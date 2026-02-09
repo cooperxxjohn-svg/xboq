@@ -1,0 +1,434 @@
+# =============================================================================
+# FINISH TEMPLATES - Indian Residential Construction
+# =============================================================================
+# Room type → finish specifications for BOQ generation
+# All measurements in mm unless specified
+
+# -----------------------------------------------------------------------------
+# DEFAULT HEIGHTS AND PARAMETERS
+# -----------------------------------------------------------------------------
+defaults:
+  ceiling_height_mm: 3000
+  skirting_height_mm: 100
+  dado_height_mm: 900
+  bathroom_tile_height_mm: 2100
+  kitchen_tile_height_mm: 600  # Above counter (dado)
+  door_height_mm: 2100
+  window_sill_height_mm: 900
+  plaster_thickness_mm: 12
+  plaster_both_sides: true
+
+# -----------------------------------------------------------------------------
+# ROOM FINISH TEMPLATES
+# -----------------------------------------------------------------------------
+templates:
+  # ---------------------------------------------------------------------------
+  # LIVING AREAS
+  # ---------------------------------------------------------------------------
+  living:
+    aliases: ["living", "living room", "drawing", "drawing room", "hall", "lobby", "living/dining", "l/d"]
+    floor:
+      type: vitrified_tiles
+      size: "600x600"
+      wastage: 0.05
+      item_code: "FLR-VIT-01"
+      description: "Providing and laying vitrified tiles (600x600mm) in living area"
+    skirting:
+      type: tile_skirting
+      height_mm: 100
+      item_code: "SKT-VIT-01"
+      description: "Providing vitrified tile skirting (100mm height)"
+    walls:
+      type: plastic_emulsion
+      coats: 2
+      item_code: "PNT-INT-01"
+      description: "Applying 2 coats plastic emulsion paint on plastered surface"
+    ceiling:
+      type: plastic_emulsion
+      coats: 2
+      item_code: "PNT-CLG-01"
+      description: "Applying 2 coats plastic emulsion paint on ceiling"
+
+  bedroom:
+    aliases: ["bedroom", "bed room", "bed", "master bedroom", "mbr", "br", "guest room", "bed-1", "bed-2", "bed 1", "bed 2"]
+    floor:
+      type: vitrified_tiles
+      size: "600x600"
+      wastage: 0.05
+      item_code: "FLR-VIT-01"
+      description: "Providing and laying vitrified tiles (600x600mm) in bedroom"
+    skirting:
+      type: tile_skirting
+      height_mm: 100
+      item_code: "SKT-VIT-01"
+      description: "Providing vitrified tile skirting (100mm height)"
+    walls:
+      type: plastic_emulsion
+      coats: 2
+      item_code: "PNT-INT-01"
+      description: "Applying 2 coats plastic emulsion paint on plastered surface"
+    ceiling:
+      type: plastic_emulsion
+      coats: 2
+      item_code: "PNT-CLG-01"
+      description: "Applying 2 coats plastic emulsion paint on ceiling"
+
+  dining:
+    aliases: ["dining", "dining room", "dining area", "dinette"]
+    floor:
+      type: vitrified_tiles
+      size: "600x600"
+      wastage: 0.05
+      item_code: "FLR-VIT-01"
+      description: "Providing and laying vitrified tiles (600x600mm) in dining area"
+    skirting:
+      type: tile_skirting
+      height_mm: 100
+      item_code: "SKT-VIT-01"
+      description: "Providing vitrified tile skirting (100mm height)"
+    walls:
+      type: plastic_emulsion
+      coats: 2
+      item_code: "PNT-INT-01"
+      description: "Applying 2 coats plastic emulsion paint on plastered surface"
+    ceiling:
+      type: plastic_emulsion
+      coats: 2
+      item_code: "PNT-CLG-01"
+      description: "Applying 2 coats plastic emulsion paint on ceiling"
+
+  # ---------------------------------------------------------------------------
+  # KITCHEN & UTILITY
+  # ---------------------------------------------------------------------------
+  kitchen:
+    aliases: ["kitchen", "kit", "k", "pantry", "dry kitchen", "wet kitchen", "modular kitchen"]
+    floor:
+      type: vitrified_tiles
+      size: "600x600"
+      wastage: 0.05
+      item_code: "FLR-VIT-02"
+      description: "Providing and laying vitrified tiles (600x600mm) in kitchen"
+    skirting:
+      type: none  # Dado covers
+      height_mm: 0
+    walls:
+      type: mixed
+      dado:
+        type: ceramic_tiles
+        height_mm: 600
+        wastage: 0.07
+        item_code: "DAD-CER-01"
+        description: "Providing ceramic tile dado (600mm height) above counter in kitchen"
+      above_dado:
+        type: plastic_emulsion
+        coats: 2
+        item_code: "PNT-INT-01"
+        description: "Applying 2 coats plastic emulsion paint above dado"
+    ceiling:
+      type: plastic_emulsion
+      coats: 2
+      item_code: "PNT-CLG-01"
+      description: "Applying 2 coats plastic emulsion paint on ceiling"
+
+  utility:
+    aliases: ["utility", "utility room", "wash area", "service", "store", "storeroom", "service area", "dry area"]
+    floor:
+      type: ceramic_tiles
+      size: "300x300"
+      wastage: 0.07
+      item_code: "FLR-CER-01"
+      description: "Providing and laying ceramic tiles (300x300mm) in utility"
+    skirting:
+      type: tile_skirting
+      height_mm: 100
+      item_code: "SKT-CER-01"
+      description: "Providing ceramic tile skirting (100mm height)"
+    walls:
+      type: plastic_emulsion
+      coats: 2
+      item_code: "PNT-INT-01"
+      description: "Applying 2 coats plastic emulsion paint on plastered surface"
+    ceiling:
+      type: plastic_emulsion
+      coats: 2
+      item_code: "PNT-CLG-01"
+      description: "Applying 2 coats plastic emulsion paint on ceiling"
+    waterproofing:
+      type: waterproofing_treatment
+      item_code: "WPR-UTL-01"
+      description: "Waterproofing treatment in utility floor"
+
+  # ---------------------------------------------------------------------------
+  # WET AREAS
+  # ---------------------------------------------------------------------------
+  toilet:
+    aliases: ["toilet", "wc", "bathroom", "bath", "attached bath", "common toilet", "guest toilet", "washroom", "lavatory", "toilet-1", "toilet-2", "bath-1", "bath-2", "t-1", "t-2", "c/t", "a/t", "common bath"]
+    floor:
+      type: anti_skid_tiles
+      size: "300x300"
+      wastage: 0.07
+      item_code: "FLR-AST-01"
+      description: "Providing and laying anti-skid ceramic tiles (300x300mm) in toilet"
+    skirting:
+      type: none  # Wall tiles cover
+      height_mm: 0
+    walls:
+      type: ceramic_tiles
+      height_mm: 2100
+      wastage: 0.07
+      item_code: "WTL-CER-01"
+      description: "Providing ceramic wall tiles (up to 2100mm height) in toilet"
+      above_tiles:
+        type: plastic_emulsion
+        coats: 2
+        item_code: "PNT-INT-01"
+        description: "Applying 2 coats plastic emulsion paint above tiles"
+    ceiling:
+      type: plastic_emulsion
+      coats: 2
+      item_code: "PNT-CLG-01"
+      description: "Applying 2 coats plastic emulsion paint on ceiling"
+    waterproofing:
+      type: waterproofing_treatment
+      item_code: "WPR-TOI-01"
+      description: "Waterproofing treatment in toilet floor and walls (up to 150mm)"
+
+  # ---------------------------------------------------------------------------
+  # PASSAGES & CIRCULATION
+  # ---------------------------------------------------------------------------
+  passage:
+    aliases: ["passage", "corridor", "lobby", "foyer", "entrance", "entry", "circulation", "common passage"]
+    floor:
+      type: vitrified_tiles
+      size: "600x600"
+      wastage: 0.05
+      item_code: "FLR-VIT-01"
+      description: "Providing and laying vitrified tiles (600x600mm) in passage"
+    skirting:
+      type: tile_skirting
+      height_mm: 100
+      item_code: "SKT-VIT-01"
+      description: "Providing vitrified tile skirting (100mm height)"
+    walls:
+      type: plastic_emulsion
+      coats: 2
+      item_code: "PNT-INT-01"
+      description: "Applying 2 coats plastic emulsion paint on plastered surface"
+    ceiling:
+      type: plastic_emulsion
+      coats: 2
+      item_code: "PNT-CLG-01"
+      description: "Applying 2 coats plastic emulsion paint on ceiling"
+
+  staircase:
+    aliases: ["staircase", "stair", "stairs", "steps", "stairwell", "stair hall"]
+    floor:
+      type: kota_stone
+      wastage: 0.08
+      item_code: "FLR-KOT-01"
+      description: "Providing and laying kota stone on staircase treads and risers"
+    walls:
+      type: plastic_emulsion
+      coats: 2
+      item_code: "PNT-INT-01"
+      description: "Applying 2 coats plastic emulsion paint on staircase walls"
+    handrail:
+      type: ms_handrail
+      item_code: "HRL-MS-01"
+      description: "Providing MS handrail with vertical balusters"
+    ceiling:
+      type: plastic_emulsion
+      coats: 2
+      item_code: "PNT-CLG-01"
+      description: "Applying 2 coats plastic emulsion paint on ceiling"
+
+  # ---------------------------------------------------------------------------
+  # EXTERNAL AREAS
+  # ---------------------------------------------------------------------------
+  balcony:
+    aliases: ["balcony", "deck", "sit out", "sitout", "verandah", "porch", "sit-out", "open balcony"]
+    floor:
+      type: anti_skid_tiles
+      size: "300x300"
+      wastage: 0.07
+      item_code: "FLR-AST-02"
+      description: "Providing and laying anti-skid tiles (300x300mm) on balcony"
+    skirting:
+      type: tile_skirting
+      height_mm: 100
+      item_code: "SKT-AST-01"
+      description: "Providing anti-skid tile skirting (100mm height)"
+    walls:
+      type: exterior_emulsion
+      coats: 2
+      item_code: "PNT-EXT-01"
+      description: "Applying 2 coats exterior emulsion paint on balcony walls"
+    ceiling:
+      type: exterior_emulsion
+      coats: 2
+      item_code: "PNT-EXT-01"
+      description: "Applying 2 coats exterior emulsion paint on balcony ceiling"
+    waterproofing:
+      type: waterproofing_treatment
+      item_code: "WPR-BAL-01"
+      description: "Waterproofing treatment on balcony floor"
+
+  terrace:
+    aliases: ["terrace", "roof terrace", "open terrace", "mumty", "terrace floor", "accessible terrace"]
+    floor:
+      type: ips_flooring
+      thickness_mm: 25
+      item_code: "FLR-IPS-01"
+      description: "Providing IPS flooring (25mm thick) on terrace"
+    waterproofing:
+      type: terrace_waterproofing
+      item_code: "WPR-TER-01"
+      description: "Providing waterproofing treatment on terrace with brick bat coba"
+    parapet:
+      type: exterior_emulsion
+      coats: 2
+      item_code: "PNT-EXT-01"
+      description: "Applying 2 coats exterior emulsion paint on parapet walls"
+
+  # ---------------------------------------------------------------------------
+  # SPECIAL ROOMS
+  # ---------------------------------------------------------------------------
+  pooja:
+    aliases: ["pooja", "puja", "prayer room", "mandir", "pooja room", "temple"]
+    floor:
+      type: marble
+      wastage: 0.10
+      item_code: "FLR-MRB-01"
+      description: "Providing and laying marble flooring in pooja room"
+    skirting:
+      type: marble_skirting
+      height_mm: 100
+      item_code: "SKT-MRB-01"
+      description: "Providing marble skirting (100mm height)"
+    walls:
+      type: plastic_emulsion
+      coats: 2
+      item_code: "PNT-INT-01"
+      description: "Applying 2 coats plastic emulsion paint on plastered surface"
+    ceiling:
+      type: pop_punning
+      item_code: "CLG-POP-01"
+      description: "Providing POP punning (6mm thick) on ceiling"
+
+  study:
+    aliases: ["study", "study room", "office", "home office", "workroom", "work room"]
+    floor:
+      type: vitrified_tiles
+      size: "600x600"
+      wastage: 0.05
+      item_code: "FLR-VIT-01"
+      description: "Providing and laying vitrified tiles (600x600mm) in study"
+    skirting:
+      type: tile_skirting
+      height_mm: 100
+      item_code: "SKT-VIT-01"
+      description: "Providing vitrified tile skirting (100mm height)"
+    walls:
+      type: plastic_emulsion
+      coats: 2
+      item_code: "PNT-INT-01"
+      description: "Applying 2 coats plastic emulsion paint on plastered surface"
+    ceiling:
+      type: plastic_emulsion
+      coats: 2
+      item_code: "PNT-CLG-01"
+      description: "Applying 2 coats plastic emulsion paint on ceiling"
+
+  # ---------------------------------------------------------------------------
+  # NON-FINISH AREAS (excluded from finishes)
+  # ---------------------------------------------------------------------------
+  shaft:
+    aliases: ["shaft", "duct", "ac duct", "pipe shaft", "service shaft", "electric shaft", "plumbing shaft"]
+    exclude_from_finishes: true
+
+  ots:
+    aliases: ["ots", "open to sky", "void", "court", "courtyard", "open court", "light well"]
+    exclude_from_finishes: true
+
+  lift:
+    aliases: ["lift", "elevator", "lift well", "lift pit", "lift lobby"]
+    exclude_from_finishes: true
+
+  duct:
+    aliases: ["duct", "ac duct", "exhaust duct", "ventilation duct"]
+    exclude_from_finishes: true
+
+  parking:
+    aliases: ["parking", "car parking", "garage", "carport", "covered parking", "stilt parking"]
+    floor:
+      type: paver_blocks
+      thickness_mm: 60
+      item_code: "FLR-PVR-01"
+      description: "Providing paver blocks (60mm thick) in parking area"
+    ceiling:
+      type: cement_paint
+      coats: 2
+      item_code: "PNT-CEM-01"
+      description: "Applying 2 coats cement paint on parking ceiling"
+
+# -----------------------------------------------------------------------------
+# MATERIAL RATES REFERENCE (for cost estimation - optional)
+# Rates in INR per unit (2024 reference)
+# -----------------------------------------------------------------------------
+material_rates_inr_per_unit:
+  vitrified_tiles_600x600: 65  # per sqft
+  ceramic_tiles_300x300: 35
+  anti_skid_tiles_300x300: 45
+  kota_stone: 55
+  marble: 150
+  granite: 180
+  plastic_emulsion: 8  # per sqft (material only)
+  exterior_emulsion: 10
+  waterproofing: 25  # per sqft
+  ips_flooring: 35
+  paver_blocks_60mm: 45
+
+# -----------------------------------------------------------------------------
+# DEDUCTION RULES
+# -----------------------------------------------------------------------------
+deductions:
+  floor:
+    - shafts
+    - ducts
+    - ots
+    - lift_wells
+    - staircase_void
+  wall_paint:
+    - doors
+    - windows
+    - ventilators
+    - ac_openings
+  skirting:
+    - door_widths
+  ceiling:
+    - false_ceiling_areas
+
+# -----------------------------------------------------------------------------
+# DEFAULT TEMPLATE (fallback for unmapped rooms)
+# -----------------------------------------------------------------------------
+default:
+  floor:
+    type: cement_flooring
+    thickness_mm: 25
+    item_code: "FLR-CEM-01"
+    description: "Providing cement flooring (25mm thick IPS)"
+  skirting:
+    type: cement_skirting
+    height_mm: 100
+    item_code: "SKT-CEM-01"
+    description: "Providing cement skirting (100mm height)"
+  walls:
+    type: plastic_emulsion
+    coats: 2
+    item_code: "PNT-INT-01"
+    description: "Applying 2 coats plastic emulsion paint on plastered surface"
+  ceiling:
+    type: plastic_emulsion
+    coats: 2
+    item_code: "PNT-CLG-01"
+    description: "Applying 2 coats plastic emulsion paint on ceiling"

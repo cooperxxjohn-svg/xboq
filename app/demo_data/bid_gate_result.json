@@ -1,0 +1,50 @@
+{
+  "status": "NO-GO",
+  "score": 20,
+  "is_submittable": false,
+  "checks": [
+    {
+      "check": "measured_quantities",
+      "passed": false,
+      "score": 0,
+      "detail": "NO geometry-backed measurements - all quantities are inferred"
+    },
+    {
+      "check": "rooms_data",
+      "passed": false,
+      "score": 0
+    },
+    {
+      "check": "openings_data",
+      "passed": false,
+      "score": 0
+    },
+    {
+      "check": "scope_completeness",
+      "passed": false,
+      "score": 0
+    },
+    {
+      "check": "owner_specs",
+      "passed": false,
+      "score": 0
+    },
+    {
+      "check": "critical_rfis",
+      "passed": true,
+      "score": 20
+    }
+  ],
+  "blockers": [
+    "CRITICAL: measured.json is empty - no geometry-backed quantities. Pricing DISABLED. Bid recommendation: NO-GO. All quantities would be fabricated from templates.",
+    "No room data found - cannot generate BOQ"
+  ],
+  "warnings": [
+    "No opening data - door/window schedule may be incomplete",
+    "Scope analysis not run",
+    "Owner specifications not provided - using defaults"
+  ],
+  "recommendations": [],
+  "pricing_disabled": true,
+  "pricing_disabled_reason": "No measured quantities available"
+}

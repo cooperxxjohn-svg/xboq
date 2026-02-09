@@ -1,0 +1,169 @@
+# Rate Library - DSR/CPWD Based Rates
+# Reference rates for estimating (INR)
+
+# Rate source metadata
+metadata:
+  source: "DSR 2024 / CPWD"
+  region: "All India Average"
+  base_year: 2024
+  last_updated: "2024-01-01"
+
+# Labour rates (per day)
+labour:
+  mason: 800
+  helper: 500
+  carpenter: 850
+  plumber: 750
+  electrician: 800
+  painter: 700
+  tiler: 850
+  steel_fixer: 750
+  bar_bender: 800
+  shuttering_carpenter: 900
+
+# Material rates
+materials:
+  # Cement (per bag 50kg)
+  cement:
+    opc_43: 380
+    opc_53: 400
+    ppc: 360
+
+  # Sand (per cum)
+  sand:
+    river: 2500
+    m_sand: 1800
+    plaster: 2200
+
+  # Aggregate (per cum)
+  aggregate:
+    20mm: 1800
+    12mm: 2000
+    6mm: 2200
+
+  # Steel (per MT)
+  steel:
+    tmt_fe500: 65000
+    tmt_fe550: 68000
+    tmt_fe500d: 70000
+
+  # Bricks (per 1000 nos)
+  bricks:
+    first_class: 8000
+    fly_ash: 5500
+    aac_blocks: 4500  # per cum
+
+  # Tiles (per sqm)
+  tiles:
+    vitrified_600x600: 55
+    ceramic_300x300: 35
+    anti_skid_300x300: 45
+    wall_ceramic: 40
+
+  # Paint (per litre)
+  paint:
+    primer: 180
+    plastic_emulsion: 280
+    exterior_emulsion: 320
+    enamel: 350
+
+  # Waterproofing (per sqm coverage)
+  waterproofing:
+    membrane: 120
+    brick_bat_coba: 350
+    chemical_coat: 80
+
+# Composite rates (material + labour)
+composite_rates:
+  # RCC work (per cum)
+  rcc:
+    M20: 7500
+    M25: 8200
+    M30: 9000
+    M35: 9800
+
+  # Formwork (per sqm)
+  formwork:
+    plywood: 450
+    steel: 380
+
+  # Brick work (per cum)
+  brickwork:
+    first_class_cm_1_4: 6500
+    first_class_cm_1_6: 6200
+    fly_ash_cm_1_4: 5000
+
+  # Plastering (per sqm)
+  plastering:
+    cm_1_4_12mm: 180
+    cm_1_4_15mm: 210
+    cm_1_6_12mm: 160
+    neeru_finish: 220
+    pop_punning: 280
+
+  # Flooring (per sqm)
+  flooring:
+    vitrified_600x600: 850
+    ceramic_300x300: 550
+    anti_skid_300x300: 650
+    marble: 1200
+    granite: 1400
+    ips: 280
+    kota: 480
+
+  # Wall tiles (per sqm)
+  wall_tiles:
+    ceramic: 650
+    designer: 850
+    dado: 700
+
+  # Painting (per sqm)
+  painting:
+    plastic_emulsion_2coat: 85
+    exterior_emulsion_2coat: 110
+    enamel_2coat: 120
+    primer_1coat: 35
+
+  # Waterproofing (per sqm)
+  waterproofing:
+    toilet_floor: 180
+    terrace_bbc: 450
+    terrace_membrane: 320
+
+  # Doors (per sqm)
+  doors:
+    flush_door_frame: 3500
+    panel_door_frame: 5500
+    upvc: 4200
+
+  # Windows (per sqm)
+  windows:
+    aluminium_sliding: 2800
+    upvc: 3500
+    wooden: 4500
+
+# Package-wise contingency guidelines
+contingency:
+  civil: 5
+  finishing: 8
+  plumbing: 10
+  electrical: 10
+  hvac: 12
+  external: 15
+
+# Regional multipliers
+regional_factors:
+  metro:
+    mumbai: 1.25
+    delhi: 1.15
+    bangalore: 1.10
+    chennai: 1.05
+    hyderabad: 1.05
+    kolkata: 1.00
+  tier2:
+    pune: 1.05
+    ahmedabad: 1.00
+    jaipur: 0.95
+    lucknow: 0.90
+  tier3:
+    default: 0.85

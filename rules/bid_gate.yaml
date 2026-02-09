@@ -1,0 +1,130 @@
+# Bid Gate Configuration
+# Thresholds for PASS / PASS_WITH_RESERVATIONS / FAIL determination
+# India-specific construction bidding safety checks
+
+version: "1.0"
+description: "Bid submission safety gate thresholds"
+
+# Gate status definitions
+statuses:
+  PASS:
+    description: "Bid is submittable with confidence"
+    action: "Proceed with submission"
+  PASS_WITH_RESERVATIONS:
+    description: "Bid is submittable but has known gaps"
+    action: "Submit with documented reservations"
+  FAIL:
+    description: "Bid NOT submittable - critical gaps exist"
+    action: "Do not submit until issues resolved"
+
+# Threshold configuration
+thresholds:
+  # Scale confidence on floor plan pages
+  scale_confidence:
+    description: "Confidence in drawing scale detection"
+    weight: 15
+    pass: 0.85          # >= 85% confidence
+    reservation: 0.60   # >= 60% but < 85%
+    fail: 0.60          # < 60%
+
+  # Schedule mapping coverage (doors/windows/finishes)
+  schedule_mapping:
+    description: "Percentage of schedule items mapped to drawings"
+    weight: 20
+    pass: 0.90          # >= 90% mapped
+    reservation: 0.70   # >= 70% but < 90%
+    fail: 0.70          # < 70%
+
+  # Missing referenced sheets
+  missing_sheets:
+    description: "Count of referenced but missing drawing sheets"
+    weight: 15
+    pass: 0             # 0 missing sheets
+    reservation: 3      # 1-3 missing sheets
+    fail: 3             # > 3 missing sheets
+
+  # Owner inputs completeness
+  owner_inputs_completeness:
+    description: "Percentage of mandatory owner inputs provided"
+    weight: 20
+    pass: 0.80          # >= 80% complete
+    reservation: 0.50   # >= 50% but < 80%
+    fail: 0.50          # < 50%
+
+  # Unresolved high-priority RFIs
+  high_priority_rfis:
+    description: "Count of unresolved high-priority RFIs"
+    weight: 15
+    pass: 0             # 0 high priority RFIs
+    reservation: 5      # 1-5 high priority RFIs
+    fail: 5             # > 5 high priority RFIs
+
+  # External works status
+  external_works:
+    description: "External works scope clarity"
+    weight: 8
+    # Values: "known", "partial", "unknown"
+    pass: "known"
+    reservation: "partial"
+    fail: "unknown"
+
+  # MEP coverage status
+  mep_coverage:
+    description: "MEP (Plumbing/Electrical/HVAC) scope clarity"
+    weight: 7
+    # Values: "covered", "partial", "unknown"
+    pass: "covered"
+    reservation: "partial"
+    fail: "unknown"
+
+# Critical failure conditions (any one triggers FAIL)
+critical_failures:
+  - condition: "no_drawings_processed"
+    description: "No drawing sheets were processed"
+  - condition: "zero_boq_items"
+    description: "BOQ has zero priced items"
+  - condition: "project_value_zero"
+    description: "Total project value is zero or negative"
+  - condition: "no_scale_detected"
+    description: "Could not detect scale on any drawing"
+  - condition: "tender_deadline_passed"
+    description: "Tender submission deadline has passed"
+
+# Reservation triggers (any one adds a reservation)
+reservation_triggers:
+  - condition: "provisional_items_exceed_10pct"
+    description: "Provisional/allowance items exceed 10% of value"
+    recommendation: "Review provisional items with owner"
+  - condition: "subcontractor_quotes_missing"
+    description: "No subcontractor quotes for major packages"
+    recommendation: "Obtain competitive quotes before submission"
+  - condition: "rate_analysis_incomplete"
+    description: "Rate build-ups missing for items > ₹5L"
+    recommendation: "Complete rate analysis for high-value items"
+  - condition: "structural_drawings_missing"
+    description: "Structural drawings not provided"
+    recommendation: "Assume standard structure or request drawings"
+  - condition: "mep_drawings_missing"
+    description: "MEP drawings not provided"
+    recommendation: "Include MEP provisional or request drawings"
+  - condition: "soil_report_missing"
+    description: "Soil investigation report not provided"
+    recommendation: "Add foundation allowance"
+  - condition: "approval_drawings_only"
+    description: "Only approval drawings provided, no GFC"
+    recommendation: "Note quantities are indicative only"
+
+# Output configuration
+output:
+  report_format: "markdown"
+  include_recommendations: true
+  include_evidence: true
+  stamp_failed_bids: true
+  failed_stamp_text: "⚠️ NOT SUBMITTABLE - REQUIRES CLARIFICATIONS ⚠️"
+
+# Scoring
+scoring:
+  method: "weighted_average"
+  pass_threshold: 80        # >= 80 points = PASS
+  reservation_threshold: 60 # >= 60 but < 80 = PASS_WITH_RESERVATIONS
+  # < 60 = FAIL (unless critical failure already triggered)

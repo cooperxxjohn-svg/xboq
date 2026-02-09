@@ -1,0 +1,73 @@
+{
+  "tag": "v1",
+  "created_at": "2026-02-03T01:10:46.535295",
+  "source_dir": "/Users/cooperworks/floorplan-engine/rules",
+  "files": [
+    {
+      "name": "structural_keywords.yaml",
+      "hash": "d14eba956724",
+      "size_bytes": 8775,
+      "modified": "2026-02-01T02:02:14.053498"
+    },
+    {
+      "name": "material_norms.yaml",
+      "hash": "ca0faefb59c9",
+      "size_bytes": 13922,
+      "modified": "2026-02-02T19:15:36.985680"
+    },
+    {
+      "name": "assumptions.yaml",
+      "hash": "1dc81d2379b5",
+      "size_bytes": 12251,
+      "modified": "2026-02-01T18:30:11.794142"
+    },
+    {
+      "name": "estimator_paranoia.yaml",
+      "hash": "e89f06e35975",
+      "size_bytes": 17117,
+      "modified": "2026-02-02T16:51:32.930583"
+    },
+    {
+      "name": "finish_templates.yaml",
+      "hash": "ac5e89b4c818",
+      "size_bytes": 15003,
+      "modified": "2026-02-01T18:29:09.030812"
+    },
+    {
+      "name": "rfi_rules.yaml",
+      "hash": "1427ef43ad00",
+      "size_bytes": 28745,
+      "modified": "2026-02-02T17:17:34.942915"
+    },
+    {
+      "name": "room_aliases.yaml",
+      "hash": "76ef9a169895",
+      "size_bytes": 10478,
+      "modified": "2026-02-01T01:41:26.518050"
+    },
+    {
+      "name": "bid_gate.yaml",
+      "hash": "bdd449ab2cb5",
+      "size_bytes": 4590,
+      "modified": "2026-02-02T22:17:00.332834"
+    },
+    {
+      "name": "confidence.yaml",
+      "hash": "6cb713df3b84",
+      "size_bytes": 7126,
+      "modified": "2026-02-01T18:30:52.211122"
+    },
+    {
+      "name": "scope_taxonomy.yaml",
+      "hash": "4cb0e79d7d41",
+      "size_bytes": 33184,
+      "modified": "2026-02-02T16:23:57.362817"
+    },
+    {
+      "name": "segmentation_params.yaml",
+      "hash": "41fd5dda81d6",
+      "size_bytes": 2188,
+      "modified": "2026-02-02T12:22:49.035583"
+    }
+  ]
+}

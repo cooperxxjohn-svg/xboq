@@ -1,0 +1,73 @@
+# Segmentation Parameters for Floor Plan Analysis
+# These parameters can be tuned via parameter sweep
+
+# Preprocessing parameters
+preprocess:
+  # Adaptive thresholding block size (must be odd)
+  adaptive_block_size: 35
+  # Adaptive thresholding constant
+  adaptive_c: 10
+  # Enable deskew correction
+  enable_deskew: true
+  # Enable denoising
+  enable_denoise: true
+  # Denoising strength (higher = more smoothing)
+  denoise_strength: 10
+  # CLAHE clip limit for contrast enhancement
+  clahe_clip_limit: 2.0
+
+# Wall detection parameters
+walls:
+  # Gap closing size - closes door/window openings (pixels)
+  # Higher = more aggressive closing, risk of merging rooms
+  # Lower = preserves small gaps, risk of fragmentation
+  gap_close_size: 15
+  # Minimum wall segment length to detect
+  min_wall_length: 30
+  # Wall thickness range
+  wall_thickness_min: 2
+  wall_thickness_max: 30
+
+# Region detection parameters
+regions:
+  # Minimum room area as ratio of image area
+  # Lower = detect smaller rooms/closets
+  min_room_area_ratio: 0.001
+  # Maximum room area as ratio of image area
+  # Higher = allow larger open spaces
+  max_room_area_ratio: 0.5
+  # Minimum aspect ratio (width/height)
+  min_aspect_ratio: 0.1
+  # Maximum aspect ratio
+  max_aspect_ratio: 10.0
+  # Minimum solidity (area / convex hull area)
+  # Higher = reject irregular shapes
+  min_solidity: 0.3
+  # Maximum area for internal holes (columns, shafts)
+  hole_max_area_ratio: 0.005
+
+# Polygon extraction parameters
+polygons:
+  # Douglas-Peucker simplification epsilon
+  # Higher = more simplified, fewer vertices
+  simplification_epsilon: 2.0
+  # Minimum vertices after simplification
+  min_vertices: 4
+  # Maximum vertices (limit complexity)
+  max_vertices: 100
+  # Spike angle threshold (degrees)
+  # Remove vertices with angles below this
+  spike_angle_threshold: 15
+
+# India-specific settings
+india:
+  # Typical wall thicknesses in mm
+  wall_thickness_main: 230  # 9 inch
+  wall_thickness_partition: 115  # 4.5 inch
+  # Common room sizes for validation (sqm)
+  typical_bedroom_min: 9.0
+  typical_bedroom_max: 25.0
+  typical_toilet_min: 2.0
+  typical_toilet_max: 8.0
+  typical_kitchen_min: 5.0
+  typical_kitchen_max: 15.0

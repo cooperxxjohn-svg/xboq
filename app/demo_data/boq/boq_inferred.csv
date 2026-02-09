@@ -1,0 +1,499 @@
+item_id,package,description,room,qty,unit,rate,amount,source_pages,method,confidence,scale_basis,bucket,geometry_refs,infer_reason
+FLR-001,flooring,Flooring in Brickwork Plan-Stilt Floor (Annex Building),,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-002,wall_finishes,Wall finish in Brickwork Plan-Stilt Floor (Annex Building),,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-003,wall_finishes,Ceiling in Brickwork Plan-Stilt Floor (Annex Building),,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-004,flooring,Flooring in Brickwork Plan-Ground Floor (Annex Building),,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-005,wall_finishes,Wall finish in Brickwork Plan-Ground Floor (Annex Building),,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-006,wall_finishes,Ceiling in Brickwork Plan-Ground Floor (Annex Building),,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-007,flooring,Flooring in Brickwork Plan-First Floor (Annex Building),,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-008,wall_finishes,Wall finish in Brickwork Plan-First Floor (Annex Building),,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-009,wall_finishes,Ceiling in Brickwork Plan-First Floor (Annex Building),,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-010,flooring,Flooring in Brickwork Plan-Second Floor (Annex Building),,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-011,wall_finishes,Wall finish in Brickwork Plan-Second Floor (Annex Building),,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-012,wall_finishes,Ceiling in Brickwork Plan-Second Floor (Annex Building),,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-013,flooring,Flooring in Brickwork Plan-Third Floor (Annex Building),,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-014,wall_finishes,Wall finish in Brickwork Plan-Third Floor (Annex Building),,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-015,wall_finishes,Ceiling in Brickwork Plan-Third Floor (Annex Building),,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-016,flooring,Flooring in Brickwork Plan-Mezzanine Floor (Annex Building),,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-017,wall_finishes,Wall finish in Brickwork Plan-Mezzanine Floor (Annex Building),,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-018,wall_finishes,Ceiling in Brickwork Plan-Mezzanine Floor (Annex Building),,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-019,flooring,Flooring in Brickwork Plan-Fourth Floor (Annex Building),,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-020,wall_finishes,Wall finish in Brickwork Plan-Fourth Floor (Annex Building),,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-021,wall_finishes,Ceiling in Brickwork Plan-Fourth Floor (Annex Building),,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-022,flooring,Flooring in Brickwork Plan-Terrace Level Plan (Annex Building),,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-023,wall_finishes,Wall finish in Brickwork Plan-Terrace Level Plan (Annex Building),,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-024,wall_finishes,Ceiling in Brickwork Plan-Terrace Level Plan (Annex Building),,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-025,flooring,Flooring in Brickwork Plan-Mumty Level Plan (Annex Building),,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-026,wall_finishes,Wall finish in Brickwork Plan-Mumty Level Plan (Annex Building),,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-027,wall_finishes,Ceiling in Brickwork Plan-Mumty Level Plan (Annex Building),,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-028,flooring,Flooring in Staircase Detail-Stilt To Ground Floor,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-029,wall_finishes,Wall finish in Staircase Detail-Stilt To Ground Floor,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-030,wall_finishes,Ceiling in Staircase Detail-Stilt To Ground Floor,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-031,flooring,Flooring in Staircase Detail-Ground Floor To First Floor,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-032,wall_finishes,Wall finish in Staircase Detail-Ground Floor To First Floor,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-033,wall_finishes,Ceiling in Staircase Detail-Ground Floor To First Floor,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-034,flooring,Flooring in Staircase Detail-First Floor To Second Floor,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-035,wall_finishes,Wall finish in Staircase Detail-First Floor To Second Floor,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-036,wall_finishes,Ceiling in Staircase Detail-First Floor To Second Floor,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-037,flooring,Flooring in Staircase Detail-Second Floor To Third Floor,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-038,wall_finishes,Wall finish in Staircase Detail-Second Floor To Third Floor,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-039,wall_finishes,Ceiling in Staircase Detail-Second Floor To Third Floor,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-040,flooring,Flooring in Staircase Detail-Third Floor To Fourth Floor,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-041,wall_finishes,Wall finish in Staircase Detail-Third Floor To Fourth Floor,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-042,wall_finishes,Ceiling in Staircase Detail-Third Floor To Fourth Floor,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-043,flooring,Flooring in Staircase Detail-Fourth Floor To Terrace Floor,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-044,wall_finishes,Wall finish in Staircase Detail-Fourth Floor To Terrace Floor,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-045,wall_finishes,Ceiling in Staircase Detail-Fourth Floor To Terrace Floor,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-046,flooring,Flooring in Brickwork Plan - Ground Floor,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-047,wall_finishes,Wall finish in Brickwork Plan - Ground Floor,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-048,wall_finishes,Ceiling in Brickwork Plan - Ground Floor,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-049,flooring,Flooring in Brickwork Plan - First Floor,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-050,wall_finishes,Wall finish in Brickwork Plan - First Floor,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-051,wall_finishes,Ceiling in Brickwork Plan - First Floor,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-052,flooring,Flooring in Brickwork Plan - Second Floor,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-053,wall_finishes,Wall finish in Brickwork Plan - Second Floor,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-054,wall_finishes,Ceiling in Brickwork Plan - Second Floor,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-055,flooring,Flooring in Brickwork Plan - Third Floor,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-056,wall_finishes,Wall finish in Brickwork Plan - Third Floor,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-057,wall_finishes,Ceiling in Brickwork Plan - Third Floor,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-058,flooring,Flooring in Brickwork Plan - Fourth Floor,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-059,wall_finishes,Wall finish in Brickwork Plan - Fourth Floor,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-060,wall_finishes,Ceiling in Brickwork Plan - Fourth Floor,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-061,flooring,Flooring in Brickwork Plan - Terrace,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-062,wall_finishes,Wall finish in Brickwork Plan - Terrace,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-063,wall_finishes,Ceiling in Brickwork Plan - Terrace,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-064,flooring,Flooring in Brickwork Plan - Mumty Level Plan,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-065,wall_finishes,Wall finish in Brickwork Plan - Mumty Level Plan,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-066,wall_finishes,Ceiling in Brickwork Plan - Mumty Level Plan,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-067,flooring,Flooring in Terrace Details,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-068,wall_finishes,Wall finish in Terrace Details,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-069,wall_finishes,Ceiling in Terrace Details,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-070,flooring,Flooring in System Consultancy Services,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-071,wall_finishes,Wall finish in System Consultancy Services,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-072,wall_finishes,Ceiling in System Consultancy Services,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WP-073,waterproofing,Waterproofing in System Consultancy Services,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-074,flooring,Flooring in System Consultancy Services,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-075,wall_finishes,Wall finish in System Consultancy Services,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-076,wall_finishes,Ceiling in System Consultancy Services,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WP-077,waterproofing,Waterproofing in System Consultancy Services,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-078,flooring,Flooring in System Consultancy Services,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-079,wall_finishes,Wall finish in System Consultancy Services,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-080,wall_finishes,Ceiling in System Consultancy Services,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WP-081,waterproofing,Waterproofing in System Consultancy Services,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-082,flooring,Flooring in System Consultancy Services,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-083,wall_finishes,Wall finish in System Consultancy Services,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-084,wall_finishes,Ceiling in System Consultancy Services,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WP-085,waterproofing,Waterproofing in System Consultancy Services,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-086,flooring,Flooring in Grid Shall Be,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-087,wall_finishes,Wall finish in Grid Shall Be,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-088,wall_finishes,Ceiling in Grid Shall Be,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-089,flooring,Flooring in New Column Shall,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-090,wall_finishes,Wall finish in New Column Shall,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-091,wall_finishes,Ceiling in New Column Shall,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-092,flooring,Flooring in ( Proposed Corridor),,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-093,wall_finishes,Wall finish in ( Proposed Corridor),,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-094,wall_finishes,Ceiling in ( Proposed Corridor),,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-095,flooring,Flooring in Students Entrance Lobby,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-096,wall_finishes,Wall finish in Students Entrance Lobby,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-097,wall_finishes,Ceiling in Students Entrance Lobby,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-098,flooring,Flooring in Lift Well,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-099,wall_finishes,Wall finish in Lift Well,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-100,wall_finishes,Ceiling in Lift Well,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-101,flooring,Flooring in Staircase,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-102,wall_finishes,Wall finish in Staircase,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-103,wall_finishes,Ceiling in Staircase,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-104,flooring,Flooring in Lift,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-105,wall_finishes,Wall finish in Lift,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-106,wall_finishes,Ceiling in Lift,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-107,flooring,Flooring in Staircase,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-108,wall_finishes,Wall finish in Staircase,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-109,wall_finishes,Ceiling in Staircase,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-110,flooring,Flooring in Lift Well,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-111,wall_finishes,Wall finish in Lift Well,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-112,wall_finishes,Ceiling in Lift Well,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-113,flooring,Flooring in Staircase,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-114,wall_finishes,Wall finish in Staircase,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-115,wall_finishes,Ceiling in Staircase,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-116,flooring,Flooring in Lift,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-117,wall_finishes,Wall finish in Lift,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-118,wall_finishes,Ceiling in Lift,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-119,flooring,Flooring in Staircase,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-120,wall_finishes,Wall finish in Staircase,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-121,wall_finishes,Ceiling in Staircase,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-122,flooring,Flooring in Lift,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-123,wall_finishes,Wall finish in Lift,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-124,wall_finishes,Ceiling in Lift,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-125,flooring,Flooring in Stairs,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-126,wall_finishes,Wall finish in Stairs,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-127,wall_finishes,Ceiling in Stairs,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-128,flooring,Flooring in Staircase,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-129,wall_finishes,Wall finish in Staircase,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-130,wall_finishes,Ceiling in Staircase,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-131,flooring,Flooring in Lift,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-132,wall_finishes,Wall finish in Lift,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-133,wall_finishes,Ceiling in Lift,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-134,flooring,Flooring in Staircase,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-135,wall_finishes,Wall finish in Staircase,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-136,wall_finishes,Ceiling in Staircase,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-137,flooring,Flooring in Lift,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-138,wall_finishes,Wall finish in Lift,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-139,wall_finishes,Ceiling in Lift,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-140,flooring,Flooring in Staircase,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-141,wall_finishes,Wall finish in Staircase,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-142,wall_finishes,Ceiling in Staircase,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-143,flooring,Flooring in Lift,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-144,wall_finishes,Wall finish in Lift,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-145,wall_finishes,Ceiling in Lift,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-146,flooring,Flooring in Stairs,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-147,wall_finishes,Wall finish in Stairs,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-148,wall_finishes,Ceiling in Stairs,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-149,flooring,Flooring in 230 Mm Th. Brick Work,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-150,wall_finishes,Wall finish in 230 Mm Th. Brick Work,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-151,wall_finishes,Ceiling in 230 Mm Th. Brick Work,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-152,flooring,Flooring in 115 Mm Th. Brick Work,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-153,wall_finishes,Wall finish in 115 Mm Th. Brick Work,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-154,wall_finishes,Ceiling in 115 Mm Th. Brick Work,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-155,flooring,Flooring in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-156,wall_finishes,Wall finish in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-157,wall_finishes,Ceiling in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-158,flooring,Flooring in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-159,wall_finishes,Wall finish in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-160,wall_finishes,Ceiling in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-161,flooring,Flooring in Entrance Lobby,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-162,wall_finishes,Wall finish in Entrance Lobby,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-163,wall_finishes,Ceiling in Entrance Lobby,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-164,flooring,Flooring in Toilet,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-165,wall_finishes,Wall finish in Toilet,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-166,wall_finishes,Ceiling in Toilet,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WP-167,waterproofing,Waterproofing in Toilet,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-168,flooring,Flooring in Bedroom,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-169,wall_finishes,Wall finish in Bedroom,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-170,wall_finishes,Ceiling in Bedroom,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-171,flooring,Flooring in Kitchen,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-172,wall_finishes,Wall finish in Kitchen,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-173,wall_finishes,Ceiling in Kitchen,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WP-174,waterproofing,Waterproofing in Kitchen,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-175,flooring,Flooring in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-176,wall_finishes,Wall finish in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-177,wall_finishes,Ceiling in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-178,flooring,Flooring in Entrance Lobby,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-179,wall_finishes,Wall finish in Entrance Lobby,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-180,wall_finishes,Ceiling in Entrance Lobby,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-181,flooring,Flooring in Toilet,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-182,wall_finishes,Wall finish in Toilet,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-183,wall_finishes,Ceiling in Toilet,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WP-184,waterproofing,Waterproofing in Toilet,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-185,flooring,Flooring in Bedroom,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-186,wall_finishes,Wall finish in Bedroom,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-187,wall_finishes,Ceiling in Bedroom,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-188,flooring,Flooring in Kitchen,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-189,wall_finishes,Wall finish in Kitchen,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-190,wall_finishes,Ceiling in Kitchen,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WP-191,waterproofing,Waterproofing in Kitchen,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-192,flooring,Flooring in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-193,wall_finishes,Wall finish in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-194,wall_finishes,Ceiling in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-195,flooring,Flooring in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-196,wall_finishes,Wall finish in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-197,wall_finishes,Ceiling in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-198,flooring,Flooring in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-199,wall_finishes,Wall finish in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-200,wall_finishes,Ceiling in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-201,flooring,Flooring in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-202,wall_finishes,Wall finish in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-203,wall_finishes,Ceiling in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-204,flooring,Flooring in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-205,wall_finishes,Wall finish in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-206,wall_finishes,Ceiling in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-207,flooring,Flooring in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-208,wall_finishes,Wall finish in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-209,wall_finishes,Ceiling in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-210,flooring,Flooring in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-211,wall_finishes,Wall finish in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-212,wall_finishes,Ceiling in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-213,flooring,Flooring in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-214,wall_finishes,Wall finish in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-215,wall_finishes,Ceiling in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-216,flooring,Flooring in 5- Reinforcement Shall Be Of Grade Fe:500 Conforming,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-217,wall_finishes,Wall finish in 5- Reinforcement Shall Be Of Grade Fe:500 Conforming,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-218,wall_finishes,Ceiling in 5- Reinforcement Shall Be Of Grade Fe:500 Conforming,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-219,flooring,Flooring in 6- Laps Shall Be Staggered By At Least Lap Length And,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-220,wall_finishes,Wall finish in 6- Laps Shall Be Staggered By At Least Lap Length And,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-221,wall_finishes,Ceiling in 6- Laps Shall Be Staggered By At Least Lap Length And,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-222,flooring,Flooring in 7- A Minimum Lap Length Of 50 D Shall Be Provided .,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-223,wall_finishes,Wall finish in 7- A Minimum Lap Length Of 50 D Shall Be Provided .,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-224,wall_finishes,Ceiling in 7- A Minimum Lap Length Of 50 D Shall Be Provided .,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-225,flooring,Flooring in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-226,wall_finishes,Wall finish in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-227,wall_finishes,Ceiling in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-228,flooring,Flooring in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-229,wall_finishes,Wall finish in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-230,wall_finishes,Ceiling in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-231,flooring,Flooring in 5- Reinforcement Shall Be Of Grade Fe:500 Conforming,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-232,wall_finishes,Wall finish in 5- Reinforcement Shall Be Of Grade Fe:500 Conforming,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-233,wall_finishes,Ceiling in 5- Reinforcement Shall Be Of Grade Fe:500 Conforming,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-234,flooring,Flooring in 6- Laps Shall Be Staggered By At Least Lap Length And,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-235,wall_finishes,Wall finish in 6- Laps Shall Be Staggered By At Least Lap Length And,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-236,wall_finishes,Ceiling in 6- Laps Shall Be Staggered By At Least Lap Length And,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-237,flooring,Flooring in 7- A Minimum Lap Length Of 50 D Shall Be Provided .,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-238,wall_finishes,Wall finish in 7- A Minimum Lap Length Of 50 D Shall Be Provided .,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-239,wall_finishes,Ceiling in 7- A Minimum Lap Length Of 50 D Shall Be Provided .,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-240,flooring,Flooring in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-241,wall_finishes,Wall finish in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-242,wall_finishes,Ceiling in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-243,flooring,Flooring in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-244,wall_finishes,Wall finish in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-245,wall_finishes,Ceiling in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-246,flooring,Flooring in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-247,wall_finishes,Wall finish in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-248,wall_finishes,Ceiling in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-249,flooring,Flooring in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-250,wall_finishes,Wall finish in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-251,wall_finishes,Ceiling in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-252,flooring,Flooring in 5- Reinforcement Shall Be Of Grade Fe:500 Conforming,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-253,wall_finishes,Wall finish in 5- Reinforcement Shall Be Of Grade Fe:500 Conforming,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-254,wall_finishes,Ceiling in 5- Reinforcement Shall Be Of Grade Fe:500 Conforming,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-255,flooring,Flooring in 6- Laps Shall Be Staggered By At Least Lap Length And,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-256,wall_finishes,Wall finish in 6- Laps Shall Be Staggered By At Least Lap Length And,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-257,wall_finishes,Ceiling in 6- Laps Shall Be Staggered By At Least Lap Length And,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-258,flooring,Flooring in 7- A Minimum Lap Length Of 50 D Shall Be Provided .,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-259,wall_finishes,Wall finish in 7- A Minimum Lap Length Of 50 D Shall Be Provided .,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-260,wall_finishes,Ceiling in 7- A Minimum Lap Length Of 50 D Shall Be Provided .,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-261,flooring,Flooring in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-262,wall_finishes,Wall finish in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-263,wall_finishes,Ceiling in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-264,flooring,Flooring in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-265,wall_finishes,Wall finish in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-266,wall_finishes,Ceiling in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-267,flooring,Flooring in 5- Reinforcement Shall Be Of Grade Fe:500 Conforming,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-268,wall_finishes,Wall finish in 5- Reinforcement Shall Be Of Grade Fe:500 Conforming,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-269,wall_finishes,Ceiling in 5- Reinforcement Shall Be Of Grade Fe:500 Conforming,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-270,flooring,Flooring in 6- Laps Shall Be Staggered By At Least Lap Length And,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-271,wall_finishes,Wall finish in 6- Laps Shall Be Staggered By At Least Lap Length And,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-272,wall_finishes,Ceiling in 6- Laps Shall Be Staggered By At Least Lap Length And,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-273,flooring,Flooring in 7- A Minimum Lap Length Of 50 D Shall Be Provided .,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-274,wall_finishes,Wall finish in 7- A Minimum Lap Length Of 50 D Shall Be Provided .,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-275,wall_finishes,Ceiling in 7- A Minimum Lap Length Of 50 D Shall Be Provided .,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-276,flooring,Flooring in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-277,wall_finishes,Wall finish in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-278,wall_finishes,Ceiling in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-279,flooring,Flooring in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-280,wall_finishes,Wall finish in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-281,wall_finishes,Ceiling in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-282,flooring,Flooring in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-283,wall_finishes,Wall finish in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-284,wall_finishes,Ceiling in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-285,flooring,Flooring in Structure -  Staircase Detail (St. To Gr. Fl.),,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-286,wall_finishes,Wall finish in Structure -  Staircase Detail (St. To Gr. Fl.),,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-287,wall_finishes,Ceiling in Structure -  Staircase Detail (St. To Gr. Fl.),,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-288,flooring,Flooring in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-289,wall_finishes,Wall finish in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-290,wall_finishes,Ceiling in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-291,flooring,Flooring in Structure -  Staircase Detail (Gr.Fl. To F.Fl.),,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-292,wall_finishes,Wall finish in Structure -  Staircase Detail (Gr.Fl. To F.Fl.),,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-293,wall_finishes,Ceiling in Structure -  Staircase Detail (Gr.Fl. To F.Fl.),,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-294,flooring,Flooring in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-295,wall_finishes,Wall finish in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-296,wall_finishes,Ceiling in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-297,flooring,Flooring in Structure -  Staircase Detail (F.Fl. To S.Fl.),,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-298,wall_finishes,Wall finish in Structure -  Staircase Detail (F.Fl. To S.Fl.),,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-299,wall_finishes,Ceiling in Structure -  Staircase Detail (F.Fl. To S.Fl.),,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-300,flooring,Flooring in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-301,wall_finishes,Wall finish in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-302,wall_finishes,Ceiling in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-303,flooring,Flooring in Structure -  Staircase Detail (S.Fl. To T.Fl.),,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-304,wall_finishes,Wall finish in Structure -  Staircase Detail (S.Fl. To T.Fl.),,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-305,wall_finishes,Ceiling in Structure -  Staircase Detail (S.Fl. To T.Fl.),,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-306,flooring,Flooring in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-307,wall_finishes,Wall finish in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-308,wall_finishes,Ceiling in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-309,flooring,Flooring in Structure -  Staircase Detail (T.Fl. To F.Fl.),,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-310,wall_finishes,Wall finish in Structure -  Staircase Detail (T.Fl. To F.Fl.),,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-311,wall_finishes,Ceiling in Structure -  Staircase Detail (T.Fl. To F.Fl.),,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-312,flooring,Flooring in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-313,wall_finishes,Wall finish in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-314,wall_finishes,Ceiling in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-315,flooring,Flooring in Structure -  Staircase Detail (T.Fl. To F.Fl.),,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-316,wall_finishes,Wall finish in Structure -  Staircase Detail (T.Fl. To F.Fl.),,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-317,wall_finishes,Ceiling in Structure -  Staircase Detail (T.Fl. To F.Fl.),,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-318,flooring,Flooring in Lobby,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-319,wall_finishes,Wall finish in Lobby,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-320,wall_finishes,Ceiling in Lobby,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-321,flooring,Flooring in Entrance Lobby,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-322,wall_finishes,Wall finish in Entrance Lobby,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-323,wall_finishes,Ceiling in Entrance Lobby,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-324,flooring,Flooring in Examination Hall/,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-325,wall_finishes,Wall finish in Examination Hall/,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-326,wall_finishes,Ceiling in Examination Hall/,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-327,flooring,Flooring in Toilet Window,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-328,wall_finishes,Wall finish in Toilet Window,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-329,wall_finishes,Ceiling in Toilet Window,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WP-330,waterproofing,Waterproofing in Toilet Window,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-331,flooring,Flooring in Staircase Window,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-332,wall_finishes,Wall finish in Staircase Window,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-333,wall_finishes,Ceiling in Staircase Window,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-334,flooring,Flooring in Brickwork Plan -  Ground Floor,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-335,wall_finishes,Wall finish in Brickwork Plan -  Ground Floor,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-336,wall_finishes,Ceiling in Brickwork Plan -  Ground Floor,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-337,flooring,Flooring in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-338,wall_finishes,Wall finish in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-339,wall_finishes,Ceiling in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-340,flooring,Flooring in Toilet Window,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-341,wall_finishes,Wall finish in Toilet Window,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-342,wall_finishes,Ceiling in Toilet Window,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WP-343,waterproofing,Waterproofing in Toilet Window,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-344,flooring,Flooring in Staircase Window,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-345,wall_finishes,Wall finish in Staircase Window,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-346,wall_finishes,Ceiling in Staircase Window,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-347,flooring,Flooring in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-348,wall_finishes,Wall finish in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-349,wall_finishes,Ceiling in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-350,flooring,Flooring in Brickwork Plan -  First Floor,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-351,wall_finishes,Wall finish in Brickwork Plan -  First Floor,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-352,wall_finishes,Ceiling in Brickwork Plan -  First Floor,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-353,flooring,Flooring in Lobby,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-354,wall_finishes,Wall finish in Lobby,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-355,wall_finishes,Ceiling in Lobby,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-356,flooring,Flooring in Toilet Window,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-357,wall_finishes,Wall finish in Toilet Window,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-358,wall_finishes,Ceiling in Toilet Window,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WP-359,waterproofing,Waterproofing in Toilet Window,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-360,flooring,Flooring in Staircase Window,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-361,wall_finishes,Wall finish in Staircase Window,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-362,wall_finishes,Ceiling in Staircase Window,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-363,flooring,Flooring in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-364,wall_finishes,Wall finish in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-365,wall_finishes,Ceiling in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-366,flooring,Flooring in Brickwork Plan -  Second Floor,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-367,wall_finishes,Wall finish in Brickwork Plan -  Second Floor,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-368,wall_finishes,Ceiling in Brickwork Plan -  Second Floor,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-369,flooring,Flooring in Toilet Window,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-370,wall_finishes,Wall finish in Toilet Window,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-371,wall_finishes,Ceiling in Toilet Window,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WP-372,waterproofing,Waterproofing in Toilet Window,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-373,flooring,Flooring in Staircase Window,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-374,wall_finishes,Wall finish in Staircase Window,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-375,wall_finishes,Ceiling in Staircase Window,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-376,flooring,Flooring in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-377,wall_finishes,Wall finish in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-378,wall_finishes,Ceiling in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-379,flooring,Flooring in Brickwork Plan -  Third Floor,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-380,wall_finishes,Wall finish in Brickwork Plan -  Third Floor,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-381,wall_finishes,Ceiling in Brickwork Plan -  Third Floor,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-382,flooring,Flooring in Toilets,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-383,wall_finishes,Wall finish in Toilets,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-384,wall_finishes,Ceiling in Toilets,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WP-385,waterproofing,Waterproofing in Toilets,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-386,flooring,Flooring in Toilet Window,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-387,wall_finishes,Wall finish in Toilet Window,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-388,wall_finishes,Ceiling in Toilet Window,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WP-389,waterproofing,Waterproofing in Toilet Window,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-390,flooring,Flooring in Staircase Window,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-391,wall_finishes,Wall finish in Staircase Window,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-392,wall_finishes,Ceiling in Staircase Window,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-393,flooring,Flooring in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-394,wall_finishes,Wall finish in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-395,wall_finishes,Ceiling in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-396,flooring,Flooring in Brickwork Plan -  Fourth Floor,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-397,wall_finishes,Wall finish in Brickwork Plan -  Fourth Floor,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-398,wall_finishes,Ceiling in Brickwork Plan -  Fourth Floor,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-399,flooring,Flooring in Terrace Level Plan,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-400,wall_finishes,Wall finish in Terrace Level Plan,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-401,wall_finishes,Ceiling in Terrace Level Plan,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-402,flooring,"Flooring in Mumty, Lift Machine Rooms & Over Head Water Tanks",,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-403,wall_finishes,"Wall finish in Mumty, Lift Machine Rooms & Over Head Water Tanks",,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-404,wall_finishes,"Ceiling in Mumty, Lift Machine Rooms & Over Head Water Tanks",,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-405,flooring,Flooring in Toilet Window,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-406,wall_finishes,Wall finish in Toilet Window,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-407,wall_finishes,Ceiling in Toilet Window,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WP-408,waterproofing,Waterproofing in Toilet Window,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-409,flooring,Flooring in Staircase Window,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-410,wall_finishes,Wall finish in Staircase Window,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-411,wall_finishes,Ceiling in Staircase Window,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-412,flooring,Flooring in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-413,wall_finishes,Wall finish in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-414,wall_finishes,Ceiling in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-415,flooring,Flooring in Brickwork Plan - Terrace,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-416,wall_finishes,Wall finish in Brickwork Plan - Terrace,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-417,wall_finishes,Ceiling in Brickwork Plan - Terrace,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-418,flooring,Flooring in Mumty Terrace & Water Tank/Machine Room Terrace Levels,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-419,wall_finishes,Wall finish in Mumty Terrace & Water Tank/Machine Room Terrace Levels,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-420,wall_finishes,Ceiling in Mumty Terrace & Water Tank/Machine Room Terrace Levels,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-421,flooring,Flooring in Staircase Window,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-422,wall_finishes,Wall finish in Staircase Window,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-423,wall_finishes,Ceiling in Staircase Window,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-424,flooring,Flooring in Toilet Window,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-425,wall_finishes,Wall finish in Toilet Window,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-426,wall_finishes,Ceiling in Toilet Window,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WP-427,waterproofing,Waterproofing in Toilet Window,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-428,flooring,Flooring in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-429,wall_finishes,Wall finish in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-430,wall_finishes,Ceiling in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-431,flooring,Flooring in Staircase Window,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-432,wall_finishes,Wall finish in Staircase Window,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-433,wall_finishes,Ceiling in Staircase Window,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-434,flooring,Flooring in Toilet Window,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-435,wall_finishes,Wall finish in Toilet Window,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-436,wall_finishes,Ceiling in Toilet Window,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WP-437,waterproofing,Waterproofing in Toilet Window,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-438,flooring,Flooring in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-439,wall_finishes,Wall finish in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-440,wall_finishes,Ceiling in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-441,flooring,Flooring in Staircase Window,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-442,wall_finishes,Wall finish in Staircase Window,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-443,wall_finishes,Ceiling in Staircase Window,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-444,flooring,Flooring in Toilet Window,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-445,wall_finishes,Wall finish in Toilet Window,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-446,wall_finishes,Ceiling in Toilet Window,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WP-447,waterproofing,Waterproofing in Toilet Window,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-448,flooring,Flooring in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-449,wall_finishes,Wall finish in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-450,wall_finishes,Ceiling in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-451,flooring,Flooring in Staircase Window,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-452,wall_finishes,Wall finish in Staircase Window,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-453,wall_finishes,Ceiling in Staircase Window,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-454,flooring,Flooring in Toilet Window,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-455,wall_finishes,Wall finish in Toilet Window,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-456,wall_finishes,Ceiling in Toilet Window,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WP-457,waterproofing,Waterproofing in Toilet Window,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-458,flooring,Flooring in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-459,wall_finishes,Wall finish in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-460,wall_finishes,Ceiling in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-461,flooring,Flooring in Staircase Window,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-462,wall_finishes,Wall finish in Staircase Window,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-463,wall_finishes,Ceiling in Staircase Window,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-464,flooring,Flooring in Toilet Window,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-465,wall_finishes,Wall finish in Toilet Window,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-466,wall_finishes,Ceiling in Toilet Window,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WP-467,waterproofing,Waterproofing in Toilet Window,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-468,flooring,Flooring in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-469,wall_finishes,Wall finish in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-470,wall_finishes,Ceiling in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-471,flooring,Flooring in Staircase Window,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-472,wall_finishes,Wall finish in Staircase Window,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-473,wall_finishes,Ceiling in Staircase Window,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-474,flooring,Flooring in Toilet Window,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-475,wall_finishes,Wall finish in Toilet Window,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-476,wall_finishes,Ceiling in Toilet Window,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WP-477,waterproofing,Waterproofing in Toilet Window,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-478,flooring,Flooring in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-479,wall_finishes,Wall finish in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-480,wall_finishes,Ceiling in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-481,flooring,Flooring in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-482,wall_finishes,Wall finish in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-483,wall_finishes,Ceiling in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-484,flooring,Flooring in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-485,wall_finishes,Wall finish in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-486,wall_finishes,Ceiling in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-487,flooring,Flooring in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-488,wall_finishes,Wall finish in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-489,wall_finishes,Ceiling in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-490,flooring,Flooring in Terrace Details,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-491,wall_finishes,Wall finish in Terrace Details,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-492,wall_finishes,Ceiling in Terrace Details,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-493,flooring,Flooring in Lift,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-494,wall_finishes,Wall finish in Lift,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-495,wall_finishes,Ceiling in Lift,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+FLR-496,flooring,Flooring in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+WF-497,wall_finishes,Wall finish in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.
+CLG-498,wall_finishes,Ceiling in Any Discrepancy In The Drawing Shall Be Brought To The,,,sqm,,,,inferred,0.00,unknown,inferred,,No drawing evidence. Inferred from template.

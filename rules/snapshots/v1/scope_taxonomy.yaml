@@ -1,0 +1,1414 @@
+# Scope Taxonomy for Indian Construction Projects
+# Each package defines required evidence and keywords for detection
+
+packages:
+  prelims_general_conditions:
+    name: "Preliminaries & General Conditions"
+    subpackages:
+      site_setup:
+        name: "Site Setup & Establishment"
+        keywords:
+          - site office
+          - temporary shed
+          - labour hutment
+          - material storage
+          - watchman shed
+        required_evidence:
+          - notes
+        minimum_artifacts: []
+        typical_items:
+          - Site office with amenities
+          - Temporary storage shed
+          - Labour accommodation
+          - Site boundary fencing
+
+      scaffolding:
+        name: "Scaffolding & Safety"
+        keywords:
+          - scaffolding
+          - safety net
+          - barricade
+          - safety equipment
+        required_evidence:
+          - notes
+          - spec
+        minimum_artifacts: []
+        typical_items:
+          - Steel scaffolding with safety nets
+          - Barricades and signage
+          - Safety equipment provision
+
+      water_power:
+        name: "Water & Power for Construction"
+        keywords:
+          - construction water
+          - construction power
+          - temporary connection
+        required_evidence:
+          - notes
+        minimum_artifacts: []
+        typical_items:
+          - Temporary water connection
+          - Temporary power connection 3-phase
+          - DG set for construction
+
+      permits_testing:
+        name: "Permits, Testing & Clearances"
+        keywords:
+          - clearance
+          - permit
+          - approval
+          - NOC
+          - testing
+          - cube test
+          - slump test
+        required_evidence:
+          - notes
+          - spec
+        minimum_artifacts: []
+        typical_items:
+          - Building permit fees
+          - Material testing (cube, slump, rebar)
+          - Third party inspection
+          - Completion certificate
+
+  demolition:
+    name: "Demolition & Site Clearance"
+    subpackages:
+      structure_demo:
+        name: "Structural Demolition"
+        keywords:
+          - demolition
+          - dismantling
+          - breaking
+          - removal of existing
+        required_evidence:
+          - plan
+          - notes
+        minimum_artifacts: []
+        typical_items:
+          - RCC demolition
+          - Masonry demolition
+          - Debris disposal
+
+      site_clearing:
+        name: "Site Clearing"
+        keywords:
+          - site clearing
+          - tree removal
+          - bush clearing
+          - topsoil removal
+        required_evidence:
+          - plan
+          - notes
+        minimum_artifacts: []
+        typical_items:
+          - Tree cutting and removal
+          - Bush/shrub clearing
+          - Topsoil stripping and stacking
+
+  earthwork:
+    name: "Earthwork & Excavation"
+    subpackages:
+      excavation:
+        name: "Excavation"
+        keywords:
+          - excavation
+          - digging
+          - cutting
+          - trenching
+          - foundation excavation
+          - EGL
+          - NGL
+          - formation level
+        required_evidence:
+          - plan
+          - section
+          - notes
+        minimum_artifacts:
+          - foundation_plan
+        typical_items:
+          - Foundation excavation in soil
+          - Foundation excavation in rock
+          - Trench excavation for utilities
+
+      filling:
+        name: "Filling & Compaction"
+        keywords:
+          - backfill
+          - filling
+          - compaction
+          - sand filling
+          - earth filling
+          - PCC bed
+          - soling
+        required_evidence:
+          - section
+          - notes
+        minimum_artifacts: []
+        typical_items:
+          - Earth backfilling with compaction
+          - Sand filling under floors
+          - Soling with stone/brick
+
+      anti_termite:
+        name: "Anti-Termite Treatment"
+        keywords:
+          - anti-termite
+          - termite treatment
+          - soil treatment
+          - chlorpyriphos
+        required_evidence:
+          - notes
+          - spec
+        minimum_artifacts: []
+        typical_items:
+          - Pre-construction anti-termite treatment
+          - Post-construction anti-termite treatment
+
+  rcc_concrete:
+    name: "RCC & Concrete Work"
+    subpackages:
+      pcc:
+        name: "Plain Cement Concrete"
+        keywords:
+          - PCC
+          - lean concrete
+          - bed concrete
+          - M10
+          - M15
+          - plain concrete
+        required_evidence:
+          - section
+          - notes
+          - spec
+        minimum_artifacts: []
+        typical_items:
+          - PCC M10 under footings
+          - PCC M15 in flooring
+          - Lean concrete bed
+
+      rcc_substructure:
+        name: "RCC Substructure"
+        keywords:
+          - footing
+          - foundation
+          - raft
+          - pile cap
+          - grade beam
+          - plinth beam
+          - retaining wall
+          - basement
+        required_evidence:
+          - plan
+          - section
+          - detail
+          - schedule
+        minimum_artifacts:
+          - foundation_plan
+          - structural_drawing
+        typical_items:
+          - RCC M25 isolated footing
+          - RCC M25 combined footing
+          - RCC M30 raft foundation
+          - RCC plinth beam
+          - RCC retaining wall
+
+      rcc_superstructure:
+        name: "RCC Superstructure"
+        keywords:
+          - column
+          - beam
+          - slab
+          - staircase
+          - chajja
+          - lintel
+          - sunshade
+          - parapet
+          - loft
+          - M20
+          - M25
+          - M30
+        required_evidence:
+          - plan
+          - section
+          - detail
+          - schedule
+        minimum_artifacts:
+          - floor_plan
+          - structural_drawing
+        typical_items:
+          - RCC M25 columns
+          - RCC M25 beams
+          - RCC M25 slab 125mm
+          - RCC M25 slab 150mm
+          - RCC staircase
+          - RCC chajja/sunshade
+          - RCC lintel
+          - RCC parapet wall
+
+  reinforcement_steel:
+    name: "Reinforcement Steel"
+    subpackages:
+      tmt_bars:
+        name: "TMT Reinforcement Bars"
+        keywords:
+          - TMT
+          - Fe500
+          - Fe500D
+          - Fe550
+          - rebar
+          - reinforcement
+          - bar bending
+          - BBS
+          - steel
+          - dia
+          - diameter
+        required_evidence:
+          - schedule
+          - detail
+          - notes
+        minimum_artifacts:
+          - bbs_schedule
+        typical_items:
+          - TMT Fe500D 8mm dia
+          - TMT Fe500D 10mm dia
+          - TMT Fe500D 12mm dia
+          - TMT Fe500D 16mm dia
+          - TMT Fe500D 20mm dia
+          - TMT Fe500D 25mm dia
+
+      binding_wire:
+        name: "Binding Wire & Accessories"
+        keywords:
+          - binding wire
+          - cover block
+          - spacer
+          - chair
+        required_evidence:
+          - notes
+        minimum_artifacts: []
+        typical_items:
+          - Binding wire (annealed)
+          - Cover blocks
+          - Spacers and chairs
+
+  formwork_shuttering:
+    name: "Formwork & Shuttering"
+    subpackages:
+      conventional:
+        name: "Conventional Shuttering"
+        keywords:
+          - shuttering
+          - formwork
+          - centering
+          - staging
+          - props
+          - plywood
+        required_evidence:
+          - notes
+          - spec
+        minimum_artifacts: []
+        typical_items:
+          - Steel/plywood shuttering for slabs
+          - Steel shuttering for columns
+          - Steel shuttering for beams
+          - Staging and propping
+
+      special:
+        name: "Special Formwork"
+        keywords:
+          - mivan
+          - tunnel form
+          - slip form
+          - jump form
+          - system formwork
+        required_evidence:
+          - notes
+          - spec
+        minimum_artifacts: []
+        typical_items:
+          - System formwork (mivan type)
+          - Curved formwork
+
+  masonry_partitions:
+    name: "Masonry & Partitions"
+    subpackages:
+      brick_masonry:
+        name: "Brick Masonry"
+        keywords:
+          - brick
+          - brickwork
+          - "230"
+          - "115"
+          - "230mm"
+          - "115mm"
+          - 9 inch
+          - 4.5 inch
+          - half brick
+          - one brick
+          - CM 1:6
+          - CM 1:4
+        required_evidence:
+          - plan
+          - section
+          - notes
+        minimum_artifacts:
+          - floor_plan
+        typical_items:
+          - Brick masonry 230mm in CM 1:6
+          - Brick masonry 115mm in CM 1:6
+          - Exposed brick wall
+
+      aac_blocks:
+        name: "AAC Block Masonry"
+        keywords:
+          - AAC
+          - aerated
+          - block
+          - siporex
+          - "200mm"
+          - "150mm"
+          - "100mm"
+          - lightweight
+        required_evidence:
+          - plan
+          - section
+          - notes
+        minimum_artifacts:
+          - floor_plan
+        typical_items:
+          - AAC block masonry 200mm
+          - AAC block masonry 150mm
+          - AAC block masonry 100mm
+
+      fly_ash_blocks:
+        name: "Fly Ash Brick/Block"
+        keywords:
+          - fly ash
+          - fly-ash
+          - FAB
+          - CLC
+        required_evidence:
+          - plan
+          - notes
+        minimum_artifacts: []
+        typical_items:
+          - Fly ash brick masonry 230mm
+          - Fly ash brick masonry 115mm
+
+      partition_walls:
+        name: "Partition Walls"
+        keywords:
+          - partition
+          - gypsum board
+          - drywall
+          - glass partition
+          - aluminum partition
+        required_evidence:
+          - plan
+          - detail
+          - notes
+        minimum_artifacts: []
+        typical_items:
+          - Gypsum board partition
+          - Glass partition with frame
+          - Aluminum partition system
+
+  waterproofing:
+    name: "Waterproofing"
+    subpackages:
+      toilet_waterproofing:
+        name: "Toilet/Bathroom Waterproofing"
+        keywords:
+          - toilet waterproofing
+          - bathroom waterproofing
+          - sunken waterproofing
+          - wet area
+          - APP membrane
+          - waterproofing membrane
+          - integral waterproofing
+        required_evidence:
+          - detail
+          - notes
+          - spec
+        minimum_artifacts: []
+        typical_items:
+          - APP membrane waterproofing
+          - Liquid membrane waterproofing
+          - Integral waterproofing in sunken slab
+
+      terrace_waterproofing:
+        name: "Terrace/Roof Waterproofing"
+        keywords:
+          - terrace waterproofing
+          - roof waterproofing
+          - exposed terrace
+          - brick bat coba
+          - IPS
+          - china mosaic
+        required_evidence:
+          - detail
+          - section
+          - notes
+          - spec
+        minimum_artifacts: []
+        typical_items:
+          - APP membrane with protective screed
+          - Brick bat coba waterproofing
+          - IPS waterproofing
+          - Liquid applied membrane
+
+      basement_waterproofing:
+        name: "Basement Waterproofing"
+        keywords:
+          - basement waterproofing
+          - tanking
+          - external waterproofing
+          - bentonite
+          - crystalline
+        required_evidence:
+          - detail
+          - section
+          - notes
+          - spec
+        minimum_artifacts: []
+        typical_items:
+          - External membrane waterproofing
+          - Crystalline waterproofing treatment
+          - Bentonite waterproofing
+
+      other_waterproofing:
+        name: "Other Waterproofing"
+        keywords:
+          - balcony waterproofing
+          - chajja waterproofing
+          - parapet waterproofing
+          - tank waterproofing
+          - sump waterproofing
+        required_evidence:
+          - detail
+          - notes
+        minimum_artifacts: []
+        typical_items:
+          - Balcony waterproofing
+          - Water tank waterproofing
+          - Planter waterproofing
+
+  doors_windows:
+    name: "Doors & Windows"
+    subpackages:
+      wood_doors:
+        name: "Wooden Doors"
+        keywords:
+          - wooden door
+          - timber door
+          - flush door
+          - panel door
+          - teak
+          - sal
+          - frame
+          - chaukhat
+        required_evidence:
+          - schedule
+          - detail
+          - notes
+        minimum_artifacts:
+          - door_schedule
+        typical_items:
+          - Teak wood frame with flush door
+          - Sal wood frame with flush door
+          - Teak wood paneled door
+
+      metal_doors:
+        name: "Metal Doors"
+        keywords:
+          - MS door
+          - steel door
+          - metal door
+          - pressed steel
+          - fire door
+          - rolling shutter
+        required_evidence:
+          - schedule
+          - detail
+          - notes
+        minimum_artifacts:
+          - door_schedule
+        typical_items:
+          - Pressed steel door frame
+          - MS door with frame
+          - Fire rated door
+          - Rolling shutter
+
+      upvc_aluminum_doors:
+        name: "UPVC/Aluminum Doors"
+        keywords:
+          - UPVC
+          - aluminum door
+          - aluminium door
+          - sliding door
+          - ACP
+        required_evidence:
+          - schedule
+          - detail
+          - notes
+        minimum_artifacts:
+          - door_schedule
+        typical_items:
+          - UPVC door
+          - Aluminum sliding door
+          - Aluminum framed glass door
+
+      windows:
+        name: "Windows"
+        keywords:
+          - window
+          - ventilator
+          - UPVC window
+          - aluminum window
+          - aluminium window
+          - MS window
+          - sliding window
+          - casement
+          - fixed glass
+        required_evidence:
+          - schedule
+          - detail
+          - notes
+        minimum_artifacts:
+          - window_schedule
+        typical_items:
+          - UPVC sliding window
+          - Aluminum sliding window
+          - MS grill window
+          - Fixed glass window
+          - Ventilator
+
+      hardware:
+        name: "Door/Window Hardware"
+        keywords:
+          - hardware
+          - hinges
+          - handle
+          - lock
+          - tower bolt
+          - aldrop
+          - stopper
+        required_evidence:
+          - schedule
+          - notes
+        minimum_artifacts: []
+        typical_items:
+          - SS hinges
+          - Mortice lock
+          - Door handles
+          - Tower bolts
+          - Door stoppers
+
+  finishes_floor:
+    name: "Floor Finishes"
+    subpackages:
+      vitrified_tiles:
+        name: "Vitrified Tiles"
+        keywords:
+          - vitrified
+          - ceramic
+          - tile
+          - 600x600
+          - 800x800
+          - 600x1200
+          - double charge
+          - polished
+          - matt
+          - anti-skid
+        required_evidence:
+          - schedule
+          - plan
+          - notes
+        minimum_artifacts:
+          - finish_schedule
+        typical_items:
+          - Vitrified tile 600x600mm
+          - Vitrified tile 800x800mm
+          - Anti-skid vitrified tile
+          - Double charge vitrified tile
+
+      natural_stone:
+        name: "Natural Stone Flooring"
+        keywords:
+          - granite
+          - marble
+          - kota
+          - sandstone
+          - kadappa
+          - shahabad
+          - natural stone
+        required_evidence:
+          - schedule
+          - plan
+          - notes
+        minimum_artifacts:
+          - finish_schedule
+        typical_items:
+          - Granite flooring polished
+          - Marble flooring
+          - Kota stone flooring
+          - Shahabad stone flooring
+
+      cement_flooring:
+        name: "Cement Based Flooring"
+        keywords:
+          - IPS
+          - cement concrete
+          - VDF
+          - tremix
+          - polished concrete
+          - epoxy
+        required_evidence:
+          - plan
+          - notes
+          - spec
+        minimum_artifacts: []
+        typical_items:
+          - IPS flooring
+          - VDF flooring (tremix)
+          - Epoxy flooring
+
+      skirting:
+        name: "Skirting"
+        keywords:
+          - skirting
+          - dado
+          - border
+        required_evidence:
+          - notes
+          - schedule
+        minimum_artifacts: []
+        typical_items:
+          - Vitrified tile skirting
+          - Granite skirting
+          - Marble skirting
+
+      staircase_flooring:
+        name: "Staircase Flooring"
+        keywords:
+          - stair tread
+          - stair riser
+          - nosing
+          - landing
+          - staircase flooring
+        required_evidence:
+          - detail
+          - notes
+        minimum_artifacts: []
+        typical_items:
+          - Granite stair tread with nosing
+          - Vitrified tile stair flooring
+          - Kota stone stair flooring
+
+  finishes_wall:
+    name: "Wall Finishes"
+    subpackages:
+      internal_plaster:
+        name: "Internal Plastering"
+        keywords:
+          - internal plaster
+          - plaster
+          - CM plaster
+          - cement plaster
+          - 12mm
+          - 15mm
+          - 20mm
+          - neeru
+          - POP
+          - punning
+          - gypsum plaster
+        required_evidence:
+          - notes
+          - spec
+        minimum_artifacts: []
+        typical_items:
+          - CM plaster 12mm internal
+          - CM plaster 15mm internal
+          - Neeru/POP punning
+          - Gypsum plaster 12mm
+
+      external_plaster:
+        name: "External Plastering"
+        keywords:
+          - external plaster
+          - rough plaster
+          - sand face
+          - texture
+          - 18mm
+          - 20mm
+        required_evidence:
+          - notes
+          - spec
+        minimum_artifacts: []
+        typical_items:
+          - CM plaster 18mm external
+          - CM plaster 20mm external double coat
+          - Sand face plaster
+
+      wall_tiles:
+        name: "Wall Tiles/Cladding"
+        keywords:
+          - wall tile
+          - dado tile
+          - kitchen tile
+          - bathroom tile
+          - cladding
+          - stone cladding
+        required_evidence:
+          - schedule
+          - notes
+        minimum_artifacts:
+          - finish_schedule
+        typical_items:
+          - Ceramic wall tile 300x450mm
+          - Ceramic wall tile 300x600mm
+          - Kitchen dado tiles
+          - Bathroom wall tiles
+
+      painting:
+        name: "Painting"
+        keywords:
+          - paint
+          - primer
+          - putty
+          - emulsion
+          - enamel
+          - distemper
+          - apex
+          - weathercoat
+          - acrylic
+          - oil bound
+          - OBD
+          - texture paint
+        required_evidence:
+          - notes
+          - spec
+          - schedule
+        minimum_artifacts:
+          - finish_schedule
+        typical_items:
+          - Putty 2 coats + primer + emulsion 2 coats
+          - Primer + emulsion 2 coats
+          - Exterior weathercoat/apex
+          - Enamel paint on MS
+          - Texture paint
+          - OBD distemper
+
+  finishes_ceiling:
+    name: "Ceiling Finishes"
+    subpackages:
+      plaster_ceiling:
+        name: "Plastered Ceiling"
+        keywords:
+          - ceiling plaster
+          - soffit plaster
+          - POP ceiling
+          - neeru ceiling
+        required_evidence:
+          - notes
+          - spec
+        minimum_artifacts: []
+        typical_items:
+          - CM plaster 6mm on RCC ceiling
+          - POP/neeru on ceiling
+
+      false_ceiling:
+        name: "False Ceiling"
+        keywords:
+          - false ceiling
+          - suspended ceiling
+          - gypsum ceiling
+          - grid ceiling
+          - POP false ceiling
+          - cove
+          - drop
+          - plain
+        required_evidence:
+          - plan
+          - detail
+          - notes
+        minimum_artifacts:
+          - ceiling_plan
+        typical_items:
+          - Gypsum board false ceiling
+          - POP false ceiling
+          - Grid false ceiling
+          - Cove false ceiling with lighting
+
+  plumbing_water_supply:
+    name: "Plumbing - Water Supply"
+    subpackages:
+      pipes_fittings:
+        name: "Pipes & Fittings"
+        keywords:
+          - CPVC
+          - UPVC
+          - GI pipe
+          - water supply
+          - plumbing
+          - cold water
+          - hot water
+          - pipe
+          - fitting
+        required_evidence:
+          - plan
+          - notes
+          - spec
+        minimum_artifacts:
+          - plumbing_plan
+        typical_items:
+          - CPVC pipes and fittings
+          - GI pipes for main supply
+          - Valves (gate, ball, NRV)
+
+      fixtures:
+        name: "Sanitary Fixtures"
+        keywords:
+          - WC
+          - EWC
+          - IWC
+          - wash basin
+          - sink
+          - urinal
+          - bidet
+          - CP fittings
+          - mixer
+          - tap
+          - faucet
+          - shower
+          - health faucet
+        required_evidence:
+          - schedule
+          - plan
+          - notes
+        minimum_artifacts:
+          - plumbing_plan
+        typical_items:
+          - EWC with cistern
+          - Wash basin with pedestal
+          - Kitchen sink SS
+          - CP mixer
+          - Pillar tap
+          - Health faucet
+          - Overhead shower
+
+      storage:
+        name: "Water Storage"
+        keywords:
+          - overhead tank
+          - OHT
+          - sump
+          - underground tank
+          - UG tank
+          - cistern
+          - sintex
+          - loft tank
+        required_evidence:
+          - plan
+          - detail
+          - notes
+        minimum_artifacts: []
+        typical_items:
+          - RCC overhead tank
+          - RCC underground sump
+          - FRP/plastic tank
+          - Pump and accessories
+
+  plumbing_sanitary_swr:
+    name: "Plumbing - Sanitary/SWR"
+    subpackages:
+      swr_pipes:
+        name: "SWR Pipes & Fittings"
+        keywords:
+          - SWR
+          - soil waste
+          - sewage
+          - drainage
+          - soil pipe
+          - waste pipe
+          - vent pipe
+          - 110mm
+          - 160mm
+          - 75mm
+        required_evidence:
+          - plan
+          - notes
+        minimum_artifacts: []
+        typical_items:
+          - SWR pipe 110mm
+          - SWR pipe 75mm
+          - Fittings (bends, junctions)
+
+      floor_traps:
+        name: "Floor Traps & Drains"
+        keywords:
+          - floor trap
+          - nahani trap
+          - gully trap
+          - P trap
+          - S trap
+          - drain
+        required_evidence:
+          - plan
+          - notes
+        minimum_artifacts: []
+        typical_items:
+          - Floor trap CP
+          - Gully trap
+          - Nahani trap
+
+      external_drainage:
+        name: "External Drainage"
+        keywords:
+          - inspection chamber
+          - IC
+          - manhole
+          - septic tank
+          - soak pit
+          - STP
+          - ETP
+          - chamber
+        required_evidence:
+          - plan
+          - detail
+          - notes
+        minimum_artifacts:
+          - site_plan
+        typical_items:
+          - Brick inspection chamber
+          - RCC manhole cover
+          - Septic tank
+          - Soak pit
+          - STP connection
+
+  plumbing_storm_rainwater:
+    name: "Plumbing - Stormwater/Rainwater"
+    subpackages:
+      rainwater_pipes:
+        name: "Rainwater Downpipes"
+        keywords:
+          - rainwater
+          - RWP
+          - downpipe
+          - downspout
+          - rain water
+          - storm water
+        required_evidence:
+          - plan
+          - notes
+        minimum_artifacts: []
+        typical_items:
+          - UPVC rainwater pipe 110mm
+          - CI rainwater pipe
+          - Shoe and accessories
+
+      rainwater_harvesting:
+        name: "Rainwater Harvesting"
+        keywords:
+          - rainwater harvesting
+          - RWH
+          - recharge pit
+          - filter
+          - collection
+          - percolation
+        required_evidence:
+          - plan
+          - detail
+          - notes
+        minimum_artifacts: []
+        typical_items:
+          - Rainwater harvesting pit
+          - Filter chamber
+          - Recharge well
+          - Collection tank
+
+  electrical_power_lighting:
+    name: "Electrical - Power & Lighting"
+    subpackages:
+      wiring_conduit:
+        name: "Wiring & Conduits"
+        keywords:
+          - wiring
+          - conduit
+          - cable
+          - FRLS
+          - copper
+          - PVC conduit
+          - concealed
+          - surface
+          - 1.5 sq mm
+          - 2.5 sq mm
+          - 4 sq mm
+        required_evidence:
+          - plan
+          - notes
+          - spec
+        minimum_artifacts:
+          - electrical_plan
+        typical_items:
+          - PVC conduit concealed
+          - Copper wire FRLS 1.5 sqmm
+          - Copper wire FRLS 2.5 sqmm
+          - Copper wire FRLS 4 sqmm
+
+      switches_sockets:
+        name: "Switches & Sockets"
+        keywords:
+          - switch
+          - socket
+          - modular
+          - 6A
+          - 16A
+          - 5 pin
+          - USB
+        required_evidence:
+          - plan
+          - schedule
+          - notes
+        minimum_artifacts:
+          - electrical_plan
+        typical_items:
+          - Modular switches
+          - 16A socket outlet
+          - 6A socket outlet
+          - USB charging socket
+
+      db_mcb:
+        name: "Distribution Boards & MCBs"
+        keywords:
+          - DB
+          - distribution board
+          - MCB
+          - RCCB
+          - ELCB
+          - circuit breaker
+          - SP
+          - DP
+          - TP
+        required_evidence:
+          - schedule
+          - notes
+          - spec
+        minimum_artifacts: []
+        typical_items:
+          - DB with MCBs
+          - RCCB 32A
+          - MCB SP
+          - MCB DP
+
+      lighting:
+        name: "Light Fixtures"
+        keywords:
+          - light
+          - LED
+          - tube light
+          - bulb
+          - ceiling light
+          - downlight
+          - fixture
+          - luminaire
+        required_evidence:
+          - schedule
+          - plan
+          - notes
+        minimum_artifacts:
+          - electrical_plan
+        typical_items:
+          - LED panel light
+          - LED downlight
+          - LED tube light
+          - Wall bracket light
+          - Ceiling light
+
+      earthing:
+        name: "Earthing & Protection"
+        keywords:
+          - earthing
+          - earth pit
+          - GI pipe earthing
+          - plate earthing
+          - lightning arrestor
+          - surge
+        required_evidence:
+          - notes
+          - spec
+        minimum_artifacts: []
+        typical_items:
+          - GI pipe earthing
+          - Plate earthing
+          - Lightning arrestor
+          - Surge protection
+
+      lt_panel:
+        name: "LT Panel & Metering"
+        keywords:
+          - LT panel
+          - meter
+          - energy meter
+          - main switch
+          - bus bar
+          - MCCB
+        required_evidence:
+          - plan
+          - notes
+          - spec
+        minimum_artifacts: []
+        typical_items:
+          - LT panel
+          - Energy meter
+          - Main switch/MCCB
+
+  fire_hvac:
+    name: "Fire Safety & HVAC"
+    subpackages:
+      fire_detection:
+        name: "Fire Detection & Alarm"
+        keywords:
+          - fire alarm
+          - smoke detector
+          - heat detector
+          - fire panel
+          - hooter
+          - MCP
+        required_evidence:
+          - plan
+          - notes
+          - spec
+        minimum_artifacts:
+          - fire_plan
+        typical_items:
+          - Smoke detector
+          - Heat detector
+          - Fire alarm panel
+          - MCP (manual call point)
+          - Hooter
+
+      fire_fighting:
+        name: "Fire Fighting System"
+        keywords:
+          - fire extinguisher
+          - sprinkler
+          - hydrant
+          - hose reel
+          - fire pump
+          - wet riser
+          - dry riser
+        required_evidence:
+          - plan
+          - notes
+          - spec
+        minimum_artifacts:
+          - fire_plan
+        typical_items:
+          - Fire extinguisher ABC
+          - Fire hydrant
+          - Hose reel
+          - Sprinkler system
+          - Fire pump set
+
+      hvac:
+        name: "HVAC System"
+        keywords:
+          - AC
+          - air conditioning
+          - VRV
+          - VRF
+          - split AC
+          - ducted AC
+          - chiller
+          - AHU
+          - ventilation
+          - exhaust fan
+        required_evidence:
+          - plan
+          - notes
+          - spec
+        minimum_artifacts:
+          - hvac_plan
+        typical_items:
+          - Split AC provision
+          - Exhaust fan
+          - Fresh air system
+          - VRV/VRF system
+
+  external_works_paving:
+    name: "External Works - Paving"
+    subpackages:
+      paver_blocks:
+        name: "Paver Block Paving"
+        keywords:
+          - paver
+          - interlocking
+          - paver block
+          - pathway
+          - driveway
+          - parking
+        required_evidence:
+          - plan
+          - notes
+        minimum_artifacts:
+          - site_plan
+        typical_items:
+          - Paver block 60mm
+          - Paver block 80mm
+          - Kerb stone
+
+      road_layers:
+        name: "Road Layers"
+        keywords:
+          - WMM
+          - GSB
+          - sub-base
+          - base course
+          - bitumen
+          - tar
+          - asphalt
+        required_evidence:
+          - section
+          - notes
+        minimum_artifacts: []
+        typical_items:
+          - GSB layer
+          - WMM layer
+          - Bitumen surface
+
+      kerbs:
+        name: "Kerbs & Edging"
+        keywords:
+          - kerb
+          - curb
+          - edge
+          - border
+        required_evidence:
+          - detail
+          - notes
+        minimum_artifacts: []
+        typical_items:
+          - Precast kerb stone
+          - RCC kerb in-situ
+
+  external_works_drainage:
+    name: "External Works - Drainage"
+    subpackages:
+      storm_drains:
+        name: "Storm Water Drains"
+        keywords:
+          - storm drain
+          - open drain
+          - covered drain
+          - channel
+          - catch pit
+          - outfall
+        required_evidence:
+          - plan
+          - section
+          - notes
+        minimum_artifacts:
+          - site_plan
+        typical_items:
+          - RCC open drain
+          - Precast covered drain
+          - Catch pit
+
+      ug_tank_sump:
+        name: "UG Tank & Sump"
+        keywords:
+          - UG tank
+          - underground tank
+          - sump
+          - pump room
+        required_evidence:
+          - plan
+          - detail
+          - notes
+        minimum_artifacts: []
+        typical_items:
+          - RCC underground water tank
+          - Pump room
+
+  external_works_compound:
+    name: "External Works - Compound"
+    subpackages:
+      compound_wall:
+        name: "Compound Wall"
+        keywords:
+          - compound wall
+          - boundary wall
+          - fencing
+          - gate
+          - grill
+          - railing
+        required_evidence:
+          - plan
+          - detail
+          - notes
+        minimum_artifacts:
+          - site_plan
+        typical_items:
+          - Brick compound wall
+          - RCC compound wall
+          - MS railing/grill
+          - MS gate
+
+      landscaping:
+        name: "Landscaping"
+        keywords:
+          - landscaping
+          - garden
+          - planting
+          - lawn
+          - tree
+          - shrub
+        required_evidence:
+          - plan
+          - notes
+        minimum_artifacts: []
+        typical_items:
+          - Lawn development
+          - Tree planting
+          - Shrub planting
+
+  testing_commissioning:
+    name: "Testing & Commissioning"
+    subpackages:
+      material_testing:
+        name: "Material Testing"
+        keywords:
+          - cube test
+          - slump test
+          - rebar test
+          - third party
+          - lab test
+        required_evidence:
+          - notes
+          - spec
+        minimum_artifacts: []
+        typical_items:
+          - Concrete cube testing
+          - Slump testing
+          - Rebar testing
+
+      system_commissioning:
+        name: "System Commissioning"
+        keywords:
+          - commissioning
+          - testing
+          - trial run
+          - balancing
+          - certification
+        required_evidence:
+          - notes
+          - spec
+        minimum_artifacts: []
+        typical_items:
+          - Plumbing testing
+          - Electrical testing and certification
+          - Fire system commissioning
+          - HVAC balancing

@@ -1,0 +1,571 @@
+# ============================================================
+# ESTIMATOR PARANOIA RULES - India Construction Standards
+# ============================================================
+# These rules encode experienced estimator knowledge about
+# implied scope items that MUST be included when certain
+# room types or elements are present.
+#
+# PRINCIPLE: If a room or element exists, certain associated
+# items are ALWAYS required unless explicitly excluded.
+# ============================================================
+
+version: "1.0"
+description: "India-specific estimator paranoia rules for scope inference"
+
+# ============================================================
+# ROOM-BASED INFERENCE RULES
+# ============================================================
+# When a room type is detected, these items are IMPLIED
+
+room_rules:
+  # ----------------------------------------------------------
+  # TOILET / BATHROOM / WC
+  # ----------------------------------------------------------
+  toilet:
+    triggers:
+      - toilet
+      - bathroom
+      - wc
+      - w/c
+      - w.c
+      - bath
+      - lavatory
+      - washroom
+      - powder room
+
+    implied_items:
+      - item: waterproofing_toilet
+        description: "Toilet waterproofing (IPS/membrane + china mosaic)"
+        boq_code: "PS_WP_TOILET"
+        unit: sqm
+        quantity_formula: "floor_area * 1.0"  # Full floor area
+        typical_rate_range: [350, 650]  # INR per sqm
+        priority: critical
+        notes: "Mandatory for all wet areas per NBC"
+
+      - item: floor_trap
+        description: "CI/PVC floor trap with jali"
+        boq_code: "PS_FT_TOILET"
+        unit: nos
+        quantity_formula: "1"  # Minimum 1 per toilet
+        typical_rate_range: [250, 600]
+        priority: high
+
+      - item: ventilator
+        description: "Exhaust ventilator/fan provision"
+        boq_code: "PS_VENT_TOILET"
+        unit: nos
+        quantity_formula: "1"
+        typical_rate_range: [800, 2500]
+        priority: medium
+        notes: "Required if no external window"
+
+      - item: anti_skid_tiles
+        description: "Anti-skid floor tiles"
+        boq_code: "PS_TILE_ANTISKID"
+        unit: sqm
+        quantity_formula: "floor_area"
+        typical_rate_range: [45, 120]  # Per sqm
+        priority: high
+
+      - item: dado_tiles
+        description: "Wall dado tiles (up to door height)"
+        boq_code: "PS_TILE_DADO"
+        unit: sqm
+        quantity_formula: "perimeter * 2.1"  # 7ft height typical
+        typical_rate_range: [45, 100]
+        priority: high
+
+      - item: cp_fittings
+        description: "CP fittings provision"
+        boq_code: "PS_CP_TOILET"
+        unit: set
+        quantity_formula: "1"
+        typical_rate_range: [5000, 25000]
+        priority: high
+
+      - item: sanitary_fixtures
+        description: "Sanitary fixtures (EWC/IWC, wash basin)"
+        boq_code: "PS_SANITARY"
+        unit: set
+        quantity_formula: "1"
+        typical_rate_range: [8000, 35000]
+        priority: critical
+
+      - item: pvc_door
+        description: "PVC/WPC toilet door"
+        boq_code: "PS_DOOR_TOILET"
+        unit: nos
+        quantity_formula: "1"
+        typical_rate_range: [3500, 8000]
+        priority: high
+        notes: "Water-resistant door required"
+
+  # ----------------------------------------------------------
+  # BALCONY / TERRACE
+  # ----------------------------------------------------------
+  balcony:
+    triggers:
+      - balcony
+      - terrace
+      - open terrace
+      - verandah
+      - deck
+      - patio
+
+    implied_items:
+      - item: waterproofing_terrace
+        description: "Terrace waterproofing (APP membrane/bituminous)"
+        boq_code: "PS_WP_TERRACE"
+        unit: sqm
+        quantity_formula: "floor_area"
+        typical_rate_range: [180, 450]
+        priority: critical
+        notes: "Essential for exposed areas"
+
+      - item: floor_drain
+        description: "Floor drain/outlet with grating"
+        boq_code: "PS_DRAIN_TERRACE"
+        unit: nos
+        quantity_formula: "max(1, floor_area / 15)"  # 1 per 15sqm
+        typical_rate_range: [350, 800]
+        priority: high
+
+      - item: ms_railing
+        description: "MS railing with paint"
+        boq_code: "PS_RAIL_BALCONY"
+        unit: rmt
+        quantity_formula: "exposed_perimeter"
+        typical_rate_range: [1800, 4500]
+        priority: critical
+        notes: "Minimum 1050mm height per NBC"
+
+      - item: weatherproof_tiles
+        description: "Weather-resistant floor tiles"
+        boq_code: "PS_TILE_OUTDOOR"
+        unit: sqm
+        quantity_formula: "floor_area"
+        typical_rate_range: [55, 120]
+        priority: medium
+
+      - item: drip_mould
+        description: "Drip mould at slab edge"
+        boq_code: "PS_DRIP_BALCONY"
+        unit: rmt
+        quantity_formula: "exposed_perimeter"
+        typical_rate_range: [80, 150]
+        priority: medium
+
+  # ----------------------------------------------------------
+  # STAIRCASE
+  # ----------------------------------------------------------
+  staircase:
+    triggers:
+      - staircase
+      - stair
+      - stairs
+      - stairwell
+      - stair hall
+
+    implied_items:
+      - item: ss_handrail
+        description: "SS/MS handrail both sides"
+        boq_code: "PS_RAIL_STAIR"
+        unit: rmt
+        quantity_formula: "stair_length * 2"  # Both sides
+        typical_rate_range: [2500, 6000]
+        priority: critical
+        notes: "NBC mandatory"
+
+      - item: stair_nosing
+        description: "Anti-skid nosing strips"
+        boq_code: "PS_NOSING_STAIR"
+        unit: rmt
+        quantity_formula: "tread_count * tread_width"
+        typical_rate_range: [120, 350]
+        priority: high
+
+      - item: stair_flooring
+        description: "Stair tread/riser finish (granite/kota/tile)"
+        boq_code: "PS_FINISH_STAIR"
+        unit: sqm
+        quantity_formula: "stair_surface_area"
+        typical_rate_range: [180, 650]
+        priority: high
+
+      - item: stair_plaster_both
+        description: "Plaster on soffit + sides"
+        boq_code: "PS_PLASTER_STAIR"
+        unit: sqm
+        quantity_formula: "stair_surface_area * 1.5"  # Soffit + sides
+        typical_rate_range: [35, 65]
+        priority: high
+        notes: "Both sides waist slab"
+
+      - item: stair_paint
+        description: "Paint on staircase soffit + walls"
+        boq_code: "PS_PAINT_STAIR"
+        unit: sqm
+        quantity_formula: "stair_surface_area * 2"
+        typical_rate_range: [25, 55]
+        priority: medium
+
+  # ----------------------------------------------------------
+  # SHAFT / OTS (Open to Sky)
+  # ----------------------------------------------------------
+  shaft:
+    triggers:
+      - shaft
+      - ots
+      - open to sky
+      - duct
+      - ac duct
+      - lift shaft
+      - pipe shaft
+      - service shaft
+
+    implied_items:
+      - item: shaft_masonry
+        description: "Shaft enclosure masonry"
+        boq_code: "PS_MASONRY_SHAFT"
+        unit: sqm
+        quantity_formula: "shaft_perimeter * shaft_height"
+        typical_rate_range: [450, 850]
+        priority: high
+
+      - item: shaft_plaster
+        description: "Shaft wall plaster (both sides)"
+        boq_code: "PS_PLASTER_SHAFT"
+        unit: sqm
+        quantity_formula: "shaft_perimeter * shaft_height * 2"
+        typical_rate_range: [35, 65]
+        priority: high
+
+      - item: shaft_paint
+        description: "Shaft wall paint (exterior grade)"
+        boq_code: "PS_PAINT_SHAFT"
+        unit: sqm
+        quantity_formula: "shaft_perimeter * shaft_height * 2"
+        typical_rate_range: [30, 60]
+        priority: medium
+
+      - item: shaft_cover
+        description: "GI wire mesh/grating cover at top"
+        boq_code: "PS_COVER_SHAFT"
+        unit: sqm
+        quantity_formula: "shaft_area"
+        typical_rate_range: [450, 1200]
+        priority: medium
+        notes: "Safety requirement"
+
+  # ----------------------------------------------------------
+  # PARAPET
+  # ----------------------------------------------------------
+  parapet:
+    triggers:
+      - parapet
+      - parapet wall
+      - roof edge
+      - boundary wall
+
+    implied_items:
+      - item: parapet_plaster_both
+        description: "Parapet plaster both sides"
+        boq_code: "PS_PLASTER_PARAPET"
+        unit: sqm
+        quantity_formula: "parapet_length * parapet_height * 2"
+        typical_rate_range: [35, 65]
+        priority: high
+
+      - item: parapet_paint_both
+        description: "Parapet paint both sides (exterior)"
+        boq_code: "PS_PAINT_PARAPET"
+        unit: sqm
+        quantity_formula: "parapet_length * parapet_height * 2"
+        typical_rate_range: [35, 70]
+        priority: high
+
+      - item: parapet_coping
+        description: "Coping at parapet top (cement/stone)"
+        boq_code: "PS_COPING_PARAPET"
+        unit: rmt
+        quantity_formula: "parapet_length"
+        typical_rate_range: [180, 450]
+        priority: high
+        notes: "Essential for water shedding"
+
+      - item: parapet_wp
+        description: "Parapet base waterproofing"
+        boq_code: "PS_WP_PARAPET"
+        unit: rmt
+        quantity_formula: "parapet_length"
+        typical_rate_range: [150, 350]
+        priority: medium
+
+  # ----------------------------------------------------------
+  # KITCHEN
+  # ----------------------------------------------------------
+  kitchen:
+    triggers:
+      - kitchen
+      - kitchenette
+      - pantry
+      - cooking area
+
+    implied_items:
+      - item: platform_granite
+        description: "Kitchen platform granite slab"
+        boq_code: "PS_GRANITE_KITCHEN"
+        unit: sqm
+        quantity_formula: "platform_area"
+        typical_rate_range: [250, 650]
+        priority: high
+
+      - item: platform_ss_sink
+        description: "SS sink with drain board"
+        boq_code: "PS_SINK_KITCHEN"
+        unit: nos
+        quantity_formula: "1"
+        typical_rate_range: [3500, 12000]
+        priority: high
+
+      - item: dado_tiles
+        description: "Kitchen dado tiles (2ft above platform)"
+        boq_code: "PS_TILE_KITCHEN"
+        unit: sqm
+        quantity_formula: "platform_length * 0.6"
+        typical_rate_range: [45, 100]
+        priority: medium
+
+      - item: exhaust_provision
+        description: "Chimney/exhaust provision"
+        boq_code: "PS_EXHAUST_KITCHEN"
+        unit: nos
+        quantity_formula: "1"
+        typical_rate_range: [500, 1500]
+        priority: medium
+        notes: "Outlet provision only"
+
+      - item: waterproofing_kitchen
+        description: "Kitchen waterproofing at sink area"
+        boq_code: "PS_WP_KITCHEN"
+        unit: sqm
+        quantity_formula: "2"  # Typically 2 sqm around sink
+        typical_rate_range: [350, 600]
+        priority: medium
+
+# ============================================================
+# ELEMENT-BASED INFERENCE RULES
+# ============================================================
+# When certain elements are detected, these items are IMPLIED
+
+element_rules:
+  # ----------------------------------------------------------
+  # WINDOW
+  # ----------------------------------------------------------
+  window:
+    implied_items:
+      - item: window_sill
+        description: "Window sill (stone/marble/tiles)"
+        boq_code: "PS_SILL_WINDOW"
+        unit: rmt
+        quantity_formula: "window_width"
+        typical_rate_range: [350, 850]
+        priority: high
+        notes: "Sill projection 50-75mm"
+
+      - item: window_frame_paint
+        description: "Window frame paint/polish"
+        boq_code: "PS_PAINT_WINDOW"
+        unit: sqm
+        quantity_formula: "frame_area"
+        typical_rate_range: [80, 180]
+        priority: medium
+
+      - item: window_hardware
+        description: "Window hardware (handles, stays, tower bolts)"
+        boq_code: "PS_HW_WINDOW"
+        unit: set
+        quantity_formula: "1"
+        typical_rate_range: [450, 1500]
+        priority: high
+
+  # ----------------------------------------------------------
+  # DOOR
+  # ----------------------------------------------------------
+  door:
+    implied_items:
+      - item: door_frame
+        description: "Door frame (teak/sal/WPC)"
+        boq_code: "PS_FRAME_DOOR"
+        unit: nos
+        quantity_formula: "1"
+        typical_rate_range: [2500, 8000]
+        priority: critical
+
+      - item: door_hardware
+        description: "Door hardware (hinges, lock, handle, stopper)"
+        boq_code: "PS_HW_DOOR"
+        unit: set
+        quantity_formula: "1"
+        typical_rate_range: [800, 3500]
+        priority: high
+
+      - item: door_paint
+        description: "Door shutter paint/polish"
+        boq_code: "PS_PAINT_DOOR"
+        unit: sqm
+        quantity_formula: "door_area * 2"  # Both sides
+        typical_rate_range: [80, 200]
+        priority: medium
+
+  # ----------------------------------------------------------
+  # COLUMN
+  # ----------------------------------------------------------
+  column:
+    implied_items:
+      - item: column_plaster
+        description: "Column plaster (all faces)"
+        boq_code: "PS_PLASTER_COLUMN"
+        unit: sqm
+        quantity_formula: "column_perimeter * column_height"
+        typical_rate_range: [40, 75]
+        priority: high
+
+      - item: column_paint
+        description: "Column paint"
+        boq_code: "PS_PAINT_COLUMN"
+        unit: sqm
+        quantity_formula: "column_perimeter * column_height"
+        typical_rate_range: [25, 55]
+        priority: medium
+
+  # ----------------------------------------------------------
+  # BEAM
+  # ----------------------------------------------------------
+  beam:
+    implied_items:
+      - item: beam_plaster
+        description: "Beam plaster (3 faces exposed)"
+        boq_code: "PS_PLASTER_BEAM"
+        unit: sqm
+        quantity_formula: "beam_length * (beam_width + beam_depth * 2)"
+        typical_rate_range: [45, 80]
+        priority: high
+        notes: "Bottom + two sides"
+
+      - item: beam_paint
+        description: "Beam paint"
+        boq_code: "PS_PAINT_BEAM"
+        unit: sqm
+        quantity_formula: "beam_length * (beam_width + beam_depth * 2)"
+        typical_rate_range: [25, 55]
+        priority: medium
+
+  # ----------------------------------------------------------
+  # SUNKEN SLAB (common in toilets)
+  # ----------------------------------------------------------
+  sunken_slab:
+    triggers:
+      - sunken
+      - sunken slab
+      - depressed slab
+
+    implied_items:
+      - item: brick_bat_coba
+        description: "Brick bat coba filling"
+        boq_code: "PS_COBA_SUNKEN"
+        unit: cum
+        quantity_formula: "sunken_area * sunken_depth"
+        typical_rate_range: [2800, 4500]
+        priority: high
+        notes: "Light weight filling for drainage slope"
+
+      - item: wp_before_coba
+        description: "Waterproofing before coba"
+        boq_code: "PS_WP_SUNKEN"
+        unit: sqm
+        quantity_formula: "sunken_area"
+        typical_rate_range: [400, 700]
+        priority: critical
+
+# ============================================================
+# BUILDING-LEVEL INFERENCE RULES
+# ============================================================
+# Items implied for any building project
+
+building_rules:
+  standard_provisions:
+    - item: scaffolding
+      description: "Scaffolding for external work"
+      boq_code: "PS_SCAFFOLD"
+      unit: sqm
+      quantity_formula: "external_wall_area"
+      typical_rate_range: [45, 120]
+      priority: high
+
+    - item: water_curing
+      description: "Water for curing concrete"
+      boq_code: "PS_CURING"
+      unit: ls
+      quantity_formula: "1"
+      typical_rate_range: [5000, 25000]
+      priority: medium
+      notes: "Lump sum provision"
+
+    - item: site_clearing
+      description: "Site clearing and leveling"
+      boq_code: "PS_SITECLEAR"
+      unit: sqm
+      quantity_formula: "plot_area"
+      typical_rate_range: [15, 45]
+      priority: medium
+
+    - item: barricading
+      description: "Site barricading"
+      boq_code: "PS_BARRICADE"
+      unit: rmt
+      quantity_formula: "plot_perimeter"
+      typical_rate_range: [80, 250]
+      priority: low
+
+# ============================================================
+# INFERENCE CONFIDENCE LEVELS
+# ============================================================
+confidence_levels:
+  critical:
+    min_confidence: 95
+    always_include: true
+    flag_if_missing: true
+
+  high:
+    min_confidence: 85
+    always_include: true
+    flag_if_missing: false
+
+  medium:
+    min_confidence: 70
+    always_include: false
+    flag_if_missing: false
+
+  low:
+    min_confidence: 50
+    always_include: false
+    flag_if_missing: false
+
+# ============================================================
+# QUANTITY ESTIMATION DEFAULTS
+# ============================================================
+# Default assumptions when specific measurements unavailable
+
+defaults:
+  ceiling_height_m: 3.0
+  wall_thickness_mm: 230
+  parapet_height_m: 1.0
+  sunken_depth_mm: 200
+  platform_depth_mm: 600
+  sill_height_mm: 900
+  door_height_mm: 2100
+  window_height_mm: 1200
+  stair_width_mm: 1200
+  handrail_height_mm: 1050

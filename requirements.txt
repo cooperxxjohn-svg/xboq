@@ -1,0 +1,38 @@
+# Floor Plan Room & Area Engine - Dependencies
+# Python 3.10+
+
+# Core
+numpy>=1.24.0
+opencv-python>=4.8.0
+scikit-image>=0.21.0
+shapely>=2.0.0
+
+# PDF Processing
+PyMuPDF>=1.23.0
+pdfplumber>=0.10.0
+camelot-py[cv]>=0.11.0
+tabula-py>=2.9.0
+
+# OCR (optional but recommended)
+pytesseract>=0.3.10
+
+# Image Processing
+Pillow>=10.0.0
+scipy>=1.11.0
+
+# Data
+pandas>=2.0.0
+pyyaml>=6.0
+
+# Visualization
+matplotlib>=3.7.0
+plotly>=5.18.0
+
+# Web UI
+streamlit>=1.28.0
+
+# Excel Export
+openpyxl>=3.1.0
+
+# Utilities
+tqdm>=4.65.0

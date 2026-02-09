@@ -1,0 +1,606 @@
+# =============================================================================
+# FLOOR PLAN ROOM & AREA ENGINE
+# Room Label Aliases for Indian Residential Plans
+# =============================================================================
+
+# Standard room categories with Indian terminology aliases
+room_categories:
+
+  # Bedrooms
+  bedroom:
+    canonical: "Bedroom"
+    aliases:
+      - bedroom
+      - bed room
+      - bed
+      - br
+      - b/r
+      - bed-room
+      - sleeping
+      - master bed
+      - master bedroom
+      - mbr
+      - m.bed
+      - m bed
+      - guest bed
+      - guest bedroom
+      - kids room
+      - kids bed
+      - child room
+      - children room
+      - bed 1
+      - bed 2
+      - bed 3
+      - bed-1
+      - bed-2
+      - bedroom 1
+      - bedroom 2
+      - bedroom 3
+      - br1
+      - br2
+      - br3
+    patterns:
+      - "bed\\s*room"
+      - "bed\\s*\\d+"
+      - "br\\s*\\d+"
+      - "m\\.?\\s*bed"
+      - "master\\s*bed"
+
+  # Living Areas
+  living:
+    canonical: "Living"
+    aliases:
+      - living
+      - living room
+      - l/r
+      - lr
+      - drawing
+      - drawing room
+      - hall
+      - main hall
+      - family room
+      - sitting
+      - sitting room
+      - lounge
+      - common area
+      - living cum dining
+      - l+d
+      - living/dining
+    patterns:
+      - "living"
+      - "drawing"
+      - "l\\.?r\\.?"
+      - "hall"
+
+  # Dining
+  dining:
+    canonical: "Dining"
+    aliases:
+      - dining
+      - dining room
+      - d/r
+      - dr
+      - dining area
+      - dining space
+      - eat
+      - eating area
+    patterns:
+      - "dining"
+      - "d\\.?r\\.?"
+
+  # Kitchen
+  kitchen:
+    canonical: "Kitchen"
+    aliases:
+      - kitchen
+      - kit
+      - k
+      - k/t
+      - kt
+      - cooking
+      - cook
+      - pantry
+      - kitchen pantry
+      - modular kitchen
+      - open kitchen
+      - kitchenette
+      - platform
+      - rasoi
+    patterns:
+      - "kitchen"
+      - "kit\\b"
+      - "k\\.?t\\.?"
+      - "rasoi"
+
+  # Toilets/Bathrooms (Indian terminology)
+  toilet:
+    canonical: "Toilet"
+    aliases:
+      - toilet
+      - t
+      - wc
+      - w.c.
+      - w/c
+      - bathroom
+      - bath
+      - b/r
+      - bath room
+      - attached bath
+      - att bath
+      - att. bath
+      - attached toilet
+      - common toilet
+      - common bath
+      - guest toilet
+      - guest bath
+      - t&b
+      - toilet & bath
+      - toilet/bath
+      - lavatory
+      - lav
+      - restroom
+      - washroom
+      - ots
+      - open to sky
+      - open to sky toilet
+      - dry area
+      - wet area
+      - shower
+      - shower area
+      - commode
+      - sanitary
+      - indian wc
+      - ewc
+      - water closet
+      - latrine
+    patterns:
+      - "toilet"
+      - "w\\.?c\\.?"
+      - "bath"
+      - "t\\s*&\\s*b"
+      - "ots"
+      - "lavatory"
+      - "wash\\s*room"
+
+  # Wash Area (separate from toilet)
+  wash:
+    canonical: "Wash"
+    aliases:
+      - wash
+      - wash area
+      - washing
+      - washing area
+      - laundry
+      - laundry area
+      - utility wash
+      - dry area
+      - drying area
+    patterns:
+      - "wash\\b"
+      - "laundry"
+      - "dry\\s*area"
+
+  # Utility
+  utility:
+    canonical: "Utility"
+    aliases:
+      - utility
+      - util
+      - utility room
+      - utility area
+      - service area
+      - service
+      - servant room
+      - servant
+      - maid room
+      - maid
+      - helper room
+      - domestic help
+      - dh room
+      - dhq
+      - staff room
+      - staff
+      - ayah room
+      - service toilet
+      - service bath
+      - s toilet
+      - s bath
+    patterns:
+      - "utility"
+      - "servant"
+      - "maid"
+      - "helper"
+      - "domestic"
+      - "staff"
+      - "service"
+
+  # Balcony
+  balcony:
+    canonical: "Balcony"
+    aliases:
+      - balcony
+      - bal
+      - balc
+      - b/y
+      - verandah
+      - veranda
+      - varanda
+      - sit out
+      - sitout
+      - sit-out
+      - deck
+      - open balcony
+      - covered balcony
+      - french balcony
+      - cantilever balcony
+      - projected balcony
+      - common balcony
+      - private balcony
+      - bedroom balcony
+      - living balcony
+    patterns:
+      - "balcony"
+      - "bal\\b"
+      - "verandah"
+      - "sitout"
+      - "sit\\s*out"
+
+  # Terrace
+  terrace:
+    canonical: "Terrace"
+    aliases:
+      - terrace
+      - terr
+      - tr
+      - roof terrace
+      - open terrace
+      - covered terrace
+      - accessible terrace
+      - private terrace
+      - common terrace
+      - roof
+      - roof top
+      - rooftop
+      - top floor
+      - sun deck
+      - sky deck
+    patterns:
+      - "terrace"
+      - "terr\\b"
+      - "roof"
+
+  # Passage/Lobby
+  passage:
+    canonical: "Passage"
+    aliases:
+      - passage
+      - psg
+      - lobby
+      - foyer
+      - entrance lobby
+      - entrance
+      - entry
+      - entrance foyer
+      - corridor
+      - corr
+      - hallway
+      - hall way
+      - circulation
+      - common passage
+      - private lobby
+      - lift lobby
+      - stair lobby
+      - anteroom
+      - ante room
+      - vestibule
+    patterns:
+      - "passage"
+      - "lobby"
+      - "foyer"
+      - "corridor"
+      - "entrance"
+      - "entry"
+
+  # Store
+  store:
+    canonical: "Store"
+    aliases:
+      - store
+      - storage
+      - store room
+      - storage room
+      - storeroom
+      - store area
+      - godown
+      - lumber
+      - lumber room
+      - attic
+      - loft
+      - box room
+      - spare room
+      - extra room
+    patterns:
+      - "store"
+      - "storage"
+      - "lumber"
+      - "godown"
+
+  # Study
+  study:
+    canonical: "Study"
+    aliases:
+      - study
+      - study room
+      - study area
+      - home office
+      - office
+      - work room
+      - workroom
+      - library
+      - reading room
+      - computer room
+      - work from home
+      - wfh
+      - den
+    patterns:
+      - "study"
+      - "office"
+      - "library"
+      - "work\\s*room"
+
+  # Pooja (Prayer Room - Indian specific)
+  pooja:
+    canonical: "Pooja"
+    aliases:
+      - pooja
+      - puja
+      - pooja room
+      - puja room
+      - prayer
+      - prayer room
+      - mandir
+      - temple
+      - worship
+      - worship room
+      - shrine
+      - meditation
+      - meditation room
+    patterns:
+      - "pooja"
+      - "puja"
+      - "mandir"
+      - "prayer"
+      - "temple"
+      - "meditation"
+
+  # Dressing
+  dressing:
+    canonical: "Dressing"
+    aliases:
+      - dress
+      - dressing
+      - dressing room
+      - dressing area
+      - wardrobe
+      - wardrobe room
+      - walk-in
+      - walk in
+      - walk in closet
+      - walk-in closet
+      - closet
+      - w.i.c.
+      - wic
+    patterns:
+      - "dress"
+      - "wardrobe"
+      - "walk\\s*in"
+      - "closet"
+
+  # Staircase
+  staircase:
+    canonical: "Staircase"
+    aliases:
+      - stair
+      - stairs
+      - staircase
+      - stair case
+      - stairwell
+      - stair well
+      - step
+      - steps
+      - flight
+      - stair flight
+      - landing
+      - stair landing
+      - fire stair
+      - emergency stair
+      - common stair
+      - internal stair
+      - external stair
+    patterns:
+      - "stair"
+      - "step"
+      - "flight"
+      - "landing"
+
+  # Lift
+  lift:
+    canonical: "Lift"
+    aliases:
+      - lift
+      - elevator
+      - elev
+      - lift shaft
+      - elevator shaft
+      - lift well
+      - lift pit
+      - lift machine room
+      - lmr
+      - lift lobby
+      - elevator lobby
+      - lift core
+      - service lift
+      - passenger lift
+      - fireman lift
+      - stretcher lift
+    patterns:
+      - "lift"
+      - "elevator"
+      - "elev"
+
+  # Duct
+  duct:
+    canonical: "Duct"
+    aliases:
+      - duct
+      - shaft
+      - service shaft
+      - service duct
+      - ac duct
+      - a/c duct
+      - plumbing duct
+      - electrical duct
+      - pipe shaft
+      - p shaft
+      - exhaust duct
+      - fresh air duct
+      - garbage duct
+      - refuse duct
+      - chute
+      - garbage chute
+    patterns:
+      - "duct"
+      - "shaft"
+      - "chute"
+      - "pipe\\s*shaft"
+
+  # Parking
+  parking:
+    canonical: "Parking"
+    aliases:
+      - parking
+      - car park
+      - car parking
+      - garage
+      - car port
+      - carport
+      - covered parking
+      - open parking
+      - basement parking
+      - stilt parking
+      - two wheeler
+      - 2w parking
+      - bike parking
+      - visitor parking
+    patterns:
+      - "parking"
+      - "garage"
+      - "car\\s*port"
+      - "bike"
+
+  # Garden/Landscape
+  garden:
+    canonical: "Garden"
+    aliases:
+      - garden
+      - lawn
+      - landscape
+      - landscaping
+      - green area
+      - green space
+      - planter
+      - planting
+      - backyard
+      - back yard
+      - front yard
+      - courtyard
+      - court yard
+      - patio
+      - pergola
+      - gazebo
+    patterns:
+      - "garden"
+      - "lawn"
+      - "landscape"
+      - "yard"
+      - "patio"
+
+# Special markers for unclear/unknown rooms
+unknown_markers:
+  - room
+  - space
+  - area
+  - zone
+  - unit
+  - flat
+  - apartment
+  - "?"
+  - tbd
+  - tba
+
+# Fixture-based inference (if no label found)
+fixture_inference:
+  toilet_fixtures:
+    - wc
+    - commode
+    - basin
+    - shower
+    - bathtub
+    - urinal
+    - bidet
+    - geyser
+    - water heater
+  kitchen_fixtures:
+    - sink
+    - platform
+    - chimney
+    - hob
+    - stove
+    - counter
+    - cabinet
+    - fridge
+    - refrigerator
+  bedroom_fixtures:
+    - bed
+    - wardrobe
+    - dressing
+    - ac
+    - air conditioner
+
+# Scale patterns (Indian conventions)
+scale_patterns:
+  explicit:
+    - "scale\\s*[=:]?\\s*1\\s*:\\s*(\\d+)"
+    - "1\\s*:\\s*(\\d+)\\s*scale"
+    - "drawing\\s*scale\\s*[=:]?\\s*1\\s*:\\s*(\\d+)"
+  common_scales:
+    - 50
+    - 100
+    - 200
+    - 500
+
+# Dimension patterns (Indian formats)
+dimension_patterns:
+  millimeters:
+    - "(\\d{3,5})\\s*mm"
+    - "(\\d{3,5})\\s*MM"
+    - "(\\d{3,5})(?!\\d)"  # 4 digit number alone (assumed mm)
+  meters:
+    - "(\\d+\\.\\d+)\\s*m\\b"
+    - "(\\d+\\.\\d+)\\s*M\\b"
+    - "(\\d+\\.\\d{2})(?!\\d)"  # X.XX format (assumed meters)
+  centimeters:
+    - "(\\d+)\\s*cm"
+    - "(\\d+)\\s*CM"
+  feet_inches:
+    - "(\\d+)'\\s*-?\\s*(\\d+)\""
+    - "(\\d+)\\s*ft\\s*(\\d+)\\s*in"
+    - "(\\d+)'\\s*(\\d+)"
+
+# Unit conversion factors
+unit_conversions:
+  mm_to_m: 0.001
+  cm_to_m: 0.01
+  ft_to_m: 0.3048
+  in_to_m: 0.0254
+  sqm_to_sqft: 10.7639

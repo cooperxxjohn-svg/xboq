@@ -1,0 +1,865 @@
+# ============================================================
+# RFI RULES - India Construction Estimation Standards
+# ============================================================
+# Defines required evidence, common ambiguities, trigger patterns,
+# and RFI templates for each construction package.
+#
+# These rules drive automatic RFI generation to avoid scope gaps
+# and pricing ambiguity in Indian preconstruction.
+# ============================================================
+
+version: "1.0"
+description: "India-specific RFI rules for estimator-grade bid preparation"
+
+# ============================================================
+# ISSUE TYPE DEFINITIONS
+# ============================================================
+issue_types:
+  missing_input:
+    description: "Required drawing/schedule/spec not provided"
+    default_priority: high
+  conflict:
+    description: "Two or more sources provide contradictory information"
+    default_priority: high
+  unclear_spec:
+    description: "Specification is vague or incomplete"
+    default_priority: medium
+  missing_dimension:
+    description: "Critical dimension not shown on drawing"
+    default_priority: medium
+  missing_schedule:
+    description: "Schedule referenced but not included"
+    default_priority: high
+  missing_detail_reference:
+    description: "Detail reference points to non-existent sheet"
+    default_priority: high
+
+# ============================================================
+# PRIORITY DEFINITIONS
+# ============================================================
+priorities:
+  high:
+    description: "Must be resolved before bid submission"
+    cost_impact: ">5%"
+    keywords: ["structural", "waterproofing", "MEP", "external_works", "levels"]
+  medium:
+    description: "Should be resolved to avoid assumptions"
+    cost_impact: "2-5%"
+    keywords: ["finishes", "doors", "windows", "masonry"]
+  low:
+    description: "Good to clarify but can assume standard"
+    cost_impact: "<2%"
+    keywords: ["cosmetic", "hardware", "misc"]
+
+# ============================================================
+# PACKAGE-SPECIFIC RFI RULES
+# ============================================================
+
+packages:
+  # ----------------------------------------------------------
+  # WATERPROOFING
+  # ----------------------------------------------------------
+  waterproofing:
+    priority_weight: 10  # High cost impact
+    required_evidence:
+      - type: spec_note
+        description: "Waterproofing system specification"
+      - type: detail
+        description: "Waterproofing detail section/drawing"
+      - type: schedule
+        description: "Waterproofing treatment schedule"
+
+    common_ambiguities:
+      - id: wp_system_type
+        description: "System type not specified (APP membrane vs PU coating vs cementitious)"
+        trigger_patterns:
+          - "waterproof"
+          - "WP"
+          - "damp proof"
+        missing_keywords:
+          - "APP"
+          - "PU"
+          - "SBR"
+          - "cementitious"
+          - "bituminous"
+          - "integral"
+        template: |
+          Waterproofing system type not specified for {location}.
+          Please confirm: APP membrane / PU coating / Cementitious / SBR treatment / Integral waterproofing.
+          Also confirm thickness/layers and protective screed requirement.
+
+      - id: wp_toilet_sunken
+        description: "Sunken slab waterproofing not detailed"
+        trigger_patterns:
+          - "toilet"
+          - "bathroom"
+          - "wc"
+          - "sunken"
+        required_if_room_type: ["toilet", "bathroom", "wc"]
+        template: |
+          Toilet/bathroom waterproofing treatment not specified.
+          Please clarify:
+          1. Sunken slab depth (typically 200-300mm)?
+          2. Waterproofing system below coba (IPS/membrane)?
+          3. Brick bat coba specification?
+          4. China mosaic/tile finish in sunken?
+          5. Junction treatment at walls (300mm upturn)?
+
+      - id: wp_terrace_layers
+        description: "Terrace waterproofing layers not detailed"
+        trigger_patterns:
+          - "terrace"
+          - "roof"
+          - "open to sky"
+        template: |
+          Terrace/roof waterproofing system not detailed.
+          Please specify:
+          1. Waterproofing membrane type (APP/bituminous)?
+          2. Number of layers and thickness?
+          3. Slope formation method and gradient (min 1:100)?
+          4. Protective screed specification?
+          5. Heat insulation (brick bat coba/thermocol)?
+          6. China mosaic/weathering course finish?
+
+      - id: wp_parapet_junction
+        description: "Parapet junction waterproofing not shown"
+        trigger_patterns:
+          - "parapet"
+          - "roof edge"
+        template: |
+          Parapet junction waterproofing detail missing.
+          Please provide:
+          1. Upturn height at parapet (min 300mm)?
+          2. Metal flashing specification?
+          3. Sealant at construction joints?
+
+      - id: wp_protective_screed
+        description: "Protective screed over membrane not specified"
+        trigger_patterns:
+          - "membrane"
+          - "APP"
+          - "bituminous"
+        template: |
+          Protective screed over waterproofing membrane not specified.
+          Please confirm:
+          1. Screed thickness (typically 40-50mm)?
+          2. Mix proportion (1:4 cement mortar)?
+          3. Chicken mesh reinforcement required?
+
+  # ----------------------------------------------------------
+  # TILES & FINISHES
+  # ----------------------------------------------------------
+  tiles_finishes:
+    priority_weight: 6
+    required_evidence:
+      - type: finish_schedule
+        description: "Room finish schedule"
+      - type: legend
+        description: "Tile/finish legend"
+      - type: spec_note
+        description: "Tile specifications"
+
+    common_ambiguities:
+      - id: tile_size_make
+        description: "Tile size and make not specified"
+        trigger_patterns:
+          - "vitrified"
+          - "ceramic"
+          - "tile"
+          - "flooring"
+        template: |
+          Tile specification incomplete for {location}.
+          Please specify:
+          1. Tile size (600x600/800x800/1200x600mm)?
+          2. Brand/make or equivalent specification?
+          3. Finish type (glossy/matt/rustic)?
+          4. Grade (standard/premium)?
+
+      - id: skirting_spec
+        description: "Skirting specification missing"
+        trigger_patterns:
+          - "skirting"
+          - "skirt"
+        template: |
+          Skirting specification not provided.
+          Please clarify:
+          1. Skirting height (75mm/100mm/150mm)?
+          2. Same tile as floor or different?
+          3. Rounded edge or square cut?
+
+      - id: dado_height
+        description: "Dado tile height not specified"
+        trigger_patterns:
+          - "dado"
+          - "wall tile"
+        required_if_room_type: ["toilet", "bathroom", "kitchen"]
+        template: |
+          Wall dado height not specified for {location}.
+          Please confirm:
+          1. Dado height (door height 2100mm / full height / specific)?
+          2. Tile size for dado (different from floor)?
+          3. Band/border tile at dado top?
+
+      - id: grout_color
+        description: "Grout color/type not specified"
+        trigger_patterns:
+          - "tile"
+          - "flooring"
+        template: |
+          Tile grout specification not provided.
+          Please specify:
+          1. Grout type (cement-based/epoxy)?
+          2. Grout color (matching/contrasting)?
+          3. Joint width (2mm/3mm)?
+
+  # ----------------------------------------------------------
+  # PAINTING
+  # ----------------------------------------------------------
+  painting:
+    priority_weight: 4
+    required_evidence:
+      - type: spec_note
+        description: "Paint specification"
+      - type: finish_schedule
+        description: "Room finish schedule with paint types"
+
+    common_ambiguities:
+      - id: paint_type_internal
+        description: "Internal paint type not specified"
+        trigger_patterns:
+          - "paint"
+          - "finish"
+          - "interior"
+        template: |
+          Internal paint specification not provided.
+          Please clarify:
+          1. Paint type: Acrylic emulsion / Oil bound distemper (OBD)?
+          2. Number of coats (typically 2 coats)?
+          3. Putty/primer coats required?
+          4. Brand specification or equivalent?
+
+      - id: paint_type_external
+        description: "External paint specification missing"
+        trigger_patterns:
+          - "external"
+          - "exterior"
+          - "facade"
+        template: |
+          External paint specification not provided.
+          Please specify:
+          1. Exterior grade acrylic emulsion?
+          2. Weather shield/premium exterior?
+          3. Texture finish required?
+          4. Primer for exposed concrete?
+
+      - id: putty_primer
+        description: "Wall preparation (putty/primer) not specified"
+        trigger_patterns:
+          - "paint"
+          - "emulsion"
+        template: |
+          Wall preparation for painting not specified.
+          Please confirm:
+          1. Wall putty (2 coats typically)?
+          2. Primer coat required?
+          3. Sanding/rubbing between coats?
+
+  # ----------------------------------------------------------
+  # MASONRY
+  # ----------------------------------------------------------
+  masonry:
+    priority_weight: 7
+    required_evidence:
+      - type: spec_note
+        description: "Masonry specification"
+      - type: wall_schedule
+        description: "Wall thickness schedule"
+
+    common_ambiguities:
+      - id: brick_vs_aac
+        description: "Brick type not specified (clay brick vs AAC block)"
+        trigger_patterns:
+          - "wall"
+          - "masonry"
+          - "brick"
+          - "block"
+        template: |
+          Masonry unit type not specified.
+          Please clarify:
+          1. Material: Clay brick / AAC block / Fly ash brick / Solid concrete block?
+          2. If AAC: Density (500-650 kg/m3)?
+          3. Bond type: English bond / Flemish bond / Stretcher bond?
+
+      - id: wall_thickness
+        description: "Wall thickness not clearly specified"
+        trigger_patterns:
+          - "wall"
+          - "masonry"
+        template: |
+          Wall thickness specification unclear.
+          Please confirm:
+          1. External wall thickness (230mm/200mm)?
+          2. Internal wall thickness (115mm/100mm/230mm)?
+          3. Partition wall thickness (75mm/100mm)?
+          4. Toilet partition thickness?
+
+      - id: mortar_mix
+        description: "Mortar mix proportion not specified"
+        trigger_patterns:
+          - "masonry"
+          - "mortar"
+        template: |
+          Mortar mix proportion not specified.
+          Please clarify:
+          1. Mortar mix (CM 1:4 / CM 1:6)?
+          2. Plasticizer/additive required?
+
+      - id: plaster_thickness
+        description: "Plaster thickness not specified"
+        trigger_patterns:
+          - "plaster"
+          - "plastering"
+        template: |
+          Plaster thickness not specified.
+          Please clarify:
+          1. Internal plaster (12mm/15mm)?
+          2. External plaster (20mm single coat / 12+8mm double coat)?
+          3. Ceiling plaster thickness?
+          4. Neeru finish required?
+
+  # ----------------------------------------------------------
+  # RCC & STRUCTURAL
+  # ----------------------------------------------------------
+  rcc_structural:
+    priority_weight: 10
+    required_evidence:
+      - type: structural_drawing
+        description: "Structural layout drawings"
+      - type: schedule
+        description: "Column/beam/slab schedule"
+      - type: spec_note
+        description: "Concrete and steel specifications"
+      - type: detail
+        description: "Structural details and sections"
+
+    common_ambiguities:
+      - id: concrete_grade
+        description: "Concrete grade not specified"
+        trigger_patterns:
+          - "RCC"
+          - "concrete"
+          - "M20"
+          - "M25"
+        template: |
+          Concrete grade not clearly specified.
+          Please confirm:
+          1. Foundation concrete grade (M20/M25)?
+          2. Superstructure concrete grade (M25/M30)?
+          3. Water cement ratio requirement?
+          4. Slump requirement (75mm/100mm)?
+
+      - id: steel_grade
+        description: "Reinforcement steel grade not specified"
+        trigger_patterns:
+          - "steel"
+          - "rebar"
+          - "TMT"
+          - "reinforcement"
+        template: |
+          Reinforcement steel grade not specified.
+          Please clarify:
+          1. TMT grade: Fe500 / Fe500D / Fe550?
+          2. Brand specification or ISI equivalent?
+
+      - id: cover_to_reinforcement
+        description: "Clear cover to reinforcement not specified"
+        trigger_patterns:
+          - "RCC"
+          - "reinforcement"
+          - "cover"
+        template: |
+          Clear cover to reinforcement not specified.
+          Please confirm as per IS 456:
+          1. Foundation cover (50mm minimum)?
+          2. Column/beam cover (40mm)?
+          3. Slab cover (20mm/25mm)?
+
+      - id: shuttering_finish
+        description: "Shuttering/formwork finish not specified"
+        trigger_patterns:
+          - "concrete"
+          - "RCC"
+          - "exposed"
+        template: |
+          Concrete finish / shuttering type not specified.
+          Please clarify:
+          1. Standard plywood shuttering?
+          2. Steel shuttering for fair face?
+          3. Exposed concrete finish required?
+          4. Surface treatment (debonding agent)?
+
+  # ----------------------------------------------------------
+  # PLUMBING
+  # ----------------------------------------------------------
+  plumbing:
+    priority_weight: 8
+    required_evidence:
+      - type: plumbing_drawing
+        description: "Plumbing layout drawings"
+      - type: schedule
+        description: "Sanitary fixture schedule"
+      - type: spec_note
+        description: "Pipe specifications"
+      - type: detail
+        description: "Plumbing details (chamber, trap, etc.)"
+
+    common_ambiguities:
+      - id: cpvc_class
+        description: "CPVC pipe class/SDR not specified"
+        trigger_patterns:
+          - "CPVC"
+          - "water supply"
+          - "hot water"
+        template: |
+          CPVC pipe specification incomplete.
+          Please specify:
+          1. CPVC class (SDR 11 / SDR 13.5)?
+          2. Pressure rating?
+          3. Brand or equivalent?
+          4. Hot/cold water differentiation?
+
+      - id: swr_type
+        description: "SWR pipe type not specified"
+        trigger_patterns:
+          - "SWR"
+          - "drainage"
+          - "waste"
+          - "soil"
+        template: |
+          SWR pipe specification incomplete.
+          Please clarify:
+          1. SWR Type A (3.2mm) or Type B (2.5mm)?
+          2. IS:13592 compliance?
+          3. Ring-Tite or solvent weld joints?
+
+      - id: manhole_chamber
+        description: "Manhole/inspection chamber details missing"
+        trigger_patterns:
+          - "manhole"
+          - "chamber"
+          - "IC"
+          - "inspection"
+        template: |
+          Manhole/inspection chamber details not provided.
+          Please specify:
+          1. Chamber size (internal dimensions)?
+          2. Brick/precast construction?
+          3. CI/MS frame and cover class (heavy/medium/light duty)?
+          4. Invert levels and depth?
+          5. Benching and channel details?
+
+      - id: drainage_slope
+        description: "Drainage pipe slopes not specified"
+        trigger_patterns:
+          - "drainage"
+          - "slope"
+          - "gradient"
+        template: |
+          Drainage line slopes/gradients not specified.
+          Please confirm:
+          1. Floor drain slopes (1:40 to 1:60)?
+          2. Underground drain slopes (1:100 minimum)?
+          3. Invert levels at chambers?
+
+      - id: rainwater_system
+        description: "Rainwater disposal system not detailed"
+        trigger_patterns:
+          - "rainwater"
+          - "RWP"
+          - "downpipe"
+        template: |
+          Rainwater disposal system not detailed.
+          Please specify:
+          1. Rainwater downpipe material (PVC/CI/MS)?
+          2. Downpipe sizes?
+          3. Connection to stormwater drain or soakpit?
+          4. Rainwater harvesting provision?
+
+  # ----------------------------------------------------------
+  # ELECTRICAL
+  # ----------------------------------------------------------
+  electrical:
+    priority_weight: 8
+    required_evidence:
+      - type: electrical_drawing
+        description: "Electrical layout drawings"
+      - type: schedule
+        description: "DB schedule, light/power point schedule"
+      - type: spec_note
+        description: "Wiring and equipment specifications"
+      - type: single_line
+        description: "Single line diagram"
+
+    common_ambiguities:
+      - id: wiring_type
+        description: "Wiring type not specified"
+        trigger_patterns:
+          - "wiring"
+          - "cable"
+          - "FRLS"
+        template: |
+          Electrical wiring specification incomplete.
+          Please specify:
+          1. Cable type: FRLS / FR / PVC?
+          2. Copper conductor grade?
+          3. Wire gauge for circuits (1.5/2.5/4 sq.mm)?
+          4. Brand specification?
+
+      - id: conduit_type
+        description: "Conduit type not specified"
+        trigger_patterns:
+          - "conduit"
+          - "electrical"
+        template: |
+          Electrical conduit specification not provided.
+          Please clarify:
+          1. Conduit type: PVC / MS / HDPE?
+          2. Conduit size (20mm/25mm)?
+          3. Concealed or surface conduit?
+
+      - id: db_schedule_missing
+        description: "DB schedule not provided"
+        trigger_patterns:
+          - "DB"
+          - "distribution"
+          - "MCB"
+          - "RCCB"
+        template: |
+          Distribution board schedule not provided.
+          Please provide:
+          1. DB schedule with circuit details?
+          2. MCB ratings for each circuit?
+          3. RCCB/RCBO provision?
+          4. Spare ways required?
+
+      - id: earthing_spec
+        description: "Earthing specification missing"
+        trigger_patterns:
+          - "earthing"
+          - "earth"
+          - "grounding"
+        template: |
+          Earthing system specification not provided.
+          Please specify:
+          1. Type of earthing (pipe/plate/chemical)?
+          2. Number of earth pits required?
+          3. Earth pit construction details?
+          4. Earth resistance requirement (<1 ohm)?
+          5. Earth strip/wire size for connections?
+
+  # ----------------------------------------------------------
+  # EXTERNAL WORKS
+  # ----------------------------------------------------------
+  external_works:
+    priority_weight: 9
+    required_evidence:
+      - type: site_plan
+        description: "Site layout/development plan"
+      - type: section
+        description: "Road/paving sections"
+      - type: detail
+        description: "External work details"
+      - type: spec_note
+        description: "Specifications for external items"
+
+    common_ambiguities:
+      - id: road_layers
+        description: "Road/paving layers not detailed"
+        trigger_patterns:
+          - "road"
+          - "paving"
+          - "pavement"
+          - "driveway"
+        template: |
+          Road/paving construction layers not detailed.
+          Please specify:
+          1. GSB thickness and material (150-200mm)?
+          2. WMM thickness (150-200mm)?
+          3. Bituminous layers (SDBC/BC) or CC pavement?
+          4. Prime coat and tack coat specification?
+
+      - id: paver_spec
+        description: "Paver block specification incomplete"
+        trigger_patterns:
+          - "paver"
+          - "interlocking"
+          - "block"
+        template: |
+          Paver block specification incomplete.
+          Please clarify:
+          1. Paver thickness (60mm/80mm)?
+          2. Paver shape and pattern?
+          3. Color specification?
+          4. M-sand bedding thickness?
+          5. Edge restraint/kerb details?
+
+      - id: kerb_type
+        description: "Kerb stone type not specified"
+        trigger_patterns:
+          - "kerb"
+          - "curb"
+          - "edge"
+        template: |
+          Kerb stone specification not provided.
+          Please specify:
+          1. Kerb type (precast/cast-in-situ)?
+          2. Kerb size (150x300/200x450mm)?
+          3. Mountable or barrier type?
+
+      - id: stormwater_layout
+        description: "Stormwater drainage layout missing"
+        trigger_patterns:
+          - "stormwater"
+          - "drain"
+          - "surface water"
+        template: |
+          Stormwater drainage layout not provided.
+          Please provide:
+          1. Surface drain locations and sizes?
+          2. Grating type and size?
+          3. Connection to municipal drain or soakpit?
+          4. Catch basin details?
+
+      - id: rwh_stp_spec
+        description: "RWH/STP/UG tank specifications missing"
+        trigger_patterns:
+          - "rainwater"
+          - "RWH"
+          - "STP"
+          - "UG tank"
+          - "sump"
+          - "septic"
+        template: |
+          Underground structure specifications missing.
+          Please provide for {item}:
+          1. Capacity and dimensions?
+          2. Construction type (RCC/brick)?
+          3. Waterproofing treatment?
+          4. Inlet/outlet details?
+          5. Pump and piping specifications?
+
+  # ----------------------------------------------------------
+  # DOORS & WINDOWS
+  # ----------------------------------------------------------
+  doors_windows:
+    priority_weight: 6
+    required_evidence:
+      - type: door_schedule
+        description: "Door schedule"
+      - type: window_schedule
+        description: "Window schedule"
+      - type: detail
+        description: "Door/window sections and details"
+
+    common_ambiguities:
+      - id: door_schedule_missing
+        description: "Door schedule not provided but tags present"
+        trigger_patterns:
+          - "door"
+          - "D1"
+          - "D2"
+        template: |
+          Door schedule not provided but door tags ({tags}) detected.
+          Please provide door schedule with:
+          1. Door sizes (width x height)?
+          2. Door types (flush/panel/glazed)?
+          3. Frame material (teak/sal/WPC/MS)?
+          4. Shutter material (flush/PVC/aluminum)?
+          5. Hardware specification?
+
+      - id: window_schedule_missing
+        description: "Window schedule not provided but tags present"
+        trigger_patterns:
+          - "window"
+          - "W1"
+          - "W2"
+        template: |
+          Window schedule not provided but window tags ({tags}) detected.
+          Please provide window schedule with:
+          1. Window sizes (width x height)?
+          2. Window types (sliding/casement/fixed)?
+          3. Frame material (aluminum/UPVC/MS)?
+          4. Glass type and thickness?
+          5. Mosquito mesh provision?
+
+      - id: hardware_spec
+        description: "Door/window hardware not specified"
+        trigger_patterns:
+          - "hardware"
+          - "handle"
+          - "lock"
+        template: |
+          Door/window hardware specification not provided.
+          Please specify:
+          1. Lock type (mortice/cylindrical)?
+          2. Handle type (lever/knob)?
+          3. Hinges (SS/brass, size)?
+          4. Tower bolts and stoppers?
+          5. Brand or equivalent?
+
+  # ----------------------------------------------------------
+  # LEVELS & DIMENSIONS
+  # ----------------------------------------------------------
+  levels_dimensions:
+    priority_weight: 10
+    required_evidence:
+      - type: section
+        description: "Building sections with levels"
+      - type: site_plan
+        description: "Site plan with ground levels"
+
+    common_ambiguities:
+      - id: plinth_level_missing
+        description: "Plinth level not specified"
+        trigger_patterns:
+          - "plinth"
+          - "level"
+          - "FFL"
+        template: |
+          Plinth/floor levels not specified.
+          Please provide:
+          1. Natural ground level (NGL)?
+          2. Plinth level above NGL?
+          3. Finished floor level (FFL)?
+          4. Floor-to-floor height?
+
+      - id: ffl_levels_missing
+        description: "FFL levels for different floors not shown"
+        trigger_patterns:
+          - "FFL"
+          - "floor level"
+        template: |
+          Finished floor levels not clearly specified.
+          Please confirm:
+          1. Ground floor FFL (typically +450 from NGL)?
+          2. Subsequent floor FFLs?
+          3. Sunken areas levels (toilets)?
+          4. Balcony/terrace levels?
+
+      - id: earthwork_impact
+        description: "Unclear levels affect earthwork estimation"
+        trigger_patterns:
+          - "excavation"
+          - "filling"
+          - "earthwork"
+        template: |
+          Ground levels unclear, affecting earthwork estimation.
+          Please provide:
+          1. Existing ground levels (survey required)?
+          2. Proposed formation level?
+          3. Cut/fill quantities or layout?
+          4. Disposal/sourcing requirements?
+
+# ============================================================
+# CONFLICT DETECTION RULES
+# ============================================================
+conflict_rules:
+  wall_thickness:
+    description: "Multiple wall thickness specifications found"
+    sources: ["notes", "legend", "schedule", "dimension"]
+    template: |
+      Conflicting wall thickness specifications found:
+      {conflicts}
+      Please confirm correct wall thickness for each location.
+
+  scale:
+    description: "Scale note conflicts with measured dimensions"
+    sources: ["scale_note", "dimension_derived"]
+    template: |
+      Scale conflict detected:
+      - Drawing scale note indicates: {scale_note}
+      - Dimension-derived scale suggests: {derived_scale}
+      Please confirm correct scale for quantity takeoff.
+
+  door_window_size:
+    description: "Schedule sizes conflict with measured openings"
+    sources: ["schedule", "measured"]
+    template: |
+      Door/window size conflict for {tag}:
+      - Schedule size: {schedule_size}
+      - Measured opening: {measured_size}
+      Please confirm correct dimensions.
+
+  finish_assignment:
+    description: "Finish legend conflicts with room template"
+    sources: ["legend", "room_template"]
+    template: |
+      Finish specification conflict for {room}:
+      - Legend indicates: {legend_finish}
+      - Template assumes: {template_finish}
+      Please confirm correct finish for this room.
+
+  multiple_schedules:
+    description: "Multiple schedules disagree on same tag"
+    sources: ["schedule_A", "schedule_B"]
+    template: |
+      Multiple schedules provide different information for {tag}:
+      {schedule_conflicts}
+      Please confirm which schedule is correct.
+
+# ============================================================
+# MISSING REFERENCE PATTERNS
+# ============================================================
+reference_patterns:
+  detail_reference:
+    patterns:
+      - "Detail\\s*(\\d+)/(\\w+-?\\d+)"
+      - "DET[.-]?(\\d+)/(\\w+-?\\d+)"
+      - "See\\s+detail\\s+(\\d+)\\s+on\\s+(\\w+-?\\d+)"
+      - "Refer\\s+(\\w+-?\\d+)"
+    template: |
+      Referenced detail "{reference}" not found in drawing set.
+      Please provide sheet {sheet_id} with detail {detail_id}.
+
+  section_reference:
+    patterns:
+      - "Section\\s*([A-Z])/(\\w+-?\\d+)"
+      - "SEC[.-]?([A-Z])/(\\w+-?\\d+)"
+      - "See\\s+section\\s+([A-Z])-([A-Z])"
+    template: |
+      Referenced section "{reference}" not found in drawing set.
+      Please provide section drawing.
+
+  schedule_reference:
+    patterns:
+      - "See\\s+(door|window|finish)\\s+schedule"
+      - "Refer\\s+(\\w+)\\s+schedule"
+    template: |
+      Referenced {schedule_type} schedule not found in drawing set.
+      Please provide complete schedule.
+
+# ============================================================
+# PRIORITY SCORING MATRIX
+# ============================================================
+priority_scoring:
+  cost_impact:
+    structural: 10
+    waterproofing: 9
+    external_works: 8
+    mep: 8
+    finishes: 5
+    misc: 2
+
+  ambiguity_severity:
+    missing_system_type: 10
+    missing_levels: 10
+    missing_schedule: 8
+    missing_dimension: 7
+    unclear_spec: 5
+    missing_detail: 6
+
+  discrepancy_magnitude:
+    ">20%": 10
+    "10-20%": 7
+    "5-10%": 4
+    "<5%": 2

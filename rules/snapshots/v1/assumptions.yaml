@@ -1,0 +1,480 @@
+# =============================================================================
+# STRUCTURAL TAKEOFF - ASSUMPTIONS & DEFAULTS
+# Indian RCC Buildings (IS 456:2000, SP 34)
+# =============================================================================
+# These values are used in ASSUMPTION MODE when structural drawings are not available
+# All assumptions are logged in assumptions.json for transparency
+
+metadata:
+  version: "2.0.0"
+  standard: "IS 456:2000"
+  region: "India"
+  last_updated: "2026-02-01"
+
+# =============================================================================
+# PROFILES - Different estimation modes
+# =============================================================================
+profiles:
+  conservative:
+    description: "Lower estimates, fewer assumptions, requires more manual input"
+    steel_factor_multiplier: 0.85
+    wastage_factor_multiplier: 0.8
+    size_defaults: "minimum"
+    confidence_threshold: 0.7
+
+  typical:
+    description: "Standard Indian construction practices (default)"
+    steel_factor_multiplier: 1.0
+    wastage_factor_multiplier: 1.0
+    size_defaults: "standard"
+    confidence_threshold: 0.5
+
+  premium:
+    description: "Higher quality finishes, more generous estimates"
+    steel_factor_multiplier: 1.15
+    wastage_factor_multiplier: 1.2
+    size_defaults: "large"
+    confidence_threshold: 0.5
+
+default_profile: "typical"
+
+# =============================================================================
+# WALL SPECIFICATIONS (mm)
+# =============================================================================
+walls:
+  # Standard wall thicknesses
+  external_wall_mm: 230      # 9" brick wall
+  internal_wall_mm: 115      # 4.5" brick wall
+  partition_wall_mm: 75      # 3" AAC/brick partition
+
+  # Plaster specifications
+  plaster_both_sides: true
+  internal_plaster_mm: 12
+  external_plaster_mm: 15
+
+  # Mortar specifications
+  mortar_ratio_brickwork: "1:6"
+  mortar_ratio_plaster: "1:4"
+
+  # Heights
+  default_height_mm: 3000
+  parapet_height_mm: 1050
+  plinth_height_mm: 450
+
+# =============================================================================
+# SLAB SPECIFICATIONS (mm)
+# =============================================================================
+slab:
+  # Thickness by type
+  residential_thickness_mm: 125
+  commercial_thickness_mm: 150
+  terrace_thickness_mm: 125
+
+  # Sunken slab
+  sunken_depth_mm: 200
+  sunken_filling: "brick_bat_coba"
+
+  # Formwork
+  formwork_reuse_factor: 3  # Number of uses
+
+# =============================================================================
+# CONCRETE GRADES (Indian Standards)
+# =============================================================================
+concrete:
+  default_grade: "M25"
+  grades:
+    M15: { fck: 15, use: "PCC, leveling" }
+    M20: { fck: 20, use: "footings, slabs (residential)" }
+    M25: { fck: 25, use: "columns, beams, slabs" }
+    M30: { fck: 30, use: "columns (high-rise), beams" }
+    M35: { fck: 35, use: "special structures" }
+    M40: { fck: 40, use: "prestressed, special" }
+
+  # Wastage factor
+  wastage_percent: 2.5
+
+# =============================================================================
+# REINFORCEMENT STEEL (TMT Bars - IS 1786)
+# =============================================================================
+steel:
+  default_grade: "Fe500"
+  grades:
+    Fe415: { fy: 415, use: "general" }
+    Fe500: { fy: 500, use: "standard (most common)" }
+    Fe500D: { fy: 500, use: "ductile, seismic zones" }
+    Fe550: { fy: 550, use: "special applications" }
+
+  # Steel quantity factors (kg per cubic meter of concrete)
+  # Used when BBS (Bar Bending Schedule) is not available
+  kg_per_m3:
+    slab:
+      conservative: 80
+      typical: 90
+      premium: 100
+      notes: "Residential slabs 100-125mm thick"
+    beam:
+      conservative: 130
+      typical: 150
+      premium: 170
+      notes: "RCC beams typical"
+    column:
+      conservative: 180
+      typical: 200
+      premium: 220
+      notes: "RCC columns with stirrups"
+    footing:
+      conservative: 80
+      typical: 90
+      premium: 100
+      notes: "Isolated/combined footings"
+    plinth_beam:
+      conservative: 100
+      typical: 120
+      premium: 140
+      notes: "Plinth/tie beams"
+    staircase:
+      conservative: 100
+      typical: 120
+      premium: 140
+      notes: "Waist slab + steps"
+    lintel:
+      conservative: 80
+      typical: 100
+      premium: 120
+      notes: "Lintel beams over openings"
+    retaining_wall:
+      conservative: 80
+      typical: 100
+      premium: 120
+      notes: "Cantilever/counterfort"
+
+  # Bar diameters commonly used (mm)
+  common_diameters: [8, 10, 12, 16, 20, 25, 32]
+
+  # Typical bar usage distribution (for estimation)
+  bar_distribution:
+    slab:
+      8mm: 0.35
+      10mm: 0.50
+      12mm: 0.15
+    beam:
+      12mm: 0.30
+      16mm: 0.50
+      20mm: 0.20
+    column:
+      16mm: 0.40
+      20mm: 0.40
+      25mm: 0.20
+
+  # Unit weight of steel (kg/m)
+  bar_weights:
+    8: 0.395
+    10: 0.617
+    12: 0.889
+    16: 1.580
+    20: 2.469
+    25: 3.858
+    32: 6.321
+
+  # Wastage/lapping factor
+  wastage_percent: 5
+
+# =============================================================================
+# DEFAULT ELEMENT SIZES (mm)
+# Used when schedule/callouts not detected
+# =============================================================================
+default_sizes:
+  column:
+    residential_small:
+      width: 230
+      depth: 300
+      description: "Small residential (G+1)"
+    residential_medium:
+      width: 230
+      depth: 450
+      description: "Medium residential (G+2, G+3)"
+    residential_large:
+      width: 300
+      depth: 450
+      description: "Large residential (G+4+)"
+    commercial:
+      width: 300
+      depth: 600
+      description: "Commercial buildings"
+
+  beam:
+    plinth_beam:
+      width: 230
+      depth: 300
+      description: "Plinth beam / tie beam"
+    floor_beam_small:
+      width: 230
+      depth: 380
+      description: "Floor beam (short span)"
+    floor_beam_medium:
+      width: 230
+      depth: 450
+      description: "Floor beam (medium span 4-5m)"
+    floor_beam_large:
+      width: 230
+      depth: 600
+      description: "Floor beam (long span 5-7m)"
+    lintel:
+      width: 230
+      depth: 150
+      description: "Lintel beam"
+
+  slab:
+    residential:
+      thickness: 125
+      description: "Residential slab (spans < 4m)"
+    residential_large:
+      thickness: 150
+      description: "Residential slab (spans 4-5m)"
+    commercial:
+      thickness: 175
+      description: "Commercial slab"
+
+  footing:
+    isolated_small:
+      length: 1000
+      width: 1000
+      depth: 300
+      description: "Small isolated footing"
+    isolated_medium:
+      length: 1200
+      width: 1200
+      depth: 450
+      description: "Medium isolated footing"
+    isolated_large:
+      length: 1500
+      width: 1500
+      depth: 500
+      description: "Large isolated footing"
+    combined:
+      depth: 500
+      description: "Combined footing (size varies)"
+    raft:
+      thickness: 300
+      description: "Raft foundation"
+
+  staircase:
+    waist_slab: 150
+    tread: 300
+    riser: 150
+    width: 1200
+
+# =============================================================================
+# STOREY HEIGHTS (mm)
+# =============================================================================
+storey_heights:
+  default: 3000
+  basement: 2700
+  ground_floor: 3300
+  typical_floor: 3000
+  stilt: 2400
+  terrace: 1200  # parapet height
+
+# =============================================================================
+# COVER TO REINFORCEMENT (mm) - IS 456
+# =============================================================================
+clear_cover:
+  slab: 20
+  beam: 25
+  column: 40
+  footing: 50
+  retaining_wall: 50
+  exposed_to_weather: 45
+  in_contact_with_soil: 75
+
+# =============================================================================
+# DOORS & WINDOWS (Indian Standards)
+# =============================================================================
+doors:
+  # Standard door sizes in mm (width x height)
+  main_door:
+    width_mm: 1000
+    height_mm: 2100
+    frame_width_mm: 100
+    aliases: ["MAIN", "MAIN DOOR", "MD", "ENTRANCE"]
+
+  internal_door:
+    width_mm: 900
+    height_mm: 2100
+    frame_width_mm: 75
+    aliases: ["D", "D1", "D2", "D3", "DOOR", "INT DOOR"]
+
+  toilet_door:
+    width_mm: 750
+    height_mm: 2100
+    frame_width_mm: 75
+    aliases: ["TD", "TOILET DOOR", "WC DOOR", "BATH DOOR"]
+
+  sliding_door:
+    width_mm: 1800
+    height_mm: 2100
+    frame_width_mm: 100
+    aliases: ["SD", "SLIDING", "SLIDER", "SLIDING DOOR"]
+
+  french_door:
+    width_mm: 1500
+    height_mm: 2100
+    frame_width_mm: 100
+    aliases: ["FD", "FRENCH", "FRENCH DOOR", "DOUBLE DOOR"]
+
+  balcony_door:
+    width_mm: 900
+    height_mm: 2100
+    frame_width_mm: 75
+    aliases: ["BD", "BALCONY DOOR", "TERRACE DOOR"]
+
+windows:
+  # Standard window sizes in mm
+  standard_window:
+    width_mm: 1200
+    height_mm: 1200
+    sill_height_mm: 900
+    aliases: ["W", "W1", "W2", "W3", "WINDOW"]
+
+  large_window:
+    width_mm: 1500
+    height_mm: 1500
+    sill_height_mm: 600
+    aliases: ["LW", "LARGE WINDOW", "PICTURE WINDOW"]
+
+  toilet_window:
+    width_mm: 600
+    height_mm: 450
+    sill_height_mm: 1800
+    aliases: ["TW", "TOILET WINDOW", "BATH WINDOW", "WC WINDOW"]
+
+  ventilator:
+    width_mm: 600
+    height_mm: 450
+    sill_height_mm: 2100
+    aliases: ["V", "VD", "VENT", "VENTILATOR"]
+
+  kitchen_window:
+    width_mm: 1200
+    height_mm: 1000
+    sill_height_mm: 900
+    aliases: ["KW", "KITCHEN WINDOW"]
+
+# Indian tag conventions for openings
+opening_tags:
+  doors:
+    - D
+    - D1
+    - D2
+    - D3
+    - D4
+    - MD
+    - SD
+    - TD
+    - BD
+    - FD
+    - WD
+  windows:
+    - W
+    - W1
+    - W2
+    - W3
+    - W4
+    - LW
+    - TW
+    - KW
+  ventilators:
+    - V
+    - VD
+    - V1
+    - V2
+    - VENT
+
+# =============================================================================
+# FINISHES (Indian Construction)
+# =============================================================================
+finishes:
+  # Default ceiling height
+  ceiling_height_mm: 3000
+  skirting_height_mm: 100
+  dado_height_mm: 900
+  bathroom_tile_height_mm: 2100
+  kitchen_dado_height_mm: 600
+
+  # Floor finish wastage
+  floor_wastage:
+    vitrified_tiles: 0.05
+    ceramic_tiles: 0.07
+    marble: 0.10
+    granite: 0.10
+    kota_stone: 0.08
+    wooden_flooring: 0.10
+    ips_flooring: 0.03
+
+  # Wall paint coverage (sqm per litre)
+  paint_coverage:
+    cement_paint: 12
+    distemper: 10
+    enamel_paint: 14
+    plastic_emulsion: 13
+    oil_bound_distemper: 11
+    exterior_emulsion: 11
+
+# =============================================================================
+# DEDUCTIONS & ADJUSTMENTS
+# =============================================================================
+deductions:
+  # Beam-slab junction (beam depth includes slab)
+  beam_slab_overlap: true
+  overlap_value: 125  # slab thickness deducted from beam depth
+
+  # Column-beam junction
+  column_beam_overlap: false  # usually columns are continuous
+
+  # Wastage factors
+  concrete_wastage: 0.025  # 2.5%
+  steel_wastage: 0.05  # 5% (cutting + laps)
+
+  # Maximum opening deduction from walls (as percentage)
+  max_opening_deduction_percent: 30
+
+# =============================================================================
+# DETECTION THRESHOLDS
+# =============================================================================
+detection:
+  # Column detection
+  column:
+    min_size_mm: 150
+    max_size_mm: 800
+    min_aspect_ratio: 0.5
+    max_aspect_ratio: 3.0
+    typical_spacing_mm: [3000, 3500, 4000, 4500, 5000]
+
+  # Beam detection
+  beam:
+    min_length_mm: 1000
+    max_length_mm: 8000
+    typical_widths_mm: [150, 200, 230, 250, 300]
+
+  # Footing detection
+  footing:
+    min_size_mm: 800
+    max_size_mm: 3000
+
+# =============================================================================
+# QUANTITY COMPUTATION RULES
+# =============================================================================
+computation:
+  # Round concrete to
+  concrete_decimal_places: 2
+
+  # Round steel to
+  steel_decimal_places: 1
+
+  # Minimum quantity to report
+  min_concrete_m3: 0.01
+  min_steel_kg: 0.1
+
+  # Area computation
+  area_decimal_places: 2
+  length_decimal_places: 2

@@ -1,0 +1,570 @@
+# MEP Device Types Configuration
+# Defines detection patterns, metadata, and takeoff rules for MEP devices
+
+version: "1.0"
+
+# ==============================================================================
+# ELECTRICAL DEVICES
+# ==============================================================================
+electrical:
+  lights:
+    ceiling_light:
+      patterns:
+        symbols: ["○", "⊙", "◉", "●"]
+        text: ["CL", "L", "LT", "LIGHT", "CFL", "LED"]
+        ocr_patterns: ["\\bCL\\d+\\b", "\\bL\\d+\\b", "\\bLT-?\\d+\\b"]
+      default_spec:
+        type: "ceiling_mounted"
+        wattage: "TBD"
+        lamp_type: "LED"
+      unit: "NO"
+      system: "lighting"
+      subsystem: "general_lighting"
+      rfi_if_missing: ["wattage", "lamp_type", "mounting_height"]
+
+    wall_light:
+      patterns:
+        symbols: ["◐", "◑", "▷"]
+        text: ["WL", "WALL LIGHT", "BRACKET"]
+      default_spec:
+        type: "wall_mounted"
+        wattage: "TBD"
+      unit: "NO"
+      system: "lighting"
+      subsystem: "accent_lighting"
+      rfi_if_missing: ["wattage", "mounting_height"]
+
+    downlight:
+      patterns:
+        symbols: ["⊚", "⦿"]
+        text: ["DL", "DOWNLIGHT", "RECESSED"]
+      default_spec:
+        type: "recessed"
+        wattage: "TBD"
+        cutout: "TBD"
+      unit: "NO"
+      system: "lighting"
+      subsystem: "general_lighting"
+      rfi_if_missing: ["wattage", "cutout_size", "color_temp"]
+
+    tube_light:
+      patterns:
+        symbols: ["═", "▬", "━"]
+        text: ["TL", "TUBE", "BATTEN", "FTL"]
+      default_spec:
+        type: "surface_mounted"
+        length: "4ft"
+        wattage: "36W"
+      unit: "NO"
+      system: "lighting"
+      subsystem: "general_lighting"
+
+  switches:
+    single_switch:
+      patterns:
+        symbols: ["□", "▫", "◻"]
+        text: ["S", "SW", "1W"]
+        ocr_patterns: ["\\bS\\d*\\b", "\\b1W\\b"]
+      default_spec:
+        type: "modular"
+        gang: 1
+        amp: "6A"
+      unit: "NO"
+      system: "power"
+      subsystem: "switching"
+
+    two_way_switch:
+      patterns:
+        symbols: ["⇅", "↕"]
+        text: ["2W", "TWO WAY", "2-WAY"]
+      default_spec:
+        type: "modular"
+        gang: 1
+        amp: "6A"
+        config: "two_way"
+      unit: "NO"
+      system: "power"
+      subsystem: "switching"
+
+    dimmer:
+      patterns:
+        symbols: ["◈"]
+        text: ["DIM", "DIMMER"]
+      default_spec:
+        type: "modular"
+        wattage_capacity: "TBD"
+      unit: "NO"
+      system: "power"
+      subsystem: "switching"
+      rfi_if_missing: ["wattage_capacity", "dimmer_type"]
+
+  sockets:
+    power_socket:
+      patterns:
+        symbols: ["⊞", "⊡", "▣"]
+        text: ["SP", "SOCKET", "PWR", "13A", "15A", "16A"]
+        ocr_patterns: ["\\bSP\\d*\\b", "\\b1[356]A\\b"]
+      default_spec:
+        type: "modular"
+        amp: "16A"
+        pin: "3"
+      unit: "NO"
+      system: "power"
+      subsystem: "general_power"
+
+    usb_socket:
+      patterns:
+        text: ["USB", "USB-C", "CHARGING"]
+      default_spec:
+        type: "modular"
+        ports: 2
+      unit: "NO"
+      system: "power"
+      subsystem: "general_power"
+
+    ac_socket:
+      patterns:
+        symbols: ["❄", "⬡"]
+        text: ["AC", "A/C", "20A", "32A"]
+      default_spec:
+        type: "dedicated"
+        amp: "20A"
+        mcb: "required"
+      unit: "NO"
+      system: "power"
+      subsystem: "hvac_power"
+      rfi_if_missing: ["ac_capacity", "mcb_rating"]
+
+    geyser_socket:
+      patterns:
+        text: ["GYS", "GEYSER", "WH", "WATER HEATER"]
+      default_spec:
+        type: "dedicated"
+        amp: "16A"
+        mcb: "required"
+      unit: "NO"
+      system: "power"
+      subsystem: "water_heating"
+
+  distribution:
+    db_box:
+      patterns:
+        symbols: ["▦", "⬚"]
+        text: ["DB", "MCB", "DISTRIBUTION", "PANEL", "SDB", "MDB"]
+        ocr_patterns: ["\\bDB-?\\d*\\b", "\\bSDB\\b", "\\bMDB\\b"]
+      default_spec:
+        type: "surface_mounted"
+        ways: "TBD"
+        phase: "single"
+      unit: "NO"
+      system: "power"
+      subsystem: "distribution"
+      rfi_if_missing: ["ways", "phase", "main_mcb"]
+      is_panel: true
+
+    meter_box:
+      patterns:
+        text: ["METER", "EM", "ENERGY METER"]
+      default_spec:
+        type: "utility"
+      unit: "NO"
+      system: "power"
+      subsystem: "metering"
+
+  fans:
+    ceiling_fan:
+      patterns:
+        symbols: ["✕", "✖", "⊗", "☒"]
+        text: ["CF", "FAN", "CEILING FAN"]
+        ocr_patterns: ["\\bCF\\d*\\b", "\\bFAN\\b"]
+      default_spec:
+        type: "ceiling"
+        sweep: "1200mm"
+        speed_control: "regulator"
+      unit: "NO"
+      system: "ventilation"
+      subsystem: "comfort_cooling"
+
+    exhaust_fan:
+      patterns:
+        symbols: ["⊘", "⦸"]
+        text: ["EF", "EXHAUST", "EXH FAN"]
+      default_spec:
+        type: "wall_mounted"
+        size: "TBD"
+      unit: "NO"
+      system: "ventilation"
+      subsystem: "exhaust"
+      rfi_if_missing: ["size", "cfm"]
+
+# ==============================================================================
+# PLUMBING FIXTURES
+# ==============================================================================
+plumbing:
+  sanitary:
+    wc:
+      patterns:
+        symbols: ["⬭", "⬬"]
+        text: ["WC", "TOILET", "EWC", "IWC", "WATER CLOSET"]
+        ocr_patterns: ["\\bWC\\d*\\b", "\\bEWC\\b", "\\bIWC\\b"]
+      default_spec:
+        type: "TBD"  # EWC or IWC
+        flush: "dual"
+      unit: "NO"
+      system: "sanitary"
+      subsystem: "toilets"
+      rfi_if_missing: ["wc_type", "brand"]
+
+    wash_basin:
+      patterns:
+        symbols: ["⬯", "◯"]
+        text: ["WB", "BASIN", "WASH BASIN", "LAV"]
+      default_spec:
+        type: "counter_mounted"
+        size: "TBD"
+      unit: "NO"
+      system: "sanitary"
+      subsystem: "basins"
+      rfi_if_missing: ["basin_type", "size"]
+
+    sink:
+      patterns:
+        symbols: ["▭", "▯"]
+        text: ["SINK", "KS", "KITCHEN SINK"]
+      default_spec:
+        type: "under_counter"
+        bowls: 1
+      unit: "NO"
+      system: "sanitary"
+      subsystem: "kitchen"
+      rfi_if_missing: ["sink_type", "material"]
+
+    urinal:
+      patterns:
+        text: ["UR", "URINAL"]
+      default_spec:
+        type: "wall_hung"
+        flush: "sensor"
+      unit: "NO"
+      system: "sanitary"
+      subsystem: "toilets"
+
+    bidet:
+      patterns:
+        text: ["BIDET", "HEALTH FAUCET", "JET SPRAY"]
+      default_spec:
+        type: "wall_mounted"
+      unit: "NO"
+      system: "sanitary"
+      subsystem: "toilets"
+
+  floor_drains:
+    floor_drain:
+      patterns:
+        symbols: ["⊕", "⊖", "◎"]
+        text: ["FD", "FLOOR DRAIN", "FT", "FLOOR TRAP"]
+        ocr_patterns: ["\\bFD\\d*\\b", "\\bFT\\d*\\b"]
+      default_spec:
+        size: "100mm"
+        type: "with_trap"
+      unit: "NO"
+      system: "drainage"
+      subsystem: "floor_drainage"
+
+    gully_trap:
+      patterns:
+        text: ["GT", "GULLY", "GULLY TRAP"]
+      default_spec:
+        size: "100mm"
+        type: "p_trap"
+      unit: "NO"
+      system: "drainage"
+      subsystem: "floor_drainage"
+
+  faucets:
+    mixer:
+      patterns:
+        text: ["MIX", "MIXER", "HOT/COLD", "H/C"]
+      default_spec:
+        type: "single_lever"
+        finish: "chrome"
+      unit: "NO"
+      system: "water_supply"
+      subsystem: "hot_cold"
+      rfi_if_missing: ["mixer_type", "brand"]
+
+    bib_cock:
+      patterns:
+        text: ["BC", "BIB", "BIB COCK", "TAP"]
+      default_spec:
+        type: "wall_mounted"
+        size: "15mm"
+      unit: "NO"
+      system: "water_supply"
+      subsystem: "cold_water"
+
+    pillar_cock:
+      patterns:
+        text: ["PC", "PILLAR", "PILLAR COCK"]
+      default_spec:
+        type: "deck_mounted"
+        size: "15mm"
+      unit: "NO"
+      system: "water_supply"
+      subsystem: "cold_water"
+
+  valves:
+    stop_valve:
+      patterns:
+        text: ["SV", "STOP", "STOP VALVE", "GATE"]
+      default_spec:
+        type: "gate"
+        size: "TBD"
+      unit: "NO"
+      system: "water_supply"
+      subsystem: "isolation"
+
+    angle_valve:
+      patterns:
+        text: ["AV", "ANGLE", "ANGLE VALVE"]
+      default_spec:
+        type: "angle"
+        size: "15mm"
+      unit: "NO"
+      system: "water_supply"
+      subsystem: "fixture_supply"
+
+# ==============================================================================
+# HVAC DEVICES
+# ==============================================================================
+hvac:
+  air_terminals:
+    supply_diffuser:
+      patterns:
+        symbols: ["▣", "⬜"]
+        text: ["SD", "SUPPLY", "DIFFUSER", "SUPPLY DIFFUSER"]
+      default_spec:
+        type: "square"
+        size: "TBD"
+        cfm: "TBD"
+      unit: "NO"
+      system: "hvac"
+      subsystem: "supply_air"
+      rfi_if_missing: ["size", "cfm", "throw"]
+
+    return_grille:
+      patterns:
+        symbols: ["▤", "▥"]
+        text: ["RG", "RETURN", "RETURN GRILLE", "RA"]
+      default_spec:
+        type: "fixed_bar"
+        size: "TBD"
+      unit: "NO"
+      system: "hvac"
+      subsystem: "return_air"
+      rfi_if_missing: ["size"]
+
+    linear_diffuser:
+      patterns:
+        text: ["LD", "LINEAR", "SLOT"]
+      default_spec:
+        type: "linear"
+        slots: "TBD"
+      unit: "NO"
+      system: "hvac"
+      subsystem: "supply_air"
+
+  equipment:
+    fcu:
+      patterns:
+        text: ["FCU", "FAN COIL", "AHU"]
+        ocr_patterns: ["\\bFCU-?\\d*\\b", "\\bAHU-?\\d*\\b"]
+      default_spec:
+        type: "ceiling_concealed"
+        capacity: "TBD"
+      unit: "NO"
+      system: "hvac"
+      subsystem: "cooling"
+      rfi_if_missing: ["capacity_tr", "cfm"]
+      is_equipment: true
+
+    split_ac:
+      patterns:
+        symbols: ["❄"]
+        text: ["AC", "SPLIT", "SPLIT AC", "IDU", "ODU"]
+      default_spec:
+        type: "wall_mounted"
+        capacity: "TBD"
+      unit: "NO"
+      system: "hvac"
+      subsystem: "cooling"
+      rfi_if_missing: ["capacity_tr", "brand"]
+
+  ventilation:
+    fresh_air:
+      patterns:
+        text: ["FA", "FRESH AIR", "OA", "OUTSIDE AIR"]
+      default_spec:
+        type: "ducted"
+        cfm: "TBD"
+      unit: "NO"
+      system: "hvac"
+      subsystem: "ventilation"
+
+# ==============================================================================
+# FIRE SAFETY DEVICES
+# ==============================================================================
+fire_safety:
+  detection:
+    smoke_detector:
+      patterns:
+        symbols: ["◉", "⊚"]
+        text: ["SD", "SMOKE", "SMOKE DET"]
+      default_spec:
+        type: "photoelectric"
+        coverage: "TBD"
+      unit: "NO"
+      system: "fire_alarm"
+      subsystem: "detection"
+
+    heat_detector:
+      patterns:
+        text: ["HD", "HEAT", "HEAT DET"]
+      default_spec:
+        type: "rate_of_rise"
+      unit: "NO"
+      system: "fire_alarm"
+      subsystem: "detection"
+
+    manual_call_point:
+      patterns:
+        symbols: ["☐"]
+        text: ["MCP", "CALL POINT", "MANUAL"]
+      default_spec:
+        type: "break_glass"
+      unit: "NO"
+      system: "fire_alarm"
+      subsystem: "manual"
+
+  suppression:
+    sprinkler:
+      patterns:
+        symbols: ["✴", "✳"]
+        text: ["SPR", "SPRINKLER"]
+      default_spec:
+        type: "pendant"
+        k_factor: "TBD"
+      unit: "NO"
+      system: "fire_suppression"
+      subsystem: "sprinklers"
+      rfi_if_missing: ["type", "k_factor", "coverage"]
+
+    fire_extinguisher:
+      patterns:
+        symbols: ["🧯"]
+        text: ["FE", "EXTINGUISHER", "ABC", "CO2"]
+      default_spec:
+        type: "TBD"
+        capacity: "TBD"
+      unit: "NO"
+      system: "fire_suppression"
+      subsystem: "portable"
+
+# ==============================================================================
+# CONNECTIVITY RULES
+# ==============================================================================
+connectivity:
+  electrical:
+    # Device to panel connections
+    panel_types: ["db_box", "meter_box"]
+    default_cable:
+      lighting: "1.5 sq mm FR"
+      power: "2.5 sq mm FR"
+      ac: "4 sq mm FR"
+      geyser: "4 sq mm FR"
+    conduit:
+      default: "20mm PVC"
+      heavy: "25mm PVC"
+    routing:
+      method: "wall_graph"
+      add_percentage: 15  # Cable length allowance
+
+  plumbing:
+    # Fixture to riser connections
+    riser_types: ["stack", "vent"]
+    pipe_sizes:
+      wc: "100mm"
+      basin: "40mm"
+      sink: "50mm"
+      floor_drain: "75mm"
+    routing:
+      method: "shortest_path"
+      add_percentage: 10
+
+# ==============================================================================
+# SYSTEMS HIERARCHY
+# ==============================================================================
+systems:
+  electrical:
+    name: "Electrical"
+    subsystems:
+      - lighting
+      - power
+      - distribution
+
+  lighting:
+    name: "Lighting"
+    parent: "electrical"
+    subsystems:
+      - general_lighting
+      - accent_lighting
+      - emergency_lighting
+
+  power:
+    name: "Power"
+    parent: "electrical"
+    subsystems:
+      - general_power
+      - dedicated_power
+      - switching
+
+  sanitary:
+    name: "Sanitary"
+    subsystems:
+      - toilets
+      - basins
+      - kitchen
+
+  water_supply:
+    name: "Water Supply"
+    subsystems:
+      - cold_water
+      - hot_cold
+      - isolation
+
+  drainage:
+    name: "Drainage"
+    subsystems:
+      - soil_waste
+      - floor_drainage
+
+  hvac:
+    name: "HVAC"
+    subsystems:
+      - cooling
+      - ventilation
+      - supply_air
+      - return_air
+
+  fire_alarm:
+    name: "Fire Alarm"
+    subsystems:
+      - detection
+      - manual
+      - notification
+
+  fire_suppression:
+    name: "Fire Suppression"
+    subsystems:
+      - sprinklers
+      - portable

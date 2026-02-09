@@ -1,0 +1,720 @@
+# Material Consumption Norms for Indian Construction
+# Based on CPWD/DSR 2024 and IS codes
+# All quantities per unit of work item
+
+# ============================================================================
+# RCC WORK
+# ============================================================================
+
+rcc:
+  # Per cum of RCC
+  M20:
+    cement:
+      quantity: 8.22  # bags
+      unit: bags
+      notes: "IS 456, Mix 1:1.5:3"
+    sand:
+      quantity: 0.45
+      unit: cum
+      notes: "Fine aggregate, Zone II"
+    aggregate_20mm:
+      quantity: 0.90
+      unit: cum
+      notes: "Coarse aggregate 20mm nominal"
+    water:
+      quantity: 180
+      unit: liters
+      notes: "W/C ratio 0.45"
+    steel_approx:
+      quantity: 78
+      unit: kg
+      notes: "Average for slabs 0.5% reinforcement"
+
+  M25:
+    cement:
+      quantity: 9.0
+      unit: bags
+      notes: "IS 456, nominal mix 1:1:2"
+    sand:
+      quantity: 0.42
+      unit: cum
+    aggregate_20mm:
+      quantity: 0.84
+      unit: cum
+    water:
+      quantity: 160
+      unit: liters
+      notes: "W/C ratio 0.40"
+    steel_approx:
+      quantity: 85
+      unit: kg
+      notes: "Average for beams/columns"
+
+  M30:
+    cement:
+      quantity: 10.0
+      unit: bags
+    sand:
+      quantity: 0.40
+      unit: cum
+    aggregate_20mm:
+      quantity: 0.80
+      unit: cum
+    water:
+      quantity: 150
+      unit: liters
+    steel_approx:
+      quantity: 100
+      unit: kg
+
+# ============================================================================
+# PCC WORK
+# ============================================================================
+
+pcc:
+  # Per cum of PCC
+  "1:4:8":
+    cement:
+      quantity: 3.0
+      unit: bags
+    sand:
+      quantity: 0.42
+      unit: cum
+    aggregate_40mm:
+      quantity: 0.84
+      unit: cum
+    water:
+      quantity: 135
+      unit: liters
+
+  "1:3:6":
+    cement:
+      quantity: 4.2
+      unit: bags
+    sand:
+      quantity: 0.42
+      unit: cum
+    aggregate_40mm:
+      quantity: 0.84
+      unit: cum
+    water:
+      quantity: 140
+      unit: liters
+
+  "1:2:4":
+    cement:
+      quantity: 6.4
+      unit: bags
+    sand:
+      quantity: 0.42
+      unit: cum
+    aggregate_20mm:
+      quantity: 0.84
+      unit: cum
+    water:
+      quantity: 160
+      unit: liters
+
+# ============================================================================
+# MASONRY WORK
+# ============================================================================
+
+masonry:
+  # Per cum of brickwork
+  brick_230mm:
+    bricks:
+      quantity: 460
+      unit: nos
+      notes: "Standard modular brick 190x90x90"
+    cement:
+      quantity: 1.26
+      unit: bags
+      notes: "CM 1:6 mortar"
+    sand:
+      quantity: 0.25
+      unit: cum
+
+  brick_115mm:
+    bricks:
+      quantity: 485
+      unit: nos
+      notes: "Half brick work"
+    cement:
+      quantity: 1.1
+      unit: bags
+    sand:
+      quantity: 0.22
+      unit: cum
+
+  # AAC Block work
+  aac_200mm:
+    aac_blocks:
+      quantity: 8.33
+      unit: nos
+      notes: "600x200x200 blocks"
+    block_adhesive:
+      quantity: 5.0
+      unit: kg
+      notes: "Per sqm wall area"
+    cement:
+      quantity: 0.42
+      unit: bags
+      notes: "For joints"
+
+  aac_150mm:
+    aac_blocks:
+      quantity: 11.11
+      unit: nos
+      notes: "600x200x150 blocks"
+    block_adhesive:
+      quantity: 4.5
+      unit: kg
+    cement:
+      quantity: 0.35
+      unit: bags
+
+  aac_100mm:
+    aac_blocks:
+      quantity: 16.67
+      unit: nos
+      notes: "600x200x100 blocks"
+    block_adhesive:
+      quantity: 4.0
+      unit: kg
+    cement:
+      quantity: 0.30
+      unit: bags
+
+# ============================================================================
+# PLASTER WORK
+# ============================================================================
+
+plaster:
+  # Per sqm
+  cm_12mm:
+    cement:
+      quantity: 0.12
+      unit: bags
+      notes: "CM 1:6"
+    sand:
+      quantity: 0.012
+      unit: cum
+
+  cm_15mm:
+    cement:
+      quantity: 0.15
+      unit: bags
+    sand:
+      quantity: 0.015
+      unit: cum
+
+  cm_20mm:
+    cement:
+      quantity: 0.20
+      unit: bags
+    sand:
+      quantity: 0.020
+      unit: cum
+
+  gypsum_12mm:
+    gypsum_plaster:
+      quantity: 12.0
+      unit: kg
+      notes: "Machine applied"
+    primer:
+      quantity: 0.08
+      unit: liters
+
+# ============================================================================
+# FLOORING & TILING
+# ============================================================================
+
+flooring:
+  # Per sqm
+  vitrified_tiles_600x600:
+    tiles:
+      quantity: 1.05
+      unit: sqm
+      notes: "3% wastage, 2% extra for matching"
+    tile_adhesive:
+      quantity: 4.5
+      unit: kg
+      notes: "20kg covers 4-5 sqm"
+    grout:
+      quantity: 0.25
+      unit: kg
+      notes: "1kg covers 4 sqm for 2mm joints"
+    epoxy_grout:
+      quantity: 0.35
+      unit: kg
+      notes: "If epoxy specified"
+
+  ceramic_tiles_300x300:
+    tiles:
+      quantity: 1.08
+      unit: sqm
+      notes: "5% wastage"
+    tile_adhesive:
+      quantity: 5.0
+      unit: kg
+    grout:
+      quantity: 0.40
+      unit: kg
+
+  granite_flooring:
+    granite:
+      quantity: 1.05
+      unit: sqm
+      notes: "18-20mm thick"
+    cement:
+      quantity: 0.30
+      unit: bags
+      notes: "CM 1:4 bedding"
+    sand:
+      quantity: 0.025
+      unit: cum
+    white_cement:
+      quantity: 0.20
+      unit: kg
+      notes: "For joints"
+
+  marble_flooring:
+    marble:
+      quantity: 1.05
+      unit: sqm
+    cement:
+      quantity: 0.28
+      unit: bags
+    sand:
+      quantity: 0.022
+      unit: cum
+    white_cement:
+      quantity: 0.25
+      unit: kg
+
+  kota_stone:
+    kota_stone:
+      quantity: 1.08
+      unit: sqm
+      notes: "25mm thick"
+    cement:
+      quantity: 0.35
+      unit: bags
+    sand:
+      quantity: 0.030
+      unit: cum
+
+# ============================================================================
+# WALL TILING
+# ============================================================================
+
+wall_tiles:
+  # Per sqm
+  ceramic_wall:
+    tiles:
+      quantity: 1.06
+      unit: sqm
+    tile_adhesive:
+      quantity: 4.0
+      unit: kg
+    grout:
+      quantity: 0.35
+      unit: kg
+
+  dado_tiles:
+    tiles:
+      quantity: 1.08
+      unit: sqm
+    tile_adhesive:
+      quantity: 4.5
+      unit: kg
+    grout:
+      quantity: 0.40
+      unit: kg
+
+# ============================================================================
+# PAINTING
+# ============================================================================
+
+painting:
+  # Per sqm
+  acrylic_emulsion:
+    primer:
+      quantity: 0.08
+      unit: liters
+    wall_putty:
+      quantity: 0.60
+      unit: kg
+      notes: "2 coats, 1.5mm thick"
+    acrylic_paint:
+      quantity: 0.12
+      unit: liters
+      notes: "2 coats"
+
+  exterior_emulsion:
+    primer:
+      quantity: 0.10
+      unit: liters
+    acrylic_paint:
+      quantity: 0.14
+      unit: liters
+      notes: "3 coats"
+
+  oil_bound_distemper:
+    primer:
+      quantity: 0.07
+      unit: liters
+    obd:
+      quantity: 0.20
+      unit: kg
+      notes: "2 coats"
+
+  enamel_paint:
+    primer:
+      quantity: 0.10
+      unit: liters
+    enamel:
+      quantity: 0.12
+      unit: liters
+      notes: "2 coats"
+
+# ============================================================================
+# WATERPROOFING
+# ============================================================================
+
+waterproofing:
+  # Per sqm
+  cementitious_coating:
+    waterproof_compound:
+      quantity: 1.50
+      unit: kg
+      notes: "2 coat application"
+    cement:
+      quantity: 2.0
+      unit: kg
+    acrylic_bonding:
+      quantity: 0.20
+      unit: liters
+
+  app_membrane_3mm:
+    app_membrane:
+      quantity: 1.10
+      unit: sqm
+      notes: "10% overlap"
+    bitumen_primer:
+      quantity: 0.30
+      unit: liters
+    protection_screed:
+      quantity: 0.04
+      unit: cum
+      notes: "40mm cement screed"
+
+  liquid_membrane:
+    liquid_membrane:
+      quantity: 1.5
+      unit: kg
+      notes: "2 coat, 1.5mm DFT"
+    primer:
+      quantity: 0.20
+      unit: liters
+    fabric_reinforcement:
+      quantity: 0.30
+      unit: sqm
+      notes: "At joints and corners"
+
+  integral_waterproofing:
+    integral_compound:
+      quantity: 2.0
+      unit: kg
+      notes: "Per 50kg cement"
+
+# ============================================================================
+# REINFORCEMENT STEEL
+# ============================================================================
+
+steel:
+  # Per MT of steel
+  binding_wire:
+    quantity: 12
+    unit: kg
+    notes: "18 SWG annealed wire"
+
+  cover_blocks:
+    quantity: 6
+    unit: nos
+    notes: "Per sqm of rebar"
+
+  chairs:
+    quantity: 4
+    unit: nos
+    notes: "Per sqm for slabs"
+
+  # Wastage factors
+  wastage:
+    bars:
+      percentage: 3
+      notes: "Cutting wastage for bars"
+    stirrups:
+      percentage: 5
+      notes: "For bent bars"
+
+# ============================================================================
+# FORMWORK
+# ============================================================================
+
+formwork:
+  # Per sqm
+  steel_formwork:
+    form_oil:
+      quantity: 0.05
+      unit: liters
+    props:
+      quantity: 0.5
+      unit: nos
+      notes: "Reusable"
+
+  plywood_formwork:
+    plywood:
+      quantity: 0.15
+      unit: sqm
+      notes: "5 uses assumed"
+    nails:
+      quantity: 0.10
+      unit: kg
+    form_oil:
+      quantity: 0.05
+      unit: liters
+
+# ============================================================================
+# EXTERNAL WORKS
+# ============================================================================
+
+external:
+  # Per sqm
+  paver_blocks_60mm:
+    paver_blocks:
+      quantity: 50
+      unit: nos
+      notes: "200x100x60 I-shaped"
+    sand_bedding:
+      quantity: 0.05
+      unit: cum
+    edge_restraint:
+      quantity: 0.50
+      unit: rmt
+
+  interlock_tiles_80mm:
+    interlocking_tiles:
+      quantity: 12.5
+      unit: nos
+      notes: "400x400x80"
+    sand_bedding:
+      quantity: 0.06
+      unit: cum
+
+  compound_wall_per_rmt:
+    bricks:
+      quantity: 23
+      unit: nos
+      notes: "Per rmt 230mm thick, 1.5m height"
+    cement:
+      quantity: 0.10
+      unit: bags
+    sand:
+      quantity: 0.02
+      unit: cum
+    steel:
+      quantity: 2.5
+      unit: kg
+      notes: "For pillars"
+
+# ============================================================================
+# CEILING
+# ============================================================================
+
+ceiling:
+  # Per sqm
+  gypsum_board_false_ceiling:
+    gypsum_board:
+      quantity: 1.05
+      unit: sqm
+      notes: "12.5mm thick"
+    gi_channel:
+      quantity: 4.0
+      unit: rmt
+      notes: "Main and cross runners"
+    screws:
+      quantity: 25
+      unit: nos
+    joint_tape:
+      quantity: 1.50
+      unit: rmt
+    joint_compound:
+      quantity: 0.30
+      unit: kg
+
+  grid_ceiling:
+    grid_tiles:
+      quantity: 1.05
+      unit: sqm
+    t_grid:
+      quantity: 4.0
+      unit: rmt
+    hangers:
+      quantity: 4
+      unit: nos
+
+# ============================================================================
+# DOORS & WINDOWS
+# ============================================================================
+
+doors:
+  # Per unit
+  flush_door_frame:
+    sal_wood:
+      quantity: 0.035
+      unit: cum
+      notes: "For frame 100x75"
+    hinges:
+      quantity: 3
+      unit: nos
+    screws:
+      quantity: 20
+      unit: nos
+    tower_bolt:
+      quantity: 2
+      unit: nos
+    door_stopper:
+      quantity: 1
+      unit: nos
+
+  flush_door_shutter:
+    flush_door:
+      quantity: 1
+      unit: nos
+    polish:
+      quantity: 0.50
+      unit: liters
+      notes: "Melamine polish"
+    handle:
+      quantity: 1
+      unit: set
+    lock:
+      quantity: 1
+      unit: nos
+
+windows:
+  # Per sqm
+  aluminum_section:
+    aluminum:
+      quantity: 5.5
+      unit: kg
+      notes: "Standard section weight"
+    glass_5mm:
+      quantity: 1.05
+      unit: sqm
+    sealant:
+      quantity: 0.15
+      unit: meters
+    hardware:
+      quantity: 1
+      unit: set
+
+  upvc_window:
+    upvc_profile:
+      quantity: 8.0
+      unit: rmt
+    glass_5mm:
+      quantity: 1.05
+      unit: sqm
+    hardware:
+      quantity: 1
+      unit: set
+
+# ============================================================================
+# PLUMBING
+# ============================================================================
+
+plumbing:
+  # Per fixture point
+  water_supply_point:
+    cpvc_pipe:
+      quantity: 3.0
+      unit: meters
+      notes: "Average run"
+    fittings:
+      quantity: 4
+      unit: nos
+      notes: "Elbows, tees, unions"
+    clamps:
+      quantity: 2
+      unit: nos
+    teflon_tape:
+      quantity: 0.50
+      unit: rolls
+
+  drainage_point:
+    upvc_pipe:
+      quantity: 2.5
+      unit: meters
+    fittings:
+      quantity: 3
+      unit: nos
+    solvent_cement:
+      quantity: 50
+      unit: ml
+    clamps:
+      quantity: 2
+      unit: nos
+
+# ============================================================================
+# ELECTRICAL
+# ============================================================================
+
+electrical:
+  # Per point
+  light_point:
+    wire_1.5sqmm:
+      quantity: 12
+      unit: meters
+      notes: "Loop-in system"
+    pvc_conduit:
+      quantity: 6
+      unit: meters
+      notes: "20mm conduit"
+    junction_box:
+      quantity: 1
+      unit: nos
+    switch:
+      quantity: 1
+      unit: nos
+
+  power_point:
+    wire_2.5sqmm:
+      quantity: 15
+      unit: meters
+    pvc_conduit:
+      quantity: 8
+      unit: meters
+      notes: "25mm conduit"
+    socket:
+      quantity: 1
+      unit: nos
+    junction_box:
+      quantity: 1
+      unit: nos
+
+  ac_point:
+    wire_4sqmm:
+      quantity: 18
+      unit: meters
+    pvc_conduit:
+      quantity: 10
+      unit: meters
+      notes: "32mm conduit"
+    ac_socket:
+      quantity: 1
+      unit: nos
+    mcb_20a:
+      quantity: 1
+      unit: nos

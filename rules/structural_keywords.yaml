@@ -1,0 +1,370 @@
+# =============================================================================
+# STRUCTURAL TAKEOFF - KEYWORDS & PATTERNS
+# For detecting drawing types and structural elements (Indian context)
+# =============================================================================
+
+# =============================================================================
+# DRAWING TYPE CLASSIFICATION
+# =============================================================================
+drawing_types:
+
+  architectural_plan:
+    title_keywords:
+      - "floor plan"
+      - "ground floor"
+      - "first floor"
+      - "typical floor"
+      - "terrace plan"
+      - "roof plan"
+      - "layout plan"
+      - "architectural"
+      - "arch plan"
+      - "furniture layout"
+      - "room layout"
+    sheet_prefixes:
+      - "A-"
+      - "AR-"
+      - "ARCH-"
+      - "FP-"
+    negative_keywords:
+      - "column"
+      - "beam"
+      - "footing"
+      - "structural"
+      - "framing"
+      - "foundation"
+
+  structural_framing:
+    title_keywords:
+      - "framing plan"
+      - "beam layout"
+      - "beam plan"
+      - "slab layout"
+      - "structural layout"
+      - "rcc layout"
+      - "floor framing"
+      - "roof framing"
+      - "structural plan"
+    sheet_prefixes:
+      - "S-"
+      - "ST-"
+      - "STR-"
+      - "FR-"
+    characteristic_elements:
+      - "beam lines"
+      - "slab markings"
+
+  column_layout:
+    title_keywords:
+      - "column layout"
+      - "column plan"
+      - "column location"
+      - "column grid"
+      - "column position"
+      - "rcc column"
+      - "col layout"
+      - "col plan"
+    sheet_prefixes:
+      - "S-"
+      - "COL-"
+      - "CL-"
+
+  foundation_plan:
+    title_keywords:
+      - "foundation plan"
+      - "footing plan"
+      - "footing layout"
+      - "foundation layout"
+      - "plinth plan"
+      - "plinth layout"
+      - "substructure"
+      - "basement plan"
+      - "raft plan"
+      - "pile layout"
+    sheet_prefixes:
+      - "F-"
+      - "FND-"
+      - "FNDN-"
+
+  schedule:
+    title_keywords:
+      - "schedule"
+      - "column schedule"
+      - "beam schedule"
+      - "footing schedule"
+      - "slab schedule"
+      - "bar bending schedule"
+      - "bbs"
+      - "reinforcement schedule"
+      - "rebar schedule"
+      - "steel schedule"
+    table_indicators:
+      - "mark"
+      - "size"
+      - "nos"
+      - "quantity"
+      - "length"
+      - "dia"
+      - "diameter"
+      - "spacing"
+
+  section_detail:
+    title_keywords:
+      - "section"
+      - "detail"
+      - "typical detail"
+      - "beam section"
+      - "column section"
+      - "footing detail"
+      - "slab detail"
+      - "stair detail"
+      - "rcc detail"
+      - "reinforcement detail"
+    sheet_prefixes:
+      - "D-"
+      - "DET-"
+      - "SEC-"
+
+  elevation:
+    title_keywords:
+      - "elevation"
+      - "front elevation"
+      - "side elevation"
+      - "rear elevation"
+      - "building elevation"
+    sheet_prefixes:
+      - "E-"
+      - "EL-"
+
+# =============================================================================
+# STRUCTURAL ELEMENT LABELS
+# =============================================================================
+element_labels:
+
+  column:
+    patterns:
+      - "C\\d+"           # C1, C2, C10
+      - "COL\\s*\\d+"     # COL 1, COL1
+      - "COLUMN\\s*\\d+"  # COLUMN 1
+      - "C-\\d+"          # C-1, C-2
+      - "CL\\d+"          # CL1, CL2
+    keywords:
+      - "column"
+      - "col"
+      - "pillar"
+      - "stanchion"
+
+  beam:
+    patterns:
+      - "B\\d+"           # B1, B2
+      - "BM\\d+"          # BM1, BM2
+      - "BEAM\\s*\\d+"    # BEAM 1
+      - "B-\\d+"          # B-1
+      - "FB\\d+"          # FB1 (floor beam)
+      - "PB\\d+"          # PB1 (plinth beam)
+      - "TB\\d+"          # TB1 (tie beam)
+      - "LB\\d+"          # LB1 (lintel beam)
+      - "CB\\d+"          # CB1 (cantilever beam)
+      - "RB\\d+"          # RB1 (roof beam)
+    keywords:
+      - "beam"
+      - "bm"
+      - "plinth beam"
+      - "tie beam"
+      - "lintel"
+      - "floor beam"
+      - "roof beam"
+      - "cantilever"
+    types:
+      - plinth_beam
+      - tie_beam
+      - floor_beam
+      - roof_beam
+      - lintel
+      - cantilever_beam
+
+  footing:
+    patterns:
+      - "F\\d+"           # F1, F2
+      - "FT\\d+"          # FT1, FT2
+      - "FOOTING\\s*\\d+" # FOOTING 1
+      - "F-\\d+"          # F-1
+      - "IF\\d+"          # IF1 (isolated footing)
+      - "CF\\d+"          # CF1 (combined footing)
+      - "RF\\d+"          # RF1 (raft footing)
+    keywords:
+      - "footing"
+      - "foundation"
+      - "isolated footing"
+      - "combined footing"
+      - "raft"
+      - "pile cap"
+      - "strip footing"
+    types:
+      - isolated
+      - combined
+      - raft
+      - strip
+      - pile_cap
+
+  slab:
+    patterns:
+      - "S\\d+"           # S1, S2
+      - "SL\\d+"          # SL1, SL2
+      - "SLAB\\s*\\d+"    # SLAB 1
+      - "FS\\d+"          # FS1 (floor slab)
+      - "RS\\d+"          # RS1 (roof slab)
+    keywords:
+      - "slab"
+      - "floor slab"
+      - "roof slab"
+      - "terrace slab"
+      - "chajja"
+      - "canopy"
+      - "sunshade"
+
+  staircase:
+    patterns:
+      - "ST\\d+"
+      - "STAIR\\s*\\d+"
+    keywords:
+      - "stair"
+      - "staircase"
+      - "stair flight"
+      - "landing"
+      - "waist slab"
+
+# =============================================================================
+# SIZE PATTERNS (for callouts and schedules)
+# =============================================================================
+size_patterns:
+
+  # Column/Beam cross-section: 230x450, 230 x 450, 230X450
+  cross_section:
+    - "(\\d{3})\\s*[xX×]\\s*(\\d{3})"
+    - "(\\d{3})\\s*[xX×]\\s*(\\d{3})\\s*mm"
+
+  # Footing size: 1200x1200x450
+  footing_size:
+    - "(\\d{3,4})\\s*[xX×]\\s*(\\d{3,4})\\s*[xX×]\\s*(\\d{3})"
+
+  # Slab thickness: 125mm thick, 150 thk
+  thickness:
+    - "(\\d{2,3})\\s*(?:mm)?\\s*(?:thick|thk|THK)"
+    - "(?:thickness|thk)\\s*[=:]?\\s*(\\d{2,3})"
+
+  # Diameter: 12mm dia, 16φ, #12
+  diameter:
+    - "(\\d{1,2})\\s*(?:mm)?\\s*(?:dia|φ|Φ)"
+    - "#(\\d{1,2})"
+    - "T(\\d{1,2})"  # T12, T16
+
+  # Spacing: @150 c/c, 150mm c/c
+  spacing:
+    - "@\\s*(\\d{2,3})\\s*(?:mm)?\\s*(?:c/c|C/C)?"
+    - "(\\d{2,3})\\s*(?:mm)?\\s*(?:c/c|C/C)"
+
+  # Concrete grade: M20, M25
+  concrete_grade:
+    - "M\\s*(\\d{2})"
+    - "(?:grade|GRADE)\\s*[=:]?\\s*M?(\\d{2})"
+
+  # Steel grade: Fe500, Fe500D
+  steel_grade:
+    - "Fe\\s*(\\d{3}D?)"
+    - "(?:TMT|tmt)\\s*Fe\\s*(\\d{3}D?)"
+
+# =============================================================================
+# TABLE HEADERS (for schedule extraction)
+# =============================================================================
+table_headers:
+
+  column_schedule:
+    required:
+      - ["mark", "col", "column"]
+      - ["size", "section", "dimension"]
+    optional:
+      - ["nos", "no", "qty", "quantity"]
+      - ["floor", "level", "storey"]
+      - ["remark", "note"]
+
+  beam_schedule:
+    required:
+      - ["mark", "beam", "bm"]
+      - ["size", "section", "dimension"]
+    optional:
+      - ["length", "span"]
+      - ["nos", "no", "qty"]
+      - ["floor", "level"]
+
+  footing_schedule:
+    required:
+      - ["mark", "footing", "fnd"]
+      - ["size", "dimension"]
+    optional:
+      - ["depth", "thk"]
+      - ["nos", "no", "qty"]
+      - ["column", "col"]
+
+  bbs_schedule:
+    required:
+      - ["bar", "mark", "member"]
+      - ["dia", "diameter", "size"]
+    optional:
+      - ["length", "cutting"]
+      - ["nos", "no", "qty"]
+      - ["total", "weight"]
+      - ["shape", "type"]
+
+# =============================================================================
+# GRID LINE PATTERNS
+# =============================================================================
+grid_lines:
+  horizontal:
+    - "A"
+    - "B"
+    - "C"
+    - "D"
+    - "E"
+    - "F"
+    - "G"
+  vertical:
+    - "1"
+    - "2"
+    - "3"
+    - "4"
+    - "5"
+    - "6"
+    - "7"
+    - "8"
+  patterns:
+    - "([A-Z])\\s*[-/]\\s*(\\d+)"  # A-1, A/1
+    - "([A-Z])(\\d+)"             # A1
+
+# =============================================================================
+# INDIAN SPECIFIC TERMS
+# =============================================================================
+indian_terms:
+  rcc: "Reinforced Cement Concrete"
+  pcc: "Plain Cement Concrete"
+  tmt: "Thermo-Mechanically Treated"
+  bbs: "Bar Bending Schedule"
+  gl: "Ground Level"
+  fl: "Floor Level"
+  pl: "Plinth Level"
+  tl: "Terrace Level"
+  nl: "Natural Level"
+  ffl: "Finished Floor Level"
+  ssl: "Structural Slab Level"
+  toe: "Top of Element"
+  boe: "Bottom of Element"
+  clr: "Clear"
+  c_c: "Center to Center"
+  thk: "Thick/Thickness"
+  nos: "Numbers"
+  rmt: "Running Meter"
+  sqm: "Square Meter"
+  cum: "Cubic Meter"
+  kg: "Kilogram"
+  mt: "Metric Ton"
+  qtl: "Quintal"

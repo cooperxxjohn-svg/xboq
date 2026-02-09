@@ -1,0 +1,45 @@
+# Scale Detection Assumptions
+# Used when scale cannot be auto-detected from drawings
+
+# Default scale assumptions by drawing type
+default_scales:
+  floor_plan: 100      # 1:100
+  site_plan: 200       # 1:200
+  section: 50          # 1:50
+  elevation: 100       # 1:100
+  detail: 20           # 1:20
+  structural: 100      # 1:100
+
+# Common Indian architectural scales
+common_scales:
+  - 50    # 1:50 - Details, sections
+  - 100   # 1:100 - Floor plans (most common)
+  - 200   # 1:200 - Site plans, large buildings
+  - 500   # 1:500 - Site plans
+
+# Scale bar text patterns
+scale_bar_patterns:
+  - "1\\s*:\\s*(\\d+)"           # "1:100"
+  - "scale\\s*[=:]?\\s*1:(\\d+)" # "Scale = 1:100"
+  - "(\\d+)mm\\s*=\\s*(\\d+)m"   # "10mm = 1m"
+
+# Dimension-based scale inference
+dimension_inference:
+  # Common room dimensions for validation (in mm)
+  bedroom_width_range: [2700, 4500]
+  bedroom_length_range: [3000, 5000]
+  toilet_width_range: [1200, 2400]
+  toilet_length_range: [1500, 3000]
+  door_width_standard: [750, 900, 1000, 1200]
+  door_height_standard: [2100]
+
+# Confidence adjustments
+confidence:
+  scale_bar_detected: 0.95
+  dimension_inferred: 0.75
+  default_assumed: 0.50
+
+# Fallback behavior
+fallback:
+  use_default_if_confidence_below: 0.6
+  default_scale: 100

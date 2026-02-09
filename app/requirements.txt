@@ -1,0 +1,6 @@
+# XBOQ Demo Page - Streamlit Cloud Requirements
+# Minimal dependencies for the demo UI only
+
+streamlit>=1.28.0
+pandas>=2.0.0
+numpy>=1.24.0

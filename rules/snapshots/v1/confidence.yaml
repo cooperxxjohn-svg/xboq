@@ -1,0 +1,241 @@
+# =============================================================================
+# CONFIDENCE THRESHOLDS & QC RULES
+# =============================================================================
+# Configuration for confidence scoring and quality control warnings
+
+metadata:
+  version: "1.0.0"
+  description: "Confidence thresholds for XBOQ detection modules"
+
+# =============================================================================
+# CONFIDENCE LEVELS
+# =============================================================================
+levels:
+  high:
+    min: 0.75
+    label: "High"
+    color: "#28a745"  # Green
+    icon: "🟢"
+    description: "Measured or detected from drawings with high certainty"
+
+  medium:
+    min: 0.50
+    max: 0.75
+    label: "Medium"
+    color: "#ffc107"  # Yellow
+    icon: "🟡"
+    description: "Inferred or partially detected, may need verification"
+
+  low:
+    min: 0.0
+    max: 0.50
+    label: "Low"
+    color: "#dc3545"  # Red
+    icon: "🔴"
+    description: "Assumed or estimated, likely needs manual verification"
+
+# =============================================================================
+# MODULE-SPECIFIC THRESHOLDS
+# =============================================================================
+thresholds:
+  # Scale detection
+  scale:
+    high: 0.85      # Scale bar detected with exact pixels-per-mm
+    medium: 0.70    # Scale note parsed (e.g., "1:100")
+    low: 0.50       # Default scale assumed
+
+    # Emit warnings below these
+    warn_below: 0.60
+    reject_below: 0.30
+
+  # Room detection
+  rooms:
+    high: 0.80      # Clear boundary, label detected
+    medium: 0.60    # Boundary detected, label inferred
+    low: 0.40       # Partial boundary or assumed label
+
+    warn_below: 0.50
+    reject_below: 0.25
+
+  # Wall detection
+  walls:
+    high: 0.80      # Clear wall lines, thickness measured
+    medium: 0.60    # Walls detected, thickness inferred
+    low: 0.40       # Walls assumed from room boundaries
+
+    warn_below: 0.50
+    reject_below: 0.30
+
+  # Opening detection (doors/windows)
+  openings:
+    high: 0.75      # Symbol + tag + size detected
+    medium: 0.55    # Symbol detected, size inferred
+    low: 0.35       # Gap detected only, type assumed
+
+    warn_below: 0.45
+    reject_below: 0.25
+
+  # Finish mapping
+  finishes:
+    high: 0.85      # Room type clear, template matched
+    medium: 0.70    # Room type inferred, template applied
+    low: 0.50       # Default template used
+
+    warn_below: 0.60
+    reject_below: 0.40
+
+  # Steel estimation
+  steel:
+    high: 0.80      # BBS data available
+    medium: 0.60    # Schedule detected, factors applied
+    low: 0.50       # Rule-of-thumb factors only
+
+    warn_below: 0.55
+    reject_below: 0.40
+
+  # Overall BOQ
+  overall:
+    acceptable: 0.60
+    needs_review: 0.45
+    unreliable: 0.30
+
+# =============================================================================
+# WARNING RULES
+# =============================================================================
+warnings:
+  # Emit UNKNOWN/NEEDS_REVIEW warnings
+  emit_unknown_when:
+    - "confidence < 0.40"
+    - "derived_from == 'assumption'"
+    - "item_code starts with 'UNK-'"
+    - "description contains 'assumed'"
+
+  emit_needs_review_when:
+    - "confidence between 0.40 and 0.60"
+    - "assumption_used is not null"
+    - "derived_from == 'rule_of_thumb'"
+
+  # Severity levels
+  severity:
+    info:
+      description: "Informational - no action required"
+      emoji: "ℹ️"
+    warning:
+      description: "Review recommended"
+      emoji: "⚠️"
+    error:
+      description: "Manual verification required"
+      emoji: "❌"
+    critical:
+      description: "Do not use without manual correction"
+      emoji: "🚨"
+
+# =============================================================================
+# CONFIDENCE SCORING RULES
+# =============================================================================
+scoring:
+  # How to combine multiple signals
+  combination_method: "weighted_average"  # or "minimum", "maximum"
+
+  # Weight by source
+  source_weights:
+    measured: 1.0
+    detected: 0.9
+    ocr_extracted: 0.8
+    inferred: 0.7
+    schedule_lookup: 0.75
+    rule_of_thumb: 0.55
+    assumption: 0.50
+    default: 0.45
+
+  # Boost confidence when multiple signals agree
+  multi_signal_boost: 0.10
+
+  # Reduce confidence for these conditions
+  penalties:
+    tiny_area: -0.15        # Room < 2 sqm
+    huge_area: -0.10        # Room > 50 sqm (unusual)
+    no_label: -0.20         # Room without detected label
+    overlapping: -0.25      # Overlapping polygons
+    unclosed_boundary: -0.30  # Polygon not closed
+    scale_assumed: -0.15    # Scale not detected
+
+# =============================================================================
+# QC CHECKS
+# =============================================================================
+qc_checks:
+  # Sanity checks for room areas
+  room_area:
+    min_sqm: 1.0
+    max_sqm: 100.0
+    toilet_min_sqm: 1.5
+    toilet_max_sqm: 8.0
+    kitchen_min_sqm: 3.0
+    balcony_max_sqm: 15.0
+
+  # Wall checks
+  wall:
+    min_length_m: 0.5
+    max_length_m: 15.0
+    valid_thicknesses_mm: [75, 100, 115, 150, 200, 230, 300]
+
+  # Opening checks
+  openings:
+    door_min_width_mm: 600
+    door_max_width_mm: 2400
+    window_min_width_mm: 300
+    window_max_width_mm: 3000
+
+  # Steel checks
+  steel:
+    min_kg_per_m3: 50
+    max_kg_per_m3: 300
+
+# =============================================================================
+# AUTO-FLAG RULES
+# =============================================================================
+auto_flags:
+  # Automatically flag for review
+  flag_conditions:
+    - name: "scale_not_detected"
+      condition: "scale.confidence < 0.5"
+      severity: "warning"
+      message: "Scale not detected from drawing - using default 1:100"
+
+    - name: "low_room_confidence"
+      condition: "room.confidence < 0.4"
+      severity: "warning"
+      message: "Room boundaries may be incorrect"
+
+    - name: "no_openings_detected"
+      condition: "total_doors == 0 AND total_windows == 0"
+      severity: "warning"
+      message: "No doors or windows detected - check if plan is architectural"
+
+    - name: "excessive_assumptions"
+      condition: "assumption_count > 20"
+      severity: "info"
+      message: "Many assumptions used - consider providing more detailed drawings"
+
+    - name: "tiny_rooms"
+      condition: "room.area_sqm < 2.0"
+      severity: "warning"
+      message: "Very small room detected - may be shaft or detection error"
+
+    - name: "unmapped_room_type"
+      condition: "room.template == 'default'"
+      severity: "info"
+      message: "Room type not recognized - using default finishes"
+
+# =============================================================================
+# REPORTING
+# =============================================================================
+reporting:
+  # Include in report
+  include_assumptions: true
+  include_warnings: true
+  include_confidence_breakdown: true
+
+  # Summary thresholds
+  acceptable_percentage: 70  # % items at medium confidence or above
+  minimum_percentage: 50     # Reject if fewer items meet this

@@ -1,0 +1,372 @@
+{
+  "run_id": "20260207_224555_cku8ri",
+  "project_id": "bitmesra_clean",
+  "mode": "full",
+  "profile": "typical",
+  "rules_version": null,
+  "start_time": "2026-02-07T22:45:55.165650",
+  "duration_sec": 49.1,
+  "aggregates": {
+    "pages_processed": 78,
+    "pages_routed": 78,
+    "candidate_pages": 71,
+    "rooms_found": 159,
+    "openings_found": 358,
+    "dimensions_found": 0,
+    "boq_items_total": 856,
+    "boq_measured": 0,
+    "boq_counted": 358,
+    "boq_inferred": 498,
+    "coverage_percent": 0.0,
+    "missing_scope_count": 0,
+    "rfis_generated": 1,
+    "scales_detected": [
+      "1:100",
+      "1:150",
+      "1:200"
+    ],
+    "drawing_types": {
+      "floor_plan": 9,
+      "structural": 37,
+      "candidate_plan": 25,
+      "unknown": 7
+    },
+    "bid_recommendation": "NO-GO",
+    "bid_score": 20,
+    "input_files": []
+  },
+  "phases_run": [
+    "01_index",
+    "02_route",
+    "03_extract",
+    "04_join",
+    "05_takeoff",
+    "06_measurement",
+    "06a_provenance",
+    "07_measurement_gate",
+    "07_scope",
+    "12_rfi",
+    "18_bid_gate",
+    "23_proof_pack",
+    "E1_estimator",
+    "24_verify"
+  ],
+  "phases_skipped": [],
+  "phases_failed": [
+    "07_measurement_gate",
+    "24_verify"
+  ],
+  "output_completeness_score": 0.67,
+  "output_verification": [
+    {
+      "file": "summary.md",
+      "exists": true,
+      "size_bytes": 1530,
+      "reason": null
+    },
+    {
+      "file": "bid_gate_report.md",
+      "exists": true,
+      "size_bytes": 879,
+      "reason": null
+    },
+    {
+      "file": "overlays/quicklook.png",
+      "exists": false,
+      "size_bytes": 0,
+      "reason": "File not generated"
+    },
+    {
+      "file": "rfi/rfi_log.md",
+      "exists": true,
+      "size_bytes": 480,
+      "reason": null
+    },
+    {
+      "file": "scope/scope_register.csv",
+      "exists": false,
+      "size_bytes": 0,
+      "reason": "File not generated"
+    },
+    {
+      "file": "boq/boq_quantities.csv",
+      "exists": true,
+      "size_bytes": 364098,
+      "reason": null
+    },
+    {
+      "file": "boq/provisional_items.csv",
+      "exists": true,
+      "size_bytes": 42,
+      "reason": null
+    },
+    {
+      "file": "boq/material_estimate.csv",
+      "exists": true,
+      "size_bytes": 179,
+      "reason": null
+    },
+    {
+      "file": "pricing/estimate_priced.csv",
+      "exists": true,
+      "size_bytes": 119,
+      "reason": null
+    },
+    {
+      "file": "prelims/prelims_boq.csv",
+      "exists": true,
+      "size_bytes": 206,
+      "reason": null
+    },
+    {
+      "file": "bid_book/clarifications_letter.md",
+      "exists": true,
+      "size_bytes": 98,
+      "reason": null
+    },
+    {
+      "file": "bid_book/exclusions.md",
+      "exists": true,
+      "size_bytes": 299,
+      "reason": null
+    },
+    {
+      "file": "bid_book/assumptions.md",
+      "exists": true,
+      "size_bytes": 330,
+      "reason": null
+    },
+    {
+      "file": "bid_report.pdf",
+      "exists": true,
+      "size_bytes": 16323,
+      "reason": null
+    },
+    {
+      "file": "boq/boq_measured.csv",
+      "exists": true,
+      "size_bytes": 132,
+      "reason": null
+    },
+    {
+      "file": "boq/boq_inferred.csv",
+      "exists": true,
+      "size_bytes": 76296,
+      "reason": null
+    },
+    {
+      "file": "measurement_gate_report.md",
+      "exists": true,
+      "size_bytes": 2302,
+      "reason": null
+    },
+    {
+      "file": "proof/proof_pack.md",
+      "exists": true,
+      "size_bytes": 327137,
+      "reason": null
+    },
+    {
+      "file": "packages/pkg_rcc_structural.csv",
+      "exists": false,
+      "size_bytes": 0,
+      "reason": "Package not generated"
+    },
+    {
+      "file": "packages/pkg_masonry.csv",
+      "exists": false,
+      "size_bytes": 0,
+      "reason": "Package not generated"
+    },
+    {
+      "file": "packages/pkg_waterproofing.csv",
+      "exists": false,
+      "size_bytes": 0,
+      "reason": "Package not generated"
+    },
+    {
+      "file": "packages/pkg_flooring.csv",
+      "exists": false,
+      "size_bytes": 0,
+      "reason": "Package not generated"
+    },
+    {
+      "file": "packages/pkg_doors_windows.csv",
+      "exists": false,
+      "size_bytes": 0,
+      "reason": "Package not generated"
+    },
+    {
+      "file": "packages/pkg_wall_finishes.csv",
+      "exists": false,
+      "size_bytes": 0,
+      "reason": "Package not generated"
+    }
+  ],
+  "summary": {
+    "project_id": "bitmesra_clean",
+    "mode": "full",
+    "total_phases": 14,
+    "successful": 12,
+    "failed": 2,
+    "skipped": 0,
+    "duration_sec": 49.1,
+    "output_dir": "/Users/cooperworks/floorplan-engine/out/bitmesra_clean",
+    "phases": [
+      {
+        "phase": "01_index",
+        "phase_name": "Index Drawings",
+        "success": true,
+        "skipped": false,
+        "message": "Found 78 pages from 1 files",
+        "error": null,
+        "skip_reason": null,
+        "stack_trace": null,
+        "duration_sec": 2.809987
+      },
+      {
+        "phase": "02_route",
+        "phase_name": "Route Pages",
+        "success": true,
+        "skipped": false,
+        "message": "Routed 78 pages: 71 candidates, types={'floor_plan': 9, 'structural': 37, 'candidate_plan': 25, 'unknown': 7}, scales=['1:100', '1:150', '1:200']",
+        "error": null,
+        "skip_reason": null,
+        "stack_trace": null,
+        "duration_sec": 37.372932
+      },
+      {
+        "phase": "03_extract",
+        "phase_name": "Extract Features",
+        "success": true,
+        "skipped": false,
+        "message": "Processed 71 pages, 159 rooms, 358 openings (scale 1:100)",
+        "error": null,
+        "skip_reason": null,
+        "stack_trace": null,
+        "duration_sec": 7.158543
+      },
+      {
+        "phase": "04_join",
+        "phase_name": "Join Multi-Page",
+        "success": true,
+        "skipped": false,
+        "message": "Joined 57 pages, 159 rooms",
+        "error": null,
+        "skip_reason": null,
+        "stack_trace": null,
+        "duration_sec": 0.008314
+      },
+      {
+        "phase": "05_takeoff",
+        "phase_name": "Takeoff Generation",
+        "success": true,
+        "skipped": false,
+        "message": "Generated 856 BOQ items (fallback)",
+        "error": null,
+        "skip_reason": null,
+        "stack_trace": null,
+        "duration_sec": 0.00322
+      },
+      {
+        "phase": "06_measurement",
+        "phase_name": "Measurement Rules + Deductions",
+        "success": true,
+        "skipped": false,
+        "message": "Applied 0 deductions (IS 1200/CPWD rules)",
+        "error": null,
+        "skip_reason": null,
+        "stack_trace": null,
+        "duration_sec": 0.001966
+      },
+      {
+        "phase": "06a_provenance",
+        "phase_name": "Attach Provenance",
+        "success": true,
+        "skipped": false,
+        "message": "Measured: 0, Counted: 358, Inferred: 498 (0% coverage)",
+        "error": null,
+        "skip_reason": null,
+        "stack_trace": null,
+        "duration_sec": 0.131694
+      },
+      {
+        "phase": "07_measurement_gate",
+        "phase_name": "Measurement Gate (HARD)",
+        "success": false,
+        "skipped": false,
+        "message": "FAIL - FAIL: Scale could not be reliably determined. Measurements unreliable., FAIL: No wall geometry detected. Cannot measure areas reliably. | Pricing SKIPPED (no reliable rates/measurements)",
+        "error": null,
+        "skip_reason": null,
+        "stack_trace": null,
+        "duration_sec": 0.002281
+      },
+      {
+        "phase": "07_scope",
+        "phase_name": "Scope Completeness",
+        "success": true,
+        "skipped": false,
+        "message": "Scope completeness: 0%, 0 packages analyzed",
+        "error": null,
+        "skip_reason": null,
+        "stack_trace": null,
+        "duration_sec": 5.7e-05
+      },
+      {
+        "phase": "12_rfi",
+        "phase_name": "RFI Engine",
+        "success": true,
+        "skipped": false,
+        "message": "Generated 1 RFIs",
+        "error": null,
+        "skip_reason": null,
+        "stack_trace": null,
+        "duration_sec": 0.001339
+      },
+      {
+        "phase": "18_bid_gate",
+        "phase_name": "Bid Gate",
+        "success": true,
+        "skipped": false,
+        "message": "Gate: NO-GO (score: 20/100)",
+        "error": null,
+        "skip_reason": null,
+        "stack_trace": null,
+        "duration_sec": 0.004651
+      },
+      {
+        "phase": "23_proof_pack",
+        "phase_name": "Proof Pack Generation",
+        "success": true,
+        "skipped": false,
+        "message": "Generated 4 overlays, proof_pack.md created",
+        "error": null,
+        "skip_reason": null,
+        "stack_trace": null,
+        "duration_sec": 0.138366
+      },
+      {
+        "phase": "E1_estimator",
+        "phase_name": "Estimator Reconciliation",
+        "success": true,
+        "skipped": false,
+        "message": "Measured: 0 | Inferred: 185 | (0% coverage) | Missing: 1476 | Bid: NO-GO",
+        "error": null,
+        "skip_reason": null,
+        "stack_trace": null,
+        "duration_sec": 1.377283
+      },
+      {
+        "phase": "24_verify",
+        "phase_name": "Output Verification",
+        "success": false,
+        "skipped": false,
+        "message": "16/24 required outputs present | Measurement gate: FAIL_SCALE",
+        "error": "Missing: overlays/quicklook.png, scope/scope_register.csv, packages/pkg_rcc_structural.csv, packages/pkg_masonry.csv, packages/pkg_waterproofing.csv, packages/pkg_flooring.csv, packages/pkg_doors_windows.csv, packages/pkg_wall_finishes.csv",
+        "skip_reason": null,
+        "stack_trace": null,
+        "duration_sec": 0.0
+      }
+    ]
+  }
+}

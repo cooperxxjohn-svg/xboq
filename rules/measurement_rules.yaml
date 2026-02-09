@@ -1,0 +1,148 @@
+# Measurement Rules - IS 1200 / CPWD Method of Measurement
+# Indian Standard specifications for quantity takeoff
+
+# Opening Deduction Rules
+deductions:
+  plaster:
+    # IS 1200 Part 12: Plastering
+    # Openings > 0.5 sqm to be deducted
+    threshold_sqm: 0.5
+    deduct_full: true
+    no_deduction_for_reveals: false
+
+  paint:
+    # IS 1200 Part 13: Painting
+    # Small openings (< 0.1 sqm) not deducted
+    threshold_sqm: 0.1
+    deduct_full: true
+
+  masonry:
+    # IS 1200 Part 6: Brick Work
+    # Openings > 0.1 sqm to be deducted
+    threshold_sqm: 0.1
+    deduct_full: true
+    lintel_area_add: true  # Add lintel area back
+
+  tiles:
+    # Wall tiles - deduct all openings
+    threshold_sqm: 0.0
+    deduct_full: true
+
+# Formwork Derivation Constants
+formwork:
+  # Sqm of formwork per cum of RCC
+  slab:
+    typical: 10.0      # sqm formwork per cum slab
+    waffle: 15.0       # More complex formwork
+  beam:
+    typical: 12.0      # sqm formwork per cum beam
+    deep: 14.0         # Deep beams need more
+  column:
+    typical: 8.0       # sqm formwork per cum column
+    circular: 12.0     # Circular columns
+  staircase:
+    typical: 18.0      # Stairs are complex
+
+  # Staging/scaffolding
+  staging:
+    height_threshold_m: 3.5   # Above this, add staging
+    rate_sqm_per_cum: 2.0     # Additional sqm staging
+
+# Measurement Units
+units:
+  area: sqm
+  volume: cum
+  length: rmt
+  count: nos
+  weight: kg
+  steel: MT
+
+# Steel Estimation
+steel:
+  # Kg per cum of RCC (thumb rules)
+  slab: 80
+  beam: 120
+  column: 150
+  footing: 60
+  staircase: 100
+  retaining_wall: 80
+
+  # Typical wastage
+  wastage_percent: 3
+
+# Concrete Mix
+concrete:
+  # Default grades by element
+  default_grade:
+    footing: M25
+    column: M30
+    beam: M25
+    slab: M25
+    staircase: M25
+
+  # Cement content kg/cum
+  cement_content:
+    M20: 320
+    M25: 360
+    M30: 400
+    M35: 440
+
+# Brick/Block Work
+masonry:
+  # Mortar consumption
+  mortar_cum_per_cum_brick: 0.25
+  mortar_cum_per_sqm_230wall: 0.03
+  mortar_cum_per_sqm_115wall: 0.015
+
+  # Brick quantity
+  bricks_per_cum: 500
+  bricks_per_sqm_230wall: 115
+  bricks_per_sqm_115wall: 58
+
+# Plaster
+plaster:
+  # Cement mortar thickness
+  internal_mm: 12
+  external_mm: 15
+  ceiling_mm: 6
+
+  # Mortar consumption sqm/cum
+  mortar_sqm_per_cum_12mm: 80
+  mortar_sqm_per_cum_15mm: 65
+
+# Painting
+painting:
+  # Number of coats
+  primer_coats: 1
+  finish_coats: 2
+
+  # Coverage sqm/litre
+  primer_coverage: 12
+  emulsion_coverage: 14
+  enamel_coverage: 10
+
+# Flooring
+flooring:
+  # Wastage percentages
+  tile_wastage_percent: 5
+  marble_wastage_percent: 8
+  granite_wastage_percent: 8
+
+  # Bedding thickness
+  bedding_mm: 20
+  grouting_mm: 3
+
+# Waterproofing
+waterproofing:
+  # Coverage
+  membrane_overlap_mm: 100
+  coba_thickness_mm: 25
+
+  # Application areas
+  wet_area_types:
+    - toilet
+    - bathroom
+    - wash
+    - balcony
+    - terrace
+    - kitchen  # Under sink only
