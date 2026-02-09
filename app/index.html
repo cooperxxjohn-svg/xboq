@@ -1,0 +1,2469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XBOQ - 3 Weeks → 24 Hours | AI-Powered BOQ Generation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-primary: rgb(0, 0, 0);
+            --bg-secondary: rgb(8, 8, 10);
+            --bg-card: rgba(18, 18, 22, 0.95);
+            --bg-card-hover: rgba(24, 24, 30, 0.98);
+
+            --purple-primary: rgb(140, 69, 255);
+            --purple-secondary: rgb(180, 100, 255);
+            --purple-glow: rgba(140, 69, 255, 0.4);
+            --purple-soft: rgba(140, 69, 255, 0.12);
+            --gradient-purple: linear-gradient(135deg, rgb(140, 69, 255) 0%, rgb(180, 100, 255) 100%);
+
+            --text-primary: rgb(255, 255, 255);
+            --text-secondary: rgba(255, 255, 255, 0.7);
+            --text-muted: rgba(255, 255, 255, 0.45);
+
+            --border-color: rgba(255, 255, 255, 0.08);
+            --border-hover: rgba(140, 69, 255, 0.4);
+
+            --green: #10b981;
+            --green-soft: rgba(16, 185, 129, 0.12);
+            --red: #ef4444;
+            --red-soft: rgba(239, 68, 68, 0.12);
+            --yellow: #f59e0b;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Animated background with intense glow effects like reference */
+        .page-bg {
+            position: fixed;
+            inset: 0;
+            background: var(--bg-primary);
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        /* Main top center glow - intense purple */
+        .page-bg::before {
+            content: '';
+            position: absolute;
+            top: -30%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120%;
+            height: 80%;
+            background: radial-gradient(ellipse 50% 40% at 50% 20%, rgba(140, 69, 255, 0.6) 0%, rgba(140, 69, 255, 0.3) 30%, rgba(140, 69, 255, 0.1) 50%, transparent 70%);
+            animation: pulseGlow 6s ease-in-out infinite;
+        }
+
+        /* Secondary glow layer for depth */
+        .page-bg::after {
+            content: '';
+            position: absolute;
+            top: -20%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            height: 70%;
+            background: radial-gradient(ellipse 40% 35% at 50% 10%, rgba(180, 100, 255, 0.4) 0%, rgba(140, 69, 255, 0.15) 40%, transparent 70%);
+            animation: pulseGlow2 8s ease-in-out infinite;
+        }
+
+        /* Grid overlay */
+        .grid-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            background-image:
+                linear-gradient(rgba(140, 69, 255, 0.06) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(140, 69, 255, 0.06) 1px, transparent 1px);
+            background-size: 50px 50px;
+            mask-image: radial-gradient(ellipse 100% 70% at 50% 0%, black 0%, transparent 60%);
+            -webkit-mask-image: radial-gradient(ellipse 100% 70% at 50% 0%, black 0%, transparent 60%);
+        }
+
+        /* Construction-themed background elements */
+        .blueprint-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        /* Blueprint measurement lines */
+        .measure-line {
+            position: absolute;
+            background: rgba(140, 69, 255, 0.15);
+        }
+
+        .measure-line-h1 {
+            width: 200px;
+            height: 1px;
+            top: 25%;
+            left: 5%;
+            animation: measurePulse 4s ease-in-out infinite;
+        }
+        .measure-line-h1::before,
+        .measure-line-h1::after {
+            content: '';
+            position: absolute;
+            width: 1px;
+            height: 8px;
+            background: rgba(140, 69, 255, 0.3);
+            top: -3px;
+        }
+        .measure-line-h1::before { left: 0; }
+        .measure-line-h1::after { right: 0; }
+
+        .measure-line-h2 {
+            width: 150px;
+            height: 1px;
+            top: 35%;
+            right: 8%;
+            animation: measurePulse 5s ease-in-out infinite 1s;
+        }
+        .measure-line-h2::before,
+        .measure-line-h2::after {
+            content: '';
+            position: absolute;
+            width: 1px;
+            height: 8px;
+            background: rgba(140, 69, 255, 0.3);
+            top: -3px;
+        }
+        .measure-line-h2::before { left: 0; }
+        .measure-line-h2::after { right: 0; }
+
+        .measure-line-v1 {
+            width: 1px;
+            height: 120px;
+            top: 20%;
+            left: 12%;
+            animation: measurePulse 6s ease-in-out infinite 0.5s;
+        }
+        .measure-line-v1::before,
+        .measure-line-v1::after {
+            content: '';
+            position: absolute;
+            width: 8px;
+            height: 1px;
+            background: rgba(140, 69, 255, 0.3);
+            left: -3px;
+        }
+        .measure-line-v1::before { top: 0; }
+        .measure-line-v1::after { bottom: 0; }
+
+        .measure-line-v2 {
+            width: 1px;
+            height: 100px;
+            top: 30%;
+            right: 15%;
+            animation: measurePulse 4.5s ease-in-out infinite 2s;
+        }
+        .measure-line-v2::before,
+        .measure-line-v2::after {
+            content: '';
+            position: absolute;
+            width: 8px;
+            height: 1px;
+            background: rgba(140, 69, 255, 0.3);
+            left: -3px;
+        }
+        .measure-line-v2::before { top: 0; }
+        .measure-line-v2::after { bottom: 0; }
+
+        @keyframes measurePulse {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.8; }
+        }
+
+        /* Building outline shapes */
+        .building-outline {
+            position: absolute;
+            border: 1px solid rgba(140, 69, 255, 0.1);
+            background: transparent;
+        }
+
+        .building-1 {
+            width: 60px;
+            height: 100px;
+            bottom: 30%;
+            left: 8%;
+            animation: buildingFloat 8s ease-in-out infinite;
+        }
+        .building-1::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-left: 30px solid transparent;
+            border-right: 30px solid transparent;
+            border-bottom: 20px solid rgba(140, 69, 255, 0.1);
+        }
+
+        .building-2 {
+            width: 40px;
+            height: 140px;
+            bottom: 25%;
+            right: 10%;
+            animation: buildingFloat 10s ease-in-out infinite 1s;
+        }
+
+        .building-3 {
+            width: 80px;
+            height: 80px;
+            bottom: 35%;
+            left: 18%;
+            animation: buildingFloat 7s ease-in-out infinite 2s;
+        }
+
+        @keyframes buildingFloat {
+            0%, 100% { transform: translateY(0); opacity: 0.4; }
+            50% { transform: translateY(-10px); opacity: 0.7; }
+        }
+
+        /* Construction grid nodes */
+        .grid-node {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: rgba(140, 69, 255, 0.4);
+            border-radius: 1px;
+            animation: nodeGlow 3s ease-in-out infinite;
+        }
+
+        .node-1 { top: 22%; left: 25%; animation-delay: 0s; }
+        .node-2 { top: 28%; left: 35%; animation-delay: 0.5s; }
+        .node-3 { top: 18%; right: 30%; animation-delay: 1s; }
+        .node-4 { top: 35%; right: 22%; animation-delay: 1.5s; }
+        .node-5 { top: 42%; left: 20%; animation-delay: 2s; }
+        .node-6 { top: 15%; left: 45%; animation-delay: 0.3s; }
+
+        @keyframes nodeGlow {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.3); box-shadow: 0 0 10px rgba(140, 69, 255, 0.5); }
+        }
+
+        /* Connecting structure lines */
+        .struct-line {
+            position: absolute;
+            background: linear-gradient(90deg, transparent, rgba(140, 69, 255, 0.2), transparent);
+            height: 1px;
+        }
+
+        .struct-1 {
+            width: 300px;
+            top: 25%;
+            left: 10%;
+            transform: rotate(-5deg);
+            animation: structFade 6s ease-in-out infinite;
+        }
+
+        .struct-2 {
+            width: 250px;
+            top: 32%;
+            right: 5%;
+            transform: rotate(8deg);
+            animation: structFade 7s ease-in-out infinite 1s;
+        }
+
+        .struct-3 {
+            width: 200px;
+            top: 40%;
+            left: 15%;
+            transform: rotate(-3deg);
+            animation: structFade 5s ease-in-out infinite 2s;
+        }
+
+        @keyframes structFade {
+            0%, 100% { opacity: 0.2; }
+            50% { opacity: 0.6; }
+        }
+
+        /* Gradient swoosh - adjusted */
+        .gradient-swoosh {
+            position: fixed;
+            top: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120%;
+            height: 60%;
+            background:
+                radial-gradient(ellipse 80% 50% at 30% 50%, rgba(140, 69, 255, 0.08) 0%, transparent 50%),
+                radial-gradient(ellipse 80% 50% at 70% 50%, rgba(180, 100, 255, 0.06) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .glow-orb {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(100px);
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* Main center glow orb - very bright */
+        .glow-orb-1 {
+            width: 800px;
+            height: 600px;
+            background: radial-gradient(ellipse, rgba(140, 69, 255, 0.7) 0%, rgba(140, 69, 255, 0.3) 40%, transparent 70%);
+            top: -300px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: floatOrb1 10s ease-in-out infinite;
+            opacity: 1;
+        }
+
+        /* Left accent glow */
+        .glow-orb-2 {
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(ellipse, rgba(180, 100, 255, 0.5) 0%, transparent 70%);
+            top: -100px;
+            left: -100px;
+            animation: floatOrb2 12s ease-in-out infinite;
+            opacity: 0.7;
+        }
+
+        /* Right accent glow */
+        .glow-orb-3 {
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(ellipse, rgba(140, 69, 255, 0.5) 0%, transparent 70%);
+            top: -100px;
+            right: -100px;
+            animation: floatOrb3 14s ease-in-out infinite;
+            opacity: 0.7;
+        }
+
+        @keyframes pulseGlow {
+            0%, 100% { opacity: 1; transform: translateX(-50%) scale(1); }
+            50% { opacity: 0.8; transform: translateX(-50%) scale(1.1); }
+        }
+
+        @keyframes pulseGlow2 {
+            0%, 100% { opacity: 0.8; transform: translateX(-50%) scale(1); }
+            50% { opacity: 1; transform: translateX(-50%) scale(1.05); }
+        }
+
+        @keyframes floatOrb1 {
+            0%, 100% { transform: translateX(-50%) translateY(0) scale(1); opacity: 1; }
+            50% { transform: translateX(-50%) translateY(20px) scale(1.05); opacity: 0.9; }
+        }
+
+        @keyframes floatOrb2 {
+            0%, 100% { transform: translateY(0) translateX(0); opacity: 0.7; }
+            50% { transform: translateY(-30px) translateX(20px); opacity: 0.5; }
+        }
+
+        @keyframes floatOrb3 {
+            0%, 100% { transform: translateY(0); opacity: 0.7; }
+            50% { transform: translateY(-30px); opacity: 0.5; }
+        }
+
+        .container {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Navigation - Minimal & Clean */
+        nav {
+            position: fixed;
+            top: 16px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 100;
+            width: calc(100% - 32px);
+            max-width: 1100px;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 24px;
+            background: rgba(8, 8, 12, 0.85);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            backdrop-filter: blur(24px);
+        }
+
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-icon {
+            width: 32px;
+            height: 32px;
+            background: var(--gradient-purple);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 14px;
+        }
+
+        .logo-text {
+            font-family: 'Satoshi', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 8px;
+            transition: all 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--text-primary);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .nav-cta {
+            padding: 10px 20px;
+            background: var(--text-primary);
+            border: none;
+            border-radius: 10px;
+            color: var(--bg-primary);
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-decoration: none;
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 8px 24px rgba(255, 255, 255, 0.15);
+        }
+
+        /* Hero Section - YC Impact */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 140px 24px 100px;
+        }
+
+        .yc-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 6px 6px 14px;
+            background: rgba(245, 158, 11, 0.1);
+            border: 1px solid rgba(245, 158, 11, 0.25);
+            border-radius: 100px;
+            font-size: 13px;
+            color: var(--yellow);
+            margin-bottom: 32px;
+            animation: fadeInUp 0.5s ease-out;
+        }
+
+        .yc-badge-icon {
+            padding: 5px 10px;
+            background: var(--yellow);
+            border-radius: 100px;
+            font-size: 11px;
+            font-weight: 700;
+            color: black;
+        }
+
+        .hero h1 {
+            font-family: 'Satoshi', sans-serif;
+            font-size: clamp(48px, 8vw, 76px);
+            font-weight: 700;
+            line-height: 1.05;
+            margin-bottom: 24px;
+            letter-spacing: -3px;
+            animation: fadeInUp 0.5s ease-out 0.1s both;
+        }
+
+        .hero h1 .gradient-text {
+            background: linear-gradient(180deg, rgba(255, 255, 255, 1) 20%, rgba(255, 255, 255, 0.4) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero h1 .highlight {
+            color: var(--purple-primary);
+        }
+
+        .hero-subtitle {
+            font-size: 19px;
+            color: var(--text-secondary);
+            max-width: 580px;
+            margin-bottom: 40px;
+            line-height: 1.7;
+            animation: fadeInUp 0.5s ease-out 0.2s both;
+        }
+
+        .hero-subtitle strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .hero-cta-group {
+            display: flex;
+            gap: 12px;
+            animation: fadeInUp 0.5s ease-out 0.3s both;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 16px 32px;
+            background: var(--text-primary);
+            border: none;
+            border-radius: 12px;
+            color: var(--bg-primary);
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-decoration: none;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 16px 40px rgba(255, 255, 255, 0.12);
+        }
+
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 16px 32px;
+            background: transparent;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            color: var(--text-primary);
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-decoration: none;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.04);
+            border-color: rgba(255, 255, 255, 0.15);
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(24px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Hero Metrics - Sharp YC Style */
+        .hero-metrics {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2px;
+            margin-top: 56px;
+            background: var(--border-color);
+            border-radius: 16px;
+            overflow: hidden;
+            animation: fadeInUp 0.5s ease-out 0.4s both;
+            max-width: 720px;
+        }
+
+        .hero-metric {
+            background: var(--bg-card);
+            padding: 28px 24px;
+            text-align: center;
+        }
+
+        .hero-metric-value {
+            font-family: 'Satoshi', sans-serif;
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 4px;
+        }
+
+        .hero-metric-value.purple {
+            color: var(--purple-primary);
+        }
+
+        .hero-metric-label {
+            font-size: 12px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Product Preview - Clean Dashboard */
+        .hero-preview {
+            margin-top: 72px;
+            width: 100%;
+            max-width: 1000px;
+            animation: fadeInUp 0.6s ease-out 0.5s both;
+            position: relative;
+        }
+
+        .hero-preview::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 70%;
+            height: 70%;
+            background: radial-gradient(ellipse, var(--purple-glow) 0%, transparent 70%);
+            opacity: 0.4;
+            filter: blur(80px);
+            z-index: -1;
+        }
+
+        .dashboard-window {
+            background: linear-gradient(160deg, rgba(24, 24, 30, 0.95) 0%, rgba(12, 12, 16, 0.98) 100%);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 32px 80px rgba(0, 0, 0, 0.5);
+        }
+
+        .dashboard-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 20px;
+            border-bottom: 1px solid var(--border-color);
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .window-dots {
+            display: flex;
+            gap: 8px;
+        }
+
+        .window-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .window-dot.red { background: #ff5f56; }
+        .window-dot.yellow { background: #ffbd2e; }
+        .window-dot.green { background: #27ca40; }
+
+        .dashboard-url {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 14px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 6px;
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        .dashboard-body {
+            display: flex;
+            min-height: 380px;
+        }
+
+        .dashboard-sidebar {
+            width: 200px;
+            padding: 20px 16px;
+            border-right: 1px solid var(--border-color);
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        .sidebar-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 12px;
+            border-radius: 8px;
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 4px;
+        }
+
+        .sidebar-item.active {
+            background: var(--purple-soft);
+            color: var(--text-primary);
+        }
+
+        .sidebar-icon {
+            font-size: 14px;
+        }
+
+        .dashboard-main {
+            flex: 1;
+            padding: 24px;
+        }
+
+        .dashboard-title {
+            font-family: 'Satoshi', sans-serif;
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .status-badge {
+            padding: 4px 10px;
+            background: var(--green-soft);
+            border-radius: 100px;
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--green);
+        }
+
+        .dashboard-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 16px;
+        }
+
+        .stat-label {
+            font-size: 11px;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .stat-value {
+            font-family: 'Satoshi', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+        }
+
+        .stat-change {
+            font-size: 11px;
+            font-weight: 600;
+            padding: 2px 6px;
+            border-radius: 4px;
+            color: var(--green);
+            background: var(--green-soft);
+        }
+
+        .boq-preview {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .boq-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .boq-header-title {
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .boq-badge {
+            padding: 3px 8px;
+            background: var(--purple-soft);
+            border-radius: 4px;
+            font-size: 10px;
+            font-weight: 600;
+            color: var(--purple-primary);
+        }
+
+        .boq-row {
+            display: grid;
+            grid-template-columns: 2.5fr 0.8fr 0.6fr 1fr 0.5fr;
+            padding: 10px 16px;
+            border-bottom: 1px solid var(--border-color);
+            font-size: 11px;
+            align-items: center;
+        }
+
+        .boq-row:last-child { border-bottom: none; }
+
+        .boq-row.header {
+            color: var(--text-muted);
+            font-weight: 600;
+            font-size: 9px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .boq-row .item { color: var(--text-secondary); }
+        .boq-row .rate { color: var(--text-muted); }
+        .boq-row .amount { color: var(--text-primary); font-weight: 600; }
+        .boq-row .compliant { color: var(--green); font-weight: 500; }
+
+        /* Interactive Dashboard */
+        .sidebar-item {
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .sidebar-item:hover {
+            background: rgba(140, 69, 255, 0.08);
+            color: var(--text-secondary);
+        }
+        .boq-row:not(.header) {
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .boq-row:not(.header):hover {
+            background: rgba(140, 69, 255, 0.06);
+        }
+        .stat-card {
+            cursor: pointer;
+            transition: all 0.25s;
+        }
+        .stat-card:hover {
+            border-color: var(--purple-primary);
+            background: rgba(140, 69, 255, 0.06);
+            transform: translateY(-2px);
+        }
+        .status-badge {
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .status-badge:hover {
+            background: var(--green);
+            color: white;
+        }
+        .boq-badge {
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .boq-badge:hover {
+            background: var(--purple-primary);
+            color: white;
+        }
+        .dashboard-window {
+            transition: all 0.3s;
+        }
+        .dashboard-window:hover {
+            box-shadow: 0 40px 100px rgba(140, 69, 255, 0.2);
+            border-color: rgba(140, 69, 255, 0.3);
+        }
+
+        /* Problem Section */
+        .section {
+            padding: 120px 0;
+            position: relative;
+        }
+
+        .section-divider {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--border-color), transparent);
+        }
+
+        .section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 14px;
+            background: var(--purple-soft);
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--purple-primary);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 64px;
+        }
+
+        .section-header h2 {
+            font-family: 'Satoshi', sans-serif;
+            font-size: clamp(32px, 5vw, 48px);
+            font-weight: 700;
+            margin-bottom: 16px;
+            letter-spacing: -1px;
+            line-height: 1.15;
+        }
+
+        .section-header p {
+            font-size: 17px;
+            color: var(--text-secondary);
+            max-width: 540px;
+            margin: 0 auto;
+        }
+
+        /* Problem Cards - Sharp */
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+        }
+
+        .problem-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 28px;
+            transition: all 0.25s;
+        }
+
+        .problem-card:hover {
+            transform: translateY(-2px);
+            border-color: var(--red);
+            background: var(--bg-card-hover);
+        }
+
+        .problem-icon {
+            width: 44px;
+            height: 44px;
+            background: var(--red-soft);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+            font-size: 20px;
+        }
+
+        .problem-card h3 {
+            font-family: 'Satoshi', sans-serif;
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .problem-card p {
+            color: var(--text-secondary);
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+
+        .problem-stat {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 12px;
+            background: var(--red-soft);
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--red);
+        }
+
+        /* Solution Section */
+        .solution-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            align-items: center;
+        }
+
+        .solution-content h2 {
+            font-family: 'Satoshi', sans-serif;
+            font-size: clamp(32px, 4vw, 44px);
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+            line-height: 1.15;
+        }
+
+        .solution-content > p {
+            font-size: 16px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 32px;
+        }
+
+        .solution-features {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .solution-feature {
+            display: flex;
+            gap: 14px;
+        }
+
+        .solution-feature-icon {
+            width: 28px;
+            height: 28px;
+            background: var(--purple-soft);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            color: var(--purple-primary);
+        }
+
+        .solution-feature-content h4 {
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+
+        .solution-feature-content p {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        /* Comparison Card - Redesigned */
+        .comparison-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .comparison-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 1px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--border-color) 0%, rgba(140, 69, 255, 0.3) 50%, var(--border-color) 100%);
+        }
+
+        .comparison-header {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            position: relative;
+        }
+
+        .comparison-header::after {
+            content: '→';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 40px;
+            height: 40px;
+            background: var(--gradient-purple);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            color: white;
+            z-index: 2;
+            box-shadow: 0 4px 20px var(--purple-glow);
+        }
+
+        .comparison-col {
+            padding: 32px 24px;
+            text-align: center;
+        }
+
+        .comparison-col.before {
+            background: linear-gradient(135deg, rgba(239, 68, 68, 0.08) 0%, rgba(239, 68, 68, 0.02) 100%);
+        }
+
+        .comparison-col.after {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.02) 0%, rgba(16, 185, 129, 0.08) 100%);
+        }
+
+        .comparison-col h4 {
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 12px;
+            opacity: 0.8;
+        }
+
+        .comparison-col.before h4 { color: var(--red); }
+        .comparison-col.after h4 { color: var(--green); }
+
+        .comparison-col .value {
+            font-family: 'Satoshi', sans-serif;
+            font-size: 42px;
+            font-weight: 700;
+            line-height: 1;
+        }
+
+        .comparison-col.before .value {
+            color: var(--red);
+            text-decoration: line-through;
+            text-decoration-thickness: 2px;
+            opacity: 0.7;
+        }
+        .comparison-col.after .value {
+            color: var(--green);
+            text-shadow: 0 0 30px rgba(16, 185, 129, 0.3);
+        }
+
+        .comparison-body {
+            padding: 8px 24px 24px;
+        }
+
+        .comparison-item {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            align-items: center;
+            padding: 16px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .comparison-item:last-child { border-bottom: none; }
+
+        .comparison-item-label {
+            font-size: 14px;
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        .comparison-item-value {
+            font-size: 14px;
+            font-weight: 600;
+            text-align: center;
+            padding: 6px 12px;
+            border-radius: 6px;
+        }
+
+        .comparison-item-value.before {
+            color: var(--red);
+            background: var(--red-soft);
+        }
+        .comparison-item-value.after {
+            color: var(--green);
+            background: var(--green-soft);
+        }
+
+        /* Features Bento Grid */
+        .features-section {
+            background: var(--bg-secondary);
+        }
+
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 16px;
+        }
+
+        .bento-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 28px;
+            transition: all 0.25s;
+        }
+
+        .bento-card:hover {
+            transform: translateY(-2px);
+            border-color: var(--border-hover);
+        }
+
+        .bento-card.span-6 { grid-column: span 6; }
+        .bento-card.span-4 { grid-column: span 4; }
+        .bento-card.span-8 { grid-column: span 8; }
+
+        .bento-icon {
+            width: 44px;
+            height: 44px;
+            background: var(--purple-soft);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+            font-size: 20px;
+        }
+
+        .bento-card h3 {
+            font-family: 'Satoshi', sans-serif;
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .bento-card p {
+            color: var(--text-secondary);
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .bento-stat {
+            font-family: 'Satoshi', sans-serif;
+            font-size: 56px;
+            font-weight: 700;
+            background: var(--gradient-purple);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-top: 20px;
+        }
+
+        .bento-stat-label {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-top: 4px;
+        }
+
+        /* How It Works - Modern Flow Style */
+        .workflow-container {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        /* Vertical connecting line */
+        .workflow-container::before {
+            content: '';
+            position: absolute;
+            left: 32px;
+            top: 60px;
+            bottom: 60px;
+            width: 2px;
+            background: linear-gradient(180deg, var(--purple-primary) 0%, rgba(140, 69, 255, 0.3) 50%, var(--purple-primary) 100%);
+        }
+
+        .workflow-step {
+            display: flex;
+            align-items: flex-start;
+            gap: 32px;
+            position: relative;
+            padding: 24px 0;
+        }
+
+        .workflow-number {
+            width: 64px;
+            height: 64px;
+            background: var(--bg-card);
+            border: 2px solid var(--purple-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Satoshi', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--purple-primary);
+            flex-shrink: 0;
+            z-index: 2;
+            transition: all 0.3s;
+        }
+
+        .workflow-step:hover .workflow-number {
+            background: var(--gradient-purple);
+            color: white;
+            transform: scale(1.1);
+            box-shadow: 0 0 30px var(--purple-glow);
+        }
+
+        .workflow-content {
+            flex: 1;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 28px 32px;
+            transition: all 0.3s;
+        }
+
+        .workflow-step:hover .workflow-content {
+            border-color: var(--purple-primary);
+            background: var(--bg-card-hover);
+            transform: translateX(8px);
+        }
+
+        .workflow-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 12px;
+        }
+
+        .workflow-content h3 {
+            font-family: 'Satoshi', sans-serif;
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .workflow-time {
+            padding: 6px 12px;
+            background: var(--purple-soft);
+            border-radius: 100px;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--purple-primary);
+        }
+
+        .workflow-content p {
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .workflow-tags {
+            display: flex;
+            gap: 8px;
+            margin-top: 16px;
+            flex-wrap: wrap;
+        }
+
+        .workflow-tag {
+            padding: 6px 12px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            font-size: 12px;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .workflow-tag.highlight {
+            background: var(--green-soft);
+            border-color: var(--green);
+            color: var(--green);
+        }
+
+        @media (max-width: 768px) {
+            .workflow-container::before {
+                left: 24px;
+            }
+            .workflow-number {
+                width: 48px;
+                height: 48px;
+                font-size: 18px;
+            }
+            .workflow-step {
+                gap: 20px;
+            }
+            .workflow-content {
+                padding: 20px;
+            }
+            .workflow-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+        }
+
+        /* Testimonials - 2 Column */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .testimonial-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 32px;
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 24px;
+            right: 32px;
+            font-family: Georgia, serif;
+            font-size: 72px;
+            color: var(--purple-primary);
+            opacity: 0.15;
+            line-height: 1;
+        }
+
+        .testimonial-quote {
+            font-size: 16px;
+            line-height: 1.7;
+            margin-bottom: 24px;
+            color: var(--text-secondary);
+        }
+
+        .testimonial-footer {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .testimonial-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--gradient-purple);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Satoshi', sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        .testimonial-info h4 {
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+
+        .testimonial-info p {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        .testimonial-metric {
+            margin-left: auto;
+            text-align: right;
+        }
+
+        .testimonial-metric-value {
+            font-family: 'Satoshi', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--green);
+        }
+
+        .testimonial-metric-label {
+            font-size: 11px;
+            color: var(--text-muted);
+        }
+
+        /* Pricing */
+        .pricing-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        .pricing-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 32px;
+            transition: all 0.25s;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-2px);
+        }
+
+        .pricing-card.featured {
+            border-color: var(--purple-primary);
+            background: linear-gradient(160deg, rgba(140, 69, 255, 0.06) 0%, var(--bg-card) 100%);
+            position: relative;
+        }
+
+        .pricing-badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--gradient-purple);
+            padding: 6px 16px;
+            border-radius: 100px;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .pricing-name {
+            font-family: 'Satoshi', sans-serif;
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .pricing-desc {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+
+        .pricing-price {
+            font-family: 'Satoshi', sans-serif;
+            font-size: 40px;
+            font-weight: 700;
+            margin-bottom: 24px;
+        }
+
+        .pricing-price span {
+            font-size: 14px;
+            font-weight: 400;
+            color: var(--text-muted);
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin-bottom: 24px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .pricing-features li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 0;
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        .pricing-features li::before {
+            content: '✓';
+            width: 18px;
+            height: 18px;
+            background: var(--purple-soft);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            color: var(--purple-primary);
+            font-weight: 600;
+        }
+
+        .pricing-btn {
+            width: 100%;
+            padding: 14px;
+            border-radius: 10px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-align: center;
+            text-decoration: none;
+            display: block;
+        }
+
+        .pricing-btn.primary {
+            background: var(--gradient-purple);
+            border: none;
+            color: white;
+        }
+
+        .pricing-btn.primary:hover {
+            box-shadow: 0 12px 32px var(--purple-glow);
+        }
+
+        .pricing-btn.secondary {
+            background: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+        }
+
+        .pricing-btn.secondary:hover {
+            border-color: var(--purple-primary);
+            background: var(--purple-soft);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            text-align: center;
+            position: relative;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            height: 400px;
+            background: radial-gradient(ellipse, var(--purple-glow) 0%, transparent 70%);
+            opacity: 0.3;
+            pointer-events: none;
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-section h2 {
+            font-family: 'Satoshi', sans-serif;
+            font-size: clamp(36px, 5vw, 52px);
+            font-weight: 700;
+            margin-bottom: 16px;
+            letter-spacing: -1.5px;
+        }
+
+        .cta-section h2 .gradient-text {
+            background: var(--gradient-purple);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .cta-section .subtitle {
+            font-size: 17px;
+            color: var(--text-secondary);
+            margin-bottom: 36px;
+        }
+
+        .cta-form {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            max-width: 420px;
+            margin: 0 auto 20px;
+        }
+
+        .cta-form input {
+            flex: 1;
+            padding: 14px 20px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            color: var(--text-primary);
+            font-size: 15px;
+            outline: none;
+            transition: all 0.2s;
+        }
+
+        .cta-form input::placeholder {
+            color: var(--text-muted);
+        }
+
+        .cta-form input:focus {
+            border-color: var(--purple-primary);
+            background: rgba(140, 69, 255, 0.04);
+        }
+
+        .cta-form button {
+            padding: 14px 28px;
+            background: var(--gradient-purple);
+            border: none;
+            border-radius: 10px;
+            color: white;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            white-space: nowrap;
+        }
+
+        .cta-form button:hover {
+            box-shadow: 0 12px 32px var(--purple-glow);
+        }
+
+        .cta-note {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        /* Footer */
+        footer {
+            padding: 48px 0 32px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-logo-icon {
+            width: 28px;
+            height: 28px;
+            background: var(--gradient-purple);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 12px;
+        }
+
+        .footer-logo-text {
+            font-family: 'Satoshi', sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 24px;
+            list-style: none;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 13px;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: var(--text-primary);
+        }
+
+        .footer-copyright {
+            width: 100%;
+            text-align: center;
+            padding-top: 32px;
+            margin-top: 32px;
+            border-top: 1px solid var(--border-color);
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .bento-card.span-6,
+            .bento-card.span-4,
+            .bento-card.span-8 {
+                grid-column: span 6;
+            }
+
+            .solution-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .problem-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+
+            .hero { padding: 120px 20px 60px; }
+
+            .hero-metrics {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .hero-cta-group {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .btn-primary, .btn-secondary {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .bento-card.span-6,
+            .bento-card.span-4,
+            .bento-card.span-8 {
+                grid-column: span 12;
+            }
+
+            .steps-container {
+                grid-template-columns: 1fr;
+            }
+
+            .pricing-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-form {
+                flex-direction: column;
+            }
+
+            .dashboard-body { flex-direction: column; }
+            .dashboard-sidebar {
+                width: 100%;
+                border-right: none;
+                border-bottom: 1px solid var(--border-color);
+            }
+            .dashboard-stats { grid-template-columns: 1fr; }
+
+            .footer-content { flex-direction: column; text-align: center; }
+            .footer-links { flex-wrap: wrap; justify-content: center; }
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <div class="page-bg"></div>
+    <div class="grid-overlay"></div>
+    <div class="gradient-swoosh"></div>
+    <div class="glow-orb glow-orb-1"></div>
+    <div class="glow-orb glow-orb-2"></div>
+    <div class="glow-orb glow-orb-3"></div>
+
+    <!-- Construction-themed background elements -->
+    <div class="blueprint-container">
+        <!-- Measurement lines like blueprints -->
+        <div class="measure-line measure-line-h1"></div>
+        <div class="measure-line measure-line-h2"></div>
+        <div class="measure-line measure-line-v1"></div>
+        <div class="measure-line measure-line-v2"></div>
+
+        <!-- Building outline silhouettes -->
+        <div class="building-outline building-1"></div>
+        <div class="building-outline building-2"></div>
+        <div class="building-outline building-3"></div>
+
+        <!-- Grid intersection nodes -->
+        <div class="grid-node node-1"></div>
+        <div class="grid-node node-2"></div>
+        <div class="grid-node node-3"></div>
+        <div class="grid-node node-4"></div>
+        <div class="grid-node node-5"></div>
+        <div class="grid-node node-6"></div>
+
+        <!-- Structural lines -->
+        <div class="struct-line struct-1"></div>
+        <div class="struct-line struct-2"></div>
+        <div class="struct-line struct-3"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="nav-left">
+                <div class="logo-icon">X</div>
+                <span class="logo-text">XBOQ</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#problem">Problem</a></li>
+                <li><a href="#solution">Solution</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#cta">Contact</a></li>
+            </ul>
+            <a href="#cta" class="nav-cta">Get Demo →</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <h1>
+            <span class="highlight">3 Weeks</span> → <span class="gradient-text">24 Hours</span>
+        </h1>
+
+        <p class="hero-subtitle">
+            AI-powered BOQ generation for construction. Upload drawings, get <strong>CPWD-compliant BOQs in under 30 minutes</strong>. End-to-end bid orchestration in 24-72 hours.
+        </p>
+
+        <div class="hero-cta-group">
+            <a href="#cta" class="btn-primary">
+                Start Free Pilot
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="#solution" class="btn-secondary">See Demo</a>
+        </div>
+
+        <div class="hero-metrics">
+            <div class="hero-metric">
+                <div class="hero-metric-value purple">&lt;30m</div>
+                <div class="hero-metric-label">BOQ Generation</div>
+            </div>
+            <div class="hero-metric">
+                <div class="hero-metric-value">95%+</div>
+                <div class="hero-metric-label">Accuracy</div>
+            </div>
+            <div class="hero-metric">
+                <div class="hero-metric-value">₹1Cr+</div>
+                <div class="hero-metric-label">Savings / Year</div>
+            </div>
+            <div class="hero-metric">
+                <div class="hero-metric-value">&lt;2%</div>
+                <div class="hero-metric-label">Rejection Rate</div>
+            </div>
+        </div>
+
+        <div class="hero-preview">
+            <div class="dashboard-window">
+                <div class="dashboard-header">
+                    <div class="window-dots">
+                        <div class="window-dot red"></div>
+                        <div class="window-dot yellow"></div>
+                        <div class="window-dot green"></div>
+                    </div>
+                    <div class="dashboard-url">
+                        <span>🔒 app.xboq.in</span>
+                    </div>
+                    <div style="width: 52px;"></div>
+                </div>
+                <div class="dashboard-body">
+                    <div class="dashboard-sidebar">
+                        <div class="sidebar-item active">
+                            <span class="sidebar-icon">📊</span> Dashboard
+                        </div>
+                        <div class="sidebar-item">
+                            <span class="sidebar-icon">📁</span> Projects
+                        </div>
+                        <div class="sidebar-item">
+                            <span class="sidebar-icon">⚡</span> BOQ Generator
+                        </div>
+                        <div class="sidebar-item">
+                            <span class="sidebar-icon">🏢</span> Vendors
+                        </div>
+                        <div class="sidebar-item">
+                            <span class="sidebar-icon">✅</span> Compliance
+                        </div>
+                    </div>
+                    <div class="dashboard-main">
+                        <div class="dashboard-title">
+                            Delhi Metro Phase 4 - Station Block A
+                            <span class="status-badge">✓ CPWD Compliant</span>
+                        </div>
+                        <div class="dashboard-stats">
+                            <div class="stat-card">
+                                <div class="stat-label">Processing Time</div>
+                                <div class="stat-value">24 min <span class="stat-change">↓ 95%</span></div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-label">BOQ Items</div>
+                                <div class="stat-value">347 <span class="stat-change">✓ Verified</span></div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-label">Est. Cost</div>
+                                <div class="stat-value">₹4.2Cr <span class="stat-change">Optimized</span></div>
+                            </div>
+                        </div>
+                        <div class="boq-preview">
+                            <div class="boq-header">
+                                <span class="boq-header-title">Generated BOQ — 347 Items</span>
+                                <span class="boq-badge">CPWD 2024</span>
+                            </div>
+                            <div class="boq-row header">
+                                <span>Description</span>
+                                <span>Qty</span>
+                                <span>Unit</span>
+                                <span>Rate / Amt</span>
+                                <span></span>
+                            </div>
+                            <div class="boq-row">
+                                <span class="item">RCC M25 grade concrete in foundation</span>
+                                <span>245.5</span>
+                                <span>cum</span>
+                                <span class="amount">₹18.4L</span>
+                                <span class="compliant">✓</span>
+                            </div>
+                            <div class="boq-row">
+                                <span class="item">TMT Fe 500D reinforcement bars</span>
+                                <span>18,450</span>
+                                <span>kg</span>
+                                <span class="amount">₹15.2L</span>
+                                <span class="compliant">✓</span>
+                            </div>
+                            <div class="boq-row">
+                                <span class="item">Structural steel fabrication & erection</span>
+                                <span>12,800</span>
+                                <span>kg</span>
+                                <span class="amount">₹12.8L</span>
+                                <span class="compliant">✓</span>
+                            </div>
+                            <div class="boq-row">
+                                <span class="item">Brick masonry 230mm thick in CM 1:6</span>
+                                <span>1,840</span>
+                                <span>sqm</span>
+                                <span class="amount">₹9.2L</span>
+                                <span class="compliant">✓</span>
+                            </div>
+                            <div class="boq-row" style="background: rgba(140, 69, 255, 0.04);">
+                                <span class="item" style="font-weight: 600;">+ 343 more items...</span>
+                                <span></span>
+                                <span></span>
+                                <span class="amount" style="color: var(--purple-primary);">₹4.2Cr</span>
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="section" id="problem">
+        <div class="section-divider"></div>
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">The Problem</div>
+                <h2>You're Losing Bids You Should Win</h2>
+                <p>Every week spent on manual BOQ prep is a tender deadline missed.</p>
+            </div>
+
+            <div class="problem-grid">
+                <div class="problem-card fade-in">
+                    <div class="problem-icon">📋</div>
+                    <h3>3 Weeks Per BOQ</h3>
+                    <p>Your engineers spend weeks manually reading drawings, cross-referencing CPWD specs, copying data into Excel. One tender = one month gone.</p>
+                    <div class="problem-stat">40+ engineer hours wasted</div>
+                </div>
+                <div class="problem-card fade-in">
+                    <div class="problem-icon">⚠️</div>
+                    <h3>Rejected at Submission</h3>
+                    <p>Small spec mismatches get flagged during evaluation. By the time you find out, the tender is lost. No second chances.</p>
+                    <div class="problem-stat">15-25% rejection rate</div>
+                </div>
+                <div class="problem-card fade-in">
+                    <div class="problem-icon">📧</div>
+                    <h3>Quotes Everywhere, Answers Nowhere</h3>
+                    <p>Vendor rates scattered across WhatsApp, email, phone calls. Comparing 20 quotes manually = errors + overpaying.</p>
+                    <div class="problem-stat">10-15% cost overrun</div>
+                </div>
+                <div class="problem-card fade-in">
+                    <div class="problem-icon">🚫</div>
+                    <h3>Can't Bid Fast Enough</h3>
+                    <p>Tight deadlines mean you skip tenders you could win. Larger firms with more staff outpace you every time.</p>
+                    <div class="problem-stat">Missed opportunities</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section class="section" id="solution">
+        <div class="section-divider"></div>
+        <div class="container">
+            <div class="solution-grid">
+                <div class="solution-content fade-in">
+                    <div class="section-label">The Solution</div>
+                    <h2>Complete Bid Orchestration in 24-72 Hours</h2>
+                    <p>XBOQ uses Claude AI and document intelligence to automate the entire pre-bidding workflow.</p>
+
+                    <div class="solution-features">
+                        <div class="solution-feature">
+                            <div class="solution-feature-icon">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                            </div>
+                            <div class="solution-feature-content">
+                                <h4>BOQ in &lt;30 Minutes</h4>
+                                <p>Upload drawings → AI extracts quantities → CPWD-compliant BOQ</p>
+                            </div>
+                        </div>
+                        <div class="solution-feature">
+                            <div class="solution-feature-icon">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                            </div>
+                            <div class="solution-feature-content">
+                                <h4>Auto Compliance Check</h4>
+                                <p>Flags non-compliant items against CPWD standards instantly</p>
+                            </div>
+                        </div>
+                        <div class="solution-feature">
+                            <div class="solution-feature-icon">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                            </div>
+                            <div class="solution-feature-content">
+                                <h4>Vendor Management</h4>
+                                <p>Aggregate, standardize, compare quotes in one platform</p>
+                            </div>
+                        </div>
+                        <div class="solution-feature">
+                            <div class="solution-feature-icon">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                            </div>
+                            <div class="solution-feature-content">
+                                <h4>Cost Optimization</h4>
+                                <p>Identify best-cost vendor combinations automatically</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="fade-in">
+                    <div class="comparison-card">
+                        <div class="comparison-header">
+                            <div class="comparison-col before">
+                                <h4>Manual Process</h4>
+                                <div class="value">3-4 wks</div>
+                            </div>
+                            <div class="comparison-col after">
+                                <h4>With XBOQ</h4>
+                                <div class="value">24 hrs</div>
+                            </div>
+                        </div>
+                        <div class="comparison-body">
+                            <div class="comparison-item">
+                                <span class="comparison-item-label">BOQ Generation</span>
+                                <span class="comparison-item-value before">2-3 weeks</span>
+                                <span class="comparison-item-value after">&lt; 30 min</span>
+                            </div>
+                            <div class="comparison-item">
+                                <span class="comparison-item-label">Compliance Check</span>
+                                <span class="comparison-item-value before">3-5 days</span>
+                                <span class="comparison-item-value after">Instant</span>
+                            </div>
+                            <div class="comparison-item">
+                                <span class="comparison-item-label">Vendor Quotes</span>
+                                <span class="comparison-item-value before">1-2 weeks</span>
+                                <span class="comparison-item-value after">1-2 days</span>
+                            </div>
+                            <div class="comparison-item">
+                                <span class="comparison-item-label">Rejection Rate</span>
+                                <span class="comparison-item-value before">15-25%</span>
+                                <span class="comparison-item-value after">&lt; 2%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="section features-section" id="features">
+        <div class="section-divider"></div>
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Features</div>
+                <h2>Built for Construction Professionals</h2>
+                <p>From drawing upload to compliant bid submission — one unified platform.</p>
+            </div>
+
+            <div class="bento-grid">
+                <div class="bento-card span-6 fade-in">
+                    <div class="bento-icon">⚡</div>
+                    <h3>Lightning-Fast BOQ</h3>
+                    <p>Upload technical drawings and specs. XBOQ extracts quantities, cross-references CPWD standards, generates compliant BOQ with audit trail.</p>
+                    <div class="bento-stat">&lt;30m</div>
+                    <div class="bento-stat-label">Complete BOQ generation</div>
+                </div>
+                <div class="bento-card span-6 fade-in">
+                    <div class="bento-icon">🏛️</div>
+                    <h3>CPWD Compliance Built-In</h3>
+                    <p>Automatic flagging of any BOQ line items that violate CPWD or regulatory requirements. No surprise rejections.</p>
+                    <div class="bento-stat">95%+</div>
+                    <div class="bento-stat-label">Accuracy vs manual BOQs</div>
+                </div>
+                <div class="bento-card span-4 fade-in">
+                    <div class="bento-icon">📄</div>
+                    <h3>Multi-Format</h3>
+                    <p>Text PDFs, scanned docs, images — OCR-enabled processing handles any format.</p>
+                </div>
+                <div class="bento-card span-4 fade-in">
+                    <div class="bento-icon">🏢</div>
+                    <h3>Centralized Quoting</h3>
+                    <p>All vendor quotes in one place. Compare rates instantly, no more digging through WhatsApp.</p>
+                </div>
+                <div class="bento-card span-4 fade-in">
+                    <div class="bento-icon">📊</div>
+                    <h3>Ready-to-Submit Output</h3>
+                    <p>Download BOQs in standard Excel format. Paste directly into government portals.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="section">
+        <div class="section-divider"></div>
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Workflow</div>
+                <h2>From Drawings to Winning Bid</h2>
+                <p>A seamless pipeline built for Indian construction standards.</p>
+            </div>
+
+            <div class="workflow-container fade-in">
+                <div class="workflow-step">
+                    <div class="workflow-number">1</div>
+                    <div class="workflow-content">
+                        <div class="workflow-header">
+                            <h3>Upload Your Drawings</h3>
+                            <span class="workflow-time">Instant</span>
+                        </div>
+                        <p>Drag and drop construction drawings, specifications, or scanned documents. Our AI handles any format — no preprocessing needed.</p>
+                        <div class="workflow-tags">
+                            <span class="workflow-tag">PDF</span>
+                            <span class="workflow-tag">DWG</span>
+                            <span class="workflow-tag">Scanned Docs</span>
+                            <span class="workflow-tag">Images</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="workflow-step">
+                    <div class="workflow-number">2</div>
+                    <div class="workflow-content">
+                        <div class="workflow-header">
+                            <h3>AI Extracts & Validates</h3>
+                            <span class="workflow-time">&lt; 30 min</span>
+                        </div>
+                        <p>Claude AI reads your drawings, extracts every quantity, maps items to CPWD specifications, and flags any compliance issues automatically.</p>
+                        <div class="workflow-tags">
+                            <span class="workflow-tag">Quantity Takeoff</span>
+                            <span class="workflow-tag">CPWD Mapping</span>
+                            <span class="workflow-tag highlight">Auto Compliance Check</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="workflow-step">
+                    <div class="workflow-number">3</div>
+                    <div class="workflow-content">
+                        <div class="workflow-header">
+                            <h3>Export Detailed BOQ</h3>
+                            <span class="workflow-time">1 Click</span>
+                        </div>
+                        <p>Download a complete, submission-ready BOQ with itemized pricing, quantities, and full CPWD compliance. Works with your existing workflow.</p>
+                        <div class="workflow-tags">
+                            <span class="workflow-tag">Excel Export</span>
+                            <span class="workflow-tag">CPWD 2024 Format</span>
+                            <span class="workflow-tag highlight">Audit Trail</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section" id="testimonials">
+        <div class="section-divider"></div>
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">What They Say</div>
+                <h2>Early Adopters</h2>
+                <p>Feedback from our pilot customers.</p>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card fade-in">
+                    <p class="testimonial-quote">
+                        "We used to spend 3 weeks on BOQ preparation for each government tender. With XBOQ, our team generated a 400+ item BOQ in under an hour. The CPWD formatting was spot-on — zero compliance issues."
+                    </p>
+                    <div class="testimonial-footer">
+                        <div class="testimonial-avatar">PS</div>
+                        <div class="testimonial-info">
+                            <h4>Priya Sharma</h4>
+                            <p>Principal Architect, Studio Symmetry</p>
+                        </div>
+                        <div class="testimonial-metric">
+                            <div class="testimonial-metric-value">3→1</div>
+                            <div class="testimonial-metric-label">weeks→hour</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card fade-in">
+                    <p class="testimonial-quote">
+                        "Honestly didn't expect much from an AI tool for construction. But the BOQ output was cleaner than what our junior engineers produce. Already used it for 2 PWD tenders — both accepted without revisions."
+                    </p>
+                    <div class="testimonial-footer">
+                        <div class="testimonial-avatar">RK</div>
+                        <div class="testimonial-info">
+                            <h4>Rajesh Kumar</h4>
+                            <p>Managing Director, SPG Infraprojects</p>
+                        </div>
+                        <div class="testimonial-metric">
+                            <div class="testimonial-metric-value">2/2</div>
+                            <div class="testimonial-metric-label">accepted</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card fade-in" style="grid-column: span 2;">
+                    <p class="testimonial-quote">
+                        "The compliance checking alone is worth it. We submitted a ₹12Cr metro tender last month — XBOQ caught 14 specification mismatches that would've gotten us rejected. My estimation team now uses it for every bid."
+                    </p>
+                    <div class="testimonial-footer">
+                        <div class="testimonial-avatar">VT</div>
+                        <div class="testimonial-info">
+                            <h4>Vikram Thakur</h4>
+                            <p>Head of Estimation, Bharat Construction Co.</p>
+                        </div>
+                        <div class="testimonial-metric">
+                            <div class="testimonial-metric-value">14</div>
+                            <div class="testimonial-metric-label">errors caught</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- CTA -->
+    <section class="section cta-section" id="cta">
+        <div class="section-divider"></div>
+        <div class="container">
+            <div class="cta-content fade-in">
+                <h2>Ready to Win <span class="gradient-text">More Bids?</span></h2>
+                <p class="subtitle">See XBOQ in action with your own drawings.</p>
+                <a href="mailto:hello@xboq.in?subject=Demo Request" class="btn-primary" style="margin-bottom: 20px;">
+                    Schedule a Demo
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+                <p class="cta-note">or <a href="mailto:hello@xboq.in" style="color: var(--purple-primary); text-decoration: underline;">contact us</a> with any questions</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div class="footer-logo-icon">X</div>
+                    <span class="footer-logo-text">XBOQ</span>
+                </div>
+                <ul class="footer-links">
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#cta">Contact</a></li>
+                    <li><a href="#">Privacy</a></li>
+                    <li><a href="#">Terms</a></li>
+                </ul>
+            </div>
+            <div class="footer-copyright">
+                © 2026 XBOQ. AI-Powered BOQ Generation. Made in India 🇮🇳
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Scroll animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Interactive Dashboard Demo
+        const sidebarItems = document.querySelectorAll('.sidebar-item');
+        sidebarItems.forEach(item => {
+            item.addEventListener('click', function() {
+                sidebarItems.forEach(i => i.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // BOQ row click effect
+        const boqRows = document.querySelectorAll('.boq-row:not(.header)');
+        boqRows.forEach(row => {
+            row.addEventListener('click', function() {
+                boqRows.forEach(r => r.style.background = '');
+                if (!this.style.background || this.style.background === '') {
+                    this.style.background = 'rgba(140, 69, 255, 0.1)';
+                    this.style.borderLeft = '3px solid rgb(140, 69, 255)';
+                }
+            });
+        });
+
+        // Animated counter for stats on scroll
+        const animateValue = (element, start, end, duration) => {
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                const value = Math.floor(progress * (end - start) + start);
+                element.textContent = value;
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        };
+
+        // Trigger animation when dashboard is in view
+        const dashboardObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const timeValue = entry.target.querySelector('.stat-value');
+                    if (timeValue && timeValue.textContent.includes('24')) {
+                        animateValue(timeValue.firstChild, 0, 24, 1000);
+                    }
+                }
+            });
+        }, { threshold: 0.5 });
+
+        const dashboard = document.querySelector('.dashboard-window');
+        if (dashboard) dashboardObserver.observe(dashboard);
+    </script>
+</body>
+</html>
