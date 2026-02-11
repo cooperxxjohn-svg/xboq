@@ -13,6 +13,11 @@ from .dependency_reasoner import (
     DependencyReasoner,
     reason_dependencies,
 )
+from .llm_enrichment import (
+    LLMEnrichment,
+    calculate_readiness_score,
+    enrich_analysis,
+)
 
 __all__ = [
     "detect_conflicts",
@@ -23,4 +28,7 @@ __all__ = [
     "save_plan_graph",
     "DependencyReasoner",
     "reason_dependencies",
+    "LLMEnrichment",
+    "calculate_readiness_score",
+    "enrich_analysis",
 ]
