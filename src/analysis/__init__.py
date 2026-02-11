@@ -9,6 +9,10 @@ from .plan_graph import (
     load_plan_graph_from_dir,
     save_plan_graph,
 )
+from .dependency_reasoner import (
+    DependencyReasoner,
+    reason_dependencies,
+)
 
 __all__ = [
     "detect_conflicts",
@@ -17,4 +21,6 @@ __all__ = [
     "build_plan_graph",
     "load_plan_graph_from_dir",
     "save_plan_graph",
+    "DependencyReasoner",
+    "reason_dependencies",
 ]
