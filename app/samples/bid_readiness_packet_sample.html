@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bid Readiness Packet - Sample | XBOQ</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background: #f8fafc;
+            color: #1e293b;
+            line-height: 1.6;
+            padding: 2rem;
+        }
+        .container { max-width: 900px; margin: 0 auto; }
+        .header {
+            background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+        }
+        .header h1 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+        .header .meta { opacity: 0.9; font-size: 0.9rem; }
+        .status-banner {
+            background: #fef2f2;
+            border: 2px solid #ef4444;
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .status-text {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #ef4444;
+        }
+        .status-score { color: #64748b; }
+        .section {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem 2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+        }
+        .section h2 {
+            font-size: 1.2rem;
+            color: #1e293b;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        .metric-card {
+            background: #f8fafc;
+            border-radius: 8px;
+            padding: 1rem;
+            text-align: center;
+        }
+        .metric-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #7c3aed;
+        }
+        .metric-value.red { color: #ef4444; }
+        .metric-label { color: #64748b; font-size: 0.85rem; }
+        .blocker-item {
+            border: 1px solid #fecaca;
+            background: #fef2f2;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 0.75rem;
+        }
+        .blocker-title { font-weight: 600; color: #b91c1c; margin-bottom: 0.25rem; }
+        .blocker-desc { color: #64748b; font-size: 0.9rem; }
+        table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+        th, td { padding: 0.75rem; text-align: left; border-bottom: 1px solid #e2e8f0; }
+        th { background: #f8fafc; font-weight: 600; color: #475569; font-size: 0.85rem; }
+        .badge {
+            display: inline-block;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        .badge-high { background: #fef2f2; color: #b91c1c; }
+        .badge-medium { background: #fffbeb; color: #b45309; }
+        .badge-low { background: #f0fdf4; color: #15803d; }
+        .footer {
+            text-align: center;
+            color: #94a3b8;
+            font-size: 0.8rem;
+            padding: 2rem 0;
+            border-top: 1px solid #e2e8f0;
+            margin-top: 2rem;
+        }
+        .sample-badge {
+            background: #fef3c7;
+            color: #b45309;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sample-badge">Sample Output - Demo Project</div>
+
+        <div class="header">
+            <h1>Bid Readiness Packet</h1>
+            <div class="meta">Project: bitmesra_clean | Generated: 2026-02-10</div>
+        </div>
+
+        <div class="status-banner">
+            <div class="status-text">NO-GO</div>
+            <div class="status-score">Bid Readiness: 20/100 | Priceability: 30/100</div>
+        </div>
+
+        <div class="section">
+            <h2>Executive Summary</h2>
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-value">78</div>
+                    <div class="metric-label">Pages Analyzed</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">15</div>
+                    <div class="metric-label">RFIs Generated</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value red">6</div>
+                    <div class="metric-label">Critical/High RFIs</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">159</div>
+                    <div class="metric-label">Rooms Detected</div>
+                </div>
+            </div>
+            <p><strong>Priceability Status:</strong> Pricing blocked</p>
+            <p><strong>Trades blocked:</strong> Architectural, MEP, Structural</p>
+        </div>
+
+        <div class="section">
+            <h2>Critical Blockers (6)</h2>
+            <p style="color: #64748b; margin-bottom: 1rem;">These must be resolved before pricing:</p>
+
+            <div class="blocker-item">
+                <div class="blocker-title">BLK-001: No Sections found in drawing set</div>
+                <div class="blocker-desc">Impact: Cannot verify architectural scope without sections<br>Fix: Provide sections or confirm if not applicable (Score +5)</div>
+            </div>
+
+            <div class="blocker-item">
+                <div class="blocker-title">BLK-002: Door schedule required - 16 door types detected</div>
+                <div class="blocker-desc">Impact: Cannot price 161 doors without schedule<br>Fix: Provide door schedule with columns: Mark, Size, Type, Frame Material (Score +8)</div>
+            </div>
+
+            <div class="blocker-item">
+                <div class="blocker-title">BLK-003: Window schedule required - 11 window types detected</div>
+                <div class="blocker-desc">Impact: Cannot price 197 windows without schedule<br>Fix: Provide window schedule (Score +8)</div>
+            </div>
+
+            <div class="blocker-item">
+                <div class="blocker-title">BLK-004: Scale not detected on 58 drawing pages</div>
+                <div class="blocker-desc">Impact: Measurements on these pages are unreliable<br>Fix: Add scale notation to all drawings (Score +10)</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Trade-Wise Gap Summary</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Trade</th>
+                        <th>Coverage</th>
+                        <th>Priceable</th>
+                        <th>Blocked</th>
+                        <th>Cost Risk</th>
+                        <th>Schedule Risk</th>
+                        <th>Next Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Civil</strong></td>
+                        <td>40%</td>
+                        <td>5</td>
+                        <td>3</td>
+                        <td><span class="badge badge-medium">MEDIUM</span></td>
+                        <td><span class="badge badge-low">LOW</span></td>
+                        <td>Address 1 RFI(s)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Structural</strong></td>
+                        <td>50%</td>
+                        <td>8</td>
+                        <td>4</td>
+                        <td><span class="badge badge-medium">MEDIUM</span></td>
+                        <td><span class="badge badge-medium">MEDIUM</span></td>
+                        <td>Address 2 RFI(s)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Architectural</strong></td>
+                        <td>35%</td>
+                        <td>6</td>
+                        <td>9</td>
+                        <td><span class="badge badge-high">HIGH</span></td>
+                        <td><span class="badge badge-high">HIGH</span></td>
+                        <td>Resolve 5 critical RFI(s)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>MEP</strong></td>
+                        <td>0%</td>
+                        <td>0</td>
+                        <td>10</td>
+                        <td><span class="badge badge-high">HIGH</span></td>
+                        <td><span class="badge badge-high">HIGH</span></td>
+                        <td>Obtain MEP Drawings</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Finishes</strong></td>
+                        <td>30%</td>
+                        <td>8</td>
+                        <td>12</td>
+                        <td><span class="badge badge-high">HIGH</span></td>
+                        <td><span class="badge badge-medium">MEDIUM</span></td>
+                        <td>Resolve 1 critical RFI(s)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>General</strong></td>
+                        <td>50%</td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td><span class="badge badge-high">HIGH</span></td>
+                        <td><span class="badge badge-medium">MEDIUM</span></td>
+                        <td>Resolve 2 critical RFI(s)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>Assumptions & Exclusions</h2>
+            <p style="color: #64748b; margin-bottom: 1rem;">Review and accept before submitting bid:</p>
+
+            <div style="padding: 0.75rem 0; border-bottom: 1px solid #e2e8f0;">
+                <strong>ASM-001</strong> [Scope]: Scale assumed as 1:100 for unscaled drawings<br>
+                <span style="color: #64748b; font-size: 0.85rem;">If wrong: Quantities may be off by 20-50%</span>
+            </div>
+
+            <div style="padding: 0.75rem 0; border-bottom: 1px solid #e2e8f0;">
+                <strong>ASM-002</strong> [Specification]: Standard specifications assumed for items without schedules<br>
+                <span style="color: #64748b; font-size: 0.85rem;">If wrong: Material costs may vary significantly</span>
+            </div>
+
+            <div style="padding: 0.75rem 0; border-bottom: 1px solid #e2e8f0;">
+                <strong>ASM-003</strong> [Scope]: MEP scope excluded from pricing - not in provided drawings<br>
+                <span style="color: #64748b; font-size: 0.85rem;">If wrong: MEP costs not included in estimate</span>
+            </div>
+
+            <div style="padding: 0.75rem 0; border-bottom: 1px solid #e2e8f0;">
+                <strong>ASM-004</strong> [Pricing]: All quantities subject to site verification<br>
+                <span style="color: #64748b; font-size: 0.85rem;">If wrong: 5-10% variation expected</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Drawing Set Metadata</h2>
+            <table>
+                <tr><td><strong>Total Pages</strong></td><td>78</td></tr>
+                <tr><td><strong>Disciplines Detected</strong></td><td>Architectural, Structural</td></tr>
+                <tr><td><strong>Scale Status</strong></td><td>Partial (58 pages without scale)</td></tr>
+                <tr><td><strong>Drawing Types</strong></td><td>Floor Plans: 9, Structural: 37, Candidate Plans: 25, Unknown: 7</td></tr>
+            </table>
+        </div>
+
+        <div class="footer">
+            Generated by XBOQ - Pre-Bid Scope & Risk Check<br>
+            This report is auto-generated. Verify all assumptions before bid submission.
+        </div>
+    </div>
+</body>
+</html>

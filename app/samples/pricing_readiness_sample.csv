@@ -1,0 +1,7 @@
+Trade,Scope Coverage %,Priceable Items,Blocked Items,Top Missing,Next Action,Confidence,Cost Risk,Schedule Risk
+Civil,35%,8,0,Specification,Address 1 RFI(s),Medium,Low,Low
+Structural,60%,12,0,,Ready for pricing,Medium,Low,Low
+Architectural,25%,3,12,"Sections/Elevations, Sections/Elevations, Missing Detail Drawings",Resolve 3 critical RFI(s),Low,High,Medium
+Mep,0%,5,5,"MEP Drawings, MEP Drawings, MEP Drawings",Resolve 1 critical RFI(s),Medium,Medium,High
+Finishes,40%,18,2,Schedule,Address 1 RFI(s),Medium,Low,High
+General,50%,2,3,"Schedule, Scale, Critical scope gap",Resolve 2 critical RFI(s),Medium,High,High

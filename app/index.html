@@ -692,6 +692,107 @@
             margin-bottom: 8px;
         }
 
+        /* Sample Outputs Section */
+        .sample-outputs {
+            padding: 80px 0 60px;
+            position: relative;
+        }
+
+        .sample-outputs-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .sample-outputs-header h2 {
+            font-family: 'Satoshi', sans-serif;
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+
+        .sample-outputs-header p {
+            color: var(--text-secondary);
+            font-size: 15px;
+        }
+
+        .output-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .output-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 24px;
+            text-align: center;
+            transition: all 0.25s;
+        }
+
+        .output-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--purple-primary);
+            background: var(--bg-card-hover);
+        }
+
+        .output-card-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--purple-soft);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+            font-size: 24px;
+        }
+
+        .output-card h3 {
+            font-family: 'Satoshi', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .output-card p {
+            color: var(--text-muted);
+            font-size: 13px;
+            margin-bottom: 16px;
+            line-height: 1.5;
+        }
+
+        .output-card .btn-download {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            background: transparent;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            color: var(--text-secondary);
+            font-size: 13px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .output-card .btn-download:hover {
+            background: var(--purple-soft);
+            border-color: var(--purple-primary);
+            color: var(--purple-primary);
+        }
+
+        @media (max-width: 768px) {
+            .output-cards {
+                grid-template-columns: 1fr;
+                padding: 0 20px;
+            }
+        }
+
         /* Product Preview - Clean Dashboard */
         .hero-preview {
             margin-top: 72px;
@@ -2138,6 +2239,48 @@
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sample Outputs Section -->
+    <section class="sample-outputs" id="sample-outputs">
+        <div class="container">
+            <div class="sample-outputs-header">
+                <h2>Sample outputs</h2>
+                <p>Forward these to your team or send to the client.</p>
+            </div>
+
+            <div class="output-cards">
+                <div class="output-card">
+                    <div class="output-card-icon">📄</div>
+                    <h3>Bid Readiness Packet</h3>
+                    <p>GO/NO-GO, blockers, trade gaps, assumptions.</p>
+                    <a href="samples/bid_readiness_packet_sample.html" class="btn-download" target="_blank">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+                        View sample
+                    </a>
+                </div>
+
+                <div class="output-card">
+                    <div class="output-card-icon">📊</div>
+                    <h3>RFI Pack</h3>
+                    <p>Deduped RFIs grouped by trade.</p>
+                    <a href="samples/rfi_tracker_sample.csv" class="btn-download" download>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+                        Download CSV
+                    </a>
+                </div>
+
+                <div class="output-card">
+                    <div class="output-card-icon">📈</div>
+                    <h3>Pricing Readiness Sheet</h3>
+                    <p>What's priceable vs blocked by trade.</p>
+                    <a href="samples/pricing_readiness_sample.xlsx" class="btn-download" download>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+                        Download Excel
+                    </a>
                 </div>
             </div>
         </div>
