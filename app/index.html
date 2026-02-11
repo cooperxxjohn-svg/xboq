@@ -599,28 +599,28 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Hero Metrics - Sharp YC Style */
+        /* Hero Metrics - Output-First 6-tile Row */
         .hero-metrics {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(6, 1fr);
             gap: 2px;
             margin-top: 56px;
             background: var(--border-color);
             border-radius: 16px;
             overflow: hidden;
             animation: fadeInUp 0.5s ease-out 0.4s both;
-            max-width: 720px;
+            max-width: 900px;
         }
 
         .hero-metric {
             background: var(--bg-card);
-            padding: 28px 24px;
+            padding: 20px 16px;
             text-align: center;
         }
 
         .hero-metric-value {
             font-family: 'Satoshi', sans-serif;
-            font-size: 32px;
+            font-size: 26px;
             font-weight: 700;
             color: var(--text-primary);
             margin-bottom: 4px;
@@ -630,11 +630,66 @@
             color: var(--purple-primary);
         }
 
+        .hero-metric-value.red {
+            color: var(--red);
+        }
+
         .hero-metric-label {
-            font-size: 12px;
+            font-size: 11px;
             color: var(--text-muted);
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.3px;
+            margin-bottom: 2px;
+        }
+
+        .hero-metric-caption {
+            font-size: 9px;
+            color: var(--text-muted);
+            opacity: 0.7;
+            line-height: 1.3;
+        }
+
+        /* Traction Row - smaller, secondary */
+        .traction-metrics {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2px;
+            margin-top: 16px;
+            background: var(--border-color);
+            border-radius: 12px;
+            overflow: hidden;
+            animation: fadeInUp 0.5s ease-out 0.5s both;
+            max-width: 400px;
+        }
+
+        .traction-metric {
+            background: var(--bg-card);
+            padding: 16px 20px;
+            text-align: center;
+        }
+
+        .traction-metric-value {
+            font-family: 'Satoshi', sans-serif;
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--text-secondary);
+            margin-bottom: 2px;
+        }
+
+        .traction-metric-label {
+            font-size: 10px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        .traction-label {
+            font-size: 10px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 16px;
+            margin-bottom: 8px;
         }
 
         /* Product Preview - Clean Dashboard */
@@ -1805,7 +1860,13 @@
             .hero { padding: 120px 20px 60px; }
 
             .hero-metrics {
+                grid-template-columns: repeat(3, 1fr);
+                max-width: 100%;
+            }
+
+            .traction-metrics {
                 grid-template-columns: repeat(2, 1fr);
+                max-width: 100%;
             }
 
             .hero-cta-group {
@@ -1931,22 +1992,50 @@
             <a href="#sample-outputs" class="btn-secondary">See sample report</a>
         </div>
 
+        <!-- Output-First Metrics Row (6 tiles) -->
         <div class="hero-metrics">
             <div class="hero-metric">
-                <div class="hero-metric-value purple">20+</div>
-                <div class="hero-metric-label">Live Tenders Analyzed</div>
+                <div class="hero-metric-value purple">78</div>
+                <div class="hero-metric-label">Pages Parsed</div>
+                <div class="hero-metric-caption">Plans, schedules, details</div>
             </div>
             <div class="hero-metric">
-                <div class="hero-metric-value">2</div>
-                <div class="hero-metric-label">Pilot Contractors (Delhi NCR)</div>
+                <div class="hero-metric-value red">6</div>
+                <div class="hero-metric-label">Bid Blockers</div>
+                <div class="hero-metric-caption">Missing schedules, scale, trades</div>
             </div>
             <div class="hero-metric">
-                <div class="hero-metric-value">20–40</div>
-                <div class="hero-metric-label">RFIs per Tender</div>
+                <div class="hero-metric-value">15</div>
+                <div class="hero-metric-label">RFIs Drafted</div>
+                <div class="hero-metric-caption">Ready-to-send, grouped by trade</div>
+            </div>
+            <div class="hero-metric">
+                <div class="hero-metric-value">4</div>
+                <div class="hero-metric-label">Missing Deps</div>
+                <div class="hero-metric-caption">Schedules, specs, scale</div>
+            </div>
+            <div class="hero-metric">
+                <div class="hero-metric-value" style="font-size: 16px; line-height: 1.4;">Arch 62%<br>MEP 0%</div>
+                <div class="hero-metric-label">Trade Coverage</div>
+                <div class="hero-metric-caption">Shows what's priceable</div>
             </div>
             <div class="hero-metric">
                 <div class="hero-metric-value">&lt;24h</div>
-                <div class="hero-metric-label">First Risk Report</div>
+                <div class="hero-metric-label">First Report</div>
+                <div class="hero-metric-caption">Risk packet generated</div>
+            </div>
+        </div>
+
+        <!-- Traction Row (2 tiles) -->
+        <div class="traction-label">Proof</div>
+        <div class="traction-metrics">
+            <div class="traction-metric">
+                <div class="traction-metric-value">20+</div>
+                <div class="traction-metric-label">Live Tenders Analyzed</div>
+            </div>
+            <div class="traction-metric">
+                <div class="traction-metric-value">2</div>
+                <div class="traction-metric-label">Pilot Contractors (Delhi NCR)</div>
             </div>
         </div>
 
