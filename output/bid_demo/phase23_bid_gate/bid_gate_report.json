@@ -1,0 +1,97 @@
+{
+  "project_id": "DEMO-2024-001",
+  "status": "PASS_WITH_RESERVATIONS",
+  "score": 62.7,
+  "is_submittable": true,
+  "checks": {
+    "scale_confidence": {
+      "value": 0.78,
+      "threshold": 0.85,
+      "score": 70,
+      "weight": 15
+    },
+    "schedule_mapping": {
+      "value": 0.79,
+      "threshold": 0.9,
+      "score": 75,
+      "weight": 20
+    },
+    "missing_sheets": {
+      "value": 2,
+      "threshold": 0,
+      "score": 60,
+      "weight": 15
+    },
+    "owner_inputs": {
+      "value": 0.62,
+      "threshold": 0.8,
+      "score": 65,
+      "weight": 20
+    },
+    "high_priority_rfis": {
+      "value": 3,
+      "threshold": 0,
+      "score": 50,
+      "weight": 15
+    },
+    "external_works": {
+      "value": "partial",
+      "threshold": "known",
+      "score": 70,
+      "weight": 8
+    },
+    "mep_coverage": {
+      "value": "unknown",
+      "threshold": "covered",
+      "score": 30,
+      "weight": 7
+    }
+  },
+  "reservations": [
+    {
+      "code": "RES-001",
+      "description": "MEP drawings not provided - plumbing and electrical on provisional allowance",
+      "severity": "high",
+      "recommendation": "Obtain MEP drawings before construction; current provisional may vary +/-25%",
+      "evidence": "No MEP sheets in drawing set"
+    },
+    {
+      "code": "RES-002",
+      "description": "Scale confidence 78% on floor plans - quantities may vary",
+      "severity": "medium",
+      "recommendation": "Request GFC drawings with verified scale bars",
+      "evidence": "Scale detection confidence: 78%"
+    },
+    {
+      "code": "RES-003",
+      "description": "Approval drawings only - not GFC (Good For Construction)",
+      "severity": "medium",
+      "recommendation": "Quantities are indicative; final BOQ subject to GFC issue",
+      "evidence": "Drawing title block shows 'For Approval'"
+    },
+    {
+      "code": "RES-004",
+      "description": "Soil investigation report not provided - foundation design unverified",
+      "severity": "high",
+      "recommendation": "Add foundation allowance of 10% for unforeseen ground conditions",
+      "evidence": "Missing document: Soil Report"
+    },
+    {
+      "code": "RES-005",
+      "description": "External works scope partially defined",
+      "severity": "medium",
+      "recommendation": "Compound wall and driveway included; landscaping excluded",
+      "evidence": "Site plan shows boundary only"
+    },
+    {
+      "code": "RES-006",
+      "description": "3 high-priority RFIs unresolved",
+      "severity": "high",
+      "recommendation": "Resolve RFIs before bid finalization or submit with clarifications",
+      "evidence": "RFI-001, RFI-002, RFI-005"
+    }
+  ],
+  "reservations_count": 6,
+  "critical_failures": [],
+  "recommendation": "Submit with documented reservations and clarifications letter"
+}

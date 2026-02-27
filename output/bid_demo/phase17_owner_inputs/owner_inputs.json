@@ -1,0 +1,27 @@
+{
+  "project": {
+    "name": "Residential Villa - Whitefield, Bangalore",
+    "type": "residential",
+    "location": "Bangalore",
+    "built_up_area_sqm": 4500
+  },
+  "finishes": {
+    "grade": "premium",
+    "floor_tile_brand": "TBD"
+  },
+  "structural": {
+    "concrete_grade": "M25",
+    "steel_grade": "Fe500D"
+  },
+  "completeness_score": 62,
+  "missing_mandatory": [
+    "soil_type",
+    "electrical_load_kw",
+    "plumbing_fixtures"
+  ],
+  "defaults_applied": [
+    "ceiling_height: 3000mm",
+    "slab_thickness: 150mm",
+    "wall_plaster: 12mm internal"
+  ]
+}

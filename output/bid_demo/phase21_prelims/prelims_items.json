@@ -1,0 +1,75 @@
+[
+  {
+    "item": "Site Engineer (1 no.)",
+    "months": 14,
+    "rate": 65000,
+    "amount": 910000
+  },
+  {
+    "item": "Site Supervisor (2 nos.)",
+    "months": 14,
+    "rate": 45000,
+    "amount": 1260000
+  },
+  {
+    "item": "Site Office (prefab)",
+    "quantity": 1,
+    "unit": "LS",
+    "amount": 180000
+  },
+  {
+    "item": "Labour Hutments",
+    "quantity": 1,
+    "unit": "LS",
+    "amount": 120000
+  },
+  {
+    "item": "Temporary Toilet Blocks",
+    "quantity": 2,
+    "unit": "nos",
+    "rate": 35000,
+    "amount": 70000
+  },
+  {
+    "item": "Temporary Electricity Connection",
+    "quantity": 1,
+    "unit": "LS",
+    "amount": 85000
+  },
+  {
+    "item": "Temporary Water Connection",
+    "quantity": 1,
+    "unit": "LS",
+    "amount": 45000
+  },
+  {
+    "item": "Safety Equipment & PPE",
+    "quantity": 1,
+    "unit": "LS",
+    "amount": 95000
+  },
+  {
+    "item": "Tools & Tackles",
+    "quantity": 1,
+    "unit": "LS",
+    "amount": 75000
+  },
+  {
+    "item": "Insurance (CAR Policy)",
+    "quantity": 1,
+    "unit": "LS",
+    "amount": 26500.1856
+  },
+  {
+    "item": "Scaffolding & Shuttering (hire)",
+    "months": 8,
+    "rate": 45000,
+    "amount": 360000
+  },
+  {
+    "item": "Tower Crane Hire",
+    "months": 6,
+    "rate": 185000,
+    "amount": 1110000
+  }
+]

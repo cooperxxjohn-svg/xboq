@@ -1,0 +1,77 @@
+{
+  "version": "1.0",
+  "created": "/Users/cooperworks/floorplan-engine",
+  "total_images": 10,
+  "images": [
+    {
+      "id": "test_column_layout",
+      "path": "data/benchmark/raw/test_column_layout.png",
+      "width": 1000,
+      "height": 1000,
+      "source": "existing"
+    },
+    {
+      "id": "test_simple_rectangle",
+      "path": "data/benchmark/raw/test_simple_rectangle.png",
+      "width": 1281,
+      "height": 1281,
+      "source": "existing"
+    },
+    {
+      "id": "test_foundation_plan",
+      "path": "data/benchmark/raw/test_foundation_plan.png",
+      "width": 1000,
+      "height": 1000,
+      "source": "existing"
+    },
+    {
+      "id": "test_2bhk",
+      "path": "data/benchmark/raw/test_2bhk.png",
+      "width": 1044,
+      "height": 1458,
+      "source": "existing"
+    },
+    {
+      "id": "test_beam_layout",
+      "path": "data/benchmark/raw/test_beam_layout.png",
+      "width": 1000,
+      "height": 1000,
+      "source": "existing"
+    },
+    {
+      "id": "test_column_schedule",
+      "path": "data/benchmark/raw/test_column_schedule.png",
+      "width": 600,
+      "height": 590,
+      "source": "existing"
+    },
+    {
+      "id": "test_1bhk",
+      "path": "data/benchmark/raw/test_1bhk.png",
+      "width": 926,
+      "height": 1222,
+      "source": "existing"
+    },
+    {
+      "id": "synthetic_000",
+      "path": "data/benchmark/raw/synthetic_000.png",
+      "width": 1281,
+      "height": 1281,
+      "source": "synthetic"
+    },
+    {
+      "id": "synthetic_001",
+      "path": "data/benchmark/raw/synthetic_001.png",
+      "width": 926,
+      "height": 1222,
+      "source": "synthetic"
+    },
+    {
+      "id": "synthetic_002",
+      "path": "data/benchmark/raw/synthetic_002.png",
+      "width": 1044,
+      "height": 1458,
+      "source": "synthetic"
+    }
+  ]
+}

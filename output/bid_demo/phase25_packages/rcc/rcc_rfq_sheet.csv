@@ -1,0 +1,5 @@
+SL,Item Description,Quantity,Unit,Specification Notes,Drawing References,Assumptions,Subcontractor Rate,Subcontractor Amount,Remarks
+1,"RCC M25 grade for columns 450x450mm",45.5,cum,"As per specification",STR-01,"Standard specification",,,"To be filled by subcontractor"
+2,"RCC M25 grade for beams 230x450mm",38.2,cum,"As per specification",STR-01,"Standard specification",,,"To be filled by subcontractor"
+3,"RCC M25 grade for slab 150mm thick",125.0,cum,"As per specification",STR-02,"Standard specification",,,"To be filled by subcontractor"
+4,"Steel reinforcement Fe500D",18500,kg,"As per specification",STR-01,STR-02,"Standard specification",,,"To be filled by subcontractor"

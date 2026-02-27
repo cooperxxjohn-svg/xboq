@@ -56,5 +56,12 @@ credentials/
 *.log
 logs/
 
+# Benchmarks (run artifacts, local manifests)
+benchmarks/_runs/
+benchmarks/manifest.json
+
+# Dataset capture (local tender data — NEVER commit)
+datasets/
+
 # Jupyter
 .ipynb_checkpoints/

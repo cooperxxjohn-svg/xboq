@@ -1,0 +1,10 @@
+package,package_name,quantity_certainty,scope_certainty,spec_certainty,rfi_count,missing_inputs,provisional_items,package_value,provisional_value,risk_level,risk_score,suggested_contingency_pct,risk_drivers
+electrical,Electrical Works,35.0,0.0,50.0,1,1,1,720000.00,720000.00,very_high,76.2,20.0,Low quantity confidence (35%); Incomplete scope definition (0%); Unclear specifications (50%); 1 provisional items; High provisional value (100%)
+plumbing,Plumbing Works,40.0,0.0,50.0,1,1,1,850000.00,850000.00,very_high,75.0,20.0,Low quantity confidence (40%); Incomplete scope definition (0%); Unclear specifications (50%); 1 provisional items; High provisional value (100%)
+external,External Development,59.2,50.0,70.0,1,0,1,622500.00,240000.00,high,53.0,15.0,Low quantity confidence (59%); Incomplete scope definition (50%); 1 provisional items; High provisional value (39%)
+rcc,RCC Structural,89.1,100.0,80.0,2,0,0,3247490.00,0.00,low,16.7,2.0,
+flooring,Flooring & Tiling,84.3,100.0,80.0,1,0,0,821750.00,0.00,low,12.9,2.0,
+waterproof,Waterproofing,74.1,100.0,80.0,0,0,0,415700.00,0.00,low,10.5,2.0,
+finishes,Finishes & Painting,80.0,100.0,80.0,0,0,0,357000.00,0.00,low,9.0,2.0,
+masonry,Masonry & Plastering,87.9,100.0,80.0,0,0,0,3871100.00,0.00,low,7.0,2.0,
+doors_windows,Doors & Windows,89.1,100.0,80.0,0,0,0,522000.00,0.00,low,6.7,2.0,

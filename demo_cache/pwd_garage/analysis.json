@@ -1,0 +1,382 @@
+{
+  "schema_version": "1.0.0",
+  "project_id": "pwd_garage",
+  "project_name": "PWD Garage Construction",
+  "tender_ref": "PWD/2024/GAR-001",
+  "timestamp": "2026-02-15T10:30:00.000000",
+  "primary_pdf_path": null,
+  "file_info": [
+    {"name": "Garage Drawings.pdf", "pages": 7, "path": null, "ocr_used": true}
+  ],
+  "ocr_bbox_meta": {
+    "engine": "surya",
+    "avg_confidence": 0.87,
+    "pages_with_bbox": 5,
+    "pages_total": 7
+  },
+  "ocr_text_cache": {
+    "0": "GROUND FLOOR PLAN\nGARAGE BLOCK\nDoor D1 - 900 x 2100\nDoor D4 - 1200 x 2100\nColumn C1\nBeam B1\nSlab S1 - 150mm THK\nPlinth Level +0.45\nFinished Floor Level +0.60",
+    "1": "FIRST FLOOR PLAN\nGARAGE BLOCK\nRoom R1\nStaircase ST1\nSlab S2 - 120mm THK\nBeam B2 230x450\nColumn C2 300x300\nClear Height 3.0m",
+    "2": "UPPER FLOOR PLAN\nDoor D10 - 900 x 2100\nWindow W1\nParapet wall 900mm\nSlab S3 - 150mm THK\nBeam B3\nTerrace Level +6.60",
+    "3": "SECTION A-A\nFoundation depth 1.5m\nPlinth beam 230x300\nLintel 230x150\nSlab thickness 150mm\nClear height 3.0m\nParapet 900mm",
+    "4": "SECTION B-B\nRoof slab 150mm\nWeathering course 100mm\nParapet 900mm\nPlinth beam 230x300\nColumn 300x300\nFooting 1200x1200x300",
+    "5": "ELEVATION NORTH\nPlinth level +0.45\nSill level +0.90\nLintel level +2.10\nParapet level +6.90\nGround level +0.00\nRoof level +6.60",
+    "6": "ELEVATION EAST\nDoor D10\nWindow W1\nParapet coping\nPlinth band\nWeathering course\nDrip mould at lintel"
+  },
+  "drawing_overview": {
+    "files": [
+      "Garage Drawings.pdf"
+    ],
+    "pages_total": 7,
+    "disciplines_detected": [
+      "Structural",
+      "Electrical"
+    ],
+    "sheet_types_count": 5,
+    "scale_found_pages": 0,
+    "schedules_detected_count": 0,
+    "door_tags_found": 3,
+    "window_tags_found": 0,
+    "room_names_found": 0,
+    "ocr_used": true,
+    "ocr_pages_count": 7,
+    "scales_from_ocr": []
+  },
+  "readiness_score": 61,
+  "decision": "CONDITIONAL",
+  "sub_scores": {
+    "completeness": 80,
+    "coverage": 64,
+    "measurement": 30,
+    "blocker": 65
+  },
+  "blockers": [
+    {
+      "id": "BLK-0010",
+      "title": "Door schedule required - 3 door types detected",
+      "trade": "architectural",
+      "severity": "high",
+      "affected_trades": ["finishes"],
+      "description": "Detected 3 door instances with 3 unique tags (D1, D4, D10). Door schedule needed to price doors, frames, and hardware.",
+      "missing_dependency": ["door_schedule"],
+      "impact_cost": "high",
+      "impact_schedule": "medium",
+      "bid_impact": "blocks_pricing",
+      "evidence": {
+        "pages": [0, 2, 6],
+        "sheets": ["A-101", "A-103", "A-107"],
+        "snippets": ["Door D1 shown on Ground Floor Plan", "D4 and D10 on Upper Floor"],
+        "detected_entities": {
+          "door_tags": ["D1", "D4", "D10"],
+          "door_count": 3,
+          "unique_types": 3
+        },
+        "search_attempts": {
+          "schedule_keywords": ["door schedule", "door sch", "door listing"],
+          "schedule_sheet_type": "checked for SheetType.SCHEDULE with 'door'"
+        },
+        "confidence": 0.9,
+        "confidence_reason": "Door tags clearly detected in floor plans",
+        "bbox": [
+          [[0.12, 0.45, 0.88, 0.52, 0.91, "BLK-0010-P0-0"]],
+          [[0.10, 0.30, 0.90, 0.38, 0.85, "BLK-0010-P1-0"], [0.10, 0.60, 0.90, 0.68, 0.72, "BLK-0010-P1-1"]],
+          []
+        ],
+        "searched_pages": [0, 1, 2, 3, 4, 5, 6],
+        "text_coverage_pct": 95.0
+      },
+      "fix_actions": [
+        "Provide door schedule with columns: Mark, Size (W x H), Type, Frame Material, Shutter Material, Hardware",
+        "Or clarify if doors are out of scope for this tender"
+      ],
+      "score_delta_estimate": 8,
+      "unlocks_boq_categories": ["doors", "door_frames", "hardware"],
+      "issue_type": "missing_schedule",
+      "coverage_status": "not_found_after_search",
+      "created_at": "2026-02-15T10:30:00.000000"
+    },
+    {
+      "id": "BLK-0013",
+      "title": "Scale not detected on 7 drawing pages",
+      "trade": "general",
+      "severity": "high",
+      "affected_trades": ["civil", "structural", "architectural", "finishes"],
+      "description": "7 of 7 pages have no detectable scale notation. Area measurements may be unreliable. Dimension strings on drawings can still be used for linear pricing.",
+      "missing_dependency": ["scale_notation"],
+      "impact_cost": "medium",
+      "impact_schedule": "low",
+      "bid_impact": "forces_allowance",
+      "evidence": {
+        "pages": [0, 1, 2, 3, 4, 5, 6],
+        "sheets": [],
+        "snippets": [],
+        "detected_entities": {
+          "pages_without_scale": 7,
+          "pages_with_scale": 0,
+          "total_pages": 7
+        },
+        "search_attempts": {
+          "scale_patterns": ["1:100", "1:50", "1:200", "SCALE =", "NTS"],
+          "search_type": "regex pattern matching across all pages"
+        },
+        "confidence": 0.85,
+        "confidence_reason": "Scale notation pattern search completed",
+        "bbox": [
+          [], [], [], [], [], [], []
+        ],
+        "searched_pages": [0, 1, 2, 3, 4, 5, 6],
+        "text_coverage_pct": 95.0
+      },
+      "fix_actions": [
+        "Confirm scale with architect/engineer",
+        "Use dimension strings from drawings for area calculations",
+        "Or provide scale in tender documents"
+      ],
+      "score_delta_estimate": 10,
+      "unlocks_boq_categories": ["all_measured_items"],
+      "issue_type": "scale_issue",
+      "coverage_status": "not_found_after_search",
+      "created_at": "2026-02-15T10:30:00.000000"
+    }
+  ],
+  "rfis": [
+    {
+      "id": "RFI-0010",
+      "trade": "architectural",
+      "priority": "high",
+      "question": "Please provide door schedule for the 3 doors shown (D1, D4, D10)",
+      "why_it_matters": "Cannot price doors, frames, or hardware without specifications. This affects both material costs and installation labour.",
+      "evidence": {
+        "pages": [0, 2, 6],
+        "sheets": ["A-101", "A-103", "A-107"],
+        "snippets": ["Door tags D1, D4, D10 detected on floor plans"],
+        "detected_entities": {
+          "door_tags": ["D1", "D4", "D10"],
+          "door_count": 3,
+          "unique_types": 3
+        },
+        "confidence": 0.9,
+        "confidence_reason": "Door tags clearly visible in OCR extraction",
+        "bbox": [
+          [[0.12, 0.45, 0.88, 0.52, 0.91, "RFI-0010-P0-0"]],
+          [[0.10, 0.30, 0.90, 0.38, 0.85, "RFI-0010-P1-0"], [0.10, 0.60, 0.90, 0.68, 0.72, "RFI-0010-P1-1"]],
+          []
+        ],
+        "searched_pages": [0, 1, 2, 3, 4, 5, 6],
+        "text_coverage_pct": 95.0
+      },
+      "suggested_resolution": "Provide door schedule with columns: Mark, Size (W x H), Type, Frame Material, Shutter Material, Hardware",
+      "acceptable_alternatives": [
+        "Confirm all doors are standard 900x2100mm flush doors",
+        "Clarify if doors are out of scope for this tender"
+      ],
+      "related_blocker_id": "BLK-0010",
+      "issue_type": "missing_schedule",
+      "coverage_status": "not_found_after_search",
+      "package": "Doors & Windows",
+      "created_at": "2026-02-15T10:30:00.000000"
+    },
+    {
+      "id": "RFI-0013",
+      "trade": "general",
+      "priority": "high",
+      "question": "Please confirm drawing scale for accurate area calculations",
+      "why_it_matters": "Scale notation not found on any of the 7 pages. Without scale, area-based quantities (flooring, plastering, painting) will be estimated with allowances.",
+      "evidence": {
+        "pages": [0, 1, 2, 3, 4, 5, 6],
+        "sheets": [],
+        "snippets": [],
+        "detected_entities": {
+          "pages_without_scale": 7,
+          "total_pages": 7
+        },
+        "confidence": 0.85,
+        "confidence_reason": "Comprehensive scale pattern search completed",
+        "bbox": [
+          [], [], [], [], [], [], []
+        ],
+        "searched_pages": [0, 1, 2, 3, 4, 5, 6],
+        "text_coverage_pct": 95.0
+      },
+      "suggested_resolution": "Confirm scale (e.g., 1:100, 1:50) for each drawing sheet",
+      "acceptable_alternatives": [
+        "Provide overall plot/built-up area dimensions",
+        "Accept that area-based items will be priced as allowances"
+      ],
+      "related_blocker_id": "BLK-0013",
+      "issue_type": "scale_issue",
+      "coverage_status": "not_found_after_search",
+      "package": "General",
+      "created_at": "2026-02-15T10:30:00.000000"
+    }
+  ],
+  "trade_coverage": [
+    {
+      "trade": "civil",
+      "coverage_pct": 100.0,
+      "total_categories": 8,
+      "priceable_count": 8,
+      "blocked_count": 0,
+      "assumed_count": 0,
+      "missing_dependencies": ["scale_notation"],
+      "cost_risk": "medium",
+      "schedule_risk": "low",
+      "next_action": "Ready for pricing with scale assumption"
+    },
+    {
+      "trade": "structural",
+      "coverage_pct": 100.0,
+      "total_categories": 9,
+      "priceable_count": 9,
+      "blocked_count": 0,
+      "assumed_count": 0,
+      "missing_dependencies": ["scale_notation"],
+      "cost_risk": "medium",
+      "schedule_risk": "low",
+      "next_action": "Ready for pricing with scale assumption"
+    },
+    {
+      "trade": "architectural",
+      "coverage_pct": 88.9,
+      "total_categories": 9,
+      "priceable_count": 8,
+      "blocked_count": 1,
+      "assumed_count": 0,
+      "missing_dependencies": ["door_schedule", "scale_notation"],
+      "cost_risk": "high",
+      "schedule_risk": "medium",
+      "next_action": "Resolve door schedule RFI before pricing"
+    },
+    {
+      "trade": "mep",
+      "coverage_pct": 100.0,
+      "total_categories": 8,
+      "priceable_count": 8,
+      "blocked_count": 0,
+      "assumed_count": 0,
+      "missing_dependencies": [],
+      "cost_risk": "low",
+      "schedule_risk": "low",
+      "next_action": "Ready for pricing"
+    },
+    {
+      "trade": "finishes",
+      "coverage_pct": 0.0,
+      "total_categories": 9,
+      "priceable_count": 0,
+      "blocked_count": 0,
+      "assumed_count": 9,
+      "missing_dependencies": ["finish_schedule", "scale_notation"],
+      "cost_risk": "unknown",
+      "schedule_risk": "unknown",
+      "next_action": "No finish schedule found - apply allowances"
+    },
+    {
+      "trade": "general",
+      "coverage_pct": 0.0,
+      "total_categories": 5,
+      "priceable_count": 0,
+      "blocked_count": 0,
+      "assumed_count": 5,
+      "missing_dependencies": ["scale_notation"],
+      "cost_risk": "unknown",
+      "schedule_risk": "unknown",
+      "next_action": "Apply standard allowances"
+    }
+  ],
+  "extraction_summary": {
+    "requirements": [],
+    "schedules": [],
+    "boq_items": [],
+    "callouts": [
+      {"text": "D1", "callout_type": "tag", "source_page": 0, "sheet_id": "A-101", "confidence": 0.8},
+      {"text": "D4", "callout_type": "tag", "source_page": 2, "sheet_id": "A-103", "confidence": 0.8},
+      {"text": "D10", "callout_type": "tag", "source_page": 6, "sheet_id": "A-107", "confidence": 0.8}
+    ],
+    "pages_processed": 7,
+    "pages_by_extractor": {"drawings": 7},
+    "counts": {
+      "requirements": 0,
+      "schedules": 0,
+      "boq_items": 0,
+      "callouts": 3
+    }
+  },
+  "run_coverage": {
+    "pages_total": 7,
+    "pages_indexed": 7,
+    "pages_deep_processed": 7,
+    "pages_skipped": [],
+    "doc_types_detected": {"plan": 4, "detail": 1, "section": 1, "elevation": 1},
+    "disciplines_detected": {"structural": 4, "electrical": 2, "architectural": 1},
+    "doc_types_fully_covered": ["plan", "detail", "section", "elevation"],
+    "doc_types_partially_covered": [],
+    "doc_types_not_covered": [],
+    "selection_mode": "full_read",
+    "ocr_budget_pages": 80,
+    "coverage_by_check": {}
+  },
+  "guardrail_warnings": [],
+  "diagnostics": {
+    "page_index": {
+      "pdf_name": "Garage Drawings.pdf",
+      "total_pages": 7,
+      "counts_by_type": {"plan": 4, "detail": 1, "section": 1, "elevation": 1},
+      "counts_by_discipline": {"structural": 4, "electrical": 2, "architectural": 1},
+      "indexing_time_s": 2.1
+    },
+    "selected_pages": {
+      "selected": [0, 1, 2, 3, 4, 5, 6],
+      "budget_total": 80,
+      "budget_used": 7,
+      "always_include_count": 0,
+      "sample_count": 7,
+      "skipped_types": {},
+      "coverage_summary": {"plan": 4, "detail": 1, "section": 1, "elevation": 1}
+    }
+  },
+  "timings": {
+    "load_s": 0.32,
+    "index_s": 2.1,
+    "select_s": 0.01,
+    "extract_s": 7.58,
+    "graph_s": 0.01,
+    "reason_s": 0.12,
+    "rfi_s": 0.08,
+    "export_s": 0.15,
+    "total_s": 10.37
+  },
+  "assumptions": [
+    {
+      "id": "ASM-001",
+      "category": "Measurement",
+      "assumption": "All rooms assumed 3.0m floor-to-ceiling height",
+      "impact": "Wall quantities may vary +/- 10%",
+      "basis": "Standard residential/light commercial construction"
+    },
+    {
+      "id": "ASM-002",
+      "category": "Pricing",
+      "assumption": "Doors assumed standard flush type if schedule not provided",
+      "impact": "Door costs may vary significantly for specialized doors",
+      "basis": "Tender clarification required"
+    }
+  ],
+  "exclusions": [
+    {
+      "id": "EXC-001",
+      "category": "Scope",
+      "exclusion": "External works beyond building footprint",
+      "reason": "No site plan provided"
+    },
+    {
+      "id": "EXC-002",
+      "category": "Scope",
+      "exclusion": "Furniture and fixtures",
+      "reason": "Not shown on drawings"
+    }
+  ],
+  "addendum_index": [],
+  "conflicts": [],
+  "reconciliation_findings": []
+}

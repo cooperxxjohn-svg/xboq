@@ -1,0 +1,10 @@
+{
+  "status": "skipped",
+  "reason": "No subcontractor quotes provided",
+  "packages_needing_quotes": [
+    "flooring",
+    "doors_windows",
+    "plumbing",
+    "electrical"
+  ]
+}

@@ -1,0 +1,22 @@
+SL,Item ID,Description,Quantity,Unit,Rate (INR),Amount (INR),Package,Drawing Ref,Rate Source
+1,RCC-001,"RCC M25 grade for columns 450x450mm",45.5,cum,8500.00,386750.00,rcc,STR-01,CPWD-2023
+2,RCC-002,"RCC M25 grade for beams 230x450mm",38.2,cum,8200.00,313240.00,rcc,STR-01,CPWD-2023
+3,RCC-003,"RCC M25 grade for slab 150mm thick",125.0,cum,7800.00,975000.00,rcc,STR-02,CPWD-2023
+4,RCC-004,"Steel reinforcement Fe500D",18500,kg,85.00,1572500.00,rcc,STR-01,STR-02,ISR-2024
+5,MAS-001,"AAC Block masonry 200mm thick",1850,sqm,1450.00,2682500.00,masonry,ARC-01,ARC-02,DSR-KAR
+6,MAS-002,"AAC Block masonry 100mm thick",420,sqm,980.00,411600.00,masonry,ARC-01,DSR-KAR
+7,MAS-003,"Cement plaster 12mm internal",4200,sqm,185.00,777000.00,masonry,ARC-01,ARC-02,DSR-KAR
+8,MAS-004,"Cement plaster 20mm external",1100,sqm,245.00,269500.00,masonry,ARC-03,DSR-KAR
+9,WP-001,"APP membrane waterproofing for terrace",520,sqm,650.00,338000.00,waterproof,ARC-ROOF,Market-2024
+10,WP-002,"Integral waterproofing for toilets",185,sqm,420.00,77700.00,waterproof,ARC-01,Market-2024
+11,FLR-001,"Vitrified tiles 600x600mm living/dining",380,sqm,1850.00,703000.00,flooring,INT-01,Market-2024
+12,FLR-002,"Ceramic tiles 300x300mm anti-skid toilets",95,sqm,1250.00,118750.00,flooring,INT-01,Market-2024
+13,FLR-003,"Granite flooring for lobby",65,sqm,3200.00,208000.00,flooring,INT-02,Market-2024
+14,DW-001,"Flush door 900x2100mm with frame",24,nos,12500.00,300000.00,doors_windows,ARC-01,D-SCH,Market-2024
+15,DW-002,"Main entrance door teak wood",1,nos,85000.00,85000.00,doors_windows,D-SCH,Market-2024
+16,DW-003,"UPVC sliding window 1800x1500mm",12,nos,18500.00,222000.00,doors_windows,W-SCH,Vendor Quote
+17,DW-004,"UPVC casement window 1200x1200mm",18,nos,12800.00,230400.00,doors_windows,W-SCH,Vendor Quote
+18,PLB-001,"Internal plumbing complete - PROVISIONAL",1,LS,850000.00,850000.00,plumbing,N/A,Allowance @190/sqft
+19,ELE-001,"Internal electrical complete - PROVISIONAL",1,LS,720000.00,720000.00,electrical,N/A,Allowance @160/sqft
+20,EXT-001,"Compound wall brick 230mm with foundation",85,rmt,4500.00,382500.00,external,SITE-01,DSR-KAR
+21,EXT-002,"Paver blocks 80mm for driveway",180,sqm,1150.00,207000.00,external,SITE-01,Market-2024

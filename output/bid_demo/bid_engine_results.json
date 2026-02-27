@@ -1,0 +1,110 @@
+{
+  "project_id": "DEMO-2024-001",
+  "project_name": "Residential Villa - Whitefield, Bangalore",
+  "generated_at": "2026-02-02T22:34:28.707883",
+  "phases": {
+    "phase16": {
+      "status": "skipped",
+      "reason": "No owner documents"
+    },
+    "phase17": {
+      "status": "completed",
+      "completeness_score": 62,
+      "rfis_generated": 2
+    },
+    "phase18": {
+      "status": "skipped",
+      "reason": "No owner BOQ"
+    },
+    "phase19": {
+      "status": "completed",
+      "total_items": 21,
+      "priced_items": 21,
+      "grand_total": 11830440.0,
+      "location": "Bangalore",
+      "location_factor": 1.05
+    },
+    "phase20": {
+      "status": "skipped",
+      "reason": "No quotes provided"
+    },
+    "phase21": {
+      "status": "completed",
+      "total_prelims": 4336500.1855999995,
+      "prelims_percent": 36.65544295562971,
+      "items_count": 12
+    },
+    "phase22": {
+      "status": "completed",
+      "total_bid_value": 16166940.1856,
+      "outputs": [
+        "bid_summary.json",
+        "priced_boq.csv"
+      ]
+    },
+    "phase23": {
+      "status": "completed",
+      "gate_status": "PASS_WITH_RESERVATIONS",
+      "gate_score": 62.7,
+      "reservations_count": 6,
+      "is_submittable": true
+    },
+    "phase24": {
+      "status": "completed",
+      "inclusions_count": 12,
+      "exclusions_count": 13,
+      "assumptions_count": 9,
+      "rfis_count": 3,
+      "reservations_count": 6
+    },
+    "phase25": {
+      "status": "completed",
+      "packages_created": 8,
+      "total_items": 21,
+      "packages": {
+        "rcc": {
+          "items": 4,
+          "value": 3247490.0
+        },
+        "masonry": {
+          "items": 4,
+          "value": 4140600
+        },
+        "waterproof": {
+          "items": 2,
+          "value": 415700
+        },
+        "flooring": {
+          "items": 3,
+          "value": 1029750
+        },
+        "doors_windows": {
+          "items": 4,
+          "value": 837400
+        },
+        "plumbing": {
+          "items": 1,
+          "value": 850000
+        },
+        "electrical": {
+          "items": 1,
+          "value": 720000
+        },
+        "external": {
+          "items": 2,
+          "value": 589500
+        }
+      }
+    }
+  },
+  "summary": {
+    "phases_completed": 7,
+    "phases_skipped": 3,
+    "total_bid_value": 16166940.1856,
+    "bid_status": "PASS_WITH_RESERVATIONS",
+    "gate_score": 62.7,
+    "is_submittable": true,
+    "reservations_count": 6,
+    "high_priority_rfis": 3
+  }
+}

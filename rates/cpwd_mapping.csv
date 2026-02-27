@@ -1,0 +1,57 @@
+item_code,cpwd_item_no,cpwd_description,cpwd_unit,rate_inr,notes
+MSN-230,5.1.1,"Providing and laying 1st class brick work in cement mortar 1:6 in superstructure (230mm thick)",cum,,9-inch external wall
+MSN-115,5.1.2,"Providing and laying 1st class brick work in cement mortar 1:4 in superstructure (115mm thick)",cum,,4.5-inch internal wall
+MSN-075,5.1.3,"Providing and laying AAC block work 75mm thick in cement mortar 1:4",sqm,,Partition wall
+PLT-INT-01,13.1.1,"Providing 12mm thick cement plaster 1:4 on internal walls",sqm,,Internal plaster
+PLT-EXT-01,13.1.2,"Providing 15mm thick cement plaster 1:4 on external walls",sqm,,External plaster
+FLR-VIT-01,11.24,"Providing and laying vitrified tiles 600x600mm with 6mm thick CM 1:3 bed",sqm,,Living/bedroom flooring
+FLR-VIT-02,11.24,"Providing and laying vitrified tiles 600x600mm with 6mm thick CM 1:3 bed",sqm,,Kitchen flooring
+FLR-AST-01,11.25,"Providing and laying anti-skid ceramic tiles 300x300mm in toilet",sqm,,Toilet flooring
+FLR-AST-02,11.25,"Providing and laying anti-skid ceramic tiles 300x300mm on balcony",sqm,,Balcony flooring
+FLR-CER-01,11.23,"Providing and laying ceramic tiles 300x300mm with CM 1:3 bed",sqm,,Utility flooring
+FLR-KOT-01,11.12,"Providing and laying kota stone flooring 25mm thick with CM 1:3 bed",sqm,,Staircase flooring
+FLR-MRB-01,11.14,"Providing and laying marble flooring 18mm thick with CM 1:3 bed",sqm,,Pooja room flooring
+FLR-IPS-01,11.6,"Providing IPS flooring 25mm thick with neat cement punning",sqm,,Terrace flooring
+FLR-CEM-01,11.5,"Providing cement concrete flooring 25mm thick",sqm,,Default flooring
+FLR-PVR-01,11.30,"Providing paver blocks 60mm thick on sand bed",sqm,,Parking area
+WTL-CER-01,11.45,"Providing ceramic wall tiles up to 2100mm height with CM 1:3 bed",sqm,,Toilet wall tiles (2.1m height)
+DAD-CER-01,11.44,"Providing ceramic tile dado 600mm height with CM 1:3 bed",sqm,,Kitchen dado (0.6m height)
+WPR-TOI-01,6.12,"Providing waterproofing treatment in toilet with integral compound",sqm,,Toilet waterproofing
+WPR-BAL-01,6.13,"Providing waterproofing treatment on balcony floor",sqm,,Balcony waterproofing
+WPR-TER-01,6.14,"Providing waterproofing treatment on terrace with brick bat coba",sqm,,Terrace waterproofing
+WPR-UTL-01,6.12,"Providing waterproofing treatment in utility area",sqm,,Utility waterproofing
+PNT-INT-01,13.61,"Applying 2 coats plastic emulsion paint on plastered surface",sqm,,Internal wall paint
+PNT-EXT-01,13.65,"Applying 2 coats exterior emulsion paint on external surface",sqm,,External wall paint
+PNT-CLG-01,13.61,"Applying 2 coats plastic emulsion paint on ceiling",sqm,,Ceiling paint
+PNT-CEM-01,13.55,"Applying 2 coats cement paint on surface",sqm,,Cement paint
+SKT-VIT-01,11.28,"Providing vitrified tile skirting 100mm height",rm,,Tile skirting
+SKT-CER-01,11.28,"Providing ceramic tile skirting 100mm height",rm,,Ceramic skirting
+SKT-AST-01,11.28,"Providing anti-skid tile skirting 100mm height",rm,,Anti-skid skirting
+SKT-MRB-01,11.28,"Providing marble skirting 100mm height",rm,,Marble skirting
+SKT-CEM-01,11.28,"Providing cement skirting 100mm height",rm,,Cement skirting
+CLG-POP-01,13.30,"Providing POP punning 6mm thick on ceiling",sqm,,POP ceiling
+HRL-MS-01,10.15,"Providing MS handrail with vertical balusters",rm,,Staircase handrail
+DRF-door,9.3.1,"Providing sal wood door frame 100x75mm section",rm,,Door frame
+DRS-door,9.5.1,"Providing flush door shutter 35mm thick with commercial ply",sqm,,Door shutter
+WND-window,10.8,"Providing aluminium sliding window with 5mm glass",sqm,,Aluminium window
+WND-ventilator,10.9,"Providing aluminium louver ventilator",sqm,,Ventilator
+MSH-window,10.12,"Providing SS mosquito mesh for window/ventilator",sqm,,Mosquito mesh
+HDW-HNG-01,9.30,"Providing SS butt hinges 100mm for doors",nos,,Door hinges (3 per door)
+HDW-LCK-01,9.32,"Providing mortise door lock",nos,,Door lock
+HDW-STP-01,9.35,"Providing floor mounted door stopper",nos,,Door stopper
+HDW-WST-01,10.20,"Providing SS window stay",nos,,Window stay (2 per window)
+HDW-TBT-01,10.21,"Providing tower bolt for window",nos,,Tower bolt
+RCC-SLB-M25,4.1.4,"Providing RCC M25 work in slab including formwork",cum,,RCC slab
+RCC-SNK-M25,4.1.4,"Providing RCC M25 work in sunken slab",cum,,Sunken slab
+FWK-SLB-01,4.5.1,"Providing centering and shuttering for RCC slab",sqm,,Slab formwork
+CUR-SLB-01,4.6.1,"Curing of RCC work for 7 days",sqm,,Slab curing
+BBC-SNK-01,5.8,"Providing brick bat coba filling in sunken portion",cum,,Sunken filling
+STL-SLA,4.2.1,"Providing TMT Fe500 reinforcement in slab",kg,,Slab steel
+STL-LIN,4.2.1,"Providing TMT Fe500 reinforcement in lintel",kg,,Lintel steel
+STL-08,4.2.1,"TMT Fe500 bars 8mm diameter",kg,,8mm bars
+STL-10,4.2.1,"TMT Fe500 bars 10mm diameter",kg,,10mm bars
+STL-12,4.2.1,"TMT Fe500 bars 12mm diameter",kg,,12mm bars
+STL-16,4.2.1,"TMT Fe500 bars 16mm diameter",kg,,16mm bars
+STL-20,4.2.1,"TMT Fe500 bars 20mm diameter",kg,,20mm bars
+STL-TOT,4.2.1,"Total TMT Fe500 reinforcement steel",MT,,Total steel
+MTR-CM-01,5.20,"Cement mortar for brickwork/masonry",cum,,Mortar

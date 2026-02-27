@@ -1,0 +1,8 @@
+item_id,item_description,gross_qty,deduction,net_qty,unit,door_deduct,window_deduct,rule
+MAS-001,AAC Block masonry 200mm thick external walls,1838.43,111.50,1726.93,sqm,49.08,62.42,0.1
+MAS-002,AAC Block masonry 100mm thick internal partitions,408.43,111.50,296.93,sqm,49.08,62.42,0.1
+PLS-001,Cement plaster 12mm internal walls,3989.19,46.20,3942.99,sqm,46.20,0.00,0.5
+PLS-002,Cement plaster 20mm external walls,1088.99,61.20,1027.79,sqm,2.88,58.32,0.5
+PNT-001,Interior emulsion paint 2 coats,4188.99,107.40,4081.59,sqm,49.08,58.32,0.5
+PNT-002,Exterior weatherproof paint,1088.99,107.40,981.59,sqm,49.08,58.32,0.5
+EXT-001,Compound wall brick 230mm with foundation,73.43,111.50,0.00,rmt,49.08,62.42,0.1

@@ -404,7 +404,7 @@ if __name__ == "__main__":
 
     graph = build_plan_graph("test_project", sample_texts)
     blockers, rfis, coverage, skeleton = reason_dependencies(graph)
-    score = calculate_readiness_score(graph, blockers)
+    score = calculate_readiness_score(graph, blockers, trade_coverage=coverage)
 
     result = DeepAnalysisResult(
         project_id="test_project",

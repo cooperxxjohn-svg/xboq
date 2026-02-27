@@ -1,0 +1,15 @@
+{
+  "project_id": "DEMO-2024-001",
+  "project_name": "Residential Villa - Whitefield, Bangalore",
+  "location": "Whitefield, Bangalore",
+  "built_up_area_sqm": 4500,
+  "duration_months": 14,
+  "boq_total": 11830440.0,
+  "prelims_total": 4336500.1855999995,
+  "grand_total": 16166940.1856,
+  "rate_per_sqft": 333.7656423799496,
+  "items_count": 21,
+  "provisional_items": 2,
+  "provisional_value": 1570000,
+  "provisional_percent": 13.270850450194583
+}

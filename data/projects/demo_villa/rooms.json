@@ -1,0 +1,98 @@
+{
+  "project_id": "demo_villa",
+  "floor": "ground",
+  "rooms": [
+    {
+      "id": "R001",
+      "label": "Living",
+      "room_type": "living",
+      "area_sqm": 28.5,
+      "perimeter_m": 21.4,
+      "polygon": [[0,0], [6000,0], [6000,4750], [0,4750]],
+      "confidence": 0.92
+    },
+    {
+      "id": "R002",
+      "label": "Dining",
+      "room_type": "dining",
+      "area_sqm": 12.0,
+      "perimeter_m": 14.0,
+      "polygon": [[6000,0], [10000,0], [10000,3000], [6000,3000]],
+      "confidence": 0.88
+    },
+    {
+      "id": "R003",
+      "label": "Kitchen",
+      "room_type": "kitchen",
+      "area_sqm": 10.5,
+      "perimeter_m": 13.0,
+      "polygon": [[6000,3000], [10000,3000], [10000,5625], [6000,5625]],
+      "confidence": 0.90
+    },
+    {
+      "id": "R004",
+      "label": "Master Bedroom",
+      "room_type": "bedroom",
+      "area_sqm": 18.0,
+      "perimeter_m": 17.0,
+      "polygon": [[0,4750], [4500,4750], [4500,8750], [0,8750]],
+      "confidence": 0.95
+    },
+    {
+      "id": "R005",
+      "label": "Bedroom 2",
+      "room_type": "bedroom",
+      "area_sqm": 14.0,
+      "perimeter_m": 15.2,
+      "polygon": [[4500,4750], [8000,4750], [8000,8750], [4500,8750]],
+      "confidence": 0.91
+    },
+    {
+      "id": "R006",
+      "label": "Att. Bath (M.Bed)",
+      "room_type": "toilet",
+      "area_sqm": 4.5,
+      "perimeter_m": 8.6,
+      "polygon": [[0,8750], [2500,8750], [2500,10550], [0,10550]],
+      "confidence": 0.87
+    },
+    {
+      "id": "R007",
+      "label": "Common Toilet",
+      "room_type": "toilet",
+      "area_sqm": 3.2,
+      "perimeter_m": 7.2,
+      "polygon": [[8000,5000], [10000,5000], [10000,6600], [8000,6600]],
+      "confidence": 0.85
+    },
+    {
+      "id": "R008",
+      "label": "Balcony",
+      "room_type": "balcony",
+      "area_sqm": 6.0,
+      "perimeter_m": 10.0,
+      "polygon": [[10000,0], [12000,0], [12000,3000], [10000,3000]],
+      "confidence": 0.93
+    },
+    {
+      "id": "R009",
+      "label": "Pooja",
+      "room_type": "pooja",
+      "area_sqm": 2.5,
+      "perimeter_m": 6.4,
+      "polygon": [[2500,8750], [4000,8750], [4000,10416], [2500,10416]],
+      "confidence": 0.82
+    },
+    {
+      "id": "R010",
+      "label": "Utility",
+      "room_type": "utility",
+      "area_sqm": 3.0,
+      "perimeter_m": 7.0,
+      "polygon": [[8000,6600], [10000,6600], [10000,8100], [8000,8100]],
+      "confidence": 0.80
+    }
+  ],
+  "total_area_sqm": 102.2,
+  "scale_used": "1:100"
+}

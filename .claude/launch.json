@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "xboq-demo",
+      "runtimeExecutable": "streamlit",
+      "runtimeArgs": ["run", "/Users/cooperworks/xboq.ai/app/demo_page.py", "--server.port", "8501", "--server.enableStaticServing", "true"],
+      "port": 8501
+    }
+  ]
+}

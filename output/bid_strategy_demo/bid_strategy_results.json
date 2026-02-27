@@ -1,0 +1,579 @@
+{
+  "risk_pricing": {
+    "package_risks": [
+      {
+        "package": "electrical",
+        "package_name": "Electrical Works",
+        "risk_level": "very_high",
+        "risk_score": 76.2,
+        "suggested_contingency_pct": 20.0,
+        "quantity_certainty": 35.0,
+        "scope_certainty": 0.0,
+        "spec_certainty": 50.0,
+        "package_value": 720000,
+        "risk_drivers": [
+          "Low quantity confidence (35%)",
+          "Incomplete scope definition (0%)",
+          "Unclear specifications (50%)",
+          "1 provisional items",
+          "High provisional value (100%)"
+        ]
+      },
+      {
+        "package": "plumbing",
+        "package_name": "Plumbing Works",
+        "risk_level": "very_high",
+        "risk_score": 75.0,
+        "suggested_contingency_pct": 20.0,
+        "quantity_certainty": 40.0,
+        "scope_certainty": 0.0,
+        "spec_certainty": 50.0,
+        "package_value": 850000,
+        "risk_drivers": [
+          "Low quantity confidence (40%)",
+          "Incomplete scope definition (0%)",
+          "Unclear specifications (50%)",
+          "1 provisional items",
+          "High provisional value (100%)"
+        ]
+      },
+      {
+        "package": "external",
+        "package_name": "External Development",
+        "risk_level": "high",
+        "risk_score": 53.0,
+        "suggested_contingency_pct": 15.0,
+        "quantity_certainty": 59.2,
+        "scope_certainty": 50.0,
+        "spec_certainty": 70.0,
+        "package_value": 622500,
+        "risk_drivers": [
+          "Low quantity confidence (59%)",
+          "Incomplete scope definition (50%)",
+          "1 provisional items",
+          "High provisional value (39%)"
+        ]
+      },
+      {
+        "package": "rcc",
+        "package_name": "RCC Structural",
+        "risk_level": "low",
+        "risk_score": 16.7,
+        "suggested_contingency_pct": 2.0,
+        "quantity_certainty": 89.1,
+        "scope_certainty": 100.0,
+        "spec_certainty": 80.0,
+        "package_value": 3247490,
+        "risk_drivers": []
+      },
+      {
+        "package": "flooring",
+        "package_name": "Flooring & Tiling",
+        "risk_level": "low",
+        "risk_score": 12.9,
+        "suggested_contingency_pct": 2.0,
+        "quantity_certainty": 84.3,
+        "scope_certainty": 100.0,
+        "spec_certainty": 80.0,
+        "package_value": 821750,
+        "risk_drivers": []
+      },
+      {
+        "package": "waterproof",
+        "package_name": "Waterproofing",
+        "risk_level": "low",
+        "risk_score": 10.5,
+        "suggested_contingency_pct": 2.0,
+        "quantity_certainty": 74.1,
+        "scope_certainty": 100.0,
+        "spec_certainty": 80.0,
+        "package_value": 415700,
+        "risk_drivers": []
+      },
+      {
+        "package": "finishes",
+        "package_name": "Finishes & Painting",
+        "risk_level": "low",
+        "risk_score": 9.0,
+        "suggested_contingency_pct": 2.0,
+        "quantity_certainty": 80.0,
+        "scope_certainty": 100.0,
+        "spec_certainty": 80.0,
+        "package_value": 357000,
+        "risk_drivers": []
+      },
+      {
+        "package": "masonry",
+        "package_name": "Masonry & Plastering",
+        "risk_level": "low",
+        "risk_score": 7.0,
+        "suggested_contingency_pct": 2.0,
+        "quantity_certainty": 87.9,
+        "scope_certainty": 100.0,
+        "spec_certainty": 80.0,
+        "package_value": 3871100,
+        "risk_drivers": []
+      },
+      {
+        "package": "doors_windows",
+        "package_name": "Doors & Windows",
+        "risk_level": "low",
+        "risk_score": 6.7,
+        "suggested_contingency_pct": 2.0,
+        "quantity_certainty": 89.1,
+        "scope_certainty": 100.0,
+        "spec_certainty": 80.0,
+        "package_value": 522000,
+        "risk_drivers": []
+      }
+    ],
+    "summary": {
+      "packages_analyzed": 9,
+      "low_risk_packages": 6,
+      "medium_risk_packages": 0,
+      "high_risk_packages": 1,
+      "very_high_risk_packages": 2,
+      "total_value": 11427540,
+      "weighted_avg_contingency": 5.18,
+      "top_risk_packages": [
+        {
+          "package": "Electrical Works",
+          "risk_score": 76.2,
+          "contingency": 20.0
+        },
+        {
+          "package": "Plumbing Works",
+          "risk_score": 75.0,
+          "contingency": 20.0
+        },
+        {
+          "package": "External Development",
+          "risk_score": 53.0,
+          "contingency": 15.0
+        }
+      ]
+    }
+  },
+  "sensitivity": {
+    "scenarios": [
+      {
+        "name": "Steel +10%",
+        "variable": "steel_rate",
+        "change_pct": 10.0,
+        "impact_amount": 146137.05,
+        "impact_pct": 0.84
+      },
+      {
+        "name": "Steel -10%",
+        "variable": "steel_rate",
+        "change_pct": -10.0,
+        "impact_amount": -146137.05,
+        "impact_pct": -0.84
+      },
+      {
+        "name": "Cement +10%",
+        "variable": "cement_rate",
+        "change_pct": 10.0,
+        "impact_amount": 123016.3,
+        "impact_pct": 0.71
+      },
+      {
+        "name": "Cement -10%",
+        "variable": "cement_rate",
+        "change_pct": -10.0,
+        "impact_amount": -123016.3,
+        "impact_pct": -0.71
+      },
+      {
+        "name": "Labour +10%",
+        "variable": "labour_rate",
+        "change_pct": 10.0,
+        "impact_amount": 349918.75,
+        "impact_pct": 2.02
+      },
+      {
+        "name": "Labour -10%",
+        "variable": "labour_rate",
+        "change_pct": -10.0,
+        "impact_amount": -349918.75,
+        "impact_pct": -2.02
+      },
+      {
+        "name": "Duration +20%",
+        "variable": "project_duration",
+        "change_pct": 20.0,
+        "impact_amount": 1136000.0,
+        "impact_pct": 6.55
+      },
+      {
+        "name": "Duration -20%",
+        "variable": "project_duration",
+        "change_pct": -20.0,
+        "impact_amount": -1136000.0,
+        "impact_pct": -6.55
+      }
+    ],
+    "base_values": {
+      "rcc_value": 3247490,
+      "masonry_value": 3871100,
+      "finishes_value": 1178750,
+      "mep_value": 1570000,
+      "total_boq": 11427540,
+      "time_based_prelims": 5680000,
+      "total_prelims": 5905000,
+      "grand_total": 17332540
+    },
+    "summary": {
+      "scenarios_analyzed": 8,
+      "grand_total": 17332540,
+      "max_upside_risk": {
+        "scenario": "Duration +20%",
+        "impact_pct": 6.55,
+        "impact_amount": 1136000.0
+      },
+      "max_downside_opportunity": {
+        "scenario": "Duration -20%",
+        "impact_pct": -6.55,
+        "impact_amount": -1136000.0
+      },
+      "total_upside_exposure": 10.12,
+      "total_downside_opportunity": 10.12
+    }
+  },
+  "quote_plan": {
+    "quote_plan": [
+      {
+        "package": "plumbing",
+        "package_name": "Plumbing Works",
+        "needs_quote": "yes",
+        "reason": "Specialised MEP trade; High risk package (very_high); High provisional (100%); Low quantity confidence (40%)",
+        "priority": 1,
+        "package_value": 850000
+      },
+      {
+        "package": "electrical",
+        "package_name": "Electrical Works",
+        "needs_quote": "yes",
+        "reason": "Specialised MEP trade; High risk package (very_high); High provisional (100%); Low quantity confidence (35%)",
+        "priority": 1,
+        "package_value": 720000
+      },
+      {
+        "package": "external",
+        "package_name": "External Development",
+        "needs_quote": "yes",
+        "reason": "High risk package (high); High provisional (39%); Low quantity confidence (57%)",
+        "priority": 1,
+        "package_value": 622500
+      },
+      {
+        "package": "flooring",
+        "package_name": "Flooring & Tiling",
+        "needs_quote": "yes",
+        "reason": "Specialised laying (marble/vitrified)",
+        "priority": 2,
+        "package_value": 821750
+      },
+      {
+        "package": "doors_windows",
+        "package_name": "Doors & Windows",
+        "needs_quote": "yes",
+        "reason": "Fabrication and installation",
+        "priority": 2,
+        "package_value": 522000
+      },
+      {
+        "package": "waterproof",
+        "package_name": "Waterproofing",
+        "needs_quote": "yes",
+        "reason": "Specialised application",
+        "priority": 2,
+        "package_value": 415700
+      },
+      {
+        "package": "masonry",
+        "package_name": "Masonry & Plastering",
+        "needs_quote": "optional",
+        "reason": "High value package (>15L)",
+        "priority": 3,
+        "package_value": 3871100
+      },
+      {
+        "package": "rcc",
+        "package_name": "RCC Structural",
+        "needs_quote": "optional",
+        "reason": "High value package (>15L)",
+        "priority": 3,
+        "package_value": 3247490
+      },
+      {
+        "package": "finishes",
+        "package_name": "Finishes & Painting",
+        "needs_quote": "no",
+        "reason": "In-house capability / low risk",
+        "priority": 4,
+        "package_value": 357000
+      }
+    ],
+    "summary": {
+      "total_packages": 9,
+      "urgent_quotes": 3,
+      "quotes_needed": 6,
+      "total_value": 11427540,
+      "quote_value": 3951950,
+      "urgent_packages": [
+        "Plumbing Works",
+        "Electrical Works",
+        "External Development"
+      ]
+    }
+  },
+  "exclusions_assumptions": {
+    "exclusions": [
+      {
+        "category": "Scope",
+        "item": "Furniture, fixtures, and furnishings (FF&F)",
+        "reason": "Not part of civil construction contract"
+      },
+      {
+        "category": "Scope",
+        "item": "Modular kitchen including appliances",
+        "reason": "Interior fit-out scope"
+      },
+      {
+        "category": "Scope",
+        "item": "Air conditioning and HVAC system",
+        "reason": "MEP specialist scope unless specified"
+      },
+      {
+        "category": "Scope",
+        "item": "Lift/elevator installation",
+        "reason": "Specialised OEM supply and install"
+      },
+      {
+        "category": "Scope",
+        "item": "Solar water heating / Solar PV panels",
+        "reason": "Green building scope unless specified"
+      },
+      {
+        "category": "Scope",
+        "item": "Swimming pool and associated equipment",
+        "reason": "Specialised construction"
+      },
+      {
+        "category": "Scope",
+        "item": "Landscaping, gardening and soft areas",
+        "reason": "Post-construction scope"
+      },
+      {
+        "category": "Scope",
+        "item": "External development beyond site boundary",
+        "reason": "Not in contractor's scope"
+      },
+      {
+        "category": "Commercial",
+        "item": "GST on works contract (currently 18%)",
+        "reason": "Statutory levy on actuals"
+      },
+      {
+        "category": "Commercial",
+        "item": "Government fees, approvals and liaison charges",
+        "reason": "Owner's responsibility"
+      },
+      {
+        "category": "Site",
+        "item": "Rock excavation (if encountered)",
+        "reason": "Unknown subsurface condition"
+      },
+      {
+        "category": "Site",
+        "item": "Dewatering beyond normal conditions",
+        "reason": "Subject to site conditions"
+      },
+      {
+        "category": "Site",
+        "item": "Shoring and underpinning of adjacent structures",
+        "reason": "If required"
+      },
+      {
+        "category": "Scope",
+        "item": "Demolition of existing structures (if any)",
+        "reason": "Unless specifically included"
+      },
+      {
+        "category": "Scope",
+        "item": "Asbestos/hazardous material removal",
+        "reason": "Specialist disposal required"
+      },
+      {
+        "category": "Scope Gap",
+        "item": "Lift installation",
+        "reason": "No drawings"
+      },
+      {
+        "category": "Scope Gap",
+        "item": "Fire fighting system",
+        "reason": "MEP missing"
+      }
+    ],
+    "assumptions": [
+      {
+        "category": "Specifications",
+        "assumption": "Concrete grade M25 for all RCC work unless specified otherwise",
+        "basis": "Standard residential grade"
+      },
+      {
+        "category": "Specifications",
+        "assumption": "Steel reinforcement Fe500D grade",
+        "basis": "IS 1786 compliant"
+      },
+      {
+        "category": "Specifications",
+        "assumption": "Ceiling height 3.0m (clear) floor to ceiling",
+        "basis": "Standard residential"
+      },
+      {
+        "category": "Specifications",
+        "assumption": "Floor to floor height 3.3m",
+        "basis": "Including slab thickness"
+      },
+      {
+        "category": "Specifications",
+        "assumption": "Slab thickness 150mm for typical floors",
+        "basis": "Unless noted in drawings"
+      },
+      {
+        "category": "Site",
+        "assumption": "Normal soil conditions for foundation (no rock)",
+        "basis": "As per standard practice"
+      },
+      {
+        "category": "Site",
+        "assumption": "Water table below foundation level",
+        "basis": "Normal conditions"
+      },
+      {
+        "category": "Site",
+        "assumption": "Clear access for material delivery and crane operation",
+        "basis": "8-hour working window"
+      },
+      {
+        "category": "Site",
+        "assumption": "Electricity and water available at site boundary",
+        "basis": "For construction use"
+      },
+      {
+        "category": "Programme",
+        "assumption": "Normal working hours (8 AM to 6 PM)",
+        "basis": "6 days per week"
+      },
+      {
+        "category": "Programme",
+        "assumption": "Monsoon period work possible with precautions",
+        "basis": "June-September"
+      },
+      {
+        "category": "Commercial",
+        "assumption": "Payment terms: Monthly RA bills within 15 days",
+        "basis": "Standard practice"
+      },
+      {
+        "category": "Commercial",
+        "assumption": "Material price validity: 60 days from bid date",
+        "basis": "Subject to market conditions"
+      },
+      {
+        "category": "Commercial",
+        "assumption": "No price escalation for project duration < 18 months",
+        "basis": "Fixed price contract"
+      },
+      {
+        "category": "Drawings",
+        "assumption": "Drawing MEP-01 to be provided before construction",
+        "basis": "Referenced but not received"
+      },
+      {
+        "category": "Drawings",
+        "assumption": "Drawing STR-03 to be provided before construction",
+        "basis": "Referenced but not received"
+      },
+      {
+        "category": "Drawings",
+        "assumption": "Drawing SITE-02 to be provided before construction",
+        "basis": "Referenced but not received"
+      },
+      {
+        "category": "Specifications",
+        "assumption": "Tile brand/model - standard specification assumed",
+        "basis": "Not specified in tender"
+      },
+      {
+        "category": "Specifications",
+        "assumption": "Paint shade - standard specification assumed",
+        "basis": "Not specified in tender"
+      },
+      {
+        "category": "Provisional",
+        "assumption": "Plumbing work on provisional allowance",
+        "basis": "Detailed drawings/specs not available"
+      },
+      {
+        "category": "Provisional",
+        "assumption": "Electrical work on provisional allowance",
+        "basis": "Detailed drawings/specs not available"
+      },
+      {
+        "category": "Provisional",
+        "assumption": "External work on provisional allowance",
+        "basis": "Detailed drawings/specs not available"
+      },
+      {
+        "category": "MEP",
+        "assumption": "Plumbing and electrical on lumpsum allowance basis",
+        "basis": "MEP drawings not provided"
+      },
+      {
+        "category": "Drawings",
+        "assumption": "Quantities based on approval drawings (not GFC)",
+        "basis": "GFC drawings not issued"
+      },
+      {
+        "category": "Programme",
+        "assumption": "Project completion in 14 months from site handover",
+        "basis": "Contractual requirement"
+      },
+      {
+        "category": "Commercial",
+        "assumption": "Material rates based on Bangalore market prices",
+        "basis": "Q1 2024 market survey"
+      }
+    ],
+    "summary": {
+      "total_exclusions": 17,
+      "total_assumptions": 26,
+      "exclusions_by_category": {
+        "Scope": 10,
+        "Commercial": 2,
+        "Site": 3,
+        "Scope Gap": 2
+      },
+      "assumptions_by_category": {
+        "Specifications": 7,
+        "Site": 4,
+        "Programme": 3,
+        "Commercial": 4,
+        "Drawings": 4,
+        "Provisional": 3,
+        "MEP": 1
+      }
+    }
+  },
+  "bid_strategy": {
+    "recommendation": "CAUTION",
+    "safe_packages": 6,
+    "risky_packages": 3,
+    "weighted_contingency": 5.18,
+    "urgent_quotes": 3,
+    "top_risk_driver": "Low quantity confidence (35%)"
+  }
+}

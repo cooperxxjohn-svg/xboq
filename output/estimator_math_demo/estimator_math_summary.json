@@ -1,0 +1,114 @@
+{
+  "timestamp": "2026-02-02T23:15:54.168517",
+  "original_items": 17,
+  "adjustments": [],
+  "deductions": {
+    "entries": 43,
+    "total_deducted": 278.5575
+  },
+  "opening_deductions": {
+    "total_openings": 7,
+    "doors": 3,
+    "windows": 4,
+    "total_door_area": 49.080000000000005,
+    "total_window_area": 62.415000000000006,
+    "deductions_applied": 7,
+    "total_deducted_area": 656.6850000000001
+  },
+  "formwork": {
+    "total_formwork_sqm": 1561.43,
+    "total_value": 699275.32,
+    "items_derived": 6,
+    "by_type": {
+      "column": {
+        "qty": 404.44,
+        "amount": 182000.0
+      },
+      "beam_bottom": {
+        "qty": 84.89,
+        "amount": 35653.33
+      },
+      "beam_sides": {
+        "qty": 221.45,
+        "amount": 88579.71
+      },
+      "slab_soffit": {
+        "qty": 833.33,
+        "amount": 316666.67
+      },
+      "slab_edge": {
+        "qty": 17.32,
+        "amount": 5542.56
+      },
+      "staging": {
+        "qty": 833.33,
+        "amount": 70833.05
+      }
+    }
+  },
+  "external_provisionals": {
+    "items_generated": 11,
+    "total_provisional_value": 1004800.0,
+    "categories": [
+      "GATE",
+      "KERB",
+      "LAND",
+      "SWD",
+      "FILL",
+      "GSB",
+      "WMM",
+      "ELECT",
+      "PLUMB",
+      "UGT"
+    ],
+    "note": "PROVISIONAL - Subject to site survey and detailed design"
+  },
+  "prelims": {
+    "total_items": 27,
+    "total_value": 10577504.74,
+    "by_category": {
+      "staff": {
+        "items": 5,
+        "amount": 7644000
+      },
+      "facilities": {
+        "items": 4,
+        "amount": 391500
+      },
+      "services": {
+        "items": 3,
+        "amount": 1050000
+      },
+      "equipment": {
+        "items": 3,
+        "amount": 588598.6
+      },
+      "safety": {
+        "items": 3,
+        "amount": 569000
+      },
+      "testing": {
+        "items": 3,
+        "amount": 98291.0
+      },
+      "insurance": {
+        "items": 2,
+        "amount": 42192.58
+      },
+      "statutory": {
+        "items": 1,
+        "amount": 46880.64
+      },
+      "misc": {
+        "items": 3,
+        "amount": 147041.91999999998
+      }
+    }
+  },
+  "final_boq": {
+    "items": 34,
+    "boq_total": 11080203.12,
+    "prelims_total": 10577504.74,
+    "grand_total": 21657707.86
+  }
+}

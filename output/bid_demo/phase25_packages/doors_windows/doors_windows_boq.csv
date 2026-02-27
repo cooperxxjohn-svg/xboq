@@ -1,0 +1,5 @@
+SL,Item ID,Description,Quantity,Unit,Rate,Amount,Drawing Ref
+1,DW-001,"Flush door 900x2100mm with frame",24,nos,12500.00,300000.00,ARC-01,D-SCH
+2,DW-002,"Main entrance door teak wood",1,nos,85000.00,85000.00,D-SCH
+3,DW-003,"UPVC sliding window 1800x1500mm",12,nos,18500.00,222000.00,W-SCH
+4,DW-004,"UPVC casement window 1200x1200mm",18,nos,12800.00,230400.00,W-SCH

@@ -1,0 +1,23 @@
+[
+  {
+    "rfi_id": "RFI-001",
+    "question": "Confirm column C5 dimensions - mismatch between structural (450x450) and architectural (400x400) drawings",
+    "priority": "high",
+    "status": "open",
+    "category": "structural"
+  },
+  {
+    "rfi_id": "RFI-002",
+    "question": "Provide MEP drawings for plumbing and electrical layout - currently using provisional allowances",
+    "priority": "high",
+    "status": "open",
+    "category": "mep"
+  },
+  {
+    "rfi_id": "RFI-005",
+    "question": "Provide soil investigation report for foundation design verification",
+    "priority": "high",
+    "status": "open",
+    "category": "structural"
+  }
+]

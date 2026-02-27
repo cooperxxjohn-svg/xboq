@@ -61,6 +61,7 @@ class Trade(str, Enum):
     PLUMBING = "plumbing"
     FINISHES = "finishes"
     GENERAL = "general"
+    COMMERCIAL = "commercial"
 
 
 class SheetType(str, Enum):
@@ -113,6 +114,114 @@ class ConfidenceLevel(str, Enum):
     LOW = "low"         # < 0.5
 
 
+class CoverageStatus(str, Enum):
+    """Whether a check actually covered the relevant pages."""
+    FOUND = "found"
+    NOT_FOUND_AFTER_SEARCH = "not_found_after_search"
+    UNKNOWN_NOT_PROCESSED = "unknown_not_processed"
+
+
+class SelectionMode(str, Enum):
+    """How pages were selected for deep processing."""
+    FULL_READ = "full_read"
+    FAST_BUDGET = "fast_budget"
+
+
+class RunMode(str, Enum):
+    """User-selectable run mode controlling deep-processing page budget.
+
+    Sprint 20G: Allows users to choose how many pages are deep-processed.
+    """
+    DEMO_FAST = "demo_fast"              # deep_cap=80  (current default)
+    STANDARD_REVIEW = "standard_review"  # deep_cap=220
+    FULL_AUDIT = "full_audit"            # deep_cap=None (all pages)
+
+    @property
+    def deep_cap(self) -> int | None:
+        """Return the page budget for this mode (None = unlimited)."""
+        return _RUN_MODE_CAPS[self]
+
+    @property
+    def label(self) -> str:
+        return _RUN_MODE_LABELS[self]
+
+
+_RUN_MODE_CAPS: dict["RunMode", int | None] = {
+    RunMode.DEMO_FAST: 80,
+    RunMode.STANDARD_REVIEW: 220,
+    RunMode.FULL_AUDIT: None,
+}
+
+_RUN_MODE_LABELS: dict["RunMode", str] = {
+    RunMode.DEMO_FAST: "Demo Fast (80 pages)",
+    RunMode.STANDARD_REVIEW: "Standard Review (220 pages)",
+    RunMode.FULL_AUDIT: "Full Audit (All pages)",
+}
+
+
+class RunCoverage(BaseModel):
+    """
+    Global coverage snapshot for the entire analysis run.
+
+    Built in pipeline.py after extraction, passed to dependency_reasoner
+    and rfi_engine so checks can gate "missing" assertions on whether
+    the relevant pages were actually deep-processed.
+    """
+    pages_total: int = 0
+    pages_indexed: int = 0
+    pages_deep_processed: int = 0
+    pages_skipped: List[Dict[str, Any]] = Field(
+        default_factory=list,
+        description="Each entry: {page_idx, doc_type, discipline, reason}"
+    )
+
+    doc_types_detected: Dict[str, int] = Field(default_factory=dict)
+    disciplines_detected: Dict[str, int] = Field(default_factory=dict)
+
+    doc_types_fully_covered: List[str] = Field(
+        default_factory=list,
+        description="Every page of this type was deep-processed"
+    )
+    doc_types_partially_covered: List[str] = Field(
+        default_factory=list,
+        description="Some pages of this type were deep-processed"
+    )
+    doc_types_not_covered: List[str] = Field(
+        default_factory=list,
+        description="Zero pages of this type were deep-processed"
+    )
+
+    selection_mode: SelectionMode = SelectionMode.FAST_BUDGET
+    ocr_budget_pages: int = 80
+    coverage_by_check: Dict[str, Dict[str, Any]] = Field(default_factory=dict)
+
+    def is_doc_type_covered(self, doc_type: str) -> CoverageStatus:
+        """Check if a doc_type was fully covered by deep processing."""
+        if doc_type in self.doc_types_fully_covered:
+            return CoverageStatus.NOT_FOUND_AFTER_SEARCH
+        # If doc_type was never detected in indexing, it genuinely doesn't exist
+        if self.doc_types_detected.get(doc_type, 0) == 0:
+            return CoverageStatus.NOT_FOUND_AFTER_SEARCH
+        # Partially or not covered
+        return CoverageStatus.UNKNOWN_NOT_PROCESSED
+
+    def to_dict(self) -> Dict[str, Any]:
+        return {
+            "pages_total": self.pages_total,
+            "pages_indexed": self.pages_indexed,
+            "pages_deep_processed": self.pages_deep_processed,
+            "pages_skipped": self.pages_skipped,
+            "doc_types_detected": self.doc_types_detected,
+            "disciplines_detected": self.disciplines_detected,
+            "doc_types_fully_covered": self.doc_types_fully_covered,
+            "doc_types_partially_covered": self.doc_types_partially_covered,
+            "doc_types_not_covered": self.doc_types_not_covered,
+            "selection_mode": self.selection_mode.value,
+            "ocr_budget_pages": self.ocr_budget_pages,
+            "coverage_by_check": self.coverage_by_check,
+        }
+
+
 # =============================================================================
 # EVIDENCE MODEL (Core - used by all findings)
 # =============================================================================
@@ -158,6 +267,45 @@ class EvidenceRef(BaseModel):
         description="Why this confidence level"
     )
 
+    # Spatial evidence — per-page bounding boxes with confidence + bbox_id
+    bbox: Optional[List[List[List[Any]]]] = Field(
+        default=None,
+        description=(
+            "Per-evidence-page bounding boxes. Outer list parallels self.pages. "
+            "Each inner list: [[x0_rel, y0_rel, x1_rel, y1_rel, confidence, bbox_id], ...] "
+            "where coords are 0.0-1.0 page-relative, confidence is 0.0-1.0, "
+            "and bbox_id is an optional string like 'BLK-0010-P0-0'."
+        ),
+    )
+
+    def assign_bbox_ids(self, item_id: str) -> None:
+        """Assign bbox_id (6th element) to every box in self.bbox.
+
+        Convention: '{item_id}-P{page_pos}-{box_idx}'
+        e.g. 'BLK-0010-P0-0', 'BLK-0010-P1-1'.
+        """
+        if not self.bbox:
+            return
+        for page_pos, page_boxes in enumerate(self.bbox):
+            for box_idx, box in enumerate(page_boxes):
+                bbox_id = f"{item_id}-P{page_pos}-{box_idx}"
+                if len(box) >= 6:
+                    box[5] = bbox_id  # overwrite existing
+                elif len(box) >= 5:
+                    box.append(bbox_id)  # append 6th element
+
+    # NOT_FOUND proof
+    searched_pages: Optional[List[int]] = Field(
+        default=None,
+        description="0-indexed pages that were actually searched for this item"
+    )
+    text_coverage_pct: Optional[float] = Field(
+        default=None,
+        ge=0.0,
+        le=100.0,
+        description="Pct of text on searched pages that was actually analyzed"
+    )
+
     @field_validator('snippets')
     @classmethod
     def truncate_snippets(cls, v):
@@ -195,6 +343,8 @@ class EvidenceRef(BaseModel):
         if self.search_attempts:
             searched = list(self.search_attempts.keys())[:3]
             parts.append(f"Searched: {', '.join(searched)}")
+        if self.searched_pages:
+            parts.append(f"Searched {len(self.searched_pages)} pages")
         return " | ".join(parts) if parts else "No evidence"
 
     def to_dict(self) -> Dict[str, Any]:
@@ -207,6 +357,9 @@ class EvidenceRef(BaseModel):
             "search_attempts": self.search_attempts,
             "confidence": self.confidence,
             "confidence_reason": self.confidence_reason,
+            "bbox": self.bbox,
+            "searched_pages": self.searched_pages,
+            "text_coverage_pct": self.text_coverage_pct,
         }
 
 
@@ -225,12 +378,23 @@ class Blocker(BaseModel):
     - What's the impact? (cost, schedule, bid)
     - How to fix? (fix_actions)
     - What becomes priceable? (unlocks_boq_categories)
+
+    Blockers are now TRADE/CATEGORY-SPECIFIC:
+    - affected_trades: List of trades this blocker impacts (not global)
+    - A blocker only affects coverage/pricing for its affected_trades
+    - Global NO-GO only happens when critical trades have no coverage
     """
     # Identity
     id: str = Field(description="Unique blocker ID like 'BLK-0001'")
     title: str = Field(description="Short title")
     trade: Trade = Field(default=Trade.GENERAL)
     severity: Severity = Field(default=Severity.MEDIUM)
+
+    # Affected trades (NEW: for granular impact tracking)
+    affected_trades: List[Trade] = Field(
+        default_factory=list,
+        description="Specific trades affected by this blocker. Empty = affects only primary trade."
+    )
 
     # Description
     description: str = Field(description="Detailed description of the issue")
@@ -267,6 +431,7 @@ class Blocker(BaseModel):
 
     # Metadata
     issue_type: str = Field(default="", description="Category: missing_schedule, missing_drawing, scale_issue, etc.")
+    coverage_status: Optional[str] = Field(default=None, description="CoverageStatus value: found, not_found_after_search, unknown_not_processed")
     created_at: datetime = Field(default_factory=datetime.now)
 
     @property
@@ -277,6 +442,22 @@ class Blocker(BaseModel):
     def blocks_pricing(self) -> bool:
         return self.bid_impact == BidImpact.BLOCKS_PRICING
 
+    @property
+    def all_affected_trades(self) -> List[Trade]:
+        """Get all trades affected by this blocker (primary + explicit)."""
+        trades = set([self.trade])
+        trades.update(self.affected_trades)
+        return list(trades)
+
+    @property
+    def is_global_blocker(self) -> bool:
+        """Check if this blocker affects all trades (like missing scale)."""
+        # Scale blockers and certain critical issues affect all trades
+        return (
+            'all_measured_items' in self.unlocks_boq_categories or
+            self.trade == Trade.GENERAL and self.bid_impact == BidImpact.BLOCKS_PRICING
+        )
+
     def to_dict(self) -> Dict[str, Any]:
         """Serialize to dict for JSON export."""
         return {
@@ -284,6 +465,7 @@ class Blocker(BaseModel):
             "title": self.title,
             "trade": self.trade.value,
             "severity": self.severity.value,
+            "affected_trades": [t.value for t in self.affected_trades],
             "description": self.description,
             "missing_dependency": self.missing_dependency,
             "impact_cost": self.impact_cost.value,
@@ -294,6 +476,7 @@ class Blocker(BaseModel):
             "score_delta_estimate": self.score_delta_estimate,
             "unlocks_boq_categories": self.unlocks_boq_categories,
             "issue_type": self.issue_type,
+            "coverage_status": self.coverage_status,
             "created_at": self.created_at.isoformat(),
         }
 
@@ -333,6 +516,7 @@ class RFIItem(BaseModel):
     # Metadata
     issue_type: str = Field(default="")
     package: str = Field(default="")
+    coverage_status: Optional[str] = Field(default=None, description="CoverageStatus value")
     created_at: datetime = Field(default_factory=datetime.now)
 
     def to_dict(self) -> Dict[str, Any]:
@@ -348,6 +532,7 @@ class RFIItem(BaseModel):
             "related_blocker_id": self.related_blocker_id,
             "issue_type": self.issue_type,
             "package": self.package,
+            "coverage_status": self.coverage_status,
             "created_at": self.created_at.isoformat(),
         }
 
@@ -799,6 +984,41 @@ def create_blocker_id(index: int) -> str:
 def create_rfi_id(index: int) -> str:
     """Generate an RFI ID."""
     return f"RFI-{index:04d}"
+
+
+def assign_all_bbox_ids(blockers: List[Dict], rfis: List[Dict]) -> None:
+    """Walk all blockers and RFIs (as dicts) and assign bbox_ids in-place.
+
+    Each bbox entry gets a 6th element: '{item_id}-P{page_pos}-{box_idx}'.
+    Works on serialized dicts (post to_dict()), not Pydantic models.
+    """
+    for item in blockers:
+        item_id = item.get("id", "UNK")
+        ev = item.get("evidence", {})
+        bbox = ev.get("bbox")
+        if not bbox:
+            continue
+        for page_pos, page_boxes in enumerate(bbox):
+            for box_idx, box in enumerate(page_boxes):
+                bbox_id = f"{item_id}-P{page_pos}-{box_idx}"
+                if len(box) >= 6:
+                    box[5] = bbox_id
+                elif len(box) >= 5:
+                    box.append(bbox_id)
+
+    for item in rfis:
+        item_id = item.get("id", "UNK")
+        ev = item.get("evidence", {})
+        bbox = ev.get("bbox")
+        if not bbox:
+            continue
+        for page_pos, page_boxes in enumerate(bbox):
+            for box_idx, box in enumerate(page_boxes):
+                bbox_id = f"{item_id}-P{page_pos}-{box_idx}"
+                if len(box) >= 6:
+                    box[5] = bbox_id
+                elif len(box) >= 5:
+                    box.append(bbox_id)
 
 
 def severity_from_confidence(confidence: float) -> Severity:

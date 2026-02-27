@@ -1,0 +1,5 @@
+SL,Item ID,Description,Quantity,Unit,Rate,Amount,Drawing Ref
+1,MAS-001,"AAC Block masonry 200mm thick",1850,sqm,1450.00,2682500.00,ARC-01,ARC-02
+2,MAS-002,"AAC Block masonry 100mm thick",420,sqm,980.00,411600.00,ARC-01
+3,MAS-003,"Cement plaster 12mm internal",4200,sqm,185.00,777000.00,ARC-01,ARC-02
+4,MAS-004,"Cement plaster 20mm external",1100,sqm,245.00,269500.00,ARC-03

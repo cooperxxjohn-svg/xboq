@@ -1,0 +1,252 @@
+"""
+Floor Plan Pipeline Tests
+Tests the full pipeline with synthetic data.
+"""
+
+import logging
+import json
+from pathlib import Path
+import sys
+import numpy as np
+
+sys.path.insert(0, str(Path(__file__).parent.parent))
+
+from src.pipeline import FloorPlanPipeline, PipelineConfig
+from tests.synthetic_generator import save_synthetic_plans
+
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s'
+)
+logger = logging.getLogger(__name__)
+
+
+def test_simple_rectangle():
+    """Test with simplest case - single rectangle."""
+    logger.info("\n" + "="*60)
+    logger.info("TEST: Simple Rectangle (10m x 10m = 100 sqm)")
+    logger.info("="*60)
+
+    data_dir = Path(__file__).parent.parent / "data" / "plans"
+    output_dir = Path(__file__).parent.parent / "out"
+
+    # Generate synthetic data if needed
+    if not (data_dir / "test_simple_rectangle.png").exists():
+        logger.info("Generating synthetic test data...")
+        save_synthetic_plans(data_dir)
+
+    # Run pipeline
+    config = PipelineConfig(
+        dpi=300,
+        default_scale=100,
+        output_dir=output_dir
+    )
+
+    pipeline = FloorPlanPipeline(config)
+    result = pipeline.process(data_dir / "test_simple_rectangle.png")
+
+    # Validate
+    assert result.success, f"Pipeline failed: {result.errors}"
+    assert len(result.rooms_with_area) >= 1, "Should detect at least 1 room"
+
+    # Check area accuracy
+    detected_area = sum(r.area.area_sqm for r in result.rooms_with_area)
+    expected_area = 100.0  # 10m x 10m
+
+    # Allow 20% tolerance
+    tolerance = 0.20
+    area_error = abs(detected_area - expected_area) / expected_area
+
+    logger.info(f"  Expected area: {expected_area:.1f} sqm")
+    logger.info(f"  Detected area: {detected_area:.1f} sqm")
+    logger.info(f"  Error: {area_error:.1%}")
+
+    assert area_error < tolerance, f"Area error {area_error:.1%} exceeds {tolerance:.0%} tolerance"
+
+    logger.info("  ✓ TEST PASSED")
+    return True
+
+
+def test_1bhk():
+    """Test with 1BHK apartment."""
+    logger.info("\n" + "="*60)
+    logger.info("TEST: 1BHK Apartment")
+    logger.info("="*60)
+
+    data_dir = Path(__file__).parent.parent / "data" / "plans"
+    output_dir = Path(__file__).parent.parent / "out"
+
+    if not (data_dir / "test_1bhk.png").exists():
+        save_synthetic_plans(data_dir)
+
+    config = PipelineConfig(dpi=300, default_scale=100, output_dir=output_dir)
+    pipeline = FloorPlanPipeline(config)
+    result = pipeline.process(data_dir / "test_1bhk.png")
+
+    assert result.success, f"Pipeline failed: {result.errors}"
+
+    # Should detect multiple rooms
+    logger.info(f"  Detected {len(result.rooms_with_area)} rooms")
+
+    # Check room detection
+    room_labels = [r.label for r in result.rooms_with_area]
+    logger.info(f"  Room labels: {room_labels}")
+
+    # At minimum should detect some rooms
+    assert len(result.rooms_with_area) >= 3, "Should detect at least 3 rooms"
+
+    # Check QC report
+    if result.qc_report:
+        logger.info(f"  QC Confidence: {result.qc_report.overall_confidence:.0%}")
+        logger.info(f"  Warnings: {len(result.qc_report.warnings)}")
+
+    logger.info("  ✓ TEST PASSED")
+    return True
+
+
+def test_2bhk():
+    """Test with 2BHK apartment."""
+    logger.info("\n" + "="*60)
+    logger.info("TEST: 2BHK Apartment")
+    logger.info("="*60)
+
+    data_dir = Path(__file__).parent.parent / "data" / "plans"
+    output_dir = Path(__file__).parent.parent / "out"
+
+    if not (data_dir / "test_2bhk.png").exists():
+        save_synthetic_plans(data_dir)
+
+    config = PipelineConfig(dpi=300, default_scale=100, output_dir=output_dir)
+    pipeline = FloorPlanPipeline(config)
+    result = pipeline.process(data_dir / "test_2bhk.png")
+
+    assert result.success, f"Pipeline failed: {result.errors}"
+
+    logger.info(f"  Detected {len(result.rooms_with_area)} rooms")
+
+    room_labels = [r.label for r in result.rooms_with_area]
+    logger.info(f"  Room labels: {room_labels}")
+
+    # 2BHK should have more rooms
+    assert len(result.rooms_with_area) >= 5, "Should detect at least 5 rooms"
+
+    # Total area should be reasonable
+    total_area = sum(r.area.area_sqm for r in result.rooms_with_area)
+    logger.info(f"  Total area: {total_area:.1f} sqm")
+
+    logger.info("  ✓ TEST PASSED")
+    return True
+
+
+def test_consistency_score():
+    """Test consistency scoring."""
+    logger.info("\n" + "="*60)
+    logger.info("TEST: Consistency Score Calculation")
+    logger.info("="*60)
+
+    data_dir = Path(__file__).parent.parent / "data" / "plans"
+    output_dir = Path(__file__).parent.parent / "out"
+
+    if not (data_dir / "test_1bhk.png").exists():
+        save_synthetic_plans(data_dir)
+
+    config = PipelineConfig(dpi=300, default_scale=100, output_dir=output_dir)
+    pipeline = FloorPlanPipeline(config)
+    result = pipeline.process(data_dir / "test_1bhk.png")
+
+    if not result.success:
+        logger.warning("  Pipeline failed, skipping consistency test")
+        return False
+
+    # Calculate consistency metrics
+    rooms = result.rooms_with_area
+    total_rooms = len(rooms)
+
+    if total_rooms == 0:
+        logger.warning("  No rooms detected, skipping")
+        return False
+
+    # Percent labeled
+    labeled = len([r for r in rooms if r.label not in ('Room', 'Unknown')])
+    pct_labeled = labeled / total_rooms * 100
+
+    # Percent high confidence
+    high_conf = len([r for r in rooms if r.confidence >= 0.7])
+    pct_high_conf = high_conf / total_rooms * 100
+
+    # QC metrics
+    if result.qc_report:
+        errors = len([w for w in result.qc_report.warnings if w.severity == 'error'])
+        warnings = len([w for w in result.qc_report.warnings if w.severity == 'warning'])
+    else:
+        errors, warnings = 0, 0
+
+    # Calculate overall consistency score
+    consistency_score = (
+        pct_labeled * 0.3 +
+        pct_high_conf * 0.3 +
+        (1 - errors / max(1, total_rooms)) * 100 * 0.2 +
+        (1 - warnings / max(1, total_rooms) / 2) * 100 * 0.2
+    )
+
+    logger.info(f"  Total rooms: {total_rooms}")
+    logger.info(f"  Labeled: {pct_labeled:.0f}%")
+    logger.info(f"  High confidence: {pct_high_conf:.0f}%")
+    logger.info(f"  Errors: {errors}")
+    logger.info(f"  Warnings: {warnings}")
+    logger.info(f"  Consistency Score: {consistency_score:.1f}/100")
+
+    assert consistency_score >= 30, f"Consistency score {consistency_score:.1f} too low"
+
+    logger.info("  ✓ TEST PASSED")
+    return True
+
+
+def run_all_tests():
+    """Run all tests and generate report."""
+    logger.info("\n" + "="*70)
+    logger.info("FLOOR PLAN PIPELINE TESTS")
+    logger.info("="*70)
+
+    results = {}
+
+    # Run tests
+    tests = [
+        ("simple_rectangle", test_simple_rectangle),
+        ("1bhk", test_1bhk),
+        ("2bhk", test_2bhk),
+        ("consistency_score", test_consistency_score),
+    ]
+
+    for name, test_func in tests:
+        try:
+            passed = test_func()
+            results[name] = "PASS" if passed else "FAIL"
+        except AssertionError as e:
+            logger.error(f"  ✗ TEST FAILED: {e}")
+            results[name] = "FAIL"
+        except Exception as e:
+            logger.error(f"  ✗ TEST ERROR: {e}")
+            results[name] = "ERROR"
+
+    # Summary
+    logger.info("\n" + "="*70)
+    logger.info("TEST SUMMARY")
+    logger.info("="*70)
+
+    passed = len([r for r in results.values() if r == "PASS"])
+    total = len(results)
+
+    for name, status in results.items():
+        symbol = "✓" if status == "PASS" else "✗"
+        logger.info(f"  {symbol} {name}: {status}")
+
+    logger.info(f"\nTotal: {passed}/{total} tests passed")
+    logger.info("="*70)
+
+    return passed == total
+
+
+if __name__ == "__main__":
+    success = run_all_tests()
+    sys.exit(0 if success else 1)

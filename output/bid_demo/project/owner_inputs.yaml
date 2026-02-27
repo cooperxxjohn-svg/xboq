@@ -1,0 +1,24 @@
+# Owner Inputs for Demo Project
+project:
+  name: "Residential Villa - Whitefield"
+  type: residential
+  location: Bangalore
+  built_up_area_sqm: 4500
+  completion_months: 14
+
+site:
+  address: "Survey No. 123, Whitefield, Bangalore - 560066"
+  soil_type: unknown  # Soil report not provided
+  water_table_depth_m: null
+
+finishes:
+  grade: premium
+  floor_tile_brand: null  # To be confirmed
+
+structural:
+  concrete_grade: M25
+  steel_grade: Fe500D
+
+mep:
+  electrical_load_kw: null  # MEP drawings not provided
+  plumbing_fixtures: null

@@ -1,0 +1,9 @@
+{
+  "project_id": "sample_project",
+  "project_name": "Sample 2BHK Apartment",
+  "profile": "typical",
+  "ceiling_height_mm": 3000,
+  "slab_thickness_mm": 125,
+  "concrete_grade": "M25",
+  "steel_grade": "Fe500"
+}

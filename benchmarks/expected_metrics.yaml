@@ -1,0 +1,24 @@
+# Expected KPI thresholds per benchmark case.
+# Used by scripts/run_regression.py to PASS/WARN/FAIL each KPI.
+#
+# PASS:  KPI meets or exceeds threshold
+# WARN:  KPI is within 10% below threshold
+# FAIL:  KPI is more than 10% below threshold
+#
+# Add thresholds only for KPIs you care about per case.
+# Missing thresholds are reported as INFO (no judgement).
+
+# example_hospital_300pg:
+#   min_boq_items: 50
+#   min_commercial_terms: 5
+#   min_requirements: 20
+#   min_rfis: 15
+#   max_toxic_pages: 5
+#   min_qa_score: 0.6
+
+# example_residential_50pg:
+#   min_boq_items: 10
+#   min_commercial_terms: 2
+#   min_requirements: 5
+#   min_rfis: 5
+#   max_toxic_pages: 2

@@ -1,0 +1,62 @@
+{
+  "project_id": "sample_project",
+  "scale_factor": 0.05,
+  "rooms": [
+    {
+      "id": "R001",
+      "label": "Living",
+      "area_sqm": 28.5,
+      "perimeter_m": 21.4,
+      "room_type": "living"
+    },
+    {
+      "id": "R002",
+      "label": "Bedroom 1",
+      "area_sqm": 14.2,
+      "perimeter_m": 15.2,
+      "room_type": "bedroom"
+    },
+    {
+      "id": "R003",
+      "label": "Bedroom 2",
+      "area_sqm": 12.8,
+      "perimeter_m": 14.4,
+      "room_type": "bedroom"
+    },
+    {
+      "id": "R004",
+      "label": "Kitchen",
+      "area_sqm": 9.5,
+      "perimeter_m": 12.4,
+      "room_type": "kitchen"
+    },
+    {
+      "id": "R005",
+      "label": "Toilet 1",
+      "area_sqm": 3.2,
+      "perimeter_m": 7.2,
+      "room_type": "toilet"
+    },
+    {
+      "id": "R006",
+      "label": "Toilet 2",
+      "area_sqm": 2.8,
+      "perimeter_m": 6.8,
+      "room_type": "toilet"
+    },
+    {
+      "id": "R007",
+      "label": "Balcony",
+      "area_sqm": 4.5,
+      "perimeter_m": 9.0,
+      "room_type": "balcony"
+    },
+    {
+      "id": "R008",
+      "label": "Passage",
+      "area_sqm": 5.2,
+      "perimeter_m": 10.4,
+      "room_type": "passage"
+    }
+  ]
+}

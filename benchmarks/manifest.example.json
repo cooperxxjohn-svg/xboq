@@ -1,0 +1,27 @@
+{
+  "cases": {
+    "example_hospital_300pg": {
+      "paths": [
+        "/path/to/hospital_tender.pdf"
+      ],
+      "mode": "standard_review",
+      "description": "300-page hospital tender with BOQ, drawings, schedules"
+    },
+    "example_residential_50pg": {
+      "paths": [
+        "/path/to/residential_tender.pdf"
+      ],
+      "mode": "demo_fast",
+      "description": "Small residential tender for quick smoke test"
+    },
+    "example_multi_doc": {
+      "paths": [
+        "/path/to/main_tender.pdf",
+        "/path/to/addendum_1.pdf",
+        "/path/to/boq_excel.xlsx"
+      ],
+      "mode": "standard_review",
+      "description": "Multi-document tender with addenda"
+    }
+  }
+}

@@ -1,0 +1,28 @@
+item_id,description,quantity,unit,rate,amount,category,derivation
+PG-STAFF-002,Site Engineers (3 nos x 14 months),42,man-months,65000,2730000,staff,4500 sqm / 1000 x 0.5 = 3 engineers
+PG-STAFF-003,Site Supervisors (5 nos x 14 months),70,man-months,45000,3150000,staff,4500 sqm / 1000 x 1.0 = 5 supervisors
+PG-STAFF-004,Storekeeper (1 no x 14 months),14,months,35000,490000,staff,Standard requirement
+PG-STAFF-005,Security/Watchmen (2 nos x 14 months),28,man-months,18000,504000,staff,2 watchmen for 24hr coverage
+PG-STAFF-006,Safety Officer (1 no x 14 months),14,months,55000,770000,staff,Required for project > 3000 sqm
+PG-FAC-001,Site office (prefab/container) including furniture,1,LS,36000,36000,facilities,BUA 4500 sqm x ₹8/sqm
+PG-FAC-002,Material stores and cement godown,1,LS,22500,22500,facilities,BUA 4500 sqm x ₹5/sqm
+PG-FAC-003,Labour hutments/accommodation,1,LS,18000,18000,facilities,BUA 4500 sqm x ₹4/sqm
+PG-FAC-004,Temporary toilet blocks (9 nos),9,nos,35000,315000,facilities,4500 sqm / 1000 x 2 = 9
+PG-SVC-001,Temporary electricity connection and monthly charges (14 months),14,months,45000,630000,services,Monthly charges for construction power
+PG-SVC-002,Temporary water connection and monthly charges (14 months),14,months,25000,350000,services,Municipal water for construction
+PG-SVC-003,Internet/communication (14 months),14,months,5000,70000,services,Site office internet and communication
+PG-EQP-001,Material hoist hire (8 months),8,months,45000,360000,equipment,Suitable for 3 floor project
+PG-EQP-003,Scaffolding and staging hire for formwork,2394.76,sqm,85,203554.6,equipment,Total formwork area: 2395 sqm
+PG-EQP-004,"Concrete curing (water, jute, compound)",208.7,cum,120,25044.0,equipment,Total RCC: 209 cum
+PG-SAF-001,"Safety equipment (nets, barricades, signages)",4500,sqm,12,54000,safety,BUA 4500 sqm
+PG-SAF-002,"PPE (helmets, boots, jackets, gloves) - 14 months",14,months,35000,490000,safety,Monthly replenishment
+PG-SAF-003,First aid kit and medical supplies (initial),1,LS,25000,25000,safety,Initial setup
+PG-TEST-001,Concrete cube testing (4 sets of cubes),208.7,cum,180,37566.0,testing,1 set per 50 cum = 4 sets
+PG-TEST-002,Steel reinforcement testing (0 samples),18.5,MT,850,15725.0,testing,1 sample per 50 MT = 0 samples
+PG-TEST-003,Soil investigation (initial),1,LS,45000,45000,testing,SPT and bore log
+PG-INS-001,Contractor All Risk (CAR) insurance,1,LS,18752.26,18752.26,insurance,"0.2% of project value ₹9,376,128"
+PG-INS-002,Workmen compensation insurance,1,LS,23440.32,23440.32,insurance,1.0% of labour value
+PG-STAT-001,Statutory fees and permissions,1,LS,46880.64,46880.64,statutory,Estimated 0.5% of project value
+PG-MISC-001,Initial and periodic survey,800,sqm,8,6400,misc,Plot area 800 sqm
+PG-MISC-002,Tools and tackles,1,LS,46880.64,46880.64,misc,0.5% of project value
+PG-MISC-003,Mobilization and demobilization,1,LS,93761.28,93761.28,misc,1.0% of project value

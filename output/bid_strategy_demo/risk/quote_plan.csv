@@ -1,0 +1,10 @@
+package,package_name,needs_quote,reason,rfq_sheet_path,risk_level,priority,package_value,provisional_value,confidence
+plumbing,Plumbing Works,yes,Specialised MEP trade; High risk package (very_high); High provisional (100%); Low quantity confidence (40%),,very_high,1,850000.00,850000.00,40.0
+electrical,Electrical Works,yes,Specialised MEP trade; High risk package (very_high); High provisional (100%); Low quantity confidence (35%),,very_high,1,720000.00,720000.00,35.0
+external,External Development,yes,High risk package (high); High provisional (39%); Low quantity confidence (57%),,high,1,622500.00,240000.00,57.5
+flooring,Flooring & Tiling,yes,Specialised laying (marble/vitrified),,low,2,821750.00,0.00,82.5
+doors_windows,Doors & Windows,yes,Fabrication and installation,,low,2,522000.00,0.00,89.0
+waterproof,Waterproofing,yes,Specialised application,,low,2,415700.00,0.00,72.5
+masonry,Masonry & Plastering,optional,High value package (>15L),,low,3,3871100.00,0.00,85.7
+rcc,RCC Structural,optional,High value package (>15L),,low,3,3247490.00,0.00,90.0
+finishes,Finishes & Painting,no,In-house capability / low risk,,low,4,357000.00,0.00,80.0

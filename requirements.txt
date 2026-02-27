@@ -9,8 +9,8 @@ shapely>=2.0.0
 
 # PDF Processing
 PyMuPDF>=1.23.0
-pdfplumber>=0.10.0
-camelot-py[cv]>=0.11.0
+pdfplumber>=0.10.0                 # Used by table_router for text-PDF table extraction
+camelot-py[cv]>=0.11.0             # Optional: requires ghostscript system package for lattice mode
 tabula-py>=2.9.0
 
 # OCR (optional but recommended)
@@ -33,6 +33,9 @@ streamlit>=1.28.0
 
 # Excel Export
 openpyxl>=3.1.0
+
+# Word Export
+python-docx>=0.8.11
 
 # Utilities
 tqdm>=4.65.0

@@ -1,0 +1,5 @@
+SL,Item ID,Description,Quantity,Unit,Rate,Amount,Drawing Ref
+1,RCC-001,"RCC M25 grade for columns 450x450mm",45.5,cum,8500.00,386750.00,STR-01
+2,RCC-002,"RCC M25 grade for beams 230x450mm",38.2,cum,8200.00,313240.00,STR-01
+3,RCC-003,"RCC M25 grade for slab 150mm thick",125.0,cum,7800.00,975000.00,STR-02
+4,RCC-004,"Steel reinforcement Fe500D",18500,kg,85.00,1572500.00,STR-01,STR-02

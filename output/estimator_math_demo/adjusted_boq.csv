@@ -1,0 +1,35 @@
+amount,confidence,deductions,derivation_method,derived_from,description,drawing_ref,formwork_type,gross_quantity,is_provisional,item_id,opening_deduction,package,quantity,rate,unit
+386750,,,,,RCC M25 grade for columns 450x450mm,STR-01,,,,RCC-001,,rcc,45.5,8500,cum
+313240,,,,,RCC M25 grade for beams 230x450mm,STR-01,,,,RCC-002,,rcc,38.2,8200,cum
+975000,,,,,RCC M25 grade for slab 150mm thick,STR-02,,,,RCC-003,,rcc,125.0,7800,cum
+1572500,,,,,Steel reinforcement Fe500D,"STR-01,STR-02",,,,RCC-004,,rcc,18500,85,kg
+2504048.5,,11.5725,,,AAC Block masonry 200mm thick external walls,"ARC-01,ARC-02",,1838.4275,,MAS-001,111.5,masonry,1726.93,1450,sqm
+290991.4,,11.5725,,,AAC Block masonry 100mm thick internal partitions,ARC-01,,408.4275,,MAS-002,111.5,masonry,296.93,980,sqm
+729453.1499999999,,210.81,,,Cement plaster 12mm internal walls,"ARC-01,ARC-02",,3989.19,,PLS-001,46.2,masonry,3942.99,185,sqm
+251808.55,,11.01,,,Cement plaster 20mm external walls,ARC-03,,1088.99,,PLS-002,61.2,masonry,1027.79,245,sqm
+346935.15,,11.01,,,Interior emulsion paint 2 coats,INT-01,,4188.99,,PNT-001,107.4,finishes,4081.59,85,sqm
+93251.05,,11.01,,,Exterior weatherproof paint,INT-01,,1088.99,,PNT-002,107.4,finishes,981.59,95,sqm
+338000,,,,,APP membrane waterproofing for terrace,ARC-ROOF,,,,WP-001,,waterproof,520,650,sqm
+703000,,,,,Vitrified tiles 600x600mm living/dining,INT-01,,,,FLR-001,,flooring,380,1850,sqm
+118750,,,,,Ceramic tiles 300x300mm anti-skid toilets,INT-01,,,,FLR-002,,flooring,95,1250,sqm
+300000,,,,,Flush door 900x2100mm with frame,D-SCH,,,,DW-001,,doors_windows,24,12500,nos
+222000,,,,,UPVC sliding window 1800x1500mm,W-SCH,,,,DW-002,,doors_windows,12,18500,nos
+230400,,,,,UPVC casement window 1200x1200mm,W-SCH,,,,DW-003,,doors_windows,18,12800,nos
+0,,11.5725,,,Compound wall brick 230mm with foundation,SITE-01,,73.4275,,EXT-001,111.5,external,0,4500,rmt
+182000.0,,,Column 450.0x450.0mm x 3.0m,RCC-001,Centering and shuttering for RCC columns (derived from RCC-001),STR-01,column,,,FW-COL-001,,rcc,404.44,450,sqm
+35653.33,,,Beam 230.0x450.0mm,RCC-002,Centering and shuttering for beam bottom (derived from RCC-002),STR-01,beam_bottom,,,FW-BEAM-BOT-002,,rcc,84.89,420,sqm
+88579.71,,,Beam sides 2 x L x 300.0mm,RCC-002,Centering and shuttering for beam sides (both sides),STR-01,beam_sides,,,FW-BEAM-SIDE-003,,rcc,221.45,400,sqm
+316666.67,,,RCC 125.00 cum / 150mm thickness,RCC-003,Centering and shuttering for RCC slab soffit (derived from RCC-003),STR-02,slab_soffit,,,FW-SLAB-004,,rcc,833.33,380,sqm
+5542.56,,,Slab perimeter x 150mm,RCC-003,Centering and shuttering for RCC slab edges,STR-02,slab_edge,,,FW-SLAB-EDGE-005,,rcc,17.32,320,sqm
+70833.05,,,Slab soffit area 833.33 sqm x 1.0,slab_formwork,Staging/propping for slab formwork (steel props/scaffolding),STR,staging,,,STG-006,,rcc,833.33,85,sqm
+0.0,0.5,,External area 0 sqm x 0.3m depth,,Earth filling in plinth and external areas including compaction - PROVISIONAL,N/A,,,True,EXT-FILL-001,,external,0.0,650,cum
+336000.0,0.5,,Plot area 800 sqm x 0.15 ratio,,RCC stormwater drain 300x300mm with precast cover - PROVISIONAL,N/A,,,True,EXT-SWD-001,,external,120.0,2800,rmt
+120000,0.5,,24 persons x 200L x 2 days,,RCC underground water tank 10000L capacity with pump room - PROVISIONAL,N/A,,,True,EXT-UGT-001,,external,10000,12,litres
+28800.0,0.5,,Plot area 800 sqm x 0.08 ratio,,Precast kerb stones 150x300mm with haunching - PROVISIONAL,N/A,,,True,EXT-KERB-001,,external,64.0,450,rmt
+0.0,0.5,,Paved area 0 sqm (60% of external),,Granular Sub-Base (GSB) 150mm thick compacted - PROVISIONAL,N/A,,,True,EXT-GSB-001,,external,0.0,185,sqm
+0.0,0.5,,Paved area 0 sqm (60% of external),,Wet Mix Macadam (WMM) 100mm thick - PROVISIONAL,N/A,,,True,EXT-WMM-001,,external,0.0,220,sqm
+202500,0.5,,BUA 4500 sqm x ₹45/sqm,,External plumbing - water supply and drainage connections - PROVISIONAL,N/A,,,True,EXT-PLUMB-001,,external,1,202500,LS
+157500,0.5,,BUA 4500 sqm x ₹35/sqm,,"External electrical - EB connection, meter, street lights, conduits - PROVISIONAL",N/A,,,True,EXT-ELECT-001,,external,1,157500,LS
+0.0,0.5,,30% of external area 0 sqm,,"Soft landscaping including lawn, plants, irrigation - PROVISIONAL",N/A,,,True,EXT-LAND-001,,external,0.0,350,sqm
+125000,0.5,,Standard main gate allowance,,Main entrance gate MS fabricated with automation - PROVISIONAL,N/A,,,True,EXT-GATE-001,,external,1,125000,nos
+35000,0.5,,Standard pedestrian gate allowance,,Pedestrian gate MS fabricated - PROVISIONAL,N/A,,,True,EXT-GATE-002,,external,1,35000,nos

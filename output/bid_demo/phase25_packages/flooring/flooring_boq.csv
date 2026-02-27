@@ -1,0 +1,4 @@
+SL,Item ID,Description,Quantity,Unit,Rate,Amount,Drawing Ref
+1,FLR-001,"Vitrified tiles 600x600mm living/dining",380,sqm,1850.00,703000.00,INT-01
+2,FLR-002,"Ceramic tiles 300x300mm anti-skid toilets",95,sqm,1250.00,118750.00,INT-01
+3,FLR-003,"Granite flooring for lobby",65,sqm,3200.00,208000.00,INT-02

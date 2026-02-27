@@ -1,0 +1,611 @@
+{
+  "simple_rectangle": {
+    "name": "simple_rectangle",
+    "width_mm": 10000,
+    "height_mm": 10000,
+    "scale": 100,
+    "dpi": 300,
+    "rooms": [
+      {
+        "name": "Room",
+        "bbox_mm": [
+          0,
+          0,
+          10000,
+          10000
+        ],
+        "area_sqm": 100.0,
+        "aliases": []
+      }
+    ]
+  },
+  "1bhk": {
+    "name": "1bhk",
+    "width_mm": 7000,
+    "height_mm": 9500,
+    "scale": 100,
+    "dpi": 300,
+    "rooms": [
+      {
+        "name": "Bedroom",
+        "bbox_mm": [
+          0,
+          0,
+          4000,
+          4000
+        ],
+        "area_sqm": 16.0,
+        "aliases": [
+          "BR",
+          "Master"
+        ]
+      },
+      {
+        "name": "Living",
+        "bbox_mm": [
+          0,
+          4000,
+          4000,
+          4000
+        ],
+        "area_sqm": 16.0,
+        "aliases": [
+          "Hall",
+          "Drawing"
+        ]
+      },
+      {
+        "name": "Kitchen",
+        "bbox_mm": [
+          4000,
+          4000,
+          3000,
+          3000
+        ],
+        "area_sqm": 9.0,
+        "aliases": [
+          "Kitch"
+        ]
+      },
+      {
+        "name": "Toilet",
+        "bbox_mm": [
+          4000,
+          0,
+          3000,
+          2000
+        ],
+        "area_sqm": 6.0,
+        "aliases": [
+          "WC",
+          "Bath",
+          "T&B"
+        ]
+      },
+      {
+        "name": "Bath",
+        "bbox_mm": [
+          4000,
+          2000,
+          3000,
+          2000
+        ],
+        "area_sqm": 6.0,
+        "aliases": [
+          "Bathroom",
+          "Attached"
+        ]
+      },
+      {
+        "name": "Balcony",
+        "bbox_mm": [
+          0,
+          8000,
+          2000,
+          1500
+        ],
+        "area_sqm": 3.0,
+        "aliases": [
+          "Blcny",
+          "Deck"
+        ]
+      }
+    ]
+  },
+  "2bhk": {
+    "name": "2bhk",
+    "width_mm": 8000,
+    "height_mm": 11500,
+    "scale": 100,
+    "dpi": 300,
+    "rooms": [
+      {
+        "name": "Master Bedroom",
+        "bbox_mm": [
+          0,
+          0,
+          4500,
+          4000
+        ],
+        "area_sqm": 18.0,
+        "aliases": [
+          "MBR"
+        ]
+      },
+      {
+        "name": "Bedroom 2",
+        "bbox_mm": [
+          4500,
+          0,
+          3500,
+          3500
+        ],
+        "area_sqm": 12.25,
+        "aliases": [
+          "BR2",
+          "Kids Room"
+        ]
+      },
+      {
+        "name": "Living",
+        "bbox_mm": [
+          0,
+          4000,
+          5000,
+          4500
+        ],
+        "area_sqm": 22.5,
+        "aliases": [
+          "Hall",
+          "Drawing"
+        ]
+      },
+      {
+        "name": "Dining",
+        "bbox_mm": [
+          5000,
+          4000,
+          3000,
+          3000
+        ],
+        "area_sqm": 9.0,
+        "aliases": [
+          "Dining Room"
+        ]
+      },
+      {
+        "name": "Kitchen",
+        "bbox_mm": [
+          5000,
+          7000,
+          3000,
+          3000
+        ],
+        "area_sqm": 9.0,
+        "aliases": [
+          "Kitch"
+        ]
+      },
+      {
+        "name": "Toilet 1",
+        "bbox_mm": [
+          4500,
+          0,
+          2000,
+          2000
+        ],
+        "area_sqm": 4.0,
+        "aliases": [
+          "WC1",
+          "Common Toilet"
+        ]
+      },
+      {
+        "name": "Toilet 2",
+        "bbox_mm": [
+          6500,
+          0,
+          1500,
+          2000
+        ],
+        "area_sqm": 3.0,
+        "aliases": [
+          "WC2",
+          "Attached"
+        ]
+      },
+      {
+        "name": "Utility",
+        "bbox_mm": [
+          0,
+          8500,
+          2000,
+          1500
+        ],
+        "area_sqm": 3.0,
+        "aliases": [
+          "Store",
+          "Service"
+        ]
+      },
+      {
+        "name": "Balcony 1",
+        "bbox_mm": [
+          0,
+          10000,
+          2500,
+          1500
+        ],
+        "area_sqm": 3.75,
+        "aliases": []
+      },
+      {
+        "name": "Balcony 2",
+        "bbox_mm": [
+          5000,
+          10000,
+          3000,
+          1500
+        ],
+        "area_sqm": 4.5,
+        "aliases": []
+      },
+      {
+        "name": "Passage",
+        "bbox_mm": [
+          4500,
+          2000,
+          1000,
+          2000
+        ],
+        "area_sqm": 2.0,
+        "aliases": [
+          "Corridor"
+        ]
+      }
+    ]
+  },
+  "3bhk": {
+    "name": "3bhk",
+    "width_mm": 12500,
+    "height_mm": 13500,
+    "scale": 100,
+    "dpi": 300,
+    "rooms": [
+      {
+        "name": "Master Bedroom",
+        "bbox_mm": [
+          0,
+          0,
+          5000,
+          4500
+        ],
+        "area_sqm": 22.5,
+        "aliases": [
+          "MBR"
+        ]
+      },
+      {
+        "name": "Bedroom 2",
+        "bbox_mm": [
+          5000,
+          0,
+          4000,
+          4000
+        ],
+        "area_sqm": 16.0,
+        "aliases": [
+          "BR2"
+        ]
+      },
+      {
+        "name": "Bedroom 3",
+        "bbox_mm": [
+          9000,
+          0,
+          3500,
+          4000
+        ],
+        "area_sqm": 14.0,
+        "aliases": [
+          "BR3",
+          "Guest"
+        ]
+      },
+      {
+        "name": "Living",
+        "bbox_mm": [
+          0,
+          4500,
+          6000,
+          5000
+        ],
+        "area_sqm": 30.0,
+        "aliases": [
+          "Hall",
+          "Drawing"
+        ]
+      },
+      {
+        "name": "Dining",
+        "bbox_mm": [
+          6000,
+          4500,
+          3500,
+          3500
+        ],
+        "area_sqm": 12.25,
+        "aliases": [
+          "Dining Room"
+        ]
+      },
+      {
+        "name": "Kitchen",
+        "bbox_mm": [
+          9500,
+          4500,
+          3000,
+          3500
+        ],
+        "area_sqm": 10.5,
+        "aliases": [
+          "Kitch"
+        ]
+      },
+      {
+        "name": "Toilet 1",
+        "bbox_mm": [
+          5000,
+          0,
+          2000,
+          2000
+        ],
+        "area_sqm": 4.0,
+        "aliases": [
+          "MBR Toilet"
+        ]
+      },
+      {
+        "name": "Toilet 2",
+        "bbox_mm": [
+          7000,
+          0,
+          2000,
+          2000
+        ],
+        "area_sqm": 4.0,
+        "aliases": [
+          "Common Toilet"
+        ]
+      },
+      {
+        "name": "Toilet 3",
+        "bbox_mm": [
+          9500,
+          8000,
+          2000,
+          2000
+        ],
+        "area_sqm": 4.0,
+        "aliases": [
+          "Guest Toilet"
+        ]
+      },
+      {
+        "name": "Utility",
+        "bbox_mm": [
+          0,
+          9500,
+          2500,
+          2000
+        ],
+        "area_sqm": 5.0,
+        "aliases": [
+          "Store",
+          "Service"
+        ]
+      },
+      {
+        "name": "Balcony 1",
+        "bbox_mm": [
+          0,
+          11500,
+          3000,
+          2000
+        ],
+        "area_sqm": 6.0,
+        "aliases": []
+      },
+      {
+        "name": "Balcony 2",
+        "bbox_mm": [
+          6000,
+          11500,
+          3500,
+          2000
+        ],
+        "area_sqm": 7.0,
+        "aliases": []
+      },
+      {
+        "name": "Passage",
+        "bbox_mm": [
+          6000,
+          2000,
+          1500,
+          2500
+        ],
+        "area_sqm": 3.75,
+        "aliases": [
+          "Corridor"
+        ]
+      }
+    ]
+  },
+  "indian_apartment": {
+    "name": "indian_apartment",
+    "width_mm": 8000,
+    "height_mm": 13000,
+    "scale": 100,
+    "dpi": 300,
+    "rooms": [
+      {
+        "name": "Master Bedroom",
+        "bbox_mm": [
+          0,
+          0,
+          4500,
+          4000
+        ],
+        "area_sqm": 18.0,
+        "aliases": [
+          "MBR"
+        ]
+      },
+      {
+        "name": "Bedroom",
+        "bbox_mm": [
+          4500,
+          0,
+          3500,
+          3500
+        ],
+        "area_sqm": 12.25,
+        "aliases": []
+      },
+      {
+        "name": "Drawing Room",
+        "bbox_mm": [
+          0,
+          4000,
+          5000,
+          4000
+        ],
+        "area_sqm": 20.0,
+        "aliases": [
+          "Living",
+          "Hall"
+        ]
+      },
+      {
+        "name": "Dining",
+        "bbox_mm": [
+          5000,
+          4000,
+          3000,
+          3000
+        ],
+        "area_sqm": 9.0,
+        "aliases": []
+      },
+      {
+        "name": "Kitchen",
+        "bbox_mm": [
+          5000,
+          7000,
+          3000,
+          3000
+        ],
+        "area_sqm": 9.0,
+        "aliases": [
+          "Kitch",
+          "Rasoi"
+        ]
+      },
+      {
+        "name": "Pooja",
+        "bbox_mm": [
+          0,
+          8000,
+          2000,
+          1500
+        ],
+        "area_sqm": 3.0,
+        "aliases": [
+          "Pooja Room",
+          "Mandir"
+        ]
+      },
+      {
+        "name": "T&B",
+        "bbox_mm": [
+          4500,
+          0,
+          2000,
+          2000
+        ],
+        "area_sqm": 4.0,
+        "aliases": [
+          "Toilet",
+          "WC",
+          "Bathroom"
+        ]
+      },
+      {
+        "name": "OTS",
+        "bbox_mm": [
+          6500,
+          0,
+          1500,
+          2000
+        ],
+        "area_sqm": 3.0,
+        "aliases": [
+          "Open to Sky",
+          "Utility"
+        ]
+      },
+      {
+        "name": "Servant",
+        "bbox_mm": [
+          0,
+          9500,
+          2000,
+          2000
+        ],
+        "area_sqm": 4.0,
+        "aliases": [
+          "Servant Room",
+          "Service"
+        ]
+      },
+      {
+        "name": "Balcony",
+        "bbox_mm": [
+          0,
+          11500,
+          3000,
+          1500
+        ],
+        "area_sqm": 4.5,
+        "aliases": [
+          "Blcny"
+        ]
+      },
+      {
+        "name": "Dry Balcony",
+        "bbox_mm": [
+          5000,
+          10000,
+          3000,
+          1500
+        ],
+        "area_sqm": 4.5,
+        "aliases": []
+      },
+      {
+        "name": "Foyer",
+        "bbox_mm": [
+          3000,
+          4000,
+          2000,
+          1500
+        ],
+        "area_sqm": 3.0,
+        "aliases": [
+          "Entrance"
+        ]
+      }
+    ]
+  }
+}

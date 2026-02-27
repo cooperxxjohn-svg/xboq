@@ -1,0 +1,322 @@
+# Owner Inputs Template for Indian Construction Bidding
+# All fields marked with (MANDATORY) must be provided or will generate RFIs/allowances
+# Fields marked (OPTIONAL) have defaults if not specified
+
+# ============================================================================
+# PROJECT BASICS (MANDATORY)
+# ============================================================================
+project:
+  name: ""                    # (MANDATORY) Project name
+  location:
+    city: ""                  # (MANDATORY) City for location multiplier
+    state: ""                 # (MANDATORY) State
+    pincode: ""               # (OPTIONAL)
+  type: ""                    # (MANDATORY) residential / commercial / industrial / institutional
+  built_up_area_sqm: null     # (OPTIONAL) If known, cross-verify with drawings
+  floors_above_ground: null   # (OPTIONAL)
+  floors_below_ground: null   # (OPTIONAL) Basement levels
+  completion_months: null     # (MANDATORY) Project duration for prelims
+
+# ============================================================================
+# FINISH SPECIFICATIONS (MANDATORY)
+# ============================================================================
+finishes:
+  grade: ""                   # (MANDATORY) basic / standard / premium / luxury
+
+  flooring:
+    living_dining:
+      type: ""                # (MANDATORY) vitrified_tile / marble / granite / wooden / other
+      size: ""                # (MANDATORY) 600x600 / 800x800 / 1200x600 / as_per_layout
+      make_range: ""          # (OPTIONAL) kajaria_premium / somany_standard / architect_approved / owner_supply
+
+    bedrooms:
+      type: ""                # (MANDATORY)
+      size: ""                # (MANDATORY)
+      make_range: ""          # (OPTIONAL)
+
+    kitchen:
+      type: ""                # (MANDATORY)
+      size: ""                # (MANDATORY)
+      anti_skid: true         # (OPTIONAL) default true
+
+    bathrooms:
+      type: ""                # (MANDATORY) ceramic / vitrified / stone
+      size: ""                # (MANDATORY)
+      anti_skid: true         # (MANDATORY) must be anti-skid
+
+    balcony_terrace:
+      type: ""                # (MANDATORY)
+      anti_skid: true         # (MANDATORY)
+
+    common_areas:
+      type: ""                # (MANDATORY)
+      size: ""                # (MANDATORY)
+
+    parking:
+      type: ""                # (MANDATORY) paver_blocks / vdf / kota / exposed_concrete
+      thickness_mm: null      # (OPTIONAL)
+
+  wall_finishes:
+    internal_paint:
+      type: ""                # (MANDATORY) acrylic_emulsion / oil_bound_distemper / texture
+      coats: 2                # (OPTIONAL) default 2
+      make_range: ""          # (OPTIONAL) asian_premium / berger_standard / architect_approved
+
+    external_paint:
+      type: ""                # (MANDATORY) acrylic_exterior / texture / elastomeric
+      coats: 3                # (OPTIONAL) default 3 for exterior
+      make_range: ""          # (OPTIONAL)
+
+    bathroom_dado:
+      height_mm: null         # (MANDATORY) full_height / 1200 / 2100
+      tile_type: ""           # (MANDATORY)
+      tile_size: ""           # (MANDATORY)
+
+    kitchen_dado:
+      height_mm: null         # (MANDATORY) 600 / 750 / platform_top_only
+      tile_type: ""           # (MANDATORY)
+
+  ceiling:
+    type: ""                  # (MANDATORY) plain_plaster / pop_finish / gypsum_false_ceiling / grid_ceiling
+    false_ceiling_locations: []  # (OPTIONAL) list of room types with false ceiling
+
+# ============================================================================
+# WATERPROOFING SPECIFICATIONS (MANDATORY)
+# ============================================================================
+waterproofing:
+  toilet:
+    system: ""                # (MANDATORY) cementitious_coating / integral_compound / app_membrane / liquid_membrane
+    brand_range: ""           # (OPTIONAL) drfixit / fosroc / sika / architect_approved
+    turnup_mm: 150            # (OPTIONAL) default 150mm
+
+  terrace:
+    system: ""                # (MANDATORY) brick_bat_coba / app_membrane / liquid_membrane / heat_insulation_tiles
+    heat_insulation: false    # (OPTIONAL)
+    brand_range: ""           # (OPTIONAL)
+
+  water_tank:
+    system: ""                # (MANDATORY) cementitious_coating / epoxy_coating / crystalline
+    brand_range: ""           # (OPTIONAL)
+
+  basement:
+    required: false           # (MANDATORY if basement exists)
+    system: ""                # (CONDITIONAL) bentonite / membrane / injection_grouting
+
+  podium:
+    required: false           # (OPTIONAL)
+    system: ""                # (CONDITIONAL)
+
+# ============================================================================
+# DOORS & WINDOWS (MANDATORY)
+# ============================================================================
+doors:
+  main_entrance:
+    type: ""                  # (MANDATORY) teak_solid / teak_veneer / flush_laminated / designer
+    size: ""                  # (OPTIONAL) as_per_schedule
+    hardware_level: ""        # (MANDATORY) basic / standard / premium
+
+  internal:
+    type: ""                  # (MANDATORY) flush_painted / flush_laminated / skin_moulded
+    frame_type: ""            # (MANDATORY) sal_wood / teak / pressed_steel / wpc
+    hardware_level: ""        # (MANDATORY)
+
+  bathroom:
+    type: ""                  # (MANDATORY) wpc / pvc / upvc / aluminum
+    hardware_level: ""        # (MANDATORY)
+
+  service:
+    type: ""                  # (MANDATORY) ms_painted / gi / flush
+
+windows:
+  type: ""                    # (MANDATORY) aluminum_powder_coated / upvc / wood / aluminum_anodized
+  glass_type: ""              # (MANDATORY) clear / tinted / reflective / saint_gobain_equivalent
+  glass_thickness_mm: null    # (MANDATORY) 5 / 6 / 8
+  mosquito_mesh: true         # (OPTIONAL) default true
+  grill: ""                   # (MANDATORY) ms_grill / ss_grill / none
+
+# ============================================================================
+# SANITARY & CP FITTINGS (MANDATORY)
+# ============================================================================
+sanitary:
+  brand_level: ""             # (MANDATORY) basic / standard / premium / luxury
+                              # basic = hindware_bib, standard = parryware, premium = kohler/duravit, luxury = owner_supply
+
+  wc_type: ""                 # (MANDATORY) ewc / indian_wc / both
+  cistern_type: ""            # (MANDATORY) exposed / concealed
+
+  wash_basin:
+    type: ""                  # (MANDATORY) wall_hung / pedestal / counter_top
+
+  shower:
+    type: ""                  # (MANDATORY) overhead_only / overhead_hand / rain_shower
+
+  cp_fittings:
+    brand_level: ""           # (MANDATORY) basic / standard / premium / luxury
+
+  accessories:
+    included: true            # (MANDATORY) towel_rail, soap_dish, mirror, etc.
+    brand_level: ""           # (MANDATORY)
+
+# ============================================================================
+# PLUMBING (MANDATORY)
+# ============================================================================
+plumbing:
+  water_supply:
+    pipe_type: ""             # (MANDATORY) cpvc / ppr / composite
+    brand_range: ""           # (OPTIONAL) astral / supreme / finolex / equivalent
+    cpvc_class: ""            # (MANDATORY for CPVC) sch40 / sch80 / sdr11
+
+  drainage:
+    pipe_type: ""             # (MANDATORY) upvc_swr / hdpe / ci
+    brand_range: ""           # (OPTIONAL)
+
+  hot_water:
+    required: false           # (MANDATORY)
+    system: ""                # (CONDITIONAL) geyser_point / solar / central_heating
+
+  rainwater_harvesting:
+    required: false           # (OPTIONAL)
+
+# ============================================================================
+# ELECTRICAL (MANDATORY)
+# ============================================================================
+electrical:
+  brand_level: ""             # (MANDATORY) basic / standard / premium
+                              # basic = anchor, standard = legrand, premium = schneider
+
+  switches:
+    type: ""                  # (MANDATORY) modular / conventional
+    brand_range: ""           # (MANDATORY)
+
+  wiring:
+    type: ""                  # (MANDATORY) fr_pvc / frls / lszh
+    brand_range: ""           # (OPTIONAL) polycab / havells / finolex
+    conduit_type: ""          # (MANDATORY) pvc / gi / concealed_in_slab
+
+  db_panel:
+    type: ""                  # (MANDATORY) sp / tp
+    mcb_brand: ""             # (MANDATORY)
+
+  earthing:
+    type: ""                  # (MANDATORY) plate / pipe / chemical
+
+  generator_backup:
+    required: false           # (MANDATORY)
+    coverage: ""              # (CONDITIONAL) essential_loads / full_backup
+
+  solar:
+    required: false           # (OPTIONAL)
+    capacity_kw: null         # (CONDITIONAL)
+
+# ============================================================================
+# HVAC (CONDITIONAL)
+# ============================================================================
+hvac:
+  required: false             # (MANDATORY)
+  type: ""                    # (CONDITIONAL) split_ac_provision / vrv / central_ac
+  provision_only: true        # (OPTIONAL) just conduit+drain vs installed units
+
+# ============================================================================
+# FIRE SAFETY (CONDITIONAL)
+# ============================================================================
+fire:
+  required: false             # (MANDATORY) - check local building bylaws
+  type: ""                    # (CONDITIONAL) hydrant / sprinkler / both
+  fire_alarm: false           # (CONDITIONAL)
+  fire_extinguishers: true    # (OPTIONAL) default true
+
+# ============================================================================
+# LIFT / ELEVATOR (CONDITIONAL)
+# ============================================================================
+lift:
+  required: false             # (MANDATORY)
+  count: null                 # (CONDITIONAL)
+  type: ""                    # (CONDITIONAL) passenger / service / both
+  capacity_persons: null      # (CONDITIONAL)
+  brand_range: ""             # (CONDITIONAL) otis / kone / johnson / thyssenkrupp / indian
+
+# ============================================================================
+# EXTERNAL WORKS (MANDATORY)
+# ============================================================================
+external_works:
+  compound_wall:
+    required: true            # (MANDATORY)
+    height_m: null            # (MANDATORY)
+    type: ""                  # (MANDATORY) brick / rcc / precast / ms_grill
+
+  gate:
+    type: ""                  # (MANDATORY) ms_sliding / ms_swing / ss / automatic
+
+  paving:
+    type: ""                  # (MANDATORY) paver_blocks / kota / concrete / interlocking
+
+  landscaping:
+    required: false           # (OPTIONAL)
+    scope: ""                 # (CONDITIONAL) basic_planting / designed_landscape / hardscape_only
+
+# ============================================================================
+# COMMERCIAL TERMS (MANDATORY)
+# ============================================================================
+commercial:
+  gst_included: true          # (MANDATORY) whether rates include GST
+  gst_rate: 18                # (OPTIONAL) default 18%
+
+  payment_terms:
+    advance_percent: null     # (OPTIONAL)
+    milestone_based: true     # (OPTIONAL)
+    retention_percent: 5      # (OPTIONAL) default 5%
+
+  escalation:
+    applicable: false         # (MANDATORY)
+    clause: ""                # (CONDITIONAL) as_per_tender / fixed_price
+
+  defect_liability_months: 12 # (OPTIONAL) default 12 months
+
+  insurance:
+    car_required: true        # (OPTIONAL) Contractor All Risk
+    wc_required: true         # (OPTIONAL) Workmen Compensation
+
+# ============================================================================
+# TESTING & QUALITY (MANDATORY)
+# ============================================================================
+testing:
+  concrete:
+    cube_test: true           # (MANDATORY)
+    third_party: false        # (OPTIONAL)
+    frequency: ""             # (OPTIONAL) as_per_is / every_10_cum
+
+  rebar:
+    test_required: true       # (MANDATORY)
+    mill_test_certificate: true  # (OPTIONAL)
+
+  waterproofing:
+    flood_test: true          # (MANDATORY)
+    duration_hours: 24        # (OPTIONAL)
+
+  plumbing:
+    pressure_test: true       # (MANDATORY)
+    test_pressure_bar: 10     # (OPTIONAL)
+
+  electrical:
+    megger_test: true         # (MANDATORY)
+    earthing_test: true       # (MANDATORY)
+
+# ============================================================================
+# SITE CONDITIONS (OPTIONAL but affects pricing)
+# ============================================================================
+site_conditions:
+  access_restricted: false    # Affects material handling costs
+  working_hours_restricted: false  # Affects labour productivity
+  noise_restrictions: false   # May need silent equipment
+  existing_structure: false   # Demolition/protection needed
+  soil_type: ""               # (OPTIONAL) hard_rock / soft_rock / normal_soil / marshy
+  water_table_depth_m: null   # Affects excavation/dewatering
+
+# ============================================================================
+# OWNER PREFERENCES (OPTIONAL)
+# ============================================================================
+preferences:
+  preferred_makes: {}         # Dict of item -> preferred makes list
+  excluded_makes: {}          # Dict of item -> excluded makes list
+  sustainability_requirements: []  # LEED / GRIHA / IGBC requirements
+  local_content_percent: null # Minimum local sourcing %

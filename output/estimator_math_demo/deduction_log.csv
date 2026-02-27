@@ -1,0 +1,44 @@
+deduction_type,item_id,item_description,opening_id,opening_description,gross_qty,deducted_qty,net_qty,unit,rule_applied,evidence
+opening_masonry,MAS-001,AAC Block masonry 200mm thick external walls,D1,door,1850.00,1.89,1848.11,sqm,IS 1200: Deduct opening > 0.1 sqm,Opening D1: 1.89 sqm x 200mm
+opening_masonry,MAS-001,AAC Block masonry 200mm thick external walls,D2,door,1850.00,2.10,1846.01,sqm,IS 1200: Deduct opening > 0.1 sqm,Opening D2: 2.10 sqm x 200mm
+opening_masonry,MAS-001,AAC Block masonry 200mm thick external walls,MD,door,1850.00,2.88,1843.13,sqm,IS 1200: Deduct opening > 0.1 sqm,Opening MD: 2.88 sqm x 200mm
+opening_masonry,MAS-001,AAC Block masonry 200mm thick external walls,W1,window,1850.00,2.70,1840.43,sqm,IS 1200: Deduct opening > 0.1 sqm,Opening W1: 2.70 sqm x 200mm
+opening_masonry,MAS-001,AAC Block masonry 200mm thick external walls,W2,window,1850.00,1.44,1838.99,sqm,IS 1200: Deduct opening > 0.1 sqm,Opening W2: 1.44 sqm x 200mm
+opening_masonry,MAS-001,AAC Block masonry 200mm thick external walls,W3,window,1850.00,0.36,1838.63,sqm,IS 1200: Deduct opening > 0.1 sqm,Opening W3: 0.36 sqm x 200mm
+opening_masonry,MAS-001,AAC Block masonry 200mm thick external walls,TW,window,1850.00,0.20,1838.43,sqm,IS 1200: Deduct opening > 0.1 sqm,Opening TW: 0.20 sqm x 200mm
+opening_masonry,MAS-002,AAC Block masonry 100mm thick internal partitions,D1,door,420.00,1.89,418.11,sqm,IS 1200: Deduct opening > 0.1 sqm,Opening D1: 1.89 sqm x 100mm
+opening_masonry,MAS-002,AAC Block masonry 100mm thick internal partitions,D2,door,420.00,2.10,416.01,sqm,IS 1200: Deduct opening > 0.1 sqm,Opening D2: 2.10 sqm x 100mm
+opening_masonry,MAS-002,AAC Block masonry 100mm thick internal partitions,MD,door,420.00,2.88,413.13,sqm,IS 1200: Deduct opening > 0.1 sqm,Opening MD: 2.88 sqm x 100mm
+opening_masonry,MAS-002,AAC Block masonry 100mm thick internal partitions,W1,window,420.00,2.70,410.43,sqm,IS 1200: Deduct opening > 0.1 sqm,Opening W1: 2.70 sqm x 100mm
+opening_masonry,MAS-002,AAC Block masonry 100mm thick internal partitions,W2,window,420.00,1.44,408.99,sqm,IS 1200: Deduct opening > 0.1 sqm,Opening W2: 1.44 sqm x 100mm
+opening_masonry,MAS-002,AAC Block masonry 100mm thick internal partitions,W3,window,420.00,0.36,408.63,sqm,IS 1200: Deduct opening > 0.1 sqm,Opening W3: 0.36 sqm x 100mm
+opening_masonry,MAS-002,AAC Block masonry 100mm thick internal partitions,TW,window,420.00,0.20,408.43,sqm,IS 1200: Deduct opening > 0.1 sqm,Opening TW: 0.20 sqm x 100mm
+opening_plaster,PLS-001,Cement plaster 12mm internal walls,D1,door,4200.00,1.89,4198.11,sqm,IS 1200: Deduct opening > 0.5 sqm,Opening D1: 1.89 sqm
+opening_plaster,PLS-001,Cement plaster 12mm internal walls,D2,door,4200.00,2.10,4196.01,sqm,IS 1200: Deduct opening > 0.5 sqm,Opening D2: 2.10 sqm
+opening_plaster,PLS-001,Cement plaster 12mm internal walls,MD,door,4200.00,2.88,4193.13,sqm,IS 1200: Deduct opening > 0.5 sqm,Opening MD: 2.88 sqm
+opening_plaster,PLS-001,Cement plaster 12mm internal walls,W1,window,4200.00,2.70,4190.43,sqm,IS 1200: Deduct opening > 0.5 sqm,Opening W1: 2.70 sqm
+opening_plaster,PLS-001,Cement plaster 12mm internal walls,W2,window,4200.00,1.44,4188.99,sqm,IS 1200: Deduct opening > 0.5 sqm,Opening W2: 1.44 sqm
+beam_face,PLS-001,Cement plaster 12mm internal walls,beams,Beam faces (measured separately),4200.00,189.00,3999.99,sqm,IS 1200: Beam faces measured separately,Beam face area: 189.00 sqm
+column_face,PLS-001,Cement plaster 12mm internal walls,columns,Column faces (measured separately),4200.00,10.80,3989.19,sqm,IS 1200: Column faces measured separately,Column face area: 10.80 sqm
+opening_plaster,PLS-002,Cement plaster 20mm external walls,D1,door,1100.00,1.89,1098.11,sqm,IS 1200: Deduct opening > 0.5 sqm,Opening D1: 1.89 sqm
+opening_plaster,PLS-002,Cement plaster 20mm external walls,D2,door,1100.00,2.10,1096.01,sqm,IS 1200: Deduct opening > 0.5 sqm,Opening D2: 2.10 sqm
+opening_plaster,PLS-002,Cement plaster 20mm external walls,MD,door,1100.00,2.88,1093.13,sqm,IS 1200: Deduct opening > 0.5 sqm,Opening MD: 2.88 sqm
+opening_plaster,PLS-002,Cement plaster 20mm external walls,W1,window,1100.00,2.70,1090.43,sqm,IS 1200: Deduct opening > 0.5 sqm,Opening W1: 2.70 sqm
+opening_plaster,PLS-002,Cement plaster 20mm external walls,W2,window,1100.00,1.44,1088.99,sqm,IS 1200: Deduct opening > 0.5 sqm,Opening W2: 1.44 sqm
+opening_paint,PNT-001,Interior emulsion paint 2 coats,D1,door,4200.00,1.89,4198.11,sqm,IS 1200: Deduct opening > 0.5 sqm,Opening D1: 1.89 sqm
+opening_paint,PNT-001,Interior emulsion paint 2 coats,D2,door,4200.00,2.10,4196.01,sqm,IS 1200: Deduct opening > 0.5 sqm,Opening D2: 2.10 sqm
+opening_paint,PNT-001,Interior emulsion paint 2 coats,MD,door,4200.00,2.88,4193.13,sqm,IS 1200: Deduct opening > 0.5 sqm,Opening MD: 2.88 sqm
+opening_paint,PNT-001,Interior emulsion paint 2 coats,W1,window,4200.00,2.70,4190.43,sqm,IS 1200: Deduct opening > 0.5 sqm,Opening W1: 2.70 sqm
+opening_paint,PNT-001,Interior emulsion paint 2 coats,W2,window,4200.00,1.44,4188.99,sqm,IS 1200: Deduct opening > 0.5 sqm,Opening W2: 1.44 sqm
+opening_paint,PNT-002,Exterior weatherproof paint,D1,door,1100.00,1.89,1098.11,sqm,IS 1200: Deduct opening > 0.5 sqm,Opening D1: 1.89 sqm
+opening_paint,PNT-002,Exterior weatherproof paint,D2,door,1100.00,2.10,1096.01,sqm,IS 1200: Deduct opening > 0.5 sqm,Opening D2: 2.10 sqm
+opening_paint,PNT-002,Exterior weatherproof paint,MD,door,1100.00,2.88,1093.13,sqm,IS 1200: Deduct opening > 0.5 sqm,Opening MD: 2.88 sqm
+opening_paint,PNT-002,Exterior weatherproof paint,W1,window,1100.00,2.70,1090.43,sqm,IS 1200: Deduct opening > 0.5 sqm,Opening W1: 2.70 sqm
+opening_paint,PNT-002,Exterior weatherproof paint,W2,window,1100.00,1.44,1088.99,sqm,IS 1200: Deduct opening > 0.5 sqm,Opening W2: 1.44 sqm
+opening_masonry,EXT-001,Compound wall brick 230mm with foundation,D1,door,85.00,1.89,83.11,rmt,IS 1200: Deduct opening > 0.1 sqm,Opening D1: 1.89 sqm x 230mm
+opening_masonry,EXT-001,Compound wall brick 230mm with foundation,D2,door,85.00,2.10,81.01,rmt,IS 1200: Deduct opening > 0.1 sqm,Opening D2: 2.10 sqm x 230mm
+opening_masonry,EXT-001,Compound wall brick 230mm with foundation,MD,door,85.00,2.88,78.13,rmt,IS 1200: Deduct opening > 0.1 sqm,Opening MD: 2.88 sqm x 230mm
+opening_masonry,EXT-001,Compound wall brick 230mm with foundation,W1,window,85.00,2.70,75.43,rmt,IS 1200: Deduct opening > 0.1 sqm,Opening W1: 2.70 sqm x 230mm
+opening_masonry,EXT-001,Compound wall brick 230mm with foundation,W2,window,85.00,1.44,73.99,rmt,IS 1200: Deduct opening > 0.1 sqm,Opening W2: 1.44 sqm x 230mm
+opening_masonry,EXT-001,Compound wall brick 230mm with foundation,W3,window,85.00,0.36,73.63,rmt,IS 1200: Deduct opening > 0.1 sqm,Opening W3: 0.36 sqm x 230mm
+opening_masonry,EXT-001,Compound wall brick 230mm with foundation,TW,window,85.00,0.20,73.43,rmt,IS 1200: Deduct opening > 0.1 sqm,Opening TW: 0.20 sqm x 230mm

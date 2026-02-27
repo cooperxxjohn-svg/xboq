@@ -1,0 +1,10 @@
+{
+  "status": "skipped",
+  "reason": "No owner documents provided for demo",
+  "expected_documents": [
+    "Tender document",
+    "Technical specifications",
+    "Owner BOQ",
+    "Addenda"
+  ]
+}

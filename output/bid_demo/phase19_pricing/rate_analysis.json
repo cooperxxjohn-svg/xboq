@@ -1,0 +1,249 @@
+[
+  {
+    "item_id": "RCC-001",
+    "description": "RCC M25 grade for columns 450x450mm",
+    "rate": 8500,
+    "amount": 386750.0,
+    "rate_source": "CPWD-2023",
+    "breakdown": {
+      "material": 4675.0,
+      "labor": 2550.0,
+      "equipment": 425.0,
+      "overhead": 850.0
+    }
+  },
+  {
+    "item_id": "RCC-002",
+    "description": "RCC M25 grade for beams 230x450mm",
+    "rate": 8200,
+    "amount": 313240.0,
+    "rate_source": "CPWD-2023",
+    "breakdown": {
+      "material": 4510.0,
+      "labor": 2460.0,
+      "equipment": 410.0,
+      "overhead": 820.0
+    }
+  },
+  {
+    "item_id": "RCC-003",
+    "description": "RCC M25 grade for slab 150mm thick",
+    "rate": 7800,
+    "amount": 975000.0,
+    "rate_source": "CPWD-2023",
+    "breakdown": {
+      "material": 4290.0,
+      "labor": 2340.0,
+      "equipment": 390.0,
+      "overhead": 780.0
+    }
+  },
+  {
+    "item_id": "RCC-004",
+    "description": "Steel reinforcement Fe500D",
+    "rate": 85,
+    "amount": 1572500,
+    "rate_source": "ISR-2024",
+    "breakdown": {
+      "material": 46.75000000000001,
+      "labor": 25.5,
+      "equipment": 4.25,
+      "overhead": 8.5
+    }
+  },
+  {
+    "item_id": "MAS-001",
+    "description": "AAC Block masonry 200mm thick",
+    "rate": 1450,
+    "amount": 2682500,
+    "rate_source": "DSR-KAR",
+    "breakdown": {
+      "material": 797.5000000000001,
+      "labor": 435.0,
+      "equipment": 72.5,
+      "overhead": 145.0
+    }
+  },
+  {
+    "item_id": "MAS-002",
+    "description": "AAC Block masonry 100mm thick",
+    "rate": 980,
+    "amount": 411600,
+    "rate_source": "DSR-KAR",
+    "breakdown": {
+      "material": 539.0,
+      "labor": 294.0,
+      "equipment": 49.0,
+      "overhead": 98.0
+    }
+  },
+  {
+    "item_id": "MAS-003",
+    "description": "Cement plaster 12mm internal",
+    "rate": 185,
+    "amount": 777000,
+    "rate_source": "DSR-KAR",
+    "breakdown": {
+      "material": 101.75000000000001,
+      "labor": 55.5,
+      "equipment": 9.25,
+      "overhead": 18.5
+    }
+  },
+  {
+    "item_id": "MAS-004",
+    "description": "Cement plaster 20mm external",
+    "rate": 245,
+    "amount": 269500,
+    "rate_source": "DSR-KAR",
+    "breakdown": {
+      "material": 134.75,
+      "labor": 73.5,
+      "equipment": 12.25,
+      "overhead": 24.5
+    }
+  },
+  {
+    "item_id": "WP-001",
+    "description": "APP membrane waterproofing for terrace",
+    "rate": 650,
+    "amount": 338000,
+    "rate_source": "Market-2024",
+    "breakdown": {
+      "material": 357.50000000000006,
+      "labor": 195.0,
+      "equipment": 32.5,
+      "overhead": 65.0
+    }
+  },
+  {
+    "item_id": "FLR-001",
+    "description": "Vitrified tiles 600x600mm living/dining",
+    "rate": 1850,
+    "amount": 703000,
+    "rate_source": "Market-2024",
+    "breakdown": {
+      "material": 1017.5000000000001,
+      "labor": 555.0,
+      "equipment": 92.5,
+      "overhead": 185.0
+    }
+  },
+  {
+    "item_id": "FLR-002",
+    "description": "Ceramic tiles 300x300mm anti-skid toilets",
+    "rate": 1250,
+    "amount": 118750,
+    "rate_source": "Market-2024",
+    "breakdown": {
+      "material": 687.5,
+      "labor": 375.0,
+      "equipment": 62.5,
+      "overhead": 125.0
+    }
+  },
+  {
+    "item_id": "FLR-003",
+    "description": "Granite flooring for lobby",
+    "rate": 3200,
+    "amount": 208000,
+    "rate_source": "Market-2024",
+    "breakdown": {
+      "material": 1760.0000000000002,
+      "labor": 960.0,
+      "equipment": 160.0,
+      "overhead": 320.0
+    }
+  },
+  {
+    "item_id": "DW-001",
+    "description": "Flush door 900x2100mm with frame",
+    "rate": 12500,
+    "amount": 300000,
+    "rate_source": "Market-2024",
+    "breakdown": {
+      "material": 6875.000000000001,
+      "labor": 3750.0,
+      "equipment": 625.0,
+      "overhead": 1250.0
+    }
+  },
+  {
+    "item_id": "DW-003",
+    "description": "UPVC sliding window 1800x1500mm",
+    "rate": 18500,
+    "amount": 222000,
+    "rate_source": "Vendor Quote",
+    "breakdown": {
+      "material": 10175.0,
+      "labor": 5550.0,
+      "equipment": 925.0,
+      "overhead": 1850.0
+    }
+  },
+  {
+    "item_id": "DW-004",
+    "description": "UPVC casement window 1200x1200mm",
+    "rate": 12800,
+    "amount": 230400,
+    "rate_source": "Vendor Quote",
+    "breakdown": {
+      "material": 7040.000000000001,
+      "labor": 3840.0,
+      "equipment": 640.0,
+      "overhead": 1280.0
+    }
+  },
+  {
+    "item_id": "PLB-001",
+    "description": "Internal plumbing complete - PROVISIONAL",
+    "rate": 850000,
+    "amount": 850000,
+    "rate_source": "Allowance @190/sqft",
+    "breakdown": {
+      "material": 467500.00000000006,
+      "labor": 255000.0,
+      "equipment": 42500.0,
+      "overhead": 85000.0
+    }
+  },
+  {
+    "item_id": "ELE-001",
+    "description": "Internal electrical complete - PROVISIONAL",
+    "rate": 720000,
+    "amount": 720000,
+    "rate_source": "Allowance @160/sqft",
+    "breakdown": {
+      "material": 396000.00000000006,
+      "labor": 216000.0,
+      "equipment": 36000.0,
+      "overhead": 72000.0
+    }
+  },
+  {
+    "item_id": "EXT-001",
+    "description": "Compound wall brick 230mm with foundation",
+    "rate": 4500,
+    "amount": 382500,
+    "rate_source": "DSR-KAR",
+    "breakdown": {
+      "material": 2475.0,
+      "labor": 1350.0,
+      "equipment": 225.0,
+      "overhead": 450.0
+    }
+  },
+  {
+    "item_id": "EXT-002",
+    "description": "Paver blocks 80mm for driveway",
+    "rate": 1150,
+    "amount": 207000,
+    "rate_source": "Market-2024",
+    "breakdown": {
+      "material": 632.5,
+      "labor": 345.0,
+      "equipment": 57.5,
+      "overhead": 115.0
+    }
+  }
+]

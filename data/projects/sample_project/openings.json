@@ -1,0 +1,148 @@
+{
+  "project_id": "sample_project",
+  "openings": [
+    {
+      "id": "D001",
+      "type": "door",
+      "tag": "D1",
+      "width_m": 1.0,
+      "height_m": 2.1,
+      "room_left_id": "R001",
+      "room_right_id": "R008",
+      "material": "flush_door",
+      "confidence": 0.85
+    },
+    {
+      "id": "D002",
+      "type": "door",
+      "tag": "D2",
+      "width_m": 0.9,
+      "height_m": 2.1,
+      "room_left_id": "R002",
+      "room_right_id": "R008",
+      "material": "flush_door",
+      "confidence": 0.82
+    },
+    {
+      "id": "D003",
+      "type": "door",
+      "tag": "D3",
+      "width_m": 0.9,
+      "height_m": 2.1,
+      "room_left_id": "R003",
+      "room_right_id": "R008",
+      "material": "flush_door",
+      "confidence": 0.80
+    },
+    {
+      "id": "D004",
+      "type": "door",
+      "tag": "D4",
+      "width_m": 0.75,
+      "height_m": 2.1,
+      "room_left_id": "R004",
+      "room_right_id": "R008",
+      "material": "flush_door",
+      "confidence": 0.78
+    },
+    {
+      "id": "D005",
+      "type": "door",
+      "tag": "D5",
+      "width_m": 0.75,
+      "height_m": 2.1,
+      "room_left_id": "R005",
+      "room_right_id": "R008",
+      "material": "pvc_door",
+      "confidence": 0.75
+    },
+    {
+      "id": "D006",
+      "type": "door",
+      "tag": "D6",
+      "width_m": 0.75,
+      "height_m": 2.1,
+      "room_left_id": "R006",
+      "room_right_id": "R002",
+      "material": "pvc_door",
+      "confidence": 0.72
+    },
+    {
+      "id": "D007",
+      "type": "door",
+      "tag": "MD",
+      "width_m": 1.0,
+      "height_m": 2.1,
+      "room_left_id": "R008",
+      "room_right_id": null,
+      "material": "main_door",
+      "confidence": 0.90
+    },
+    {
+      "id": "W001",
+      "type": "window",
+      "tag": "W1",
+      "width_m": 1.5,
+      "height_m": 1.2,
+      "room_left_id": "R001",
+      "sill_height_m": 0.9,
+      "material": "aluminium_sliding",
+      "confidence": 0.88
+    },
+    {
+      "id": "W002",
+      "type": "window",
+      "tag": "W2",
+      "width_m": 1.2,
+      "height_m": 1.2,
+      "room_left_id": "R002",
+      "sill_height_m": 0.9,
+      "material": "aluminium_sliding",
+      "confidence": 0.85
+    },
+    {
+      "id": "W003",
+      "type": "window",
+      "tag": "W3",
+      "width_m": 1.2,
+      "height_m": 1.2,
+      "room_left_id": "R003",
+      "sill_height_m": 0.9,
+      "material": "aluminium_sliding",
+      "confidence": 0.83
+    },
+    {
+      "id": "W004",
+      "type": "window",
+      "tag": "W4",
+      "width_m": 1.0,
+      "height_m": 0.6,
+      "room_left_id": "R004",
+      "sill_height_m": 1.2,
+      "material": "aluminium_sliding",
+      "confidence": 0.80
+    },
+    {
+      "id": "W005",
+      "type": "window",
+      "tag": "V1",
+      "width_m": 0.45,
+      "height_m": 0.6,
+      "room_left_id": "R005",
+      "sill_height_m": 1.5,
+      "material": "aluminium_ventilator",
+      "confidence": 0.75
+    },
+    {
+      "id": "W006",
+      "type": "window",
+      "tag": "V2",
+      "width_m": 0.45,
+      "height_m": 0.6,
+      "room_left_id": "R006",
+      "sill_height_m": 1.5,
+      "material": "aluminium_ventilator",
+      "confidence": 0.72
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+SL,Item Description,Quantity,Unit,Specification Notes,Drawing References,Assumptions,Subcontractor Rate,Subcontractor Amount,Remarks
+1,"AAC Block masonry 200mm thick",1850,sqm,"As per specification",ARC-01,ARC-02,"Standard specification",,,"To be filled by subcontractor"
+2,"AAC Block masonry 100mm thick",420,sqm,"As per specification",ARC-01,"Standard specification",,,"To be filled by subcontractor"
+3,"Cement plaster 12mm internal",4200,sqm,"As per specification",ARC-01,ARC-02,"Standard specification",,,"To be filled by subcontractor"
+4,"Cement plaster 20mm external",1100,sqm,"As per specification",ARC-03,"Standard specification",,,"To be filled by subcontractor"

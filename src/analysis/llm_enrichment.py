@@ -365,51 +365,82 @@ class LLMEnrichment:
 
 def calculate_readiness_score(
     graph: PlanSetGraph,
-    blockers: List[Blocker]
+    blockers: List[Blocker],
+    trade_coverage: List = None,
 ) -> ReadinessScore:
     """
-    Calculate multi-component readiness score.
+    Calculate multi-component readiness score with PASS/CONDITIONAL/NO-GO decision.
+
+    Decision Logic:
+    - PASS: Reasonably complete, safe to bid (score >= 70, no blocks_pricing blockers)
+    - CONDITIONAL: Some trades blocked but others usable (score >= 40 OR some trades have >50% coverage)
+    - NO-GO: Drawing set is so incomplete that bidding is extremely risky
 
     Components:
     - Completeness: Based on missing dependencies
-    - Measurement: Based on scale coverage
-    - Coverage: Based on discipline coverage
-    - Blocker: Inverse of critical blockers
+    - Measurement: Based on scale coverage + dimension presence
+    - Coverage: Based on discipline/sheet type coverage
+    - Blocker: Weighted by severity and bid_impact
 
     Returns:
         ReadinessScore with breakdown
     """
     # Completeness score (0-100)
-    # Penalize for each missing dependency type
+    # Penalize less harshly for missing dependencies
     dependency_types = set()
     for b in blockers:
         dependency_types.update(b.missing_dependency)
-    completeness = max(0, 100 - len(dependency_types) * 12)
+    completeness = max(0, 100 - len(dependency_types) * 10)  # Reduced from 12
 
     # Measurement score (0-100)
-    # Based on scale coverage
+    # Based on scale coverage, but give partial credit for having any drawings
     total_pages = max(graph.total_pages, 1)
     scale_coverage = graph.pages_with_scale / total_pages
-    measurement = int(scale_coverage * 100)
+
+    # NEW: Give base credit for having drawings at all
+    base_measurement = 30 if total_pages >= 1 else 0
+    measurement = int(base_measurement + scale_coverage * 70)
 
     # Coverage score (0-100)
-    # Based on disciplines found (assume we need at least A, S, MEP for full coverage)
+    # Based on actual sheet types and entities found, not just disciplines
     expected_disciplines = {"A", "S", "M", "E", "P"}
     found = set(graph.disciplines_found)
     discipline_coverage = len(found.intersection(expected_disciplines)) / len(expected_disciplines)
-    coverage = int(discipline_coverage * 100)
+
+    # NEW: Also credit for having ANY sheet types identified
+    sheet_types_found = len(graph.sheet_types_found) > 0
+    entities_found = bool(graph.all_door_tags or graph.all_window_tags or graph.all_room_names)
+
+    # Base coverage from disciplines
+    coverage = int(discipline_coverage * 60)
+
+    # Bonus for sheet types and entities
+    if sheet_types_found:
+        coverage += 20
+    if entities_found:
+        coverage += 20
+
+    coverage = min(coverage, 100)
 
     # Blocker score (0-100)
-    # Inverse of critical blockers
-    critical_count = sum(1 for b in blockers
-                        if b.severity in [Severity.CRITICAL, Severity.HIGH])
-    blocker_score = max(0, 100 - critical_count * 15)
+    # NEW: Weight by severity AND bid_impact
+    critical_count = 0
+    pricing_blockers = 0
+    for b in blockers:
+        if b.severity in [Severity.CRITICAL, Severity.HIGH]:
+            critical_count += 1
+        if b.bid_impact == BidImpact.BLOCKS_PRICING:
+            pricing_blockers += 1
+
+    # Pricing blockers matter more than just high severity
+    blocker_penalty = critical_count * 10 + pricing_blockers * 15
+    blocker_score = max(0, 100 - blocker_penalty)
 
     # Weighted total
     weights = {
-        "completeness": 0.30,
-        "measurement": 0.25,
-        "coverage": 0.25,
+        "completeness": 0.25,  # Reduced from 0.30
+        "measurement": 0.20,   # Reduced from 0.25
+        "coverage": 0.35,      # Increased from 0.25 - coverage matters most
         "blocker": 0.20,
     }
 
@@ -420,11 +451,51 @@ def calculate_readiness_score(
         blocker_score * weights["blocker"]
     )
 
+    # ==========================================================================
+    # DECISION LOGIC: PASS / CONDITIONAL / NO-GO
+    # ==========================================================================
+    #
+    # PASS: Ready to bid
+    #   - Score >= 70 AND no pricing blockers
+    #   - OR score >= 60 AND at least 3 trades have good coverage
+    #
+    # CONDITIONAL: Can proceed with caution
+    #   - Score >= 40 (some useful content)
+    #   - OR at least 1 trade has > 50% coverage
+    #   - System recommends RFIs but doesn't ban pricing
+    #
+    # NO-GO: Too risky to bid
+    #   - Almost nothing measurable (score < 40)
+    #   - AND no trades with meaningful coverage
+    #   - AND critical disciplines missing
+    # ==========================================================================
+
+    # Check if any trades have good coverage
+    good_coverage_trades = 0
+    any_coverage_trades = 0
+    if trade_coverage:
+        for tc in trade_coverage:
+            if tc.coverage_pct >= 60:
+                good_coverage_trades += 1
+            if tc.coverage_pct > 0:
+                any_coverage_trades += 1
+
     # Determine status
-    if total >= 70 and critical_count == 0:
-        status = "GO"
-    elif total >= 50:
-        status = "REVIEW"
+    # PASS requires:
+    #   - High score (>=70) AND no pricing blockers, OR
+    #   - Good score (>=65) AND multiple trades with good coverage AND no critical blockers
+    if total >= 70 and pricing_blockers == 0 and critical_count == 0:
+        status = "PASS"
+    elif total >= 65 and good_coverage_trades >= 3 and pricing_blockers == 0:
+        status = "PASS"
+    # CONDITIONAL when:
+    #   - Moderate score (>=40) with some issues, OR
+    #   - Some trades have coverage even if overall score is low
+    elif total >= 40 or any_coverage_trades >= 1:
+        status = "CONDITIONAL"
+    elif graph.total_pages > 0 and (sheet_types_found or entities_found):
+        # Have some drawings with identifiable content - CONDITIONAL not NO-GO
+        status = "CONDITIONAL"
     else:
         status = "NO-GO"
 
@@ -439,8 +510,8 @@ def calculate_readiness_score(
         score_breakdown={
             "completeness": f"{len(dependency_types)} missing dependency types",
             "measurement": f"{graph.pages_with_scale}/{total_pages} pages with scale",
-            "coverage": f"{len(found)} of 5 expected disciplines",
-            "blocker": f"{critical_count} critical/high blockers",
+            "coverage": f"{len(found)} disciplines, {len(graph.sheet_types_found)} sheet types",
+            "blocker": f"{critical_count} high severity, {pricing_blockers} pricing blockers",
         }
     )
 
@@ -488,7 +559,8 @@ def enrich_analysis(
         # Calculate readiness score
         result.readiness_score = calculate_readiness_score(
             result.plan_graph,
-            result.blockers
+            result.blockers,
+            trade_coverage=result.trade_coverage
         )
 
     return result
