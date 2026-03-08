@@ -4,3 +4,6 @@
 streamlit>=1.28.0
 pandas>=2.0.0
 numpy>=1.24.0
+
+# Core model layer (required at import time by src.models.estimate_schema)
+pydantic>=2.0.0,<3.0.0
