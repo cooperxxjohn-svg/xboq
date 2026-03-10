@@ -1,5 +1,4 @@
 # XBOQ Demo Page - Streamlit Cloud Requirements
-# Minimal dependencies for the demo UI only
 
 streamlit>=1.28.0
 pandas>=2.0.0
@@ -7,3 +6,17 @@ numpy>=1.24.0
 
 # Core model layer (required at import time by src.models.estimate_schema)
 pydantic>=2.0.0,<3.0.0
+
+# PDF loading — required for every pipeline run (Stage 1: Load PDFs)
+# Without this, load_pdf_pages() silently returns 0 pages → "Analysis failed"
+PyMuPDF>=1.23.0
+
+# Image processing + OCR for scanned PDFs (Stage 4: Extract Text)
+Pillow>=9.0.0
+pytesseract>=0.3.10
+
+# Table extraction for native-text BOQ pages (pdfplumber) — optional, used lazily
+pdfplumber>=0.10.0
+
+# scikit-learn for TF-IDF vectorstore / RAG search
+scikit-learn>=1.3.0
