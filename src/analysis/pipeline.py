@@ -547,6 +547,7 @@ def run_analysis_pipeline(
     run_mode: Optional[str] = None,
     boq_excel_paths: Optional[List[Path]] = None,
     llm_client=None,
+    sub_callback: Optional[Callable[[str, str, str, int], None]] = None,
 ) -> AnalysisResult:
     """
     Run the analysis pipeline on uploaded files.
@@ -558,6 +559,9 @@ def run_analysis_pipeline(
         progress_callback: Callback(stage_id, message, progress_pct) for UI updates
         run_mode: Sprint 20G — one of "demo_fast", "standard_review", "full_audit".
                   Defaults to "demo_fast" if not provided (backward compatible).
+        sub_callback: Optional Callback(agent_id, status, message, items) for
+                      fine-grained agent-level UI updates (Agent Office panel).
+                      status is one of: "working", "done", "error", "skipped".
         llm_client: Optional LLM client (openai.OpenAI or anthropic.Anthropic) for
                     enrichment. If None, enrichment uses template fallbacks.
 
@@ -609,6 +613,14 @@ def run_analysis_pipeline(
                 break
         if progress_callback:
             progress_callback(stage_id, message, progress)
+
+    def fire_sub(agent_id: str, status: str, message: str = "", items: int = 0) -> None:
+        """Fire a sub-agent status update to the Agent Office callback (no-op if not wired)."""
+        if sub_callback:
+            try:
+                sub_callback(agent_id, status, message, items)
+            except Exception as _sub_exc:
+                logger.debug("Agent Office sub_callback error (non-critical): %s", _sub_exc)
 
     try:
         # Create output directory
@@ -1051,6 +1063,7 @@ def run_analysis_pipeline(
         # ── QTO: Room-finish takeoff from plan drawings ──────────────────
         _qto_finish_items: list = []
         _qto_rooms: list = []
+        fire_sub("finish_agent", "working", "finish takeoff")
         try:
             from .qto.finish_takeoff import run_finish_takeoff
             # Gather (page_idx, text, doc_type) for all processed pages using
@@ -1077,15 +1090,18 @@ def run_analysis_pipeline(
             if _qto_finish_items:
                 # Add QTO items into spec_items for normaliser to pick up
                 _spec_items_list = list(_spec_items_list) + _qto_finish_items
+            fire_sub("finish_agent", "done", f"{len(_qto_finish_items)} items", len(_qto_finish_items))
         except Exception as _qto_err:
             import logging as _qlog
             _qlog.getLogger(__name__).warning(f"QTO finish takeoff failed: {_qto_err}")
+            fire_sub("finish_agent", "error", str(_qto_err)[:80])
 
         # ── Scale Detection (Sprint 43 — early, feeds structural + visual) ──
         # Runs against all page texts before any geometry-dependent QTO module.
         # Result: ScaleInfo with px_per_mm, ratio, confidence.
         _detected_scale = None
         _all_page_texts_for_scale: list = []
+        fire_sub("scale_agent", "working", "detecting scale")
         try:
             from .qto.scale_detector import detect_scale as _detect_scale_fn
             if page_index_result and all_page_texts:
@@ -1102,17 +1118,21 @@ def run_analysis_pipeline(
                     (i, t or "", "unknown") for i, t in enumerate(all_page_texts)
                 ]
             _detected_scale = _detect_scale_fn(_all_page_texts_for_scale)
+            _scale_msg = f"1:{_detected_scale.ratio}" if _detected_scale else "not found"
+            fire_sub("scale_agent", "done", _scale_msg)
         except Exception as _scale_early_err:
             import logging as _scaleearly_log
             _scaleearly_log.getLogger(__name__).debug(
                 "Early scale detection failed (non-critical): %s", _scale_early_err
             )
+            fire_sub("scale_agent", "skipped", "non-critical")
 
         # ── QTO: Structural takeoff from schedule text ──────────────────
         _qto_structural_items: list = []
         _qto_structural_elements: list = []
         _qto_structural_mode = "none"
         _qto_structural_warnings: list = []
+        fire_sub("structural_agent", "working", "structural QTO")
         try:
             from .qto.structural_takeoff import run_structural_takeoff
 
@@ -1178,11 +1198,15 @@ def run_analysis_pipeline(
 
                 if _qto_structural_items:
                     _spec_items_list = list(_spec_items_list) + _qto_structural_items
+            fire_sub("structural_agent", "done",
+                     f"{len(_qto_structural_elements)} elements, {len(_qto_structural_items)} items",
+                     len(_qto_structural_items))
         except Exception as _st_err:
             import logging as _stlog
             _stlog.getLogger(__name__).warning(
                 f"QTO structural takeoff failed: {_st_err}"
             )
+            fire_sub("structural_agent", "error", str(_st_err)[:80])
 
         # ── QTO: Implied items rule engine ──────────────────────────────
         _qto_implied_items: list = []
@@ -1220,6 +1244,7 @@ def run_analysis_pipeline(
         _qto_mep_mode = "none"
         _qto_mep_warnings: list = []
         _mep_page_texts: list = []
+        fire_sub("mep_agent", "working", "MEP takeoff")
         try:
             from .qto.mep_takeoff import run_mep_takeoff
 
@@ -1253,12 +1278,16 @@ def run_analysis_pipeline(
 
             if _qto_mep_items:
                 _spec_items_list = list(_spec_items_list) + _qto_mep_items
+            fire_sub("mep_agent", "done",
+                     f"{len(_qto_mep_elements)} elements, {len(_qto_mep_items)} items",
+                     len(_qto_mep_items))
 
         except Exception as _mep_err:
             import logging as _meplog
             _meplog.getLogger(__name__).warning(
                 f"MEP takeoff failed: {_mep_err}"
             )
+            fire_sub("mep_agent", "error", str(_mep_err)[:80])
 
         # ── QTO: Visual Element Detection (Sprint 37) ────────────────
         _qto_visual_elements: list = []
@@ -1270,6 +1299,10 @@ def run_analysis_pipeline(
         _primary_pdf = payload.get("primary_pdf_path") if payload else None
         if not _primary_pdf:
             _primary_pdf = getattr(result, 'pdf_path', None)
+        if llm_client is not None and _primary_pdf and _mep_page_texts:
+            fire_sub("visual_detector", "working", "visual detection")
+        else:
+            fire_sub("visual_detector", "skipped", "no LLM / no PDF")
         try:
             if llm_client is not None and _primary_pdf and _mep_page_texts:
                 from .qto.visual_element_detector import run_visual_detection
@@ -1287,11 +1320,15 @@ def run_analysis_pipeline(
 
                 if _qto_visual_items:
                     _spec_items_list = list(_spec_items_list) + _qto_visual_items
+                fire_sub("visual_detector", "done",
+                         f"{len(_qto_visual_elements)} elements",
+                         len(_qto_visual_items))
         except Exception as _vis_err:
             import logging as _vislog
             _vislog.getLogger(__name__).warning(
                 f"Visual element detection failed: {_vis_err}"
             )
+            fire_sub("visual_detector", "error", str(_vis_err)[:80])
 
         # ── QTO: Visual Measurement (Sprint 37) ──────────────────────
         _qto_vmeas_rooms: list = []
@@ -1301,6 +1338,10 @@ def run_analysis_pipeline(
         _qto_vmeas_scale = ""
         _qto_vmeas_area = 0.0
         _qto_vmeas_room_schedule: list = []
+        if llm_client is not None and _primary_pdf and _mep_page_texts:
+            fire_sub("visual_measure", "working", "visual measurement")
+        else:
+            fire_sub("visual_measure", "skipped", "no LLM / no PDF")
         try:
             if llm_client is not None and _primary_pdf and _mep_page_texts:
                 from .qto.visual_measurement import run_visual_measurement
@@ -1326,11 +1367,15 @@ def run_analysis_pipeline(
                 # Add measurement-derived finish items to spec items
                 if _qto_vmeas_items:
                     _spec_items_list = list(_spec_items_list) + _qto_vmeas_items
+                fire_sub("visual_measure", "done",
+                         f"{len(_qto_vmeas_rooms)} rooms, {len(_qto_vmeas_items)} items",
+                         len(_qto_vmeas_items))
         except Exception as _vmeas_err:
             import logging as _vmeaslog
             _vmeaslog.getLogger(__name__).warning(
                 f"Visual measurement failed: {_vmeas_err}"
             )
+            fire_sub("visual_measure", "error", str(_vmeas_err)[:80])
 
         # ── QTO: Door & Window Takeoff (Sprint 38) ───────────────────
         _qto_dw_elements: list = []
@@ -1339,6 +1384,7 @@ def run_analysis_pipeline(
         _qto_dw_warnings: list = []
         _qto_dw_door_count = 0
         _qto_dw_window_count = 0
+        fire_sub("dw_agent", "working", "door/window takeoff")
         try:
             from .qto.door_window_takeoff import run_dw_takeoff
             _dw_result = run_dw_takeoff(
@@ -1354,9 +1400,13 @@ def run_analysis_pipeline(
             _qto_dw_window_count= _dw_result.window_count
             if _qto_dw_items:
                 _spec_items_list = list(_spec_items_list) + _qto_dw_items
+            fire_sub("dw_agent", "done",
+                     f"D:{_qto_dw_door_count} W:{_qto_dw_window_count}",
+                     len(_qto_dw_items))
         except Exception as _dw_err:
             import logging as _dwlog
             _dwlog.getLogger(__name__).warning(f"Door/window takeoff failed: {_dw_err}")
+            fire_sub("dw_agent", "error", str(_dw_err)[:80])
 
         # ── QTO: Painting Takeoff (Sprint 38) ────────────────────────
         _qto_paint_items: list = []
@@ -1365,6 +1415,7 @@ def run_analysis_pipeline(
         _qto_paint_int_wall = 0.0
         _qto_paint_ceiling = 0.0
         _qto_paint_ext_wall = 0.0
+        fire_sub("painting_agent", "working", "painting takeoff")
         try:
             from .qto.painting_takeoff import run_painting_takeoff
             _paint_result = run_painting_takeoff(
@@ -1382,9 +1433,12 @@ def run_analysis_pipeline(
             _qto_paint_ext_wall = _paint_result.total_exterior_wall_sqm
             if _qto_paint_items:
                 _spec_items_list = list(_spec_items_list) + _qto_paint_items
+            fire_sub("painting_agent", "done",
+                     f"{len(_qto_paint_items)} items", len(_qto_paint_items))
         except Exception as _paint_err:
             import logging as _paintlog
             _paintlog.getLogger(__name__).warning(f"Painting takeoff failed: {_paint_err}")
+            fire_sub("painting_agent", "error", str(_paint_err)[:80])
 
         # ── QTO: Waterproofing Takeoff (Sprint 38) ───────────────────
         _qto_wp_items: list = []
@@ -1392,6 +1446,7 @@ def run_analysis_pipeline(
         _qto_wp_warnings: list = []
         _qto_wp_wet_area = 0.0
         _qto_wp_roof_area = 0.0
+        fire_sub("waterproof_agent", "working", "waterproofing takeoff")
         try:
             from .qto.waterproofing_takeoff import run_waterproofing_takeoff
             _wp_result = run_waterproofing_takeoff(
@@ -1406,14 +1461,18 @@ def run_analysis_pipeline(
             _qto_wp_roof_area= _wp_result.roof_area_sqm
             if _qto_wp_items:
                 _spec_items_list = list(_spec_items_list) + _qto_wp_items
+            fire_sub("waterproof_agent", "done",
+                     f"{len(_qto_wp_items)} items", len(_qto_wp_items))
         except Exception as _wp_err:
             import logging as _wplog
             _wplog.getLogger(__name__).warning(f"Waterproofing takeoff failed: {_wp_err}")
+            fire_sub("waterproof_agent", "error", str(_wp_err)[:80])
 
         # ── QTO: Site Work Takeoff (Sprint 38) ───────────────────────
         _qto_sw_items: list = []
         _qto_sw_mode = "none"
         _qto_sw_warnings: list = []
+        fire_sub("sitework_agent", "working", "sitework takeoff")
         try:
             from .qto.sitework_takeoff import run_sitework_takeoff
             _sw_result = run_sitework_takeoff(
@@ -1427,14 +1486,18 @@ def run_analysis_pipeline(
             _qto_sw_warnings = _sw_result.warnings
             if _qto_sw_items:
                 _spec_items_list = list(_spec_items_list) + _qto_sw_items
+            fire_sub("sitework_agent", "done",
+                     f"{len(_qto_sw_items)} items", len(_qto_sw_items))
         except Exception as _sw_err:
             import logging as _swlog
             _swlog.getLogger(__name__).warning(f"Sitework takeoff failed: {_sw_err}")
+            fire_sub("sitework_agent", "error", str(_sw_err)[:80])
 
         # ── Rate Engine: Apply rates to ALL spec items (Sprint 38) ───
         _qto_rated_items: list = []
         _qto_trade_summary: dict = {}
         _qto_grand_total_inr: float = 0.0
+        fire_sub("rate_engine", "working", "applying rates")
         try:
             from .qto.rate_engine import apply_rates, compute_trade_summary
             _qto_rated_items = apply_rates(list(_spec_items_list), region="tier1")
@@ -1444,9 +1507,12 @@ def run_analysis_pipeline(
             )
             # Store rated items back as spec_items_list so export sees rates
             _spec_items_list = _qto_rated_items
+            fire_sub("rate_engine", "done",
+                     f"₹{_qto_grand_total_inr/1e7:.1f}Cr total", len(_qto_rated_items))
         except Exception as _rate_err:
             import logging as _ratelog
             _ratelog.getLogger(__name__).warning(f"Rate engine failed: {_rate_err}")
+            fire_sub("rate_engine", "error", str(_rate_err)[:80])
 
         # ── Sprint 41: Rebuild unified line_items after all QTO modules ──
         # The initial build_line_items() call (Sprint 21D above) ran with only
@@ -1473,6 +1539,7 @@ def run_analysis_pipeline(
 
         # ── Excel Export (Sprint 38) ─────────────────────────────────
         _qto_excel_bytes: bytes = b""
+        fire_sub("excel_exporter", "working", "exporting Excel BOQ")
         try:
             from .export.excel_exporter import export_to_excel
             _excel_meta = {
@@ -1488,9 +1555,12 @@ def run_analysis_pipeline(
                 project_meta=_excel_meta,
             )
             _qto_excel_bytes = _excel_result or b""
+            fire_sub("excel_exporter", "done",
+                     f"{len(_spec_items_list)} items")
         except Exception as _excel_err:
             import logging as _excellog
             _excellog.getLogger(__name__).warning(f"Excel export failed: {_excel_err}")
+            fire_sub("excel_exporter", "error", str(_excel_err)[:80])
 
         payload = getattr(result, 'payload', {})
         payload["qto_summary"] = {
@@ -1820,6 +1890,7 @@ def run_analysis_pipeline(
         # =================================================================
         stage_start = time.perf_counter()
         update_progress("rfi", "Running discipline checklist...", 0.2)
+        fire_sub("rfi_generator", "working", "generating RFIs")
 
         # Generate new checklist-driven RFIs
         if extraction_result and page_index_result and selected_result:
@@ -1883,6 +1954,7 @@ def run_analysis_pipeline(
             _log.getLogger(__name__).debug("KB RFI extension skipped: %s", _kb_err)
 
         update_progress("rfi", f"Generated {len(rfi_list)} RFIs", 1.0)
+        fire_sub("rfi_generator", "done", f"{len(rfi_list)} RFIs", len(rfi_list))
         stage_times["rfi"] = time.perf_counter() - stage_start
 
         # =================================================================
@@ -2491,6 +2563,7 @@ def run_analysis_pipeline(
             logger.warning("Sprint 28 SVG generation failed (non-critical): %s", _svg_exc)
 
         # Sprint 29: Build and save vector index for RAG semantic search
+        fire_sub("vector_indexer", "working", "building vector index")
         try:
             from src.vectorstore import build_index_from_payload
             _vec_index = build_index_from_payload(result.payload)
@@ -2500,12 +2573,18 @@ def run_analysis_pipeline(
                 result.files_generated.append(str(_vec_path))
                 logger.info("Sprint 29: Vector index saved — %d chunks, %d vocab terms",
                             _vec_index.size, _vec_index.vocab_size)
+            fire_sub("vector_indexer", "done",
+                     f"{getattr(_vec_index, 'size', 0)} chunks")
         except Exception as _vec_exc:
             logger.warning("Sprint 29 vector index build failed (non-critical): %s", _vec_exc)
+            fire_sub("vector_indexer", "error", str(_vec_exc)[:80])
 
         # ── Semantic Intelligence Layer (Sprint 40) ───────────────────────────
         # ChromaDB dense embeddings + gap analysis + bid synthesis
         # Gracefully skipped if chromadb / sentence-transformers not installed
+        fire_sub("gap_analyzer",   "working", "analyzing gaps")
+        fire_sub("cost_impact",    "working", "estimating cost impact")
+        fire_sub("bid_synthesizer","working", "synthesizing bid intelligence")
         try:
             from src.embeddings.embedder import Embedder as _Embedder
             from src.embeddings.chroma_store import BidChromaStore as _BidChromaStore
@@ -2524,12 +2603,20 @@ def run_analysis_pipeline(
             _intel_gaps = _analyze_gaps(
                 result.payload, _intel_store, _intel_embedder, llm_client,
             )
+            fire_sub("gap_analyzer", "done",
+                     f"{len(_intel_gaps)} gaps", len(_intel_gaps))
+
             _intel_impacts = [
                 _estimate_cost_impact(g, result.payload) for g in _intel_gaps
             ]
+            fire_sub("cost_impact", "done",
+                     f"{len(_intel_impacts)} estimates", len(_intel_impacts))
+
             _intel_synthesis = _synthesize_bid(
                 result.payload, _intel_gaps, _intel_impacts, llm_client,
             )
+            fire_sub("bid_synthesizer", "done",
+                     f"readiness={_intel_synthesis.bid_readiness_score}")
 
             result.payload["bid_synthesis"] = _intel_synthesis.to_dict()
             result.payload["gaps"] = [
@@ -2556,8 +2643,14 @@ def run_analysis_pipeline(
                 "Sprint 40: chromadb/sentence-transformers not installed; "
                 "install them for full bid intelligence: pip install chromadb sentence-transformers"
             )
+            fire_sub("gap_analyzer",    "skipped", "chromadb not installed")
+            fire_sub("cost_impact",     "skipped", "chromadb not installed")
+            fire_sub("bid_synthesizer", "skipped", "chromadb not installed")
         except Exception as _intel_exc:
             logger.warning("Sprint 40 intelligence layer failed (non-critical): %s", _intel_exc)
+            fire_sub("gap_analyzer",    "error", str(_intel_exc)[:80])
+            fire_sub("cost_impact",     "error", str(_intel_exc)[:80])
+            fire_sub("bid_synthesizer", "error", str(_intel_exc)[:80])
 
         # Sprint 11: Save current payload snapshot for next run compare
         try:

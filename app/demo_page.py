@@ -29,9 +29,37 @@ from datetime import datetime
 from typing import List, Any, Dict, Optional
 from dataclasses import dataclass
 
-# Add src and app to path for imports
-sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
-sys.path.insert(0, str(Path(__file__).parent))
+# Add project root, src, and app to path for imports
+# Use .resolve() to handle symlinks (floorplan-engine/app -> xboq.ai/app)
+_PROJECT_ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(_PROJECT_ROOT))
+sys.path.insert(0, str(_PROJECT_ROOT / "src"))
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+
+
+# ── Error tracking (Sentry) ──────────────────────────────────────────────
+import os as _os_sentry
+_SENTRY_DSN = _os_sentry.environ.get("SENTRY_DSN", "")
+if _SENTRY_DSN:
+    try:
+        import sentry_sdk
+        from sentry_sdk.integrations.logging import LoggingIntegration
+        import logging as _logging_sentry
+        sentry_sdk.init(
+            dsn=_SENTRY_DSN,
+            traces_sample_rate=0.1,      # 10% of transactions
+            profiles_sample_rate=0.0,
+            environment=_os_sentry.environ.get("XBOQ_ENV", "production"),
+            integrations=[
+                LoggingIntegration(
+                    level=_logging_sentry.WARNING,
+                    event_level=_logging_sentry.ERROR,
+                ),
+            ],
+            before_send=lambda event, hint: event,  # send all errors
+        )
+    except ImportError:
+        pass  # sentry_sdk not installed — silent no-op
 
 
 # =============================================================================
@@ -287,6 +315,18 @@ from exports.pricing_readiness import get_pricing_readiness_buffer
 from exports.rfi_pack import get_rfi_pack_buffer
 from exports.bid_packet import get_bid_packet_buffer
 
+# Agent Office — live pipeline agent status panel
+try:
+    from agent_office import (
+        build_initial_states as _build_office_states,
+        make_sub_callback as _make_sub_callback,
+        make_stage_sub_callback as _make_stage_sub_callback,
+        render_office_sidebar as _render_office_sidebar,
+    )
+    _HAS_AGENT_OFFICE = True
+except ImportError:
+    _HAS_AGENT_OFFICE = False
+
 # Try to import report builder
 try:
     from reports.bid_readiness_report import (
@@ -298,6 +338,9 @@ try:
 except ImportError:
     HAS_REPORT_BUILDER = False
 
+# Auth
+from src.auth.login_ui import render_auth_gate, render_user_menu
+
 # Page config
 st.set_page_config(
     page_title="XBOQ - Pre-Bid Scope Check",
@@ -305,6 +348,9 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="collapsed"
 )
+
+_current_user = render_auth_gate()
+render_user_menu()
 
 # CSS
 st.markdown("""
@@ -670,7 +716,7 @@ def load_demo_results(project_id: str) -> dict:
 
     This ensures YC demos use reliable cached data while fresh uploads work too.
     """
-    project_root = Path(__file__).parent.parent
+    project_root = Path(__file__).resolve().parent.parent
 
     results = {
         "loaded": False, "rfis": [], "trade_summary": {}, "bid_gate": {},
@@ -885,28 +931,20 @@ def render_decision_banner(demo: DemoAnalysis):
         elif _run_mode_top == "full_audit":
             _cov_label = "Full Coverage"
 
-        st.markdown(f"""
-        <style>.pill-sublabel {{font-size:0.6rem;color:#71717a;margin-top:2px;}}</style>
-        <div class="sub-score-row">
-            <div class="sub-score-pill">
-                <div class="pill-value">{sub.get("coverage", 0)}</div>
-                <div class="pill-label">{_cov_label}</div>
-                {_cov_sublabel}
-            </div>
-            <div class="sub-score-pill">
-                <div class="pill-value">{sub.get("completeness", 0)}</div>
-                <div class="pill-label">Completeness</div>
-            </div>
-            <div class="sub-score-pill">
-                <div class="pill-value">{sub.get("measurement", 0)}</div>
-                <div class="pill-label">Measurement</div>
-            </div>
-            <div class="sub-score-pill">
-                <div class="pill-value">{sub.get("blocker", 0)}</div>
-                <div class="pill-label">Blockers</div>
-            </div>
-        </div>
-        """, unsafe_allow_html=True)
+        _sub_html = (
+            f'<style>.pill-sublabel {{font-size:0.6rem;color:#71717a;margin-top:2px;}}</style>'
+            f'<div class="sub-score-row">'
+            f'<div class="sub-score-pill"><div class="pill-value">{sub.get("coverage", 0)}</div>'
+            f'<div class="pill-label">{_cov_label}</div>{_cov_sublabel}</div>'
+            f'<div class="sub-score-pill"><div class="pill-value">{sub.get("completeness", 0)}</div>'
+            f'<div class="pill-label">Completeness</div></div>'
+            f'<div class="sub-score-pill"><div class="pill-value">{sub.get("measurement", 0)}</div>'
+            f'<div class="pill-label">Measurement</div></div>'
+            f'<div class="sub-score-pill"><div class="pill-value">{sub.get("blocker", 0)}</div>'
+            f'<div class="pill-label">Blockers</div></div>'
+            f'</div>'
+        )
+        st.markdown(_sub_html, unsafe_allow_html=True)
 
 
 def format_duration(seconds: float) -> str:
@@ -1501,6 +1539,20 @@ def render_evidence_expander(evidence: dict, title: str = "Why?",
                 overlay_key = _make_widget_key(_kp, "ev_overlay", item_id, title)
                 show_overlay = st.checkbox("Show highlights", value=True, key=overlay_key)
 
+            # Sprint 28: SVG option for drawing-type evidence pages
+            _ev_svg_toggle = False
+            _ev_pi = st.session_state.get("_xboq_page_index", {})
+            _ev_pi_info = _ev_pi.get(str(pages[current_idx]), _ev_pi.get(pages[current_idx], {}))
+            _ev_doc_type = _ev_pi_info.get("doc_type", "unknown") if isinstance(_ev_pi_info, dict) else "unknown"
+            try:
+                from app.svg_renderer import is_svg_doc_type as _is_svg_dt
+                if _is_svg_dt(_ev_doc_type):
+                    _ev_svg_key = _make_widget_key(_kp, "ev_svg", item_id, title)
+                    _ev_svg_toggle = st.checkbox("SVG", value=False, key=_ev_svg_key,
+                                                  help="Vector render (crisp for drawings)")
+            except ImportError:
+                pass
+
             # Resolve per-page bboxes from evidence
             all_bboxes = evidence.get("bbox")
             current_page_bboxes = None
@@ -1522,22 +1574,64 @@ def render_evidence_expander(evidence: dict, title: str = "Why?",
                             _render_page = _gp - _d.get("global_page_start", 0)
                             break
 
-            page_png = render_pdf_page_with_overlay(
-                _render_pdf, _render_page, current_page_bboxes, zoom,
-                label_boxes=True,
-            )
-            if page_png:
-                st.image(page_png, caption=f"Page {pages[current_idx] + 1}",
-                         use_container_width=True)
+            # Sprint 28: SVG rendering branch
+            if _ev_svg_toggle and _render_pdf:
+                try:
+                    from app.svg_renderer import (
+                        _cached_page_svg as _ev_svg_fn,
+                        inject_bbox_overlay_svg as _ev_inject,
+                        get_svg_page_dimensions as _ev_dims_fn,
+                        render_svg_html as _ev_svg_html,
+                    )
+                    _ev_svg = getattr(_ev_svg_fn, "__wrapped__", _ev_svg_fn)(_render_pdf, _render_page, "path")
+                    if _ev_svg and show_overlay and current_page_bboxes:
+                        _dims = _ev_dims_fn(_render_pdf, _render_page)
+                        if _dims:
+                            _ev_svg = _ev_inject(_ev_svg, current_page_bboxes, _dims[0], _dims[1], label_boxes=True)
+                    if _ev_svg:
+                        import streamlit.components.v1 as _ev_comp
+                        _ev_comp.html(_ev_svg_html(_ev_svg, height=500), height=520, scrolling=True)
+                    else:
+                        # Fallback to PNG
+                        page_png = render_pdf_page_with_overlay(
+                            _render_pdf, _render_page, current_page_bboxes, zoom,
+                            label_boxes=True,
+                        )
+                        if page_png:
+                            st.image(page_png, caption=f"Page {pages[current_idx] + 1}",
+                                     use_container_width=True)
+                        else:
+                            st.info(f"Page preview unavailable (page {pages[current_idx] + 1})")
+                except Exception:
+                    # Fallback to PNG on any SVG error
+                    page_png = render_pdf_page_with_overlay(
+                        _render_pdf, _render_page, current_page_bboxes, zoom,
+                        label_boxes=True,
+                    )
+                    if page_png:
+                        st.image(page_png, caption=f"Page {pages[current_idx] + 1}",
+                                 use_container_width=True)
+                    else:
+                        st.info(f"Page preview unavailable (page {pages[current_idx] + 1})")
             else:
-                st.info(f"Page preview unavailable (page {pages[current_idx] + 1})")
+                page_png = render_pdf_page_with_overlay(
+                    _render_pdf, _render_page, current_page_bboxes, zoom,
+                    label_boxes=True,
+                )
+                if page_png:
+                    st.image(page_png, caption=f"Page {pages[current_idx] + 1}",
+                             use_container_width=True)
+                else:
+                    st.info(f"Page preview unavailable (page {pages[current_idx] + 1})")
         elif pages and not pdf_path:
             page_nums = [str(p + 1) for p in pages[:10]]
-            st.markdown(f"**Found on pages:** {', '.join(page_nums)}")
+            _pn_extra = f" +{len(pages) - 10} more" if len(pages) > 10 else ""
+            st.markdown(f"**Found on pages:** {', '.join(page_nums)}{_pn_extra}")
             st.caption("📄 PDF preview not available in cached demo mode")
         elif pages:
             page_nums = [str(p + 1) for p in pages[:10]]
-            st.markdown(f"**Found on pages:** {', '.join(page_nums)}")
+            _pn_extra = f" +{len(pages) - 10} more" if len(pages) > 10 else ""
+            st.markdown(f"**Found on pages:** {', '.join(page_nums)}{_pn_extra}")
 
         # ── Evidence snippets with inline citations ─────────────────
         snippets = evidence.get("snippets", [])
@@ -1567,6 +1661,16 @@ def render_evidence_expander(evidence: dict, title: str = "Why?",
                     if st.button(label, key=_make_widget_key(_kp, "ev_jump", item_id, pg)):
                         st.session_state[nav_key] = i
                         st.rerun()
+
+        # ── Sprint 27: "View in Page Browser" button ─────────
+        if pages:
+            if st.button(
+                f"📄 View page {pages[0] + 1} in Page Browser",
+                key=_make_widget_key(_kp, "ev_pgbrowser", item_id),
+                help="Open this page in the Page Browser tab for full context",
+            ):
+                st.session_state["_page_detail_idx"] = pages[0]
+                st.toast(f"Navigate to 📄 Pages tab to see page {pages[0] + 1}")
 
         # ── Rule ID + Confidence badge ────────────────────────────
         if item_id:
@@ -2371,6 +2475,544 @@ def render_key_line_items(payload: dict):
             for trade, reqs in sorted(req_by_trade.items(), key=lambda x: -len(x[1])):
                 st.caption(f"**{trade.title()}**: {len(reqs)} requirements")
 
+    # Sprint 23: Rate benchmark analysis
+    render_rate_analysis(payload)
+
+    # Sprint 23: Contractual clauses (excluded from pricing)
+    render_contractual_items(payload)
+
+    # Sprint 24: QTO room-finish takeoff quantities
+    render_qto_panel(payload)
+
+
+def render_rate_analysis(payload: dict):
+    """Render DSR rate benchmark analysis for line items.
+
+    Sprint 23: Shows rate deviation vs DSR schedule, worst offenders, and
+    an item-count breakdown by status.  All reads use .get() — graceful
+    fallback when rate_benchmark data is absent.
+    """
+    import pandas as pd
+
+    line_items = payload.get("line_items", [])
+    if not line_items:
+        return
+
+    # Filter to items that carry a rate_benchmark dict
+    benchmarked = [it for it in line_items if it.get("rate_benchmark")]
+    if not benchmarked:
+        return
+
+    st.markdown("### Rate Analysis")
+
+    # ── Summary metrics ───────────────────────────────────────────────
+    total = len(line_items)
+    n_benchmarked = len(benchmarked)
+
+    _status_counts: dict = {}
+    for it in benchmarked:
+        s = (it["rate_benchmark"].get("status") or "NO_MATCH").upper()
+        _status_counts[s] = _status_counts.get(s, 0) + 1
+
+    n_above = _status_counts.get("ABOVE_SCHEDULE", 0)
+    n_at = _status_counts.get("AT_SCHEDULE", 0)
+    n_below = _status_counts.get("BELOW_SCHEDULE", 0)
+
+    pct_above = n_above / n_benchmarked * 100 if n_benchmarked else 0
+    pct_at = (n_at + n_below) / n_benchmarked * 100 if n_benchmarked else 0
+
+    _mc1, _mc2, _mc3 = st.columns(3)
+    _mc1.metric(
+        "Benchmarked Items",
+        f"{n_benchmarked} / {total}",
+        help="Items matched against DSR schedule",
+    )
+    _mc2.metric(
+        "Above Schedule",
+        f"{pct_above:.0f}%",
+        delta=f"{n_above} items" if n_above else None,
+        delta_color="inverse",
+        help="Item rate exceeds DSR schedule rate",
+    )
+    _mc3.metric(
+        "At / Below Schedule",
+        f"{pct_at:.0f}%",
+        delta=f"{n_at + n_below} items" if (n_at + n_below) else None,
+        delta_color="normal",
+        help="Item rate is at or below DSR schedule rate",
+    )
+
+    # ── Rate Analysis dataframe ───────────────────────────────────────
+    _STATUS_EMOJI = {
+        "ABOVE_SCHEDULE": "🔴 ABOVE",
+        "AT_SCHEDULE": "🟢 AT",
+        "BELOW_SCHEDULE": "🟢 BELOW",
+        "UNRATED": "⚪ UNRATED",
+        "NO_MATCH": "⚪ NO MATCH",
+    }
+
+    rows = []
+    for it in benchmarked:
+        rb = it["rate_benchmark"]
+        raw_status = (rb.get("status") or "NO_MATCH").upper()
+        status_display = _STATUS_EMOJI.get(raw_status, f"⚪ {raw_status}")
+        dev = rb.get("deviation_pct")
+        dev_str = f"{dev:+.1f}%" if dev is not None else "—"
+        rows.append({
+            "Item No": _safe_str(it.get("item_no", "")),
+            "Description": _safe_str(it.get("description", ""))[:60],
+            "Trade": _safe_str(it.get("trade", "")).title() or "—",
+            "Unit": _safe_str(it.get("unit", "") or rb.get("dsr_unit", "")) or "—",
+            "DSR Rate (₹)": rb.get("dsr_rate") if rb.get("dsr_rate") is not None else "—",
+            "Item Rate (₹)": rb.get("item_rate") if rb.get("item_rate") is not None else it.get("rate", "—"),
+            "Deviation %": dev_str,
+            "Status": status_display,
+        })
+
+    df_ra = pd.DataFrame(rows)
+    st.dataframe(df_ra, use_container_width=True, hide_index=True)
+
+    # ── Rate Intelligence expander ────────────────────────────────────
+    with st.expander("Rate Intelligence", expanded=False):
+        # Bar chart: item counts by status
+        _chart_data = {
+            "Above Schedule": _status_counts.get("ABOVE_SCHEDULE", 0),
+            "At Schedule": _status_counts.get("AT_SCHEDULE", 0),
+            "Below Schedule": _status_counts.get("BELOW_SCHEDULE", 0),
+            "Unrated": _status_counts.get("UNRATED", 0),
+            "No Match": _status_counts.get("NO_MATCH", 0),
+        }
+        # Only include non-zero buckets
+        _chart_data = {k: v for k, v in _chart_data.items() if v > 0}
+        if _chart_data:
+            try:
+                import plotly.graph_objects as go
+                fig = go.Figure(go.Bar(
+                    x=list(_chart_data.keys()),
+                    y=list(_chart_data.values()),
+                    marker_color=[
+                        "#ef4444" if k == "Above Schedule" else
+                        "#22c55e" if k in ("At Schedule", "Below Schedule") else
+                        "#71717a"
+                        for k in _chart_data.keys()
+                    ],
+                ))
+                fig.update_layout(
+                    paper_bgcolor="rgba(0,0,0,0)",
+                    plot_bgcolor="rgba(0,0,0,0)",
+                    font_color="#a1a1aa",
+                    margin=dict(l=0, r=0, t=24, b=0),
+                    height=240,
+                    showlegend=False,
+                    title_text="Item Count by Rate Status",
+                    title_font_size=13,
+                )
+                fig.update_yaxes(tickcolor="#3f3f46", gridcolor="#27272a")
+                fig.update_xaxes(tickcolor="#3f3f46")
+                st.plotly_chart(fig, use_container_width=True)
+            except ImportError:
+                # Fallback: st.bar_chart with a simple DataFrame
+                df_chart = pd.DataFrame.from_dict(
+                    _chart_data, orient="index", columns=["Count"]
+                )
+                st.bar_chart(df_chart)
+
+        # Worst offenders: deviation_pct > 20, sorted descending
+        worst = []
+        for it in benchmarked:
+            rb = it["rate_benchmark"]
+            dev = rb.get("deviation_pct")
+            if dev is not None and dev > 20:
+                worst.append({
+                    "Item No": _safe_str(it.get("item_no", "")),
+                    "Description": _safe_str(it.get("description", ""))[:60],
+                    "DSR Rate (₹)": rb.get("dsr_rate", "—"),
+                    "Item Rate (₹)": rb.get("item_rate") if rb.get("item_rate") is not None else it.get("rate", "—"),
+                    "Deviation %": f"{dev:+.1f}%",
+                    "DSR Ref": _safe_str(rb.get("dsr_id", "")) or "—",
+                    "Confidence": _safe_str(rb.get("match_confidence", "")) or "—",
+                })
+        worst.sort(key=lambda x: float(x["Deviation %"].replace("%", "").replace("+", "")), reverse=True)
+        if worst:
+            st.markdown(f"**Worst Offenders** — {len(worst)} item(s) >20% above schedule")
+            df_worst = pd.DataFrame(worst)
+            st.dataframe(df_worst, use_container_width=True, hide_index=True)
+        else:
+            st.caption("No items exceed 20% above schedule rate.")
+
+
+def render_contractual_items(payload: dict):
+    """Render contractual/excluded items from the payload.
+
+    Sprint 23: Shows items in payload['contractual_items'] that are excluded
+    from pricing, with their description and priceable_reason.
+    Graceful no-op when the key is absent.
+    """
+    contractual_items = payload.get("contractual_items", [])
+    if not contractual_items:
+        return
+
+    with st.expander(
+        f"\u2696\ufe0f Contractual Clauses (excluded from pricing) — {len(contractual_items)} item(s)",
+        expanded=False,
+    ):
+        import pandas as pd
+
+        rows = []
+        for ci in contractual_items:
+            rows.append({
+                "Item No": _safe_str(ci.get("item_no", "")) or "—",
+                "Description": _safe_str(ci.get("description", ""))[:80],
+                "Reason Excluded": _safe_str(ci.get("priceable_reason", "")) or "—",
+            })
+        df_ci = pd.DataFrame(rows)
+        st.dataframe(df_ci, use_container_width=True, hide_index=True)
+
+
+def render_qto_panel(payload: dict):
+    """Render the 📐 Quantities (QTO) section.
+
+    Sprint 24: Shows room-finish takeoff metrics and tables from the QTO
+    pipeline module. Reads payload['qto_summary'] for headline counts.
+    If payload['qto_rooms'] / payload['qto_finish_items'] are present
+    (future pipeline extension), full tables are rendered with a CSV export.
+    Graceful no-op when qto_summary is absent.
+    """
+    import pandas as pd
+    import io as _io
+
+    qto_summary = payload.get("qto_summary", {})
+    if not qto_summary:
+        return
+
+    rooms_detected = qto_summary.get("rooms_detected", 0)
+    finish_items = qto_summary.get("finish_items_generated", 0)
+
+    st.markdown("### 📐 Quantities (QTO)")
+
+    # ── Metrics row ───────────────────────────────────────────────────
+    _qm1, _qm2 = st.columns(2)
+    _qm1.metric("Rooms Detected", rooms_detected)
+    _qm2.metric("Finish Items Generated", finish_items)
+
+    # ── Rooms table (if detailed data is in payload) ──────────────────
+    qto_rooms = payload.get("qto_rooms", [])
+    qto_finish_items = payload.get("qto_finish_items", [])
+
+    if qto_rooms:
+        with st.expander(f"Room Schedule ({len(qto_rooms)} rooms)", expanded=False):
+            rows_r = []
+            for r in qto_rooms:
+                dim_l = r.get("dim_l")
+                dim_w = r.get("dim_w")
+                dim_str = (
+                    f"{dim_l} × {dim_w}"
+                    if dim_l is not None and dim_w is not None
+                    else "—"
+                )
+                rows_r.append({
+                    "Room Name": _safe_str(r.get("name", r.get("raw_name", ""))),
+                    "Area (sqm)": r.get("area_sqm", ""),
+                    "Dimensions (L×W)": dim_str,
+                    "Confidence": f"{r.get('confidence', 0):.0%}",
+                    "Source Page": (r.get("source_page", 0) or 0) + 1,
+                })
+            df_rooms = pd.DataFrame(rows_r)
+            st.dataframe(df_rooms, use_container_width=True, hide_index=True)
+    elif rooms_detected > 0:
+        st.caption(
+            f"Room-level detail not stored in payload — {rooms_detected} room(s) detected. "
+            "Re-run with pipeline v2+ to see full room schedule."
+        )
+
+    # ── Finish items table (if detailed data is in payload) ───────────
+    if qto_finish_items:
+        with st.expander(
+            f"Finish Items ({len(qto_finish_items)} items)", expanded=False
+        ):
+            rows_fi = []
+            for fi in qto_finish_items:
+                rows_fi.append({
+                    "Room": _safe_str(fi.get("room", "")),
+                    "Element": _safe_str(fi.get("element", "")),
+                    "Description": _safe_str(fi.get("description", ""))[:80],
+                    "Unit": _safe_str(fi.get("unit", "")) or "sqm",
+                    "Qty (sqm)": fi.get("qty", ""),
+                    "Trade": _safe_str(fi.get("trade", "")),
+                })
+            df_fi = pd.DataFrame(rows_fi)
+            st.dataframe(df_fi, use_container_width=True, hide_index=True)
+
+            # ── CSV download ──────────────────────────────────────────
+            csv_buf = _io.StringIO()
+            df_fi.to_csv(csv_buf, index=False)
+            st.download_button(
+                label="⬇ Export QTO as CSV",
+                data=csv_buf.getvalue(),
+                file_name="qto_finish_items.csv",
+                mime="text/csv",
+                key=_make_widget_key("qto_csv_download"),
+            )
+    elif finish_items > 0:
+        st.caption(
+            f"Finish-item detail not stored in payload — {finish_items} item(s) generated. "
+            "Re-run with pipeline v2+ to see the full finish takeoff table."
+        )
+
+    # ── MEP Takeoff summary (Sprint 37) ──────────────────────────────
+    _mep_elements_ct = qto_summary.get("mep_elements_detected", 0)
+    _mep_items_ct    = qto_summary.get("mep_items_generated", 0)
+    _mep_mode        = qto_summary.get("mep_mode", "none")
+    _mep_warnings    = qto_summary.get("mep_warnings", [])
+
+    if _mep_items_ct > 0:
+        st.markdown("---")
+        st.markdown("#### ⚡ MEP Takeoff")
+        _mode_badge = {
+            "schedule":   "🟢 Schedule detected",
+            "assumption": "🟡 Assumption mode",
+        }.get(_mep_mode, "⚪ Not run")
+        _mc1, _mc2, _mc3 = st.columns(3)
+        _mc1.metric("MEP Elements", _mep_elements_ct)
+        _mc2.metric("MEP Items", _mep_items_ct)
+        _mc3.metric("Mode", _mode_badge)
+
+        if _mep_warnings:
+            for _w in _mep_warnings[:2]:
+                st.caption(f"⚠ {_w}")
+
+        # Pull MEP items from spec_items_list for display
+        _all_spec = payload.get("spec_items_list") or []
+        _mep_disp_items = [
+            it for it in _all_spec
+            if it.get("trade", "").lower() in ("electrical", "plumbing", "hvac")
+            and it.get("source", "").startswith("mep")
+        ]
+        if not _mep_disp_items and _mep_items_ct > 0:
+            st.caption("MEP items generated — visible in Bid Pack tab under trades.")
+        elif _mep_disp_items:
+            _trade_groups = {}
+            for _it in _mep_disp_items:
+                _t = _it.get("trade", "Other")
+                _trade_groups.setdefault(_t, []).append(_it)
+            for _trade, _items in sorted(_trade_groups.items()):
+                with st.expander(f"{_trade} ({len(_items)} items)", expanded=False):
+                    _rows = [
+                        {
+                            "Description": _it.get("description", "")[:80],
+                            "Qty": _it.get("qty", ""),
+                            "Unit": _it.get("unit", ""),
+                            "Spec": _it.get("spec", "")[:40],
+                        }
+                        for _it in _items
+                    ]
+                    st.dataframe(_rows, use_container_width=True, hide_index=True)
+
+    # ── Visual Detection summary (Sprint 37) ─────────────────────────
+    _vis_elements_ct = qto_summary.get("visual_elements_detected", 0)
+    _vis_items_ct    = qto_summary.get("visual_items_generated", 0)
+    _vis_mode        = qto_summary.get("visual_mode", "none")
+    _vis_warnings    = qto_summary.get("visual_warnings", [])
+    _vis_scale       = qto_summary.get("visual_scale", "")
+    _vis_area        = qto_summary.get("visual_area_sqm", 0.0)
+
+    if _vis_mode == "vision_ai" and _vis_elements_ct > 0:
+        st.markdown("---")
+        st.markdown("#### 👁️ Visual Element Detection")
+        st.caption(
+            "AI vision reading directly from rendered drawing images — "
+            "counts rooms, doors, windows, fixtures visible on drawings."
+        )
+        _vc1, _vc2, _vc3, _vc4 = st.columns(4)
+        _vc1.metric("Elements Detected", _vis_elements_ct)
+        _vc2.metric("BOQ Items", _vis_items_ct)
+        _vc3.metric("Scale", _vis_scale or "—")
+        _vc4.metric("Area (sqm)", f"{_vis_area:.0f}" if _vis_area else "—")
+        if _vis_warnings:
+            for _w in _vis_warnings[:2]:
+                st.caption(f"⚠ {_w}")
+
+    elif _vis_mode == "none" and qto_summary:
+        # Show a "not run" note if an LLM client is available
+        st.markdown("---")
+        st.caption(
+            "👁️ **Visual detection** not run — "
+            "requires LLM client (set `OPENAI_API_KEY` or `ANTHROPIC_API_KEY` and re-analyse). "
+            "Detects rooms, doors, fixtures directly from drawing images."
+        )
+
+    # ── Visual Measurement (Sprint 37) ───────────────────────────────────────
+    _vmeas_mode     = qto_summary.get("vmeas_mode", "none")
+    _vmeas_rooms_ct = qto_summary.get("vmeas_rooms_measured", 0)
+    _vmeas_items_ct = qto_summary.get("vmeas_items_generated", 0)
+    _vmeas_warnings = qto_summary.get("vmeas_warnings", [])
+    _vmeas_scale    = qto_summary.get("vmeas_scale", "")
+    _vmeas_area     = qto_summary.get("vmeas_area_sqm", 0.0)
+    _vmeas_schedule = qto_summary.get("vmeas_room_schedule", [])
+
+    if _vmeas_mode == "vision_measurement" and _vmeas_rooms_ct > 0:
+        st.markdown("---")
+        st.markdown("#### 📐 Visual Measurement — Measured Room Schedule")
+        st.caption(
+            "AI reads dimension annotations and room labels directly from floor plan images "
+            "to produce a measured room schedule and finish QTO."
+        )
+        _mc1, _mc2, _mc3, _mc4 = st.columns(4)
+        _mc1.metric("Rooms Measured", _vmeas_rooms_ct)
+        _mc2.metric("Finish Items", _vmeas_items_ct)
+        _mc3.metric("Scale", _vmeas_scale or "—")
+        _mc4.metric("Total Area", f"{_vmeas_area:.0f} sqm" if _vmeas_area else "—")
+
+        if _vmeas_schedule:
+            import pandas as pd
+            _sched_rows = []
+            for r in _vmeas_schedule:
+                _l = r.get("dim_l")
+                _w = r.get("dim_w")
+                _dims = (
+                    f"{_l:.2f} × {_w:.2f} m"
+                    if (_l and _w) else "—"
+                )
+                _sched_rows.append({
+                    "Room": r.get("raw_name") or r.get("name", ""),
+                    "Area (sqm)": r.get("area_sqm", 0),
+                    "Dimensions": _dims,
+                    "Confidence": f"{r.get('confidence', 0):.0%}",
+                    "Page": (r.get("source_page", 0) or 0) + 1,
+                })
+            _sched_rows.sort(key=lambda x: x["Area (sqm)"], reverse=True)
+            _df_sched = pd.DataFrame(_sched_rows)
+            with st.expander(f"📋 Room Schedule ({len(_sched_rows)} rooms)", expanded=True):
+                st.dataframe(_df_sched, use_container_width=True, hide_index=True)
+
+        if _vmeas_warnings:
+            for _mw in _vmeas_warnings[:3]:
+                st.caption(f"⚠ {_mw}")
+
+    elif _vmeas_mode == "none" and qto_summary:
+        st.markdown("---")
+        st.caption(
+            "📐 **Visual measurement** not run — "
+            "requires LLM client with vision support. "
+            "Reads dimension annotations from drawings to produce a measured room schedule."
+        )
+
+    # ── Door & Window Takeoff (Sprint 38) ────────────────────────────────────
+    _dw_mode     = qto_summary.get("dw_mode", "none")
+    _dw_elem_ct  = qto_summary.get("dw_elements_detected", 0)
+    _dw_items_ct = qto_summary.get("dw_items_generated", 0)
+    _dw_warnings = qto_summary.get("dw_warnings", [])
+    _dw_doors    = qto_summary.get("dw_door_count", 0)
+    _dw_windows  = qto_summary.get("dw_window_count", 0)
+
+    if _dw_mode in ("schedule", "assumption") and _dw_items_ct > 0:
+        st.markdown("---")
+        st.markdown(f"#### 🚪 Doors & Windows {'(from schedule)' if _dw_mode == 'schedule' else '(estimated)'}")
+        _dw1, _dw2, _dw3, _dw4 = st.columns(4)
+        _dw1.metric("Doors", _dw_doors)
+        _dw2.metric("Windows", _dw_windows)
+        _dw3.metric("BOQ Items", _dw_items_ct)
+        _dw4.metric("Mode", "Schedule" if _dw_mode == "schedule" else "Estimate")
+        if _dw_warnings:
+            for _dw in _dw_warnings[:2]:
+                st.caption(f"⚠ {_dw}")
+
+    # ── Painting Takeoff (Sprint 38) ─────────────────────────────────────────
+    _pt_mode     = qto_summary.get("paint_mode", "none")
+    _pt_items_ct = qto_summary.get("paint_items_generated", 0)
+    _pt_warnings = qto_summary.get("paint_warnings", [])
+    _pt_int_wall = qto_summary.get("paint_int_wall_sqm", 0.0)
+    _pt_ceiling  = qto_summary.get("paint_ceiling_sqm", 0.0)
+    _pt_ext_wall = qto_summary.get("paint_ext_wall_sqm", 0.0)
+
+    if _pt_mode != "none" and _pt_items_ct > 0:
+        st.markdown("---")
+        st.markdown("#### 🎨 Painting")
+        _pa1, _pa2, _pa3, _pa4 = st.columns(4)
+        _pa1.metric("Int. Walls", f"{_pt_int_wall:.0f} sqm")
+        _pa2.metric("Ceilings", f"{_pt_ceiling:.0f} sqm")
+        _pa3.metric("Ext. Walls", f"{_pt_ext_wall:.0f} sqm")
+        _pa4.metric("Items", _pt_items_ct)
+        if _pt_warnings:
+            for _pw in _pt_warnings[:2]:
+                st.caption(f"⚠ {_pw}")
+
+    # ── Waterproofing Takeoff (Sprint 38) ────────────────────────────────────
+    _wp_mode     = qto_summary.get("wp_mode", "none")
+    _wp_items_ct = qto_summary.get("wp_items_generated", 0)
+    _wp_warnings = qto_summary.get("wp_warnings", [])
+    _wp_wet      = qto_summary.get("wp_wet_area_sqm", 0.0)
+    _wp_roof     = qto_summary.get("wp_roof_area_sqm", 0.0)
+
+    if _wp_mode != "none" and _wp_items_ct > 0:
+        st.markdown("---")
+        st.markdown("#### 💧 Waterproofing")
+        _w1, _w2, _w3 = st.columns(3)
+        _w1.metric("Wet Areas", f"{_wp_wet:.0f} sqm")
+        _w2.metric("Roof/Terrace", f"{_wp_roof:.0f} sqm")
+        _w3.metric("BOQ Items", _wp_items_ct)
+
+    # ── Site Work Takeoff (Sprint 38) ─────────────────────────────────────────
+    _sw_mode     = qto_summary.get("sw_mode", "none")
+    _sw_items_ct = qto_summary.get("sw_items_generated", 0)
+    _sw_warnings = qto_summary.get("sw_warnings", [])
+
+    if _sw_mode != "none" and _sw_items_ct > 0:
+        st.markdown("---")
+        st.markdown("#### 🏗️ Civil / Site Work")
+        st.metric("BOQ Items", _sw_items_ct)
+
+    # ── Cost Estimate Summary (Sprint 38) ─────────────────────────────────────
+    _grand_total    = qto_summary.get("grand_total_inr", 0.0)
+    _trade_summary  = qto_summary.get("trade_summary", {})
+    _total_items    = qto_summary.get("total_spec_items", 0)
+    _excel_avail    = qto_summary.get("_excel_available", False)
+
+    if _grand_total > 0 or _total_items > 0:
+        st.markdown("---")
+        st.markdown("#### 💰 Estimated Project Cost")
+        st.caption("Indicative Q1 2025 Tier-1 India market rates. Accuracy ±20–30%.")
+
+        _gc1, _gc2, _gc3 = st.columns(3)
+        _gc1.metric("Grand Total (INR)", f"₹{_grand_total:,.0f}" if _grand_total else "—")
+        _gc2.metric("Total BOQ Items", _total_items)
+        _area_for_psm = (
+            qto_summary.get("vmeas_area_sqm") or
+            qto_summary.get("visual_area_sqm") or 0
+        )
+        if _area_for_psm and _grand_total:
+            _gc3.metric("Cost/sqm", f"₹{_grand_total / _area_for_psm:,.0f}")
+
+        if _trade_summary:
+            import pandas as pd
+            _ts_rows = [
+                {
+                    "Trade": trade,
+                    "Items": info.get("item_count", 0),
+                    "Amount (INR)": f"₹{info.get('total_amount', 0):,.0f}" if info.get("total_amount", 0) else "—",
+                }
+                for trade, info in sorted(
+                    _trade_summary.items(),
+                    key=lambda x: x[1].get("total_amount", 0),
+                    reverse=True,
+                )
+                if info.get("total_amount", 0) > 0
+            ]
+            if _ts_rows:
+                with st.expander("📊 Trade-wise Cost Summary", expanded=True):
+                    st.dataframe(pd.DataFrame(_ts_rows), use_container_width=True, hide_index=True)
+
+        if _excel_avail:
+            _excel_bytes = payload.get("_excel_bytes", b"")
+            if _excel_bytes:
+                st.download_button(
+                    label="📥 Download BOQ (Excel)",
+                    data=_excel_bytes,
+                    file_name="xboq_bill_of_quantities.xlsx",
+                    mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                    use_container_width=True,
+                )
+
 
 # =============================================================================
 # EXTRACTED ARTIFACTS & SELECTION/COVERAGE TABS
@@ -2427,8 +3069,58 @@ def render_bid_pack_tab(payload: dict):
             ])
         st.dataframe(df_boq, use_container_width=True, hide_index=True)
 
+        # Sprint 22: Cost-driving items analysis
+        _priced = []
+        for _item in boq_items:
+            _q = _item.get("qty", 0) or 0
+            _r = _item.get("rate", 0) or 0
+            try:
+                _a = float(_q) * float(_r)
+            except (TypeError, ValueError):
+                _a = 0.0
+            if _a > 0:
+                _priced.append({**_item, "_amount": _a})
+        if _priced:
+            _priced.sort(key=lambda x: x["_amount"], reverse=True)
+            _total = sum(it["_amount"] for it in _priced)
+            with st.expander(f"Key Cost Drivers ({len(_priced)} priced items, total: {_total:,.0f})", expanded=False):
+                # Top 10
+                _top = _priced[:10]
+                df_cost = pd.DataFrame([
+                    {
+                        "Description": _safe_str(it.get("description", ""))[:60],
+                        "Trade": _safe_str(it.get("trade", "general")).title(),
+                        "Qty": it.get("qty", 0),
+                        "Rate": it.get("rate", 0),
+                        "Amount": f"{it['_amount']:,.0f}",
+                        "%": f"{it['_amount'] / _total * 100:.1f}%",
+                    }
+                    for it in _top
+                ])
+                st.dataframe(df_cost, use_container_width=True, hide_index=True)
+
+                # Trade breakdown
+                _trades: dict = {}
+                for it in _priced:
+                    _t = (it.get("trade") or "general").title()
+                    _trades[_t] = _trades.get(_t, 0) + it["_amount"]
+                _sorted_trades = sorted(_trades.items(), key=lambda x: x[1], reverse=True)
+                df_trades = pd.DataFrame([
+                    {"Trade": t, "Value": f"{v:,.0f}", "%": f"{v / _total * 100:.1f}%"}
+                    for t, v in _sorted_trades
+                ])
+                st.markdown("**Trade Breakdown**")
+                st.dataframe(df_trades, use_container_width=True, hide_index=True)
+
+                # Concentration warning
+                if _top[0]["_amount"] > _total * 0.30:
+                    st.warning(
+                        f"Top item represents {_top[0]['_amount'] / _total * 100:.0f}% of total value "
+                        f"— verify quantity independently."
+                    )
+
         # Page jump viewer
-        if pdf_path:
+        if pdf_path and "Page" in df_boq.columns:
             boq_pages = sorted(set(int(p) for p in df_boq["Page"].dropna().unique() if p))
             if boq_pages:
                 jump_col1, jump_col2 = st.columns([1, 3])
@@ -2441,6 +3133,65 @@ def render_bid_pack_tab(payload: dict):
                             st.image(page_png, caption=f"Page {sel_page}", use_container_width=True)
     else:
         st.info("No BOQ items found in this document. This may mean the tender does not include a BOQ, or the pages were not processed. Try increasing the OCR budget.")
+
+    # ── Unified Line Items (Sprint 41) ────────────────────────────────
+    _line_items = payload.get("line_items", [])
+    _dedup_stats = payload.get("dedup_stats", {})
+    _dedup_removed = _dedup_stats.get("removed", 0)
+    if _line_items:
+        _li_caption = f"All items merged from BOQ + specs + QTO modules. Duplicates removed: {_dedup_removed}."
+        with st.expander(f"📋 Unified Line Items ({len(_line_items)} items, {_dedup_removed} duplicates removed)", expanded=False):
+            st.caption(_li_caption)
+            _li_tabs = st.tabs(["ALL", "BOQ", "Spec / Clause", "QTO Generated"])
+            _li_by_source: dict = {}
+            for _li in _line_items:
+                _src = _li.get("source", "unknown")
+                _li_by_source.setdefault(_src, []).append(_li)
+
+            _qto_sources = {"visual_detect", "vision_count", "mep_detect", "dw_takeoff",
+                            "paint_takeoff", "wp_takeoff", "sitework", "structural_detect"}
+
+            def _li_table(items):
+                if not items:
+                    st.info("No items in this category.")
+                    return
+                df = pd.DataFrame([
+                    {
+                        "ID": _safe_str(it.get("id", "")),
+                        "Trade": _safe_str(it.get("trade", "")).title(),
+                        "Description": _safe_str(it.get("description", ""))[:80],
+                        "Unit": _safe_str(it.get("unit", "")) or "—",
+                        "Qty": it.get("qty", ""),
+                        "Rate (INR)": it.get("rate", "") or it.get("rate_benchmark", {}).get("dsr_rate", ""),
+                        "Source": _safe_str(it.get("source", "")),
+                        "Conf": f"{it.get('match_confidence', 0):.2f}" if it.get('match_confidence') else "—",
+                    }
+                    for it in items
+                ])
+                st.dataframe(df, use_container_width=True, hide_index=True)
+
+            with _li_tabs[0]:
+                _li_table(_line_items)
+            with _li_tabs[1]:
+                _li_table([it for it in _line_items if it.get("source") == "boq"])
+            with _li_tabs[2]:
+                _li_table([it for it in _line_items if it.get("source") == "spec_item"])
+            with _li_tabs[3]:
+                _qto_items = [it for it in _line_items if it.get("source") in _qto_sources
+                              or it.get("source") not in {"boq", "spec_item", "schedule_stub"}]
+                _li_table(_qto_items)
+
+            # Trade summary
+            _li_trade_counts: dict = {}
+            for _it in _line_items:
+                _t = _it.get("trade", "general")
+                _li_trade_counts[_t] = _li_trade_counts.get(_t, 0) + 1
+            if _li_trade_counts:
+                st.markdown("**Items by Trade:**")
+                _tc_df = pd.DataFrame(
+                    [{"Trade": t.title(), "Items": c} for t, c in sorted(_li_trade_counts.items(), key=lambda x: -x[1])]
+                )
+                st.dataframe(_tc_df, use_container_width=True, hide_index=True)
 
     # ── Schedules (sortable, grouped by type) ─────────────────────────
     schedules = extraction.get("schedules", [])
@@ -3865,6 +4616,19 @@ def render_coverage_dashboard(payload: dict):
             if skip_items:
                 st.caption(f"Skipped by type: {skip_items}")
 
+    # ── Pipeline Stage Warnings ───────────────────────────────────────
+    # Shown when optional pipeline stages (quantity reconciliation, LLM
+    # enrichment, pricing guidance, etc.) failed during analysis.
+    _pipe_warnings = payload.get("pipeline_warnings", [])
+    if _pipe_warnings:
+        with st.expander(f"⚠️ {len(_pipe_warnings)} analysis step(s) were skipped", expanded=True):
+            st.caption(
+                "These steps are non-critical but may reduce analysis depth. "
+                "Re-run or check server logs for details."
+            )
+            for _pw in _pipe_warnings:
+                st.warning(f"⚠️ {_pw}")
+
     # ── Guardrail Warnings ────────────────────────────────────────────
     warnings = payload.get("guardrail_warnings", [])
     if warnings:
@@ -4147,6 +4911,49 @@ def render_section_4_rfis(report: dict):
                     st.markdown(f"✅ **Suggested Resolution:** {resolution}")
                 st.markdown("")
 
+    # ── KB-Enhanced RFI Section ──
+    try:
+        from src.knowledge_base import get_rfi_rules as _kb_rfi_rules
+        _kb_rules = _kb_rfi_rules()
+        if _kb_rules:
+            st.markdown("---")
+            st.markdown("### Knowledge Base RFI Intelligence")
+            st.caption(f"**{len(_kb_rules)} intelligent RFI rules** across 5 categories. "
+                       f"Rules include 'why it matters' and 'suggested resolution' for each gap.")
+
+            # Group by trigger_type
+            _kb_by_type = {}
+            for _kr in _kb_rules:
+                _tt = getattr(_kr, 'trigger_type', 'scope_gap')
+                _kb_by_type.setdefault(_tt, []).append(_kr)
+
+            _type_labels = {
+                "scope_gap": ("Scope Gap RFIs", "Missing scope items that need clarification"),
+                "missing_spec": ("Specification Clarity RFIs", "Vague specs that need details"),
+                "missing_doc": ("Document Request RFIs", "Missing documents to request"),
+                "ambiguous": ("Boundary Clarity RFIs", "Ambiguous scope boundaries"),
+                "building_type": ("Building-Type RFIs", "Building-specific requirements"),
+            }
+            for _tt, _rules in _kb_by_type.items():
+                _label, _desc = _type_labels.get(_tt, (_tt.replace("_", " ").title(), ""))
+                with st.expander(f"{_label} ({len(_rules)} rules) — {_desc}"):
+                    for _kr in _rules[:5]:
+                        _q = getattr(_kr, 'question_template', '')[:120]
+                        _why = getattr(_kr, 'why_it_matters', '')[:100]
+                        _pri = getattr(_kr, 'priority', 'medium')
+                        _pri_icon = "&#128308;" if _pri in ["high", "critical"] else "&#128993;" if _pri == "medium" else "&#128994;"
+                        st.markdown(
+                            f'<div style="background:rgba(255,255,255,0.03);padding:0.5rem 0.8rem;border-radius:6px;'
+                            f'margin:0.3rem 0;border:1px solid rgba(255,255,255,0.06);">'
+                            f'{_pri_icon} <strong>{_q}</strong><br/>'
+                            f'<span style="color:#9ca3af;font-size:0.8em;">Why: {_why}</span>'
+                            f'</div>', unsafe_allow_html=True,
+                        )
+                    if len(_rules) > 5:
+                        st.caption(f"... and {len(_rules) - 5} more rules")
+    except Exception:
+        pass
+
     # Export buttons
     st.markdown("### Export RFI Pack")
     col1, col2, col3 = st.columns(3)
@@ -4196,6 +5003,68 @@ def render_section_5_coverage(report: dict):
                 st.markdown(f"- {item}")
         else:
             st.caption("No blocked categories")
+
+    # ── KB Taxonomy Drill-Down ──
+    try:
+        from src.knowledge_base import get_stats as _cov_kb_stats
+        from src.knowledge_base import get_taxonomy_items_by_trade as _cov_kb_by_trade
+        _cov_stats = _cov_kb_stats()
+        if _cov_stats.get("taxonomy_items", 0) > 0:
+            st.markdown("---")
+            st.markdown("### Knowledge Base Coverage Matrix")
+            st.caption(f"Master taxonomy: **{_cov_stats['taxonomy_items']:,} items** across 21 disciplines. "
+                       f"Expand any trade below to see expected items from the KB.")
+
+            # Get discipline breakdown
+            from src.knowledge_base import get_taxonomy
+            _cov_tax = get_taxonomy()
+            _cov_all = _cov_tax.all_items()
+
+            # Group by discipline
+            _cov_by_disc = {}
+            for _ci in _cov_all:
+                _disc = getattr(_ci, 'discipline', 'other')
+                _trade = getattr(_ci, 'trade', 'other')
+                _cov_by_disc.setdefault(_disc, {}).setdefault(_trade, []).append(_ci)
+
+            _disc_table = []
+            for _disc, _trades_dict in sorted(_cov_by_disc.items()):
+                _total = sum(len(v) for v in _trades_dict.values())
+                _disc_table.append({
+                    "Discipline": _disc.replace("_", " ").title(),
+                    "Trades": len(_trades_dict),
+                    "Items": _total,
+                })
+            st.dataframe(_disc_table, use_container_width=True, hide_index=True)
+
+            # Expandable trade drill-down
+            _cov_trades = {}
+            for _ci in _cov_all:
+                _t = getattr(_ci, 'trade', 'other')
+                _cov_trades.setdefault(_t, []).append(_ci)
+
+            _top_trades = sorted(_cov_trades.items(), key=lambda x: -len(x[1]))[:10]
+            for _tn, _titems in _top_trades:
+                with st.expander(f"{_tn.replace('_', ' ').title()} ({len(_titems)} items)"):
+                    # Show first 8 items as sample
+                    for _ti in _titems[:8]:
+                        _ti_name = getattr(_ti, 'standard_name', '')
+                        _ti_unit = getattr(_ti, 'unit', '')
+                        _ti_id = getattr(_ti, 'id', '')
+                        _ti_ref = getattr(_ti, 'is_code_ref', '')
+                        st.markdown(
+                            f'<div style="background:rgba(255,255,255,0.02);padding:0.3rem 0.6rem;'
+                            f'border-radius:4px;margin:0.15rem 0;">'
+                            f'<code style="font-size:0.75em;color:#93c5fd;">{_ti_id}</code> '
+                            f'{_ti_name} '
+                            f'<span style="color:#6b7280;font-size:0.8em;">({_ti_unit})</span>'
+                            f'{"  <span style=&quot;color:#9ca3af;font-size:0.75em;&quot;>[" + _ti_ref + "]</span>" if _ti_ref else ""}'
+                            f'</div>', unsafe_allow_html=True,
+                        )
+                    if len(_titems) > 8:
+                        st.caption(f"... and {len(_titems) - 8} more items")
+    except Exception:
+        pass
 
 
 def render_section_6_assumptions(report: dict):
@@ -4360,6 +5229,61 @@ Requested Action:
 """
         emails.append(email)
     return "\n".join(emails)
+
+
+def _generate_scope_gaps_csv(scope_result) -> str:
+    """Generate CSV from scope gap analysis result."""
+    output = io.StringIO()
+    import csv
+    writer = csv.DictWriter(output, fieldnames=[
+        "Missing Item", "Trade", "Severity", "Triggered By",
+        "IS Code Reference", "Priority", "Why Needed",
+    ])
+    writer.writeheader()
+    all_gaps = getattr(scope_result, 'all_gaps', []) or getattr(scope_result, 'critical_gaps', [])
+    for gap in all_gaps:
+        writer.writerow({
+            "Missing Item": getattr(gap, 'missing_item', ''),
+            "Trade": getattr(gap, 'trade', ''),
+            "Severity": getattr(gap, 'severity', ''),
+            "Triggered By": getattr(gap, 'triggered_by', ''),
+            "IS Code Reference": getattr(gap, 'is_code_ref', ''),
+            "Priority": getattr(gap, 'priority', ''),
+            "Why Needed": getattr(gap, 'reason', getattr(gap, 'note', '')),
+        })
+    return output.getvalue()
+
+
+def _generate_kb_coverage_report() -> str:
+    """Generate knowledge base coverage report as JSON."""
+    try:
+        from src.knowledge_base import get_stats
+        stats = get_stats()
+        report = {
+            "knowledge_base_version": "1.0",
+            "summary": stats,
+            "layers": {
+                "taxonomy": {
+                    "total_items": stats.get("taxonomy_items", 0),
+                    "description": "Master construction taxonomy covering 21 disciplines",
+                },
+                "synonyms": {
+                    "total_entries": stats.get("synonym_entries", 0),
+                    "description": "English formal/informal, Hindi, abbreviations, brand names, unit aliases",
+                },
+                "dependencies": {
+                    "total_rules": stats.get("dependency_rules", 0),
+                    "description": "Scope dependency rules including building-type and code compliance",
+                },
+                "rfi_rules": {
+                    "total_rules": stats.get("rfi_rules", 0),
+                    "description": "Intelligent RFI generation rules with why-it-matters and suggested resolution",
+                },
+            },
+        }
+        return json.dumps(report, indent=2)
+    except Exception:
+        return json.dumps({"error": "Knowledge base not available"})
 
 
 def build_report_from_results(results: dict, project_id: str) -> dict:
@@ -4658,6 +5582,34 @@ def _render_analysis_results_preview(result, project_id: str, uploaded_files: Li
     if payload and st.session_state.get("_ep_playbook"):
         payload["estimating_playbook"] = st.session_state["_ep_playbook"]
 
+    # Save to Supabase project history (if configured)
+    try:
+        from src.auth.project_store import save_project
+        from src.auth.login_ui import get_current_user as _get_user
+        _u = _get_user()
+        if _u and _u.get("id") != "guest" and payload:
+            save_project(
+                org_id=_u.get("org_id") or _u["id"],
+                user_id=_u["id"],
+                filename=uploaded_files[0].name if uploaded_files else "unknown",
+                summary=payload.get("line_items_summary", {}),
+                payload=payload,
+            )
+    except Exception:
+        pass
+
+    # Save to local history
+    try:
+        from src.history.local_store import save_run as _save_run
+        _fname = uploaded_files[0].name if uploaded_files else "unknown.pdf"
+        _save_run(
+            filename=_fname,
+            summary=payload.get("line_items_summary", {}),
+            payload=payload,
+        )
+    except Exception:
+        pass
+
     # If no payload, show minimal fallback
     if not payload:
         st.warning("Analysis completed but no detailed results available.")
@@ -4858,6 +5810,17 @@ def _render_analysis_results_preview(result, project_id: str, uploaded_files: Li
             "\U0001f4e5 Ground Truth",
             "\U0001f3d7\ufe0f Structural Takeoff",
             "\u2699\ufe0f Estimating Playbook",
+            "\U0001f4c4 Pages",
+            "\u2753 Ask Tender",
+            # Sprint 35 tabs
+            "\U0001f50d Scope Gaps",
+            "\U0001f4b0 BOQ Quality",
+            "\U0001f3d8\ufe0f Delhi NCR Pricing",
+            "\U0001f6a8 Bid Risk AI",
+            # Sprint 36: Interactive measurement
+            "\U0001f4cf Measure",
+            # Sprint 40: Bid Intelligence
+            "\U0001f9e0 Bid Intelligence",
         ]
     else:
         _tab_labels = [
@@ -4873,6 +5836,17 @@ def _render_analysis_results_preview(result, project_id: str, uploaded_files: Li
             "\U0001f4e5 Ground Truth",
             "\U0001f3d7\ufe0f Structural Takeoff",
             "\u2699\ufe0f Estimating Playbook",
+            "\U0001f4c4 Pages",
+            "\u2753 Ask Tender",
+            # Sprint 35 tabs
+            "\U0001f50d Scope Gaps Analysis",
+            "\U0001f4b0 BOQ Quality Dashboard",
+            "\U0001f3d8\ufe0f Delhi NCR Pricing",
+            "\U0001f6a8 Bid Risk Assessment",
+            # Sprint 36: Interactive measurement
+            "\U0001f4cf Measure",
+            # Sprint 40: Bid Intelligence
+            "\U0001f9e0 Bid Intelligence",
         ]
 
     # Sprint 20B: Stability guard helper — prevents one tab crash from blanking all tabs
@@ -5224,7 +6198,7 @@ def _render_analysis_results_preview(result, project_id: str, uploaded_files: Li
                     ev["coverage_status"] = nb.get("coverage_status", "")
                     render_evidence_expander(
                         ev,
-                        title=f"Evidence: {nb['title'][:60]}",
+                        title=f"Evidence: {nb['title'][:60]}{'...' if len(nb.get('title', '')) > 60 else ''}",
                         item_id=nb["id"],
                     )
                     # Bbox selector (Sprint 5)
@@ -5344,7 +6318,7 @@ def _render_analysis_results_preview(result, project_id: str, uploaded_files: Li
                 rfi_list_fb = payload.get("rfis", [])
                 if rfi_list_fb:
                     rfi_labels = [
-                        f"{r.get('id', f'RFI-{i+1}')}: {r.get('question', '')[:60]}"
+                        f"{r.get('id', f'RFI-{i+1}')}: {r.get('question', '')[:60]}{'...' if len(r.get('question', '')) > 60 else ''}"
                         for i, r in enumerate(rfi_list_fb)
                     ]
                     selected_rfi_label = st.selectbox("Select RFI:", rfi_labels, key="fb_rfi_select")
@@ -5384,30 +6358,93 @@ def _render_analysis_results_preview(result, project_id: str, uploaded_files: Li
                     if _fb_count > 0:
                         st.caption(f"{_fb_count} feedback entries recorded this session")
 
-            # ── Sprint 13: RFI Approval Status ──────────────────────────
+            # ── Sprint 13+30: RFI Approval Workflow ──────────────────────
             st.markdown("---")
-            st.markdown("##### RFI Approval Status")
+            st.markdown("##### RFI Approval Workflow")
             _rfi_statuses = st.session_state.get("_rfi_statuses", {})
             _all_rfis_for_approval = payload.get("rfis", [])
             if _all_rfis_for_approval:
+                # Sprint 30: Status filter
+                _ra_filter_opts = ["All", "draft", "approved", "sent"]
+                _ra_filter = st.selectbox("Filter by status:", _ra_filter_opts,
+                                          key=_make_widget_key("rfi_status_filter"))
+
+                # Sprint 30: Bulk approve button
+                _ra_bulk_cols = st.columns([1, 1, 4])
+                with _ra_bulk_cols[0]:
+                    if st.button("✅ Approve All Draft",
+                                 key=_make_widget_key("rfi_bulk_approve"),
+                                 use_container_width=True):
+                        try:
+                            from src.analysis.approval_states import set_rfi_status as _set_rs
+                            for _ba_rfi in _all_rfis_for_approval:
+                                _ba_id = _ba_rfi.get("id", "")
+                                _ba_cur = _rfi_statuses.get(_ba_id, "draft")
+                                if _ba_cur == "draft":
+                                    _rfi_statuses[_ba_id] = "approved"
+                            st.session_state["_rfi_statuses"] = _rfi_statuses
+                            st.toast(f"All draft RFIs approved")
+                            st.rerun()
+                        except Exception:
+                            pass
+                with _ra_bulk_cols[1]:
+                    _ra_approved_count = sum(1 for v in _rfi_statuses.values() if v == "approved")
+                    _ra_sent_count = sum(1 for v in _rfi_statuses.values() if v == "sent")
+                    st.caption(f"✅ {_ra_approved_count} approved · 📤 {_ra_sent_count} sent")
+
                 for _ra_i, _ra_rfi in enumerate(_all_rfis_for_approval):
                     _ra_id = _ra_rfi.get("id", f"rfi_{_ra_i}")
                     _ra_current = _rfi_statuses.get(_ra_id, _ra_rfi.get("status", "draft"))
-                    _ra_col_q, _ra_col_s = st.columns([4, 1])
-                    with _ra_col_q:
-                        st.caption(f"**{_ra_id}** {_ra_rfi.get('question', '')[:80]}")
-                    with _ra_col_s:
-                        _ra_opts = ["draft", "approved", "sent"]
-                        _ra_new = st.selectbox(
-                            "Status",
-                            options=_ra_opts,
-                            index=_ra_opts.index(_ra_current) if _ra_current in _ra_opts else 0,
-                            key=f"rfi_status_{_ra_id}",
-                            label_visibility="collapsed",
-                        )
-                        if _ra_new != _ra_current:
-                            _rfi_statuses[_ra_id] = _ra_new
-                            st.session_state["_rfi_statuses"] = _rfi_statuses
+
+                    # Apply filter
+                    if _ra_filter != "All" and _ra_current != _ra_filter:
+                        continue
+
+                    _ra_badge_color = {"draft": "🔵", "approved": "🟢", "sent": "📤"}.get(_ra_current, "⚪")
+
+                    with st.container(border=True):
+                        _ra_col_q, _ra_col_btns = st.columns([3, 2])
+                        with _ra_col_q:
+                            st.markdown(f"{_ra_badge_color} **{_ra_id}** — {_ra_rfi.get('question', '')[:80]}")
+                            st.caption(f"Trade: {_ra_rfi.get('trade', 'general')} · Status: **{_ra_current}**")
+
+                        with _ra_col_btns:
+                            _ra_btn_cols = st.columns(3)
+                            with _ra_btn_cols[0]:
+                                if _ra_current == "draft":
+                                    if st.button("✅ Approve",
+                                                 key=_make_widget_key("rfi_apr", _ra_id),
+                                                 use_container_width=True):
+                                        _rfi_statuses[_ra_id] = "approved"
+                                        st.session_state["_rfi_statuses"] = _rfi_statuses
+                                        # Sprint 30: Persist to collaboration log
+                                        try:
+                                            from src.analysis.collaboration import make_collaboration_entry, append_collaboration
+                                            _ce = make_collaboration_entry("rfi", _ra_id, "status_change",
+                                                {"old_status": "draft", "new_status": "approved"}, author="estimator")
+                                            _cp = st.session_state.get("_active_project_dir", "")
+                                            if _cp:
+                                                append_collaboration(_cp, _ce)
+                                        except Exception:
+                                            pass
+                                        st.rerun()
+                            with _ra_btn_cols[1]:
+                                if _ra_current == "approved":
+                                    if st.button("📤 Send",
+                                                 key=_make_widget_key("rfi_snd", _ra_id),
+                                                 use_container_width=True):
+                                        _rfi_statuses[_ra_id] = "sent"
+                                        st.session_state["_rfi_statuses"] = _rfi_statuses
+                                        st.rerun()
+                            with _ra_btn_cols[2]:
+                                if _ra_current in ("approved", "sent"):
+                                    if st.button("↩ Revert",
+                                                 key=_make_widget_key("rfi_rev", _ra_id),
+                                                 use_container_width=True):
+                                        _rfi_statuses[_ra_id] = "draft"
+                                        st.session_state["_rfi_statuses"] = _rfi_statuses
+                                        st.rerun()
+
                     # Sprint 14: Collaboration widget for each RFI
                     _render_collab_widget("rfi", _ra_id, widget_key=f"rfi_{_ra_i}")
             else:
@@ -5422,6 +6459,54 @@ def _render_analysis_results_preview(result, project_id: str, uploaded_files: Li
     with preview_tabs[3]:
         _safe_tab("Bid Pack", render_bid_pack_tab, payload)
 
+        # Sprint 30: Submission Pack Download
+        try:
+            st.markdown("---")
+            st.markdown("#### 📦 Submission Pack")
+            st.caption("Download a structured ZIP with all bid documents organized into folders")
+
+            if csv_buffers:
+                from app.submission_pack import get_submission_manifest, generate_submission_pack
+
+                _sp_manifest = get_submission_manifest(csv_buffers)
+                _sp_file_count = sum(len(v) for v in _sp_manifest.values())
+
+                with st.expander(f"Manifest Preview ({_sp_file_count} files)", expanded=False):
+                    for _sp_folder, _sp_files in _sp_manifest.items():
+                        st.markdown(f"**{_sp_folder}/**")
+                        for _sp_fn in _sp_files:
+                            st.caption(f"  └ {_sp_fn}")
+
+                _sp_dl_col1, _sp_dl_col2 = st.columns([2, 3])
+                with _sp_dl_col1:
+                    if st.button("Build Submission Pack",
+                                 key=_make_widget_key("sp_build"), type="primary",
+                                 use_container_width=True):
+                        with st.spinner("Building submission pack..."):
+                            _sp_bytes = generate_submission_pack(
+                                csv_buffers,
+                                project_id=project_id,
+                                project_name=st.session_state.get("_active_project_name", project_id),
+                            )
+                        st.session_state["_submission_pack_bytes"] = _sp_bytes
+                        st.toast(f"Submission pack built ({len(_sp_bytes):,} bytes)")
+                        st.rerun()
+
+                if st.session_state.get("_submission_pack_bytes"):
+                    _sp_sz = len(st.session_state["_submission_pack_bytes"])
+                    st.download_button(
+                        f"📥 Download ZIP ({_sp_sz:,} bytes)",
+                        st.session_state["_submission_pack_bytes"],
+                        f"submission_pack_{project_id}.zip",
+                        "application/zip",
+                        key=_make_widget_key("sp_zip_dl"),
+                        use_container_width=True,
+                    )
+            else:
+                st.info("No export data available yet. Run analysis first.")
+        except Exception as _sp_err:
+            _handle_tab_error("Submission Pack", _sp_err)
+
     # ------------------------------------------------------------------
     # TAB 4: Selection & Coverage
     # ------------------------------------------------------------------
@@ -5435,6 +6520,80 @@ def _render_analysis_results_preview(result, project_id: str, uploaded_files: Li
     # ------------------------------------------------------------------
     with preview_tabs[5]:
         _safe_tab("Bid Strategy", render_bid_strategy_tab, payload)
+
+        # Sprint 30: Bid Scenario Comparison
+        try:
+            st.markdown("---")
+            st.markdown("#### Bid Scenario Comparison")
+            st.caption("Three pricing strategies: Aggressive / Balanced / Conservative")
+
+            from src.bid_scenarios import generate_scenarios as _gen_scenarios
+            with st.spinner("Generating bid scenarios..."):
+                _sc_comp = _gen_scenarios(payload)
+
+            if _sc_comp.base_cost <= 0:
+                st.info("No priced BOQ items available for scenario comparison. "
+                        "Upload a BOQ with rates to see bid variants.")
+            else:
+                # Metric cards row
+                _sc_cols = st.columns(3)
+                for _sc_i, _sc_s in enumerate(_sc_comp.scenarios):
+                    with _sc_cols[_sc_i]:
+                        _sc_badge = " ⭐" if _sc_s.name == _sc_comp.recommendation else ""
+                        st.metric(
+                            f"{_sc_s.label}{_sc_badge}",
+                            f"₹ {_sc_s.total_bid:,.0f}",
+                            delta=f"{_sc_s.margin_pct:.0f}% margin + {_sc_s.contingency_pct:.0f}% contingency",
+                        )
+
+                # Comparison table
+                import pandas as _sc_pd
+                _sc_df = _sc_pd.DataFrame([{
+                    "Scenario": s.label,
+                    "Grade": s.grade.title(),
+                    "Base Cost": f"₹{s.adjusted_cost:,.0f}",
+                    "OH %": f"{s.oh_pct:.0f}%",
+                    "Margin %": f"{s.margin_pct:.0f}%",
+                    "Contingency %": f"{s.contingency_pct:.0f}%",
+                    "Total Bid": f"₹{s.total_bid:,.0f}",
+                } for s in _sc_comp.scenarios])
+                st.dataframe(_sc_df, use_container_width=True, hide_index=True)
+
+                st.caption(
+                    f"Bid range: ₹{_sc_comp.spread_amount:,.0f} "
+                    f"({_sc_comp.spread_pct:.1f}% spread between aggressive and conservative)"
+                )
+
+                # Stacked bar chart
+                try:
+                    import plotly.graph_objects as _sc_go
+                    _sc_fig = _sc_go.Figure(data=[
+                        _sc_go.Bar(name="Base Cost",
+                                   x=[s.label for s in _sc_comp.scenarios],
+                                   y=[s.adjusted_cost for s in _sc_comp.scenarios]),
+                        _sc_go.Bar(name="Overheads",
+                                   x=[s.label for s in _sc_comp.scenarios],
+                                   y=[s.oh_amount for s in _sc_comp.scenarios]),
+                        _sc_go.Bar(name="Margin",
+                                   x=[s.label for s in _sc_comp.scenarios],
+                                   y=[s.margin_amount for s in _sc_comp.scenarios]),
+                        _sc_go.Bar(name="Contingency",
+                                   x=[s.label for s in _sc_comp.scenarios],
+                                   y=[s.contingency_amount for s in _sc_comp.scenarios]),
+                    ])
+                    _sc_fig.update_layout(barmode="stack", height=350,
+                                          title="Bid Scenario Breakdown (₹)")
+                    st.plotly_chart(_sc_fig, use_container_width=True,
+                                   key=_make_widget_key("sc_plotly"))
+                except Exception as _chart_err:
+                    st.warning(f"Chart visualization unavailable: {_chart_err}")
+
+                # Recommendation
+                st.info(f"**Recommended: {_sc_comp.recommendation.title()}** — "
+                        f"{_sc_comp.recommendation_reason}")
+
+        except Exception as _sc_err:
+            _handle_tab_error("Bid Scenarios", _sc_err)
 
     # ------------------------------------------------------------------
     # TAB 6: Risk Checklist (Sprint 7)
@@ -5696,12 +6855,13 @@ def _render_analysis_results_preview(result, project_id: str, uploaded_files: Li
                 except Exception:
                     pass
 
-            _mtg_agenda = build_meeting_agenda(
-                review_items=_mtg_review_items,
-                assignments=_mtg_assignments,
-                rfis=payload.get("rfis", []),
-                project_name=st.session_state.get("_active_project_name", project_id),
-            )
+            with st.spinner("Generating pre-bid meeting agenda..."):
+                _mtg_agenda = build_meeting_agenda(
+                    review_items=_mtg_review_items,
+                    assignments=_mtg_assignments,
+                    rfis=payload.get("rfis", []),
+                    project_name=st.session_state.get("_active_project_name", project_id),
+                )
 
             # Summary metrics
             _mtg_summary = _mtg_agenda.get("summary", {})
@@ -5766,19 +6926,21 @@ def _render_analysis_results_preview(result, project_id: str, uploaded_files: Li
             _mtg_dl = st.columns(2)
             with _mtg_dl[0]:
                 try:
-                    _mtg_docx = generate_agenda_docx(_mtg_agenda)
+                    with st.spinner("Generating DOCX..."):
+                        _mtg_docx = generate_agenda_docx(_mtg_agenda)
                     st.download_button("\U0001f4c4 Download agenda.docx", _mtg_docx,
                                        "agenda.docx", "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
                                        key="mtg_docx_dl")
-                except Exception:
-                    st.caption("DOCX export unavailable")
+                except Exception as _docx_err:
+                    st.warning(f"DOCX export unavailable: {_docx_err}")
             with _mtg_dl[1]:
                 try:
-                    _mtg_pdf = generate_agenda_pdf(_mtg_agenda)
+                    with st.spinner("Generating PDF..."):
+                        _mtg_pdf = generate_agenda_pdf(_mtg_agenda)
                     st.download_button("\U0001f4c4 Download agenda.pdf", _mtg_pdf,
                                        "agenda.pdf", "application/pdf", key="mtg_pdf_dl")
-                except Exception:
-                    st.caption("PDF export unavailable")
+                except Exception as _pdf_err:
+                    st.warning(f"PDF export unavailable: {_pdf_err}")
         except Exception as _mtg_err:
             _handle_tab_error("Pre-bid Meeting", _mtg_err)
 
@@ -5851,6 +7013,65 @@ def _render_analysis_results_preview(result, project_id: str, uploaded_files: Li
             if not _qd_feedback and not _qd_runs:
                 st.info("No feedback or run history data available yet. "
                         "Rate RFIs/quantities in the relevant tabs to build quality metrics.")
+
+            # Sprint 30: Run History Comparison
+            st.markdown("---")
+            st.markdown("##### Run History & Comparison")
+
+            _rc_data = payload.get("_run_compare")
+            if _rc_data and isinstance(_rc_data, dict):
+                st.markdown("**Changes since previous run:**")
+                _rc_cols = st.columns(4)
+
+                # QA Score delta
+                _rc_qa = _rc_data.get("qa_score_delta")
+                if _rc_qa is not None:
+                    _rc_sign = "+" if _rc_qa >= 0 else ""
+                    _rc_cols[0].metric("QA Score", f"{payload.get('qa_score', {}).get('score', 0):.0f}",
+                                       delta=f"{_rc_sign}{_rc_qa:.0f}")
+
+                # BOQ delta
+                _rc_boq = _rc_data.get("boq_delta_summary", {})
+                if isinstance(_rc_boq, dict) and "delta" in _rc_boq:
+                    _rc_bd = _rc_boq["delta"]
+                    _rc_cols[1].metric("BOQ Items", str(_rc_boq.get("current", 0)),
+                                       delta=f"{'+' if _rc_bd >= 0 else ''}{_rc_bd}")
+
+                # Newly approved RFIs
+                _rc_approved = _rc_data.get("newly_approved_rfis", [])
+                if _rc_approved:
+                    _rc_cols[2].metric("Newly Approved", str(len(_rc_approved)))
+
+                # Conflicts reviewed delta
+                _rc_cr = _rc_data.get("conflicts_reviewed_delta")
+                if _rc_cr is not None:
+                    _rc_cols[3].metric("Conflicts Reviewed",
+                                       delta=f"+{_rc_cr}" if _rc_cr > 0 else str(_rc_cr))
+
+                # Detail expander
+                with st.expander("Run comparison details", expanded=False):
+                    st.json(_rc_data)
+            else:
+                st.caption("No previous run to compare against. Run analysis again to see deltas.")
+
+            # Run history list
+            if _qd_runs and len(_qd_runs) > 1:
+                st.markdown("**Past runs:**")
+                try:
+                    import pandas as _rh_pd
+                    _rh_df = _rh_pd.DataFrame([{
+                        "Run": r.get("run_id", "")[:20],
+                        "Time": r.get("timestamp", "")[:19],
+                        "Score": r.get("readiness_score", "—"),
+                        "Decision": r.get("decision", "—"),
+                    } for r in _qd_runs[:10]])
+                    st.dataframe(_rh_df, use_container_width=True, hide_index=True)
+                except Exception:
+                    for _rh_r in _qd_runs[:5]:
+                        st.caption(f"• {_rh_r.get('timestamp', '')[:19]} — "
+                                   f"Score: {_rh_r.get('readiness_score', '?')} — "
+                                   f"Decision: {_rh_r.get('decision', '?')}")
+
         except Exception as _qd_err:
             _handle_tab_error("Quality Dashboard", _qd_err)
 
@@ -6043,9 +7264,10 @@ def _render_analysis_results_preview(result, project_id: str, uploaded_files: Li
                 _gt_qty_data = load_gt_data(_gt_pid, "quantities", DEFAULT_PROJECTS_DIR)
 
                 if _gt_boq_data or _gt_sched_data or _gt_qty_data:
-                    _gt_diff = compute_gt_diff(
-                        payload, _gt_boq_data, _gt_sched_data, _gt_qty_data,
-                    )
+                    with st.spinner("Computing ground truth diff..."):
+                        _gt_diff = compute_gt_diff(
+                            payload, _gt_boq_data, _gt_sched_data, _gt_qty_data,
+                        )
 
                     # Overall match
                     _overall = _gt_diff.get("overall_match_rate")
@@ -6572,6 +7794,995 @@ def _render_analysis_results_preview(result, project_id: str, uploaded_files: Li
       except Exception as _tab13_err:
           _handle_tab_error("Estimating Playbook", _tab13_err)
 
+    # ------------------------------------------------------------------
+    # TAB 14: Page Browser (Sprint 27)
+    # ------------------------------------------------------------------
+    with preview_tabs[14]:
+      try:
+        # Sprint 30: Handle page jump from Ask Tender
+        _pg_jump = st.session_state.pop("_page_browser_jump", None)
+
+        st.markdown("#### 📄 Page Browser")
+        st.caption("Browse all tender pages with thumbnails, search, and cross-references to findings.")
+
+        # ── Sprint 27: Imports ─────────────────────────────────
+        from app.thumbnails import generate_thumbnail
+        from app.search import search_ocr_text
+        # ── Sprint 28: SVG vector rendering ───────────────────
+        from app.svg_renderer import (
+            _cached_page_svg, inject_bbox_overlay_svg,
+            get_svg_page_dimensions, is_svg_doc_type, render_svg_html,
+        )
+
+        # ── Sprint 27: Reverse index (page → findings) ────────
+        @st.cache_data(show_spinner=False)
+        def _build_page_ref_index(_payload_json: str) -> dict:
+            """Build reverse index: page_idx → list of {type, id, title, severity/trade}."""
+            _pl = json.loads(_payload_json)
+            _idx: dict = {}
+            # Scan blockers
+            for _blk in _pl.get("blockers", []):
+                _ev = _blk.get("evidence", {})
+                _pgs = _ev.get("pages", []) if isinstance(_ev, dict) else []
+                for _pg in _pgs:
+                    _idx.setdefault(_pg, []).append({
+                        "type": "blocker",
+                        "id": _blk.get("id", ""),
+                        "title": _blk.get("title", _blk.get("finding", "")),
+                        "severity": _blk.get("severity", ""),
+                    })
+            # Scan RFIs
+            for _rfi in _pl.get("rfis", []):
+                _ev = _rfi.get("evidence", {})
+                _pgs = _ev.get("pages", []) if isinstance(_ev, dict) else []
+                for _pg in _pgs:
+                    _idx.setdefault(_pg, []).append({
+                        "type": "rfi",
+                        "id": _rfi.get("id", ""),
+                        "title": _rfi.get("title", _rfi.get("question", "")),
+                        "trade": _rfi.get("trade", ""),
+                    })
+            # Scan assumptions
+            for _asm in _pl.get("assumptions", []):
+                _ev = _asm.get("evidence", {})
+                _pgs = _ev.get("pages", []) if isinstance(_ev, dict) else []
+                for _pg in _pgs:
+                    _idx.setdefault(_pg, []).append({
+                        "type": "assumption",
+                        "id": _asm.get("id", ""),
+                        "title": _asm.get("title", _asm.get("assumption", "")),
+                    })
+            return _idx
+
+        _page_ref_index = _build_page_ref_index(json.dumps(payload, default=str))
+
+        # ── Sprint 27: Data sources ───────────────────────────
+        _page_index = (payload.get("diagnostics") or {}).get("page_index", {})
+        _pdf_path = st.session_state.get("_xboq_pdf_path", "")
+        # Sprint 28: Store page_index in session state for evidence expander SVG access
+        if _page_index and "_xboq_page_index" not in st.session_state:
+            st.session_state["_xboq_page_index"] = _page_index
+        _total_pages = (payload.get("drawing_overview") or {}).get("pages_total", 0)
+
+        # Fallback: count from page_index keys
+        if not _total_pages and _page_index:
+            try:
+                _total_pages = max(int(k) for k in _page_index.keys()) + 1
+            except (ValueError, TypeError):
+                _total_pages = len(_page_index)
+
+        # ── Sprint 27: Search bar ─────────────────────────────
+        _pg_search_query = st.text_input(
+            "🔍 Search page content...",
+            placeholder="e.g. CPWD, reinforcement, door schedule",
+            key=_make_widget_key("page_browser_search"),
+        )
+        _search_match_pages: set = set()
+        _search_results: list = []
+        if _pg_search_query and _pg_search_query.strip():
+            _ocr_cache = st.session_state.get("_ocr_text_cache", {})
+            if _ocr_cache:
+                _search_results = search_ocr_text(_ocr_cache, _pg_search_query, max_results=50)
+                _search_match_pages = {r["page_idx"] for r in _search_results}
+            else:
+                st.info("OCR text cache not available. Run analysis with PDF file to enable page search.")
+
+        # ── Sprint 27: Filter bar ─────────────────────────────
+        _doc_types = ["All"]
+        if _page_index:
+            _seen_types = set()
+            for _pi_val in _page_index.values():
+                _dt = _pi_val.get("doc_type", "unknown") if isinstance(_pi_val, dict) else "unknown"
+                _seen_types.add(_dt)
+            _doc_types.extend(sorted(_seen_types))
+
+        _filter_cols = st.columns([2, 2, 6])
+        with _filter_cols[0]:
+            _selected_type = st.selectbox(
+                "Filter by type",
+                _doc_types,
+                key=_make_widget_key("page_browser_filter"),
+            )
+        with _filter_cols[1]:
+            _pb_per_page = st.selectbox(
+                "Per page",
+                [12, 24, 48],
+                index=1,
+                key=_make_widget_key("page_browser_per_page"),
+            )
+        with _filter_cols[2]:
+            if _search_match_pages:
+                st.success(f"🔍 {len(_search_match_pages)} pages match \"{_pg_search_query}\"")
+
+        # ── Sprint 27: Build filtered page list ───────────────
+        _all_page_indices = list(range(_total_pages))
+        _filtered_pages = []
+        for _pi in _all_page_indices:
+            _pi_info = _page_index.get(str(_pi), _page_index.get(_pi, {}))
+            _dt = _pi_info.get("doc_type", "unknown") if isinstance(_pi_info, dict) else "unknown"
+            if _selected_type != "All" and _dt != _selected_type:
+                continue
+            _filtered_pages.append((_pi, _dt))
+
+        if not _filtered_pages and _total_pages > 0:
+            st.info(f"No pages match filter '{_selected_type}'.")
+        elif _total_pages == 0:
+            st.info("No pages available. Upload a PDF tender to browse pages.")
+        else:
+            # ── Sprint 27: Detail view (if a page is selected) ─────
+            _detail_idx = st.session_state.get("_page_detail_idx")
+
+            if _detail_idx is not None:
+                # Show detail view for selected page
+                st.markdown("---")
+                _back_cols = st.columns([1, 5])
+                with _back_cols[0]:
+                    if st.button("← Back to grid", key=_make_widget_key("page_back_grid")):
+                        del st.session_state["_page_detail_idx"]
+                        st.rerun()
+
+                _pi_info = _page_index.get(str(_detail_idx), _page_index.get(_detail_idx, {}))
+                _dt = _pi_info.get("doc_type", "unknown") if isinstance(_pi_info, dict) else "unknown"
+
+                _type_colors = {
+                    "plan": "green", "spec": "blue", "conditions": "orange",
+                    "boq": "red", "schedule": "purple", "unknown": "gray",
+                }
+                _badge_color = _type_colors.get(_dt, "gray")
+
+                st.markdown(
+                    f"### Page {_detail_idx + 1} "
+                    f"<span style='background:{_badge_color};color:white;padding:2px 8px;"
+                    f"border-radius:4px;font-size:0.7em'>{_dt.upper()}</span>",
+                    unsafe_allow_html=True,
+                )
+
+                # Full-resolution page render (Sprint 28: SVG for drawings)
+                if _pdf_path:
+                    _use_svg = is_svg_doc_type(_dt)
+
+                    _render_mode_cols = st.columns([4, 1])
+                    with _render_mode_cols[1]:
+                        if _use_svg:
+                            _svg_toggle = st.checkbox(
+                                "Vector (SVG)",
+                                value=True,
+                                key=_make_widget_key("pg_svg_toggle", _detail_idx),
+                                help="SVG renders drawings as crisp vectors. Uncheck for raster PNG.",
+                            )
+                        else:
+                            _svg_toggle = False
+
+                    if _svg_toggle:
+                        _svg_str = _cached_page_svg(_pdf_path, _detail_idx, text_mode="path")
+                        if _svg_str:
+                            import streamlit.components.v1 as _sv1
+                            _sv1.html(render_svg_html(_svg_str, height=700), height=720, scrolling=True)
+                            st.caption(f"Page {_detail_idx + 1} — SVG vector render")
+                        else:
+                            _full_png = _cached_page_png(_pdf_path, _detail_idx, zoom=1.5)
+                            if _full_png:
+                                st.image(_full_png, caption=f"Page {_detail_idx + 1} (PNG fallback)", use_container_width=True)
+                            else:
+                                st.warning("Page preview unavailable.")
+                    else:
+                        _full_png = _cached_page_png(_pdf_path, _detail_idx, zoom=1.5)
+                        if _full_png:
+                            st.image(_full_png, caption=f"Page {_detail_idx + 1}", use_container_width=True)
+                        else:
+                            st.warning("Page preview unavailable.")
+                else:
+                    st.info("PDF file not available for preview.")
+
+                # References panel
+                _refs = _page_ref_index.get(_detail_idx, [])
+                if _refs:
+                    st.markdown("##### 🔗 Referenced by")
+                    for _ref in _refs:
+                        _ref_icon = {"blocker": "🚫", "rfi": "📝", "assumption": "📌"}.get(_ref["type"], "📎")
+                        _sev = _ref.get("severity", _ref.get("trade", ""))
+                        _sev_display = f" · `{_sev}`" if _sev else ""
+                        st.markdown(
+                            f"- {_ref_icon} **{_ref['type'].upper()}** {_ref.get('id', '')}: "
+                            f"{_ref.get('title', 'Untitled')}{_sev_display}"
+                        )
+                else:
+                    st.caption("No blockers, RFIs, or assumptions reference this page.")
+
+                # OCR text excerpt (if available)
+                _ocr_cache = st.session_state.get("_ocr_text_cache", {})
+                _page_text = _ocr_cache.get(_detail_idx, _ocr_cache.get(str(_detail_idx), ""))
+                if _page_text:
+                    with st.expander("📝 OCR Text", expanded=False):
+                        st.text(_page_text[:3000])
+
+            else:
+                # ── Sprint 27: Thumbnail grid ─────────────────────────
+                # Pagination
+                _total_filtered = len(_filtered_pages)
+                _total_grid_pages = max(1, (_total_filtered + _pb_per_page - 1) // _pb_per_page)
+                _grid_page = st.session_state.get("_page_browser_page", 0)
+                _grid_page = max(0, min(_grid_page, _total_grid_pages - 1))
+
+                _start = _grid_page * _pb_per_page
+                _end = min(_start + _pb_per_page, _total_filtered)
+                _visible_pages = _filtered_pages[_start:_end]
+
+                # Pagination controls
+                if _total_grid_pages > 1:
+                    _pag_cols = st.columns([1, 3, 1])
+                    with _pag_cols[0]:
+                        if st.button("◀ Prev", key=_make_widget_key("pg_grid_prev"),
+                                     disabled=_grid_page == 0):
+                            st.session_state["_page_browser_page"] = _grid_page - 1
+                            st.rerun()
+                    with _pag_cols[1]:
+                        st.caption(f"Page {_grid_page + 1} of {_total_grid_pages} · "
+                                   f"Showing {_start + 1}–{_end} of {_total_filtered} pages")
+                    with _pag_cols[2]:
+                        if st.button("Next ▶", key=_make_widget_key("pg_grid_next"),
+                                     disabled=_grid_page >= _total_grid_pages - 1):
+                            st.session_state["_page_browser_page"] = _grid_page + 1
+                            st.rerun()
+
+                # Search results list (above grid if search active)
+                if _search_results and not _detail_idx:
+                    with st.expander(f"🔍 Search results ({len(_search_results)} matches)", expanded=True):
+                        for _sr_i, _sr in enumerate(_search_results[:20]):
+                            _sr_cols = st.columns([1, 5, 1])
+                            with _sr_cols[0]:
+                                st.markdown(f"**p.{_sr['page_idx'] + 1}**")
+                            with _sr_cols[1]:
+                                st.markdown(_sr.get("snippet", ""), unsafe_allow_html=True)
+                            with _sr_cols[2]:
+                                if st.button("View", key=_make_widget_key("sr_view", _sr_i)):
+                                    st.session_state["_page_detail_idx"] = _sr["page_idx"]
+                                    st.rerun()
+
+                # Render grid
+                _grid_cols = st.columns(4)
+                for _gi, (_pg_idx, _pg_dt) in enumerate(_visible_pages):
+                    with _grid_cols[_gi % 4]:
+                        _type_colors = {
+                            "plan": "green", "spec": "blue", "conditions": "orange",
+                            "boq": "red", "schedule": "purple", "unknown": "gray",
+                        }
+                        _badge_color = _type_colors.get(_pg_dt, "gray")
+
+                        # Search highlight border
+                        _is_match = _pg_idx in _search_match_pages
+                        _border_style = "3px solid #ff6b35" if _is_match else "1px solid #ddd"
+                        _match_icon = " 🔍" if _is_match else ""
+
+                        # Thumbnail
+                        _ref_count = len(_page_ref_index.get(_pg_idx, []))
+                        _ref_badge = f" · 📎{_ref_count}" if _ref_count > 0 else ""
+
+                        with st.container(border=True):
+                            if _pdf_path:
+                                _thumb = generate_thumbnail(_pdf_path, _pg_idx, width=200)
+                                if _thumb:
+                                    st.image(_thumb, use_container_width=True)
+                                else:
+                                    st.markdown(
+                                        f"<div style='height:120px;background:#f0f0f0;display:flex;"
+                                        f"align-items:center;justify-content:center;color:#999'>"
+                                        f"Page {_pg_idx + 1}</div>",
+                                        unsafe_allow_html=True,
+                                    )
+                            else:
+                                st.markdown(
+                                    f"<div style='height:120px;background:#f0f0f0;display:flex;"
+                                    f"align-items:center;justify-content:center;color:#999'>"
+                                    f"Page {_pg_idx + 1}</div>",
+                                    unsafe_allow_html=True,
+                                )
+
+                            st.markdown(
+                                f"<span style='font-weight:bold'>p.{_pg_idx + 1}</span>{_match_icon} "
+                                f"<span style='background:{_badge_color};color:white;padding:1px 5px;"
+                                f"border-radius:3px;font-size:0.7em'>{_pg_dt}</span>"
+                                f"<span style='font-size:0.8em;color:#666'>{_ref_badge}</span>",
+                                unsafe_allow_html=True,
+                            )
+
+                            if st.button("View", key=_make_widget_key("pg_view", _pg_idx),
+                                         use_container_width=True):
+                                st.session_state["_page_detail_idx"] = _pg_idx
+                                st.rerun()
+
+      except Exception as _tab14_err:
+          _handle_tab_error("Page Browser", _tab14_err)
+
+    # ------------------------------------------------------------------
+    # TAB 15: Ask Tender (Sprint 24 Phase 4 + Sprint 26 improvements)
+    # ------------------------------------------------------------------
+    with preview_tabs[15]:
+      try:
+        st.markdown("#### Ask Tender")
+        st.caption("Ask natural language questions about this tender. Answers come from structured lookups + RAG semantic search.")
+
+        from src.ask_tender import ask as _ask_tender
+
+        # Sprint 30: Initialize conversation history
+        if "_ask_history" not in st.session_state:
+            st.session_state["_ask_history"] = []
+
+        _ask_query = st.text_input(
+            "Ask a question about this tender...",
+            placeholder="e.g. What trades are blocked? How many RFIs? What are the commercial terms?",
+            key=_make_widget_key("ask_tender_query"),
+        )
+
+        # Sprint 26: Expanded quick-access buttons (2 rows of 4)
+        _ask_row1 = st.columns(4)
+        with _ask_row1[0]:
+            if st.button("📋 Overview", key=_make_widget_key("ask_btn_overview"), use_container_width=True):
+                st.session_state["_ask_query_override"] = "tender overview"
+        with _ask_row1[1]:
+            if st.button("🚫 Blockers", key=_make_widget_key("ask_btn_blockers"), use_container_width=True):
+                st.session_state["_ask_query_override"] = "what is blocking?"
+        with _ask_row1[2]:
+            if st.button("📝 RFIs", key=_make_widget_key("ask_btn_rfis"), use_container_width=True):
+                st.session_state["_ask_query_override"] = "how many RFIs by trade?"
+        with _ask_row1[3]:
+            if st.button("✅ Readiness", key=_make_widget_key("ask_btn_ready"), use_container_width=True):
+                st.session_state["_ask_query_override"] = "readiness score"
+
+        _ask_row2 = st.columns(4)
+        with _ask_row2[0]:
+            if st.button("🚪 Doors/Windows", key=_make_widget_key("ask_btn_schedules"), use_container_width=True):
+                st.session_state["_ask_query_override"] = "door and window schedule"
+        with _ask_row2[1]:
+            if st.button("💰 Commercial", key=_make_widget_key("ask_btn_commercial"), use_container_width=True):
+                st.session_state["_ask_query_override"] = "commercial terms and conditions"
+        with _ask_row2[2]:
+            if st.button("📐 Quantities", key=_make_widget_key("ask_btn_boq"), use_container_width=True):
+                st.session_state["_ask_query_override"] = "how many BOQ items?"
+        with _ask_row2[3]:
+            if st.button("🎯 Next Steps", key=_make_widget_key("ask_btn_next"), use_container_width=True):
+                st.session_state["_ask_query_override"] = "what should I do next?"
+
+        # Suggested queries (collapsible)
+        with st.expander("💡 More question ideas", expanded=False):
+            _suggestions = [
+                "Which trades are covered?",
+                "What structural data is available?",
+                "What drawings are in the set?",
+                "What is the LD clause?",
+                "What rooms are in the plan?",
+                "What specifications are mentioned?",
+            ]
+            _sug_cols = st.columns(2)
+            for _si, _sq in enumerate(_suggestions):
+                with _sug_cols[_si % 2]:
+                    if st.button(_sq, key=_make_widget_key(f"ask_sug_{_si}"), use_container_width=True):
+                        st.session_state["_ask_query_override"] = _sq
+
+        # Use override query if set by button press
+        _effective_query = st.session_state.pop("_ask_query_override", None) or _ask_query
+
+        if _effective_query and _effective_query.strip():
+            with st.spinner("Searching tender documents..."):
+                _ask_result = _ask_tender(payload, _effective_query)
+
+            # Sprint 30: Append to conversation history
+            from datetime import datetime as _ask_dt
+            st.session_state["_ask_history"].append({
+                "query": _effective_query,
+                "result": _ask_result.to_dict(),
+                "timestamp": _ask_dt.now().isoformat()[:19],
+            })
+            # Sprint 31: Cap history to prevent unbounded growth
+            if len(st.session_state["_ask_history"]) > 50:
+                st.session_state["_ask_history"] = st.session_state["_ask_history"][-50:]
+
+        # Sprint 30: Export + Clear buttons
+        _ask_hist = st.session_state.get("_ask_history", [])
+        if _ask_hist:
+            _ask_btn_row = st.columns([1, 1, 4])
+            with _ask_btn_row[0]:
+                # Build CSV for export
+                _qa_csv_buf = io.StringIO()
+                _qa_writer = csv.DictWriter(_qa_csv_buf, fieldnames=[
+                    "timestamp", "query", "intent", "answer_title",
+                    "answer_body", "confidence", "source", "evidence",
+                ])
+                _qa_writer.writeheader()
+                for _qe in _ask_hist:
+                    _qr = _qe.get("result", {})
+                    for _qa in _qr.get("answers", []):
+                        _qa_writer.writerow({
+                            "timestamp": _qe.get("timestamp", ""),
+                            "query": _qe.get("query", ""),
+                            "intent": _qr.get("intent", ""),
+                            "answer_title": _qa.get("title", ""),
+                            "answer_body": str(_qa.get("body", ""))[:500],
+                            "confidence": _qa.get("confidence", 0),
+                            "source": _qa.get("source", ""),
+                            "evidence": "; ".join(str(e) for e in _qa.get("evidence", [])),
+                        })
+                st.download_button(
+                    "📥 Export Q&A",
+                    _qa_csv_buf.getvalue(),
+                    "ask_tender_qa.csv",
+                    "text/csv",
+                    key=_make_widget_key("ask_export_csv"),
+                    use_container_width=True,
+                )
+            with _ask_btn_row[1]:
+                if st.button("🗑 Clear", key=_make_widget_key("ask_clear_hist"),
+                             use_container_width=True):
+                    st.session_state["_ask_history"] = []
+                    st.rerun()
+
+            st.caption(f"{len(_ask_hist)} questions asked this session")
+
+        # Sprint 30: Render conversation history (newest first)
+        for _hi, _entry in enumerate(reversed(_ask_hist)):
+            with st.container(border=True):
+                st.markdown(f"**Q:** {_entry['query']}")
+                _hr = _entry.get("result", {})
+                _ha_count = _hr.get("answer_count", len(_hr.get("answers", [])))
+                st.caption(f"Intent: `{_hr.get('intent', '')}` · {_ha_count} answers · {_entry.get('timestamp', '')}")
+
+                if _hr.get("fallback_search"):
+                    st.info("Fell back to semantic/OCR search.")
+
+                for _hai, _hans in enumerate(_hr.get("answers", [])):
+                    _hconf = _hans.get("confidence", 0)
+                    _hcolor = "green" if _hconf >= 0.8 else "orange" if _hconf >= 0.5 else "red"
+                    st.markdown(
+                        f"**{_hans.get('title', '')}** "
+                        f"<span style='color:{_hcolor};font-size:0.8em'>"
+                        f"[{_hans.get('source', '')} | {_hconf:.0%}]</span>",
+                        unsafe_allow_html=True,
+                    )
+                    st.markdown(str(_hans.get("body", "")).replace("\n", "  \n")[:500])
+
+                    # Sprint 30: Clickable page links → Page Browser
+                    _hevs = _hans.get("evidence", [])
+                    if _hevs:
+                        _hev_parts = []
+                        for _hev in _hevs:
+                            _hpm = re.search(r'(?:page|p\.?)\s*(\d+)', str(_hev), re.IGNORECASE)
+                            if _hpm:
+                                _hev_parts.append((_hpm.group(0), int(_hpm.group(1))))
+                            else:
+                                _hev_parts.append((str(_hev), None))
+                        _hev_cols = st.columns(min(len(_hev_parts) + 1, 6))
+                        for _hei, (_het, _hpn) in enumerate(_hev_parts):
+                            with _hev_cols[_hei % 5]:
+                                if _hpn is not None:
+                                    if st.button(f"📄 {_het}",
+                                                 key=_make_widget_key("ask_pg", _hi, _hai, _hei),
+                                                 use_container_width=True):
+                                        st.session_state["_page_browser_jump"] = _hpn - 1
+                                else:
+                                    st.caption(_het)
+
+                # Raw JSON per entry
+                with st.expander("Raw JSON", expanded=False):
+                    st.json(_hr)
+
+        if not _ask_hist:
+            st.info("Ask a question above to get started. Your conversation history will appear here.")
+
+      except Exception as _tab15_err:
+          _handle_tab_error("Ask Tender", _tab15_err)
+
+    # ------------------------------------------------------------------
+    # TAB 16: Scope Gaps Analysis (Sprint 35)
+    # ------------------------------------------------------------------
+    with preview_tabs[16]:
+      try:
+        st.markdown("#### Scope Dependency Analysis")
+        st.caption(
+            "Checks extracted BOQ against **70 dependency rules** covering "
+            "**222 required items** across all construction trades."
+        )
+
+        from src.boq.scope_dependencies import (
+            analyze_scope_gaps as _s35_analyze_scope_gaps,
+            get_rule_count as _s35_get_rule_count,
+            get_required_item_count as _s35_get_required_item_count,
+        )
+
+        # Extract BOQ items from payload
+        _s35_boq = payload.get("boq_items") or []
+        if not _s35_boq and payload.get("extraction_summary", {}).get("boq_items"):
+            _s35_boq = payload["extraction_summary"]["boq_items"]
+        if not _s35_boq and payload.get("boq_stats", {}).get("items"):
+            _s35_boq = payload["boq_stats"]["items"]
+
+        # Infer detected structural elements
+        _s35_elements = set()
+        _s35_st = payload.get("structural_takeoff", {})
+        if _s35_st and _s35_st.get("mode") not in (None, "error"):
+            _s35_elements.update(["footing", "column", "beam", "slab"])
+        _s35_pg = payload.get("plan_graph", {})
+        if _s35_pg.get("columns"):
+            _s35_elements.add("column")
+        for _s35_tc in payload.get("trade_coverage", []):
+            if _s35_tc.get("trade") == "structural" and _s35_tc.get("priceable_count", 0) > 0:
+                _s35_elements.update(["footing", "column", "beam", "slab"])
+        for _s35_item in _s35_boq:
+            _s35_desc = (_s35_item.get("description") or "").lower()
+            if "footing" in _s35_desc or "foundation" in _s35_desc:
+                _s35_elements.add("footing")
+            if "column" in _s35_desc:
+                _s35_elements.add("column")
+            if "beam" in _s35_desc:
+                _s35_elements.add("beam")
+            if "slab" in _s35_desc:
+                _s35_elements.add("slab")
+            if "stair" in _s35_desc:
+                _s35_elements.add("staircase")
+            if "lintel" in _s35_desc:
+                _s35_elements.add("lintel")
+        _s35_elem_list = list(_s35_elements) if _s35_elements else ["footing", "column", "beam", "slab"]
+
+        # Infer room types
+        _s35_rooms = set()
+        for _s35_rm in _s35_pg.get("rooms", []):
+            _s35_rname = (_s35_rm.get("name") or _s35_rm.get("label") or "").lower()
+            if "bed" in _s35_rname: _s35_rooms.add("bedroom")
+            elif "living" in _s35_rname or "drawing" in _s35_rname: _s35_rooms.add("living_room")
+            elif "kitchen" in _s35_rname: _s35_rooms.add("kitchen")
+            elif "toilet" in _s35_rname or "wc" in _s35_rname: _s35_rooms.add("toilet")
+            elif "bath" in _s35_rname: _s35_rooms.add("bathroom")
+            elif "balcony" in _s35_rname: _s35_rooms.add("balcony")
+            elif "store" in _s35_rname: _s35_rooms.add("store")
+        _s35_room_list = list(_s35_rooms) if _s35_rooms else ["bedroom", "living_room", "kitchen", "toilet", "balcony"]
+
+        _s35_scope = _s35_analyze_scope_gaps(
+            boq_items=_s35_boq,
+            detected_elements=_s35_elem_list,
+            room_types=_s35_room_list,
+            project_params={"num_floors": 4, "plot_area_sqm": 300},
+        )
+
+        _s35_c1, _s35_c2, _s35_c3, _s35_c4 = st.columns(4)
+        _s35_c1.metric("Rules Fired", _s35_scope.total_rules_checked,
+                        f"of {_s35_get_rule_count()} total")
+        _s35_c2.metric("Items Checked", _s35_scope.total_items_checked,
+                        f"of {_s35_get_required_item_count()}")
+        _s35_c3.metric("Gaps Found", _s35_scope.total_gaps_found,
+                        delta=f"-{_s35_scope.total_gaps_found}" if _s35_scope.total_gaps_found else None,
+                        delta_color="inverse")
+        _s35_c4.metric("Completeness", f"{_s35_scope.completeness_score}%")
+
+        st.markdown("---")
+
+        _s35_left, _s35_right = st.columns([3, 2])
+
+        with _s35_left:
+            st.markdown("##### Critical Missing Items")
+            for _s35_gap in _s35_scope.critical_gaps[:20]:
+                st.markdown(
+                    f'<div style="background:#f8fafc;padding:0.4rem 0.8rem;border-radius:6px;'
+                    f'margin:0.2rem 0;border:1px solid #e2e8f0;">'
+                    f'<strong>{_s35_gap.missing_item}</strong> '
+                    f'<span style="color:#6b7280;font-size:0.85em">({_s35_gap.trade})</span><br/>'
+                    f'<span style="color:#9ca3af;font-size:0.8em">Triggered by: {_s35_gap.triggered_by}</span>'
+                    f'</div>',
+                    unsafe_allow_html=True,
+                )
+            if len(_s35_scope.critical_gaps) > 20:
+                st.caption(f"... and {len(_s35_scope.critical_gaps) - 20} more critical gaps")
+
+        with _s35_right:
+            st.markdown("##### Coverage by Trade")
+            if _s35_scope.coverage_by_trade:
+                _s35_td = []
+                for _s35_trade, _s35_info in _s35_scope.coverage_by_trade.items():
+                    _s35_rc = _s35_info.get("rules", 0)
+                    _s35_gc = _s35_info.get("gaps", 0)
+                    _s35_ic = _s35_info.get("items", _s35_rc * 3)
+                    _s35_found = _s35_ic - _s35_gc
+                    _s35_pct = (_s35_found / _s35_ic * 100) if _s35_ic > 0 else 0
+                    _s35_td.append({
+                        "Trade": _s35_trade, "Rules": _s35_rc,
+                        "Gaps": _s35_gc, "Coverage": f"{_s35_pct:.0f}%",
+                    })
+                st.dataframe(_s35_td, use_container_width=True, hide_index=True)
+
+        # Store scope result for bid risk tab
+        st.session_state["_s35_scope_result"] = _s35_scope
+
+      except Exception as _tab16_err:
+          _handle_tab_error("Scope Gaps", _tab16_err)
+
+    # ------------------------------------------------------------------
+    # TAB 17: BOQ Quality Dashboard (Sprint 35)
+    # ------------------------------------------------------------------
+    with preview_tabs[17]:
+      try:
+        st.markdown("#### BOQ Quality Analysis")
+        st.caption("Deduplication + quantity cross-validation + completeness scoring on extracted BOQ.")
+
+        from src.boq.deduplicator import (
+            deduplicate_boq as _s35_deduplicate_boq,
+        )
+        from src.analysis.quantity_crosscheck import (
+            cross_check_boq as _s35_cross_check_boq,
+        )
+        from src.boq.completeness_scorer import (
+            score_boq_completeness as _s35_score_completeness,
+            get_improvement_suggestions as _s35_get_suggestions,
+        )
+
+        _s35_boq2 = payload.get("boq_items") or []
+        if not _s35_boq2 and payload.get("extraction_summary", {}).get("boq_items"):
+            _s35_boq2 = payload["extraction_summary"]["boq_items"]
+        if not _s35_boq2 and payload.get("boq_stats", {}).get("items"):
+            _s35_boq2 = payload["boq_stats"]["items"]
+
+        if not _s35_boq2:
+            st.warning("No BOQ items extracted. Upload drawings containing BOQ tables for quality analysis.")
+        else:
+            # ── Deduplication ──
+            st.markdown("##### Deduplication")
+            _s35_dedup = _s35_deduplicate_boq(_s35_boq2)
+
+            _s35_dc1, _s35_dc2, _s35_dc3 = st.columns(3)
+            _s35_dc1.metric("Original Items", _s35_dedup.original_count)
+            _s35_dc2.metric("After Dedup", _s35_dedup.deduplicated_count,
+                            delta=f"-{_s35_dedup.duplicates_found}", delta_color="inverse")
+            _s35_dc3.metric("Reduction", f"{_s35_dedup.reduction_pct:.0f}%")
+
+            if _s35_dedup.merge_log:
+                with st.expander(f"Merge Log ({len(_s35_dedup.merge_log)} merges)", expanded=False):
+                    for _s35_me in _s35_dedup.merge_log[:10]:
+                        st.markdown(f"**Kept:** {_s35_me.kept_description[:80]}")
+                        for _s35_md in _s35_me.merged_descriptions:
+                            if _s35_md != _s35_me.kept_description:
+                                st.caption(f"  Merged: {_s35_md[:80]} (sim: {_s35_me.similarity:.0%})")
+
+            st.markdown("---")
+
+            # ── Quantity Cross-Check ──
+            st.markdown("##### Quantity Cross-Validation")
+            _s35_clean_boq = _s35_dedup.deduplicated_items if _s35_dedup.deduplicated_items else _s35_boq2
+            _s35_xcheck = _s35_cross_check_boq(_s35_clean_boq)
+
+            _s35_xc1, _s35_xc2, _s35_xc3, _s35_xc4 = st.columns(4)
+            _s35_xc1.metric("Checks Run", len(_s35_xcheck.checks))
+            _s35_xc2.metric("Issues", _s35_xcheck.issues_count)
+            _s35_xc3.metric("Critical", len(_s35_xcheck.critical_issues))
+            _s35_xc4.metric("Confidence", f"{_s35_xcheck.overall_confidence}%")
+
+            _s35_sev_map = {
+                "ok": ("background:#f0fdf4;border-left:4px solid #16a34a;", "&#9989;"),
+                "low": ("background:#f0fdf4;border-left:4px solid #16a34a;", "&#128309;"),
+                "medium": ("background:#fefce8;border-left:4px solid #ca8a04;", "&#128993;"),
+                "high": ("background:#fff7ed;border-left:4px solid #ea580c;", "&#128992;"),
+                "critical": ("background:#fee2e2;border-left:4px solid #dc2626;", "&#128308;"),
+            }
+            for _s35_chk in _s35_xcheck.checks[:12]:
+                _s35_sv = _s35_chk.severity.value
+                _s35_css, _s35_ico = _s35_sev_map.get(_s35_sv, ("background:#eff6ff;border-left:4px solid #2563eb;", "&#8505;"))
+                _s35_var = f"{_s35_chk.variance_pct:+.1f}%" if _s35_chk.variance_pct else ""
+                st.markdown(
+                    f'<div style="{_s35_css}padding:0.6rem 0.8rem;border-radius:4px;margin:0.3rem 0;">'
+                    f'{_s35_ico} <strong>[{_s35_sv.upper()}]</strong> {_s35_chk.check_type} &nbsp; '
+                    f'<span style="color:#6b7280">BOQ: {_s35_chk.boq_qty:.0f} {_s35_chk.unit} | '
+                    f'Expected: {_s35_chk.derived_qty:.0f} {_s35_chk.unit} | {_s35_var}</span><br/>'
+                    f'<span style="font-size:0.85em">{_s35_chk.explanation[:140]}</span>'
+                    f'</div>',
+                    unsafe_allow_html=True,
+                )
+
+            st.markdown("---")
+
+            # ── Completeness Score ──
+            st.markdown("##### Completeness Score")
+            _s35_comp = _s35_score_completeness(_s35_clean_boq)
+
+            _s35_grade_colors = {"A": "#16a34a", "B": "#65a30d", "C": "#ca8a04", "D": "#ea580c", "E": "#dc2626", "F": "#991b1b"}
+            _s35_gc = _s35_grade_colors.get(_s35_comp.grade, "#6b7280")
+
+            _s35_cc1, _s35_cc2, _s35_cc3 = st.columns(3)
+            _s35_cc1.metric("Score", f"{_s35_comp.overall_score:.0f}/100")
+            _s35_cc2.markdown(
+                f"**Grade:** <span style='color:{_s35_gc};font-size:2.5rem;font-weight:bold'>"
+                f"{_s35_comp.grade}</span>",
+                unsafe_allow_html=True,
+            )
+            _s35_cc3.metric("Trades Found", f"{_s35_comp.trades_found}/{_s35_comp.trades_expected}")
+
+            _s35_cl, _s35_cr = st.columns([3, 2])
+            with _s35_cl:
+                if _s35_comp.missing_trades:
+                    st.markdown("**Missing Trades:**")
+                    for _s35_mt in _s35_comp.missing_trades[:8]:
+                        st.markdown(
+                            f'<div style="background:#fff7ed;border-left:4px solid #ea580c;'
+                            f'padding:0.5rem 0.8rem;border-radius:4px;margin:0.2rem 0;">'
+                            f'Missing: <strong>{_s35_mt.replace("_", " ").title()}</strong></div>',
+                            unsafe_allow_html=True,
+                        )
+            with _s35_cr:
+                st.markdown("**Improvement Suggestions:**")
+                _s35_sugg = _s35_get_suggestions(_s35_comp, max_suggestions=5)
+                for _s35_si, _s35_s in enumerate(_s35_sugg, 1):
+                    st.markdown(f"**{_s35_si}.** {_s35_s}")
+
+            # Store for bid risk tab
+            st.session_state["_s35_xcheck_result"] = _s35_xcheck
+            st.session_state["_s35_comp_result"] = _s35_comp
+
+      except Exception as _tab17_err:
+          _handle_tab_error("BOQ Quality", _tab17_err)
+
+    # ------------------------------------------------------------------
+    # TAB 18: Delhi NCR Pricing (Sprint 35)
+    # ------------------------------------------------------------------
+    with preview_tabs[18]:
+      try:
+        st.markdown("#### Delhi NCR Pricing Analysis")
+        st.caption("Material costs and rate escalation focused on **Delhi NCR region**. CPWD DSR 2024 base rates.")
+
+        from src.pricing.location_factors import (
+            get_city_factor as _s35_get_city_factor,
+            get_material_city_factor as _s35_get_material_city_factor,
+        )
+        from src.pricing.escalation import (
+            escalate_rate as _s35_escalate_rate,
+        )
+
+        _s35_ncr_cities = ["Delhi", "Gurgaon", "Noida", "Faridabad", "Ghaziabad", "Greater Noida"]
+        _s35_delhi_factor = _s35_get_city_factor("Delhi")
+        _s35_duration = 18  # Default
+
+        _s35_pc1, _s35_pc2, _s35_pc3 = st.columns(3)
+        _s35_pc1.metric("Base Location", "Delhi NCR", delta=f"Factor: {_s35_delhi_factor:.2f}x")
+        _s35_pc2.metric("NCR Cities", len(_s35_ncr_cities))
+        _s35_pc3.metric("Duration", f"{_s35_duration} months")
+
+        st.markdown("---")
+
+        # Material comparison across NCR + metros
+        st.markdown("##### Material Costs \u2014 Delhi NCR vs Other Metros")
+        _s35_materials = ["steel", "cement", "aggregates", "labour", "timber", "bricks", "fuel_transport"]
+        _s35_compare = ["Delhi", "Gurgaon", "Noida", "Mumbai", "Bangalore", "Chennai"]
+
+        _s35_mat_data = []
+        for _s35_m in _s35_materials:
+            _s35_row = {"Material": _s35_m.replace("_", " ").title()}
+            for _s35_city in _s35_compare:
+                _s35_f = _s35_get_material_city_factor(_s35_city, _s35_m)
+                _s35_row[_s35_city] = f"{_s35_f:.3f}"
+            _s35_mat_data.append(_s35_row)
+        st.dataframe(_s35_mat_data, use_container_width=True, hide_index=True)
+
+        st.markdown("---")
+
+        # Rate escalation for key construction items
+        st.markdown("##### Rate Escalation \u2014 Key Items (Delhi NCR)")
+
+        _s35_key_items = [
+            ("RCC M25 Concrete", 8200, "rcc_concrete"),
+            ("Steel Fe500D", 75000, "steel"),
+            ("Brick Masonry", 5800, "masonry"),
+            ("Cement Plaster", 180, "plaster"),
+            ("Vitrified Tiles", 450, "flooring"),
+            ("PCC M7.5", 4500, "pcc_concrete"),
+            ("Excavation", 250, "earthwork"),
+        ]
+
+        _s35_esc_data = []
+        for _s35_name, _s35_base, _s35_mtype in _s35_key_items:
+            try:
+                _s35_esc = _s35_escalate_rate(_s35_base, _s35_mtype, _s35_duration, location="Delhi")
+                _s35_esc_rate = _s35_esc.get("escalated_rate", _s35_base)
+                _s35_inc = ((_s35_esc_rate / _s35_base) - 1) * 100
+                _s35_esc_data.append({
+                    "Item": _s35_name,
+                    "Base Rate (Rs)": f"{_s35_base:,}",
+                    f"Escalated ({_s35_duration}mo)": f"{_s35_esc_rate:,.0f}",
+                    "Increase": f"{_s35_inc:+.1f}%",
+                })
+            except Exception:
+                _s35_esc_data.append({
+                    "Item": _s35_name,
+                    "Base Rate (Rs)": f"{_s35_base:,}",
+                    f"Escalated ({_s35_duration}mo)": f"{_s35_base:,}",
+                    "Increase": "N/A",
+                })
+        st.dataframe(_s35_esc_data, use_container_width=True, hide_index=True)
+
+        st.markdown("---")
+
+        # BOQ-specific pricing if items available
+        _s35_boq3 = payload.get("boq_items") or []
+        if _s35_boq3:
+            st.markdown("##### Extracted BOQ \u2014 Delhi NCR Adjusted Rates")
+            _s35_priced = []
+            for _s35_bi in _s35_boq3[:25]:
+                _s35_desc = _s35_bi.get("description", "")[:60]
+                _s35_qty = _s35_bi.get("quantity") or _s35_bi.get("qty") or 0
+                try:
+                    _s35_qty = float(_s35_qty)
+                except (ValueError, TypeError):
+                    _s35_qty = 0
+                _s35_unit = _s35_bi.get("unit", "")
+                _s35_rate = _s35_bi.get("rate", 0)
+                try:
+                    _s35_rate = float(_s35_rate)
+                except (ValueError, TypeError):
+                    _s35_rate = 0
+                _s35_amount = _s35_qty * _s35_rate * _s35_delhi_factor
+                _s35_priced.append({
+                    "Description": _s35_desc,
+                    "Qty": f"{_s35_qty:.1f}" if _s35_qty else "",
+                    "Unit": _s35_unit,
+                    "Rate": f"{_s35_rate:,.0f}" if _s35_rate else "",
+                    "NCR Adjusted": f"{_s35_rate * _s35_delhi_factor:,.0f}" if _s35_rate else "",
+                    "Amount (Rs)": f"{_s35_amount:,.0f}" if _s35_amount else "",
+                })
+            st.dataframe(_s35_priced, use_container_width=True, hide_index=True)
+        else:
+            st.info("Upload drawings with BOQ to see Delhi NCR-adjusted item rates.")
+
+        st.caption("Rates: Delhi NCR CPWD DSR 2024 base. Escalation based on material-specific WPI trends.")
+
+      except Exception as _tab18_err:
+          _handle_tab_error("Delhi NCR Pricing", _tab18_err)
+
+    # ------------------------------------------------------------------
+    # TAB 19: Bid Risk Assessment (Sprint 35)
+    # ------------------------------------------------------------------
+    with preview_tabs[19]:
+      try:
+        st.markdown("#### Bid Risk Assessment")
+        st.caption("**7-category risk analysis** combining pipeline findings + Sprint 35 engines. Delhi NCR focused.")
+
+        from src.analysis.bid_risk_analyzer import (
+            analyze_bid_risk as _s35_analyze_bid_risk,
+        )
+
+        _s35_boq4 = payload.get("boq_items") or []
+        if not _s35_boq4 and payload.get("extraction_summary", {}).get("boq_items"):
+            _s35_boq4 = payload["extraction_summary"]["boq_items"]
+
+        # Gather inputs from session state or defaults
+        _s35_scope_r = st.session_state.get("_s35_scope_result")
+        _s35_xcheck_r = st.session_state.get("_s35_xcheck_result")
+        _s35_comp_r = st.session_state.get("_s35_comp_result")
+
+        _s35_sgaps = _s35_scope_r.total_gaps_found if _s35_scope_r else 0
+        _s35_qmis = _s35_xcheck_r.issues_count if _s35_xcheck_r else 0
+        _s35_cscore = _s35_comp_r.overall_score if _s35_comp_r else 50.0
+
+        # Infer document types
+        _s35_docs = []
+        _s35_ov = payload.get("drawing_overview") or {}
+        _s35_discs = _s35_ov.get("disciplines_detected", [])
+        if "structural" in _s35_discs: _s35_docs.append("structural_drawings")
+        if "architectural" in _s35_discs: _s35_docs.append("architectural_drawings")
+        if "mep" in _s35_discs or "electrical" in _s35_discs: _s35_docs.append("mep_drawings")
+        if payload.get("boq_stats", {}).get("total_items", 0) > 0: _s35_docs.append("boq")
+        if payload.get("commercial_terms"): _s35_docs.append("conditions_of_contract")
+
+        # Contract conditions from payload
+        _s35_cc = {}
+        for _s35_ct in payload.get("commercial_terms", []):
+            _s35_tt = _s35_ct.get("term_type", "")
+            _s35_tv = _s35_ct.get("value", "")
+            try:
+                if "defect" in _s35_tt.lower():
+                    _s35_cc["defect_liability_years"] = int(_s35_tv)
+                elif "retention" in _s35_tt.lower():
+                    _s35_cc["retention_pct"] = float(_s35_tv)
+                elif "payment" in _s35_tt.lower():
+                    _s35_cc["payment_terms_days"] = int(_s35_tv)
+            except (ValueError, TypeError):
+                pass
+
+        _s35_risk = _s35_analyze_bid_risk(
+            boq_items=_s35_boq4,
+            scope_gaps=_s35_sgaps,
+            quantity_mismatches=_s35_qmis,
+            missing_rates_pct=0.0,
+            completeness_score=_s35_cscore,
+            project_duration_months=18,
+            project_value_lakhs=2500,
+            document_types_available=_s35_docs,
+            contract_conditions=_s35_cc,
+            location="Delhi",
+        )
+
+        # Recommendation banner
+        _s35_rec = _s35_risk.bid_recommendation
+        _s35_rec_colors = {
+            "GO": ("#065f46", "#059669"),
+            "GO_WITH_QUALIFICATIONS": ("#92400e", "#d97706"),
+            "NO_GO": ("#991b1b", "#dc2626"),
+            "NEEDS_REVIEW": ("#92400e", "#ea580c"),
+        }
+        _s35_bg1, _s35_bg2 = _s35_rec_colors.get(_s35_rec, ("#4a5568", "#718096"))
+        _s35_rec_label = _s35_rec.replace("_", " ")
+
+        st.markdown(
+            f'<div style="background:linear-gradient(135deg,{_s35_bg1},{_s35_bg2});'
+            f'padding:1.5rem 2rem;border-radius:12px;color:white;text-align:center;margin:0.5rem 0;">'
+            f'<div style="font-size:2.2rem;font-weight:700">{_s35_rec_label}</div>'
+            f'<div style="font-size:1rem;opacity:0.9">Risk Score: {_s35_risk.overall_risk_score:.0f}/100 | Delhi NCR</div>'
+            f'</div>',
+            unsafe_allow_html=True,
+        )
+
+        _s35_rc1, _s35_rc2, _s35_rc3, _s35_rc4 = st.columns(4)
+        _s35_rc1.metric("Risk Score", f"{_s35_risk.overall_risk_score:.0f}/100")
+        _s35_rc2.metric("Critical Risks", len(_s35_risk.critical_risks))
+        _s35_rc3.metric("High Risks", len(_s35_risk.high_risks))
+        _s35_rc4.metric("Total Risks", len(_s35_risk.risks))
+
+        st.markdown("---")
+
+        _s35_rl, _s35_rr = st.columns([3, 2])
+
+        with _s35_rl:
+            st.markdown("##### Risk Details")
+            _s35_risk_css = {
+                "critical": "background:#fee2e2;border-left:4px solid #dc2626;",
+                "high": "background:#fff7ed;border-left:4px solid #ea580c;",
+                "medium": "background:#fefce8;border-left:4px solid #ca8a04;",
+                "low": "background:#f0fdf4;border-left:4px solid #16a34a;",
+            }
+            for _s35_ri in _s35_risk.risks[:15]:
+                _s35_rlev = _s35_ri.level.value
+                _s35_rcss = _s35_risk_css.get(_s35_rlev, "background:#eff6ff;border-left:4px solid #2563eb;")
+                _s35_impact = f"<br/><em>Impact: {_s35_ri.financial_impact}</em>" if _s35_ri.financial_impact else ""
+                _s35_mitig = f"<br/><strong>Mitigation:</strong> {_s35_ri.mitigation[:120]}" if _s35_ri.mitigation else ""
+                st.markdown(
+                    f'<div style="{_s35_rcss}padding:0.6rem 0.8rem;border-radius:4px;margin:0.3rem 0;">'
+                    f'<strong>[{_s35_rlev.upper()}] [{_s35_ri.category.value.upper()}]</strong> {_s35_ri.title}<br/>'
+                    f'<span style="font-size:0.85em">{_s35_ri.description[:160]}</span>'
+                    f'{_s35_impact}{_s35_mitig}'
+                    f'</div>',
+                    unsafe_allow_html=True,
+                )
+
+        with _s35_rr:
+            st.markdown("##### Risk by Category")
+            _s35_cat_data = []
+            for _s35_cat, _s35_cnt in sorted(_s35_risk.risk_by_category.items(), key=lambda x: -x[1]):
+                _s35_cat_data.append({"Category": _s35_cat.title(), "Risks": _s35_cnt})
+            st.dataframe(_s35_cat_data, use_container_width=True, hide_index=True)
+
+            if _s35_scope_r:
+                st.markdown("---")
+                st.markdown("##### Inputs from Sprint 35 Engines")
+                st.markdown(f"- **Scope Gaps:** {_s35_sgaps} missing items")
+                st.markdown(f"- **Qty Mismatches:** {_s35_qmis} issues")
+                st.markdown(f"- **Completeness:** {_s35_cscore:.0f}/100")
+                st.markdown(f"- **Location:** Delhi NCR")
+
+      except Exception as _tab19_err:
+          _handle_tab_error("Bid Risk Assessment", _tab19_err)
+
     # =========================================================================
     # ACTION BUTTONS
     # =========================================================================
@@ -6695,7 +8906,7 @@ def _run_analysis_with_progress(uploaded_files: List[Any], dev_mode: bool = Fals
     """
     # Project setup
     project_id = generate_project_id()
-    project_root = Path(__file__).parent.parent
+    project_root = Path(__file__).resolve().parent.parent
     uploads_dir = project_root / "uploads"
     output_dir = project_root / "out" / project_id
 
@@ -6714,6 +8925,24 @@ def _run_analysis_with_progress(uploaded_files: List[Any], dev_mode: bool = Fals
     # Create progress UI
     st.markdown("---")
 
+    # ── Agent Office sidebar setup ────────────────────────────────────────────
+    _office_states = None
+    _office_placeholder = None
+    _office_active_flag = [True]   # mutable bool: True = pipeline running
+    _sub_callback = None
+    if _HAS_AGENT_OFFICE:
+        try:
+            _office_states = _build_office_states()
+            st.sidebar.markdown("---")
+            _office_placeholder = st.sidebar.empty()
+            _render_office_sidebar(_office_states, _office_placeholder, pipeline_active=True)
+            _sub_callback = _make_sub_callback(
+                _office_states, _office_placeholder, _office_active_flag
+            )
+        except Exception:
+            _office_states = None
+            _office_placeholder = None
+
     # Track result outside the status block so we can render results after it
     analysis_result = None
     analysis_error = None
@@ -6726,6 +8955,18 @@ def _run_analysis_with_progress(uploaded_files: List[Any], dev_mode: bool = Fals
 
         current_stage_idx = 0
         stage_progress = {}
+
+        # Stage → agent IDs to mark working when stage starts (coarse mapping)
+        _STAGE_START_AGENTS_UI = {
+            "load":    ["pdf_loader"],
+            "index":   ["page_indexer"],
+            "select":  ["page_selector"],
+            "extract": ["drawing_extractor", "boq_extractor", "spec_extractor",
+                        "schedule_extractor", "ocr_scanner"],
+            "graph":   ["reconciler"],
+        }
+        _stage_started_ui: set = set()
+        _stage_done_ui: set = set()
 
         def progress_callback(stage_id: str, message: str, progress: float):
             """Update progress UI from analysis pipeline."""
@@ -6758,12 +8999,44 @@ def _run_analysis_with_progress(uploaded_files: List[Any], dev_mode: bool = Fals
                         f"~{secs // 60}m {secs % 60}s remaining"
                     )
 
+            # Agent Office: coarse stage-level updates for Ingestion/Extraction agents
+            if _sub_callback and _office_states is not None:
+                try:
+                    if stage_id not in _stage_started_ui and progress > 0:
+                        _stage_started_ui.add(stage_id)
+                        for _aid in _STAGE_START_AGENTS_UI.get(stage_id, []):
+                            _sub_callback(_aid, "working", message)
+                    if stage_id not in _stage_done_ui and progress >= 1.0:
+                        _stage_done_ui.add(stage_id)
+                        for _aid in _STAGE_START_AGENTS_UI.get(stage_id, []):
+                            if _office_states.get(_aid) and _office_states[_aid].status == "working":
+                                _sub_callback(_aid, "done", message)
+                except Exception:
+                    pass
+
         stage_text.markdown(f"**Stage 1/{len(stages)}:** {stages[0][1]}")
         detail_text.caption(stages[0][2])
 
         try:
             detail_text.caption("Saving uploaded files...")
             saved_files = save_uploaded_files(uploaded_files, project_id, uploads_dir)
+
+            # Build LLM client from env vars if available
+            _llm_client = None
+            _openai_key = os.environ.get("OPENAI_API_KEY", "")
+            _anthropic_key = os.environ.get("ANTHROPIC_API_KEY", "")
+            if _openai_key:
+                try:
+                    import openai
+                    _llm_client = openai.OpenAI(api_key=_openai_key)
+                except ImportError:
+                    pass
+            elif _anthropic_key:
+                try:
+                    import anthropic
+                    _llm_client = anthropic.Anthropic(api_key=_anthropic_key)
+                except ImportError:
+                    pass
 
             # Sprint 16: Try async job queue if available
             _use_async = os.environ.get("XBOQ_ASYNC_JOBS", "").lower() == "true"
@@ -6779,6 +9052,7 @@ def _run_analysis_with_progress(uploaded_files: List[Any], dev_mode: bool = Fals
                         project_id=project_id,
                         output_dir=output_dir,
                         run_mode=run_mode,
+                        llm_client=_llm_client,
                     )
                     st.session_state["_xboq_active_job"] = _job_id
                     st.session_state["_xboq_active_job_project"] = project_id
@@ -6795,6 +9069,8 @@ def _run_analysis_with_progress(uploaded_files: List[Any], dev_mode: bool = Fals
                 output_dir=output_dir,
                 progress_callback=progress_callback,
                 run_mode=run_mode,
+                llm_client=_llm_client,
+                sub_callback=_sub_callback,
             )
 
             progress_bar.progress(1.0)
@@ -6831,6 +9107,16 @@ def _run_analysis_with_progress(uploaded_files: List[Any], dev_mode: bool = Fals
             else:
                 with st.expander("Technical Details"):
                     st.code(traceback.format_exc(), language="python")
+
+        finally:
+            # Mark Agent Office as no longer running (pipeline done or errored)
+            if _office_active_flag:
+                _office_active_flag[0] = False
+            if _HAS_AGENT_OFFICE and _office_states is not None and _office_placeholder is not None:
+                try:
+                    _render_office_sidebar(_office_states, _office_placeholder, pipeline_active=False)
+                except Exception:
+                    pass
 
     # ── Render results OUTSIDE the status block so they're always visible ──
     if analysis_result is not None:
@@ -6945,13 +9231,42 @@ def main():
     # Check for dev mode (show stack traces)
     dev_mode = st.query_params.get("dev", "") == "1"
 
-    # ── Sprint 16: Auth gate (opt-in via XBOQ_AUTH_ENABLED=true) ─────
-    _auth_enabled = os.environ.get("XBOQ_AUTH_ENABLED", "").lower() == "true"
+    # ── Auth gate — ON by default (set XBOQ_AUTH_ENABLED=false to disable) ─────
+    _auth_enabled = os.environ.get("XBOQ_AUTH_ENABLED", "true").lower() != "false"
+    _session_timeout_minutes = int(os.environ.get("XBOQ_SESSION_TIMEOUT_MINUTES", "60"))
 
     if _auth_enabled:
+        # Session timeout check
+        _now = datetime.now()
+        _last_active = st.session_state.get("_xboq_last_active")
+        if _last_active and "_xboq_tenant_id" in st.session_state:
+            try:
+                _last_dt = datetime.fromisoformat(_last_active)
+                if (_now - _last_dt).total_seconds() > _session_timeout_minutes * 60:
+                    # Session expired — clear and force re-login
+                    for _k in ["_xboq_tenant_id", "_xboq_tenant_name", "_xboq_last_active"]:
+                        st.session_state.pop(_k, None)
+                    st.warning("Session expired. Please log in again.")
+            except Exception:
+                pass
+
         if "_xboq_tenant_id" not in st.session_state:
             _render_login_page()
             return
+
+        # Update last-active timestamp on every page load
+        st.session_state["_xboq_last_active"] = _now.isoformat()
+
+    # ── Logout button (only when auth enabled and logged in) ──
+    if _auth_enabled and "_xboq_tenant_id" in st.session_state:
+        with st.sidebar:
+            st.divider()
+            _tenant_name = st.session_state.get("_xboq_tenant_name", st.session_state.get("_xboq_tenant_id", ""))
+            st.caption(f"Logged in as: **{_tenant_name}**")
+            if st.button("Logout", key="_logout_btn", use_container_width=True):
+                for _k in list(st.session_state.keys()):
+                    del st.session_state[_k]
+                st.rerun()
 
     # ── Sprint 16: Job status check ──────────────────────────────────
     if "_xboq_active_job" in st.session_state:
@@ -7167,6 +9482,40 @@ def main():
         pass
     # ─────────────────────────────────────────────────────────────────
 
+    # ── Project History ─────────────────────────────────────────
+    st.sidebar.markdown("---")
+    st.sidebar.markdown("### 🕓 Recent Analyses")
+
+    try:
+        from src.history.local_store import list_runs, get_run, delete_run
+        import time as _time
+
+        _runs = list_runs(limit=15)
+        if not _runs:
+            st.sidebar.caption("No analyses yet. Upload a tender to start.")
+        else:
+            for _run in _runs:
+                _ago = int((_time.time() - _run["saved_at"]) / 60)
+                _ago_str = f"{_ago}m ago" if _ago < 60 else f"{_ago//60}h ago"
+                _summary = _run.get("summary", {})
+                _total   = _summary.get("total", "?")
+                _label   = f"📄 {_run['filename'][:28]}…" if len(_run['filename']) > 28 else f"📄 {_run['filename']}"
+
+                col_a, col_b = st.sidebar.columns([4, 1])
+                with col_a:
+                    if st.button(f"{_label}\n_{_ago_str} · {_total} items_", key=f"hist_{_run['run_id']}", use_container_width=True):
+                        _loaded = get_run(_run["run_id"])
+                        if _loaded:
+                            st.session_state["loaded_payload"] = _loaded.get("payload", {})
+                            st.session_state["loaded_filename"] = _run["filename"]
+                            st.rerun()
+                with col_b:
+                    if st.button("🗑", key=f"del_{_run['run_id']}", help="Delete this run"):
+                        delete_run(_run["run_id"])
+                        st.rerun()
+    except Exception as _he:
+        st.sidebar.caption(f"History unavailable: {_he}")
+
     if not project_id:
         # ── Hero landing page ──
         st.markdown("""
@@ -7251,7 +9600,7 @@ def main():
             st.error(f"No results found for project: {project_id}")
 
             # Show what we looked for (debug info)
-            base_path = Path(__file__).parent.parent / "out" / project_id
+            base_path = Path(__file__).resolve().parent.parent / "out" / project_id
             with st.expander("Debug: Expected output location"):
                 st.code(f"Output directory: {base_path}")
                 st.write(f"Directory exists: {base_path.exists()}")
@@ -7363,6 +9712,13 @@ def main():
         ]
         if analysis_payload:
             _tab_labels.append("\U0001f4c8 Bid Strategy")
+        # Sprint 35 tabs
+        _tab_labels.extend([
+            "\U0001f50d Scope Gaps",
+            "\U0001f4b0 BOQ Quality",
+            "\U0001f3d8\ufe0f Delhi NCR Pricing",
+            "\U0001f6a8 Bid Risk AI",
+        ])
         tabs = st.tabs(_tab_labels)
 
         with tabs[0]:
@@ -7410,6 +9766,603 @@ def main():
             with tabs[7]:
                 render_bid_strategy_tab(analysis_payload)
 
+        # ── Sprint 35: Scope Gaps Tab ──
+        _s35_scope_idx = 8 if analysis_payload else 7
+        with tabs[_s35_scope_idx]:
+          try:
+            st.markdown("#### Scope Dependency Analysis")
+
+            # ── KB Stats Banner ──
+            try:
+                from src.knowledge_base import get_stats as _kb_get_stats
+                _kb_st = _kb_get_stats()
+                st.markdown(
+                    f'<div style="background:linear-gradient(135deg,#1e3a5f,#2d5a87);padding:0.8rem 1.2rem;'
+                    f'border-radius:10px;margin-bottom:1rem;display:flex;gap:2rem;flex-wrap:wrap;">'
+                    f'<div><span style="color:#93c5fd;font-size:0.75rem;text-transform:uppercase;">Taxonomy</span>'
+                    f'<div style="color:white;font-size:1.3rem;font-weight:700">{_kb_st.get("taxonomy_items",0):,}</div></div>'
+                    f'<div><span style="color:#93c5fd;font-size:0.75rem;text-transform:uppercase;">Synonyms</span>'
+                    f'<div style="color:white;font-size:1.3rem;font-weight:700">{_kb_st.get("synonym_entries",0):,}</div></div>'
+                    f'<div><span style="color:#93c5fd;font-size:0.75rem;text-transform:uppercase;">Dep Rules</span>'
+                    f'<div style="color:white;font-size:1.3rem;font-weight:700">{_kb_st.get("dependency_rules",0):,}</div></div>'
+                    f'<div><span style="color:#93c5fd;font-size:0.75rem;text-transform:uppercase;">RFI Rules</span>'
+                    f'<div style="color:white;font-size:1.3rem;font-weight:700">{_kb_st.get("rfi_rules",0):,}</div></div>'
+                    f'</div>', unsafe_allow_html=True,
+                )
+            except Exception:
+                pass
+
+            from src.boq.scope_dependencies import (
+                analyze_scope_gaps as _s35c_scope_gaps,
+                get_rule_count as _s35c_rule_count,
+                get_required_item_count as _s35c_item_count,
+            )
+
+            st.caption(f"Checks extracted BOQ against **{_s35c_rule_count()} dependency rules** covering **{_s35c_item_count()} required items**.")
+
+            # ── Building Type Selector ──
+            _s35c_btype_options = [
+                "Residential", "Commercial", "Institutional (Hospital)",
+                "Institutional (School)", "Hotel / Hospitality",
+                "Industrial / Factory", "Data Center", "Mixed Use",
+            ]
+            _s35c_btype_col1, _s35c_btype_col2 = st.columns([2, 3])
+            with _s35c_btype_col1:
+                _s35c_btype = st.selectbox(
+                    "Building Type", _s35c_btype_options, index=0,
+                    help="Select building type for context-specific scope gap detection",
+                    key="_s35c_building_type",
+                )
+            _s35c_btype_map = {
+                "Residential": "residential",
+                "Commercial": "commercial",
+                "Institutional (Hospital)": "hospital",
+                "Institutional (School)": "school",
+                "Hotel / Hospitality": "hotel",
+                "Industrial / Factory": "factory",
+                "Data Center": "data_center",
+                "Mixed Use": "commercial",
+            }
+            _s35c_btype_val = _s35c_btype_map.get(_s35c_btype, "residential")
+
+            _s35c_payload = analysis_payload or {}
+            _s35c_boq = _s35c_payload.get("boq_items") or []
+            if not _s35c_boq and _s35c_payload.get("boq_stats", {}).get("items"):
+                _s35c_boq = _s35c_payload["boq_stats"]["items"]
+
+            # Infer elements from payload
+            _s35c_elems = set()
+            _s35c_st = _s35c_payload.get("structural_takeoff", {})
+            if _s35c_st and _s35c_st.get("mode") not in (None, "error"):
+                _s35c_elems.update(["footing", "column", "beam", "slab"])
+            for _s35c_bi in _s35c_boq:
+                _s35c_d = (_s35c_bi.get("description") or "").lower()
+                if "footing" in _s35c_d or "foundation" in _s35c_d: _s35c_elems.add("footing")
+                if "column" in _s35c_d: _s35c_elems.add("column")
+                if "beam" in _s35c_d: _s35c_elems.add("beam")
+                if "slab" in _s35c_d: _s35c_elems.add("slab")
+                if "stair" in _s35c_d: _s35c_elems.add("staircase")
+            _s35c_el = list(_s35c_elems) if _s35c_elems else ["footing", "column", "beam", "slab"]
+
+            # Infer rooms
+            _s35c_rooms = set()
+            for _s35c_rm in _s35c_payload.get("plan_graph", {}).get("rooms", []):
+                _s35c_rn = (_s35c_rm.get("name") or _s35c_rm.get("label") or "").lower()
+                if "bed" in _s35c_rn: _s35c_rooms.add("bedroom")
+                elif "living" in _s35c_rn: _s35c_rooms.add("living_room")
+                elif "kitchen" in _s35c_rn: _s35c_rooms.add("kitchen")
+                elif "toilet" in _s35c_rn or "wc" in _s35c_rn: _s35c_rooms.add("toilet")
+                elif "bath" in _s35c_rn: _s35c_rooms.add("bathroom")
+                elif "balcony" in _s35c_rn: _s35c_rooms.add("balcony")
+            _s35c_rl = list(_s35c_rooms) if _s35c_rooms else ["bedroom", "living_room", "kitchen", "toilet", "balcony"]
+
+            _s35c_scope = _s35c_scope_gaps(
+                boq_items=_s35c_boq,
+                detected_elements=_s35c_el,
+                room_types=_s35c_rl,
+                project_params={
+                    "num_floors": 4, "plot_area_sqm": 300,
+                    "building_type": _s35c_btype_val,
+                },
+            )
+
+            c1, c2, c3, c4 = st.columns(4)
+            c1.metric("Rules Fired", _s35c_scope.total_rules_checked, f"of {_s35c_rule_count()}")
+            c2.metric("Items Checked", _s35c_scope.total_items_checked, f"of {_s35c_item_count()}")
+            c3.metric("Gaps Found", _s35c_scope.total_gaps_found,
+                       delta=f"-{_s35c_scope.total_gaps_found}" if _s35c_scope.total_gaps_found else None,
+                       delta_color="inverse")
+            c4.metric("Completeness", f"{_s35c_scope.completeness_score}%")
+
+            st.markdown("---")
+
+            # ── BOQ Taxonomy Matching ──
+            try:
+                from src.knowledge_base.matcher import match_boq_batch, get_matcher as _s35c_get_matcher
+                _s35c_boq_descs = [
+                    b.get("description") or b.get("item_name", "")
+                    for b in _s35c_boq if b.get("description") or b.get("item_name")
+                ]
+                if _s35c_boq_descs:
+                    _s35c_matches = match_boq_batch(_s35c_boq_descs)
+                    _s35c_match_stats = _s35c_get_matcher().get_match_stats(_s35c_matches)
+                    _s35c_mr = _s35c_match_stats["match_rate"]
+                    _s35c_mr_color = "#16a34a" if _s35c_mr > 0.7 else ("#ca8a04" if _s35c_mr > 0.4 else "#dc2626")
+                    st.markdown(
+                        f'<div style="background:rgba(255,255,255,0.03);padding:0.6rem 1rem;border-radius:8px;'
+                        f'border:1px solid rgba(255,255,255,0.08);margin-bottom:0.8rem;">'
+                        f'<span style="font-weight:600;">BOQ \u2192 Taxonomy Match:</span> '
+                        f'<span style="color:{_s35c_mr_color};font-weight:700;">{_s35c_mr:.0%}</span> '
+                        f'({_s35c_match_stats["matched"]}/{_s35c_match_stats["total"]} items matched) '
+                        f'<span style="color:#6b7280;font-size:0.85em;">'
+                        f'| Avg confidence: {_s35c_match_stats["avg_confidence"]:.0%}</span>'
+                        f'</div>', unsafe_allow_html=True,
+                    )
+                    # Store for other tabs
+                    st.session_state["_s35c_match_stats"] = _s35c_match_stats
+                    st.session_state["_s35c_matches"] = _s35c_matches
+            except Exception as _s35c_match_err:
+                import logging as _s35c_log
+                _s35c_log.getLogger(__name__).debug("KB matcher: %s", _s35c_match_err)
+
+            _s35c_lc, _s35c_rc = st.columns([3, 2])
+            with _s35c_lc:
+                st.markdown("##### Critical Missing Items")
+                for _s35c_g in _s35c_scope.critical_gaps[:15]:
+                    st.markdown(
+                        f'<div style="background:rgba(255,255,255,0.05);padding:0.4rem 0.8rem;border-radius:6px;'
+                        f'margin:0.2rem 0;border:1px solid rgba(255,255,255,0.1);">'
+                        f'<strong>{_s35c_g.missing_item}</strong> '
+                        f'<span style="color:#9ca3af;font-size:0.85em">({_s35c_g.trade})</span><br/>'
+                        f'<span style="color:#6b7280;font-size:0.8em">Triggered by: {_s35c_g.triggered_by}</span>'
+                        f'</div>', unsafe_allow_html=True,
+                    )
+                if len(_s35c_scope.critical_gaps) > 15:
+                    st.caption(f"... and {len(_s35c_scope.critical_gaps) - 15} more")
+            with _s35c_rc:
+                st.markdown("##### Coverage by Trade")
+                if _s35c_scope.coverage_by_trade:
+                    _s35c_td = []
+                    for _tr, _inf in _s35c_scope.coverage_by_trade.items():
+                        _rc = _inf.get("rules", 0)
+                        _gc = _inf.get("gaps", 0)
+                        _ic = _inf.get("items", _rc * 3)
+                        _f = _ic - _gc
+                        _p = (_f / _ic * 100) if _ic > 0 else 0
+                        _s35c_td.append({"Trade": _tr, "Rules": _rc, "Gaps": _gc, "Coverage": f"{_p:.0f}%"})
+                    st.dataframe(_s35c_td, use_container_width=True, hide_index=True)
+
+            # ── Code Compliance Section ──
+            try:
+                _s35c_compliance_gaps = [
+                    g for g in (_s35c_scope.all_gaps if hasattr(_s35c_scope, 'all_gaps') else _s35c_scope.critical_gaps)
+                    if hasattr(g, 'is_code_ref') and getattr(g, 'is_code_ref', '')
+                ]
+                if not _s35c_compliance_gaps:
+                    # Also check by trigger keywords for code compliance
+                    _compliance_triggers = {
+                        "building_above_15m", "seismic_zone", "public_building",
+                        "accessibility", "fire_noc", "nbc",
+                    }
+                    _s35c_compliance_gaps = [
+                        g for g in (_s35c_scope.all_gaps if hasattr(_s35c_scope, 'all_gaps') else _s35c_scope.critical_gaps)
+                        if any(ct in getattr(g, 'triggered_by', '').lower() for ct in _compliance_triggers)
+                    ]
+                if _s35c_compliance_gaps:
+                    st.markdown("---")
+                    st.markdown("##### Code Compliance Gaps")
+                    st.caption("Missing items required by NBC 2016, IS codes, or CPWD standards.")
+                    for _cg in _s35c_compliance_gaps[:10]:
+                        _cg_ref = getattr(_cg, 'is_code_ref', '') or ''
+                        _cg_sev = getattr(_cg, 'severity', 'error')
+                        _cg_css = "background:rgba(220,38,38,0.1);border-left:4px solid #dc2626;" if _cg_sev == "error" else "background:rgba(202,138,4,0.1);border-left:4px solid #ca8a04;"
+                        st.markdown(
+                            f'<div style="{_cg_css}padding:0.5rem 0.8rem;border-radius:4px;margin:0.3rem 0;">'
+                            f'<strong>{getattr(_cg, "missing_item", "")}</strong> '
+                            f'<span style="color:#9ca3af;font-size:0.85em;">({getattr(_cg, "trade", "")})</span>'
+                            f'{"<br/><span style=&quot;color:#93c5fd;font-size:0.8em;&quot;>Ref: " + _cg_ref + "</span>" if _cg_ref else ""}'
+                            f'</div>', unsafe_allow_html=True,
+                        )
+                    if len(_s35c_compliance_gaps) > 10:
+                        st.caption(f"... and {len(_s35c_compliance_gaps) - 10} more compliance gaps")
+            except Exception:
+                pass
+
+            # ── Rate Validation Section ──
+            try:
+                from src.knowledge_base.rate_validator import validate_boq_rates as _s35c_validate_rates
+                _s35c_boq_with_rates = [b for b in _s35c_boq if b.get("rate") or b.get("unit_rate")]
+                if _s35c_boq_with_rates:
+                    st.markdown("---")
+                    st.markdown("##### Rate Anomaly Detection")
+                    _s35c_rv = _s35c_validate_rates(_s35c_boq_with_rates)
+                    rv1, rv2, rv3, rv4 = st.columns(4)
+                    rv1.metric("Items Validated", _s35c_rv.items_validated)
+                    rv2.metric("Anomalies", len(_s35c_rv.anomalies),
+                               delta=f"-{len(_s35c_rv.anomalies)}" if _s35c_rv.anomalies else None,
+                               delta_color="inverse")
+                    _rv_hc = "#16a34a" if _s35c_rv.health_score > 80 else (
+                        "#ca8a04" if _s35c_rv.health_score > 60 else "#dc2626")
+                    rv3.markdown(
+                        f"**Rate Health**<br/>"
+                        f"<span style='color:{_rv_hc};font-size:1.8rem;font-weight:700'>"
+                        f"{_s35c_rv.health_score:.0f}</span>"
+                        f"<span style='color:#6b7280;font-size:0.9rem'>/100</span>",
+                        unsafe_allow_html=True,
+                    )
+                    rv4.metric("Critical", _s35c_rv.critical_count)
+                    if _s35c_rv.anomalies:
+                        _rv_sev_css = {
+                            "critical": "background:rgba(220,38,38,0.1);border-left:4px solid #dc2626;",
+                            "high": "background:rgba(234,88,12,0.1);border-left:4px solid #ea580c;",
+                            "medium": "background:rgba(202,138,4,0.1);border-left:4px solid #ca8a04;",
+                            "low": "background:rgba(22,163,74,0.1);border-left:4px solid #16a34a;",
+                        }
+                        for _ra in _s35c_rv.anomalies[:8]:
+                            _ra_css = _rv_sev_css.get(_ra.severity, "")
+                            st.markdown(
+                                f'<div style="{_ra_css}padding:0.5rem 0.8rem;border-radius:4px;margin:0.3rem 0;">'
+                                f'<strong>[{_ra.severity.upper()}]</strong> {_ra.item_description[:60]} '
+                                f'<span style="color:#6b7280;font-size:0.85em;">'
+                                f'Rs {_ra.item_rate:,.0f} vs range Rs {_ra.expected_min:,.0f}-{_ra.expected_max:,.0f}'
+                                f'</span><br/>'
+                                f'<span style="color:#9ca3af;font-size:0.8em;">{_ra.explanation[:120]}</span>'
+                                f'</div>', unsafe_allow_html=True,
+                            )
+                        if len(_s35c_rv.anomalies) > 8:
+                            st.caption(f"... and {len(_s35c_rv.anomalies) - 8} more anomalies")
+                    st.session_state["_s35c_rate_validation"] = _s35c_rv
+            except Exception as _s35c_rv_err:
+                import logging as _s35c_log2
+                _s35c_log2.getLogger(__name__).debug("KB rate validator: %s", _s35c_rv_err)
+
+            # ── Export Section ──
+            st.markdown("---")
+            st.markdown("##### Export")
+            _exp_c1, _exp_c2, _exp_c3 = st.columns(3)
+            with _exp_c1:
+                _sg_csv = _generate_scope_gaps_csv(_s35c_scope)
+                st.download_button(
+                    "Scope Gaps CSV", _sg_csv, "scope_gaps.csv", "text/csv",
+                    use_container_width=True, key="_dl_scope_gaps_csv",
+                )
+            with _exp_c2:
+                _kb_rep = _generate_kb_coverage_report()
+                st.download_button(
+                    "KB Coverage JSON", _kb_rep, "kb_coverage.json", "application/json",
+                    use_container_width=True, key="_dl_kb_coverage",
+                )
+
+            st.session_state["_s35c_scope"] = _s35c_scope
+          except Exception as _s35c_e1:
+            st.error(f"Scope Gaps error: {_s35c_e1}")
+
+        # ── Sprint 35: BOQ Quality Tab ──
+        with tabs[_s35_scope_idx + 1]:
+          try:
+            st.markdown("#### BOQ Quality Analysis")
+            st.caption("Deduplication + quantity cross-validation + completeness scoring.")
+
+            from src.boq.deduplicator import deduplicate_boq as _s35c_dedup
+            from src.analysis.quantity_crosscheck import cross_check_boq as _s35c_xcheck
+            from src.boq.completeness_scorer import (
+                score_boq_completeness as _s35c_comp,
+                get_improvement_suggestions as _s35c_sugg,
+            )
+
+            _s35c_boq2 = (analysis_payload or {}).get("boq_items") or []
+            if not _s35c_boq2 and (analysis_payload or {}).get("boq_stats", {}).get("items"):
+                _s35c_boq2 = analysis_payload["boq_stats"]["items"]
+
+            if not _s35c_boq2:
+                st.info("No BOQ items extracted. Upload drawings with BOQ for quality analysis.")
+            else:
+                _s35c_dd = _s35c_dedup(_s35c_boq2)
+                c1, c2, c3 = st.columns(3)
+                c1.metric("Original Items", _s35c_dd.original_count)
+                c2.metric("After Dedup", _s35c_dd.deduplicated_count,
+                           delta=f"-{_s35c_dd.duplicates_found}", delta_color="inverse")
+                c3.metric("Reduction", f"{_s35c_dd.reduction_pct:.0f}%")
+
+                if _s35c_dd.merge_log:
+                    with st.expander(f"Merge Log ({len(_s35c_dd.merge_log)} merges)"):
+                        for _me in _s35c_dd.merge_log[:8]:
+                            st.markdown(f"**Kept:** {_me.kept_description[:80]}")
+                            for _md in _me.merged_descriptions:
+                                if _md != _me.kept_description:
+                                    st.caption(f"  Merged: {_md[:80]} (sim: {_me.similarity:.0%})")
+
+                st.markdown("---")
+                st.markdown("##### Quantity Cross-Validation")
+                _s35c_clean = _s35c_dd.deduplicated_items if _s35c_dd.deduplicated_items else _s35c_boq2
+                _s35c_xr = _s35c_xcheck(_s35c_clean)
+                c1, c2, c3, c4 = st.columns(4)
+                c1.metric("Checks", len(_s35c_xr.checks))
+                c2.metric("Issues", _s35c_xr.issues_count)
+                c3.metric("Critical", len(_s35c_xr.critical_issues))
+                c4.metric("Confidence", f"{_s35c_xr.overall_confidence}%")
+
+                _sev_css = {
+                    "ok": ("background:rgba(22,163,74,0.1);border-left:4px solid #16a34a;", "&#9989;"),
+                    "low": ("background:rgba(22,163,74,0.1);border-left:4px solid #16a34a;", "&#128309;"),
+                    "medium": ("background:rgba(202,138,4,0.1);border-left:4px solid #ca8a04;", "&#128993;"),
+                    "high": ("background:rgba(234,88,12,0.1);border-left:4px solid #ea580c;", "&#128992;"),
+                    "critical": ("background:rgba(220,38,38,0.1);border-left:4px solid #dc2626;", "&#128308;"),
+                }
+                for _chk in _s35c_xr.checks[:10]:
+                    _sv = _chk.severity.value
+                    _css, _ico = _sev_css.get(_sv, ("background:rgba(37,99,235,0.1);border-left:4px solid #2563eb;", "&#8505;"))
+                    _var = f"{_chk.variance_pct:+.1f}%" if _chk.variance_pct else ""
+                    st.markdown(
+                        f'<div style="{_css}padding:0.5rem 0.8rem;border-radius:4px;margin:0.3rem 0;">'
+                        f'{_ico} <strong>[{_sv.upper()}]</strong> {_chk.check_type} &mdash; '
+                        f'<span style="color:#9ca3af">{_chk.explanation[:120]}</span>'
+                        f'</div>', unsafe_allow_html=True,
+                    )
+
+                st.markdown("---")
+                st.markdown("##### Completeness Score")
+                _s35c_cr = _s35c_comp(_s35c_clean)
+                _gcolors = {"A": "#16a34a", "B": "#65a30d", "C": "#ca8a04", "D": "#ea580c", "E": "#dc2626", "F": "#991b1b"}
+                c1, c2, c3 = st.columns(3)
+                c1.metric("Score", f"{_s35c_cr.overall_score:.0f}/100")
+                c2.markdown(f"**Grade:** <span style='color:{_gcolors.get(_s35c_cr.grade, '#6b7280')};font-size:2.5rem;font-weight:bold'>{_s35c_cr.grade}</span>", unsafe_allow_html=True)
+                c3.metric("Trades", f"{_s35c_cr.trades_found}/{_s35c_cr.trades_expected}")
+
+                if _s35c_cr.missing_trades:
+                    with st.expander(f"Missing Trades ({len(_s35c_cr.missing_trades)})"):
+                        for _mt in _s35c_cr.missing_trades:
+                            st.markdown(f"- **{_mt.replace('_', ' ').title()}**")
+
+                _s35c_suggestions = _s35c_sugg(_s35c_cr, max_suggestions=5)
+                if _s35c_suggestions:
+                    with st.expander("Improvement Suggestions"):
+                        for _si, _s in enumerate(_s35c_suggestions, 1):
+                            st.markdown(f"**{_si}.** {_s}")
+
+                # ── KB Taxonomy Match Analysis ──
+                try:
+                    from src.knowledge_base.matcher import match_boq_batch as _bq_match_batch, get_matcher as _bq_get_matcher
+                    _bq_descs = [
+                        b.get("description") or b.get("item_name", "")
+                        for b in _s35c_clean if b.get("description") or b.get("item_name")
+                    ]
+                    if _bq_descs:
+                        st.markdown("---")
+                        st.markdown("##### BOQ Item Classification")
+                        _bq_results = _bq_match_batch(_bq_descs)
+                        _bq_stats = _bq_get_matcher().get_match_stats(_bq_results)
+
+                        bq1, bq2, bq3 = st.columns(3)
+                        _bq_mr = _bq_stats["match_rate"]
+                        _bq_col = "#16a34a" if _bq_mr > 0.7 else ("#ca8a04" if _bq_mr > 0.4 else "#dc2626")
+                        bq1.markdown(
+                            f"**Match Rate**<br/>"
+                            f"<span style='color:{_bq_col};font-size:1.6rem;font-weight:700'>{_bq_mr:.0%}</span>",
+                            unsafe_allow_html=True,
+                        )
+                        bq2.metric("Matched", _bq_stats["matched"], f"of {_bq_stats['total']}")
+                        bq3.metric("Avg Confidence", f"{_bq_stats['avg_confidence']:.0%}")
+
+                        # Show by-discipline breakdown
+                        if _bq_stats.get("by_discipline"):
+                            with st.expander("Match by Discipline"):
+                                _bq_disc_rows = [
+                                    {"Discipline": d.replace("_", " ").title(), "Matched Items": c}
+                                    for d, c in sorted(_bq_stats["by_discipline"].items(), key=lambda x: -x[1])
+                                ]
+                                st.dataframe(_bq_disc_rows, use_container_width=True, hide_index=True)
+
+                        # Show unmatched items
+                        _bq_unmatched = [r.input_text for r in _bq_results if not r.matched]
+                        if _bq_unmatched:
+                            with st.expander(f"Unmatched Items ({len(_bq_unmatched)})"):
+                                for _u in _bq_unmatched[:10]:
+                                    st.markdown(f"- {_u[:100]}")
+                                if len(_bq_unmatched) > 10:
+                                    st.caption(f"... and {len(_bq_unmatched) - 10} more")
+                except Exception:
+                    pass
+
+                # ── KB Completeness V2 ──
+                try:
+                    from src.knowledge_base.completeness_v2 import score_completeness_v2 as _bq_comp_v2
+                    _bq_btype = st.session_state.get("_s35c_building_type", "Residential")
+                    _bq_btype_map2 = {
+                        "Residential": "residential", "Commercial": "commercial",
+                        "Institutional (Hospital)": "hospital", "Institutional (School)": "school",
+                        "Hotel / Hospitality": "hotel", "Industrial / Factory": "factory",
+                        "Data Center": "data_center", "Mixed Use": "commercial",
+                    }
+                    _bq_btype_v = _bq_btype_map2.get(_bq_btype, "residential")
+                    _bq_v2 = _bq_comp_v2(_s35c_clean, _bq_btype_v)
+
+                    st.markdown("---")
+                    st.markdown("##### KB-Enhanced Completeness (8 Disciplines)")
+                    _v2_grade_colors = {
+                        "A": "#16a34a", "B": "#65a30d", "C": "#ca8a04",
+                        "D": "#ea580c", "E": "#dc2626", "F": "#991b1b",
+                    }
+                    v2c1, v2c2, v2c3, v2c4 = st.columns(4)
+                    v2c1.markdown(
+                        f"**Score**<br/>"
+                        f"<span style='color:{_v2_grade_colors.get(_bq_v2.grade, '#6b7280')};font-size:1.6rem;font-weight:700'>"
+                        f"{_bq_v2.overall_score:.0f}/100</span>",
+                        unsafe_allow_html=True,
+                    )
+                    v2c2.markdown(
+                        f"**Grade**<br/>"
+                        f"<span style='color:{_v2_grade_colors.get(_bq_v2.grade, '#6b7280')};font-size:2rem;font-weight:700'>"
+                        f"{_bq_v2.grade}</span>",
+                        unsafe_allow_html=True,
+                    )
+                    v2c3.metric("Disciplines", f"{_bq_v2.disciplines_found}/{_bq_v2.disciplines_expected}")
+                    v2c4.metric("Match Rate", f"{_bq_v2.match_rate:.0%}")
+
+                    # Sub-score breakdown
+                    _ss1, _ss2, _ss3, _ss4 = st.columns(4)
+                    _ss1.caption(f"Breadth: {getattr(_bq_v2, 'breadth_score', 0):.0f}")
+                    _ss2.caption(f"Match: {getattr(_bq_v2, 'match_score', 0):.0f}")
+                    _ss3.caption(f"Depth: {getattr(_bq_v2, 'depth_score', 0):.0f}")
+                    _ss4.caption(f"Key Items: {getattr(_bq_v2, 'key_items_score', 0):.0f}")
+
+                    if _bq_v2.top_gaps:
+                        with st.expander(f"Top Coverage Gaps ({len(_bq_v2.top_gaps)})"):
+                            for _tg in _bq_v2.top_gaps:
+                                st.markdown(f"- {_tg}")
+
+                    # Discipline heatmap
+                    _v2_disc_data = []
+                    for _dc in _bq_v2.discipline_coverage:
+                        _st_color = "#16a34a" if _dc.status == "good" else (
+                            "#ca8a04" if _dc.status == "partial" else "#dc2626")
+                        _v2_disc_data.append({
+                            "Discipline": _dc.display_name,
+                            "Coverage": f"{_dc.coverage_pct:.0f}%",
+                            "Matched": _dc.matched_items,
+                            "Total KB": _dc.taxonomy_items,
+                            "Status": _dc.status.title(),
+                        })
+                    if _v2_disc_data:
+                        with st.expander("Discipline Coverage Matrix"):
+                            st.dataframe(_v2_disc_data, use_container_width=True, hide_index=True)
+                except Exception:
+                    pass
+
+                st.session_state["_s35c_xcheck"] = _s35c_xr
+                st.session_state["_s35c_comp"] = _s35c_cr
+
+          except Exception as _s35c_e2:
+            st.error(f"BOQ Quality error: {_s35c_e2}")
+
+        # ── Sprint 35: Delhi NCR Pricing Tab ──
+        with tabs[_s35_scope_idx + 2]:
+          try:
+            st.markdown("#### Delhi NCR Pricing Analysis")
+            st.caption("Material costs and escalation for **Delhi NCR**. CPWD DSR 2024 base rates.")
+
+            from src.pricing.location_factors import (
+                get_city_factor as _s35c_city_f,
+                get_material_city_factor as _s35c_mat_f,
+            )
+            from src.pricing.escalation import escalate_rate as _s35c_esc
+
+            _s35c_delhi = _s35c_city_f("Delhi")
+            c1, c2, c3 = st.columns(3)
+            c1.metric("Base", "Delhi NCR", delta=f"{_s35c_delhi:.2f}x")
+            c2.metric("NCR Cities", "6")
+            c3.metric("Duration", "18 months")
+
+            st.markdown("---")
+            st.markdown("##### Material Costs \u2014 Delhi NCR vs Metros")
+            _mats = ["steel", "cement", "aggregates", "labour", "timber", "bricks", "fuel_transport"]
+            _cities = ["Delhi", "Gurgaon", "Noida", "Mumbai", "Bangalore", "Chennai"]
+            _md = []
+            for _m in _mats:
+                _row = {"Material": _m.replace("_", " ").title()}
+                for _c in _cities:
+                    _row[_c] = f"{_s35c_mat_f(_c, _m):.3f}"
+                _md.append(_row)
+            st.dataframe(_md, use_container_width=True, hide_index=True)
+
+            st.markdown("---")
+            st.markdown("##### Rate Escalation \u2014 Key Items")
+            _ki = [
+                ("RCC M25", 8200, "rcc_concrete"), ("Steel Fe500D", 75000, "steel"),
+                ("Brick Masonry", 5800, "masonry"), ("Cement Plaster", 180, "plaster"),
+                ("Vitrified Tiles", 450, "flooring"), ("PCC M7.5", 4500, "pcc_concrete"),
+            ]
+            _ed = []
+            for _n, _b, _t in _ki:
+                try:
+                    _e = _s35c_esc(_b, _t, 18, location="Delhi")
+                    _er = _e.get("escalated_rate", _b)
+                    _ed.append({"Item": _n, "Base (Rs)": f"{_b:,}", "Escalated (18mo)": f"{_er:,.0f}",
+                                "Increase": f"{((_er/_b)-1)*100:+.1f}%"})
+                except Exception:
+                    _ed.append({"Item": _n, "Base (Rs)": f"{_b:,}", "Escalated (18mo)": f"{_b:,}", "Increase": "N/A"})
+            st.dataframe(_ed, use_container_width=True, hide_index=True)
+
+          except Exception as _s35c_e3:
+            st.error(f"Delhi NCR Pricing error: {_s35c_e3}")
+
+        # ── Sprint 35: Bid Risk Assessment Tab ──
+        with tabs[_s35_scope_idx + 3]:
+          try:
+            st.markdown("#### Bid Risk Assessment")
+            st.caption("**7-category risk analysis** with GO / NO_GO recommendation. Delhi NCR focused.")
+
+            from src.analysis.bid_risk_analyzer import analyze_bid_risk as _s35c_risk_fn
+
+            _s35c_boq4 = (analysis_payload or {}).get("boq_items") or []
+            _s35c_sr = st.session_state.get("_s35c_scope")
+            _s35c_xr2 = st.session_state.get("_s35c_xcheck")
+            _s35c_cr2 = st.session_state.get("_s35c_comp")
+
+            _s35c_sg = _s35c_sr.total_gaps_found if _s35c_sr else 0
+            _s35c_qm = _s35c_xr2.issues_count if _s35c_xr2 else 0
+            _s35c_cs = _s35c_cr2.overall_score if _s35c_cr2 else 50.0
+
+            _s35c_docs = []
+            _s35c_ov = (analysis_payload or {}).get("drawing_overview") or {}
+            _s35c_disc = _s35c_ov.get("disciplines_detected", [])
+            if "structural" in _s35c_disc: _s35c_docs.append("structural_drawings")
+            if "architectural" in _s35c_disc: _s35c_docs.append("architectural_drawings")
+            if (analysis_payload or {}).get("boq_stats", {}).get("total_items", 0) > 0: _s35c_docs.append("boq")
+
+            _s35c_rr = _s35c_risk_fn(
+                boq_items=_s35c_boq4, scope_gaps=_s35c_sg, quantity_mismatches=_s35c_qm,
+                missing_rates_pct=0.0, completeness_score=_s35c_cs,
+                project_duration_months=18, project_value_lakhs=2500,
+                document_types_available=_s35c_docs, contract_conditions={}, location="Delhi",
+            )
+
+            _rec = _s35c_rr.bid_recommendation
+            _rec_colors = {"GO": ("#065f46", "#059669"), "GO_WITH_QUALIFICATIONS": ("#92400e", "#d97706"),
+                           "NO_GO": ("#991b1b", "#dc2626"), "NEEDS_REVIEW": ("#92400e", "#ea580c")}
+            _bg1, _bg2 = _rec_colors.get(_rec, ("#4a5568", "#718096"))
+            st.markdown(
+                f'<div style="background:linear-gradient(135deg,{_bg1},{_bg2});'
+                f'padding:1.25rem 2rem;border-radius:12px;color:white;text-align:center;margin:0.5rem 0;">'
+                f'<div style="font-size:2rem;font-weight:700">{_rec.replace("_"," ")}</div>'
+                f'<div style="opacity:0.9">Risk Score: {_s35c_rr.overall_risk_score:.0f}/100 | Delhi NCR</div>'
+                f'</div>', unsafe_allow_html=True,
+            )
+
+            c1, c2, c3, c4 = st.columns(4)
+            c1.metric("Risk Score", f"{_s35c_rr.overall_risk_score:.0f}/100")
+            c2.metric("Critical", len(_s35c_rr.critical_risks))
+            c3.metric("High", len(_s35c_rr.high_risks))
+            c4.metric("Total", len(_s35c_rr.risks))
+
+            st.markdown("---")
+            _rl, _rr = st.columns([3, 2])
+            with _rl:
+                st.markdown("##### Risk Details")
+                _rcss = {"critical": "background:rgba(220,38,38,0.1);border-left:4px solid #dc2626;",
+                          "high": "background:rgba(234,88,12,0.1);border-left:4px solid #ea580c;",
+                          "medium": "background:rgba(202,138,4,0.1);border-left:4px solid #ca8a04;",
+                          "low": "background:rgba(22,163,74,0.1);border-left:4px solid #16a34a;"}
+                for _ri in _s35c_rr.risks[:12]:
+                    _lev = _ri.level.value
+                    _cs = _rcss.get(_lev, "background:rgba(37,99,235,0.1);border-left:4px solid #2563eb;")
+                    _imp = f"<br/><em>Impact: {_ri.financial_impact}</em>" if _ri.financial_impact else ""
+                    _mit = f"<br/><strong>Mitigation:</strong> {_ri.mitigation[:100]}" if _ri.mitigation else ""
+                    st.markdown(
+                        f'<div style="{_cs}padding:0.5rem 0.8rem;border-radius:4px;margin:0.3rem 0;">'
+                        f'<strong>[{_lev.upper()}] [{_ri.category.value.upper()}]</strong> {_ri.title}<br/>'
+                        f'<span style="font-size:0.85em">{_ri.description[:150]}</span>{_imp}{_mit}'
+                        f'</div>', unsafe_allow_html=True,
+                    )
+            with _rr:
+                st.markdown("##### Risk by Category")
+                _cd = [{"Category": _cat.title(), "Risks": _cnt}
+                       for _cat, _cnt in sorted(_s35c_rr.risk_by_category.items(), key=lambda x: -x[1])]
+                st.dataframe(_cd, use_container_width=True, hide_index=True)
+
+          except Exception as _s35c_e4:
+            st.error(f"Bid Risk error: {_s35c_e4}")
+
         # Footer
         st.markdown("---")
         st.markdown("""
@@ -7417,6 +10370,334 @@ def main():
             <span style="color: #3f3f46; font-size: 0.75rem;">xBOQ &bull; Pre-Bid Scope & Risk Check</span>
         </div>
         """, unsafe_allow_html=True)
+
+    # ------------------------------------------------------------------
+    # TAB 20: Interactive Drawing Measurement (Sprint 36)
+    # ------------------------------------------------------------------
+    with preview_tabs[20]:
+        try:
+            import sys as _sys
+            import os as _os
+            _app_root = _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))
+            if _app_root not in _sys.path:
+                _sys.path.insert(0, _app_root)
+            from app.measurement_tool import render_measurement_tool
+
+            # Retrieve PDF path and OCR cache from session state
+            _meas_pdf = st.session_state.get("_xboq_pdf_path") or ""
+            _meas_ocr_cache: dict = st.session_state.get("_xboq_ocr_cache") or {}
+
+            # Convert {page_idx: text} → [(page_idx, text, "unknown")]
+            # Scale detector handles "unknown" doc_type gracefully
+            _meas_page_texts = [
+                (int(pidx), txt, "unknown")
+                for pidx, txt in _meas_ocr_cache.items()
+                if txt and txt.strip()
+            ]
+
+            # Enrich with doc_types from diagnostics if available
+            _meas_page_index = (payload.get("diagnostics") or {}).get("page_index", {})
+            if _meas_page_index and isinstance(_meas_page_index, dict):
+                _meas_dt_map = {
+                    pg.get("page_idx", i): pg.get("doc_type", "unknown")
+                    for i, pg in enumerate(_meas_page_index.get("pages", []))
+                }
+                _meas_page_texts = [
+                    (pidx, txt, _meas_dt_map.get(pidx, "unknown"))
+                    for pidx, txt, _ in _meas_page_texts
+                ]
+
+            render_measurement_tool(
+                pdf_path=_meas_pdf or None,
+                page_texts=_meas_page_texts or None,
+                session_key="main",
+            )
+        except Exception as _meas_err:
+            st.error(f"Measurement tool error: {type(_meas_err).__name__}: {_meas_err}")
+            with st.expander("Traceback", expanded=False):
+                import traceback as _tb
+                st.code(_tb.format_exc())
+
+    # ------------------------------------------------------------------
+    # TAB 21: Bid Intelligence (Sprint 40)
+    # ------------------------------------------------------------------
+    with preview_tabs[21]:
+        try:
+            _intel_payload = payload or {}
+            _render_bid_intelligence_tab(_intel_payload)
+        except Exception as _intel_tab_err:
+            st.error(f"Bid Intelligence error: {type(_intel_tab_err).__name__}: {_intel_tab_err}")
+            with st.expander("Traceback"):
+                import traceback as _tb2
+                st.code(_tb2.format_exc())
+
+
+# =============================================================================
+# Sprint 40: Bid Intelligence Tab renderer
+# =============================================================================
+
+def _render_bid_intelligence_tab(payload: dict) -> None:
+    """
+    🧠 Bid Intelligence tab — readiness score, gap analysis, RFI list, chat.
+    Gracefully degrades when bid_synthesis not in payload.
+    """
+    synthesis = payload.get("bid_synthesis") or {}
+    gaps_raw = payload.get("gaps") or []
+    n_chunks = payload.get("chroma_indexed_chunks", 0)
+
+    if not synthesis:
+        st.info(
+            "**Bid Intelligence** requires the Semantic Intelligence Layer.\n\n"
+            "Run the analysis on a bid package, or install optional dependencies:\n\n"
+            "```\npip install chromadb sentence-transformers\n```"
+        )
+        if gaps_raw:
+            st.subheader("Gap Analysis (rule-based only)")
+            _render_gap_table(gaps_raw)
+        return
+
+    score = synthesis.get("bid_readiness_score", 0)
+    label = synthesis.get("bid_readiness_label", "UNKNOWN")
+    est_cost = synthesis.get("estimated_cost_inr", 0)
+    gap_exposure = synthesis.get("total_gap_exposure_inr", 0)
+    contingency = synthesis.get("recommended_contingency_pct", 10.0)
+    executive_summary = synthesis.get("executive_summary", "")
+    cost_per_sqm = synthesis.get("cost_per_sqm", 0)
+
+    # ── Readiness score hero ──────────────────────────────────────────────
+    _score_color = "#22c55e" if score >= 75 else "#f59e0b" if score >= 50 else "#ef4444"
+    st.markdown(
+        f'<div style="background:linear-gradient(135deg,#0f172a,#1e293b);'
+        f'border-left:6px solid {_score_color};border-radius:12px;'
+        f'padding:1.2rem 1.5rem;margin-bottom:1rem;">'
+        f'<div style="display:flex;align-items:center;gap:2rem;flex-wrap:wrap;">'
+        f'<div>'
+        f'<div style="color:#94a3b8;font-size:0.75rem;text-transform:uppercase;letter-spacing:0.05em">Bid Readiness</div>'
+        f'<div style="color:{_score_color};font-size:3rem;font-weight:800;line-height:1">{score}</div>'
+        f'<div style="color:{_score_color};font-size:0.85rem;font-weight:600">{label}</div>'
+        f'</div>'
+        f'<div style="flex:1;color:#e2e8f0;font-size:0.92rem;line-height:1.5">{executive_summary}</div>'
+        f'</div>'
+        f'</div>',
+        unsafe_allow_html=True,
+    )
+
+    # ── Key metrics row ───────────────────────────────────────────────────
+    _mc1, _mc2, _mc3, _mc4 = st.columns(4)
+    _mc1.metric(
+        "Estimated Cost",
+        f"₹{est_cost/1e7:.1f} Cr" if est_cost > 0 else "N/A",
+        f"₹{cost_per_sqm:,.0f}/sqm" if cost_per_sqm > 0 else None,
+    )
+    _mc2.metric(
+        "Gap Exposure",
+        f"₹{gap_exposure/1e7:.1f} Cr" if gap_exposure > 0 else "Low",
+        delta=f"{len(gaps_raw)} gap(s) identified",
+        delta_color="off",
+    )
+    _mc3.metric("Recommended Contingency", f"{contingency:.1f}%")
+    _mc4.metric("Chunks Indexed", f"{n_chunks:,}" if n_chunks else "N/A")
+
+    st.markdown("---")
+
+    # ── Gap Analysis ──────────────────────────────────────────────────────
+    _crit = [g for g in gaps_raw if g.get("severity") == "CRITICAL"]
+    _high = [g for g in gaps_raw if g.get("severity") == "HIGH"]
+    _med_low = [g for g in gaps_raw if g.get("severity") not in ("CRITICAL", "HIGH")]
+
+    st.subheader(f"Gap Analysis — {len(gaps_raw)} Gap(s) Identified")
+
+    _gap_tab1, _gap_tab2, _gap_tab3, _gap_tab4 = st.tabs([
+        f"🔴 Critical ({len(_crit)})",
+        f"🟠 High ({len(_high)})",
+        f"🟡 Medium/Low ({len(_med_low)})",
+        "All",
+    ])
+    with _gap_tab1:
+        _render_gap_table(_crit) if _crit else st.success("No critical gaps identified.")
+    with _gap_tab2:
+        _render_gap_table(_high) if _high else st.success("No high-severity gaps.")
+    with _gap_tab3:
+        _render_gap_table(_med_low) if _med_low else st.info("No medium/low gaps.")
+    with _gap_tab4:
+        _render_gap_table(gaps_raw) if gaps_raw else st.success("No gaps identified.")
+
+    st.markdown("---")
+
+    # ── RFI List ──────────────────────────────────────────────────────────
+    rfi_list = synthesis.get("rfi_list") or []
+    if rfi_list:
+        st.subheader(f"RFI List — {len(rfi_list)} RFI(s) Ready to Send")
+        with st.expander("View / Copy RFIs", expanded=False):
+            for rfi in rfi_list[:30]:
+                ref = rfi.get("ref", "RFI")
+                priority = rfi.get("priority", "MEDIUM")
+                trade = rfi.get("trade", "general")
+                question = rfi.get("question", "")
+                _pc = "#ef4444" if priority == "CRITICAL" else "#f59e0b" if priority == "HIGH" else "#6b7280"
+                st.markdown(
+                    f'<div style="border-left:3px solid {_pc};padding:0.5rem 0.8rem;'
+                    f'background:#1e293b;border-radius:4px;margin-bottom:0.5rem;">'
+                    f'<span style="color:{_pc};font-weight:600">{ref}</span> '
+                    f'<span style="color:#94a3b8;font-size:0.8rem">[{priority}] {trade}</span><br>'
+                    f'<span style="color:#e2e8f0">{question}</span>'
+                    f'</div>',
+                    unsafe_allow_html=True,
+                )
+
+    # ── Risk Register ──────────────────────────────────────────────────────
+    risk_reg = synthesis.get("risk_register") or []
+    if risk_reg:
+        st.subheader(f"Risk Register — {len(risk_reg)} Risk(s)")
+        with st.expander("View Risk Register", expanded=False):
+            import pandas as _pd
+            _rdf = _pd.DataFrame(risk_reg)[["trade", "probability", "impact", "risk", "mitigation"]]
+            _rdf.columns = ["Trade", "Probability", "Impact", "Risk", "Mitigation"]
+            st.dataframe(_rdf, use_container_width=True, hide_index=True)
+
+    # ── Scope Summary ──────────────────────────────────────────────────────
+    scope = synthesis.get("scope_summary") or {}
+    if scope:
+        st.subheader("Scope Summary")
+        with st.expander("View by Trade", expanded=False):
+            for trade, info in scope.items():
+                items = info.get("items", 0)
+                trade_cost = info.get("estimated_cost_inr", 0)
+                cost_str = f"₹{trade_cost/1e5:.1f}L" if trade_cost > 0 else "—"
+                extras = []
+                if info.get("concrete_cum"):
+                    extras.append(f"Concrete: {info['concrete_cum']:.0f} cum")
+                if info.get("steel_kg"):
+                    extras.append(f"Steel: {info['steel_kg']:.0f} kg")
+                extra_str = " | ".join(extras)
+                st.markdown(
+                    f"**{trade.title()}** — {items} items, {cost_str}"
+                    + (f" | {extra_str}" if extra_str else "")
+                )
+
+    st.markdown("---")
+
+    # ── Conversational Q&A ────────────────────────────────────────────────
+    st.subheader("💬 Ask About This Bid")
+
+    _sug_cols = st.columns(3)
+    _suggestions = [
+        "What are the critical blockers?",
+        "What RFIs should I send first?",
+        "What is the recommended contingency?",
+    ]
+    for _sc, _sq in zip(_sug_cols, _suggestions):
+        if _sc.button(_sq, key=f"_intel_sug_{_sq[:20]}", use_container_width=True):
+            st.session_state["_intel_chat_input"] = _sq
+
+    _chat_history_key = "_intel_chat_history"
+    if _chat_history_key not in st.session_state:
+        st.session_state[_chat_history_key] = []
+
+    _user_q = st.chat_input("Ask anything about this bid…", key="_intel_chat")
+    if not _user_q:
+        _user_q = st.session_state.pop("_intel_chat_input", None)
+
+    if _user_q:
+        try:
+            from src.bidagent.agent import BidAgent
+            from src.reasoning.bid_synthesizer import BidSynthesis, synthesize_bid
+            from src.reasoning.gap_analyzer import Gap
+
+            # Reconstruct synthesis + gaps from payload dicts
+            _gaps_obj = [
+                Gap(
+                    id=g.get("id", ""),
+                    trade=g.get("trade", "general"),
+                    severity=g.get("severity", "MEDIUM"),
+                    description=g.get("description", ""),
+                    evidence=g.get("evidence") or [],
+                    action_required=g.get("action_required", ""),
+                    cost_impact=g.get("cost_impact"),
+                    source=g.get("source", "rule"),
+                )
+                for g in gaps_raw
+            ]
+
+            _synth_obj = BidSynthesis(
+                project_name=synthesis.get("project_name", "Project"),
+                bid_readiness_score=synthesis.get("bid_readiness_score", score),
+                bid_readiness_label=synthesis.get("bid_readiness_label", label),
+                executive_summary=executive_summary,
+                scope_summary=synthesis.get("scope_summary", {}),
+                critical_gaps=[g for g in _gaps_obj if g.severity == "CRITICAL"],
+                all_gaps=_gaps_obj,
+                total_gap_exposure_inr=synthesis.get("total_gap_exposure_inr", 0),
+                rfi_list=synthesis.get("rfi_list", []),
+                risk_register=synthesis.get("risk_register", []),
+                estimated_cost_inr=synthesis.get("estimated_cost_inr", 0),
+                cost_per_sqm=synthesis.get("cost_per_sqm", 0),
+                recommended_contingency_pct=synthesis.get("recommended_contingency_pct", 10.0),
+            )
+
+            _agent = BidAgent(payload=payload, synthesis=_synth_obj)
+            _ans = _agent.ask(_user_q)
+
+            st.session_state[_chat_history_key].append({"role": "user", "content": _user_q})
+            st.session_state[_chat_history_key].append({"role": "assistant", "content": _ans.answer})
+
+        except Exception as _chat_err:
+            st.session_state[_chat_history_key].append({"role": "user", "content": _user_q})
+            st.session_state[_chat_history_key].append({
+                "role": "assistant",
+                "content": f"Chat error: {_chat_err}. Try again after installing sentence-transformers.",
+            })
+
+    # Display chat history
+    for _msg in st.session_state.get(_chat_history_key, []):
+        with st.chat_message(_msg["role"]):
+            st.markdown(_msg["content"])
+
+    if st.session_state.get(_chat_history_key):
+        if st.button("🗑️ Clear chat", key="_intel_clear_chat"):
+            st.session_state[_chat_history_key] = []
+            st.rerun()
+
+    # ── Download bid report ───────────────────────────────────────────────
+    st.markdown("---")
+    _bid_report_json = json.dumps(
+        {k: v for k, v in payload.items() if k in ("bid_synthesis", "gaps", "chroma_indexed_chunks")},
+        indent=2,
+        default=str,
+    )
+    st.download_button(
+        "📄 Download Bid Intelligence Report (JSON)",
+        data=_bid_report_json,
+        file_name=f"bid_intelligence_{payload.get('project_id','project')}.json",
+        mime="application/json",
+        use_container_width=True,
+    )
+
+
+def _render_gap_table(gaps: list) -> None:
+    """Render a list of gap dicts as styled cards."""
+    if not gaps:
+        st.info("No gaps in this category.")
+        return
+    for g in gaps:
+        sev = g.get("severity", "MEDIUM")
+        _c = {"CRITICAL": "#ef4444", "HIGH": "#f59e0b", "MEDIUM": "#3b82f6", "LOW": "#6b7280"}.get(sev, "#6b7280")
+        action = g.get("action_required") or ""
+        cost = g.get("cost_impact") or ""
+        st.markdown(
+            f'<div style="border-left:4px solid {_c};background:#1e293b;'
+            f'border-radius:6px;padding:0.7rem 1rem;margin-bottom:0.6rem;">'
+            f'<div style="display:flex;gap:0.8rem;align-items:baseline;">'
+            f'<span style="color:{_c};font-weight:700;font-size:0.8rem">{sev}</span>'
+            f'<span style="color:#94a3b8;font-size:0.8rem">{g.get("id","")}</span>'
+            f'<span style="color:#94a3b8;font-size:0.8rem">{g.get("trade","")}</span>'
+            f'</div>'
+            f'<div style="color:#e2e8f0;margin:0.3rem 0">{g.get("description","")}</div>'
+            + (f'<div style="color:#94a3b8;font-size:0.82rem">Action: {action}</div>' if action else "")
+            + (f'<div style="color:#fbbf24;font-size:0.82rem">Cost impact: {cost}</div>' if cost else "")
+            + f'</div>',
+            unsafe_allow_html=True,
+        )
 
 
 if __name__ == "__main__":
