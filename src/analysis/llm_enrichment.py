@@ -12,11 +12,22 @@ Key principles:
 """
 
 import json
+import logging
+import os
 from typing import List, Dict, Any, Optional
+
+logger = logging.getLogger(__name__)
 from pathlib import Path
 
 import sys
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
+
+# ── LLM model selection ──────────────────────────────────────────────────────
+# Override via environment variables; defaults are the latest fast/cost models.
+# OpenAI:    export XBOQ_OPENAI_MODEL=gpt-4o        (for higher quality)
+# Anthropic: export XBOQ_ANTHROPIC_MODEL=claude-opus-4-5  (for higher quality)
+_OPENAI_MODEL    = os.environ.get("XBOQ_OPENAI_MODEL",    "gpt-4o-mini")
+_ANTHROPIC_MODEL = os.environ.get("XBOQ_ANTHROPIC_MODEL", "claude-3-5-haiku-20241022")
 
 from src.models.analysis_models import (
     PlanSetGraph, Blocker, RFIItem, EvidenceRef,
@@ -179,7 +190,7 @@ class LLMEnrichment:
             )
             return self._parse_enrichment_response(response)
         except Exception as e:
-            print(f"LLM enrichment failed: {e}")
+            logger.warning(f"LLM enrichment failed: {e}")
             return self._default_enrichment(blocker)
 
     def enrich_all_blockers(
@@ -252,33 +263,17 @@ class LLMEnrichment:
 
     def _call_llm(self, system_prompt: str, user_prompt: str) -> str:
         """
-        Call the LLM client.
-
-        Override this method for specific LLM implementations.
+        Call the LLM client with automatic retry on transient errors (429, 5xx).
         """
-        if hasattr(self.llm_client, 'chat'):
-            # OpenAI-style client
-            response = self.llm_client.chat.completions.create(
-                model="gpt-4o-mini",  # Use smaller model for enrichment
-                messages=[
-                    {"role": "system", "content": system_prompt},
-                    {"role": "user", "content": user_prompt}
-                ],
-                temperature=0.3,
-                max_tokens=500,
-            )
-            return response.choices[0].message.content
-        elif hasattr(self.llm_client, 'messages'):
-            # Anthropic-style client
-            response = self.llm_client.messages.create(
-                model="claude-3-haiku-20240307",
-                max_tokens=500,
-                system=system_prompt,
-                messages=[{"role": "user", "content": user_prompt}]
-            )
-            return response.content[0].text
-        else:
-            raise ValueError("Unknown LLM client type")
+        from src.utils.llm_caller import call_llm
+        return call_llm(
+            client=self.llm_client,
+            system=system_prompt,
+            user=user_prompt,
+            max_tokens=500,
+            openai_model=_OPENAI_MODEL,
+            anthropic_model=_ANTHROPIC_MODEL,
+        )
 
     def _parse_enrichment_response(self, response: str) -> Dict[str, Any]:
         """Parse JSON response from LLM."""
@@ -480,13 +475,25 @@ def calculate_readiness_score(
             if tc.coverage_pct > 0:
                 any_coverage_trades += 1
 
+    # BUG-4 FIX: guard against PASS for spec-only / report-only documents.
+    # A document looks like a spec/report (not a construction drawing set) when:
+    #   - Very few pages have a scale notation (< 3 % of total pages)
+    #   - Sheet-number page coverage is moderate — consistent with specs referencing
+    #     drawing numbers, not drawing sheets owning those numbers (< 50 %)
+    # For such documents the scoring heuristics tend to inflate coverage/completeness;
+    # cap the decision at CONDITIONAL regardless of numeric score.
+    _scale_fraction = graph.pages_with_scale / max(graph.total_pages, 1)
+    _sheet_no_ratio = getattr(graph, 'pages_with_sheet_no', 0) / max(graph.total_pages, 1)
+    _appears_spec_only = _scale_fraction < 0.03 and _sheet_no_ratio < 0.50
+
     # Determine status
     # PASS requires:
     #   - High score (>=70) AND no pricing blockers, OR
     #   - Good score (>=65) AND multiple trades with good coverage AND no critical blockers
-    if total >= 70 and pricing_blockers == 0 and critical_count == 0:
+    #   PLUS: document must NOT appear to be spec-only (see guard above)
+    if total >= 70 and pricing_blockers == 0 and critical_count == 0 and not _appears_spec_only:
         status = "PASS"
-    elif total >= 65 and good_coverage_trades >= 3 and pricing_blockers == 0:
+    elif total >= 65 and good_coverage_trades >= 3 and pricing_blockers == 0 and not _appears_spec_only:
         status = "PASS"
     # CONDITIONAL when:
     #   - Moderate score (>=40) with some issues, OR
