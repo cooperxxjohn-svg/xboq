@@ -17,12 +17,7 @@ Comprehensive Bid Readiness Report showing at-a-glance:
 7. Drawing Set Overview / Audit Trail
 """
 
-import sys as _sys_diag, os as _os_diag
-_sys_diag.stderr.write("[XBOQ_STARTUP] Python {}\n".format(_sys_diag.version))
-_sys_diag.stderr.flush()
-
 import streamlit as st
-_sys_diag.stderr.write("[XBOQ_STARTUP] streamlit imported\n"); _sys_diag.stderr.flush()
 import json
 import os
 import sys
@@ -317,14 +312,13 @@ def build_demo_analysis(payload: Dict[str, Any], project_id: str) -> DemoAnalysi
     )
 
 # Import analysis runner
-_sys_diag.stderr.write("[XBOQ_STARTUP] importing analysis_runner\n"); _sys_diag.stderr.flush()
 from analysis_runner import (
     run_analysis_pipeline,
     save_uploaded_files,
     generate_project_id,
     AnalysisResult,
 )
-_sys_diag.stderr.write("[XBOQ_STARTUP] analysis_runner OK\n"); _sys_diag.stderr.flush()
+
 
 from exports.pricing_readiness import get_pricing_readiness_buffer
 from exports.rfi_pack import get_rfi_pack_buffer
@@ -373,8 +367,6 @@ except ImportError:
 # Auth
 from src.auth.login_ui import render_auth_gate, render_user_menu
 
-_sys_diag.stderr.write("[XBOQ_STARTUP] all imports done, calling set_page_config\n"); _sys_diag.stderr.flush()
-
 # Page config
 st.set_page_config(
     page_title="XBOQ - Pre-Bid Scope Check",
@@ -382,7 +374,6 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="expanded"
 )
-_sys_diag.stderr.write("[XBOQ_STARTUP] set_page_config OK\n"); _sys_diag.stderr.flush()
 
 _current_user = render_auth_gate()
 render_user_menu()
