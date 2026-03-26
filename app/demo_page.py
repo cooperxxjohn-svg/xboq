@@ -17,7 +17,12 @@ Comprehensive Bid Readiness Report showing at-a-glance:
 7. Drawing Set Overview / Audit Trail
 """
 
+import sys as _sys_diag, os as _os_diag
+_sys_diag.stderr.write("[XBOQ_STARTUP] Python {}\n".format(_sys_diag.version))
+_sys_diag.stderr.flush()
+
 import streamlit as st
+_sys_diag.stderr.write("[XBOQ_STARTUP] streamlit imported\n"); _sys_diag.stderr.flush()
 import json
 import os
 import sys
@@ -29,17 +34,25 @@ from datetime import datetime
 from typing import List, Any, Dict, Optional
 from dataclasses import dataclass
 
-# Add project root, src, and app to path for imports
-# Use .resolve() to handle symlinks (floorplan-engine/app -> xboq.ai/app)
+# ── Auto-load .env from project root before anything else ───────────────────
 _PROJECT_ROOT = Path(__file__).resolve().parent.parent
+_ENV_FILE = _PROJECT_ROOT / ".env"
+if _ENV_FILE.exists():
+    try:
+        for _line in _ENV_FILE.read_text().splitlines():
+            _line = _line.strip()
+            if _line and not _line.startswith("#") and "=" in _line:
+                _k, _, _v = _line.partition("=")
+                os.environ[_k.strip()] = _v.strip()
+    except Exception:
+        pass
 sys.path.insert(0, str(_PROJECT_ROOT))
 sys.path.insert(0, str(_PROJECT_ROOT / "src"))
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 
 # ── Error tracking (Sentry) ──────────────────────────────────────────────
-import os as _os_sentry
-_SENTRY_DSN = _os_sentry.environ.get("SENTRY_DSN", "")
+_SENTRY_DSN = os.environ.get("SENTRY_DSN", "")
 if _SENTRY_DSN:
     try:
         import sentry_sdk
@@ -49,7 +62,7 @@ if _SENTRY_DSN:
             dsn=_SENTRY_DSN,
             traces_sample_rate=0.1,      # 10% of transactions
             profiles_sample_rate=0.0,
-            environment=_os_sentry.environ.get("XBOQ_ENV", "production"),
+            environment=os.environ.get("XBOQ_ENV", "production"),
             integrations=[
                 LoggingIntegration(
                     level=_logging_sentry.WARNING,
@@ -304,16 +317,35 @@ def build_demo_analysis(payload: Dict[str, Any], project_id: str) -> DemoAnalysi
     )
 
 # Import analysis runner
+_sys_diag.stderr.write("[XBOQ_STARTUP] importing analysis_runner\n"); _sys_diag.stderr.flush()
 from analysis_runner import (
     run_analysis_pipeline,
     save_uploaded_files,
     generate_project_id,
     AnalysisResult,
 )
+_sys_diag.stderr.write("[XBOQ_STARTUP] analysis_runner OK\n"); _sys_diag.stderr.flush()
 
 from exports.pricing_readiness import get_pricing_readiness_buffer
 from exports.rfi_pack import get_rfi_pack_buffer
 from exports.bid_packet import get_bid_packet_buffer
+
+# Sprint 46: Extra tabs
+try:
+    from extra_tabs import (
+        render_projects_tab,
+        render_bid_report_tab,
+        render_prelims_tab,
+        render_scope_packages_tab,
+        render_addenda_tab,
+        render_reconcile_tab,
+        render_cash_flow_tab,
+        render_benchmark_tab,
+        render_compare_tab,
+    )
+    _HAS_EXTRA_TABS = True
+except ImportError:
+    _HAS_EXTRA_TABS = False
 
 # Agent Office — live pipeline agent status panel
 try:
@@ -341,13 +373,16 @@ except ImportError:
 # Auth
 from src.auth.login_ui import render_auth_gate, render_user_menu
 
+_sys_diag.stderr.write("[XBOQ_STARTUP] all imports done, calling set_page_config\n"); _sys_diag.stderr.flush()
+
 # Page config
 st.set_page_config(
     page_title="XBOQ - Pre-Bid Scope Check",
     page_icon="📋",
     layout="wide",
-    initial_sidebar_state="collapsed"
+    initial_sidebar_state="expanded"
 )
+_sys_diag.stderr.write("[XBOQ_STARTUP] set_page_config OK\n"); _sys_diag.stderr.flush()
 
 _current_user = render_auth_gate()
 render_user_menu()
@@ -362,6 +397,24 @@ st.markdown("""
     .stApp { background: #09090b; }
     .main .block-container { max-width: 1100px; padding: 2rem 1.5rem; }
     h1, h2, h3, h4, p, span, div, li, a, code, label { font-family: 'Inter', -apple-system, sans-serif !important; }
+
+    /* ── Sidebar: remove white border box ── */
+    section[data-testid="stSidebar"] { background: #111113 !important; border-right: 1px solid rgba(255,255,255,0.06) !important; }
+    section[data-testid="stSidebar"] > div { background: transparent !important; border: none !important; box-shadow: none !important; }
+    section[data-testid="stSidebar"] .stVerticalBlock,
+    section[data-testid="stSidebar"] .stHorizontalBlock,
+    section[data-testid="stSidebar"] [data-testid="stVerticalBlock"],
+    section[data-testid="stSidebar"] .block-container { border: none !important; box-shadow: none !important; background: transparent !important; }
+    /* Remove any white/light borders from Streamlit's default container borders */
+    section[data-testid="stSidebar"] [data-testid="stExpander"] { background: rgba(255,255,255,0.03) !important; border: 1px solid rgba(255,255,255,0.06) !important; border-radius: 8px !important; }
+
+    /* ── Expander: fix icon/arrow text overlap ── */
+    .stExpander details summary { display: flex; align-items: center; gap: 0.4rem; overflow: hidden; }
+    .stExpander details summary svg { flex-shrink: 0; }
+    .stExpander details summary p,
+    .stExpander details summary span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    /* Ensure expander content has proper background so it doesn't bleed into adjacent elements */
+    section[data-testid="stSidebar"] .stExpander details > div { background: #111113 !important; }
 
     /* ── Buttons ── */
     .stButton > button[kind="primary"] {
@@ -1010,6 +1063,30 @@ def _make_widget_key(*parts) -> str:
     return ":".join(clean) if clean else f"wk_{id(parts)}"
 
 
+def _paginate_list(items: list, page_size: int = 50, key_prefix: str = "page") -> list:
+    """
+    Paginate a list for display. Shows a selectbox to choose the page.
+    Returns the slice of items for the current page.
+
+    Usage:
+        visible_rfis = _paginate_list(all_rfis, page_size=50, key_prefix="rfi_page")
+        for rfi in visible_rfis:
+            ...
+    """
+    if not items or len(items) <= page_size:
+        return items
+    n_pages = (len(items) + page_size - 1) // page_size
+    page_key = _make_widget_key(f"{key_prefix}_selector")
+    page_num = st.selectbox(
+        f"Page (showing {page_size} of {len(items)} items)",
+        options=list(range(1, n_pages + 1)),
+        key=page_key,
+        label_visibility="visible",
+    ) or 1
+    start = (page_num - 1) * page_size
+    return items[start: start + page_size]
+
+
 def _safe_str(val) -> str:
     """Convert any value to a clean display string.
 
@@ -1333,6 +1410,63 @@ def render_at_a_glance_dashboard(demo: DemoAnalysis):
         render_top_blockers_preview(demo)
     with col2:
         render_top_rfis_preview(demo)
+
+    # ── Task 5: Low confidence flags (scale assumptions etc.) ─────────
+    _payload_ov = demo.raw_payload
+    _lcf = _payload_ov.get("_low_confidence_flags") or []
+    if _lcf:
+        with st.expander(f"⚠️ {len(_lcf)} Low Confidence Flag(s)", expanded=False):
+            for _flag in _lcf:
+                st.warning(f"**{_safe_str(_flag.get('type',''))}**: {_safe_str(_flag.get('message',''))} (page {_flag.get('page','?')})")
+
+    # ── Task 1: BOQ Version History (if available) ────────────────────
+    _snap_run_id = _payload_ov.get("boq_snapshot_run_id", "")
+    if _snap_run_id:
+        with st.expander("📋 BOQ Version History", expanded=False):
+            try:
+                from src.analysis.boq_versioning import BOQVersionStore
+                _bvs = BOQVersionStore()
+                _proj_id = _safe_str(_payload_ov.get("project_id") or _payload_ov.get("project_name") or "local")
+                _runs = _bvs.list_runs(_proj_id)
+                if len(_runs) >= 2:
+                    st.caption(f"{len(_runs)} runs recorded for this project")
+                    _run_ids = [r["run_id"] for r in _runs[:10]]
+                    _run_labels = [f"{r['run_id']} — {r.get('n_items',0)} items, ₹{r.get('total_cost',0)/1e5:.1f}L" for r in _runs[:10]]
+                    col_a, col_b = st.columns(2)
+                    with col_a:
+                        _sel_a = st.selectbox("Compare: Baseline run", _run_labels, index=min(1, len(_run_labels)-1), key=_make_widget_key("boq_diff_run_a"))
+                    with col_b:
+                        _sel_b = st.selectbox("Compare: New run", _run_labels, index=0, key=_make_widget_key("boq_diff_run_b"))
+                    if st.button("Show Diff", key=_make_widget_key("boq_diff_btn")):
+                        _idx_a = _run_labels.index(_sel_a) if _sel_a in _run_labels else 1
+                        _idx_b = _run_labels.index(_sel_b) if _sel_b in _run_labels else 0
+                        _diff = _bvs.diff_snapshots(_proj_id, _run_ids[_idx_a], _run_ids[_idx_b])
+                        if _diff:
+                            col1, col2, col3, col4 = st.columns(4)
+                            col1.metric("Added items", _diff.n_added, delta=f"+{_diff.n_added}")
+                            col2.metric("Removed items", _diff.n_removed, delta=f"-{_diff.n_removed}" if _diff.n_removed else "0")
+                            col3.metric("Changed items", _diff.n_changed)
+                            col4.metric("Cost delta", f"₹{abs(_diff.cost_delta)/1e5:.1f}L",
+                                        delta=f"{_diff.cost_delta_pct:+.1f}%",
+                                        delta_color="inverse" if _diff.cost_delta > 0 else "normal")
+                            if _diff.changes:
+                                import pandas as pd
+                                _df = pd.DataFrame([
+                                    {"Change": c.change_type.replace("_", " ").title(),
+                                     "Trade": c.trade.title(),
+                                     "Description": c.description[:60],
+                                     "Old": c.old_value,
+                                     "New": c.new_value,
+                                     "Δ%": f"{c.pct_change:+.1f}%" if c.pct_change is not None else ""}
+                                    for c in _diff.changes[:30]
+                                ])
+                                st.dataframe(_df, use_container_width=True, hide_index=True)
+                elif len(_runs) == 1:
+                    st.info("Only 1 run recorded. Run the pipeline again to compare versions.")
+                else:
+                    st.info("No version history yet for this project.")
+            except Exception as _bv_err:
+                st.caption(f"Version history unavailable: {_bv_err}")
 
 
 def render_pdf_page_preview(pdf_path: Optional[str], page_idx: int, zoom: float = 1.5) -> Optional[bytes]:
@@ -2419,6 +2553,37 @@ def render_quantified_outputs(demo: "DemoAnalysis"):
     </table>
     """, unsafe_allow_html=True)
 
+    # ── Task 2: OCR Confidence per page ──────────────────────────────
+    _page_profiles = _payload.get("processing_stats", {}).get("page_profiles") or \
+                     _payload.get("ocr_metadata", {}).get("page_profiles") or []
+    _conf_scores = [p.get("ocr_confidence", 0) for p in _page_profiles if isinstance(p, dict) and "ocr_confidence" in p]
+    if _conf_scores:
+        _avg_conf = sum(_conf_scores) / len(_conf_scores)
+        _low_conf_pages = [i+1 for i, c in enumerate(_conf_scores) if c < 0.4]
+        _conf_color = "🟢" if _avg_conf >= 0.7 else ("🟡" if _avg_conf >= 0.4 else "🔴")
+        st.metric(f"{_conf_color} Avg OCR Confidence", f"{_avg_conf:.0%}")
+        if _low_conf_pages:
+            st.caption(f"⚠️ Low confidence pages: {', '.join(str(p) for p in _low_conf_pages[:8])}{'...' if len(_low_conf_pages) > 8 else ''}")
+
+    # ── Task 3: Table extraction coverage ────────────────────────────
+    _tec = _payload.get("table_extraction_coverage") or {}
+    if _tec:
+        _cov_pct = _tec.get("coverage_pct", 0)
+        _boq_cov = _tec.get("boq_coverage_pct", 0)
+        _cov_color = "🟢" if _cov_pct >= 80 else ("🟡" if _cov_pct >= 50 else "🔴")
+        col_t1, col_t2, col_t3 = st.columns(3)
+        col_t1.metric(f"{_cov_color} Table Coverage", f"{_cov_pct:.0f}%",
+                      help="% of table extraction attempts that succeeded")
+        col_t2.metric("BOQ Coverage", f"{_boq_cov:.0f}%",
+                      help="% of BOQ pages successfully parsed")
+        col_t3.metric("Rows Extracted", _tec.get("total_rows_extracted", 0))
+        _methods = _tec.get("method_breakdown") or {}
+        if _methods:
+            st.caption("Methods: " + " | ".join(f"{k}: {v}" for k, v in _methods.items()))
+        _low_conf_tec_pages = _tec.get("low_confidence_pages") or []
+        if _low_conf_tec_pages:
+            st.caption(f"⚠️ Low confidence extraction on pages: {_low_conf_tec_pages[:8]}")
+
 
 def render_key_line_items(payload: dict):
     """Show commercial terms, BOQ stats, requirements count, commercial RFIs.
@@ -2967,11 +3132,24 @@ def render_qto_panel(payload: dict):
     _trade_summary  = qto_summary.get("trade_summary", {})
     _total_items    = qto_summary.get("total_spec_items", 0)
     _excel_avail    = qto_summary.get("_excel_available", False)
+    # Suppress cost totals when area was assumed from default (results are unreliable)
+    _area_assumed   = qto_summary.get("area_assumed_default", False)
+    _detected_area  = (qto_summary.get("vmeas_area_sqm") or qto_summary.get("visual_area_sqm") or 0)
+    _cost_reliable  = bool(_detected_area > 0 and not _area_assumed)
 
     if _grand_total > 0 or _total_items > 0:
         st.markdown("---")
         st.markdown("#### 💰 Estimated Project Cost")
-        st.caption("Indicative Q1 2025 Tier-1 India market rates. Accuracy ±20–30%.")
+        if not _cost_reliable and _grand_total > 0:
+            st.warning(
+                "⚠️ **Cost estimate unreliable** — floor area not detected from drawings. "
+                "Upload floor plan PDFs with scale notation for accurate quantities. "
+                "The figures below are thumb-rule estimates only.",
+                icon="⚠️",
+            )
+            st.caption("Indicative rates only — quantities based on assumed area. Accuracy may exceed ±50%.")
+        else:
+            st.caption("Indicative Q1 2025 Tier-1 India market rates. Accuracy ±20–30%.")
 
         _gc1, _gc2, _gc3 = st.columns(3)
         _gc1.metric("Grand Total (INR)", f"₹{_grand_total:,.0f}" if _grand_total else "—")
@@ -3012,6 +3190,81 @@ def render_qto_panel(payload: dict):
                     mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
                     use_container_width=True,
                 )
+
+    # ── Construction Cost by Trade ────────────────────────────────────────────
+    # Primary view: what does it actually cost to build, broken down by trade.
+    # Source 1: qto_summary.trade_summary  — always present, per-trade market-rate cost
+    # Source 2: bid_margin.by_trade        — present when BOQ has extracted rates (item-rate tenders)
+    # Source 3: bid_margin.tender_value_inr from NIT — overall tender value reference
+    _bid_margin   = payload.get("bid_margin", {})
+    _qto_summary  = payload.get("qto_summary", {})
+    _trade_summary = _qto_summary.get("trade_summary", {})
+    _nit_total     = _bid_margin.get("tender_value_inr", 0) or 0
+    _qto_total     = _qto_summary.get("grand_total_inr", 0) or 0
+
+    if _trade_summary or _nit_total > 0:
+        import pandas as pd
+        st.markdown("---")
+        st.markdown("#### 🏗️ Construction Cost by Trade")
+
+        # Header metrics
+        _cc_cols = st.columns(3)
+        _cc_cols[0].metric(
+            "Tender Value (NIT)" if _nit_total > 0 else "Tender Value",
+            f"₹{_nit_total/1e7:.1f} Cr" if _nit_total >= 1e7 else (f"₹{_nit_total:,.0f}" if _nit_total else "—"),
+            help="Estimated cost stated on NIT/cover page (what the client has priced the job at)",
+        )
+        _cc_cols[1].metric(
+            "Our Build Cost (QTO)",
+            f"₹{_qto_total/1e7:.1f} Cr" if _qto_total >= 1e7 else (f"₹{_qto_total:,.0f}" if _qto_total else "—"),
+            help="Construction cost at Q1 2025 market/DSR rates × extracted quantities",
+        )
+        _cov_pct = _bid_margin.get("scope_coverage_pct", 0) or 0
+        _cc_cols[2].metric(
+            "QTO Scope Coverage",
+            f"{_cov_pct:.0f}%" if _cov_pct > 0 else "—",
+            help=(
+                "% of tender value covered by extracted quantities. "
+                "Re-run in Full Audit mode to increase coverage."
+            ),
+        )
+
+        # Per-trade cost table — the core output
+        if _trade_summary:
+            # Build rows: trade | our cost | % of total | items
+            _rows = []
+            for _trade, _info in sorted(
+                _trade_summary.items(),
+                key=lambda x: x[1].get("total_amount", 0),
+                reverse=True,
+            ):
+                _amt  = _info.get("total_amount", 0) or 0
+                _cnt  = _info.get("item_count", 0) or 0
+                if _amt <= 0 and _cnt == 0:
+                    continue
+                _pct  = (_amt / _qto_total * 100) if _qto_total > 0 else 0
+                _rows.append({
+                    "Trade":          _safe_str(_trade).title(),
+                    "Build Cost":     f"₹{_amt:,.0f}" if _amt > 0 else "—",
+                    "% of Total":     f"{_pct:.1f}%" if _pct > 0 else "—",
+                    "Items":          _cnt,
+                })
+
+            if _rows:
+                _trade_df = pd.DataFrame(_rows)
+                st.dataframe(_trade_df, use_container_width=True, hide_index=True)
+
+        # Coverage and data-quality note
+        if _cov_pct > 0 and _cov_pct < 50:
+            st.caption(
+                f"⚠️ QTO covers ~{_cov_pct:.0f}% of tender scope. "
+                f"Re-run in Full Audit mode for a complete cost picture."
+            )
+        elif _nit_total > 0 and _qto_total > 0 and _cov_pct == 0:
+            st.caption(
+                "ℹ️ Build cost based on extracted quantities only. "
+                "Tender value (NIT) shown for reference."
+            )
 
 
 # =============================================================================
@@ -3133,6 +3386,27 @@ def render_bid_pack_tab(payload: dict):
                             st.image(page_png, caption=f"Page {sel_page}", use_container_width=True)
     else:
         st.info("No BOQ items found in this document. This may mean the tender does not include a BOQ, or the pages were not processed. Try increasing the OCR budget.")
+
+    # ── Task 4: Rate history benchmarking (if available) ─────────────
+    _rate_comp = payload.get("rate_history_comparison") or []
+    _flagged_items = [r for r in _rate_comp if r.get("hist_flag") or r.get("flagged")]
+    if _flagged_items:
+        with st.expander(f"📈 Rate Benchmarking — {len(_flagged_items)} items flagged vs historical", expanded=False):
+            st.caption("Items where current rates differ significantly from your historical bid data")
+            _rh_df = pd.DataFrame([
+                {
+                    "Description": _safe_str(r.get("description", ""))[:50],
+                    "Trade": _safe_str(r.get("trade", "")).title(),
+                    "Current Rate": f"₹{float(r.get('rate_inr') or r.get('rate') or 0):,.0f}",
+                    "Hist Avg": f"₹{float(r.get('hist_avg') or r.get('avg_rate') or 0):,.0f}",
+                    "Δ%": f"{float(r.get('hist_pct_diff') or r.get('pct_diff') or 0):+.1f}%",
+                    "Flag": "⚠️ Above" if float(r.get('hist_pct_diff') or 0) > 10 else ("💡 Below" if float(r.get('hist_pct_diff') or 0) < -10 else "✅ OK"),
+                }
+                for r in _flagged_items[:30]
+            ])
+            st.dataframe(_rh_df, use_container_width=True, hide_index=True)
+    elif payload.get("rate_history_comparison") is not None:
+        st.caption("✅ All rates within historical range")
 
     # ── Unified Line Items (Sprint 41) ────────────────────────────────
     _line_items = payload.get("line_items", [])
@@ -4166,6 +4440,34 @@ def _render_rfi_raw_view(norm_rfis, rfis, blockers, payload, project_id):
             if nr["suggested_resolution"]:
                 st.caption(f"\u2705 Suggested: {nr['suggested_resolution'][:100]}")
 
+        # Inline RFI feedback
+        _fb_col1, _fb_col2, _fb_col3 = st.columns([1, 1, 8])
+        _rfi_id_key = nr.get("id", f"rfi_{idx}")
+        with _fb_col1:
+            if st.button("👍", key=f"fb_up_{_rfi_id_key}_{project_id}"):
+                try:
+                    import requests as _req
+                    _req.post(
+                        "http://localhost:8000/api/jobs/{}/rfi-feedback".format(project_id),
+                        json={"rfi_id": _rfi_id_key, "useful": True},
+                        timeout=2
+                    )
+                except Exception:
+                    pass
+                st.toast("Marked as useful")
+        with _fb_col2:
+            if st.button("👎", key=f"fb_dn_{_rfi_id_key}_{project_id}"):
+                try:
+                    import requests as _req
+                    _req.post(
+                        "http://localhost:8000/api/jobs/{}/rfi-feedback".format(project_id),
+                        json={"rfi_id": _rfi_id_key, "useful": False},
+                        timeout=2
+                    )
+                except Exception:
+                    pass
+                st.toast("Feedback noted")
+
     # Export CSV (columns match table)
     st.markdown("---")
     import csv as csv_mod
@@ -4885,6 +5187,15 @@ def render_section_4_rfis(report: dict):
             st.markdown(f"**{i}.** {q}")
 
     st.markdown("---")
+
+    # Paginate the full RFI list before rendering (handles tenders with 50+ RFIs)
+    visible_rfis = _paginate_list(rfis, page_size=50, key_prefix="rfi_page")
+    # Rebuild trade grouping for the visible page slice only
+    if visible_rfis is not rfis:
+        rfis_by_trade = {}
+        for _rfi in visible_rfis:
+            _trade = _rfi.get("trade", "general")
+            rfis_by_trade.setdefault(_trade, []).append(_rfi)
 
     # Grouped by trade
     for trade, trade_rfis in rfis_by_trade.items():
@@ -5737,6 +6048,187 @@ def _render_analysis_results_preview(result, project_id: str, uploaded_files: Li
     timings = payload.get("timings", {})
 
     # =========================================================================
+    # TIER-1 FEATURE BANNERS (Sprint 47+)
+    # =========================================================================
+
+    # ── T1-A: Bid Deadline Countdown Banner ──────────────────────────────────
+    try:
+        _commercial = payload.get("commercial_terms") or []
+        _deadline_entry = next(
+            (t for t in _commercial if isinstance(t, dict) and t.get("term_type") == "bid_deadline"),
+            None
+        )
+        if _deadline_entry and _deadline_entry.get("iso_date"):
+            from datetime import date as _date_cls
+            _deadline_iso = _deadline_entry["iso_date"]
+            _deadline_dt = _date_cls.fromisoformat(_deadline_iso)
+            _today = _date_cls.today()
+            _days_left = (_deadline_dt - _today).days
+            if _days_left >= 0:
+                _dl_color = "#ef4444" if _days_left <= 3 else ("#f97316" if _days_left <= 7 else "#22c55e")
+                _dl_icon = "🚨" if _days_left <= 3 else ("⚠️" if _days_left <= 7 else "📅")
+                _dl_label = "TODAY" if _days_left == 0 else f"{_days_left} days"
+                st.markdown(
+                    f"""<div style="background:rgba(239,68,68,0.1);border:1px solid {_dl_color};
+                        border-radius:8px;padding:0.7rem 1rem;margin:0.5rem 0;display:flex;align-items:center;gap:0.5rem;">
+                        <span style="font-size:1.2rem;">{_dl_icon}</span>
+                        <span><b>Bid Submission Deadline: {_deadline_iso}</b> &nbsp;
+                        <span style="color:{_dl_color};font-weight:700;">{_dl_label} remaining</span></span>
+                    </div>""",
+                    unsafe_allow_html=True,
+                )
+                # .ics calendar download
+                _ics_content = (
+                    "BEGIN:VCALENDAR\nVERSION:2.0\nBEGIN:VEVENT\n"
+                    f"DTSTART;VALUE=DATE:{_deadline_iso.replace('-', '')}\n"
+                    f"SUMMARY:Bid Deadline — {project_id}\n"
+                    f"DESCRIPTION:Tender bid submission deadline for {project_id}\n"
+                    "END:VEVENT\nEND:VCALENDAR\n"
+                )
+                st.download_button(
+                    "📅 Add to Calendar (.ics)",
+                    _ics_content,
+                    f"bid_deadline_{project_id}.ics",
+                    "text/calendar",
+                    key=_make_widget_key("bid_deadline_ics"),
+                )
+            else:
+                st.caption(f"Bid deadline {_deadline_iso} has passed.")
+    except Exception:
+        pass
+
+    # ── T1-B: Trade-wise Confidence Scores ───────────────────────────────────
+    try:
+        _trade_conf_data = payload.get("trade_confidence") or []
+        if not _trade_conf_data:
+            # Compute on-the-fly if not pre-computed
+            from src.analysis.trade_confidence import compute_trade_confidence as _ctc
+            _tscores = _ctc(payload)
+            _trade_conf_data = [s.to_dict() for s in _tscores]
+
+        if _trade_conf_data:
+            st.markdown("---")
+            _tc_badge_parts = [
+                f"{s['trade']} **{s['confidence_pct']}%**" for s in _trade_conf_data[:6]
+            ]
+            st.markdown(
+                "**Trade Extraction Confidence:** " + " · ".join(_tc_badge_parts),
+            )
+            with st.expander("Trade confidence details", expanded=False):
+                _tc_cols = st.columns(min(len(_trade_conf_data), 4))
+                for _ti, _ts in enumerate(_trade_conf_data):
+                    with _tc_cols[_ti % len(_tc_cols)]:
+                        _tc_color = {"High": "green", "Medium": "orange", "Low": "red"}.get(
+                            _ts.get("label", ""), "gray"
+                        )
+                        st.metric(
+                            _ts["trade"],
+                            f"{_ts['confidence_pct']}%",
+                            help=(
+                                f"Pages: {_ts.get('page_count', 0)} · "
+                                f"Coverage: {_ts.get('coverage_pct', 0):.0f}%"
+                            ),
+                        )
+                        st.caption(f":{_tc_color}[{_ts.get('label', '')}]")
+    except Exception:
+        pass
+
+    # ── T1-C: BOQ Auto-fill from Drawings ────────────────────────────────────
+    try:
+        from src.analysis.boq_from_drawings import can_autofill as _can_af
+        _boq_autofill_data = payload.get("boq_autofill")
+        if _boq_autofill_data and _boq_autofill_data.get("item_count", 0) > 0:
+            st.markdown("---")
+            _af_count = _boq_autofill_data["item_count"]
+            _af_total = _boq_autofill_data.get("total_inr", 0)
+            st.info(
+                f"**No BOQ provided.** {_af_count} BOQ items auto-generated from drawings "
+                f"(est. ₹{_af_total:,.0f}). Download to review."
+            )
+            _af_items = _boq_autofill_data.get("items", [])
+            if _af_items:
+                import io as _io_af
+                try:
+                    import csv as _csv_af
+                    _af_buf = _io_af.StringIO()
+                    _af_writer = _csv_af.DictWriter(
+                        _af_buf,
+                        fieldnames=["description", "trade", "unit", "qty", "rate_inr", "amount_inr", "source"],
+                        extrasaction="ignore",
+                    )
+                    _af_writer.writeheader()
+                    _af_writer.writerows(_af_items)
+                    st.download_button(
+                        "Download Auto-generated BOQ (CSV)",
+                        _af_buf.getvalue(),
+                        f"auto_boq_{project_id}.csv",
+                        "text/csv",
+                        key=_make_widget_key("boq_autofill_csv"),
+                    )
+                except Exception:
+                    pass
+        elif _can_af(payload):
+            st.markdown("---")
+            st.info(
+                "No BOQ found in this tender. QTO data is available — "
+                "re-run the analysis to auto-generate a priced BOQ from the drawings."
+            )
+    except Exception:
+        pass
+
+    # ── T1-D: Tender Version Diff ─────────────────────────────────────────────
+    try:
+        _prev_job_id = st.session_state.get("_xboq_compare_job_id")
+        _current_job_id = st.session_state.get("_xboq_current_job_id")
+        if _prev_job_id and _current_job_id and _prev_job_id != _current_job_id:
+            st.markdown("---")
+            st.markdown("**Tender Revision Comparison**")
+            _rev_col1, _rev_col2 = st.columns([3, 1])
+            with _rev_col1:
+                st.caption(f"Comparing: `{_prev_job_id}` (baseline) vs `{_current_job_id}` (revised)")
+            with _rev_col2:
+                if st.button(
+                    "Show Diff",
+                    key=_make_widget_key("revision_diff_btn"),
+                    type="secondary",
+                ):
+                    import requests as _rev_req
+                    try:
+                        _rev_r = _rev_req.post(
+                            "http://localhost:8000/api/revision/diff",
+                            json={"job_id_a": _prev_job_id, "job_id_b": _current_job_id},
+                            timeout=30,
+                        )
+                        if _rev_r.status_code == 200:
+                            _rev_data = _rev_r.json().get("diff", {})
+                            st.session_state["_xboq_revision_diff"] = _rev_data
+                        else:
+                            st.warning(f"Diff API returned {_rev_r.status_code}")
+                    except Exception as _rev_exc:
+                        st.warning(f"Revision diff unavailable: {_rev_exc}")
+
+            _stored_diff = st.session_state.get("_xboq_revision_diff")
+            if _stored_diff:
+                _diff_cols = st.columns(4)
+                with _diff_cols[0]:
+                    st.metric("Added sheets", len(_stored_diff.get("added_sheet_ids", [])))
+                with _diff_cols[1]:
+                    st.metric("Removed sheets", len(_stored_diff.get("removed_sheet_ids", [])))
+                with _diff_cols[2]:
+                    st.metric("Modified sheets", len(_stored_diff.get("changed_sheet_ids", [])))
+                with _diff_cols[3]:
+                    st.metric("Unchanged", len(_stored_diff.get("unchanged_sheet_ids", [])))
+                if _stored_diff.get("diffs"):
+                    with st.expander(f"Sheet diffs ({len(_stored_diff['diffs'])})"):
+                        for _sd in _stored_diff["diffs"][:20]:
+                            st.markdown(
+                                f"- **{_sd['sheet_id']}** "
+                                f"[{_sd['change_type']}]: {_sd['summary']}"
+                            )
+    except Exception:
+        pass
+
+    # =========================================================================
     # GLOBAL SEARCH (Sprint 5) — above tabs, always visible
     # =========================================================================
     st.markdown("---")
@@ -5821,6 +6313,18 @@ def _render_analysis_results_preview(result, project_id: str, uploaded_files: Li
             "\U0001f4cf Measure",
             # Sprint 40: Bid Intelligence
             "\U0001f9e0 Bid Intelligence",
+            # Sprint 46: Platform completion
+            "\U0001f4c1 Projects",
+            "\U0001f4c4 Bid Report",
+            "\U0001f3d7\ufe0f Prelims",
+            "\U0001f4ec Scope Packages",
+            "\U0001f504 Addenda",
+            "\U0001f50d Reconcile",
+            "\U0001f4b5 Cash Flow",
+            "\U0001f4ca Benchmark",
+            "\U0001f500 Compare",
+            # Tier 4: attentive.ai parity
+            "\U0001f4d0 Sheet Takeoff",
         ]
     else:
         _tab_labels = [
@@ -5847,6 +6351,18 @@ def _render_analysis_results_preview(result, project_id: str, uploaded_files: Li
             "\U0001f4cf Measure",
             # Sprint 40: Bid Intelligence
             "\U0001f9e0 Bid Intelligence",
+            # Sprint 46: Platform completion
+            "\U0001f4c1 Projects",
+            "\U0001f4c4 Bid Report",
+            "\U0001f3d7\ufe0f Prelims",
+            "\U0001f4ec Scope Packages",
+            "\U0001f504 Addenda",
+            "\U0001f50d Reconcile",
+            "\U0001f4b5 Cash Flow",
+            "\U0001f4ca Benchmark",
+            "\U0001f500 Compare",
+            # Tier 4: attentive.ai parity
+            "\U0001f4d0 Sheet Takeoff",
         ]
 
     # Sprint 20B: Stability guard helper — prevents one tab crash from blanking all tabs
@@ -5862,7 +6378,6 @@ def _render_analysis_results_preview(result, project_id: str, uploaded_files: Li
             else:
                 st.error(f"{tab_name} encountered an error: {type(_tab_err).__name__}")
                 with st.expander("Traceback", expanded=False):
-                    import traceback
                     st.code(traceback.format_exc())
 
     def _handle_tab_error(tab_name: str, err: Exception):
@@ -5874,8 +6389,15 @@ def _render_analysis_results_preview(result, project_id: str, uploaded_files: Li
         else:
             st.error(f"{tab_name} encountered an error: {type(err).__name__}")
             with st.expander("Traceback", expanded=False):
-                import traceback
                 st.code(traceback.format_exc())
+
+    # Share button
+    _share_col1, _share_col2 = st.columns([6, 1])
+    with _share_col2:
+        _share_project_id = project_id
+        if _share_project_id:
+            _share_url = f"/api/jobs/{_share_project_id}/report"
+            st.code(_share_url, language=None)
 
     preview_tabs = st.tabs(_tab_labels)
 
@@ -6650,6 +7172,47 @@ def _render_analysis_results_preview(result, project_id: str, uploaded_files: Li
                     csv_data, "quantities.csv", "text/csv",
                     key="dl_quantities_csv",
                 )
+
+                # ── T4-4: Estimating Software Exports ─────────────────────────
+                _est_boq = payload.get("boq_items") or []
+                if _est_boq:
+                    st.markdown("**Export for estimating software:**")
+                    _ecols = st.columns(4)
+                    try:
+                        from src.exports.estimating_export import (
+                            export_sage100_csv, export_buildertrend_csv,
+                            export_procore_csv, export_generic_csv,
+                        )
+                        with _ecols[0]:
+                            st.download_button(
+                                "⬇ Sage 100", export_sage100_csv(_est_boq),
+                                f"{project_id}_sage100.csv", "text/csv",
+                                key=_make_widget_key("est_sage100", project_id),
+                                use_container_width=True,
+                            )
+                        with _ecols[1]:
+                            st.download_button(
+                                "⬇ Buildertrend", export_buildertrend_csv(_est_boq),
+                                f"{project_id}_buildertrend.csv", "text/csv",
+                                key=_make_widget_key("est_bt", project_id),
+                                use_container_width=True,
+                            )
+                        with _ecols[2]:
+                            st.download_button(
+                                "⬇ Procore", export_procore_csv(_est_boq),
+                                f"{project_id}_procore.csv", "text/csv",
+                                key=_make_widget_key("est_pc", project_id),
+                                use_container_width=True,
+                            )
+                        with _ecols[3]:
+                            st.download_button(
+                                "⬇ Generic CSV", export_generic_csv(_est_boq),
+                                f"{project_id}_generic.csv", "text/csv",
+                                key=_make_widget_key("est_gen", project_id),
+                                use_container_width=True,
+                            )
+                    except Exception:
+                        pass
 
                 # ── Sprint 12: Quantity Feedback ──────────────────────────────
                 st.markdown("---")
@@ -8783,6 +9346,112 @@ def _render_analysis_results_preview(result, project_id: str, uploaded_files: Li
       except Exception as _tab19_err:
           _handle_tab_error("Bid Risk Assessment", _tab19_err)
 
+    # ------------------------------------------------------------------
+    # TAB 20: Interactive Drawing Measurement (Sprint 36)
+    # ------------------------------------------------------------------
+    with preview_tabs[20]:
+        try:
+            import sys as _sys
+            import os as _os
+            _app_root = _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))
+            if _app_root not in _sys.path:
+                _sys.path.insert(0, _app_root)
+            from app.measurement_tool import render_measurement_tool
+
+            # Retrieve PDF path and OCR cache from session state
+            _meas_pdf = st.session_state.get("_xboq_pdf_path") or ""
+            _meas_ocr_cache: dict = st.session_state.get("_xboq_ocr_cache") or {}
+
+            # Convert {page_idx: text} → [(page_idx, text, "unknown")]
+            _meas_page_texts = [
+                (int(pidx), txt, "unknown")
+                for pidx, txt in _meas_ocr_cache.items()
+                if txt and txt.strip()
+            ]
+
+            # Enrich with doc_types from diagnostics if available
+            _meas_page_index = (payload.get("diagnostics") or {}).get("page_index", {})
+            if _meas_page_index and isinstance(_meas_page_index, dict):
+                _meas_dt_map = {
+                    pg.get("page_idx", i): pg.get("doc_type", "unknown")
+                    for i, pg in enumerate(_meas_page_index.get("pages", []))
+                }
+                _meas_page_texts = [
+                    (pidx, txt, _meas_dt_map.get(pidx, "unknown"))
+                    for pidx, txt, _ in _meas_page_texts
+                ]
+
+            render_measurement_tool(
+                pdf_path=_meas_pdf or None,
+                page_texts=_meas_page_texts or None,
+                session_key="main",
+            )
+        except Exception as _meas_err:
+            st.error(f"Measurement tool error: {type(_meas_err).__name__}: {_meas_err}")
+            with st.expander("Traceback", expanded=False):
+                st.code(traceback.format_exc())
+
+    # ------------------------------------------------------------------
+    # TAB 21: Bid Intelligence (Sprint 40)
+    # ------------------------------------------------------------------
+    with preview_tabs[21]:
+        try:
+            _intel_payload = payload or {}
+            _render_bid_intelligence_tab(_intel_payload)
+        except Exception as _intel_tab_err:
+            st.error(f"Bid Intelligence error: {type(_intel_tab_err).__name__}: {_intel_tab_err}")
+            with st.expander("Traceback"):
+                st.code(traceback.format_exc())
+
+    # ── Sprint 46 tabs ────────────────────────────────────────────────────────
+    def _extra_tab(tab_name: str, render_fn, payload_arg):
+        try:
+            render_fn(payload_arg)
+        except Exception as _et_err:
+            st.error(f"{tab_name} error: {type(_et_err).__name__}: {_et_err}")
+            with st.expander("Traceback"):
+                st.code(traceback.format_exc())
+
+    if _HAS_EXTRA_TABS:
+        with preview_tabs[22]:
+            _extra_tab("Projects", render_projects_tab, payload or {})
+
+        with preview_tabs[23]:
+            _extra_tab("Bid Report", render_bid_report_tab, payload or {})
+
+        with preview_tabs[24]:
+            _extra_tab("Prelims", render_prelims_tab, payload or {})
+
+        with preview_tabs[25]:
+            _extra_tab("Scope Packages", render_scope_packages_tab, payload or {})
+
+        with preview_tabs[26]:
+            _extra_tab("Addenda", render_addenda_tab, payload or {})
+
+        with preview_tabs[27]:
+            _extra_tab("Reconcile", render_reconcile_tab, payload or {})
+
+        with preview_tabs[28]:
+            _extra_tab("Cash Flow", render_cash_flow_tab, payload or {})
+
+        with preview_tabs[29]:
+            _extra_tab("Benchmark", render_benchmark_tab, payload or {})
+
+        with preview_tabs[30]:
+            _extra_tab("Compare", render_compare_tab, payload or {})
+    else:
+        for _t46_idx in range(22, 31):
+            with preview_tabs[_t46_idx]:
+                st.info("Extra tabs module not loaded. Check app/extra_tabs.py.")
+
+    # Tier 4 — Tab 31: Sheet Takeoff
+    with preview_tabs[31]:
+        try:
+            from app.sheet_takeoff import render_sheet_takeoff_tab
+            render_sheet_takeoff_tab(payload or {})
+        except Exception as _st_err:
+            _handle_tab_error("Sheet Takeoff", _st_err)
+
     # =========================================================================
     # ACTION BUTTONS
     # =========================================================================
@@ -9021,22 +9690,24 @@ def _run_analysis_with_progress(uploaded_files: List[Any], dev_mode: bool = Fals
             detail_text.caption("Saving uploaded files...")
             saved_files = save_uploaded_files(uploaded_files, project_id, uploads_dir)
 
-            # Build LLM client from env vars if available
+            # Build LLM client from env vars — Claude preferred, OpenAI fallback
             _llm_client = None
-            _openai_key = os.environ.get("OPENAI_API_KEY", "")
             _anthropic_key = os.environ.get("ANTHROPIC_API_KEY", "")
-            if _openai_key:
-                try:
-                    import openai
-                    _llm_client = openai.OpenAI(api_key=_openai_key)
-                except ImportError:
-                    pass
-            elif _anthropic_key:
+            _openai_key    = os.environ.get("OPENAI_API_KEY", "")
+            if _anthropic_key:
                 try:
                     import anthropic
                     _llm_client = anthropic.Anthropic(api_key=_anthropic_key)
                 except ImportError:
                     pass
+            if _llm_client is None and _openai_key:
+                try:
+                    import openai
+                    _llm_client = openai.OpenAI(api_key=_openai_key)
+                except ImportError:
+                    pass
+            if _llm_client is None:
+                st.warning("⚠️ No LLM API key found — gap analysis, visual detection and bid synthesis disabled. Set ANTHROPIC_API_KEY in your .env file.", icon="⚠️")
 
             # Sprint 16: Try async job queue if available
             _use_async = os.environ.get("XBOQ_ASYNC_JOBS", "").lower() == "true"
@@ -9071,6 +9742,7 @@ def _run_analysis_with_progress(uploaded_files: List[Any], dev_mode: bool = Fals
                 run_mode=run_mode,
                 llm_client=_llm_client,
                 sub_callback=_sub_callback,
+                tenant_id=st.session_state.get("_xboq_tenant_id"),
             )
 
             progress_bar.progress(1.0)
@@ -9122,6 +9794,17 @@ def _run_analysis_with_progress(uploaded_files: List[Any], dev_mode: bool = Fals
     if analysis_result is not None:
         _render_analysis_results_preview(analysis_result, project_id, uploaded_files)
     elif analysis_error is not None:
+        st.error("Analysis encountered an issue with this tender.")
+        with st.expander("What to try"):
+            st.markdown("""
+        - **Try Full Audit mode** — processes all pages, better for scanned PDFs
+        - **Check the PDF** — ensure it's not password-protected or corrupted
+        - **Split large files** — for PDFs >500 pages, split into sections first
+        """)
+        _err_detail = str(analysis_error)
+        if _err_detail:
+            with st.expander("Technical details (for support)"):
+                st.code(_err_detail)
         if st.button("Try Again", type="secondary"):
             st.rerun()
 
@@ -9342,7 +10025,7 @@ def main():
                 st.session_state["_active_project_name"] = ""
 
             # New project expander
-            with st.expander("➕ New Project"):
+            with st.expander("+ New Project"):
                 _np_name = st.text_input("Project name", key="_np_name")
                 _np_owner = st.text_input("Owner / Client", key="_np_owner")
                 _np_bid = st.text_input("Bid date", key="_np_bid", placeholder="YYYY-MM-DD")
@@ -9508,6 +10191,7 @@ def main():
                         if _loaded:
                             st.session_state["loaded_payload"] = _loaded.get("payload", {})
                             st.session_state["loaded_filename"] = _run["filename"]
+                            st.query_params["project_id"] = "_history"
                             st.rerun()
                 with col_b:
                     if st.button("🗑", key=f"del_{_run['run_id']}", help="Delete this run"):
@@ -9515,6 +10199,18 @@ def main():
                         st.rerun()
     except Exception as _he:
         st.sidebar.caption(f"History unavailable: {_he}")
+
+    # ── Rate Overrides sidebar ───────────────────────────────────────
+    with st.sidebar.expander("Rate Overrides (optional)", expanded=False):
+        st.caption("Override default DSR rates for this session")
+        _steel_rate = st.number_input("Steel (₹/MT)", value=88000, min_value=50000, max_value=150000, step=1000, key="rate_steel")
+        _cement_rate = st.number_input("Cement (₹/bag)", value=420, min_value=200, max_value=800, step=10, key="rate_cement")
+        _labour_rate = st.number_input("Labour (₹/sqft)", value=350, min_value=100, max_value=800, step=10, key="rate_labour")
+        if st.button("Apply Rates", key="btn_apply_rates"):
+            os.environ["XBOQ_RATE_STEEL_MT"] = str(_steel_rate)
+            os.environ["XBOQ_RATE_CEMENT_BAG"] = str(_cement_rate)
+            os.environ["XBOQ_RATE_LABOUR_SQFT"] = str(_labour_rate)
+            st.success("Rates applied for this session")
 
     if not project_id:
         # ── Hero landing page ──
@@ -9541,6 +10237,22 @@ def main():
             </div>
         </div>
         """, unsafe_allow_html=True)
+
+        # First-run onboarding
+        _has_prior_jobs = False
+        try:
+            _jobs_dir = Path(os.environ.get("XBOQ_JOBS_DIR", Path.home() / ".xboq" / "job_outputs"))
+            _has_prior_jobs = _jobs_dir.exists() and any(_jobs_dir.iterdir())
+        except Exception:
+            pass
+
+        if not _has_prior_jobs:
+            st.info(
+                "**Welcome to xBOQ.** Upload a construction tender PDF below. "
+                "In 2–5 minutes you'll get: RFIs to send to the client, "
+                "quantities extracted from drawings, and a cost estimate by trade. "
+                "No setup required."
+            )
 
         uploaded_files = st.file_uploader(
             "Drop your tender drawing PDFs here",
@@ -9593,8 +10305,13 @@ def main():
                 st.rerun()
 
     else:
-        # Results view
-        results = load_demo_results(project_id)
+        # Results view — may come from history load (_history) or disk (project_id)
+        _hist_payload = st.session_state.get("loaded_payload") if project_id == "_history" else None
+
+        if _hist_payload:
+            results = {"loaded": True, "analysis": _hist_payload}
+        else:
+            results = load_demo_results(project_id)
 
         if not results["loaded"]:
             st.error(f"No results found for project: {project_id}")
@@ -9620,6 +10337,8 @@ def main():
         col_back, col_spacer, col_export = st.columns([1, 2, 1])
         with col_back:
             if st.button("← New analysis", type="secondary", use_container_width=True):
+                st.session_state.pop("loaded_payload", None)
+                st.session_state.pop("loaded_filename", None)
                 st.query_params.clear()
                 st.rerun()
 
@@ -10371,65 +11090,6 @@ def main():
         </div>
         """, unsafe_allow_html=True)
 
-    # ------------------------------------------------------------------
-    # TAB 20: Interactive Drawing Measurement (Sprint 36)
-    # ------------------------------------------------------------------
-    with preview_tabs[20]:
-        try:
-            import sys as _sys
-            import os as _os
-            _app_root = _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))
-            if _app_root not in _sys.path:
-                _sys.path.insert(0, _app_root)
-            from app.measurement_tool import render_measurement_tool
-
-            # Retrieve PDF path and OCR cache from session state
-            _meas_pdf = st.session_state.get("_xboq_pdf_path") or ""
-            _meas_ocr_cache: dict = st.session_state.get("_xboq_ocr_cache") or {}
-
-            # Convert {page_idx: text} → [(page_idx, text, "unknown")]
-            # Scale detector handles "unknown" doc_type gracefully
-            _meas_page_texts = [
-                (int(pidx), txt, "unknown")
-                for pidx, txt in _meas_ocr_cache.items()
-                if txt and txt.strip()
-            ]
-
-            # Enrich with doc_types from diagnostics if available
-            _meas_page_index = (payload.get("diagnostics") or {}).get("page_index", {})
-            if _meas_page_index and isinstance(_meas_page_index, dict):
-                _meas_dt_map = {
-                    pg.get("page_idx", i): pg.get("doc_type", "unknown")
-                    for i, pg in enumerate(_meas_page_index.get("pages", []))
-                }
-                _meas_page_texts = [
-                    (pidx, txt, _meas_dt_map.get(pidx, "unknown"))
-                    for pidx, txt, _ in _meas_page_texts
-                ]
-
-            render_measurement_tool(
-                pdf_path=_meas_pdf or None,
-                page_texts=_meas_page_texts or None,
-                session_key="main",
-            )
-        except Exception as _meas_err:
-            st.error(f"Measurement tool error: {type(_meas_err).__name__}: {_meas_err}")
-            with st.expander("Traceback", expanded=False):
-                import traceback as _tb
-                st.code(_tb.format_exc())
-
-    # ------------------------------------------------------------------
-    # TAB 21: Bid Intelligence (Sprint 40)
-    # ------------------------------------------------------------------
-    with preview_tabs[21]:
-        try:
-            _intel_payload = payload or {}
-            _render_bid_intelligence_tab(_intel_payload)
-        except Exception as _intel_tab_err:
-            st.error(f"Bid Intelligence error: {type(_intel_tab_err).__name__}: {_intel_tab_err}")
-            with st.expander("Traceback"):
-                import traceback as _tb2
-                st.code(_tb2.format_exc())
 
 
 # =============================================================================
@@ -10497,6 +11157,81 @@ def _render_bid_intelligence_tab(payload: dict) -> None:
     )
     _mc3.metric("Recommended Contingency", f"{contingency:.1f}%")
     _mc4.metric("Chunks Indexed", f"{n_chunks:,}" if n_chunks else "N/A")
+
+    # ── T3: Market Benchmark banner ───────────────────────────────────────
+    _bm = payload.get("benchmark_comparison") or {}
+    if _bm.get("status") == "ok":
+        _bm_flag = _bm.get("flag", "at_market")
+        _bm_color = "#22c55e" if _bm_flag == "below_market" else "#f59e0b" if _bm_flag == "at_market" else "#ef4444"
+        _bm_icon = "▼" if _bm_flag == "below_market" else "▲" if _bm_flag == "above_market" else "●"
+        _bm_text = _bm.get("insight_text", "")
+        _bm_n = _bm.get("sample_count", 0)
+        st.markdown(
+            f'<div style="background:#1e293b;border-left:4px solid {_bm_color};'
+            f'border-radius:8px;padding:0.8rem 1.2rem;margin:0.5rem 0;">'
+            f'<span style="color:{_bm_color};font-weight:700;font-size:1.1rem">{_bm_icon} Market Benchmark</span> '
+            f'<span style="color:#e2e8f0;font-size:0.9rem"> — {_bm_text}</span>'
+            f'<span style="color:#64748b;font-size:0.75rem"> (n={_bm_n})</span>'
+            f'</div>',
+            unsafe_allow_html=True,
+        )
+
+    # ── T3: Award Probability gauge ───────────────────────────────────────
+    _award_pct = synthesis.get("award_probability") or payload.get("award_probability")
+    if _award_pct is not None:
+        _aw_color = "#22c55e" if _award_pct >= 60 else "#f59e0b" if _award_pct >= 40 else "#ef4444"
+        _ap_detail = payload.get("award_prediction") or {}
+        _ap_conf = _ap_detail.get("confidence", "low")
+        st.markdown(
+            f'<div style="background:#1e293b;border-left:4px solid {_aw_color};'
+            f'border-radius:8px;padding:0.8rem 1.2rem;margin:0.5rem 0 1rem 0;">'
+            f'<span style="color:{_aw_color};font-weight:700;font-size:1.1rem">🎯 Award Probability</span> '
+            f'<span style="color:{_aw_color};font-size:2rem;font-weight:800;margin-left:1rem">{_award_pct}%</span>'
+            f'<span style="color:#64748b;font-size:0.75rem;margin-left:0.8rem">confidence: {_ap_conf}</span>'
+            f'</div>',
+            unsafe_allow_html=True,
+        )
+
+    # ── T4-1: QA Verified badge ───────────────────────────────────────────
+    try:
+        from src.analysis.qa_workflow import is_verified as _is_qa_verified
+        if project_id and _is_qa_verified(project_id):
+            st.markdown(
+                '<div style="background:#14532d;border:2px solid #22c55e;border-radius:8px;'
+                'padding:0.6rem 1.2rem;margin:0.5rem 0 1rem 0;display:inline-block;">'
+                '<span style="color:#22c55e;font-weight:700;font-size:1rem">✅ QA Verified</span>'
+                '<span style="color:#86efac;font-size:0.85rem;margin-left:0.8rem">'
+                'All quantities reviewed by a human estimator</span>'
+                '</div>',
+                unsafe_allow_html=True,
+            )
+    except Exception:
+        pass
+
+    # ── T4-5: Site Measurement widget ─────────────────────────────────────
+    with st.expander("🛰️ Aerial Site Measurement", expanded=False):
+        _addr_input = st.text_input(
+            "Site address",
+            placeholder="e.g. Plot 14, Sector 62, Noida, UP",
+            key=_make_widget_key("aerial_address", project_id),
+        )
+        if st.button("Measure Site", key=_make_widget_key("aerial_btn", project_id)):
+            try:
+                from src.analysis.aerial_measurement import measure_site as _measure_site
+                with st.spinner("Fetching satellite data…"):
+                    _sm = _measure_site(_addr_input or "")
+                if _sm.total_site_sqm > 0:
+                    _sm_cols = st.columns(3)
+                    _sm_cols[0].metric("Total Site", f"{_sm.total_site_sqm:,.0f} sqm")
+                    _sm_cols[1].metric("Built Footprint", f"{_sm.built_footprint_sqm:,.0f} sqm")
+                    _sm_cols[2].metric("Laydown Area", f"{_sm.laydown_sqm:,.0f} sqm")
+                else:
+                    st.info(f"Measurement confidence: {_sm.confidence}. "
+                            "Add GOOGLE_MAPS_API_KEY env var for live satellite data.")
+                _sm_dict = _sm.to_dict()
+                payload["site_measurement"] = _sm_dict
+            except Exception as _sm_err:
+                st.warning(f"Aerial measurement unavailable: {_sm_err}")
 
     st.markdown("---")
 
