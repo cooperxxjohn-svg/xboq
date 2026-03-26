@@ -312,9 +312,10 @@ class BOQExporter:
             f.write(f"|--------|-------|\n")
             f.write(f"| Total Items | {len(items)} |\n")
             f.write(f"| Categories | {len(by_category)} |\n")
-            f.write(f"| High Confidence (≥75%) | {high_conf} ({high_conf/len(items)*100:.0f}%) |\n")
-            f.write(f"| Medium Confidence (50-75%) | {med_conf} ({med_conf/len(items)*100:.0f}%) |\n")
-            f.write(f"| Low Confidence (<50%) | {low_conf} ({low_conf/len(items)*100:.0f}%) |\n")
+            n = len(items) or 1  # Prevent division by zero
+            f.write(f"| High Confidence (≥75%) | {high_conf} ({high_conf/n*100:.0f}%) |\n")
+            f.write(f"| Medium Confidence (50-75%) | {med_conf} ({med_conf/n*100:.0f}%) |\n")
+            f.write(f"| Low Confidence (<50%) | {low_conf} ({low_conf/n*100:.0f}%) |\n")
             f.write(f"| Assumptions Made | {len(assumptions)} |\n\n")
 
             # By category

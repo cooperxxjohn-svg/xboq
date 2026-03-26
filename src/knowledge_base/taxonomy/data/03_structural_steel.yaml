@@ -1,0 +1,5727 @@
+discipline: structural
+trade: steel_frame
+sub_trades:
+  sections:
+    categories:
+      ismb:
+        items:
+        - id: STR.SF.ISMB.001
+          standard_name: Providing fabricating and erecting ISMB 150 structural steel section including cutting, welding, drilling, surface preparation and one coat primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 808, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - ISMB 150
+          - I-beam 150
+          - medium beam 150
+          typical_rate_range:
+            min: 95
+            max: 135
+          notes: Weight 14.9 kg/m. For light framing and bracings
+          data_source: CPWD DSR 2023 + IS codes
+        - id: STR.SF.ISMB.002
+          standard_name: Providing fabricating and erecting ISMB 200 structural steel section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 808, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - ISMB 200
+          - I-beam 200
+          typical_rate_range:
+            min: 92
+            max: 130
+          notes: Weight 25.4 kg/m
+          data_source: CPWD DSR 2023 + IS codes
+        - id: STR.SF.ISMB.003
+          standard_name: Providing fabricating and erecting ISMB 250 structural steel section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 808, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - ISMB 250
+          - I-beam 250
+          typical_rate_range:
+            min: 90
+            max: 128
+          notes: Weight 37.3 kg/m. Common for floor beams
+          data_source: CPWD DSR 2023 + IS codes
+        - id: STR.SF.ISMB.004
+          standard_name: Providing fabricating and erecting ISMB 300 structural steel section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 808, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - ISMB 300
+          - I-beam 300
+          typical_rate_range:
+            min: 88
+            max: 125
+          notes: Weight 44.2 kg/m
+          data_source: CPWD DSR 2023 + IS codes
+        - id: STR.SF.ISMB.005
+          standard_name: Providing fabricating and erecting ISMB 350 structural steel section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 808, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - ISMB 350
+          - I-beam 350
+          typical_rate_range:
+            min: 88
+            max: 125
+          notes: Weight 52.4 kg/m
+          data_source: CPWD DSR 2023 + IS codes
+        - id: STR.SF.ISMB.006
+          standard_name: Providing fabricating and erecting ISMB 400 structural steel section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 808, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - ISMB 400
+          - I-beam 400
+          typical_rate_range:
+            min: 87
+            max: 122
+          notes: Weight 61.6 kg/m. Common for main beams
+          data_source: CPWD DSR 2023 + IS codes
+        - id: STR.SF.ISMB.007
+          standard_name: Providing fabricating and erecting ISMB 450 structural steel section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - commercial
+          - industrial
+          requires: []
+          is_code_ref: IS 808, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - ISMB 450
+          - I-beam 450
+          typical_rate_range:
+            min: 86
+            max: 120
+          notes: Weight 72.4 kg/m
+          data_source: CPWD DSR 2023 + IS codes
+        - id: STR.SF.ISMB.008
+          standard_name: Providing fabricating and erecting ISMB 500 structural steel section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - commercial
+          - industrial
+          requires: []
+          is_code_ref: IS 808, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - ISMB 500
+          - I-beam 500
+          typical_rate_range:
+            min: 85
+            max: 120
+          notes: Weight 86.9 kg/m
+          data_source: CPWD DSR 2023 + IS codes
+        - id: STR.SF.ISMB.009
+          standard_name: Providing fabricating and erecting ISMB 550 structural steel section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - commercial
+          - industrial
+          - infrastructure
+          requires: []
+          is_code_ref: IS 808, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - ISMB 550
+          - I-beam 550
+          typical_rate_range:
+            min: 85
+            max: 120
+          notes: Weight 103.7 kg/m
+          data_source: CPWD DSR 2023 + IS codes
+        - id: STR.SF.ISMB.010
+          standard_name: Providing fabricating and erecting ISMB 600 structural steel section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - commercial
+          - industrial
+          - infrastructure
+          requires: []
+          is_code_ref: IS 808, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - ISMB 600
+          - I-beam 600
+          typical_rate_range:
+            min: 85
+            max: 120
+          notes: Weight 122.6 kg/m. For heavy primary beams and crane girders
+          data_source: CPWD DSR 2023 + IS codes
+      ismc:
+        items:
+        - id: STR.SF.ISMC.001
+          standard_name: Providing fabricating and erecting ISMC 75 channel section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 808, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - ISMC 75
+          - channel 75
+          - C-section 75
+          typical_rate_range:
+            min: 100
+            max: 140
+          notes: Weight 6.8 kg/m. For bracings and light framing
+          data_source: CPWD DSR 2023 + IS codes
+        - id: STR.SF.ISMC.002
+          standard_name: Providing fabricating and erecting ISMC 100 channel section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 808, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - ISMC 100
+          - channel 100
+          typical_rate_range:
+            min: 98
+            max: 138
+          notes: Weight 9.2 kg/m
+          data_source: CPWD DSR 2023 + IS codes
+        - id: STR.SF.ISMC.003
+          standard_name: Providing fabricating and erecting ISMC 125 channel section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 808, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - ISMC 125
+          - channel 125
+          typical_rate_range:
+            min: 96
+            max: 135
+          notes: Weight 12.7 kg/m
+          data_source: CPWD DSR 2023 + IS codes
+        - id: STR.SF.ISMC.004
+          standard_name: Providing fabricating and erecting ISMC 150 channel section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 808, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - ISMC 150
+          - channel 150
+          typical_rate_range:
+            min: 94
+            max: 132
+          notes: Weight 16.0 kg/m
+          data_source: CPWD DSR 2023 + IS codes
+        - id: STR.SF.ISMC.005
+          standard_name: Providing fabricating and erecting ISMC 200 channel section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 808, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - ISMC 200
+          - channel 200
+          typical_rate_range:
+            min: 92
+            max: 130
+          notes: Weight 22.1 kg/m
+          data_source: CPWD DSR 2023 + IS codes
+        - id: STR.SF.ISMC.006
+          standard_name: Providing fabricating and erecting ISMC 250 channel section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 808, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - ISMC 250
+          - channel 250
+          typical_rate_range:
+            min: 90
+            max: 128
+          notes: Weight 30.4 kg/m
+          data_source: CPWD DSR 2023 + IS codes
+        - id: STR.SF.ISMC.007
+          standard_name: Providing fabricating and erecting ISMC 300 channel section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - commercial
+          - industrial
+          requires: []
+          is_code_ref: IS 808, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - ISMC 300
+          - channel 300
+          typical_rate_range:
+            min: 88
+            max: 125
+          notes: Weight 36.3 kg/m
+          data_source: CPWD DSR 2023 + IS codes
+      isa:
+        items:
+        - id: STR.SF.ISA.001
+          standard_name: Providing fabricating and erecting ISA 50x50x6 equal angle section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 808, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - ISA 50x50
+          - angle 50
+          - L-section 50
+          typical_rate_range:
+            min: 100
+            max: 140
+          notes: Weight 4.5 kg/m. For bracings, trusses, and lintels
+          data_source: CPWD DSR 2023 + IS codes
+        - id: STR.SF.ISA.002
+          standard_name: Providing fabricating and erecting ISA 65x65x6 equal angle section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 808, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - ISA 65x65
+          - angle 65
+          typical_rate_range:
+            min: 98
+            max: 138
+          notes: Weight 5.8 kg/m
+          data_source: CPWD DSR 2023 + IS codes
+        - id: STR.SF.ISA.003
+          standard_name: Providing fabricating and erecting ISA 75x75x6 equal angle section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 808, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - ISA 75x75
+          - angle 75
+          typical_rate_range:
+            min: 96
+            max: 135
+          notes: Weight 6.8 kg/m. Common truss member
+          data_source: CPWD DSR 2023 + IS codes
+        - id: STR.SF.ISA.004
+          standard_name: Providing fabricating and erecting ISA 90x90x8 equal angle section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 808, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - ISA 90x90
+          - angle 90
+          typical_rate_range:
+            min: 94
+            max: 132
+          notes: Weight 10.8 kg/m
+          data_source: CPWD DSR 2023 + IS codes
+        - id: STR.SF.ISA.005
+          standard_name: Providing fabricating and erecting ISA 100x100x8 equal angle section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 808, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - ISA 100x100
+          - angle 100
+          typical_rate_range:
+            min: 92
+            max: 130
+          notes: Weight 12.1 kg/m
+          data_source: CPWD DSR 2023 + IS codes
+        - id: STR.SF.ISA.006
+          standard_name: Providing fabricating and erecting ISA 130x130x10 equal angle section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - commercial
+          - industrial
+          requires: []
+          is_code_ref: IS 808, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - ISA 130x130
+          - angle 130
+          typical_rate_range:
+            min: 90
+            max: 128
+          notes: Weight 19.7 kg/m
+          data_source: CPWD DSR 2023 + IS codes
+        - id: STR.SF.ISA.007
+          standard_name: Providing fabricating and erecting ISA 150x150x12 equal angle section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - commercial
+          - industrial
+          requires: []
+          is_code_ref: IS 808, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - ISA 150x150
+          - angle 150
+          - heavy angle
+          typical_rate_range:
+            min: 88
+            max: 125
+          notes: Weight 27.3 kg/m. For heavy trusses and columns
+          data_source: CPWD DSR 2023 + IS codes
+      hollow_sections:
+        items:
+        - id: STR.SF.SHS.001
+          standard_name: Providing fabricating and erecting SHS 60x60x3.2mm square hollow section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 4923
+          dsr_item_ref: ''
+          aliases:
+          - SHS 60
+          - square tube 60
+          - square hollow 60
+          typical_rate_range:
+            min: 105
+            max: 150
+          notes: Weight 5.6 kg/m
+          data_source: CPWD DSR 2023 + IS codes
+        - id: STR.SF.SHS.002
+          standard_name: Providing fabricating and erecting SHS 80x80x4mm square hollow section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 4923
+          dsr_item_ref: ''
+          aliases:
+          - SHS 80
+          - square tube 80
+          typical_rate_range:
+            min: 102
+            max: 145
+          notes: Weight 9.2 kg/m
+          data_source: CPWD DSR 2023 + IS codes
+        - id: STR.SF.SHS.003
+          standard_name: Providing fabricating and erecting SHS 100x100x4mm square hollow section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 4923
+          dsr_item_ref: ''
+          aliases:
+          - SHS 100
+          - square tube 100
+          typical_rate_range:
+            min: 100
+            max: 142
+          notes: Weight 11.7 kg/m
+          data_source: CPWD DSR 2023 + IS codes
+        - id: STR.SF.SHS.004
+          standard_name: Providing fabricating and erecting SHS 150x150x5mm square hollow section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - commercial
+          - industrial
+          requires: []
+          is_code_ref: IS 4923
+          dsr_item_ref: ''
+          aliases:
+          - SHS 150
+          - square tube 150
+          typical_rate_range:
+            min: 98
+            max: 140
+          notes: Weight 22.0 kg/m
+          data_source: CPWD DSR 2023 + IS codes
+        - id: STR.SF.RHS.001
+          standard_name: Providing fabricating and erecting RHS 100x50x3.2mm rectangular hollow section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 4923
+          dsr_item_ref: ''
+          aliases:
+          - RHS 100x50
+          - rectangular tube
+          typical_rate_range:
+            min: 105
+            max: 150
+          notes: Weight 7.0 kg/m
+          data_source: CPWD DSR 2023 + IS codes
+        - id: STR.SF.RHS.002
+          standard_name: Providing fabricating and erecting RHS 150x75x4mm rectangular hollow section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 4923
+          dsr_item_ref: ''
+          aliases:
+          - RHS 150x75
+          - rect tube 150x75
+          typical_rate_range:
+            min: 100
+            max: 142
+          notes: Weight 13.0 kg/m
+          data_source: CPWD DSR 2023 + IS codes
+        - id: STR.SF.RHS.003
+          standard_name: Providing fabricating and erecting RHS 200x100x5mm rectangular hollow section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - commercial
+          - industrial
+          requires: []
+          is_code_ref: IS 4923
+          dsr_item_ref: ''
+          aliases:
+          - RHS 200x100
+          typical_rate_range:
+            min: 98
+            max: 140
+          notes: Weight 22.0 kg/m
+          data_source: CPWD DSR 2023 + IS codes
+        - id: STR.SF.CHS.001
+          standard_name: Providing fabricating and erecting CHS 60.3mm OD x 3.2mm circular hollow section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1161
+          dsr_item_ref: ''
+          aliases:
+          - CHS 60
+          - circular tube 60
+          - pipe section 60
+          typical_rate_range:
+            min: 110
+            max: 155
+          notes: Weight 4.5 kg/m
+          data_source: CPWD DSR 2023 + IS codes
+        - id: STR.SF.CHS.002
+          standard_name: Providing fabricating and erecting CHS 88.9mm OD x 4mm circular hollow section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1161
+          dsr_item_ref: ''
+          aliases:
+          - CHS 89
+          - circular tube 89
+          typical_rate_range:
+            min: 108
+            max: 150
+          notes: Weight 8.4 kg/m
+          data_source: CPWD DSR 2023 + IS codes
+        - id: STR.SF.CHS.003
+          standard_name: Providing fabricating and erecting CHS 114.3mm OD x 5mm circular hollow section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1161
+          dsr_item_ref: ''
+          aliases:
+          - CHS 114
+          - circular tube 114
+          typical_rate_range:
+            min: 105
+            max: 148
+          notes: Weight 13.5 kg/m
+          data_source: CPWD DSR 2023 + IS codes
+        - id: STR.SF.CHS.004
+          standard_name: Providing fabricating and erecting CHS 168.3mm OD x 6mm circular hollow section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - commercial
+          - industrial
+          requires: []
+          is_code_ref: IS 1161
+          dsr_item_ref: ''
+          aliases:
+          - CHS 168
+          - circular tube 168
+          typical_rate_range:
+            min: 102
+            max: 145
+          notes: Weight 24.0 kg/m
+          data_source: CPWD DSR 2023 + IS codes
+        - id: STR.SF.CHS.005
+          standard_name: Providing fabricating and erecting CHS 219.1mm OD x 8mm circular hollow section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - commercial
+          - industrial
+          - infrastructure
+          requires: []
+          is_code_ref: IS 1161
+          dsr_item_ref: ''
+          aliases:
+          - CHS 219
+          - large circular tube
+          typical_rate_range:
+            min: 100
+            max: 142
+          notes: Weight 41.6 kg/m. For columns and large trusses
+          data_source: CPWD DSR 2023 + IS codes
+        - id: STR.SF.SHS.005
+          standard_name: Providing fabricating and erecting SHS 40x40x2.6mm square hollow section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 4923
+          dsr_item_ref: ''
+          aliases:
+          - SHS 40
+          - square tube 40
+          typical_rate_range:
+            min: 110
+            max: 155
+          notes: Weight 2.9 kg/m. For light framing and handrails
+          data_source: IS codes only
+        - id: STR.SF.SHS.006
+          standard_name: Providing fabricating and erecting SHS 120x120x4mm square hollow section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 4923
+          dsr_item_ref: ''
+          aliases:
+          - SHS 120
+          - square tube 120
+          typical_rate_range:
+            min: 100
+            max: 142
+          notes: Weight 14.0 kg/m
+          data_source: IS codes only
+        - id: STR.SF.SHS.007
+          standard_name: Providing fabricating and erecting SHS 200x200x6mm square hollow section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - commercial
+          - industrial
+          requires: []
+          is_code_ref: IS 4923
+          dsr_item_ref: ''
+          aliases:
+          - SHS 200
+          - square tube 200
+          typical_rate_range:
+            min: 96
+            max: 138
+          notes: Weight 35.0 kg/m. For columns and heavy framing
+          data_source: IS codes only
+        - id: STR.SF.SHS.008
+          standard_name: Providing fabricating and erecting SHS 250x250x8mm square hollow section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - commercial
+          - industrial
+          requires: []
+          is_code_ref: IS 4923
+          dsr_item_ref: ''
+          aliases:
+          - SHS 250
+          - square tube 250
+          typical_rate_range:
+            min: 94
+            max: 135
+          notes: Weight 57.8 kg/m. For heavy columns
+          data_source: IS codes only
+        - id: STR.SF.RHS.004
+          standard_name: Providing fabricating and erecting RHS 40x20x2.0mm rectangular hollow section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 4923
+          dsr_item_ref: ''
+          aliases:
+          - RHS 40x20
+          - small rect tube
+          typical_rate_range:
+            min: 112
+            max: 158
+          notes: Weight 1.7 kg/m. For light framing
+          data_source: IS codes only
+        - id: STR.SF.RHS.005
+          standard_name: Providing fabricating and erecting RHS 60x40x3.2mm rectangular hollow section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 4923
+          dsr_item_ref: ''
+          aliases:
+          - RHS 60x40
+          - rect tube 60x40
+          typical_rate_range:
+            min: 108
+            max: 152
+          notes: Weight 4.5 kg/m
+          data_source: IS codes only
+        - id: STR.SF.RHS.006
+          standard_name: Providing fabricating and erecting RHS 250x150x6mm rectangular hollow section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - commercial
+          - industrial
+          requires: []
+          is_code_ref: IS 4923
+          dsr_item_ref: ''
+          aliases:
+          - RHS 250x150
+          - rect tube 250x150
+          typical_rate_range:
+            min: 96
+            max: 138
+          notes: Weight 35.5 kg/m
+          data_source: IS codes only
+        - id: STR.SF.RHS.007
+          standard_name: Providing fabricating and erecting RHS 300x200x8mm rectangular hollow section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - commercial
+          - industrial
+          requires: []
+          is_code_ref: IS 4923
+          dsr_item_ref: ''
+          aliases:
+          - RHS 300x200
+          - large rect tube
+          typical_rate_range:
+            min: 94
+            max: 135
+          notes: Weight 59.1 kg/m. For heavy beams and columns
+          data_source: IS codes only
+        - id: STR.SF.CHS.006
+          standard_name: Providing fabricating and erecting CHS 42.4mm OD x 2.6mm circular hollow section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1161
+          dsr_item_ref: ''
+          aliases:
+          - CHS 42
+          - small pipe section
+          typical_rate_range:
+            min: 115
+            max: 160
+          notes: Weight 2.6 kg/m. For handrails and light bracing
+          data_source: IS codes only
+        - id: STR.SF.CHS.007
+          standard_name: Providing fabricating and erecting CHS 139.7mm OD x 5mm circular hollow section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1161
+          dsr_item_ref: ''
+          aliases:
+          - CHS 140
+          - circular tube 140
+          typical_rate_range:
+            min: 104
+            max: 148
+          notes: Weight 16.6 kg/m
+          data_source: IS codes only
+        - id: STR.SF.CHS.008
+          standard_name: Providing fabricating and erecting CHS 273.1mm OD x 8mm circular hollow section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - commercial
+          - industrial
+          - infrastructure
+          requires: []
+          is_code_ref: IS 1161
+          dsr_item_ref: ''
+          aliases:
+          - CHS 273
+          - large pipe column
+          typical_rate_range:
+            min: 98
+            max: 140
+          notes: Weight 52.3 kg/m
+          data_source: IS codes only
+        - id: STR.SF.CHS.009
+          standard_name: Providing fabricating and erecting CHS 323.9mm OD x 10mm circular hollow section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - commercial
+          - industrial
+          - infrastructure
+          requires: []
+          is_code_ref: IS 1161
+          dsr_item_ref: ''
+          aliases:
+          - CHS 324
+          - heavy pipe column
+          typical_rate_range:
+            min: 96
+            max: 138
+          notes: Weight 77.4 kg/m
+          data_source: IS codes only
+        - id: STR.SF.CHS.010
+          standard_name: Providing fabricating and erecting CHS 406.4mm OD x 10mm circular hollow section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - commercial
+          - industrial
+          - infrastructure
+          requires: []
+          is_code_ref: IS 1161
+          dsr_item_ref: ''
+          aliases:
+          - CHS 406
+          - pipe column 406
+          typical_rate_range:
+            min: 94
+            max: 135
+          notes: Weight 97.8 kg/m
+          data_source: IS codes only
+        - id: STR.SF.CHS.011
+          standard_name: Providing fabricating and erecting CHS 508mm OD x 12mm circular hollow section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - commercial
+          - industrial
+          - infrastructure
+          requires: []
+          is_code_ref: IS 1161
+          dsr_item_ref: ''
+          aliases:
+          - CHS 508
+          - largest pipe column
+          typical_rate_range:
+            min: 92
+            max: 132
+          notes: Weight 146.8 kg/m. For major columns and piles
+          data_source: IS codes only
+      ishb:
+        items:
+        - id: STR.SF.ISHB.001
+          standard_name: Providing fabricating and erecting ISHB 150 heavy beam section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 808, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - ISHB 150
+          - heavy beam 150
+          - H-beam 150
+          typical_rate_range:
+            min: 94
+            max: 132
+          notes: Weight 27.1 kg/m. Wider flanges than ISMB
+          data_source: IS codes only
+        - id: STR.SF.ISHB.002
+          standard_name: Providing fabricating and erecting ISHB 200 heavy beam section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 808, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - ISHB 200
+          - heavy beam 200
+          - H-beam 200
+          typical_rate_range:
+            min: 92
+            max: 130
+          notes: Weight 37.3 kg/m
+          data_source: IS codes only
+        - id: STR.SF.ISHB.003
+          standard_name: Providing fabricating and erecting ISHB 225 heavy beam section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 808, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - ISHB 225
+          - heavy beam 225
+          typical_rate_range:
+            min: 90
+            max: 128
+          notes: Weight 43.1 kg/m
+          data_source: IS codes only
+        - id: STR.SF.ISHB.004
+          standard_name: Providing fabricating and erecting ISHB 300 heavy beam section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - commercial
+          - industrial
+          requires: []
+          is_code_ref: IS 808, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - ISHB 300
+          - heavy beam 300
+          - H-beam 300
+          typical_rate_range:
+            min: 88
+            max: 125
+          notes: Weight 58.8 kg/m
+          data_source: IS codes only
+        - id: STR.SF.ISHB.005
+          standard_name: Providing fabricating and erecting ISHB 350 heavy beam section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - commercial
+          - industrial
+          requires: []
+          is_code_ref: IS 808, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - ISHB 350
+          - heavy beam 350
+          typical_rate_range:
+            min: 87
+            max: 123
+          notes: Weight 67.4 kg/m
+          data_source: IS codes only
+        - id: STR.SF.ISHB.006
+          standard_name: Providing fabricating and erecting ISHB 400 heavy beam section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - commercial
+          - industrial
+          requires: []
+          is_code_ref: IS 808, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - ISHB 400
+          - heavy beam 400
+          - H-beam 400
+          typical_rate_range:
+            min: 86
+            max: 122
+          notes: Weight 77.4 kg/m. For heavy columns
+          data_source: IS codes only
+        - id: STR.SF.ISHB.007
+          standard_name: Providing fabricating and erecting ISHB 450 heavy beam section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - commercial
+          - industrial
+          requires: []
+          is_code_ref: IS 808, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - ISHB 450
+          - heavy beam 450
+          typical_rate_range:
+            min: 85
+            max: 120
+          notes: Weight 87.2 kg/m. For heavy column applications
+          data_source: IS codes only
+      ismc_heavy:
+        items:
+        - id: STR.SF.ISMC.008
+          standard_name: Providing fabricating and erecting ISMC 350 channel section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - commercial
+          - industrial
+          requires: []
+          is_code_ref: IS 808, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - ISMC 350
+          - channel 350
+          typical_rate_range:
+            min: 88
+            max: 125
+          notes: Weight 42.1 kg/m
+          data_source: IS codes only
+        - id: STR.SF.ISMC.009
+          standard_name: Providing fabricating and erecting ISMC 400 channel section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - commercial
+          - industrial
+          requires: []
+          is_code_ref: IS 808, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - ISMC 400
+          - channel 400
+          - heavy channel
+          typical_rate_range:
+            min: 86
+            max: 122
+          notes: Weight 49.4 kg/m. Heaviest standard channel
+          data_source: IS codes only
+      isa_extra:
+        items:
+        - id: STR.SF.ISA.008
+          standard_name: Providing fabricating and erecting ISA 25x25x3 equal angle section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 808, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - ISA 25x25
+          - angle 25
+          - small angle
+          typical_rate_range:
+            min: 110
+            max: 155
+          notes: Weight 1.1 kg/m. Lightest angle for bracing
+          data_source: IS codes only
+        - id: STR.SF.ISA.009
+          standard_name: Providing fabricating and erecting ISA 30x30x3 equal angle section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 808, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - ISA 30x30
+          - angle 30
+          typical_rate_range:
+            min: 108
+            max: 152
+          notes: Weight 1.4 kg/m
+          data_source: IS codes only
+        - id: STR.SF.ISA.010
+          standard_name: Providing fabricating and erecting ISA 40x40x5 equal angle section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 808, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - ISA 40x40
+          - angle 40
+          typical_rate_range:
+            min: 105
+            max: 148
+          notes: Weight 2.9 kg/m
+          data_source: IS codes only
+        - id: STR.SF.ISA.011
+          standard_name: Providing fabricating and erecting ISA 110x110x8 equal angle section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 808, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - ISA 110x110
+          - angle 110
+          typical_rate_range:
+            min: 92
+            max: 130
+          notes: Weight 13.2 kg/m
+          data_source: IS codes only
+        - id: STR.SF.ISA.012
+          standard_name: Providing fabricating and erecting ISA 200x200x16 equal angle section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - commercial
+          - industrial
+          requires: []
+          is_code_ref: IS 808, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - ISA 200x200
+          - angle 200
+          - heaviest angle
+          typical_rate_range:
+            min: 88
+            max: 125
+          notes: Weight 48.5 kg/m. Heaviest standard angle
+          data_source: IS codes only
+        - id: STR.SF.ISA.013
+          standard_name: Providing fabricating and erecting ISA 75x50x6 unequal angle section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 808, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - ISA 75x50
+          - unequal angle 75x50
+          typical_rate_range:
+            min: 98
+            max: 138
+          notes: Weight 5.7 kg/m. Unequal leg angle
+          data_source: IS codes only
+        - id: STR.SF.ISA.014
+          standard_name: Providing fabricating and erecting ISA 100x65x8 unequal angle section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 808, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - ISA 100x65
+          - unequal angle 100x65
+          typical_rate_range:
+            min: 96
+            max: 135
+          notes: Weight 9.8 kg/m
+          data_source: IS codes only
+        - id: STR.SF.ISA.015
+          standard_name: Providing fabricating and erecting ISA 150x75x10 unequal angle section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - commercial
+          - industrial
+          requires: []
+          is_code_ref: IS 808, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - ISA 150x75
+          - unequal angle 150x75
+          typical_rate_range:
+            min: 92
+            max: 130
+          notes: Weight 16.8 kg/m
+          data_source: IS codes only
+        - id: STR.SF.ISA.016
+          standard_name: Providing fabricating and erecting ISA 200x100x12 unequal angle section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - commercial
+          - industrial
+          requires: []
+          is_code_ref: IS 808, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - ISA 200x100
+          - unequal angle 200x100
+          typical_rate_range:
+            min: 90
+            max: 128
+          notes: Weight 27.0 kg/m
+          data_source: IS codes only
+      plate_girders:
+        items:
+        - id: STR.SF.PG.001
+          standard_name: Providing fabricating and erecting built-up plate girder section from MS plates (web + flanges) with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - commercial
+          - industrial
+          - infrastructure
+          requires: []
+          is_code_ref: IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - plate girder
+          - built-up girder
+          - welded plate girder
+          typical_rate_range:
+            min: 95
+            max: 140
+          notes: Custom fabricated from plates. For large spans
+          data_source: CPWD DSR 2023 + IS codes
+        - id: STR.SF.PG.002
+          standard_name: Providing fabricating built-up box section column from MS plates with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - commercial
+          - industrial
+          requires: []
+          is_code_ref: IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - box column
+          - built-up box section
+          typical_rate_range:
+            min: 100
+            max: 145
+          notes: For heavy loaded columns
+          data_source: CPWD DSR 2023 + IS codes
+        - id: STR.SF.PG.003
+          standard_name: Providing fabricating and erecting tapered/haunched steel section for portal frames
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - industrial
+          requires: []
+          is_code_ref: IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - tapered section
+          - haunched beam
+          - portal frame rafter
+          typical_rate_range:
+            min: 100
+            max: 145
+          notes: For industrial portal frame buildings
+          data_source: IS codes only
+        - id: STR.SF.PG.004
+          standard_name: Providing fabricating and erecting steel roof truss from angle/tubular sections with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - roof truss
+          - steel truss
+          - tubular truss
+          typical_rate_range:
+            min: 105
+            max: 150
+          notes: Including gusset plates and connection details
+          data_source: CPWD DSR 2023 + IS codes
+  connections:
+    categories:
+      bolted_connections:
+        items:
+        - id: STR.SF.CON.001
+          standard_name: Providing and fixing HSFG (High Strength Friction Grip) bolts M16x50mm Grade 8.8 with nut and washer
+          unit: nos
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 3757, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - HSFG bolt M16
+          - friction bolt
+          - high strength bolt
+          typical_rate_range:
+            min: 35
+            max: 65
+          notes: Grade 8.8 or 10.9. Torque controlled tightening
+          data_source: CPWD DSR 2023 + IS codes
+        - id: STR.SF.CON.002
+          standard_name: Providing and fixing HSFG bolts M20x60mm Grade 8.8 with nut and washer
+          unit: nos
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 3757, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - HSFG bolt M20
+          - 20mm friction bolt
+          typical_rate_range:
+            min: 50
+            max: 90
+          notes: Most common HSFG bolt size
+          data_source: CPWD DSR 2023 + IS codes
+        - id: STR.SF.CON.003
+          standard_name: Providing and fixing HSFG bolts M24x75mm Grade 8.8 with nut and washer
+          unit: nos
+          construction_types:
+          - steel_frame
+          building_types:
+          - commercial
+          - industrial
+          - infrastructure
+          requires: []
+          is_code_ref: IS 3757, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - HSFG bolt M24
+          - 24mm friction bolt
+          typical_rate_range:
+            min: 75
+            max: 130
+          notes: ''
+          data_source: CPWD DSR 2023 + IS codes
+        - id: STR.SF.CON.004
+          standard_name: Providing and fixing bearing type bolts (ordinary/black bolts) M16 Grade 4.6 with nut and washer
+          unit: nos
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1364, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - black bolt M16
+          - bearing bolt
+          - ordinary bolt
+          typical_rate_range:
+            min: 12
+            max: 25
+          notes: For secondary connections and non-slip critical joints
+          data_source: CPWD DSR 2023 + IS codes
+        - id: STR.SF.CON.005
+          standard_name: Providing and fixing bearing type bolts M20 Grade 4.6 with nut and washer
+          unit: nos
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1364, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - black bolt M20
+          typical_rate_range:
+            min: 18
+            max: 35
+          notes: ''
+          data_source: CPWD DSR 2023 + IS codes
+      welded_connections:
+        items:
+        - id: STR.SF.CON.006
+          standard_name: Site welding - fillet weld 6mm size using SMAW/MMA process
+          unit: rm
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 816, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - fillet weld 6mm
+          - site welding
+          - MMA welding
+          typical_rate_range:
+            min: 80
+            max: 150
+          notes: Per running metre of weld. Includes consumables
+          data_source: CPWD DSR 2023 + IS codes
+        - id: STR.SF.CON.007
+          standard_name: Site welding - fillet weld 8mm size using SMAW/MMA process
+          unit: rm
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 816, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - fillet weld 8mm
+          typical_rate_range:
+            min: 100
+            max: 180
+          notes: ''
+          data_source: CPWD DSR 2023 + IS codes
+        - id: STR.SF.CON.008
+          standard_name: Site welding - fillet weld 10mm size using SMAW/MMA process
+          unit: rm
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 816, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - fillet weld 10mm
+          typical_rate_range:
+            min: 130
+            max: 220
+          notes: ''
+          data_source: CPWD DSR 2023 + IS codes
+        - id: STR.SF.CON.009
+          standard_name: Full penetration butt weld (single V) on plates up to 12mm thick
+          unit: rm
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 816, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - butt weld
+          - groove weld
+          - full penetration weld
+          typical_rate_range:
+            min: 200
+            max: 400
+          notes: Requires NDT testing
+          data_source: CPWD DSR 2023 + IS codes
+        - id: STR.SF.CON.010
+          standard_name: Full penetration butt weld (double V) on plates 12-25mm thick
+          unit: rm
+          construction_types:
+          - steel_frame
+          building_types:
+          - commercial
+          - industrial
+          - infrastructure
+          requires: []
+          is_code_ref: IS 816, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - double V butt weld
+          - heavy plate weld
+          typical_rate_range:
+            min: 350
+            max: 650
+          notes: ''
+          data_source: CPWD DSR 2023 + IS codes
+      connection_plates:
+        items:
+        - id: STR.SF.CON.011
+          standard_name: Providing and fixing MS base plates for column base including machining, drilling, and grouting
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - base plate
+          - column base plate
+          typical_rate_range:
+            min: 100
+            max: 150
+          notes: Typically 20-50mm thick. Machined top surface
+          data_source: CPWD DSR 2023 + IS codes
+        - id: STR.SF.CON.012
+          standard_name: Providing and fixing HD anchor bolts M20x500mm with nut, washer, and anchor plate
+          unit: nos
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - anchor bolt M20
+          - holding down bolt
+          - HD bolt
+          typical_rate_range:
+            min: 200
+            max: 450
+          notes: Cast into concrete foundation
+          data_source: CPWD DSR 2023 + IS codes
+        - id: STR.SF.CON.013
+          standard_name: Providing and fixing HD anchor bolts M24x600mm with nut, washer, and anchor plate
+          unit: nos
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - anchor bolt M24
+          - HD bolt M24
+          typical_rate_range:
+            min: 300
+            max: 600
+          notes: ''
+          data_source: CPWD DSR 2023 + IS codes
+        - id: STR.SF.CON.014
+          standard_name: Providing and fixing gusset plates for truss/bracing connections
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - gusset plate
+          - connection plate
+          typical_rate_range:
+            min: 95
+            max: 140
+          notes: Typically 10-20mm thick plates
+          data_source: CPWD DSR 2023 + IS codes
+        - id: STR.SF.CON.015
+          standard_name: Providing and fixing splice plates for beam/column splices
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - splice plate
+          - flange splice
+          - web splice
+          typical_rate_range:
+            min: 95
+            max: 140
+          notes: ''
+          data_source: CPWD DSR 2023 + IS codes
+        - id: STR.SF.CON.016
+          standard_name: Providing and fixing stiffener plates for beam/column connections
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - stiffener plate
+          - bearing stiffener
+          - web stiffener
+          typical_rate_range:
+            min: 95
+            max: 140
+          notes: ''
+          data_source: CPWD DSR 2023 + IS codes
+        - id: STR.SF.CON.017
+          standard_name: Providing and fixing end plate connections for beam-to-column joints
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - end plate
+          - flush end plate
+          - extended end plate
+          typical_rate_range:
+            min: 100
+            max: 145
+          notes: Including machining and drilling
+          data_source: CPWD DSR 2023 + IS codes
+  erection:
+    categories:
+      crane_erection:
+        items:
+        - id: STR.SF.ERC.001
+          standard_name: Erection of structural steelwork using mobile crane up to 20 tonne capacity, building height up to 12m
+          unit: tonne
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - steel erection
+          - crane erection
+          - structural erection
+          typical_rate_range:
+            min: 5000
+            max: 10000
+          notes: Per tonne of steel erected. Including temporary bracing
+          data_source: CPWD DSR 2023 + IS codes
+        - id: STR.SF.ERC.002
+          standard_name: Erection of structural steelwork using mobile crane up to 50 tonne capacity, height 12-24m
+          unit: tonne
+          construction_types:
+          - steel_frame
+          building_types:
+          - commercial
+          - industrial
+          requires: []
+          is_code_ref: IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - heavy crane erection
+          - medium height erection
+          typical_rate_range:
+            min: 7000
+            max: 14000
+          notes: ''
+          data_source: CPWD DSR 2023 + IS codes
+        - id: STR.SF.ERC.003
+          standard_name: Erection of structural steelwork using tower crane, height exceeding 24m
+          unit: tonne
+          construction_types:
+          - steel_frame
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - tower crane erection
+          - high-rise steel erection
+          typical_rate_range:
+            min: 10000
+            max: 20000
+          notes: ''
+          data_source: CPWD DSR 2023 + IS codes
+      alignment_grouting:
+        items:
+        - id: STR.SF.ERC.004
+          standard_name: Plumbing and alignment of steel columns including temporary bracing
+          unit: nos
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - column alignment
+          - plumbing
+          - column levelling
+          typical_rate_range:
+            min: 1500
+            max: 4000
+          notes: Per column. Tolerance per IS 800
+          data_source: CPWD DSR 2023 + IS codes
+        - id: STR.SF.ERC.005
+          standard_name: Non-shrink grout under column base plates using polymer modified cementitious grout
+          unit: ltr
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - base plate grouting
+          - non-shrink grout
+          - column grouting
+          typical_rate_range:
+            min: 40
+            max: 80
+          notes: Minimum 25mm thick. Non-shrink type
+          data_source: CPWD DSR 2023 + IS codes
+        - id: STR.SF.ERC.006
+          standard_name: Torque tightening of HSFG bolts using calibrated torque wrench
+          unit: nos
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires:
+          - STR.SF.CON.001
+          is_code_ref: IS 4000
+          dsr_item_ref: ''
+          aliases:
+          - torque tightening
+          - bolt tightening
+          - snug tight
+          typical_rate_range:
+            min: 15
+            max: 40
+          notes: Including calibration of wrench
+          data_source: CPWD DSR 2023 + IS codes
+  fire_protection:
+    categories:
+      intumescent_paint:
+        items:
+        - id: STR.SF.FP.001
+          standard_name: Providing and applying intumescent fire protection paint for 30 minutes fire rating (approx 0.5mm DFT)
+          unit: sqm
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15988
+          dsr_item_ref: ''
+          aliases:
+          - intumescent paint 30min
+          - fire paint 30
+          - thin film fire protection
+          typical_rate_range:
+            min: 400
+            max: 750
+          notes: DFT varies with section factor. Per sqm of steel surface
+          data_source: IS codes only
+        - id: STR.SF.FP.002
+          standard_name: Providing and applying intumescent fire protection paint for 60 minutes fire rating (approx 1.0mm DFT)
+          unit: sqm
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15988
+          dsr_item_ref: ''
+          aliases:
+          - intumescent paint 60min
+          - fire paint 60
+          typical_rate_range:
+            min: 700
+            max: 1200
+          notes: ''
+          data_source: IS codes only
+        - id: STR.SF.FP.003
+          standard_name: Providing and applying intumescent fire protection paint for 90 minutes fire rating (approx 1.5mm DFT)
+          unit: sqm
+          construction_types:
+          - steel_frame
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 15988
+          dsr_item_ref: ''
+          aliases:
+          - intumescent paint 90min
+          - fire paint 90
+          typical_rate_range:
+            min: 1000
+            max: 1800
+          notes: ''
+          data_source: IS codes only
+        - id: STR.SF.FP.004
+          standard_name: Providing and applying intumescent fire protection paint for 120 minutes fire rating (approx 2.0mm DFT)
+          unit: sqm
+          construction_types:
+          - steel_frame
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 15988
+          dsr_item_ref: ''
+          aliases:
+          - intumescent paint 120min
+          - fire paint 120
+          typical_rate_range:
+            min: 1400
+            max: 2500
+          notes: ''
+          data_source: IS codes only
+      board_spray:
+        items:
+        - id: STR.SF.FP.005
+          standard_name: Providing and fixing calcium silicate fire protection board 20mm thick for 60 min rating
+          unit: sqm
+          construction_types:
+          - steel_frame
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 15988
+          dsr_item_ref: ''
+          aliases:
+          - fire board
+          - calcium silicate board
+          - Promat board
+          typical_rate_range:
+            min: 800
+            max: 1500
+          notes: Boxed around steel sections
+          data_source: IS codes only
+        - id: STR.SF.FP.006
+          standard_name: Providing and fixing calcium silicate fire protection board 25mm thick for 90 min rating
+          unit: sqm
+          construction_types:
+          - steel_frame
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 15988
+          dsr_item_ref: ''
+          aliases:
+          - thick fire board
+          - 90min fire board
+          typical_rate_range:
+            min: 1000
+            max: 1800
+          notes: ''
+          data_source: IS codes only
+        - id: STR.SF.FP.007
+          standard_name: Providing and applying spray-applied fire protection (vermiculite/cementitious) 20mm thick for 60 min
+          unit: sqm
+          construction_types:
+          - steel_frame
+          building_types:
+          - commercial
+          - industrial
+          requires: []
+          is_code_ref: IS 15988
+          dsr_item_ref: ''
+          aliases:
+          - spray fire protection
+          - vermiculite spray
+          - fire spray
+          typical_rate_range:
+            min: 500
+            max: 900
+          notes: For concealed steelwork. Not for exposed application
+          data_source: IS codes only
+        - id: STR.SF.FP.008
+          standard_name: Providing and applying spray-applied fire protection 30mm thick for 90 min rating
+          unit: sqm
+          construction_types:
+          - steel_frame
+          building_types:
+          - commercial
+          - industrial
+          requires: []
+          is_code_ref: IS 15988
+          dsr_item_ref: ''
+          aliases:
+          - thick spray fire protection
+          typical_rate_range:
+            min: 700
+            max: 1200
+          notes: ''
+          data_source: IS codes only
+  purlins:
+    categories:
+      cold_formed:
+        items:
+        - id: STR.SF.PUR.001
+          standard_name: Providing and fixing Z-purlin 150x2.0mm cold formed galvanized steel
+          unit: rm
+          construction_types:
+          - steel_frame
+          building_types:
+          - industrial
+          requires: []
+          is_code_ref: IS 811, IS 801
+          dsr_item_ref: ''
+          aliases:
+          - Z purlin 150
+          - zed purlin
+          - cold formed purlin
+          typical_rate_range:
+            min: 250
+            max: 450
+          notes: Weight approx 4.7 kg/m. Galvanized 120 gsm
+          data_source: CPWD DSR 2023 + IS codes
+        - id: STR.SF.PUR.002
+          standard_name: Providing and fixing Z-purlin 200x2.5mm cold formed galvanized steel
+          unit: rm
+          construction_types:
+          - steel_frame
+          building_types:
+          - industrial
+          requires: []
+          is_code_ref: IS 811, IS 801
+          dsr_item_ref: ''
+          aliases:
+          - Z purlin 200
+          typical_rate_range:
+            min: 350
+            max: 600
+          notes: Weight approx 7.8 kg/m
+          data_source: CPWD DSR 2023 + IS codes
+        - id: STR.SF.PUR.003
+          standard_name: Providing and fixing Z-purlin 250x2.5mm cold formed galvanized steel
+          unit: rm
+          construction_types:
+          - steel_frame
+          building_types:
+          - industrial
+          requires: []
+          is_code_ref: IS 811, IS 801
+          dsr_item_ref: ''
+          aliases:
+          - Z purlin 250
+          typical_rate_range:
+            min: 420
+            max: 700
+          notes: Weight approx 9.5 kg/m
+          data_source: CPWD DSR 2023 + IS codes
+        - id: STR.SF.PUR.004
+          standard_name: Providing and fixing C-purlin 150x2.0mm cold formed galvanized steel
+          unit: rm
+          construction_types:
+          - steel_frame
+          building_types:
+          - industrial
+          requires: []
+          is_code_ref: IS 811, IS 801
+          dsr_item_ref: ''
+          aliases:
+          - C purlin 150
+          - C section purlin
+          typical_rate_range:
+            min: 240
+            max: 430
+          notes: ''
+          data_source: CPWD DSR 2023 + IS codes
+        - id: STR.SF.PUR.005
+          standard_name: Providing and fixing C-purlin 200x2.5mm cold formed galvanized steel
+          unit: rm
+          construction_types:
+          - steel_frame
+          building_types:
+          - industrial
+          requires: []
+          is_code_ref: IS 811, IS 801
+          dsr_item_ref: ''
+          aliases:
+          - C purlin 200
+          typical_rate_range:
+            min: 340
+            max: 580
+          notes: ''
+          data_source: CPWD DSR 2023 + IS codes
+        - id: STR.SF.PUR.006
+          standard_name: Providing and fixing sag rods 12mm dia between purlins
+          unit: rm
+          construction_types:
+          - steel_frame
+          building_types:
+          - industrial
+          requires: []
+          is_code_ref: IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - sag rod
+          - anti-sag rod
+          - purlin sag rod
+          typical_rate_range:
+            min: 60
+            max: 120
+          notes: Per running metre
+          data_source: CPWD DSR 2023 + IS codes
+        - id: STR.SF.PUR.007
+          standard_name: Providing and fixing purlin cleats (angle bracket) for connecting purlins to rafters
+          unit: nos
+          construction_types:
+          - steel_frame
+          building_types:
+          - industrial
+          requires: []
+          is_code_ref: IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - purlin cleat
+          - angle cleat
+          - purlin bracket
+          typical_rate_range:
+            min: 80
+            max: 180
+          notes: One per purlin-rafter junction
+          data_source: CPWD DSR 2023 + IS codes
+  decking:
+    categories:
+      metal_deck:
+        items:
+        - id: STR.SF.DK.001
+          standard_name: Providing and fixing composite metal floor deck 0.8mm thick galvanized profiled steel sheet
+          unit: sqm
+          construction_types:
+          - steel_frame
+          - composite
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 11434
+          dsr_item_ref: ''
+          aliases:
+          - composite deck
+          - metal deck floor
+          - profiled deck sheet
+          typical_rate_range:
+            min: 500
+            max: 850
+          notes: Acts as permanent formwork and bottom reinforcement
+          data_source: IS codes only
+        - id: STR.SF.DK.002
+          standard_name: Providing and fixing composite metal floor deck 1.0mm thick galvanized profiled steel sheet
+          unit: sqm
+          construction_types:
+          - steel_frame
+          - composite
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 11434
+          dsr_item_ref: ''
+          aliases:
+          - heavy composite deck
+          - 1mm metal deck
+          typical_rate_range:
+            min: 600
+            max: 1000
+          notes: ''
+          data_source: IS codes only
+        - id: STR.SF.DK.003
+          standard_name: Providing and fixing shear studs (Nelson studs) 19mm dia x 100mm on steel beams for composite action
+          unit: nos
+          construction_types:
+          - steel_frame
+          - composite
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 11384
+          dsr_item_ref: ''
+          aliases:
+          - shear stud
+          - Nelson stud
+          - composite stud
+          typical_rate_range:
+            min: 30
+            max: 60
+          notes: Welded through deck. For composite beam action
+          data_source: IS codes only
+        - id: STR.SF.DK.004
+          standard_name: Providing and fixing metal roof deck 0.5mm thick pre-painted galvalume profiled sheet
+          unit: sqm
+          construction_types:
+          - steel_frame
+          building_types:
+          - industrial
+          requires: []
+          is_code_ref: IS 14246
+          dsr_item_ref: ''
+          aliases:
+          - roof deck
+          - metal roof sheet
+          - galvalume roofing
+          typical_rate_range:
+            min: 350
+            max: 600
+          notes: For industrial buildings
+          data_source: CPWD DSR 2023 + IS codes
+        - id: STR.SF.DK.005
+          standard_name: Providing and fixing insulated sandwich roof panel 50mm PUF/PIR core, 0.5mm galvalume both sides
+          unit: sqm
+          construction_types:
+          - steel_frame
+          building_types:
+          - commercial
+          - industrial
+          requires: []
+          is_code_ref: IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - sandwich panel roof
+          - insulated roof panel
+          - PUF panel
+          typical_rate_range:
+            min: 1200
+            max: 2200
+          notes: Combined roofing and insulation
+          data_source: estimated
+  cladding_support:
+    categories:
+      wall_girts:
+        items:
+        - id: STR.SF.CLD.001
+          standard_name: Providing and fixing wall girts using Z-section 150x2.0mm cold formed galvanized steel
+          unit: rm
+          construction_types:
+          - steel_frame
+          building_types:
+          - industrial
+          requires: []
+          is_code_ref: IS 811
+          dsr_item_ref: ''
+          aliases:
+          - wall girt
+          - side runner
+          - cladding rail
+          typical_rate_range:
+            min: 250
+            max: 450
+          notes: Horizontal members supporting wall cladding
+          data_source: CPWD DSR 2023 + IS codes
+        - id: STR.SF.CLD.002
+          standard_name: Providing and fixing wall girts using C-section 200x2.5mm cold formed galvanized steel
+          unit: rm
+          construction_types:
+          - steel_frame
+          building_types:
+          - industrial
+          requires: []
+          is_code_ref: IS 811
+          dsr_item_ref: ''
+          aliases:
+          - C-girt 200
+          - heavy wall girt
+          typical_rate_range:
+            min: 340
+            max: 580
+          notes: ''
+          data_source: CPWD DSR 2023 + IS codes
+        - id: STR.SF.CLD.003
+          standard_name: Providing and fixing metal wall cladding 0.5mm pre-painted galvalume profiled sheet
+          unit: sqm
+          construction_types:
+          - steel_frame
+          building_types:
+          - industrial
+          requires: []
+          is_code_ref: IS 14246
+          dsr_item_ref: ''
+          aliases:
+          - wall cladding sheet
+          - metal wall panel
+          - profile sheet wall
+          typical_rate_range:
+            min: 350
+            max: 600
+          notes: Including self-drilling screws and accessories
+          data_source: CPWD DSR 2023 + IS codes
+        - id: STR.SF.CLD.004
+          standard_name: Providing and fixing insulated sandwich wall panel 50mm PUF core, 0.5mm galvalume both sides
+          unit: sqm
+          construction_types:
+          - steel_frame
+          building_types:
+          - commercial
+          - industrial
+          requires: []
+          is_code_ref: IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - sandwich wall panel
+          - insulated wall panel
+          typical_rate_range:
+            min: 1200
+            max: 2200
+          notes: For temperature controlled environments
+          data_source: estimated
+        - id: STR.SF.CLD.005
+          standard_name: Providing and fixing self-drilling/self-tapping screws for metal cladding
+          unit: nos
+          construction_types:
+          - steel_frame
+          building_types:
+          - industrial
+          requires: []
+          is_code_ref: IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - self-drilling screw
+          - tek screw
+          - cladding screw
+          typical_rate_range:
+            min: 5
+            max: 12
+          notes: With EPDM washer. 5-6 nos per sqm of sheeting
+          data_source: estimated
+        - id: STR.SF.CLD.006
+          standard_name: Providing and fixing ridge capping for metal roof in pre-painted galvalume
+          unit: rm
+          construction_types:
+          - steel_frame
+          building_types:
+          - industrial
+          requires: []
+          is_code_ref: IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - ridge cap
+          - roof ridge
+          - ridge flashing
+          typical_rate_range:
+            min: 300
+            max: 550
+          notes: ''
+          data_source: estimated
+        - id: STR.SF.CLD.007
+          standard_name: Providing and fixing valley gutter in pre-painted galvalume for metal roof
+          unit: rm
+          construction_types:
+          - steel_frame
+          building_types:
+          - industrial
+          requires: []
+          is_code_ref: IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - valley gutter
+          - roof gutter
+          - eaves gutter
+          typical_rate_range:
+            min: 400
+            max: 700
+          notes: ''
+          data_source: estimated
+        - id: STR.SF.CLD.008
+          standard_name: Providing and fixing polycarbonate translucent roofing sheet 2mm thick for natural lighting
+          unit: sqm
+          construction_types:
+          - steel_frame
+          building_types:
+          - industrial
+          requires: []
+          is_code_ref: IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - skylight sheet
+          - polycarbonate sheet
+          - translucent roofing
+          typical_rate_range:
+            min: 600
+            max: 1100
+          notes: Typically 10% of roof area for natural lighting
+          data_source: estimated
+  sections_extended:
+    categories:
+      ishb:
+        items:
+        - id: STR.SF.ISHB.009
+          standard_name: Providing fabricating and erecting ISHB 150 wide flange beam section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - commercial
+          - industrial
+          requires: []
+          is_code_ref: IS 808, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - ISHB 150
+          - wide flange 150
+          - H-beam 150
+          typical_rate_range:
+            min: 86
+            max: 122
+          notes: Weight 27.1 kg/m. Wide flange section for columns
+          data_source: IS codes only
+        - id: STR.SF.ISHB.010
+          standard_name: Providing fabricating and erecting ISHB 200 wide flange beam section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - commercial
+          - industrial
+          requires: []
+          is_code_ref: IS 808, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - ISHB 200
+          - wide flange 200
+          - H-beam 200
+          typical_rate_range:
+            min: 86
+            max: 122
+          notes: Weight 37.3 kg/m. Wide flange section for columns
+          data_source: IS codes only
+        - id: STR.SF.ISHB.011
+          standard_name: Providing fabricating and erecting ISHB 225 wide flange beam section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - commercial
+          - industrial
+          requires: []
+          is_code_ref: IS 808, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - ISHB 225
+          - wide flange 225
+          - H-beam 225
+          typical_rate_range:
+            min: 86
+            max: 122
+          notes: Weight 43.1 kg/m. Wide flange section for columns
+          data_source: IS codes only
+        - id: STR.SF.ISHB.012
+          standard_name: Providing fabricating and erecting ISHB 250 wide flange beam section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - commercial
+          - industrial
+          requires: []
+          is_code_ref: IS 808, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - ISHB 250
+          - wide flange 250
+          - H-beam 250
+          typical_rate_range:
+            min: 86
+            max: 122
+          notes: Weight 51.0 kg/m. Wide flange section for columns
+          data_source: IS codes only
+        - id: STR.SF.ISHB.013
+          standard_name: Providing fabricating and erecting ISHB 300 wide flange beam section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - commercial
+          - industrial
+          requires: []
+          is_code_ref: IS 808, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - ISHB 300
+          - wide flange 300
+          - H-beam 300
+          typical_rate_range:
+            min: 86
+            max: 122
+          notes: Weight 58.8 kg/m. Wide flange section for columns
+          data_source: IS codes only
+        - id: STR.SF.ISHB.014
+          standard_name: Providing fabricating and erecting ISHB 350 wide flange beam section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - commercial
+          - industrial
+          requires: []
+          is_code_ref: IS 808, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - ISHB 350
+          - wide flange 350
+          - H-beam 350
+          typical_rate_range:
+            min: 86
+            max: 122
+          notes: Weight 67.4 kg/m. Wide flange section for columns
+          data_source: IS codes only
+        - id: STR.SF.ISHB.015
+          standard_name: Providing fabricating and erecting ISHB 400 wide flange beam section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - commercial
+          - industrial
+          requires: []
+          is_code_ref: IS 808, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - ISHB 400
+          - wide flange 400
+          - H-beam 400
+          typical_rate_range:
+            min: 86
+            max: 122
+          notes: Weight 77.4 kg/m. Wide flange section for columns
+          data_source: IS codes only
+        - id: STR.SF.ISHB.008
+          standard_name: Providing fabricating and erecting ISHB 450 wide flange beam section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - commercial
+          - industrial
+          requires: []
+          is_code_ref: IS 808, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - ISHB 450
+          - wide flange 450
+          - H-beam 450
+          typical_rate_range:
+            min: 86
+            max: 122
+          notes: Weight 87.2 kg/m. Wide flange section for columns
+          data_source: IS codes only
+      shs:
+        items:
+        - id: STR.SF.SHS.017
+          standard_name: Providing fabricating and erecting SHS 50x50x3.2mm square hollow section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 4923, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - SHS 50x50x3.2
+          - square tube 50
+          - box section 50
+          typical_rate_range:
+            min: 110
+            max: 155
+          notes: Weight 4.5 kg/m. Square hollow section
+          data_source: IS codes only
+        - id: STR.SF.SHS.018
+          standard_name: Providing fabricating and erecting SHS 75x75x3.2mm square hollow section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 4923, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - SHS 75x75x3.2
+          - square tube 75
+          - box section 75
+          typical_rate_range:
+            min: 105
+            max: 148
+          notes: Weight 6.9 kg/m. Square hollow section
+          data_source: IS codes only
+        - id: STR.SF.SHS.019
+          standard_name: Providing fabricating and erecting SHS 75x75x4.0mm square hollow section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 4923, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - SHS 75x75x4.0
+          - square tube 75
+          - box section 75
+          typical_rate_range:
+            min: 105
+            max: 148
+          notes: Weight 8.5 kg/m. Square hollow section
+          data_source: IS codes only
+        - id: STR.SF.SHS.020
+          standard_name: Providing fabricating and erecting SHS 100x100x3.2mm square hollow section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 4923, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - SHS 100x100x3.2
+          - square tube 100
+          - box section 100
+          typical_rate_range:
+            min: 100
+            max: 142
+          notes: Weight 9.3 kg/m. Square hollow section
+          data_source: IS codes only
+        - id: STR.SF.SHS.021
+          standard_name: Providing fabricating and erecting SHS 100x100x4.0mm square hollow section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 4923, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - SHS 100x100x4.0
+          - square tube 100
+          - box section 100
+          typical_rate_range:
+            min: 100
+            max: 142
+          notes: Weight 11.5 kg/m. Square hollow section
+          data_source: IS codes only
+        - id: STR.SF.SHS.022
+          standard_name: Providing fabricating and erecting SHS 100x100x5.0mm square hollow section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 4923, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - SHS 100x100x5.0
+          - square tube 100
+          - box section 100
+          typical_rate_range:
+            min: 100
+            max: 142
+          notes: Weight 14.1 kg/m. Square hollow section
+          data_source: IS codes only
+        - id: STR.SF.SHS.023
+          standard_name: Providing fabricating and erecting SHS 125x125x4.0mm square hollow section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 4923, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - SHS 125x125x4.0
+          - square tube 125
+          - box section 125
+          typical_rate_range:
+            min: 98
+            max: 138
+          notes: Weight 14.5 kg/m. Square hollow section
+          data_source: IS codes only
+        - id: STR.SF.SHS.024
+          standard_name: Providing fabricating and erecting SHS 125x125x5.0mm square hollow section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 4923, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - SHS 125x125x5.0
+          - square tube 125
+          - box section 125
+          typical_rate_range:
+            min: 98
+            max: 138
+          notes: Weight 17.8 kg/m. Square hollow section
+          data_source: IS codes only
+        - id: STR.SF.SHS.009
+          standard_name: Providing fabricating and erecting SHS 150x150x4.0mm square hollow section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 4923, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - SHS 150x150x4.0
+          - square tube 150
+          - box section 150
+          typical_rate_range:
+            min: 95
+            max: 135
+          notes: Weight 17.5 kg/m. Square hollow section
+          data_source: IS codes only
+        - id: STR.SF.SHS.010
+          standard_name: Providing fabricating and erecting SHS 150x150x5.0mm square hollow section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 4923, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - SHS 150x150x5.0
+          - square tube 150
+          - box section 150
+          typical_rate_range:
+            min: 95
+            max: 135
+          notes: Weight 21.5 kg/m. Square hollow section
+          data_source: IS codes only
+        - id: STR.SF.SHS.011
+          standard_name: Providing fabricating and erecting SHS 150x150x6.3mm square hollow section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 4923, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - SHS 150x150x6.3
+          - square tube 150
+          - box section 150
+          typical_rate_range:
+            min: 95
+            max: 135
+          notes: Weight 26.6 kg/m. Square hollow section
+          data_source: IS codes only
+        - id: STR.SF.SHS.012
+          standard_name: Providing fabricating and erecting SHS 200x200x5.0mm square hollow section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 4923, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - SHS 200x200x5.0
+          - square tube 200
+          - box section 200
+          typical_rate_range:
+            min: 92
+            max: 130
+          notes: Weight 29.0 kg/m. Square hollow section
+          data_source: IS codes only
+        - id: STR.SF.SHS.013
+          standard_name: Providing fabricating and erecting SHS 200x200x6.3mm square hollow section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 4923, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - SHS 200x200x6.3
+          - square tube 200
+          - box section 200
+          typical_rate_range:
+            min: 92
+            max: 130
+          notes: Weight 36.0 kg/m. Square hollow section
+          data_source: IS codes only
+        - id: STR.SF.SHS.014
+          standard_name: Providing fabricating and erecting SHS 200x200x8.0mm square hollow section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 4923, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - SHS 200x200x8.0
+          - square tube 200
+          - box section 200
+          typical_rate_range:
+            min: 92
+            max: 130
+          notes: Weight 44.7 kg/m. Square hollow section
+          data_source: IS codes only
+        - id: STR.SF.SHS.015
+          standard_name: Providing fabricating and erecting SHS 250x250x6.3mm square hollow section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 4923, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - SHS 250x250x6.3
+          - square tube 250
+          - box section 250
+          typical_rate_range:
+            min: 90
+            max: 128
+          notes: Weight 45.5 kg/m. Square hollow section
+          data_source: IS codes only
+        - id: STR.SF.SHS.016
+          standard_name: Providing fabricating and erecting SHS 250x250x8.0mm square hollow section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 4923, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - SHS 250x250x8.0
+          - square tube 250
+          - box section 250
+          typical_rate_range:
+            min: 90
+            max: 128
+          notes: Weight 56.6 kg/m. Square hollow section
+          data_source: IS codes only
+      rhs:
+        items:
+        - id: STR.SF.RHS.015
+          standard_name: Providing fabricating and erecting RHS 50x25x2.6mm rectangular hollow section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 4923, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - RHS 50x25x2.6
+          - rectangular tube 50x25
+          typical_rate_range:
+            min: 115
+            max: 160
+          notes: Weight 2.7 kg/m. Rectangular hollow section
+          data_source: IS codes only
+        - id: STR.SF.RHS.016
+          standard_name: Providing fabricating and erecting RHS 100x50x3.2mm rectangular hollow section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 4923, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - RHS 100x50x3.2
+          - rectangular tube 100x50
+          typical_rate_range:
+            min: 105
+            max: 148
+          notes: Weight 7.1 kg/m. Rectangular hollow section
+          data_source: IS codes only
+        - id: STR.SF.RHS.017
+          standard_name: Providing fabricating and erecting RHS 100x50x4.0mm rectangular hollow section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 4923, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - RHS 100x50x4.0
+          - rectangular tube 100x50
+          typical_rate_range:
+            min: 105
+            max: 148
+          notes: Weight 8.7 kg/m. Rectangular hollow section
+          data_source: IS codes only
+        - id: STR.SF.RHS.018
+          standard_name: Providing fabricating and erecting RHS 150x75x3.2mm rectangular hollow section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 4923, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - RHS 150x75x3.2
+          - rectangular tube 150x75
+          typical_rate_range:
+            min: 100
+            max: 142
+          notes: Weight 10.8 kg/m. Rectangular hollow section
+          data_source: IS codes only
+        - id: STR.SF.RHS.019
+          standard_name: Providing fabricating and erecting RHS 150x75x4.0mm rectangular hollow section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 4923, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - RHS 150x75x4.0
+          - rectangular tube 150x75
+          typical_rate_range:
+            min: 100
+            max: 142
+          notes: Weight 13.3 kg/m. Rectangular hollow section
+          data_source: IS codes only
+        - id: STR.SF.RHS.020
+          standard_name: Providing fabricating and erecting RHS 150x75x5.0mm rectangular hollow section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 4923, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - RHS 150x75x5.0
+          - rectangular tube 150x75
+          typical_rate_range:
+            min: 100
+            max: 142
+          notes: Weight 16.3 kg/m. Rectangular hollow section
+          data_source: IS codes only
+        - id: STR.SF.RHS.021
+          standard_name: Providing fabricating and erecting RHS 200x100x4.0mm rectangular hollow section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 4923, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - RHS 200x100x4.0
+          - rectangular tube 200x100
+          typical_rate_range:
+            min: 95
+            max: 135
+          notes: Weight 17.9 kg/m. Rectangular hollow section
+          data_source: IS codes only
+        - id: STR.SF.RHS.008
+          standard_name: Providing fabricating and erecting RHS 200x100x5.0mm rectangular hollow section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 4923, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - RHS 200x100x5.0
+          - rectangular tube 200x100
+          typical_rate_range:
+            min: 95
+            max: 135
+          notes: Weight 22.0 kg/m. Rectangular hollow section
+          data_source: IS codes only
+        - id: STR.SF.RHS.009
+          standard_name: Providing fabricating and erecting RHS 200x100x6.3mm rectangular hollow section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 4923, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - RHS 200x100x6.3
+          - rectangular tube 200x100
+          typical_rate_range:
+            min: 95
+            max: 135
+          notes: Weight 27.2 kg/m. Rectangular hollow section
+          data_source: IS codes only
+        - id: STR.SF.RHS.010
+          standard_name: Providing fabricating and erecting RHS 250x150x5.0mm rectangular hollow section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 4923, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - RHS 250x150x5.0
+          - rectangular tube 250x150
+          typical_rate_range:
+            min: 92
+            max: 130
+          notes: Weight 29.5 kg/m. Rectangular hollow section
+          data_source: IS codes only
+        - id: STR.SF.RHS.011
+          standard_name: Providing fabricating and erecting RHS 250x150x6.3mm rectangular hollow section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 4923, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - RHS 250x150x6.3
+          - rectangular tube 250x150
+          typical_rate_range:
+            min: 92
+            max: 130
+          notes: Weight 36.6 kg/m. Rectangular hollow section
+          data_source: IS codes only
+        - id: STR.SF.RHS.012
+          standard_name: Providing fabricating and erecting RHS 250x150x8.0mm rectangular hollow section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 4923, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - RHS 250x150x8.0
+          - rectangular tube 250x150
+          typical_rate_range:
+            min: 92
+            max: 130
+          notes: Weight 45.5 kg/m. Rectangular hollow section
+          data_source: IS codes only
+        - id: STR.SF.RHS.013
+          standard_name: Providing fabricating and erecting RHS 300x200x6.3mm rectangular hollow section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 4923, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - RHS 300x200x6.3
+          - rectangular tube 300x200
+          typical_rate_range:
+            min: 90
+            max: 128
+          notes: Weight 46.3 kg/m. Rectangular hollow section
+          data_source: IS codes only
+        - id: STR.SF.RHS.014
+          standard_name: Providing fabricating and erecting RHS 300x200x8.0mm rectangular hollow section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 4923, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - RHS 300x200x8.0
+          - rectangular tube 300x200
+          typical_rate_range:
+            min: 90
+            max: 128
+          notes: Weight 57.8 kg/m. Rectangular hollow section
+          data_source: IS codes only
+      chs:
+        items:
+        - id: STR.SF.CHS.017
+          standard_name: Providing fabricating and erecting CHS 48.3x3.2mm circular hollow section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1161, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - CHS 48.3x3.2
+          - circular tube 48.3mm
+          - pipe section 48.3
+          typical_rate_range:
+            min: 115
+            max: 160
+          notes: Weight 3.6 kg/m. Circular hollow section
+          data_source: IS codes only
+        - id: STR.SF.CHS.018
+          standard_name: Providing fabricating and erecting CHS 60.3x3.2mm circular hollow section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1161, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - CHS 60.3x3.2
+          - circular tube 60.3mm
+          - pipe section 60.3
+          typical_rate_range:
+            min: 112
+            max: 155
+          notes: Weight 4.5 kg/m. Circular hollow section
+          data_source: IS codes only
+        - id: STR.SF.CHS.019
+          standard_name: Providing fabricating and erecting CHS 76.1x3.2mm circular hollow section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1161, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - CHS 76.1x3.2
+          - circular tube 76.1mm
+          - pipe section 76.1
+          typical_rate_range:
+            min: 108
+            max: 150
+          notes: Weight 5.7 kg/m. Circular hollow section
+          data_source: IS codes only
+        - id: STR.SF.CHS.020
+          standard_name: Providing fabricating and erecting CHS 88.9x3.2mm circular hollow section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1161, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - CHS 88.9x3.2
+          - circular tube 88.9mm
+          - pipe section 88.9
+          typical_rate_range:
+            min: 105
+            max: 148
+          notes: Weight 6.8 kg/m. Circular hollow section
+          data_source: IS codes only
+        - id: STR.SF.CHS.021
+          standard_name: Providing fabricating and erecting CHS 88.9x4.0mm circular hollow section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1161, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - CHS 88.9x4.0
+          - circular tube 88.9mm
+          - pipe section 88.9
+          typical_rate_range:
+            min: 105
+            max: 148
+          notes: Weight 8.4 kg/m. Circular hollow section
+          data_source: IS codes only
+        - id: STR.SF.CHS.022
+          standard_name: Providing fabricating and erecting CHS 114.3x3.6mm circular hollow section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1161, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - CHS 114.3x3.6
+          - circular tube 114.3mm
+          - pipe section 114.3
+          typical_rate_range:
+            min: 100
+            max: 142
+          notes: Weight 9.8 kg/m. Circular hollow section
+          data_source: IS codes only
+        - id: STR.SF.CHS.023
+          standard_name: Providing fabricating and erecting CHS 114.3x5.0mm circular hollow section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1161, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - CHS 114.3x5.0
+          - circular tube 114.3mm
+          - pipe section 114.3
+          typical_rate_range:
+            min: 100
+            max: 142
+          notes: Weight 13.5 kg/m. Circular hollow section
+          data_source: IS codes only
+        - id: STR.SF.CHS.024
+          standard_name: Providing fabricating and erecting CHS 139.7x5.0mm circular hollow section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1161, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - CHS 139.7x5.0
+          - circular tube 139.7mm
+          - pipe section 139.7
+          typical_rate_range:
+            min: 98
+            max: 138
+          notes: Weight 16.6 kg/m. Circular hollow section
+          data_source: IS codes only
+        - id: STR.SF.CHS.025
+          standard_name: Providing fabricating and erecting CHS 168.3x5.0mm circular hollow section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1161, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - CHS 168.3x5.0
+          - circular tube 168.3mm
+          - pipe section 168.3
+          typical_rate_range:
+            min: 95
+            max: 135
+          notes: Weight 20.1 kg/m. Circular hollow section
+          data_source: IS codes only
+        - id: STR.SF.CHS.026
+          standard_name: Providing fabricating and erecting CHS 168.3x6.3mm circular hollow section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1161, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - CHS 168.3x6.3
+          - circular tube 168.3mm
+          - pipe section 168.3
+          typical_rate_range:
+            min: 95
+            max: 135
+          notes: Weight 25.2 kg/m. Circular hollow section
+          data_source: IS codes only
+        - id: STR.SF.CHS.027
+          standard_name: Providing fabricating and erecting CHS 219.1x6.3mm circular hollow section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1161, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - CHS 219.1x6.3
+          - circular tube 219.1mm
+          - pipe section 219.1
+          typical_rate_range:
+            min: 92
+            max: 130
+          notes: Weight 33.1 kg/m. Circular hollow section
+          data_source: IS codes only
+        - id: STR.SF.CHS.012
+          standard_name: Providing fabricating and erecting CHS 219.1x8.0mm circular hollow section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1161, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - CHS 219.1x8.0
+          - circular tube 219.1mm
+          - pipe section 219.1
+          typical_rate_range:
+            min: 92
+            max: 130
+          notes: Weight 41.6 kg/m. Circular hollow section
+          data_source: IS codes only
+        - id: STR.SF.CHS.013
+          standard_name: Providing fabricating and erecting CHS 273.0x6.3mm circular hollow section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1161, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - CHS 273.0x6.3
+          - circular tube 273.0mm
+          - pipe section 273.0
+          typical_rate_range:
+            min: 90
+            max: 128
+          notes: Weight 41.4 kg/m. Circular hollow section
+          data_source: IS codes only
+        - id: STR.SF.CHS.014
+          standard_name: Providing fabricating and erecting CHS 273.0x8.0mm circular hollow section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1161, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - CHS 273.0x8.0
+          - circular tube 273.0mm
+          - pipe section 273.0
+          typical_rate_range:
+            min: 90
+            max: 128
+          notes: Weight 52.3 kg/m. Circular hollow section
+          data_source: IS codes only
+        - id: STR.SF.CHS.015
+          standard_name: Providing fabricating and erecting CHS 323.9x8.0mm circular hollow section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1161, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - CHS 323.9x8.0
+          - circular tube 323.9mm
+          - pipe section 323.9
+          typical_rate_range:
+            min: 88
+            max: 125
+          notes: Weight 62.3 kg/m. Circular hollow section
+          data_source: IS codes only
+        - id: STR.SF.CHS.016
+          standard_name: Providing fabricating and erecting CHS 355.6x8.0mm circular hollow section with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1161, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - CHS 355.6x8.0
+          - circular tube 355.6mm
+          - pipe section 355.6
+          typical_rate_range:
+            min: 88
+            max: 125
+          notes: Weight 68.6 kg/m. Circular hollow section
+          data_source: IS codes only
+  bolting_anchoring:
+    categories:
+      hsfg_bolts:
+        items:
+        - id: STR.SF.HSF.001
+          standard_name: Providing HSFG bolt M16 Grade 8.8S with nut and washer, including installation and tensioning
+          unit: nos
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 3757, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - HSFG M16 8.8S
+          - high strength bolt M16
+          - friction grip bolt M16
+          typical_rate_range:
+            min: 25
+            max: 50
+          notes: Grade 8.8S HSFG bolt. Tensioned to proof load
+          data_source: IS codes only
+        - id: STR.SF.HSF.002
+          standard_name: Providing HSFG bolt M16 Grade 10.9S with nut and washer, including installation and tensioning
+          unit: nos
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 3757, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - HSFG M16 10.9S
+          - high strength bolt M16
+          - friction grip bolt M16
+          typical_rate_range:
+            min: 35
+            max: 65
+          notes: Grade 10.9S HSFG bolt. Tensioned to proof load
+          data_source: IS codes only
+        - id: STR.SF.HSF.003
+          standard_name: Providing HSFG bolt M20 Grade 8.8S with nut and washer, including installation and tensioning
+          unit: nos
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 3757, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - HSFG M20 8.8S
+          - high strength bolt M20
+          - friction grip bolt M20
+          typical_rate_range:
+            min: 35
+            max: 65
+          notes: Grade 8.8S HSFG bolt. Tensioned to proof load
+          data_source: IS codes only
+        - id: STR.SF.HSF.004
+          standard_name: Providing HSFG bolt M20 Grade 10.9S with nut and washer, including installation and tensioning
+          unit: nos
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 3757, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - HSFG M20 10.9S
+          - high strength bolt M20
+          - friction grip bolt M20
+          typical_rate_range:
+            min: 50
+            max: 90
+          notes: Grade 10.9S HSFG bolt. Tensioned to proof load
+          data_source: IS codes only
+        - id: STR.SF.HSF.005
+          standard_name: Providing HSFG bolt M22 Grade 8.8S with nut and washer, including installation and tensioning
+          unit: nos
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 3757, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - HSFG M22 8.8S
+          - high strength bolt M22
+          - friction grip bolt M22
+          typical_rate_range:
+            min: 45
+            max: 80
+          notes: Grade 8.8S HSFG bolt. Tensioned to proof load
+          data_source: IS codes only
+        - id: STR.SF.HSF.006
+          standard_name: Providing HSFG bolt M22 Grade 10.9S with nut and washer, including installation and tensioning
+          unit: nos
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 3757, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - HSFG M22 10.9S
+          - high strength bolt M22
+          - friction grip bolt M22
+          typical_rate_range:
+            min: 60
+            max: 105
+          notes: Grade 10.9S HSFG bolt. Tensioned to proof load
+          data_source: IS codes only
+        - id: STR.SF.HSF.007
+          standard_name: Providing HSFG bolt M24 Grade 8.8S with nut and washer, including installation and tensioning
+          unit: nos
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 3757, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - HSFG M24 8.8S
+          - high strength bolt M24
+          - friction grip bolt M24
+          typical_rate_range:
+            min: 55
+            max: 95
+          notes: Grade 8.8S HSFG bolt. Tensioned to proof load
+          data_source: IS codes only
+        - id: STR.SF.HSF.008
+          standard_name: Providing HSFG bolt M24 Grade 10.9S with nut and washer, including installation and tensioning
+          unit: nos
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 3757, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - HSFG M24 10.9S
+          - high strength bolt M24
+          - friction grip bolt M24
+          typical_rate_range:
+            min: 70
+            max: 120
+          notes: Grade 10.9S HSFG bolt. Tensioned to proof load
+          data_source: IS codes only
+        - id: STR.SF.HSF.009
+          standard_name: Providing HSFG bolt M27 Grade 10.9S with nut and washer, including installation and tensioning
+          unit: nos
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 3757, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - HSFG M27 10.9S
+          - high strength bolt M27
+          - friction grip bolt M27
+          typical_rate_range:
+            min: 90
+            max: 155
+          notes: Grade 10.9S HSFG bolt. Tensioned to proof load
+          data_source: IS codes only
+        - id: STR.SF.HSF.010
+          standard_name: Providing HSFG bolt M30 Grade 10.9S with nut and washer, including installation and tensioning
+          unit: nos
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 3757, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - HSFG M30 10.9S
+          - high strength bolt M30
+          - friction grip bolt M30
+          typical_rate_range:
+            min: 120
+            max: 200
+          notes: Grade 10.9S HSFG bolt. Tensioned to proof load
+          data_source: IS codes only
+      anchor_bolts:
+        items:
+        - id: STR.SF.ANB.001
+          standard_name: Providing and fixing anchor bolt M16x300mm long (Grade 4.6) including template and grouting
+          unit: nos
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - anchor bolt M16x300
+          - foundation bolt M16
+          - holding down bolt M16
+          typical_rate_range:
+            min: 80
+            max: 160
+          notes: Cast-in anchor bolt M16 x 300mm
+          data_source: IS codes only
+        - id: STR.SF.ANB.002
+          standard_name: Providing and fixing anchor bolt M16x450mm long (Grade 4.6) including template and grouting
+          unit: nos
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - anchor bolt M16x450
+          - foundation bolt M16
+          - holding down bolt M16
+          typical_rate_range:
+            min: 100
+            max: 200
+          notes: Cast-in anchor bolt M16 x 450mm
+          data_source: IS codes only
+        - id: STR.SF.ANB.003
+          standard_name: Providing and fixing anchor bolt M20x400mm long (Grade 4.6) including template and grouting
+          unit: nos
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - anchor bolt M20x400
+          - foundation bolt M20
+          - holding down bolt M20
+          typical_rate_range:
+            min: 120
+            max: 240
+          notes: Cast-in anchor bolt M20 x 400mm
+          data_source: IS codes only
+        - id: STR.SF.ANB.004
+          standard_name: Providing and fixing anchor bolt M20x600mm long (Grade 4.6) including template and grouting
+          unit: nos
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - anchor bolt M20x600
+          - foundation bolt M20
+          - holding down bolt M20
+          typical_rate_range:
+            min: 160
+            max: 300
+          notes: Cast-in anchor bolt M20 x 600mm
+          data_source: IS codes only
+        - id: STR.SF.ANB.005
+          standard_name: Providing and fixing anchor bolt M24x500mm long (Grade 4.6) including template and grouting
+          unit: nos
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - anchor bolt M24x500
+          - foundation bolt M24
+          - holding down bolt M24
+          typical_rate_range:
+            min: 180
+            max: 350
+          notes: Cast-in anchor bolt M24 x 500mm
+          data_source: IS codes only
+        - id: STR.SF.ANB.006
+          standard_name: Providing and fixing anchor bolt M24x750mm long (Grade 4.6) including template and grouting
+          unit: nos
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - anchor bolt M24x750
+          - foundation bolt M24
+          - holding down bolt M24
+          typical_rate_range:
+            min: 250
+            max: 450
+          notes: Cast-in anchor bolt M24 x 750mm
+          data_source: IS codes only
+        - id: STR.SF.ANB.007
+          standard_name: Providing and fixing anchor bolt M30x600mm long (Grade 4.6) including template and grouting
+          unit: nos
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - anchor bolt M30x600
+          - foundation bolt M30
+          - holding down bolt M30
+          typical_rate_range:
+            min: 300
+            max: 550
+          notes: Cast-in anchor bolt M30 x 600mm
+          data_source: IS codes only
+        - id: STR.SF.ANB.008
+          standard_name: Providing and fixing anchor bolt M30x900mm long (Grade 4.6) including template and grouting
+          unit: nos
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - anchor bolt M30x900
+          - foundation bolt M30
+          - holding down bolt M30
+          typical_rate_range:
+            min: 400
+            max: 700
+          notes: Cast-in anchor bolt M30 x 900mm
+          data_source: IS codes only
+        - id: STR.SF.ANB.009
+          standard_name: Providing and fixing anchor bolt M36x750mm long (Grade 4.6) including template and grouting
+          unit: nos
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - anchor bolt M36x750
+          - foundation bolt M36
+          - holding down bolt M36
+          typical_rate_range:
+            min: 500
+            max: 900
+          notes: Cast-in anchor bolt M36 x 750mm
+          data_source: IS codes only
+        - id: STR.SF.ANB.010
+          standard_name: Providing and fixing anchor bolt M36x1000mm long (Grade 4.6) including template and grouting
+          unit: nos
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - anchor bolt M36x1000
+          - foundation bolt M36
+          - holding down bolt M36
+          typical_rate_range:
+            min: 650
+            max: 1100
+          notes: Cast-in anchor bolt M36 x 1000mm
+          data_source: IS codes only
+      base_gusset_plates:
+        items:
+        - id: STR.SF.BPL.001
+          standard_name: Providing and fixing steel base plate 300x300x20mm thick with levelling shims and grouting
+          unit: nos
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - base plate 300x300x20
+          - column base plate small
+          typical_rate_range:
+            min: 1500
+            max: 3000
+          notes: Light column base plate
+          data_source: IS codes only
+        - id: STR.SF.BPL.002
+          standard_name: Providing and fixing steel base plate 400x400x25mm thick with levelling shims and grouting
+          unit: nos
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - base plate 400x400x25
+          - column base plate medium
+          typical_rate_range:
+            min: 2500
+            max: 5000
+          notes: Medium column base plate
+          data_source: IS codes only
+        - id: STR.SF.BPL.003
+          standard_name: Providing and fixing steel base plate 500x500x32mm thick with levelling shims and grouting
+          unit: nos
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - base plate 500x500x32
+          - column base plate large
+          typical_rate_range:
+            min: 4000
+            max: 7500
+          notes: Heavy column base plate
+          data_source: IS codes only
+        - id: STR.SF.BPL.004
+          standard_name: Providing and fixing steel base plate 600x600x40mm thick with levelling shims and grouting
+          unit: nos
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - base plate 600x600x40
+          - column base plate heavy
+          typical_rate_range:
+            min: 6000
+            max: 11000
+          notes: Extra heavy column base plate
+          data_source: IS codes only
+        - id: STR.SF.BPL.005
+          standard_name: Providing and fixing gusset plate (8mm thick) for bracing connections
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - gusset plate 8mm
+          - bracing gusset
+          typical_rate_range:
+            min: 95
+            max: 135
+          notes: Connection plate for bracing members
+          data_source: IS codes only
+        - id: STR.SF.BPL.006
+          standard_name: Providing and fixing gusset plate (10mm thick) for bracing connections
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - gusset plate 10mm
+          - medium gusset plate
+          typical_rate_range:
+            min: 93
+            max: 132
+          notes: Thicker gusset for heavier bracings
+          data_source: IS codes only
+        - id: STR.SF.BPL.007
+          standard_name: Providing and fixing gusset plate (12mm thick) for beam-column connections
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - gusset plate 12mm
+          - heavy gusset plate
+          typical_rate_range:
+            min: 92
+            max: 130
+          notes: For beam-column moment connections
+          data_source: IS codes only
+        - id: STR.SF.BPL.008
+          standard_name: Providing and fixing splice plate for beam/column splice connection
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - splice plate
+          - beam splice plate
+          typical_rate_range:
+            min: 95
+            max: 135
+          notes: Splice plates for member continuity
+          data_source: IS codes only
+        - id: STR.SF.BPL.009
+          standard_name: Providing and fixing stiffener plate on beam/column web
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - stiffener plate
+          - web stiffener
+          typical_rate_range:
+            min: 98
+            max: 140
+          notes: Web stiffeners at concentrated loads
+          data_source: IS codes only
+        - id: STR.SF.BPL.010
+          standard_name: Providing and fixing end plate for beam-column connection, 20mm thick
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - end plate connection
+          - flush end plate
+          typical_rate_range:
+            min: 95
+            max: 135
+          notes: Flush or extended end plate
+          data_source: IS codes only
+  fire_protection_extended:
+    categories:
+      intumescent_detailed:
+        items:
+        - id: STR.SF.FP.101
+          standard_name: Providing and applying intumescent paint for 30 min fire rating at 250 micron DFT on structural steel
+          unit: sqm
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15988
+          dsr_item_ref: ''
+          aliases:
+          - intumescent 30 min
+          - fire paint 250 micron
+          - fire protection 30 min
+          typical_rate_range:
+            min: 180
+            max: 350
+          notes: Intumescent coating for 30 min fire resistance
+          data_source: IS codes only
+        - id: STR.SF.FP.102
+          standard_name: Providing and applying intumescent paint for 60 min fire rating at 500 micron DFT on structural steel
+          unit: sqm
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15988
+          dsr_item_ref: ''
+          aliases:
+          - intumescent 60 min
+          - fire paint 500 micron
+          - fire protection 60 min
+          typical_rate_range:
+            min: 300
+            max: 550
+          notes: Intumescent coating for 60 min fire resistance
+          data_source: IS codes only
+        - id: STR.SF.FP.103
+          standard_name: Providing and applying intumescent paint for 90 min fire rating at 1000 micron DFT on structural steel
+          unit: sqm
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15988
+          dsr_item_ref: ''
+          aliases:
+          - intumescent 90 min
+          - fire paint 1000 micron
+          - fire protection 90 min
+          typical_rate_range:
+            min: 500
+            max: 900
+          notes: Intumescent coating for 90 min fire resistance
+          data_source: IS codes only
+        - id: STR.SF.FP.104
+          standard_name: Providing and applying intumescent paint for 120 min fire rating at 1500 micron DFT on structural steel
+          unit: sqm
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15988
+          dsr_item_ref: ''
+          aliases:
+          - intumescent 120 min
+          - fire paint 1500 micron
+          - fire protection 120 min
+          typical_rate_range:
+            min: 700
+            max: 1200
+          notes: Intumescent coating for 120 min fire resistance
+          data_source: IS codes only
+        - id: STR.SF.FP.105
+          standard_name: Providing and applying intumescent paint for 180 min fire rating at 2500 micron DFT on structural steel
+          unit: sqm
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15988
+          dsr_item_ref: ''
+          aliases:
+          - intumescent 180 min
+          - fire paint 2500 micron
+          - fire protection 180 min
+          typical_rate_range:
+            min: 1000
+            max: 1800
+          notes: Intumescent coating for 180 min fire resistance
+          data_source: IS codes only
+      board_protection_extended:
+        items:
+        - id: STR.SF.FP.201
+          standard_name: Providing and fixing calcium silicate fire protection board 15mm thick for 60 min rating
+          unit: sqm
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15988
+          dsr_item_ref: ''
+          aliases:
+          - fire board 15mm
+          - calcium silicate board 15
+          - fire rated board 60 min
+          typical_rate_range:
+            min: 400
+            max: 700
+          notes: 15mm calcium silicate board. 60 min fire rating
+          data_source: IS codes only
+        - id: STR.SF.FP.202
+          standard_name: Providing and fixing calcium silicate fire protection board 20mm thick for 90 min rating
+          unit: sqm
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15988
+          dsr_item_ref: ''
+          aliases:
+          - fire board 20mm
+          - calcium silicate board 20
+          - fire rated board 90 min
+          typical_rate_range:
+            min: 500
+            max: 900
+          notes: 20mm calcium silicate board. 90 min fire rating
+          data_source: IS codes only
+        - id: STR.SF.FP.203
+          standard_name: Providing and fixing calcium silicate fire protection board 25mm thick for 120 min rating
+          unit: sqm
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15988
+          dsr_item_ref: ''
+          aliases:
+          - fire board 25mm
+          - calcium silicate board 25
+          - fire rated board 120 min
+          typical_rate_range:
+            min: 650
+            max: 1100
+          notes: 25mm calcium silicate board. 120 min fire rating
+          data_source: IS codes only
+        - id: STR.SF.FP.204
+          standard_name: Providing and fixing calcium silicate fire protection board 30mm thick for 120 min rating
+          unit: sqm
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15988
+          dsr_item_ref: ''
+          aliases:
+          - fire board 30mm
+          - calcium silicate board 30
+          - fire rated board 120 min
+          typical_rate_range:
+            min: 750
+            max: 1300
+          notes: 30mm calcium silicate board. 120 min fire rating
+          data_source: IS codes only
+        - id: STR.SF.FP.205
+          standard_name: Providing and fixing calcium silicate fire protection board 40mm thick for 180 min rating
+          unit: sqm
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15988
+          dsr_item_ref: ''
+          aliases:
+          - fire board 40mm
+          - calcium silicate board 40
+          - fire rated board 180 min
+          typical_rate_range:
+            min: 950
+            max: 1600
+          notes: 40mm calcium silicate board. 180 min fire rating
+          data_source: IS codes only
+        - id: STR.SF.FP.206
+          standard_name: Providing and fixing calcium silicate fire protection board 50mm thick for 240 min rating
+          unit: sqm
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15988
+          dsr_item_ref: ''
+          aliases:
+          - fire board 50mm
+          - calcium silicate board 50
+          - fire rated board 240 min
+          typical_rate_range:
+            min: 1200
+            max: 2000
+          notes: 50mm calcium silicate board. 240 min fire rating
+          data_source: IS codes only
+      spray_protection:
+        items:
+        - id: STR.SF.FP.301
+          standard_name: Providing spray applied vermiculite/perlite fire protection 20mm thick for 60 min rating
+          unit: sqm
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15988
+          dsr_item_ref: ''
+          aliases:
+          - spray fire protection 20mm
+          - vermiculite spray 60min
+          typical_rate_range:
+            min: 300
+            max: 550
+          notes: Spray applied fire protection
+          data_source: IS codes only
+        - id: STR.SF.FP.302
+          standard_name: Providing spray applied vermiculite/perlite fire protection 30mm thick for 90 min rating
+          unit: sqm
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15988
+          dsr_item_ref: ''
+          aliases:
+          - spray fire protection 30mm
+          - vermiculite spray 90min
+          typical_rate_range:
+            min: 400
+            max: 700
+          notes: Thicker spray fire protection
+          data_source: IS codes only
+        - id: STR.SF.FP.303
+          standard_name: Providing spray applied vermiculite/perlite fire protection 40mm thick for 120 min rating
+          unit: sqm
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15988
+          dsr_item_ref: ''
+          aliases:
+          - spray fire protection 40mm
+          - vermiculite spray 120min
+          typical_rate_range:
+            min: 500
+            max: 900
+          notes: Heavy duty spray fire protection
+          data_source: IS codes only
+        - id: STR.SF.FP.304
+          standard_name: Providing concrete encasement for fire protection of steel columns, 50mm thick
+          unit: rm
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15988
+          dsr_item_ref: ''
+          aliases:
+          - concrete encasement 50mm
+          - fire encased column
+          typical_rate_range:
+            min: 2000
+            max: 4000
+          notes: Concrete casing around steel columns
+          data_source: IS codes only
+        - id: STR.SF.FP.305
+          standard_name: Providing concrete encasement for fire protection of steel beams, 50mm thick
+          unit: rm
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15988
+          dsr_item_ref: ''
+          aliases:
+          - beam concrete encasement
+          - fire encased beam
+          typical_rate_range:
+            min: 1500
+            max: 3000
+          notes: Concrete casing around steel beams
+          data_source: IS codes only
+  purlins_extended:
+    categories:
+      z_purlins:
+        items:
+        - id: STR.SF.ZPR.001
+          standard_name: Providing and fixing Z-purlin 150x1.6mm cold formed galvanised steel for roof
+          unit: rm
+          construction_types:
+          - steel_frame
+          building_types:
+          - industrial
+          - commercial
+          requires: []
+          is_code_ref: IS 811
+          dsr_item_ref: ''
+          aliases:
+          - Z-purlin 150x1.6
+          - zed purlin 150
+          - roof purlin Z150
+          typical_rate_range:
+            min: 200
+            max: 380
+          notes: Weight 3.5 kg/m. Cold formed Z-section purlin
+          data_source: IS codes only
+        - id: STR.SF.ZPR.002
+          standard_name: Providing and fixing Z-purlin 150x2.0mm cold formed galvanised steel for roof
+          unit: rm
+          construction_types:
+          - steel_frame
+          building_types:
+          - industrial
+          - commercial
+          requires: []
+          is_code_ref: IS 811
+          dsr_item_ref: ''
+          aliases:
+          - Z-purlin 150x2.0
+          - zed purlin 150
+          - roof purlin Z150
+          typical_rate_range:
+            min: 220
+            max: 400
+          notes: Weight 4.3 kg/m. Cold formed Z-section purlin
+          data_source: IS codes only
+        - id: STR.SF.ZPR.003
+          standard_name: Providing and fixing Z-purlin 175x1.6mm cold formed galvanised steel for roof
+          unit: rm
+          construction_types:
+          - steel_frame
+          building_types:
+          - industrial
+          - commercial
+          requires: []
+          is_code_ref: IS 811
+          dsr_item_ref: ''
+          aliases:
+          - Z-purlin 175x1.6
+          - zed purlin 175
+          - roof purlin Z175
+          typical_rate_range:
+            min: 230
+            max: 420
+          notes: Weight 4.0 kg/m. Cold formed Z-section purlin
+          data_source: IS codes only
+        - id: STR.SF.ZPR.004
+          standard_name: Providing and fixing Z-purlin 175x2.0mm cold formed galvanised steel for roof
+          unit: rm
+          construction_types:
+          - steel_frame
+          building_types:
+          - industrial
+          - commercial
+          requires: []
+          is_code_ref: IS 811
+          dsr_item_ref: ''
+          aliases:
+          - Z-purlin 175x2.0
+          - zed purlin 175
+          - roof purlin Z175
+          typical_rate_range:
+            min: 250
+            max: 450
+          notes: Weight 5.0 kg/m. Cold formed Z-section purlin
+          data_source: IS codes only
+        - id: STR.SF.ZPR.005
+          standard_name: Providing and fixing Z-purlin 200x1.6mm cold formed galvanised steel for roof
+          unit: rm
+          construction_types:
+          - steel_frame
+          building_types:
+          - industrial
+          - commercial
+          requires: []
+          is_code_ref: IS 811
+          dsr_item_ref: ''
+          aliases:
+          - Z-purlin 200x1.6
+          - zed purlin 200
+          - roof purlin Z200
+          typical_rate_range:
+            min: 260
+            max: 470
+          notes: Weight 4.5 kg/m. Cold formed Z-section purlin
+          data_source: IS codes only
+        - id: STR.SF.ZPR.006
+          standard_name: Providing and fixing Z-purlin 200x2.0mm cold formed galvanised steel for roof
+          unit: rm
+          construction_types:
+          - steel_frame
+          building_types:
+          - industrial
+          - commercial
+          requires: []
+          is_code_ref: IS 811
+          dsr_item_ref: ''
+          aliases:
+          - Z-purlin 200x2.0
+          - zed purlin 200
+          - roof purlin Z200
+          typical_rate_range:
+            min: 280
+            max: 500
+          notes: Weight 5.6 kg/m. Cold formed Z-section purlin
+          data_source: IS codes only
+        - id: STR.SF.ZPR.007
+          standard_name: Providing and fixing Z-purlin 200x2.5mm cold formed galvanised steel for roof
+          unit: rm
+          construction_types:
+          - steel_frame
+          building_types:
+          - industrial
+          - commercial
+          requires: []
+          is_code_ref: IS 811
+          dsr_item_ref: ''
+          aliases:
+          - Z-purlin 200x2.5
+          - zed purlin 200
+          - roof purlin Z200
+          typical_rate_range:
+            min: 300
+            max: 540
+          notes: Weight 7.0 kg/m. Cold formed Z-section purlin
+          data_source: IS codes only
+        - id: STR.SF.ZPR.008
+          standard_name: Providing and fixing Z-purlin 230x2.0mm cold formed galvanised steel for roof
+          unit: rm
+          construction_types:
+          - steel_frame
+          building_types:
+          - industrial
+          - commercial
+          requires: []
+          is_code_ref: IS 811
+          dsr_item_ref: ''
+          aliases:
+          - Z-purlin 230x2.0
+          - zed purlin 230
+          - roof purlin Z230
+          typical_rate_range:
+            min: 320
+            max: 570
+          notes: Weight 6.4 kg/m. Cold formed Z-section purlin
+          data_source: IS codes only
+        - id: STR.SF.ZPR.009
+          standard_name: Providing and fixing Z-purlin 230x2.5mm cold formed galvanised steel for roof
+          unit: rm
+          construction_types:
+          - steel_frame
+          building_types:
+          - industrial
+          - commercial
+          requires: []
+          is_code_ref: IS 811
+          dsr_item_ref: ''
+          aliases:
+          - Z-purlin 230x2.5
+          - zed purlin 230
+          - roof purlin Z230
+          typical_rate_range:
+            min: 340
+            max: 600
+          notes: Weight 8.0 kg/m. Cold formed Z-section purlin
+          data_source: IS codes only
+        - id: STR.SF.ZPR.010
+          standard_name: Providing and fixing Z-purlin 250x2.5mm cold formed galvanised steel for roof
+          unit: rm
+          construction_types:
+          - steel_frame
+          building_types:
+          - industrial
+          - commercial
+          requires: []
+          is_code_ref: IS 811
+          dsr_item_ref: ''
+          aliases:
+          - Z-purlin 250x2.5
+          - zed purlin 250
+          - roof purlin Z250
+          typical_rate_range:
+            min: 360
+            max: 640
+          notes: Weight 8.7 kg/m. Cold formed Z-section purlin
+          data_source: IS codes only
+      c_purlins:
+        items:
+        - id: STR.SF.CPR.001
+          standard_name: Providing and fixing C-purlin 100x1.6mm cold formed galvanised steel for roof
+          unit: rm
+          construction_types:
+          - steel_frame
+          building_types:
+          - industrial
+          - commercial
+          requires: []
+          is_code_ref: IS 811
+          dsr_item_ref: ''
+          aliases:
+          - C-purlin 100x1.6
+          - channel purlin 100
+          typical_rate_range:
+            min: 180
+            max: 330
+          notes: Weight 2.5 kg/m. Cold formed C-section purlin
+          data_source: IS codes only
+        - id: STR.SF.CPR.002
+          standard_name: Providing and fixing C-purlin 125x1.6mm cold formed galvanised steel for roof
+          unit: rm
+          construction_types:
+          - steel_frame
+          building_types:
+          - industrial
+          - commercial
+          requires: []
+          is_code_ref: IS 811
+          dsr_item_ref: ''
+          aliases:
+          - C-purlin 125x1.6
+          - channel purlin 125
+          typical_rate_range:
+            min: 200
+            max: 360
+          notes: Weight 3.0 kg/m. Cold formed C-section purlin
+          data_source: IS codes only
+        - id: STR.SF.CPR.003
+          standard_name: Providing and fixing C-purlin 150x1.6mm cold formed galvanised steel for roof
+          unit: rm
+          construction_types:
+          - steel_frame
+          building_types:
+          - industrial
+          - commercial
+          requires: []
+          is_code_ref: IS 811
+          dsr_item_ref: ''
+          aliases:
+          - C-purlin 150x1.6
+          - channel purlin 150
+          typical_rate_range:
+            min: 220
+            max: 400
+          notes: Weight 3.5 kg/m. Cold formed C-section purlin
+          data_source: IS codes only
+        - id: STR.SF.CPR.004
+          standard_name: Providing and fixing C-purlin 150x2.0mm cold formed galvanised steel for roof
+          unit: rm
+          construction_types:
+          - steel_frame
+          building_types:
+          - industrial
+          - commercial
+          requires: []
+          is_code_ref: IS 811
+          dsr_item_ref: ''
+          aliases:
+          - C-purlin 150x2.0
+          - channel purlin 150
+          typical_rate_range:
+            min: 240
+            max: 430
+          notes: Weight 4.3 kg/m. Cold formed C-section purlin
+          data_source: IS codes only
+        - id: STR.SF.CPR.005
+          standard_name: Providing and fixing C-purlin 175x2.0mm cold formed galvanised steel for roof
+          unit: rm
+          construction_types:
+          - steel_frame
+          building_types:
+          - industrial
+          - commercial
+          requires: []
+          is_code_ref: IS 811
+          dsr_item_ref: ''
+          aliases:
+          - C-purlin 175x2.0
+          - channel purlin 175
+          typical_rate_range:
+            min: 260
+            max: 470
+          notes: Weight 5.0 kg/m. Cold formed C-section purlin
+          data_source: IS codes only
+        - id: STR.SF.CPR.006
+          standard_name: Providing and fixing C-purlin 200x2.0mm cold formed galvanised steel for roof
+          unit: rm
+          construction_types:
+          - steel_frame
+          building_types:
+          - industrial
+          - commercial
+          requires: []
+          is_code_ref: IS 811
+          dsr_item_ref: ''
+          aliases:
+          - C-purlin 200x2.0
+          - channel purlin 200
+          typical_rate_range:
+            min: 280
+            max: 500
+          notes: Weight 5.6 kg/m. Cold formed C-section purlin
+          data_source: IS codes only
+        - id: STR.SF.CPR.007
+          standard_name: Providing and fixing C-purlin 200x2.5mm cold formed galvanised steel for roof
+          unit: rm
+          construction_types:
+          - steel_frame
+          building_types:
+          - industrial
+          - commercial
+          requires: []
+          is_code_ref: IS 811
+          dsr_item_ref: ''
+          aliases:
+          - C-purlin 200x2.5
+          - channel purlin 200
+          typical_rate_range:
+            min: 300
+            max: 540
+          notes: Weight 7.0 kg/m. Cold formed C-section purlin
+          data_source: IS codes only
+        - id: STR.SF.CPR.008
+          standard_name: Providing and fixing C-purlin 250x2.5mm cold formed galvanised steel for roof
+          unit: rm
+          construction_types:
+          - steel_frame
+          building_types:
+          - industrial
+          - commercial
+          requires: []
+          is_code_ref: IS 811
+          dsr_item_ref: ''
+          aliases:
+          - C-purlin 250x2.5
+          - channel purlin 250
+          typical_rate_range:
+            min: 340
+            max: 600
+          notes: Weight 8.7 kg/m. Cold formed C-section purlin
+          data_source: IS codes only
+      purlin_accessories:
+        items:
+        - id: STR.SF.PRA.001
+          standard_name: Providing and fixing sag rod 12mm dia for purlin lateral support
+          unit: rm
+          construction_types:
+          - steel_frame
+          building_types:
+          - industrial
+          requires: []
+          is_code_ref: IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - sag rod 12mm
+          - purlin sag rod
+          typical_rate_range:
+            min: 80
+            max: 160
+          notes: Lateral support between purlins
+          data_source: IS codes only
+        - id: STR.SF.PRA.002
+          standard_name: Providing and fixing sag rod 16mm dia for purlin lateral support
+          unit: rm
+          construction_types:
+          - steel_frame
+          building_types:
+          - industrial
+          requires: []
+          is_code_ref: IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - sag rod 16mm
+          - heavy sag rod
+          typical_rate_range:
+            min: 120
+            max: 220
+          notes: For longer purlin spans
+          data_source: IS codes only
+        - id: STR.SF.PRA.003
+          standard_name: Providing and fixing tie rod 16mm dia with turnbuckle for roof bracing
+          unit: rm
+          construction_types:
+          - steel_frame
+          building_types:
+          - industrial
+          requires: []
+          is_code_ref: IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - tie rod 16mm
+          - roof bracing tie
+          typical_rate_range:
+            min: 150
+            max: 280
+          notes: Roof plane bracing
+          data_source: IS codes only
+        - id: STR.SF.PRA.004
+          standard_name: Providing and fixing tie rod 20mm dia with turnbuckle for roof bracing
+          unit: rm
+          construction_types:
+          - steel_frame
+          building_types:
+          - industrial
+          requires: []
+          is_code_ref: IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - tie rod 20mm
+          - heavy tie rod
+          typical_rate_range:
+            min: 200
+            max: 380
+          notes: Heavy duty roof bracing
+          data_source: IS codes only
+  decking_extended:
+    categories:
+      composite_deck:
+        items:
+        - id: STR.SF.DK.101
+          standard_name: Providing and fixing profiled metal deck sheet 0.8mm thick galvanised for composite slab
+          unit: sqm
+          construction_types:
+          - steel_frame
+          building_types:
+          - commercial
+          - industrial
+          requires: []
+          is_code_ref: IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - deck sheet 0.8mm
+          - composite deck 0.8
+          typical_rate_range:
+            min: 400
+            max: 700
+          notes: Light duty composite deck
+          data_source: IS codes only
+        - id: STR.SF.DK.102
+          standard_name: Providing and fixing profiled metal deck sheet 1.0mm thick galvanised for composite slab
+          unit: sqm
+          construction_types:
+          - steel_frame
+          building_types:
+          - commercial
+          - industrial
+          requires: []
+          is_code_ref: IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - deck sheet 1.0mm
+          - composite deck 1.0
+          typical_rate_range:
+            min: 500
+            max: 850
+          notes: Standard composite deck
+          data_source: IS codes only
+        - id: STR.SF.DK.103
+          standard_name: Providing and fixing profiled metal deck sheet 1.2mm thick galvanised for composite slab
+          unit: sqm
+          construction_types:
+          - steel_frame
+          building_types:
+          - commercial
+          - industrial
+          requires: []
+          is_code_ref: IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - deck sheet 1.2mm
+          - composite deck 1.2
+          typical_rate_range:
+            min: 600
+            max: 1000
+          notes: Heavy duty composite deck
+          data_source: IS codes only
+        - id: STR.SF.DK.104
+          standard_name: Providing headed shear stud 19mm dia x 100mm long welded through deck
+          unit: nos
+          construction_types:
+          - steel_frame
+          building_types:
+          - commercial
+          - industrial
+          requires: []
+          is_code_ref: IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - shear stud 19x100
+          - through deck stud
+          typical_rate_range:
+            min: 30
+            max: 60
+          notes: Nelson stud for composite action
+          data_source: IS codes only
+        - id: STR.SF.DK.105
+          standard_name: Providing headed shear stud 22mm dia x 125mm long welded through deck
+          unit: nos
+          construction_types:
+          - steel_frame
+          building_types:
+          - commercial
+          - industrial
+          requires: []
+          is_code_ref: IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - shear stud 22x125
+          - large shear stud
+          typical_rate_range:
+            min: 40
+            max: 75
+          notes: Larger stud for heavier loading
+          data_source: IS codes only
+        - id: STR.SF.DK.106
+          standard_name: Providing edge trim and closure pieces for metal deck
+          unit: rm
+          construction_types:
+          - steel_frame
+          building_types:
+          - commercial
+          - industrial
+          requires: []
+          is_code_ref: IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - deck edge trim
+          - deck closure piece
+          typical_rate_range:
+            min: 150
+            max: 300
+          notes: Edge finishing for metal deck
+          data_source: IS codes only
+  special_steel_structures:
+    categories:
+      crane_structures:
+        items:
+        - id: STR.SF.CRN.001
+          standard_name: Providing fabricating and erecting crane beam (runway girder) ISMB 500 with rail
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - industrial
+          requires: []
+          is_code_ref: IS 800:2007, IS 807
+          dsr_item_ref: ''
+          aliases:
+          - crane beam ISMB 500
+          - runway girder 500
+          typical_rate_range:
+            min: 95
+            max: 135
+          notes: Crane runway girder with rail mounting
+          data_source: IS codes only
+        - id: STR.SF.CRN.002
+          standard_name: Providing fabricating and erecting crane beam (runway girder) ISMB 600 with rail
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - industrial
+          requires: []
+          is_code_ref: IS 800:2007, IS 807
+          dsr_item_ref: ''
+          aliases:
+          - crane beam ISMB 600
+          - runway girder 600
+          typical_rate_range:
+            min: 92
+            max: 130
+          notes: Heavy crane runway
+          data_source: IS codes only
+        - id: STR.SF.CRN.003
+          standard_name: Providing fabricating and erecting crane beam plate girder (custom built) with rail
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - industrial
+          requires: []
+          is_code_ref: IS 800:2007, IS 807
+          dsr_item_ref: ''
+          aliases:
+          - crane plate girder
+          - heavy runway girder
+          typical_rate_range:
+            min: 105
+            max: 150
+          notes: Custom fabricated crane girder
+          data_source: IS codes only
+        - id: STR.SF.CRN.004
+          standard_name: Providing and fixing crane rail (light duty) CR 50 type on runway girder
+          unit: rm
+          construction_types:
+          - steel_frame
+          building_types:
+          - industrial
+          requires: []
+          is_code_ref: IS 800:2007, IS 807
+          dsr_item_ref: ''
+          aliases:
+          - crane rail CR50
+          - light crane rail
+          typical_rate_range:
+            min: 1500
+            max: 3000
+          notes: Light duty overhead crane rail
+          data_source: IS codes only
+        - id: STR.SF.CRN.005
+          standard_name: Providing and fixing crane rail (heavy duty) CR 80 type on runway girder
+          unit: rm
+          construction_types:
+          - steel_frame
+          building_types:
+          - industrial
+          requires: []
+          is_code_ref: IS 800:2007, IS 807
+          dsr_item_ref: ''
+          aliases:
+          - crane rail CR80
+          - heavy crane rail
+          typical_rate_range:
+            min: 3000
+            max: 5500
+          notes: Heavy duty overhead crane rail
+          data_source: IS codes only
+        - id: STR.SF.CRN.006
+          standard_name: Providing and fixing crane rail clips and pads
+          unit: nos
+          construction_types:
+          - steel_frame
+          building_types:
+          - industrial
+          requires: []
+          is_code_ref: IS 800:2007, IS 807
+          dsr_item_ref: ''
+          aliases:
+          - rail clip assembly
+          - crane rail fixing
+          typical_rate_range:
+            min: 200
+            max: 500
+          notes: Per clip assembly including pad
+          data_source: IS codes only
+        - id: STR.SF.CRN.007
+          standard_name: Providing fabricating and erecting crane bracket/corbel on column
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - industrial
+          requires: []
+          is_code_ref: IS 800:2007, IS 807
+          dsr_item_ref: ''
+          aliases:
+          - crane bracket
+          - crane column corbel
+          typical_rate_range:
+            min: 100
+            max: 145
+          notes: Bracket supporting runway girder
+          data_source: IS codes only
+        - id: STR.SF.CRN.008
+          standard_name: Providing fabricating and erecting monorail beam ISMB 300 with trolley track
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - industrial
+          requires: []
+          is_code_ref: IS 800:2007, IS 807
+          dsr_item_ref: ''
+          aliases:
+          - monorail beam 300
+          - monorail girder
+          typical_rate_range:
+            min: 100
+            max: 140
+          notes: Monorail for light lifting
+          data_source: IS codes only
+        - id: STR.SF.CRN.009
+          standard_name: Providing fabricating and erecting monorail beam ISMB 400 with trolley track
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - industrial
+          requires: []
+          is_code_ref: IS 800:2007, IS 807
+          dsr_item_ref: ''
+          aliases:
+          - monorail beam 400
+          - heavy monorail
+          typical_rate_range:
+            min: 98
+            max: 138
+          notes: Monorail for medium lifting
+          data_source: IS codes only
+        - id: STR.SF.CRN.010
+          standard_name: Providing and installing crane buffer/stopper at end of runway
+          unit: nos
+          construction_types:
+          - steel_frame
+          building_types:
+          - industrial
+          requires: []
+          is_code_ref: IS 800:2007, IS 807
+          dsr_item_ref: ''
+          aliases:
+          - crane buffer
+          - end stop crane
+          typical_rate_range:
+            min: 5000
+            max: 12000
+          notes: Per end stop assembly
+          data_source: IS codes only
+      miscellaneous_steel:
+        items:
+        - id: STR.SF.MSC.001
+          standard_name: Providing fabricating and erecting steel staircase stringers (ISMC 200 pair) with primer
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - stair stringer ISMC 200
+          - steel stair support
+          typical_rate_range:
+            min: 100
+            max: 145
+          notes: Channel stringers for metal staircase
+          data_source: IS codes only
+        - id: STR.SF.MSC.002
+          standard_name: Providing fabricating and erecting steel stair treads (chequered plate 6mm)
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - chequered plate tread
+          - steel stair tread
+          typical_rate_range:
+            min: 105
+            max: 150
+          notes: MS chequered plate treads
+          data_source: IS codes only
+        - id: STR.SF.MSC.003
+          standard_name: Providing fabricating and erecting steel stair treads (open grating type)
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - grating stair tread
+          - open mesh tread
+          typical_rate_range:
+            min: 110
+            max: 155
+          notes: Open mesh/grating treads for industrial
+          data_source: IS codes only
+        - id: STR.SF.MSC.004
+          standard_name: Providing fabricating and erecting steel handrail (MS pipe 40mm NB) with primer
+          unit: rm
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - MS pipe handrail
+          - steel railing 40NB
+          typical_rate_range:
+            min: 500
+            max: 900
+          notes: Standard pipe handrail
+          data_source: IS codes only
+        - id: STR.SF.MSC.005
+          standard_name: Providing fabricating and erecting steel handrail (MS pipe 50mm NB) with primer
+          unit: rm
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - MS pipe handrail 50NB
+          - heavy steel railing
+          typical_rate_range:
+            min: 600
+            max: 1100
+          notes: Heavy duty pipe handrail
+          data_source: IS codes only
+        - id: STR.SF.MSC.006
+          standard_name: Providing fabricating and erecting steel ladder (cat ladder) with cage for industrial
+          unit: rm
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - cat ladder with cage
+          - industrial ladder caged
+          typical_rate_range:
+            min: 3000
+            max: 6000
+          notes: Per running metre height of ladder
+          data_source: IS codes only
+        - id: STR.SF.MSC.007
+          standard_name: Providing fabricating and erecting steel platform/walkway with grating and handrail
+          unit: sqm
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - steel platform grating
+          - elevated walkway steel
+          typical_rate_range:
+            min: 3500
+            max: 7000
+          notes: Complete steel platform system
+          data_source: IS codes only
+        - id: STR.SF.MSC.008
+          standard_name: Providing fabricating and erecting steel canopy/awning frame
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - canopy steel frame
+          - awning structure
+          typical_rate_range:
+            min: 100
+            max: 145
+          notes: Steel frame for entrance canopy
+          data_source: IS codes only
+        - id: STR.SF.MSC.009
+          standard_name: Providing fabricating and erecting steel truss for roof (span 10-15m)
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - roof truss 10-15m
+          - steel truss medium span
+          typical_rate_range:
+            min: 95
+            max: 135
+          notes: Fabricated steel roof truss
+          data_source: IS codes only
+        - id: STR.SF.MSC.010
+          standard_name: Providing fabricating and erecting steel truss for roof (span 15-25m)
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - roof truss 15-25m
+          - steel truss long span
+          typical_rate_range:
+            min: 92
+            max: 130
+          notes: Long span roof truss
+          data_source: IS codes only
+        - id: STR.SF.MSC.011
+          standard_name: Providing fabricating and erecting steel truss for roof (span 25-40m)
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - roof truss 25-40m
+          - steel truss very long
+          typical_rate_range:
+            min: 90
+            max: 128
+          notes: Very long span truss
+          data_source: IS codes only
+        - id: STR.SF.MSC.012
+          standard_name: Providing fabricating and erecting steel space frame structure
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - space frame
+          - 3D space structure
+          typical_rate_range:
+            min: 110
+            max: 160
+          notes: Space frame for large span roofs
+          data_source: IS codes only
+        - id: STR.SF.MSC.013
+          standard_name: Providing hot-dip galvanizing treatment for structural steel members
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - hot-dip galvanizing
+          - HDG steel treatment
+          typical_rate_range:
+            min: 15
+            max: 30
+          notes: Extra over basic rate for galvanizing
+          data_source: IS codes only
+        - id: STR.SF.MSC.014
+          standard_name: Providing shop painting with two coats epoxy primer on structural steel
+          unit: sqm
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - epoxy primer steel
+          - two coat primer
+          typical_rate_range:
+            min: 80
+            max: 160
+          notes: Two coat shop applied primer system
+          data_source: IS codes only
+        - id: STR.SF.MSC.015
+          standard_name: Providing site touch-up painting after erection including weld areas
+          unit: sqm
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - touch-up paint site
+          - site primer repair
+          typical_rate_range:
+            min: 50
+            max: 100
+          notes: Repair painting at site joints
+          data_source: IS codes only
+  connections_extended:
+    categories:
+      bolted_connections:
+        items:
+        - id: STR.SF.BLT.001
+          standard_name: Providing HSFG bolted connection - M20 Grade 8.8 - friction grip
+          unit: nos
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 800:2007, IS 4000
+          dsr_item_ref: ''
+          aliases:
+          - HSFG bolt M20
+          - friction grip bolt
+          - high strength bolt
+          typical_rate_range:
+            min: 80
+            max: 160
+          notes: Per bolt including nut, washer, tensioning
+          data_source: IS codes only
+        - id: STR.SF.BLT.002
+          standard_name: Providing HSFG bolted connection - M24 Grade 10.9 - friction grip
+          unit: nos
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 800:2007, IS 4000
+          dsr_item_ref: ''
+          aliases:
+          - HSFG bolt M24
+          - heavy duty HSFG
+          typical_rate_range:
+            min: 120
+            max: 220
+          notes: For heavy connections
+          data_source: IS codes only
+        - id: STR.SF.BLT.003
+          standard_name: Providing ordinary bolt connection - M16 Grade 4.6
+          unit: nos
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - ordinary bolt M16
+          - bearing bolt M16
+          typical_rate_range:
+            min: 25
+            max: 55
+          notes: For secondary connections, bracings
+          data_source: IS codes only
+        - id: STR.SF.BLT.004
+          standard_name: Providing anchor bolt/foundation bolt - M24 Grade 4.6 - 600mm embedment
+          unit: nos
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 800:2007, IS 5624
+          dsr_item_ref: ''
+          aliases:
+          - anchor bolt M24
+          - foundation bolt
+          - holding down bolt
+          typical_rate_range:
+            min: 150
+            max: 350
+          notes: Cast-in or grouted anchor bolt
+          data_source: IS codes only
+        - id: STR.SF.BLT.005
+          standard_name: Providing chemical anchor bolt - M20 - epoxy grouted
+          unit: nos
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 4000
+          dsr_item_ref: ''
+          aliases:
+          - chemical anchor M20
+          - epoxy anchor bolt
+          typical_rate_range:
+            min: 200
+            max: 450
+          notes: Post-installed chemical anchor
+          data_source: estimated
+      welded_connections:
+        items:
+        - id: STR.SF.WLD.001
+          standard_name: Providing butt weld (full penetration) - shop weld - per mm x per meter
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 800:2007, IS 816
+          dsr_item_ref: ''
+          aliases:
+          - butt weld shop
+          - full penetration weld
+          typical_rate_range:
+            min: 30
+            max: 60
+          notes: Per kg of weld metal deposited
+          data_source: IS codes only
+        - id: STR.SF.WLD.002
+          standard_name: Providing fillet weld - shop weld - per mm size x per meter
+          unit: rmt
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 800:2007, IS 816
+          dsr_item_ref: ''
+          aliases:
+          - fillet weld shop
+          - shop welding
+          typical_rate_range:
+            min: 150
+            max: 350
+          notes: Per running meter of 6mm fillet
+          data_source: IS codes only
+        - id: STR.SF.WLD.003
+          standard_name: Providing site welding - butt weld (full penetration)
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 800:2007, IS 816
+          dsr_item_ref: ''
+          aliases:
+          - site butt weld
+          - field weld full pen
+          typical_rate_range:
+            min: 50
+            max: 100
+          notes: Higher rate for site welding conditions
+          data_source: IS codes only
+        - id: STR.SF.WLD.004
+          standard_name: Providing site welding - fillet weld - per mm size x per meter
+          unit: rmt
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 800:2007, IS 816
+          dsr_item_ref: ''
+          aliases:
+          - site fillet weld
+          - field welding fillet
+          typical_rate_range:
+            min: 200
+            max: 450
+          notes: Per running meter of 6mm fillet at site
+          data_source: IS codes only
+      connection_plates:
+        items:
+        - id: STR.SF.CPL.001
+          standard_name: Providing base plate/bearing plate - MS fabricated with stiffeners
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - base plate steel
+          - bearing plate column
+          typical_rate_range:
+            min: 85
+            max: 130
+          notes: Including stiffeners, welding
+          data_source: IS codes only
+        - id: STR.SF.CPL.002
+          standard_name: Providing gusset plate/connection plate - MS fabricated
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - gusset plate
+          - connection plate
+          typical_rate_range:
+            min: 90
+            max: 140
+          notes: For bracing and truss connections
+          data_source: IS codes only
+        - id: STR.SF.CPL.003
+          standard_name: Providing end plate/splice plate - MS fabricated with bolt holes
+          unit: kg
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - end plate connection
+          - splice plate
+          typical_rate_range:
+            min: 88
+            max: 135
+          notes: For beam-to-column moment connections
+          data_source: IS codes only
+  metal_roofing_extended:
+    categories:
+      roofing_sheets:
+        items:
+        - id: STR.SF.RSH.001
+          standard_name: Providing colour coated profiled steel roofing sheet - 0.50mm BMT
+          unit: sqm
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 14246
+          dsr_item_ref: ''
+          aliases:
+          - colour steel roof 0.50mm
+          - profiled roofing sheet
+          typical_rate_range:
+            min: 350
+            max: 550
+          notes: Including self-drilling screws, sealant
+          data_source: IS codes only
+        - id: STR.SF.RSH.002
+          standard_name: Providing colour coated profiled steel roofing sheet - 0.60mm BMT
+          unit: sqm
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 14246
+          dsr_item_ref: ''
+          aliases:
+          - colour steel roof 0.60mm
+          - heavy gauge roofing
+          typical_rate_range:
+            min: 420
+            max: 650
+          notes: Thicker gauge for longer spans
+          data_source: IS codes only
+        - id: STR.SF.RSH.003
+          standard_name: Providing standing seam metal roofing - Zincalume 0.50mm
+          unit: sqm
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - standing seam roof
+          - clip-fix roofing
+          typical_rate_range:
+            min: 500
+            max: 800
+          notes: Concealed fix, no exposed fasteners
+          data_source: estimated
+        - id: STR.SF.RSH.004
+          standard_name: Providing sandwich/insulated roofing panel - PUF 50mm - steel faced
+          unit: sqm
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - PUF sandwich panel roof
+          - insulated roof panel
+          typical_rate_range:
+            min: 800
+            max: 1400
+          notes: Combined roofing and insulation
+          data_source: estimated
+        - id: STR.SF.RSH.005
+          standard_name: Providing polycarbonate translucent roofing sheet - 2mm
+          unit: sqm
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - polycarbonate roofing
+          - translucent roof sheet
+          - skylight sheet
+          typical_rate_range:
+            min: 350
+            max: 600
+          notes: For natural daylight in industrial buildings
+          data_source: estimated
+      roofing_accessories:
+        items:
+        - id: STR.SF.RAC.001
+          standard_name: Providing ridge cap/ridge flashing - colour coated steel
+          unit: rmt
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - ridge cap
+          - ridge flashing
+          typical_rate_range:
+            min: 200
+            max: 400
+          notes: Pre-formed colour coated ridge
+          data_source: estimated
+        - id: STR.SF.RAC.002
+          standard_name: Providing gutter/valley gutter - colour coated steel - 300mm wide
+          unit: rmt
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - roof gutter steel
+          - valley gutter
+          typical_rate_range:
+            min: 250
+            max: 500
+          notes: Including brackets and downpipe connections
+          data_source: estimated
+        - id: STR.SF.RAC.003
+          standard_name: Providing wall flashing/parapet flashing - colour coated steel
+          unit: rmt
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - wall flashing
+          - parapet flashing
+          typical_rate_range:
+            min: 180
+            max: 350
+          notes: Weather seal at roof-wall junction
+          data_source: estimated
+        - id: STR.SF.RAC.004
+          standard_name: Providing turbo ventilator - SS/aluminum - 600mm diameter
+          unit: nos
+          construction_types:
+          - steel_frame
+          building_types:
+          - industrial
+          - warehouse
+          requires: []
+          is_code_ref: IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - turbo vent
+          - wind ventilator
+          - roof ventilator
+          typical_rate_range:
+            min: 3000
+            max: 7000
+          notes: Wind driven rotary ventilator
+          data_source: estimated
+        - id: STR.SF.RAC.005
+          standard_name: Providing roof walkway/maintenance platform - MS with grating
+          unit: rmt
+          construction_types:
+          - steel_frame
+          building_types:
+          - industrial
+          - commercial
+          requires: []
+          is_code_ref: IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - roof walkway
+          - maintenance platform
+          - roof access path
+          typical_rate_range:
+            min: 2000
+            max: 4500
+          notes: 600mm wide walkway with handrails
+          data_source: estimated
+        - id: STR.SF.RAC.006
+          standard_name: Providing roof safety railing/fall arrest system - MS galvanized
+          unit: rmt
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - roof safety rail
+          - fall protection roof
+          typical_rate_range:
+            min: 1200
+            max: 2500
+          notes: Permanent roof edge protection
+          data_source: estimated
+        - id: STR.SF.RAC.007
+          standard_name: Providing roof access ladder with safety cage - MS galvanized
+          unit: nos
+          construction_types:
+          - steel_frame
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - cat ladder
+          - caged roof ladder
+          - safety cage ladder
+          typical_rate_range:
+            min: 15000
+            max: 35000
+          notes: Per ladder up to 6m height
+          data_source: estimated

@@ -303,6 +303,17 @@ class QuantityEngine:
         Returns:
             QuantityResult with estimated quantities
         """
+        # Input validation — prevent wrong bid numbers from bad inputs
+        if total_area_sqm <= 0:
+            logger.warning(f"Invalid total_area_sqm={total_area_sqm}, clamping to 1.0")
+            total_area_sqm = 1.0
+        if floors <= 0:
+            logger.warning(f"Invalid floors={floors}, clamping to 1")
+            floors = 1
+        if column_grid_m <= 0:
+            logger.warning(f"Invalid column_grid_m={column_grid_m}, using default 4.0")
+            column_grid_m = 4.0
+
         logger.info(f"Computing quantities (assumption mode) for {total_area_sqm:.1f} sqm, "
                    f"{floors} floor(s)")
 

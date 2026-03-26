@@ -5,9 +5,12 @@ Maps runner's bid book export interface to real bid_docs modules.
 """
 
 import json
+import logging
 import yaml
 from pathlib import Path
 from typing import Dict, Any, List, Optional
+
+logger = logging.getLogger(__name__)
 
 # Import real modules
 from src.bid_docs.exclusions import ExclusionsAssumptionsGenerator
@@ -238,6 +241,6 @@ def run_bidbook_export(
         result["files_generated"].append("risk/sensitivity_report.md")
 
     except Exception as e:
-        pass
+        logger.warning(f"Sensitivity analysis export failed: {e}")
 
     return result

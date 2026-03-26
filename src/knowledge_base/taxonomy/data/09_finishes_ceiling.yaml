@@ -1,0 +1,3847 @@
+discipline: architectural
+trade: ceiling_finishes
+sub_trades:
+  plaster:
+    categories:
+      cement_plaster_ceiling:
+        items:
+        - id: FIN.CL.PLS.001
+          standard_name: Cement Plaster 1:3 - 6mm Thick on Ceiling
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1661
+          dsr_item_ref: ''
+          aliases:
+          - ceiling plaster 6mm
+          - thin ceiling plaster
+          typical_rate_range:
+            min: 120
+            max: 220
+          notes: Overhead work, scaffolding included
+          data_source: CPWD DSR 2023 + IS codes
+        - id: FIN.CL.PLS.002
+          standard_name: Cement Plaster 1:3 - 10mm Thick on Ceiling
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1661
+          dsr_item_ref: ''
+          aliases:
+          - ceiling plaster 10mm
+          typical_rate_range:
+            min: 150
+            max: 270
+          notes: ''
+          data_source: IS codes only
+        - id: FIN.CL.PLS.003
+          standard_name: Cement Plaster 1:3 - 12mm Thick on Ceiling
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1661
+          dsr_item_ref: ''
+          aliases:
+          - ceiling plaster 12mm
+          typical_rate_range:
+            min: 170
+            max: 300
+          notes: ''
+          data_source: IS codes only
+      pop_ceiling:
+        items:
+        - id: FIN.CL.PLS.004
+          standard_name: POP Plaster 3-Layer on Ceiling - Base Coat
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - commercial
+          requires: []
+          is_code_ref: IS 2547
+          dsr_item_ref: ''
+          aliases:
+          - POP ceiling base
+          typical_rate_range:
+            min: 140
+            max: 240
+          notes: ''
+          data_source: estimated
+        - id: FIN.CL.PLS.005
+          standard_name: POP Plaster 3-Layer on Ceiling - Complete System
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - commercial
+          requires: []
+          is_code_ref: IS 2547
+          dsr_item_ref: ''
+          aliases:
+          - POP ceiling plaster
+          - POP punning ceiling
+          typical_rate_range:
+            min: 300
+            max: 550
+          notes: All 3 layers including scaffolding
+          data_source: estimated
+      gypsum_plaster_ceiling:
+        items:
+        - id: FIN.CL.PLS.006
+          standard_name: Gypsum Machine Plaster - 10mm Thick on Ceiling
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2547
+          dsr_item_ref: ''
+          aliases:
+          - gypsum ceiling plaster
+          typical_rate_range:
+            min: 220
+            max: 380
+          notes: Machine spray application on ceiling
+          data_source: IS codes only
+        - id: FIN.CL.PLS.007
+          standard_name: Gypsum Machine Plaster - 15mm Thick on Ceiling
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2547
+          dsr_item_ref: ''
+          aliases:
+          - 15mm gypsum ceiling
+          typical_rate_range:
+            min: 270
+            max: 440
+          notes: ''
+          data_source: IS codes only
+  false_ceiling:
+    categories:
+      gypsum_board:
+        items:
+        - id: FIN.CL.GYP.001
+          standard_name: Gypsum Board False Ceiling 12.5mm Plain on GI Frame
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2095 Part 1
+          dsr_item_ref: ''
+          aliases:
+          - gypsum false ceiling
+          - gyproc ceiling
+          - plain gypsum board
+          typical_rate_range:
+            min: 350
+            max: 600
+          notes: Including GI framework, jointing, finishing
+          data_source: estimated
+        - id: FIN.CL.GYP.002
+          standard_name: Gypsum Board False Ceiling 12.5mm Moisture Resistant on GI Frame
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2095 Part 1
+          dsr_item_ref: ''
+          aliases:
+          - MR gypsum ceiling
+          - moisture resistant ceiling
+          - green board ceiling
+          typical_rate_range:
+            min: 400
+            max: 680
+          notes: For bathrooms, kitchens, wet areas
+          data_source: estimated
+        - id: FIN.CL.GYP.003
+          standard_name: Gypsum Board False Ceiling 15mm Fire Rated on GI Frame
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 1641
+          dsr_item_ref: ''
+          aliases:
+          - fire rated gypsum ceiling
+          - FR board ceiling
+          - pink board ceiling
+          typical_rate_range:
+            min: 450
+            max: 750
+          notes: 1-hour fire rating
+          data_source: estimated
+        - id: FIN.CL.GYP.004
+          standard_name: Gypsum Board False Ceiling 12.5mm Double Layer on GI Frame
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 2095 Part 1
+          dsr_item_ref: ''
+          aliases:
+          - double layer gypsum
+          - double board ceiling
+          typical_rate_range:
+            min: 550
+            max: 900
+          notes: Enhanced fire and acoustic performance
+          data_source: estimated
+        - id: FIN.CL.GYP.005
+          standard_name: Gypsum Board Cove/Pelmet - L-Shaped Profile
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires:
+          - FIN.CL.GYP.001
+          is_code_ref: IS 2095 Part 1
+          dsr_item_ref: ''
+          aliases:
+          - gypsum cove
+          - pelmet
+          - light cove
+          typical_rate_range:
+            min: 250
+            max: 500
+          notes: For indirect cove lighting
+          data_source: estimated
+        - id: FIN.CL.GYP.006
+          standard_name: Gypsum Board Drop Ceiling - Peripheral Lowered Portion
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2095 Part 1
+          dsr_item_ref: ''
+          aliases:
+          - drop ceiling
+          - peripheral false ceiling
+          - border ceiling
+          typical_rate_range:
+            min: 400
+            max: 700
+          notes: Lowered border section with level change
+          data_source: estimated
+        - id: FIN.CL.GYP.007
+          standard_name: Gypsum Board Curved / Radius Profile
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - hospitality
+          requires: []
+          is_code_ref: IS 2095 Part 1
+          dsr_item_ref: ''
+          aliases:
+          - curved gypsum
+          - radius ceiling
+          typical_rate_range:
+            min: 400
+            max: 800
+          notes: Wet bent or flexible board
+          data_source: estimated
+        - id: FIN.CL.GYP.008
+          standard_name: Gypsum Board Multi-Level Ceiling - 2 Level
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - commercial
+          requires: []
+          is_code_ref: IS 2095 Part 1
+          dsr_item_ref: ''
+          aliases:
+          - multi level ceiling
+          - 2 level ceiling
+          typical_rate_range:
+            min: 500
+            max: 850
+          notes: ''
+          data_source: estimated
+        - id: FIN.CL.GYP.009
+          standard_name: Gypsum Board Multi-Level Ceiling - 3 Level
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - hospitality
+          requires: []
+          is_code_ref: IS 2095 Part 1
+          dsr_item_ref: ''
+          aliases:
+          - 3 level ceiling
+          - triple level
+          typical_rate_range:
+            min: 650
+            max: 1100
+          notes: ''
+          data_source: estimated
+      grid_ceiling:
+        items:
+        - id: FIN.CL.GRD.001
+          standard_name: T-Bar Grid Ceiling - Exposed Grid 600x600mm
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 277
+          dsr_item_ref: ''
+          aliases:
+          - exposed grid ceiling
+          - T-bar ceiling
+          - Armstrong grid
+          typical_rate_range:
+            min: 250
+            max: 450
+          notes: Including main runner, cross tee, wall angle
+          data_source: estimated
+        - id: FIN.CL.GRD.002
+          standard_name: T-Bar Grid Ceiling - Exposed Grid 600x1200mm
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 277
+          dsr_item_ref: ''
+          aliases:
+          - 2x4 grid ceiling
+          typical_rate_range:
+            min: 270
+            max: 480
+          notes: ''
+          data_source: estimated
+        - id: FIN.CL.GRD.003
+          standard_name: T-Bar Grid Ceiling - Concealed Grid 600x600mm
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - hospitality
+          requires: []
+          is_code_ref: IS 277
+          dsr_item_ref: ''
+          aliases:
+          - concealed grid ceiling
+          - flush grid
+          typical_rate_range:
+            min: 350
+            max: 600
+          notes: Grid hidden behind tiles
+          data_source: estimated
+        - id: FIN.CL.GRD.004
+          standard_name: T-Bar Grid Ceiling - Semi-Concealed Grid
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 277
+          dsr_item_ref: ''
+          aliases:
+          - semi concealed grid
+          typical_rate_range:
+            min: 300
+            max: 520
+          notes: ''
+          data_source: estimated
+        - id: FIN.CL.GRD.005
+          standard_name: Narrow Strip Grid Ceiling - 15mm T-Bar
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - hospitality
+          requires: []
+          is_code_ref: IS 277
+          dsr_item_ref: ''
+          aliases:
+          - narrow grid
+          - slim tee grid
+          typical_rate_range:
+            min: 320
+            max: 550
+          notes: ''
+          data_source: estimated
+      metal_ceiling:
+        items:
+        - id: FIN.CL.MTL.001
+          standard_name: Aluminum Strip Ceiling - 100mm Wide
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 277
+          dsr_item_ref: ''
+          aliases:
+          - aluminum strip ceiling
+          - metal strip
+          typical_rate_range:
+            min: 500
+            max: 900
+          notes: ''
+          data_source: estimated
+        - id: FIN.CL.MTL.002
+          standard_name: Aluminum Strip Ceiling - 150mm Wide
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 277
+          dsr_item_ref: ''
+          aliases:
+          - 150mm aluminum strip
+          typical_rate_range:
+            min: 480
+            max: 850
+          notes: ''
+          data_source: estimated
+        - id: FIN.CL.MTL.003
+          standard_name: Aluminum Strip Ceiling - 200mm Wide with Gap
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 277
+          dsr_item_ref: ''
+          aliases:
+          - open strip ceiling
+          typical_rate_range:
+            min: 520
+            max: 920
+          notes: With visible gap between strips
+          data_source: estimated
+        - id: FIN.CL.MTL.004
+          standard_name: Aluminum Tile Ceiling 600x600mm - Lay-in
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 277
+          dsr_item_ref: ''
+          aliases:
+          - aluminum tile ceiling
+          - metal lay-in
+          typical_rate_range:
+            min: 550
+            max: 950
+          notes: ''
+          data_source: estimated
+        - id: FIN.CL.MTL.005
+          standard_name: Aluminum Tile Ceiling 600x600mm - Clip-in
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - hospitality
+          requires: []
+          is_code_ref: IS 277
+          dsr_item_ref: ''
+          aliases:
+          - clip in metal ceiling
+          typical_rate_range:
+            min: 600
+            max: 1050
+          notes: ''
+          data_source: estimated
+        - id: FIN.CL.MTL.006
+          standard_name: Steel Metal Ceiling - Perforated Panel 600x600mm
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - industrial
+          requires: []
+          is_code_ref: IS 277
+          dsr_item_ref: ''
+          aliases:
+          - perforated steel ceiling
+          typical_rate_range:
+            min: 450
+            max: 800
+          notes: ''
+          data_source: estimated
+        - id: FIN.CL.MTL.007
+          standard_name: Aluminum Open Cell Grid Ceiling - 50x50mm
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - retail
+          requires: []
+          is_code_ref: IS 277
+          dsr_item_ref: ''
+          aliases:
+          - open cell ceiling
+          - egg crate ceiling
+          typical_rate_range:
+            min: 600
+            max: 1100
+          notes: ''
+          data_source: estimated
+        - id: FIN.CL.MTL.008
+          standard_name: Aluminum Open Cell Grid Ceiling - 100x100mm
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - retail
+          requires: []
+          is_code_ref: IS 277
+          dsr_item_ref: ''
+          aliases:
+          - 100mm open cell
+          typical_rate_range:
+            min: 500
+            max: 950
+          notes: ''
+          data_source: estimated
+      wood_ceiling:
+        items:
+        - id: FIN.CL.WD.001
+          standard_name: Wood Veneer Panel Ceiling 600x600mm on Grid
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - hospitality
+          requires: []
+          is_code_ref: IS 399
+          dsr_item_ref: ''
+          aliases:
+          - wood veneer ceiling
+          - veneer panel ceiling
+          typical_rate_range:
+            min: 800
+            max: 1500
+          notes: ''
+          data_source: estimated
+        - id: FIN.CL.WD.002
+          standard_name: Wood Veneer Panel Ceiling 600x1200mm on Grid
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - hospitality
+          requires: []
+          is_code_ref: IS 399
+          dsr_item_ref: ''
+          aliases:
+          - 2x4 wood ceiling
+          typical_rate_range:
+            min: 850
+            max: 1600
+          notes: ''
+          data_source: estimated
+        - id: FIN.CL.WD.003
+          standard_name: Solid Wood Plank Ceiling - T&G on Battens
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - hospitality
+          requires: []
+          is_code_ref: IS 399
+          dsr_item_ref: ''
+          aliases:
+          - wood plank ceiling
+          - T&G ceiling
+          typical_rate_range:
+            min: 1200
+            max: 2500
+          notes: ''
+          data_source: estimated
+        - id: FIN.CL.WD.004
+          standard_name: Engineered Wood Ceiling - Laminate on MDF
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - commercial
+          requires: []
+          is_code_ref: IS 399
+          dsr_item_ref: ''
+          aliases:
+          - engineered wood ceiling
+          typical_rate_range:
+            min: 600
+            max: 1100
+          notes: ''
+          data_source: estimated
+      pvc_ceiling:
+        items:
+        - id: FIN.CL.PVC.001
+          standard_name: PVC Panel Ceiling 200mm Wide - Plain White
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - PVC ceiling
+          - PVC panel ceiling
+          typical_rate_range:
+            min: 150
+            max: 300
+          notes: Economy ceiling option
+          data_source: estimated
+        - id: FIN.CL.PVC.002
+          standard_name: PVC Panel Ceiling 250mm Wide - Printed Design
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - printed PVC ceiling
+          typical_rate_range:
+            min: 180
+            max: 350
+          notes: ''
+          data_source: estimated
+        - id: FIN.CL.PVC.003
+          standard_name: PVC Panel Ceiling 300mm Wide - Laminated Finish
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - laminated PVC ceiling
+          typical_rate_range:
+            min: 200
+            max: 400
+          notes: ''
+          data_source: estimated
+      frp_ceiling:
+        items:
+        - id: FIN.CL.FRP.001
+          standard_name: FRP Ceiling Panel 600x600mm on Grid
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - industrial
+          - healthcare
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - FRP ceiling
+          - fibre reinforced plastic ceiling
+          typical_rate_range:
+            min: 400
+            max: 700
+          notes: Chemical and moisture resistant
+          data_source: estimated
+        - id: FIN.CL.FRP.002
+          standard_name: FRP Ceiling Panel - Cleanroom Grade
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - healthcare
+          - industrial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - cleanroom FRP ceiling
+          typical_rate_range:
+            min: 600
+            max: 1100
+          notes: Flush joint, cleanable
+          data_source: estimated
+  acoustic:
+    categories:
+      mineral_fibre:
+        items:
+        - id: FIN.CL.ACO.001
+          standard_name: Mineral Fibre Acoustic Tile 600x600mm - Standard (Armstrong)
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires:
+          - FIN.CL.GRD.001
+          is_code_ref: IS 3344
+          dsr_item_ref: ''
+          aliases:
+          - Armstrong ceiling
+          - mineral fibre tile
+          - acoustic tile
+          typical_rate_range:
+            min: 350
+            max: 600
+          notes: NRC 0.55-0.65 including grid
+          data_source: estimated
+        - id: FIN.CL.ACO.002
+          standard_name: Mineral Fibre Acoustic Tile 600x600mm - Premium (Armstrong Fine Fissured)
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires:
+          - FIN.CL.GRD.001
+          is_code_ref: IS 3344
+          dsr_item_ref: ''
+          aliases:
+          - fine fissured
+          - premium acoustic tile
+          typical_rate_range:
+            min: 420
+            max: 720
+          notes: NRC 0.65-0.75
+          data_source: estimated
+        - id: FIN.CL.ACO.003
+          standard_name: Mineral Fibre Acoustic Tile 600x600mm - High NRC (Armstrong Ultima)
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires:
+          - FIN.CL.GRD.001
+          is_code_ref: IS 3344
+          dsr_item_ref: ''
+          aliases:
+          - Ultima ceiling
+          - high NRC tile
+          typical_rate_range:
+            min: 500
+            max: 850
+          notes: NRC 0.75-0.90
+          data_source: estimated
+        - id: FIN.CL.ACO.004
+          standard_name: Mineral Fibre Acoustic Tile 600x1200mm - Standard
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires:
+          - FIN.CL.GRD.002
+          is_code_ref: IS 3344
+          dsr_item_ref: ''
+          aliases:
+          - 2x4 acoustic tile
+          typical_rate_range:
+            min: 370
+            max: 630
+          notes: ''
+          data_source: estimated
+        - id: FIN.CL.ACO.005
+          standard_name: Mineral Fibre Acoustic Tile 600x600mm (OWA)
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires:
+          - FIN.CL.GRD.001
+          is_code_ref: IS 3344
+          dsr_item_ref: ''
+          aliases:
+          - OWA ceiling
+          - OWA acoustic
+          typical_rate_range:
+            min: 380
+            max: 650
+          notes: ''
+          data_source: estimated
+        - id: FIN.CL.ACO.006
+          standard_name: Mineral Fibre Acoustic Tile 600x600mm (USG Boral)
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires:
+          - FIN.CL.GRD.001
+          is_code_ref: IS 3344
+          dsr_item_ref: ''
+          aliases:
+          - USG ceiling
+          - USG Boral
+          typical_rate_range:
+            min: 370
+            max: 640
+          notes: ''
+          data_source: estimated
+        - id: FIN.CL.ACO.007
+          standard_name: Mineral Fibre Acoustic Tile - Tegular Edge 600x600mm
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires:
+          - FIN.CL.GRD.001
+          is_code_ref: IS 3344
+          dsr_item_ref: ''
+          aliases:
+          - tegular edge tile
+          typical_rate_range:
+            min: 400
+            max: 680
+          notes: Recessed reveal edge
+          data_source: estimated
+        - id: FIN.CL.ACO.008
+          standard_name: Mineral Fibre Acoustic Tile - Bevelled Edge 600x600mm
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires:
+          - FIN.CL.GRD.001
+          is_code_ref: IS 3344
+          dsr_item_ref: ''
+          aliases:
+          - bevelled edge tile
+          typical_rate_range:
+            min: 390
+            max: 670
+          notes: ''
+          data_source: estimated
+      glass_wool:
+        items:
+        - id: FIN.CL.ACO.009
+          standard_name: Glass Wool Faced Acoustic Tile 600x600mm 15mm
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires:
+          - FIN.CL.GRD.001
+          is_code_ref: IS 3348
+          dsr_item_ref: ''
+          aliases:
+          - glass wool ceiling tile
+          - Ecophon
+          typical_rate_range:
+            min: 450
+            max: 800
+          notes: NRC 0.80-0.95
+          data_source: estimated
+        - id: FIN.CL.ACO.010
+          standard_name: Glass Wool Faced Acoustic Tile 600x600mm 25mm
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires:
+          - FIN.CL.GRD.001
+          is_code_ref: IS 3348
+          dsr_item_ref: ''
+          aliases:
+          - 25mm glass wool ceiling
+          typical_rate_range:
+            min: 500
+            max: 900
+          notes: High absorption
+          data_source: estimated
+        - id: FIN.CL.ACO.011
+          standard_name: Glass Wool Faced Acoustic Tile 600x1200mm
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires:
+          - FIN.CL.GRD.002
+          is_code_ref: IS 3348
+          dsr_item_ref: ''
+          aliases:
+          - 2x4 glass wool ceiling
+          typical_rate_range:
+            min: 480
+            max: 860
+          notes: ''
+          data_source: estimated
+      perforated_gypsum:
+        items:
+        - id: FIN.CL.ACO.012
+          standard_name: Perforated Gypsum Board Ceiling 12.5mm - Round Holes
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 2095 Part 1
+          dsr_item_ref: ''
+          aliases:
+          - perforated gypsum ceiling
+          - acoustic gypsum
+          typical_rate_range:
+            min: 500
+            max: 850
+          notes: With acoustic fleece backing
+          data_source: estimated
+        - id: FIN.CL.ACO.013
+          standard_name: Perforated Gypsum Board Ceiling 12.5mm - Square Holes
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 2095 Part 1
+          dsr_item_ref: ''
+          aliases:
+          - square perf gypsum
+          typical_rate_range:
+            min: 520
+            max: 880
+          notes: ''
+          data_source: estimated
+        - id: FIN.CL.ACO.014
+          standard_name: Perforated Gypsum Board Ceiling - Random Pattern
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - hospitality
+          requires: []
+          is_code_ref: IS 2095 Part 1
+          dsr_item_ref: ''
+          aliases:
+          - random perf gypsum
+          typical_rate_range:
+            min: 550
+            max: 920
+          notes: ''
+          data_source: estimated
+      wood_wool:
+        items:
+        - id: FIN.CL.ACO.015
+          standard_name: Wood Wool Acoustic Panel 25mm - Natural
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 3344
+          dsr_item_ref: ''
+          aliases:
+          - wood wool panel
+          - Heraklith
+          - Tectum
+          typical_rate_range:
+            min: 600
+            max: 1100
+          notes: ''
+          data_source: estimated
+        - id: FIN.CL.ACO.016
+          standard_name: Wood Wool Acoustic Panel 50mm - Painted
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 3344
+          dsr_item_ref: ''
+          aliases:
+          - painted wood wool
+          typical_rate_range:
+            min: 750
+            max: 1300
+          notes: ''
+          data_source: estimated
+      fabric_panel:
+        items:
+        - id: FIN.CL.ACO.017
+          standard_name: Fabric Wrapped Acoustic Panel 600x600mm 25mm
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - hospitality
+          requires: []
+          is_code_ref: IS 3344
+          dsr_item_ref: ''
+          aliases:
+          - fabric acoustic panel
+          - wrapped panel
+          typical_rate_range:
+            min: 800
+            max: 1500
+          notes: Glass wool core with fabric wrap
+          data_source: estimated
+        - id: FIN.CL.ACO.018
+          standard_name: Fabric Wrapped Acoustic Panel 600x1200mm 50mm
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - hospitality
+          requires: []
+          is_code_ref: IS 3344
+          dsr_item_ref: ''
+          aliases:
+          - large fabric panel
+          typical_rate_range:
+            min: 1000
+            max: 1800
+          notes: ''
+          data_source: estimated
+      acoustic_spray:
+        items:
+        - id: FIN.CL.ACO.019
+          standard_name: Acoustic Spray Coating 15mm Thick on Ceiling
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - acoustic spray
+          - K13 spray
+          - spray on acoustic
+          typical_rate_range:
+            min: 600
+            max: 1100
+          notes: Cellulose fibre based spray
+          data_source: estimated
+        - id: FIN.CL.ACO.020
+          standard_name: Acoustic Spray Coating 25mm Thick on Ceiling
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - thick acoustic spray
+          typical_rate_range:
+            min: 800
+            max: 1400
+          notes: ''
+          data_source: estimated
+  exposed:
+    categories:
+      polished_concrete:
+        items:
+        - id: FIN.CL.EXP.001
+          standard_name: Polished Concrete Ceiling - Mechanical Grinding
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - hospitality
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - polished concrete ceiling
+          - exposed concrete
+          typical_rate_range:
+            min: 400
+            max: 800
+          notes: Including filling and sealing
+          data_source: estimated
+        - id: FIN.CL.EXP.002
+          standard_name: Polished Concrete Ceiling - Clear Sealer Only
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - hospitality
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - sealed concrete ceiling
+          typical_rate_range:
+            min: 200
+            max: 400
+          notes: ''
+          data_source: estimated
+      exposed_painted:
+        items:
+        - id: FIN.CL.EXP.003
+          standard_name: Exposed Rafters/Beams - Painted Finish
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - hospitality
+          requires: []
+          is_code_ref: IS 15489
+          dsr_item_ref: ''
+          aliases:
+          - painted exposed rafters
+          - exposed beam ceiling
+          typical_rate_range:
+            min: 150
+            max: 350
+          notes: Paint on exposed structural members
+          data_source: estimated
+        - id: FIN.CL.EXP.004
+          standard_name: Exposed Rafters/Beams - Stained Finish
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - hospitality
+          requires: []
+          is_code_ref: IS 15489
+          dsr_item_ref: ''
+          aliases:
+          - stained exposed rafters
+          typical_rate_range:
+            min: 200
+            max: 400
+          notes: ''
+          data_source: estimated
+      industrial_exposed:
+        items:
+        - id: FIN.CL.EXP.005
+          standard_name: Industrial Exposed Ceiling - Services Painted
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - hospitality
+          requires: []
+          is_code_ref: IS 15489
+          dsr_item_ref: ''
+          aliases:
+          - industrial ceiling
+          - exposed services ceiling
+          typical_rate_range:
+            min: 250
+            max: 500
+          notes: All exposed services painted uniform colour
+          data_source: estimated
+        - id: FIN.CL.EXP.006
+          standard_name: Industrial Exposed Ceiling - Spray Black
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - hospitality
+          - retail
+          requires: []
+          is_code_ref: IS 15489
+          dsr_item_ref: ''
+          aliases:
+          - black exposed ceiling
+          - spray black ceiling
+          typical_rate_range:
+            min: 200
+            max: 400
+          notes: Slab + services sprayed matte black
+          data_source: estimated
+  specialty:
+    categories:
+      stretch_ceiling:
+        items:
+        - id: FIN.CL.SPC.001
+          standard_name: Stretch Ceiling PVC Film - Plain Colour
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - hospitality
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - stretch ceiling
+          - PVC stretch ceiling
+          - Barrisol
+          typical_rate_range:
+            min: 800
+            max: 1600
+          notes: ''
+          data_source: estimated
+        - id: FIN.CL.SPC.002
+          standard_name: Stretch Ceiling PVC Film - Printed/Graphic
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - hospitality
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - printed stretch ceiling
+          typical_rate_range:
+            min: 1000
+            max: 2200
+          notes: ''
+          data_source: estimated
+        - id: FIN.CL.SPC.003
+          standard_name: Stretch Ceiling PVC Film - Translucent/Backlit
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - hospitality
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - backlit stretch ceiling
+          - translucent stretch
+          typical_rate_range:
+            min: 1200
+            max: 2800
+          notes: For LED backlighting
+          data_source: estimated
+        - id: FIN.CL.SPC.004
+          standard_name: Stretch Ceiling Fabric - Acoustic
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - hospitality
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - fabric stretch ceiling
+          - acoustic stretch
+          typical_rate_range:
+            min: 1500
+            max: 3000
+          notes: Micro-perforated for acoustic absorption
+          data_source: estimated
+      baffle_ceiling:
+        items:
+        - id: FIN.CL.SPC.005
+          standard_name: Wood Baffle Ceiling - Solid Timber 50x100mm
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - hospitality
+          requires: []
+          is_code_ref: IS 399
+          dsr_item_ref: ''
+          aliases:
+          - wood baffle ceiling
+          - timber baffle
+          typical_rate_range:
+            min: 2000
+            max: 4000
+          notes: ''
+          data_source: estimated
+        - id: FIN.CL.SPC.006
+          standard_name: Wood Baffle Ceiling - MDF Veneered 30x80mm
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - hospitality
+          requires: []
+          is_code_ref: IS 399
+          dsr_item_ref: ''
+          aliases:
+          - MDF baffle
+          - veneer baffle
+          typical_rate_range:
+            min: 1500
+            max: 3000
+          notes: ''
+          data_source: estimated
+        - id: FIN.CL.SPC.007
+          standard_name: Metal Baffle Ceiling - Aluminum 30x100mm
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 277
+          dsr_item_ref: ''
+          aliases:
+          - metal baffle ceiling
+          - aluminum baffle
+          typical_rate_range:
+            min: 1200
+            max: 2500
+          notes: ''
+          data_source: estimated
+        - id: FIN.CL.SPC.008
+          standard_name: Metal Baffle Ceiling - Aluminum 50x150mm
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 277
+          dsr_item_ref: ''
+          aliases:
+          - large aluminum baffle
+          typical_rate_range:
+            min: 1400
+            max: 2800
+          notes: ''
+          data_source: estimated
+        - id: FIN.CL.SPC.009
+          standard_name: Fabric Baffle Ceiling - Vertical Hanging Panels
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 3344
+          dsr_item_ref: ''
+          aliases:
+          - fabric baffle
+          - hanging fabric panel
+          typical_rate_range:
+            min: 1000
+            max: 2200
+          notes: Acoustic rated
+          data_source: estimated
+      cloud_panel:
+        items:
+        - id: FIN.CL.SPC.010
+          standard_name: Acoustic Cloud Panel - Mineral Fibre 1200x1200mm
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 3344
+          dsr_item_ref: ''
+          aliases:
+          - cloud panel
+          - floating panel
+          - acoustic island
+          typical_rate_range:
+            min: 3000
+            max: 6000
+          notes: Suspended individual panels
+          data_source: estimated
+        - id: FIN.CL.SPC.011
+          standard_name: Acoustic Cloud Panel - Fabric Wrapped 1200x2400mm
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - hospitality
+          requires: []
+          is_code_ref: IS 3344
+          dsr_item_ref: ''
+          aliases:
+          - fabric cloud panel
+          typical_rate_range:
+            min: 5000
+            max: 10000
+          notes: ''
+          data_source: estimated
+        - id: FIN.CL.SPC.012
+          standard_name: Acoustic Cloud Panel - Metal Perforated 1200x1200mm
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 277
+          dsr_item_ref: ''
+          aliases:
+          - metal cloud panel
+          typical_rate_range:
+            min: 4000
+            max: 8000
+          notes: ''
+          data_source: estimated
+      backlit_ceiling:
+        items:
+        - id: FIN.CL.SPC.013
+          standard_name: Backlit Translucent Panel Ceiling - Acrylic
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - hospitality
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - backlit ceiling
+          - luminous ceiling
+          - acrylic light ceiling
+          typical_rate_range:
+            min: 2000
+            max: 4000
+          notes: Including LED panel behind
+          data_source: estimated
+        - id: FIN.CL.SPC.014
+          standard_name: Backlit Translucent Panel Ceiling - Onyx/Stone
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - hospitality
+          - luxury_residential
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - backlit onyx ceiling
+          - illuminated stone ceiling
+          typical_rate_range:
+            min: 8000
+            max: 20000
+          notes: Thin stone veneer with backlighting
+          data_source: estimated
+      metal_mesh_ceiling:
+        items:
+        - id: FIN.CL.SPC.015
+          standard_name: Metal Mesh Ceiling - Woven Stainless Steel
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - hospitality
+          requires: []
+          is_code_ref: IS 277
+          dsr_item_ref: ''
+          aliases:
+          - metal mesh ceiling
+          - wire mesh ceiling
+          typical_rate_range:
+            min: 2000
+            max: 4500
+          notes: ''
+          data_source: estimated
+        - id: FIN.CL.SPC.016
+          standard_name: Metal Mesh Ceiling - Expanded Aluminum
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 277
+          dsr_item_ref: ''
+          aliases:
+          - expanded metal ceiling
+          typical_rate_range:
+            min: 1500
+            max: 3000
+          notes: ''
+          data_source: estimated
+      mirror_ceiling:
+        items:
+        - id: FIN.CL.SPC.017
+          standard_name: Mirror Ceiling Panel 600x600mm on Grid
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - hospitality
+          - retail
+          requires: []
+          is_code_ref: IS 14900
+          dsr_item_ref: ''
+          aliases:
+          - mirror ceiling
+          typical_rate_range:
+            min: 2500
+            max: 5000
+          notes: ''
+          data_source: estimated
+  access:
+    categories:
+      access_panels:
+        items:
+        - id: FIN.CL.ACC.001
+          standard_name: Access Panel - Standard GI 300x300mm
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 277
+          dsr_item_ref: ''
+          aliases:
+          - access panel
+          - ceiling hatch 300
+          typical_rate_range:
+            min: 500
+            max: 1000
+          notes: ''
+          data_source: estimated
+        - id: FIN.CL.ACC.002
+          standard_name: Access Panel - Standard GI 450x450mm
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 277
+          dsr_item_ref: ''
+          aliases:
+          - access panel 450
+          - ceiling hatch 450
+          typical_rate_range:
+            min: 700
+            max: 1300
+          notes: ''
+          data_source: estimated
+        - id: FIN.CL.ACC.003
+          standard_name: Access Panel - Standard GI 600x600mm
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 277
+          dsr_item_ref: ''
+          aliases:
+          - access panel 600
+          - ceiling hatch 600
+          typical_rate_range:
+            min: 900
+            max: 1600
+          notes: ''
+          data_source: estimated
+        - id: FIN.CL.ACC.004
+          standard_name: Access Panel - Fire Rated 60 Min 300x300mm
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 1641
+          dsr_item_ref: ''
+          aliases:
+          - fire rated access panel 300
+          typical_rate_range:
+            min: 1500
+            max: 3000
+          notes: ''
+          data_source: estimated
+        - id: FIN.CL.ACC.005
+          standard_name: Access Panel - Fire Rated 60 Min 600x600mm
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 1641
+          dsr_item_ref: ''
+          aliases:
+          - fire rated access panel 600
+          typical_rate_range:
+            min: 2500
+            max: 4500
+          notes: ''
+          data_source: estimated
+        - id: FIN.CL.ACC.006
+          standard_name: Access Panel - Gypsum Faced Concealed 300x300mm
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 277
+          dsr_item_ref: ''
+          aliases:
+          - concealed access panel
+          - flush access panel
+          typical_rate_range:
+            min: 1000
+            max: 2000
+          notes: Tile-able / paintable to match ceiling
+          data_source: estimated
+        - id: FIN.CL.ACC.007
+          standard_name: Access Panel - Gypsum Faced Concealed 600x600mm
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 277
+          dsr_item_ref: ''
+          aliases:
+          - concealed access 600
+          typical_rate_range:
+            min: 1500
+            max: 2800
+          notes: ''
+          data_source: estimated
+      trap_doors:
+        items:
+        - id: FIN.CL.ACC.008
+          standard_name: Trap Door - Hinged Access 600x600mm in Ceiling
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 277
+          dsr_item_ref: ''
+          aliases:
+          - trap door
+          - ceiling trap door
+          typical_rate_range:
+            min: 2000
+            max: 4000
+          notes: For loft / roof access
+          data_source: estimated
+        - id: FIN.CL.ACC.009
+          standard_name: Trap Door - Hinged Access 900x600mm in Ceiling
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 277
+          dsr_item_ref: ''
+          aliases:
+          - large trap door
+          typical_rate_range:
+            min: 2500
+            max: 5000
+          notes: ''
+          data_source: estimated
+        - id: FIN.CL.ACC.010
+          standard_name: Trap Door - Insulated with Ladder 600x900mm
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: IS 277
+          dsr_item_ref: ''
+          aliases:
+          - loft hatch with ladder
+          - attic access
+          typical_rate_range:
+            min: 5000
+            max: 10000
+          notes: Including folding ladder
+          data_source: estimated
+  gypsum_board_additional:
+    categories:
+      gypsum_board_finishes:
+        items:
+        - id: FIN.CL.GYP.010
+          standard_name: Gypsum Board 12.5mm Plain - Putty and Paint Finish
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15489
+          dsr_item_ref: ''
+          aliases:
+          - gypsum putty paint
+          - finished gypsum ceiling
+          typical_rate_range:
+            min: 450
+            max: 750
+          notes: Complete system with 2 coats putty + 2 coats paint
+          data_source: estimated
+        - id: FIN.CL.GYP.011
+          standard_name: Gypsum Board 12.5mm MR - Putty and Paint Finish
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15489
+          dsr_item_ref: ''
+          aliases:
+          - MR gypsum putty paint
+          - bathroom ceiling finished
+          typical_rate_range:
+            min: 500
+            max: 830
+          notes: Complete MR system for wet areas
+          data_source: estimated
+        - id: FIN.CL.GYP.012
+          standard_name: Gypsum Board 12.5mm FR - Putty and Paint Finish
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 15489
+          dsr_item_ref: ''
+          aliases:
+          - FR gypsum finished
+          - fire rated finished ceiling
+          typical_rate_range:
+            min: 550
+            max: 900
+          notes: Complete fire rated system with finish
+          data_source: estimated
+        - id: FIN.CL.GYP.013
+          standard_name: Gypsum Board 15mm Plain on GI Frame
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 2095 Part 1
+          dsr_item_ref: ''
+          aliases:
+          - 15mm gypsum ceiling
+          - thick gypsum board
+          typical_rate_range:
+            min: 420
+            max: 700
+          notes: Thicker board for better acoustic performance
+          data_source: estimated
+        - id: FIN.CL.GYP.014
+          standard_name: Gypsum Board 15mm Plain - Putty and Paint Finish
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 15489
+          dsr_item_ref: ''
+          aliases:
+          - 15mm gypsum finished ceiling
+          typical_rate_range:
+            min: 520
+            max: 850
+          notes: Complete system with finish
+          data_source: estimated
+        - id: FIN.CL.GYP.015
+          standard_name: Gypsum Board Double Layer 12.5mm - Putty and Paint Finish
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 15489
+          dsr_item_ref: ''
+          aliases:
+          - double gypsum finished
+          - double board finished ceiling
+          typical_rate_range:
+            min: 650
+            max: 1050
+          notes: 2-hour fire rating with finish
+          data_source: estimated
+        - id: FIN.CL.GYP.016
+          standard_name: Gypsum Board 12.5mm Plain - Texture Paint Finish
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - commercial
+          requires: []
+          is_code_ref: IS 15489
+          dsr_item_ref: ''
+          aliases:
+          - gypsum texture ceiling
+          - textured gypsum ceiling
+          typical_rate_range:
+            min: 500
+            max: 850
+          notes: Including texture coat application
+          data_source: estimated
+        - id: FIN.CL.GYP.017
+          standard_name: Gypsum Board 12.5mm MR - Texture Paint Finish
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - commercial
+          requires: []
+          is_code_ref: IS 15489
+          dsr_item_ref: ''
+          aliases:
+          - MR gypsum texture
+          - wet area texture ceiling
+          typical_rate_range:
+            min: 550
+            max: 900
+          notes: Texture finish on moisture resistant board
+          data_source: estimated
+      grid_systems_additional:
+        items:
+        - id: FIN.CL.GRD.006
+          standard_name: T-Bar Grid Ceiling - Exposed 15mm Narrow Grid 600x600mm
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - hospitality
+          requires: []
+          is_code_ref: IS 277
+          dsr_item_ref: ''
+          aliases:
+          - 15mm grid ceiling
+          - slim grid ceiling
+          typical_rate_range:
+            min: 300
+            max: 520
+          notes: Narrow profile for premium look
+          data_source: estimated
+        - id: FIN.CL.GRD.007
+          standard_name: T-Bar Grid Ceiling - Exposed 24mm Standard Grid 600x600mm
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 277
+          dsr_item_ref: ''
+          aliases:
+          - 24mm grid ceiling
+          - standard 24mm tee
+          typical_rate_range:
+            min: 240
+            max: 420
+          notes: Standard economy grid system
+          data_source: estimated
+        - id: FIN.CL.GRD.008
+          standard_name: Metal Grid Ceiling - Aluminium Profile 600x600mm
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - hospitality
+          requires: []
+          is_code_ref: IS 277
+          dsr_item_ref: ''
+          aliases:
+          - aluminium grid ceiling
+          - metal grid system
+          typical_rate_range:
+            min: 400
+            max: 700
+          notes: Aluminium grid for premium applications
+          data_source: estimated
+        - id: FIN.CL.GRD.009
+          standard_name: Metal Grid Ceiling - Steel Profile 600x600mm
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - industrial
+          requires: []
+          is_code_ref: IS 277
+          dsr_item_ref: ''
+          aliases:
+          - steel grid ceiling
+          - GI grid system
+          typical_rate_range:
+            min: 350
+            max: 600
+          notes: Powder coated steel grid
+          data_source: estimated
+      mineral_fibre_additional:
+        items:
+        - id: FIN.CL.ACO.021
+          standard_name: Mineral Fibre Tile 12mm - Lay-in Edge NRC 0.55
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires:
+          - FIN.CL.GRD.001
+          is_code_ref: IS 3344
+          dsr_item_ref: ''
+          aliases:
+          - 12mm mineral fibre lay-in
+          - thin acoustic tile
+          typical_rate_range:
+            min: 300
+            max: 520
+          notes: Economy grade mineral fibre
+          data_source: estimated
+        - id: FIN.CL.ACO.022
+          standard_name: Mineral Fibre Tile 15mm - Lay-in Edge NRC 0.55
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires:
+          - FIN.CL.GRD.001
+          is_code_ref: IS 3344
+          dsr_item_ref: ''
+          aliases:
+          - 15mm mineral fibre lay-in
+          typical_rate_range:
+            min: 340
+            max: 580
+          notes: Standard thickness mineral fibre
+          data_source: estimated
+        - id: FIN.CL.ACO.023
+          standard_name: Mineral Fibre Tile 20mm - Lay-in Edge NRC 0.70
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires:
+          - FIN.CL.GRD.001
+          is_code_ref: IS 3344
+          dsr_item_ref: ''
+          aliases:
+          - 20mm mineral fibre lay-in
+          - thick acoustic lay-in
+          typical_rate_range:
+            min: 400
+            max: 680
+          notes: Enhanced acoustic performance
+          data_source: estimated
+        - id: FIN.CL.ACO.024
+          standard_name: Mineral Fibre Tile 15mm - Tegular Edge NRC 0.70
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires:
+          - FIN.CL.GRD.001
+          is_code_ref: IS 3344
+          dsr_item_ref: ''
+          aliases:
+          - 15mm tegular mineral fibre
+          typical_rate_range:
+            min: 380
+            max: 650
+          notes: Recessed edge for shadow line
+          data_source: estimated
+        - id: FIN.CL.ACO.025
+          standard_name: Mineral Fibre Tile 20mm - Square Edge NRC 0.85
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires:
+          - FIN.CL.GRD.001
+          is_code_ref: IS 3344
+          dsr_item_ref: ''
+          aliases:
+          - 20mm square edge mineral
+          - high NRC square edge
+          typical_rate_range:
+            min: 450
+            max: 780
+          notes: Premium acoustic, seamless look
+          data_source: estimated
+        - id: FIN.CL.ACO.026
+          standard_name: Mineral Fibre Tile 12mm - Square Edge NRC 0.55
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires:
+          - FIN.CL.GRD.001
+          is_code_ref: IS 3344
+          dsr_item_ref: ''
+          aliases:
+          - 12mm square edge mineral
+          typical_rate_range:
+            min: 310
+            max: 540
+          notes: Flush concealed grid appearance
+          data_source: estimated
+      metal_ceiling_additional:
+        items:
+        - id: FIN.CL.MTL.009
+          standard_name: Aluminium Strip Ceiling - 85mm Wide
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 277
+          dsr_item_ref: ''
+          aliases:
+          - 85mm aluminium strip
+          - narrow metal strip
+          typical_rate_range:
+            min: 550
+            max: 950
+          notes: Narrow strip for premium look
+          data_source: estimated
+        - id: FIN.CL.MTL.010
+          standard_name: Aluminium Strip Ceiling - 200mm Wide Close Joint
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 277
+          dsr_item_ref: ''
+          aliases:
+          - 200mm close joint strip
+          - flush metal strip
+          typical_rate_range:
+            min: 500
+            max: 880
+          notes: Closed joint, no visible gap
+          data_source: estimated
+        - id: FIN.CL.MTL.011
+          standard_name: Aluminium Tile Ceiling 600x600mm - Hook-on
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 277
+          dsr_item_ref: ''
+          aliases:
+          - hook-on metal ceiling
+          - snap-on aluminium tile
+          typical_rate_range:
+            min: 580
+            max: 1000
+          notes: Easy removal for maintenance access
+          data_source: estimated
+        - id: FIN.CL.MTL.012
+          standard_name: Aluminium Open Cell Grid Ceiling - 75x75mm
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - retail
+          requires: []
+          is_code_ref: IS 277
+          dsr_item_ref: ''
+          aliases:
+          - 75mm open cell ceiling
+          - medium egg crate
+          typical_rate_range:
+            min: 550
+            max: 1000
+          notes: Medium cell size
+          data_source: estimated
+        - id: FIN.CL.MTL.013
+          standard_name: Aluminium Open Cell Grid Ceiling - 150x150mm
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - retail
+          requires: []
+          is_code_ref: IS 277
+          dsr_item_ref: ''
+          aliases:
+          - 150mm open cell ceiling
+          - large egg crate
+          typical_rate_range:
+            min: 450
+            max: 850
+          notes: Large cell size
+          data_source: estimated
+      wood_ceiling_additional:
+        items:
+        - id: FIN.CL.WD.005
+          standard_name: Bamboo Plank Ceiling - T&G on Battens
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - hospitality
+          requires: []
+          is_code_ref: IS 399
+          dsr_item_ref: ''
+          aliases:
+          - bamboo ceiling
+          - bamboo plank ceiling
+          typical_rate_range:
+            min: 900
+            max: 1800
+          notes: Sustainable bamboo planks
+          data_source: estimated
+        - id: FIN.CL.WD.006
+          standard_name: WPC Ceiling Panel - 150mm Wide
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - commercial
+          requires: []
+          is_code_ref: IS 399
+          dsr_item_ref: ''
+          aliases:
+          - WPC ceiling panel
+          - wood plastic ceiling
+          typical_rate_range:
+            min: 500
+            max: 1000
+          notes: Moisture resistant WPC for ceiling
+          data_source: estimated
+        - id: FIN.CL.WD.007
+          standard_name: WPC Ceiling Panel - 200mm Wide
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - commercial
+          requires: []
+          is_code_ref: IS 399
+          dsr_item_ref: ''
+          aliases:
+          - 200mm WPC ceiling
+          - wide WPC ceiling
+          typical_rate_range:
+            min: 550
+            max: 1100
+          notes: ''
+          data_source: estimated
+        - id: FIN.CL.WD.008
+          standard_name: Solid Wood Plank Ceiling - Pine
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - hospitality
+          requires: []
+          is_code_ref: IS 399
+          dsr_item_ref: ''
+          aliases:
+          - pine ceiling plank
+          - pine wood ceiling
+          typical_rate_range:
+            min: 800
+            max: 1500
+          notes: Pine T&G planks with stain/polish
+          data_source: estimated
+      pvc_frp_additional:
+        items:
+        - id: FIN.CL.PVC.004
+          standard_name: PVC Panel Ceiling 100mm Wide - Narrow Strip
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - narrow PVC ceiling
+          - 100mm PVC strip
+          typical_rate_range:
+            min: 140
+            max: 280
+          notes: ''
+          data_source: estimated
+        - id: FIN.CL.PVC.005
+          standard_name: PVC Panel Ceiling 250mm Wide - Wood Grain Finish
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - wood grain PVC ceiling
+          - PVC wood ceiling
+          typical_rate_range:
+            min: 200
+            max: 380
+          notes: Wood look PVC panels
+          data_source: estimated
+        - id: FIN.CL.PVC.006
+          standard_name: PVC Panel Ceiling 300mm Wide - Glossy Finish
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - glossy PVC ceiling
+          - shiny PVC panel
+          typical_rate_range:
+            min: 220
+            max: 420
+          notes: ''
+          data_source: estimated
+        - id: FIN.CL.FRP.003
+          standard_name: FRP Ceiling Panel 600x1200mm on Grid
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - industrial
+          - healthcare
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - FRP 2x4 ceiling
+          - large FRP panel
+          typical_rate_range:
+            min: 420
+            max: 740
+          notes: Chemical and moisture resistant
+          data_source: estimated
+      stretch_ceiling_additional:
+        items:
+        - id: FIN.CL.SPC.018
+          standard_name: Stretch Ceiling PVC Film - Glossy/Lacquer
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - hospitality
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - glossy stretch ceiling
+          - lacquer stretch ceiling
+          typical_rate_range:
+            min: 900
+            max: 1800
+          notes: Mirror-like reflective finish
+          data_source: estimated
+        - id: FIN.CL.SPC.019
+          standard_name: Stretch Ceiling PVC Film - Matt/Satin
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - hospitality
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - matt stretch ceiling
+          - satin stretch ceiling
+          typical_rate_range:
+            min: 850
+            max: 1700
+          notes: Non-reflective elegant finish
+          data_source: estimated
+        - id: FIN.CL.SPC.020
+          standard_name: Stretch Ceiling Fabric - Printed Design
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - hospitality
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - printed fabric stretch
+          - custom print stretch
+          typical_rate_range:
+            min: 1200
+            max: 2500
+          notes: Custom printed fabric membrane
+          data_source: estimated
+      acoustic_specialty:
+        items:
+        - id: FIN.CL.ACO.027
+          standard_name: Acoustic Perforated Metal Panel 600x600mm - Aluminium
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 3344
+          dsr_item_ref: ''
+          aliases:
+          - perforated acoustic metal
+          - perforated aluminium ceiling
+          typical_rate_range:
+            min: 700
+            max: 1300
+          notes: With acoustic fleece backing
+          data_source: estimated
+        - id: FIN.CL.ACO.028
+          standard_name: Acoustic Micro-Perforated Metal Panel 600x600mm
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 3344
+          dsr_item_ref: ''
+          aliases:
+          - micro-perforated ceiling
+          - micro perf metal
+          typical_rate_range:
+            min: 800
+            max: 1500
+          notes: Sub-1mm holes, nearly invisible perforation
+          data_source: estimated
+        - id: FIN.CL.ACO.029
+          standard_name: Acoustic Slotted Metal Panel 600x600mm
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 3344
+          dsr_item_ref: ''
+          aliases:
+          - slotted acoustic panel
+          - slot perforated ceiling
+          typical_rate_range:
+            min: 750
+            max: 1400
+          notes: Linear slot pattern for aesthetic
+          data_source: estimated
+        - id: FIN.CL.ACO.030
+          standard_name: Acoustic Cloud Panel - Mineral Fibre 600x1200mm
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 3344
+          dsr_item_ref: ''
+          aliases:
+          - small cloud panel
+          - acoustic island small
+          typical_rate_range:
+            min: 2000
+            max: 4000
+          notes: Suspended individual panel
+          data_source: estimated
+        - id: FIN.CL.ACO.031
+          standard_name: Acoustic Floating Panel - Curved 1200x2400mm
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - hospitality
+          requires: []
+          is_code_ref: IS 3344
+          dsr_item_ref: ''
+          aliases:
+          - curved floating panel
+          - curved acoustic canopy
+          typical_rate_range:
+            min: 6000
+            max: 12000
+          notes: Curved suspended acoustic element
+          data_source: estimated
+        - id: FIN.CL.ACO.032
+          standard_name: Acoustic Canopy Panel - Rectangular 1200x600mm
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 3344
+          dsr_item_ref: ''
+          aliases:
+          - acoustic canopy
+          - ceiling canopy panel
+          typical_rate_range:
+            min: 3000
+            max: 6000
+          notes: Free-hanging acoustic canopy
+          data_source: estimated
+        - id: FIN.CL.ACO.033
+          standard_name: Acoustic Perforated Gypsum Board - Slotted Pattern
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 2095 Part 1
+          dsr_item_ref: ''
+          aliases:
+          - slotted gypsum acoustic
+          - linear perf gypsum
+          typical_rate_range:
+            min: 540
+            max: 900
+          notes: With acoustic fleece backing
+          data_source: estimated
+      cornice_cove:
+        items:
+        - id: FIN.CL.CRN.001
+          standard_name: Gypsum Cornice Moulding - Plain 75mm
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - gypsum cornice 75mm
+          - ceiling cornice small
+          typical_rate_range:
+            min: 120
+            max: 250
+          notes: Pre-cast gypsum moulding
+          data_source: estimated
+        - id: FIN.CL.CRN.002
+          standard_name: Gypsum Cornice Moulding - Decorative 100mm
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - hospitality
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - gypsum cornice 100mm
+          - decorative cornice
+          typical_rate_range:
+            min: 180
+            max: 350
+          notes: Pre-cast ornamental moulding
+          data_source: estimated
+        - id: FIN.CL.CRN.003
+          standard_name: Gypsum Cornice Moulding - Large Profile 150mm
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - hospitality
+          - luxury_residential
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - large cornice
+          - crown moulding 150mm
+          typical_rate_range:
+            min: 250
+            max: 500
+          notes: Large ornamental moulding
+          data_source: estimated
+        - id: FIN.CL.CRN.004
+          standard_name: POP Cornice Moulding - Site Made
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - POP cornice
+          - plaster cornice
+          typical_rate_range:
+            min: 80
+            max: 180
+          notes: Site-cast POP cornice
+          data_source: estimated
+        - id: FIN.CL.CRN.005
+          standard_name: PU (Polyurethane) Cornice Moulding - 80mm
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - PU cornice
+          - polyurethane moulding
+          typical_rate_range:
+            min: 150
+            max: 300
+          notes: Lightweight pre-finished moulding
+          data_source: estimated
+        - id: FIN.CL.CRN.006
+          standard_name: Cove Lighting Trough - Gypsum Board L-Profile
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - cove light trough
+          - indirect light cove
+          typical_rate_range:
+            min: 300
+            max: 550
+          notes: For LED strip indirect lighting
+          data_source: estimated
+        - id: FIN.CL.CRN.007
+          standard_name: Cove Lighting Trough - Aluminium Profile
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - hospitality
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - aluminium cove light
+          - metal light trough
+          typical_rate_range:
+            min: 400
+            max: 700
+          notes: Pre-formed aluminium light channel
+          data_source: estimated
+        - id: FIN.CL.CRN.008
+          standard_name: Shadow Gap Profile - Aluminium 10mm
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - hospitality
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - shadow gap
+          - shadow line ceiling
+          typical_rate_range:
+            min: 200
+            max: 400
+          notes: Clean junction between ceiling and wall
+          data_source: estimated
+      additional_access:
+        items:
+        - id: FIN.CL.ACC.011
+          standard_name: Access Panel - Fire Rated 120 Min 600x600mm
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 1641
+          dsr_item_ref: ''
+          aliases:
+          - 120 min fire access
+          - 2hr fire rated hatch
+          typical_rate_range:
+            min: 3500
+            max: 6000
+          notes: ''
+          data_source: estimated
+        - id: FIN.CL.ACC.012
+          standard_name: Access Panel - Magnetic Concealed 300x300mm
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - hospitality
+          requires: []
+          is_code_ref: IS 277
+          dsr_item_ref: ''
+          aliases:
+          - magnetic access panel
+          - invisible access panel
+          typical_rate_range:
+            min: 1200
+            max: 2500
+          notes: Magnetic latch, seamless appearance
+          data_source: estimated
+        - id: FIN.CL.ACC.013
+          standard_name: Access Panel - Magnetic Concealed 600x600mm
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - hospitality
+          requires: []
+          is_code_ref: IS 277
+          dsr_item_ref: ''
+          aliases:
+          - magnetic access 600
+          - invisible hatch 600
+          typical_rate_range:
+            min: 1800
+            max: 3500
+          notes: Magnetic latch, seamless appearance
+          data_source: estimated
+        - id: FIN.CL.ACC.014
+          standard_name: Trap Door - Steel Insulated 600x600mm Roof Access
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 277
+          dsr_item_ref: ''
+          aliases:
+          - roof access trap
+          - insulated roof hatch
+          typical_rate_range:
+            min: 8000
+            max: 15000
+          notes: Weather sealed roof access
+          data_source: estimated
+      specialty_additional:
+        items:
+        - id: FIN.CL.SPC.021
+          standard_name: Metal Baffle Ceiling - Aluminium 25x80mm
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 277
+          dsr_item_ref: ''
+          aliases:
+          - narrow aluminium baffle
+          - slim metal baffle
+          typical_rate_range:
+            min: 1100
+            max: 2200
+          notes: Narrow profile metal baffles
+          data_source: estimated
+        - id: FIN.CL.SPC.022
+          standard_name: WPC Baffle Ceiling - 40x80mm
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - hospitality
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - WPC baffle ceiling
+          - composite baffle
+          typical_rate_range:
+            min: 1000
+            max: 2000
+          notes: Weather resistant WPC baffles
+          data_source: estimated
+        - id: FIN.CL.SPC.023
+          standard_name: Backlit Translucent Panel Ceiling - Polycarbonate
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - hospitality
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - polycarbonate backlit ceiling
+          - PC light ceiling
+          typical_rate_range:
+            min: 1800
+            max: 3500
+          notes: Including LED panel behind
+          data_source: estimated
+        - id: FIN.CL.SPC.024
+          standard_name: Linear Metal Ceiling - Aluminium Plank 300mm
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - linear plank ceiling
+          - metal plank 300mm
+          typical_rate_range:
+            min: 600
+            max: 1100
+          notes: Wide plank with concealed fix
+          data_source: estimated
+        - id: FIN.CL.SPC.025
+          standard_name: Acoustic Fabric Ceiling - Stretched System
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - hospitality
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - fabric acoustic ceiling
+          - stretched fabric ceiling
+          typical_rate_range:
+            min: 1200
+            max: 2500
+          notes: Fabric stretched over acoustic substrate
+          data_source: estimated
+        - id: FIN.CL.SPC.026
+          standard_name: Exposed Concrete Ceiling - Patch and Seal
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - hospitality
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - exposed concrete patched
+          - fair face ceiling
+          typical_rate_range:
+            min: 300
+            max: 600
+          notes: Filling honeycombs, sealing with clear coat
+          data_source: estimated
+        - id: FIN.CL.SPC.027
+          standard_name: Ceiling Medallion - Gypsum Decorative
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - hospitality
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - ceiling medallion
+          - ceiling rose
+          - decorative rosette
+          typical_rate_range:
+            min: 1500
+            max: 4000
+          notes: Ornamental centre piece for chandelier
+          data_source: estimated
+        - id: FIN.CL.SPC.028
+          standard_name: Coffered Ceiling - Gypsum Board
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - hospitality
+          - luxury_residential
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - coffered ceiling
+          - recessed panel ceiling
+          typical_rate_range:
+            min: 800
+            max: 1600
+          notes: Grid of recessed panels
+          data_source: estimated
+        - id: FIN.CL.SPC.029
+          standard_name: Coffered Ceiling - Wood/MDF
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - hospitality
+          - luxury_residential
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - wood coffered ceiling
+          - MDF coffered ceiling
+          typical_rate_range:
+            min: 1500
+            max: 3500
+          notes: Wood beam and panel coffered system
+          data_source: estimated
+        - id: FIN.CL.SPC.030
+          standard_name: Tray Ceiling - Gypsum Board Stepped
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - hospitality
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - tray ceiling
+          - inverted tray ceiling
+          typical_rate_range:
+            min: 600
+            max: 1100
+          notes: Raised central section
+          data_source: estimated
+  grid_ceiling_extended:
+    categories:
+      mineral_fiber_brands:
+        items:
+        - id: FIN.CL.MFB.001
+          standard_name: Mineral Fiber Grid Ceiling - Armstrong Fine Fissured - 15mm - 600x600mm
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - Armstrong fine fissured
+          - mineral fiber 15mm 600x600
+          typical_rate_range:
+            min: 250
+            max: 450
+          notes: Standard commercial grid ceiling
+          data_source: estimated
+        - id: FIN.CL.MFB.002
+          standard_name: Mineral Fiber Grid Ceiling - Armstrong Cortega - 16mm - 600x600mm
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - Armstrong Cortega
+          - economy mineral fiber
+          typical_rate_range:
+            min: 200
+            max: 380
+          notes: Economy range grid ceiling
+          data_source: estimated
+        - id: FIN.CL.MFB.003
+          standard_name: Mineral Fiber Grid Ceiling - Armstrong Ultima - 19mm - 600x600mm
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - Armstrong Ultima
+          - premium mineral fiber
+          typical_rate_range:
+            min: 350
+            max: 600
+          notes: High NRC 0.70, clean room compatible
+          data_source: estimated
+        - id: FIN.CL.MFB.004
+          standard_name: Mineral Fiber Grid Ceiling - OWA (German) - 15mm - 600x600mm
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - OWA ceiling
+          - German mineral fiber
+          typical_rate_range:
+            min: 280
+            max: 500
+          notes: European quality mineral fiber
+          data_source: estimated
+        - id: FIN.CL.MFB.005
+          standard_name: Mineral Fiber Grid Ceiling - USG Boral Radar - 16mm - 600x600mm
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - USG Boral Radar
+          - Boral ceiling tile
+          typical_rate_range:
+            min: 220
+            max: 400
+          notes: Smooth face mineral fiber
+          data_source: estimated
+        - id: FIN.CL.MFB.006
+          standard_name: Mineral Fiber Grid Ceiling - 600x1200mm Tegular Edge
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - mineral fiber 600x1200
+          - large tile ceiling
+          typical_rate_range:
+            min: 300
+            max: 520
+          notes: Larger format with reveal edge
+          data_source: estimated
+        - id: FIN.CL.MFB.007
+          standard_name: Mineral Fiber Grid Ceiling - Moisture Resistant - for Toilets/Kitchens
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - moisture resistant ceiling tile
+          - wet area ceiling
+          typical_rate_range:
+            min: 350
+            max: 600
+          notes: RH 95% resistant, sag resistant
+          data_source: estimated
+        - id: FIN.CL.MFB.008
+          standard_name: Mineral Fiber Grid Ceiling - Fire Rated 2 Hour
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - fire rated ceiling tile
+          - 2 hour fire ceiling
+          typical_rate_range:
+            min: 400
+            max: 700
+          notes: Fire rated mineral fiber system
+          data_source: estimated
+      grid_accessories:
+        items:
+        - id: FIN.CL.GRA.001
+          standard_name: Grid Ceiling T-Bar System - Exposed 15mm - White Powder Coated
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - T-bar grid
+          - exposed grid system
+          - ceiling grid
+          typical_rate_range:
+            min: 80
+            max: 160
+          notes: Main runner, cross tee, wall angle
+          data_source: estimated
+        - id: FIN.CL.GRA.002
+          standard_name: Grid Ceiling T-Bar System - Concealed/Semi-Concealed
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - concealed grid
+          - flush grid ceiling
+          typical_rate_range:
+            min: 120
+            max: 220
+          notes: Hidden grid for seamless look
+          data_source: estimated
+        - id: FIN.CL.GRA.003
+          standard_name: Grid Ceiling T-Bar System - Black Powder Coated
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - hospitality
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - black grid ceiling
+          - dark grid system
+          typical_rate_range:
+            min: 100
+            max: 200
+          notes: For industrial/modern aesthetics
+          data_source: estimated
+  pop_patterns_extended:
+    categories:
+      pop_decorative:
+        items:
+        - id: FIN.CL.PPD.001
+          standard_name: POP False Ceiling - L-Shaped Cove with LED Strip Recess
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - POP cove ceiling
+          - L-shape cove POP
+          typical_rate_range:
+            min: 250
+            max: 500
+          notes: Per running meter of cove detail
+          data_source: estimated
+        - id: FIN.CL.PPD.002
+          standard_name: POP False Ceiling - Double Height Drop (200-300mm)
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - double drop POP
+          - deep POP ceiling
+          typical_rate_range:
+            min: 500
+            max: 900
+          notes: Two-level drop ceiling
+          data_source: estimated
+        - id: FIN.CL.PPD.003
+          standard_name: POP Cornice Moulding - Simple Profile
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - POP cornice
+          - ceiling cornice simple
+          typical_rate_range:
+            min: 80
+            max: 180
+          notes: Simple cove/ogee profile
+          data_source: estimated
+        - id: FIN.CL.PPD.004
+          standard_name: POP Cornice Moulding - Ornate/Classical Profile
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - hospitality
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - ornate POP cornice
+          - classical cornice
+          typical_rate_range:
+            min: 200
+            max: 450
+          notes: Elaborate Victorian/Colonial moulding
+          data_source: estimated
+        - id: FIN.CL.PPD.005
+          standard_name: POP Ceiling Band/Border - Decorative - 150mm Wide
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - hospitality
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - POP ceiling band
+          - decorative POP border
+          typical_rate_range:
+            min: 150
+            max: 350
+          notes: Decorative band around ceiling perimeter
+          data_source: estimated
+        - id: FIN.CL.PPD.006
+          standard_name: POP Ceiling - Curved/Arched Profile
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - hospitality
+          - residential
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - curved POP ceiling
+          - arched ceiling
+          typical_rate_range:
+            min: 700
+            max: 1400
+          notes: With GI mesh armature for curved forms
+          data_source: estimated
+  exposed_ceiling:
+    categories:
+      exposed_finishes:
+        items:
+        - id: FIN.CL.EXP.007
+          standard_name: Exposed Ceiling - Concrete Repair, Fill and Clear Sealer
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - hospitality
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - exposed concrete ceiling sealed
+          - industrial ceiling
+          typical_rate_range:
+            min: 250
+            max: 500
+          notes: Patching honeycombs, filling bug holes, clear polyurethane
+          data_source: estimated
+        - id: FIN.CL.EXP.008
+          standard_name: Exposed Ceiling - Painted Black/Dark (Concrete + Services)
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - hospitality
+          requires: []
+          is_code_ref: IS 15489
+          dsr_item_ref: ''
+          aliases:
+          - black exposed ceiling
+          - dark painted ceiling
+          typical_rate_range:
+            min: 150
+            max: 300
+          notes: Including soffits, ducts, pipes all painted dark
+          data_source: estimated
+        - id: FIN.CL.EXP.009
+          standard_name: Exposed Ceiling - Steel Deck Profiled Sheet - Painted
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - industrial
+          requires: []
+          is_code_ref: IS 15489
+          dsr_item_ref: ''
+          aliases:
+          - exposed steel deck ceiling
+          - profile sheet ceiling
+          typical_rate_range:
+            min: 100
+            max: 220
+          notes: Paint finish on composite deck soffit
+          data_source: estimated
+        - id: FIN.CL.EXP.010
+          standard_name: Exposed Ceiling - Timber/Wood Beam and Plank Finish
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - hospitality
+          - residential
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - exposed wood ceiling
+          - timber beam ceiling
+          typical_rate_range:
+            min: 2000
+            max: 4500
+          notes: Structural timber or decorative beams
+          data_source: estimated
+  acoustic_ceiling_extended:
+    categories:
+      acoustic_treatments:
+        items:
+        - id: FIN.CL.ACX.001
+          standard_name: Acoustic Baffle - Vertical Hanging - Glass Wool with Fabric Wrap
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - acoustic baffle
+          - hanging baffle
+          - ceiling baffle
+          typical_rate_range:
+            min: 1500
+            max: 3500
+          notes: Per baffle unit 1200x600mm
+          data_source: estimated
+        - id: FIN.CL.ACX.002
+          standard_name: Acoustic Cloud/Island - Suspended Horizontal Panel - 1200x1200mm
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - acoustic cloud
+          - floating ceiling panel
+          - acoustic island
+          typical_rate_range:
+            min: 3000
+            max: 7000
+          notes: Suspended free-hanging absorber panel
+          data_source: estimated
+        - id: FIN.CL.ACX.003
+          standard_name: Acoustic Spray - Cellulose Based - on Ceiling Soffit
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - acoustic spray ceiling
+          - cellulose spray acoustic
+          typical_rate_range:
+            min: 300
+            max: 600
+          notes: Spray applied acoustic treatment
+          data_source: estimated
+        - id: FIN.CL.ACX.004
+          standard_name: Acoustic Wood Wool Board Ceiling - 25mm Thick
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - wood wool ceiling
+          - Heraklith ceiling
+          typical_rate_range:
+            min: 400
+            max: 800
+          notes: Cement bonded wood wool acoustic board
+          data_source: estimated
+        - id: FIN.CL.ACX.005
+          standard_name: Acoustic Perforated Metal Ceiling - Aluminum - 600x600mm
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - perforated metal ceiling
+          - aluminum acoustic ceiling
+          typical_rate_range:
+            min: 600
+            max: 1200
+          notes: With acoustic fleece backing
+          data_source: estimated
+        - id: FIN.CL.ACX.006
+          standard_name: Acoustic PET Felt Panel Ceiling - Recycled - 12mm
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - PET felt ceiling
+          - recycled acoustic panel
+          typical_rate_range:
+            min: 500
+            max: 1000
+          notes: Eco-friendly recycled polyester acoustic panel
+          data_source: estimated
+      ceiling_paint:
+        items:
+        - id: FIN.CL.CPT.001
+          standard_name: Ceiling Paint - White Emulsion - 2 Coat on Plaster
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - ceiling paint white
+          - ceiling emulsion
+          typical_rate_range:
+            min: 25
+            max: 50
+          notes: Including primer and putty
+          data_source: estimated
+        - id: FIN.CL.CPT.002
+          standard_name: Ceiling Paint - Premium Matt/Velvet - 2 Coat
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - premium ceiling paint
+          - matt ceiling finish
+          typical_rate_range:
+            min: 40
+            max: 75
+          notes: Deep matt/velvet finish
+          data_source: estimated
+        - id: FIN.CL.CPT.003
+          standard_name: Ceiling Paint - Anti-Bacterial/Anti-Fungal - 2 Coat
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - healthcare
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - anti-bacterial ceiling paint
+          - hospital ceiling paint
+          typical_rate_range:
+            min: 50
+            max: 95
+          notes: For healthcare and food processing areas
+          data_source: estimated
+  specialty_ceiling:
+    categories:
+      linear_ceiling:
+        items:
+        - id: FIN.CL.LNR.001
+          standard_name: Linear Metal Strip Ceiling - Aluminum 84mm Wide - on Carrier
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - linear strip ceiling
+          - metal strip ceiling
+          typical_rate_range:
+            min: 600
+            max: 1200
+          notes: Snap-in aluminum strips on carrier
+          data_source: estimated
+        - id: FIN.CL.LNR.002
+          standard_name: Linear Metal Strip Ceiling - Aluminum 150mm Wide - on Carrier
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - wide strip ceiling
+          - 150mm linear ceiling
+          typical_rate_range:
+            min: 700
+            max: 1400
+          notes: Wider strip for modern look
+          data_source: estimated
+        - id: FIN.CL.LNR.003
+          standard_name: WPC Linear Ceiling Panel - 100mm Wide - on Battens
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - residential
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - WPC ceiling panel
+          - WPC linear ceiling
+          typical_rate_range:
+            min: 500
+            max: 1000
+          notes: Tongue and groove WPC panels
+          data_source: estimated
+        - id: FIN.CL.LNR.004
+          standard_name: PVC Linear Ceiling Panel - 200mm Wide - Interlocking
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - PVC ceiling panel
+          - PVC false ceiling
+          typical_rate_range:
+            min: 200
+            max: 400
+          notes: Economy ceiling for utility areas
+          data_source: estimated
+      open_cell_ceiling:
+        items:
+        - id: FIN.CL.OPC.001
+          standard_name: Open Cell/Egg Crate Ceiling - Aluminum - 50x50mm Cell
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - open cell ceiling
+          - egg crate ceiling
+          typical_rate_range:
+            min: 800
+            max: 1500
+          notes: Allows service access and air circulation
+          data_source: estimated
+        - id: FIN.CL.OPC.002
+          standard_name: Open Cell/Egg Crate Ceiling - Aluminum - 100x100mm Cell
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - large cell ceiling
+          - 100mm grid ceiling
+          typical_rate_range:
+            min: 600
+            max: 1200
+          notes: Larger cell for more open feel
+          data_source: estimated
+        - id: FIN.CL.OPC.003
+          standard_name: Louvre/Blade Ceiling - Aluminum Blades - 100mm Width
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - hospitality
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - blade ceiling
+          - louvre ceiling
+          typical_rate_range:
+            min: 900
+            max: 1800
+          notes: Parallel blade/fin ceiling system
+          data_source: estimated
+      ceiling_accessories:
+        items:
+        - id: FIN.CL.ACC.015
+          standard_name: Ceiling Access Panel/Hatch - 600x600mm - Gypsum Board
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 277
+          dsr_item_ref: ''
+          aliases:
+          - access panel ceiling
+          - ceiling hatch
+          - inspection panel
+          typical_rate_range:
+            min: 800
+            max: 1800
+          notes: Spring loaded or hinged
+          data_source: estimated
+        - id: FIN.CL.ACC.016
+          standard_name: Ceiling Access Panel/Hatch - 600x600mm - Metal (Fire Rated)
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 1641
+          dsr_item_ref: ''
+          aliases:
+          - fire rated access panel
+          - metal ceiling hatch
+          typical_rate_range:
+            min: 2000
+            max: 4000
+          notes: 2 hour fire rated metal access panel
+          data_source: estimated
+        - id: FIN.CL.ACC.017
+          standard_name: Ceiling Curtain Track Recess/Box - Gypsum Board
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - commercial
+          requires: []
+          is_code_ref: IS 277
+          dsr_item_ref: ''
+          aliases:
+          - curtain box ceiling
+          - curtain pelmet recess
+          typical_rate_range:
+            min: 250
+            max: 500
+          notes: Recessed channel for curtain track
+          data_source: estimated
+        - id: FIN.CL.ACC.018
+          standard_name: Ceiling AC Grille Opening/Frame - 600x600mm
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 277
+          dsr_item_ref: ''
+          aliases:
+          - AC grille ceiling cutout
+          - cassette AC opening
+          typical_rate_range:
+            min: 300
+            max: 700
+          notes: Reinforced opening in false ceiling
+          data_source: estimated
+        - id: FIN.CL.ACC.019
+          standard_name: LED Cove Light Recess/Channel in False Ceiling
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 277
+          dsr_item_ref: ''
+          aliases:
+          - cove light channel
+          - LED strip recess ceiling
+          typical_rate_range:
+            min: 150
+            max: 350
+          notes: Concealed profile for LED strip lighting
+          data_source: estimated
+        - id: FIN.CL.ACC.020
+          standard_name: Ceiling Light Fixture Cutout/Reinforcement - Recessed Downlight
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 277
+          dsr_item_ref: ''
+          aliases:
+          - downlight cutout
+          - ceiling light opening
+          typical_rate_range:
+            min: 50
+            max: 150
+          notes: Per cutout with edge reinforcement
+          data_source: estimated
+        - id: FIN.CL.ACC.021
+          standard_name: Ceiling Expansion Joint Cover - Aluminum Profile
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 277
+          dsr_item_ref: ''
+          aliases:
+          - ceiling expansion joint
+          - ceiling joint cover
+          typical_rate_range:
+            min: 400
+            max: 900
+          notes: Flexible cover for movement joints
+          data_source: estimated
+        - id: FIN.CL.ACC.022
+          standard_name: Ceiling Sprinkler Head Trim Ring/Escutcheon
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 277
+          dsr_item_ref: ''
+          aliases:
+          - sprinkler trim ring
+          - sprinkler escutcheon
+          typical_rate_range:
+            min: 50
+            max: 150
+          notes: Decorative ring around sprinkler penetration
+          data_source: estimated
+        - id: FIN.CL.ACC.023
+          standard_name: Ceiling Smoke Detector Cutout with Bezel
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 277
+          dsr_item_ref: ''
+          aliases:
+          - smoke detector ceiling cutout
+          - detector trim ring
+          typical_rate_range:
+            min: 30
+            max: 100
+          notes: Clean cutout with decorative trim
+          data_source: estimated

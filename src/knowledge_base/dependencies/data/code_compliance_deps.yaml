@@ -1,0 +1,1217 @@
+rules:
+  # ============================================================
+  # FIRE SAFETY - BUILDING ABOVE 15M
+  # ============================================================
+  - id: "DEP-COD-001"
+    trigger: "building_above_15m"
+    required_items: ["fire_hydrant_system", "sprinkler_system", "smoke_detector", "fire_alarm_panel"]
+    trade: "fire_safety"
+    priority: 1
+    condition: "height_above_15m"
+    building_types: [all]
+    room_types: []
+    min_floors: 5
+    min_area_sqm: 0
+    is_code_ref: "NBC Part 4"
+    note: "Buildings above 15m require fire hydrant, sprinkler, smoke detection, and alarm panel"
+
+  - id: "DEP-COD-002"
+    trigger: "building_above_15m"
+    required_items: ["pressurized_staircase", "fire_rated_doors", "refuge_area"]
+    trade: "fire_safety"
+    priority: 1
+    condition: "height_above_15m"
+    building_types: [all]
+    room_types: []
+    min_floors: 5
+    min_area_sqm: 0
+    is_code_ref: "NBC Part 4"
+    note: "Buildings above 15m require pressurized staircase, fire doors, and refuge area"
+
+  - id: "DEP-COD-003"
+    trigger: "building_above_15m"
+    required_items: ["dg_for_fire_systems", "emergency_lighting_1hr", "exit_signage_illuminated"]
+    trade: "fire_safety"
+    priority: 1
+    condition: "height_above_15m"
+    building_types: [all]
+    room_types: []
+    min_floors: 5
+    min_area_sqm: 0
+    is_code_ref: "NBC Part 4"
+    note: "Buildings above 15m: DG for fire systems, 1hr emergency lighting, illuminated exit signs"
+
+  - id: "DEP-COD-004"
+    trigger: "building_above_15m"
+    required_items: ["wet_riser", "fire_pump_house", "fire_water_tank"]
+    trade: "fire_safety"
+    priority: 1
+    condition: "height_above_15m"
+    building_types: [all]
+    room_types: []
+    min_floors: 5
+    min_area_sqm: 0
+    is_code_ref: "NBC Part 4"
+    note: "Buildings above 15m: wet riser, fire pump house, dedicated fire water tank"
+
+  # ============================================================
+  # SEISMIC DESIGN - DELHI NCR
+  # ============================================================
+  - id: "DEP-COD-005"
+    trigger: "building_delhi_ncr"
+    required_items: ["seismic_zone_iv_design", "ductile_detailing", "strong_column_weak_beam"]
+    trade: "structural"
+    priority: 1
+    condition: "location_delhi_ncr"
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 1893"
+    note: "Delhi NCR buildings require seismic zone IV design, ductile detailing, SCWB per IS 1893"
+
+  - id: "DEP-COD-006"
+    trigger: "building_delhi_ncr"
+    required_items: ["special_moment_resisting_frame", "confinement_reinforcement"]
+    trade: "structural"
+    priority: 1
+    condition: "location_delhi_ncr"
+    building_types: [all]
+    room_types: []
+    min_floors: 3
+    min_area_sqm: 0
+    is_code_ref: "IS 13920"
+    note: "Multi-storey buildings in Delhi NCR require SMRF and confinement reinforcement"
+
+  - id: "DEP-COD-007"
+    trigger: "seismic_zone_iii_iv_v"
+    required_items: ["shear_wall_or_bracing", "foundation_tie_beam"]
+    trade: "structural"
+    priority: 1
+    condition: "seismic_zone_iii_plus"
+    building_types: [all]
+    room_types: []
+    min_floors: 4
+    min_area_sqm: 0
+    is_code_ref: "IS 1893"
+    note: "Seismic zone III/IV/V multi-storey requires shear wall or bracing and foundation tie beams"
+
+  # ============================================================
+  # ACCESSIBILITY - DISABLED PERSONS
+  # ============================================================
+  - id: "DEP-COD-008"
+    trigger: "public_building"
+    required_items: ["ramp_1_12_gradient", "disabled_toilet", "tactile_flooring", "braille_signage", "wheelchair_access"]
+    trade: "finishing"
+    priority: 1
+    condition: ""
+    building_types: ["commercial", "hospital", "school", "hotel", "retail_mall", "government"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "RPwD Act 2016"
+    note: "Public buildings: ramp 1:12, disabled toilet, tactile floor, braille signage, wheelchair access"
+
+  - id: "DEP-COD-009"
+    trigger: "public_building"
+    required_items: ["accessible_elevator", "grab_bars_toilet", "lowered_counter"]
+    trade: "finishing"
+    priority: 1
+    condition: ""
+    building_types: ["commercial", "hospital", "school", "hotel", "retail_mall", "government"]
+    room_types: []
+    min_floors: 2
+    min_area_sqm: 0
+    is_code_ref: "RPwD Act 2016"
+    note: "Multi-storey public buildings: accessible lift, toilet grab bars, lowered counters"
+
+  - id: "DEP-COD-010"
+    trigger: "public_building"
+    required_items: ["accessible_parking", "signage_international_symbol"]
+    trade: "external"
+    priority: 1
+    condition: ""
+    building_types: ["commercial", "hospital", "school", "hotel", "retail_mall", "government"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "RPwD Act 2016"
+    note: "Public buildings: accessible parking spaces with international symbol signage"
+
+  # ============================================================
+  # BUILDING ABOVE 24M
+  # ============================================================
+  - id: "DEP-COD-011"
+    trigger: "building_above_24m"
+    required_items: ["fire_lift", "refuge_floor_every_4_floors", "standby_dg_fire_systems"]
+    trade: "fire_safety"
+    priority: 1
+    condition: "height_above_24m"
+    building_types: [all]
+    room_types: []
+    min_floors: 8
+    min_area_sqm: 0
+    is_code_ref: "NBC Part 4"
+    note: "Buildings above 24m: fire lift, refuge floor every 4 floors, standby DG for fire"
+
+  - id: "DEP-COD-012"
+    trigger: "building_above_24m"
+    required_items: ["dual_staircase", "pressurized_lobby"]
+    trade: "fire_safety"
+    priority: 1
+    condition: "height_above_24m"
+    building_types: [all]
+    room_types: []
+    min_floors: 8
+    min_area_sqm: 0
+    is_code_ref: "NBC Part 4"
+    note: "Buildings above 24m require dual staircases and pressurized lift lobbies"
+
+  # ============================================================
+  # COMMERCIAL ABOVE 500 SQM
+  # ============================================================
+  - id: "DEP-COD-013"
+    trigger: "commercial_above_500sqm"
+    required_items: ["fire_alarm_addressable", "sprinkler_system", "pa_voice_evacuation"]
+    trade: "fire_safety"
+    priority: 1
+    condition: "commercial_above_500sqm"
+    building_types: ["commercial", "retail_mall"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 500
+    is_code_ref: "NBC Part 4"
+    note: "Commercial above 500 sqm: addressable fire alarm, sprinklers, PA/voice evacuation"
+
+  - id: "DEP-COD-014"
+    trigger: "commercial_above_500sqm"
+    required_items: ["emergency_lighting", "exit_signage", "fire_extinguishers"]
+    trade: "fire_safety"
+    priority: 1
+    condition: "commercial_above_500sqm"
+    building_types: ["commercial", "retail_mall"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 500
+    is_code_ref: "NBC Part 4"
+    note: "Commercial above 500 sqm: emergency lighting, exit signage, fire extinguishers"
+
+  # ============================================================
+  # ASSEMBLY BUILDING
+  # ============================================================
+  - id: "DEP-COD-015"
+    trigger: "assembly_building"
+    required_items: ["min_2_exits", "panic_hardware_doors", "emergency_lighting", "exit_signage"]
+    trade: "fire_safety"
+    priority: 1
+    condition: ""
+    building_types: ["auditorium", "cinema", "convention", "school", "temple", "mosque", "church"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "NBC Part 4"
+    note: "Assembly buildings: minimum 2 exits, panic hardware, emergency lighting, exit signs"
+
+  - id: "DEP-COD-016"
+    trigger: "assembly_building"
+    required_items: ["aisle_width_min_1050mm", "seat_row_spacing_min_850mm"]
+    trade: "finishing"
+    priority: 1
+    condition: ""
+    building_types: ["auditorium", "cinema", "convention"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "NBC Part 4"
+    note: "Assembly building seating: min 1050mm aisle width, min 850mm row spacing"
+
+  # ============================================================
+  # BASEMENT PARKING
+  # ============================================================
+  - id: "DEP-COD-017"
+    trigger: "basement_parking"
+    required_items: ["mechanical_ventilation_6_ach", "co_detection", "jet_fans", "fire_sprinkler"]
+    trade: "hvac"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: ["basement_parking"]
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "NBC Part 4"
+    note: "Basement parking: 6 ACH ventilation, CO detection, jet fans, fire sprinkler"
+
+  - id: "DEP-COD-018"
+    trigger: "basement_parking"
+    required_items: ["ramp_gradient_max_1_8", "vehicle_barrier", "fire_escape_stair"]
+    trade: "structural"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: ["basement_parking"]
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "NBC Part 4"
+    note: "Basement parking: max 1:8 ramp gradient, vehicle barriers, fire escape staircase"
+
+  # ============================================================
+  # HIGH RISE ABOVE 30M
+  # ============================================================
+  - id: "DEP-COD-019"
+    trigger: "high_rise_above_30m"
+    required_items: ["structural_wind_analysis", "facade_wind_design", "building_sway_limit"]
+    trade: "structural"
+    priority: 1
+    condition: "height_above_30m"
+    building_types: [all]
+    room_types: []
+    min_floors: 10
+    min_area_sqm: 0
+    is_code_ref: "IS 875 Part 3"
+    note: "High-rise above 30m: wind analysis, facade wind design, sway limit check per IS 875"
+
+  - id: "DEP-COD-020"
+    trigger: "high_rise_above_30m"
+    required_items: ["wind_tunnel_test"]
+    trade: "structural"
+    priority: 2
+    condition: "height_above_60m"
+    building_types: [all]
+    room_types: []
+    min_floors: 20
+    min_area_sqm: 0
+    is_code_ref: "IS 875 Part 3"
+    note: "Buildings above 60m may require wind tunnel testing for facade and structural design"
+
+  # ============================================================
+  # ECBC COMPLIANCE
+  # ============================================================
+  - id: "DEP-COD-021"
+    trigger: "ecbc_applicable"
+    required_items: ["building_envelope_compliance", "hvac_efficiency", "lighting_power_density"]
+    trade: "services"
+    priority: 1
+    condition: "commercial_above_100kw"
+    building_types: ["commercial", "hotel", "hospital"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 500
+    is_code_ref: "ECBC 2017"
+    note: "ECBC applicable: building envelope, HVAC efficiency, lighting power density compliance"
+
+  - id: "DEP-COD-022"
+    trigger: "ecbc_applicable"
+    required_items: ["solar_panel_provision", "swh_provision", "bms_energy_monitoring"]
+    trade: "electrical"
+    priority: 2
+    condition: "ecbc_compliance"
+    building_types: ["commercial", "hotel", "hospital"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 500
+    is_code_ref: "ECBC 2017"
+    note: "ECBC: solar panel provision, solar water heater, BMS energy monitoring"
+
+  # ============================================================
+  # ALL BUILDINGS - MANDATORY
+  # ============================================================
+  - id: "DEP-COD-023"
+    trigger: "all_buildings"
+    required_items: ["dpc_at_plinth", "anti_termite_treatment", "curing_7_days_min", "concrete_testing"]
+    trade: "structural"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 456"
+    note: "All buildings: DPC at plinth, anti-termite, minimum 7 days curing, concrete testing"
+
+  - id: "DEP-COD-024"
+    trigger: "all_buildings"
+    required_items: ["fire_extinguisher_per_floor"]
+    trade: "fire_safety"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "NBC Part 4"
+    note: "All buildings require fire extinguishers on every floor"
+
+  - id: "DEP-COD-025"
+    trigger: "all_buildings"
+    required_items: ["adequate_ventilation", "natural_light"]
+    trade: "architectural"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "NBC Part 8"
+    note: "All habitable rooms must have adequate ventilation and natural light per NBC"
+
+  # ============================================================
+  # STRUCTURAL DESIGN LOADS
+  # ============================================================
+  - id: "DEP-COD-026"
+    trigger: "structural_design"
+    required_items: ["dead_load_analysis", "live_load_per_use", "wind_load_analysis"]
+    trade: "structural"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 875 Parts 1-3"
+    note: "Structural design per IS 875: dead load, live load by use, wind load analysis"
+
+  - id: "DEP-COD-027"
+    trigger: "structural_design"
+    required_items: ["seismic_load_analysis"]
+    trade: "structural"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 1893"
+    note: "Seismic load analysis mandatory for all buildings per IS 1893"
+
+  # ============================================================
+  # CONCRETE CODE COMPLIANCE
+  # ============================================================
+  - id: "DEP-COD-028"
+    trigger: "rcc_construction"
+    required_items: ["minimum_grade_m20", "cover_as_per_exposure"]
+    trade: "structural"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 456"
+    note: "RCC: minimum M20 grade, concrete cover as per exposure condition per IS 456"
+
+  - id: "DEP-COD-029"
+    trigger: "rcc_construction"
+    required_items: ["minimum_reinforcement", "maximum_reinforcement", "lap_splice_length"]
+    trade: "structural"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 456"
+    note: "RCC detailing: minimum/maximum reinforcement limits, lap splice length per IS 456"
+
+  # ============================================================
+  # PLUMBING CODE COMPLIANCE
+  # ============================================================
+  - id: "DEP-COD-030"
+    trigger: "plumbing_design"
+    required_items: ["water_supply_per_capita", "drainage_per_capita"]
+    trade: "plumbing"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 1172"
+    note: "Water supply and drainage design per capita as per IS 1172 and local bylaws"
+
+  - id: "DEP-COD-031"
+    trigger: "plumbing_design"
+    required_items: ["trap_on_every_drain", "vent_pipe_provision"]
+    trade: "plumbing"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 2065"
+    note: "Plumbing: trap on every drain point, vent pipe provision per IS 2065"
+
+  # ============================================================
+  # ELECTRICAL CODE COMPLIANCE
+  # ============================================================
+  - id: "DEP-COD-032"
+    trigger: "electrical_design"
+    required_items: ["load_calculation", "cable_sizing", "protection_coordination"]
+    trade: "electrical"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 732"
+    note: "Electrical design: load calculation, cable sizing, protection coordination per IS 732"
+
+  - id: "DEP-COD-033"
+    trigger: "electrical_design"
+    required_items: ["rccb_mandatory", "mcb_per_circuit"]
+    trade: "electrical"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 732"
+    note: "RCCB mandatory for all installations, MCB per circuit per IS 732"
+
+  # ============================================================
+  # GREEN BUILDING COMPLIANCE
+  # ============================================================
+  - id: "DEP-COD-034"
+    trigger: "green_building"
+    required_items: ["rwh_mandatory", "swh_solar_water_heater", "led_lighting", "water_efficient_fixtures"]
+    trade: "services"
+    priority: 2
+    condition: "green_rating_targeted"
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "GRIHA/IGBC"
+    note: "Green building: RWH, solar water heater, LED lighting, water-efficient fixtures"
+
+  - id: "DEP-COD-035"
+    trigger: "green_building"
+    required_items: ["stormwater_management", "construction_waste_management"]
+    trade: "external"
+    priority: 2
+    condition: "green_rating_targeted"
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "GRIHA/IGBC"
+    note: "Green building: stormwater management, construction waste management"
+
+  # ============================================================
+  # LIFT CODE COMPLIANCE
+  # ============================================================
+  - id: "DEP-COD-036"
+    trigger: "lift_installation"
+    required_items: ["lift_per_is_14665", "ard_device", "overload_protection"]
+    trade: "vertical_transport"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 4
+    min_area_sqm: 0
+    is_code_ref: "IS 14665"
+    note: "Lift installation per IS 14665 with ARD and overload protection"
+
+  # ============================================================
+  # NOISE AND ACOUSTIC COMPLIANCE
+  # ============================================================
+  - id: "DEP-COD-037"
+    trigger: "noise_compliance"
+    required_items: ["dg_acoustic_enclosure", "acoustic_barrier"]
+    trade: "mechanical"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "CPCB Noise Rules"
+    note: "DG set acoustic enclosure and barriers per CPCB noise standards"
+
+  # ============================================================
+  # RAIN WATER HARVESTING MANDATORY
+  # ============================================================
+  - id: "DEP-COD-038"
+    trigger: "rwh_mandatory"
+    required_items: ["rain_water_collection", "recharge_structure"]
+    trade: "plumbing"
+    priority: 1
+    condition: "plot_above_100sqm"
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 100
+    is_code_ref: "Local Bylaws"
+    note: "RWH mandatory for plots above 100 sqm in most Indian cities"
+
+  # ============================================================
+  # STP MANDATORY
+  # ============================================================
+  - id: "DEP-COD-039"
+    trigger: "stp_mandatory"
+    required_items: ["stp_plant", "treated_water_reuse"]
+    trade: "plumbing"
+    priority: 1
+    condition: "above_10000_sqft_or_20_dwelling"
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 930
+    is_code_ref: "CPCB/Local Bylaws"
+    note: "STP mandatory for buildings above 10000 sqft or 20 dwelling units"
+
+  # ============================================================
+  # SOLAR ENERGY PROVISION
+  # ============================================================
+  - id: "DEP-COD-040"
+    trigger: "solar_mandatory"
+    required_items: ["solar_panel_area_provision", "solar_water_heater"]
+    trade: "electrical"
+    priority: 1
+    condition: ""
+    building_types: ["residential_apartment", "hotel", "hospital"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 500
+    is_code_ref: "Local Bylaws"
+    note: "Solar provision mandatory in many states for buildings above 500 sqm"
+
+  # ============================================================
+  # PARKING REQUIREMENTS
+  # ============================================================
+  - id: "DEP-COD-041"
+    trigger: "parking_provision"
+    required_items: ["parking_per_local_bylaw", "visitor_parking", "disabled_parking"]
+    trade: "external"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "Local Bylaws"
+    note: "Parking provision as per local development control rules with visitor and disabled spaces"
+
+  # ============================================================
+  # FIRE ESCAPE AND EXIT REQUIREMENTS
+  # ============================================================
+  - id: "DEP-COD-042"
+    trigger: "fire_escape"
+    required_items: ["exit_width_per_occupancy", "travel_distance_max", "dead_end_max"]
+    trade: "fire_safety"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "NBC Part 4"
+    note: "Fire escape: exit width per occupancy, maximum travel distance, dead-end limit per NBC"
+
+  - id: "DEP-COD-043"
+    trigger: "fire_escape"
+    required_items: ["staircase_width_min_1200mm", "staircase_enclosed"]
+    trade: "fire_safety"
+    priority: 1
+    condition: "building_above_15m"
+    building_types: [all]
+    room_types: []
+    min_floors: 5
+    min_area_sqm: 0
+    is_code_ref: "NBC Part 4"
+    note: "Fire staircase: minimum 1200mm width, enclosed with fire doors above 15m"
+
+  # ============================================================
+  # STRUCTURAL STABILITY AND TESTING
+  # ============================================================
+  - id: "DEP-COD-044"
+    trigger: "structural_stability"
+    required_items: ["stability_check_overturning", "stability_check_sliding"]
+    trade: "structural"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 456"
+    note: "Structural stability: overturning and sliding checks per IS 456"
+
+  # ============================================================
+  # NBC OCCUPANCY REQUIREMENTS
+  # ============================================================
+  - id: "DEP-COD-045"
+    trigger: "occupancy_load"
+    required_items: ["toilet_ratio_per_occupancy", "drinking_water_per_occupancy"]
+    trade: "plumbing"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "NBC Part 8"
+    note: "Toilet and drinking water provision per occupancy load as per NBC"
+
+  # ============================================================
+  # CONSTRUCTION SAFETY CODE
+  # ============================================================
+  - id: "DEP-COD-046"
+    trigger: "construction_safety"
+    required_items: ["safety_officer", "safety_equipment", "site_barricading"]
+    trade: "preliminaries"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "BOCW Act"
+    note: "Construction safety per BOCW Act: safety officer, equipment, barricading"
+
+  # ============================================================
+  # ELECTRICAL SAFETY CODE
+  # ============================================================
+  - id: "DEP-COD-047"
+    trigger: "electrical_safety"
+    required_items: ["cei_approval", "electrical_inspector_test"]
+    trade: "electrical"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "CEA Regulations"
+    note: "Electrical safety: CEI approval and electrical inspector testing per CEA regulations"
+
+  # ============================================================
+  # FOOD SAFETY CODE
+  # ============================================================
+  - id: "DEP-COD-048"
+    trigger: "commercial_kitchen"
+    required_items: ["fssai_compliant_kitchen", "exhaust_hood", "grease_trap", "pest_control"]
+    trade: "specialist"
+    priority: 1
+    condition: ""
+    building_types: ["hotel", "restaurant"]
+    room_types: ["kitchen"]
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "FSSAI"
+    note: "Commercial kitchen: FSSAI compliant layout, exhaust, grease trap, pest control"
+
+  # ============================================================
+  # NBC PART 3 - DEVELOPMENT CONTROL
+  # ============================================================
+  - id: "DEP-COD-049"
+    trigger: "development_control"
+    required_items: ["setback_compliance", "far_compliance", "height_restriction", "ground_coverage"]
+    trade: "architectural"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "NBC Part 3"
+    note: "Development control: setback, FAR, height restriction, ground coverage per local rules"
+
+  # ============================================================
+  # ENVIRONMENTAL COMPLIANCE
+  # ============================================================
+  - id: "DEP-COD-050"
+    trigger: "environmental_compliance"
+    required_items: ["environment_clearance"]
+    trade: "statutory"
+    priority: 1
+    condition: "built_up_above_20000sqm"
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 20000
+    is_code_ref: "EIA Notification"
+    note: "Projects above 20000 sqm built-up require environmental clearance per EIA notification"
+
+  # ============================================================
+  # IS 456 CONCRETE CUBE TESTING COMPLIANCE
+  # ============================================================
+  - id: "DEP-COD-051"
+    trigger: "rcc_pour"
+    required_items: ["concrete_cube_samples_3_per_50cum", "cube_curing_28_days", "cube_test_report"]
+    trade: "structural"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 456"
+    note: "IS 456 Clause 15.2 mandates minimum 3 cube specimens per 50 cum or fraction thereof at every RCC pour — cubes cured in water for 28 days and tested at approved lab; test reports form part of the quality register required by structural consultants and local authorities before issuing completion certificate"
+
+  # ============================================================
+  # IS 1786 STEEL MILL TEST CERTIFICATE
+  # ============================================================
+  - id: "DEP-COD-052"
+    trigger: "tmt_bar_purchase"
+    required_items: ["mill_test_certificate_is1786", "heat_number_traceability"]
+    trade: "structural"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 1786"
+    note: "Every TMT bar delivery must be accompanied by the manufacturer's mill test certificate showing yield strength (min 500 MPa for Fe500D), UTS, elongation (min 16%), and chemical composition (C, S, P, CEV) per IS 1786 — bars without MTCs are presumed sub-standard and must be rejected; heat number traceability links bars to the specific melt batch"
+
+  # ============================================================
+  # IS 13920 SEISMIC ZONE III/IV DUCTILE DETAILING
+  # ============================================================
+  - id: "DEP-COD-053"
+    trigger: "rcc_columns_seismic_zone_iii_iv"
+    required_items: ["ductile_detailing_is13920", "confinement_zone_stirrups", "special_confining_reinforcement"]
+    trade: "structural"
+    priority: 1
+    condition: "seismic_zone_iii_iv_v"
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 13920"
+    note: "IS 13920 mandatory for all RCC buildings in seismic zone III and above: columns must have closely-spaced hoop reinforcement in confinement zones (top and bottom L_o = max(h, b/6, 450mm)); special confining reinforcement ensures column ductility under repeated cyclic seismic loading — non-compliance discovered during audit can require retrofitting entire column sets"
+
+  # ============================================================
+  # BUILDING ABOVE 30M STRUCTURAL ENGINEER INSPECTION
+  # ============================================================
+  - id: "DEP-COD-054"
+    trigger: "building_above_30m"
+    required_items: ["structural_engineer_inspection_certificate_periodic", "stage_completion_certificates"]
+    trade: "structural"
+    priority: 1
+    condition: "height_above_30m"
+    building_types: [all]
+    room_types: []
+    min_floors: 10
+    min_area_sqm: 0
+    is_code_ref: "Local Authority"
+    note: "Buildings exceeding 30m height require structural engineer to issue inspection certificates at defined stages (foundation, plinth, each 5 floors) — many urban local bodies (MCGM Bye-law 42, BBMP Building Bye-laws) make this mandatory; without stage certificates, municipal officials can stop work and cancel building permission"
+
+  # ============================================================
+  # BUILDING PERMIT - AS-BUILT AND COMPLETION CERTIFICATE
+  # ============================================================
+  - id: "DEP-COD-055"
+    trigger: "project_completion_permit"
+    required_items: ["as_built_drawings_all_services", "completion_certificate_from_licensed_architect"]
+    trade: "statutory"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "Model Building Bye-Laws"
+    note: "Model Building Bye-Laws (TCPO) and all state building regulations require as-built drawings (architectural, structural, MEP) and completion certificate from the licensed architect/engineer of record before the local body issues an Occupancy Certificate — without OC, building cannot be legally occupied, insured, or sold"
+
+  # ============================================================
+  # GREEN BUILDING RATING - ENERGY SIMULATION AND DOCUMENTATION
+  # ============================================================
+  - id: "DEP-COD-056"
+    trigger: "green_building_rating_target"
+    required_items: ["energy_simulation_ecbc_compliance", "griha_or_leed_documentation", "commissioning_agent"]
+    trade: "services"
+    priority: 2
+    condition: "griha_or_leed_or_igbc_targeted"
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "GRIHA/LEED/IGBC"
+    note: "GRIHA, LEED, and IGBC ratings require energy simulation (e.g., EnergyPlus, eQUEST) showing compliance with ECBC 2017 baselines; documentation must be assembled credit-by-credit and submitted for third-party review; a commissioning agent is needed to verify that installed systems perform per design — starting documentation late in construction is a major cause of rating failures"
+
+  # ============================================================
+  # ACCESSIBILITY - RAMP, TACTILE PATH, ACCESSIBLE TOILET
+  # ============================================================
+  - id: "DEP-COD-057"
+    trigger: "public_building_accessibility"
+    required_items: ["ramp_1_in_12_gradient", "tactile_path_at_entry", "accessible_toilet_per_floor"]
+    trade: "finishing"
+    priority: 1
+    condition: ""
+    building_types: ["commercial", "hospital", "school", "hotel", "government", "retail_mall"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "RPwD Act 2016 / NBC Part 3"
+    note: "RPwD Act 2016 and NBC Part 3 Chapter 11 make barrier-free access mandatory for all public buildings: ramp gradient max 1:12 with handrails on both sides; tactile walking surface indicators (TWSI) from car park to building entry; at least one accessible unisex toilet per floor — non-compliance discovered during fire NOC or occupancy certificate process requires expensive retrofitting"
+
+  # ============================================================
+  # SWIMMING POOL - IS 3370 AND FINA SPEC
+  # ============================================================
+  - id: "DEP-COD-058"
+    trigger: "swimming_pool_construction"
+    required_items: ["is3370_water_tightness_test_pool", "fina_spec_check_competition_pool"]
+    trade: "specialist"
+    priority: 1
+    condition: ""
+    building_types: ["hotel", "residential_apartment", "sports"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 3370"
+    note: "Swimming pool shell is a liquid retaining structure designed per IS 3370 — water tightness test (fill and observe for 7 days, max 10mm drop) is mandatory before tiling; competition pools must also comply with FINA specifications for lane widths, depth, timing system, and lighting — non-compliant pools discovered after tiling require partial demolition"
+
+  # ============================================================
+  # HOSPITAL - MEDICAL GAS, CLEAN ROOM, INFECTION CONTROL
+  # ============================================================
+  - id: "DEP-COD-059"
+    trigger: "hospital_construction"
+    required_items: ["medical_gas_piping_is7484", "clean_room_classification", "infection_control_during_construction"]
+    trade: "medical"
+    priority: 1
+    condition: ""
+    building_types: ["hospital"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 7484 / NABH"
+    note: "Hospital medical gas piping (O2, N2O, vacuum, air) per IS 7484 must be pressure-tested, purged, and certified before commissioning; OT and ICU clean room classification (ISO class) requires HEPA filtration and particle count testing; infection control during construction (ICRA) prevents fungal spore contamination of clinical areas — NABH accreditation auditors specifically check all three"
+
+  # ============================================================
+  # SCHOOL - ACOUSTIC TREATMENT AND EMERGENCY ASSEMBLY
+  # ============================================================
+  - id: "DEP-COD-060"
+    trigger: "school_construction"
+    required_items: ["acoustic_treatment_classrooms", "emergency_assembly_area_designated"]
+    trade: "finishing"
+    priority: 1
+    condition: ""
+    building_types: ["school"]
+    room_types: ["classroom"]
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "NBC Part 8"
+    note: "NBC Part 8 specifies maximum reverberation time of 0.6 seconds for classrooms — acoustic panels or carpeting are needed especially in high-ceiling assemblies; emergency assembly area must be designated in site plan and marked on drawings as required by CBSE/CISCE affiliation norms and local fire NOC — schools without designated assembly areas are denied fire clearance"
+
+  # ============================================================
+  # IS 1893 SEISMIC ANALYSIS MANDATORY
+  # ============================================================
+  - id: "DEP-COD-061"
+    trigger: "structural_design_all_buildings"
+    required_items: ["seismic_load_analysis_is1893", "design_basis_report"]
+    trade: "structural"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 1893"
+    note: "IS 1893 makes seismic load analysis mandatory for all new buildings — the Design Basis Report (DBR) prepared by structural engineer defines seismic zone, importance factor, response reduction factor, and analysis method; structural drawings not accompanied by DBR are rejected by most municipal building plan approval authorities"
+
+  # ============================================================
+  # FIRE SAFETY - NOC REQUIREMENTS
+  # ============================================================
+  - id: "DEP-COD-062"
+    trigger: "fire_noc_application"
+    required_items: ["fire_noc_from_cfo", "fire_system_completion_certificate", "mock_drill_record"]
+    trade: "fire_safety"
+    priority: 1
+    condition: "building_above_15m_or_occupancy_above_500sqm"
+    building_types: [all]
+    room_types: []
+    min_floors: 5
+    min_area_sqm: 0
+    is_code_ref: "NBC Part 4"
+    note: "Fire NOC from Chief Fire Officer is mandatory before occupancy for all buildings above 15m or commercial buildings above 500 sqm — requires all fire systems installed and commissioned, certificate from installer, and mock drill conducted with staff; without fire NOC, occupancy certificate is not issued"
+
+  # ============================================================
+  # IS 875 WIND LOAD COMPLIANCE
+  # ============================================================
+  - id: "DEP-COD-063"
+    trigger: "structural_design"
+    required_items: ["wind_load_analysis_is875", "basic_wind_speed_zone_map"]
+    trade: "structural"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 875 Part 3"
+    note: "IS 875 Part 3 wind load analysis must use the correct basic wind speed from the zone map for the project location (50m/s for most coastal cities, 39m/s for inland areas) — using a lower wind speed to save steel is a code violation; wind load is the governing lateral load above 15 floors in moderate seismic zones"
+
+  # ============================================================
+  # LIFT INSTALLATION LICENSE
+  # ============================================================
+  - id: "DEP-COD-064"
+    trigger: "lift_installation"
+    required_items: ["lift_license_from_factory_inspectorate", "is14665_compliance_certificate"]
+    trade: "vertical_transport"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 4
+    min_area_sqm: 0
+    is_code_ref: "IS 14665"
+    note: "Lifts require IS 14665 compliance and a license from the Chief Inspector of Factories and Boilers (or equivalent state authority) before commissioning — unlicensed lifts operating in buildings are illegal and expose owners to criminal liability; license requires annual renewal and safety inspection"
+
+  # ============================================================
+  # FACADE GLASS SAFETY
+  # ============================================================
+  - id: "DEP-COD-065"
+    trigger: "glass_facade"
+    required_items: ["toughened_or_laminated_glass", "glass_testing_certificate", "wind_pressure_check_facade"]
+    trade: "facade"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 2553"
+    note: "IS 2553 and NBC Part 3 require toughened or laminated safety glass for facades above ground level — untoughened glass shatters into dangerous shards; glass thickness must be checked against wind pressure (IS 875 Part 3); glass test certificates from manufacturer (EN 12150 / IS 2553) must accompany supply"
+
+  # ============================================================
+  # STRUCTURAL STABILITY OF FAÇADE
+  # ============================================================
+  - id: "DEP-COD-066"
+    trigger: "external_cladding"
+    required_items: ["cladding_design_wind_load", "anchor_design_approved", "periodic_facade_audit"]
+    trade: "facade"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 3
+    min_area_sqm: 0
+    is_code_ref: "IS 875 Part 3"
+    note: "Cladding systems must be wind-load-designed for the project location — anchor pull-out capacity must exceed design load by a safety factor of at least 2; periodic facade audit every 5 years is required in many states after high-rise cladding failures; unverified cladding anchors have caused multiple façade collapses in Indian cities"
+
+  # ============================================================
+  # STP COMPLIANCE
+  # ============================================================
+  - id: "DEP-COD-067"
+    trigger: "stp_plant"
+    required_items: ["stp_effluent_quality_cpcb_standards", "stp_operator_trained"]
+    trade: "plumbing"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "CPCB Guidelines"
+    note: "CPCB consent-to-operate requires treated effluent to meet standards: BOD < 10 mg/L, COD < 50 mg/L, TSS < 10 mg/L for irrigation reuse; treated water must be monitored monthly and records kept; an untrained operator is a common cause of STP failure leading to environmental violations and fines from SPCB"
+
+  # ============================================================
+  # LABOUR AND WORKER WELFARE COMPLIANCE
+  # ============================================================
+  - id: "DEP-COD-068"
+    trigger: "construction_site"
+    required_items: ["bocw_registration", "bocw_cess_payment", "worker_welfare_facilities"]
+    trade: "preliminaries"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "BOCW Act 1996"
+    note: "BOCW (Building and Other Construction Workers) Act mandates registration of any project worth > Rs.10 lakhs with Labour Department; 1% cess on project cost must be paid; welfare facilities — potable water, sanitation, first aid, crèche for 10+ children — are statutory; non-compliance results in stoppage of work orders and penalties"
+
+  # ============================================================
+  # DG SET NOISE COMPLIANCE
+  # ============================================================
+  - id: "DEP-COD-069"
+    trigger: "dg_set_installation"
+    required_items: ["acoustic_enclosure_dg", "exhaust_muffler", "noise_level_below_75dba_at_1m"]
+    trade: "electrical"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "CPCB Noise Rules 2000"
+    note: "CPCB Noise Pollution Rules 2000 and IS 3043 require DG sets to have acoustic enclosures reducing noise to < 75 dB(A) at 1m from enclosure; exhaust stacks must discharge above roof level to prevent re-entry; noise violations attract shutdown notices from SPCB — apartment residents filing complaints against DG noise are increasingly successful"
+
+  # ============================================================
+  # POTABLE WATER QUALITY
+  # ============================================================
+  - id: "DEP-COD-070"
+    trigger: "potable_water_system"
+    required_items: ["water_quality_test_is10500", "chlorination_residual_0_2_ppm"]
+    trade: "plumbing"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 10500"
+    note: "IS 10500 specifies potable water quality — pH 6.5-8.5, TDS < 500 mg/L, no coliform; water testing at tank and at point of use before handover is required by most local authorities; residual chlorine of 0.2 ppm at delivery point prevents bacterial regrowth in the distribution system — particularly critical for hospitals and schools"
+
+  # ============================================================
+  # OHS PLAN AND SITE SAFETY
+  # ============================================================
+  - id: "DEP-COD-071"
+    trigger: "construction_safety"
+    required_items: ["written_safety_plan", "safety_officer_bocw", "ppe_mandatory_site"]
+    trade: "preliminaries"
+    priority: 1
+    condition: "project_above_50_workers"
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "BOCW Act 1996"
+    note: "BOCW Rules require a written safety plan and a qualified Safety Officer for sites employing > 50 workers; PPE (hard hat, safety shoes, harness at height > 2m) is mandatory; non-compliance is a criminal offence under the Act with imprisonment up to 3 months — labour inspectors routinely issue stop-work orders on non-compliant sites"
+
+  # ============================================================
+  # ELECTRICAL INSPECTOR APPROVAL
+  # ============================================================
+  - id: "DEP-COD-072"
+    trigger: "electrical_installation"
+    required_items: ["electrical_inspector_test_clearance", "cei_licensed_supervisor"]
+    trade: "electrical"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "CEA Regulations 2010"
+    note: "Central Electricity Authority (Technical Standards) Regulations 2010 require electrical installations above 250V to be inspected and cleared by the Electrical Inspector before energisation; work must be executed under the supervision of a CEI-licensed electrical engineer — unlicensed installations cannot be connected to DISCOM supply, blocking occupancy"
+
+  # ============================================================
+  # FIRE SEPARATION BETWEEN OCCUPANCIES
+  # ============================================================
+  - id: "DEP-COD-073"
+    trigger: "mixed_occupancy_building"
+    required_items: ["fire_rated_compartmentation_2hr", "fire_doors_at_compartment_boundary"]
+    trade: "fire_safety"
+    priority: 1
+    condition: ""
+    building_types: ["mixed_use", "commercial", "retail_mall"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "NBC Part 4"
+    note: "NBC Part 4 requires 2-hour fire-rated compartmentation between different occupancy types (e.g., residential above commercial) — this limits fire spread and allows safe evacuation of one zone while the other burns; fire-rated walls and floors must be continuous with no penetrations except through fire-rated assemblies with intumescent seals"
+
+  # ============================================================
+  # AIR POLLUTION CONTROL FOR CONCRETE BATCHING
+  # ============================================================
+  - id: "DEP-COD-074"
+    trigger: "on_site_batching_plant"
+    required_items: ["dust_suppression_batching", "spcb_consent_to_operate", "vehicle_wheel_wash"]
+    trade: "preliminaries"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "CPCB Air Quality Norms"
+    note: "On-site concrete batching plants require SPCB Consent-to-Operate for air emissions; dust suppression (water sprays, enclosures) is mandatory; vehicle wheel-wash before exiting site prevents road mud — in cities with Construction Dust Action Plans (Delhi, Mumbai), non-compliance attracts site closure and fines up to Rs.50,000/day"
+
+  # ============================================================
+  # PLAN APPROVAL AND COMMENCEMENT CERTIFICATE
+  # ============================================================
+  - id: "DEP-COD-075"
+    trigger: "construction_commencement"
+    required_items: ["approved_building_plan_on_site", "commencement_certificate_from_authority"]
+    trade: "statutory"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "Model Building Bye-Laws"
+    note: "Approved building plan and commencement certificate must be available on site at all times — building without approved plan is an illegal structure liable for demolition; municipal officers routinely check for approved drawings during site inspections; commencement certificate fixes the permitted parameters (height, FAR, setbacks) that cannot be deviated from without fresh approval"
+
+  # ============================================================
+  # STRUCTURAL PEER REVIEW FOR HIGH-RISE
+  # ============================================================
+  - id: "DEP-COD-076"
+    trigger: "high_rise_above_50m"
+    required_items: ["structural_peer_review", "independent_structural_reviewer_certificate"]
+    trade: "structural"
+    priority: 1
+    condition: "height_above_50m"
+    building_types: [all]
+    room_types: []
+    min_floors: 15
+    min_area_sqm: 0
+    is_code_ref: "Local Authority"
+    note: "Several state regulations (Maharashtra, Karnataka) require an independent structural peer review for buildings above 50m — an experienced structural engineer not associated with the project reviews the structural design for adequacy; this extra check catches design errors before construction, preventing costly retrofits or, in extreme cases, collapse"
+
+  # ============================================================
+  # CHILD PROTECTION FEATURES IN SCHOOLS
+  # ============================================================
+  - id: "DEP-COD-077"
+    trigger: "school_safety"
+    required_items: ["window_grills_max_100mm_gap", "staircase_balusters_max_100mm_gap", "safe_play_equipment"]
+    trade: "finishing"
+    priority: 1
+    condition: ""
+    building_types: ["school"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "NBC Part 4"
+    note: "NBC and school safety guidelines mandate window grills and staircase balusters with maximum 100mm gap to prevent children climbing through; play equipment must be verified safe (IS 15567); missing or inadequate child protection features are flagged during CBSE affiliation inspection and can result in school closure — liability claims for child accidents are significant"
+
+  # ============================================================
+  # NBC MINIMUM ROOM SIZES
+  # ============================================================
+  - id: "DEP-COD-078"
+    trigger: "habitable_room"
+    required_items: ["minimum_room_area_9_5sqm", "minimum_room_height_2_75m"]
+    trade: "architectural"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: ["bedroom", "living_room"]
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "NBC Part 3"
+    note: "NBC Part 3 mandates minimum floor area of 9.5 sqm for habitable rooms and minimum clear height of 2.75m (2.4m in mezzanine) — rooms below minimum dimensions are cited in building plan approvals as non-compliant and must be redesigned; undersized rooms also affect building valuation and RERA registration"
+
+  # ============================================================
+  # STRUCTURAL DESIGN DOCUMENTATION
+  # ============================================================
+  - id: "DEP-COD-079"
+    trigger: "structural_drawing_submission"
+    required_items: ["structural_design_report", "structural_drawings_signed_by_licensed_engineer"]
+    trade: "structural"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "Local Authority"
+    note: "All structural drawings submitted for building plan approval must be signed by a licensed structural engineer registered with the local body — unsigned or self-prepared structural drawings are rejected; the structural design report (design basis, load calculations, foundation design) must be retained on site and available for inspection throughout construction"
+
+  # ============================================================
+  # SOLAR WATER HEATER MANDATORY PROVISION
+  # ============================================================
+  - id: "DEP-COD-080"
+    trigger: "residential_apartment_above_10units"
+    required_items: ["solar_water_heater_provision", "rooftop_area_reserved_solar"]
+    trade: "electrical"
+    priority: 1
+    condition: "above_10_dwelling_units"
+    building_types: ["residential_apartment", "hotel", "hospital"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "Local Bylaws / ECBC 2017"
+    note: "Most state building rules and ECBC 2017 mandate solar water heater (SWH) provision for residential apartments above 10 units, hotels, and hospitals — rooftop structural load (typically 25 kg/sqm for SWH) must be accounted for in terrace slab design; SWH provision is checked during building plan approval and non-compliance can delay plan sanction"

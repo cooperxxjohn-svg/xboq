@@ -1,0 +1,1208 @@
+rules:
+- id: RFI-BT-HP-001
+  trigger_type: building_type
+  trigger_keywords:
+  - hospital
+  - medical gas
+  - oxygen
+  - vacuum
+  trigger_trade: medical
+  question_template: 'Hospital medical gas system specification not provided. Please confirm: (a) Gas types required (O2, N2O, medical vacuum, medical air, CO2, nitrogen), (b) Manifold type per gas — cylinder
+    manifold vs liquid tank with VIE, (c) Number and type of outlets per bed/room category (ICU, ward, OT, recovery), (d) Pipeline material — copper grade per IS 8365 or equivalent, (e) Zone valve box locations
+    and alarm panel specification, (f) Whether MGPS testing and validation (purge, pressure, cross-connection) is in scope.
+
+    '
+  why_it_matters: Medical gas is a life-critical system governed by IS 7524 and NABH. Gas type determines manifold sizing and piping specification. Pipeline material (DHP copper vs DLP copper) affects cost
+    by 20-30%. Zone valves are mandatory per NABH accreditation. Omitting any gas type or under-specifying outlets leads to costly retrofit during commissioning.
+  suggested_resolution: Provide a complete medical gas system specification covering gas types, manifold type, outlet schedule per department, pipeline material grade, zone valve layout, and testing/validation
+    scope
+  priority: critical
+  building_types:
+  - hospital
+  package: medical
+- id: RFI-BT-HP-002
+  trigger_type: building_type
+  trigger_keywords:
+  - hospital
+  - ot
+  - operation theatre
+  - operating room
+  trigger_trade: hvac
+  question_template: 'Operation theatre classification and HVAC specification not provided. Please confirm: (a) OT class per NABH — Class A (ultra-clean, laminar flow), Class B (conventional with HEPA),
+    or Class C (minor procedures), (b) Air change rate per hour required per class, (c) HEPA filter efficiency — H13 or H14, (d) Laminar flow system type — vertical or horizontal, full ceiling or partial
+    canopy, (e) Temperature range (20-24 deg C) and RH range (40-60%) with tolerance, (f) Pressure cascade specification — positive pressure differential between OT, scrub area, corridor, and sub-sterile
+    room.
+
+    '
+  why_it_matters: OT class directly determines HVAC capital cost — Class A (laminar flow with full canopy) costs 3-5x Class C (turbulent with basic filtration). Wrong specification risks patient safety,
+    infection control failure, and loss of NABH accreditation. Pressure cascade prevents cross-contamination and is mandatory for Class A and B.
+  suggested_resolution: Specify OT class per NABH for each operation theatre, with air change rate, HEPA grade, laminar/turbulent flow type, temperature/humidity control range, and pressure cascade schedule
+  priority: critical
+  building_types:
+  - hospital
+  package: hvac
+- id: RFI-BT-HP-003
+  trigger_type: building_type
+  trigger_keywords:
+  - hospital
+  - radiation
+  - xray
+  - x-ray
+  - ct scan
+  - mri
+  - radiology
+  trigger_trade: specialist
+  question_template: 'Radiation protection specification not provided for radiology and imaging rooms. Please confirm: (a) Lead lining thickness per room type — X-ray room (1.5-2.0 mm Pb), CT room (2.0-2.5
+    mm Pb), catheterization lab, (b) Lead-lined door and window frame specification, (c) AERB (Atomic Energy Regulatory Board) approval status and layout compliance, (d) Whether MRI room requires RF shielding
+    (Faraday cage) and specification, (e) MRI room — 5-gauss line demarcation and quench pipe provision, (f) Whether lead lining installation and testing is in building contractor scope or specialist vendor
+    scope.
+
+    '
+  why_it_matters: Lead thickness varies by equipment kVp/mA rating and room usage. Under-specification causes radiation leakage failing AERB inspection. MRI RF shielding (Faraday cage) costs 8-15 lakh per
+    room and requires specialist installation. AERB approval is mandatory before equipment commissioning. Scope ambiguity between building contractor and specialist vendor is a common dispute.
+  suggested_resolution: Provide radiation protection specification per AERB guidelines with lead thickness per room, door/window protection, RF shielding for MRI, 5-gauss line layout, quench pipe, and clear
+    scope assignment
+  priority: critical
+  building_types:
+  - hospital
+  package: specialist
+- id: RFI-BT-HP-004
+  trigger_type: building_type
+  trigger_keywords:
+  - hospital
+  - nurse call
+  - patient call
+  trigger_trade: electrical
+  question_template: 'Nurse call system specification not provided. Please confirm: (a) System type — wired IP-based or wireless, (b) Number of call points per bed — bedhead unit, toilet pull cord, bath
+    pull cord, (c) Display and annunciation — nurse station display panel, corridor dome light, zone indicator, (d) Integration with BMS or hospital information system (HIS), (e) Code blue (emergency) call
+    provision in ICU and critical areas, (f) Approved brand list and whether system is proprietary or open-protocol.
+
+    '
+  why_it_matters: Nurse call system is mandatory for NABH accreditation and patient safety. Wired IP systems require conduit and cabling installed during civil/electrical rough-in — late specification causes
+    wall chasing and rework. Wireless systems cost 30-50% more but avoid cabling. Code blue integration is critical for ICU.
+  suggested_resolution: Specify nurse call system type, call point schedule per department, display/annunciation locations, integration requirements, code blue provision, and approved brands
+  priority: high
+  building_types:
+  - hospital
+  package: electrical
+- id: RFI-BT-HP-005
+  trigger_type: building_type
+  trigger_keywords:
+  - hospital
+  - isolation
+  - negative pressure
+  - infection control
+  trigger_trade: hvac
+  question_template: 'Hospital isolation room specification not provided. Please confirm: (a) Number of negative-pressure isolation rooms required, (b) Negative pressure differential (minimum 2.5 Pa per
+    IS/ASHRAE), (c) Air change rate (minimum 12 ACH per CDC guidelines), (d) HEPA filtration on exhaust — H13 or H14, (e) Anteroom/vestibule requirement with pressure monitoring, (f) Whether isolation rooms
+    require independent AHU or can share with ward AHU with bypass dampers.
+
+    '
+  why_it_matters: Negative-pressure isolation rooms are mandatory for airborne infection control (TB, COVID). Independent AHU per isolation room costs 3-4x shared systems. Anteroom with pressure monitoring
+    is required per NABH and CDC. Wrong specification risks infection spread and regulatory non-compliance.
+  suggested_resolution: Specify number of isolation rooms, pressure differential, air changes, exhaust filtration, anteroom requirement, and AHU configuration (independent vs shared)
+  priority: critical
+  building_types:
+  - hospital
+  package: hvac
+- id: RFI-BT-SC-001
+  trigger_type: building_type
+  trigger_keywords:
+  - school
+  - laboratory
+  - science lab
+  - computer lab
+  trigger_trade: finishing
+  question_template: 'School laboratory specification and equipment scope not defined. Please confirm: (a) Number and type of labs — physics, chemistry, biology, computer, language, (b) Whether lab furniture
+    (benches, stools, fume hoods, reagent shelves) is in building scope, (c) Lab gas piping — LPG for Bunsen burners, compressed air, (d) Lab plumbing — sinks per bench, eye wash stations, acid- resistant
+    drainage, (e) Lab electrical — 15A sockets per bench, dedicated UPS for computer lab, emergency power-off switches, (f) Fume hood exhaust ductwork and fan specification.
+
+    '
+  why_it_matters: Lab equipment and furniture can represent 5-10% of school project cost. Fume hoods require dedicated exhaust ductwork routed to roof level. Acid-resistant drainage needs HDPE piping instead
+    of PVC. Computer lab UPS and structured cabling need early coordination. Omission leads to expensive post-construction retrofit.
+  suggested_resolution: Define lab scope including number/type of labs, furniture schedule, gas piping, plumbing (sinks, drainage material), electrical (sockets, UPS), and fume hood exhaust specification
+  priority: medium
+  building_types:
+  - school
+  package: finishing
+- id: RFI-BT-SC-002
+  trigger_type: building_type
+  trigger_keywords:
+  - school
+  - sports
+  - playground
+  - court
+  - ground
+  trigger_trade: external
+  question_template: 'School sports facility scope not defined. Please confirm: (a) Playground size and surface — natural grass, synthetic turf (FIFA-rated or recreational), rubberized track surface, (b)
+    Sports court types and surfaces — basketball (acrylic/PU), badminton (wooden/synthetic), tennis (acrylic/clay), volleyball, (c) Running track — 200m/400m, number of lanes, surface type (synthetic/cinder),
+    (d) Flood lighting — lux level per sport, pole height, lamp type (LED/metal halide), (e) Changing rooms, toilets, and equipment storage.
+
+    '
+  why_it_matters: Synthetic turf costs 5-10x natural grass and requires drainage sub-base. Sports court surfaces (PU vs acrylic vs wooden) vary 3-5x in cost. Running track surface selection affects both
+    cost and maintenance. Flood lighting at competition standard requires 300-500 lux vs 100-200 lux for practice.
+  suggested_resolution: Define sports scope with playground surface type, court types and surfaces, track specification, lighting levels, and support facilities
+  priority: medium
+  building_types:
+  - school
+  package: external
+- id: RFI-BT-SC-003
+  trigger_type: building_type
+  trigger_keywords:
+  - school
+  - assembly hall
+  - auditorium
+  - multipurpose hall
+  trigger_trade: finishing
+  question_template: 'School assembly hall / auditorium specification not defined. Please confirm: (a) Seating type — fixed tip-up chairs with writing arm, retractable bleachers, or loose chairs, (b) Seating
+    capacity and layout (flat floor vs raked/tiered), (c) Stage specification — proscenium, thrust, or flat; stage depth and height, (d) Acoustic treatment — wall panels, ceiling treatment, RT60 target,
+    (e) AV system — projector/LED screen, sound system, stage lighting, (f) Air conditioning — split/VRF/chilled water for assembly occupancy load.
+
+    '
+  why_it_matters: Fixed tiered seating with acoustic treatment costs 3-5x a flat-floor hall with loose chairs. Stage type determines structural requirements (pit, fly tower). Acoustic treatment is essential
+    for speech intelligibility but adds 15-25% to finishing cost. AV and sound systems can cost 10-30 lakh depending on specification.
+  suggested_resolution: Specify assembly hall seating type and capacity, stage configuration, acoustic treatment level, AV/sound/lighting systems, and HVAC for peak occupancy
+  priority: medium
+  building_types:
+  - school
+  package: finishing
+- id: RFI-BT-SC-004
+  trigger_type: building_type
+  trigger_keywords:
+  - school
+  - accessibility
+  - barrier free
+  - disabled
+  - pwd
+  trigger_trade: all
+  question_template: 'School accessibility and barrier-free compliance scope not defined. Please confirm: (a) Whether project must comply with RPWD Act 2016 and Harmonised Guidelines (CPWD), (b) Number
+    and location of ramps — gradient (1:12 max), width (1.8m min), handrail height, (c) Accessible toilet provision per floor, (d) Elevator requirement — whether building is G+1 or higher, stretcher-size
+    or standard, (e) Tactile paving for visually impaired — flooring type and locations, (f) Signage — Braille, raised letter, and pictogram at all key locations.
+
+    '
+  why_it_matters: RPWD Act 2016 compliance is mandatory for all government and aided schools. Ramps affect building footprint and landscape design. Accessible toilets require larger room sizes (2.0x2.2m
+    min). Elevators add 15-25 lakh per floor. Non-compliance risks building occupancy certificate refusal.
+  suggested_resolution: Confirm RPWD Act compliance scope including ramp locations and gradients, accessible toilet schedule, elevator requirement, tactile paving, and accessible signage
+  priority: high
+  building_types:
+  - school
+  package: all
+- id: RFI-BT-HT-001
+  trigger_type: building_type
+  trigger_keywords:
+  - hotel
+  - star rating
+  - classification
+  - star category
+  trigger_trade: all
+  question_template: 'Hotel star rating and classification not specified. Please confirm: (a) Target star rating — 3-star, 4-star, 5-star, or 5-star deluxe per Ministry of Tourism guidelines, (b) Whether
+    FHRAI (Federation of Hotel & Restaurant Associations of India) classification applies, (c) Minimum room size per rating — standard room, suite, executive, (d) Room count by category, (e) Common area
+    requirements per rating — lobby size, restaurant covers, conference/banquet capacity, (f) Finish level per rating — flooring, wall cladding, ceiling, bathroom specification.
+
+    '
+  why_it_matters: 'Star rating determines every aspect of hotel specification. 5-star room fitout costs 2-3x of 3-star per room (25-40 lakh vs 8-15 lakh). Minimum room sizes are mandated (5-star: 200 sqft
+    min, 3-star: 120 sqft min). Common area requirements (lobby, restaurants, banquet) affect building design. Wrong rating assumption causes fundamental scope and cost errors.'
+  suggested_resolution: Confirm target star rating with applicable standards, room sizes and counts by category, common area requirements, and finish level specification per rating
+  priority: high
+  building_types:
+  - hotel
+  package: all
+- id: RFI-BT-HT-002
+  trigger_type: building_type
+  trigger_keywords:
+  - hotel
+  - kitchen
+  - commercial kitchen
+  - kitchen equipment
+  trigger_trade: kitchen
+  question_template: 'Hotel commercial kitchen equipment scope not defined. Please confirm: (a) Whether kitchen equipment supply, installation, and commissioning is in building contractor scope or specialist
+    vendor scope, (b) Equipment list — cooking range, tandoor, oven, fryer, tilting pan, cold room (walk-in chiller and freezer), dishwasher, food prep tables, (c) Exhaust hood specification — type (wall-mounted/island),
+    airflow, grease filter (baffle/ electrostatic), fire suppression (wet chemical/CO2), (d) Cold room sizes, temperature ranges, and panel insulation thickness, (e) Utility requirements — gas, water, drainage,
+    electrical load per equipment, (f) Number of kitchens — main, banquet, specialty restaurant, staff cafeteria.
+
+    '
+  why_it_matters: Kitchen equipment can represent 5-10% of hotel project cost. Commercial kitchen exhaust with fire suppression is mandatory per NBC 2016. Cold rooms require dedicated compressor, drainage,
+    and 3-phase power. Late specification causes services coordination failure. Scope ambiguity between building contractor and kitchen vendor is a frequent dispute.
+  suggested_resolution: Provide kitchen equipment list with specifications, exhaust hood details, cold room requirements, utility schedule, scope assignment, and number of kitchens
+  priority: high
+  building_types:
+  - hotel
+  package: kitchen
+- id: RFI-BT-HT-003
+  trigger_type: building_type
+  trigger_keywords:
+  - hotel
+  - laundry
+  - linen
+  trigger_trade: mechanical
+  question_template: 'Hotel laundry facility specification not defined. Please confirm: (a) Whether laundry is in-house or outsourced — if outsourced, whether linen room only is in scope, (b) If in-house:
+    equipment list — washer-extractor capacity (kg), tumble dryer, flatwork ironer, dry cleaning machine, (c) Steam requirement — whether steam boiler is in laundry scope or shared with kitchen, (d) Ventilation
+    — exhaust rate, lint filtration, make-up air, (e) Drainage — floor drain capacity, lint trap specification, (f) Laundry room dimensions and layout per equipment schedule.
+
+    '
+  why_it_matters: In-house laundry equipment for a 200-room hotel costs 30-50 lakh. Steam boiler requirement (if not shared with kitchen) adds 15-25 lakh. High-capacity ventilation and drainage are critical
+    for lint and moisture control. Outsourced laundry eliminates equipment cost but requires linen storage and sorting room.
+  suggested_resolution: Confirm whether laundry is in-house or outsourced, and if in-house provide equipment list, steam requirement, ventilation, drainage, and room layout
+  priority: medium
+  building_types:
+  - hotel
+  package: mechanical
+- id: RFI-BT-HT-004
+  trigger_type: building_type
+  trigger_keywords:
+  - hotel
+  - swimming pool
+  - pool
+  - jacuzzi
+  trigger_trade: specialist
+  question_template: 'Hotel swimming pool specification not provided. Please confirm: (a) Pool size (length x width) and depth profile (shallow/deep end), (b) Indoor or outdoor — if indoor, dehumidification
+    system specification, (c) Pool heating — boiler, heat pump, or solar; target water temperature, (d) Filtration system — sand filter or cartridge, turnover rate (6-8 hours), (e) Pool finish — vitrified
+    tile, glass mosaic, or PVC liner, (f) Pool deck — material (stone/ tile/composite), slip resistance rating, (g) Whether children''s pool, jacuzzi, or infinity edge is included, (h) Pool chemical dosing
+    — manual or automatic.
+
+    '
+  why_it_matters: Pool cost varies 3-5x between basic outdoor (50 lakh) and premium indoor heated infinity pool (2-3 crore). Indoor pool requires dehumidification system costing 15-30 lakh. Heated pool
+    needs boiler or heat pump. Glass mosaic finish costs 3x vitrified tile. Infinity edge requires surge tank and additional pumps. Each option fundamentally changes cost and design.
+  suggested_resolution: Provide pool specification with dimensions, depth profile, indoor/outdoor, heating, filtration, finish material, deck material, accessories (children's pool, jacuzzi), and chemical
+    dosing type
+  priority: medium
+  building_types:
+  - hotel
+  package: specialist
+- id: RFI-BT-DC-001
+  trigger_type: building_type
+  trigger_keywords:
+  - data center
+  - data centre
+  - tier
+  - uptime
+  trigger_trade: all
+  question_template: 'Data center tier level and redundancy specification not provided. Please confirm: (a) Target tier per TIA-942 or Uptime Institute — Tier I (basic), Tier II (redundant components),
+    Tier III (concurrently maintainable), Tier IV (fault tolerant), (b) Target uptime — 99.671% (Tier I) to 99.995% (Tier IV), (c) Redundancy level for power — N, N+1, 2N, or 2(N+1), (d) Redundancy level
+    for cooling — N, N+1, 2N, (e) Concurrent maintainability requirement — whether any component can be serviced without IT load downtime, (f) Whether Uptime Institute certification is required (design,
+    constructed facility, operational).
+
+    '
+  why_it_matters: Tier level is the single most impactful specification for data center cost. Tier III (N+1) costs 30-50% more than Tier II in MEP infrastructure. Tier IV (2N) costs 80-100% more than Tier
+    III. Wrong tier assumption causes fundamental design errors in power, cooling, and structural systems. Uptime Institute certification adds design and documentation requirements.
+  suggested_resolution: Confirm target tier level with power and cooling redundancy, uptime requirement, concurrent maintainability, and whether Uptime Institute certification is required
+  priority: critical
+  building_types:
+  - data_center
+  package: all
+- id: RFI-BT-DC-002
+  trigger_type: building_type
+  trigger_keywords:
+  - data center
+  - cooling
+  - precision ac
+  - crac
+  - crah
+  - pue
+  trigger_trade: hvac
+  question_template: 'Data center cooling system specification not provided. Please confirm: (a) Cooling system type — precision AC (DX), chilled water (CRAH), indirect evaporative, rear-door heat exchangers,
+    or liquid cooling, (b) Design power density per rack — kW/rack (5 kW standard, 10-15 kW high density, 30+ kW AI/HPC), (c) Cooling redundancy — N+1, 2N per tier requirement, (d) Containment type — hot
+    aisle, cold aisle, or chimney cabinet, (e) PUE (Power Usage Effectiveness) target — 1.2-1.6 range, (f) Free cooling hours — whether economizer mode is specified for Indian climate zone, (g) Chilled
+    water temperature — standard (7/12 deg C) or elevated (15/21 deg C for higher PUE).
+
+    '
+  why_it_matters: Cooling represents 30-40% of data center capital cost and 40-50% of operating cost. Power density per rack (5 kW vs 15 kW vs 30 kW) fundamentally changes cooling system design. PUE target
+    below 1.3 requires free cooling or liquid cooling. Hot/cold aisle containment improves efficiency by 20-30% but adds infrastructure cost. Wrong specification leads to either stranded cooling capacity
+    or thermal hotspots.
+  suggested_resolution: Specify cooling system type, design power density per rack, redundancy level, containment type, PUE target, free cooling provision, and chilled water temperature
+  priority: critical
+  building_types:
+  - data_center
+  package: hvac
+- id: RFI-BT-DC-003
+  trigger_type: building_type
+  trigger_keywords:
+  - data center
+  - ups
+  - power density
+  - electrical
+  - genset
+  trigger_trade: electrical
+  question_template: 'Data center electrical and power distribution specification not provided. Please confirm: (a) Total IT load in kW/MW and growth provision, (b) UPS type — static (transformer-based
+    or transformerless), rotary, or lithium-ion, (c) UPS redundancy — N+1 or 2N per tier, (d) Battery runtime — 5 min, 10 min, or 15 min, (e) Generator redundancy and fuel storage duration (24/48/72 hours),
+    (f) Power distribution — PDU type (basic/ metered/switched), busway vs cable, (g) Whether dual utility feed from separate substations is required.
+
+    '
+  why_it_matters: Electrical infrastructure is 25-35% of data center cost. UPS selection (static vs rotary vs lithium-ion) affects footprint, efficiency, and cost by 20-40%. Battery runtime and generator
+    fuel storage determine site resilience. PDU type affects monitoring and control capability. Dual utility feed requires separate HT infrastructure doubling incoming power cost.
+  suggested_resolution: Specify total IT load, UPS type and redundancy, battery runtime, generator redundancy and fuel duration, PDU type, and utility feed configuration
+  priority: critical
+  building_types:
+  - data_center
+  package: electrical
+- id: RFI-BT-IN-001
+  trigger_type: building_type
+  trigger_keywords:
+  - factory
+  - industrial
+  - process
+  - manufacturing
+  trigger_trade: all
+  question_template: 'Boundary between process equipment and building construction scope is unclear. Please confirm: (a) Whether process equipment foundations (dynamic/vibration-isolated) are in building
+    contractor scope, (b) Process piping vs building plumbing boundary — from which point does building scope end, (c) Process electrical (motor feeders, MCC panels, instrumentation) vs building electrical
+    boundary, (d) Process ventilation (LEV, fume extraction) vs building HVAC boundary, (e) Utility supply to process — compressed air, nitrogen, steam, cooling water — who provides from plant room to point
+    of use, (f) Whether process equipment erection platform/mezzanine is in building scope.
+
+    '
+  why_it_matters: Process vs building scope is the most common source of claims and disputes in industrial projects. Process equipment foundations require vibration analysis and dynamic loading which civil
+    contractors may not have expertise for. Unclear utility boundaries lead to gaps — neither party provisions the connection. This ambiguity can represent 10-20% of project cost.
+  suggested_resolution: Provide a clear scope demarcation matrix covering foundations, piping, electrical, ventilation, utility connections, and structural platforms with specific boundary points
+  priority: critical
+  building_types:
+  - factory
+  package: all
+- id: RFI-BT-IN-002
+  trigger_type: building_type
+  trigger_keywords:
+  - factory
+  - crane
+  - eot
+  - gantry
+  - overhead crane
+  trigger_trade: structural
+  question_template: 'EOT (Electric Overhead Travelling) crane specification not provided. Please confirm: (a) Crane capacity in tonnes — SWL (Safe Working Load), (b) Crane span — centre to centre of rails,
+    (c) Lift height — from finished floor to hook at highest position, (d) Class of duty per IS 807 — light (M3), medium (M5), heavy (M7), very heavy (M8), (e) Single girder or double girder, (f) Crane
+    rail specification — rail section, brackets, end stops, (g) Power supply — busbar or festoon cable, supply voltage, (h) Whether crane supply, erection, and testing is in building contractor scope or
+    separate crane vendor scope.
+
+    '
+  why_it_matters: Crane capacity directly determines crane beam, column, and foundation design. A 20T crane requires column sections 2-3x heavier than a 5T crane. Crane duty class affects fatigue design
+    of connections. Crane rail misalignment tolerance is 1mm per 3m — requiring precision in steel erection. Wrong specification means structural redesign. Scope ambiguity between building and crane vendor
+    is a frequent dispute.
+  suggested_resolution: Provide crane specification with SWL, span, lift height, duty class, girder type, rail specification, power supply, and clear scope assignment
+  priority: high
+  building_types:
+  - factory
+  package: structural
+- id: RFI-BT-IN-003
+  trigger_type: building_type
+  trigger_keywords:
+  - factory
+  - floor loading
+  - forklift
+  - heavy equipment
+  - mhe
+  trigger_trade: structural
+  question_template: 'Factory floor loading specification not provided. Please confirm: (a) Floor live load — uniform distributed load (UDL) in kN/sqm per zone (production, storage, circulation), (b) Point
+    load from MHE (Material Handling Equipment) — forklift axle load (tonnes), wheel spacing, wheel contact area, (c) Floor flatness requirement — FM2 (defined movement), DM2 (random movement), or general
+    industrial, (d) Floor finish — VDF (vacuum dewatered flooring), dry shake hardener, epoxy coating, (e) Joint layout — saw-cut joint spacing, armoured joints at doorways, (f) Floor thickness and reinforcement
+    — whether designed for racking point loads.
+
+    '
+  why_it_matters: Factory floor is typically 8-15% of building cost. Floor thickness ranges from 150mm (light industrial) to 300mm+ (heavy loading). FM2 flatness for VNA (Very Narrow Aisle) forklifts requires
+    specialist contractors and costs 30-50% more than general industrial floor. Wrong specification causes floor cracking, racking instability, or forklift operational issues.
+  suggested_resolution: Specify floor loading per zone (UDL and point loads), MHE wheel loads, flatness classification, finish type, joint layout, and design for racking loads
+  priority: high
+  building_types:
+  - factory
+  package: structural
+- id: RFI-BT-IN-004
+  trigger_type: building_type
+  trigger_keywords:
+  - factory
+  - etp
+  - effluent
+  - stp
+  - waste water
+  trigger_trade: plumbing
+  question_template: 'ETP (Effluent Treatment Plant) specification not provided. Please confirm: (a) ETP capacity in KLD (kilolitres per day), (b) Influent characteristics — BOD, COD, TSS, pH, heavy metals,
+    oil and grease, (c) Treatment process — primary (screening, equalization), secondary (activated sludge/MBBR/SBR), tertiary (sand filter, activated carbon, UF/RO), (d) Discharge standard — CPCB norms
+    for inland surface water, land disposal, or ZLD (Zero Liquid Discharge), (e) Whether ETP civil works (tanks, clarifiers) and equipment are both in scope, (f) Sludge handling and disposal — filter press,
+    sludge drying beds.
+
+    '
+  why_it_matters: ETP is mandatory for most factories under CPCB/SPCB regulations. ETP cost varies 5-10x depending on treatment level — primary treatment (5-10 lakh) vs ZLD system (1-5 crore). Influent
+    characteristics determine treatment process selection. Wrong specification risks CPCB non-compliance, factory closure orders, and environmental penalties.
+  suggested_resolution: Provide ETP specification with capacity, influent characteristics, treatment process, discharge standards, scope (civil + equipment), and sludge handling
+  priority: high
+  building_types:
+  - factory
+  package: plumbing
+- id: RFI-BT-HR-001
+  trigger_type: building_type
+  trigger_keywords:
+  - high rise
+  - high-rise
+  - highrise
+  - tower
+  - skyscraper
+  - tall building
+  trigger_trade: structural
+  question_template: 'High-rise structural system not specified. Please confirm: (a) Structural system type — RCC frame with shear walls, flat slab with shear core, composite (steel-concrete), or precast,
+    (b) Number of basements and their structural system (raft/pile foundation, retaining wall type — diaphragm wall, secant pile, contiguous pile), (c) Wind load design — basic wind speed, terrain category,
+    whether wind tunnel study is required for buildings above 150m, (d) Seismic zone and response reduction factor, (e) Foundation type — isolated, raft, piled raft, or barrette, (f) Transfer structure
+    — whether transfer beams/plates are required for podium-to-tower transition.
+
+    '
+  why_it_matters: Structural system selection for high-rise affects cost by 20-40%. Flat slab systems reduce floor-to-floor height saving facade and services cost. Composite construction reduces column
+    sizes gaining carpet area. Basement retaining wall type depends on soil and water table — diaphragm wall costs 2-3x contiguous pile. Wind tunnel study is mandatory per IS 875 for buildings above 150m.
+    Transfer structures at podium level can cost 2-5 crore per floor.
+  suggested_resolution: Specify structural system, basement construction method, wind load parameters (with wind tunnel if applicable), seismic design parameters, foundation type, and transfer structure
+    requirements
+  priority: critical
+  building_types:
+  - high_rise
+  package: structural
+- id: RFI-BT-HR-002
+  trigger_type: building_type
+  trigger_keywords:
+  - high rise
+  - high-rise
+  - facade
+  - curtain wall
+  - cladding
+  - acp
+  - glass
+  trigger_trade: facade
+  question_template: 'High-rise facade system specification not provided. Please confirm: (a) Facade system type — aluminium curtain wall (stick/unitized), ACP cladding, stone cladding, precast concrete
+    panels, or combination, (b) Glass specification — type (DGU/SGU), coating (low-e, solar control), thickness, (c) Facade performance requirements — U-value, SHGC, air infiltration, water penetration,
+    structural wind load, (d) Whether facade mock-up and testing (AAMA/CWCT) is required, (e) Facade access system — BMU (Building Maintenance Unit) or rope access provision, (f) Facade fire barrier and
+    spandrel panel specification per NBC 2016.
+
+    '
+  why_it_matters: Facade is typically 15-25% of high-rise construction cost. Unitized curtain wall costs 2-3x stick system but enables faster installation. DGU with low-e coating costs 2x SGU but is often
+    mandatory per ECBC. Fire barriers at each floor slab edge are mandatory per NBC 2016. BMU provision requires structural loading at roof level. Wrong facade specification causes both cost overruns and
+    performance failures.
+  suggested_resolution: Specify facade system type, glass specification with performance requirements, testing standard, BMU provision, and fire barrier/spandrel details
+  priority: critical
+  building_types:
+  - high_rise
+  package: facade
+- id: RFI-BT-HR-003
+  trigger_type: building_type
+  trigger_keywords:
+  - high rise
+  - high-rise
+  - fire
+  - refuge
+  - pressurization
+  - nbc
+  trigger_trade: fire
+  question_template: 'High-rise fire and life safety specification not provided. Please confirm: (a) NBC 2016 compliance tier — building height category (15-24m, 24-45m, 45-60m, above 60m), (b) Staircase
+    pressurization — number of pressurized staircases, design pressure differential, fan capacity, (c) Refuge area/floor — number, location, fire rating, ventilation, (d) Fireman''s lift — number, capacity,
+    protected lobby specification, (e) Fire command centre location and equipment, (f) Automatic sprinkler system — whether wet riser, dry riser, or combined; sprinkler density per floor type, (g) Smoke
+    management — whether atrium smoke exhaust or floor-level smoke extraction.
+
+    '
+  why_it_matters: NBC 2016 fire safety requirements increase significantly with building height. Buildings above 24m require pressurized staircases and fireman's lift. Above 45m, refuge floors are mandatory
+    every 15m of height. Staircase pressurization system costs 15-30 lakh per staircase. Refuge area reduces saleable/leasable floor area. Fire command centre is mandatory above 45m. Non-compliance prevents
+    fire NOC and occupancy certificate.
+  suggested_resolution: Specify NBC 2016 height category, staircase pressurization, refuge area locations, fireman's lift, fire command centre, sprinkler system type, and smoke management strategy
+  priority: critical
+  building_types:
+  - high_rise
+  package: fire
+- id: RFI-BT-RT-001
+  trigger_type: building_type
+  trigger_keywords:
+  - retail
+  - mall
+  - shopping
+  - tenant
+  - base building
+  trigger_trade: all
+  question_template: 'Tenant vs base building scope demarcation not defined. Please confirm: (a) Base building scope per retail unit — whether it includes screed floor, plastered walls, basic ceiling, or
+    bare shell only, (b) HVAC provision — whether base building provides full AC, chilled water stub, or condenser water loop per unit, (c) Electrical provision per unit — power density (W/sqm), meter board,
+    distribution board, or main cable only, (d) Fire sprinkler — whether base building installs sprinklers inside each unit or only in common areas, (e) Plumbing — whether F&B units get water/drainage stub-outs
+    in base building, (f) Ceiling — whether base building provides grid ceiling or exposed soffit.
+
+    '
+  why_it_matters: Tenant vs base building scope is the primary cost and contract demarcation in mall projects. Ambiguity leads to both landlord and tenant contractors either double-counting or omitting
+    items. Full AC provision vs chilled water stub changes HVAC cost by 30-50%. Sprinkler inside units vs common area only affects fire safety compliance. This demarcation affects every trade and determines
+    bid pricing.
+  suggested_resolution: Provide detailed base building scope per unit type (retail, F&B, anchor, kiosk) covering structure, finishes, HVAC, electrical, fire, and plumbing provisions
+  priority: high
+  building_types:
+  - retail_mall
+  package: all
+- id: RFI-BT-RT-002
+  trigger_type: building_type
+  trigger_keywords:
+  - mall
+  - food court
+  - exhaust
+  - kitchen exhaust
+  - f&b
+  trigger_trade: hvac
+  question_template: 'Food court and F&B exhaust system scope not defined. Please confirm: (a) Number of food court outlets and F&B restaurants, (b) Whether individual exhaust per outlet or common riser
+    with branch connections, (c) Exhaust airflow capacity per outlet (CFM) based on hood size, (d) Grease filter type — baffle filter (basic), UV electrostatic (premium), or combination, (e) Fire suppression
+    in kitchen hood — wet chemical per NFPA 96 or NBC 2016, (f) Exhaust discharge — rooftop discharge with odor control (carbon filter/ozone) or not, (g) Make-up air provision per kitchen.
+
+    '
+  why_it_matters: Food court exhaust is one of the most complex and expensive HVAC systems in a mall, costing 30-80 lakh depending on number of outlets and specification. Individual vs common exhaust system
+    fundamentally changes ductwork routing and cost. Fire suppression in kitchen hoods is mandatory per NBC 2016 and NFPA 96. Odor control at discharge prevents complaints from adjacent buildings and is
+    increasingly mandated by municipal authorities.
+  suggested_resolution: Define food court exhaust scope with number of outlets, system configuration, airflow per outlet, grease filtration type, fire suppression, odor control, and make-up air
+  priority: high
+  building_types:
+  - retail_mall
+  package: hvac
+- id: RFI-BT-RT-003
+  trigger_type: building_type
+  trigger_keywords:
+  - mall
+  - atrium
+  - common area
+  - escalator
+  trigger_trade: finishing
+  question_template: 'Mall common area and atrium specification not defined. Please confirm: (a) Atrium height and whether atrium skylight/glazing is included, (b) Atrium smoke exhaust system — mechanical
+    or natural ventilation, CFD analysis required, (c) Common area flooring — material (granite/marble/vitrified tile/terrazzo), (d) Common area ceiling — type (plaster/metal/GRG), height, feature lighting,
+    (e) Escalator and travelator — number, width, rise, brand specification, (f) Common area signage and wayfinding — type, material, whether illuminated.
+
+    '
+  why_it_matters: Atrium height affects structural cost, smoke exhaust design, and facade specification. Atrium smoke exhaust per NBC 2016 requires CFD analysis costing 5-10 lakh and mechanical systems
+    costing 20-50 lakh. Common area flooring and ceiling specification varies 3-5x between basic and premium. Escalators cost 25-40 lakh each. These elements define the mall's visual identity and customer
+    experience.
+  suggested_resolution: Specify atrium dimensions and glazing, smoke exhaust strategy, common area flooring and ceiling materials, escalator/travelator schedule, and signage specification
+  priority: high
+  building_types:
+  - retail_mall
+  package: finishing
+- id: RFI-BT-WH-001
+  trigger_type: building_type
+  trigger_keywords:
+  - warehouse
+  - racking
+  - storage
+  - pallet
+  trigger_trade: specialist
+  question_template: 'Warehouse racking system specification not defined. Please confirm: (a) Whether racking supply and installation is in building contractor scope or specialist vendor scope, (b) Racking
+    type — selective, double-deep, drive-in/drive- through, pushback, pallet flow, or ASRS (automated), (c) Load per pallet position (kg) and maximum stacking height, (d) Clear height requirement — underside
+    of lowest beam/truss to FFL, (e) Floor flatness requirement — FM2 class (for VNA forklift), DM2 class (for reach truck), or general industrial, (f) Whether in-rack sprinkler is required based on commodity
+    classification and storage height per NFPA 13.
+
+    '
+  why_it_matters: 'Racking specification drives three critical building design parameters: (1) clear height determines structural steel cost — every additional meter of height increases steel weight by
+    10-15%, (2) floor flatness for VNA operations requires FM2 tolerance costing 30-50% more than general floors, (3) storage height above 5.5m triggers in-rack sprinkler requirement per NFPA 13, adding
+    15-25% to fire protection cost. Wrong specification causes either over-design or operational failure.'
+  suggested_resolution: Provide racking specification with type, pallet loads, stacking height, scope assignment, floor flatness class, and confirm whether in-rack sprinkler is required
+  priority: high
+  building_types:
+  - warehouse
+  package: specialist
+- id: RFI-BT-WH-002
+  trigger_type: building_type
+  trigger_keywords:
+  - warehouse
+  - dock
+  - loading bay
+  - leveller
+  trigger_trade: structural
+  question_template: 'Warehouse loading dock specification not provided. Please confirm: (a) Number of dock positions — shipping, receiving, and combined, (b) Dock type — depressed dock (sunken approach)
+    or at-grade with dock leveller, (c) Dock leveller type — mechanical, hydraulic, or air-powered; capacity (tonnes), (d) Dock shelter/seal type — inflatable, compression, or curtain, (e) Dock door size
+    — width and height for truck type (LCV/HCV/container), (f) Dock bumpers — rubber or spring loaded, (g) Whether separate van/LCV loading area is required at grade level.
+
+    '
+  why_it_matters: Loading dock is the operational interface of a warehouse. Depressed dock requires earthwork and retaining walls costing 2-3x at-grade dock with leveller. Hydraulic dock leveller costs
+    2x mechanical but handles heavier loads. Wrong dock door size prevents container truck access. Number of dock positions determines building length and operational throughput. Dock specification must
+    match vehicle fleet and operational volume.
+  suggested_resolution: Specify number of dock positions, dock type (depressed vs at-grade), leveller type and capacity, shelter type, door sizes, and whether separate LCV area is needed
+  priority: high
+  building_types:
+  - warehouse
+  package: structural
+- id: RFI-BT-WH-003
+  trigger_type: building_type
+  trigger_keywords:
+  - warehouse
+  - cold storage
+  - temperature controlled
+  - frozen
+  trigger_trade: specialist
+  question_template: 'Warehouse temperature-controlled storage specification not provided. Please confirm: (a) Whether temperature-controlled zones are required — ambient, chilled (2-8 deg C), frozen (-18
+    to -25 deg C), (b) Cold room panel specification — insulation material (PUF/PIR), thickness per temperature zone, (c) Refrigeration system — type (DX/brine/ammonia/CO2), cooling capacity per zone, (d)
+    Cold room flooring — insulated floor with heater to prevent frost heave, (e) Ante-room/air curtain at cold room entry, (f) Temperature monitoring and alarm system, (g) Whether cold room is in building
+    contractor scope or specialist cold storage vendor scope.
+
+    '
+  why_it_matters: Cold storage construction costs 3-5x ambient warehouse per sqm. Frozen storage (-25 deg C) requires 150-200mm PUF insulation vs 80-100mm for chilled. Floor insulation with heating cable
+    to prevent frost heave is mandatory for frozen storage. Ammonia refrigeration is most efficient but requires safety systems per SMPV rules. Scope ambiguity between building contractor and cold storage
+    specialist is a major dispute source.
+  suggested_resolution: Specify temperature zones with areas, insulation panel specification, refrigeration system type and capacity, insulated floor details, monitoring system, and scope assignment
+  priority: high
+  building_types:
+  - warehouse
+  package: specialist
+- id: RFI-BT-HP-006
+  trigger_type: building_type
+  trigger_keywords:
+  - hospital
+  - NABH
+  - accreditation
+  - healthcare compliance
+  trigger_trade: all
+  question_template: 'NABH (National Accreditation Board for Hospitals) compliance requirements have not been addressed in the BOQ for {area}. Please confirm:
+
+    (a) Is NABH accreditation being targeted — Entry level, NABH, or NABH full? What is the target timeline?
+
+    (b) NABH-specific construction requirements — isolation rooms (number, negative pressure), clean corridors, soiled corridors (traffic separation)?
+
+    (c) Flooring — seamless coving between wall and floor in OT, ICU, and clean areas?
+
+    (d) Wall finish — anti-bacterial coating or seamless finish required for infection control zones?
+
+    '
+  why_it_matters: NABH accreditation is increasingly required by major healthcare operators and health insurance companies. NABH standards specify infection control infrastructure — negative pressure isolation
+    rooms, traffic separation, seamless coved flooring, anti-bacterial surfaces in clinical areas. These requirements add 15-25% to finishing cost in clinical areas versus standard construction. Without
+    addressing NABH requirements at BOQ stage, major rework is needed post-construction to achieve accreditation.
+  suggested_resolution: Confirm NABH accreditation target and timeline. Provide NABH-specific construction specification for each clinical zone (OT, ICU, ward, isolation). Include traffic separation planning,
+    seamless coved flooring, and infection control finishes in BOQ.
+  priority: high
+  building_types:
+  - hospital
+  package: all
+- id: RFI-BT-HP-007
+  trigger_type: building_type
+  trigger_keywords:
+  - hospital
+  - medical gas piping
+  - MGPS
+  - oxygen piping hospital
+  trigger_trade: medical
+  question_template: 'Medical gas piping system (MGPS) is not included in BOQ despite hospital items being present at {area}. Please confirm:
+
+    (a) Gas types required — O2, N2O, medical vacuum, medical air, CO2, and anaesthetic gas scavenging (AGSS)?
+
+    (b) Copper pipe grade per IS 8365 — Type K (thick wall for oxygen) or Type L?
+
+    (c) Outlet schedule per room type — number and type of outlets in ICU, OT, ward, recovery, and emergency?
+
+    (d) Zone valve box (ZVB) locations per NABH requirement — one per department?
+
+    '
+  why_it_matters: Medical gas piping is a life-critical system with zero tolerance for error. Copper piping must be cleaned, capped, and pressure-tested before handover per IS 7524. Cross-connection between
+    different gas pipelines is a patient safety catastrophe — zone valve boxes enable department-level isolation. Omitting MGPS from BOQ is a common oversight in hospitals designed by non-specialist consultants.
+    MGPS cost is INR 50-200 lakh depending on hospital size — a significant scope gap.
+  suggested_resolution: Add MGPS to BOQ with complete gas type list, pipe grade per IS 8365, outlet schedule per department, zone valve box locations, manifold specification, and IS 7524/NABH testing requirements.
+  priority: critical
+  building_types:
+  - hospital
+  package: medical
+- id: RFI-BT-HP-008
+  trigger_type: building_type
+  trigger_keywords:
+  - hospital
+  - HEPA filtration
+  - OT HVAC
+  - ICU air filtration
+  - clean room hospital
+  trigger_trade: hvac
+  question_template: 'HEPA filtration specification for OT and ICU has not been provided for {area}. Please confirm:
+
+    (a) HEPA filter grade — H13 (99.95% efficiency at MPPS) for ICU, or H14 (99.995%) for OT?
+
+    (b) Filter stages — pre-filter (G4), medium filter (F7/F9), and terminal HEPA — all three stages required?
+
+    (c) HEPA terminal diffuser or ceiling modules — location, number, and type for laminar flow?
+
+    (d) Filter replacement access — is there a safe-change housing (bag-in/bag-out) for HEPA filter replacement?
+
+    '
+  why_it_matters: HEPA filtration is the primary infection control measure in OT and ICU. H14 HEPA removes 99.995% of particles >0.3 microns, preventing airborne infection (MRSA, Aspergillus). Three-stage
+    filtration protects HEPA filters from loading, extending life. Safe-change HEPA housing is mandatory in oncology and transplant OTs — contaminated filter change without it exposes maintenance staff
+    to pathogens. Specifying only "HEPA filtration" without grade and stages leads to under-specification.
+  suggested_resolution: Specify HEPA filter grade (H13 minimum for ICU, H14 for OT), filtration stages, terminal diffuser type, and safe-change housing for critical areas. Validate specification against
+    NABH guidelines.
+  priority: critical
+  building_types:
+  - hospital
+  package: hvac
+- id: RFI-BT-HT-005
+  trigger_type: building_type
+  trigger_keywords:
+  - hotel
+  - star category
+  - hotel rating
+  - hotel grade
+  trigger_trade: all
+  question_template: 'Hotel star category and associated finish grade have not been specified for {area}. Please confirm:
+
+    (a) Target star rating — 3-star, 4-star, or 5-star per Ministry of Tourism guidelines?
+
+    (b) Minimum room sizes by category — standard, superior, deluxe, and suite dimensions?
+
+    (c) Finish grade per star rating — flooring, wall cladding, bathroom fixtures, and furniture grade?
+
+    (d) Branded hotel — is there a brand standard manual (e.g., Marriott, Hyatt, Accor) that overrides generic specification?
+
+    '
+  why_it_matters: Star rating is the single most impactful design decision for a hotel — it determines every specification. 5-star room fitout (INR 25-40 lakh per key) is 2-3x the cost of a 3-star room
+    (INR 8-15 lakh per key). Branded hotels (Marriott, IHG, Hyatt) have detailed brand standard manuals that specify everything from tile size to towel bar height — deviations require brand approval. Without
+    star category, finish specification is guesswork. Underestimation here leads to massive cost overruns.
+  suggested_resolution: Confirm target star rating. If branded hotel, provide brand standard manual. Define room size minimums per category. Provide finish grade specification aligned with star rating and
+    brand requirements.
+  priority: critical
+  building_types:
+  - hotel
+  package: all
+- id: RFI-BT-HT-006
+  trigger_type: building_type
+  trigger_keywords:
+  - hotel
+  - GRMS
+  - guest room management
+  - hotel automation
+  - room control system
+  trigger_trade: electrical
+  question_template: 'Guest Room Management System (GRMS) / hotel room control system has not been included in BOQ for {area}. Please confirm:
+
+    (a) Is GRMS required — for which star category is it mandatory per hotel brand standards?
+
+    (b) GRMS features required — DND/MUR panel, bedside control panel, welcome lighting scene, occupancy sensor?
+
+    (c) Integration — GRMS linked to HVAC thermostat, curtain motor, TV, and hotel PMS?
+
+    (d) Cabling — what pre-installed conduit and cable is needed for GRMS during civil construction?
+
+    '
+  why_it_matters: GRMS is standard in 4-star and above hotels and required by many brands (Hilton, Marriott, IHG). GRMS cost is INR 1-3 lakh per room — for a 200-room hotel, this is INR 2-6 crore. GRMS
+    requires pre-installed conduit from bedhead wall to MDF — retrofitting after plastering is very expensive. Integration with HVAC (energy saving when room unoccupied) can reduce hotel energy consumption
+    by 15-25%. Late specification of GRMS is a perennial hotel project problem.
+  suggested_resolution: Confirm GRMS requirement per brand standards and hotel category. Add GRMS to BOQ with feature list, integration scope, cabling specification, and pre-installation conduit/box requirements
+    during civil stage.
+  priority: high
+  building_types:
+  - hotel
+  package: electrical
+- id: RFI-BT-SC-005
+  trigger_type: building_type
+  trigger_keywords:
+  - school
+  - classroom acoustic
+  - classroom noise
+  - learning environment acoustic
+  trigger_trade: finishing
+  question_template: 'Classroom acoustic treatment has not been specified for {area}. Please confirm:
+
+    (a) Reverberation time target — RT60 of 0.6 seconds for classrooms per CBSE/NCERT guidelines?
+
+    (b) Acoustic treatment method — acoustic ceiling tiles (NRC 0.65+), wall panels, or a combination?
+
+    (c) External noise intrusion — STC of classroom walls and windows to exclude external traffic noise?
+
+    (d) Is noise from adjoining classrooms or corridors a concern — STC requirement for internal partitions?
+
+    '
+  why_it_matters: Research shows that classroom reverberation time above 0.8 seconds reduces speech intelligibility and learning outcomes. Standard construction (plaster walls, terrazzo floor) results in
+    RT60 of 1.2-1.8 seconds — far above the optimal 0.6 seconds. Acoustic ceiling tiles cost 2-3x standard gypsum tiles but are essential for learning quality. External noise masking can reduce effective
+    teaching time by 20-30% in urban schools near main roads. Acoustic treatment is rarely in school project BOQs but is a critical quality factor.
+  suggested_resolution: Add classroom acoustic treatment to BOQ with RT60 target of 0.6 seconds. Specify acoustic ceiling tiles (NRC ≥0.65), wall panel locations, and window/wall STC for external noise
+    control.
+  priority: medium
+  building_types:
+  - school
+  package: finishing
+- id: RFI-BT-SC-006
+  trigger_type: building_type
+  trigger_keywords:
+  - school
+  - drinking water filtration
+  - water purifier school
+  - RO school
+  trigger_trade: plumbing
+  question_template: 'Drinking water filtration system for students has not been specified for {area}. Please confirm:
+
+    (a) Treatment type — RO (reverse osmosis), UV, or combined RO+UV based on source water quality?
+
+    (b) Capacity — litres per hour to serve total student and staff population?
+
+    (c) Distribution — centralised RO with chilled water dispenser units, or point-of-use filters at each drinking station?
+
+    (d) Testing and maintenance — who is responsible for filter cartridge replacement and water quality testing?
+
+    '
+  why_it_matters: Safe drinking water in schools is a public health requirement under the Mid-Day Meal Scheme and Right to Education Act. Borewell water in many schools fails IS 10500 potable standards.
+    RO+UV treatment is the most reliable approach for unknown water quality. Centralised system (one RO with distribution piping) costs less per litre than individual point-of-use units but requires dedicated
+    plumbing infrastructure. Without specification, basic filling stations are installed without treatment, creating health risks.
+  suggested_resolution: Conduct water quality test and specify appropriate treatment system. Add drinking water filtration to BOQ with capacity, treatment method, distribution points, and maintenance responsibility.
+  priority: high
+  building_types:
+  - school
+  package: plumbing
+- id: RFI-BT-RT-004
+  trigger_type: building_type
+  trigger_keywords:
+  - mall
+  - tenant interface
+  - fit-out interface
+  - tenant demarcation
+  trigger_trade: all
+  question_template: 'Tenant fit-out interface specification has not been defined for {area}. Please confirm:
+
+    (a) Base building scope per unit — what does the landlord provide (slab-to-slab shell, or with screed floor, plastered walls, and basic ceiling)?
+
+    (b) MEP stub-out points — where does base building MEP end and tenant MEP begin?
+
+    (c) Electrical supply to each unit — isolator at unit boundary, or main DB within the unit?
+
+    (d) Fire protection within units — base building installs sprinklers inside units, or tenant installs?
+
+    '
+  why_it_matters: Tenant fit-out interface is the primary contractual boundary in mall projects. Ambiguity causes both landlord and tenant contractors to exclude items, resulting in unfit units at handover.
+    MEP stub-out scope — whether base building provides HVAC, electrical, plumbing to unit boundary or to finished point — is a multi-crore item. Sprinklers inside tenant units are a fire safety requirement
+    but a major cost item. Tenant handbook clarity on interface reduces fit-out disputes and simplifies the leasing process.
+  suggested_resolution: Provide detailed tenant fit-out interface document (Tenant Manual) specifying base building provision per unit type. Define MEP stub-out points, electrical supply extent, fire protection,
+    and loading restrictions.
+  priority: critical
+  building_types:
+  - retail_mall
+  package: all
+- id: RFI-BT-DC-004
+  trigger_type: building_type
+  trigger_keywords:
+  - data center
+  - data centre
+  - tier level
+  - tier certification
+  - uptime institute
+  trigger_trade: all
+  question_template: 'Data centre tier level has not been confirmed for {area}. Please clarify:
+
+    (a) Target tier per TIA-942/Uptime Institute — Tier I, II, III (most common for enterprise), or Tier IV?
+
+    (b) Concurrent maintainability requirement — can any single system be serviced without IT load downtime?
+
+    (c) Fault tolerance requirement — can the facility sustain any single component failure and continue operation?
+
+    (d) Is Uptime Institute Tier Certification required (Design Documents, Constructed Facility, Operational Sustainability)?
+
+    '
+  why_it_matters: Tier level is the single parameter with the largest cost impact in a data centre. Tier II costs 20-30% more than Tier I; Tier III (concurrently maintainable) costs 30-50% more than Tier
+    II; Tier IV (fault tolerant, 2N for everything) costs 80-120% more than Tier III. Tier III requires parallel active paths for power (A+B feeds to every rack) and cooling. Without tier specification,
+    the entire infrastructure design — UPS, generator, cooling, power distribution — cannot be finalised. This is the foundational specification for all data centre BOQ items.
+  suggested_resolution: Confirm target tier level before any data centre design proceeds. Provide Uptime Institute or TIA-942 tier classification requirement. Define redundancy levels for power (N, N+1,
+    2N) and cooling.
+  priority: critical
+  building_types:
+  - data_center
+  package: all
+- id: RFI-BT-DC-005
+  trigger_type: building_type
+  trigger_keywords:
+  - data center
+  - precision AC
+  - CRAC
+  - CRAH
+  - data centre cooling spec
+  trigger_trade: hvac
+  question_template: 'Precision AC specification is not in BOQ for data centre at {area}. Please confirm:
+
+    (a) Cooling system type — precision AC (DX CRAC units), chilled water AHU (CRAH), in-row cooling, or rear-door heat exchangers?
+
+    (b) Design power density per rack — 5 kW (standard), 10-15 kW (high density), or 30+ kW (AI/GPU computing)?
+
+    (c) Redundancy — N+1, 2N per tier requirement?
+
+    (d) PUE target — power usage effectiveness target for energy efficiency (1.2-1.6 for most designs)?
+
+    '
+  why_it_matters: Cooling represents 30-40% of data centre capital cost. Power density per rack is the critical design driver — a 5 kW rack uses standard precision AC while a 30 kW GPU rack requires liquid
+    cooling or rear-door exchangers. Without this specification, the entire cooling system design, equipment size, and cost cannot be determined. Wrong cooling selection leads to thermal hotspots (equipment
+    failure) or massive overcapacity (capital waste). PUE target affects cooling system design and is increasingly an SLA metric for data centre operators.
+  suggested_resolution: Specify precision AC system type, design power density per rack, cooling redundancy, and PUE target. Share IT load plan (kW per rack for each zone) with MEP consultant before HVAC
+    design begins.
+  priority: critical
+  building_types:
+  - data_center
+  package: hvac
+- id: RFI-BT-IN-005
+  trigger_type: building_type
+  trigger_keywords:
+  - factory
+  - hazardous area
+  - ATEX
+  - Zone 1 Zone 2
+  - explosion proof
+  trigger_trade: electrical
+  question_template: 'Hazardous area classification has not been provided for industrial/factory project at {area}. Please confirm:
+
+    (a) Are any process areas classified as Zone 0, Zone 1, or Zone 2 (flammable gas/vapour) or Zone 20/21/22 (combustible dust)?
+
+    (b) Hazardous area drawing — area classification drawing showing zone boundaries and extent?
+
+    (c) Electrical equipment in hazardous zones — what Ex protection categories are required (Ex d, Ex e, Ex n)?
+
+    (d) Applicable standard — ATEX (European), IECEx, or IS 5572/IS 5571 for Indian installations?
+
+    '
+  why_it_matters: Installing standard (non-Ex) electrical equipment in hazardous areas is a potentially fatal safety error and a statutory violation under the Petroleum Act, Factories Act, and SMPV Rules.
+    Ex-certified equipment costs 2-5x standard equipment. Zone 1 equipment (Exd flameproof) is most expensive; Zone 2 (Exn) is more affordable but requires Area Classification Drawing. Without hazardous
+    area classification, it is impossible to specify correct electrical equipment or estimate costs. This is a non-negotiable pre-requisite for all pharmaceutical, chemical, paint, and petroleum projects.
+  suggested_resolution: Provide hazardous area classification drawing per IS 5572/IECEx from process safety engineer. Define Ex protection categories for each zone. Update electrical BOQ to include Ex-rated
+    equipment for all items in hazardous areas.
+  priority: critical
+  building_types:
+  - factory
+  package: electrical
+- id: RFI-BT-IN-006
+  trigger_type: building_type
+  trigger_keywords:
+  - explosion proof
+  - Ex-proof fitting
+  - flameproof fitting
+  - hazardous area fitting
+  trigger_trade: electrical
+  question_template: 'Explosion-proof (Ex-rated) electrical fittings not specified for hazardous area in industrial project at {area}. Please confirm:
+
+    (a) Ex protection type required per zone — Ex d (flameproof), Ex e (increased safety), Ex n (non-sparking), or Ex p (purged)?
+
+    (b) Temperature class — T1 to T6 based on ignition temperature of flammable substance present?
+
+    (c) Gas group — IIA (propane), IIB (ethylene), or IIC (hydrogen/acetylene) — determines enclosure design?
+
+    (d) Certification body — IECEx, ATEX, or PESO (Petroleum and Explosives Safety Organisation, India) certified?
+
+    '
+  why_it_matters: Ex-proof fittings must be certified for the specific hazardous zone, gas group, and temperature class. Mixing up gas groups is a safety disaster — IIA rated equipment in an IIC hydrogen
+    zone can cause explosion. PESO certification is required for Indian petroleum storage facilities under the Petroleum Act. Ex equipment cost is 2-5x standard and requires specialist installation and
+    certified inspection. Without these specifications, electrical BOQ for hazardous areas is meaningless.
+  suggested_resolution: Specify Ex protection type, temperature class, and gas group for each hazardous area zone based on area classification drawing. List approved PESO/IECEx certified equipment for each
+    application.
+  priority: critical
+  building_types:
+  - factory
+  package: electrical
+- id: RFI-BT-WH-004
+  trigger_type: building_type
+  trigger_keywords:
+  - warehouse
+  - floor load
+  - floor capacity
+  - racking load
+  - forklift floor
+  trigger_trade: structural
+  question_template: 'Warehouse floor load capacity specification is not provided for {area}. Please confirm:
+
+    (a) Uniform distributed load (UDL) per zone — storage area, rack aisle, and loading/unloading bay?
+
+    (b) Racking point loads — leg load per racking upright (kN) and upright spacing?
+
+    (c) Forklift type and wheel load — VNA (Very Narrow Aisle), reach truck, or counterbalance; axle load?
+
+    (d) Floor flatness classification — FM1 (very high for VNA), FM2 (defined movement routes), or DM2 (free movement)?
+
+    '
+  why_it_matters: Warehouse floor specification is the most critical structural parameter — it determines slab thickness, reinforcement, and surface treatment. Under-designed floor cracks under racking
+    and forklift loads within months. VNA forklifts (for high bay racking) require FM1 floor flatness (±2mm over 3m) — achievable only with specialist laser-screeded concrete costing 30-50% more than standard
+    floor. Racking point loads can be 20-40 kN per upright — concentrated loads the generic floor slab design may not handle. Wrong specification leads to floor replacement within 2-3 years of operation.
+  suggested_resolution: Provide floor loading schedule per zone including UDL, racking point loads, and forklift axle loads. Specify floor flatness classification based on MHE type. Design slab for all
+    load combinations with appropriate safety factors.
+  priority: critical
+  building_types:
+  - warehouse
+  package: structural
+- id: RFI-BT-RS-001
+  trigger_type: building_type
+  trigger_keywords:
+  - residential
+  - vastu
+  - vastu compliance
+  - vastu shastra
+  trigger_trade: all
+  question_template: 'Vastu compliance requirement has not been confirmed for residential project at {area}. Please confirm:
+
+    (a) Is Vastu Shastra compliance a client/buyer requirement — and has a Vastu consultant been appointed?
+
+    (b) If yes — which specific elements are Vastu-sensitive (entrance direction, kitchen position, master bedroom orientation, pooja room)?
+
+    (c) Do Vastu requirements conflict with building plan sanctioned layout, fire egress, or structural efficiency?
+
+    (d) Is Vastu compliance a contract obligation or a design intent only?
+
+    '
+  why_it_matters: Vastu compliance is a significant requirement in residential projects, particularly for premium residential and developer sales projects targeting specific demographics. Late Vastu corrections
+    (moving kitchen, repositioning entrance) after construction begins cause major redesign costs. Vastu requirements can conflict with structural efficiency (column grid) and fire egress (staircase location)
+    — these conflicts must be resolved at design stage. If Vastu compliance is a marketing commitment to buyers, it must be a contract obligation clearly stated.
+  suggested_resolution: Confirm if Vastu compliance is required. If yes, appoint Vastu consultant and integrate requirements into architectural design before sanctioned plan submission. Document specific
+    Vastu elements as design constraints.
+  priority: low
+  building_types:
+  - residential
+  - residential_apartment
+  package: all
+- id: RFI-BT-RS-002
+  trigger_type: building_type
+  trigger_keywords:
+  - residential
+  - balcony waterproofing
+  - balcony leakage
+  - apartment balcony
+  trigger_trade: waterproofing
+  question_template: 'Balcony waterproofing specification has not been provided for residential project at {area}. Please confirm:
+
+    (a) Waterproofing system for balcony — liquid-applied PU, APP membrane, or cementitious coating over RCC slab?
+
+    (b) Threshold detail — waterproofing upturn at sliding/French door sill (minimum 50mm above FFL)?
+
+    (c) Drainage — floor drain location, slope direction (minimum 1:80 towards drain), and anti-siphon trap?
+
+    (d) Tile/paver finish — pedestal system (no waterproofing puncture) or mortar bed fixed over waterproofing membrane?
+
+    '
+  why_it_matters: Balcony waterproofing failure is among the top three defect complaints in residential apartments during DLP. Water ponding at door threshold causes interior water ingress, floor damage,
+    and mould. Threshold height is critical — a 50mm upturn prevents water entry even under wind-driven rain. Pedestal system for balcony paving avoids penetrating the waterproofing membrane (a common failure
+    cause). Without specification, contractors use leftover cementitious coating without primer — a substandard approach.
+  suggested_resolution: Add balcony waterproofing to BOQ with system type, upturn height at door threshold, drain detail, and finish system. Mandate pedestal system for balcony paving to protect waterproofing
+    membrane.
+  priority: high
+  building_types:
+  - residential
+  - residential_apartment
+  package: waterproofing
+- id: RFI-BT-SP-001
+  trigger_type: building_type
+  trigger_keywords:
+  - swimming pool
+  - pool filtration
+  - sand filter pool
+  - pool treatment
+  trigger_trade: specialist
+  question_template: 'Swimming pool filtration and water treatment system is not in BOQ for {area}. Please confirm:
+
+    (a) Filtration type — sand filter (standard), cartridge filter, or DE (diatomaceous earth) filter?
+
+    (b) Turnover rate — full pool volume circulation time (6-8 hours per turnover as per BIS norms)?
+
+    (c) Chemical treatment — manual dosing (chlorine granules) or automated chemical dosing system?
+
+    (d) Heating — is pool heating required? If yes, heat pump, solar, or gas heater, and target temperature?
+
+    '
+  why_it_matters: Pool filtration system is a mandatory health and safety requirement. A pool without adequate filtration accumulates bacteria and algae, creating waterborne disease risk. Turnover rate
+    (6-8 hours) determines pump and filter sizing. Under-sized filtration causes persistent water quality failure. Automated chemical dosing systems maintain consistent disinfection at lower operational
+    risk than manual dosing. Pool heating in North India (October-March) requires heat pump or solar heating — adds 15-30 lakh for a 200 sqm pool.
+  suggested_resolution: Add pool filtration and water treatment system to BOQ with filter type, pump sizing for 6-hour turnover, automated dosing system, and heating system if required. Include backwash
+    drain and plant room layout.
+  priority: high
+  building_types:
+  - hotel
+  - residential_complex
+  - sports_complex
+  package: specialist
+- id: RFI-BT-SP-002
+  trigger_type: building_type
+  trigger_keywords:
+  - swimming pool
+  - FINA
+  - competition pool
+  - pool dimensions
+  trigger_trade: specialist
+  question_template: 'FINA dimension compliance for swimming pool at sports facility has not been confirmed for {area}. Please confirm:
+
+    (a) Pool use — recreational, training, or competition? FINA compliance required only for competition pools?
+
+    (b) FINA dimensions — 50m x 25m x 2m depth (or 25m x 12.5m for short course), with lane rope recesses?
+
+    (c) Timing system — electronic touchpad timing and scoreboard for competition use?
+
+    (d) Starting block specification — FINA-approved blocks with backstroke ledge?
+
+    '
+  why_it_matters: FINA (World Aquatics) standards are mandatory for pools used for competitive swimming where times are to be officially recognised. Dimensional non-compliance means competition cannot be
+    held. FINA-compliant pool dimensions (lane width, touchpad recesses, depth) must be established at civil design stage — retroactive corrections to pool basin are extremely costly. Timing systems, electronic
+    touchpads, and starting blocks are additional scope items often omitted from BOQ.
+  suggested_resolution: Confirm pool competition level and FINA compliance requirement. If competition, design to FINA 2022 standards. Add timing system, electronic touchpads, and starting blocks to BOQ
+    if competition pool is required.
+  priority: medium
+  building_types:
+  - sports_complex
+  - school
+  - hotel
+  package: specialist
+- id: RFI-BT-LB-001
+  trigger_type: building_type
+  trigger_keywords:
+  - laboratory
+  - fume hood
+  - exhaust fume hood
+  - lab ventilation
+  trigger_trade: hvac
+  question_template: 'Laboratory fume hood exhaust system is not in BOQ for {area}. Please confirm:
+
+    (a) Number and type of fume hoods — standard chemical fume hood, perchloric acid hood, biosafety cabinet (Class II), or ductless fume hood?
+
+    (b) Exhaust airflow per hood — typically 0.3-0.5 m/s face velocity at sash height; CFM per hood?
+
+    (c) Exhaust duct material — stainless steel (SS 316) for acid labs, or GI for general lab chemicals?
+
+    (d) Scrubber/treatment of exhaust — acid neutralisation scrubber, activated carbon filter, or direct discharge?
+
+    '
+  why_it_matters: Fume hood exhaust is a specialist system with significant HVAC implications. Each fume hood exhausts 400-1200 CFM, which must be matched by make-up air. Perchloric acid hoods require SS
+    316 ductwork and water-wash scrubbers (perchloric acid deposits are explosive). Direct exhaust of acid fumes from GI ductwork causes rapid corrosion. Without fume hood specification, HVAC designer cannot
+    calculate ventilation load, duct sizing, or fan capacity — leading to inadequate exhaust and worker safety failures.
+  suggested_resolution: Add fume hood exhaust system to BOQ including hood count and type, duct material per chemical class, exhaust treatment, fan specification, and make-up air provision. Consult safety
+    officer for exhaust treatment requirement.
+  priority: high
+  building_types:
+  - school
+  - hospital
+  - industrial
+  - office
+  package: hvac
+- id: RFI-BT-AU-001
+  trigger_type: building_type
+  trigger_keywords:
+  - auditorium
+  - stage rigging
+  - fly tower
+  - stage lighting grid
+  - theatre rigging
+  trigger_trade: specialist
+  question_template: 'Stage rigging and lighting grid not found in BOQ for auditorium at {area}. Please confirm:
+
+    (a) Stage type — proscenium with fly tower, thrust, or flat stage (determines rigging requirement)?
+
+    (b) Fly tower height — at least 2x proscenium opening height for full counterweight rigging?
+
+    (c) Counterweight flying system — number of lines, capacity per line (250 kg, 500 kg)?
+
+    (d) Lighting grid — front of house (FOH), overhead catwalks, side booms — access for crew?
+
+    '
+  why_it_matters: Stage rigging and fly tower structure are specialist items that must be integrated with civil structure design. Fly tower requires structural loadings of 15-30 kN/sqm (for suspended scenery)
+    — far exceeding standard floor design. Rigging loft (above fly tower) requires catwalks, steel grid, and dedicated access. Rigging system (counterweight sets, hemp lines) is often entirely omitted from
+    BOQ as it is neither pure building nor pure theatrical equipment. Stage lighting grid load must be included in structural design.
+  suggested_resolution: Engage theatre consultant/stage designer for rigging specification. Add fly tower structural loads to structural brief. Include counterweight system, lighting grid, and catwalks
+    in BOQ as specialist scope.
+  priority: high
+  building_types:
+  - school
+  - hotel
+  - retail_mall
+  package: specialist
+- id: RFI-BT-SP-003
+  trigger_type: building_type
+  trigger_keywords:
+  - sports facility
+  - playing surface
+  - sports surface specification
+  - court surface
+  trigger_trade: specialist
+  question_template: 'Sports playing surface specification has not been provided for {area}. Please confirm:
+
+    (a) Sport type — basketball, badminton, tennis, squash, volleyball, or multipurpose?
+
+    (b) Surface material — wooden sprung (maple), PU coating, acrylic (for tennis), or synthetic turf?
+
+    (c) Compliance standard — BWF (World Badminton Federation), FIBA (basketball), ITF (tennis), or national federation?
+
+    (d) Sub-floor system — directly bonded, resilient floating, or fully floating sprung for impact absorption?
+
+    '
+  why_it_matters: Sports surface specification is the primary cost driver for any sports facility. Sprung maple floor (FIBA Class 3) costs INR 800-1200/sqft versus PU coating at INR 150-250/sqft. Federation-standard
+    surfaces are mandatory for official competitions and significantly affect athlete safety. Fully floating sprung floors absorb impact (critical for basketball) but require sub-floor uniformity within
+    ±3mm. Without specification, the cheapest option is procured — often unsuitable for competitive use.
+  suggested_resolution: Confirm sport type and competition level. Specify playing surface to relevant federation standard. Add complete surface build-up to BOQ — sub-floor preparation, resilient layer,
+    surface material, and line marking.
+  priority: high
+  building_types:
+  - sports_complex
+  - school
+  - hotel
+  package: specialist

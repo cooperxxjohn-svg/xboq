@@ -82,12 +82,19 @@ class OpeningsDeductor:
                 tag = row.get("tag") or row.get("id") or row.get("Tag") or row.get("ID", "")
                 opening_type = row.get("type") or row.get("Type", "door")
 
-                width = float(row.get("width_mm") or row.get("width") or row.get("Width", 0))
-                height = float(row.get("height_mm") or row.get("height") or row.get("Height", 0))
-                sill = float(row.get("sill_height_mm") or row.get("sill_height") or row.get("Sill", 0))
+                try:
+                    width = float(row.get("width_mm") or row.get("width") or row.get("Width", 0))
+                    height = float(row.get("height_mm") or row.get("height") or row.get("Height", 0))
+                    sill = float(row.get("sill_height_mm") or row.get("sill_height") or row.get("Sill", 0))
+                except (ValueError, TypeError):
+                    logger.warning(f"Skipping opening with non-numeric dimensions: {row}")
+                    continue
 
                 location = row.get("location") or row.get("room") or row.get("Location", "")
-                count = int(row.get("count") or row.get("qty") or row.get("Count", 1))
+                try:
+                    count = int(row.get("count") or row.get("qty") or row.get("Count", 1))
+                except (ValueError, TypeError):
+                    count = 1
                 frame = row.get("frame_type") or row.get("frame") or row.get("Frame", "")
 
                 if width > 0 and height > 0:

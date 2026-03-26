@@ -1,0 +1,3801 @@
+discipline: architectural
+trade: interior_fitout
+sub_trades:
+  modular_furniture:
+    categories:
+      workstation:
+        items:
+        - id: INT.MF.WKS.001
+          standard_name: Workstation - linear type - 1200x600mm - standard
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 4899
+          dsr_item_ref: ''
+          aliases:
+          - linear workstation
+          - office desk standard
+          typical_rate_range:
+            min: 8000
+            max: 15000
+          notes: Including desktop, modesty panel, wire manager
+          data_source: estimated
+        - id: INT.MF.WKS.002
+          standard_name: Workstation - L-shape type - 1500x1500mm - standard
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 4899
+          dsr_item_ref: ''
+          aliases:
+          - L-shape workstation
+          - L-desk
+          typical_rate_range:
+            min: 12000
+            max: 22000
+          notes: ''
+          data_source: estimated
+        - id: INT.MF.WKS.003
+          standard_name: Workstation - cluster of 4 (shared pedestal, cross-shaped)
+          unit: set
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 4899
+          dsr_item_ref: ''
+          aliases:
+          - cluster workstation
+          - bench desk 4-person
+          typical_rate_range:
+            min: 35000
+            max: 65000
+          notes: Set of 4 workstations with shared structure
+          data_source: estimated
+        - id: INT.MF.WKS.004
+          standard_name: Workstation - cluster of 6 (bench type, back-to-back)
+          unit: set
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 4899
+          dsr_item_ref: ''
+          aliases:
+          - 6-person bench desk
+          typical_rate_range:
+            min: 50000
+            max: 90000
+          notes: ''
+          data_source: estimated
+        - id: INT.MF.WKS.005
+          standard_name: Workstation - executive type - 1800x900mm - with return
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 4899
+          dsr_item_ref: ''
+          aliases:
+          - executive desk
+          - manager desk
+          typical_rate_range:
+            min: 18000
+            max: 35000
+          notes: ''
+          data_source: estimated
+        - id: INT.MF.WKS.006
+          standard_name: Workstation partition/screen - fabric/glass - 1200mm height
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 14900
+          dsr_item_ref: ''
+          aliases:
+          - desk partition
+          - workstation screen
+          - desk divider
+          typical_rate_range:
+            min: 2000
+            max: 4500
+          notes: ''
+          data_source: estimated
+        - id: INT.MF.WKS.007
+          standard_name: Workstation pedestal - mobile 3-drawer unit
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 4899
+          dsr_item_ref: ''
+          aliases:
+          - mobile pedestal
+          - desk drawer unit
+          typical_rate_range:
+            min: 3000
+            max: 6000
+          notes: ''
+          data_source: estimated
+      cabin:
+        items:
+        - id: INT.MF.CBN.001
+          standard_name: Cabin - glass partition (10mm toughened) - including door
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 14900
+          dsr_item_ref: ''
+          aliases:
+          - glass cabin
+          - glass office
+          typical_rate_range:
+            min: 3500
+            max: 6500
+          notes: Per sqm of partition area
+          data_source: estimated
+        - id: INT.MF.CBN.002
+          standard_name: Cabin - gypsum partition (double board, painted) - including door
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 2095 Part 1
+          dsr_item_ref: ''
+          aliases:
+          - gypsum cabin
+          - drywall cabin
+          typical_rate_range:
+            min: 1500
+            max: 3000
+          notes: ''
+          data_source: estimated
+      conference:
+        items:
+        - id: INT.MF.CNF.001
+          standard_name: Conference table - 8 seater - 2400x1200mm - wood veneer top
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 4899
+          dsr_item_ref: ''
+          aliases:
+          - 8 seater conference table
+          - meeting table 8P
+          typical_rate_range:
+            min: 25000
+            max: 50000
+          notes: Including wire box/flip-top for AV
+          data_source: estimated
+        - id: INT.MF.CNF.002
+          standard_name: Conference table - 12 seater - 3600x1500mm - wood veneer top
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 4899
+          dsr_item_ref: ''
+          aliases:
+          - 12 seater conference table
+          typical_rate_range:
+            min: 40000
+            max: 80000
+          notes: ''
+          data_source: estimated
+        - id: INT.MF.CNF.003
+          standard_name: Conference table - 16 seater - 4800x1500mm - wood veneer top
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 4899
+          dsr_item_ref: ''
+          aliases:
+          - 16 seater conference table
+          - boardroom table
+          typical_rate_range:
+            min: 60000
+            max: 120000
+          notes: ''
+          data_source: estimated
+      reception:
+        items:
+        - id: INT.MF.RCP.001
+          standard_name: Reception desk - custom designed - laminate/veneer/stone top
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 4899
+          dsr_item_ref: ''
+          aliases:
+          - reception counter
+          - front desk
+          typical_rate_range:
+            min: 8000
+            max: 20000
+          notes: Per running meter
+          data_source: estimated
+      storage:
+        items:
+        - id: INT.MF.STR.001
+          standard_name: Storage unit - low height (900mm) - open shelves
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 4899
+          dsr_item_ref: ''
+          aliases:
+          - low storage unit
+          - open shelf unit
+          typical_rate_range:
+            min: 4000
+            max: 8000
+          notes: ''
+          data_source: estimated
+        - id: INT.MF.STR.002
+          standard_name: Storage unit - medium height (1200mm) - with shutters
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 4899
+          dsr_item_ref: ''
+          aliases:
+          - medium storage
+          - half-height cabinet
+          typical_rate_range:
+            min: 6000
+            max: 12000
+          notes: ''
+          data_source: estimated
+        - id: INT.MF.STR.003
+          standard_name: Storage unit - full height (2100mm) - with shutters and lock
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 4899
+          dsr_item_ref: ''
+          aliases:
+          - tall cabinet
+          - full height storage
+          typical_rate_range:
+            min: 10000
+            max: 20000
+          notes: ''
+          data_source: estimated
+        - id: INT.MF.STR.004
+          standard_name: Storage unit - full height - with drawers (filing cabinet)
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 4899
+          dsr_item_ref: ''
+          aliases:
+          - filing cabinet
+          - drawer cabinet
+          typical_rate_range:
+            min: 8000
+            max: 16000
+          notes: ''
+          data_source: estimated
+        - id: INT.MF.CMP.001
+          standard_name: Compactor storage - mobile shelving system - per bay
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 4899
+          dsr_item_ref: ''
+          aliases:
+          - compactor
+          - mobile shelving
+          - compact storage
+          typical_rate_range:
+            min: 15000
+            max: 35000
+          notes: Per mobile bay
+          data_source: estimated
+        - id: INT.MF.SRV.001
+          standard_name: Server rack cabinet - 42U - 600x1000mm - with cooling
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 4899
+          dsr_item_ref: ''
+          aliases:
+          - server rack
+          - network rack
+          - 42U rack
+          typical_rate_range:
+            min: 25000
+            max: 50000
+          notes: ''
+          data_source: estimated
+        - id: INT.MF.AVU.001
+          standard_name: AV credenza/unit - with cable management and ventilation
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 4899
+          dsr_item_ref: ''
+          aliases:
+          - AV unit
+          - media console
+          - AV credenza
+          typical_rate_range:
+            min: 12000
+            max: 25000
+          notes: ''
+          data_source: estimated
+  kitchen:
+    categories:
+      carcase:
+        items:
+        - id: INT.KT.MOD.001
+          standard_name: Modular kitchen - marine plywood carcase - per rft of base unit
+          unit: rft
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - marine ply kitchen
+          - modular kitchen base unit
+          typical_rate_range:
+            min: 1500
+            max: 3000
+          notes: BWP (boiling water proof) plywood 18mm
+          data_source: estimated
+        - id: INT.KT.MOD.002
+          standard_name: Modular kitchen - HDHMR carcase - per rft of base unit
+          unit: rft
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - HDHMR kitchen
+          - action tesa kitchen
+          typical_rate_range:
+            min: 1200
+            max: 2200
+          notes: High density, high moisture resistant board
+          data_source: estimated
+        - id: INT.KT.MOD.003
+          standard_name: Modular kitchen - SS 304 carcase - per rft of base unit
+          unit: rft
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - hospitality
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - SS kitchen
+          - stainless steel kitchen
+          typical_rate_range:
+            min: 2500
+            max: 4500
+          notes: For commercial/institutional kitchens
+          data_source: estimated
+        - id: INT.KT.WLL.001
+          standard_name: Modular kitchen - wall unit (overhead) - per rft
+          unit: rft
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - wall cabinet kitchen
+          - overhead unit
+          typical_rate_range:
+            min: 1000
+            max: 2000
+          notes: ''
+          data_source: estimated
+        - id: INT.KT.TLL.001
+          standard_name: Kitchen tall unit - 2100mm height - with pull-outs
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - pantry unit
+          - tall unit kitchen
+          typical_rate_range:
+            min: 15000
+            max: 30000
+          notes: ''
+          data_source: estimated
+        - id: INT.KT.ISL.001
+          standard_name: Kitchen island - with storage and countertop
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - kitchen island
+          - island counter
+          typical_rate_range:
+            min: 30000
+            max: 80000
+          notes: ''
+          data_source: estimated
+      shutter:
+        items:
+        - id: INT.KT.SHL.001
+          standard_name: Kitchen shutter - laminate finish (0.8mm HPL)
+          unit: sqft
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: IS 4021
+          dsr_item_ref: ''
+          aliases:
+          - laminate shutter
+          - HPL kitchen door
+          typical_rate_range:
+            min: 80
+            max: 160
+          notes: ''
+          data_source: estimated
+        - id: INT.KT.SHA.001
+          standard_name: Kitchen shutter - acrylic high gloss finish
+          unit: sqft
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - acrylic shutter
+          - high gloss shutter
+          typical_rate_range:
+            min: 120
+            max: 220
+          notes: ''
+          data_source: estimated
+        - id: INT.KT.SHP.001
+          standard_name: Kitchen shutter - PU (polyurethane) painted finish
+          unit: sqft
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: IS 4021
+          dsr_item_ref: ''
+          aliases:
+          - PU shutter
+          - painted kitchen door
+          typical_rate_range:
+            min: 150
+            max: 300
+          notes: ''
+          data_source: estimated
+        - id: INT.KT.SHV.001
+          standard_name: Kitchen shutter - natural wood veneer finish
+          unit: sqft
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: IS 4021
+          dsr_item_ref: ''
+          aliases:
+          - veneer shutter
+          - wood finish shutter
+          typical_rate_range:
+            min: 180
+            max: 350
+          notes: ''
+          data_source: estimated
+        - id: INT.KT.SHG.001
+          standard_name: Kitchen shutter - glass (frosted/lacquered) in aluminum frame
+          unit: sqft
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: IS 14900
+          dsr_item_ref: ''
+          aliases:
+          - glass shutter kitchen
+          - aluminum frame glass door
+          typical_rate_range:
+            min: 130
+            max: 250
+          notes: ''
+          data_source: estimated
+      countertop:
+        items:
+        - id: INT.KT.CTG.001
+          standard_name: Kitchen countertop - granite 18mm thick - polished
+          unit: sqft
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: IS 1130
+          dsr_item_ref: ''
+          aliases:
+          - granite countertop
+          - granite kitchen slab
+          typical_rate_range:
+            min: 100
+            max: 250
+          notes: ''
+          data_source: estimated
+        - id: INT.KT.CTQ.001
+          standard_name: Kitchen countertop - quartz 20mm thick - engineered stone
+          unit: sqft
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: IS 1130
+          dsr_item_ref: ''
+          aliases:
+          - quartz countertop
+          - quartz kitchen slab
+          typical_rate_range:
+            min: 200
+            max: 450
+          notes: ''
+          data_source: estimated
+        - id: INT.KT.CTA.001
+          standard_name: Kitchen countertop - acrylic solid surface (Corian type)
+          unit: sqft
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - Corian countertop
+          - solid surface countertop
+          typical_rate_range:
+            min: 250
+            max: 500
+          notes: Seamless joint possible
+          data_source: estimated
+        - id: INT.KT.CTS.001
+          standard_name: Kitchen countertop - stainless steel 18 gauge
+          unit: sqft
+          construction_types:
+          - all
+          building_types:
+          - hospitality
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - SS countertop
+          - steel kitchen top
+          typical_rate_range:
+            min: 200
+            max: 400
+          notes: Commercial kitchen
+          data_source: estimated
+      backsplash:
+        items:
+        - id: INT.KT.BST.001
+          standard_name: Kitchen backsplash - ceramic/porcelain tile
+          unit: sqft
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - tile backsplash
+          - kitchen wall tile
+          typical_rate_range:
+            min: 50
+            max: 120
+          notes: ''
+          data_source: estimated
+        - id: INT.KT.BSG.001
+          standard_name: Kitchen backsplash - back-painted glass (6mm toughened)
+          unit: sqft
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: IS 14900
+          dsr_item_ref: ''
+          aliases:
+          - glass backsplash
+          - lacquered glass backsplash
+          typical_rate_range:
+            min: 100
+            max: 200
+          notes: ''
+          data_source: estimated
+        - id: INT.KT.BSS.001
+          standard_name: Kitchen backsplash - stainless steel sheet
+          unit: sqft
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - hospitality
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - SS backsplash
+          typical_rate_range:
+            min: 80
+            max: 180
+          notes: ''
+          data_source: estimated
+      accessories:
+        items:
+        - id: INT.KT.ACC.001
+          standard_name: Kitchen basket - SS wire - plain/perforated - standard drawer
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - kitchen basket
+          - wire basket
+          typical_rate_range:
+            min: 800
+            max: 2000
+          notes: ''
+          data_source: estimated
+        - id: INT.KT.ACC.002
+          standard_name: Kitchen carousel/lazy susan - corner unit
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - carousel
+          - lazy susan
+          - corner carousel
+          typical_rate_range:
+            min: 3000
+            max: 7000
+          notes: ''
+          data_source: estimated
+        - id: INT.KT.ACC.003
+          standard_name: Kitchen magic corner - swing out trays
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - magic corner
+          - swing out corner
+          typical_rate_range:
+            min: 5000
+            max: 12000
+          notes: ''
+          data_source: estimated
+        - id: INT.KT.ACC.004
+          standard_name: Kitchen cutlery tray insert - PVC/wood
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - cutlery tray
+          - cutlery divider
+          typical_rate_range:
+            min: 500
+            max: 1500
+          notes: ''
+          data_source: estimated
+        - id: INT.KT.ACC.005
+          standard_name: Kitchen bottle pull-out - tall/base unit
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - bottle pull out
+          - narrow pull out
+          typical_rate_range:
+            min: 2000
+            max: 5000
+          notes: ''
+          data_source: estimated
+        - id: INT.KT.ACC.006
+          standard_name: Kitchen dustbin pull-out - single/double bin
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - dustbin pull out
+          - waste bin unit
+          typical_rate_range:
+            min: 1500
+            max: 4000
+          notes: ''
+          data_source: estimated
+  wardrobe:
+    categories:
+      sliding:
+        items:
+        - id: INT.WR.SLD.001
+          standard_name: Sliding wardrobe - 2 door - mirror finish - 6ft wide x 7ft high
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: IS 14900
+          dsr_item_ref: ''
+          aliases:
+          - sliding wardrobe 2 door mirror
+          - sliding almirah
+          typical_rate_range:
+            min: 35000
+            max: 65000
+          notes: Including carcase, track, shutter, internals
+          data_source: estimated
+        - id: INT.WR.SLD.002
+          standard_name: Sliding wardrobe - 3 door - laminate finish - 8ft wide x 7ft high
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: IS 4021
+          dsr_item_ref: ''
+          aliases:
+          - sliding wardrobe 3 door
+          - large sliding wardrobe
+          typical_rate_range:
+            min: 45000
+            max: 85000
+          notes: ''
+          data_source: estimated
+        - id: INT.WR.SLD.003
+          standard_name: Sliding wardrobe - 2 door - laminate finish - 6ft wide x 7ft high
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: IS 4021
+          dsr_item_ref: ''
+          aliases:
+          - sliding wardrobe 2 door laminate
+          typical_rate_range:
+            min: 30000
+            max: 55000
+          notes: ''
+          data_source: estimated
+      hinged:
+        items:
+        - id: INT.WR.HNG.001
+          standard_name: Hinged wardrobe - 2 door - laminate finish - 4ft wide x 7ft high
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: IS 4021
+          dsr_item_ref: ''
+          aliases:
+          - hinged wardrobe 2 door
+          - swing door wardrobe
+          typical_rate_range:
+            min: 20000
+            max: 40000
+          notes: ''
+          data_source: estimated
+        - id: INT.WR.HNG.002
+          standard_name: Hinged wardrobe - 3 door - laminate finish - 6ft wide x 7ft high
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: IS 4021
+          dsr_item_ref: ''
+          aliases:
+          - hinged wardrobe 3 door
+          typical_rate_range:
+            min: 30000
+            max: 55000
+          notes: ''
+          data_source: estimated
+      walkin:
+        items:
+        - id: INT.WR.WLK.001
+          standard_name: Walk-in closet - modular system - per sqm of floor area
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: IS 4021
+          dsr_item_ref: ''
+          aliases:
+          - walk-in closet
+          - dressing room
+          typical_rate_range:
+            min: 5000
+            max: 12000
+          notes: Including all internals
+          data_source: estimated
+      internals:
+        items:
+        - id: INT.WR.INT.001
+          standard_name: Wardrobe internal - adjustable shelf (per shelf)
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: IS 4021
+          dsr_item_ref: ''
+          aliases:
+          - wardrobe shelf
+          typical_rate_range:
+            min: 500
+            max: 1200
+          notes: ''
+          data_source: estimated
+        - id: INT.WR.INT.002
+          standard_name: Wardrobe internal - drawer unit (3 drawer stack)
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: IS 4021
+          dsr_item_ref: ''
+          aliases:
+          - wardrobe drawer
+          - internal drawer
+          typical_rate_range:
+            min: 2000
+            max: 5000
+          notes: ''
+          data_source: estimated
+        - id: INT.WR.INT.003
+          standard_name: Wardrobe internal - hanger rod (SS/chrome)
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: IS 4021
+          dsr_item_ref: ''
+          aliases:
+          - hanging rod
+          - hanger bar
+          typical_rate_range:
+            min: 300
+            max: 800
+          notes: ''
+          data_source: estimated
+        - id: INT.WR.INT.004
+          standard_name: Wardrobe internal - pull-out trouser rack
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: IS 4021
+          dsr_item_ref: ''
+          aliases:
+          - trouser rack
+          - pull-out tray
+          typical_rate_range:
+            min: 1500
+            max: 3500
+          notes: ''
+          data_source: estimated
+        - id: INT.WR.INT.005
+          standard_name: Wardrobe internal - shoe rack (pull-out/tilting)
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: IS 4021
+          dsr_item_ref: ''
+          aliases:
+          - shoe rack wardrobe
+          typical_rate_range:
+            min: 1000
+            max: 3000
+          notes: ''
+          data_source: estimated
+        - id: INT.WR.INT.006
+          standard_name: Wardrobe internal - full length mirror
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: IS 14900
+          dsr_item_ref: ''
+          aliases:
+          - wardrobe mirror
+          - full mirror
+          typical_rate_range:
+            min: 1000
+            max: 2500
+          notes: ''
+          data_source: estimated
+        - id: INT.WR.INT.007
+          standard_name: Wardrobe internal - LED strip light (sensor activated)
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - wardrobe light
+          - LED wardrobe light
+          typical_rate_range:
+            min: 800
+            max: 2000
+          notes: ''
+          data_source: estimated
+        - id: INT.WR.INT.008
+          standard_name: Wardrobe lock - digital/key type
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - wardrobe lock
+          typical_rate_range:
+            min: 300
+            max: 1000
+          notes: ''
+          data_source: estimated
+  bathroom_vanity:
+    categories:
+      units:
+        items:
+        - id: INT.BV.WLH.001
+          standard_name: Bathroom vanity - wall-hung - single basin - 600mm wide
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - wall hung vanity
+          - floating vanity
+          typical_rate_range:
+            min: 8000
+            max: 18000
+          notes: Including basin, cabinet, mirror
+          data_source: estimated
+        - id: INT.BV.WLH.002
+          standard_name: Bathroom vanity - wall-hung - single basin - 900mm wide
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - vanity 900mm
+          typical_rate_range:
+            min: 12000
+            max: 25000
+          notes: ''
+          data_source: estimated
+        - id: INT.BV.FLR.001
+          standard_name: Bathroom vanity - floor standing - single basin - 600mm wide
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - floor standing vanity
+          typical_rate_range:
+            min: 6000
+            max: 15000
+          notes: ''
+          data_source: estimated
+        - id: INT.BV.DBL.001
+          standard_name: Bathroom vanity - wall-hung - double basin - 1200mm wide
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - hospitality
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - double basin vanity
+          - his and hers vanity
+          typical_rate_range:
+            min: 18000
+            max: 40000
+          notes: ''
+          data_source: estimated
+        - id: INT.BV.MRC.001
+          standard_name: Mirror cabinet - plain mirror - 600mm wide
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: IS 14900
+          dsr_item_ref: ''
+          aliases:
+          - mirror cabinet
+          - medicine cabinet
+          typical_rate_range:
+            min: 3000
+            max: 8000
+          notes: ''
+          data_source: estimated
+        - id: INT.BV.MRC.002
+          standard_name: Mirror cabinet - LED illuminated - 600mm wide - anti-fog
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: IS 14900
+          dsr_item_ref: ''
+          aliases:
+          - LED mirror cabinet
+          - illuminated mirror
+          typical_rate_range:
+            min: 5000
+            max: 15000
+          notes: ''
+          data_source: estimated
+        - id: INT.BV.SHF.001
+          standard_name: Bathroom open shelf - wall-mounted - glass/wood
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: IS 14900
+          dsr_item_ref: ''
+          aliases:
+          - bathroom shelf
+          typical_rate_range:
+            min: 1000
+            max: 3000
+          notes: ''
+          data_source: estimated
+  signage:
+    categories:
+      reception:
+        items:
+        - id: INT.SG.RLG.001
+          standard_name: Reception logo - SS individual cut letters - backlit LED
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 9457
+          dsr_item_ref: ''
+          aliases:
+          - reception logo SS
+          - company logo sign
+          typical_rate_range:
+            min: 20000
+            max: 60000
+          notes: Rate varies with size
+          data_source: estimated
+        - id: INT.SG.RLG.002
+          standard_name: Reception logo - acrylic with LED backlight
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 9457
+          dsr_item_ref: ''
+          aliases:
+          - acrylic logo sign
+          typical_rate_range:
+            min: 10000
+            max: 35000
+          notes: ''
+          data_source: estimated
+        - id: INT.SG.RLG.003
+          standard_name: Reception logo - natural stone engraved/mounted
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 9457
+          dsr_item_ref: ''
+          aliases:
+          - stone logo
+          - engraved stone sign
+          typical_rate_range:
+            min: 15000
+            max: 45000
+          notes: ''
+          data_source: estimated
+      room_signage:
+        items:
+        - id: INT.SG.RMN.001
+          standard_name: Room number sign - acrylic/aluminum - with braille
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - room number
+          - room sign
+          typical_rate_range:
+            min: 500
+            max: 1500
+          notes: Per room
+          data_source: IS codes only
+        - id: INT.SG.FLD.001
+          standard_name: Floor directory sign - wall mounted - aluminum/acrylic
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 9457
+          dsr_item_ref: ''
+          aliases:
+          - floor directory
+          - floor map
+          typical_rate_range:
+            min: 3000
+            max: 8000
+          notes: ''
+          data_source: estimated
+        - id: INT.SG.TOI.001
+          standard_name: Toilet signage - male/female/accessible - with braille
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - washroom sign
+          - toilet sign
+          - restroom sign
+          typical_rate_range:
+            min: 500
+            max: 1500
+          notes: ''
+          data_source: IS codes only
+        - id: INT.SG.FRS.001
+          standard_name: Fire safety signage set (exit, extinguisher, assembly point)
+          unit: set
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - fire signage set
+          - emergency signage
+          typical_rate_range:
+            min: 5000
+            max: 12000
+          notes: Per floor
+          data_source: IS codes only
+      wayfinding:
+        items:
+        - id: INT.SG.WFW.001
+          standard_name: Wayfinding sign - wall mounted - aluminum/acrylic
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 9457
+          dsr_item_ref: ''
+          aliases:
+          - wall wayfinding
+          - directional sign indoor
+          typical_rate_range:
+            min: 2000
+            max: 5000
+          notes: ''
+          data_source: estimated
+        - id: INT.SG.WFC.001
+          standard_name: Wayfinding sign - ceiling suspended - double sided
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 9457
+          dsr_item_ref: ''
+          aliases:
+          - hanging sign
+          - ceiling directional
+          typical_rate_range:
+            min: 3000
+            max: 8000
+          notes: ''
+          data_source: estimated
+        - id: INT.SG.WFF.001
+          standard_name: Wayfinding sign - floor mounted/applied vinyl
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 9457
+          dsr_item_ref: ''
+          aliases:
+          - floor sign
+          - floor vinyl sign
+          typical_rate_range:
+            min: 1000
+            max: 3000
+          notes: ''
+          data_source: estimated
+        - id: INT.SG.DGT.001
+          standard_name: Digital signage totem - freestanding - 43/55 inch LCD
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 9457
+          dsr_item_ref: ''
+          aliases:
+          - digital totem indoor
+          - interactive kiosk
+          typical_rate_range:
+            min: 80000
+            max: 250000
+          notes: ''
+          data_source: estimated
+  partitions:
+    categories:
+      glass:
+        items:
+        - id: INT.PT.GLF.001
+          standard_name: Glass partition - 10mm toughened - frameless (patch fitting)
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 14900
+          dsr_item_ref: ''
+          aliases:
+          - frameless glass partition
+          - patch glass wall
+          typical_rate_range:
+            min: 3000
+            max: 5500
+          notes: ''
+          data_source: estimated
+        - id: INT.PT.GLF.002
+          standard_name: Glass partition - 12mm toughened - frameless (patch fitting)
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 14900
+          dsr_item_ref: ''
+          aliases:
+          - 12mm frameless glass
+          typical_rate_range:
+            min: 3500
+            max: 6500
+          notes: ''
+          data_source: estimated
+        - id: INT.PT.GLA.001
+          standard_name: Glass partition - 10mm toughened - aluminum frame system
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 14900
+          dsr_item_ref: ''
+          aliases:
+          - aluminum frame glass partition
+          typical_rate_range:
+            min: 3500
+            max: 6000
+          notes: ''
+          data_source: estimated
+        - id: INT.PT.GLD.001
+          standard_name: Glass partition - double glazed with blinds between glass
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 14900
+          dsr_item_ref: ''
+          aliases:
+          - double glass partition
+          - integral blind glass
+          typical_rate_range:
+            min: 6000
+            max: 10000
+          notes: Privacy control with internal blinds
+          data_source: estimated
+      gypsum:
+        items:
+        - id: INT.PT.GYP.001
+          standard_name: Gypsum board partition - 75mm thick - single board each side
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 2095 Part 1
+          dsr_item_ref: ''
+          aliases:
+          - drywall partition 75mm
+          - gypsum partition single
+          typical_rate_range:
+            min: 800
+            max: 1500
+          notes: Including GI stud frame, taping, jointing
+          data_source: estimated
+        - id: INT.PT.GYP.002
+          standard_name: Gypsum board partition - 100mm thick - single board each side
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 2095 Part 1
+          dsr_item_ref: ''
+          aliases:
+          - drywall partition 100mm
+          typical_rate_range:
+            min: 900
+            max: 1700
+          notes: ''
+          data_source: estimated
+        - id: INT.PT.GYP.003
+          standard_name: Gypsum board partition - 100mm thick - double board each side
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 2095 Part 1
+          dsr_item_ref: ''
+          aliases:
+          - double board partition
+          - heavy duty drywall
+          typical_rate_range:
+            min: 1200
+            max: 2200
+          notes: Better sound insulation
+          data_source: estimated
+        - id: INT.PT.GYP.004
+          standard_name: Gypsum board partition - fire rated (2 hour) - double board + insulation
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - fire rated drywall
+          - fire partition gypsum
+          typical_rate_range:
+            min: 1500
+            max: 2800
+          notes: With fire-rated boards and mineral wool infill
+          data_source: IS codes only
+      demountable:
+        items:
+        - id: INT.PT.DMP.001
+          standard_name: Demountable partition - modular panel system - full height
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - demountable wall
+          - relocatable partition
+          typical_rate_range:
+            min: 3000
+            max: 6000
+          notes: Reusable, no wet work
+          data_source: estimated
+      acoustic:
+        items:
+        - id: INT.PT.ACP.001
+          standard_name: Acoustic partition - STC 45+ rating - insulated stud wall
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 3344
+          dsr_item_ref: ''
+          aliases:
+          - sound proof partition
+          - acoustic wall
+          typical_rate_range:
+            min: 2000
+            max: 4000
+          notes: For meeting rooms and private offices
+          data_source: estimated
+      operable:
+        items:
+        - id: INT.PT.SFP.001
+          standard_name: Sliding/folding partition - operable wall - per sqm of opening
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - hospitality
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - operable wall
+          - folding partition
+          - sliding partition
+          typical_rate_range:
+            min: 6000
+            max: 12000
+          notes: For banquet halls and conference rooms
+          data_source: estimated
+  flooring_specialty:
+    categories:
+      raised_floor:
+        items:
+        - id: INT.FL.RAF.001
+          standard_name: Raised access floor - bare finish steel panel - 100mm void
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - raised floor bare
+          - access floor 100mm
+          typical_rate_range:
+            min: 1200
+            max: 2200
+          notes: Including pedestal and stringer
+          data_source: estimated
+        - id: INT.FL.RAF.002
+          standard_name: Raised access floor - calcium sulphate panel - 300mm void
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - calcium sulphate raised floor
+          typical_rate_range:
+            min: 1800
+            max: 3200
+          notes: Higher load capacity
+          data_source: estimated
+        - id: INT.FL.RAF.003
+          standard_name: Raised access floor - wood core panel - 600mm void
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - wood core raised floor
+          - high void raised floor
+          typical_rate_range:
+            min: 2000
+            max: 3500
+          notes: For data centers and server rooms
+          data_source: estimated
+        - id: INT.FL.RAF.004
+          standard_name: Raised access floor - with carpet tile finish
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - raised floor with carpet
+          typical_rate_range:
+            min: 1800
+            max: 3000
+          notes: Including carpet tile bonded to panel
+          data_source: estimated
+      anti_static:
+        items:
+        - id: INT.FL.ASV.001
+          standard_name: Anti-static flooring - conductive vinyl tile
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - industrial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - ESD flooring vinyl
+          - conductive floor tile
+          typical_rate_range:
+            min: 800
+            max: 1500
+          notes: For server rooms, labs
+          data_source: estimated
+        - id: INT.FL.ASE.001
+          standard_name: Anti-static flooring - conductive epoxy coating
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - industrial
+          requires: []
+          is_code_ref: IS 4631
+          dsr_item_ref: ''
+          aliases:
+          - ESD epoxy
+          - conductive epoxy floor
+          typical_rate_range:
+            min: 600
+            max: 1200
+          notes: ''
+          data_source: estimated
+      special_panel:
+        items:
+        - id: INT.FL.CRP.001
+          standard_name: Clean room wall/ceiling panel - GI/SS sandwich panel - 50mm PUF
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - industrial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - clean room panel
+          - modular clean room wall
+          typical_rate_range:
+            min: 2000
+            max: 4000
+          notes: ''
+          data_source: estimated
+      acoustic_panel:
+        items:
+        - id: INT.FL.AWF.001
+          standard_name: Acoustic wall panel - fabric wrapped - 25mm thick
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 3344
+          dsr_item_ref: ''
+          aliases:
+          - fabric acoustic panel
+          - sound absorbing panel
+          typical_rate_range:
+            min: 800
+            max: 1800
+          notes: NRC 0.7-0.85
+          data_source: estimated
+        - id: INT.FL.AWW.001
+          standard_name: Acoustic wall panel - wood (slotted/perforated) - 18mm thick
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 3344
+          dsr_item_ref: ''
+          aliases:
+          - wood acoustic panel
+          - slotted wood panel
+          typical_rate_range:
+            min: 1200
+            max: 2500
+          notes: ''
+          data_source: estimated
+        - id: INT.FL.AWP.001
+          standard_name: Acoustic wall panel - perforated metal with acoustic infill
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 3344
+          dsr_item_ref: ''
+          aliases:
+          - perforated acoustic panel
+          - metal acoustic panel
+          typical_rate_range:
+            min: 1500
+            max: 3000
+          notes: ''
+          data_source: estimated
+  false_ceiling:
+    categories:
+      gypsum:
+        items:
+        - id: INT.FC.GYP.001
+          standard_name: False ceiling - gypsum board 12.5mm - plain - on GI grid
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2095 Part 1
+          dsr_item_ref: ''
+          aliases:
+          - gypsum false ceiling
+          - gypboard ceiling plain
+          typical_rate_range:
+            min: 65
+            max: 120
+          notes: Per sqft, including GI frame, taping, jointing, primer
+          data_source: estimated
+        - id: INT.FC.GYP.002
+          standard_name: False ceiling - gypsum board 12.5mm - with cove/peripheral
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2095 Part 1
+          dsr_item_ref: ''
+          aliases:
+          - cove ceiling gypsum
+          - L-box ceiling
+          typical_rate_range:
+            min: 85
+            max: 150
+          notes: Per sqft, including cove light pocket
+          data_source: estimated
+        - id: INT.FC.GYP.003
+          standard_name: False ceiling - gypsum board 12.5mm - curved/multilevel
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - hospitality
+          requires: []
+          is_code_ref: IS 2095 Part 1
+          dsr_item_ref: ''
+          aliases:
+          - curved gypsum ceiling
+          - designer ceiling
+          typical_rate_range:
+            min: 120
+            max: 220
+          notes: Per sqft, complex shapes
+          data_source: estimated
+        - id: INT.FC.GYP.004
+          standard_name: False ceiling - gypsum board - moisture resistant - for wet areas
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2095 Part 1
+          dsr_item_ref: ''
+          aliases:
+          - MR gypsum ceiling
+          - moisture resistant ceiling
+          typical_rate_range:
+            min: 80
+            max: 140
+          notes: Green board for toilets, pantry areas
+          data_source: estimated
+        - id: INT.FC.GYP.005
+          standard_name: False ceiling - gypsum board - fire rated (2 hour) - double board
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - fire rated ceiling gypsum
+          typical_rate_range:
+            min: 120
+            max: 200
+          notes: Per sqft
+          data_source: IS codes only
+      pop:
+        items:
+        - id: INT.FC.POP.001
+          standard_name: False ceiling - POP (plaster of paris) - plain finish
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: IS 2547
+          dsr_item_ref: ''
+          aliases:
+          - POP false ceiling
+          - plaster ceiling
+          typical_rate_range:
+            min: 55
+            max: 90
+          notes: Per sqft, on wire mesh/GI grid
+          data_source: estimated
+        - id: INT.FC.POP.002
+          standard_name: False ceiling - POP - with cornices/moulding
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: IS 2547
+          dsr_item_ref: ''
+          aliases:
+          - POP cornice ceiling
+          - decorative POP ceiling
+          typical_rate_range:
+            min: 75
+            max: 130
+          notes: Per sqft
+          data_source: estimated
+      grid:
+        items:
+        - id: INT.FC.GRD.001
+          standard_name: Grid ceiling - mineral fiber tile (600x600mm) - exposed T-grid
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 277
+          dsr_item_ref: ''
+          aliases:
+          - mineral fiber ceiling
+          - Armstrong ceiling
+          - T-grid ceiling
+          typical_rate_range:
+            min: 60
+            max: 110
+          notes: Per sqft, including grid, tile, suspension
+          data_source: estimated
+        - id: INT.FC.GRD.002
+          standard_name: Grid ceiling - mineral fiber tile (600x600mm) - concealed grid
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 277
+          dsr_item_ref: ''
+          aliases:
+          - concealed grid ceiling
+          - tegular edge tile
+          typical_rate_range:
+            min: 80
+            max: 140
+          notes: Per sqft
+          data_source: estimated
+        - id: INT.FC.GRD.003
+          standard_name: Grid ceiling - metal tile (600x600mm) - clip-in type
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 277
+          dsr_item_ref: ''
+          aliases:
+          - metal tile ceiling
+          - clip-in metal ceiling
+          typical_rate_range:
+            min: 100
+            max: 180
+          notes: Per sqft, powder coated aluminum/steel
+          data_source: estimated
+        - id: INT.FC.GRD.004
+          standard_name: Grid ceiling - metal tile (600x600mm) - lay-in type - perforated
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 277
+          dsr_item_ref: ''
+          aliases:
+          - perforated metal ceiling
+          - acoustic metal ceiling
+          typical_rate_range:
+            min: 120
+            max: 200
+          notes: Per sqft, with acoustic backing
+          data_source: estimated
+      special:
+        items:
+        - id: INT.FC.WDN.001
+          standard_name: False ceiling - wooden/WPC plank - linear pattern
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 399
+          dsr_item_ref: ''
+          aliases:
+          - wooden ceiling
+          - WPC ceiling plank
+          - wood finish ceiling
+          typical_rate_range:
+            min: 150
+            max: 300
+          notes: Per sqft
+          data_source: estimated
+        - id: INT.FC.BFL.001
+          standard_name: Baffle ceiling - aluminum/wood fin - linear suspended
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 277
+          dsr_item_ref: ''
+          aliases:
+          - baffle ceiling
+          - fin ceiling
+          - linear baffle
+          typical_rate_range:
+            min: 200
+            max: 400
+          notes: Per sqft, open cell type
+          data_source: estimated
+        - id: INT.FC.STR.001
+          standard_name: Stretch ceiling - PVC membrane - with LED backlighting
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - hospitality
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - stretch ceiling
+          - Barrisol ceiling
+          - membrane ceiling
+          typical_rate_range:
+            min: 250
+            max: 500
+          notes: Per sqft, translucent or printed options
+          data_source: estimated
+        - id: INT.FC.OPC.001
+          standard_name: Open cell ceiling - aluminum grid (75x75mm or 100x100mm)
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 277
+          dsr_item_ref: ''
+          aliases:
+          - open cell ceiling
+          - egg crate ceiling
+          - aluminum grid ceiling
+          typical_rate_range:
+            min: 180
+            max: 350
+          notes: Per sqft
+          data_source: estimated
+  wall_paneling:
+    categories:
+      wpc_pvc:
+        items:
+        - id: INT.WP.WPC.001
+          standard_name: Wall panel - WPC fluted panel - 8mm thick - wood grain finish
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - WPC fluted panel
+          - charcoal panel WPC
+          - fluted wall panel
+          typical_rate_range:
+            min: 400
+            max: 800
+          notes: Per sqft, including adhesive/mechanical fix
+          data_source: estimated
+        - id: INT.WP.WPC.002
+          standard_name: Wall panel - WPC flat panel - 8mm thick - solid color
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - WPC flat wall panel
+          typical_rate_range:
+            min: 350
+            max: 700
+          notes: Per sqft
+          data_source: estimated
+        - id: INT.WP.PVC.001
+          standard_name: Wall panel - PVC panel - 8mm thick - printed design
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - PVC wall panel
+          - PVC charcoal panel
+          typical_rate_range:
+            min: 200
+            max: 450
+          notes: Per sqft, economy option
+          data_source: estimated
+        - id: INT.WP.PVC.002
+          standard_name: Wall panel - PVC fluted panel - 12mm thick - premium finish
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - PVC fluted premium
+          typical_rate_range:
+            min: 300
+            max: 600
+          notes: Per sqft
+          data_source: estimated
+      mdf_veneer:
+        items:
+        - id: INT.WP.MDF.001
+          standard_name: Wall panel - MDF panel - 18mm thick - laminate finish
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 399
+          dsr_item_ref: ''
+          aliases:
+          - MDF wall panel laminate
+          - MDF paneling
+          typical_rate_range:
+            min: 600
+            max: 1200
+          notes: Per sqft, on batten frame
+          data_source: estimated
+        - id: INT.WP.MDF.002
+          standard_name: Wall panel - MDF panel - 18mm thick - PU painted finish
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - hospitality
+          requires: []
+          is_code_ref: IS 399
+          dsr_item_ref: ''
+          aliases:
+          - MDF PU painted panel
+          typical_rate_range:
+            min: 800
+            max: 1600
+          notes: Per sqft
+          data_source: estimated
+        - id: INT.WP.VNR.001
+          standard_name: Wall panel - natural wood veneer on MDF - 18mm thick
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - hospitality
+          requires: []
+          is_code_ref: IS 399
+          dsr_item_ref: ''
+          aliases:
+          - veneer wall panel
+          - wood veneer paneling
+          typical_rate_range:
+            min: 1000
+            max: 2000
+          notes: Per sqft, teak/oak/walnut veneer
+          data_source: estimated
+      fabric_leather:
+        items:
+        - id: INT.WP.FBR.001
+          standard_name: Wall panel - fabric wrapped - 25mm thick padded
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - hospitality
+          requires: []
+          is_code_ref: IS 3344
+          dsr_item_ref: ''
+          aliases:
+          - fabric wall panel
+          - upholstered wall panel
+          typical_rate_range:
+            min: 800
+            max: 1800
+          notes: Per sqft, acoustic + decorative
+          data_source: estimated
+        - id: INT.WP.LTH.001
+          standard_name: Wall panel - leather/leatherette padded - 25mm thick
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - hospitality
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - leather wall panel
+          - leatherette panel
+          - faux leather panel
+          typical_rate_range:
+            min: 1200
+            max: 2800
+          notes: Per sqft, for headboard walls, feature walls
+          data_source: estimated
+      mirror_stone:
+        items:
+        - id: INT.WP.MRR.001
+          standard_name: Wall panel - mirror panel - 4mm beveled mirror
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - hospitality
+          requires: []
+          is_code_ref: IS 14900
+          dsr_item_ref: ''
+          aliases:
+          - mirror wall panel
+          - mirror cladding wall
+          typical_rate_range:
+            min: 600
+            max: 1200
+          notes: Per sqft, on plywood backing
+          data_source: estimated
+        - id: INT.WP.MRR.002
+          standard_name: Wall panel - tinted/antique mirror - decorative
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - hospitality
+          - commercial
+          requires: []
+          is_code_ref: IS 14900
+          dsr_item_ref: ''
+          aliases:
+          - antique mirror panel
+          - tinted mirror panel
+          typical_rate_range:
+            min: 800
+            max: 1800
+          notes: Per sqft
+          data_source: estimated
+        - id: INT.WP.STV.001
+          standard_name: Wall panel - stone veneer - natural thin stone 2-3mm
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1130
+          dsr_item_ref: ''
+          aliases:
+          - stone veneer panel
+          - thin stone wall
+          - flexible stone
+          typical_rate_range:
+            min: 500
+            max: 1200
+          notes: Per sqft, lightweight stone finish
+          data_source: estimated
+  painting:
+    categories:
+      wall_painting:
+        items:
+        - id: INT.PT.EME.001
+          standard_name: Interior wall painting - economy emulsion - 2 coats
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15489
+          dsr_item_ref: ''
+          aliases:
+          - economy emulsion paint
+          - tractor emulsion
+          - basic interior paint
+          typical_rate_range:
+            min: 12
+            max: 22
+          notes: Per sqft, on putty/primer base
+          data_source: IS codes only
+        - id: INT.PT.EMP.001
+          standard_name: Interior wall painting - premium emulsion - 2 coats
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15489
+          dsr_item_ref: ''
+          aliases:
+          - premium emulsion
+          - Royale type
+          - washable emulsion
+          typical_rate_range:
+            min: 18
+            max: 35
+          notes: Per sqft, washable, stain guard
+          data_source: IS codes only
+        - id: INT.PT.EML.001
+          standard_name: Interior wall painting - luxury emulsion - 2 coats
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - hospitality
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - luxury emulsion
+          - premium plus emulsion
+          - Ultima type
+          typical_rate_range:
+            min: 28
+            max: 50
+          notes: Per sqft, anti-bacterial, low VOC
+          data_source: estimated
+        - id: INT.PT.PRM.001
+          standard_name: Wall primer - acrylic water-based - 2 coats
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - wall primer
+          - acrylic primer interior
+          typical_rate_range:
+            min: 6
+            max: 12
+          notes: Per sqft
+          data_source: estimated
+        - id: INT.PT.PUT.001
+          standard_name: Wall putty - white cement based - 2 coats
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - wall putty
+          - Birla putty
+          - JK putty
+          typical_rate_range:
+            min: 8
+            max: 16
+          notes: Per sqft
+          data_source: estimated
+        - id: INT.PT.POP.001
+          standard_name: POP punning - wall surface smoothening - 6-8mm thick
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - POP punning
+          - plaster of paris finish
+          - pop finish
+          typical_rate_range:
+            min: 10
+            max: 20
+          notes: Per sqft, for smooth finish before paint
+          data_source: estimated
+      texture:
+        items:
+        - id: INT.PT.TXR.001
+          standard_name: Texture paint - roller texture - standard pattern
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - roller texture paint
+          - basic texture paint
+          typical_rate_range:
+            min: 25
+            max: 50
+          notes: Per sqft, sand/ragging/stipple
+          data_source: estimated
+        - id: INT.PT.TXS.001
+          standard_name: Texture paint - stucco finish - trowel applied
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - hospitality
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - stucco texture
+          - trowel texture
+          typical_rate_range:
+            min: 40
+            max: 80
+          notes: Per sqft
+          data_source: estimated
+        - id: INT.PT.TXV.001
+          standard_name: Texture paint - Venetian plaster - multi-coat polished
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - hospitality
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - Venetian plaster
+          - Italian plaster
+          - polished stucco
+          typical_rate_range:
+            min: 80
+            max: 180
+          notes: Per sqft, premium decorative finish
+          data_source: estimated
+        - id: INT.PT.TXM.001
+          standard_name: Texture paint - metallic finish - brushed/hammered effect
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - hospitality
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - metallic texture paint
+          - metallic wall finish
+          typical_rate_range:
+            min: 60
+            max: 130
+          notes: Per sqft
+          data_source: estimated
+      woodwork:
+        items:
+        - id: INT.PT.ENW.001
+          standard_name: Enamel paint for woodwork - oil-based - 2 coats on primer
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2932
+          dsr_item_ref: ''
+          aliases:
+          - enamel paint wood
+          - oil paint woodwork
+          typical_rate_range:
+            min: 20
+            max: 40
+          notes: Per sqft, for doors, windows, grills
+          data_source: CPWD DSR 2023 + IS codes
+        - id: INT.PT.PUW.001
+          standard_name: PU (polyurethane) polish/paint for woodwork - clear/matte
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - PU polish wood
+          - polyurethane finish
+          - PU clear coat
+          typical_rate_range:
+            min: 35
+            max: 70
+          notes: Per sqft, for furniture and joinery
+          data_source: estimated
+        - id: INT.PT.MLM.001
+          standard_name: Melamine polish for woodwork - natural wood finish
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - melamine polish
+          - NC lacquer
+          typical_rate_range:
+            min: 25
+            max: 50
+          notes: Per sqft, economy clear finish
+          data_source: estimated
+  flooring_interior:
+    categories:
+      wooden:
+        items:
+        - id: INT.FI.WDL.001
+          standard_name: Wooden flooring - engineered hardwood - 14mm thick - T&G
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - engineered wood floor
+          - hardwood flooring
+          typical_rate_range:
+            min: 250
+            max: 500
+          notes: Per sqft, including underlayment
+          data_source: estimated
+        - id: INT.FI.WDL.002
+          standard_name: Wooden flooring - laminate/HDF - 8mm thick - click-lock
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - laminate flooring
+          - Pergo type floor
+          - HDF flooring
+          typical_rate_range:
+            min: 80
+            max: 180
+          notes: Per sqft, floating installation
+          data_source: estimated
+        - id: INT.FI.WDL.003
+          standard_name: Wooden flooring - solid hardwood - 18mm thick - teak/oak
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - hospitality
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - solid wood floor
+          - teak flooring
+          - oak flooring
+          typical_rate_range:
+            min: 400
+            max: 800
+          notes: Per sqft, on batten/ply base
+          data_source: estimated
+      carpet:
+        items:
+        - id: INT.FI.CRP.001
+          standard_name: Carpet tile - 500x500mm - tufted - commercial grade
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - carpet tile
+          - modular carpet
+          - office carpet tile
+          typical_rate_range:
+            min: 80
+            max: 180
+          notes: Per sqft, on raised floor or adhesive
+          data_source: estimated
+        - id: INT.FI.CRP.002
+          standard_name: Carpet - broadloom - wall-to-wall - commercial grade
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - hospitality
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - broadloom carpet
+          - wall to wall carpet
+          - roll carpet
+          typical_rate_range:
+            min: 60
+            max: 150
+          notes: Per sqft, including underlay and installation
+          data_source: estimated
+        - id: INT.FI.CRP.003
+          standard_name: Carpet - hand-tufted/woven - custom design - hospitality grade
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - hospitality
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - custom carpet
+          - designer carpet
+          - hand tufted carpet
+          typical_rate_range:
+            min: 200
+            max: 600
+          notes: Per sqft, for lobbies, banquets
+          data_source: estimated
+      vinyl:
+        items:
+        - id: INT.FI.VNL.001
+          standard_name: Vinyl flooring - LVT (luxury vinyl tile) - 2mm thick - dry back
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - LVT flooring
+          - luxury vinyl tile
+          - vinyl tile
+          typical_rate_range:
+            min: 60
+            max: 120
+          notes: Per sqft, glue-down
+          data_source: estimated
+        - id: INT.FI.VNL.002
+          standard_name: Vinyl flooring - LVP (luxury vinyl plank) - 4mm thick - click-lock
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - LVP flooring
+          - vinyl plank
+          - SPC flooring
+          typical_rate_range:
+            min: 80
+            max: 180
+          notes: Per sqft, floating installation
+          data_source: estimated
+        - id: INT.FI.VNL.003
+          standard_name: Vinyl flooring - sheet vinyl - 2mm thick - roll type
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - vinyl sheet flooring
+          - roll vinyl
+          typical_rate_range:
+            min: 40
+            max: 90
+          notes: Per sqft, for hospitals, labs
+          data_source: estimated
+        - id: INT.FI.VNL.004
+          standard_name: Vinyl flooring - homogeneous - 2mm thick - anti-bacterial
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - homogeneous vinyl
+          - hospital vinyl floor
+          typical_rate_range:
+            min: 80
+            max: 160
+          notes: Per sqft, for healthcare
+          data_source: estimated
+  doors_interior:
+    categories:
+      flush:
+        items:
+        - id: INT.DR.FLD.001
+          standard_name: Flush door - 35mm thick - commercial ply - laminate both sides
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2202
+          dsr_item_ref: ''
+          aliases:
+          - flush door laminate
+          - interior flush door
+          typical_rate_range:
+            min: 3000
+            max: 6000
+          notes: Including frame, stopper, hinges
+          data_source: CPWD DSR 2023 + IS codes
+        - id: INT.DR.FLD.002
+          standard_name: Flush door - 35mm thick - BWP ply - veneer both sides
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - commercial
+          requires: []
+          is_code_ref: IS 2202
+          dsr_item_ref: ''
+          aliases:
+          - flush door veneer
+          - veneer internal door
+          typical_rate_range:
+            min: 5000
+            max: 10000
+          notes: ''
+          data_source: IS codes only
+        - id: INT.DR.FLD.003
+          standard_name: Flush door - 44mm thick - fire rated (30 min) - with intumescent strip
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - fire door 30 min
+          - fire rated flush door
+          typical_rate_range:
+            min: 8000
+            max: 15000
+          notes: Including door closer, intumescent seal
+          data_source: IS codes only
+        - id: INT.DR.FLD.004
+          standard_name: Flush door - 54mm thick - fire rated (60 min) - with intumescent strip
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - high_rise
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - fire door 60 min
+          typical_rate_range:
+            min: 12000
+            max: 22000
+          notes: ''
+          data_source: IS codes only
+      glass:
+        items:
+        - id: INT.DR.GLS.001
+          standard_name: Glass door - 12mm toughened - frameless - with patch fittings
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - frameless glass door
+          - patch fitting door
+          typical_rate_range:
+            min: 12000
+            max: 22000
+          notes: Including floor spring, patch, handles
+          data_source: estimated
+        - id: INT.DR.GLS.002
+          standard_name: Glass door - 10mm toughened - aluminum frame - single swing
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - aluminum glass door interior
+          typical_rate_range:
+            min: 8000
+            max: 15000
+          notes: ''
+          data_source: estimated
+      sliding:
+        items:
+        - id: INT.DR.SLD.001
+          standard_name: Sliding door - wooden/MDF - wall pocket type - single leaf
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - pocket door wood
+          - concealed sliding door
+          typical_rate_range:
+            min: 12000
+            max: 25000
+          notes: Including pocket frame and hardware
+          data_source: estimated
+        - id: INT.DR.SLD.002
+          standard_name: Sliding door - glass - 10mm toughened - top hung track
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - residential
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - sliding glass door interior
+          - barn door glass
+          typical_rate_range:
+            min: 10000
+            max: 20000
+          notes: ''
+          data_source: estimated
+        - id: INT.DR.SLD.003
+          standard_name: Sliding door - wooden/MDF - barn door style - with exposed track
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - barn door wood
+          - exposed track sliding door
+          typical_rate_range:
+            min: 8000
+            max: 18000
+          notes: ''
+          data_source: estimated
+  tv_unit_study:
+    categories:
+      tv_unit:
+        items:
+        - id: INT.TV.WLM.001
+          standard_name: TV unit - wall mounted - laminate finish - 6ft wide
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - wall TV unit
+          - floating TV unit
+          - entertainment unit
+          typical_rate_range:
+            min: 12000
+            max: 25000
+          notes: Including backpanel, shelves, cable management
+          data_source: estimated
+        - id: INT.TV.WLM.002
+          standard_name: TV unit - wall mounted - with storage - 8ft wide
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - large TV unit
+          - TV wall unit with storage
+          typical_rate_range:
+            min: 18000
+            max: 40000
+          notes: ''
+          data_source: estimated
+        - id: INT.TV.FLR.001
+          standard_name: TV unit - floor standing console - 5ft wide
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - TV console
+          - media console floor
+          typical_rate_range:
+            min: 8000
+            max: 18000
+          notes: ''
+          data_source: estimated
+      study:
+        items:
+        - id: INT.TV.STD.001
+          standard_name: Study table - built-in - wall-mounted - with drawers - 4ft
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - built-in study table
+          - wall study table
+          typical_rate_range:
+            min: 8000
+            max: 16000
+          notes: ''
+          data_source: estimated
+        - id: INT.TV.STD.002
+          standard_name: Study table - L-shaped - with overhead shelves - built-in
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - L-shape study table
+          - corner study
+          typical_rate_range:
+            min: 12000
+            max: 25000
+          notes: ''
+          data_source: estimated
+        - id: INT.TV.BKS.001
+          standard_name: Bookshelf - built-in - floor to ceiling - 3ft wide
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - built-in bookshelf
+          - floor to ceiling shelf
+          typical_rate_range:
+            min: 10000
+            max: 22000
+          notes: ''
+          data_source: estimated
+        - id: INT.TV.BKS.002
+          standard_name: Bookshelf - wall-mounted open shelves - floating - 4ft wide
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - floating bookshelf
+          - wall mounted shelves
+          typical_rate_range:
+            min: 4000
+            max: 10000
+          notes: ''
+          data_source: estimated
+  accessories:
+    categories:
+      curtain_hardware:
+        items:
+        - id: INT.AC.CTR.001
+          standard_name: Curtain track - aluminum - ceiling mounted - single track
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - curtain track single
+          - ceiling curtain track
+          typical_rate_range:
+            min: 80
+            max: 200
+          notes: Per running foot
+          data_source: estimated
+        - id: INT.AC.CTR.002
+          standard_name: Curtain track - aluminum - double track (sheer + blackout)
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - double curtain track
+          typical_rate_range:
+            min: 150
+            max: 350
+          notes: Per running foot
+          data_source: estimated
+        - id: INT.AC.CTR.003
+          standard_name: Curtain rod - SS/brass - decorative - with finials and brackets
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - curtain rod SS
+          - decorative curtain rod
+          typical_rate_range:
+            min: 200
+            max: 500
+          notes: Per running foot
+          data_source: estimated
+        - id: INT.AC.CTR.004
+          standard_name: Motorized curtain track - with remote/smart control
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - hospitality
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - motorized curtain
+          - automated curtain track
+          typical_rate_range:
+            min: 500
+            max: 1200
+          notes: Per running foot, including motor
+          data_source: estimated
+      bathroom_accessories:
+        items:
+        - id: INT.AC.TWL.001
+          standard_name: Towel rail - SS 304 - 600mm length - wall mounted
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - towel bar
+          - towel rail SS
+          typical_rate_range:
+            min: 500
+            max: 1500
+          notes: ''
+          data_source: estimated
+        - id: INT.AC.TWL.002
+          standard_name: Towel ring - SS 304/chrome - wall mounted
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - towel ring
+          typical_rate_range:
+            min: 300
+            max: 800
+          notes: ''
+          data_source: estimated
+        - id: INT.AC.SPD.001
+          standard_name: Soap dish - SS 304/chrome - wall mounted
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - soap holder
+          - soap dish wall
+          typical_rate_range:
+            min: 200
+            max: 600
+          notes: ''
+          data_source: estimated
+        - id: INT.AC.SPD.002
+          standard_name: Liquid soap dispenser - SS 304 - wall mounted
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - soap dispenser wall
+          - liquid soap dispenser
+          typical_rate_range:
+            min: 500
+            max: 1500
+          notes: ''
+          data_source: estimated
+        - id: INT.AC.RBH.001
+          standard_name: Robe hook - SS 304/chrome - double
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - robe hook
+          - cloth hook
+          - towel hook
+          typical_rate_range:
+            min: 200
+            max: 600
+          notes: ''
+          data_source: estimated
+        - id: INT.AC.TPH.001
+          standard_name: Toilet paper holder - SS 304/chrome - with cover
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - toilet roll holder
+          - tissue holder
+          - TP holder
+          typical_rate_range:
+            min: 300
+            max: 800
+          notes: ''
+          data_source: estimated
+        - id: INT.AC.GRB.001
+          standard_name: Grab bar - SS 304 - 450mm length - for accessible toilet
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - grab bar SS
+          - safety bar toilet
+          - handicap rail
+          typical_rate_range:
+            min: 800
+            max: 2000
+          notes: Mandatory for PwD accessible toilets
+          data_source: IS codes only
+        - id: INT.AC.GRB.002
+          standard_name: Grab bar - SS 304 - L-shaped - 600x300mm - for accessible toilet
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - L-shape grab bar
+          - corner grab bar
+          typical_rate_range:
+            min: 1200
+            max: 3000
+          notes: ''
+          data_source: IS codes only
+      kitchen_appliances:
+        items:
+        - id: INT.AC.CHM.001
+          standard_name: Kitchen chimney - wall mounted - 60cm - auto clean
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - kitchen chimney 60cm
+          - auto clean chimney
+          typical_rate_range:
+            min: 8000
+            max: 20000
+          notes: ''
+          data_source: estimated
+        - id: INT.AC.CHM.002
+          standard_name: Kitchen chimney - island/ceiling mounted - 90cm
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - island chimney
+          - ceiling chimney
+          typical_rate_range:
+            min: 15000
+            max: 40000
+          notes: ''
+          data_source: estimated
+        - id: INT.AC.HOB.001
+          standard_name: Kitchen hob - 4 burner - glass top - built-in
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - cooktop 4 burner
+          - gas hob built-in
+          typical_rate_range:
+            min: 5000
+            max: 15000
+          notes: ''
+          data_source: estimated
+        - id: INT.AC.SNK.001
+          standard_name: Kitchen sink - SS 304 - single bowl - 24x18 inches
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - kitchen sink single
+          - SS sink single bowl
+          typical_rate_range:
+            min: 3000
+            max: 8000
+          notes: Including waste coupling
+          data_source: estimated
+        - id: INT.AC.SNK.002
+          standard_name: Kitchen sink - SS 304 - double bowl - 37x18 inches
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - double bowl sink
+          - SS sink double
+          typical_rate_range:
+            min: 5000
+            max: 12000
+          notes: ''
+          data_source: estimated
+        - id: INT.AC.SNK.003
+          standard_name: Kitchen sink - granite/quartz composite - single bowl
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - granite sink
+          - quartz sink
+          typical_rate_range:
+            min: 8000
+            max: 20000
+          notes: ''
+          data_source: estimated
+      hardware:
+        items:
+        - id: INT.AC.HNG.001
+          standard_name: Soft-close hinge - concealed - Hettich/Hafele - for kitchen/wardrobe
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - soft close hinge
+          - concealed hinge Hettich
+          - European hinge
+          typical_rate_range:
+            min: 80
+            max: 250
+          notes: Per piece, clip-on type
+          data_source: estimated
+        - id: INT.AC.DRC.001
+          standard_name: Soft-close drawer channel - ball bearing - Hettich/Hafele
+          unit: pair
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - soft close drawer slide
+          - telescopic channel
+          - drawer runner
+          typical_rate_range:
+            min: 300
+            max: 800
+          notes: Per pair, full extension
+          data_source: estimated
+        - id: INT.AC.DRC.002
+          standard_name: Tandem box drawer system - Hettich InnoTech/Hafele - with soft close
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - tandem box
+          - InnoTech drawer
+          - premium drawer system
+          typical_rate_range:
+            min: 1500
+            max: 3500
+          notes: Per drawer, complete system
+          data_source: estimated
+        - id: INT.AC.HDL.001
+          standard_name: Cabinet handle - SS/aluminum - D-handle/C-handle - standard
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - cabinet handle
+          - D-handle
+          - C-handle
+          typical_rate_range:
+            min: 50
+            max: 200
+          notes: Per piece
+          data_source: estimated
+        - id: INT.AC.HDL.002
+          standard_name: Cabinet handle - concealed/J-profile - aluminum - handleless look
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - J-profile handle
+          - gola profile
+          - handleless cabinet
+          typical_rate_range:
+            min: 200
+            max: 500
+          notes: Per running foot
+          data_source: estimated
+  crockery_shoe:
+    categories:
+      crockery_unit:
+        items:
+        - id: INT.CS.CRK.001
+          standard_name: Crockery unit - wall mounted - glass shutter - with LED - 3ft wide
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - crockery unit wall
+          - display cabinet glass
+          typical_rate_range:
+            min: 10000
+            max: 22000
+          notes: ''
+          data_source: estimated
+        - id: INT.CS.CRK.002
+          standard_name: Crockery unit - floor to ceiling - with backpanel and LED - 5ft wide
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - tall crockery unit
+          - full height crockery
+          typical_rate_range:
+            min: 20000
+            max: 45000
+          notes: ''
+          data_source: estimated
+      shoe_rack:
+        items:
+        - id: INT.CS.SHR.001
+          standard_name: Shoe rack - wall mounted - pull-down type - 3ft wide
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - wall shoe rack
+          - pull down shoe cabinet
+          typical_rate_range:
+            min: 6000
+            max: 14000
+          notes: ''
+          data_source: estimated
+        - id: INT.CS.SHR.002
+          standard_name: Shoe rack - floor standing - with mirror - 4ft wide
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - shoe cabinet with mirror
+          - foyer shoe unit
+          typical_rate_range:
+            min: 8000
+            max: 18000
+          notes: ''
+          data_source: estimated
+  pooja_unit:
+    categories:
+      pooja:
+        items:
+        - id: INT.PJ.MND.001
+          standard_name: Pooja unit/mandir - wall mounted - teak/plywood - with LED - 2ft wide
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - wall pooja unit
+          - small mandir
+          - prayer shelf
+          typical_rate_range:
+            min: 8000
+            max: 18000
+          notes: ''
+          data_source: estimated
+        - id: INT.PJ.MND.002
+          standard_name: Pooja unit/mandir - floor standing - carved teak/CNC - 3ft wide
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - floor standing mandir
+          - large pooja unit
+          typical_rate_range:
+            min: 20000
+            max: 50000
+          notes: ''
+          data_source: estimated
+        - id: INT.PJ.MND.003
+          standard_name: Pooja room - complete interior - with marble/stone cladding, Corian jali
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - pooja room interior
+          - custom pooja room
+          typical_rate_range:
+            min: 50000
+            max: 150000
+          notes: Complete room including ceiling, wall treatment
+          data_source: estimated
+  wallpaper:
+    categories:
+      types:
+        items:
+        - id: INT.WW.PPR.001
+          standard_name: Wallpaper - PVC/vinyl - standard design - pasting included
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - vinyl wallpaper
+          - PVC wallpaper
+          typical_rate_range:
+            min: 50
+            max: 120
+          notes: Per sqft, including adhesive and labour
+          data_source: estimated
+        - id: INT.WW.PPR.002
+          standard_name: Wallpaper - non-woven fabric - premium imported
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - hospitality
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - fabric wallpaper
+          - non-woven wallpaper
+          - premium wallpaper
+          typical_rate_range:
+            min: 100
+            max: 250
+          notes: Per sqft
+          data_source: estimated
+        - id: INT.WW.PPR.003
+          standard_name: Wallpaper - 3D/customized print - digital printed
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - 3D wallpaper
+          - custom print wallpaper
+          - mural wallpaper
+          typical_rate_range:
+            min: 80
+            max: 200
+          notes: Per sqft, custom design
+          data_source: estimated
+  blinds_curtains:
+    categories:
+      blinds:
+        items:
+        - id: INT.BC.RLB.001
+          standard_name: Roller blind - fabric - blackout - with chain/spring mechanism
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - roller blind blackout
+          - window roller blind
+          typical_rate_range:
+            min: 100
+            max: 250
+          notes: Per sqft
+          data_source: estimated
+        - id: INT.BC.RLB.002
+          standard_name: Roller blind - fabric - translucent/sunscreen - motorized
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - motorized roller blind
+          - sunscreen blind
+          typical_rate_range:
+            min: 200
+            max: 450
+          notes: Per sqft, including motor
+          data_source: estimated
+        - id: INT.BC.VNB.001
+          standard_name: Venetian blind - aluminum slat - 25mm - manual
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - Venetian blind
+          - aluminum slat blind
+          typical_rate_range:
+            min: 80
+            max: 180
+          notes: Per sqft
+          data_source: estimated
+        - id: INT.BC.VTB.001
+          standard_name: Vertical blind - fabric/PVC - 89mm slat - for office
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - vertical blind office
+          - PVC vertical blind
+          typical_rate_range:
+            min: 60
+            max: 140
+          notes: Per sqft
+          data_source: estimated

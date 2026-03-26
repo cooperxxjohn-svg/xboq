@@ -8,7 +8,10 @@ Output: contingency_range, recommended_exclusions, recommended_clarifications,
 Pure module, no Streamlit dependency. Can be tested independently.
 """
 
+import logging
 from typing import Any, Dict, List, Optional
+
+logger = logging.getLogger(__name__)
 
 
 # =============================================================================
@@ -315,8 +318,8 @@ def compute_pricing_guidance(
                 contingency.get("rationale", "") +
                 " Adjusted by estimating playbook."
             )
-        except Exception:
-            pass  # playbook integration optional — don't break pricing
+        except Exception as e:
+            logger.warning(f"Playbook contingency adjustment failed: {e} — using document-risk only")
 
     exclusions = _compute_exclusions(
         run_coverage=run_coverage,

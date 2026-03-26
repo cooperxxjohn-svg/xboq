@@ -1,0 +1,1435 @@
+# xBOQ.ai Master Construction Knowledge Base
+# English Formal Synonyms - IS Code / CPWD / DSR formal terminology
+# ~200 entries covering all major construction trades
+
+terms:
+  # ============================================================
+  # STRUCTURAL - Concrete
+  # ============================================================
+  - canonical: "reinforced_cement_concrete"
+    taxonomy_ids: ["STR.CON.RCC.001"]
+    formal_english: ["reinforced cement concrete", "reinforced concrete", "R.C.C. work", "RCC in structural members", "reinforced concrete work", "RCC in columns beams and slabs", "RCC in footings", "RCC in retaining walls", "ferro concrete"]
+    informal_english: ["RCC", "RCC work", "concrete work"]
+    hindi: ["RCC ka kaam", "lohewala concrete"]
+    abbreviations: ["RCC", "RC"]
+    brand_names: []
+
+  - canonical: "plain_cement_concrete"
+    taxonomy_ids: ["STR.CON.PCC.001"]
+    formal_english: ["plain cement concrete", "cement concrete", "lean concrete", "mass concrete", "levelling course", "blinding concrete", "bed concrete", "PCC in foundation", "nominal mix concrete", "lean cement concrete 1:4:8", "lean cement concrete 1:3:6"]
+    informal_english: ["PCC", "lean mix", "blinding concrete"]
+    hindi: ["PCC", "sadha concrete"]
+    abbreviations: ["PCC", "CC"]
+    brand_names: []
+
+  - canonical: "prestressed_concrete"
+    taxonomy_ids: ["STR.CON.PSC.001"]
+    formal_english: ["prestressed concrete", "post-tensioned concrete", "pre-tensioned concrete", "prestressed cement concrete"]
+    informal_english: ["PT concrete", "PT slab", "prestressed slab"]
+    hindi: ["PT slab", "prestressed concrete"]
+    abbreviations: ["PSC", "PT"]
+    brand_names: []
+
+  - canonical: "ready_mix_concrete"
+    taxonomy_ids: ["STR.CON.RMC.001"]
+    formal_english: ["ready mixed concrete", "ready-mix concrete", "plant-mixed concrete", "transit mixed concrete"]
+    informal_english: ["RMC", "ready mix", "premix concrete"]
+    hindi: ["RMC", "tayaar concrete"]
+    abbreviations: ["RMC"]
+    brand_names: ["UltraTech RMC", "ACC RMC", "Lafarge RMC", "RDC Concrete"]
+
+  - canonical: "concrete_grade_m20"
+    taxonomy_ids: ["STR.CON.GRD.020"]
+    formal_english: ["M20 grade concrete", "design mix M20", "nominal mix 1:1.5:3"]
+    informal_english: ["M20", "twenty grade"]
+    hindi: ["M20 grade"]
+    abbreviations: ["M20"]
+    brand_names: []
+
+  - canonical: "concrete_grade_m25"
+    taxonomy_ids: ["STR.CON.GRD.025"]
+    formal_english: ["M25 grade concrete", "design mix M25"]
+    informal_english: ["M25", "twenty five grade"]
+    hindi: ["M25 grade"]
+    abbreviations: ["M25"]
+    brand_names: []
+
+  - canonical: "concrete_grade_m30"
+    taxonomy_ids: ["STR.CON.GRD.030"]
+    formal_english: ["M30 grade concrete", "design mix M30"]
+    informal_english: ["M30", "thirty grade"]
+    hindi: ["M30 grade"]
+    abbreviations: ["M30"]
+    brand_names: []
+
+  - canonical: "concrete_grade_m35"
+    taxonomy_ids: ["STR.CON.GRD.035"]
+    formal_english: ["M35 grade concrete", "design mix M35"]
+    informal_english: ["M35", "thirty five grade"]
+    hindi: ["M35 grade"]
+    abbreviations: ["M35"]
+    brand_names: []
+
+  - canonical: "concrete_grade_m40"
+    taxonomy_ids: ["STR.CON.GRD.040"]
+    formal_english: ["M40 grade concrete", "design mix M40", "high strength concrete"]
+    informal_english: ["M40", "forty grade", "high strength"]
+    hindi: ["M40 grade"]
+    abbreviations: ["M40"]
+    brand_names: []
+
+  - canonical: "self_compacting_concrete"
+    taxonomy_ids: ["STR.CON.SCC.001"]
+    formal_english: ["self-compacting concrete", "self-consolidating concrete", "SCC"]
+    informal_english: ["self-levelling concrete", "SCC"]
+    hindi: ["self compacting concrete"]
+    abbreviations: ["SCC"]
+    brand_names: []
+
+  - canonical: "fibre_reinforced_concrete"
+    taxonomy_ids: ["STR.CON.FRC.001"]
+    formal_english: ["fibre reinforced concrete", "steel fibre reinforced concrete", "polypropylene fibre concrete"]
+    informal_english: ["fibre concrete", "FRC"]
+    hindi: ["fibre wala concrete"]
+    abbreviations: ["FRC", "SFRC"]
+    brand_names: ["Dramix", "Bekaert"]
+
+  # ============================================================
+  # STRUCTURAL - Formwork
+  # ============================================================
+  - canonical: "formwork"
+    taxonomy_ids: ["STR.FW.GEN.001"]
+    formal_english: ["formwork", "form work", "shuttering and centering", "moulds for concrete"]
+    informal_english: ["shuttering", "centering", "form"]
+    hindi: ["shuttering", "centering"]
+    abbreviations: ["FW"]
+    brand_names: ["Doka", "PERI", "Mivan", "ULMA"]
+
+  - canonical: "column_formwork"
+    taxonomy_ids: ["STR.FW.COL.001"]
+    formal_english: ["formwork for columns", "column formwork", "column shuttering", "column moulds"]
+    informal_english: ["column shuttering", "pillar shuttering"]
+    hindi: ["pillar ka shuttering"]
+    abbreviations: []
+    brand_names: []
+
+  - canonical: "beam_formwork"
+    taxonomy_ids: ["STR.FW.BEM.001"]
+    formal_english: ["formwork for beams", "beam formwork", "beam bottom and sides shuttering"]
+    informal_english: ["beam shuttering", "beam centering"]
+    hindi: ["beam ka shuttering", "kadhi ka shuttering"]
+    abbreviations: []
+    brand_names: []
+
+  - canonical: "slab_formwork"
+    taxonomy_ids: ["STR.FW.SLB.001"]
+    formal_english: ["formwork for slabs", "slab formwork", "soffit formwork", "floor formwork"]
+    informal_english: ["slab shuttering", "slab centering", "soffit shuttering"]
+    hindi: ["chhat ka shuttering", "slab ka centering"]
+    abbreviations: []
+    brand_names: []
+
+  - canonical: "aluminium_formwork"
+    taxonomy_ids: ["STR.FW.ALU.001"]
+    formal_english: ["aluminium formwork system", "aluminium panel formwork", "system formwork"]
+    informal_english: ["Mivan", "aluminium shuttering", "system shuttering"]
+    hindi: ["Mivan shuttering", "aluminium shuttering"]
+    abbreviations: ["MIVAN"]
+    brand_names: ["Mivan", "PERI", "Doka", "ULMA"]
+
+  - canonical: "plywood_formwork"
+    taxonomy_ids: ["STR.FW.PLY.001"]
+    formal_english: ["plywood formwork", "conventional formwork", "timber formwork"]
+    informal_english: ["ply shuttering", "conventional shuttering"]
+    hindi: ["ply ka shuttering", "lakdi ka shuttering"]
+    abbreviations: []
+    brand_names: []
+
+  # ============================================================
+  # STRUCTURAL - Reinforcement
+  # ============================================================
+  - canonical: "reinforcement_steel"
+    taxonomy_ids: ["STR.RE.TMT.001"]
+    formal_english: ["reinforcement steel", "reinforcement bars", "high strength deformed bars", "TMT bars", "thermo mechanically treated bars"]
+    informal_english: ["rebar", "steel bars", "TMT", "saria", "rod"]
+    hindi: ["saria", "sariya", "loha", "chhad"]
+    abbreviations: ["TMT"]
+    brand_names: ["Tata Tiscon", "SAIL TMT", "Jindal Panther", "JSW Neosteel"]
+
+  - canonical: "binding_wire"
+    taxonomy_ids: ["STR.RE.BW.001"]
+    formal_english: ["binding wire", "annealed mild steel wire", "tying wire"]
+    informal_english: ["binding wire", "tying wire", "BW"]
+    hindi: ["binding wire", "bandhan tar"]
+    abbreviations: ["BW"]
+    brand_names: []
+
+  - canonical: "cover_blocks"
+    taxonomy_ids: ["STR.RE.CB.001"]
+    formal_english: ["cover blocks", "spacer blocks", "concrete cover spacers", "chair spacers"]
+    informal_english: ["cover blocks", "spacers", "chairs"]
+    hindi: ["cover block", "cover"]
+    abbreviations: []
+    brand_names: []
+
+  - canonical: "bar_bending_schedule"
+    taxonomy_ids: ["STR.RE.BBS.001"]
+    formal_english: ["bar bending schedule", "reinforcement schedule", "bending schedule"]
+    informal_english: ["BBS", "bending schedule"]
+    hindi: ["BBS", "saria schedule"]
+    abbreviations: ["BBS"]
+    brand_names: []
+
+  - canonical: "welded_wire_mesh"
+    taxonomy_ids: ["STR.RE.WM.001"]
+    formal_english: ["welded wire mesh", "welded wire fabric", "wire mesh reinforcement"]
+    informal_english: ["wire mesh", "jali", "weld mesh"]
+    hindi: ["jali", "wire mesh"]
+    abbreviations: ["WWM", "WWF"]
+    brand_names: []
+
+  # ============================================================
+  # STRUCTURAL - Curing
+  # ============================================================
+  - canonical: "curing"
+    taxonomy_ids: ["STR.CUR.GEN.001"]
+    formal_english: ["curing of concrete", "moist curing", "water curing", "membrane curing"]
+    informal_english: ["curing", "water curing", "ponding"]
+    hindi: ["curing", "paani dena", "geela rakhna"]
+    abbreviations: []
+    brand_names: []
+
+  - canonical: "curing_compound"
+    taxonomy_ids: ["STR.CUR.CMP.001"]
+    formal_english: ["curing compound", "membrane forming curing compound", "resin based curing compound"]
+    informal_english: ["curing compound", "spray curing"]
+    hindi: ["curing compound"]
+    abbreviations: []
+    brand_names: ["Fosroc Concure", "Sika Antisol", "MC Bauchemie"]
+
+  # ============================================================
+  # EARTHWORK
+  # ============================================================
+  - canonical: "excavation"
+    taxonomy_ids: ["CIV.EW.EXC.001"]
+    formal_english: ["earth excavation", "earthwork excavation", "excavation in all types of soil", "earth excavation in foundation", "excavation for foundation trenches", "excavation in ordinary soil", "excavation in hard soil", "open excavation", "bulk excavation", "manual excavation"]
+    informal_english: ["digging", "pit digging", "trenching"]
+    hindi: ["khudai", "khodai"]
+    abbreviations: ["EW", "exc"]
+    brand_names: []
+
+  - canonical: "backfilling"
+    taxonomy_ids: ["CIV.EW.BF.001"]
+    formal_english: ["backfilling", "earth filling", "filling with approved material", "backfill with compaction"]
+    informal_english: ["backfill", "filling", "refilling"]
+    hindi: ["bharna", "bharai", "mitti bharna"]
+    abbreviations: ["BF"]
+    brand_names: []
+
+  - canonical: "sand_filling"
+    taxonomy_ids: ["CIV.EW.SF.001"]
+    formal_english: ["sand filling", "sand cushion", "sand bed", "granular sub-base"]
+    informal_english: ["sand filling", "sand bed", "GSB"]
+    hindi: ["ret bharna", "bajri bharna"]
+    abbreviations: ["GSB"]
+    brand_names: []
+
+  - canonical: "rock_excavation"
+    taxonomy_ids: ["CIV.EW.RK.001"]
+    formal_english: ["rock excavation", "hard rock excavation", "excavation in rock"]
+    informal_english: ["rock breaking", "rock cutting"]
+    hindi: ["patthar todna", "chattan khodna"]
+    abbreviations: []
+    brand_names: []
+
+  - canonical: "dewatering"
+    taxonomy_ids: ["CIV.EW.DW.001"]
+    formal_english: ["dewatering", "well point dewatering", "ground water lowering"]
+    informal_english: ["dewatering", "pumping out water"]
+    hindi: ["paani nikalna", "dewatering"]
+    abbreviations: []
+    brand_names: []
+
+  - canonical: "soil_investigation"
+    taxonomy_ids: ["CIV.EW.SI.001"]
+    formal_english: ["soil investigation", "geotechnical investigation", "sub-soil investigation", "bore log"]
+    informal_english: ["soil test", "boring test", "soil report"]
+    hindi: ["mitti ki janch", "boring test"]
+    abbreviations: ["SI"]
+    brand_names: []
+
+  # ============================================================
+  # FOUNDATION
+  # ============================================================
+  - canonical: "isolated_footing"
+    taxonomy_ids: ["STR.FND.ISO.001"]
+    formal_english: ["isolated footing", "isolated column footing", "spread footing", "pad footing"]
+    informal_english: ["footing", "column footing"]
+    hindi: ["footing", "neev"]
+    abbreviations: []
+    brand_names: []
+
+  - canonical: "combined_footing"
+    taxonomy_ids: ["STR.FND.CMB.001"]
+    formal_english: ["combined footing", "combined column footing", "trapezoidal footing", "strap footing"]
+    informal_english: ["combined footing"]
+    hindi: ["combined footing"]
+    abbreviations: []
+    brand_names: []
+
+  - canonical: "raft_foundation"
+    taxonomy_ids: ["STR.FND.RFT.001"]
+    formal_english: ["raft foundation", "mat foundation", "raft slab", "flat slab foundation", "combined raft", "RCC raft slab", "raft with grade beams"]
+    informal_english: ["raft", "mat foundation", "mat slab"]
+    hindi: ["raft foundation", "raft"]
+    abbreviations: []
+    brand_names: []
+
+  - canonical: "pile_foundation"
+    taxonomy_ids: ["STR.FND.PIL.001"]
+    formal_english: ["pile foundation", "bored cast-in-situ pile", "driven pile", "micro pile"]
+    informal_english: ["piling", "pile", "bored pile"]
+    hindi: ["pile", "piling"]
+    abbreviations: []
+    brand_names: []
+
+  - canonical: "pile_cap"
+    taxonomy_ids: ["STR.FND.PC.001"]
+    formal_english: ["pile cap", "cap for pile foundation"]
+    informal_english: ["pile cap"]
+    hindi: ["pile cap"]
+    abbreviations: []
+    brand_names: []
+
+  - canonical: "plinth_beam"
+    taxonomy_ids: ["STR.FND.PB.001"]
+    formal_english: ["plinth beam", "grade beam", "tie beam at plinth level"]
+    informal_english: ["plinth beam", "grade beam"]
+    hindi: ["plinth beam", "neeche wali beam"]
+    abbreviations: ["PB"]
+    brand_names: []
+
+  # ============================================================
+  # MASONRY
+  # ============================================================
+  - canonical: "brickwork"
+    taxonomy_ids: ["MAS.BK.GEN.001"]
+    formal_english: ["brick masonry", "brick work in cement mortar", "burnt clay brick masonry", "brick masonry in cement mortar", "first class brick masonry", "second class brick masonry", "half brick masonry", "one brick thick masonry", "brick masonry in 1:4 CM", "brick masonry in 1:6 CM", "modular brick masonry"]
+    informal_english: ["brickwork", "brick wall", "eent ki deewar"]
+    hindi: ["eent ka kaam", "eent ki deewar", "chuna eent"]
+    abbreviations: ["BW"]
+    brand_names: []
+
+  - canonical: "aac_blockwork"
+    taxonomy_ids: ["MAS.BK.AAC.001"]
+    formal_english: ["autoclaved aerated concrete block masonry", "AAC block work", "lightweight block masonry"]
+    informal_english: ["AAC block", "block wall", "light block"]
+    hindi: ["AAC block", "halka block"]
+    abbreviations: ["AAC"]
+    brand_names: ["Ultratech Aerocon", "Magicrete", "Siporex", "Renacon"]
+
+  - canonical: "fly_ash_brick"
+    taxonomy_ids: ["MAS.BK.FAB.001"]
+    formal_english: ["fly ash brick masonry", "fly ash lime brick", "calcium silicate brick"]
+    informal_english: ["fly ash brick", "FAL-G brick"]
+    hindi: ["fly ash eent", "safed eent"]
+    abbreviations: ["FAB", "FAL-G"]
+    brand_names: []
+
+  - canonical: "concrete_block"
+    taxonomy_ids: ["MAS.BK.CB.001"]
+    formal_english: ["concrete block masonry", "hollow concrete block", "solid concrete block"]
+    informal_english: ["concrete block", "hollow block"]
+    hindi: ["concrete block", "khokla block"]
+    abbreviations: []
+    brand_names: []
+
+  - canonical: "stone_masonry"
+    taxonomy_ids: ["MAS.ST.GEN.001"]
+    formal_english: ["stone masonry", "random rubble masonry", "coursed rubble masonry", "ashlar masonry"]
+    informal_english: ["stone wall", "rubble masonry", "patthar ka kaam"]
+    hindi: ["patthar ki deewar", "patthar ki chunai"]
+    abbreviations: ["RR", "CR"]
+    brand_names: []
+
+  - canonical: "mortar"
+    taxonomy_ids: ["MAS.MO.GEN.001"]
+    formal_english: ["cement mortar", "cement sand mortar", "masonry mortar"]
+    informal_english: ["mortar", "masala", "mix"]
+    hindi: ["masala", "mortar"]
+    abbreviations: ["CM"]
+    brand_names: []
+
+  - canonical: "pointing"
+    taxonomy_ids: ["MAS.PT.GEN.001"]
+    formal_english: ["pointing", "flush pointing", "struck pointing", "recessed pointing"]
+    informal_english: ["pointing", "joint pointing"]
+    hindi: ["pointing", "joint bharai"]
+    abbreviations: []
+    brand_names: []
+
+  - canonical: "expansion_joint"
+    taxonomy_ids: ["MAS.EJ.GEN.001"]
+    formal_english: ["expansion joint", "movement joint", "control joint", "construction joint"]
+    informal_english: ["expansion joint", "movement joint"]
+    hindi: ["expansion joint"]
+    abbreviations: ["EJ"]
+    brand_names: []
+
+  # ============================================================
+  # FINISHES - Plastering
+  # ============================================================
+  - canonical: "internal_plastering"
+    taxonomy_ids: ["FIN.PL.INT.001"]
+    formal_english: ["internal plastering", "internal cement plaster", "cement plaster to inside of walls", "cement plaster 12mm thick", "cement plaster 20mm thick", "cement mortar plaster", "two coat plaster", "finish coat", "base coat plaster", "skim coat", "cement plaster 1:4", "cement plaster 1:6"]
+    informal_english: ["inside plaster", "internal plaster"]
+    hindi: ["andar ki lipai", "andar plaster"]
+    abbreviations: []
+    brand_names: []
+
+  - canonical: "external_plastering"
+    taxonomy_ids: ["FIN.PL.EXT.001"]
+    formal_english: ["external plastering", "external cement plaster", "sand faced plaster", "rough cast plaster", "cement plaster to external walls", "waterproof cement plaster", "textured plaster", "pebble dash", "external render"]
+    informal_english: ["outside plaster", "external plaster", "bahari plaster"]
+    hindi: ["bahar ki lipai", "bahar plaster"]
+    abbreviations: []
+    brand_names: []
+
+  - canonical: "plaster_of_paris"
+    taxonomy_ids: ["FIN.PL.POP.001"]
+    formal_english: ["plaster of Paris finish", "gypsum plaster", "POP finish", "POP punning"]
+    informal_english: ["POP", "punning", "POP work"]
+    hindi: ["POP", "punning", "POP ka kaam"]
+    abbreviations: ["POP"]
+    brand_names: ["Gyproc", "Saint-Gobain"]
+
+  - canonical: "ready_mix_plaster"
+    taxonomy_ids: ["FIN.PL.RMP.001"]
+    formal_english: ["ready mix plaster", "pre-mixed dry plaster", "gypsum based plaster"]
+    informal_english: ["ready plaster", "premix plaster"]
+    hindi: ["ready mix plaster"]
+    abbreviations: ["RMP"]
+    brand_names: ["Birla White LevelO", "JK Lakshmiplast"]
+
+  # ============================================================
+  # FINISHES - Flooring
+  # ============================================================
+  - canonical: "vitrified_tile_flooring"
+    taxonomy_ids: ["FIN.FL.VT.001"]
+    formal_english: ["vitrified tile flooring", "polished vitrified tile", "double charged vitrified tile"]
+    informal_english: ["vitrified tile", "VT flooring", "glossy tile"]
+    hindi: ["vitrified tile", "chamkili tile"]
+    abbreviations: ["VT", "PVT"]
+    brand_names: ["Kajaria", "Somany", "Johnson", "RAK", "Nitco"]
+
+  - canonical: "ceramic_tile_flooring"
+    taxonomy_ids: ["FIN.FL.CT.001"]
+    formal_english: ["ceramic tile flooring", "glazed ceramic tile", "ceramic floor tile"]
+    informal_english: ["ceramic tile", "floor tile"]
+    hindi: ["ceramic tile"]
+    abbreviations: ["CT"]
+    brand_names: ["Kajaria", "Somany", "Johnson", "Orient Bell"]
+
+  - canonical: "natural_stone_flooring"
+    taxonomy_ids: ["FIN.FL.NS.001"]
+    formal_english: ["natural stone flooring", "granite flooring", "marble flooring", "sandstone flooring", "kota stone flooring"]
+    informal_english: ["stone flooring", "granite floor", "marble floor", "kota floor"]
+    hindi: ["patthar ka farsh", "granite", "marble", "kota"]
+    abbreviations: []
+    brand_names: []
+
+  - canonical: "ips_flooring"
+    taxonomy_ids: ["FIN.FL.IPS.001"]
+    formal_english: ["Indian Patent Stone flooring", "IPS flooring", "cement concrete flooring with hardener"]
+    informal_english: ["IPS", "cement floor"]
+    hindi: ["IPS", "cement ka farsh"]
+    abbreviations: ["IPS"]
+    brand_names: []
+
+  - canonical: "vdf_flooring"
+    taxonomy_ids: ["FIN.FL.VDF.001"]
+    formal_english: ["vacuum dewatered flooring", "VDF flooring", "tremix flooring", "industrial concrete flooring"]
+    informal_english: ["VDF", "tremix floor", "industrial floor"]
+    hindi: ["VDF floor", "tremix floor"]
+    abbreviations: ["VDF"]
+    brand_names: []
+
+  - canonical: "wooden_flooring"
+    taxonomy_ids: ["FIN.FL.WD.001"]
+    formal_english: ["wooden flooring", "engineered wood flooring", "laminate flooring", "solid hardwood flooring"]
+    informal_english: ["wood floor", "laminate floor", "parquet"]
+    hindi: ["lakdi ka farsh", "wooden floor"]
+    abbreviations: []
+    brand_names: ["Pergo", "Greenply", "Action Tesa"]
+
+  - canonical: "epoxy_flooring"
+    taxonomy_ids: ["FIN.FL.EP.001"]
+    formal_english: ["epoxy flooring", "epoxy coating", "epoxy self-levelling floor", "epoxy mortar flooring"]
+    informal_english: ["epoxy floor", "epoxy coating"]
+    hindi: ["epoxy floor"]
+    abbreviations: []
+    brand_names: ["Asian Paints SmartCare", "Dr. Fixit"]
+
+  # ============================================================
+  # FINISHES - Wall Finishes
+  # ============================================================
+  - canonical: "wall_tiling"
+    taxonomy_ids: ["FIN.WT.GEN.001"]
+    formal_english: ["wall tiling", "ceramic wall tile", "glazed wall tile", "dado tiling"]
+    informal_english: ["wall tile", "dado", "bathroom tile"]
+    hindi: ["deewar ki tile", "dado"]
+    abbreviations: []
+    brand_names: []
+
+  - canonical: "dado"
+    taxonomy_ids: ["FIN.WT.DAD.001"]
+    formal_english: ["dado", "dado tiling", "wall dado to specified height"]
+    informal_english: ["dado", "half wall tile"]
+    hindi: ["dado"]
+    abbreviations: []
+    brand_names: []
+
+  - canonical: "skirting"
+    taxonomy_ids: ["FIN.WT.SKT.001"]
+    formal_english: ["skirting", "floor skirting", "tile skirting", "stone skirting"]
+    informal_english: ["skirting", "border"]
+    hindi: ["skirting", "patti"]
+    abbreviations: []
+    brand_names: []
+
+  - canonical: "stone_cladding"
+    taxonomy_ids: ["FIN.WT.SCL.001"]
+    formal_english: ["stone cladding", "natural stone cladding", "granite cladding", "marble cladding"]
+    informal_english: ["stone cladding", "granite cladding"]
+    hindi: ["patthar cladding", "patthar lagana"]
+    abbreviations: []
+    brand_names: []
+
+  # ============================================================
+  # FINISHES - Painting
+  # ============================================================
+  - canonical: "interior_emulsion"
+    taxonomy_ids: ["FIN.PA.IE.001"]
+    formal_english: ["interior acrylic emulsion paint", "interior emulsion", "plastic emulsion paint", "two coat emulsion paint", "three coat emulsion paint", "acrylic distemper"]
+    informal_english: ["emulsion", "inside paint", "wall paint"]
+    hindi: ["andar ka paint", "emulsion"]
+    abbreviations: []
+    brand_names: ["Asian Paints Tractor", "Asian Paints Royale", "Berger Easy Clean", "Nerolac Impressions"]
+
+  - canonical: "exterior_emulsion"
+    taxonomy_ids: ["FIN.PA.EE.001"]
+    formal_english: ["exterior acrylic emulsion paint", "exterior weather coat", "weather resistant paint", "elastomeric paint", "masonry paint", "exterior textured paint"]
+    informal_english: ["outside paint", "exterior paint", "weather coat"]
+    hindi: ["bahar ka paint", "weather coat"]
+    abbreviations: []
+    brand_names: ["Asian Paints Apex", "Berger WeatherCoat", "Nerolac Excel"]
+
+  - canonical: "primer"
+    taxonomy_ids: ["FIN.PA.PR.001"]
+    formal_english: ["primer", "cement primer", "alkali resistant primer", "wall primer", "cement primer coat", "acrylic primer", "PVA primer", "bond coat"]
+    informal_english: ["primer", "base coat"]
+    hindi: ["primer"]
+    abbreviations: []
+    brand_names: ["Asian Paints Decoprime", "Berger Bison Primer"]
+
+  - canonical: "wall_putty"
+    taxonomy_ids: ["FIN.PA.WP.001"]
+    formal_english: ["wall putty", "acrylic wall putty", "white cement putty", "wall care putty"]
+    informal_english: ["putty", "wall putty"]
+    hindi: ["putty", "white cement"]
+    abbreviations: []
+    brand_names: ["Birla White WallCare", "Asian Paints Putty", "JK Wall Putty"]
+
+  - canonical: "enamel_paint"
+    taxonomy_ids: ["FIN.PA.EN.001"]
+    formal_english: ["synthetic enamel paint", "oil bound distemper", "enamel paint", "OBD", "oil bound distemper two coats", "synthetic enamel paint two coats over primer", "gloss finish paint", "semi-gloss enamel"]
+    informal_english: ["enamel", "oil paint", "gloss paint"]
+    hindi: ["enamel paint", "tel paint"]
+    abbreviations: []
+    brand_names: ["Asian Paints Apcolite", "Berger Luxol"]
+
+  - canonical: "texture_paint"
+    taxonomy_ids: ["FIN.PA.TX.001"]
+    formal_english: ["texture paint", "textured finish", "designer finish", "texture coating"]
+    informal_english: ["texture", "designer paint"]
+    hindi: ["texture paint"]
+    abbreviations: []
+    brand_names: ["Asian Paints Royale Play", "Berger Silk Glamour"]
+
+  - canonical: "wood_polish"
+    taxonomy_ids: ["FIN.PA.WPL.001"]
+    formal_english: ["wood polish", "french polish", "melamine polish", "polyurethane polish"]
+    informal_english: ["polish", "wood polish", "PU polish"]
+    hindi: ["polish", "lakdi ka polish"]
+    abbreviations: ["PU"]
+    brand_names: ["Asian Paints WoodTech", "Shalimar PU"]
+
+  # ============================================================
+  # FINISHES - False Ceiling
+  # ============================================================
+  - canonical: "gypsum_false_ceiling"
+    taxonomy_ids: ["FIN.FC.GYP.001"]
+    formal_english: ["gypsum board false ceiling", "gypsum plasterboard ceiling", "suspended gypsum ceiling"]
+    informal_english: ["gypsum ceiling", "false ceiling", "FC"]
+    hindi: ["false ceiling", "jhooti chhat"]
+    abbreviations: ["FC"]
+    brand_names: ["Gyproc", "USG Boral", "Saint-Gobain"]
+
+  - canonical: "grid_false_ceiling"
+    taxonomy_ids: ["FIN.FC.GRD.001"]
+    formal_english: ["metal grid false ceiling", "T-grid suspended ceiling", "lay-in ceiling"]
+    informal_english: ["grid ceiling", "Armstrong ceiling", "T-grid ceiling"]
+    hindi: ["grid ceiling"]
+    abbreviations: []
+    brand_names: ["Armstrong", "USG Boral", "Aerocon"]
+
+  - canonical: "metal_false_ceiling"
+    taxonomy_ids: ["FIN.FC.MET.001"]
+    formal_english: ["metal false ceiling", "aluminium false ceiling", "metal strip ceiling", "metal baffle ceiling"]
+    informal_english: ["metal ceiling", "aluminium ceiling", "baffle ceiling"]
+    hindi: ["metal ceiling"]
+    abbreviations: []
+    brand_names: ["Hunter Douglas", "Durlum"]
+
+  # ============================================================
+  # WATERPROOFING
+  # ============================================================
+  - canonical: "waterproofing"
+    taxonomy_ids: ["WP.GEN.001"]
+    formal_english: ["waterproofing treatment", "damp proof treatment", "water proofing"]
+    informal_english: ["waterproofing", "WP", "damp proofing"]
+    hindi: ["waterproofing", "paani rokna"]
+    abbreviations: ["WP", "DPT"]
+    brand_names: []
+
+  - canonical: "bituminous_waterproofing"
+    taxonomy_ids: ["WP.BIT.001"]
+    formal_english: ["bituminous waterproofing", "APP membrane", "SBS membrane", "torch applied membrane"]
+    informal_english: ["bitumen sheet", "membrane", "torch-on"]
+    hindi: ["bitumen sheet", "membrane"]
+    abbreviations: ["APP", "SBS"]
+    brand_names: ["Dr. Fixit", "Fosroc", "Sika", "BASF MasterSeal"]
+
+  - canonical: "cementitious_waterproofing"
+    taxonomy_ids: ["WP.CEM.001"]
+    formal_english: ["cementitious waterproofing", "polymer modified cementitious coating", "crystalline waterproofing"]
+    informal_english: ["cement waterproofing", "coating waterproofing"]
+    hindi: ["cement waterproofing"]
+    abbreviations: []
+    brand_names: ["Dr. Fixit Pidifin", "Fosroc Renderoc", "Xypex", "Penetron"]
+
+  - canonical: "liquid_waterproofing"
+    taxonomy_ids: ["WP.LIQ.001"]
+    formal_english: ["liquid applied waterproofing membrane", "polyurethane waterproofing", "acrylic waterproofing"]
+    informal_english: ["liquid membrane", "PU waterproofing", "spray waterproofing"]
+    hindi: ["liquid waterproofing"]
+    abbreviations: ["PU"]
+    brand_names: ["Dr. Fixit Roofseal", "Sika", "Fosroc"]
+
+  - canonical: "damp_proof_course"
+    taxonomy_ids: ["WP.DPC.001"]
+    formal_english: ["damp proof course", "DPC", "damp proof treatment at plinth level"]
+    informal_english: ["DPC", "damp course"]
+    hindi: ["DPC", "nami rokna"]
+    abbreviations: ["DPC"]
+    brand_names: []
+
+  # ============================================================
+  # PLUMBING & SANITARY
+  # ============================================================
+  - canonical: "water_supply_system"
+    taxonomy_ids: ["PLB.WS.GEN.001"]
+    formal_english: ["internal water supply system", "water distribution system", "plumbing water supply"]
+    informal_english: ["water supply", "water line", "plumbing"]
+    hindi: ["paani ki supply", "nal ki line"]
+    abbreviations: ["WS"]
+    brand_names: []
+
+  - canonical: "drainage_system"
+    taxonomy_ids: ["PLB.DR.GEN.001"]
+    formal_english: ["internal drainage system", "soil waste and vent system", "plumbing drainage"]
+    informal_english: ["drainage", "waste line", "drain pipe"]
+    hindi: ["drainage", "nali", "mori"]
+    abbreviations: ["SWV", "DR"]
+    brand_names: []
+
+  - canonical: "sanitary_fixtures"
+    taxonomy_ids: ["PLB.SF.GEN.001"]
+    formal_english: ["sanitary fixtures", "sanitary ware", "bathroom fixtures"]
+    informal_english: ["sanitary", "fixtures", "bathroom fittings"]
+    hindi: ["sanitary", "bathroom ka saman"]
+    abbreviations: []
+    brand_names: ["Hindware", "Parryware", "Kohler", "Duravit", "Cera"]
+
+  - canonical: "water_closet"
+    taxonomy_ids: ["PLB.SF.WC.001"]
+    formal_english: ["water closet", "European water closet", "Indian water closet", "wall hung WC"]
+    informal_english: ["WC", "EWC", "IWC", "commode", "toilet"]
+    hindi: ["commode", "sandaas", "WC"]
+    abbreviations: ["WC", "EWC", "IWC"]
+    brand_names: ["Kohler", "Hindware", "Parryware", "TOTO", "Duravit"]
+
+  - canonical: "wash_basin"
+    taxonomy_ids: ["PLB.SF.WB.001"]
+    formal_english: ["wash basin", "lavatory basin", "counter top basin", "under counter basin", "pedestal basin"]
+    informal_english: ["basin", "wash basin", "hand wash"]
+    hindi: ["basin", "haath dhone ka basin"]
+    abbreviations: ["WB"]
+    brand_names: ["Kohler", "Hindware", "Parryware", "Cera"]
+
+  - canonical: "cp_fittings"
+    taxonomy_ids: ["PLB.CP.GEN.001"]
+    formal_english: ["chrome plated fittings", "CP fittings", "bathroom accessories", "shower fittings"]
+    informal_english: ["CP fittings", "taps", "faucets", "shower"]
+    hindi: ["CP fitting", "nal", "shower"]
+    abbreviations: ["CP"]
+    brand_names: ["Jaquar", "Grohe", "Kohler", "Hindware"]
+
+  - canonical: "cpvc_pipe"
+    taxonomy_ids: ["PLB.PP.CPVC.001"]
+    formal_english: ["CPVC piping system", "chlorinated polyvinyl chloride pipe", "CPVC hot and cold water pipe"]
+    informal_english: ["CPVC pipe", "CPVC", "hot water pipe"]
+    hindi: ["CPVC pipe", "garam paani ki pipe"]
+    abbreviations: ["CPVC"]
+    brand_names: ["Astral CPVC", "Ashirvad FlowGuard", "Prince FlowGuard", "Supreme"]
+
+  - canonical: "upvc_pipe"
+    taxonomy_ids: ["PLB.PP.UPVC.001"]
+    formal_english: ["UPVC pipe", "unplasticized polyvinyl chloride pipe", "UPVC pressure pipe"]
+    informal_english: ["UPVC", "PVC pipe", "plastic pipe"]
+    hindi: ["PVC pipe", "plastic pipe"]
+    abbreviations: ["UPVC", "PVC"]
+    brand_names: ["Astral", "Ashirvad", "Prince", "Supreme", "Finolex"]
+
+  - canonical: "swr_pipe"
+    taxonomy_ids: ["PLB.PP.SWR.001"]
+    formal_english: ["SWR pipe", "soil waste and rain water pipe", "SWR drainage pipe"]
+    informal_english: ["SWR pipe", "waste pipe", "drain pipe"]
+    hindi: ["SWR pipe", "nali ki pipe"]
+    abbreviations: ["SWR"]
+    brand_names: ["Astral", "Ashirvad", "Prince", "Supreme"]
+
+  - canonical: "gi_pipe"
+    taxonomy_ids: ["PLB.PP.GI.001"]
+    formal_english: ["galvanized iron pipe", "GI pipe", "galvanized steel pipe"]
+    informal_english: ["GI pipe", "iron pipe"]
+    hindi: ["GI pipe", "lohe ki pipe"]
+    abbreviations: ["GI"]
+    brand_names: ["Tata", "Jindal", "APL Apollo"]
+
+  - canonical: "hdpe_pipe"
+    taxonomy_ids: ["PLB.PP.HDPE.001"]
+    formal_english: ["HDPE pipe", "high density polyethylene pipe"]
+    informal_english: ["HDPE pipe", "HDPE", "black pipe"]
+    hindi: ["HDPE pipe", "kaali pipe"]
+    abbreviations: ["HDPE"]
+    brand_names: ["Jain Irrigation", "Supreme", "Prince"]
+
+  - canonical: "sewage_treatment_plant"
+    taxonomy_ids: ["PLB.STP.GEN.001"]
+    formal_english: ["sewage treatment plant", "STP", "effluent treatment plant", "waste water treatment plant"]
+    informal_english: ["STP", "ETP", "treatment plant"]
+    hindi: ["STP", "ganda paani saaf karne ka plant"]
+    abbreviations: ["STP", "ETP", "WTP"]
+    brand_names: ["Thermax", "Ion Exchange", "VA Tech Wabag"]
+
+  - canonical: "rainwater_harvesting"
+    taxonomy_ids: ["PLB.RWH.GEN.001"]
+    formal_english: ["rain water harvesting system", "RWH system", "roof top rain water harvesting"]
+    informal_english: ["RWH", "rain water harvesting", "water harvesting"]
+    hindi: ["baarish ka paani jama karna", "RWH"]
+    abbreviations: ["RWH"]
+    brand_names: []
+
+  - canonical: "overhead_tank"
+    taxonomy_ids: ["PLB.TK.OHT.001"]
+    formal_english: ["overhead water tank", "elevated storage reservoir", "OHT"]
+    informal_english: ["overhead tank", "OHT", "upper tank"]
+    hindi: ["upar ki tanki", "OHT"]
+    abbreviations: ["OHT"]
+    brand_names: ["Sintex", "Ashirvad"]
+
+  - canonical: "underground_tank"
+    taxonomy_ids: ["PLB.TK.UGT.001"]
+    formal_english: ["underground water tank", "sump", "underground storage reservoir"]
+    informal_english: ["underground tank", "sump", "UGT"]
+    hindi: ["zameen ke neeche tanki", "sump", "UGT"]
+    abbreviations: ["UGT"]
+    brand_names: []
+
+  # ============================================================
+  # ELECTRICAL
+  # ============================================================
+  - canonical: "distribution_board"
+    taxonomy_ids: ["ELE.DB.GEN.001"]
+    formal_english: ["distribution board", "electrical distribution board", "consumer unit", "panel board"]
+    informal_english: ["DB", "board", "MCB box"]
+    hindi: ["board", "DB", "bijli ka board"]
+    abbreviations: ["DB", "MDB", "SMDB", "SDB"]
+    brand_names: ["Schneider", "ABB", "Siemens", "Legrand", "Havells"]
+
+  - canonical: "mcb"
+    taxonomy_ids: ["ELE.CB.MCB.001"]
+    formal_english: ["miniature circuit breaker", "MCB", "automatic circuit breaker"]
+    informal_english: ["MCB", "breaker", "trip switch"]
+    hindi: ["MCB", "trip", "breaker"]
+    abbreviations: ["MCB"]
+    brand_names: ["Schneider", "ABB", "Siemens", "Legrand", "Havells"]
+
+  - canonical: "rccb"
+    taxonomy_ids: ["ELE.CB.RCCB.001"]
+    formal_english: ["residual current circuit breaker", "RCCB", "earth leakage circuit breaker"]
+    informal_english: ["RCCB", "ELCB", "earth leakage"]
+    hindi: ["RCCB", "ELCB"]
+    abbreviations: ["RCCB", "ELCB"]
+    brand_names: ["Schneider", "ABB", "Siemens", "Legrand", "Havells"]
+
+  - canonical: "mccb"
+    taxonomy_ids: ["ELE.CB.MCCB.001"]
+    formal_english: ["moulded case circuit breaker", "MCCB"]
+    informal_english: ["MCCB"]
+    hindi: ["MCCB"]
+    abbreviations: ["MCCB"]
+    brand_names: ["Schneider", "ABB", "Siemens", "Legrand"]
+
+  - canonical: "electrical_conduit"
+    taxonomy_ids: ["ELE.CD.GEN.001"]
+    formal_english: ["electrical conduit", "PVC conduit", "GI conduit", "conduit pipe"]
+    informal_english: ["conduit", "pipe", "electrical pipe"]
+    hindi: ["conduit", "bijli ki pipe"]
+    abbreviations: []
+    brand_names: ["Precision", "Polycab"]
+
+  - canonical: "cable_tray"
+    taxonomy_ids: ["ELE.CT.GEN.001"]
+    formal_english: ["cable tray", "perforated cable tray", "ladder type cable tray"]
+    informal_english: ["cable tray", "tray"]
+    hindi: ["cable tray"]
+    abbreviations: ["CT"]
+    brand_names: ["Legrand", "Snake Tray"]
+
+  - canonical: "electrical_wiring"
+    taxonomy_ids: ["ELE.WR.GEN.001"]
+    formal_english: ["electrical wiring", "FRLS cable", "PVC insulated copper wire", "armoured cable"]
+    informal_english: ["wiring", "cable", "wire"]
+    hindi: ["tar", "wire", "cable"]
+    abbreviations: ["FRLS"]
+    brand_names: ["Polycab", "Finolex", "Havells", "KEI", "RR Kabel"]
+
+  - canonical: "earthing"
+    taxonomy_ids: ["ELE.ER.GEN.001"]
+    formal_english: ["earthing", "grounding", "earth electrode", "maintenance free earthing"]
+    informal_english: ["earthing", "grounding", "earth pit"]
+    hindi: ["earthing"]
+    abbreviations: []
+    brand_names: ["Furse", "Axis"]
+
+  - canonical: "dg_set"
+    taxonomy_ids: ["ELE.DG.GEN.001"]
+    formal_english: ["diesel generator set", "DG set", "standby generator", "power backup generator"]
+    informal_english: ["DG", "generator", "genset"]
+    hindi: ["generator", "DG"]
+    abbreviations: ["DG"]
+    brand_names: ["Kirloskar", "Cummins", "Ashok Leyland", "Mahindra Powerol"]
+
+  - canonical: "ups"
+    taxonomy_ids: ["ELE.UPS.GEN.001"]
+    formal_english: ["uninterruptible power supply", "UPS system", "online UPS"]
+    informal_english: ["UPS", "inverter", "battery backup"]
+    hindi: ["UPS", "inverter"]
+    abbreviations: ["UPS"]
+    brand_names: ["APC", "Emerson/Vertiv", "Luminous", "Microtek", "Eaton"]
+
+  - canonical: "electrical_switch"
+    taxonomy_ids: ["ELE.SW.GEN.001"]
+    formal_english: ["modular switch", "electrical switch", "switch socket outlet"]
+    informal_english: ["switch", "switch board", "modular switch"]
+    hindi: ["switch", "board"]
+    abbreviations: []
+    brand_names: ["Legrand", "Schneider", "Anchor/Panasonic", "Havells", "GM"]
+
+  - canonical: "light_fixture"
+    taxonomy_ids: ["ELE.LT.GEN.001"]
+    formal_english: ["light fixture", "luminaire", "LED light fitting", "lighting fixture"]
+    informal_english: ["light", "LED light", "fitting"]
+    hindi: ["batti", "light", "bulb"]
+    abbreviations: ["LED"]
+    brand_names: ["Philips", "Havells", "Crompton", "Bajaj", "Wipro"]
+
+  - canonical: "solar_pv_system"
+    taxonomy_ids: ["ELE.SOL.GEN.001"]
+    formal_english: ["solar photovoltaic system", "solar PV system", "rooftop solar plant"]
+    informal_english: ["solar", "solar panel", "solar system"]
+    hindi: ["solar panel", "solar"]
+    abbreviations: ["PV"]
+    brand_names: ["Tata Solar", "Vikram Solar", "Waaree", "Adani Solar"]
+
+  # ============================================================
+  # HVAC
+  # ============================================================
+  - canonical: "vrv_system"
+    taxonomy_ids: ["HVAC.VRV.GEN.001"]
+    formal_english: ["variable refrigerant volume system", "variable refrigerant flow system", "VRV/VRF system"]
+    informal_english: ["VRV", "VRF", "multi-split"]
+    hindi: ["VRV", "VRF"]
+    abbreviations: ["VRV", "VRF"]
+    brand_names: ["Daikin", "Mitsubishi", "Samsung DVM", "LG Multi V", "Toshiba"]
+
+  - canonical: "split_ac"
+    taxonomy_ids: ["HVAC.SPL.GEN.001"]
+    formal_english: ["split air conditioner", "wall mounted split unit", "ductable split unit", "cassette unit"]
+    informal_english: ["split AC", "AC", "cassette AC"]
+    hindi: ["AC", "split AC"]
+    abbreviations: ["AC"]
+    brand_names: ["Daikin", "Mitsubishi", "Samsung", "LG", "Voltas", "Blue Star", "Carrier"]
+
+  - canonical: "air_handling_unit"
+    taxonomy_ids: ["HVAC.AHU.GEN.001"]
+    formal_english: ["air handling unit", "AHU", "double skin air handling unit"]
+    informal_english: ["AHU", "air handler"]
+    hindi: ["AHU"]
+    abbreviations: ["AHU", "DAHU"]
+    brand_names: ["Blue Star", "Carrier", "Daikin", "Voltas"]
+
+  - canonical: "fan_coil_unit"
+    taxonomy_ids: ["HVAC.FCU.GEN.001"]
+    formal_english: ["fan coil unit", "FCU", "ceiling concealed FCU", "floor mounted FCU"]
+    informal_english: ["FCU", "fan coil"]
+    hindi: ["FCU"]
+    abbreviations: ["FCU"]
+    brand_names: ["Blue Star", "Carrier", "Daikin"]
+
+  - canonical: "chiller"
+    taxonomy_ids: ["HVAC.CHL.GEN.001"]
+    formal_english: ["water cooled chiller", "air cooled chiller", "centrifugal chiller", "screw chiller"]
+    informal_english: ["chiller"]
+    hindi: ["chiller"]
+    abbreviations: []
+    brand_names: ["Carrier", "Trane", "Daikin", "Blue Star", "Johnson Controls"]
+
+  - canonical: "ductwork"
+    taxonomy_ids: ["HVAC.DW.GEN.001"]
+    formal_english: ["ductwork", "GI ductwork", "pre-insulated ductwork", "HVAC ducts"]
+    informal_english: ["duct", "AC duct", "ductwork"]
+    hindi: ["duct", "AC ki nali"]
+    abbreviations: []
+    brand_names: []
+
+  - canonical: "cooling_tower"
+    taxonomy_ids: ["HVAC.CT.GEN.001"]
+    formal_english: ["cooling tower", "FRP cooling tower", "RCC cooling tower"]
+    informal_english: ["cooling tower", "CT"]
+    hindi: ["cooling tower"]
+    abbreviations: ["CT"]
+    brand_names: ["Paharpur", "Baltimore Aircoil"]
+
+  # ============================================================
+  # FIRE PROTECTION
+  # ============================================================
+  - canonical: "fire_sprinkler"
+    taxonomy_ids: ["FP.SPR.GEN.001"]
+    formal_english: ["automatic fire sprinkler system", "wet riser sprinkler", "fire sprinkler system"]
+    informal_english: ["sprinkler", "fire sprinkler"]
+    hindi: ["sprinkler"]
+    abbreviations: []
+    brand_names: ["Tyco", "Viking", "Reliable"]
+
+  - canonical: "fire_alarm"
+    taxonomy_ids: ["FP.FA.GEN.001"]
+    formal_english: ["fire alarm system", "fire detection and alarm system", "addressable fire alarm"]
+    informal_english: ["fire alarm", "alarm system"]
+    hindi: ["fire alarm", "aag ka alarm"]
+    abbreviations: ["FA"]
+    brand_names: ["Honeywell", "Siemens", "Bosch", "Morley-IAS"]
+
+  - canonical: "smoke_detector"
+    taxonomy_ids: ["FP.SD.GEN.001"]
+    formal_english: ["smoke detector", "optical smoke detector", "photoelectric smoke detector"]
+    informal_english: ["smoke detector", "detector"]
+    hindi: ["smoke detector", "dhuyen ka detector"]
+    abbreviations: ["SD"]
+    brand_names: ["Honeywell", "Siemens", "Bosch"]
+
+  - canonical: "fire_hydrant"
+    taxonomy_ids: ["FP.HY.GEN.001"]
+    formal_english: ["fire hydrant system", "wet riser system", "internal hydrant system"]
+    informal_english: ["hydrant", "fire hydrant"]
+    hindi: ["hydrant"]
+    abbreviations: ["FH"]
+    brand_names: []
+
+  - canonical: "fire_extinguisher"
+    taxonomy_ids: ["FP.FE.GEN.001"]
+    formal_english: ["fire extinguisher", "ABC type fire extinguisher", "CO2 fire extinguisher", "DCP fire extinguisher"]
+    informal_english: ["fire extinguisher", "extinguisher"]
+    hindi: ["fire extinguisher", "aag bujhane wala"]
+    abbreviations: ["FE", "ABC", "DCP"]
+    brand_names: ["Cease Fire", "Safex", "Minimax"]
+
+  - canonical: "fire_pump"
+    taxonomy_ids: ["FP.PM.GEN.001"]
+    formal_english: ["fire fighting pump", "fire pump set", "jockey pump", "main fire pump"]
+    informal_english: ["fire pump", "hydrant pump"]
+    hindi: ["fire pump"]
+    abbreviations: []
+    brand_names: ["Kirloskar", "Grundfos", "Wilo"]
+
+  # ============================================================
+  # DOORS & WINDOWS
+  # ============================================================
+  - canonical: "wooden_door"
+    taxonomy_ids: ["DW.WD.GEN.001"]
+    formal_english: ["wooden door", "flush door", "panel door", "solid core door", "timber door"]
+    informal_english: ["wooden door", "flush door", "ply door"]
+    hindi: ["lakdi ka darwaza", "flush door"]
+    abbreviations: []
+    brand_names: ["Greenply", "CenturyPly", "Kitply", "Kutty"]
+
+  - canonical: "aluminium_window"
+    taxonomy_ids: ["DW.AW.GEN.001"]
+    formal_english: ["aluminium window", "aluminium sliding window", "aluminium casement window"]
+    informal_english: ["aluminium window", "sliding window"]
+    hindi: ["aluminium ki khidki"]
+    abbreviations: ["AL"]
+    brand_names: ["Fenesta", "Jindal Aluminium", "Hindalco"]
+
+  - canonical: "upvc_window"
+    taxonomy_ids: ["DW.UW.GEN.001"]
+    formal_english: ["UPVC window", "UPVC casement window", "UPVC sliding window"]
+    informal_english: ["UPVC window", "plastic window"]
+    hindi: ["UPVC khidki"]
+    abbreviations: ["UPVC"]
+    brand_names: ["Fenesta", "Prominance", "Encraft", "Lingel"]
+
+  - canonical: "fire_rated_door"
+    taxonomy_ids: ["DW.FD.GEN.001"]
+    formal_english: ["fire rated door", "fire resistant door", "fire door assembly"]
+    informal_english: ["fire door", "fire rated door"]
+    hindi: ["fire door"]
+    abbreviations: ["FRD"]
+    brand_names: ["Dormakaba", "Assa Abloy"]
+
+  - canonical: "door_hardware"
+    taxonomy_ids: ["DW.HW.GEN.001"]
+    formal_english: ["door hardware", "door ironmongery", "door fittings", "architectural hardware"]
+    informal_english: ["hardware", "door fittings", "hinges and locks"]
+    hindi: ["hardware", "darwaze ka hardware"]
+    abbreviations: []
+    brand_names: ["Dorma", "Yale", "Godrej", "Hafele", "Hettich"]
+
+  # ============================================================
+  # ELEVATOR / LIFT
+  # ============================================================
+  - canonical: "passenger_elevator"
+    taxonomy_ids: ["LIFT.PE.GEN.001"]
+    formal_english: ["passenger elevator", "passenger lift", "machine room-less elevator"]
+    informal_english: ["lift", "elevator", "MRL lift"]
+    hindi: ["lift"]
+    abbreviations: ["MRL"]
+    brand_names: ["Otis", "KONE", "Schindler", "ThyssenKrupp", "Johnson"]
+
+  - canonical: "service_elevator"
+    taxonomy_ids: ["LIFT.SE.GEN.001"]
+    formal_english: ["service elevator", "goods elevator", "service cum goods lift"]
+    informal_english: ["service lift", "goods lift"]
+    hindi: ["saman ki lift", "goods lift"]
+    abbreviations: []
+    brand_names: ["Otis", "KONE", "Schindler"]
+
+  # ============================================================
+  # MISCELLANEOUS
+  # ============================================================
+  - canonical: "anti_termite_treatment"
+    taxonomy_ids: ["MISC.AT.GEN.001"]
+    formal_english: ["anti termite treatment", "termite proofing", "pre-construction anti-termite treatment"]
+    informal_english: ["anti termite", "termite treatment"]
+    hindi: ["deemak ka ilaaj", "anti termite"]
+    abbreviations: ["ATT"]
+    brand_names: ["Bayer Premise", "BASF Termidor"]
+
+  - canonical: "scaffolding"
+    taxonomy_ids: ["MISC.SC.GEN.001"]
+    formal_english: ["scaffolding", "steel tubular scaffolding", "cup-lock scaffolding"]
+    informal_english: ["scaffolding", "scaffold"]
+    hindi: ["scaffold", "machan"]
+    abbreviations: []
+    brand_names: []
+
+  - canonical: "structural_steel"
+    taxonomy_ids: ["STR.SS.GEN.001"]
+    formal_english: ["structural steel work", "steel fabrication and erection", "hot rolled steel sections"]
+    informal_english: ["steel structure", "MS structure"]
+    hindi: ["lohe ka structure", "steel structure"]
+    abbreviations: ["MS"]
+    brand_names: ["Tata Structura", "JSW", "SAIL", "Jindal"]
+
+  - canonical: "handrail"
+    taxonomy_ids: ["MISC.HR.GEN.001"]
+    formal_english: ["handrail", "stainless steel handrail", "MS handrail", "glass railing"]
+    informal_english: ["railing", "handrail", "balustrade"]
+    hindi: ["railing", "jangla"]
+    abbreviations: ["SS", "MS"]
+    brand_names: []
+
+  - canonical: "road_work"
+    taxonomy_ids: ["CIV.RD.GEN.001"]
+    formal_english: ["road work", "bituminous road", "cement concrete road", "flexible pavement", "rigid pavement"]
+    informal_english: ["road", "tar road", "CC road"]
+    hindi: ["sadak", "tar road", "CC road"]
+    abbreviations: ["BM", "DBM", "BC", "WMM", "WBM", "GSB"]
+    brand_names: []
+
+  - canonical: "compound_wall"
+    taxonomy_ids: ["CIV.CW.GEN.001"]
+    formal_english: ["compound wall", "boundary wall", "perimeter wall"]
+    informal_english: ["boundary wall", "compound wall"]
+    hindi: ["chaar diwari", "boundary wall"]
+    abbreviations: []
+    brand_names: []
+
+  - canonical: "stormwater_drainage"
+    taxonomy_ids: ["CIV.SD.GEN.001"]
+    formal_english: ["storm water drainage", "surface drainage", "storm water drain"]
+    informal_english: ["storm drain", "surface drainage"]
+    hindi: ["baarish ka paani ka nala", "nali"]
+    abbreviations: ["SWD"]
+    brand_names: []
+
+  - canonical: "landscaping"
+    taxonomy_ids: ["EXT.LS.GEN.001"]
+    formal_english: ["landscaping", "soft landscaping", "hard landscaping", "horticulture work"]
+    informal_english: ["landscaping", "garden", "plantation"]
+    hindi: ["baagbani", "landscaping"]
+    abbreviations: []
+    brand_names: []
+
+  - canonical: "external_electrification"
+    taxonomy_ids: ["ELE.EXT.GEN.001"]
+    formal_english: ["external electrification", "street lighting", "area lighting"]
+    informal_english: ["external lighting", "street light", "compound light"]
+    hindi: ["bahar ki light", "sadak ki light"]
+    abbreviations: []
+    brand_names: []
+
+  - canonical: "transformer"
+    taxonomy_ids: ["ELE.TR.GEN.001"]
+    formal_english: ["transformer", "distribution transformer", "power transformer"]
+    informal_english: ["transformer", "TC"]
+    hindi: ["transformer", "TC"]
+    abbreviations: ["TC"]
+    brand_names: ["ABB", "Siemens", "Crompton Greaves", "BHEL"]
+
+  - canonical: "bms"
+    taxonomy_ids: ["ELE.BMS.GEN.001"]
+    formal_english: ["building management system", "building automation system", "BMS"]
+    informal_english: ["BMS", "building automation"]
+    hindi: ["BMS"]
+    abbreviations: ["BMS", "BAS"]
+    brand_names: ["Honeywell", "Schneider", "Siemens", "Johnson Controls"]
+
+  - canonical: "cctv_system"
+    taxonomy_ids: ["SEC.CCTV.GEN.001"]
+    formal_english: ["closed circuit television system", "CCTV surveillance system", "IP camera system"]
+    informal_english: ["CCTV", "camera", "surveillance"]
+    hindi: ["CCTV", "camera"]
+    abbreviations: ["CCTV", "IP"]
+    brand_names: ["Hikvision", "Dahua", "CP Plus", "Bosch"]
+
+  - canonical: "access_control"
+    taxonomy_ids: ["SEC.AC.GEN.001"]
+    formal_english: ["access control system", "card access system", "biometric access"]
+    informal_english: ["access control", "card access", "biometric"]
+    hindi: ["access control"]
+    abbreviations: []
+    brand_names: ["Honeywell", "HID", "ZKTeco"]
+
+  - canonical: "pa_system"
+    taxonomy_ids: ["SEC.PA.GEN.001"]
+    formal_english: ["public address system", "PA system", "voice evacuation system"]
+    informal_english: ["PA system", "speaker system"]
+    hindi: ["PA system", "speaker"]
+    abbreviations: ["PA", "PAVA"]
+    brand_names: ["Bosch", "TOA", "Bose"]
+
+  - canonical: "structured_cabling"
+    taxonomy_ids: ["ELE.SC.GEN.001"]
+    formal_english: ["structured cabling system", "LAN cabling", "data cabling", "networking"]
+    informal_english: ["LAN", "networking", "data cable"]
+    hindi: ["LAN cable", "network"]
+    abbreviations: ["LAN", "SCS"]
+    brand_names: ["CommScope", "Panduit", "Legrand"]
+
+  - canonical: "curtain_wall"
+    taxonomy_ids: ["FAC.CW.GEN.001"]
+    formal_english: ["curtain wall", "structural glazing", "unitized curtain wall", "stick curtain wall"]
+    informal_english: ["curtain wall", "glass facade", "structural glazing"]
+    hindi: ["curtain wall", "glass facade"]
+    abbreviations: []
+    brand_names: ["Schuco", "Reynaers", "Aluprof"]
+
+  - canonical: "acp_cladding"
+    taxonomy_ids: ["FAC.ACP.GEN.001"]
+    formal_english: ["aluminium composite panel cladding", "ACP cladding", "metal composite panel"]
+    informal_english: ["ACP", "aluminium cladding"]
+    hindi: ["ACP", "aluminium panel"]
+    abbreviations: ["ACP"]
+    brand_names: ["Alucobond", "Reynobond", "Aludecor", "Viva"]
+
+  - canonical: "swimming_pool"
+    taxonomy_ids: ["SPL.SP.GEN.001"]
+    formal_english: ["swimming pool", "pool shell", "pool filtration system"]
+    informal_english: ["swimming pool", "pool"]
+    hindi: ["swimming pool", "talaab"]
+    abbreviations: []
+    brand_names: []
+
+  - canonical: "kitchen_platform"
+    taxonomy_ids: ["FIN.KP.GEN.001"]
+    formal_english: ["kitchen platform", "kitchen countertop", "granite kitchen platform"]
+    informal_english: ["kitchen platform", "counter", "slab"]
+    hindi: ["kitchen platform", "kitchen slab"]
+    abbreviations: []
+    brand_names: ["Caesarstone", "Corian"]
+
+  - canonical: "staircase"
+    taxonomy_ids: ["STR.ST.GEN.001"]
+    formal_english: ["staircase", "reinforced cement concrete staircase", "precast staircase"]
+    informal_english: ["staircase", "stairs"]
+    hindi: ["seedhi", "staircase"]
+    abbreviations: []
+    brand_names: []
+
+  - canonical: "ramp"
+    taxonomy_ids: ["STR.RM.GEN.001"]
+    formal_english: ["ramp", "vehicular ramp", "wheelchair ramp", "accessible ramp"]
+    informal_english: ["ramp"]
+    hindi: ["ramp", "dhalan"]
+    abbreviations: []
+    brand_names: []
+
+  - canonical: "insulation"
+    taxonomy_ids: ["MISC.INS.GEN.001"]
+    formal_english: ["thermal insulation", "acoustic insulation", "pipe insulation", "duct insulation"]
+    informal_english: ["insulation", "rockwool", "glass wool"]
+    hindi: ["insulation"]
+    abbreviations: []
+    brand_names: ["Rockwool", "Owens Corning", "Kingspan", "Armacell"]
+
+  - canonical: "concrete_admixture"
+    taxonomy_ids: ["STR.AD.GEN.001"]
+    formal_english: ["concrete admixture", "plasticizer", "superplasticizer", "retarder", "accelerator"]
+    informal_english: ["admixture", "plasticizer"]
+    hindi: ["admixture"]
+    abbreviations: []
+    brand_names: ["Fosroc", "Sika", "BASF MasterBuilders", "MC Bauchemie"]
+
+  - canonical: "cement"
+    taxonomy_ids: ["MAT.CM.GEN.001"]
+    formal_english: ["ordinary Portland cement", "Portland pozzolana cement", "Portland slag cement"]
+    informal_english: ["cement", "OPC", "PPC"]
+    hindi: ["cement"]
+    abbreviations: ["OPC", "PPC", "PSC"]
+    brand_names: ["UltraTech", "ACC", "Ambuja", "Shree", "Birla", "Dalmia"]
+
+  - canonical: "sand_aggregate"
+    taxonomy_ids: ["MAT.SA.GEN.001"]
+    formal_english: ["fine aggregate", "coarse aggregate", "natural sand", "manufactured sand", "crushed stone aggregate"]
+    informal_english: ["sand", "aggregate", "gitti", "bajri", "M-sand"]
+    hindi: ["bajri", "gitti", "ret", "reta"]
+    abbreviations: []
+    brand_names: []
+
+  - canonical: "construction_joint_sealant"
+    taxonomy_ids: ["WP.JS.GEN.001"]
+    formal_english: ["construction joint sealant", "joint filler", "PU sealant", "silicone sealant", "expansion joint filler"]
+    informal_english: ["sealant", "joint sealant", "silicone"]
+    hindi: ["sealant", "joint filler"]
+    abbreviations: ["PU"]
+    brand_names: ["Dow Corning", "Sika", "Fosroc", "3M"]
+
+  - canonical: "grout"
+    taxonomy_ids: ["STR.GR.GEN.001"]
+    formal_english: ["non-shrink grout", "cementitious grout", "epoxy grout", "construction grout"]
+    informal_english: ["grout", "grouting"]
+    hindi: ["grout"]
+    abbreviations: []
+    brand_names: ["Fosroc Conbextra", "Sika Grout", "BASF MasterFlow"]
+
+  - canonical: "tile_grout"
+    taxonomy_ids: ["FIN.TG.GEN.001"]
+    formal_english: ["tile grout", "tile joint filler", "epoxy tile grout"]
+    informal_english: ["grout", "tile grout", "joint filler"]
+    hindi: ["grout", "joint bharna"]
+    abbreviations: []
+    brand_names: ["Roff", "Laticrete", "MYK Laticrete"]
+
+  - canonical: "tile_adhesive"
+    taxonomy_ids: ["FIN.TA.GEN.001"]
+    formal_english: ["tile adhesive", "cementitious tile adhesive", "polymer modified tile adhesive"]
+    informal_english: ["tile adhesive", "adhesive"]
+    hindi: ["tile adhesive", "tile chipkane wala"]
+    abbreviations: []
+    brand_names: ["Roff", "MYK Laticrete", "Sika Ceram"]
+
+  - canonical: "manhole"
+    taxonomy_ids: ["CIV.MH.GEN.001"]
+    formal_english: ["manhole", "inspection chamber", "manholes and inspection chambers"]
+    informal_english: ["manhole", "chamber"]
+    hindi: ["manhole", "chamber"]
+    abbreviations: ["MH", "IC"]
+    brand_names: []
+
+  - canonical: "septic_tank"
+    taxonomy_ids: ["PLB.ST.GEN.001"]
+    formal_english: ["septic tank", "septic tank with soak pit"]
+    informal_english: ["septic tank"]
+    hindi: ["septic tank"]
+    abbreviations: []
+    brand_names: []
+
+  - canonical: "fire_suppression_system"
+    taxonomy_ids: ["FP.FS.GEN.001"]
+    formal_english: ["fire suppression system", "clean agent fire suppression", "FM200 system", "Novec 1230 system"]
+    informal_english: ["fire suppression", "FM200", "gas suppression"]
+    hindi: ["fire suppression"]
+    abbreviations: []
+    brand_names: ["Tyco", "Kidde", "Minimax"]
+
+  - canonical: "raised_access_floor"
+    taxonomy_ids: ["FIN.RAF.GEN.001"]
+    formal_english: ["raised access floor", "raised floor", "access flooring system"]
+    informal_english: ["raised floor", "false floor"]
+    hindi: ["raised floor"]
+    abbreviations: ["RAF"]
+    brand_names: ["Kingspan", "ASM"]
+
+  - canonical: "escalator"
+    taxonomy_ids: ["LIFT.ESC.GEN.001"]
+    formal_english: ["escalator", "moving stairway"]
+    informal_english: ["escalator"]
+    hindi: ["escalator"]
+    abbreviations: []
+    brand_names: ["Otis", "KONE", "Schindler", "ThyssenKrupp"]
+
+  - canonical: "parking_management"
+    taxonomy_ids: ["EXT.PK.GEN.001"]
+    formal_english: ["car parking", "basement parking", "multilevel car parking", "parking management system"]
+    informal_english: ["parking", "car park"]
+    hindi: ["parking"]
+    abbreviations: ["MLCP"]
+    brand_names: []
+
+  - canonical: "sewage_pipe"
+    taxonomy_ids: ["PLB.SP.GEN.001"]
+    formal_english: ["sewage pipe", "DWC pipe", "RCC hume pipe", "CI soil pipe"]
+    informal_english: ["sewage pipe", "sewer line"]
+    hindi: ["sewer pipe", "ganda paani ki pipe"]
+    abbreviations: ["DWC", "CI"]
+    brand_names: []
+
+  # ============================================================
+  # DSR/CPWD SPECIFIC ADDITIONS
+  # ============================================================
+  - canonical: "distemper"
+    taxonomy_ids: ["FIN.PA.DS.001"]
+    formal_english: ["oil bound distemper", "OBD", "dry distemper", "washable distemper", "acrylic distemper", "two coats of oil bound distemper over primer"]
+    informal_english: ["distemper", "OBD", "whitewash"]
+    hindi: ["distemper", "safedi"]
+    abbreviations: ["OBD"]
+    brand_names: ["Asian Paints Utsav", "Berger Bison", "Nerolac Suraksha"]
+
+  - canonical: "concrete_grouting"
+    taxonomy_ids: ["STR.GR.CON.001"]
+    formal_english: ["grouting", "cement grouting", "pressure grouting", "curtain grouting", "consolidation grouting", "non-shrink grout under machine base"]
+    informal_english: ["grouting", "injection grouting"]
+    hindi: ["grouting", "cement bharna"]
+    abbreviations: []
+    brand_names: ["Fosroc", "Sika", "BASF"]
+
+  - canonical: "rubble_soling"
+    taxonomy_ids: ["STR.FND.RS.001"]
+    formal_english: ["rubble soling", "stone soling", "dry stone packing", "soling in foundation", "hard core soling", "boulder soling"]
+    informal_english: ["soling", "stone soling", "rubble soling"]
+    hindi: ["soling", "patthar ki bharai"]
+    abbreviations: []
+    brand_names: []
+
+  - canonical: "brick_bat_coba"
+    taxonomy_ids: ["WP.BBC.001"]
+    formal_english: ["brick bat coba", "brick bat lime concrete", "BBC waterproofing", "brick tile waterproofing", "lime concrete terracing"]
+    informal_english: ["brick bat coba", "BBC", "lime concrete terracing"]
+    hindi: ["brick bat coba", "BBC"]
+    abbreviations: ["BBC"]
+    brand_names: []
+
+  - canonical: "dhala_kaam"
+    taxonomy_ids: ["STR.CON.DH.001"]
+    formal_english: ["concreting work", "concrete in position", "placing concrete", "casting of structural members", "RCC casting in foundation footing column beam slab"]
+    informal_english: ["dhala kaam", "casting", "pouring"]
+    hindi: ["dhalna", "casting", "concrete dalna"]
+    abbreviations: []
+    brand_names: []
+
+  - canonical: "steel_reinforcement_fabrication"
+    taxonomy_ids: ["STR.RE.FAB.001"]
+    formal_english: ["reinforcement steel fabrication and placement", "cutting bending and placing of reinforcement", "steel reinforcement in position", "providing and placing TMT bars", "reinforcement in RCC work"]
+    informal_english: ["steel fixing", "rebar fixing", "saria kaam"]
+    hindi: ["saria kaam", "saria banana"]
+    abbreviations: ["TMT"]
+    brand_names: ["Tata Tiscon", "SAIL TMT", "Jindal Panther"]
+
+  - canonical: "painting_woodwork"
+    taxonomy_ids: ["FIN.PA.WD.001"]
+    formal_english: ["painting woodwork", "painting on new wood", "knotting priming stopping and painting", "painting doors windows shutters", "synthetic enamel paint on woodwork", "two coats enamel paint on primed wood"]
+    informal_english: ["wood painting", "door painting", "enamel on wood"]
+    hindi: ["lakdi ki painting", "darwaze ki painting"]
+    abbreviations: []
+    brand_names: ["Asian Paints Apcolite", "Berger Luxol"]
+
+  - canonical: "painting_ironwork"
+    taxonomy_ids: ["FIN.PA.IR.001"]
+    formal_english: ["painting ironwork", "painting structural steelwork", "red oxide primer on MS surfaces", "two coats enamel paint over red oxide primer", "protective coating on ferrous metal", "anticorrosive paint on steel"]
+    informal_english: ["MS painting", "iron painting", "red oxide", "metal painting"]
+    hindi: ["lohe ki painting", "MS painting"]
+    abbreviations: []
+    brand_names: ["Asian Paints Apcolite", "Berger Rust-X"]
+
+  - canonical: "whitewashing"
+    taxonomy_ids: ["FIN.PA.WW.001"]
+    formal_english: ["whitewashing", "lime whitewash", "two coats whitewash on new work", "three coats whitewash on old work", "whitewash with lime", "colour washing"]
+    informal_english: ["whitewash", "safedi", "lime wash"]
+    hindi: ["safedi", "chunna lagna", "chune ki safedi"]
+    abbreviations: []
+    brand_names: []
+
+  - canonical: "pointing_masonry"
+    taxonomy_ids: ["MAS.PT.GEN.001"]
+    formal_english: ["pointing", "flush pointing", "raised pointing", "recessed pointing", "struck pointing", "V-groove pointing", "pointing in cement mortar 1:3", "pointing in CM 1:2"]
+    informal_english: ["pointing", "joint pointing", "deewar ki pointing"]
+    hindi: ["pointing", "joint bharai"]
+    abbreviations: []
+    brand_names: []
+
+  - canonical: "hacking"
+    taxonomy_ids: ["STR.CH.HAC.001"]
+    formal_english: ["hacking of concrete surface", "hacking of RCC surface for plaster bond", "surface preparation by hacking", "machine hacking", "hand hacking"]
+    informal_english: ["hacking", "chipping", "roughening", "surface prep"]
+    hindi: ["hacking", "chipping", "surface thokna"]
+    abbreviations: []
+    brand_names: []
+
+  - canonical: "lean_concrete_foundation"
+    taxonomy_ids: ["STR.FND.LCC.001"]
+    formal_english: ["lean cement concrete in foundation", "PCC 1:4:8 in foundation", "PCC 1:3:6 below footing", "CC bed in foundation", "plain concrete base course", "levelling concrete in foundation trenches"]
+    informal_english: ["PCC in foundation", "bed concrete", "lean mix"]
+    hindi: ["PCC neeche", "neev mein PCC"]
+    abbreviations: ["PCC"]
+    brand_names: []
+
+  - canonical: "DPC_waterproofing"
+    taxonomy_ids: ["WP.DPC.001"]
+    formal_english: ["damp proof course", "DPC at plinth level", "DPC in CM 1:3", "DPC with integral WP compound", "DPC 75mm thick", "horizontal DPC", "DPC in brick masonry"]
+    informal_english: ["DPC", "damp course", "plinth DPC"]
+    hindi: ["DPC", "nami rokne ki patti"]
+    abbreviations: ["DPC"]
+    brand_names: []

@@ -1,0 +1,2405 @@
+rules:
+- id: RFI-SG-WP-001
+  trigger_type: scope_gap
+  trigger_keywords:
+  - waterproofing
+  - toilet
+  - bathroom
+  - wet area
+  trigger_trade: waterproofing
+  question_template: 'Waterproofing system not specified for {area}. Please confirm: (a) System type — APP membrane, polyurethane (PU) liquid applied, cementitious coating, or integral waterproofing? (b)
+    Number of layers and total DFT (dry film thickness) required? (c) Upturn height on walls — 150mm, 300mm, or full height behind shower? (d) Junction/corner treatment — additional reinforcing strip or
+    fabric membrane at floor-wall junctions? (e) Protective screed specification over membrane — thickness, mix, and slope to drain?
+
+    '
+  why_it_matters: 'Waterproofing system type affects material cost by 2-5x (APP membrane vs cementitious coating). Incorrect specification leads to rework, leakage claims, and structural damage to floors
+    below.
+
+    '
+  suggested_resolution: Provide waterproofing detail drawing showing system build-up, product name, manufacturer, and applicator qualification requirements.
+  priority: critical
+  building_types:
+  - all
+  package: waterproofing
+- id: RFI-SG-WP-002
+  trigger_type: scope_gap
+  trigger_keywords:
+  - waterproofing
+  - terrace
+  - roof
+  - exposed terrace
+  trigger_trade: waterproofing
+  question_template: 'Terrace/roof waterproofing not specified for {area}. Please confirm: (a) System type — APP/SBS torch-applied membrane, PU liquid applied, or elastomeric coating? (b) Insulation layer
+    required — XPS/EPS board, thickness, and density? (c) Protection screed and slope to drain — minimum fall (1:100 or 1:80)? (d) Reflective/cool roof coating over waterproofing — required for energy compliance?
+    (e) Treatment at parapet upturns, pipe penetrations, and expansion joints?
+
+    '
+  why_it_matters: 'Terrace waterproofing is the most failure-prone system in tropical climates. System selection impacts 10-year maintenance cost and warranty coverage significantly.
+
+    '
+  suggested_resolution: Provide terrace waterproofing detail section showing full build-up from structural slab to finish, including insulation and drainage layer.
+  priority: critical
+  building_types:
+  - all
+  package: waterproofing
+- id: RFI-SG-WP-003
+  trigger_type: scope_gap
+  trigger_keywords:
+  - waterproofing
+  - basement
+  - retaining wall
+  - below grade
+  trigger_trade: waterproofing
+  question_template: 'Basement/below-grade waterproofing not specified for {area}. Please confirm: (a) External positive-side vs internal negative-side waterproofing system? (b) Product type — bentonite
+    sheet, HDPE membrane, crystalline admixture, or bituminous coating? (c) Hydrostatic pressure head expected — what is the water table level relative to lowest basement slab? (d) Construction joint treatment
+    — PVC waterstop, injectable hose, or swellable strip? (e) Protection board over external membrane — HDPE dimple board or XPS?
+
+    '
+  why_it_matters: 'Basement waterproofing failures are extremely costly to remediate post-construction. System selection depends on water table level and soil conditions. Remedial work can cost 3-10x the
+    original waterproofing budget.
+
+    '
+  suggested_resolution: Provide soil investigation report showing water table level, and basement waterproofing detail drawing showing system at slab, wall, and construction joint locations.
+  priority: critical
+  building_types:
+  - all
+  package: waterproofing
+- id: RFI-SG-WP-004
+  trigger_type: scope_gap
+  trigger_keywords:
+  - waterproofing
+  - water tank
+  - sump
+  - reservoir
+  trigger_trade: waterproofing
+  question_template: 'Water tank/sump waterproofing not specified for {area}. Please confirm: (a) Potable or non-potable water storage — food-grade coating required? (b) System type — crystalline integral,
+    cementitious coating, or epoxy lining? (c) Internal vs external application (or both)? (d) Construction joint treatment — type of waterstop at slab-wall junction? (e) Testing protocol — ponding test
+    duration and acceptable leakage rate?
+
+    '
+  why_it_matters: 'Water tanks require food-safe waterproofing for potable storage. Non-compliant coatings cause health hazards and regulatory issues. Leakage undermines adjacent structures.
+
+    '
+  suggested_resolution: Provide water tank waterproofing specification with product name, application method, and testing/acceptance criteria. Confirm potable vs non-potable use.
+  priority: high
+  building_types:
+  - all
+  package: waterproofing
+- id: RFI-SG-WP-005
+  trigger_type: scope_gap
+  trigger_keywords:
+  - waterproofing
+  - sunken slab
+  - depressed slab
+  - sunken floor
+  trigger_trade: waterproofing
+  question_template: 'Sunken slab waterproofing not specified for {area}. Please confirm: (a) Sunken depth — 200mm, 300mm, or custom depth for plumbing runs? (b) Waterproofing system — liquid applied PU,
+    cementitious, or APP membrane within sunken portion? (c) Fill material — AAC block pieces, cinder fill, or lightweight concrete? (d) Drainage provision — floor trap within sunken portion as leak detection?
+    (e) Upturn waterproofing height on sunken walls before fill?
+
+    '
+  why_it_matters: 'Sunken slabs trap water if waterproofing fails, causing hidden leakage to floors below. Fill material type affects dead load calculation and structural design.
+
+    '
+  suggested_resolution: Provide sunken slab detail drawing showing waterproofing membrane, fill type, drainage arrangement, and screed specification.
+  priority: high
+  building_types:
+  - all
+  package: waterproofing
+- id: RFI-SG-WP-006
+  trigger_type: scope_gap
+  trigger_keywords:
+  - waterproofing
+  - balcony
+  - deck
+  - open deck
+  trigger_trade: waterproofing
+  question_template: 'Balcony/open deck waterproofing not specified for {area}. Please confirm: (a) Waterproofing system type — liquid applied PU, APP membrane, or elastomeric coating? (b) Slope to drain
+    — minimum 1:80 fall toward drain/spout? (c) Threshold detail — waterproofing upturn at door sill, minimum 50mm above FFL? (d) Drip edge detail at balcony edge — required or railing base detail? (e)
+    Tile/paver finish over waterproofing — pedestal system or mortar bed?
+
+    '
+  why_it_matters: 'Balconies are exposed to weather and water ingress at the threshold is a common defect. Inadequate slope causes ponding; threshold detail failure causes interior water damage.
+
+    '
+  suggested_resolution: Provide balcony waterproofing detail showing threshold treatment, edge detail, slope direction, and finish system build-up.
+  priority: high
+  building_types:
+  - all
+  package: waterproofing
+- id: RFI-SG-FL-001
+  trigger_type: scope_gap
+  trigger_keywords:
+  - flooring
+  - floor material
+  - floor finish
+  - floor type
+  trigger_trade: flooring
+  question_template: 'Flooring material not specified for {area}. Please confirm: (a) Material type — vitrified tile, ceramic tile, natural stone (granite/marble/kota), vinyl, epoxy, or hardwood? (b) Manufacturer/brand
+    and product series or grade? (c) Color palette or design reference — specific shade or designer''s selection? (d) Surface finish — polished, matt, rustic, anti-skid, or honed? (e) Budget range per sqm
+    to guide material selection?
+
+    '
+  why_it_matters: 'Flooring is typically 8-15% of finishing cost. Material type changes cost by 3-10x (ceramic tile INR 40/sqft vs imported marble INR 400+/sqft). Delays in selection hold up screed, MEP
+    rough-in, and all subsequent finishing trades.
+
+    '
+  suggested_resolution: Provide floor finish schedule showing material, size, color, and brand for each room/area type. Include skirting specification.
+  priority: high
+  building_types:
+  - all
+  package: flooring
+- id: RFI-SG-FL-002
+  trigger_type: scope_gap
+  trigger_keywords:
+  - tile size
+  - flooring size
+  - floor tile dimension
+  trigger_trade: flooring
+  question_template: 'Tile/flooring size not specified for {area}. Please confirm: (a) Tile dimensions — 600x600mm, 600x1200mm, 800x800mm, or large format 1200x1200mm? (b) Skirting size — matching tile
+    cut or dedicated skirting piece? Height — 75mm, 100mm, or 150mm? (c) Thickness — 8mm, 10mm, or 12mm (affects level with adjacent areas)? (d) Is rectified (precision-cut) tile required for minimal grout
+    joints?
+
+    '
+  why_it_matters: 'Tile size affects wastage (large format = 8-12% waste vs 3-5% for standard), adhesive type (large format needs polymer-modified adhesive), and substrate flatness requirement.
+
+    '
+  suggested_resolution: Update floor finish schedule with tile size for each area. Confirm skirting size and type.
+  priority: medium
+  building_types:
+  - all
+  package: flooring
+- id: RFI-SG-FL-003
+  trigger_type: scope_gap
+  trigger_keywords:
+  - laying pattern
+  - floor pattern
+  - tile layout
+  - floor design
+  trigger_trade: flooring
+  question_template: 'Floor laying pattern not specified for {area}. Please confirm: (a) Laying pattern — straight/stack bond, brick bond (staggered), herringbone, diagonal, or custom? (b) Grout joint width
+    — 1.5mm (rectified), 3mm, or 5mm? (c) Grout color — matching tile, contrasting, or specific color reference? (d) Border/dado design — single border, double border, or flush to wall? (e) Starting point
+    for layout — center of room, entrance, or as per pattern drawing?
+
+    '
+  why_it_matters: 'Laying pattern impacts material wastage (herringbone = 12-15% waste vs straight = 3-5%), labor productivity, and aesthetic outcome. Grout specification affects durability and maintenance.
+
+    '
+  suggested_resolution: Provide floor pattern layout drawing for each typical room/area. Specify grout brand, color, and joint width.
+  priority: medium
+  building_types:
+  - all
+  package: flooring
+- id: RFI-SG-FL-004
+  trigger_type: scope_gap
+  trigger_keywords:
+  - skirting
+  - base
+  - floor skirting
+  - wall base
+  trigger_trade: flooring
+  question_template: 'Skirting/base specification not found for {area}. Please confirm: (a) Skirting type — matching tile cut, dedicated skirting tile, stone, or PVC/aluminum profile? (b) Height — 75mm,
+    100mm, or 150mm? (c) Profile — flat flush, beveled, or cove (rounded) at floor junction? (d) Is skirting required in all rooms or only specific areas?
+
+    '
+  why_it_matters: 'Skirting specification affects material ordering (dedicated skirting pieces vs field tile cuts), labor method, and coordination with wall painting/plastering. Missing skirting causes
+    unsightly floor-wall junctions and maintenance issues.
+
+    '
+  suggested_resolution: Add skirting specification to floor finish schedule — type, height, and profile for each area.
+  priority: low
+  building_types:
+  - all
+  package: flooring
+- id: RFI-SG-FL-005
+  trigger_type: scope_gap
+  trigger_keywords:
+  - screed
+  - floor screed
+  - leveling screed
+  - base screed
+  trigger_trade: flooring
+  question_template: 'Floor screed specification not provided for {area}. Please confirm: (a) Screed type — sand-cement (1:4), polymer-modified, or self-leveling compound? (b) Minimum and maximum thickness
+    — typically 25-50mm, but varies with level differences? (c) Is waterproofing required below screed (wet areas)? (d) Level tolerance — is FL (finished floor level) uniform across all rooms or does it
+    vary (e.g., balcony step-down)? (e) Curing method and duration?
+
+    '
+  why_it_matters: 'Screed specification determines floor flatness, tile adhesion, and overall floor level. Incorrect screed causes hollow tiles, cracking, and level mismatches at door thresholds.
+
+    '
+  suggested_resolution: Provide screed specification in floor finish schedule. Include level chart showing FFL for each room relative to structural slab level.
+  priority: medium
+  building_types:
+  - all
+  package: flooring
+- id: RFI-SG-FL-006
+  trigger_type: scope_gap
+  trigger_keywords:
+  - sports flooring
+  - gym floor
+  - court
+  - sports surface
+  trigger_trade: flooring
+  question_template: 'Sports/activity area flooring not specified for {area}. Please confirm: (a) Sport type — basketball, badminton, multipurpose, or gymnasium? (b) Surface type — wooden sprung floor (maple/teak),
+    PU coating, vinyl sports surface, or synthetic turf? (c) Compliance standard — BWF (badminton), FIBA (basketball), or general multipurpose? (d) Sub-floor system — sprung/floating or direct stick? (e)
+    Line marking scope — sports lines, colors, and logo?
+
+    '
+  why_it_matters: 'Sports flooring systems range from INR 200/sqft (PU) to INR 1200/sqft (imported maple sprung floor). Wrong specification causes athlete injuries and fails sports body certification.
+
+    '
+  suggested_resolution: Provide sports flooring specification with sport type, surface system, compliance standard, and sub-floor detail.
+  priority: high
+  building_types:
+  - school
+  - sports_complex
+  - residential_complex
+  package: flooring
+- id: RFI-SG-FL-007
+  trigger_type: scope_gap
+  trigger_keywords:
+  - industrial flooring
+  - factory floor
+  - warehouse floor
+  - heavy duty floor
+  trigger_trade: flooring
+  question_template: 'Industrial/heavy-duty flooring not specified for {area}. Please confirm: (a) Floor loading requirement — point load (kg), UDL (kN/sqm), and MHE wheel load? (b) Surface type — VDF (vacuum
+    dewatered flooring), tremix, epoxy coated, or PU screed? (c) Flatness requirement — FM classification (FM1, FM2, FM3) for racking/MHE areas? (d) Joint layout — sawn joints, formed joints, and maximum
+    panel size? (e) Surface hardener — dry shake or liquid applied? Color?
+
+    '
+  why_it_matters: 'Industrial floor specification drives slab thickness, reinforcement, and construction method. Incorrect flatness causes racking instability. Wrong surface treatment causes dusting and
+    abrasion failure under forklift traffic.
+
+    '
+  suggested_resolution: Provide floor loading schedule, flatness classification, and surface treatment specification for each zone.
+  priority: critical
+  building_types:
+  - factory
+  - warehouse
+  - industrial
+  package: flooring
+- id: RFI-SG-FL-008
+  trigger_type: scope_gap
+  trigger_keywords:
+  - wet area flooring
+  - anti-skid
+  - slip resistant
+  - pool area floor
+  trigger_trade: flooring
+  question_template: 'Wet area/anti-skid flooring not specified for {area}. Please confirm: (a) Anti-skid coefficient requirement — R9, R10, R11, or R12 (DIN 51130)? (b) Material — anti-skid vitrified tile,
+    natural stone (honed), or specialty anti-skid vinyl? (c) Slope to floor drain — 1:80 or 1:60? (d) Drain type — line drain (channel) or point drain (floor trap)? (e) Are cove tiles required at wall-floor
+    junction in wet areas?
+
+    '
+  why_it_matters: 'Slip resistance in wet areas is a safety and liability issue. Specifying wrong R-rating causes accidents. Drainage slope and drain type affect waterproofing design and plumbing coordination.
+
+    '
+  suggested_resolution: Specify anti-skid rating, tile type, and drainage detail for all wet areas in the floor finish schedule.
+  priority: high
+  building_types:
+  - all
+  package: flooring
+- id: RFI-SG-EL-001
+  trigger_type: scope_gap
+  trigger_keywords:
+  - load calculation
+  - electrical load
+  - connected load
+  - demand load
+  trigger_trade: electrical
+  question_template: 'Electrical load calculation/schedule not provided for {area}. Please confirm: (a) Total connected load (kW) and maximum demand (kVA) for the project? (b) Diversity factor applied —
+    as per IS 732 or project-specific? (c) Power supply arrangement — single source, dual source, or ring main? (d) Contract demand with utility (DISCOM) — applied or to be applied? (e) Transformer capacity
+    and ownership — client-owned or utility-owned?
+
+    '
+  why_it_matters: 'Electrical load calculation is the foundation for all electrical design — panel sizing, cable sizing, transformer capacity, and DG set rating. Without it, no accurate electrical BOQ can
+    be prepared. Under-estimation causes overloading; over-estimation wastes capital.
+
+    '
+  suggested_resolution: Provide electrical load schedule with area-wise connected load, demand factor, and total maximum demand. Include power supply single line diagram (SLD).
+  priority: critical
+  building_types:
+  - all
+  package: electrical
+- id: RFI-SG-EL-002
+  trigger_type: scope_gap
+  trigger_keywords:
+  - earthing
+  - grounding
+  - earth pit
+  - earth electrode
+  trigger_trade: electrical
+  question_template: 'Earthing/grounding system not specified for {area}. Please confirm: (a) Earthing system type — TN-S, TN-C-S, or TT as per IS 3043? (b) Earth electrode type — pipe earth, plate earth,
+    or chemical/maintenance-free earth? (c) Number of earth pits required and their locations? (d) Earth resistance target — less than 1 ohm (critical facilities) or less than 5 ohm (general)? (e) Equipotential
+    bonding — is main equipotential bonding and supplementary bonding in wet areas specified?
+
+    '
+  why_it_matters: 'Earthing system is a life-safety requirement. Incorrect earthing causes electrocution hazard, equipment damage, and fails electrical inspection. System type affects cable sizing and protection
+    coordination throughout the installation.
+
+    '
+  suggested_resolution: Provide earthing layout drawing showing earth pit locations, electrode type, interconnection, and earth bus arrangement. Include soil resistivity test report.
+  priority: critical
+  building_types:
+  - all
+  package: electrical
+- id: RFI-SG-EL-003
+  trigger_type: scope_gap
+  trigger_keywords:
+  - DG set
+  - generator
+  - diesel generator
+  - backup power
+  - genset
+  trigger_trade: electrical
+  question_template: 'Diesel generator (DG) set specification not provided for {area}. Please confirm: (a) DG capacity required (kVA) — based on essential load or full backup? (b) Number of DG sets — single
+    unit or parallel operation? (c) Fuel type — diesel (HSD), gas, or dual fuel? (d) Acoustic enclosure — required? Sound level limit at property boundary? (e) AMF (auto mains failure) panel and changeover
+    arrangement — manual or automatic? (f) Fuel storage capacity — hours of backup at full load?
+
+    '
+  why_it_matters: 'DG set is typically 5-10% of MEP cost. Capacity directly impacts civil works (foundation, exhaust, fuel tank room), electrical infrastructure (changeover panel, cables), and recurring
+    operational cost.
+
+    '
+  suggested_resolution: Provide DG set specification including capacity, make, acoustic treatment, and fuel storage requirement. Include essential load schedule.
+  priority: high
+  building_types:
+  - all
+  package: electrical
+- id: RFI-SG-EL-004
+  trigger_type: scope_gap
+  trigger_keywords:
+  - lightning protection
+  - lightning arrester
+  - LPS
+  - surge protection
+  trigger_trade: electrical
+  question_template: 'Lightning protection system (LPS) not specified for {area}. Please confirm: (a) LPS class required — Class I, II, III, or IV as per IS/IEC 62305? (b) Protection method — conventional
+    (Franklin rod), ESE (early streamer emission), or mesh conductor? (c) Down conductor routing and material — GI strip, copper tape, or aluminum? (d) Earth termination — dedicated lightning earth pits
+    or combined with power earthing? (e) Surge protection devices (SPD) — Type 1 at main panel, Type 2 at sub-panels?
+
+    '
+  why_it_matters: 'Lightning protection is mandatory for buildings above 15m per NBC 2016. Absence causes structural damage, fire risk, and electronic equipment failure. LPS class depends on building type
+    and risk assessment.
+
+    '
+  suggested_resolution: Provide lightning risk assessment per IS/IEC 62305-2 and LPS design drawing showing air termination, down conductors, and earth termination layout.
+  priority: high
+  building_types:
+  - all
+  package: electrical
+- id: RFI-SG-EL-005
+  trigger_type: scope_gap
+  trigger_keywords:
+  - solar
+  - photovoltaic
+  - PV
+  - rooftop solar
+  - solar panel
+  trigger_trade: electrical
+  question_template: 'Solar PV system not specified for {area}. Please confirm: (a) Is rooftop solar PV required? If yes, installed capacity (kWp)? (b) System type — grid-tied, off-grid, or hybrid with
+    battery storage? (c) Panel type — monocrystalline, polycrystalline, or thin film? (d) Mounting system — fixed tilt, seasonal adjustable, or single-axis tracker? (e) Net metering arrangement with DISCOM
+    — applicable? (f) Is solar provision mandatory per local green building/ECBC norms?
+
+    '
+  why_it_matters: 'Solar PV is mandatory in many Indian states for buildings above certain built-up area. System type and capacity affect roof structural design (additional 15-25 kg/sqm dead load), electrical
+    infrastructure, and project cost.
+
+    '
+  suggested_resolution: Confirm solar PV requirement and capacity. Provide roof area available for solar, structural loading data, and electrical interconnection point.
+  priority: high
+  building_types:
+  - all
+  package: electrical
+- id: RFI-SG-EL-006
+  trigger_type: scope_gap
+  trigger_keywords:
+  - LV system
+  - low voltage
+  - ELV
+  - CCTV
+  - access control
+  - PA system
+  - BMS
+  trigger_trade: electrical
+  question_template: 'Low voltage (LV/ELV) systems not specified for {area}. Please confirm scope of the following: (a) CCTV/surveillance — number of cameras, type (dome/bullet/PTZ), recording duration?
+    (b) Access control — biometric, card, or facial recognition? Which doors? (c) Public address (PA) system — zones, speaker type, and emergency voice evacuation? (d) Building management system (BMS) —
+    integration points for HVAC, lighting, fire, elevator? (e) Structured cabling/LAN — number of data points per room, Cat6/Cat6A? (f) Intercom/video door phone — internal or building entry?
+
+    '
+  why_it_matters: 'ELV systems are typically 3-8% of project cost but are often omitted from initial BOQ. Late addition causes rework in conduit routing, tray sizing, and riser shaft space allocation.
+
+    '
+  suggested_resolution: Provide ELV system scope matrix listing each system, coverage area, and capacity. Include riser diagram and floor-wise point schedule.
+  priority: high
+  building_types:
+  - all
+  package: electrical
+- id: RFI-SG-EL-007
+  trigger_type: scope_gap
+  trigger_keywords:
+  - panel schedule
+  - distribution board
+  - DB schedule
+  - panel board
+  trigger_trade: electrical
+  question_template: 'Electrical panel/distribution board schedule not provided for {area}. Please confirm: (a) Panel hierarchy — main panel, sub-main panels, and final distribution boards (FDBs)? (b) Number
+    and rating of outgoing feeders from each panel? (c) Bus bar rating and type of enclosure (IP rating)? (d) MCB/MCCB ratings and breaking capacity for each outgoing? (e) Metering arrangement — are sub-meters
+    required for common areas/individual units? (f) Panel board make/brand — approved manufacturer list?
+
+    '
+  why_it_matters: 'Panel schedule defines the electrical distribution architecture. Without it, cable sizing, conduit sizing, and protective device coordination cannot be verified. Missing panels cause
+    major rework during installation.
+
+    '
+  suggested_resolution: Provide single line diagram (SLD) showing panel hierarchy and distribution board schedules with circuit-wise outgoing details.
+  priority: critical
+  building_types:
+  - all
+  package: electrical
+- id: RFI-SG-EL-008
+  trigger_type: scope_gap
+  trigger_keywords:
+  - cable sizing
+  - cable schedule
+  - wire size
+  - conductor size
+  trigger_trade: electrical
+  question_template: 'Cable sizing/schedule not provided for {area}. Please confirm: (a) Cable sizing basis — voltage drop limit (3% or 5%), current carrying capacity, or short circuit rating? (b) Cable
+    type — XLPE, PVC, FRLS, or armored for different sections? (c) Cable routing method — in conduit, on tray, in trench, or direct buried? (d) Cable tray sizing and material — GI perforated, ladder, or
+    mesh type? (e) Derating factors considered — ambient temperature, grouping, and burial depth?
+
+    '
+  why_it_matters: 'Cable is 15-25% of electrical installation cost. Incorrect sizing causes overheating, voltage drop issues, and fire hazard. Over-sizing wastes 20-40% material cost.
+
+    '
+  suggested_resolution: Provide cable schedule showing cable type, size, length, and routing for each feeder. Include voltage drop calculations.
+  priority: high
+  building_types:
+  - all
+  package: electrical
+- id: RFI-SG-PL-001
+  trigger_type: scope_gap
+  trigger_keywords:
+  - pipe sizing
+  - pipe diameter
+  - pipe size
+  - plumbing pipe
+  trigger_trade: plumbing
+  question_template: 'Plumbing pipe sizing not specified for {area}. Please confirm: (a) Pipe material for each system — uPVC (soil/waste/rain), CPVC (hot water), PPR, or GI? (b) Pipe sizing basis — fixture
+    unit method as per IS 2065 or hydraulic calculation? (c) Riser pipe sizes for soil, waste, vent, and water supply? (d) Horizontal branch pipe sizes for each floor? (e) Is pipe sizing calculation/report
+    available for review?
+
+    '
+  why_it_matters: 'Pipe sizing directly impacts material cost, shaft/chase space requirement, and system performance. Under-sized pipes cause poor flow/pressure; over-sized pipes waste material and require
+    larger shafts.
+
+    '
+  suggested_resolution: Provide plumbing riser diagram with pipe sizes for all systems (soil, waste, vent, cold water, hot water, rainwater). Include fixture schedule per floor.
+  priority: high
+  building_types:
+  - all
+  package: plumbing
+- id: RFI-SG-PL-002
+  trigger_type: scope_gap
+  trigger_keywords:
+  - water tank
+  - overhead tank
+  - sump
+  - storage tank
+  - OHT
+  - UGT
+  trigger_trade: plumbing
+  question_template: 'Water storage tank capacity not specified for {area}. Please confirm: (a) Daily water demand calculation — population, per capita demand (as per IS 1172)? (b) Underground sump capacity
+    — number of days storage (typically 1-2 days)? (c) Overhead tank (OHT) capacity — typically 1/3 to 1/2 of daily demand? (d) Tank construction — RCC, steel sectional (Zincalume), or HDPE/FRP? (e) Compartmentalization
+    — is divided tank required for maintenance without shutdown? (f) Fire reserve — is dedicated fire storage required within or separate from domestic tank?
+
+    '
+  why_it_matters: 'Water tank capacity affects structural design (dead load on roof for OHT), pump sizing, and civil construction scope. Fire reserve requirement can increase tank size by 30-50%.
+
+    '
+  suggested_resolution: Provide water demand calculation, tank sizing sheet, and tank location drawing. Specify construction type and compartmentalization requirement.
+  priority: high
+  building_types:
+  - all
+  package: plumbing
+- id: RFI-SG-PL-003
+  trigger_type: scope_gap
+  trigger_keywords:
+  - pump
+  - booster pump
+  - transfer pump
+  - hydropneumatic
+  trigger_trade: plumbing
+  question_template: 'Pump specification not provided for {area}. Please confirm: (a) Pump type — centrifugal, submersible, hydropneumatic booster, or pressurization system? (b) Pump capacity — flow rate
+    (LPM) and head (m)? (c) Number of pumps — duty + standby arrangement? (d) Motor rating (HP/kW) and power supply (single/three phase)? (e) Pump make/brand — approved manufacturer? (f) Is variable frequency
+    drive (VFD) required for energy efficiency?
+
+    '
+  why_it_matters: 'Pump specification impacts electrical load, civil works (pump room, foundation), and operational energy cost. Hydropneumatic systems cost 3-5x more than conventional OHT systems but save
+    on structural cost.
+
+    '
+  suggested_resolution: Provide pump schedule showing type, capacity, head, motor rating, and quantity for each pumping system (domestic, fire, drainage, STP).
+  priority: high
+  building_types:
+  - all
+  package: plumbing
+- id: RFI-SG-PL-004
+  trigger_type: scope_gap
+  trigger_keywords:
+  - STP
+  - sewage treatment
+  - effluent treatment
+  - ETP
+  - waste water
+  trigger_trade: plumbing
+  question_template: 'Sewage/effluent treatment plant (STP/ETP) not specified for {area}. Please confirm: (a) STP capacity (KLD) — based on sewage generation calculation? (b) Treatment technology — SBR,
+    MBR, MBBR, or packaged/containerized? (c) Treated water quality standard — CPCB norms for reuse or discharge? (d) Reuse scope — flushing, gardening, cooling tower, or all? (e) STP location — basement,
+    ground level, or underground? (f) Is ETP required separately for kitchen/industrial wastewater?
+
+    '
+  why_it_matters: 'STP is mandatory per CPCB/local pollution control board for projects above threshold. Technology selection affects capital cost (MBR is 2-3x SBR), space requirement, and operational cost.
+    Non-compliance causes project completion certificate delays.
+
+    '
+  suggested_resolution: Provide STP capacity calculation, technology selection, treated water reuse plan, and STP room/area layout.
+  priority: critical
+  building_types:
+  - all
+  package: plumbing
+- id: RFI-SG-PL-005
+  trigger_type: scope_gap
+  trigger_keywords:
+  - rainwater harvesting
+  - RWH
+  - rain water
+  - stormwater
+  - groundwater recharge
+  trigger_trade: plumbing
+  question_template: 'Rainwater harvesting (RWH) system not specified for {area}. Please confirm: (a) RWH type — rooftop collection with storage, or percolation/recharge pit? (b) Collection area and estimated
+    yield (roof area x rainfall)? (c) Storage tank capacity for rainwater (if direct use)? (d) Number and type of recharge structures — recharge pit, bore well, or trench? (e) First-flush diverter and filtration
+    system specification? (f) Is RWH mandatory per local building bylaws?
+
+    '
+  why_it_matters: 'Rainwater harvesting is mandatory in most Indian cities for plots above 100-200 sqm. System type affects civil works scope (pits, tanks, piping) and is a building plan approval and completion
+    certificate requirement.
+
+    '
+  suggested_resolution: Provide RWH design calculation, recharge structure details, and layout drawing showing collection network and storage/recharge points.
+  priority: high
+  building_types:
+  - all
+  package: plumbing
+- id: RFI-SG-PL-006
+  trigger_type: scope_gap
+  trigger_keywords:
+  - hot water
+  - solar water heater
+  - geyser
+  - heat pump
+  - calorifier
+  trigger_trade: plumbing
+  question_template: 'Hot water system not specified for {area}. Please confirm: (a) Hot water generation system — solar water heater, heat pump, electric geyser, or centralized boiler? (b) Capacity — liters
+    per day, based on number of users and usage pattern? (c) Distribution — individual point-of-use or centralized with recirculation loop? (d) Pipe material for hot water — CPVC, PPR, or copper? (e) Insulation
+    on hot water pipes — required for centralized systems? (f) Is solar water heater mandatory per local energy conservation code?
+
+    '
+  why_it_matters: 'Hot water system type significantly affects MEP infrastructure — centralized systems require plant room, recirculation piping, and insulation. Solar water heaters are mandatory in many
+    states and affect roof structural loading and layout.
+
+    '
+  suggested_resolution: Provide hot water system design showing generation method, capacity, distribution layout, and pipe material specification.
+  priority: medium
+  building_types:
+  - all
+  package: plumbing
+- id: RFI-SG-PL-007
+  trigger_type: scope_gap
+  trigger_keywords:
+  - fire hydrant
+  - fire fighting
+  - fire water
+  - sprinkler
+  - fire suppression
+  trigger_trade: plumbing
+  question_template: 'Fire fighting/hydrant system not specified for {area}. Please confirm: (a) Systems required — wet riser, dry riser, sprinkler, or combination? (b) Fire water storage capacity — as
+    per NBC/IS 15105 for building occupancy type? (c) Fire pump set — electric + diesel + jockey pump ratings (LPM and head)? (d) Sprinkler system — wet pipe, dry pipe, or pre-action? Coverage area per
+    head? (e) Hydrant type — single-headed or double-headed? Hose reel at each landing? (f) Fire department inlet (yard hydrant) — number and locations?
+
+    '
+  why_it_matters: 'Fire fighting system is a statutory requirement for buildings per NBC 2016. System scope depends on building height, area, and occupancy. Non-compliance blocks fire NOC and occupancy
+    certificate. Fire water tank alone can be 50,000-200,000 liters.
+
+    '
+  suggested_resolution: Provide fire fighting system design as per NBC 2016 showing pump room layout, riser diagram, sprinkler layout, and fire water storage calculation.
+  priority: critical
+  building_types:
+  - all
+  package: fire_fighting
+- id: RFI-SG-PL-008
+  trigger_type: scope_gap
+  trigger_keywords:
+  - gas piping
+  - LPG
+  - PNG
+  - gas pipeline
+  - gas bank
+  trigger_trade: plumbing
+  question_template: 'Gas piping system not specified for {area}. Please confirm: (a) Gas type — PNG (piped natural gas) or LPG (manifold/bank)? (b) Number of gas outlet points — kitchen, laboratory, or
+    other? (c) Pipe material — GI (for LPG above ground), copper, or MDPE (for PNG below ground)? (d) Gas meter location — individual metering or bulk? (e) Safety provisions — gas leak detector, solenoid
+    valve, and exhaust fan interlock? (f) LPG bank — number of cylinders, manifold type, and changeover system?
+
+    '
+  why_it_matters: 'Gas piping is a life-safety system requiring PESO/CCOE approval. Material specification and safety provisions are non-negotiable. PNG vs LPG decision affects infrastructure (PNG requires
+    utility connection; LPG needs cylinder storage room).
+
+    '
+  suggested_resolution: Provide gas piping layout showing outlet points, pipe routing, meter locations, and safety device locations. Specify gas type and approval requirements.
+  priority: high
+  building_types:
+  - all
+  package: plumbing
+- id: RFI-SG-ST-001
+  trigger_type: scope_gap
+  trigger_keywords:
+  - soil report
+  - soil investigation
+  - geotechnical
+  - bore log
+  - SBC
+  trigger_trade: structural
+  question_template: 'Soil investigation report not provided for {area}. Please confirm: (a) Has soil investigation been conducted at the project site? (b) Number of boreholes and depth of investigation?
+    (c) Safe bearing capacity (SBC) at proposed foundation level? (d) Water table level — seasonal variation? (e) Soil type — black cotton, sandy, rocky, or filled ground? (f) Is chemical analysis of soil/groundwater
+    available (for sulphate/chloride attack assessment)?
+
+    '
+  why_it_matters: 'Soil investigation is the basis for foundation design. Without it, foundation type (isolated, raft, pile) cannot be confirmed. Incorrect assumptions cause foundation failure or massive
+    over-design. SBC directly affects footing size and cost.
+
+    '
+  suggested_resolution: Provide geotechnical investigation report with bore logs, SBC recommendation, water table data, and foundation type recommendation.
+  priority: critical
+  building_types:
+  - all
+  package: structural
+- id: RFI-SG-ST-002
+  trigger_type: scope_gap
+  trigger_keywords:
+  - concrete grade
+  - concrete mix
+  - concrete specification
+  - grade of concrete
+  trigger_trade: structural
+  question_template: 'Concrete grade/specification not provided for {area}. Please confirm: (a) Grade of concrete for each structural element — footing, column, beam, slab, and retaining wall? (b) Mix type
+    — design mix (as per IS 10262) or nominal mix? (c) Exposure condition — mild, moderate, severe, very severe, or extreme (as per IS 456 Table 5)? (d) Minimum cement content and maximum w/c ratio for
+    durability? (e) Admixture requirement — plasticizer, superplasticizer, retarder, or integral waterproofing? (f) Slump requirement at point of placement?
+
+    '
+  why_it_matters: 'Concrete grade affects structural capacity, durability, and cost. M25 vs M40 concrete can have 30-50% cost difference. Exposure condition determines minimum grade per IS 456 (e.g., severe
+    exposure requires minimum M30).
+
+    '
+  suggested_resolution: Provide concrete grade schedule for all structural elements. Include exposure condition assessment and admixture requirements.
+  priority: critical
+  building_types:
+  - all
+  package: structural
+- id: RFI-SG-ST-003
+  trigger_type: scope_gap
+  trigger_keywords:
+  - steel grade
+  - reinforcement grade
+  - rebar grade
+  - TMT bar
+  trigger_trade: structural
+  question_template: 'Reinforcement steel grade not specified for {area}. Please confirm: (a) Steel grade — Fe500, Fe500D, Fe550, or Fe550D as per IS 1786? (b) Is Fe500D (higher ductility) mandatory for
+    seismic zone compliance? (c) Approved steel manufacturers/brands? (d) Bar bending schedule (BBS) — provided or to be prepared by contractor? (e) Coupler specification for large diameter bars (above
+    25mm)? (f) Lap length and development length as per structural design?
+
+    '
+  why_it_matters: 'Steel grade affects structural design, ductility in seismic zones, and material cost. Fe500D is mandatory in seismic zones III-V per IS 13920. Wrong grade compromises structural safety
+    and fails third-party audit.
+
+    '
+  suggested_resolution: Specify steel grade for all structural elements. Confirm if BBS is consultant-provided or contractor-scope. List approved steel manufacturers.
+  priority: critical
+  building_types:
+  - all
+  package: structural
+- id: RFI-SG-ST-004
+  trigger_type: scope_gap
+  trigger_keywords:
+  - design mix
+  - mix design
+  - concrete mix design
+  - trial mix
+  trigger_trade: structural
+  question_template: 'Concrete mix design details not provided for {area}. Please confirm: (a) Is design mix mandatory (as per IS 10262) for all grades M20 and above? (b) Target mean strength — what margin
+    over characteristic strength (fck + 1.65 x standard deviation)? (c) Cement type — OPC 43/53 grade, PPC, or PSC? (d) Aggregate source and maximum nominal size — 20mm or 40mm? (e) Admixture type and dosage
+    — superplasticizer brand and target slump? (f) Number of trial mixes and cube testing protocol?
+
+    '
+  why_it_matters: 'Mix design determines concrete performance, durability, and cost optimization. Without approved mix design, site concrete quality cannot be controlled. Cement type (OPC vs PPC) affects
+    early strength gain and stripping time.
+
+    '
+  suggested_resolution: Provide approved concrete mix design for each grade required. Specify cement type, aggregate source, and admixture. Include trial mix approval process.
+  priority: high
+  building_types:
+  - all
+  package: structural
+- id: RFI-SG-ST-005
+  trigger_type: scope_gap
+  trigger_keywords:
+  - concrete testing
+  - cube testing
+  - quality control
+  - testing protocol
+  trigger_trade: structural
+  question_template: 'Concrete testing/quality control protocol not specified for {area}. Please confirm: (a) Cube testing frequency — as per IS 456 (1 sample per 50 cum or part thereof)? (b) Third-party
+    testing lab — NABL accredited lab specified? (c) Non-destructive testing (NDT) — rebound hammer, UPV testing required? (d) Core testing protocol — when is core cutting mandated? (e) Steel testing —
+    mill certificates sufficient or re-testing at site required? (f) Who bears the cost of testing — client or contractor?
+
+    '
+  why_it_matters: 'Testing protocol is a quality assurance requirement per IS 456. Third-party testing adds 0.5-1% to structural cost. Ambiguity about testing responsibility causes disputes and delays in
+    structural completion.
+
+    '
+  suggested_resolution: Provide quality assurance plan specifying testing frequency, lab approval, NDT requirements, and cost responsibility for all tests.
+  priority: medium
+  building_types:
+  - all
+  package: structural
+- id: RFI-SG-ST-006
+  trigger_type: scope_gap
+  trigger_keywords:
+  - expansion joint
+  - movement joint
+  - construction joint
+  - structural joint
+  trigger_trade: structural
+  question_template: 'Structural joints not specified for {area}. Please confirm: (a) Expansion joint locations — at what intervals (typically 45m as per IS 456)? (b) Expansion joint detail — gap width,
+    filler material, and cover plate/sealant? (c) Construction joint locations — permitted locations and treatment (shear key, roughening)? (d) Is seismic separation joint required between blocks? (e) Joint
+    sealant specification — polysulphide, silicone, or polyurethane? (f) Waterproofing treatment at joints — especially at terrace and basement levels?
+
+    '
+  why_it_matters: 'Structural joints are critical for accommodating thermal movement and seismic response. Missing or incorrect joints cause cracking, leakage, and structural distress. Joint treatment at
+    waterproofing level is a common failure point.
+
+    '
+  suggested_resolution: Provide expansion joint layout drawing showing joint locations, gap width, and detail sections at slab, wall, and waterproofing levels.
+  priority: high
+  building_types:
+  - all
+  package: structural
+- id: RFI-SG-HV-001
+  trigger_type: scope_gap
+  trigger_keywords:
+  - HVAC system
+  - air conditioning
+  - cooling system
+  - AC system
+  trigger_trade: hvac
+  question_template: 'HVAC system type not specified for {area}. Please confirm: (a) System type — VRF/VRV, chilled water (chiller), split/multi-split, or centralized AHU? (b) Design conditions — indoor
+    temperature (24C/25C), relative humidity (50%/55%)? (c) Outdoor design conditions — dry bulb and wet bulb temperatures for the city? (d) Operating hours — 8 hours, 12 hours, or 24/7? (e) Energy efficiency
+    target — BEE star rating, ECBC compliance, or IGBC/LEED requirement? (f) Is part-load performance a selection criterion?
+
+    '
+  why_it_matters: 'HVAC system type is the single largest MEP cost decision — VRF costs 2-3x split AC; chiller-based systems need plant room, cooling tower, and chilled water piping. System type determines
+    electrical load (30-50% of building electrical demand).
+
+    '
+  suggested_resolution: Provide HVAC system selection basis document showing system type, design conditions, zone-wise cooling load, and energy compliance requirement.
+  priority: critical
+  building_types:
+  - all
+  package: hvac
+- id: RFI-SG-HV-002
+  trigger_type: scope_gap
+  trigger_keywords:
+  - cooling load
+  - heat load
+  - tonnage
+  - TR
+  - cooling capacity
+  trigger_trade: hvac
+  question_template: 'HVAC cooling load calculation not provided for {area}. Please confirm: (a) Zone-wise cooling load in TR (tons of refrigeration) or kW? (b) Load calculation method — CLTD/CLF, RTS,
+    or software-based (HAP/Trace)? (c) Internal heat gains considered — occupancy, lighting, equipment loads? (d) Building envelope parameters — U-values for wall, roof, and glass? (e) Diversity factor
+    applied for system sizing? (f) Fresh air load included per ASHRAE 62.1 or NBC?
+
+    '
+  why_it_matters: 'Cooling load calculation determines equipment capacity and all downstream sizing (ductwork, piping, electrical). Without it, HVAC BOQ is based on thumb rules that can be off by 30-50%.
+    Under-sizing causes comfort failure; over-sizing wastes capital.
+
+    '
+  suggested_resolution: Provide room-by-room cooling load calculation report with assumptions. Include building envelope parameters and fresh air requirements.
+  priority: critical
+  building_types:
+  - all
+  package: hvac
+- id: RFI-SG-HV-003
+  trigger_type: scope_gap
+  trigger_keywords:
+  - ventilation
+  - exhaust
+  - fresh air
+  - air changes
+  - basement ventilation
+  trigger_trade: hvac
+  question_template: 'Ventilation system not specified for {area}. Please confirm: (a) Areas requiring mechanical ventilation — basement parking, kitchen, toilets, DG room, electrical rooms? (b) Air change
+    requirement per hour (ACH) for each area type? (c) Ventilation type — supply only, exhaust only, or balanced (supply + exhaust)? (d) CO monitoring for basement parking — is CO-based ventilation control
+    required? (e) Kitchen exhaust — hood type (island/wall-mounted), CFM, and make-up air arrangement? (f) Is energy recovery ventilator (ERV/HRV) required for fresh air handling?
+
+    '
+  why_it_matters: 'Ventilation is a code requirement (NBC 2016, ASHRAE 62.1) for occupant health and safety. Basement ventilation system alone can be 5-10% of HVAC cost. CO monitoring for parking is mandatory
+    per fire department requirements in most cities.
+
+    '
+  suggested_resolution: Provide ventilation schedule showing ACH, supply/exhaust CFM, and fan specification for each area requiring mechanical ventilation.
+  priority: high
+  building_types:
+  - all
+  package: hvac
+- id: RFI-SG-HV-004
+  trigger_type: scope_gap
+  trigger_keywords:
+  - duct sizing
+  - ductwork
+  - duct material
+  - duct type
+  trigger_trade: hvac
+  question_template: 'Ductwork specification not provided for {area}. Please confirm: (a) Duct material — GI sheet (most common), pre-insulated PIR, or fabric duct? (b) Duct sizing method — equal friction,
+    static regain, or velocity reduction? (c) Maximum duct velocity — supply (6-8 m/s), return (5-6 m/s)? (d) Duct insulation — type (nitrile rubber, glasswool), thickness, and vapor barrier? (e) Duct accessories
+    — fire dampers, volume dampers, flexible connections, access doors? (f) Duct leakage testing — Class A, B, or C per SMACNA/DW144?
+
+    '
+  why_it_matters: 'Ductwork is 15-25% of HVAC cost. Material selection (GI vs pre-insulated) affects cost by 1.5-2x. Duct sizing impacts ceiling void height requirement and coordination with other services
+    (fire sprinkler, electrical cable trays, plumbing).
+
+    '
+  suggested_resolution: Provide duct layout drawing with sizes, duct material specification, insulation type/thickness, and duct leakage class requirement.
+  priority: high
+  building_types:
+  - all
+  package: hvac
+- id: RFI-SG-HV-005
+  trigger_type: scope_gap
+  trigger_keywords:
+  - HVAC controls
+  - thermostat
+  - BMS
+  - DDC
+  - building automation
+  trigger_trade: hvac
+  question_template: 'HVAC controls and automation not specified for {area}. Please confirm: (a) Control type — standalone thermostat, DDC (direct digital control), or BMS integrated? (b) Zone control strategy
+    — individual room control or zone-based? (c) Sensors required — temperature, humidity, CO2, occupancy? (d) BMS integration scope — monitoring only, or monitoring and control? (e) Energy metering — is
+    sub-metering of HVAC energy consumption required? (f) Remote monitoring/cloud-based dashboard requirement?
+
+    '
+  why_it_matters: 'HVAC controls affect energy efficiency (20-40% savings with proper controls vs manual), occupant comfort, and operational cost. BMS integration scope significantly impacts wiring, panel,
+    and software costs.
+
+    '
+  suggested_resolution: Provide HVAC controls specification including control strategy, sensor types, BMS integration scope, and approved makes.
+  priority: medium
+  building_types:
+  - all
+  package: hvac
+- id: RFI-SG-HV-006
+  trigger_type: scope_gap
+  trigger_keywords:
+  - fresh air
+  - outdoor air
+  - FAHU
+  - fresh air handling unit
+  - DOAS
+  trigger_trade: hvac
+  question_template: 'Fresh air system not specified for {area}. Please confirm: (a) Fresh air requirement — as per ASHRAE 62.1 (CFM per person + per sqft) or NBC norms? (b) Fresh air handling method —
+    dedicated FAHU/DOAS, mixed with return air in AHU, or VRF with OA processing? (c) Fresh air treatment — sensible cooling only, or sensible + latent (dehumidification)? (d) Filtration level — MERV 8
+    (pre-filter), MERV 13 (fine), or HEPA (hospital/cleanroom)? (e) Energy recovery — enthalpy wheel, plate heat exchanger, or run-around coil? (f) Fresh air intake location — away from exhaust, cooling
+    tower, and DG exhaust?
+
+    '
+  why_it_matters: 'Fresh air handling is 20-35% of cooling load in tropical climates. Inadequate fresh air causes sick building syndrome and fails IAQ standards. Over-ventilation wastes energy. Filtration
+    level dramatically affects fan power and filter replacement cost.
+
+    '
+  suggested_resolution: Provide fresh air calculation per ASHRAE 62.1, FAHU/DOAS specification, filtration requirement, and intake/exhaust location plan.
+  priority: high
+  building_types:
+  - all
+  package: hvac
+- id: RFI-SG-FS-001
+  trigger_type: scope_gap
+  trigger_keywords:
+  - fire detection
+  - fire alarm
+  - smoke detector
+  - heat detector
+  - fire panel
+  trigger_trade: fire_safety
+  question_template: 'Fire detection and alarm system not specified for {area}. Please confirm: (a) System type — conventional, addressable, or analog addressable? (b) Detector type per area — smoke (optical/ionization),
+    heat (rate-of-rise/fixed temp), or multi-sensor? (c) Manual call point (MCP) locations — at staircases, exits, and every 30m travel distance? (d) Alarm notification — hooter, strobe, or voice evacuation
+    (EVAC)? (e) Fire alarm panel — number of zones/loops, location, and repeater panel requirement? (f) Integration — with sprinkler flow switch, fire damper, elevator recall, and AHU shutdown?
+
+    '
+  why_it_matters: 'Fire detection is mandatory per NBC 2016 for all buildings above 15m. System type (conventional vs addressable) affects cost by 2-3x but also affects maintenance and response capability.
+    Integration scope determines wiring and programming requirements.
+
+    '
+  suggested_resolution: Provide fire detection system design showing detector type and layout per floor, panel specification, and integration matrix.
+  priority: critical
+  building_types:
+  - all
+  package: fire_safety
+- id: RFI-SG-FS-002
+  trigger_type: scope_gap
+  trigger_keywords:
+  - fire suppression
+  - sprinkler system
+  - wet riser
+  - dry riser
+  - deluge
+  trigger_trade: fire_safety
+  question_template: 'Fire suppression/sprinkler system not specified for {area}. Please confirm: (a) Sprinkler system type — wet pipe, dry pipe, pre-action, or deluge? (b) Hazard classification — light
+    hazard (office), ordinary hazard (storage), or extra hazard (industrial)? (c) Design density — mm/min/sqm and coverage area per sprinkler head? (d) Sprinkler head type — pendant, upright, sidewall,
+    or concealed? (e) Pipe material — mild steel (ERW), GI, or CPVC (for light hazard)? (f) System components — alarm valve, flow switch, tamper switch, and drain valve locations?
+
+    '
+  why_it_matters: 'Sprinkler system is mandatory for buildings above 15m and certain occupancies per NBC 2016. Hazard classification determines pipe sizing, pump capacity, and water storage. Wrong classification
+    can under-protect the building or over-spend by 40-60%.
+
+    '
+  suggested_resolution: Provide sprinkler system design per IS 15105/NFPA 13 showing hazard classification, design density, layout, and hydraulic calculation.
+  priority: critical
+  building_types:
+  - all
+  package: fire_safety
+- id: RFI-SG-FS-003
+  trigger_type: scope_gap
+  trigger_keywords:
+  - fire hydrant
+  - standpipe
+  - hose reel
+  - yard hydrant
+  - fire water
+  trigger_trade: fire_safety
+  question_template: 'Fire hydrant/standpipe system details not specified for {area}. Please confirm: (a) Internal hydrant — single-headed (63mm) or double-headed (63mm + 63mm)? (b) Hose reel — 19mm/25mm?
+    At every floor landing or per 30m travel distance? (c) Wet riser or dry riser — based on building height and occupancy? (d) Yard hydrant — number, location, and type (pillar/underground)? (e) Fire department
+    inlet (siamese connection) — location and number? (f) Landing valve cabinet — type (recessed/surface), with first-aid hose or without?
+
+    '
+  why_it_matters: 'Fire hydrant system design per NBC/IS 3844 varies significantly based on building height and occupancy. Under-specification fails fire NOC; over-specification wastes material cost and
+    pump capacity.
+
+    '
+  suggested_resolution: Provide fire hydrant riser diagram showing valve locations, hose reel positions, yard hydrant layout, and fire department inlet location.
+  priority: high
+  building_types:
+  - all
+  package: fire_safety
+- id: RFI-SG-FS-004
+  trigger_type: scope_gap
+  trigger_keywords:
+  - fire extinguisher
+  - portable fire
+  - ABC extinguisher
+  - CO2 extinguisher
+  trigger_trade: fire_safety
+  question_template: 'Portable fire extinguisher schedule not provided for {area}. Please confirm: (a) Extinguisher types required — ABC dry powder, CO2, water, or foam based on fire risk class? (b) Capacity
+    — 4 kg, 6 kg, 9 kg, or 50 kg trolley-mounted for high-risk areas? (c) Coverage — one extinguisher per floor or per IS 2190 travel distance (15m for Class A)? (d) Mounting — wall bracket or floor stand?
+    (e) Signage — as per IS 2189 for extinguisher location marking? (f) Is this client supply or contractor scope?
+
+    '
+  why_it_matters: 'Portable extinguishers are a basic fire safety requirement per NBC and IS 2190. Wrong type for fire class is a safety hazard (e.g., water on electrical fire). Quantity calculation affects
+    procurement and maintenance budget.
+
+    '
+  suggested_resolution: Provide fire extinguisher schedule per IS 2190 showing type, capacity, and location for each floor/area.
+  priority: medium
+  building_types:
+  - all
+  package: fire_safety
+- id: RFI-SG-FS-005
+  trigger_type: scope_gap
+  trigger_keywords:
+  - passive fire
+  - fire rating
+  - fire barrier
+  - fire stop
+  - fire seal
+  - compartmentation
+  trigger_trade: fire_safety
+  question_template: 'Passive fire protection not specified for {area}. Please confirm: (a) Fire compartment sizes and fire rating requirement (1-hour, 2-hour, or 4-hour)? (b) Fire-rated walls — which walls
+    require fire rating? Material specification? (c) Fire stopping at service penetrations — cable, pipe, and duct penetrations through rated walls/floors? (d) Fire dampers in ductwork at fire compartment
+    boundaries — type and rating? (e) Fire-rated doors — locations, rating, and whether self-closing/automatic? (f) Intumescent paint on structural steel — required areas and fire rating?
+
+    '
+  why_it_matters: 'Passive fire protection is the backbone of fire safety — it contains fire spread and enables safe evacuation. Missing fire stops at MEP penetrations is the most common fire safety deficiency
+    found in audits. Non-compliance blocks fire NOC.
+
+    '
+  suggested_resolution: Provide fire compartmentation drawing showing rated walls, rated doors, fire stop locations at all MEP penetrations, and fire damper schedule.
+  priority: critical
+  building_types:
+  - all
+  package: fire_safety
+- id: RFI-SG-FS-006
+  trigger_type: scope_gap
+  trigger_keywords:
+  - fire escape
+  - means of egress
+  - staircase pressurization
+  - exit
+  - refuge area
+  trigger_trade: fire_safety
+  question_template: 'Fire egress/evacuation system not specified for {area}. Please confirm: (a) Staircase pressurization — required for buildings above 15m as per NBC? (b) Pressurization fan capacity
+    (CFM) and duct routing? (c) Refuge area — designated floors and area per NBC (15 sqm per floor or 0.3 sqm per person)? (d) Emergency lighting — battery backup duration (1 hour or 3 hours)? (e) Exit
+    signage — photoluminescent or internally illuminated per IS 12349? (f) Public address/EVAC system — dedicated or combined with general PA?
+
+    '
+  why_it_matters: 'Fire egress systems are life-safety critical. Staircase pressurization prevents smoke entry into escape routes. Refuge areas are mandatory for differently-abled persons. Non-compliance
+    is a fire NOC rejection issue.
+
+    '
+  suggested_resolution: Provide fire evacuation plan showing staircase pressurization design, refuge area locations, emergency lighting layout, and exit signage positions.
+  priority: critical
+  building_types:
+  - all
+  package: fire_safety
+- id: RFI-SG-DW-001
+  trigger_type: scope_gap
+  trigger_keywords:
+  - door schedule
+  - door type
+  - door specification
+  - door list
+  trigger_trade: doors_windows
+  question_template: 'Door schedule not provided for {area}. Please confirm: (a) Door types — flush door, panel door, glass door, fire-rated door, or specialty (acoustic, lead-lined)? (b) Door sizes — standard
+    900x2100mm or custom sizes? Double-leaf doors where? (c) Frame material — MS, aluminum, wooden, or FRP? (d) Shutter material — BWP plywood, particle board, WPC, or solid core? (e) Door finish — laminate,
+    veneer, painted, or PU polish? (f) Number of doors per type per floor?
+
+    '
+  why_it_matters: 'Door schedule is essential for accurate BOQ. Door types range from INR 3,000 (basic flush) to INR 50,000+ (fire-rated/acoustic). Missing schedule causes procurement delays as doors have
+    4-8 week lead time.
+
+    '
+  suggested_resolution: Provide door schedule spreadsheet showing door mark, size, type, frame material, shutter material, finish, and hardware for each door.
+  priority: high
+  building_types:
+  - all
+  package: doors_windows
+- id: RFI-SG-DW-002
+  trigger_type: scope_gap
+  trigger_keywords:
+  - window schedule
+  - window type
+  - window specification
+  - window list
+  - fenestration
+  trigger_trade: doors_windows
+  question_template: 'Window schedule not provided for {area}. Please confirm: (a) Window frame material — aluminum (powder-coated/anodized), uPVC, or steel? (b) Window type — casement, sliding, fixed,
+    awning, tilt-and-turn, or combination? (c) Window sizes — provide schedule with mark, width, and height for each type? (d) Section profile — frame and mullion section size and series? (e) Glass type
+    — plain float, tinted, reflective, or DGU (double glazed unit)? (f) Insect screen — required? Mesh type — SS, fiberglass, or aluminum?
+
+    '
+  why_it_matters: 'Window specification affects facade appearance, energy performance (SHGC/U-value for ECBC), and cost. Aluminum windows range INR 350-1200/sqft depending on profile and glass type. Window
+    area determines WWR (wall-to-window ratio) for energy code compliance.
+
+    '
+  suggested_resolution: Provide window schedule with mark, size, type, frame section, glass specification, and hardware for each window. Include window-wall ratio calculation.
+  priority: high
+  building_types:
+  - all
+  package: doors_windows
+- id: RFI-SG-DW-003
+  trigger_type: scope_gap
+  trigger_keywords:
+  - door hardware
+  - door handle
+  - lock
+  - closer
+  - hinge
+  trigger_trade: doors_windows
+  question_template: 'Door hardware specification not provided for {area}. Please confirm: (a) Lock type — mortise lock, cylindrical lock, digital lock, or panic bar (emergency exits)? (b) Handle type —
+    lever handle, pull handle, or knob? Material — SS, brass, or aluminum? (c) Hinges — butt hinge (2 or 3 per leaf), pivot hinge, or concealed hinge? Material? (d) Door closer — overhead (Dorma/GEZE type),
+    concealed, or floor spring? (e) Door stopper — wall-mounted or floor-mounted? (f) Hardware finish — satin, polished, antique brass, or PVD coated? (g) Approved hardware brands?
+
+    '
+  why_it_matters: 'Door hardware is 20-40% of door cost for quality installations. Hardware brand and type significantly affect durability and user experience. Fire-rated doors require UL-listed hardware.
+    Missing specification causes inconsistent procurement.
+
+    '
+  suggested_resolution: Provide door hardware schedule showing lock type, handle, hinge, closer, and accessories for each door type. List approved hardware manufacturers.
+  priority: medium
+  building_types:
+  - all
+  package: doors_windows
+- id: RFI-SG-DW-004
+  trigger_type: scope_gap
+  trigger_keywords:
+  - glass type
+  - glazing
+  - glass specification
+  - DGU
+  - double glazed
+  trigger_trade: doors_windows
+  question_template: 'Glass specification not provided for {area}. Please confirm: (a) Glass type — clear float, tinted (grey/green/blue), reflective, or low-E coated? (b) Thickness — 5mm, 6mm, 8mm, 10mm,
+    or 12mm? (c) Is DGU (double glazed unit) required? If yes, glass combination and spacer bar? (d) Safety glass — toughened, laminated, or both (toughened-laminated) per NBC/IS 2553? (e) Solar performance
+    — SHGC (solar heat gain coefficient) and U-value target for ECBC compliance? (f) Is acoustic glass required for noise-sensitive areas (STC rating)?
+
+    '
+  why_it_matters: 'Glass specification drives facade cost (clear float INR 80/sqft vs performance DGU INR 400+/sqft), energy performance, and safety compliance. Toughened/laminated glass is mandatory for
+    large panes and above certain heights per NBC.
+
+    '
+  suggested_resolution: Provide glass specification for each window/curtain wall type showing glass type, thickness, DGU configuration, and performance parameters (SHGC, U-value, VLT).
+  priority: high
+  building_types:
+  - all
+  package: doors_windows
+- id: RFI-SG-DW-005
+  trigger_type: scope_gap
+  trigger_keywords:
+  - fire rated door
+  - fire door
+  - fire rating door
+  trigger_trade: doors_windows
+  question_template: 'Fire-rated door specification not provided for {area}. Please confirm: (a) Fire rating required — 30 min, 60 min, 90 min, or 120 min? (b) Door locations requiring fire rating — staircase,
+    electrical room, kitchen, DG room, fire compartment? (c) Door construction — steel, timber with intumescent, or composite? (d) Vision panel — is fire-rated glass vision panel required? Size? (e) Hardware
+    — fire-rated (UL listed) closer, lock, hinge, and intumescent strip? (f) Certification — IS 3614, BS 476, or UL 10C standard?
+
+    '
+  why_it_matters: 'Fire-rated doors are mandatory at all fire compartment boundaries per NBC 2016. Cost is 3-5x regular doors. Missing fire door specifications delays fire NOC approval. Wrong rating or
+    uncertified doors are rejected during fire audit.
+
+    '
+  suggested_resolution: Provide fire door schedule showing location, rating, size, construction type, glass requirement, and certified manufacturer. Include test certificate reference.
+  priority: critical
+  building_types:
+  - all
+  package: doors_windows
+- id: RFI-SG-DW-006
+  trigger_type: scope_gap
+  trigger_keywords:
+  - frame material
+  - door frame
+  - window frame
+  - frame specification
+  trigger_trade: doors_windows
+  question_template: 'Door/window frame material not specified for {area}. Please confirm: (a) Door frame — MS angle, pressed steel, sal wood, or WPC? (b) Window frame — aluminum extruded, uPVC, or MS steel?
+    (c) Frame finish — primer + paint (MS), powder coating (aluminum), or natural wood finish? (d) Frame fixing method — embedded in masonry, grouted, or mechanical anchored? (e) Frame section size — meets
+    structural and fire rating requirements? (f) Sealant between frame and wall — type and specification?
+
+    '
+  why_it_matters: 'Frame material affects door/window cost, durability, maintenance, and fire performance. MS frames require regular painting; aluminum and uPVC are low-maintenance. Frame type affects masonry
+    coordination (blockout size) and plaster jamb finish.
+
+    '
+  suggested_resolution: Specify frame material and section for each door and window type. Include finish specification, fixing detail, and sealant type.
+  priority: medium
+  building_types:
+  - all
+  package: doors_windows
+- id: RFI-SG-EX-001
+  trigger_type: scope_gap
+  trigger_keywords:
+  - road
+  - internal road
+  - driveway
+  - pavement
+  - road specification
+  trigger_trade: external_works
+  question_template: 'Internal road/pavement specification not provided for {area}. Please confirm: (a) Road construction — flexible (bituminous) or rigid (CC) pavement? (b) Pavement design — sub-base,
+    base course, and wearing course thicknesses? (c) Road width — carriageway and shoulder/walkway? (d) Surface — dense bituminous macadam (DBM) + SDBC, or CC with joints? (e) Kerb type — mountable, semi-mountable,
+    or barrier? Material — precast CC or stone? (f) Speed breaker locations and design?
+
+    '
+  why_it_matters: 'Internal road specification affects earthwork, sub-base material, and surfacing cost. Flexible vs rigid pavement has 20-40% cost difference. Road width determines traffic flow and fire
+    tender access compliance.
+
+    '
+  suggested_resolution: Provide road layout plan showing alignment, width, pavement design section, and kerb detail. Include fire tender access compliance check.
+  priority: medium
+  building_types:
+  - all
+  package: external_works
+- id: RFI-SG-EX-002
+  trigger_type: scope_gap
+  trigger_keywords:
+  - drainage
+  - stormwater drainage
+  - surface drainage
+  - drain
+  trigger_trade: external_works
+  question_template: 'External drainage/stormwater system not specified for {area}. Please confirm: (a) Drainage type — surface drain (open/covered), subsurface piped, or combined? (b) Drain material —
+    RCC hume pipe, HDPE, or brick/stone masonry channel? (c) Design rainfall intensity and return period? (d) Outfall point — municipal drain, natural watercourse, or on-site recharge? (e) Manhole/catch
+    pit locations and sizes? (f) Is flood protection/retention pond required for the site?
+
+    '
+  why_it_matters: 'Inadequate stormwater drainage causes site flooding, foundation damage, and access issues. Design is driven by local rainfall data. Municipal connection approval may be required and has
+    long lead time.
+
+    '
+  suggested_resolution: Provide stormwater drainage layout with pipe/drain sizes, slope, manhole locations, and outfall detail. Include rainfall calculation.
+  priority: high
+  building_types:
+  - all
+  package: external_works
+- id: RFI-SG-EX-003
+  trigger_type: scope_gap
+  trigger_keywords:
+  - compound wall
+  - boundary wall
+  - fencing
+  - security wall
+  trigger_trade: external_works
+  question_template: 'Compound/boundary wall specification not provided for {area}. Please confirm: (a) Wall type — masonry (brick/block), RCC, precast, or metal fencing? (b) Wall height — 1.5m, 1.8m, 2.4m,
+    or 3.0m? (c) Foundation type — strip footing or isolated post footing? (d) Finishing — plastered + painted, exposed brick, stone cladding, or precast finish? (e) Railing/extension — MS railing, razor
+    wire, or electric fence on top of wall? (f) Gate specification — width, height, type (sliding/swing), and material?
+
+    '
+  why_it_matters: 'Compound wall is significant cost in site development (boundary can be 200-1000m). Wall type affects foundation design, timeline, and appearance. Gate specification is critical for security
+    and fire tender access (minimum 4.5m clear width per NBC).
+
+    '
+  suggested_resolution: Provide compound wall elevation showing height, foundation detail, finish, and gate locations with sizes. Include section details.
+  priority: medium
+  building_types:
+  - all
+  package: external_works
+- id: RFI-SG-EX-004
+  trigger_type: scope_gap
+  trigger_keywords:
+  - landscaping
+  - plantation
+  - garden
+  - green area
+  - softscape
+  - hardscape
+  trigger_trade: external_works
+  question_template: 'Landscape specification not provided for {area}. Please confirm: (a) Softscape — tree species, shrub types, ground cover, and lawn specification? (b) Hardscape — paver type (interlocking/natural
+    stone), seating, pergola, water feature? (c) Soil preparation — garden soil depth, organic manure, and fertilizer? (d) Irrigation system — drip, sprinkler, or manual? Automated timer-based? (e) Landscape
+    lighting — bollards, spotlights, pathway lights? (f) Maintenance period — 6 months, 12 months, or 24 months post-planting?
+
+    '
+  why_it_matters: 'Landscape can be 2-5% of project cost. Plant species selection affects survival rate and replacement cost during maintenance period. Hardscape material choice affects durability and maintenance.
+    Irrigation system design affects water consumption.
+
+    '
+  suggested_resolution: Provide landscape drawing showing planting plan, hardscape layout, irrigation design, and lighting layout. Include plant schedule with species, size, and quantity.
+  priority: low
+  building_types:
+  - all
+  package: external_works
+- id: RFI-SG-EX-005
+  trigger_type: scope_gap
+  trigger_keywords:
+  - parking
+  - car park
+  - basement parking
+  - surface parking
+  - parking lot
+  trigger_trade: external_works
+  question_template: 'Parking specification not provided for {area}. Please confirm: (a) Parking type — surface (open/covered), basement, or multi-level (MLCP)? (b) Number of car and two-wheeler parking
+    spaces as per local bye-law requirement? (c) Parking stall size — standard 2.5m x 5.0m or compact? (d) Surface finish — CC, bituminous, interlocking pavers, or epoxy coated (basement)? (e) EV charging
+    provision — percentage of bays with EV charging infrastructure? (f) Line marking, signage, and wheel stopper specification?
+
+    '
+  why_it_matters: 'Parking count and type is a building plan approval requirement. Basement parking significantly increases structural and MEP cost (ventilation, fire fighting, drainage). EV charging is
+    becoming mandatory in many states for new projects.
+
+    '
+  suggested_resolution: Provide parking layout showing stall dimensions, aisle widths, ramp gradients, and total count. Confirm EV charging requirement per local norms.
+  priority: high
+  building_types:
+  - all
+  package: external_works
+- id: RFI-SG-EX-006
+  trigger_type: scope_gap
+  trigger_keywords:
+  - external utilities
+  - utility connection
+  - water supply connection
+  - sewer connection
+  - electrical connection
+  trigger_trade: external_works
+  question_template: 'External utility connections not specified for {area}. Please confirm: (a) Water supply — municipal connection point, line size, and meter location? (b) Sewer — connection to municipal
+    sewer or on-site STP? Sewer line route and size? (c) Electrical — HT/LT supply from utility, transformer yard location, and cable route? (d) Telecom — fiber/copper entry point and service provider?
+    (e) Gas — PNG connection point and entry meter location? (f) Is road cutting/restoration required for any utility connection? Who bears the cost?
+
+    '
+  why_it_matters: 'External utility connections involve third-party approvals (municipality, DISCOM, gas utility) with long lead times (2-6 months). Cost of connections, deposits, and infrastructure charges
+    can be significant and are often excluded from contractor scope.
+
+    '
+  suggested_resolution: Provide utility connection plan showing connection points, line routes, and agency approval status. Clarify whether connection charges are client or contractor cost.
+  priority: high
+  building_types:
+  - all
+  package: external_works
+- id: RFI-SG-PT-001
+  trigger_type: scope_gap
+  trigger_keywords:
+  - paint specification
+  - paint type
+  - paint brand
+  - interior paint
+  trigger_trade: painting
+  question_template: 'Interior paint specification not provided for {area}. Please confirm: (a) Paint brand and product line — Asian Paints, Berger, Nerolac, or equivalent? (b) Paint type — acrylic emulsion,
+    premium emulsion, or luxury/designer range? (c) Finish — matt, soft sheen, semi-gloss, or high gloss? (d) Color scheme — light shades, dark shades, or specific color codes? (e) Are accent walls or feature
+    walls with different paint/texture specified? (f) Approved paint shade card or color scheme drawing?
+
+    '
+  why_it_matters: 'Paint brand and product line affects cost by 2-4x (economy emulsion INR 15/sqft vs premium INR 45/sqft). Finish type affects appearance and durability. Dark colors require additional
+    coats and cost 20-30% more than light shades.
+
+    '
+  suggested_resolution: Provide paint specification for interior walls and ceilings showing brand, product, finish type, and color reference. Include room-wise color scheme if applicable.
+  priority: medium
+  building_types:
+  - all
+  package: painting
+- id: RFI-SG-PT-002
+  trigger_type: scope_gap
+  trigger_keywords:
+  - number of coats
+  - paint coats
+  - coat specification
+  - paint application
+  trigger_trade: painting
+  question_template: 'Number of paint coats and surface preparation not specified for {area}. Please confirm: (a) Surface preparation — 2-coat putty, single coat putty, or no putty (direct on plaster)?
+    (b) Primer — water-based primer, alkali-resistant primer, or cement primer? (c) Number of paint coats — 2 coats or 3 coats? (Applies to both walls and ceiling) (d) Is sanding between coats required
+    for premium finish? (e) Touch-up after other trades (electrical/plumbing fitting) — included? (f) Ceiling paint — same specification as walls or different (typically matt white)?
+
+    '
+  why_it_matters: 'Paint system (putty + primer + coats) determines wall finish quality and total cost. 3-coat system costs 30-40% more than 2-coat. Missing putty causes visible plaster imperfections. Surface
+    preparation is 60% of painting cost.
+
+    '
+  suggested_resolution: Specify complete paint system for walls and ceilings — putty (type and coats), primer (type), and finish paint (product and number of coats).
+  priority: medium
+  building_types:
+  - all
+  package: painting
+- id: RFI-SG-PT-003
+  trigger_type: scope_gap
+  trigger_keywords:
+  - primer
+  - wall primer
+  - metal primer
+  - wood primer
+  trigger_trade: painting
+  question_template: 'Primer specification not provided for {area}. Please confirm: (a) Wall primer type — water-based acrylic primer, solvent-based alkali-resistant primer, or cement primer? (b) Metal
+    primer — red oxide, zinc phosphate, or epoxy primer for MS surfaces? (c) Wood primer — wood primer, shellac-based, or PU sealer? (d) Is anti-fungal/anti-algae primer required for humid/coastal areas?
+    (e) Number of primer coats — 1 coat or 2 coats? (f) Primer brand — same as finish paint manufacturer or independent?
+
+    '
+  why_it_matters: 'Primer ensures paint adhesion, prevents alkali attack, and improves coverage. Wrong primer causes peeling, efflorescence, and fungal growth. Metal surfaces without proper primer develop
+    rust within months.
+
+    '
+  suggested_resolution: Specify primer type for each surface (plastered wall, ceiling, MS metal, wood, GI surfaces). Include brand and application method.
+  priority: low
+  building_types:
+  - all
+  package: painting
+- id: RFI-SG-PT-004
+  trigger_type: scope_gap
+  trigger_keywords:
+  - exterior paint
+  - external paint
+  - weather coat
+  - facade paint
+  - texture paint
+  trigger_trade: painting
+  question_template: 'Exterior paint specification not provided for {area}. Please confirm: (a) Exterior paint type — exterior emulsion, weather-proof coating, or textured finish? (b) Brand and product
+    line — Asian Apex/Ultima, Berger WeatherCoat, or equivalent? (c) Texture type for feature areas — sand texture, rustic, roller texture, or spray texture? (d) Color scheme — light shades (recommended
+    for tropical) or dark/bold accents? (e) Surface preparation — exterior putty or direct on cement plaster? (f) Anti-carbonation coating for exposed concrete surfaces — required?
+
+    '
+  why_it_matters: 'Exterior paint must withstand UV, rain, and temperature cycling. Premium exterior coatings cost 2-3x economy but last 7-10 years vs 3-5 years. Texture paint costs 3-5x flat paint but
+    provides waterproofing benefit.
+
+    '
+  suggested_resolution: Provide exterior paint specification showing product, finish type, color scheme, and texture treatment for feature areas. Include elevation drawing with color coding.
+  priority: medium
+  building_types:
+  - all
+  package: painting
+- id: RFI-SG-MA-001
+  trigger_type: scope_gap
+  trigger_keywords:
+  - block type
+  - brick type
+  - masonry block
+  - AAC block
+  - fly ash brick
+  - solid block
+  trigger_trade: masonry
+  question_template: 'Masonry block/brick type not specified for {area}. Please confirm: (a) Block type — AAC block, fly ash brick, CLC block, solid concrete block, or clay brick? (b) Block size — 600x200x200mm
+    (AAC), 230x110x75mm (brick), or other? (c) Block density/grade — AAC (3.5-5 N/mm2), fly ash (7.5-10 N/mm2)? (d) Wall thickness — 100mm (partition), 150mm, 200mm, or 230mm? (e) Approved block manufacturers?
+    (f) Is testing (compressive strength, water absorption) required before use?
+
+    '
+  why_it_matters: 'Block type affects structural dead load (AAC is 1/3 weight of clay brick), thermal insulation, plastering method, and cost. AAC requires special thin-joint mortar. Wrong block selection
+    impacts structural design and plaster specification.
+
+    '
+  suggested_resolution: Specify masonry block type, size, and grade for external walls, internal walls, and partitions. List approved manufacturers and testing requirements.
+  priority: high
+  building_types:
+  - all
+  package: masonry
+- id: RFI-SG-MA-002
+  trigger_type: scope_gap
+  trigger_keywords:
+  - mortar specification
+  - mortar mix
+  - cement mortar
+  - thin joint mortar
+  trigger_trade: masonry
+  question_template: 'Masonry mortar specification not provided for {area}. Please confirm: (a) Mortar type — cement mortar (CM 1:4, 1:6), polymer-modified, or thin-joint adhesive (for AAC)? (b) Mortar
+    joint thickness — 10-12mm (conventional) or 2-3mm (thin joint for AAC)? (c) Plastering mortar — CM 1:4, CM 1:6, or pre-mixed dry mortar? (d) Is any special mortar required — waterproof mortar for external
+    walls, or fire-rated mortar? (e) Sand type — river sand, manufactured sand (M-sand), or quarry dust? (f) Is ready-mix mortar or site-mixed mortar preferred?
+
+    '
+  why_it_matters: 'Mortar specification affects masonry strength, durability, and workmanship quality. Using cement mortar with AAC blocks (instead of thin-joint adhesive) causes cracking. M-sand vs river
+    sand affects mortar workability and cost.
+
+    '
+  suggested_resolution: Specify mortar type and mix for blockwork, plastering (internal and external), and any special applications. Confirm sand type and source.
+  priority: medium
+  building_types:
+  - all
+  package: masonry
+- id: RFI-SG-MA-003
+  trigger_type: scope_gap
+  trigger_keywords:
+  - wall reinforcement
+  - bed joint reinforcement
+  - masonry reinforcement
+  - wall tie
+  trigger_trade: masonry
+  question_template: 'Masonry wall reinforcement not specified for {area}. Please confirm: (a) Bed joint reinforcement — truss type or ladder type? At what vertical spacing (every 3rd or 4th course)? (b)
+    Wall tie to RCC column — L-shaped MS bar, mesh strip, or mechanical anchor? Spacing? (c) Lintel specification — RCC lintel or precast? Bearing length on each side? (d) Band beam (horizontal band) —
+    required at sill level, lintel level, or both? (e) Control joints in long walls — spacing (typically 6-8m) and sealant type? (f) Is wire mesh at block-RCC junction required to prevent plaster cracking?
+
+    '
+  why_it_matters: 'Masonry reinforcement prevents cracking at wall-column junctions and at openings. Missing wall ties cause separation of wall from frame. Missing control joints cause shrinkage cracks
+    in long walls. These are the most common masonry defects.
+
+    '
+  suggested_resolution: Provide masonry reinforcement detail showing wall tie type and spacing, bed joint reinforcement, lintel details, and control joint locations.
+  priority: medium
+  building_types:
+  - all
+  package: masonry
+- id: RFI-SG-MA-004
+  trigger_type: scope_gap
+  trigger_keywords:
+  - DPC
+  - damp proof course
+  - damp proofing
+  - moisture barrier
+  trigger_trade: masonry
+  question_template: 'Damp proof course (DPC) not specified for {area}. Please confirm: (a) DPC at plinth level — cement concrete (1:1.5:3) with waterproofing compound, bituminous felt, or polymer sheet?
+    (b) DPC thickness — 25mm, 40mm, or 50mm? (c) DPC at floor-wall junction in wet areas — is cove required? (d) Anti-termite treatment below DPC — chemical barrier specification? (e) Is DPC required at
+    parapet top/coping to prevent downward moisture migration? (f) Rising damp treatment for existing structures — injection method or physical DPC?
+
+    '
+  why_it_matters: 'DPC prevents rising dampness from ground into walls. Missing DPC causes wall dampness, paint peeling, efflorescence, and health hazards. Anti-termite treatment is a warranty requirement
+    for most residential buildings.
+
+    '
+  suggested_resolution: Provide DPC specification showing type, thickness, and location (plinth, parapet, wet areas). Include anti-termite treatment specification.
+  priority: high
+  building_types:
+  - all
+  package: masonry
+- id: RFI-SG-EV-001
+  trigger_type: scope_gap
+  trigger_keywords:
+  - elevator capacity
+  - lift capacity
+  - passenger lift
+  - cargo lift
+  trigger_trade: elevator
+  question_template: 'Elevator capacity not specified for {area}. Please confirm: (a) Number of elevators — passenger, service/stretcher, and goods/cargo? (b) Passenger elevator capacity — 6 person (408
+    kg), 8 person (544 kg), 13 person (884 kg), or higher? (c) Goods elevator capacity — 1000 kg, 1500 kg, 2000 kg, or custom? (d) Stretcher elevator — minimum car size 1100mm x 2000mm for stretcher accommodation?
+    (e) Traffic analysis — has vertical transportation study been done for building population? (f) Is elevator mandatory per NBC based on building height (above 12m)?
+
+    '
+  why_it_matters: 'Elevator capacity determines shaft size (structural), machine room size, power requirement, and cost (8-person lift INR 15-25 lakh vs 13-person INR 25-45 lakh). Under-provision causes
+    long wait times and complaints; over-provision wastes capital and floor area.
+
+    '
+  suggested_resolution: Provide elevator specification including number, type, capacity, speed, and manufacturer preference. Include traffic analysis if available.
+  priority: high
+  building_types:
+  - all
+  package: elevator
+- id: RFI-SG-EV-002
+  trigger_type: scope_gap
+  trigger_keywords:
+  - elevator speed
+  - lift speed
+  - elevator travel
+  trigger_trade: elevator
+  question_template: 'Elevator speed not specified for {area}. Please confirm: (a) Elevator speed — 1.0 m/s (low-rise), 1.5 m/s (mid-rise), 2.0 m/s, or higher (high-rise)? (b) Is variable voltage variable
+    frequency (VVVF) drive required (standard for modern lifts)? (c) Door type — center opening or side opening? Door width — 800mm, 900mm, or 1100mm? (d) Door operating speed and dwell time setting? (e)
+    Group control system — required for buildings with 2 or more elevators?
+
+    '
+  why_it_matters: 'Elevator speed affects waiting time, building population handling, and cost. Higher speed requires longer overhead (pit to top floor clearance) and more powerful motor, affecting shaft
+    dimensions and structural design. VVVF drives save 30-40% energy vs conventional.
+
+    '
+  suggested_resolution: Specify elevator speed based on number of floors and traffic analysis. Include door type, opening width, and group control requirement.
+  priority: medium
+  building_types:
+  - all
+  package: elevator
+- id: RFI-SG-EV-003
+  trigger_type: scope_gap
+  trigger_keywords:
+  - elevator car finish
+  - lift cabin
+  - car interior
+  - lift finish
+  trigger_trade: elevator
+  question_template: 'Elevator car interior finish not specified for {area}. Please confirm: (a) Car wall finish — stainless steel (hairline/mirror), laminate, glass panel, or painted steel? (b) Car floor
+    finish — granite, marble, vinyl, or stainless steel chequer plate (goods lift)? (c) Car ceiling — stainless steel with LED downlights or standard fluorescent? (d) Handrail — stainless steel round or
+    flat bar? (e) Car operating panel (COP) — standard button, touch panel, or designer panel? (f) Lobby operating panel (LOP) — flush or surface mounted? (g) Is wheelchair-accessible COP at lower height
+    required?
+
+    '
+  why_it_matters: 'Car finish affects elevator cost by 30-50% (standard hairline SS vs designer cabin). Finish selection impacts perception of building quality. Wheelchair accessibility features are mandatory
+    per Accessibility Code.
+
+    '
+  suggested_resolution: Provide elevator car finish specification or reference image. Specify wall, floor, ceiling, COP/LOP type, and accessibility features.
+  priority: low
+  building_types:
+  - all
+  package: elevator
+- id: RFI-SG-EV-004
+  trigger_type: scope_gap
+  trigger_keywords:
+  - elevator stops
+  - lift stops
+  - number of stops
+  - landing
+  - elevator landing
+  trigger_trade: elevator
+  question_template: 'Number of elevator stops/landings not confirmed for {area}. Please confirm: (a) Number of stops/landings for each elevator — including basement levels and terrace? (b) Does any elevator
+    serve only specific floors (restricted access)? (c) Pit depth below lowest landing — 1500mm standard or deeper for high-speed lifts? (d) Overhead clearance above highest landing — as per IS 14665 and
+    lift manufacturer? (e) Machine room location — on top (conventional), in shaft (MRL), or remote? (f) Fire service elevator — is one elevator designated as firefighter''s lift per NBC?
+
+    '
+  why_it_matters: 'Number of stops determines guide rail length, rope/belt length, shaft height, and cost. Each additional stop adds INR 50,000-150,000 to elevator cost. Pit depth and overhead affect structural
+    design of basement and machine room.
+
+    '
+  suggested_resolution: Provide elevator stop schedule showing which floors each elevator serves. Confirm pit depth, overhead, and machine room arrangement.
+  priority: high
+  building_types:
+  - all
+  package: elevator
+- id: RFI-SG-FA-001
+  trigger_type: scope_gap
+  trigger_keywords:
+  - facade system
+  - curtain wall
+  - cladding system
+  - ACP
+  - facade type
+  trigger_trade: facade
+  question_template: 'Facade system type not specified for {area}. Please confirm: (a) Facade system — aluminum curtain wall, ACP cladding, stone cladding, glass fin system, or combination? (b) Structural
+    glazing vs semi-structural vs stick system? (c) Facade area and scope — full building or only specific elevations? (d) Facade support — from primary structure (embed plates) or secondary steel framing?
+    (e) Fire barrier at floor slab edge — type and rating? (f) Access for maintenance — BMU (building maintenance unit), gondola provision, or rope access?
+
+    '
+  why_it_matters: 'Facade system is 10-20% of total building cost for commercial buildings. System type (curtain wall INR 800-2000/sqft vs ACP cladding INR 300-600/sqft) dramatically affects budget. Structural
+    support requirements affect RCC design.
+
+    '
+  suggested_resolution: Provide facade design showing system type per elevation, typical sections, and connection detail to structure. Include facade area calculation.
+  priority: critical
+  building_types:
+  - commercial
+  - office
+  - hotel
+  - hospital
+  - high_rise
+  package: facade
+- id: RFI-SG-FA-002
+  trigger_type: scope_gap
+  trigger_keywords:
+  - facade glass
+  - curtain wall glass
+  - glass specification
+  - vision glass
+  - spandrel
+  trigger_trade: facade
+  question_template: 'Facade glass specification not provided for {area}. Please confirm: (a) Vision glass — DGU configuration (e.g., 6mm tempered + 12mm spacer + 6mm tempered)? (b) Glass type — clear,
+    tinted (grey/green/blue), reflective, low-E, or triple silver low-E? (c) Solar performance — SHGC target, U-value, and visible light transmittance (VLT)? (d) Spandrel glass — opacified/ceramic frit,
+    shadow box, or insulated metal panel? (e) Safety compliance — toughened, laminated, or heat-strengthened as per IS 2553/NBC? (f) Acoustic performance — STC (sound transmission class) requirement?
+
+    '
+  why_it_matters: 'Facade glass is the largest facade cost component. Performance glass (low-E DGU) costs 2-3x clear float but significantly reduces HVAC load. Glass specification must comply with ECBC
+    energy code and NBC safety requirements.
+
+    '
+  suggested_resolution: Provide glass schedule for each facade zone showing glass type, DGU configuration, performance parameters (SHGC, U-value, VLT, STC), and safety glass type.
+  priority: high
+  building_types:
+  - commercial
+  - office
+  - hotel
+  - high_rise
+  package: facade
+- id: RFI-SG-FA-003
+  trigger_type: scope_gap
+  trigger_keywords:
+  - facade sealant
+  - weather seal
+  - structural sealant
+  - joint sealant
+  trigger_trade: facade
+  question_template: 'Facade sealant specification not provided for {area}. Please confirm: (a) Structural sealant — silicone type (one-part or two-part), brand, and cure type? (b) Weather sealant — silicone,
+    polyurethane, or polysulphide? (c) Joint design — primary seal + secondary seal (dual seal) or single seal? (d) Joint width and depth — minimum bite for structural silicone? (e) Sealant color — matching
+    frame, glass edge, or specific color? (f) Backer rod type and size?
+
+    '
+  why_it_matters: 'Sealant is the primary defense against water and air infiltration in curtain walls. Wrong sealant type or joint design causes leakage, the number one facade defect. Structural sealant
+    failure is a safety hazard (glass fallout risk).
+
+    '
+  suggested_resolution: Provide sealant specification showing structural and weather sealant types, joint design detail, and manufacturer compatibility confirmation.
+  priority: high
+  building_types:
+  - commercial
+  - office
+  - hotel
+  - high_rise
+  package: facade
+- id: RFI-SG-FA-004
+  trigger_type: scope_gap
+  trigger_keywords:
+  - wind load
+  - facade wind pressure
+  - facade structural
+  - facade design pressure
+  trigger_trade: facade
+  question_template: 'Facade wind load/design pressure not specified for {area}. Please confirm: (a) Basic wind speed for the city as per IS 875 Part 3? (b) Design wind pressure at each floor level (varies
+    with height)? (c) Terrain category — I, II, III, or IV? (d) Is wind tunnel study required for the building (typically for buildings above 50m)? (e) Design pressure for cladding (both positive and negative/suction)?
+    (f) Deflection limit for facade framing — L/175 or L/200?
+
+    '
+  why_it_matters: 'Wind load design determines facade frame member sizing, glass thickness, and anchor design. Under-designed facade fails during storms (glass breakage, water leakage, or cladding detachment).
+    Over-design wastes material cost by 20-40%.
+
+    '
+  suggested_resolution: Provide wind load calculation for facade per IS 875 Part 3 showing design pressure at each height zone. Include deflection and stress criteria.
+  priority: critical
+  building_types:
+  - commercial
+  - office
+  - hotel
+  - high_rise
+  package: facade
+- id: RFI-SG-CQ-001
+  trigger_type: scope_gap
+  trigger_keywords:
+  - concrete testing
+  - cube testing
+  - IS 516
+  - quality control concrete
+  trigger_trade: structural
+  question_template: 'Concrete cube testing programme not included in BOQ for {area}. Please confirm:
+
+    (a) Cube sampling frequency — IS 456 requires minimum 1 set (6 cubes) per 50 cum or part thereof; is this included in rates or measured separately?
+
+    (b) NABL-accredited third-party testing lab — who appoints and who pays?
+
+    (c) 7-day and 28-day cube results — what is the acceptance/rejection criterion per IS 456 Clause 16?
+
+    (d) Failed cube protocol — core cutting, load test, or demolition decision process?
+
+    '
+  why_it_matters: IS 516 cube testing is a statutory quality assurance requirement under IS 456. Absence from BOQ causes disputes about who bears testing cost (INR 300-500 per cube set). Failed cubes without
+    a defined protocol can stall the project or lead to costly demolition orders. Third-party NABL lab is mandated by most PMCs and clients.
+  suggested_resolution: Add a concrete quality control BOQ item specifying sampling frequency, NABL-accredited lab, and cost responsibility. Include failed-cube protocol in the contract.
+  priority: high
+  building_types:
+  - all
+  package: structural
+- id: RFI-SG-PC-001
+  trigger_type: scope_gap
+  trigger_keywords:
+  - anti-termite
+  - termite treatment
+  - termite proofing
+  - soil treatment termite
+  trigger_trade: civil
+  question_template: 'Anti-termite treatment not found in BOQ despite foundation/ground-floor items being present for {area}. Please confirm:
+
+    (a) Pre-construction soil poisoning below slab — chemical type (chlorpyrifos/bifenthrin) and dilution per IS 6313 Part 2?
+
+    (b) Post-construction treatment at perimeter and plinth joints — included or excluded?
+
+    (c) Warranty period required — minimum 10 years per IS 6313?
+
+    (d) Licensed pest control operator (PCO) certificate required before slab pour?
+
+    '
+  why_it_matters: Anti-termite treatment is mandatory under IS 6313 Part 2 for all buildings on organic soil. Omission leads to structural timber damage (doors, furniture, woodwork) and expensive post-construction
+    chemical injection. INR 15-40/sqft for pre-construction treatment is far cheaper than remedial work. Many local building bylaws and RERA require proof of anti-termite treatment before OC.
+  suggested_resolution: Add anti-termite treatment item to the BOQ specifying IS 6313 Part 2 compliance, chemical type, coverage area, application sequence (pre and post construction), warranty, and PCO
+    certification.
+  priority: high
+  building_types:
+  - all
+  package: civil
+- id: RFI-SG-CQ-002
+  trigger_type: scope_gap
+  trigger_keywords:
+  - curing compound
+  - membrane curing
+  - concrete curing
+  - curing agent RCC
+  trigger_trade: structural
+  question_template: 'Curing compound not listed in BOQ despite RCC items being present for {area}. Please confirm:
+
+    (a) Is curing compound an acceptable alternative to water curing for slab/column surfaces?
+
+    (b) Product type — wax-based, resin-based, or acrylic dissipating compound?
+
+    (c) Coverage rate and number of coats per manufacturer data sheet?
+
+    (d) Is curing compound measured as a separate BOQ item or included in concrete rates?
+
+    '
+  why_it_matters: Improper curing reduces concrete strength by 30-40% and causes plastic shrinkage cracking. In hot and exposed conditions (slabs in summer), curing compound is the most practical curing
+    method. When not in the BOQ, contractors skip curing or use inadequate methods. Curing compound costs INR 8-15/sqm but prevents costly remedial work.
+  suggested_resolution: Add curing compound as a separate measured item in the BOQ. Specify product type, application rate, and confirm whether it is an alternative or supplement to water curing.
+  priority: medium
+  building_types:
+  - all
+  package: structural
+- id: RFI-SG-ST-007
+  trigger_type: scope_gap
+  trigger_keywords:
+  - expansion joint floor
+  - floor expansion joint
+  - movement joint floor
+  - large floor area
+  trigger_trade: structural
+  question_template: 'Expansion joints not shown in the BOQ/drawings for the floor areas (total floor area likely exceeds 300 sqm) at {area}. Please confirm:
+
+    (a) Expansion joint spacing — typically 30-45m each direction per IS 456 Cl. 27?
+
+    (b) Joint width — 12mm, 20mm, or custom depending on temperature range?
+
+    (c) Joint cover profile — aluminium or stainless steel cover plate, recessed or surface-mounted?
+
+    (d) Filler material — closed-cell polyethylene foam board or cork board?
+
+    '
+  why_it_matters: IS 456 Clause 27 requires expansion joints in structures exceeding certain lengths to relieve thermal and shrinkage stresses. Omitting joints in large floor areas causes uncontrolled cracking
+    at random locations. Expansion joint cover profiles cost INR 600-1500/m but prevent major structural cracking. For industrial and commercial floors, joint design must also accommodate live load deflection.
+  suggested_resolution: Provide expansion joint layout drawing showing joint locations, spacing, width, and detail sections. Add expansion joint cover profile to BOQ with material and fixing specification.
+  priority: high
+  building_types:
+  - all
+  package: structural
+- id: RFI-SG-WP-007
+  trigger_type: scope_gap
+  trigger_keywords:
+  - waterstop
+  - water bar
+  - construction joint waterproofing
+  - basement waterstop
+  trigger_trade: waterproofing
+  question_template: 'Waterstop at construction joints not found in BOQ despite basement/water-retaining structure items being present at {area}. Please confirm:
+
+    (a) Waterstop type — PVC centre-bulb, dumbbell, tear-web, or crystalline-based injectable hose?
+
+    (b) Dimensions — 150mm, 200mm, or 230mm width?
+
+    (c) Location — all construction joints, or only horizontal slab-wall joints?
+
+    (d) Swellable hydrophilic strip (e.g., Sika Greenstreak) as supplement or alternative?
+
+    '
+  why_it_matters: Construction joints are the most vulnerable point in basement and water-tank waterproofing. PVC waterstop at slab-wall joints is the industry standard and adds INR 250-400/m to cost. Without
+    waterstop, groundwater enters through construction joints, causing structural corrosion and wet basement. Remedial injection of failed construction joints costs 10-20x the original waterstop cost.
+  suggested_resolution: Add waterstop to BOQ for all construction joints in basements and water-retaining structures. Specify type (PVC/crystalline/hydrophilic), width, and installation detail drawing.
+  priority: critical
+  building_types:
+  - all
+  package: waterproofing
+- id: RFI-SG-ST-008
+  trigger_type: scope_gap
+  trigger_keywords:
+  - precast
+  - grouting precast
+  - precast connection
+  - prestressed
+  trigger_trade: structural
+  question_template: 'Grouting at precast element joints and connections not found in BOQ despite precast items being present at {area}. Please confirm:
+
+    (a) Grout type — non-shrink cementitious grout (e.g., Sika/Fosroc/BASF) or fine concrete?
+
+    (b) Grout strength requirement — minimum 30 MPa or matching precast element strength?
+
+    (c) Grouted key or sleeve coupler connections — type and testing requirement?
+
+    (d) Dry-pack mortar versus poured grout at bearing surfaces — which areas?
+
+    '
+  why_it_matters: Precast element connections are structural load transfer points — inadequate grouting causes differential settlement, joint cracking, and structural failure. Non-shrink grout prevents
+    void formation. Grout cube testing is required to verify connection strength. Precast grouting is frequently omitted from BOQ, creating a scope gap.
+  suggested_resolution: Add non-shrink grout item to BOQ for all precast connections. Specify grout type, strength, testing frequency, and connection detail drawings.
+  priority: high
+  building_types:
+  - all
+  package: structural
+- id: RFI-SG-ST-009
+  trigger_type: scope_gap
+  trigger_keywords:
+  - bar bending schedule
+  - BBS
+  - reinforcement schedule
+  - bending schedule
+  trigger_trade: structural
+  question_template: 'Bar bending schedule (BBS) responsibility not defined in the contract documents for {area}. Please confirm:
+
+    (a) Is BBS provided by the structural consultant or is preparation the contractor''s responsibility?
+
+    (b) If contractor scope — what is the review and approval turnaround time, and is cost included in rates?
+
+    (c) Does BBS cover all elements — footing, column, beam, slab, staircase, retaining wall?
+
+    (d) Is steel cutting list optimisation for minimum wastage required?
+
+    '
+  why_it_matters: BBS preparation is a significant engineering task. When not provided by the consultant, the contractor must prepare it, adding 2-4 weeks to preconstruction lead time per floor cycle. BBS
+    accuracy directly affects steel wastage — correct BBS limits wastage to 3-5% versus 8-12% without. Steel represents 25-35% of structural cost; wastage control is critical.
+  suggested_resolution: Clarify in contract documents whether BBS is consultant-provided or contractor-scope. If contractor-scope, allow time and cost for BBS preparation and approval before each structural
+    milestone.
+  priority: high
+  building_types:
+  - all
+  package: structural
+- id: RFI-SG-EL-009
+  trigger_type: scope_gap
+  trigger_keywords:
+  - lightning protection
+  - lightning arrester
+  - LPS
+  - IS 2309
+  - air terminal
+  trigger_trade: electrical
+  question_template: 'Lightning protection system (LPS) not found in BOQ for building height exceeding 9m at {area}. Please confirm:
+
+    (a) LPS design class per IS 2309 / IS/IEC 62305 — Class I, II, III, or IV based on risk assessment?
+
+    (b) Air termination system — Franklin rod, horizontal conductors, or early streamer emission (ESE) device?
+
+    (c) Down conductors — GI strip 25x3mm, copper tape, or aluminium, with number and routing?
+
+    (d) Earth termination — dedicated lightning earth pits or combined with electrical earthing?
+
+    '
+  why_it_matters: IS 2309 recommends lightning protection for buildings above 9m, and NBC 2016 makes it mandatory for buildings above 15m and for critical facilities (hospitals, data centres). Lightning
+    strikes cause structural fire, equipment damage, and data loss costing lakhs to crores. LPS installation costs INR 50,000-3 lakh depending on building size — a minor fraction of potential damage.
+  suggested_resolution: Add lightning protection system to BOQ with risk assessment per IS/IEC 62305-2, air termination, down conductor, and earth termination details. Include surge protection devices at
+    main panel.
+  priority: high
+  building_types:
+  - all
+  package: electrical
+- id: RFI-SG-EL-010
+  trigger_type: scope_gap
+  trigger_keywords:
+  - earthing
+  - grounding
+  - earth electrode
+  - IS 3043
+  - earth pit
+  trigger_trade: electrical
+  question_template: 'Earthing system not found in BOQ despite electrical items being present at {area}. Please confirm:
+
+    (a) Earthing system type per IS 3043 — TN-S, TN-C-S, or TT?
+
+    (b) Earth electrode type — GI pipe earth, GI plate earth, or chemical maintenance-free earth?
+
+    (c) Number of earth pits and target earth resistance — <1 ohm (data/hospital) or <5 ohm (general)?
+
+    (d) Main equipotential bonding — all metallic services (water, gas, structural steel) bonded?
+
+    '
+  why_it_matters: Earthing is a life-safety requirement. An unearthed installation causes electrocution risk, equipment damage, and fails electrical inspector approval under IE Rules 1956. Chemical earth
+    electrodes maintain low resistance year-round in high-resistivity soils. Without a defined earthing system in the BOQ, contractors install minimum-compliance pits with no performance guarantee.
+  suggested_resolution: Add earthing system to BOQ specifying IS 3043 compliance, electrode type and number, target resistance, and inter-connection strip. Require earth resistance test certificate at handover.
+  priority: critical
+  building_types:
+  - all
+  package: electrical
+- id: RFI-SG-PL-009
+  trigger_type: scope_gap
+  trigger_keywords:
+  - pressure testing
+  - hydrostatic test
+  - pipe pressure test
+  - plumbing testing
+  trigger_trade: plumbing
+  question_template: 'Pressure testing of water supply pipes not specified in BOQ for {area}. Please confirm:
+
+    (a) Test pressure — 1.5x working pressure or minimum 7 bar as per IS 2065?
+
+    (b) Test duration — 30 minutes, 1 hour, or 2 hours with acceptable pressure drop?
+
+    (c) Testing sequence — section by section before concealment, or full system after installation?
+
+    (d) Witnessing and certification — PMC/client representative to sign test report?
+
+    '
+  why_it_matters: Pressure testing before walls are plastered is the only way to detect concealed pipe joint failures. Leaks in concealed pipework cause structural damage, mould, and expensive wall chasing/replastering.
+    IS 2065 mandates pressure testing for all water supply installations. Test reports are required for building completion certificate in most municipalities.
+  suggested_resolution: Add hydraulic pressure testing as a measured item in the BOQ. Specify test pressure, duration, witnessing requirement, and provide a standard test report format.
+  priority: high
+  building_types:
+  - all
+  package: plumbing
+- id: RFI-SG-PL-010
+  trigger_type: scope_gap
+  trigger_keywords:
+  - tank testing
+  - hydraulic test tank
+  - ponding test
+  - water tank test
+  trigger_trade: plumbing
+  question_template: 'Hydraulic testing of water tanks (overhead/underground) not specified in BOQ for {area}. Please confirm:
+
+    (a) Test method — fill and hold for 24 hours; acceptable water level drop?
+
+    (b) Who witnesses and certifies the test — client, PMC, or independent inspector?
+
+    (c) Test before or after waterproofing application?
+
+    (d) Is potable water quality test (bacteriological and chemical) required after tank filling?
+
+    '
+  why_it_matters: Water tank testing is required to confirm structural integrity and waterproofing effectiveness before the tank is put into service. A failed tank can contaminate potable water or cause
+    structural flooding. Potable water quality testing is mandatory per IS 10500 to ensure no contamination from waterproofing materials. Without a testing clause, defects are discovered only after handover.
+  suggested_resolution: Add hydraulic test item to BOQ for each water tank. Specify hold period, acceptable leakage rate, witnessing requirement, and post-fill water quality test per IS 10500.
+  priority: high
+  building_types:
+  - all
+  package: plumbing
+- id: RFI-SG-PL-011
+  trigger_type: scope_gap
+  trigger_keywords:
+  - STP residential
+  - sewage treatment
+  - residential STP
+  - apartment STP
+  trigger_trade: plumbing
+  question_template: 'Sewage treatment plant (STP) not found in BOQ for residential project with more than 20 dwelling units at {area}. Please confirm:
+
+    (a) STP capacity (KLD) based on IS 1172 sewage generation norm (135 LPCD x occupancy)?
+
+    (b) Technology — SBR, MBBR, MBR, or packaged unit?
+
+    (c) Treated water reuse — for flushing, garden irrigation, or both?
+
+    (d) CPCB/SPCB approval requirement — has the technology selection been cleared?
+
+    '
+  why_it_matters: CPCB and state pollution control boards mandate STP for residential projects above specified thresholds (typically 20+ units or 500+ sqm built-up area). Absence blocks building completion
+    and occupancy certificates. MBR technology costs 2-3x SBR but produces higher quality treated water suitable for toilet flushing. Treated water reuse can meet 30-40% of total water demand, reducing
+    municipal water consumption significantly.
+  suggested_resolution: Add STP to BOQ with IS 1172-based capacity calculation, technology selection, treated water reuse plan, and CPCB/SPCB compliance confirmation.
+  priority: critical
+  building_types:
+  - residential
+  - residential_apartment
+  package: plumbing
+- id: RFI-SG-PL-012
+  trigger_type: scope_gap
+  trigger_keywords:
+  - rainwater harvesting
+  - RWH mandatory
+  - rain water recharge
+  - groundwater recharge
+  trigger_trade: plumbing
+  question_template: 'Rainwater harvesting (RWH) system not found in BOQ for {area}. Please confirm:
+
+    (a) Is RWH mandatory per local building bylaws and state government notification?
+
+    (b) RWH type — rooftop collection with storage, groundwater recharge pits, or both?
+
+    (c) Recharge pit/bore count and design per Central Ground Water Board (CGWB) norms?
+
+    (d) First-flush diverter specification and filtration before storage or recharge?
+
+    '
+  why_it_matters: RWH is mandatory in over 15 Indian states for plots above 100-300 sqm. Absence blocks building plan approval and occupancy certificate. Groundwater recharge requirement is particularly
+    stringent in water-stressed cities (Bengaluru, Chennai, Hyderabad). RWH system costs INR 50,000-2 lakh — small relative to total project cost but critical for regulatory compliance.
+  suggested_resolution: Confirm RWH requirement under state building bylaws. Add RWH system to BOQ with CGWB-compliant recharge structure design, collection piping, first-flush diverter, and filtration.
+  priority: high
+  building_types:
+  - all
+  package: plumbing
+- id: RFI-SG-EL-011
+  trigger_type: scope_gap
+  trigger_keywords:
+  - EV charging
+  - electric vehicle charging
+  - EV provision
+  - charging point parking
+  trigger_trade: electrical
+  question_template: 'EV charging provisions not found in BOQ for commercial parking at {area}. Please confirm:
+
+    (a) Number of EV charging points as percentage of total parking — MoP notification requires minimum 20%?
+
+    (b) Charging level — Level 2 AC (3.3/7.4 kW) or DC fast charger (25-50 kW) per bay?
+
+    (c) Infrastructure scope — conduit and cable only (EV-ready), or charger supply and installation?
+
+    (d) Power supply — dedicated feeder from main panel, with sub-metering?
+
+    '
+  why_it_matters: Ministry of Power (MoP) mandates EV charging provisions in new buildings. State DISCOM regulations and ECBC 2017 addendum increasingly require EV readiness. Retrofitting conduit in finished
+    parking floors costs 3-5x the cost of providing conduit during construction. DC fast chargers need 3-phase 415V supply and significant cable size. EV infrastructure is becoming a tenant requirement
+    for grade-A commercial assets.
+  suggested_resolution: Add EV charging provisions to BOQ specifying number of points, charging level, conduit/cable routing, dedicated feeder, and sub-metering. Confirm if charger supply is in scope.
+  priority: medium
+  building_types:
+  - commercial
+  - office
+  - retail_mall
+  - hotel
+  package: electrical
+- id: RFI-SG-AC-001
+  trigger_type: scope_gap
+  trigger_keywords:
+  - accessible toilet
+  - disabled toilet
+  - RPWD
+  - barrier free toilet
+  - wheelchair toilet
+  trigger_trade: finishing
+  question_template: 'Accessible toilet per RPWD Act 2016 not found in BOQ for public building at {area}. Please confirm:
+
+    (a) Number and location of accessible toilets per floor — is provision on each accessible floor required?
+
+    (b) Minimum room size — 2.25m x 1.5m per NBC 2016/CPWD Harmonised Guidelines?
+
+    (c) Grab bars — horizontal, vertical, and swing-down L-shaped beside EWC?
+
+    (d) Alarm/emergency call system — pull cord or push button within reach of a fallen person?
+
+    '
+  why_it_matters: The Rights of Persons with Disabilities (RPWD) Act 2016 mandates accessibility compliance for all public buildings. Accessible toilets require minimum 2.25x1.5m floor area (larger than
+    standard 1.5x1.2m), anti-skid flooring, grab bars, and emergency call. Non-compliance results in occupancy certificate refusal and legal liability. Retrofitting accessible toilets post-construction
+    is extremely expensive due to plumbing relocation.
+  suggested_resolution: Add accessible toilet provision to BOQ with RPWD Act 2016/NBC 2016 compliant room dimensions, grab bars, anti-skid flooring, accessible EWC, and emergency call system.
+  priority: high
+  building_types:
+  - commercial
+  - hospital
+  - school
+  - hotel
+  - retail_mall
+  - office
+  package: finishing
+- id: RFI-SG-AC-002
+  trigger_type: scope_gap
+  trigger_keywords:
+  - tactile path
+  - tactile paving
+  - visually impaired
+  - accessible path
+  trigger_trade: finishing
+  question_template: 'Tactile path/paving for visually impaired persons not found in BOQ for public building at {area}. Please confirm:
+
+    (a) Tactile tile type — directional (striped) and warning (dotted) tiles as per IS 15477?
+
+    (b) Tactile tile material — vitrified ceramic or stainless steel? Contrasting colour required?
+
+    (c) Tactile path routing — from building entrance to lifts, stairs, and key areas?
+
+    (d) Continuity with external tactile path at public footpath or dropped kerb?
+
+    '
+  why_it_matters: Tactile guidance paths are mandatory for public buildings under the RPWD Act 2016 and CPWD Harmonised Guidelines. Directional tiles guide movement; warning tiles indicate hazards (steps,
+    platform edges). Tactile tiles must be installed before flooring completion — retrofitting requires tile removal and relaying. IS 15477 specifies dimensions and contrasting colour requirements to ensure
+    detectability by white-cane users.
+  suggested_resolution: Add tactile path provision to BOQ with IS 15477 compliant directional and warning tiles, specify colour contrast, material, and routing drawing from building entry to all key destinations.
+  priority: medium
+  building_types:
+  - commercial
+  - hospital
+  - school
+  - hotel
+  - retail_mall
+  - office
+  package: finishing
+- id: RFI-SG-FS-007
+  trigger_type: scope_gap
+  trigger_keywords:
+  - emergency exit sign
+  - exit signage
+  - escape route sign
+  - photoluminescent sign
+  trigger_trade: fire_safety
+  question_template: 'Emergency exit signage not found in BOQ despite fire safety items being present at {area}. Please confirm:
+
+    (a) Signage type — photoluminescent (self-luminous, no power needed) or internally illuminated LED?
+
+    (b) Standard — IS 12349 (safety signs) or ISO 7010 compliant pictograms?
+
+    (c) Coverage — at every exit door, above escape route changes, and at maximum 20m intervals?
+
+    (d) Battery backup for illuminated signs — minimum 3 hours per NBC 2016?
+
+    '
+  why_it_matters: Emergency exit signage is mandatory per NBC 2016 for all buildings with more than one storey or floor area above 500 sqm. In smoke conditions, photoluminescent signs are visible where
+    illuminated signs may fail due to power failure. Incorrectly located or missing signs are the primary cause of evacuation delay in emergencies. Fire NOC inspection specifically checks signage placement
+    and illumination backup.
+  suggested_resolution: Add emergency exit signage to BOQ specifying type (photoluminescent or LED), IS 12349 compliance, battery backup duration, and provide signage location plan covering all escape routes.
+  priority: high
+  building_types:
+  - all
+  package: fire_safety
+- id: RFI-SG-FS-008
+  trigger_type: scope_gap
+  trigger_keywords:
+  - fire pump room
+  - fire pump
+  - pump room civil
+  - wet riser pump
+  trigger_trade: fire_safety
+  question_template: 'Fire pump room civil works not found in BOQ despite wet riser/sprinkler items being present at {area}. Please confirm:
+
+    (a) Fire pump room size — adequate for electric pump, diesel pump, jockey pump, and control panel?
+
+    (b) Pump room construction — RCC or masonry? Waterproofed floor slab (pump room is typically at basement level)?
+
+    (c) Ventilation — minimum 6 ACH mechanical exhaust for diesel pump exhaust fumes?
+
+    (d) Access — direct access from external for fire brigade; separate from other pump rooms?
+
+    '
+  why_it_matters: Fire pump room is a mandatory civil works item supporting the fire fighting system. NBC 2016 requires a dedicated fire pump room that is accessible from outside and separate from the domestic
+    pump room. Diesel pump requires exhaust ventilation and fuel storage. Pump room flooding (common in basements) renders fire pumps non-functional — a life-safety failure. Missing from BOQ causes post-contract
+    variations.
+  suggested_resolution: Add fire pump room civil works to BOQ specifying room size, construction type, waterproofing, ventilation, diesel exhaust, and access requirements per NBC 2016.
+  priority: high
+  building_types:
+  - all
+  package: fire_safety
+- id: RFI-SG-EL-012
+  trigger_type: scope_gap
+  trigger_keywords:
+  - sub-metering
+  - energy meter
+  - sub meter
+  - individual metering
+  - electrical metering
+  trigger_trade: electrical
+  question_template: 'Electrical sub-metering not found in BOQ for commercial building at {area}. Please confirm:
+
+    (a) Sub-metering requirement — individual tenant/floor/zone metering for energy billing?
+
+    (b) Meter type — electromechanical, digital (Class 1), or smart AMR (automatic meter reading)?
+
+    (c) HVAC sub-metering — separate energy meters for HVAC system per ECBC requirement?
+
+    (d) BMS integration — are sub-meters networked to central energy management system?
+
+    '
+  why_it_matters: ECBC 2017 mandates electrical sub-metering for HVAC, lighting, and plug loads in commercial buildings above 500 sqm. Sub-metering is essential for tenant billing in multi-tenanted commercial
+    buildings and for energy benchmarking. Smart meters with AMR enable remote reading and energy analytics. Retrofitting meters in finished DB rooms requires additional cable routes and panel modifications.
+  suggested_resolution: Add sub-metering scheme to BOQ specifying meter type, metering points (per tenant/floor/system), AMR integration, and BMS connection. Confirm ECBC sub-metering compliance.
+  priority: medium
+  building_types:
+  - commercial
+  - office
+  - hotel
+  - retail_mall
+  package: electrical
+- id: RFI-SG-PL-013
+  trigger_type: scope_gap
+  trigger_keywords:
+  - water meter
+  - flow meter
+  - bulk water meter
+  - sub water meter
+  trigger_trade: plumbing
+  question_template: 'Water meters at point of use not found in BOQ for {area}. Please confirm:
+
+    (a) Bulk water meter at utility incoming supply — class and size per IS 779?
+
+    (b) Sub-meters per unit/floor/zone — required for water billing in multi-tenanted buildings?
+
+    (c) Meter type — mechanical (inferential), electromagnetic, or ultrasonic?
+
+    (d) AMR (automatic meter reading) integration — wireless pulse output to BMS or central meter management system?
+
+    '
+  why_it_matters: Bulk water metering is mandatory for municipal supply connection in most cities. Sub-metering per unit is increasingly required for fair billing in residential complexes and commercial
+    tenancies. Without water meters, leakage detection is impossible — unmetered water losses of 20-30% are common. IGBC Green Homes and GRIHA rating systems require water sub-metering and monitoring.
+  suggested_resolution: Add water meters to BOQ for incoming supply, each building, and per-unit sub-meters. Specify meter type, IS 779 class, and AMR provision if BMS is in scope.
+  priority: medium
+  building_types:
+  - all
+  package: plumbing
+- id: RFI-SG-HV-007
+  trigger_type: scope_gap
+  trigger_keywords:
+  - smoke damper
+  - fire damper HVAC
+  - duct fire wall
+  - HVAC fire compartment
+  trigger_trade: hvac
+  question_template: 'Smoke dampers for HVAC ducts crossing fire compartment walls not found in BOQ at {area}. Please confirm:
+
+    (a) Fire/smoke damper locations — at every point where duct penetrates a fire-rated wall or floor?
+
+    (b) Damper type — fire damper (thermal link only), smoke damper (actuator + detection), or combination?
+
+    (c) Fire rating — 1 hour, 1.5 hour, or 2 hour as per NBC 2016/IS 3103?
+
+    (d) Integration — actuator wired to fire alarm panel for automatic closure on smoke detection?
+
+    '
+  why_it_matters: NBC 2016 requires fire/smoke dampers wherever HVAC ducts penetrate fire compartment boundaries. Open ducts through fire walls negate the entire fire compartmentation strategy. Smoke dampers
+    must be fail-safe (spring-return) so they close on power failure. Integration with fire alarm ensures automatic closure before smoke spreads through ductwork. Fire NOC inspections specifically check
+    damper presence and wiring.
+  suggested_resolution: Add fire/smoke dampers to BOQ for all duct penetrations through fire-rated walls and floors. Specify fire rating, damper type (combination preferred), and fire alarm integration
+    wiring.
+  priority: critical
+  building_types:
+  - all
+  package: hvac
+- id: RFI-SG-HV-008
+  trigger_type: scope_gap
+  trigger_keywords:
+  - kitchen exhaust hood
+  - chimney hood
+  - kitchen hood
+  - modular kitchen exhaust
+  trigger_trade: hvac
+  question_template: 'Kitchen exhaust hood not found in BOQ despite modular kitchen items being present at {area}. Please confirm:
+
+    (a) Hood type — residential chimney style (decorative) or commercial-grade stainless steel canopy?
+
+    (b) Airflow — minimum 10 air changes per hour for kitchen volume, or per hood manufacturer data?
+
+    (c) Exhaust duct routing — to terrace/external wall, avoiding other occupied spaces?
+
+    (d) Grease filter — baffle filter or mesh filter? Cleaning frequency and replacement?
+
+    '
+  why_it_matters: Kitchen exhaust removes cooking fumes, heat, and grease-laden air. Without adequate exhaust, IAQ deteriorates and grease accumulates in ductwork — a fire risk. Duct routing must terminate
+    externally, not into other rooms. In multi-storey residential projects, exhaust duct routing through shafts requires coordination with civil scope. NBC 2016 requires kitchen ventilation at minimum 6
+    ACH for habitable kitchens.
+  suggested_resolution: Add kitchen exhaust hood and ductwork to BOQ specifying hood type, airflow (CFM), grease filter type, duct size and routing to external termination point.
+  priority: medium
+  building_types:
+  - residential
+  - residential_apartment
+  - hotel
+  package: hvac
+- id: RFI-SG-HV-009
+  trigger_type: scope_gap
+  trigger_keywords:
+  - condensate drain
+  - AC drain
+  - condensate pipe
+  - split AC drain
+  trigger_trade: hvac
+  question_template: 'Condensate drain piping not found in BOQ despite AC units being listed for {area}. Please confirm:
+
+    (a) Condensate pipe material — CPVC, PVC, or GI? Pipe size per unit tonnage?
+
+    (b) Discharge point — to nearest floor drain, dedicated drain riser, or external?
+
+    (c) Insulation on condensate pipe — to prevent sweating and dripping onto ceilings?
+
+    (d) Condensate pump — required for indoor units where gravity drain is not possible?
+
+    '
+  why_it_matters: Missing condensate drainage is the most common cause of water damage from split AC units. Condensate must drain by gravity or via condensate pump to a suitable discharge point. Uninsulated
+    condensate pipes in cool ceiling voids sweat externally, causing ceiling stains. Without a dedicated drain riser plan, condensate is improvised at site, leading to blocked drains and water ingress.
+  suggested_resolution: Add condensate drain piping to BOQ for all AC indoor units. Specify pipe material, size, routing, insulation, discharge point, and condensate pump where gravity drain is not feasible.
+  priority: medium
+  building_types:
+  - all
+  package: hvac
+- id: RFI-SG-HV-010
+  trigger_type: scope_gap
+  trigger_keywords:
+  - acoustic insulation AHU
+  - AHU room acoustic
+  - mechanical room noise
+  - pump room acoustic
+  trigger_trade: hvac
+  question_template: 'Acoustic insulation for AHU room adjacent to occupied spaces not found in BOQ at {area}. Please confirm:
+
+    (a) Target noise criterion (NC) in adjacent occupied space — NC 35 (office), NC 30 (hotel bedroom), or NC 25 (hospital)?
+
+    (b) AHU room wall construction — standard brick/block or acoustically treated with mass-and-resilience wall?
+
+    (c) Acoustic duct lining — internal lining (glasswool/Armaflex) for first 3-5m of duct from AHU?
+
+    (d) Flexible connections between AHU and ductwork — to prevent structure-borne vibration transmission?
+
+    '
+  why_it_matters: AHU rooms adjacent to occupied spaces (hotel bedrooms, hospital wards, offices) cause noise complaints if not acoustically treated. Remedial acoustic treatment post-construction costs
+    5-10x the original acoustic specification. NC 35 in a hotel bedroom is achievable only with proper room construction and duct attenuation. Structure-borne noise from rigid duct connections is the most
+    common source of complaints and is easily prevented at installation stage.
+  suggested_resolution: Add acoustic treatment scope to BOQ for AHU rooms adjacent to occupied areas — specify target NC level, wall construction, duct lining, and flexible connection requirements.
+  priority: medium
+  building_types:
+  - hotel
+  - hospital
+  - office
+  - commercial
+  - residential_apartment
+  package: hvac
+- id: RFI-SG-HV-011
+  trigger_type: scope_gap
+  trigger_keywords:
+  - vibration isolation
+  - anti-vibration mounts
+  - pump vibration
+  - AHU vibration isolation
+  trigger_trade: hvac
+  question_template: 'Vibration isolation mounts for pumps and AHU not found in BOQ at {area}. Please confirm:
+
+    (a) Anti-vibration mount type — rubber pad, spring isolator, or inertia base with springs?
+
+    (b) Equipment requiring isolation — all pumps, AHUs, chillers, compressors, and cooling towers?
+
+    (c) Deflection specification — static deflection of 25mm for spring isolators (critical facilities)?
+
+    (d) Flexible pipe connections — rubber bellow or braided flexible connector on inlet/outlet of each pump/AHU?
+
+    '
+  why_it_matters: Vibrating equipment without isolation transmits noise and vibration through structure, affecting occupant comfort. Structure-borne vibration is particularly problematic in residential
+    and hotel buildings where pumps are above occupied spaces. Anti-vibration mounts cost INR 2,000-15,000 per unit but prevent expensive remedial work. Flexible connections prevent pipe cracking due to
+    equipment vibration. Inertia base is mandatory for large pumps and AHUs above 5 TR to achieve adequate isolation.
+  suggested_resolution: Add anti-vibration mounts and flexible connections to BOQ for all rotating equipment (pumps, AHUs, chillers, fans). Specify mount type, static deflection, and material for flexible
+    connections.
+  priority: medium
+  building_types:
+  - all
+  package: hvac

@@ -728,6 +728,21 @@ class PlanSetGraph(BaseModel):
     pages_with_scale: int = Field(default=0)
     pages_without_scale: int = Field(default=0)
 
+    # Sheet-number coverage (pages that have a proper engineering sheet number A-101 etc.)
+    # Used to distinguish drawing sets (high ratio) from spec documents (low ratio).
+    pages_with_sheet_no: int = Field(default=0)
+
+    # Package classification (set by pipeline after classify_package())
+    package_type: Optional[str] = Field(
+        default=None,
+        description="PackageType value: 'drawing_set', 'tender', 'mixed', 'incomplete'",
+    )
+    package_type_confidence: float = Field(default=0.0)
+    boq_trades_detected: List[str] = Field(
+        default_factory=list,
+        description="Trades inferred from BOQ text keywords e.g. ['civil', 'general']",
+    )
+
     def to_dict(self) -> Dict[str, Any]:
         return {
             "project_id": self.project_id,
@@ -745,6 +760,10 @@ class PlanSetGraph(BaseModel):
             "has_legend": self.has_legend,
             "pages_with_scale": self.pages_with_scale,
             "pages_without_scale": self.pages_without_scale,
+            "pages_with_sheet_no": self.pages_with_sheet_no,
+            "package_type": self.package_type,
+            "package_type_confidence": self.package_type_confidence,
+            "boq_trades_detected": self.boq_trades_detected,
         }
 
 
@@ -900,6 +919,79 @@ class EvaluationLog(BaseModel):
             "user_marked_false_positive": self.user_marked_false_positive,
             "user_marked_resolved": self.user_marked_resolved,
             "user_corrections": self.user_corrections,
+        }
+
+
+# =============================================================================
+# UNIFIED LINE ITEM  (Sprint 21 — 100% extraction feature)
+# =============================================================================
+
+class UnifiedLineItem(BaseModel):
+    """
+    A normalised, trade-tagged line item assembled from:
+      - BOQ items            (source="boq")
+      - Spec/notes clauses   (source="spec_item")
+      - Schedule stubs       (source="schedule_stub")
+
+    All items run through taxonomy matching; the result is the canonical
+    line-items list used for pricing, coverage scoring, and export.
+    """
+    id: str                                   # "LI-0001", "LI-0002", …
+    source: str                               # "boq" | "spec_item" | "schedule_stub"
+    item_no: Optional[str]  = None
+
+    @field_validator("item_no", mode="before")
+    @classmethod
+    def _coerce_item_no_to_str(cls, v):
+        # BUG-14 FIX: BOQ parsers sometimes pass integer item numbers (1, 2, 3).
+        # Coerce any non-None value to str so Pydantic validation passes.
+        if v is None:
+            return v
+        return str(v) if not isinstance(v, str) else v
+    description: str        = ""
+    unit: Optional[str]     = None
+    unit_family: Optional[str] = None         # AREA|VOLUME|LINEAR|COUNT|WEIGHT|LUMP
+    qty: Optional[float]    = None
+    rate: Optional[float]   = None
+    trade: str              = "general"
+    section: Optional[str]  = None
+    source_page: int        = 0
+
+    # Taxonomy match results
+    taxonomy_id: Optional[str]          = None
+    taxonomy_discipline: Optional[str]  = None
+    taxonomy_unit: Optional[str]        = None
+    match_confidence: float             = 0.0
+    match_method: str                   = ""
+    taxonomy_matched: bool              = False
+
+    # Quality flags
+    unit_inferred: bool  = False
+    qty_missing: bool    = False
+    rate_missing: bool   = False
+
+    def to_dict(self) -> Dict[str, Any]:
+        return {
+            "id":                   self.id,
+            "source":               self.source,
+            "item_no":              self.item_no,
+            "description":          self.description,
+            "unit":                 self.unit,
+            "unit_family":          self.unit_family,
+            "qty":                  self.qty,
+            "rate":                 self.rate,
+            "trade":                self.trade,
+            "section":              self.section,
+            "source_page":          self.source_page,
+            "taxonomy_id":          self.taxonomy_id,
+            "taxonomy_discipline":  self.taxonomy_discipline,
+            "taxonomy_unit":        self.taxonomy_unit,
+            "match_confidence":     self.match_confidence,
+            "match_method":         self.match_method,
+            "taxonomy_matched":     self.taxonomy_matched,
+            "unit_inferred":        self.unit_inferred,
+            "qty_missing":          self.qty_missing,
+            "rate_missing":         self.rate_missing,
         }
 
 

@@ -1,0 +1,1707 @@
+# xBOQ.ai Master Construction Knowledge Base
+# Grade Aliases — material grades, sizes, and technical designations
+# Maps BOQ text like "M20 RCC column" or "Fe500D TMT bar 16mm" to canonical taxonomy terms
+# ~130 entries covering concrete grades, steel grades, bar diameters, pipe sizes,
+# cable sizes, tile sizes, paint grades, membranes, bricks/blocks, structural steel
+
+terms:
+
+  # ============================================================
+  # 1. CONCRETE GRADES
+  # ============================================================
+
+  - canonical: concrete_m5
+    taxonomy_ids: [STR.CON.GRD.005, STR.CON.PCC.001]
+    formal_english:
+      - M5
+      - M-5
+      - "M 5"
+      - grade 5
+      - M5 grade
+      - M5 grade concrete
+      - design mix M5
+      - fck 5
+      - "fck=5"
+      - "fck 5 n/mm2"
+      - characteristic strength 5
+      - "nominal mix 1:5:10"
+    informal_english:
+      - five grade
+      - M5 concrete
+      - five MPa concrete
+
+  - canonical: concrete_m7_5
+    taxonomy_ids: [STR.CON.GRD.007, STR.CON.PCC.001]
+    formal_english:
+      - M7.5
+      - M-7.5
+      - "M 7.5"
+      - grade 7.5
+      - M7.5 grade concrete
+      - design mix M7.5
+      - fck 7.5
+      - "fck=7.5"
+      - "fck 7.5 n/mm2"
+      - characteristic strength 7.5
+      - "nominal mix 1:4:8"
+    informal_english:
+      - seven point five grade
+      - M7.5 concrete
+      - lean mix concrete
+
+  - canonical: concrete_m10
+    taxonomy_ids: [STR.CON.GRD.010, STR.CON.PCC.001]
+    formal_english:
+      - M10
+      - M-10
+      - "M 10"
+      - grade 10
+      - M10 grade
+      - M10 grade concrete
+      - design mix M10
+      - fck 10
+      - "fck=10"
+      - "fck 10 n/mm2"
+      - characteristic strength 10
+      - "nominal mix 1:3:6"
+      - lean concrete M10
+      - PCC M10
+    informal_english:
+      - ten grade
+      - M10 concrete
+      - ten MPa concrete
+
+  - canonical: concrete_m15
+    taxonomy_ids: [STR.CON.GRD.015, STR.CON.PCC.001]
+    formal_english:
+      - M15
+      - M-15
+      - "M 15"
+      - grade 15
+      - M15 grade
+      - M15 grade concrete
+      - design mix M15
+      - fck 15
+      - "fck=15"
+      - "fck 15 n/mm2"
+      - characteristic strength 15
+      - "nominal mix 1:2:4"
+      - PCC M15
+    informal_english:
+      - fifteen grade
+      - M15 concrete
+      - fifteen MPa concrete
+
+  - canonical: concrete_m20
+    taxonomy_ids: [STR.CON.GRD.020, STR.RCC.COL.001, STR.RCC.FTG.001]
+    formal_english:
+      - M20
+      - M-20
+      - "M 20"
+      - grade 20
+      - M20 grade
+      - M20 grade concrete
+      - design mix M20
+      - fck 20
+      - "fck=20"
+      - "fck 20 n/mm2"
+      - characteristic strength 20
+      - "characteristic strength 20 n/mm2"
+      - "nominal mix 1:1.5:3"
+      - RCC M20
+    informal_english:
+      - twenty grade
+      - M20 concrete
+      - twenty MPa concrete
+
+  - canonical: concrete_m25
+    taxonomy_ids: [STR.CON.GRD.025, STR.RCC.COL.001, STR.RCC.BM.001]
+    formal_english:
+      - M25
+      - M-25
+      - "M 25"
+      - grade 25
+      - M25 grade
+      - M25 grade concrete
+      - design mix M25
+      - fck 25
+      - "fck=25"
+      - "fck 25 n/mm2"
+      - characteristic strength 25
+      - "characteristic strength 25 n/mm2"
+      - "nominal mix 1:1:2"
+      - RCC M25
+    informal_english:
+      - twenty five grade
+      - M25 concrete
+      - twenty five MPa concrete
+
+  - canonical: concrete_m30
+    taxonomy_ids: [STR.CON.GRD.030, STR.RCC.COL.001, STR.RCC.BM.001]
+    formal_english:
+      - M30
+      - M-30
+      - "M 30"
+      - grade 30
+      - M30 grade
+      - M30 grade concrete
+      - design mix M30
+      - fck 30
+      - "fck=30"
+      - "fck 30 n/mm2"
+      - characteristic strength 30
+      - RCC M30
+      - high strength concrete M30
+    informal_english:
+      - thirty grade
+      - M30 concrete
+      - thirty MPa concrete
+
+  - canonical: concrete_m35
+    taxonomy_ids: [STR.CON.GRD.035, STR.RCC.COL.001]
+    formal_english:
+      - M35
+      - M-35
+      - "M 35"
+      - grade 35
+      - M35 grade
+      - M35 grade concrete
+      - design mix M35
+      - fck 35
+      - "fck=35"
+      - "fck 35 n/mm2"
+      - characteristic strength 35
+      - high strength concrete M35
+    informal_english:
+      - thirty five grade
+      - M35 concrete
+      - thirty five MPa concrete
+
+  - canonical: concrete_m40
+    taxonomy_ids: [STR.CON.GRD.040, STR.RCC.COL.001]
+    formal_english:
+      - M40
+      - M-40
+      - "M 40"
+      - grade 40
+      - M40 grade
+      - M40 grade concrete
+      - design mix M40
+      - fck 40
+      - "fck=40"
+      - "fck 40 n/mm2"
+      - characteristic strength 40
+      - high strength concrete M40
+    informal_english:
+      - forty grade
+      - M40 concrete
+      - forty MPa concrete
+      - high strength
+
+  - canonical: concrete_m45
+    taxonomy_ids: [STR.CON.GRD.045]
+    formal_english:
+      - M45
+      - M-45
+      - "M 45"
+      - grade 45
+      - M45 grade
+      - M45 grade concrete
+      - design mix M45
+      - fck 45
+      - "fck=45"
+      - "fck 45 n/mm2"
+      - characteristic strength 45
+    informal_english:
+      - forty five grade
+      - M45 concrete
+      - forty five MPa concrete
+
+  - canonical: concrete_m50
+    taxonomy_ids: [STR.CON.GRD.050]
+    formal_english:
+      - M50
+      - M-50
+      - "M 50"
+      - grade 50
+      - M50 grade
+      - M50 grade concrete
+      - design mix M50
+      - fck 50
+      - "fck=50"
+      - "fck 50 n/mm2"
+      - characteristic strength 50
+      - very high strength concrete M50
+    informal_english:
+      - fifty grade
+      - M50 concrete
+      - fifty MPa concrete
+
+  - canonical: concrete_m55
+    taxonomy_ids: [STR.CON.GRD.055]
+    formal_english:
+      - M55
+      - M-55
+      - "M 55"
+      - grade 55
+      - M55 grade
+      - M55 grade concrete
+      - design mix M55
+      - fck 55
+      - "fck=55"
+      - "fck 55 n/mm2"
+      - characteristic strength 55
+    informal_english:
+      - fifty five grade
+      - M55 concrete
+      - fifty five MPa concrete
+
+  - canonical: concrete_m60
+    taxonomy_ids: [STR.CON.GRD.060]
+    formal_english:
+      - M60
+      - M-60
+      - "M 60"
+      - grade 60
+      - M60 grade
+      - M60 grade concrete
+      - design mix M60
+      - fck 60
+      - "fck=60"
+      - "fck 60 n/mm2"
+      - characteristic strength 60
+      - ultra high strength concrete M60
+    informal_english:
+      - sixty grade
+      - M60 concrete
+      - sixty MPa concrete
+
+  # ============================================================
+  # 2. STEEL / TMT GRADES
+  # ============================================================
+
+  - canonical: tmt_fe415
+    taxonomy_ids: [STR.RE.TMT.415, STR.RE.REBAR.001]
+    formal_english:
+      - Fe415
+      - Fe-415
+      - "Fe 415"
+      - 415 grade
+      - 415 grade TMT
+      - TMT Fe415
+      - HYSD Fe415
+      - high yield deformed bar 415
+      - deformed bar Fe415
+      - CTD 415
+      - cold twisted deformed 415
+      - IS 1786 Fe415
+    informal_english:
+      - old TMT
+      - four fifteen grade
+      - Fe415 bar
+      - 415 rebar
+
+  - canonical: tmt_fe500
+    taxonomy_ids: [STR.RE.TMT.500, STR.RE.REBAR.001]
+    formal_english:
+      - Fe500
+      - Fe-500
+      - "Fe 500"
+      - 500 grade
+      - 500 grade TMT
+      - TMT Fe500
+      - HYSD Fe500
+      - high yield deformed bar 500
+      - deformed bar Fe500
+      - IS 1786 Fe500
+    informal_english:
+      - five hundred grade
+      - Fe500 bar
+      - 500 TMT
+      - 500 rebar
+
+  - canonical: tmt_fe500d
+    taxonomy_ids: [STR.RE.TMT.500D, STR.RE.REBAR.001]
+    formal_english:
+      - Fe500D
+      - Fe-500D
+      - "Fe 500D"
+      - 500D
+      - TMT 500D
+      - TMT Fe500D
+      - HYSD 500
+      - high yield steel 500
+      - 500 grade TMT
+      - deformed bar 500D
+      - high ductility TMT 500D
+      - IS 1786 Fe500D
+    informal_english:
+      - five hundred D grade
+      - Fe500D bar
+      - 500D rebar
+      - ductile TMT
+
+  - canonical: tmt_fe550
+    taxonomy_ids: [STR.RE.TMT.550, STR.RE.REBAR.001]
+    formal_english:
+      - Fe550
+      - Fe-550
+      - "Fe 550"
+      - 550 grade
+      - 550 grade TMT
+      - TMT Fe550
+      - high yield deformed bar 550
+      - deformed bar Fe550
+      - IS 1786 Fe550
+    informal_english:
+      - five fifty grade
+      - Fe550 bar
+      - 550 TMT
+      - 550 rebar
+
+  - canonical: tmt_fe550d
+    taxonomy_ids: [STR.RE.TMT.550D, STR.RE.REBAR.001]
+    formal_english:
+      - Fe550D
+      - Fe-550D
+      - "Fe 550D"
+      - 550D
+      - TMT 550D
+      - TMT Fe550D
+      - high ductility TMT 550D
+      - IS 1786 Fe550D
+    informal_english:
+      - five fifty D grade
+      - Fe550D bar
+      - 550D rebar
+
+  - canonical: tmt_fe600
+    taxonomy_ids: [STR.RE.TMT.600, STR.RE.REBAR.001]
+    formal_english:
+      - Fe600
+      - Fe-600
+      - "Fe 600"
+      - 600 grade
+      - 600 grade TMT
+      - TMT Fe600
+      - high yield deformed bar 600
+      - IS 1786 Fe600
+    informal_english:
+      - six hundred grade
+      - Fe600 bar
+      - 600 TMT
+
+  # ============================================================
+  # 3. TMT BAR DIAMETERS
+  # ============================================================
+
+  - canonical: tmt_8mm
+    taxonomy_ids: [STR.RE.DIA.008, STR.RE.REBAR.001]
+    formal_english:
+      - 8mm dia
+      - 8mm diameter
+      - 8mm TMT bar
+      - 8mm rebar
+      - 8Φ
+      - "8 dia"
+      - "#3 bar"
+      - T8
+      - 8mm HYSD bar
+      - "8mm dia TMT bar"
+      - tor 8mm
+    informal_english:
+      - eight mm bar
+      - eight mil bar
+      - 8 mm rod
+
+  - canonical: tmt_10mm
+    taxonomy_ids: [STR.RE.DIA.010, STR.RE.REBAR.001]
+    formal_english:
+      - 10mm dia
+      - 10mm diameter
+      - 10mm TMT bar
+      - 10mm rebar
+      - 10Φ
+      - "10 dia"
+      - "#3 bar"
+      - T10
+      - 10mm HYSD bar
+      - "10mm dia TMT bar"
+      - tor 10mm
+    informal_english:
+      - ten mm bar
+      - ten mil bar
+      - 10 mm rod
+
+  - canonical: tmt_12mm
+    taxonomy_ids: [STR.RE.DIA.012, STR.RE.REBAR.001]
+    formal_english:
+      - 12mm dia
+      - 12mm diameter
+      - 12mm TMT bar
+      - 12mm rebar
+      - 12Φ
+      - "12 dia"
+      - "#4 bar"
+      - T12
+      - 12mm HYSD bar
+      - "12mm dia TMT bar"
+      - tor 12mm
+    informal_english:
+      - twelve mm bar
+      - twelve mil bar
+      - 12 mm rod
+
+  - canonical: tmt_16mm
+    taxonomy_ids: [STR.RE.DIA.016, STR.RE.REBAR.001]
+    formal_english:
+      - 16mm dia
+      - 16mm diameter
+      - 16mm TMT bar
+      - 16mm rebar
+      - 16Φ
+      - "16 dia"
+      - "#5 bar"
+      - T16
+      - 16mm HYSD bar
+      - "16mm dia TMT bar"
+      - tor 16mm
+    informal_english:
+      - sixteen mm bar
+      - sixteen mil bar
+      - 16 mm rod
+
+  - canonical: tmt_20mm
+    taxonomy_ids: [STR.RE.DIA.020, STR.RE.REBAR.001]
+    formal_english:
+      - 20mm dia
+      - 20mm diameter
+      - 20mm TMT bar
+      - 20mm rebar
+      - 20Φ
+      - "20 dia"
+      - "#6 bar"
+      - T20
+      - 20mm HYSD bar
+      - "20mm dia TMT bar"
+      - tor 20mm
+    informal_english:
+      - twenty mm bar
+      - twenty mil bar
+      - 20 mm rod
+
+  - canonical: tmt_25mm
+    taxonomy_ids: [STR.RE.DIA.025, STR.RE.REBAR.001]
+    formal_english:
+      - 25mm dia
+      - 25mm diameter
+      - 25mm TMT bar
+      - 25mm rebar
+      - 25Φ
+      - "25 dia"
+      - "#8 bar"
+      - T25
+      - 25mm HYSD bar
+      - "25mm dia TMT bar"
+      - tor 25mm
+    informal_english:
+      - twenty five mm bar
+      - twenty five mil bar
+      - 25 mm rod
+
+  - canonical: tmt_28mm
+    taxonomy_ids: [STR.RE.DIA.028, STR.RE.REBAR.001]
+    formal_english:
+      - 28mm dia
+      - 28mm diameter
+      - 28mm TMT bar
+      - 28mm rebar
+      - 28Φ
+      - "28 dia"
+      - "#9 bar"
+      - T28
+      - 28mm HYSD bar
+      - "28mm dia TMT bar"
+      - tor 28mm
+    informal_english:
+      - twenty eight mm bar
+      - 28 mm rod
+
+  - canonical: tmt_32mm
+    taxonomy_ids: [STR.RE.DIA.032, STR.RE.REBAR.001]
+    formal_english:
+      - 32mm dia
+      - 32mm diameter
+      - 32mm TMT bar
+      - 32mm rebar
+      - 32Φ
+      - "32 dia"
+      - "#10 bar"
+      - T32
+      - 32mm HYSD bar
+      - "32mm dia TMT bar"
+      - tor 32mm
+    informal_english:
+      - thirty two mm bar
+      - thirty two mil bar
+      - 32 mm rod
+
+  - canonical: tmt_36mm
+    taxonomy_ids: [STR.RE.DIA.036, STR.RE.REBAR.001]
+    formal_english:
+      - 36mm dia
+      - 36mm diameter
+      - 36mm TMT bar
+      - 36mm rebar
+      - 36Φ
+      - "36 dia"
+      - T36
+      - 36mm HYSD bar
+      - "36mm dia TMT bar"
+      - tor 36mm
+    informal_english:
+      - thirty six mm bar
+      - 36 mm rod
+
+  - canonical: tmt_40mm
+    taxonomy_ids: [STR.RE.DIA.040, STR.RE.REBAR.001]
+    formal_english:
+      - 40mm dia
+      - 40mm diameter
+      - 40mm TMT bar
+      - 40mm rebar
+      - 40Φ
+      - "40 dia"
+      - "#13 bar"
+      - T40
+      - 40mm HYSD bar
+      - "40mm dia TMT bar"
+      - tor 40mm
+    informal_english:
+      - forty mm bar
+      - forty mil bar
+      - 40 mm rod
+
+  # ============================================================
+  # 4. PIPE SIZES (GI / CPVC / PPR / uPVC — plumbing)
+  # ============================================================
+
+  - canonical: pipe_15mm
+    taxonomy_ids: [PLB.PP.PIPE.015, MEP.PLB.SUPPLY.001]
+    formal_english:
+      - 15mm dia pipe
+      - 15mm NB pipe
+      - 15 NB
+      - "1/2 inch pipe"
+      - half inch pipe
+      - "1/2\" pipe"
+      - DN15
+      - DN 15
+      - 15mm nominal bore
+      - GI pipe 15mm
+      - CPVC pipe 15mm
+      - PPR pipe 15mm
+      - uPVC pipe 15mm
+    informal_english:
+      - half inch pipe
+      - 15 mm pipe
+      - "1/2 inch"
+
+  - canonical: pipe_20mm
+    taxonomy_ids: [PLB.PP.PIPE.020, MEP.PLB.SUPPLY.001]
+    formal_english:
+      - 20mm dia pipe
+      - 20mm NB pipe
+      - 20 NB
+      - "3/4 inch pipe"
+      - three quarter inch pipe
+      - "3/4\" pipe"
+      - DN20
+      - DN 20
+      - 20mm nominal bore
+      - GI pipe 20mm
+      - CPVC pipe 20mm
+      - PPR pipe 20mm
+      - uPVC pipe 20mm
+    informal_english:
+      - three quarter inch pipe
+      - 20 mm pipe
+
+  - canonical: pipe_25mm
+    taxonomy_ids: [PLB.PP.PIPE.025, MEP.PLB.SUPPLY.001]
+    formal_english:
+      - 25mm dia pipe
+      - 25mm NB pipe
+      - 25 NB
+      - 1 inch pipe
+      - "1\" pipe"
+      - DN25
+      - DN 25
+      - 25mm nominal bore
+      - GI pipe 25mm
+      - CPVC pipe 25mm
+      - PPR pipe 25mm
+      - uPVC pipe 25mm
+    informal_english:
+      - one inch pipe
+      - 25 mm pipe
+
+  - canonical: pipe_32mm
+    taxonomy_ids: [PLB.PP.PIPE.032, MEP.PLB.SUPPLY.001]
+    formal_english:
+      - 32mm dia pipe
+      - 32mm NB pipe
+      - 32 NB
+      - "1.25 inch pipe"
+      - "1-1/4 inch pipe"
+      - "1.25\" pipe"
+      - DN32
+      - DN 32
+      - 32mm nominal bore
+      - GI pipe 32mm
+      - CPVC pipe 32mm
+      - PPR pipe 32mm
+    informal_english:
+      - one and quarter inch pipe
+      - 32 mm pipe
+
+  - canonical: pipe_40mm
+    taxonomy_ids: [PLB.PP.PIPE.040, MEP.PLB.SUPPLY.001]
+    formal_english:
+      - 40mm dia pipe
+      - 40mm NB pipe
+      - 40 NB
+      - "1.5 inch pipe"
+      - "1-1/2 inch pipe"
+      - "1.5\" pipe"
+      - DN40
+      - DN 40
+      - 40mm nominal bore
+      - GI pipe 40mm
+      - CPVC pipe 40mm
+      - PPR pipe 40mm
+    informal_english:
+      - one and half inch pipe
+      - 40 mm pipe
+
+  - canonical: pipe_50mm
+    taxonomy_ids: [PLB.PP.PIPE.050, MEP.PLB.SUPPLY.001]
+    formal_english:
+      - 50mm dia pipe
+      - 50mm NB pipe
+      - 50 NB
+      - 2 inch pipe
+      - "2\" pipe"
+      - DN50
+      - DN 50
+      - 50mm nominal bore
+      - GI pipe 50mm
+      - CPVC pipe 50mm
+      - uPVC pipe 50mm
+    informal_english:
+      - two inch pipe
+      - 50 mm pipe
+
+  - canonical: pipe_65mm
+    taxonomy_ids: [PLB.PP.PIPE.065, MEP.PLB.SUPPLY.001]
+    formal_english:
+      - 65mm dia pipe
+      - 65mm NB pipe
+      - 65 NB
+      - "2.5 inch pipe"
+      - "2-1/2 inch pipe"
+      - "2.5\" pipe"
+      - DN65
+      - DN 65
+      - 65mm nominal bore
+      - GI pipe 65mm
+      - uPVC pipe 65mm
+    informal_english:
+      - two and half inch pipe
+      - 65 mm pipe
+
+  - canonical: pipe_80mm
+    taxonomy_ids: [PLB.PP.PIPE.080, MEP.PLB.SUPPLY.001]
+    formal_english:
+      - 80mm dia pipe
+      - 80mm NB pipe
+      - 80 NB
+      - 3 inch pipe
+      - "3\" pipe"
+      - DN80
+      - DN 80
+      - 80mm nominal bore
+      - GI pipe 80mm
+      - uPVC pipe 80mm
+      - SWR pipe 80mm
+    informal_english:
+      - three inch pipe
+      - 80 mm pipe
+
+  - canonical: pipe_100mm
+    taxonomy_ids: [PLB.PP.PIPE.100, MEP.PLB.DRAIN.001]
+    formal_english:
+      - 100mm dia pipe
+      - 100mm NB pipe
+      - 100 NB
+      - 4 inch pipe
+      - "4\" pipe"
+      - DN100
+      - DN 100
+      - 100mm nominal bore
+      - uPVC pipe 100mm
+      - SWR pipe 100mm
+      - CI pipe 100mm
+      - DI pipe 100mm
+    informal_english:
+      - four inch pipe
+      - 100 mm pipe
+
+  - canonical: pipe_150mm
+    taxonomy_ids: [PLB.PP.PIPE.150, MEP.PLB.DRAIN.001, CIV.DRN.PIPE.001]
+    formal_english:
+      - 150mm dia pipe
+      - 150mm NB pipe
+      - 150 NB
+      - 6 inch pipe
+      - "6\" pipe"
+      - DN150
+      - DN 150
+      - 150mm nominal bore
+      - uPVC pipe 150mm
+      - SWR pipe 150mm
+      - CI pipe 150mm
+      - RCC pipe 150mm
+    informal_english:
+      - six inch pipe
+      - 150 mm pipe
+
+  - canonical: pipe_200mm
+    taxonomy_ids: [PLB.PP.PIPE.200, CIV.DRN.PIPE.001]
+    formal_english:
+      - 200mm dia pipe
+      - 200mm NB pipe
+      - 200 NB
+      - 8 inch pipe
+      - "8\" pipe"
+      - DN200
+      - DN 200
+      - 200mm nominal bore
+      - uPVC pipe 200mm
+      - RCC pipe 200mm
+      - DI pipe 200mm
+      - HDPE pipe 200mm
+    informal_english:
+      - eight inch pipe
+      - 200 mm pipe
+
+  # ============================================================
+  # 5. ELECTRICAL CABLE SIZES
+  # ============================================================
+
+  - canonical: cable_1_5sqmm
+    taxonomy_ids: [ELE.WIR.CAB.1P5, MEP.ELE.WIRING.001]
+    formal_english:
+      - 1.5 sqmm
+      - "1.5 sq mm"
+      - 1.5mm2
+      - "1.5 mm²"
+      - "1.5 sq.mm"
+      - 1.5 sqmm copper
+      - "1.5mm² FRLS"
+      - 1.5 sqmm FR cable
+      - 1.5 sqmm PVC wire
+      - "1.5mm² copper conductor"
+      - 1.5 sqmm single core
+    informal_english:
+      - one point five sqmm
+      - 1.5 wire
+      - 1.5 mm cable
+
+  - canonical: cable_2_5sqmm
+    taxonomy_ids: [ELE.WIR.CAB.2P5, MEP.ELE.WIRING.001]
+    formal_english:
+      - 2.5 sqmm
+      - "2.5 sq mm"
+      - 2.5mm2
+      - "2.5 mm²"
+      - "2.5 sq.mm"
+      - 2.5 sqmm copper
+      - "2.5mm² FRLS"
+      - 2.5 sqmm FR cable
+      - 2.5 sqmm PVC wire
+      - "2.5mm² copper conductor"
+      - 2.5 sqmm single core
+    informal_english:
+      - two point five sqmm
+      - 2.5 wire
+      - 2.5 mm cable
+
+  - canonical: cable_4sqmm
+    taxonomy_ids: [ELE.WIR.CAB.4, MEP.ELE.WIRING.001]
+    formal_english:
+      - 4 sqmm
+      - "4 sq mm"
+      - 4mm2
+      - "4 mm²"
+      - "4 sq.mm"
+      - 4 sqmm copper
+      - "4mm² FRLS"
+      - 4 sqmm FR cable
+      - 4 sqmm PVC wire
+      - "4mm² copper conductor"
+    informal_english:
+      - four sqmm
+      - 4 mm cable
+      - four mm wire
+
+  - canonical: cable_6sqmm
+    taxonomy_ids: [ELE.WIR.CAB.6, MEP.ELE.WIRING.001]
+    formal_english:
+      - 6 sqmm
+      - "6 sq mm"
+      - 6mm2
+      - "6 mm²"
+      - "6 sq.mm"
+      - 6 sqmm copper
+      - "6mm² FRLS"
+      - 6 sqmm FR cable
+      - 6 sqmm PVC wire
+      - "6mm² copper conductor"
+    informal_english:
+      - six sqmm
+      - 6 mm cable
+      - six mm wire
+
+  - canonical: cable_10sqmm
+    taxonomy_ids: [ELE.WIR.CAB.10, MEP.ELE.WIRING.001]
+    formal_english:
+      - 10 sqmm
+      - "10 sq mm"
+      - 10mm2
+      - "10 mm²"
+      - "10 sq.mm"
+      - 10 sqmm copper
+      - "10mm² FRLS"
+      - 10 sqmm armoured cable
+      - 10 sqmm XLPE cable
+      - "10mm² copper conductor"
+    informal_english:
+      - ten sqmm
+      - 10 mm cable
+      - ten mm wire
+
+  - canonical: cable_16sqmm
+    taxonomy_ids: [ELE.WIR.CAB.16, MEP.ELE.WIRING.001]
+    formal_english:
+      - 16 sqmm
+      - "16 sq mm"
+      - 16mm2
+      - "16 mm²"
+      - "16 sq.mm"
+      - 16 sqmm copper
+      - 16 sqmm armoured cable
+      - 16 sqmm XLPE cable
+      - "16mm² copper conductor"
+    informal_english:
+      - sixteen sqmm
+      - 16 mm cable
+
+  - canonical: cable_25sqmm
+    taxonomy_ids: [ELE.WIR.CAB.25, MEP.ELE.PWR.001]
+    formal_english:
+      - 25 sqmm
+      - "25 sq mm"
+      - 25mm2
+      - "25 mm²"
+      - "25 sq.mm"
+      - 25 sqmm copper
+      - 25 sqmm aluminium
+      - 25 sqmm armoured cable
+      - 25 sqmm XLPE cable
+      - "25mm² conductor"
+    informal_english:
+      - twenty five sqmm
+      - 25 mm cable
+
+  - canonical: cable_35sqmm
+    taxonomy_ids: [ELE.WIR.CAB.35, MEP.ELE.PWR.001]
+    formal_english:
+      - 35 sqmm
+      - "35 sq mm"
+      - 35mm2
+      - "35 mm²"
+      - "35 sq.mm"
+      - 35 sqmm copper
+      - 35 sqmm aluminium
+      - 35 sqmm armoured cable
+      - 35 sqmm XLPE cable
+    informal_english:
+      - thirty five sqmm
+      - 35 mm cable
+
+  - canonical: cable_50sqmm
+    taxonomy_ids: [ELE.WIR.CAB.50, MEP.ELE.PWR.001]
+    formal_english:
+      - 50 sqmm
+      - "50 sq mm"
+      - 50mm2
+      - "50 mm²"
+      - "50 sq.mm"
+      - 50 sqmm copper
+      - 50 sqmm aluminium
+      - 50 sqmm armoured cable
+      - 50 sqmm XLPE cable
+    informal_english:
+      - fifty sqmm
+      - 50 mm cable
+
+  - canonical: cable_70sqmm
+    taxonomy_ids: [ELE.WIR.CAB.70, MEP.ELE.PWR.001]
+    formal_english:
+      - 70 sqmm
+      - "70 sq mm"
+      - 70mm2
+      - "70 mm²"
+      - "70 sq.mm"
+      - 70 sqmm copper
+      - 70 sqmm aluminium
+      - 70 sqmm armoured cable
+      - 70 sqmm XLPE cable
+    informal_english:
+      - seventy sqmm
+      - 70 mm cable
+
+  - canonical: cable_95sqmm
+    taxonomy_ids: [ELE.WIR.CAB.95, MEP.ELE.PWR.001]
+    formal_english:
+      - 95 sqmm
+      - "95 sq mm"
+      - 95mm2
+      - "95 mm²"
+      - "95 sq.mm"
+      - 95 sqmm copper
+      - 95 sqmm aluminium
+      - 95 sqmm armoured cable
+      - 95 sqmm XLPE cable
+    informal_english:
+      - ninety five sqmm
+      - 95 mm cable
+
+  - canonical: cable_120sqmm
+    taxonomy_ids: [ELE.WIR.CAB.120, MEP.ELE.PWR.001]
+    formal_english:
+      - 120 sqmm
+      - "120 sq mm"
+      - 120mm2
+      - "120 mm²"
+      - "120 sq.mm"
+      - 120 sqmm copper
+      - 120 sqmm aluminium
+      - 120 sqmm armoured cable
+      - 120 sqmm XLPE cable
+    informal_english:
+      - one twenty sqmm
+      - 120 mm cable
+
+  # ============================================================
+  # 6. TILE SIZES
+  # ============================================================
+
+  - canonical: tile_200x200
+    taxonomy_ids: [FIN.FL.TILE.200x200, FIN.WL.TILE.200x200]
+    formal_english:
+      - 200x200mm tile
+      - 200 x 200 tile
+      - 200x200 mm ceramic tile
+      - 200mm x 200mm tile
+      - 8x8 inch tile
+      - "8\"x8\" tile"
+    informal_english:
+      - small tile 200
+      - 200 by 200 tile
+
+  - canonical: tile_300x300
+    taxonomy_ids: [FIN.FL.TILE.300x300, FIN.WL.TILE.300x300]
+    formal_english:
+      - 300x300mm tile
+      - 300 x 300 tile
+      - 300x300 mm ceramic tile
+      - 300mm x 300mm tile
+      - 12x12 inch tile
+      - "12\"x12\" tile"
+      - 1 foot x 1 foot tile
+    informal_english:
+      - one foot tile
+      - 300 by 300 tile
+
+  - canonical: tile_300x450
+    taxonomy_ids: [FIN.WL.TILE.300x450]
+    formal_english:
+      - 300x450mm tile
+      - 300 x 450 tile
+      - 300mm x 450mm tile
+      - 12x18 inch tile
+      - "12\"x18\" tile"
+      - wall tile 300x450
+    informal_english:
+      - 300 by 450 tile
+      - twelve by eighteen tile
+
+  - canonical: tile_300x600
+    taxonomy_ids: [FIN.WL.TILE.300x600, FIN.FL.TILE.300x600]
+    formal_english:
+      - 300x600mm tile
+      - 300 x 600 tile
+      - 300mm x 600mm tile
+      - 12x24 inch tile
+      - "12\"x24\" tile"
+      - wall tile 300x600
+      - vitrified tile 300x600
+    informal_english:
+      - 300 by 600 tile
+      - twelve by twenty four tile
+
+  - canonical: tile_400x400
+    taxonomy_ids: [FIN.FL.TILE.400x400]
+    formal_english:
+      - 400x400mm tile
+      - 400 x 400 tile
+      - 400mm x 400mm tile
+      - 16x16 inch tile
+      - "16\"x16\" tile"
+      - vitrified tile 400x400
+    informal_english:
+      - 400 by 400 tile
+      - sixteen by sixteen tile
+
+  - canonical: tile_450x450
+    taxonomy_ids: [FIN.FL.TILE.450x450]
+    formal_english:
+      - 450x450mm tile
+      - 450 x 450 tile
+      - 450mm x 450mm tile
+      - 18x18 inch tile
+      - "18\"x18\" tile"
+      - vitrified tile 450x450
+    informal_english:
+      - 450 by 450 tile
+      - eighteen by eighteen tile
+
+  - canonical: tile_600x600
+    taxonomy_ids: [FIN.FL.TILE.600x600]
+    formal_english:
+      - 600x600mm tile
+      - 600 x 600 tile
+      - 600mm x 600mm tile
+      - 2x2 feet tile
+      - "2'x2' tile"
+      - "2ft x 2ft tile"
+      - 24x24 inch tile
+      - "24\"x24\" tile"
+      - 600mm square tile
+      - vitrified tile 600x600
+      - full body vitrified 600x600
+    informal_english:
+      - two by two tile
+      - 600 square tile
+      - two foot tile
+
+  - canonical: tile_600x900
+    taxonomy_ids: [FIN.FL.TILE.600x900]
+    formal_english:
+      - 600x900mm tile
+      - 600 x 900 tile
+      - 600mm x 900mm tile
+      - 24x36 inch tile
+      - "24\"x36\" tile"
+      - vitrified tile 600x900
+      - large format tile 600x900
+    informal_english:
+      - 600 by 900 tile
+      - twenty four by thirty six tile
+
+  - canonical: tile_600x1200
+    taxonomy_ids: [FIN.FL.TILE.600x1200]
+    formal_english:
+      - 600x1200mm tile
+      - 600 x 1200 tile
+      - 600mm x 1200mm tile
+      - 24x48 inch tile
+      - "24\"x48\" tile"
+      - vitrified tile 600x1200
+      - large format tile 600x1200
+      - plank tile 600x1200
+    informal_english:
+      - 600 by 1200 tile
+      - twenty four by forty eight tile
+
+  - canonical: tile_800x800
+    taxonomy_ids: [FIN.FL.TILE.800x800]
+    formal_english:
+      - 800x800mm tile
+      - 800 x 800 tile
+      - 800mm x 800mm tile
+      - 32x32 inch tile
+      - "32\"x32\" tile"
+      - vitrified tile 800x800
+      - large format tile 800x800
+    informal_english:
+      - 800 by 800 tile
+      - thirty two by thirty two tile
+
+  - canonical: tile_800x1200
+    taxonomy_ids: [FIN.FL.TILE.800x1200]
+    formal_english:
+      - 800x1200mm tile
+      - 800 x 1200 tile
+      - 800mm x 1200mm tile
+      - vitrified tile 800x1200
+      - large format tile 800x1200
+    informal_english:
+      - 800 by 1200 tile
+      - large slab tile
+
+  - canonical: tile_1200x600
+    taxonomy_ids: [FIN.FL.TILE.1200x600]
+    formal_english:
+      - 1200x600mm tile
+      - 1200 x 600 tile
+      - 1200mm x 600mm tile
+      - 48x24 inch tile
+      - vitrified tile 1200x600
+      - large format tile 1200x600
+    informal_english:
+      - 1200 by 600 tile
+      - large plank tile
+
+  - canonical: tile_1200x1200
+    taxonomy_ids: [FIN.FL.TILE.1200x1200]
+    formal_english:
+      - 1200x1200mm tile
+      - 1200 x 1200 tile
+      - 1200mm x 1200mm tile
+      - "4'x4' tile"
+      - 48x48 inch tile
+      - vitrified tile 1200x1200
+      - large format tile 1200x1200
+      - slab tile 1200x1200
+    informal_english:
+      - 1200 by 1200 tile
+      - four by four tile
+
+  - canonical: tile_1600x800
+    taxonomy_ids: [FIN.FL.TILE.1600x800]
+    formal_english:
+      - 1600x800mm tile
+      - 1600 x 800 tile
+      - 1600mm x 800mm tile
+      - vitrified tile 1600x800
+      - large format tile 1600x800
+      - slab tile 1600x800
+    informal_english:
+      - 1600 by 800 tile
+      - extra large tile
+
+  # ============================================================
+  # 7. PAINT GRADES — EMULSION
+  # ============================================================
+
+  - canonical: emulsion_economy
+    taxonomy_ids: [FIN.PT.EMU.ECO, FIN.PT.INT.001]
+    formal_english:
+      - economy emulsion
+      - economy grade emulsion
+      - economy grade interior emulsion
+      - washable distemper
+      - acrylic distemper
+      - low cost emulsion
+      - budget emulsion paint
+      - economy interior paint
+    informal_english:
+      - cheap emulsion
+      - basic paint
+      - distemper paint
+
+  - canonical: emulsion_standard
+    taxonomy_ids: [FIN.PT.EMU.STD, FIN.PT.INT.001]
+    formal_english:
+      - standard emulsion
+      - standard grade emulsion
+      - two coat emulsion
+      - interior emulsion
+      - acrylic emulsion
+      - interior acrylic emulsion
+      - mid-range emulsion
+      - standard interior emulsion
+      - two coat interior emulsion
+    informal_english:
+      - regular emulsion
+      - normal emulsion
+      - standard paint
+
+  - canonical: emulsion_premium
+    taxonomy_ids: [FIN.PT.EMU.PRM, FIN.PT.INT.001]
+    formal_english:
+      - premium emulsion
+      - premium grade emulsion
+      - luxury emulsion
+      - sheen finish emulsion
+      - silk emulsion
+      - premium interior emulsion
+      - velvet finish emulsion
+      - acrylic silk emulsion
+      - high sheen emulsion
+    informal_english:
+      - good quality paint
+      - luxury paint
+      - premium finish paint
+    brand_names:
+      - Asian Paints Royale
+      - Dulux Velvet Touch
+      - Nerolac Impressions
+      - Berger Silk
+
+  # ============================================================
+  # 8. WATERPROOFING MEMBRANE THICKNESS
+  # ============================================================
+
+  - canonical: membrane_3mm
+    taxonomy_ids: [CIV.WP.MEM.3MM, STR.WP.TERRACE.001]
+    formal_english:
+      - 3mm APP membrane
+      - 3mm SBS membrane
+      - 3mm bituminous membrane
+      - bituminous membrane 3mm thick
+      - torch-applied membrane 3mm
+      - 3mm waterproofing membrane
+      - 3mm modified bitumen membrane
+      - APP modified bitumen 3mm
+      - 3mm self-adhesive membrane
+    informal_english:
+      - three mm membrane
+      - 3mm waterproofing sheet
+      - thin bituminous sheet
+
+  - canonical: membrane_4mm
+    taxonomy_ids: [CIV.WP.MEM.4MM, STR.WP.TERRACE.001]
+    formal_english:
+      - 4mm APP membrane
+      - SBS 4mm
+      - 4mm SBS membrane
+      - 4mm bituminous membrane
+      - bituminous membrane 4mm thick
+      - torch-applied membrane 4mm
+      - 4mm waterproofing membrane
+      - 4mm modified bitumen membrane
+      - APP modified bitumen 4mm
+    informal_english:
+      - four mm membrane
+      - 4mm waterproofing sheet
+
+  - canonical: membrane_5mm
+    taxonomy_ids: [CIV.WP.MEM.5MM, STR.WP.TERRACE.001]
+    formal_english:
+      - 5mm APP membrane
+      - 5mm SBS membrane
+      - 5mm bituminous membrane
+      - bituminous membrane 5mm thick
+      - torch-applied membrane 5mm
+      - 5mm waterproofing membrane
+      - 5mm modified bitumen membrane
+      - heavy duty waterproofing membrane 5mm
+    informal_english:
+      - five mm membrane
+      - thick bituminous sheet
+      - 5mm waterproofing sheet
+
+  # ============================================================
+  # 9. BRICK / BLOCK TYPES AND SIZES
+  # ============================================================
+
+  - canonical: brick_230x110x75
+    taxonomy_ids: [MSN.BRK.CLY.001, MSN.BW.001]
+    formal_english:
+      - 230x110x75mm brick
+      - 230 x 110 x 75 brick
+      - 9 inch brick
+      - "9\" brick"
+      - standard clay brick
+      - modular clay brick 230x110x75
+      - first class brick
+      - IS 1077 brick
+      - machine made brick
+      - table moulded brick
+    informal_english:
+      - full brick
+      - nine inch brick
+      - standard brick
+
+  - canonical: brick_modular
+    taxonomy_ids: [MSN.BRK.MOD.001, MSN.BW.001]
+    formal_english:
+      - modular brick
+      - modular brick 200x100x75
+      - 200x100x75mm brick
+      - 200 x 100 x 75 brick
+      - IS modular brick
+      - metric modular brick
+    informal_english:
+      - modular brick
+      - small brick
+      - 200 brick
+
+  - canonical: aac_block_100mm
+    taxonomy_ids: [MSN.BLK.AAC.100, MSN.BW.AAC.001]
+    formal_english:
+      - AAC block 100mm
+      - AAC 100mm
+      - autoclaved aerated concrete block 100mm
+      - Autoclaved Aerated Concrete 100mm
+      - Siporex 100mm
+      - Aerocon 100mm
+      - aerated concrete block 100mm
+      - lightweight block 100mm
+      - 100mm AAC block
+      - 4 inch AAC block
+    informal_english:
+      - four inch block
+      - 100mm light block
+      - four inch AAC
+    brand_names:
+      - Siporex 100mm
+      - Aerocon 100mm
+      - Ultratech AAC 100mm
+      - Birla Aerocon 100mm
+
+  - canonical: aac_block_150mm
+    taxonomy_ids: [MSN.BLK.AAC.150, MSN.BW.AAC.001]
+    formal_english:
+      - AAC block 150mm
+      - AAC 150mm
+      - autoclaved aerated concrete block 150mm
+      - Autoclaved Aerated Concrete 150mm
+      - Siporex 150mm
+      - Aerocon 150mm
+      - lightweight block 150mm
+      - 150mm AAC block
+      - 6 inch AAC block
+    informal_english:
+      - six inch block
+      - 150mm light block
+      - six inch AAC
+    brand_names:
+      - Siporex 150mm
+      - Aerocon 150mm
+      - Ultratech AAC 150mm
+
+  - canonical: aac_block_200mm
+    taxonomy_ids: [MSN.BLK.AAC.200, MSN.BW.AAC.001]
+    formal_english:
+      - AAC block 200mm
+      - AAC 200mm
+      - autoclaved aerated concrete block 200mm
+      - Autoclaved Aerated Concrete 200mm
+      - Siporex 200mm
+      - Aerocon 200mm
+      - lightweight block 200mm
+      - 200mm AAC block
+      - 8 inch AAC block
+    informal_english:
+      - eight inch block
+      - 200mm light block
+      - eight inch AAC
+    brand_names:
+      - Siporex 200mm
+      - Aerocon 200mm
+      - Ultratech AAC 200mm
+
+  - canonical: fly_ash_brick
+    taxonomy_ids: [MSN.BRK.FAB.001, MSN.BW.001]
+    formal_english:
+      - fly ash brick
+      - fly ash lime brick
+      - FAL-G brick
+      - fly ash lime gypsum brick
+      - fly ash building brick
+      - IS 12894 fly ash brick
+      - compressed fly ash brick
+      - class A fly ash brick
+    informal_english:
+      - fly ash brick
+      - FAL brick
+      - ash brick
+
+  - canonical: concrete_block_200mm
+    taxonomy_ids: [MSN.BLK.CCB.200, MSN.BW.001]
+    formal_english:
+      - concrete block 200mm
+      - hollow concrete block 200mm
+      - solid concrete block 200mm
+      - cement block 200mm
+      - 200mm concrete masonry unit
+      - CMU 200mm
+      - 8 inch concrete block
+      - IS 2185 block 200mm
+    informal_english:
+      - eight inch block
+      - cement block
+      - 200mm CMU
+
+  # ============================================================
+  # 10. STRUCTURAL STEEL SECTIONS
+  # ============================================================
+
+  # ISMB (I-sections / beams)
+
+  - canonical: ismb_100
+    taxonomy_ids: [STR.SS.ISMB.100, STR.STL.BM.001]
+    formal_english:
+      - ISMB 100
+      - MB100
+      - "I section 100"
+      - joist 100
+      - 100mm I beam
+      - I-beam 100
+      - IS 808 ISMB 100
+      - Indian Standard Medium Weight Beam 100
+    informal_english:
+      - MB 100
+      - hundred I section
+
+  - canonical: ismb_150
+    taxonomy_ids: [STR.SS.ISMB.150, STR.STL.BM.001]
+    formal_english:
+      - ISMB 150
+      - MB150
+      - "I section 150"
+      - joist 150
+      - 150mm I beam
+      - I-beam 150
+      - IS 808 ISMB 150
+    informal_english:
+      - MB 150
+      - one fifty I section
+
+  - canonical: ismb_200
+    taxonomy_ids: [STR.SS.ISMB.200, STR.STL.BM.001]
+    formal_english:
+      - ISMB 200
+      - MB200
+      - "I section 200"
+      - joist 200
+      - 200mm I beam
+      - I-beam 200
+      - IS 808 ISMB 200
+    informal_english:
+      - MB 200
+      - two hundred I section
+
+  - canonical: ismb_250
+    taxonomy_ids: [STR.SS.ISMB.250, STR.STL.BM.001]
+    formal_english:
+      - ISMB 250
+      - MB250
+      - "I section 250"
+      - joist 250
+      - 250mm I beam
+      - I-beam 250
+      - IS 808 ISMB 250
+    informal_english:
+      - MB 250
+      - two fifty I section
+
+  - canonical: ismb_300
+    taxonomy_ids: [STR.SS.ISMB.300, STR.STL.BM.001]
+    formal_english:
+      - ISMB 300
+      - MB300
+      - "I section 300"
+      - joist 300
+      - 300mm I beam
+      - I-beam 300
+      - IS 808 ISMB 300
+    informal_english:
+      - MB 300
+      - three hundred I section
+
+  - canonical: ismb_400
+    taxonomy_ids: [STR.SS.ISMB.400, STR.STL.BM.001]
+    formal_english:
+      - ISMB 400
+      - MB400
+      - "I section 400"
+      - joist 400
+      - 400mm I beam
+      - I-beam 400
+      - IS 808 ISMB 400
+    informal_english:
+      - MB 400
+      - four hundred I section
+
+  - canonical: ismb_500
+    taxonomy_ids: [STR.SS.ISMB.500, STR.STL.BM.001]
+    formal_english:
+      - ISMB 500
+      - MB500
+      - "I section 500"
+      - joist 500
+      - 500mm I beam
+      - I-beam 500
+      - IS 808 ISMB 500
+    informal_english:
+      - MB 500
+      - five hundred I section
+
+  - canonical: ismb_600
+    taxonomy_ids: [STR.SS.ISMB.600, STR.STL.BM.001]
+    formal_english:
+      - ISMB 600
+      - MB600
+      - "I section 600"
+      - joist 600
+      - 600mm I beam
+      - I-beam 600
+      - IS 808 ISMB 600
+    informal_english:
+      - MB 600
+      - six hundred I section
+
+  # ISMC (Channel sections)
+
+  - canonical: ismc_75
+    taxonomy_ids: [STR.SS.ISMC.075, STR.STL.CHN.001]
+    formal_english:
+      - ISMC 75
+      - MC75
+      - channel 75
+      - 75mm channel
+      - C-section 75
+      - IS 808 ISMC 75
+      - Indian Standard Medium Weight Channel 75
+    informal_english:
+      - MC 75
+      - seventy five channel
+
+  - canonical: ismc_100
+    taxonomy_ids: [STR.SS.ISMC.100, STR.STL.CHN.001]
+    formal_english:
+      - ISMC 100
+      - MC100
+      - channel 100
+      - 100mm channel
+      - C-section 100
+      - IS 808 ISMC 100
+    informal_english:
+      - MC 100
+      - hundred channel
+
+  - canonical: ismc_150
+    taxonomy_ids: [STR.SS.ISMC.150, STR.STL.CHN.001]
+    formal_english:
+      - ISMC 150
+      - MC150
+      - channel 150
+      - 150mm channel
+      - C-section 150
+      - IS 808 ISMC 150
+    informal_english:
+      - MC 150
+      - one fifty channel
+
+  - canonical: ismc_200
+    taxonomy_ids: [STR.SS.ISMC.200, STR.STL.CHN.001]
+    formal_english:
+      - ISMC 200
+      - MC200
+      - channel 200
+      - 200mm channel
+      - C-section 200
+      - IS 808 ISMC 200
+    informal_english:
+      - MC 200
+      - two hundred channel
+
+  - canonical: ismc_250
+    taxonomy_ids: [STR.SS.ISMC.250, STR.STL.CHN.001]
+    formal_english:
+      - ISMC 250
+      - MC250
+      - channel 250
+      - 250mm channel
+      - C-section 250
+      - IS 808 ISMC 250
+    informal_english:
+      - MC 250
+      - two fifty channel
+
+  - canonical: ismc_300
+    taxonomy_ids: [STR.SS.ISMC.300, STR.STL.CHN.001]
+    formal_english:
+      - ISMC 300
+      - MC300
+      - channel 300
+      - 300mm channel
+      - C-section 300
+      - IS 808 ISMC 300
+    informal_english:
+      - MC 300
+      - three hundred channel
+
+  # ISA (Angle sections)
+
+  - canonical: isa_50x50x5
+    taxonomy_ids: [STR.SS.ISA.50x50x5, STR.STL.ANG.001]
+    formal_english:
+      - "ISA 50x50x5"
+      - "ISA 50 x 50 x 5"
+      - "angle 50x50x5"
+      - "L section 50x50"
+      - "50x50x5 angle"
+      - equal angle 50x50x5
+      - IS 808 ISA 50x50x5
+    informal_english:
+      - fifty fifty five angle
+      - "50x50 angle"
+
+  - canonical: isa_65x65x6
+    taxonomy_ids: [STR.SS.ISA.65x65x6, STR.STL.ANG.001]
+    formal_english:
+      - "ISA 65x65x6"
+      - "ISA 65 x 65 x 6"
+      - "angle 65x65x6"
+      - "L section 65x65"
+      - "65x65x6 angle"
+      - equal angle 65x65x6
+      - IS 808 ISA 65x65x6
+    informal_english:
+      - sixty five sixty five angle
+      - "65x65 angle"
+
+  - canonical: isa_75x75x8
+    taxonomy_ids: [STR.SS.ISA.75x75x8, STR.STL.ANG.001]
+    formal_english:
+      - "ISA 75x75x8"
+      - "ISA 75 x 75 x 8"
+      - "angle 75x75x8"
+      - "L section 75x75"
+      - "75x75x8 angle"
+      - equal angle 75x75x8
+      - IS 808 ISA 75x75x8
+    informal_english:
+      - seventy five seventy five angle
+      - "75x75 angle"
+
+  - canonical: isa_100x100x10
+    taxonomy_ids: [STR.SS.ISA.100x100x10, STR.STL.ANG.001]
+    formal_english:
+      - "ISA 100x100x10"
+      - "ISA 100 x 100 x 10"
+      - "angle 100x100x10"
+      - "L section 100x100"
+      - "100x100x10 angle"
+      - equal angle 100x100x10
+      - IS 808 ISA 100x100x10
+    informal_english:
+      - hundred hundred ten angle
+      - "100x100 angle"

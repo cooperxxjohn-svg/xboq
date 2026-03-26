@@ -1,0 +1,416 @@
+rules:
+  # ============================================================
+  # STRUCTURAL vs MASONRY — 2 rules
+  # ============================================================
+  - id: "RFI-AM-SM-001"
+    trigger_type: ambiguous
+    trigger_keywords: [lintel, chajja, sunshade, structural masonry, RCC lintel]
+    trigger_trade: structural
+    question_template: >
+      Scope boundary unclear between structural and masonry trades for {area}. Please clarify:
+      (a) RCC lintels over door/window openings — are these in structural contractor scope or masonry/civil contractor scope?
+      (b) Chajjas/sunshades — who provides reinforcement, formwork, and concrete? Structural or civil?
+      (c) Parapet wall coping — RCC coping is structural scope or masonry scope?
+      (d) Lintel band and sill band in masonry — who provides reinforcement and concrete?
+      (e) If structural contractor provides lintels, is masonry contractor responsible for blockouts and propping?
+    why_it_matters: >
+      Lintels and chajjas are commonly disputed items between structural and masonry contractors.
+      Each trade assumes the other will provide these elements, resulting in gaps. Chajjas alone
+      can be 2-3% of structural cost. Unresolved boundary causes delays at every floor.
+    suggested_resolution: "Provide a clear scope matrix assigning lintels, chajjas, bands, and coping to specific contractors with measurement method."
+    priority: high
+    building_types: [all]
+    package: structural
+
+  - id: "RFI-AM-SM-002"
+    trigger_type: ambiguous
+    trigger_keywords: [masonry reinforcement, wall tie, column masonry, frame infill]
+    trigger_trade: masonry
+    question_template: >
+      Responsibility for masonry-to-structure connection not defined for {area}. Please clarify:
+      (a) Wall ties (L-bars/dowels) connecting masonry to RCC columns — who provides and installs?
+      (b) Are wall ties to be cast into column during concreting (structural scope) or drilled and fixed later (masonry scope)?
+      (c) Wire mesh at RCC-masonry junction for plaster crack prevention — whose scope?
+      (d) Bed joint reinforcement in masonry — whose scope to provide and install?
+      (e) Blockout filling after MEP rough-in — masonry contractor or MEP contractor?
+    why_it_matters: >
+      Wall tie installation timing affects quality — cast-in ties are stronger but require
+      structural contractor coordination. Drilled ties are weaker and risk column damage.
+      This interface issue is the root cause of 80% of masonry-frame junction cracks.
+    suggested_resolution: "Define wall tie type, installation method, and responsible contractor. Include wire mesh and blockout filling responsibilities."
+    priority: medium
+    building_types: [all]
+    package: masonry
+
+  # ============================================================
+  # PLUMBING vs CIVIL — 2 rules
+  # ============================================================
+  - id: "RFI-AM-PC-001"
+    trigger_type: ambiguous
+    trigger_keywords: [sump, overhead tank, water tank civil, tank construction]
+    trigger_trade: plumbing
+    question_template: >
+      Scope boundary unclear between plumbing and civil/structural for water storage in {area}. Please clarify:
+      (a) Underground sump — civil construction (RCC walls, slab, waterproofing) by whom?
+      (b) Overhead tank — structural design and construction by structural contractor or plumbing contractor?
+      (c) Internal piping within tank (inlet, outlet, overflow, drain, level indicator) — plumbing scope?
+      (d) Waterproofing of tank — waterproofing specialist, civil contractor, or plumbing contractor?
+      (e) Ladder, manhole cover, and ventilation for underground sump — whose scope?
+    why_it_matters: >
+      Water tanks involve civil construction, waterproofing, and plumbing — three different
+      trades. Without clear boundary, each contractor excludes tank scope from their bid,
+      resulting in a major gap. Tank construction is 2-5% of project cost.
+    suggested_resolution: "Define responsibility matrix for water tanks — civil construction, waterproofing, internal piping, accessories, and testing. Assign each element to a specific contractor."
+    priority: high
+    building_types: [all]
+    package: plumbing
+
+  - id: "RFI-AM-PC-002"
+    trigger_type: ambiguous
+    trigger_keywords: [STP civil, STP construction, ETP civil, treatment plant civil]
+    trigger_trade: plumbing
+    question_template: >
+      Scope boundary between plumbing/process and civil for STP/ETP not defined for {area}. Please clarify:
+      (a) STP civil works (tanks, channels, pump room) — civil contractor or STP specialist?
+      (b) STP equipment (blowers, diffusers, membranes, controls) — STP specialist or plumbing contractor?
+      (c) Incoming sewer line to STP — plumbing contractor or STP specialist?
+      (d) Treated water reuse piping from STP to building — plumbing contractor or STP specialist?
+      (e) Electrical connection to STP equipment — electrical contractor or STP specialist?
+    why_it_matters: >
+      STP involves civil, mechanical, electrical, and plumbing trades. Unclear boundaries
+      result in either double-counting or gaps. STP is typically 1-3% of project cost
+      and requires specialized vendor coordination.
+    suggested_resolution: "Define STP scope boundary clearly — civil works, equipment supply/install, inlet piping, outlet piping, and electrical. Assign each to a specific contractor."
+    priority: high
+    building_types: [all]
+    package: plumbing
+
+  # ============================================================
+  # ELECTRICAL vs FIRE — 2 rules
+  # ============================================================
+  - id: "RFI-AM-EF-001"
+    trigger_type: ambiguous
+    trigger_keywords: [fire alarm wiring, fire alarm cable, fire detection wiring]
+    trigger_trade: fire_safety
+    question_template: >
+      Scope boundary between electrical and fire alarm contractors not defined for {area}. Please clarify:
+      (a) Fire alarm cable — supply and installation by fire alarm contractor or electrical contractor?
+      (b) Conduit for fire alarm cables — who provides? Shared with electrical or dedicated?
+      (c) Power supply to fire alarm panel — electrical contractor provides dedicated circuit?
+      (d) Emergency lighting — fire contractor scope or electrical contractor scope?
+      (e) Interface wiring between fire alarm panel and elevator, AHU, dampers — whose scope?
+    why_it_matters: >
+      Fire alarm system requires dedicated FRLS cables routed in separate conduit/tray from
+      power cables. If conduit routing is not coordinated, fire alarm cables cannot be pulled
+      during commissioning. Emergency lighting ownership is frequently disputed.
+    suggested_resolution: "Define fire system wiring scope — cable, conduit, power supply, emergency lighting, and interface wiring responsibilities."
+    priority: high
+    building_types: [all]
+    package: fire_safety
+
+  - id: "RFI-AM-EF-002"
+    trigger_type: ambiguous
+    trigger_keywords: [emergency lighting, exit light, fire escape lighting, battery backup light]
+    trigger_trade: electrical
+    question_template: >
+      Emergency lighting scope boundary between electrical and fire safety contractors not clear for {area}. Please clarify:
+      (a) Emergency lighting in escape routes — electrical contractor or fire safety contractor?
+      (b) Battery backup arrangement — individual battery in each fixture or central inverter system?
+      (c) Exit signage — illuminated signs by electrical or fire contractor?
+      (d) Emergency lighting duration — 1 hour (standard) or 3 hours (high occupancy buildings)?
+      (e) Testing and maintenance of emergency lighting — whose responsibility during DLP?
+    why_it_matters: >
+      Emergency lighting is a statutory requirement per NBC 2016 and is often excluded by
+      both electrical and fire contractors. Battery backup type significantly affects cost —
+      central inverter costs less but requires dedicated circuit from each panel.
+    suggested_resolution: "Assign emergency lighting and exit signage to a specific contractor. Define backup type, duration, and testing responsibility."
+    priority: high
+    building_types: [all]
+    package: electrical
+
+  # ============================================================
+  # HVAC vs ELECTRICAL — 2 rules
+  # ============================================================
+  - id: "RFI-AM-HE-001"
+    trigger_type: ambiguous
+    trigger_keywords: [power to AHU, power to chiller, HVAC power, AC power supply]
+    trigger_trade: hvac
+    question_template: >
+      Scope boundary between HVAC and electrical for power supply not defined for {area}. Please clarify:
+      (a) Power cable from panel to HVAC equipment — electrical contractor or HVAC contractor?
+      (b) Termination point — at equipment terminal or at isolator/starter near equipment?
+      (c) Starter/VFD for AHU, chiller pump, cooling tower — HVAC or electrical scope?
+      (d) Control wiring between HVAC controls and BMS — HVAC or electrical scope?
+      (e) Dedicated panels for HVAC loads — supplied by electrical or HVAC contractor?
+    why_it_matters: >
+      HVAC equipment requires significant electrical infrastructure (30-50% of building
+      electrical load). Power cable to HVAC equipment is typically the single largest
+      electrical item. Unclear boundary causes cable sizing errors and coordination delays.
+    suggested_resolution: "Define HVAC-electrical interface point — who provides cable, starter/VFD, and controls wiring. Specify whether dedicated HVAC panels are in electrical or HVAC scope."
+    priority: high
+    building_types: [all]
+    package: hvac
+
+  - id: "RFI-AM-HE-002"
+    trigger_type: ambiguous
+    trigger_keywords: [VFD, variable frequency drive, HVAC controls, BMS integration, DDC]
+    trigger_trade: hvac
+    question_template: >
+      Scope boundary between HVAC and electrical/BMS for controls not defined for {area}. Please clarify:
+      (a) VFD (variable frequency drive) for AHU/pumps — HVAC or electrical scope?
+      (b) DDC controllers and sensors — HVAC contractor or BMS contractor?
+      (c) BMS integration — who provides communication protocol (BACnet/Modbus) gateway?
+      (d) Control panel wiring from DDC to actuators/dampers — HVAC or BMS scope?
+      (e) Energy meters for HVAC monitoring — electrical or HVAC scope?
+    why_it_matters: >
+      HVAC controls and BMS integration involve three potential parties — HVAC, electrical,
+      and BMS contractors. VFD cost alone can be 5-10% of HVAC cost. Unclear boundary
+      causes commissioning delays and finger-pointing.
+    suggested_resolution: "Define controls scope boundary — VFD, DDC, BMS gateway, wiring, and energy metering. Create responsibility matrix for all three parties."
+    priority: medium
+    building_types: [commercial, office, hospital, hotel]
+    package: hvac
+
+  # ============================================================
+  # INTERIOR vs CIVIL — 2 rules
+  # ============================================================
+  - id: "RFI-AM-IC-001"
+    trigger_type: ambiguous
+    trigger_keywords: [false ceiling, partition wall, drywall, gypsum partition]
+    trigger_trade: interiors
+    question_template: >
+      Scope boundary between interior fitout and civil contractor not defined for {area}. Please clarify:
+      (a) False ceiling — civil/main contractor or interior/specialist contractor?
+      (b) Gypsum board partition walls — civil contractor or interior contractor?
+      (c) If interior contractor — who provides MEP coordination for points in partition/ceiling?
+      (d) Fire-rated ceiling and partitions — same contractor as regular or specialist?
+      (e) GI framing for false ceiling — is it civil scope even if ceiling is interior scope?
+    why_it_matters: >
+      False ceiling and partitions are at the interface of civil and interior trades.
+      Main contractor typically does structural and wet trades; interior contractor does
+      dry construction. Unclear boundary causes double-pricing or scope gaps.
+    suggested_resolution: "Define partition and ceiling scope assignment. If split, define interface point and MEP coordination responsibility."
+    priority: medium
+    building_types: [all]
+    package: interiors
+
+  - id: "RFI-AM-IC-002"
+    trigger_type: ambiguous
+    trigger_keywords: [wardrobe, modular kitchen, built-in furniture, fixed furniture]
+    trigger_trade: interiors
+    question_template: >
+      Scope boundary for built-in furniture/fittings not defined for {area}. Please clarify:
+      (a) Built-in wardrobes — main contractor, interior contractor, or modular furniture vendor?
+      (b) Modular kitchen — is it in building contractor scope or separate vendor/buyer scope?
+      (c) Bathroom vanity/mirror cabinet — plumbing contractor or interior contractor?
+      (d) TV unit, shoe rack, and study table — if built-in, whose scope?
+      (e) Who coordinates electrical points and plumbing points with furniture locations?
+    why_it_matters: >
+      Built-in furniture is 3-8% of residential unit cost. In developer projects, these
+      items are either in main contractor scope (higher contract value) or buyer scope
+      (excluded). This is the most common residential scope dispute.
+    suggested_resolution: "Clearly list all built-in furniture items as either main contractor scope, interior contractor scope, or buyer/client scope."
+    priority: high
+    building_types: [residential, residential_apartment, hotel]
+    package: interiors
+
+  # ============================================================
+  # FACADE vs STRUCTURAL — 2 rules
+  # ============================================================
+  - id: "RFI-AM-FS-001"
+    trigger_type: ambiguous
+    trigger_keywords: [embed plate, facade bracket, curtain wall anchor, facade connection]
+    trigger_trade: facade
+    question_template: >
+      Scope boundary between facade and structural for connection elements not defined for {area}. Please clarify:
+      (a) Embed plates in RCC slabs/beams for facade support — structural contractor or facade contractor?
+      (b) If structural contractor provides embed plates — who supplies the plates and location drawing?
+      (c) Secondary steel brackets from embed to facade frame — facade or structural scope?
+      (d) Waterproofing at embed penetrations through slab edge — waterproofing or facade scope?
+      (e) Fire barrier at slab edge between facade and structure — facade, fire, or structural scope?
+    why_it_matters: >
+      Embed plates must be cast into concrete during structural work — if missed, expensive
+      retrofit is needed (chemical anchors at 3-5x cost). Location coordination requires
+      facade design to be finalized during structural stage, often not the case.
+    suggested_resolution: "Define embed plate supply, installation, and coordination responsibility. Include fire barrier and waterproofing at slab edge."
+    priority: critical
+    building_types: [commercial, office, hotel, high_rise]
+    package: facade
+
+  - id: "RFI-AM-FS-002"
+    trigger_type: ambiguous
+    trigger_keywords: [facade slab edge, spandrel beam, facade beam, edge treatment]
+    trigger_trade: structural
+    question_template: >
+      Slab edge treatment for facade attachment not defined for {area}. Please clarify:
+      (a) Slab edge profile — straight, with upstand, or with recess for facade engagement?
+      (b) Edge beam or spandrel beam — is additional concrete at slab edge in structural scope?
+      (c) Slab edge tolerance — what flatness is acceptable for curtain wall alignment?
+      (d) Insulation at slab edge — to prevent thermal bridge, whose scope?
+      (e) Drip edge detail at exposed slab edge — structural finish or facade detail?
+    why_it_matters: >
+      Slab edge is the most critical interface between structure and facade. Structural
+      tolerance at edges (typically +/- 10mm) must match facade tolerance requirement
+      (typically +/- 3mm). Mismatch causes facade alignment issues.
+    suggested_resolution: "Define slab edge profile, tolerance, and finish requirement for facade attachment. Include thermal insulation and drip edge responsibility."
+    priority: high
+    building_types: [commercial, office, hotel, high_rise]
+    package: structural
+
+  # ============================================================
+  # ELEVATOR vs CIVIL — 2 rules
+  # ============================================================
+  - id: "RFI-AM-EC-001"
+    trigger_type: ambiguous
+    trigger_keywords: [elevator shaft, lift shaft, lift pit, machine room]
+    trigger_trade: elevator
+    question_template: >
+      Scope boundary between elevator contractor and civil contractor not defined for {area}. Please clarify:
+      (a) Lift shaft construction (RCC walls) — civil contractor scope?
+      (b) Shaft internal finish — plastered, or bare concrete acceptable for elevator installation?
+      (c) Machine room construction and waterproofing — civil contractor scope?
+      (d) Pit construction and waterproofing — civil scope? Sump pump in pit — plumbing scope?
+      (e) Shaft ventilation opening — civil or elevator scope?
+      (f) Bracket holes/inserts in shaft walls — who provides?
+    why_it_matters: >
+      Elevator shaft is built by civil contractor but must meet elevator manufacturer's
+      exact dimensional requirements. Dimensional errors cause installation failure.
+      Machine room structural loading and pit depth vary by elevator type and must
+      be coordinated early.
+    suggested_resolution: "Provide elevator manufacturer's shaft requirement drawing. Define civil scope (shaft, pit, machine room) and elevator scope (equipment, guide rails, doors)."
+    priority: high
+    building_types: [all]
+    package: elevator
+
+  - id: "RFI-AM-EC-002"
+    trigger_type: ambiguous
+    trigger_keywords: [lift door, landing door, elevator entrance, lift lobby]
+    trigger_trade: elevator
+    question_template: >
+      Scope boundary for elevator entrance/lobby finishes not defined for {area}. Please clarify:
+      (a) Lift door frame — supplied and installed by elevator contractor as part of lift package?
+      (b) Landing door architrave/frame cladding — elevator or interior/civil scope?
+      (c) Lift lobby wall and floor finish — civil or interior contractor?
+      (d) Lift lobby calling station (LOP) cutout in wall — who provides?
+      (e) Fire rating of lift lobby — is pressurized lift lobby in fire or HVAC scope?
+    why_it_matters: >
+      Elevator entrance finish quality defines building perception. Architrave/cladding around
+      lift doors is frequently disputed — elevator contractor provides door frame but not
+      the surrounding finish. Lift lobby pressurization requires duct and fan coordination.
+    suggested_resolution: "Define elevator entrance scope — door frame, architrave, lobby finish, and pressurization responsibility."
+    priority: medium
+    building_types: [all]
+    package: elevator
+
+  # ============================================================
+  # LANDSCAPE vs CIVIL — 1 rule
+  # ============================================================
+  - id: "RFI-AM-LC-001"
+    trigger_type: ambiguous
+    trigger_keywords: [landscape civil, garden wall, planter, raised bed, landscape drainage]
+    trigger_trade: landscape
+    question_template: >
+      Scope boundary between landscape and civil contractor not defined for {area}. Please clarify:
+      (a) Landscape retaining walls, planters, and raised beds — civil or landscape scope?
+      (b) Paving base preparation (sub-grade, sub-base) — civil or landscape scope?
+      (c) Landscape drainage (sub-soil drain, French drain) — civil, plumbing, or landscape?
+      (d) Kerb stones along roads and pathways — civil or landscape scope?
+      (e) Pergola and gazebo foundations — civil or landscape scope?
+    why_it_matters: >
+      Landscape works often require civil construction (retaining walls, foundations, drainage)
+      that falls between the two contractors. Paving base preparation is 40-50% of hardscape
+      cost and is frequently excluded by both parties.
+    suggested_resolution: "Define landscape-civil interface — assign retaining walls, paving base, drainage, kerbs, and structure foundations to specific contractors."
+    priority: medium
+    building_types: [all]
+    package: landscape
+
+  # ============================================================
+  # PAINTING vs PLASTERING — 1 rule
+  # ============================================================
+  - id: "RFI-AM-PP-001"
+    trigger_type: ambiguous
+    trigger_keywords: [putty scope, primer scope, painting plastering, surface preparation]
+    trigger_trade: painting
+    question_template: >
+      Scope boundary between plastering and painting trades not defined for {area}. Please clarify:
+      (a) Wall putty (2 coats) — is this in plastering contractor scope or painting contractor scope?
+      (b) Primer application — plastering contractor or painting contractor?
+      (c) Plaster finish quality — is paint-ready plaster expected from plasterer or does painter prepare?
+      (d) Crack filling on plaster surface before painting — plasterer or painter?
+      (e) POP punning on cement plaster — is this a separate trade or included in plastering?
+    why_it_matters: >
+      Putty and primer application fall between plastering and painting trades. Putty alone
+      is 30-40% of painting cost. If plasterer provides gypsum plaster (no putty needed),
+      scope reduces. Unclear assignment causes quality defects and cost disputes.
+    suggested_resolution: "Define complete surface preparation chain — plaster (type), putty (coats), primer (type), and finish paint. Assign each layer to a specific contractor."
+    priority: high
+    building_types: [all]
+    package: painting
+
+  # ============================================================
+  # PLUMBING vs FIRE — 1 rule
+  # ============================================================
+  - id: "RFI-AM-PF-001"
+    trigger_type: ambiguous
+    trigger_keywords: [combined water tank, fire water tank, domestic fire combined, shared tank]
+    trigger_trade: plumbing
+    question_template: >
+      Scope boundary between plumbing and fire fighting for water storage not defined for {area}. Please clarify:
+      (a) Is the water tank combined (domestic + fire reserve) or separate?
+      (b) If combined — who designs and sizes the tank (plumbing or fire consultant)?
+      (c) Fire reserve compartment isolation — who provides the dividing wall and low-level outlet?
+      (d) Float valve, level indicator, and overflow — plumbing scope for entire tank?
+      (e) Suction piping from tank to fire pump — fire contractor or plumbing contractor?
+      (f) Who is responsible for testing the combined tank — ponding test and leakage check?
+    why_it_matters: >
+      Combined tanks save construction cost (one tank vs two) but create scope confusion.
+      Fire reserve must be at the bottom of tank with dedicated suction. If not properly
+      designed, domestic use depletes fire reserve, which is a life-safety issue.
+    suggested_resolution: "Define tank configuration (combined/separate), fire reserve arrangement, and assign piping, valving, and testing scope to specific contractors."
+    priority: critical
+    building_types: [all]
+    package: plumbing
+
+  # ============================================================
+  # MEP GENERAL BOUNDARY — 2 rules
+  # ============================================================
+  - id: "RFI-AM-MG-001"
+    trigger_type: ambiguous
+    trigger_keywords: [sleeve, opening, core cutting, wall chase, MEP opening]
+    trigger_trade: all
+    question_template: >
+      Responsibility for MEP sleeves, openings, and chasing not defined for {area}. Please clarify:
+      (a) Sleeves in RCC slabs/beams — who provides and casts (structural or MEP contractor)?
+      (b) Openings in masonry walls for pipes/ducts — who makes (masonry or MEP contractor)?
+      (c) Core cutting in existing slabs/walls — who performs and who bears cost?
+      (d) Chasing in plastered walls for concealed conduit/pipe — who chases and who patches?
+      (e) Fire stopping at all MEP penetrations through rated walls/floors — who provides?
+    why_it_matters: >
+      MEP openings and sleeves are the number one coordination issue on construction sites.
+      Missing sleeves require core cutting (5-10x cost of cast-in sleeve). Chasing and
+      patching is a perpetual dispute between civil and MEP contractors.
+    suggested_resolution: "Provide MEP opening/sleeve schedule. Assign sleeve provision, core cutting, chasing, patching, and fire stopping to specific contractors."
+    priority: high
+    building_types: [all]
+    package: all
+
+  - id: "RFI-AM-MG-002"
+    trigger_type: ambiguous
+    trigger_keywords: [cable tray, support, hanger, MEP support, insert]
+    trigger_trade: electrical
+    question_template: >
+      Responsibility for MEP supports, hangers, and cable trays not defined for {area}. Please clarify:
+      (a) Cast-in inserts/anchors in RCC slab for MEP hangers — structural or MEP scope?
+      (b) Cable tray — electrical contractor scope or shared with fire and HVAC?
+      (c) Pipe support/hanger — each MEP trade provides their own or civil contractor provides common support?
+      (d) Seismic bracing for MEP (if required in seismic zone) — each trade or dedicated scope?
+      (e) Ceiling void coordination — who manages spatial allocation between ducts, trays, and pipes?
+    why_it_matters: >
+      MEP supports interact with structural elements. Post-drilled anchors in slabs damage
+      reinforcement. Uncoordinated ceiling void allocation causes clashes at site requiring
+      rework. Seismic bracing for MEP is often overlooked.
+    suggested_resolution: "Define MEP support scope — cast-in inserts, cable tray ownership, pipe support, seismic bracing, and ceiling void management responsibility."
+    priority: medium
+    building_types: [all]
+    package: all

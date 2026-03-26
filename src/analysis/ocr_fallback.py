@@ -14,7 +14,7 @@ import logging
 import multiprocessing as mp
 from pathlib import Path
 from typing import List, Dict, Any, Optional, Tuple, Callable
-from concurrent.futures import ProcessPoolExecutor, as_completed
+from concurrent.futures import ProcessPoolExecutor, ThreadPoolExecutor, as_completed
 import io
 
 logger = logging.getLogger(__name__)
@@ -47,6 +47,13 @@ except ImportError:
 # PSM 11 = Sparse text (good for drawings with scattered labels)
 OCR_CONFIG_TITLE_BLOCK = '--psm 6 --oem 3'
 OCR_CONFIG_SPARSE = '--psm 11 --oem 3'
+OCR_CONFIG_TABLE   = '--psm 4 --oem 3'   # single column — dense table scans
+OCR_CONFIG_AUTO    = '--psm 3 --oem 3'   # fully automatic page segmentation
+
+# Adaptive PSM thresholds
+_PSM_TABLE_ROW_MIN     = 8       # horizontal dark-line rows ≥ this → table-heavy
+_PSM_TEXT_DENSITY_HIGH = 0.015   # dark pixel fraction above this → uniform text block
+_PSM_SPARSE_ALPHA_MAX  = 0.003   # dark pixel fraction below this → sparse drawing
 
 # Minimum text length to consider a page as having "real" text
 MIN_TEXT_LENGTH = 50
@@ -82,6 +89,173 @@ SHEET_TYPE_KEYWORDS = {
     'detail': ['DETAIL', 'ENLARGED DETAIL', 'TYPICAL DETAIL'],
     'site_plan': ['SITE PLAN', 'SITE LAYOUT', 'LOCATION PLAN'],
 }
+
+
+# ── OCR Confidence Scoring ────────────────────────────────────────────────────
+
+import re as _re
+
+_OCR_GARBAGE_PATTERNS = [
+    _re.compile(r'[^\x00-\x7F]{5,}'),           # long non-ASCII runs (garbled)
+    _re.compile(r'[|]{3,}'),                      # pipe runs (table OCR artefacts)
+    _re.compile(r'[_]{5,}'),                      # long underscores
+    _re.compile(r'([a-zA-Z])\1{4,}'),             # repeated chars (aaaaa)
+    _re.compile(r'\d{15,}'),                       # implausibly long number runs
+]
+
+_OCR_GOOD_PATTERNS = [
+    _re.compile(r'\b\d+\.?\d*\s*(cum|sqm|rmt|nos|kg|mt|lsum)\b', _re.IGNORECASE),  # quantities
+    _re.compile(r'₹\s*\d'),                                                           # price symbol
+    _re.compile(r'\b(concrete|steel|brick|plaster|tile|paint|excavat)\b', _re.IGNORECASE),
+    _re.compile(r'\b(m25|m30|fe500|fe415|is[:\s]?\d{3,4})\b', _re.IGNORECASE),     # specs
+]
+
+
+def ocr_confidence_score(text: str, doc_type: str = "") -> float:
+    """
+    Estimate OCR extraction quality for a single page text.
+
+    Returns
+    -------
+    float in [0.0, 1.0]
+        0.0 = completely garbled / empty
+        1.0 = high-confidence clean extraction
+    """
+    if not text or not text.strip():
+        return 0.0
+
+    text = text.strip()
+    word_count = len(text.split())
+
+    # Very short text → low confidence
+    if word_count < 5:
+        return 0.15
+
+    # Count garbage indicators
+    garbage_hits = sum(1 for p in _OCR_GARBAGE_PATTERNS if p.search(text))
+
+    # Count good indicators
+    good_hits = sum(1 for p in _OCR_GOOD_PATTERNS if p.search(text))
+
+    # Base score from word count (saturates at 100 words → 0.6)
+    base = min(0.6, 0.1 + word_count / 200.0)
+
+    # Penalty per garbage indicator
+    penalty = garbage_hits * 0.12
+
+    # Bonus per construction-domain indicator
+    bonus = good_hits * 0.08
+
+    # BOQ doc_type gets a small boost (likely table text)
+    if doc_type in ("boq", "schedule"):
+        bonus += 0.05
+
+    score = base - penalty + bonus
+    return round(max(0.0, min(1.0, score)), 3)
+
+
+# ── Hindi / Devanagari OCR support ───────────────────────────────────────────
+
+_DEVANAGARI_RANGE = range(0x0900, 0x097F + 1)   # Unicode block
+
+def _has_devanagari(text: str) -> bool:
+    """Return True if text contains Devanagari script characters."""
+    return any(ord(c) in _DEVANAGARI_RANGE for c in text)
+
+
+def _detect_script(text: str) -> str:
+    """
+    Detect dominant script in text.
+    Returns 'devanagari' | 'latin' | 'mixed' | 'empty'
+    """
+    if not text:
+        return "empty"
+    total = len([c for c in text if c.isalpha()])
+    if total == 0:
+        return "empty"
+    dev_count = sum(1 for c in text if ord(c) in _DEVANAGARI_RANGE)
+    ratio = dev_count / max(total, 1)
+    if ratio > 0.5:
+        return "devanagari"
+    if ratio > 0.1:
+        return "mixed"
+    return "latin"
+
+
+def _get_ocr_lang(text_hint: str = "", prefer_hindi: bool = False) -> str:
+    """
+    Choose tesseract language string.
+    Returns 'eng' or 'eng+hin' depending on script detection and availability.
+    """
+    # Check if tesseract Hindi lang pack is installed
+    try:
+        import subprocess
+        result = subprocess.run(
+            ["tesseract", "--list-langs"],
+            capture_output=True, text=True, timeout=5
+        )
+        has_hindi = "hin" in result.stdout + result.stderr
+    except Exception:
+        has_hindi = False
+
+    if not has_hindi:
+        return "eng"
+
+    if prefer_hindi or (text_hint and _has_devanagari(text_hint)):
+        return "eng+hin"
+
+    return "eng"
+
+
+# =============================================================================
+# ADAPTIVE PSM CLASSIFIER
+# =============================================================================
+
+def _classify_image_for_psm(img, render_dpi: int = 150, doc_type: str = "") -> str:
+    """
+    Classify a rendered page image and return the best Tesseract PSM config string.
+
+    Priority order:
+    1. doc_type hint (boq/schedule → PSM 4; drawing/plan → PSM 11)
+    2. Table density: many horizontal dark lines → PSM 4
+    3. Text density: high dark pixel ratio → PSM 6 (uniform block)
+    4. Sparse: very few dark pixels → PSM 11
+    5. Default fallback: PSM 3 (fully automatic)
+
+    Never raises — returns OCR_CONFIG_SPARSE on any exception.
+    """
+    # 1. doc_type shortcut
+    dt = (doc_type or "").lower()
+    if dt in ("boq", "schedule", "pricing"):
+        return OCR_CONFIG_TABLE
+    if dt in ("drawing", "plan", "detail", "section", "elevation"):
+        return OCR_CONFIG_SPARSE
+
+    if img is None:
+        return OCR_CONFIG_SPARSE
+
+    try:
+        import numpy as _np
+        gray = img.convert("L") if hasattr(img, "convert") else img
+        arr = _np.array(gray, dtype=_np.float32)
+        h, w = arr.shape
+        if h == 0 or w == 0:
+            return OCR_CONFIG_SPARSE
+
+        dark_mask   = arr < 128
+        text_density = dark_mask.sum() / (h * w)
+        row_sums     = dark_mask.sum(axis=1)
+        table_lines  = int((row_sums > w * 0.5).sum())
+
+        if table_lines >= _PSM_TABLE_ROW_MIN:
+            return OCR_CONFIG_TABLE
+        if text_density > _PSM_TEXT_DENSITY_HIGH:
+            return OCR_CONFIG_TITLE_BLOCK
+        if text_density < _PSM_SPARSE_ALPHA_MAX:
+            return OCR_CONFIG_SPARSE
+        return OCR_CONFIG_AUTO
+    except Exception:
+        return OCR_CONFIG_SPARSE
 
 
 # =============================================================================
@@ -156,8 +330,8 @@ def pdf_preflight(pdf_path: Path, page_texts: List[str]) -> Dict[str, Any]:
             for page in doc:
                 total_images += len(page.get_images(full=False))
             doc.close()
-        except Exception:
-            pass
+        except Exception as e:
+            logger.warning(f"Failed to count images in {pdf_path}: {e}")
 
     is_scanned_only = pct_text_layer < 10 and total_images > 0
 
@@ -281,7 +455,7 @@ def _analyze_ocr_text(ocr_text: str) -> Dict[str, Any]:
 # PARALLEL OCR WORKER (module-level for pickling)
 # =============================================================================
 
-def _ocr_worker(png_bytes: bytes, page_index: int, config: str) -> Dict[str, Any]:
+def _ocr_worker(png_bytes: bytes, page_index: int, config: str, render_dpi: int = 150, doc_type: str = "") -> Dict[str, Any]:
     """
     Worker function for parallel OCR. Runs in a separate process.
     Receives pre-rendered PNG bytes, returns OCR result dict.
@@ -297,11 +471,20 @@ def _ocr_worker(png_bytes: bytes, page_index: int, config: str) -> Dict[str, Any
     t_pil = _time.perf_counter()
 
     try:
-        ocr_text = _pytesseract.image_to_string(img, config=config)
+        config = _classify_image_for_psm(img, render_dpi=render_dpi, doc_type=doc_type)
     except Exception:
+        pass  # keep original config on any failure
+
+    _ocr_lang = _get_ocr_lang()
+    try:
+        ocr_text = _pytesseract.image_to_string(img, config=config, lang=_ocr_lang)
+    except Exception as e1:
+        import logging as _logging
+        _logging.getLogger(__name__).warning(f"OCR with config failed for page {page_index}: {e1}, trying fallback")
         try:
-            ocr_text = _pytesseract.image_to_string(img)
-        except Exception:
+            ocr_text = _pytesseract.image_to_string(img, lang=_ocr_lang)
+        except Exception as e2:
+            _logging.getLogger(__name__).error(f"OCR fallback also failed for page {page_index}: {e2}")
             ocr_text = ''
     t_ocr = _time.perf_counter()
 
@@ -315,6 +498,7 @@ def _ocr_worker(png_bytes: bytes, page_index: int, config: str) -> Dict[str, Any
         'page_index': page_index,
         'text': ocr_text,
         'ocr_attempted': True,
+        'ocr_confidence': ocr_confidence_score(ocr_text, doc_type=doc_type),
         **analysis,
         'timings': {
             'time_pil_convert_s': round(t_pil - t0, 4),
@@ -354,6 +538,7 @@ def extract_ocr_text_for_page(
         'sheet_type': None,
         'sheet_number': None,
         'confidence': 0.0,
+        'ocr_confidence': 0.0,
         'ocr_attempted': False,
         'timings': {},
     }
@@ -389,15 +574,20 @@ def extract_ocr_text_for_page(
 
         result['ocr_attempted'] = True
 
-        # Run OCR with sparse text config (better for drawings)
+        # Adaptive PSM selection based on image content
+        _psm_config = _classify_image_for_psm(img, render_dpi=dpi, doc_type="")
+
+        # Run OCR with adaptively selected config
+        _ocr_lang = _get_ocr_lang()
         try:
-            ocr_text = pytesseract.image_to_string(img, config=OCR_CONFIG_SPARSE)
-        except Exception:
-            # Fallback to default config
-            ocr_text = pytesseract.image_to_string(img)
+            ocr_text = pytesseract.image_to_string(img, config=_psm_config, lang=_ocr_lang)
+        except Exception as e:
+            logger.warning(f"OCR sparse config failed for page {page_index}: {e}, trying default")
+            ocr_text = pytesseract.image_to_string(img, lang=_ocr_lang)
         t_ocr = time.perf_counter()
 
         result['text'] = ocr_text
+        result['ocr_confidence'] = ocr_confidence_score(ocr_text, doc_type="")
 
         # Analyze OCR text
         analysis = _analyze_ocr_text(ocr_text)
@@ -583,7 +773,7 @@ def extract_ocr_for_all_pages(
                     }
                 break
 
-            result = _ocr_worker(png_bytes, page_index, OCR_CONFIG_SPARSE)
+            result = _ocr_worker(png_bytes, page_index, OCR_CONFIG_SPARSE, render_dpi=dpi, doc_type="")
             results_map[page_index] = result
 
             if progress_callback:
@@ -597,11 +787,22 @@ def extract_ocr_for_all_pages(
                         f"(est. {remaining:.0f}s remaining)"
                     )
     else:
-        with ProcessPoolExecutor(max_workers=max_workers) as executor:
+        # Use ThreadPoolExecutor when multiprocessing is unavailable (e.g. Streamlit Cloud,
+        # macOS frozen binaries) or explicitly requested via XBOQ_OCR_THREAD_POOL=1.
+        _use_threads = os.environ.get("XBOQ_OCR_THREAD_POOL", "0") == "1"
+        _PoolClass = ThreadPoolExecutor if _use_threads else ProcessPoolExecutor
+        try:
+            _test_pool = _PoolClass(max_workers=1)
+            _test_pool.shutdown(wait=False)
+        except (OSError, RuntimeError):
+            logger.warning("ProcessPoolExecutor unavailable, falling back to ThreadPoolExecutor for OCR")
+            _PoolClass = ThreadPoolExecutor
+
+        with _PoolClass(max_workers=max_workers) as executor:
             futures = {}
             for page_index, png_bytes in rendered_pages:
                 future = executor.submit(
-                    _ocr_worker, png_bytes, page_index, OCR_CONFIG_SPARSE
+                    _ocr_worker, png_bytes, page_index, OCR_CONFIG_SPARSE, dpi, ""
                 )
                 futures[future] = page_index
 
@@ -679,6 +880,7 @@ def extract_ocr_for_all_pages(
             'page_total': len(existing_texts),
             'has_text_layer': not page_needs_ocr(existing_text),
             'ocr_used': ocr_result.get('ocr_attempted', False),
+            'ocr_confidence': ocr_result.get('ocr_confidence', 0.0),
             'raster_dpi': dpi,
             'time_render_s': render_timings.get(page_index, 0),
         }

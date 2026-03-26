@@ -1,0 +1,986 @@
+# Unit validation rules for xBOQ
+# For each item type: what IS the correct unit, what units are WRONG, and why.
+# item_id_prefix matches the first 3 segments of taxonomy IDs (e.g. CIV.EW.EXC).
+# error_type values: dimension_mismatch | unit_confusion | ambiguous_unit | rate_not_quantity
+# is_code_ref: IS 1200 part numbers are the primary measurement standard.
+#
+# Schema:
+#   item_id_prefix   - 3-segment taxonomy prefix  (STR.RCC.PCC)
+#   canonical_name   - human-readable work description
+#   correct_unit     - the single authoritative unit
+#   also_acceptable  - other units that are valid with a note (empty list if none)
+#   wrong_units      - list of units that are definitely wrong
+#   error_type       - category of the error
+#   error_message    - message template; {actual_unit} is substituted at runtime
+#   is_code_ref      - IS code governing measurement
+#   common_reason    - why this mistake is made in practice
+
+unit_rules:
+
+  # ---------------------------------------------------------------------------
+  # CIVIL / EARTHWORK
+  # ---------------------------------------------------------------------------
+
+  - item_id_prefix: CIV.EW.EXC
+    canonical_name: Excavation (foundation trenches, pits, bulk)
+    correct_unit: cum
+    also_acceptable: []
+    wrong_units: [sqm, sqft, rmt, nos]
+    error_type: dimension_mismatch
+    error_message: "Excavation must be in cum (IS 1200 Part 1). Found {actual_unit} — this is a measurement dimension error (3D volume billed in 2D or count)."
+    is_code_ref: IS 1200 Part 1
+    common_reason: "Contractors sometimes quote in sqm (plan area only) which ignores depth entirely."
+
+  - item_id_prefix: CIV.EW.FIL
+    canonical_name: Earth filling and compaction
+    correct_unit: cum
+    also_acceptable: []
+    wrong_units: [sqm, sqft, MT, rmt]
+    error_type: dimension_mismatch
+    error_message: "Earth filling must be in cum (IS 1200 Part 1). Found {actual_unit} — filling is a volume operation; area or weight units omit a critical dimension."
+    is_code_ref: IS 1200 Part 1
+    common_reason: "Some BOQs quote filling in sqm (plan area) treating it like a surface treatment; compaction rates sometimes quoted per MT which conflates material supply with placing."
+
+  - item_id_prefix: CIV.EW.CMP
+    canonical_name: Compaction of earthfill (mechanised)
+    correct_unit: cum
+    also_acceptable: []
+    wrong_units: [sqm, sqft, MT, rmt]
+    error_type: dimension_mismatch
+    error_message: "Compaction must be in cum (IS 1200 Part 1). Found {actual_unit} — compaction is measured by volume of material placed and compacted."
+    is_code_ref: IS 1200 Part 1
+    common_reason: "Often confused with road sub-base compaction which can be sqm; for general earthfill it is always cum."
+
+  - item_id_prefix: CIV.PL.BCI
+    canonical_name: Bored cast-in-situ piling
+    correct_unit: rmt
+    also_acceptable: []
+    wrong_units: [nos, sqm, sqft, cum]
+    error_type: unit_confusion
+    error_message: "Piling (bored cast-in-situ) must be in rmt (IS 1200 Part 16). Found {actual_unit} — length is the controlling dimension; billing per number ignores pile length variation."
+    is_code_ref: IS 1200 Part 16
+    common_reason: "Piles billed per 'nos' when pile lengths vary across the layout; this hides significant quantity risk."
+
+  - item_id_prefix: CIV.EW.AT
+    canonical_name: Anti-termite treatment (soil poisoning)
+    correct_unit: sqm
+    also_acceptable: []
+    wrong_units: [cum, rmt, nos, liter]
+    error_type: dimension_mismatch
+    error_message: "Anti-termite treatment must be in sqm (IS 6313 Part 2). Found {actual_unit} — the treatment is applied to a surface area; volume or linear units are incorrect."
+    is_code_ref: IS 6313 Part 2
+    common_reason: "Applicators sometimes quote in liters (chemical quantity) rather than the treated area; this makes comparison impossible."
+
+  - item_id_prefix: CIV.EW.DEM
+    canonical_name: Demolition of structure (bulk)
+    correct_unit: cum
+    also_acceptable: [MT]
+    wrong_units: [nos, sqm, sqft, rmt]
+    error_type: unit_confusion
+    error_message: "Bulk demolition must be in cum or MT (IS 1200 Part 2). Found {actual_unit} — 'nos' is acceptable only for discrete items (individual columns, walls); bulk rubble demolition requires volume or weight."
+    is_code_ref: IS 1200 Part 2
+    common_reason: "BOQs often list demolition as 'nos of rooms' or 'nos of walls' which gives no basis for calculating debris disposal or shoring requirements."
+
+  - item_id_prefix: CIV.UW.EXC
+    canonical_name: Underwater / dewatered excavation
+    correct_unit: cum
+    also_acceptable: []
+    wrong_units: [sqm, sqft, rmt, nos]
+    error_type: dimension_mismatch
+    error_message: "Underwater excavation must be in cum (IS 1200 Part 1). Found {actual_unit} — same as ordinary excavation; dewatering is a separate item."
+    is_code_ref: IS 1200 Part 1
+    common_reason: "Dewatering pump hours sometimes conflated with excavation quantity."
+
+  # ---------------------------------------------------------------------------
+  # STRUCTURAL — RCC CONCRETE
+  # ---------------------------------------------------------------------------
+
+  - item_id_prefix: STR.RCC.PCC
+    canonical_name: Plain cement concrete (PCC)
+    correct_unit: cum
+    also_acceptable: []
+    wrong_units: [sqm, sqft, MT, kg, rmt]
+    error_type: dimension_mismatch
+    error_message: "PCC must be in cum (IS 1200 Part 2). Found {actual_unit} — concrete is a 3D volume pour; area or weight units are incorrect and prevent proper rate verification."
+    is_code_ref: IS 1200 Part 2
+    common_reason: "Thin blinding courses sometimes quoted in sqm by area; MT is a material-supply unit not a placing unit."
+
+  - item_id_prefix: STR.RCC.FTG
+    canonical_name: RCC footing / foundation concrete
+    correct_unit: cum
+    also_acceptable: []
+    wrong_units: [sqm, sqft, MT, nos, rmt]
+    error_type: dimension_mismatch
+    error_message: "RCC footing concrete must be in cum (IS 1200 Part 2). Found {actual_unit} — footings are volumetric; 'nos' hides size variation across footing schedule."
+    is_code_ref: IS 1200 Part 2
+    common_reason: "BOQs sometimes list footings as 'nos' when sizes vary widely, leading to under-pricing of larger footings."
+
+  - item_id_prefix: STR.RCC.COL
+    canonical_name: RCC column concrete
+    correct_unit: cum
+    also_acceptable: []
+    wrong_units: [sqm, sqft, MT, nos, rmt]
+    error_type: dimension_mismatch
+    error_message: "RCC columns must be in cum (IS 1200 Part 2). Found {actual_unit} — column concrete is measured by volume poured."
+    is_code_ref: IS 1200 Part 2
+    common_reason: "Columns occasionally quoted per 'nos' without size reference, causing rate ambiguity."
+
+  - item_id_prefix: STR.RCC.BEM
+    canonical_name: RCC beam concrete
+    correct_unit: cum
+    also_acceptable: []
+    wrong_units: [sqm, sqft, MT, nos, rmt]
+    error_type: dimension_mismatch
+    error_message: "RCC beams must be in cum (IS 1200 Part 2). Found {actual_unit} — beam concrete is measured by volume; length alone (rmt) ignores cross-section."
+    is_code_ref: IS 1200 Part 2
+    common_reason: "rmt used for beams when cross-section is 'standard', but cross-section variations are common."
+
+  - item_id_prefix: STR.RCC.SLB
+    canonical_name: RCC slab concrete
+    correct_unit: cum
+    also_acceptable: []
+    wrong_units: [sqm, sqft, MT, rmt]
+    error_type: dimension_mismatch
+    error_message: "RCC slab concrete must be in cum (IS 1200 Part 2). Found {actual_unit} — sqm ignores slab thickness; a 125mm and 200mm slab have the same plan area but very different volumes."
+    is_code_ref: IS 1200 Part 2
+    common_reason: "Slabs measured in sqm when thickness is uniform, but thickness changes at cantilevers and thickened edges are missed."
+
+  - item_id_prefix: STR.RCC.PLC
+    canonical_name: RCC plinth beam / grade beam concrete
+    correct_unit: cum
+    also_acceptable: []
+    wrong_units: [sqm, sqft, MT, nos, rmt]
+    error_type: dimension_mismatch
+    error_message: "RCC plinth beam concrete must be in cum (IS 1200 Part 2). Found {actual_unit}."
+    is_code_ref: IS 1200 Part 2
+    common_reason: "Grade beams sometimes quoted in rmt (length only) ignoring depth and width."
+
+  # ---------------------------------------------------------------------------
+  # STRUCTURAL — FORMWORK / SHUTTERING
+  # ---------------------------------------------------------------------------
+
+  - item_id_prefix: STR.FW.FND
+    canonical_name: Formwork for foundations and footings
+    correct_unit: sqm
+    also_acceptable: []
+    wrong_units: [cum, rmt, nos, MT]
+    error_type: dimension_mismatch
+    error_message: "Formwork must be in sqm (IS 1200 Part 2). Found {actual_unit} — shuttering is a contact area measurement; volume or length units are incorrect."
+    is_code_ref: IS 1200 Part 2
+    common_reason: "Contractors sometimes price formwork by cum of concrete, bundling it into the concrete rate rather than measuring separately."
+
+  - item_id_prefix: STR.FW.COL
+    canonical_name: Formwork for columns
+    correct_unit: sqm
+    also_acceptable: []
+    wrong_units: [cum, rmt, nos, MT]
+    error_type: dimension_mismatch
+    error_message: "Column formwork must be in sqm (IS 1200 Part 2). Found {actual_unit} — contact surface area is the measurable quantity."
+    is_code_ref: IS 1200 Part 2
+    common_reason: "Column formwork listed as 'nos' when column sizes vary; this hides surface area differences."
+
+  - item_id_prefix: STR.FW.BEM
+    canonical_name: Formwork for beams
+    correct_unit: sqm
+    also_acceptable: []
+    wrong_units: [cum, rmt, nos, MT]
+    error_type: dimension_mismatch
+    error_message: "Beam formwork must be in sqm (IS 1200 Part 2). Found {actual_unit} — contact area governs; rmt ignores web depth."
+    is_code_ref: IS 1200 Part 2
+    common_reason: "rmt used for beam soffit only, missing side shuttering; sqm of contact area is complete."
+
+  - item_id_prefix: STR.FW.SLB
+    canonical_name: Formwork for slabs
+    correct_unit: sqm
+    also_acceptable: []
+    wrong_units: [cum, rmt, nos, MT]
+    error_type: dimension_mismatch
+    error_message: "Slab formwork must be in sqm (IS 1200 Part 2). Found {actual_unit} — soffit contact area is the standard measure."
+    is_code_ref: IS 1200 Part 2
+    common_reason: "Slab formwork sometimes quoted in cum matching the concrete pour, conflating two separate operations."
+
+  # ---------------------------------------------------------------------------
+  # STRUCTURAL — REINFORCEMENT STEEL
+  # ---------------------------------------------------------------------------
+
+  - item_id_prefix: STR.RCC.RFT
+    canonical_name: Reinforcement steel (TMT bars, Fe415/500)
+    correct_unit: MT
+    also_acceptable: [kg]
+    wrong_units: [rmt, nos, cum, sqm]
+    error_type: unit_confusion
+    error_message: "Reinforcement steel must be in MT or kg (IS 1200 Part 5). Found {actual_unit} — rmt ignores bar diameter (a 32mm bar and 8mm bar per metre have vastly different weights). 'nos' gives no quantity basis."
+    is_code_ref: IS 1200 Part 5
+    common_reason: "rmt used when bar diameter is 'standard'; kg used in small projects but should be converted to MT for large packages to avoid transcription errors."
+
+  # ---------------------------------------------------------------------------
+  # STRUCTURAL STEEL (FABRICATED)
+  # ---------------------------------------------------------------------------
+
+  - item_id_prefix: STR.SF.ISMB
+    canonical_name: Structural steel fabricated sections (ISMB, ISMC, etc.)
+    correct_unit: MT
+    also_acceptable: []
+    wrong_units: [kg, rmt, nos, cum, sqm]
+    error_type: unit_confusion
+    error_message: "Fabricated structural steel must be in MT (IS 1200 Part 8). Found {actual_unit} — kg is technically correct but causes errors in large BOQs; rmt and nos ignore section weight."
+    is_code_ref: IS 1200 Part 8
+    common_reason: "Small steel packages quoted in kg which is fine, but when BOQs mix kg and MT errors of 1000x occur."
+
+  - item_id_prefix: STR.SF.CLD
+    canonical_name: Cold-formed / light-gauge steel sections
+    correct_unit: MT
+    also_acceptable: [kg]
+    wrong_units: [rmt, nos, sqm, cum]
+    error_type: unit_confusion
+    error_message: "Cold-formed steel must be in MT or kg (IS 1200 Part 8). Found {actual_unit} — rmt ignores section weight per metre."
+    is_code_ref: IS 1200 Part 8
+    common_reason: "Z-purlins and C-sections sometimes quoted in rmt when section size varies across the roof."
+
+  # ---------------------------------------------------------------------------
+  # STRUCTURAL — PRESTRESSED CONCRETE
+  # ---------------------------------------------------------------------------
+
+  - item_id_prefix: STR.PC.BM
+    canonical_name: Prestressed concrete beams / elements
+    correct_unit: cum
+    also_acceptable: []
+    wrong_units: [rmt, nos, sqm, MT]
+    error_type: dimension_mismatch
+    error_message: "Prestressed concrete must be in cum (IS 1200 Part 7). Found {actual_unit} — rmt ignores cross-section; nos hides length variation."
+    is_code_ref: IS 1200 Part 7
+    common_reason: "Precast prestressed beams quoted per 'nos' when beam lengths and cross-sections vary in a schedule."
+
+  # ---------------------------------------------------------------------------
+  # MASONRY
+  # ---------------------------------------------------------------------------
+
+  - item_id_prefix: MAS.BRK.CLA
+    canonical_name: Brick masonry (half-brick 115mm, full-brick 230mm, thicker)
+    correct_unit: cum
+    also_acceptable: []
+    wrong_units: [sqm, sqft, rmt, nos]
+    error_type: dimension_mismatch
+    error_message: "Brickwork must be in cum (IS 1200 Part 3). Found {actual_unit} — sqm is only valid for half-brick (115mm) partition walls; for any other thickness cum is mandatory."
+    is_code_ref: IS 1200 Part 3
+    common_reason: "All walls measured in sqm regardless of thickness, removing the cost signal for thicker structural walls vs thin partitions."
+
+  - item_id_prefix: MAS.BRK.CLB
+    canonical_name: Brick partition wall half-brick (115mm) thick
+    correct_unit: sqm
+    also_acceptable: [cum]
+    wrong_units: [sqft, rmt, nos]
+    error_type: unit_confusion
+    error_message: "Half-brick partition walls may be measured in sqm or cum (IS 1200 Part 3). Found {actual_unit} — sqft is a non-SI unit; rmt and nos give no area or volume basis."
+    is_code_ref: IS 1200 Part 3
+    common_reason: "sqft used in many private projects in India; this creates conversion errors when comparing with IS-code-based rates."
+
+  - item_id_prefix: MAS.AAC.100
+    canonical_name: AAC block masonry
+    correct_unit: cum
+    also_acceptable: [sqm]
+    wrong_units: [sqft, rmt, nos, MT]
+    error_type: unit_confusion
+    error_message: "AAC block masonry must be in cum (preferred) or sqm (only if single standard thickness). Found {actual_unit} — sqft is non-SI; 'nos' of blocks is a supply unit, not a measurement unit."
+    is_code_ref: IS 1200 Part 3
+    common_reason: "AAC suppliers quote in 'nos of blocks' or sqm; BOQs sometimes copy these supply units directly."
+
+  - item_id_prefix: MAS.STN.CRS
+    canonical_name: Stone masonry (coursed rubble, random rubble)
+    correct_unit: cum
+    also_acceptable: []
+    wrong_units: [sqm, sqft, rmt, nos, MT]
+    error_type: dimension_mismatch
+    error_message: "Stone masonry must be in cum (IS 1200 Part 3). Found {actual_unit} — sqm ignores wall thickness; MT is a material-supply unit not a placing unit."
+    is_code_ref: IS 1200 Part 3
+    common_reason: "Stone walls measured in sqm like plastering; thickness of stone walls (450-600mm typically) makes this a large error."
+
+  - item_id_prefix: MAS.JPT.PTG
+    canonical_name: Pointing to masonry / stone joints
+    correct_unit: sqm
+    also_acceptable: []
+    wrong_units: [cum, rmt, nos, MT]
+    error_type: dimension_mismatch
+    error_message: "Pointing must be in sqm (IS 1200 Part 3). Found {actual_unit} — pointing is applied to a surface; cum would imply volume of mortar which is not meaningful."
+    is_code_ref: IS 1200 Part 3
+    common_reason: "Pointing sometimes measured in rmt of joint length, which ignores the width of the joint and makes rate comparison difficult."
+
+  # ---------------------------------------------------------------------------
+  # WATERPROOFING
+  # ---------------------------------------------------------------------------
+
+  - item_id_prefix: WP.MEM.APP
+    canonical_name: APP/SBS bitumen membrane waterproofing
+    correct_unit: sqm
+    also_acceptable: []
+    wrong_units: [cum, rmt, nos, kg, liter]
+    error_type: dimension_mismatch
+    error_message: "Membrane waterproofing must be in sqm (IS 1322 / NBC). Found {actual_unit} — the membrane covers a surface area; volume, length, or weight units do not represent the installed quantity."
+    is_code_ref: IS 1322
+    common_reason: "Material suppliers quote membrane in kg or rolls; contractors copy the supply unit into the BOQ instead of converting to installed sqm."
+
+  - item_id_prefix: WP.APP.PLN
+    canonical_name: Liquid-applied / crystalline waterproofing
+    correct_unit: sqm
+    also_acceptable: [kg]
+    wrong_units: [cum, rmt, nos, liter]
+    error_type: unit_confusion
+    error_message: "Crystalline / cementitious waterproofing may be sqm (area) or kg (material weight at specified coverage). Found {actual_unit} — liter and cum do not correspond to any standard measurement basis."
+    is_code_ref: IS 2645
+    common_reason: "Manufacturer data sheets give kg/sqm coverage; BOQs sometimes list kg without tying to area, making verification impossible."
+
+  - item_id_prefix: WP.APP.EXJ
+    canonical_name: Injection waterproofing (crack injection, PU injection)
+    correct_unit: rmt
+    also_acceptable: []
+    wrong_units: [sqm, cum, nos, liter]
+    error_type: dimension_mismatch
+    error_message: "Crack injection waterproofing must be in rmt (length of crack treated). Found {actual_unit} — sqm is incorrect because injection follows linear cracks; 'nos' ignores crack length."
+    is_code_ref: IS 2645
+    common_reason: "BOQs list injection as 'nos of ports' (the injection nozzles) rather than rmt of crack, hiding total crack length."
+
+  - item_id_prefix: MAS.DMP.TRT
+    canonical_name: Damp proof course (DPC)
+    correct_unit: rmt
+    also_acceptable: [sqm]
+    wrong_units: [cum, nos, liter, kg]
+    error_type: unit_confusion
+    error_message: "DPC may be rmt (for strip DPC by wall length) or sqm (for DPC over full plinth area). Found {actual_unit} — cum, nos, and material units are incorrect."
+    is_code_ref: IS 3067
+    common_reason: "Strip DPC and horizontal slab DPC require different units; mixing them creates errors when comparing tenders."
+
+  # ---------------------------------------------------------------------------
+  # PLASTERING
+  # ---------------------------------------------------------------------------
+
+  - item_id_prefix: FIN.WL.PLS
+    canonical_name: Cement plaster (internal walls, external walls, different thicknesses)
+    correct_unit: sqm
+    also_acceptable: []
+    wrong_units: [cum, rmt, nos, MT, kg]
+    error_type: dimension_mismatch
+    error_message: "Cement plaster must be in sqm (IS 1200 Part 13). Found {actual_unit} — plaster is a surface treatment; cum overstates the operation (it is not a volumetric pour)."
+    is_code_ref: IS 1200 Part 13
+    common_reason: "cum used when BOQ writer confuses plaster measurement with concrete measurement."
+
+  - item_id_prefix: FIN.CL.PLS
+    canonical_name: Ceiling plaster (cement / gypsum)
+    correct_unit: sqm
+    also_acceptable: []
+    wrong_units: [cum, rmt, nos, MT]
+    error_type: dimension_mismatch
+    error_message: "Ceiling plaster must be in sqm (IS 1200 Part 13). Found {actual_unit}."
+    is_code_ref: IS 1200 Part 13
+    common_reason: "Same error pattern as wall plaster."
+
+  - item_id_prefix: FIN.WL.GCL
+    canonical_name: Gypsum plaster (drywall skim, board finish)
+    correct_unit: sqm
+    also_acceptable: []
+    wrong_units: [cum, rmt, nos, kg]
+    error_type: dimension_mismatch
+    error_message: "Gypsum plaster must be in sqm. Found {actual_unit} — kg is the material supply unit, not the installed quantity."
+    is_code_ref: IS 2547
+    common_reason: "Gypsum plaster suppliers quote in bags/kg; BOQs sometimes use this material unit."
+
+  - item_id_prefix: FIN.CL.CRN
+    canonical_name: Plaster cornice / POP cornice
+    correct_unit: rmt
+    also_acceptable: []
+    wrong_units: [sqm, sqft, nos, cum]
+    error_type: dimension_mismatch
+    error_message: "POP cornice must be in rmt (linear run). Found {actual_unit} — a cornice is a linear profile; sqm is meaningless for a moulding of fixed profile."
+    is_code_ref: IS 1200 Part 13
+    common_reason: "BOQ writers treat cornice as a wall finish and list in sqm instead of measuring the perimeter length."
+
+  - item_id_prefix: FIN.WL.MCX
+    canonical_name: Machine-applied plaster (spray plaster)
+    correct_unit: sqm
+    also_acceptable: []
+    wrong_units: [cum, rmt, nos, MT, kg]
+    error_type: dimension_mismatch
+    error_message: "Machine plaster must be in sqm. Found {actual_unit} — same measurement basis as hand-applied plaster."
+    is_code_ref: IS 1200 Part 13
+    common_reason: "Machine plaster sometimes quoted by bag consumption (kg or MT) instead of applied area."
+
+  # ---------------------------------------------------------------------------
+  # FLOORING AND TILING
+  # ---------------------------------------------------------------------------
+
+  - item_id_prefix: FIN.FLR.CER
+    canonical_name: Ceramic / vitrified floor tiles
+    correct_unit: sqm
+    also_acceptable: []
+    wrong_units: [sqft, nos, rmt, cum]
+    error_type: unit_confusion
+    error_message: "Floor tiles must be in sqm (IS 1200 Part 12). Found {actual_unit} — sqft is non-SI and creates conversion errors; 'nos' of tiles depends on tile size and cannot be compared across tenders."
+    is_code_ref: IS 1200 Part 12
+    common_reason: "sqft is extremely common in Indian private-sector BOQs; this is the single most frequent unit error in floor tiling."
+
+  - item_id_prefix: FIN.FLR.VTR
+    canonical_name: Vitrified tiles (large format, GVT, PGVT)
+    correct_unit: sqm
+    also_acceptable: []
+    wrong_units: [sqft, nos, rmt, cum]
+    error_type: unit_confusion
+    error_message: "Vitrified floor tiles must be in sqm. Found {actual_unit} — sqft is non-SI; 'nos' depends on tile format which changes product-to-product."
+    is_code_ref: IS 1200 Part 12
+    common_reason: "Architects specify tile size in mm but BOQ uses sqft, causing systematic conversion errors."
+
+  - item_id_prefix: FIN.WL.TIL
+    canonical_name: Wall tiles (ceramic, glazed, porcelain)
+    correct_unit: sqm
+    also_acceptable: []
+    wrong_units: [sqft, nos, rmt, cum]
+    error_type: unit_confusion
+    error_message: "Wall tiles must be in sqm (IS 1200 Part 12). Found {actual_unit} — sqft is non-SI; 'nos' is size-dependent and cannot be compared."
+    is_code_ref: IS 1200 Part 12
+    common_reason: "Same sqft error as floor tiles; very common in bathroom BOQs."
+
+  - item_id_prefix: FIN.FLR.STN
+    canonical_name: Natural stone flooring (marble, granite, kota, kadappa)
+    correct_unit: sqm
+    also_acceptable: []
+    wrong_units: [sqft, nos, rmt, MT, cum]
+    error_type: unit_confusion
+    error_message: "Natural stone flooring must be in sqm (IS 1200 Part 12). Found {actual_unit} — 'nos' of slabs is a supply unit; sqft is non-SI."
+    is_code_ref: IS 1200 Part 12
+    common_reason: "Stone suppliers quote per sqft or per slab; BOQs copy supply units into measurement."
+
+  - item_id_prefix: FIN.FLR.MRB
+    canonical_name: Marble / granite polishing
+    correct_unit: sqm
+    also_acceptable: []
+    wrong_units: [sqft, nos, rmt, cum]
+    error_type: unit_confusion
+    error_message: "Stone polishing must be in sqm. Found {actual_unit} — polishing is a surface operation measured by area."
+    is_code_ref: IS 1200 Part 12
+    common_reason: "sqft used in specifications that mix IS code measurements with builder's estimates."
+
+  - item_id_prefix: FIN.FLR.CPT
+    canonical_name: Carpet flooring (broadloom, tiles, area rugs)
+    correct_unit: sqm
+    also_acceptable: []
+    wrong_units: [rmt, sqft, nos, cum]
+    error_type: unit_confusion
+    error_message: "Carpet must be in sqm. Found {actual_unit} — rmt (roll metres) depends on roll width which varies by product; sqft is non-SI."
+    is_code_ref: IS 1200 Part 12
+    common_reason: "Carpet suppliers quote in rmt of roll; roll widths vary (3.66m, 4m, 5m) so rmt cannot be compared across products."
+
+  - item_id_prefix: FIN.FLR.IPS
+    canonical_name: IPS / tremix / granolithic floor
+    correct_unit: sqm
+    also_acceptable: []
+    wrong_units: [cum, rmt, nos, sqft]
+    error_type: dimension_mismatch
+    error_message: "IPS floor must be in sqm (IS 1200 Part 11). Found {actual_unit} — IPS is measured by plan area; cum is incorrect because the topping thickness is defined in the spec, not variable."
+    is_code_ref: IS 1200 Part 11
+    common_reason: "IPS billed in cum because it involves a concrete-like mix; the thin topping (~12-20mm) makes sqm the correct unit."
+
+  - item_id_prefix: FIN.FLR.SKT
+    canonical_name: Skirting (ceramic, stone, timber, vinyl)
+    correct_unit: rmt
+    also_acceptable: []
+    wrong_units: [sqm, sqft, nos, cum]
+    error_type: dimension_mismatch
+    error_message: "Skirting must be in rmt (IS 1200 Part 12). Found {actual_unit} — skirting is a linear element; sqm ignores height (height is fixed by the spec); 'nos' pieces are non-comparable."
+    is_code_ref: IS 1200 Part 12
+    common_reason: "Skirting listed in sqm treating it like a floor tile band; the linear metre is the standard."
+
+  - item_id_prefix: FIN.FLR.NOS
+    canonical_name: Stair nosing / threshold strip
+    correct_unit: rmt
+    also_acceptable: []
+    wrong_units: [nos, sqm, sqft, cum]
+    error_type: unit_confusion
+    error_message: "Stair nosing / threshold must be in rmt. Found {actual_unit} — 'nos' ignores length; each stair has a specific nosing length."
+    is_code_ref: IS 1200 Part 12
+    common_reason: "Nosing listed as 'nos per tread' when stair widths vary; rmt captures length variation."
+
+  # ---------------------------------------------------------------------------
+  # PAINTING
+  # ---------------------------------------------------------------------------
+
+  - item_id_prefix: FIN.WL.PNT
+    canonical_name: Wall and ceiling painting (emulsion, distemper, acrylic)
+    correct_unit: sqm
+    also_acceptable: []
+    wrong_units: [sqft, liter, nos, rmt, cum]
+    error_type: unit_confusion
+    error_message: "Wall/ceiling painting must be in sqm (IS 1200 Part 13). Found {actual_unit} — liter is a material quantity (coverage varies by brand and surface); sqft is non-SI."
+    is_code_ref: IS 1200 Part 13
+    common_reason: "Painters quote in liters of paint required; coverage rates vary significantly by brand making liter-based quantities incomparable."
+
+  - item_id_prefix: FIN.WL.COT
+    canonical_name: Wood painting / varnishing (doors, frames, timber elements)
+    correct_unit: sqm
+    also_acceptable: []
+    wrong_units: [nos, rmt, liter, sqft, cum]
+    error_type: unit_confusion
+    error_message: "Wood painting must be in sqm (IS 1200 Part 13). Found {actual_unit} — 'nos' of doors ignores door size; rmt ignores width; liter ignores coverage rate variability."
+    is_code_ref: IS 1200 Part 13
+    common_reason: "Doors quoted per 'nos' when sizes vary; sqm of painted surface is the correct measure (both faces + edges)."
+
+  - item_id_prefix: FIN.WL.EMX
+    canonical_name: Metal painting (windows, grilles, railings, structural steel)
+    correct_unit: sqm
+    also_acceptable: []
+    wrong_units: [nos, rmt, liter, sqft, MT, kg]
+    error_type: unit_confusion
+    error_message: "Metal painting must be in sqm (IS 1200 Part 13). Found {actual_unit} — 'nos' of windows ignores size variation; MT/kg measures material weight not painted area."
+    is_code_ref: IS 1200 Part 13
+    common_reason: "Window painting listed per 'nos of windows' when window sizes differ; structural steel painting sometimes linked to MT of steel rather than sqm painted."
+
+  - item_id_prefix: FIN.WL.TXR
+    canonical_name: Texture paint / textured finish
+    correct_unit: sqm
+    also_acceptable: []
+    wrong_units: [kg, liter, nos, sqft, rmt]
+    error_type: unit_confusion
+    error_message: "Texture paint must be in sqm. Found {actual_unit} — kg/liter coverage varies by texture pattern and application thickness; sqm is the invariant measure."
+    is_code_ref: IS 1200 Part 13
+    common_reason: "Texture paint suppliers quote in kg per sqm (which is coverage, not quantity); BOQs sometimes take the kg column as the BOQ unit."
+
+  - item_id_prefix: EXT.RD.MRK
+    canonical_name: Road markings (thermoplastic, paint)
+    correct_unit: sqm
+    also_acceptable: [rmt]
+    wrong_units: [nos, liter, kg, cum]
+    error_type: unit_confusion
+    error_message: "Road markings may be sqm (area, e.g. pedestrian crossing, parking bays) or rmt (centre lines, lane lines). Found {actual_unit} — nos and material units are incorrect."
+    is_code_ref: IRC 35
+    common_reason: "Line marking quoted in rmt which is correct for lane lines but wrong for large area markings (box junctions, pedestrian crossings)."
+
+  # ---------------------------------------------------------------------------
+  # DOORS AND WINDOWS
+  # ---------------------------------------------------------------------------
+
+  - item_id_prefix: DW.DR.FLS
+    canonical_name: Flush doors (supply and fix)
+    correct_unit: nos
+    also_acceptable: []
+    wrong_units: [sqm, sqft, rmt, cum]
+    error_type: unit_confusion
+    error_message: "Doors (supply and fix) must be in nos (IS 1200 Part 14). Found {actual_unit} — each door is a discrete manufactured item; sqm of door face is unusual and ambiguous."
+    is_code_ref: IS 1200 Part 14
+    common_reason: "sqm used to normalise door cost across sizes, but this is a design exercise not a BOQ measurement."
+
+  - item_id_prefix: DW.DR.FRD
+    canonical_name: Fire-rated door (supply and fix)
+    correct_unit: nos
+    also_acceptable: []
+    wrong_units: [sqm, sqft, rmt, cum]
+    error_type: unit_confusion
+    error_message: "Fire-rated doors must be in nos. Found {actual_unit} — fire doors are certified as complete assemblies; sqm would unbundle the assembly."
+    is_code_ref: IS 3614
+    common_reason: "sqm used for fire doors, splitting the frame, leaf, and hardware which are certified as a system."
+
+  - item_id_prefix: DW.DR.GLS
+    canonical_name: Glass panes / glazing (supply and fix)
+    correct_unit: sqm
+    also_acceptable: []
+    wrong_units: [nos, rmt, cum, kg]
+    error_type: unit_confusion
+    error_message: "Glass panes must be in sqm (IS 1200 Part 14). Found {actual_unit} — 'nos' hides size variation; glass is priced and measured by area."
+    is_code_ref: IS 1200 Part 14
+    common_reason: "Glass listed as 'nos of panes' when pane sizes differ (e.g. full-height glazing vs. small louvres)."
+
+  - item_id_prefix: DW.DR.FLD
+    canonical_name: Roller shutters / rolling grilles
+    correct_unit: sqm
+    also_acceptable: []
+    wrong_units: [nos, rmt, cum, kg]
+    error_type: unit_confusion
+    error_message: "Roller shutters must be in sqm. Found {actual_unit} — 'nos' is acceptable only when all shutters are the same size; varying opening sizes require sqm."
+    is_code_ref: IS 1200 Part 14
+    common_reason: "Shutters listed as 'nos' in BOQs where different shutter sizes are lumped together."
+
+  - item_id_prefix: INT.AC.HDL
+    canonical_name: Door hardware (lock sets, hinges, closers, handles)
+    correct_unit: nos
+    also_acceptable: []
+    wrong_units: [set, rmt, sqm, kg]
+    error_type: ambiguous_unit
+    error_message: "Door hardware must be in nos (individual items). Found {actual_unit} — 'set' is ambiguous because what constitutes a 'set' varies by supplier (e.g. 1 set = 1 lock + 2 hinges, or = full ironmongery schedule)."
+    is_code_ref: IS 1200 Part 14
+    common_reason: "Hardware specified as 'set per door' but the set definition is not stated, making pricing non-comparable."
+
+  # ---------------------------------------------------------------------------
+  # PLUMBING
+  # ---------------------------------------------------------------------------
+
+  - item_id_prefix: PLB.WS.GI
+    canonical_name: GI / MS water supply pipes (supply and fix)
+    correct_unit: rmt
+    also_acceptable: []
+    wrong_units: [nos, sqm, cum, kg]
+    error_type: dimension_mismatch
+    error_message: "Pipes (supply and fix) must be in rmt (IS 1200 Part 15). Found {actual_unit} — 'nos' without length has no measurement basis; pipes are sold and installed by length."
+    is_code_ref: IS 1200 Part 15
+    common_reason: "Pipes listed as 'nos of pipes' meaning number of 6m sticks rather than total installed length; concealed and exposed runs have different unit rates."
+
+  - item_id_prefix: PLB.WS.HDP
+    canonical_name: HDPE / CPVC / uPVC water supply pipes
+    correct_unit: rmt
+    also_acceptable: []
+    wrong_units: [nos, sqm, cum, kg]
+    error_type: dimension_mismatch
+    error_message: "Water supply pipes must be in rmt (IS 1200 Part 15). Found {actual_unit}."
+    is_code_ref: IS 1200 Part 15
+    common_reason: "Same error as GI pipes; 'nos' is ambiguous (is it number of sticks or number of runs?)."
+
+  - item_id_prefix: PLB.WS.FIT
+    canonical_name: Pipe fittings (elbows, tees, reducers, unions)
+    correct_unit: nos
+    also_acceptable: []
+    wrong_units: [rmt, sqm, cum, set, kg]
+    error_type: unit_confusion
+    error_message: "Pipe fittings must be in nos (individual pieces). Found {actual_unit} — rmt applies to straight pipe runs, not fittings; 'set' is ambiguous."
+    is_code_ref: IS 1200 Part 15
+    common_reason: "Fittings sometimes included in the pipe rmt rate ('including fittings') without being measured separately, making scope definition unclear."
+
+  - item_id_prefix: PLB.FX.EWC
+    canonical_name: Sanitary fixtures (WC, washbasin, urinal, kitchen sink)
+    correct_unit: nos
+    also_acceptable: []
+    wrong_units: [set, rmt, sqm, cum]
+    error_type: ambiguous_unit
+    error_message: "Sanitary fixtures must be in nos (IS 1200 Part 15). Found {actual_unit} — 'set' is ambiguous; a WC 'set' may or may not include flush valve, seat cover, and cistern depending on the supplier."
+    is_code_ref: IS 1200 Part 15
+    common_reason: "WC listed as 'set' without clarity on whether it includes the cistern/flush valve, leading to disputed scope at handover."
+
+  - item_id_prefix: PLB.CP.TAP
+    canonical_name: CP fittings (taps, mixers, showers, health faucets)
+    correct_unit: nos
+    also_acceptable: []
+    wrong_units: [set, rmt, sqm, cum]
+    error_type: ambiguous_unit
+    error_message: "CP fittings must be in nos. Found {actual_unit} — 'set' is ambiguous; a shower 'set' varies between brands (head only vs. head + arm + wall flange)."
+    is_code_ref: IS 1200 Part 15
+    common_reason: "Bathroom fitting packages quoted as 'set' without clear item-by-item schedule."
+
+  - item_id_prefix: PLB.TK.OH
+    canonical_name: Overhead / underground water storage tanks
+    correct_unit: nos
+    also_acceptable: [liter]
+    wrong_units: [sqm, rmt, cum, MT, kg]
+    error_type: unit_confusion
+    error_message: "Water tanks must be in nos (with capacity stated) or liter (capacity). Found {actual_unit} — sqm and rmt have no meaning for tanks; MT is weight not capacity."
+    is_code_ref: IS 1200 Part 15
+    common_reason: "Tank capacity omitted when listed as 'nos'; a 500L and 10,000L tank cannot be compared without capacity."
+
+  - item_id_prefix: PLB.PM.CEN
+    canonical_name: Pumps (centrifugal, submersible, booster)
+    correct_unit: nos
+    also_acceptable: []
+    wrong_units: [HP, KW, rmt, sqm, set]
+    error_type: rate_not_quantity
+    error_message: "Pumps must be in nos. Found {actual_unit} — HP and KW are performance ratings, not quantities; they define the type of pump, not how many are installed."
+    is_code_ref: IS 1200 Part 15
+    common_reason: "Pump spec written as '2HP pump - 1 no' but BOQ unit column shows 'HP' instead of 'nos'."
+
+  - item_id_prefix: PLB.STP.MBR
+    canonical_name: Sewage treatment plant (STP) / water treatment plant (WTP)
+    correct_unit: LS
+    also_acceptable: [nos]
+    wrong_units: [sqm, rmt, cum, KLD, MLD]
+    error_type: ambiguous_unit
+    error_message: "STP/WTP should be LS (lump sum, fully specified) or nos (if multiple identical units). Found {actual_unit} — KLD and MLD are capacity ratings, not quantity units."
+    is_code_ref: IS 1200 Part 15
+    common_reason: "STP capacity (KLD) listed as unit; this conflates the design parameter with the BOQ quantity."
+
+  # ---------------------------------------------------------------------------
+  # ELECTRICAL
+  # ---------------------------------------------------------------------------
+
+  - item_id_prefix: ELC.WR.CDT
+    canonical_name: Electrical wiring / cables (FR, FRLS, armoured)
+    correct_unit: rmt
+    also_acceptable: []
+    wrong_units: [sqmm, nos, sqm, kg, cum]
+    error_type: unit_confusion
+    error_message: "Electrical cables must be in rmt (installed length). Found {actual_unit} — sqmm is the conductor cross-section (size), not the quantity; a 2.5 sqmm cable and 16 sqmm cable both run in rmt."
+    is_code_ref: IS 1200 Part 18
+    common_reason: "Cable specifications state cross-section in sqmm and BOQ writer puts sqmm as the unit instead of rmt."
+
+  - item_id_prefix: ELC.WR.ARM
+    canonical_name: Armoured cable (XLPE/SWA, control cable)
+    correct_unit: rmt
+    also_acceptable: []
+    wrong_units: [sqmm, nos, kg, sqm]
+    error_type: unit_confusion
+    error_message: "Armoured cables must be in rmt. Found {actual_unit} — sqmm is conductor size; kg is weight per metre (used in procurement, not BOQ measurement)."
+    is_code_ref: IS 1200 Part 18
+    common_reason: "HT/LT cables quoted in coils (nos) or by drum weight (kg) in procurement; these supply units leak into BOQs."
+
+  - item_id_prefix: ELC.CD.PVC
+    canonical_name: Electrical conduit (PVC, GI, rigid, flexible)
+    correct_unit: rmt
+    also_acceptable: []
+    wrong_units: [sqmm, nos, sqm, kg]
+    error_type: unit_confusion
+    error_message: "Conduit must be in rmt (IS 1200 Part 18). Found {actual_unit} — sqmm describes conduit bore (size), not length installed."
+    is_code_ref: IS 1200 Part 18
+    common_reason: "Conduit spec gives bore in mm; BOQ writer uses mm or sqmm as unit."
+
+  - item_id_prefix: ELC.DB.MCB
+    canonical_name: MCB / MCCB / RCB (circuit breakers)
+    correct_unit: nos
+    also_acceptable: []
+    wrong_units: [amp, KA, set, sqmm, rmt]
+    error_type: rate_not_quantity
+    error_message: "Circuit breakers must be in nos. Found {actual_unit} — amp and KA are ratings (current capacity, breaking capacity), not quantities; they define which MCB to buy, not how many."
+    is_code_ref: IS 8623
+    common_reason: "MCB schedules list rating prominently; BOQ writer records the amp rating in the unit column."
+
+  - item_id_prefix: ELC.SW.SKT
+    canonical_name: Switches, sockets, data points (modular, industrial)
+    correct_unit: nos
+    also_acceptable: []
+    wrong_units: [amp, set, sqm, rmt]
+    error_type: rate_not_quantity
+    error_message: "Switches and sockets must be in nos. Found {actual_unit} — amp is the rating; 'set' is ambiguous (a switch plate 'set' varies from 1 to 8 modules)."
+    is_code_ref: IS 3854
+    common_reason: "Switch schedule uses amp for description; 'set' used for modular plate assemblies without stating module count."
+
+  - item_id_prefix: ELC.FX.LED
+    canonical_name: Light fixtures (LED panel, downlight, street light, floodlight)
+    correct_unit: nos
+    also_acceptable: []
+    wrong_units: [watt, lux, sqm, rmt, set]
+    error_type: rate_not_quantity
+    error_message: "Light fixtures must be in nos. Found {actual_unit} — watt is the power rating; lux is an illuminance level; neither is a quantity unit."
+    is_code_ref: IS 1200 Part 18
+    common_reason: "Lighting schedule specifies wattage per fitting; BOQ copies watt as the unit."
+
+  - item_id_prefix: ELC.CT.RCW
+    canonical_name: Cable tray / cable ladder / cable basket
+    correct_unit: rmt
+    also_acceptable: []
+    wrong_units: [sqm, nos, kg, set]
+    error_type: dimension_mismatch
+    error_message: "Cable tray must be in rmt (IS 1200 Part 18). Found {actual_unit} — cable tray is measured by length of run; sqm does not describe a tray installation."
+    is_code_ref: IS 1200 Part 18
+    common_reason: "Cable tray measured in sqm (as if it were a surface), ignoring that tray width is fixed by specification."
+
+  - item_id_prefix: ELC.ER.EBA
+    canonical_name: Earthing electrode (pipe earth, plate earth, chemical earth)
+    correct_unit: nos
+    also_acceptable: []
+    wrong_units: [rmt, sqm, kg, set]
+    error_type: unit_confusion
+    error_message: "Earthing electrodes must be in nos. Found {actual_unit} — rmt applies to the earth conductor (wire), not to the electrode itself which is a discrete installed item."
+    is_code_ref: IS 3043
+    common_reason: "Earth electrode and earth wire conflated; electrode depth (rmt) confused with electrode count (nos)."
+
+  - item_id_prefix: ELC.DG.100
+    canonical_name: Diesel generator sets
+    correct_unit: nos
+    also_acceptable: [KVA]
+    wrong_units: [KW, HP, rmt, sqm, set]
+    error_type: unit_confusion
+    error_message: "DG sets must be in nos (with KVA rating stated) or KVA. Found {actual_unit} — KW and HP are power ratings, not quantities; 'set' is ambiguous without specifying what is included."
+    is_code_ref: IS 10000
+    common_reason: "DG sets quoted as '250 KVA - 1 set' but the 'set' definition (whether canopy, AMF panel, fuel tank included) is undefined."
+
+  # ---------------------------------------------------------------------------
+  # HVAC
+  # ---------------------------------------------------------------------------
+
+  - item_id_prefix: HVC.SPL.WM
+    canonical_name: Split air conditioners (wall-mounted, cassette, floor-standing)
+    correct_unit: nos
+    also_acceptable: [TR]
+    wrong_units: [KW, HP, BTU, sqm, rmt, set]
+    error_type: unit_confusion
+    error_message: "Split ACs must be in nos (with TR capacity stated) or TR (tons of refrigeration). Found {actual_unit} — KW and HP describe compressor power, not installed quantity; sqm is room area, not AC unit quantity."
+    is_code_ref: IS 1391
+    common_reason: "AC schedules state cooling capacity in KW or HP; BOQ writer copies these into the unit column."
+
+  - item_id_prefix: HVC.DCT.FX
+    canonical_name: Ductwork (GI sheet ducting, pre-insulated ducting)
+    correct_unit: sqm
+    also_acceptable: []
+    wrong_units: [rmt, nos, cum, kg]
+    error_type: dimension_mismatch
+    error_message: "Ductwork must be in sqm (sheet area). Found {actual_unit} — rmt ignores duct cross-section (a 200x200mm duct and 600x600mm duct have the same length but very different material content)."
+    is_code_ref: IS 655
+    common_reason: "Duct runs measured in rmt (centre-line length) instead of developed sheet area; this is a very common error in HVAC BOQs."
+
+  - item_id_prefix: HVC.DIF.SQ
+    canonical_name: Air diffusers, grilles, registers
+    correct_unit: nos
+    also_acceptable: []
+    wrong_units: [sqm, rmt, kg, set]
+    error_type: unit_confusion
+    error_message: "Diffusers and grilles must be in nos. Found {actual_unit} — sqm does not represent discrete installed diffuser units."
+    is_code_ref: IS 655
+    common_reason: "Diffusers occasionally listed in sqm as if they are a continuous surface treatment."
+
+  - item_id_prefix: HVC.AHU.FC
+    canonical_name: Air handling unit (AHU)
+    correct_unit: nos
+    also_acceptable: [TR]
+    wrong_units: [KW, HP, sqm, rmt, CFM, CMH]
+    error_type: unit_confusion
+    error_message: "AHU must be in nos (with TR or airflow rating stated) or TR. Found {actual_unit} — CFM and CMH are airflow ratings, not quantities; KW is motor power."
+    is_code_ref: IS 655
+    common_reason: "AHU schedules specify airflow (CFM/CMH) prominently; BOQ writer records the airflow as the unit."
+
+  - item_id_prefix: HVC.CHL.WC
+    canonical_name: Chiller (air-cooled, water-cooled)
+    correct_unit: TR
+    also_acceptable: [KW]
+    wrong_units: [nos, HP, sqm, rmt, CFM]
+    error_type: unit_confusion
+    error_message: "Chillers may be measured in TR (tons of refrigeration) or KW (cooling power). Found {actual_unit} — 'nos' without capacity is ambiguous; HP and CFM are motor and airflow parameters."
+    is_code_ref: IS 1391
+    common_reason: "Single large chiller listed as '1 nos' without stating TR capacity, making rate verification impossible."
+
+  - item_id_prefix: HVC.PIP.IN
+    canonical_name: Pipe insulation for HVAC chilled/hot water lines
+    correct_unit: rmt
+    also_acceptable: []
+    wrong_units: [sqm, sqft, nos, kg]
+    error_type: dimension_mismatch
+    error_message: "Pipe insulation must be in rmt (IS 1200 Part 19). Found {actual_unit} — sqm applies to flat surfaces (duct insulation), not cylindrical pipe insulation which is measured by pipe length."
+    is_code_ref: IS 1200 Part 19
+    common_reason: "Duct insulation (sqm) and pipe insulation (rmt) conflated in the same line item."
+
+  - item_id_prefix: HVC.DCT.PI
+    canonical_name: Duct insulation (external face, PIR board, glasswool wrap)
+    correct_unit: sqm
+    also_acceptable: []
+    wrong_units: [rmt, nos, kg, cum]
+    error_type: dimension_mismatch
+    error_message: "Duct insulation must be in sqm (surface area of duct). Found {actual_unit} — rmt ignores duct perimeter; kg is material weight not installed area."
+    is_code_ref: IS 1200 Part 19
+    common_reason: "Duct insulation measured in rmt of duct run, missing the cross-section perimeter factor."
+
+  # ---------------------------------------------------------------------------
+  # FIRE SAFETY
+  # ---------------------------------------------------------------------------
+
+  - item_id_prefix: FIR.SK.UPR
+    canonical_name: Sprinkler heads (upright, pendant, sidewall)
+    correct_unit: nos
+    also_acceptable: []
+    wrong_units: [sqm, rmt, set, kg]
+    error_type: unit_confusion
+    error_message: "Sprinkler heads must be in nos. Found {actual_unit} — sqm is the coverage area (design parameter), not the quantity of sprinkler heads installed."
+    is_code_ref: IS 15105
+    common_reason: "Sprinkler coverage area (sqm per head) from the design is used as the BOQ unit instead of counting heads."
+
+  - item_id_prefix: FIR.SP.WET
+    canonical_name: Sprinkler pipe (wet system, dry system)
+    correct_unit: rmt
+    also_acceptable: []
+    wrong_units: [nos, sqm, set, kg]
+    error_type: dimension_mismatch
+    error_message: "Sprinkler pipe must be in rmt. Found {actual_unit} — pipe is measured by length; 'nos' without diameter and length is meaningless."
+    is_code_ref: IS 15105
+    common_reason: "Sprinkler pipe listed as 'nos of pipes' (6m sticks) instead of total installed length."
+
+  - item_id_prefix: FIR.PT.ABC
+    canonical_name: Fire extinguishers (ABC powder, CO2, foam, water)
+    correct_unit: nos
+    also_acceptable: []
+    wrong_units: [kg, liter, set, sqm]
+    error_type: unit_confusion
+    error_message: "Fire extinguishers must be in nos. Found {actual_unit} — kg is the content weight (e.g. '4kg ABC') which describes the type, not how many extinguishers are installed."
+    is_code_ref: IS 2190
+    common_reason: "Extinguisher spec says '4kg ABC' and BOQ records kg as the unit rather than nos."
+
+  - item_id_prefix: FIR.DT.SMK
+    canonical_name: Smoke detectors (photoelectric, ionisation, multi-sensor)
+    correct_unit: nos
+    also_acceptable: []
+    wrong_units: [sqm, rmt, set, kg]
+    error_type: unit_confusion
+    error_message: "Smoke detectors must be in nos. Found {actual_unit} — sqm is the protected area (design parameter); the installed quantity is discrete detector units."
+    is_code_ref: IS 2189
+    common_reason: "Same error as sprinklers — design coverage area used as unit instead of counting detectors."
+
+  - item_id_prefix: FIR.HY.HS
+    canonical_name: Fire hose reel (manual, automatic)
+    correct_unit: nos
+    also_acceptable: []
+    wrong_units: [rmt, sqm, set, kg]
+    error_type: unit_confusion
+    error_message: "Fire hose reels must be in nos. Found {actual_unit} — rmt applies to the hose supply pipe, not to the reel assembly which is a discrete item."
+    is_code_ref: IS 884
+    common_reason: "Hose reel and hose pipe conflated; hose pipe rmt and hose reel nos measured separately."
+
+  # ---------------------------------------------------------------------------
+  # EXTERNAL WORKS
+  # ---------------------------------------------------------------------------
+
+  - item_id_prefix: EXT.RD.CC
+    canonical_name: Road / paving (CC road, bitumen road, block paving)
+    correct_unit: sqm
+    also_acceptable: []
+    wrong_units: [rmt, nos, cum, sqft]
+    error_type: dimension_mismatch
+    error_message: "Road/paving area must be in sqm (IRC/IS codes). Found {actual_unit} — rmt is correct only for kerbs and edging strips, not for paved surface area."
+    is_code_ref: IRC 58
+    common_reason: "Road measured in rmt (road length) when width varies along the alignment; total area (length x width) must be sqm."
+
+  - item_id_prefix: EXT.RD.KRB
+    canonical_name: Kerb and edging (precast CC kerb, granite kerb, raised kerb)
+    correct_unit: rmt
+    also_acceptable: []
+    wrong_units: [sqm, sqft, nos, cum]
+    error_type: dimension_mismatch
+    error_message: "Kerb/edging must be in rmt. Found {actual_unit} — kerb is a linear element; sqm is for paved areas; 'nos' of kerb units ignores unit length."
+    is_code_ref: IRC 58
+    common_reason: "Kerbs listed as 'nos of kerb blocks' without stating block length, making total kerb run impossible to verify."
+
+  - item_id_prefix: EXT.DR.HDP
+    canonical_name: Underground drainage pipe (RCC, PVC, DI, HDPE)
+    correct_unit: rmt
+    also_acceptable: []
+    wrong_units: [nos, sqm, cum, kg]
+    error_type: dimension_mismatch
+    error_message: "Underground drainage pipe must be in rmt (IS 1200 Part 15). Found {actual_unit} — 'nos' of pipe lengths ignores pipe lengths (standard lengths vary by material and dia)."
+    is_code_ref: IS 1200 Part 15
+    common_reason: "Pipes listed as 'nos of pipes' (number of 3m or 6m sticks) instead of total installed length in metres."
+
+  - item_id_prefix: EXT.DR.MHL
+    canonical_name: Manhole / inspection chamber / catch basin
+    correct_unit: nos
+    also_acceptable: []
+    wrong_units: [rmt, sqm, cum, kg]
+    error_type: unit_confusion
+    error_message: "Manholes/inspection chambers must be in nos. Found {actual_unit} — each manhole is a discrete constructed element; rmt has no meaning for a chamber."
+    is_code_ref: IS 1200 Part 15
+    common_reason: "Manhole depth varies; 'nos' is still correct (depth and size defined in the item description)."
+
+  - item_id_prefix: EXT.LS.LWN
+    canonical_name: Landscaping turf / lawn / grass seeding
+    correct_unit: sqm
+    also_acceptable: []
+    wrong_units: [nos, rmt, cum, kg]
+    error_type: dimension_mismatch
+    error_message: "Turf/lawn must be in sqm. Found {actual_unit} — lawn is a surface area treatment; 'nos' of turf rolls depends on roll size which varies."
+    is_code_ref: IS 1200
+    common_reason: "Turf rolls listed as 'nos' when roll sizes vary by supplier."
+
+  - item_id_prefix: EXT.LS.TRE
+    canonical_name: Trees (planting, supply and plant)
+    correct_unit: nos
+    also_acceptable: []
+    wrong_units: [sqm, rmt, cum, kg]
+    error_type: unit_confusion
+    error_message: "Trees must be in nos. Found {actual_unit} — each tree is a discrete planted element; sqm is for ground cover, not individual trees."
+    is_code_ref: IS 1200
+    common_reason: "Tree planting and shrub beds sometimes measured together in sqm; trees should always be 'nos' with girth/height specified."
+
+  - item_id_prefix: EXT.CW.BRK
+    canonical_name: Compound wall / boundary wall
+    correct_unit: rmt
+    also_acceptable: []
+    wrong_units: [sqm, sqft, cum, nos]
+    error_type: unit_confusion
+    error_message: "Compound wall must be in rmt (wall length). Found {actual_unit} — wall height is typically uniform (specified in item description); sqm is also valid but rmt is more commonly specified in IS practice."
+    is_code_ref: IS 1200 Part 3
+    common_reason: "Boundary wall measured in sqm when height varies; rmt with height specification is more practical for a straight wall."

@@ -1,0 +1,1512 @@
+rules:
+  # ============================================================
+  # HOSPITAL DEPENDENCIES
+  # ============================================================
+  - id: "DEP-BLD-001"
+    trigger: "hospital"
+    required_items: ["medical_gas_piping", "nurse_call_system", "emergency_power_100pct"]
+    trade: "medical"
+    priority: 1
+    condition: ""
+    building_types: ["hospital"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "NBC Part 4"
+    note: "Hospital requires medical gas piping, nurse call system, and 100% emergency power backup"
+
+  - id: "DEP-BLD-002"
+    trigger: "hospital"
+    required_items: ["ot_laminar_flow", "ot_hepa_filter", "ot_positive_pressure"]
+    trade: "hvac"
+    priority: 1
+    condition: ""
+    building_types: ["hospital"]
+    room_types: ["ot"]
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "NABH"
+    note: "Operation theatre requires laminar flow, HEPA filtration, and positive pressure"
+
+  - id: "DEP-BLD-003"
+    trigger: "hospital"
+    required_items: ["ramp_stretcher_width", "fire_rated_doors_all", "anti_bacterial_flooring"]
+    trade: "finishing"
+    priority: 1
+    condition: ""
+    building_types: ["hospital"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "NBC Part 4"
+    note: "Hospital: stretcher-width ramps, fire-rated doors throughout, anti-bacterial flooring"
+
+  - id: "DEP-BLD-004"
+    trigger: "hospital"
+    required_items: ["lead_lining_xray", "radiation_shielding"]
+    trade: "specialist"
+    priority: 1
+    condition: ""
+    building_types: ["hospital"]
+    room_types: ["xray", "ct_scan", "radiology"]
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "AERB"
+    note: "Hospital radiology rooms require lead lining and radiation shielding per AERB guidelines"
+
+  - id: "DEP-BLD-005"
+    trigger: "hospital"
+    required_items: ["autoclave_room", "cssd", "dirty_utility", "clean_utility"]
+    trade: "medical"
+    priority: 1
+    condition: ""
+    building_types: ["hospital"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "NABH"
+    note: "Hospital support: autoclave room, CSSD, dirty utility, clean utility rooms"
+
+  - id: "DEP-BLD-006"
+    trigger: "hospital"
+    required_items: ["pneumatic_tube_system"]
+    trade: "specialist"
+    priority: 2
+    condition: "large_hospital"
+    building_types: ["hospital"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 5000
+    is_code_ref: ""
+    note: "Large hospital pneumatic tube system for sample and document transfer"
+
+  - id: "DEP-BLD-007"
+    trigger: "hospital"
+    required_items: ["blood_bank_refrigeration", "mortuary_refrigeration"]
+    trade: "medical"
+    priority: 1
+    condition: ""
+    building_types: ["hospital"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "NABH"
+    note: "Hospital: blood bank refrigeration and mortuary refrigeration facilities"
+
+  - id: "DEP-BLD-008"
+    trigger: "hospital"
+    required_items: ["isolation_room_hvac", "negative_pressure_room"]
+    trade: "hvac"
+    priority: 1
+    condition: ""
+    building_types: ["hospital"]
+    room_types: ["isolation"]
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "NABH"
+    note: "Hospital isolation rooms require dedicated HVAC with negative pressure"
+
+  - id: "DEP-BLD-009"
+    trigger: "hospital"
+    required_items: ["medical_waste_room", "color_coded_bins", "waste_treatment"]
+    trade: "medical"
+    priority: 1
+    condition: ""
+    building_types: ["hospital"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "BMW Rules 2016"
+    note: "Hospital: medical waste room with color-coded bins per BMW Rules 2016"
+
+  - id: "DEP-BLD-010"
+    trigger: "hospital"
+    required_items: ["patient_bed_head_panel", "gas_outlet", "nurse_call_point", "electrical_outlets"]
+    trade: "medical"
+    priority: 1
+    condition: ""
+    building_types: ["hospital"]
+    room_types: ["ward", "icu", "patient_room"]
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "NABH"
+    note: "Hospital patient areas: bed head panel with gas outlets, nurse call, electrical"
+
+  - id: "DEP-BLD-011"
+    trigger: "hospital"
+    required_items: ["pharmacy", "laboratory", "imaging_department", "emergency_department"]
+    trade: "medical"
+    priority: 1
+    condition: ""
+    building_types: ["hospital"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "NABH"
+    note: "Hospital core departments: pharmacy, laboratory, imaging, emergency"
+
+  # ============================================================
+  # SCHOOL DEPENDENCIES
+  # ============================================================
+  - id: "DEP-BLD-012"
+    trigger: "school"
+    required_items: ["assembly_hall", "playground", "ramp_access", "disabled_toilet"]
+    trade: "finishing"
+    priority: 1
+    condition: ""
+    building_types: ["school"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "NBC Part 4"
+    note: "School: assembly hall, playground, ramp access, disabled toilet"
+
+  - id: "DEP-BLD-013"
+    trigger: "school"
+    required_items: ["panic_bar_doors", "anti_skid_corridors", "pa_system", "emergency_lighting"]
+    trade: "fire_safety"
+    priority: 1
+    condition: ""
+    building_types: ["school"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "NBC Part 4"
+    note: "School safety: panic bar doors, anti-skid corridors, PA system, emergency lighting"
+
+  - id: "DEP-BLD-014"
+    trigger: "school"
+    required_items: ["library", "laboratory_science", "computer_room"]
+    trade: "finishing"
+    priority: 1
+    condition: ""
+    building_types: ["school"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "School academic: library, science laboratory, computer room"
+
+  - id: "DEP-BLD-015"
+    trigger: "school"
+    required_items: ["sick_room", "staff_room", "principal_office", "admin_block"]
+    trade: "finishing"
+    priority: 1
+    condition: ""
+    building_types: ["school"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "School support: sick room, staff room, principal office, admin block"
+
+  - id: "DEP-BLD-016"
+    trigger: "school"
+    required_items: ["classroom_ventilation", "natural_light_min_20pct", "blackboard_green"]
+    trade: "finishing"
+    priority: 1
+    condition: ""
+    building_types: ["school"]
+    room_types: ["classroom"]
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "NBC Part 8"
+    note: "Classroom: adequate ventilation, minimum 20% natural light, green board"
+
+  - id: "DEP-BLD-017"
+    trigger: "school"
+    required_items: ["fire_escape_staircase", "emergency_assembly_point"]
+    trade: "fire_safety"
+    priority: 1
+    condition: ""
+    building_types: ["school"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "NBC Part 4"
+    note: "School fire safety: escape staircases and designated assembly point"
+
+  # ============================================================
+  # HOTEL DEPENDENCIES
+  # ============================================================
+  - id: "DEP-BLD-018"
+    trigger: "hotel"
+    required_items: ["central_ac", "hot_water_central", "laundry_facility", "kitchen_exhaust_hood"]
+    trade: "hvac"
+    priority: 1
+    condition: ""
+    building_types: ["hotel"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Hotel: central AC, central hot water, laundry, kitchen exhaust hood"
+
+  - id: "DEP-BLD-019"
+    trigger: "hotel"
+    required_items: ["grease_trap", "fire_sprinkler_all_rooms", "dg_100pct_backup"]
+    trade: "plumbing"
+    priority: 1
+    condition: ""
+    building_types: ["hotel"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "NBC Part 4"
+    note: "Hotel: grease trap, sprinklers in all rooms, 100% DG backup"
+
+  - id: "DEP-BLD-020"
+    trigger: "hotel"
+    required_items: ["card_access_system", "cctv_full_coverage", "guest_elevator", "service_elevator"]
+    trade: "electrical"
+    priority: 1
+    condition: ""
+    building_types: ["hotel"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Hotel: card access, full CCTV, separate guest and service elevators"
+
+  - id: "DEP-BLD-021"
+    trigger: "hotel"
+    required_items: ["banquet_hall", "swimming_pool", "spa", "gym", "restaurant_kitchen"]
+    trade: "finishing"
+    priority: 2
+    condition: ""
+    building_types: ["hotel"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Hotel amenities: banquet hall, pool, spa, gym, restaurant kitchen"
+
+  - id: "DEP-BLD-022"
+    trigger: "hotel"
+    required_items: ["bar_area", "reception_desk", "concierge", "housekeeping_room"]
+    trade: "finishing"
+    priority: 1
+    condition: ""
+    building_types: ["hotel"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Hotel operations: bar, reception, concierge, housekeeping room per floor"
+
+  - id: "DEP-BLD-023"
+    trigger: "hotel_room"
+    required_items: ["minibar_point", "safe_locker", "luggage_rack", "curtain_blackout", "bedside_control_panel"]
+    trade: "finishing"
+    priority: 1
+    condition: ""
+    building_types: ["hotel"]
+    room_types: ["hotel_room"]
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Hotel room: minibar, safe, luggage rack, blackout curtain, bedside control panel"
+
+  - id: "DEP-BLD-024"
+    trigger: "hotel"
+    required_items: ["iptv_system", "pabx", "wake_up_call_system"]
+    trade: "electrical"
+    priority: 2
+    condition: ""
+    building_types: ["hotel"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Hotel technology: IPTV, PABX telephone system, wake-up call system"
+
+  # ============================================================
+  # DATA CENTER DEPENDENCIES
+  # ============================================================
+  - id: "DEP-BLD-025"
+    trigger: "data_center"
+    required_items: ["precision_ac_n_plus_1", "raised_floor_600mm", "ups_2n_redundancy"]
+    trade: "hvac"
+    priority: 1
+    condition: ""
+    building_types: ["data_center"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "TIA-942"
+    note: "Data center: precision AC N+1, 600mm raised floor, UPS 2N redundancy"
+
+  - id: "DEP-BLD-026"
+    trigger: "data_center"
+    required_items: ["dg_n_plus_1", "fire_suppression_gas_system", "vesda_detection"]
+    trade: "fire_safety"
+    priority: 1
+    condition: ""
+    building_types: ["data_center"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "TIA-942"
+    note: "Data center: DG N+1, gas-based fire suppression, VESDA early detection"
+
+  - id: "DEP-BLD-027"
+    trigger: "data_center"
+    required_items: ["rodent_proof_cable_entry", "water_leak_detection", "biometric_access"]
+    trade: "electrical"
+    priority: 1
+    condition: ""
+    building_types: ["data_center"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Data center: rodent-proof cable entry, water leak detection, biometric access"
+
+  - id: "DEP-BLD-028"
+    trigger: "data_center"
+    required_items: ["bms_full", "structured_cabling_cat6a", "fibre_backbone"]
+    trade: "electrical"
+    priority: 1
+    condition: ""
+    building_types: ["data_center"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Data center: full BMS, Cat6A structured cabling, fibre optic backbone"
+
+  - id: "DEP-BLD-029"
+    trigger: "data_center"
+    required_items: ["hot_cold_aisle_containment", "cable_containment_system"]
+    trade: "hvac"
+    priority: 1
+    condition: ""
+    building_types: ["data_center"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Data center: hot/cold aisle containment and structured cable containment"
+
+  - id: "DEP-BLD-030"
+    trigger: "data_center"
+    required_items: ["sts_static_transfer_switch", "pdu_power_distribution"]
+    trade: "electrical"
+    priority: 1
+    condition: ""
+    building_types: ["data_center"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Data center: STS for seamless power transfer, PDU for rack-level distribution"
+
+  # ============================================================
+  # FACTORY DEPENDENCIES
+  # ============================================================
+  - id: "DEP-BLD-031"
+    trigger: "factory"
+    required_items: ["eot_crane", "loading_dock", "industrial_floor_vdf"]
+    trade: "structural"
+    priority: 1
+    condition: ""
+    building_types: ["factory"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "Factories Act"
+    note: "Factory: EOT crane, loading dock, VDF industrial floor"
+
+  - id: "DEP-BLD-032"
+    trigger: "factory"
+    required_items: ["overhead_door", "industrial_ventilation", "compressed_air_system"]
+    trade: "mechanical"
+    priority: 1
+    condition: ""
+    building_types: ["factory"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "Factories Act"
+    note: "Factory: overhead doors, industrial ventilation, compressed air"
+
+  - id: "DEP-BLD-033"
+    trigger: "factory"
+    required_items: ["etp_effluent_treatment", "hazardous_storage"]
+    trade: "specialist"
+    priority: 1
+    condition: "chemical_process"
+    building_types: ["factory"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "CPCB"
+    note: "Chemical factory: effluent treatment plant and hazardous material storage"
+
+  - id: "DEP-BLD-034"
+    trigger: "factory"
+    required_items: ["fire_hydrant_system", "emergency_shower", "first_aid_room"]
+    trade: "fire_safety"
+    priority: 1
+    condition: ""
+    building_types: ["factory"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "Factories Act"
+    note: "Factory safety: fire hydrant, emergency shower, first aid room"
+
+  - id: "DEP-BLD-035"
+    trigger: "factory"
+    required_items: ["canteen", "toilet_blocks_per_nbc", "workers_rest_area"]
+    trade: "finishing"
+    priority: 1
+    condition: ""
+    building_types: ["factory"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "Factories Act"
+    note: "Factory welfare: canteen, toilet blocks per NBC ratio, workers rest area"
+
+  - id: "DEP-BLD-036"
+    trigger: "factory"
+    required_items: ["crane_beam", "gantry_rail", "crane_power"]
+    trade: "structural"
+    priority: 1
+    condition: "eot_crane_required"
+    building_types: ["factory"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 807"
+    note: "Factory crane: crane beam, gantry rails, crane power supply per IS 807"
+
+  - id: "DEP-BLD-037"
+    trigger: "factory"
+    required_items: ["dust_collection", "fume_extraction", "noise_control"]
+    trade: "mechanical"
+    priority: 1
+    condition: "manufacturing"
+    building_types: ["factory"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "Factories Act"
+    note: "Manufacturing factory: dust collection, fume extraction, noise control"
+
+  # ============================================================
+  # RETAIL / MALL DEPENDENCIES
+  # ============================================================
+  - id: "DEP-BLD-038"
+    trigger: "retail_mall"
+    required_items: ["escalator", "travelator", "fire_sprinkler_throughout"]
+    trade: "vertical_transport"
+    priority: 1
+    condition: ""
+    building_types: ["retail_mall"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "NBC Part 4"
+    note: "Retail mall: escalators, travelators, fire sprinklers throughout"
+
+  - id: "DEP-BLD-039"
+    trigger: "retail_mall"
+    required_items: ["smoke_exhaust_system", "pa_voice_evacuation", "cctv_system"]
+    trade: "fire_safety"
+    priority: 1
+    condition: ""
+    building_types: ["retail_mall"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "NBC Part 4"
+    note: "Mall safety: smoke exhaust, PA/voice evacuation, CCTV"
+
+  - id: "DEP-BLD-040"
+    trigger: "retail_mall"
+    required_items: ["central_ac_system", "dg_backup", "parking_ventilation"]
+    trade: "hvac"
+    priority: 1
+    condition: ""
+    building_types: ["retail_mall"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Mall services: central AC, DG backup, parking ventilation"
+
+  - id: "DEP-BLD-041"
+    trigger: "retail_mall"
+    required_items: ["loading_bay", "fire_fighting_lift", "atrium_smoke_management"]
+    trade: "services"
+    priority: 1
+    condition: ""
+    building_types: ["retail_mall"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "NBC Part 4"
+    note: "Mall: loading bay, fire-fighting lift, atrium smoke management"
+
+  - id: "DEP-BLD-042"
+    trigger: "retail_mall"
+    required_items: ["tenant_metering", "common_area_maintenance", "food_court_exhaust"]
+    trade: "services"
+    priority: 1
+    condition: ""
+    building_types: ["retail_mall"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Mall operations: tenant metering, CAM provisions, food court exhaust"
+
+  # ============================================================
+  # WAREHOUSE DEPENDENCIES
+  # ============================================================
+  - id: "DEP-BLD-043"
+    trigger: "warehouse"
+    required_items: ["high_bay_racking", "dock_leveller", "industrial_floor"]
+    trade: "structural"
+    priority: 1
+    condition: ""
+    building_types: ["warehouse"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Warehouse: high bay racking, dock levellers, industrial floor"
+
+  - id: "DEP-BLD-044"
+    trigger: "warehouse"
+    required_items: ["fire_sprinkler_esfr", "fire_hydrant_system", "ventilation_natural_or_mech"]
+    trade: "fire_safety"
+    priority: 1
+    condition: ""
+    building_types: ["warehouse"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "NBC Part 4"
+    note: "Warehouse safety: ESFR sprinklers, fire hydrant, ventilation"
+
+  - id: "DEP-BLD-045"
+    trigger: "warehouse"
+    required_items: ["security_system", "loading_area", "office_area"]
+    trade: "services"
+    priority: 1
+    condition: ""
+    building_types: ["warehouse"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Warehouse operations: security, loading area, office area"
+
+  - id: "DEP-BLD-046"
+    trigger: "warehouse"
+    required_items: ["overhead_door_motorized", "canopy_loading", "truck_bay"]
+    trade: "external"
+    priority: 1
+    condition: ""
+    building_types: ["warehouse"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Warehouse: motorized overhead doors, loading canopy, truck bays"
+
+  # ============================================================
+  # RELIGIOUS BUILDING DEPENDENCIES - TEMPLE
+  # ============================================================
+  - id: "DEP-BLD-047"
+    trigger: "temple"
+    required_items: ["assembly_ventilation", "acoustic_treatment", "ceremonial_lighting"]
+    trade: "services"
+    priority: 1
+    condition: ""
+    building_types: ["temple"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Temple: assembly ventilation, acoustic treatment, ceremonial lighting"
+
+  - id: "DEP-BLD-048"
+    trigger: "temple"
+    required_items: ["prayer_hall", "community_kitchen", "shoe_stand"]
+    trade: "finishing"
+    priority: 1
+    condition: ""
+    building_types: ["temple"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Temple: prayer hall, community kitchen (bhandara), shoe stand area"
+
+  - id: "DEP-BLD-049"
+    trigger: "temple"
+    required_items: ["stone_flooring_premium", "ornamental_work", "sanctum_finish"]
+    trade: "finishing"
+    priority: 1
+    condition: ""
+    building_types: ["temple"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Temple finishing: premium stone flooring, ornamental work, sanctum finish"
+
+  # ============================================================
+  # RELIGIOUS BUILDING DEPENDENCIES - MOSQUE
+  # ============================================================
+  - id: "DEP-BLD-050"
+    trigger: "mosque"
+    required_items: ["assembly_ventilation", "acoustic_treatment", "ceremonial_lighting"]
+    trade: "services"
+    priority: 1
+    condition: ""
+    building_types: ["mosque"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Mosque: assembly ventilation, acoustic treatment, ceremonial lighting"
+
+  - id: "DEP-BLD-051"
+    trigger: "mosque"
+    required_items: ["ablution_area", "prayer_hall_carpeted", "minaret"]
+    trade: "finishing"
+    priority: 1
+    condition: ""
+    building_types: ["mosque"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Mosque: ablution (wudu) area with water supply, carpeted prayer hall, minaret"
+
+  - id: "DEP-BLD-052"
+    trigger: "mosque"
+    required_items: ["mihrab_niche", "qibla_wall", "shoe_storage"]
+    trade: "finishing"
+    priority: 1
+    condition: ""
+    building_types: ["mosque"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Mosque: mihrab niche, qibla wall orientation, shoe storage area"
+
+  # ============================================================
+  # RELIGIOUS BUILDING DEPENDENCIES - CHURCH
+  # ============================================================
+  - id: "DEP-BLD-053"
+    trigger: "church"
+    required_items: ["assembly_ventilation", "acoustic_treatment", "ceremonial_lighting"]
+    trade: "services"
+    priority: 1
+    condition: ""
+    building_types: ["church"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Church: assembly ventilation, acoustic treatment, ceremonial lighting"
+
+  - id: "DEP-BLD-054"
+    trigger: "church"
+    required_items: ["prayer_hall_pews", "altar_area", "bell_tower"]
+    trade: "finishing"
+    priority: 1
+    condition: ""
+    building_types: ["church"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Church: prayer hall with pews, altar area, bell tower"
+
+  - id: "DEP-BLD-055"
+    trigger: "church"
+    required_items: ["stained_glass", "community_hall", "vestry"]
+    trade: "finishing"
+    priority: 2
+    condition: ""
+    building_types: ["church"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Church: stained glass windows, community hall, vestry (sacristy)"
+
+  # ============================================================
+  # COMMERCIAL OFFICE DEPENDENCIES
+  # ============================================================
+  - id: "DEP-BLD-056"
+    trigger: "commercial_office"
+    required_items: ["central_ac", "false_ceiling_throughout", "raised_floor_optional", "structured_cabling"]
+    trade: "hvac"
+    priority: 1
+    condition: ""
+    building_types: ["commercial"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Commercial office: central AC, false ceiling, optional raised floor, structured cabling"
+
+  - id: "DEP-BLD-057"
+    trigger: "commercial_office"
+    required_items: ["access_control", "fire_alarm_addressable", "emergency_lighting"]
+    trade: "electrical"
+    priority: 1
+    condition: ""
+    building_types: ["commercial"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "NBC Part 4"
+    note: "Commercial office: access control, addressable fire alarm, emergency lighting"
+
+  - id: "DEP-BLD-058"
+    trigger: "commercial_office"
+    required_items: ["pantry_per_floor", "conference_room", "server_room"]
+    trade: "finishing"
+    priority: 1
+    condition: ""
+    building_types: ["commercial"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Commercial office: pantry per floor, conference rooms, server room"
+
+  # ============================================================
+  # RESIDENTIAL APARTMENT DEPENDENCIES
+  # ============================================================
+  - id: "DEP-BLD-059"
+    trigger: "residential_apartment"
+    required_items: ["common_area_finishing", "lobby_per_floor", "staircase_finishing", "lift"]
+    trade: "finishing"
+    priority: 1
+    condition: ""
+    building_types: ["residential_apartment"]
+    room_types: []
+    min_floors: 4
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Residential apartment: common area finishing, lobby per floor, staircase, lift"
+
+  - id: "DEP-BLD-060"
+    trigger: "residential_apartment"
+    required_items: ["intercom_system", "cctv_common_areas", "fire_system"]
+    trade: "electrical"
+    priority: 1
+    condition: ""
+    building_types: ["residential_apartment"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Residential apartment: intercom, CCTV in common areas, fire system"
+
+  - id: "DEP-BLD-061"
+    trigger: "residential_apartment"
+    required_items: ["society_office", "maintenance_staff_room", "common_toilet"]
+    trade: "finishing"
+    priority: 2
+    condition: ""
+    building_types: ["residential_apartment"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Residential apartment: society office, maintenance staff room, common toilet"
+
+  # ============================================================
+  # INDIVIDUAL HOUSE (VILLA) DEPENDENCIES
+  # ============================================================
+  - id: "DEP-BLD-062"
+    trigger: "individual_house"
+    required_items: ["boundary_wall", "gate", "car_porch", "garden", "overhead_tank"]
+    trade: "external"
+    priority: 1
+    condition: ""
+    building_types: ["residential_villa"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Individual house: boundary wall, gate, car porch, garden, overhead tank"
+
+  - id: "DEP-BLD-063"
+    trigger: "individual_house"
+    required_items: ["septic_tank_or_sewer", "rwh", "bore_well_optional"]
+    trade: "plumbing"
+    priority: 1
+    condition: ""
+    building_types: ["residential_villa"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Individual house: septic tank or sewer connection, RWH, optional bore well"
+
+  # ============================================================
+  # AUDITORIUM DEPENDENCIES
+  # ============================================================
+  - id: "DEP-BLD-064"
+    trigger: "auditorium"
+    required_items: ["acoustic_design", "stage_structure", "seating_system", "sound_system", "lighting_system"]
+    trade: "specialist"
+    priority: 1
+    condition: ""
+    building_types: ["auditorium"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "NBC Part 4"
+    note: "Auditorium: acoustic design, stage, seating, sound system, theatrical lighting"
+
+  - id: "DEP-BLD-065"
+    trigger: "auditorium"
+    required_items: ["fire_curtain_stage", "emergency_exits_multiple", "sprinkler_system"]
+    trade: "fire_safety"
+    priority: 1
+    condition: ""
+    building_types: ["auditorium"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "NBC Part 4"
+    note: "Auditorium fire safety: fire curtain at stage, multiple exits, sprinklers"
+
+  # ============================================================
+  # SPORTS FACILITY DEPENDENCIES
+  # ============================================================
+  - id: "DEP-BLD-066"
+    trigger: "sports_complex"
+    required_items: ["playing_surface", "seating_grandstand", "flood_lighting", "changing_rooms", "medical_room"]
+    trade: "specialist"
+    priority: 1
+    condition: ""
+    building_types: ["sports"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Sports complex: playing surface, grandstand, flood lighting, changing rooms, medical"
+
+  # ============================================================
+  # LABORATORY BUILDING DEPENDENCIES
+  # ============================================================
+  - id: "DEP-BLD-067"
+    trigger: "laboratory"
+    required_items: ["fume_hood", "lab_bench", "emergency_shower", "eye_wash", "gas_piping"]
+    trade: "specialist"
+    priority: 1
+    condition: ""
+    building_types: ["laboratory"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Laboratory: fume hoods, lab benches, emergency shower, eye wash, gas piping"
+
+  - id: "DEP-BLD-068"
+    trigger: "laboratory"
+    required_items: ["acid_resistant_flooring", "chemical_storage", "waste_treatment"]
+    trade: "finishing"
+    priority: 1
+    condition: ""
+    building_types: ["laboratory"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Laboratory: acid-resistant flooring, chemical storage, waste treatment"
+
+  # ============================================================
+  # MIXED USE DEVELOPMENT DEPENDENCIES
+  # ============================================================
+  - id: "DEP-BLD-069"
+    trigger: "mixed_use"
+    required_items: ["separate_entry_residential", "separate_entry_commercial", "separate_fire_system"]
+    trade: "services"
+    priority: 1
+    condition: ""
+    building_types: ["mixed_use"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "NBC Part 4"
+    note: "Mixed use: separate entries for residential and commercial, separate fire systems"
+
+  - id: "DEP-BLD-070"
+    trigger: "mixed_use"
+    required_items: ["separate_metering", "separate_parking", "fire_separation"]
+    trade: "services"
+    priority: 1
+    condition: ""
+    building_types: ["mixed_use"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "NBC Part 4"
+    note: "Mixed use: separate metering, parking, and fire compartmentalization"
+
+  # ============================================================
+  # CINEMA / MULTIPLEX DEPENDENCIES
+  # ============================================================
+  - id: "DEP-BLD-071"
+    trigger: "cinema"
+    required_items: ["acoustic_isolation", "projection_room", "recliner_seats", "sound_system_surround"]
+    trade: "specialist"
+    priority: 1
+    condition: ""
+    building_types: ["cinema"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Cinema: acoustic isolation, projection room, seats, surround sound"
+
+  - id: "DEP-BLD-072"
+    trigger: "cinema"
+    required_items: ["emergency_exit_illuminated", "aisle_lighting", "fire_sprinkler", "smoke_exhaust"]
+    trade: "fire_safety"
+    priority: 1
+    condition: ""
+    building_types: ["cinema"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "NBC Part 4"
+    note: "Cinema safety: illuminated exits, aisle lighting, sprinklers, smoke exhaust"
+
+  # ============================================================
+  # CONVENTION CENTER DEPENDENCIES
+  # ============================================================
+  - id: "DEP-BLD-073"
+    trigger: "convention_center"
+    required_items: ["large_span_structure", "flexible_partitions", "av_infrastructure", "loading_dock"]
+    trade: "structural"
+    priority: 1
+    condition: ""
+    building_types: ["convention"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Convention center: large span, flexible partitions, AV infrastructure, loading dock"
+
+  # ============================================================
+  # OLD AGE HOME DEPENDENCIES
+  # ============================================================
+  - id: "DEP-BLD-074"
+    trigger: "old_age_home"
+    required_items: ["anti_skid_flooring_throughout", "handrails_corridors", "wheelchair_access", "nurse_call"]
+    trade: "finishing"
+    priority: 1
+    condition: ""
+    building_types: ["old_age_home"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "RPwD Act 2016"
+    note: "Old age home: anti-skid floors, corridor handrails, wheelchair access, nurse call"
+
+  - id: "DEP-BLD-075"
+    trigger: "old_age_home"
+    required_items: ["grab_bars_toilet", "walk_in_shower", "emergency_pull_cord"]
+    trade: "plumbing"
+    priority: 1
+    condition: ""
+    building_types: ["old_age_home"]
+    room_types: ["toilet"]
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Old age home toilets: grab bars, walk-in shower, emergency pull cord"
+
+  # ============================================================
+  # COLD STORAGE DEPENDENCIES
+  # ============================================================
+  - id: "DEP-BLD-076"
+    trigger: "cold_storage"
+    required_items: ["insulated_panel_walls", "insulated_panel_ceiling", "refrigeration_system", "air_lock_door"]
+    trade: "specialist"
+    priority: 1
+    condition: ""
+    building_types: ["cold_storage"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Cold storage: insulated panels, refrigeration system, air lock doors"
+
+  - id: "DEP-BLD-077"
+    trigger: "cold_storage"
+    required_items: ["floor_heating_anti_frost", "condensate_management", "temperature_monitoring"]
+    trade: "specialist"
+    priority: 1
+    condition: ""
+    building_types: ["cold_storage"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Cold storage: floor heating to prevent frost heave, condensate, temperature monitoring"
+
+  # ============================================================
+  # PETROL PUMP / GAS STATION DEPENDENCIES
+  # ============================================================
+  - id: "DEP-BLD-078"
+    trigger: "petrol_pump"
+    required_items: ["underground_tank", "dispenser", "canopy", "fire_system", "spill_containment"]
+    trade: "specialist"
+    priority: 1
+    condition: ""
+    building_types: ["petrol_pump"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "PESO"
+    note: "Petrol pump: underground tanks, dispensers, canopy, fire safety, spill containment"
+
+  # ============================================================
+  # IT PARK / TECH CAMPUS DEPENDENCIES
+  # ============================================================
+  - id: "DEP-BLD-079"
+    trigger: "it_park"
+    required_items: ["high_speed_internet_backbone", "ups_centralized", "dg_backup", "access_control"]
+    trade: "electrical"
+    priority: 1
+    condition: ""
+    building_types: ["it_park"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "IT park: high-speed internet backbone, centralized UPS, DG backup, access control"
+
+  # ============================================================
+  # MULTI-LEVEL PARKING DEPENDENCIES
+  # ============================================================
+  - id: "DEP-BLD-080"
+    trigger: "multi_level_parking"
+    required_items: ["ramp_system", "parking_guidance", "ventilation_co_detection", "fire_sprinkler", "cctv"]
+    trade: "services"
+    priority: 1
+    condition: ""
+    building_types: ["parking"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "NBC Part 4"
+    note: "Multi-level parking: ramps, parking guidance, ventilation, sprinklers, CCTV"
+
+  # ============================================================
+  # HOSPITAL - INFECTION CONTROL
+  # ============================================================
+  - id: "DEP-BLD-081"
+    trigger: "hospital"
+    required_items: ["hepa_filtration_ot_and_icu", "negative_pressure_isolation_rooms", "infection_control_risk_assessment_during_construction"]
+    trade: "hvac"
+    priority: 1
+    condition: ""
+    building_types: ["hospital"]
+    room_types: ["ot", "icu", "isolation"]
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "NABH"
+    note: "HEPA filtration (H14 class, >99.995% efficiency for 0.3µm particles) is mandatory in OTs and ICUs per NABH guidelines — inadequate filtration causes post-operative infections (SSI) which are a leading cause of hospital mortality; isolation rooms for infectious patients must maintain negative pressure (-8 Pa) to prevent airborne pathogen escape; ICRA (Infection Control Risk Assessment) during hospital construction or renovation protects existing patients from fungal spores released by demolition dust"
+
+  # ============================================================
+  # DATA CENTRE - PRECISION AC, UPS, FM200
+  # ============================================================
+  - id: "DEP-BLD-082"
+    trigger: "data_center"
+    required_items: ["pac_with_free_cooling_economiser", "ups_2n_with_bypass", "fm200_or_novec_fire_suppression"]
+    trade: "hvac"
+    priority: 1
+    condition: ""
+    building_types: ["data_center"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "TIA-942"
+    note: "Precision AC with free cooling economiser operates in partial economiser mode (Indian conditions) reducing compressor run-time by 20-40% in winter months; UPS 2N topology (two independent UPS paths to each PDU) provides double fault tolerance — minimum requirement for Tier III data centre; FM200 or Novec 1230 gas suppression must discharge within 10 seconds to suppress Class C electrical fires without water damage to servers worth hundreds of crores"
+
+  # ============================================================
+  # SCHOOL - ACOUSTIC TREATMENT IN CLASSROOMS
+  # ============================================================
+  - id: "DEP-BLD-083"
+    trigger: "school"
+    required_items: ["acoustic_tiles_classrooms_nrc_0_5_min", "sound_insulation_between_classrooms", "pa_system_for_emergency_evacuation"]
+    trade: "finishing"
+    priority: 1
+    condition: ""
+    building_types: ["school"]
+    room_types: ["classroom"]
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "NBC Part 8"
+    note: "NBC Part 8 specifies reverberation time 0.4-0.6 seconds for classrooms (achieved with NRC 0.5 acoustic tiles on ceiling) — high reverberation makes speech intelligibility poor, particularly for students with hearing difficulties; sound insulation between classrooms (STC 45 minimum) prevents noise from active classes disturbing adjacent classes; PA system with emergency tone must reach every classroom for lockdown or evacuation — increasingly required by CBSE affiliation guidelines"
+
+  # ============================================================
+  # HOTEL - GRMS AND CARD ACCESS
+  # ============================================================
+  - id: "DEP-BLD-084"
+    trigger: "hotel"
+    required_items: ["grms_guest_room_management_system", "card_key_access_all_guest_rooms", "dnd_mur_panel_at_door"]
+    trade: "electrical"
+    priority: 1
+    condition: "three_star_plus"
+    building_types: ["hotel"]
+    room_types: ["hotel_room"]
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "GRMS (Guest Room Management System) integrates card key status, room temperature, lighting, DND/MUR signals and sends to BMS — when card is removed, GRMS can automatically set back HVAC setpoint saving 20-30% room energy; card key access to guest rooms is standard practice for security and GRMS integration; DND/Make Up Room panel at door avoids staff disturbing guests, improving guest satisfaction scores which directly affect online ratings"
+
+  # ============================================================
+  # INDUSTRIAL - EXPLOSION-PROOF FITTINGS
+  # ============================================================
+  - id: "DEP-BLD-085"
+    trigger: "industrial_hazardous_zone"
+    required_items: ["explosion_proof_fittings_zone_1_or_2", "atex_or_iecex_certified_equipment", "hazardous_area_classification_drawing"]
+    trade: "electrical"
+    priority: 1
+    condition: "flammable_gas_vapour_or_dust"
+    building_types: ["factory", "petrol_pump"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 5572"
+    note: "IS 5572 (IEC 60079) requires hazardous area classification (Zone 0, 1, 2 for gas/vapour; Zone 20, 21, 22 for dust) before electrical design — standard electrical fittings in Zone 1 are a potential ignition source; all equipment in hazardous zones must be ATEX or IECEx certified for the applicable zone and gas group; hazardous area classification drawing (HAC drawing) must be submitted with electrical design for factory license and PESO approval"
+
+  # ============================================================
+  # RESIDENTIAL ABOVE 20 UNITS - RWH, STP, OWC
+  # ============================================================
+  - id: "DEP-BLD-086"
+    trigger: "residential_apartment_above_20_units"
+    required_items: ["rwh_rainwater_harvesting", "stp_sewage_treatment_plant", "owc_organic_waste_converter"]
+    trade: "plumbing"
+    priority: 1
+    condition: "above_20_dwelling_units"
+    building_types: ["residential_apartment"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "Local Bylaws / CPCB"
+    note: "Most state building rules now mandate RWH (recharge structures for plots above 100 sqm), STP (sewage treatment for >10 units or 10000 sqft), and OWC (organic waste composter for kitchen waste) for residential apartments above 20 units — RERA completion certificate is withheld if these are absent; STP treated water must achieve CPCB norms (BOD < 10 mg/L) and be reused for landscaping and flushing; OWC converts kitchen waste to manure, diverting it from municipal garbage"
+
+  # ============================================================
+  # COMMERCIAL - ENERGY AUDIT AND SUB-METERING
+  # ============================================================
+  - id: "DEP-BLD-087"
+    trigger: "commercial_building"
+    required_items: ["energy_audit_provision", "sub_metering_per_tenant", "check_meters_hvac_lighting_common"]
+    trade: "electrical"
+    priority: 2
+    condition: "above_500sqm"
+    building_types: ["commercial", "hotel", "hospital"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 500
+    is_code_ref: "ECBC 2017"
+    note: "ECBC 2017 requires energy metering provisions in commercial buildings — sub-metering per tenant enables cost-recovery and incentivises tenant energy conservation; check meters for HVAC, lighting, and common area loads allow performance benchmarking against design EPI (Energy Performance Index) target; BEE Star Rating for commercial buildings requires 1-2 years of sub-metered energy data demonstrating kWh/sqm.yr performance"
+
+  # ============================================================
+  # HOSPITAL - WASTE MANAGEMENT
+  # ============================================================
+  - id: "DEP-BLD-088"
+    trigger: "hospital"
+    required_items: ["biomedical_waste_segregation_room", "color_coded_waste_bins_4_categories", "approved_cbwtf_tie_up"]
+    trade: "medical"
+    priority: 1
+    condition: ""
+    building_types: ["hospital"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "BMW Rules 2016"
+    note: "Bio-Medical Waste Management Rules 2016 require 4-category segregation (yellow/red/white/blue) at point of generation, dedicated biomedical waste storage room, and tie-up with an authorized CBWTF (Common Biomedical Waste Treatment Facility) — hospitals without CPCB authorization for biomedical waste handling face suspension of operations; waste storage room requires separate ventilated, refrigerated compartments for infectious waste held more than 24 hours"
+
+  # ============================================================
+  # SCHOOL - KITCHEN AND SAFE DRINKING WATER
+  # ============================================================
+  - id: "DEP-BLD-089"
+    trigger: "school"
+    required_items: ["mid_day_meal_kitchen_fssai", "water_purification_ro_uv", "separate_water_taps_ratio_per_pupil"]
+    trade: "plumbing"
+    priority: 1
+    condition: ""
+    building_types: ["school"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "FSSAI"
+    note: "Schools serving mid-day meals require FSSAI-compliant kitchen with separate areas for food preparation, cooking, and storage; drinking water must be purified (RO+UV or UV minimum) with dispensers at 1 per 100 students; separate hand-wash taps (warm and cold) must be provided near toilets and food service areas per CBSE Mid-Day Meal guidelines; water-borne disease outbreaks in schools attract state health department closure orders"
+
+  # ============================================================
+  # HOTEL - FIRE COMPARTMENTATION OF GUEST FLOORS
+  # ============================================================
+  - id: "DEP-BLD-090"
+    trigger: "hotel_guest_floor"
+    required_items: ["fire_door_at_corridor_to_staircase", "horizontal_fire_compartments_2hr", "automatic_sprinkler_all_guest_rooms"]
+    trade: "fire_safety"
+    priority: 1
+    condition: ""
+    building_types: ["hotel"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "NBC Part 4"
+    note: "Hotel guest floors must have automatic sprinklers in every room (NBC Part 4 mandatory for hotels above 3 storeys) — hotel room fires spread rapidly due to synthetic soft furnishings; fire-rated door at every corridor-to-staircase junction must be self-closing; horizontal 2-hour fire compartments limit area through which fire can spread and protect evacuation routes; hotel fire risks are higher than office as rooms are occupied at night when occupants are sleeping and fire discovery is delayed"
+
+  # ============================================================
+  # FACTORY - VENTILATION AND HVAC INDUSTRIAL
+  # ============================================================
+  - id: "DEP-BLD-091"
+    trigger: "factory"
+    required_items: ["roof_monitor_for_natural_ventilation", "evaporative_cooling_if_high_temp_process", "local_exhaust_ventilation_hazardous_processes"]
+    trade: "hvac"
+    priority: 1
+    condition: ""
+    building_types: ["factory"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "Factories Act Schedule"
+    note: "Factories Act Schedule mandates minimum temperature and air change rates for workers — roof monitors (ridge glazing with opening lights) provide natural thermal buoyancy ventilation for hot processes; evaporative cooling through wet pads and fans reduces air temperature by 8-12°C at very low energy cost for factories in hot-dry zones (Rajasthan, Gujarat, MP); local exhaust ventilation at each fume-generating process (welding, painting, chemical mixing) must be designed to capture 95% of contaminants before they enter the breathing zone"
+
+  # ============================================================
+  # RETAIL MALL - TENANT COORDINATION
+  # ============================================================
+  - id: "DEP-BLD-092"
+    trigger: "retail_mall"
+    required_items: ["tenant_coordination_manual", "shell_and_core_hvac_provision", "dedicated_electrical_capacity_per_tenant_bay"]
+    trade: "services"
+    priority: 1
+    condition: ""
+    building_types: ["retail_mall"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Retail mall tenant coordination manual specifies what services are provided by landlord (shell and core) and what tenant must provide — without clear TCM, tenants make modifications that overload electrical or HVAC systems, block fire exits, or damage structure; shell and core HVAC (chilled water connection point per tenant bay) allows each tenant to fit their own fan coil units; dedicated electrical capacity per tenant bay (typically 60-100 W/sqm) must be allocated at design stage to prevent transformer overloading when all tenants fit out simultaneously"
+
+  # ============================================================
+  # RESIDENTIAL - LPCD WATER DEMAND AND TANK SIZING
+  # ============================================================
+  - id: "DEP-BLD-093"
+    trigger: "residential_apartment"
+    required_items: ["water_storage_at_135_lpcd_24hr_capacity", "dual_tank_system_underground_and_overhead"]
+    trade: "plumbing"
+    priority: 1
+    condition: ""
+    building_types: ["residential_apartment"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 1172"
+    note: "IS 1172 specifies 135 LPCD (litres per capita per day) for urban residential — water storage must provide 24 hours supply (i.e., full day's demand) to protect occupants from municipal supply interruptions; dual-tank system (underground sump + overhead tank) with pump ensures continuous supply — a single overhead tank with direct mains is inadequate for high-rise as municipal pressure is insufficient to reach upper floors; tank sizing is frequently under-specified, leading to water shortages in summer"
+
+  # ============================================================
+  # WAREHOUSE - LOADING DOCK DESIGN
+  # ============================================================
+  - id: "DEP-BLD-094"
+    trigger: "warehouse"
+    required_items: ["dock_leveller_hydraulic", "dock_shelter_or_seal", "dock_approach_apron_1_in_50_slope"]
+    trade: "external"
+    priority: 1
+    condition: ""
+    building_types: ["warehouse"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Hydraulic dock leveller bridges the height difference between warehouse floor and truck bed (typically 150-350mm variation) — fixed ramp alternatives cannot accommodate height variation and damage goods and forklifts; dock shelter or seal closes the gap between truck and dock opening, preventing rain entry and heat/cold loss (critical for temperature-controlled storage); dock approach apron must be 1:50 slope to drain rainwater away from dock opening; dock approach length minimum 18m for articulated trucks to manoeuvre"
+
+  # ============================================================
+  # HOSPITAL - ICU DESIGN REQUIREMENTS
+  # ============================================================
+  - id: "DEP-BLD-095"
+    trigger: "intensive_care_unit"
+    required_items: ["minimum_bed_space_12sqm_per_bed", "all_round_access_each_bed", "centralized_nurse_station_visibility", "dedicated_hvac_icu"]
+    trade: "finishing"
+    priority: 1
+    condition: ""
+    building_types: ["hospital"]
+    room_types: ["icu"]
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "NABH"
+    note: "NABH mandates minimum 12 sqm per ICU bed (including space for equipment), with all-round access (minimum 1200mm on all three sides) to allow CPR and equipment positioning; nurse station must have direct visual access to all beds or remote camera monitoring; dedicated HVAC with HEPA filtration (separate from rest of hospital) is required — ICU patients are immunocompromised and cannot share air with general wards"
+
+  # ============================================================
+  # DATA CENTRE - DIESEL STORAGE AND FIRE SAFETY
+  # ============================================================
+  - id: "DEP-BLD-096"
+    trigger: "data_center"
+    required_items: ["diesel_storage_above_ground_with_bund", "fuel_transfer_pump_with_day_tank", "fire_detection_in_dg_room_explosion_proof"]
+    trade: "mechanical"
+    priority: 1
+    condition: ""
+    building_types: ["data_center"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "PESO"
+    note: "Data centres with multiple DG sets store thousands of litres of diesel — storage above-ground (preferred over underground due to leak detection visibility) requires a bund (impermeable containment wall) with 110% capacity of the largest tank per PESO regulations; fuel transfer pump with day tank (300-500 litres) adjacent to DG set provides 4-6 hours runtime before needing to pump from bulk storage; explosion-proof fire detection in DG room prevents electrical faults triggering diesel fire"
+
+  # ============================================================
+  # COMMERCIAL - TOILET PROVISION
+  # ============================================================
+  - id: "DEP-BLD-097"
+    trigger: "commercial_office"
+    required_items: ["toilet_ratio_1_per_25_female_1_per_40_male", "female_toilets_minimum_as_per_factories_act", "accessible_toilet_per_floor"]
+    trade: "plumbing"
+    priority: 1
+    condition: ""
+    building_types: ["commercial"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "NBC Part 8"
+    note: "NBC Part 8 specifies 1 WC per 25 female occupants and 1 WC per 40 male occupants — under-provision causes long queues, particularly for female employees (an equality issue increasingly highlighted by HR departments); Factories Act has more generous provisions for large numbers of workers (1:15 female); accessible toilet per floor required by RPwD Act 2016; RERA-registered commercial spaces must demonstrate NBC-compliant toilet provision before Occupancy Certificate"
+
+  # ============================================================
+  # HOTEL - KITCHEN GAS SAFETY
+  # ============================================================
+  - id: "DEP-BLD-098"
+    trigger: "hotel_commercial_kitchen_gas"
+    required_items: ["lpg_manifold_outside_building", "gas_detector_in_kitchen", "automatic_gas_shutoff_on_alarm", "gas_flexi_hose_max_1m"]
+    trade: "plumbing"
+    priority: 1
+    condition: ""
+    building_types: ["hotel", "restaurant"]
+    room_types: ["kitchen"]
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 5572"
+    note: "LPG manifold for commercial kitchens must be located outside the building (not in basement or enclosed rooms per PESO regulations) — LPG is denser than air and accumulates in basements creating explosion risk; gas detector in kitchen triggers audible alarm; automatic solenoid shutoff valve isolates gas supply on alarm — this prevents small leaks becoming catastrophic accumulations when kitchen is unoccupied at night; flexible hose to appliance must be < 1m (longer hoses are easily damaged and are a common fire cause)"
+
+  # ============================================================
+  # SCHOOL - SAFETY BARRIERS
+  # ============================================================
+  - id: "DEP-BLD-099"
+    trigger: "school"
+    required_items: ["parapet_or_railing_1200mm_min_height", "anti_climb_parapet_detail", "staircase_baluster_max_100mm_gap_school"]
+    trade: "structural"
+    priority: 1
+    condition: ""
+    building_types: ["school"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "NBC Part 4"
+    note: "School parapets and balcony railings must be minimum 1200mm high (higher than NBC standard of 900mm for general buildings, to account for children) with anti-climb design (no horizontal members that children can step on); staircase balusters must not allow a 100mm sphere to pass through — multiple child fatalities at school buildings from falls over inadequate barriers have resulted in regulatory tightening; insurance companies require certifiable compliance"
+
+  # ============================================================
+  # HOSPITAL - EMERGENCY DEPARTMENT DESIGN
+  # ============================================================
+  - id: "DEP-BLD-100"
+    trigger: "hospital"
+    required_items: ["emergency_department_separate_entry", "triage_area_at_entry", "resuscitation_room_2_per_30_beds"]
+    trade: "finishing"
+    priority: 1
+    condition: ""
+    building_types: ["hospital"]
+    room_types: ["emergency"]
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "NABH"
+    note: "NABH requires ED to have independent entry for ambulances separate from OPD — mixing emergency and routine outpatient flows causes dangerous delays; triage area (minimum 12 sqm) at ED entry with trained nurse to classify patients by severity; resuscitation room with crash cart, defibrillator, and all emergency equipment at ratio of 1 per 15 emergency beds, minimum 2; ED without proper triage and resus capability will not achieve NABH accreditation"
+
+  # ============================================================
+  # INDUSTRIAL - FIRE COMPARTMENTATION
+  # ============================================================
+  - id: "DEP-BLD-101"
+    trigger: "factory"
+    required_items: ["fire_compartment_max_2000sqm_per_compartment", "fire_rated_wall_between_compartments", "sprinkler_in_high_piled_storage"]
+    trade: "fire_safety"
+    priority: 1
+    condition: "above_2000sqm"
+    building_types: ["factory", "warehouse"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 2000
+    is_code_ref: "NBC Part 4"
+    note: "NBC Part 4 limits fire compartment size in factories to 2000 sqm for ordinary hazard — large open factories must be sub-divided by 2-hour fire-rated walls to limit fire spread and reduce insurance premiums; high-piled storage above 3.6m requires ESFR (Early Suppression Fast Response) sprinklers rated for storage height and commodity class — standard sprinklers cannot suppress fires in high rack storage before major inventory loss; fire compartmentation is also required by most property insurers"
+
+  # ============================================================
+  # DATA CENTRE - OPERATIONAL CONTINUITY
+  # ============================================================
+  - id: "DEP-BLD-102"
+    trigger: "data_center"
+    required_items: ["dcim_data_centre_infrastructure_management", "redundant_network_paths", "24x7_noc_room"]
+    trade: "electrical"
+    priority: 2
+    condition: ""
+    building_types: ["data_center"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "TIA-942"
+    note: "DCIM software provides real-time monitoring of power, cooling, and space utilisation across the data centre — without DCIM, administrators manually track capacity leading to hotspots and stranded capacity; redundant network paths (dual fibre routes from two providers) ensure network stays up if one provider has a cut; 24x7 NOC (Network Operations Centre) with trained staff who can respond to alarms within minutes is required for Tier III+ data centres serving enterprise customers"
+
+  # ============================================================
+  # HOTEL - ACCESSIBILITY FOR GUESTS
+  # ============================================================
+  - id: "DEP-BLD-103"
+    trigger: "hotel"
+    required_items: ["min_1_accessible_room_per_25_rooms", "roll_in_shower_accessible_room", "accessible_pool_entry_lift"]
+    trade: "finishing"
+    priority: 1
+    condition: ""
+    building_types: ["hotel"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "RPwD Act 2016"
+    note: "RPwD Act 2016 and NBC Part 3 require hotels to provide minimum 1 fully accessible room per 25 guest rooms with wider door (900mm clear), turning space, roll-in shower (no threshold), lowered controls, and accessible bed height; swimming pool must have a pool lift or zero-entry ramp for guests using wheelchairs — international hotel chains are specifically asked about accessibility features by travel agents and disabled travel groups; non-compliance is grounds for FHRAI (Federation of Hotel and Restaurant Associations of India) complaint"
+
+  # ============================================================
+  # COMMERCIAL - GREEN ROOF OR COOL ROOF
+  # ============================================================
+  - id: "DEP-BLD-104"
+    trigger: "commercial_roof"
+    required_items: ["cool_roof_coating_sri_above_78", "or_green_roof_vegetation_layer"]
+    trade: "finishing"
+    priority: 2
+    condition: "ecbc_targeted"
+    building_types: ["commercial", "hotel", "hospital"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "ECBC 2017"
+    note: "ECBC 2017 requires roof Solar Reflectance Index (SRI) above 78 for climate zones 1-5 — standard grey cement tiles have SRI of 20-30 and absorb heat, increasing top-floor cooling load by 30-40%; cool roof coating (white or light pigmented) achieves SRI 80+ at low cost; green roof vegetation layer provides both insulation and SRI compliance while also managing storm water and biodiversity; some states (Maharashtra, Tamil Nadu) offer FAR incentives for green roofs"
+
+  # ============================================================
+  # ALL BUILDINGS - DOCUMENTATION REGISTER
+  # ============================================================
+  - id: "DEP-BLD-105"
+    trigger: "all_buildings"
+    required_items: ["quality_assurance_plan", "site_inspection_register", "material_approval_register"]
+    trade: "preliminaries"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 456"
+    note: "Quality Assurance Plan (QAP) defines inspection and test plan for each trade — without QAP, inspection responsibilities are unclear and critical inspections are skipped; site inspection register records every structural engineer and client visit with observations; material approval register documents each material submission, approval status, and approved-equals — without this register, contractors substitute non-approved materials after initial approval and the substitution goes undetected; all three documents are required by serious institutional clients and form the evidence base for defect claims during DLP"

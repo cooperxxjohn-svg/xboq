@@ -1,0 +1,2061 @@
+discipline: mep
+trade: elevator
+sub_trades:
+  passenger:
+    categories:
+      geared:
+        items:
+        - id: ELV.PS.GRD.001
+          standard_name: Geared traction passenger lift - 6 passenger (408 kg) - 1.0 m/s
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - commercial
+          requires: []
+          is_code_ref: IS 14665
+          dsr_item_ref: ''
+          aliases:
+          - geared lift 6P
+          - 6 passenger elevator
+          typical_rate_range:
+            min: 800000
+            max: 1200000
+          notes: Including controller, machine, ropes, guide rails, car and landing doors
+          data_source: IS codes only
+        - id: ELV.PS.GRD.002
+          standard_name: Geared traction passenger lift - 8 passenger (544 kg) - 1.0 m/s
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - commercial
+          requires: []
+          is_code_ref: IS 14665
+          dsr_item_ref: ''
+          aliases:
+          - geared lift 8P
+          - 8 passenger elevator
+          typical_rate_range:
+            min: 900000
+            max: 1400000
+          notes: ''
+          data_source: IS codes only
+        - id: ELV.PS.GRD.003
+          standard_name: Geared traction passenger lift - 10 passenger (680 kg) - 1.0 m/s
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - commercial
+          requires: []
+          is_code_ref: IS 14665
+          dsr_item_ref: ''
+          aliases:
+          - geared lift 10P
+          - 10 passenger elevator
+          typical_rate_range:
+            min: 1000000
+            max: 1600000
+          notes: ''
+          data_source: IS codes only
+        - id: ELV.PS.GRD.004
+          standard_name: Geared traction passenger lift - 13 passenger (884 kg) - 1.5 m/s
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 14665
+          dsr_item_ref: ''
+          aliases:
+          - geared lift 13P
+          - 13 passenger elevator
+          typical_rate_range:
+            min: 1200000
+            max: 1800000
+          notes: ''
+          data_source: IS codes only
+        - id: ELV.PS.GRD.005
+          standard_name: Geared traction passenger lift - 16 passenger (1088 kg) - 1.5 m/s
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 14665
+          dsr_item_ref: ''
+          aliases:
+          - geared lift 16P
+          - 16 passenger elevator
+          typical_rate_range:
+            min: 1400000
+            max: 2200000
+          notes: ''
+          data_source: IS codes only
+        - id: ELV.PS.GRD.006
+          standard_name: Geared traction passenger lift - 10 passenger (680 kg) - 1.5 m/s
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 14665
+          dsr_item_ref: ''
+          aliases:
+          - geared lift 10P fast
+          typical_rate_range:
+            min: 1100000
+            max: 1700000
+          notes: Higher speed variant
+          data_source: IS codes only
+        - id: ELV.PS.GRD.007
+          standard_name: Geared traction passenger lift - 13 passenger (884 kg) - 1.75 m/s
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 14665
+          dsr_item_ref: ''
+          aliases:
+          - geared lift 13P high speed
+          typical_rate_range:
+            min: 1400000
+            max: 2000000
+          notes: ''
+          data_source: IS codes only
+      gearless:
+        items:
+        - id: ELV.PS.GRL.001
+          standard_name: Gearless traction passenger lift - 10 passenger (680 kg) - 1.5 m/s
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 14665
+          dsr_item_ref: ''
+          aliases:
+          - gearless lift 10P
+          - PMML lift 10P
+          typical_rate_range:
+            min: 1400000
+            max: 2200000
+          notes: Permanent magnet motor, energy efficient
+          data_source: IS codes only
+        - id: ELV.PS.GRL.002
+          standard_name: Gearless traction passenger lift - 13 passenger (884 kg) - 2.0 m/s
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - high_rise
+          requires: []
+          is_code_ref: IS 14665
+          dsr_item_ref: ''
+          aliases:
+          - gearless lift 13P
+          - high speed lift 13P
+          typical_rate_range:
+            min: 1800000
+            max: 2800000
+          notes: ''
+          data_source: IS codes only
+        - id: ELV.PS.GRL.003
+          standard_name: Gearless traction passenger lift - 16 passenger (1088 kg) - 2.0 m/s
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - high_rise
+          requires: []
+          is_code_ref: IS 14665
+          dsr_item_ref: ''
+          aliases:
+          - gearless lift 16P
+          typical_rate_range:
+            min: 2200000
+            max: 3200000
+          notes: ''
+          data_source: IS codes only
+        - id: ELV.PS.GRL.004
+          standard_name: Gearless traction passenger lift - 20 passenger (1360 kg) - 2.5 m/s
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - high_rise
+          requires: []
+          is_code_ref: IS 14665
+          dsr_item_ref: ''
+          aliases:
+          - gearless lift 20P
+          - high speed lift 20P
+          typical_rate_range:
+            min: 2800000
+            max: 4000000
+          notes: ''
+          data_source: IS codes only
+        - id: ELV.PS.GRL.005
+          standard_name: Gearless traction passenger lift - 26 passenger (1768 kg) - 2.5 m/s
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - high_rise
+          requires: []
+          is_code_ref: IS 14665
+          dsr_item_ref: ''
+          aliases:
+          - gearless lift 26P
+          - large capacity lift
+          typical_rate_range:
+            min: 3500000
+            max: 5000000
+          notes: ''
+          data_source: IS codes only
+        - id: ELV.PS.GRL.006
+          standard_name: Gearless traction passenger lift - 16 passenger (1088 kg) - 3.0 m/s
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - high_rise
+          requires: []
+          is_code_ref: IS 14665
+          dsr_item_ref: ''
+          aliases:
+          - high speed lift 16P
+          - express lift
+          typical_rate_range:
+            min: 3200000
+            max: 4500000
+          notes: For high-rise buildings above 20 floors
+          data_source: IS codes only
+        - id: ELV.PS.GRL.007
+          standard_name: Gearless traction passenger lift - 20 passenger (1360 kg) - 3.0 m/s
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - high_rise
+          requires: []
+          is_code_ref: IS 14665
+          dsr_item_ref: ''
+          aliases:
+          - express lift 20P
+          typical_rate_range:
+            min: 3800000
+            max: 5500000
+          notes: ''
+          data_source: IS codes only
+      mrl:
+        items:
+        - id: ELV.PS.MRL.001
+          standard_name: Machine room-less passenger lift - 8 passenger (544 kg) - 1.0 m/s
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - commercial
+          requires: []
+          is_code_ref: IS 14665
+          dsr_item_ref: ''
+          aliases:
+          - MRL lift 8P
+          - machine roomless lift
+          typical_rate_range:
+            min: 1000000
+            max: 1600000
+          notes: No separate machine room required, machine in shaft
+          data_source: IS codes only
+        - id: ELV.PS.MRL.002
+          standard_name: Machine room-less passenger lift - 10 passenger (680 kg) - 1.0 m/s
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - commercial
+          requires: []
+          is_code_ref: IS 14665
+          dsr_item_ref: ''
+          aliases:
+          - MRL lift 10P
+          typical_rate_range:
+            min: 1200000
+            max: 1800000
+          notes: ''
+          data_source: IS codes only
+        - id: ELV.PS.MRL.003
+          standard_name: Machine room-less passenger lift - 13 passenger (884 kg) - 1.5 m/s
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 14665
+          dsr_item_ref: ''
+          aliases:
+          - MRL lift 13P
+          typical_rate_range:
+            min: 1500000
+            max: 2200000
+          notes: ''
+          data_source: IS codes only
+        - id: ELV.PS.MRL.004
+          standard_name: Machine room-less passenger lift - 16 passenger (1088 kg) - 1.75 m/s
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 14665
+          dsr_item_ref: ''
+          aliases:
+          - MRL lift 16P
+          typical_rate_range:
+            min: 1800000
+            max: 2800000
+          notes: ''
+          data_source: IS codes only
+      special:
+        items:
+        - id: ELV.PS.STR.001
+          standard_name: Stretcher lift - 13 passenger (884 kg) - 1.0 m/s - 2100mm deep car
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 14665, NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - stretcher elevator
+          - ambulance lift
+          - fireman lift
+          typical_rate_range:
+            min: 1500000
+            max: 2500000
+          notes: Mandatory as per NBC for buildings above 15m height
+          data_source: IS codes only
+        - id: ELV.PS.PAN.001
+          standard_name: Panoramic observation lift - glass car - 10 passenger (680 kg) - 1.0 m/s
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - hospitality
+          requires: []
+          is_code_ref: IS 14665
+          dsr_item_ref: ''
+          aliases:
+          - glass lift
+          - observation elevator
+          - capsule lift
+          typical_rate_range:
+            min: 2500000
+            max: 4500000
+          notes: Glass car walls for external or atrium installation
+          data_source: IS codes only
+        - id: ELV.PS.PAN.002
+          standard_name: Panoramic observation lift - glass car - 13 passenger (884 kg) - 1.5 m/s
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - hospitality
+          requires: []
+          is_code_ref: IS 14665
+          dsr_item_ref: ''
+          aliases:
+          - large panoramic lift
+          typical_rate_range:
+            min: 3000000
+            max: 5500000
+          notes: ''
+          data_source: IS codes only
+        - id: ELV.PS.HSP.001
+          standard_name: Hospital bed lift - 26 passenger (1768 kg) - 1.0 m/s - 2400mm deep car
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - hospital
+          requires: []
+          is_code_ref: IS 14665
+          dsr_item_ref: ''
+          aliases:
+          - bed elevator
+          - hospital lift
+          - patient lift
+          typical_rate_range:
+            min: 2500000
+            max: 4000000
+          notes: Extra deep car for hospital bed with attendants
+          data_source: IS codes only
+        - id: ELV.PS.HOM.001
+          standard_name: Home lift - 2 person (150 kg) - hydraulic drive - 0.3 m/s
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: IS 14665, NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - residential lift
+          - villa lift
+          - domestic lift
+          typical_rate_range:
+            min: 500000
+            max: 900000
+          notes: Pit-less or shallow pit design for homes
+          data_source: estimated
+        - id: ELV.PS.HOM.002
+          standard_name: Home lift - 3 person (225 kg) - hydraulic drive - 0.3 m/s
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: IS 14665, NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - home elevator 3P
+          typical_rate_range:
+            min: 600000
+            max: 1100000
+          notes: ''
+          data_source: estimated
+        - id: ELV.PS.HOM.003
+          standard_name: Home lift - 4 person (300 kg) - traction drive - 0.4 m/s
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: IS 14665, NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - home elevator 4P
+          - villa lift large
+          typical_rate_range:
+            min: 800000
+            max: 1400000
+          notes: ''
+          data_source: estimated
+        - id: ELV.PS.HOM.004
+          standard_name: Home lift - 2 person (150 kg) - traction drive - 0.4 m/s
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: IS 14665, NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - compact home lift traction
+          typical_rate_range:
+            min: 600000
+            max: 1000000
+          notes: ''
+          data_source: estimated
+        - id: ELV.PS.SCN.001
+          standard_name: Scenic elevator - external wall-climber - 10 passenger (680 kg) - 1.0 m/s
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - hospitality
+          requires: []
+          is_code_ref: IS 14665
+          dsr_item_ref: ''
+          aliases:
+          - scenic lift
+          - wall climber lift
+          - external panoramic elevator
+          typical_rate_range:
+            min: 3000000
+            max: 5500000
+          notes: External wall-mounted scenic lift with glass enclosure
+          data_source: IS codes only
+        - id: ELV.PS.SCN.002
+          standard_name: Scenic elevator - external wall-climber - 16 passenger (1088 kg) - 1.5 m/s
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - hospitality
+          requires: []
+          is_code_ref: IS 14665
+          dsr_item_ref: ''
+          aliases:
+          - large scenic lift
+          - panoramic elevator large
+          typical_rate_range:
+            min: 4000000
+            max: 7000000
+          notes: Large capacity external scenic lift
+          data_source: IS codes only
+  goods:
+    categories:
+      heavy_duty:
+        items:
+        - id: ELV.GD.HVY.001
+          standard_name: Goods lift - heavy duty - 1000 kg capacity - 0.5 m/s
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - industrial
+          requires: []
+          is_code_ref: IS 14665
+          dsr_item_ref: ''
+          aliases:
+          - freight elevator 1T
+          - cargo lift 1000kg
+          typical_rate_range:
+            min: 800000
+            max: 1400000
+          notes: Heavy-duty car floor and doors
+          data_source: IS codes only
+        - id: ELV.GD.HVY.002
+          standard_name: Goods lift - heavy duty - 2000 kg capacity - 0.5 m/s
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - industrial
+          requires: []
+          is_code_ref: IS 14665
+          dsr_item_ref: ''
+          aliases:
+          - freight elevator 2T
+          - cargo lift 2000kg
+          typical_rate_range:
+            min: 1200000
+            max: 2000000
+          notes: ''
+          data_source: IS codes only
+        - id: ELV.GD.HVY.003
+          standard_name: Goods lift - heavy duty - 3000 kg capacity - 0.5 m/s
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - industrial
+          - warehouse
+          requires: []
+          is_code_ref: IS 14665
+          dsr_item_ref: ''
+          aliases:
+          - freight elevator 3T
+          - cargo lift 3000kg
+          typical_rate_range:
+            min: 1800000
+            max: 3000000
+          notes: ''
+          data_source: IS codes only
+        - id: ELV.GD.HVY.004
+          standard_name: Goods lift - heavy duty - 5000 kg capacity - 0.3 m/s
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - industrial
+          - warehouse
+          requires: []
+          is_code_ref: IS 14665
+          dsr_item_ref: ''
+          aliases:
+          - freight elevator 5T
+          - cargo lift 5000kg
+          - heavy goods lift
+          typical_rate_range:
+            min: 2800000
+            max: 4500000
+          notes: Extra heavy-duty for industrial use
+          data_source: IS codes only
+        - id: ELV.GD.HVY.005
+          standard_name: Goods-cum-passenger lift - 1600 kg capacity - 1.0 m/s
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - industrial
+          requires: []
+          is_code_ref: IS 14665
+          dsr_item_ref: ''
+          aliases:
+          - service lift
+          - goods passenger lift
+          typical_rate_range:
+            min: 1400000
+            max: 2200000
+          notes: Dual-purpose lift with passenger-grade finishes
+          data_source: IS codes only
+      dumbwaiter:
+        items:
+        - id: ELV.GD.DWR.001
+          standard_name: Dumbwaiter - 50 kg capacity - 0.3 m/s
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - hospitality
+          - commercial
+          requires: []
+          is_code_ref: IS 14665
+          dsr_item_ref: ''
+          aliases:
+          - kitchen lift
+          - food lift
+          - small service lift
+          typical_rate_range:
+            min: 200000
+            max: 400000
+          notes: For food/document service between floors
+          data_source: estimated
+        - id: ELV.GD.DWR.002
+          standard_name: Dumbwaiter - 100 kg capacity - 0.3 m/s
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - hospitality
+          - commercial
+          requires: []
+          is_code_ref: IS 14665
+          dsr_item_ref: ''
+          aliases:
+          - medium dumbwaiter
+          - service dumbwaiter
+          typical_rate_range:
+            min: 300000
+            max: 550000
+          notes: ''
+          data_source: estimated
+        - id: ELV.GD.DWR.003
+          standard_name: Dumbwaiter - 200 kg capacity - 0.3 m/s
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - hospitality
+          - hospital
+          requires: []
+          is_code_ref: IS 14665
+          dsr_item_ref: ''
+          aliases:
+          - large dumbwaiter
+          - hospital dumbwaiter
+          typical_rate_range:
+            min: 400000
+            max: 700000
+          notes: ''
+          data_source: estimated
+        - id: ELV.GD.DWR.004
+          standard_name: Dumbwaiter - 300 kg capacity - 0.5 m/s - floor level loading
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - hospital
+          - hospitality
+          requires: []
+          is_code_ref: IS 14665
+          dsr_item_ref: ''
+          aliases:
+          - heavy dumbwaiter
+          - trolley dumbwaiter
+          - floor loading dumbwaiter
+          typical_rate_range:
+            min: 550000
+            max: 900000
+          notes: Floor level loading for trolley/cart transfer
+          data_source: estimated
+      platform_lift:
+        items:
+        - id: ELV.GD.PLT.001
+          standard_name: Platform lift (wheelchair) - 250 kg capacity - vertical - 0.15 m/s
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - wheelchair lift
+          - disabled lift
+          - accessibility platform lift
+          typical_rate_range:
+            min: 350000
+            max: 600000
+          notes: For barrier-free access per NBC accessibility guidelines
+          data_source: IS codes only
+        - id: ELV.GD.PLT.002
+          standard_name: Platform lift (wheelchair) - 400 kg capacity - enclosed shaft - 0.15 m/s
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - enclosed wheelchair lift
+          - platform elevator enclosed
+          typical_rate_range:
+            min: 500000
+            max: 850000
+          notes: Enclosed shaft type with automatic doors
+          data_source: IS codes only
+        - id: ELV.GD.PLT.003
+          standard_name: Stairlift - single straight flight - foldable seat
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: IS 14665, NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - stair chair lift
+          - stairlift
+          - chair lift stairs
+          typical_rate_range:
+            min: 250000
+            max: 500000
+          notes: Rail-mounted seat for single straight staircase
+          data_source: estimated
+      service_lift:
+        items:
+        - id: ELV.GD.SVC.001
+          standard_name: Service lift for hospital - 2000 kg capacity - 1.0 m/s - rear opening
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - hospital
+          requires: []
+          is_code_ref: IS 14665
+          dsr_item_ref: ''
+          aliases:
+          - hospital service elevator
+          - linen lift
+          - supply lift hospital
+          typical_rate_range:
+            min: 2000000
+            max: 3200000
+          notes: Dual opening (front and rear) for hospital logistics
+          data_source: IS codes only
+        - id: ELV.GD.SVC.002
+          standard_name: Service lift for hospital - 1000 kg capacity - 0.5 m/s - single opening
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - hospital
+          requires: []
+          is_code_ref: IS 14665
+          dsr_item_ref: ''
+          aliases:
+          - hospital supply lift small
+          - service elevator hospital
+          typical_rate_range:
+            min: 1200000
+            max: 2000000
+          notes: For supply and waste movement
+          data_source: IS codes only
+      car_parking_lift:
+        items:
+        - id: ELV.GD.CPL.001
+          standard_name: Car parking lift - 2 car stacker - hydraulic - 3000 kg capacity
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - commercial
+          requires: []
+          is_code_ref: IS 14665
+          dsr_item_ref: ''
+          aliases:
+          - car stacker 2 level
+          - vehicle parking lift
+          - car lift 2 level
+          typical_rate_range:
+            min: 350000
+            max: 700000
+          notes: Two-post hydraulic car stacking system
+          data_source: estimated
+        - id: ELV.GD.CPL.002
+          standard_name: Car parking lift - puzzle type - 4 car capacity
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 14665
+          dsr_item_ref: ''
+          aliases:
+          - puzzle parking 4 car
+          - automated parking puzzle
+          typical_rate_range:
+            min: 800000
+            max: 1500000
+          notes: Puzzle type automated car parking system
+          data_source: estimated
+        - id: ELV.GD.CPL.003
+          standard_name: Car parking lift - tower type - 8 to 12 car capacity
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 14665
+          dsr_item_ref: ''
+          aliases:
+          - tower parking
+          - rotary car park
+          - vertical car parking
+          typical_rate_range:
+            min: 2500000
+            max: 5000000
+          notes: Rotary/vertical tower type automated parking
+          data_source: estimated
+        - id: ELV.GD.CPL.004
+          standard_name: Car elevator - 3500 kg capacity - 0.3 m/s - drive-in type
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - residential
+          requires: []
+          is_code_ref: IS 14665
+          dsr_item_ref: ''
+          aliases:
+          - car elevator
+          - vehicle lift
+          - auto lift
+          typical_rate_range:
+            min: 2000000
+            max: 4000000
+          notes: Full vehicle drive-in elevator for basement parking
+          data_source: estimated
+  escalator:
+    categories:
+      standard:
+        items:
+        - id: ELV.ES.STD.001
+          standard_name: Escalator - 600mm step width - 30 degree - indoor
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - retail
+          requires: []
+          is_code_ref: IS 14665 Part 5
+          dsr_item_ref: ''
+          aliases:
+          - narrow escalator
+          - 600mm escalator
+          typical_rate_range:
+            min: 2500000
+            max: 4000000
+          notes: Per floor height, typically 3.5-4.5m
+          data_source: IS codes only
+        - id: ELV.ES.STD.002
+          standard_name: Escalator - 800mm step width - 30 degree - indoor
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - retail
+          - metro
+          requires: []
+          is_code_ref: IS 14665 Part 5
+          dsr_item_ref: ''
+          aliases:
+          - standard escalator
+          - 800mm escalator
+          typical_rate_range:
+            min: 3000000
+            max: 5000000
+          notes: ''
+          data_source: IS codes only
+        - id: ELV.ES.STD.003
+          standard_name: Escalator - 1000mm step width - 30 degree - indoor
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - retail
+          - metro
+          - airport
+          requires: []
+          is_code_ref: IS 14665 Part 5
+          dsr_item_ref: ''
+          aliases:
+          - wide escalator
+          - 1000mm escalator
+          typical_rate_range:
+            min: 3500000
+            max: 6000000
+          notes: For high traffic areas
+          data_source: IS codes only
+        - id: ELV.ES.STD.004
+          standard_name: Escalator - 800mm step width - 30 degree - outdoor
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - metro
+          requires: []
+          is_code_ref: IS 14665 Part 5
+          dsr_item_ref: ''
+          aliases:
+          - outdoor escalator
+          - weather-proof escalator
+          typical_rate_range:
+            min: 3500000
+            max: 5500000
+          notes: Weather-resistant components and canopy
+          data_source: IS codes only
+        - id: ELV.ES.STD.005
+          standard_name: Escalator - 1000mm step width - 30 degree - outdoor
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - metro
+          - airport
+          requires: []
+          is_code_ref: IS 14665 Part 5
+          dsr_item_ref: ''
+          aliases:
+          - outdoor wide escalator
+          typical_rate_range:
+            min: 4000000
+            max: 7000000
+          notes: ''
+          data_source: IS codes only
+        - id: ELV.ES.STD.006
+          standard_name: Escalator - 1000mm step width - 30 degree - heavy duty
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - metro
+          - airport
+          - railway_station
+          requires: []
+          is_code_ref: IS 14665 Part 5
+          dsr_item_ref: ''
+          aliases:
+          - heavy duty escalator
+          - public transit escalator
+          typical_rate_range:
+            min: 5000000
+            max: 8000000
+          notes: Designed for continuous heavy traffic
+          data_source: IS codes only
+      moving_walkway:
+        items:
+        - id: ELV.ES.MWK.001
+          standard_name: Moving walkway - 800mm width - 0 degree (horizontal) - indoor
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - airport
+          - commercial
+          requires: []
+          is_code_ref: IS 14665 Part 5
+          dsr_item_ref: ''
+          aliases:
+          - travelator
+          - moving sidewalk
+          - autowalk
+          typical_rate_range:
+            min: 3000000
+            max: 5000000
+          notes: Per 10m length
+          data_source: IS codes only
+        - id: ELV.ES.MWK.002
+          standard_name: Moving walkway - 1000mm width - 0 degree (horizontal) - indoor
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - airport
+          - commercial
+          requires: []
+          is_code_ref: IS 14665 Part 5
+          dsr_item_ref: ''
+          aliases:
+          - wide travelator
+          - wide moving walkway
+          typical_rate_range:
+            min: 3500000
+            max: 6000000
+          notes: ''
+          data_source: IS codes only
+        - id: ELV.ES.MWK.003
+          standard_name: Moving walkway - 800mm width - 12 degree incline - indoor
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - airport
+          - retail
+          - commercial
+          requires: []
+          is_code_ref: IS 14665 Part 5
+          dsr_item_ref: ''
+          aliases:
+          - incline travelator
+          - moving ramp
+          typical_rate_range:
+            min: 3500000
+            max: 5500000
+          notes: For level changes in airports and malls
+          data_source: IS codes only
+        - id: ELV.ES.MWK.004
+          standard_name: Moving walkway - 1000mm width - 12 degree incline - indoor
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - airport
+          - retail
+          requires: []
+          is_code_ref: IS 14665 Part 5
+          dsr_item_ref: ''
+          aliases:
+          - wide incline travelator
+          typical_rate_range:
+            min: 4000000
+            max: 6500000
+          notes: ''
+          data_source: IS codes only
+  car_finish:
+    categories:
+      wall_finish:
+        items:
+        - id: ELV.CF.WAL.001
+          standard_name: Car wall finish - stainless steel hairline
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 14665
+          dsr_item_ref: ''
+          aliases:
+          - SS hairline car
+          - brushed SS car
+          typical_rate_range:
+            min: 40000
+            max: 80000
+          notes: Per lift car, SS 304 grade
+          data_source: estimated
+        - id: ELV.CF.WAL.002
+          standard_name: Car wall finish - stainless steel mirror
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - hospitality
+          requires: []
+          is_code_ref: IS 14665
+          dsr_item_ref: ''
+          aliases:
+          - SS mirror car
+          - polished SS car
+          typical_rate_range:
+            min: 55000
+            max: 100000
+          notes: Per lift car, SS 304 grade mirror polish
+          data_source: estimated
+        - id: ELV.CF.WAL.003
+          standard_name: Car wall finish - stainless steel etched/coloured
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - hospitality
+          requires: []
+          is_code_ref: IS 14665
+          dsr_item_ref: ''
+          aliases:
+          - SS etched car
+          - coloured SS car
+          - designer SS car
+          typical_rate_range:
+            min: 65000
+            max: 120000
+          notes: Per lift car, decorative etched or PVD coated finish
+          data_source: estimated
+        - id: ELV.CF.WAL.004
+          standard_name: Car wall finish - glass panel (tempered/laminated)
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - hospitality
+          requires: []
+          is_code_ref: IS 14665
+          dsr_item_ref: ''
+          aliases:
+          - glass car wall
+          - glass panel car
+          typical_rate_range:
+            min: 80000
+            max: 150000
+          notes: Per lift car, back-painted or frosted glass panels
+          data_source: estimated
+      floor_finish:
+        items:
+        - id: ELV.CF.FLR.001
+          standard_name: Car floor finish - stone (granite/marble)
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - hospitality
+          requires: []
+          is_code_ref: IS 14665
+          dsr_item_ref: ''
+          aliases:
+          - granite car floor
+          - marble car floor
+          - stone lift floor
+          typical_rate_range:
+            min: 15000
+            max: 35000
+          notes: Per lift car
+          data_source: estimated
+        - id: ELV.CF.FLR.002
+          standard_name: Car floor finish - PVC/vinyl flooring
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - commercial
+          requires: []
+          is_code_ref: IS 14665
+          dsr_item_ref: ''
+          aliases:
+          - vinyl car floor
+          - PVC lift floor
+          typical_rate_range:
+            min: 5000
+            max: 12000
+          notes: ''
+          data_source: estimated
+        - id: ELV.CF.FLR.003
+          standard_name: Car floor finish - chequered plate (SS/MS)
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - industrial
+          - commercial
+          requires: []
+          is_code_ref: IS 14665
+          dsr_item_ref: ''
+          aliases:
+          - chequered plate floor
+          - anti-skid floor
+          typical_rate_range:
+            min: 8000
+            max: 18000
+          notes: For goods and service lifts
+          data_source: estimated
+      ceiling_accessories:
+        items:
+        - id: ELV.CF.CLG.001
+          standard_name: Car ceiling - LED false ceiling panel
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 14665
+          dsr_item_ref: ''
+          aliases:
+          - LED lift ceiling
+          - illuminated car ceiling
+          typical_rate_range:
+            min: 15000
+            max: 40000
+          notes: Per lift car, includes LED modules
+          data_source: estimated
+        - id: ELV.CF.CLG.002
+          standard_name: Car ceiling - standard down-light panel
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: IS 14665
+          dsr_item_ref: ''
+          aliases:
+          - standard lift ceiling
+          typical_rate_range:
+            min: 5000
+            max: 15000
+          notes: ''
+          data_source: estimated
+        - id: ELV.CF.ACC.001
+          standard_name: Car ventilation fan
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 14665
+          dsr_item_ref: ''
+          aliases:
+          - lift fan
+          - car blower
+          typical_rate_range:
+            min: 2000
+            max: 5000
+          notes: ''
+          data_source: estimated
+        - id: ELV.CF.ACC.002
+          standard_name: Car handrail - stainless steel
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 14665
+          dsr_item_ref: ''
+          aliases:
+          - lift handrail
+          - car grab rail
+          typical_rate_range:
+            min: 3000
+            max: 8000
+          notes: Per lift car, 1 or 2 wall mounted
+          data_source: estimated
+        - id: ELV.CF.ACC.003
+          standard_name: Intercom system for lift car
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 14665
+          dsr_item_ref: ''
+          aliases:
+          - lift intercom
+          - car phone
+          - emergency communication
+          typical_rate_range:
+            min: 8000
+            max: 18000
+          notes: Mandatory per code, hands-free intercom to machine room/security
+          data_source: IS codes only
+        - id: ELV.CF.ACC.004
+          standard_name: Automatic rescue device (ARD) - battery backup
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 14665
+          dsr_item_ref: ''
+          aliases:
+          - ARD
+          - emergency rescue device
+          - UPS for lift
+          typical_rate_range:
+            min: 30000
+            max: 80000
+          notes: Automatic levelling and door opening during power failure
+          data_source: IS codes only
+        - id: ELV.CF.ACC.005
+          standard_name: Car position indicator - LCD/LED segment display
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 14665
+          dsr_item_ref: ''
+          aliases:
+          - floor indicator
+          - car display
+          - CPI
+          typical_rate_range:
+            min: 5000
+            max: 15000
+          notes: Inside car indicator
+          data_source: estimated
+        - id: ELV.CF.ACC.006
+          standard_name: Car position indicator - TFT/LCD multimedia display
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - hospitality
+          requires: []
+          is_code_ref: IS 14665
+          dsr_item_ref: ''
+          aliases:
+          - multimedia display
+          - TFT car display
+          typical_rate_range:
+            min: 15000
+            max: 35000
+          notes: With media player and advertising capability
+          data_source: estimated
+        - id: ELV.CF.ACC.007
+          standard_name: Car operating panel (COP) - stainless steel with braille
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 14665
+          dsr_item_ref: ''
+          aliases:
+          - COP
+          - car button panel
+          typical_rate_range:
+            min: 8000
+            max: 20000
+          notes: Includes floor buttons, door open/close, alarm, intercom
+          data_source: IS codes only
+        - id: ELV.CF.ACC.008
+          standard_name: Landing operating panel (LOP) - stainless steel with braille
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 14665
+          dsr_item_ref: ''
+          aliases:
+          - LOP
+          - hall button panel
+          - landing call button
+          typical_rate_range:
+            min: 3000
+            max: 8000
+          notes: Per landing, includes up/down buttons
+          data_source: IS codes only
+        - id: ELV.CF.ACC.009
+          standard_name: Landing position indicator - LCD/LED segment display
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 14665
+          dsr_item_ref: ''
+          aliases:
+          - hall indicator
+          - landing display
+          - LPI
+          typical_rate_range:
+            min: 3000
+            max: 8000
+          notes: Per landing, shows car position and direction
+          data_source: estimated
+        - id: ELV.CF.ACC.010
+          standard_name: CCTV camera in lift car
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 14665
+          dsr_item_ref: ''
+          aliases:
+          - lift CCTV
+          - car camera
+          typical_rate_range:
+            min: 5000
+            max: 12000
+          notes: Dome camera with travel cable connection
+          data_source: estimated
+  shaft:
+    categories:
+      guide_system:
+        items:
+        - id: ELV.SH.GDR.001
+          standard_name: Guide rails - machined steel T-section - for car
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 14665
+          dsr_item_ref: ''
+          aliases:
+          - car guide rail
+          - T rail
+          typical_rate_range:
+            min: 800
+            max: 1500
+          notes: Per running meter, includes brackets and fishplates
+          data_source: IS codes only
+        - id: ELV.SH.GDR.002
+          standard_name: Guide rails - machined steel T-section - for counterweight
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 14665
+          dsr_item_ref: ''
+          aliases:
+          - CWT guide rail
+          - counterweight rail
+          typical_rate_range:
+            min: 600
+            max: 1200
+          notes: ''
+          data_source: IS codes only
+      safety_devices:
+        items:
+        - id: ELV.SH.BUF.001
+          standard_name: Buffer - spring type (for speeds up to 1.0 m/s)
+          unit: set
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 14665
+          dsr_item_ref: ''
+          aliases:
+          - spring buffer
+          - car buffer
+          typical_rate_range:
+            min: 8000
+            max: 18000
+          notes: Set of car + counterweight buffers
+          data_source: IS codes only
+        - id: ELV.SH.BUF.002
+          standard_name: Buffer - oil type (for speeds above 1.0 m/s)
+          unit: set
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 14665
+          dsr_item_ref: ''
+          aliases:
+          - oil buffer
+          - hydraulic buffer
+          typical_rate_range:
+            min: 25000
+            max: 50000
+          notes: ''
+          data_source: IS codes only
+        - id: ELV.SH.GOV.001
+          standard_name: Overspeed governor with safety gear
+          unit: set
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 14665
+          dsr_item_ref: ''
+          aliases:
+          - governor
+          - speed limiter
+          - safety gear
+          typical_rate_range:
+            min: 30000
+            max: 60000
+          notes: Includes governor, governor rope, tension sheave, and safety gear on car
+          data_source: IS codes only
+      machine_controller:
+        items:
+        - id: ELV.SH.MCH.001
+          standard_name: Traction machine - geared - AC motor
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 14665
+          dsr_item_ref: ''
+          aliases:
+          - geared machine
+          - lift motor geared
+          typical_rate_range:
+            min: 80000
+            max: 180000
+          notes: ''
+          data_source: IS codes only
+        - id: ELV.SH.MCH.002
+          standard_name: Traction machine - gearless - permanent magnet motor
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 14665
+          dsr_item_ref: ''
+          aliases:
+          - gearless machine
+          - PMML machine
+          - permanent magnet motor
+          typical_rate_range:
+            min: 150000
+            max: 350000
+          notes: ''
+          data_source: IS codes only
+        - id: ELV.SH.MCH.003
+          standard_name: Hydraulic power unit (for hydraulic lifts)
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: IS 14665
+          dsr_item_ref: ''
+          aliases:
+          - hydraulic unit
+          - HPU
+          typical_rate_range:
+            min: 60000
+            max: 140000
+          notes: ''
+          data_source: estimated
+        - id: ELV.SH.CTR.001
+          standard_name: Controller - VVVF (variable voltage variable frequency)
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 14665
+          dsr_item_ref: ''
+          aliases:
+          - VVVF drive
+          - VFD controller
+          - inverter drive
+          typical_rate_range:
+            min: 60000
+            max: 150000
+          notes: Energy efficient speed control
+          data_source: estimated
+        - id: ELV.SH.CTR.002
+          standard_name: Controller - hydraulic valve block
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: IS 14665
+          dsr_item_ref: ''
+          aliases:
+          - hydraulic controller
+          - valve block
+          typical_rate_range:
+            min: 40000
+            max: 90000
+          notes: ''
+          data_source: estimated
+        - id: ELV.SH.CTR.003
+          standard_name: Group control system (for 2-8 lifts)
+          unit: set
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - high_rise
+          requires: []
+          is_code_ref: IS 14665
+          dsr_item_ref: ''
+          aliases:
+          - group dispatch
+          - destination dispatch
+          - hall call allocation
+          typical_rate_range:
+            min: 100000
+            max: 300000
+          notes: Intelligent dispatching for multiple lifts
+          data_source: estimated
+      rope_system:
+        items:
+        - id: ELV.SH.ROP.001
+          standard_name: Traction ropes - steel wire (8mm/10mm diameter)
+          unit: set
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 14665
+          dsr_item_ref: ''
+          aliases:
+          - lift ropes
+          - hoist ropes
+          - wire ropes
+          typical_rate_range:
+            min: 15000
+            max: 40000
+          notes: Set for one lift, quantity depends on travel height
+          data_source: IS codes only
+        - id: ELV.SH.ROP.002
+          standard_name: Flat belt traction media (polyurethane coated steel)
+          unit: set
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 14665
+          dsr_item_ref: ''
+          aliases:
+          - flat belt
+          - coated belt
+          - traction belt
+          typical_rate_range:
+            min: 25000
+            max: 60000
+          notes: Modern alternative to steel ropes for MRL lifts
+          data_source: estimated
+        - id: ELV.SH.CWT.001
+          standard_name: Counterweight assembly (frame + filler weights)
+          unit: set
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 14665
+          dsr_item_ref: ''
+          aliases:
+          - counterweight
+          - CWT
+          - balance weight
+          typical_rate_range:
+            min: 20000
+            max: 50000
+          notes: ''
+          data_source: IS codes only
+        - id: ELV.SH.CMP.001
+          standard_name: Compensation chain/rope (for travel above 30m)
+          unit: set
+          construction_types:
+          - all
+          building_types:
+          - high_rise
+          requires: []
+          is_code_ref: IS 14665
+          dsr_item_ref: ''
+          aliases:
+          - compensation chain
+          - comp rope
+          - compensating cable
+          typical_rate_range:
+            min: 15000
+            max: 35000
+          notes: Required for high-rise installations
+          data_source: IS codes only
+        - id: ELV.SH.TCV.001
+          standard_name: Travelling cable (multi-core flexible)
+          unit: set
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 14665
+          dsr_item_ref: ''
+          aliases:
+          - travel cable
+          - trailing cable
+          - car cable
+          typical_rate_range:
+            min: 8000
+            max: 25000
+          notes: Power and signal cable from car to controller
+          data_source: estimated
+  doors:
+    categories:
+      car_door:
+        items:
+        - id: ELV.DR.CSO.001
+          standard_name: Car door - automatic side opening (2 panel) - stainless steel hairline
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 14665
+          dsr_item_ref: ''
+          aliases:
+          - side opening car door
+          - 2-panel car door SS
+          typical_rate_range:
+            min: 18000
+            max: 35000
+          notes: ''
+          data_source: IS codes only
+        - id: ELV.DR.CSO.002
+          standard_name: Car door - automatic side opening (2 panel) - painted steel
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: IS 14665
+          dsr_item_ref: ''
+          aliases:
+          - painted car door
+          - economy car door
+          typical_rate_range:
+            min: 12000
+            max: 22000
+          notes: ''
+          data_source: IS codes only
+        - id: ELV.DR.CCO.001
+          standard_name: Car door - automatic center opening (2 panel) - stainless steel hairline
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - hospitality
+          requires: []
+          is_code_ref: IS 14665
+          dsr_item_ref: ''
+          aliases:
+          - center opening car door
+          - CO car door
+          typical_rate_range:
+            min: 22000
+            max: 40000
+          notes: Faster opening for high traffic
+          data_source: IS codes only
+        - id: ELV.DR.CCO.002
+          standard_name: Car door - automatic center opening (4 panel) - stainless steel
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - hospital
+          - commercial
+          requires: []
+          is_code_ref: IS 14665
+          dsr_item_ref: ''
+          aliases:
+          - 4-panel center opening
+          - wide CO door
+          typical_rate_range:
+            min: 28000
+            max: 50000
+          notes: For wide openings in hospital/bed lifts
+          data_source: IS codes only
+        - id: ELV.DR.MCL.001
+          standard_name: Car door - manual collapsible gate
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: IS 14665
+          dsr_item_ref: ''
+          aliases:
+          - collapsible gate
+          - manual gate
+          typical_rate_range:
+            min: 8000
+            max: 15000
+          notes: For low-cost residential lifts
+          data_source: estimated
+      landing_door:
+        items:
+        - id: ELV.DR.LSO.001
+          standard_name: Landing door - automatic side opening (2 panel) - stainless steel hairline
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 14665
+          dsr_item_ref: ''
+          aliases:
+          - landing door SS
+          - hall door side opening
+          typical_rate_range:
+            min: 15000
+            max: 30000
+          notes: Per landing
+          data_source: IS codes only
+        - id: ELV.DR.LSO.002
+          standard_name: Landing door - automatic side opening (2 panel) - painted steel
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: IS 14665
+          dsr_item_ref: ''
+          aliases:
+          - painted landing door
+          - economy landing door
+          typical_rate_range:
+            min: 10000
+            max: 20000
+          notes: ''
+          data_source: IS codes only
+        - id: ELV.DR.LCO.001
+          standard_name: Landing door - automatic center opening (2 panel) - stainless steel
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - hospitality
+          requires: []
+          is_code_ref: IS 14665
+          dsr_item_ref: ''
+          aliases:
+          - center opening landing door
+          - CO landing door
+          typical_rate_range:
+            min: 18000
+            max: 35000
+          notes: ''
+          data_source: IS codes only
+        - id: ELV.DR.LFR.001
+          standard_name: Landing door - fire-rated (2 hour) - painted steel
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 14665, NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - fire rated landing door
+          - 2hr fire door lift
+          typical_rate_range:
+            min: 25000
+            max: 45000
+          notes: For fireman lift and as per fire NOC requirements
+          data_source: IS codes only
+        - id: ELV.DR.LFR.002
+          standard_name: Landing door - fire-rated (2 hour) - stainless steel
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - high_rise
+          requires: []
+          is_code_ref: IS 14665, NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - fire rated SS landing door
+          typical_rate_range:
+            min: 35000
+            max: 55000
+          notes: ''
+          data_source: IS codes only
+        - id: ELV.DR.VPN.001
+          standard_name: Vision panel for landing door (fire-rated glass)
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 14665
+          dsr_item_ref: ''
+          aliases:
+          - door vision panel
+          - glass window landing door
+          typical_rate_range:
+            min: 3000
+            max: 8000
+          notes: Per landing door
+          data_source: estimated
+        - id: ELV.DR.OPR.001
+          standard_name: Door operator - AC VVVF type
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 14665
+          dsr_item_ref: ''
+          aliases:
+          - door motor
+          - door operator
+          - door drive
+          typical_rate_range:
+            min: 12000
+            max: 25000
+          notes: One per lift car
+          data_source: estimated
+        - id: ELV.DR.OPR.002
+          standard_name: Door safety edge - infrared light curtain
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 14665
+          dsr_item_ref: ''
+          aliases:
+          - light curtain
+          - door sensor
+          - safety edge
+          typical_rate_range:
+            min: 5000
+            max: 12000
+          notes: Multi-beam infrared door protection
+          data_source: IS codes only
+        - id: ELV.DR.FRM.001
+          standard_name: Door frame - stainless steel hairline
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 14665
+          dsr_item_ref: ''
+          aliases:
+          - lift door frame SS
+          - entrance frame
+          typical_rate_range:
+            min: 5000
+            max: 12000
+          notes: Per landing
+          data_source: estimated
+        - id: ELV.DR.FRM.002
+          standard_name: Door frame - painted steel
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: IS 14665
+          dsr_item_ref: ''
+          aliases:
+          - painted door frame
+          - economy door frame
+          typical_rate_range:
+            min: 3000
+            max: 7000
+          notes: ''
+          data_source: estimated
+        - id: ELV.DR.SIL.001
+          standard_name: Door sill - extruded aluminum/SS
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 14665
+          dsr_item_ref: ''
+          aliases:
+          - lift door sill
+          - landing sill
+          - car sill
+          typical_rate_range:
+            min: 2000
+            max: 5000
+          notes: Per landing
+          data_source: estimated

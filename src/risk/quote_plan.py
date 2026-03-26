@@ -323,7 +323,8 @@ class QuotePlanningEngine:
             f.write(f"- **Urgent Quotes**: {len(urgent)}\n")
             f.write(f"- **Recommended Quotes**: {len(recommended)}\n")
             f.write(f"- **Optional Quotes**: {len(optional)}\n")
-            f.write(f"- **Quote Coverage**: {quote_value/total_value*100:.1f}% of BOQ value\n\n")
+            coverage_pct = (quote_value / total_value * 100) if total_value > 0 else 0.0
+            f.write(f"- **Quote Coverage**: {coverage_pct:.1f}% of BOQ value\n\n")
 
             if urgent:
                 f.write("## Urgent (Must Have Before Submission)\n\n")

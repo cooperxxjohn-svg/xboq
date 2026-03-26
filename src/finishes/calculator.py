@@ -290,11 +290,22 @@ class FinishCalculator:
                     "area_sqm": opening_area,
                 })
 
+        # Validate ceiling height (sanity check: 2m–6m typical for Indian RCC)
+        if ceiling_height_m <= 0:
+            logger.warning(f"Room {room_label}: ceiling_height_m={ceiling_height_m}, using default 3.0m")
+            ceiling_height_m = 3.0
+            assumptions_used.append("Ceiling height was invalid, defaulted to 3000mm")
+
         # Skirting length = perimeter - door widths
         skirting_length = max(0, room_perimeter - total_door_width)
 
         # Wall paint area = perimeter × height - openings
         gross_wall_area = room_perimeter * ceiling_height_m
+        if total_opening_area > gross_wall_area * 0.5 and gross_wall_area > 0:
+            logger.warning(
+                f"Room {room_label}: opening area ({total_opening_area:.1f} sqm) exceeds "
+                f"50% of wall area ({gross_wall_area:.1f} sqm) — check opening dimensions"
+            )
         wall_area = max(0, gross_wall_area - total_opening_area)
 
         # Ceiling area = floor area

@@ -1,0 +1,1672 @@
+rooms:
+
+  # ─────────────────────────────────────────────────────────────────────────────
+  # WET ROOMS (RESIDENTIAL / GENERAL)
+  # ─────────────────────────────────────────────────────────────────────────────
+
+  - room_type: toilet
+    display_name: "Toilet / Bathroom (Residential)"
+    keywords:
+      - toilet
+      - bathroom
+      - WC
+      - wash room
+      - W.C.
+      - restroom
+      - attached bath
+      - bath room
+      - bathing
+    required_items:
+      - waterproofing_sunken_slab
+      - anti_skid_floor_tile
+      - wall_tile_dado_minimum_2100mm
+      - floor_trap_with_grating
+      - soil_pipe_connection_UPVC_or_CI
+      - wash_basin_with_pedestal_or_counter
+      - EWC_or_IWC_with_seat_cover
+      - flush_valve_or_cistern
+      - chromium_plated_CP_fittings_set
+      - health_faucet_with_hose
+      - mirror_above_basin_with_frame
+      - exhaust_fan_150mm_dia
+      - towel_rod_CP
+      - soap_dish_CP
+      - door_with_hardware_and_privacy_latch
+      - waterproof_paint_or_cementitious_coating_walls
+      - P_trap_for_wash_basin
+    conditional_items:
+      - item: shower_tray_or_enclosure_with_glass_partition
+        if: shower_provision
+      - item: bathtub_with_waste_overflow_and_CP_fittings
+        if: master_bathroom
+      - item: grab_bar_32mm_dia_SS
+        if: accessible_toilet
+      - item: raised_WC_seat_with_arm_rests
+        if: accessible_toilet
+      - item: floor_mounted_WC_with_concealed_cistern
+        if: premium_specification
+      - item: hot_water_connection_and_mixer
+        if: shower_or_bathtub
+      - item: ventilation_shaft_or_duct
+        if: internal_bathroom_no_external_wall
+    common_omissions:
+      - waterproofing (most common — 40% of residential BOQs omit this)
+      - health_faucet
+      - floor_trap_grating
+      - soil_pipe_size_and_material_spec
+      - door_hardware_specification
+    rfi_template: >
+      Toilet/bathroom scope appears incomplete. Missing items: {missing_items}.
+      Waterproofing (IS 3067 / IS 2645), anti-skid floor tiles (COF >= 0.6),
+      floor trap, and a complete CP fittings set are mandatory for wet areas.
+      Please confirm: (a) Waterproofing system type and upturn height on walls
+      (min 300 mm behind shower, 150 mm elsewhere); (b) Anti-skid tile
+      specification and COF rating; (c) Soil pipe dia (100 mm IWC / 50 mm basin);
+      (d) Complete CP fittings schedule.
+    priority: critical
+    building_types: [all]
+
+  - room_type: toilet_commercial
+    display_name: "Toilet / WC (Commercial / Office)"
+    keywords:
+      - office toilet
+      - public toilet
+      - common toilet
+      - staff toilet
+      - ladies toilet
+      - gents toilet
+      - accessible WC
+      - disabled WC
+      - unisex toilet
+    required_items:
+      - waterproofing_sunken_slab_and_plinth_beam
+      - anti_skid_vitrified_floor_tile
+      - wall_tile_dado_full_height
+      - floor_trap_grating_heavy_duty
+      - soil_waste_stack_pipe_UPVC
+      - wash_basin_wall_hung_or_counter_top
+      - EWC_wall_hung_with_concealed_cistern
+      - flush_valve_or_automatic_flush
+      - CP_fittings_set
+      - hand_drier_or_paper_towel_dispenser
+      - mirror_with_backlit_or_MS_frame
+      - liquid_soap_dispenser
+      - exhaust_fan_or_mechanical_ventilation_with_fresh_air
+      - door_with_toilet_indicator_hardware
+      - toilet_cubicle_partition_with_door
+      - sanitary_bin_in_ladies_toilet
+      - signage_male_female_accessible
+      - vinyl_or_epoxy_skirting
+    conditional_items:
+      - item: accessible_WC_grab_bars_900mm_and_700mm
+        if: accessible_provision_required
+      - item: baby_changing_table
+        if: family_facility
+      - item: urinal_with_flush_valve_or_sensor
+        if: gents_toilet
+      - item: raised_WC_seat_with_safety_rail
+        if: accessible_toilet
+      - item: automatic_sensor_faucet
+        if: touchless_spec
+    common_omissions:
+      - cubicle_partition_spec_and_door_type
+      - mechanical_ventilation_fresh_air_rate
+      - signage_spec
+      - sanitary_bin_ladies_room
+      - automatic_flush_or_sensor_spec
+    rfi_template: >
+      Commercial toilet scope appears incomplete. Missing: {missing_items}.
+      IS 1172 (sanitary fittings) and IS 3267 (WC) apply. Per NBC 2016 Part 9,
+      minimum 1 accessible WC per floor is required. Please confirm: (a)
+      Waterproofing membrane and upturn spec; (b) Cubicle partition system
+      (HPL / powder-coated steel / aluminium); (c) Ventilation rate (min 10 ACH
+      per NBC for toilets); (d) Accessible WC compliance with IS 11214.
+    priority: critical
+    building_types: [commercial, institutional, hospitality, healthcare]
+
+  - room_type: kitchen_residential
+    display_name: "Kitchen (Residential)"
+    keywords:
+      - kitchen
+      - modular kitchen
+      - cooking area
+      - kitchenette
+    required_items:
+      - kitchen_platform_granite_or_SS_top
+      - kitchen_sink_SS_double_bowl_with_drain_board
+      - sink_waste_connection_with_bottle_trap
+      - anti_skid_floor_tile
+      - wall_tile_dado_600mm_above_platform
+      - exhaust_fan_or_chimney_provision
+      - waterproofing_under_sink_area
+      - water_supply_hot_and_cold_points
+      - drain_pipe_connection_waste
+      - electrical_points_for_appliances
+      - CP_pillar_cock_or_swan_neck_tap
+    conditional_items:
+      - item: modular_kitchen_cabinet_with_shutters
+        if: modular_kitchen_scope
+      - item: under_counter_dishwasher_provision
+        if: premium_spec
+      - item: RO_water_purifier_point
+        if: drinking_water_provision
+      - item: gas_pipeline_or_LPG_connection_point
+        if: piped_gas
+      - item: hob_and_hood_provision_in_slab
+        if: modular_kitchen
+      - item: waterproofing_full_kitchen_floor
+        if: wet_kitchen_layout
+    common_omissions:
+      - waterproofing_under_sink
+      - exhaust_connection_to_shaft
+      - electrical_appliance_points
+      - gas_connection_point
+    rfi_template: >
+      Residential kitchen scope appears incomplete. Missing: {missing_items}.
+      Please confirm: (a) Kitchen platform material and thickness (granite min
+      18 mm or SS 16 gauge); (b) Exhaust fan discharge point — kitchen shaft or
+      external wall; (c) Electrical points — number and load for appliances (min
+      16A for microwave/oven, 6A for refrigerator); (d) Waterproofing under
+      sink area — system and extent.
+    priority: high
+    building_types: [residential, hospitality]
+
+  - room_type: kitchen_commercial
+    display_name: "Kitchen (Commercial / Hotel / Institutional)"
+    keywords:
+      - commercial kitchen
+      - hotel kitchen
+      - restaurant kitchen
+      - institutional kitchen
+      - central kitchen
+      - catering kitchen
+      - pantry
+      - food preparation
+    required_items:
+      - non_slip_quarry_tile_or_epoxy_floor
+      - full_height_ceramic_tile_or_stainless_steel_wall_cladding
+      - waterproofing_entire_floor_area
+      - floor_channel_drain_with_stainless_steel_grating
+      - grease_trap_with_access_cover
+      - stainless_steel_SS316_work_tables
+      - SS_double_bowl_sink_with_splash_guard
+      - commercial_dishwasher_provision
+      - exhaust_hood_over_cooking_range_with_baffle_filters
+      - makeup_air_supply_to_balance_exhaust
+      - hot_water_supply_to_sinks_and_dishwasher
+      - gas_or_LPG_piping_to_cooking_range
+      - fire_suppression_system_over_cooking_range_ansul_or_equivalent
+      - vermin_proof_floor_skirting_and_door_seals
+      - refrigeration_cold_room_provision
+      - storage_dry_goods_shelving_SS
+      - pest_control_measures_fly_screen_etc
+      - FSSAI_compliant_surface_finishes
+    conditional_items:
+      - item: walk_in_cold_room_with_insulated_panels
+        if: large_scale_kitchen
+      - item: waste_food_disposal_unit
+        if: high_volume_kitchen
+      - item: hand_wash_station_dedicated
+        if: FSSAI_requirement
+    common_omissions:
+      - grease_trap_spec
+      - fire_suppression_over_cooking_range
+      - makeup_air_for_exhaust_balance
+      - vermin_proofing
+    rfi_template: >
+      Commercial kitchen scope appears incomplete. Missing: {missing_items}.
+      FSSAI and NBC 2016 compliance requirements apply. Please confirm: (a)
+      Floor finish — non-slip quarry tile or approved epoxy with COF >= 0.7
+      (wet); (b) Grease trap capacity (litres) and access; (c) Exhaust hood
+      static pressure and CFM — makeup air system to prevent negative pressure;
+      (d) Fire suppression system over cooking range (NFPA 17A); (e)
+      Waterproofing membrane and perimeter upturn.
+    priority: critical
+    building_types: [hospitality, institutional, commercial]
+
+  - room_type: wet_lab
+    display_name: "Wet Laboratory"
+    keywords:
+      - wet lab
+      - wet laboratory
+      - chemistry lab
+      - chemical lab
+      - testing lab
+      - research lab
+      - biology lab
+    required_items:
+      - chemical_resistant_epoxy_or_vinyl_floor
+      - acid_resistant_tile_or_epoxy_wall_coating
+      - waterproofing_full_floor
+      - floor_drain_with_acid_resistant_trap
+      - chemical_resistant_worktop_epoxy_resin_or_phenolic
+      - SS316_or_HDPE_sink_with_gooseneck_faucet
+      - emergency_eyewash_station_with_tepid_water
+      - emergency_safety_shower
+      - fume_hood_with_exhaust_fan_and_airfoil
+      - chemical_storage_cabinet_ventilated
+      - hot_cold_and_distilled_water_supply
+      - waste_neutralisation_tank_for_acid_effluent
+      - fire_extinguisher_CO2_or_dry_powder
+      - first_aid_cabinet
+      - anti_static_flooring_where_volatile_chemicals
+      - spill_containment_kerb_at_perimeter
+    conditional_items:
+      - item: biosafety_cabinet_BSL2_provision
+        if: biological_samples
+      - item: radiation_shielding
+        if: radioactive_materials
+      - item: gas_cylinder_storage_and_manifold
+        if: gas_supply_required
+    common_omissions:
+      - emergency_eyewash_station
+      - acid_waste_neutralisation
+      - fume_hood_exhaust_spec
+      - chemical_resistant_floor_spec
+    rfi_template: >
+      Wet laboratory scope appears incomplete. Missing: {missing_items}.
+      OSHA Lab Safety Standard 29 CFR 1910.1450 and NBC 2016 safety requirements
+      apply. Please confirm: (a) Floor finish chemical resistance rating and
+      COF; (b) Fume hood face velocity (min 0.4 m/s) and exhaust duct material;
+      (c) Emergency eyewash station — tepid water provision (ANSI Z358.1);
+      (d) Acid waste neutralisation system capacity; (e) Chemical storage
+      segregation compliance.
+    priority: critical
+    building_types: [institutional, industrial, healthcare]
+
+  - room_type: laundry_room
+    display_name: "Laundry Room"
+    keywords:
+      - laundry
+      - laundry room
+      - linen room
+      - washing area
+      - dhobi area
+      - ironing area
+    required_items:
+      - waterproofing_entire_floor
+      - anti_skid_floor_tile
+      - floor_drain_with_lint_trap
+      - wall_tile_dado_1800mm
+      - hot_and_cold_water_supply_points
+      - washing_machine_connection_point
+      - dryer_exhaust_duct_provision
+      - electrical_point_15A_for_each_machine
+      - ventilation_exhaust
+      - stainless_steel_sink_with_waste
+    conditional_items:
+      - item: commercial_washer_extractor_provision
+        if: hotel_or_institutional_laundry
+      - item: steam_press_ironing_table
+        if: hotel_laundry
+      - item: linen_chute_opening_with_fire_damper
+        if: multi_storey_hotel
+      - item: ironing_station_with_dedicated_electrical_circuit
+        if: institutional_laundry
+    common_omissions:
+      - waterproofing
+      - lint_trap_in_floor_drain
+      - dryer_exhaust_duct_to_outside
+    rfi_template: >
+      Laundry room scope appears incomplete. Missing: {missing_items}. Please
+      confirm: (a) Waterproofing system and upturn height; (b) Floor drain with
+      lint trap — drain dia and material; (c) Dryer exhaust duct route and
+      termination; (d) Electrical circuit rating per machine (15A or 20A).
+    priority: high
+    building_types: [all]
+
+  # ─────────────────────────────────────────────────────────────────────────────
+  # MEDICAL / HEALTHCARE
+  # ─────────────────────────────────────────────────────────────────────────────
+
+  - room_type: operating_theatre
+    display_name: "Operating Theatre (OT)"
+    keywords:
+      - operating theatre
+      - operation theatre
+      - OT
+      - operation room
+      - OR
+      - surgical suite
+      - theatre complex
+    required_items:
+      - seamless_vinyl_or_epoxy_flooring_conductive
+      - coved_skirting_100mm_radius_no_sharp_corners
+      - full_height_seamless_wall_panelling_SS_or_HPL
+      - stainless_steel_flush_ceiling_panels
+      - HEPA_H14_filtration_air_handling_unit
+      - laminar_airflow_ceiling_module_ultra_clean_zone
+      - positive_pressure_ventilation_25_Pa_above_corridor
+      - 20_to_25_air_changes_per_hour_ACH
+      - temperature_control_18_to_24_degC
+      - humidity_control_40_to_60_percent_RH
+      - medical_gas_outlets_oxygen_nitrous_oxide_vacuum_air
+      - pendants_surgical_equipment_pendant
+      - anaesthesia_pendant_with_gas_outlets
+      - OT_light_shadowless_ceiling_mounted
+      - UPS_uninterruptible_power_for_critical_equipment
+      - isolation_transformer_IT_system_per_IEC_60364_7_710
+      - nurse_call_and_intercom_system
+      - X_ray_film_viewer_or_PACS_display
+      - scrub_sink_stainless_steel_sensor_operated
+      - CSSD_sterilisation_pass_box_pressurised
+      - emergency_gas_shutoff_outside_OT
+      - lead_lined_wall_panels_if_C_arm_or_image_intensifier
+      - anti_static_earthing_grid
+      - interlock_double_door_airlock_entry
+    conditional_items:
+      - item: robotic_surgery_ceiling_mount_and_reinforced_slab
+        if: robotic_OT
+      - item: intraoperative_MRI_magnetic_shielding
+        if: hybrid_OT
+      - item: carbon_fibre_OT_table_provision
+        if: orthopaedic_OT
+    common_omissions:
+      - IT_isolated_transformer_system
+      - laminar_airflow_ceiling_specification
+      - medical_gas_outlet_schedule
+      - lead_lining_for_C_arm
+      - pressurisation_spec
+    rfi_template: >
+      Operating Theatre scope appears incomplete. Missing: {missing_items}.
+      NABH Standards, AERB (for radiation), and IS 7105 / ASHRAE 170 apply.
+      Please confirm: (a) Laminar airflow ceiling module area and ACH (min 20
+      ACH per ASHRAE 170); (b) Medical gas outlets per HTMM 2007 — schedule of
+      O2, N2O, vacuum, compressed air per pendant; (c) IT isolated power system
+      (IEC 60364-7-710) — IMD (insulation monitoring device) required; (d) Air
+      pressure differential — min +25 Pa over corridor (ASHRAE 170); (e) Lead
+      lining specification (mm Pb equivalent) if C-arm used; (f) HEPA H14
+      filter final filtration efficiency.
+    priority: critical
+    building_types: [healthcare]
+
+  - room_type: icu_ward
+    display_name: "ICU / Critical Care Ward"
+    keywords:
+      - ICU
+      - intensive care
+      - ICCU
+      - critical care
+      - HDU
+      - high dependency
+      - NICU
+      - PICU
+      - CCU
+    required_items:
+      - seamless_vinyl_or_epoxy_flooring
+      - coved_skirting_no_sharp_corners
+      - washable_and_scrubbable_wall_finish_epoxy_or_vinyl
+      - HEPA_H13_filtration_AHU
+      - positive_pressure_minimum_8_ACH_with_fresh_air
+      - temperature_control_18_to_26_degC
+      - humidity_control_30_to_60_percent_RH
+      - medical_gas_outlets_per_bed_O2_vacuum_air
+      - bedhead_panel_with_gas_and_electrical_outlets
+      - nurse_call_system_with_corridor_indicator
+      - UPS_for_all_life_support_equipment_outlets
+      - cardiac_monitor_provision_per_bed
+      - isolation_transformer_IT_system
+      - hand_hygiene_station_per_2_beds_min
+      - adequate_lux_levels_300_to_500_lux_at_bed_level
+      - emergency_lighting
+      - fire_detection_and_alarm
+      - corridor_sliding_door_with_vision_panel
+      - nurse_station_with_direct_line_of_sight
+    conditional_items:
+      - item: negative_pressure_room_for_airborne_isolation
+        if: isolation_ICU_bed
+      - item: radiation_shielding_walls
+        if: bedside_X_ray
+      - item: dialysis_water_supply_point
+        if: dialysis_provision
+    common_omissions:
+      - bedhead_panel_spec
+      - medical_gas_per_bed_schedule
+      - IT_isolated_power
+      - HEPA_filtration_grade
+    rfi_template: >
+      ICU/Critical Care scope appears incomplete. Missing: {missing_items}.
+      NABH guidelines and HTMM 2007 (Health Technical Memorandum) apply. Please
+      confirm: (a) Medical gas outlets per bed — O2, vacuum, medical air
+      (quantity and flow rate per outlet); (b) Bedhead panel specification —
+      number of 15A and 5A outlets per bed; (c) ACH — minimum 12 ACH total,
+      min 2 ACH outside air (ASHRAE 170); (d) IT power system for life
+      support outlets; (e) Hand hygiene station to bed ratio.
+    priority: critical
+    building_types: [healthcare]
+
+  - room_type: general_ward
+    display_name: "General Ward (Inpatient)"
+    keywords:
+      - general ward
+      - inpatient ward
+      - patient ward
+      - medical ward
+      - surgical ward
+      - ward block
+    required_items:
+      - washable_epoxy_or_vinyl_flooring
+      - scrubbable_wall_paint_or_vinyl_wall_cladding
+      - oxygen_outlet_per_bed_min
+      - vacuum_outlet_per_alternate_bed
+      - nurse_call_system
+      - bedhead_panel_with_electrical_and_gas_outlets
+      - curtain_track_privacy_screening_between_beds
+      - hand_hygiene_station_per_ward_bay
+      - general_lighting_200_to_300_lux
+      - examination_light_provision
+      - emergency_lighting
+      - TV_point_or_patient_entertainment_system
+      - storage_locker_per_bed
+      - overbed_table_provision
+      - waste_segregation_bins_colour_coded
+    conditional_items:
+      - item: negative_pressure_isolation_room
+        if: infectious_disease_ward
+      - item: bariatric_bed_provision_and_ceiling_hoist
+        if: bariatric_patients
+      - item: CCTV_for_vulnerable_patient_monitoring
+        if: psychiatric_or_paediatric_ward
+    common_omissions:
+      - oxygen_outlet_schedule
+      - nurse_call_spec
+      - privacy_curtain_track
+      - hand_hygiene_station
+    rfi_template: >
+      General ward scope appears incomplete. Missing: {missing_items}. Please
+      confirm: (a) Medical gas outlets — O2 and vacuum outlets per bed (HTMM
+      2007 requirement); (b) Nurse call system type — addressable or IP-based;
+      (c) Lighting levels — general 200 lux min, examination point 1000 lux
+      (IS 3646); (d) Flooring finish — slip-resistance rating and cleanability
+      certification; (e) Waste segregation bin schedule per bay.
+    priority: high
+    building_types: [healthcare]
+
+  - room_type: patient_toilet
+    display_name: "Patient Toilet (Accessible / Hospital)"
+    keywords:
+      - patient toilet
+      - accessible toilet
+      - disabled toilet
+      - handicapped toilet
+      - bariatric toilet
+    required_items:
+      - waterproofing_sunken_slab_and_walls
+      - anti_skid_floor_tile_COF_0_7_minimum
+      - wall_tile_full_height
+      - grab_bar_900mm_horizontal_32mm_SS_beside_WC
+      - grab_bar_750mm_vertical_on_approach_side
+      - fold_down_grab_bar_swing_away_type
+      - raised_WC_seat_450mm_floor_height
+      - wall_hung_WC_to_allow_floor_cleaning
+      - flush_lever_at_reachable_height
+      - wash_basin_at_750mm_height_knee_clearance_below
+      - lever_type_or_sensor_tap
+      - floor_drain_large_area
+      - call_for_assistance_alarm_with_pull_cord_low_level
+      - adequate_turning_radius_1500mm_clear
+      - outward_or_sliding_door_not_inward_swing
+      - door_with_lever_handle_not_knob
+      - emergency_override_on_door_lock
+    conditional_items:
+      - item: shower_with_fold_down_seat_and_hand_held_shower
+        if: shower_provision
+      - item: ceiling_hoist_track_if_hoisting_required
+        if: bariatric_or_mobility_impaired
+    common_omissions:
+      - fold_down_swing_away_grab_bar
+      - call_for_assistance_alarm
+      - door_opening_direction
+      - knee_clearance_below_basin
+    rfi_template: >
+      Accessible/patient toilet scope appears incomplete. Missing:
+      {missing_items}. IS 11214 and NBC 2016 accessibility provisions apply.
+      Please confirm: (a) Grab bar schedule — position, length, height, and
+      material (IS 11214 compliant); (b) WC height — 450 mm from FFL; (c)
+      Call-for-assistance alarm — pull cord reaching 100 mm from floor; (d)
+      Door clear opening width min 900 mm; (e) Turning circle 1500 mm clear.
+    priority: critical
+    building_types: [healthcare, institutional, commercial]
+
+  - room_type: clean_utility_room
+    display_name: "Clean Utility Room (Hospital)"
+    keywords:
+      - clean utility
+      - clean utility room
+      - medication room
+      - drug room
+      - treatment preparation
+    required_items:
+      - washable_smooth_wall_and_ceiling_finish
+      - seamless_vinyl_or_epoxy_floor
+      - worktop_with_stainless_steel_or_corian_surface
+      - stainless_steel_sink_single_bowl
+      - hot_and_cold_water
+      - refrigerator_recess_with_temperature_alarm
+      - medication_trolley_storage
+      - lockable_drug_cabinet
+      - hand_hygiene_station
+      - adequate_lighting_minimum_500_lux
+      - sharps_disposal_unit
+      - positive_pressure_ventilation_to_corridor
+    conditional_items:
+      - item: controlled_drug_double_locked_cabinet
+        if: controlled_drugs
+      - item: IV_fluid_storage_shelving
+        if: IV_preparation
+    common_omissions:
+      - positive_pressure_spec
+      - refrigerator_temperature_alarm
+      - lighting_lux_level
+    rfi_template: >
+      Clean utility room scope appears incomplete. Missing: {missing_items}.
+      NABH standards and HTMM 2007 apply. Please confirm: (a) Ventilation —
+      positive pressure to corridor, min 6 ACH; (b) Refrigerator specification
+      with continuous temperature monitoring alarm; (c) Worktop surface —
+      material and seamless junction to upstand; (d) Lighting — 500 lux min
+      at worktop level.
+    priority: high
+    building_types: [healthcare]
+
+  - room_type: dirty_utility_room
+    display_name: "Dirty Utility / Sluice Room (Hospital)"
+    keywords:
+      - dirty utility
+      - sluice room
+      - bedpan washer
+      - dirty linen
+      - soiled utility
+    required_items:
+      - waterproofing_full_floor
+      - anti_skid_full_height_impervious_tile
+      - large_floor_drain_with_deep_seal_trap
+      - bedpan_washer_disinfector_or_flusher
+      - sluice_hopper_or_floor_level_sink
+      - hot_cold_water_with_thermostatic_mixing
+      - negative_pressure_extraction_ventilation_min_10_ACH
+      - waste_segregation_colour_coded_bins
+      - hand_hygiene_station_at_door
+      - stainless_steel_shelving
+      - lockable_door
+    conditional_items:
+      - item: soiled_linen_bag_holder
+        if: inpatient_ward
+    common_omissions:
+      - negative_pressure_ventilation
+      - bedpan_washer_spec
+      - deep_seal_floor_trap
+    rfi_template: >
+      Dirty utility/sluice room scope appears incomplete. Missing: {missing_items}.
+      Infection control requirements (NABH, NHS HTM 63) apply. Please confirm:
+      (a) Ventilation — negative pressure, min 10 ACH, no recirculation; (b)
+      Bedpan washer/disinfector type and thermal disinfection temp (93 degC for
+      1 min per HTM 2030); (c) Floor drain — minimum 100 mm dia, deep seal;
+      (d) Waterproofing upturn on all walls.
+    priority: critical
+    building_types: [healthcare]
+
+  - room_type: pharmacy
+    display_name: "Hospital Pharmacy"
+    keywords:
+      - pharmacy
+      - dispensary
+      - drug store
+      - hospital pharmacy
+      - retail pharmacy
+    required_items:
+      - smooth_washable_wall_and_ceiling
+      - seamless_vinyl_or_epoxy_floor
+      - controlled_temperature_20_to_25_degC_HVAC
+      - controlled_humidity_30_to_60_RH
+      - dedicated_HVAC_zone_with_monitoring
+      - refrigerator_for_cold_chain_2_to_8_degC
+      - dedicated_lighting_500_lux_dispensing_area
+      - dispensing_counter_with_kneeboard_opening
+      - lockable_controlled_drug_cabinet_double_lock
+      - shelving_system_labelled_zoned
+      - CCTV_surveillance
+      - fire_detection_system
+      - security_access_control
+      - pass_through_window_for_dispensing
+    conditional_items:
+      - item: IV_compounding_area_with_HEPA_cabinet
+        if: IV_preparation
+      - item: cytotoxic_drug_preparation_negative_pressure_cabinet
+        if: oncology_pharmacy
+    common_omissions:
+      - temperature_and_humidity_monitoring
+      - cold_chain_refrigerator
+      - controlled_drug_double_lock_spec
+    rfi_template: >
+      Pharmacy scope appears incomplete. Missing: {missing_items}. CDSCO
+      regulations, Schedule M (Good Manufacturing Practices), and NABH pharmacy
+      standards apply. Please confirm: (a) HVAC — dedicated zone maintaining
+      20–25 degC and 30–60% RH with continuous BMS logging; (b) Refrigerator
+      capacity and temperature alarm (2–8 degC cold chain); (c) Controlled drug
+      cabinet — double-lock, affixed to wall, schedule-compliant; (d) Dispensing
+      counter clear opening dimension.
+    priority: high
+    building_types: [healthcare]
+
+  - room_type: radiology_xray_room
+    display_name: "Radiology / X-Ray Room"
+    keywords:
+      - radiology
+      - X-ray room
+      - X-ray
+      - xray
+      - radiography
+      - fluoroscopy
+      - CR room
+      - DR room
+    required_items:
+      - lead_lined_walls_minimum_1_5mm_Pb_equivalent
+      - lead_lined_door_minimum_1_5mm_Pb_equivalent
+      - lead_glass_observation_window
+      - lead_lined_ceiling_and_floor_where_rooms_above_and_below
+      - radiation_warning_light_and_sign_outside_door
+      - interlocked_door_with_exposure_indicator
+      - AERB_compliant_radiation_survey_certificate
+      - seamless_easy_clean_floor
+      - hand_hygiene_station
+      - control_console_alcove_or_separate_control_room
+      - emergency_stop_button
+      - adequate_room_dimensions_per_equipment_manufacturers_spec
+      - electrical_supply_per_X_ray_unit_KVA_spec
+      - earthing_grid_and_EMI_shielding
+    conditional_items:
+      - item: CT_scanner_room_dedicated_chiller_and_UPS
+        if: CT_or_MRI
+      - item: MRI_room_faraday_cage_RF_shielding
+        if: MRI_installation
+      - item: angiography_room_floor_reinforcement
+        if: cath_lab
+    common_omissions:
+      - lead_lining_specification_and_AERB_approval
+      - interlocked_door
+      - radiation_warning_light
+      - lead_glass_observation_window
+    rfi_template: >
+      Radiology/X-ray room scope appears incomplete. Missing: {missing_items}.
+      AERB (Atomic Energy Regulatory Board) approval is mandatory. Please
+      confirm: (a) Lead lining thickness — Pb equivalent (mm), typically
+      1.5–3.0 mm Pb depending on kVp and workload; (b) AERB radiation survey
+      and approval process — who provides the radiation protection design
+      certificate? (c) Lead door specification — Pb equivalent and frame seal;
+      (d) Observation window — lead glass thickness and Pb equivalent; (e)
+      Radiation warning light interlock system.
+    priority: critical
+    building_types: [healthcare]
+
+  # ─────────────────────────────────────────────────────────────────────────────
+  # INSTITUTIONAL
+  # ─────────────────────────────────────────────────────────────────────────────
+
+  - room_type: classroom
+    display_name: "Classroom / Lecture Room"
+    keywords:
+      - classroom
+      - lecture room
+      - lecture hall
+      - tutorial room
+      - seminar room
+      - teaching room
+    required_items:
+      - smooth_hard_wearing_floor_tile_or_vinyl
+      - acoustic_treatment_wall_panels_or_absorption
+      - whiteboard_or_chalkboard_with_marker_tray
+      - projection_screen_or_interactive_whiteboard
+      - data_and_power_outlets_on_each_desk_or_perimeter
+      - adequate_daylighting_with_glare_control_blinds
+      - artificial_lighting_minimum_300_lux_at_desk
+      - ceiling_fan_or_air_conditioning
+      - ventilation_fresh_air_per_occupant_10_litres_per_sec
+      - entrance_door_with_vision_panel
+      - notice_board_provision
+      - teacher_demonstration_table_with_services
+    conditional_items:
+      - item: raked_floor_fixed_seating
+        if: lecture_hall
+      - item: AV_system_projector_amplifier_microphone
+        if: equipped_lecture_hall
+      - item: hearing_loop_system
+        if: hearing_impaired_provision
+    common_omissions:
+      - acoustic_treatment_spec
+      - adequate_lux_level
+      - fresh_air_ventilation_rate
+    rfi_template: >
+      Classroom scope appears incomplete. Missing: {missing_items}. NBC 2016
+      Part 8 and IS 3646 (lighting) apply. Please confirm: (a) Acoustic
+      treatment — RT60 target (max 0.6 sec for classrooms per NBC); (b)
+      Lighting — 300 lux maintained at desk level, uniformity ratio 0.7; (c)
+      Ventilation — fresh air rate per occupant (10 L/s per person min); (d)
+      Thermal comfort — AC or fan specification.
+    priority: medium
+    building_types: [institutional]
+
+  - room_type: library
+    display_name: "Library / Reading Room"
+    keywords:
+      - library
+      - reading room
+      - book room
+      - learning resource
+      - study room
+    required_items:
+      - smooth_durable_floor_tile_or_carpet_tile
+      - acoustic_absorptive_ceiling_tiles
+      - shelving_steel_double_faced_standard_heights
+      - adequate_study_carrel_seating
+      - lighting_300_to_500_lux_reading_level_uniform
+      - natural_light_control_UV_filter_blinds
+      - air_conditioning_humidity_control_for_books
+      - fire_detection_early_warning_very_early_smoke_VESDA
+      - fire_suppression_gaseous_or_pre_action_sprinkler
+      - electrical_data_outlets_at_reading_positions
+      - security_gate_RFID_anti_theft
+      - CCTV_surveillance
+    conditional_items:
+      - item: rare_book_vault_with_humidity_control
+        if: archival_collection
+      - item: AV_media_booth
+        if: multimedia_library
+    common_omissions:
+      - UV_filter_to_protect_books
+      - VESDA_early_smoke_detection
+      - humidity_control_spec
+    rfi_template: >
+      Library scope appears incomplete. Missing: {missing_items}. Please
+      confirm: (a) Lighting — 300–500 lux at reading surfaces (IS 3646),
+      no UV transmission to protect documents; (b) HVAC humidity control —
+      40–55% RH to preserve collection; (c) Fire suppression — gaseous
+      (FM-200 or inert gas) or pre-action system preferred over conventional
+      wet sprinkler to protect books; (d) Shelving load — 1,000 kg/m² typical
+      for double-faced steel shelving — structural slab check required.
+    priority: high
+    building_types: [institutional]
+
+  - room_type: auditorium
+    display_name: "Auditorium / Multipurpose Hall"
+    keywords:
+      - auditorium
+      - multipurpose hall
+      - assembly hall
+      - conference hall
+      - convention hall
+      - audi
+    required_items:
+      - raked_seating_with_acoustic_calculation
+      - acoustic_wall_panels_and_ceiling_diffusers
+      - reverberation_time_RT60_target_0_8_to_1_2_sec
+      - stage_with_lighting_bars_and_dimmable_circuits
+      - PA_system_amplifier_loudspeakers_microphone
+      - hearing_loop_induction_loop_system
+      - AV_projector_or_LED_screen
+      - blackout_curtains_or_motorised_blinds
+      - emergency_lighting_maintained
+      - exit_signage_illuminated
+      - HVAC_adequate_for_full_occupancy
+      - dedicated_fresh_air_ventilation
+      - green_room_backstage
+      - control_room_AV_and_lighting
+      - accessible_seating_positions
+      - fire_detection_and_suppression
+    conditional_items:
+      - item: orchestra_pit_with_lift
+        if: concert_hall
+      - item: translation_booths_with_headset_system
+        if: conference_use
+      - item: dressing_rooms_with_mirrors_and_lights
+        if: performance_venue
+    common_omissions:
+      - RT60_acoustic_spec
+      - hearing_loop_system
+      - HVAC_sizing_for_full_occupancy
+      - stage_lighting_dimmer_system
+    rfi_template: >
+      Auditorium scope appears incomplete. Missing: {missing_items}. IS 2526
+      (acoustics) and NBC 2016 public assembly space requirements apply. Please
+      confirm: (a) Target RT60 — 0.8–1.2 sec for speech, up to 2.0 sec for
+      music (IS 2526); (b) Seating density and HVAC supply/extract balance at
+      full occupancy; (c) Stage technical lighting — dimmer rack KVA, number
+      of circuits; (d) PA system — SPL at last row, intelligibility STIPA > 0.5.
+    priority: high
+    building_types: [institutional, hospitality]
+
+  - room_type: server_room
+    display_name: "Server Room / Data Centre"
+    keywords:
+      - server room
+      - data centre
+      - data center
+      - network room
+      - IT room
+      - comms room
+      - computer room
+      - UPS room
+    required_items:
+      - raised_floor_600mm_x_600mm_panels_with_cable_routing
+      - precision_air_conditioning_CRAC_or_CRAH_unit
+      - N_plus_1_redundancy_cooling
+      - UPS_system_with_bypass_and_battery_room
+      - standby_diesel_generator_with_ATS
+      - fire_suppression_gaseous_system_FM200_or_inert_gas_IG541
+      - very_early_smoke_detector_VESDA_aspirating_system
+      - structured_cabling_Cat6A_or_fibre_patch_panels
+      - server_racks_19_inch_with_PDU_per_rack
+      - in_row_or_overhead_cable_management
+      - perforated_floor_tiles_for_cold_aisle
+      - hot_aisle_containment_or_cold_aisle_containment
+      - rodent_proofing_all_cable_penetrations_sealed
+      - raised_floor_plenum_pressure_differential
+      - floor_slab_capacity_minimum_12_kN_per_m2
+      - dedicated_earthing_and_bonding_system
+      - BMS_monitoring_for_temperature_humidity_power
+      - physical_access_control_biometric_or_card
+      - CCTV_surveillance
+      - fire_rated_walls_and_door_minimum_1_hour
+      - water_leak_detection_under_floor
+    conditional_items:
+      - item: Tier_3_or_4_redundant_power_2N_configuration
+        if: tier_3_4_data_centre
+      - item: modular_or_containerised_UPS
+        if: large_data_centre
+      - item: outdoor_fresh_air_economiser_cooling
+        if: free_cooling_zone
+    common_omissions:
+      - gaseous_fire_suppression_spec
+      - VESDA_early_smoke_detection
+      - water_leak_detection
+      - raised_floor_load_capacity
+      - rodent_proofing
+    rfi_template: >
+      Server room/data centre scope appears incomplete. Missing: {missing_items}.
+      TIA-942 (Data Centre Infrastructure Standard) and NBC 2016 apply. Please
+      confirm: (a) Tier level target (I–IV per TIA-942) — this drives redundancy
+      spec; (b) Cooling system — CRAC/CRAH capacity (kW) and N+1 redundancy; (c)
+      UPS capacity (kVA) and battery autonomy (minutes); (d) Gaseous fire
+      suppression agent, concentration, and hold time; (e) Raised floor load
+      rating (min 12 kN/m²); (f) VESDA aspirating smoke detection threshold
+      settings; (g) Water leak detection loop under raised floor.
+    priority: critical
+    building_types: [commercial, institutional, industrial]
+
+  - room_type: electrical_room
+    display_name: "Electrical Room / Switchroom"
+    keywords:
+      - electrical room
+      - switchroom
+      - substation
+      - HT room
+      - MV room
+      - LV room
+      - transformer room
+      - distribution room
+      - DB room
+      - main switchboard
+    required_items:
+      - concrete_or_masonry_fire_rated_walls_2_hour
+      - fire_rated_door_2_hour_self_closing
+      - sealed_cable_penetrations_fire_stop
+      - cable_trenches_with_removable_covers
+      - adequate_clearance_800mm_front_600mm_rear_of_panels
+      - ventilation_or_air_conditioning_to_control_heat
+      - floor_drain_for_transformer_oil_sump
+      - oil_sump_capacity_110_percent_of_transformer_oil
+      - fire_suppression_or_detection_in_transformer_room
+      - earthing_and_bonding_strip
+      - adequate_lighting_300_lux
+      - emergency_lighting
+      - anti_condensation_heating_where_required
+      - restricted_access_lock_and_key
+      - danger_and_caution_signage_per_CEA_regulations
+    conditional_items:
+      - item: SF6_gas_handling_ventilation_extract
+        if: SF6_switchgear
+      - item: concrete_blast_wall_or_safe_room
+        if: HV_above_11kV
+      - item: cable_cell_firewall_between_cable_runs
+        if: more_than_one_cable_circuit
+    common_omissions:
+      - oil_sump_for_transformer
+      - fire_stop_at_cable_penetrations
+      - adequate_clearance_for_maintenance
+      - ventilation_heat_load_calculation
+    rfi_template: >
+      Electrical room/switchroom scope appears incomplete. Missing:
+      {missing_items}. CEA Regulations 2010, IS 1646, and NBC 2016 Part 8 apply.
+      Please confirm: (a) Fire rating of walls and door — 2-hour minimum; (b)
+      Oil sump volume — 110% of largest transformer oil capacity (CEA); (c)
+      Cable penetration fire stopping — intumescent seal specification; (d)
+      Ventilation heat rejection — W/m² heat load and ACH; (e) Maintenance
+      clearances front (800 mm) and rear (600 mm) of switchboards.
+    priority: critical
+    building_types: [all]
+
+  - room_type: generator_room
+    display_name: "Generator Room / DG Set Room"
+    keywords:
+      - generator room
+      - DG room
+      - DG set
+      - diesel generator
+      - genset room
+      - standby generator
+    required_items:
+      - reinforced_concrete_anti_vibration_plinth
+      - vibration_isolation_mounts_under_set
+      - fuel_day_tank_within_room_with_bund
+      - fuel_bulk_tank_external_or_underground
+      - fuel_fill_point_with_spill_containment
+      - exhaust_silencer_and_chimney_stack_above_roof_level
+      - forced_draught_ventilation_supply_and_exhaust
+      - air_intake_louvres_with_insect_mesh
+      - acoustic_enclosure_or_room_lining_45_to_55_dB_attenuation
+      - fire_detection_and_fire_extinguishers
+      - oil_sump_floor_with_bund_wall
+      - ATS_automatic_transfer_switch_panel_in_safe_location
+      - earthing_of_set_and_neutral
+      - battery_charger_for_starting_batteries
+      - adequate_access_for_maintenance
+    conditional_items:
+      - item: N_plus_1_parallel_generators
+        if: redundant_power_needed
+      - item: secondary_containment_for_fuel
+        if: large_bulk_tank
+    common_omissions:
+      - anti_vibration_plinth_spec
+      - acoustic_treatment_dB_attenuation
+      - exhaust_stack_height_and_dispersion
+      - fuel_bund_and_spill_containment
+    rfi_template: >
+      Generator room scope appears incomplete. Missing: {missing_items}.
+      CEA Regulations 2010, MOEF noise norms (DG set emissions), and NBC 2016
+      apply. Please confirm: (a) Anti-vibration plinth — size, reinforcement,
+      and isolation mount type/stiffness; (b) Exhaust stack — diameter, height
+      above adjacent roofline, and rain cap; (c) Acoustic attenuation — target
+      noise level at 1 m (max 75 dB(A) as per MOEF); (d) Ventilation — air
+      flow calculation per kVA of set (approx 3–4 m³/min per kW); (e) Fuel
+      containment bund capacity.
+    priority: critical
+    building_types: [all]
+
+  # ─────────────────────────────────────────────────────────────────────────────
+  # HOSPITALITY
+  # ─────────────────────────────────────────────────────────────────────────────
+
+  - room_type: hotel_guest_room
+    display_name: "Hotel Guest Room"
+    keywords:
+      - hotel room
+      - guest room
+      - deluxe room
+      - standard room
+      - suite
+      - hotel bedroom
+    required_items:
+      - carpet_or_engineered_wood_or_luxury_vinyl_floor
+      - acoustic_insulation_walls_and_floor_STC_minimum_50
+      - bed_base_with_headboard
+      - bedside_table_with_lamp
+      - wardrobe_with_hanging_and_shelves
+      - writing_desk_with_chair
+      - minibar_provision_with_electrical_point
+      - TV_point_and_data_point
+      - air_conditioning_fan_coil_unit_per_room
+      - blackout_curtain_and_sheer
+      - window_with_opening_limit_restrictor
+      - door_with_digital_lock_or_keycard
+      - safe_deposit_box_provision
+      - telephone_point
+      - adequate_lighting_with_dimmer
+      - emergency_lighting_and_fire_alarm
+      - sprinkler_head
+      - smoke_detector
+    conditional_items:
+      - item: connecting_door_to_adjacent_room
+        if: interconnecting_room
+      - item: balcony_door_with_sliding_or_french_door
+        if: balcony_provision
+      - item: accessible_room_fittings
+        if: accessible_guest_room
+    common_omissions:
+      - STC_acoustic_spec
+      - blackout_curtain_spec
+      - door_digital_lock_spec
+      - minibar_provision
+    rfi_template: >
+      Hotel guest room scope appears incomplete. Missing: {missing_items}.
+      Please confirm: (a) Acoustic specification — STC 50+ for party walls,
+      IIC 50+ for floor/ceiling assembly (ASHRAE / hotel brand standard); (b)
+      FCU capacity — cooling kW per room; (c) Lighting control — scenes/dimmer
+      type; (d) Window opening restrictor spec — max 100 mm opening for safety.
+    priority: high
+    building_types: [hospitality]
+
+  - room_type: hotel_bathroom
+    display_name: "Hotel Guest Bathroom"
+    keywords:
+      - hotel bathroom
+      - hotel bath
+      - ensuite
+      - en-suite
+      - guest bathroom
+    required_items:
+      - waterproofing_sunken_slab_and_walls_to_1800mm
+      - anti_skid_natural_stone_or_porcelain_tile
+      - wall_tile_or_stone_full_height
+      - floor_drain_linear_or_chrome_point
+      - walk_in_shower_or_shower_tray
+      - rain_shower_overhead
+      - hand_shower_on_slide_bar
+      - thermostatic_mixer_for_shower
+      - vanity_with_mirror_and_lighting
+      - double_basin_or_single_counter_top_basin
+      - bath_towel_bar_and_ring
+      - robe_hook
+      - toilet_roll_holder
+      - WC_close_coupled_or_wall_hung
+      - phone_point_in_bathroom
+      - exhaust_fan_silent_type
+      - heated_towel_rail_provision
+      - amenity_shelf_or_niches_in_shower
+    conditional_items:
+      - item: freestanding_bathtub_with_floor_mounted_filler
+        if: premium_or_suite_bathroom
+      - item: bidet
+        if: specified_by_brand_standard
+      - item: steam_generator_for_steam_room
+        if: spa_suite
+    common_omissions:
+      - waterproofing_spec
+      - thermostatic_mixer
+      - silent_exhaust_fan
+      - phone_point
+    rfi_template: >
+      Hotel bathroom scope appears incomplete. Missing: {missing_items}.
+      Please confirm: (a) Waterproofing — system type, upturn to 1800 mm on
+      shower walls; (b) Shower thermostatic mixer — brand, pressure class; (c)
+      Exhaust fan — noise level (max NR 25 per hotel brand standard); (d)
+      Floor tile COF (min 0.6 wet per Pendulum Test); (e) Marble/stone specify
+      sealing treatment for wet area.
+    priority: critical
+    building_types: [hospitality]
+
+  - room_type: hotel_kitchen
+    display_name: "Hotel Kitchen (Back of House)"
+    keywords:
+      - hotel kitchen
+      - BOH kitchen
+      - back of house
+      - hotel pantry
+      - main kitchen
+    required_items:
+      - non_slip_quarry_tile_or_heavy_duty_epoxy_floor
+      - stainless_steel_SS304_wall_cladding_1500mm_high
+      - waterproofing_entire_floor
+      - channel_drain_stainless_steel_grating
+      - grease_trap_external
+      - SS_work_tables_SS304
+      - commercial_range_and_oven_with_gas_supply
+      - exhaust_canopy_with_grease_baffle_filters_and_UL300_ansul
+      - makeup_air_system_with_tempered_supply
+      - commercial_dishwasher_with_hot_water_booster
+      - walk_in_cold_room_0_to_4_degC_chilled
+      - walk_in_freezer_minus_18_to_minus_22_degC
+      - dry_store_with_shelving
+      - pot_wash_area_with_three_compartment_sink
+      - hand_wash_basin_dedicated_staff
+      - pest_control_provisions
+      - FSSAI_compliance_surfaces
+    conditional_items:
+      - item: halal_certified_segregated_prep_area
+        if: halal_kitchen
+      - item: pastry_section_with_proofing_chamber
+        if: full_service_hotel
+    common_omissions:
+      - makeup_air_for_exhaust_balance
+      - fire_suppression_over_range
+      - grease_trap_spec
+    rfi_template: >
+      Hotel kitchen scope appears incomplete. Missing: {missing_items}. FSSAI
+      and NBC 2016 fire safety requirements apply. Please confirm: (a) Exhaust
+      hood CFM and Ansul fire suppression system (UL 300); (b) Makeup air
+      volume to balance exhaust; (c) Grease trap location, capacity, and
+      access; (d) Cold room and freezer insulated panel system — thickness and
+      U-value.
+    priority: critical
+    building_types: [hospitality]
+
+  - room_type: banquet_hall
+    display_name: "Banquet Hall / Function Room"
+    keywords:
+      - banquet hall
+      - banquet room
+      - function room
+      - ballroom
+      - wedding hall
+      - event space
+      - conference room
+    required_items:
+      - resilient_flooring_parquet_or_carpet_or_polished_concrete
+      - acoustic_wall_panelling_or_fabric_finish
+      - acoustic_ceiling_tiles_or_coffered_ceiling
+      - dimmable_lighting_with_chandelier_and_recessed
+      - AV_system_projection_screen_speakers
+      - PA_system_wireless_microphone_provision
+      - moveable_partition_wall_STC_50_where_applicable
+      - air_conditioning_HVAC_high_occupancy_density
+      - dedicated_fresh_air_supply_per_person
+      - service_entrance_and_service_corridor
+      - back_of_house_kitchen_pantry_adjacent
+      - fire_detection_and_suppression
+      - emergency_lighting_and_exit_signage
+      - power_outlets_perimeter_and_floor_boxes
+      - hearing_loop_system
+    conditional_items:
+      - item: pre_function_area_or_foyer
+        if: large_event_venue
+      - item: breakout_rooms
+        if: conference_centre
+    common_omissions:
+      - acoustic_spec_and_moveable_partition_STC
+      - HVAC_load_at_full_occupancy
+      - power_floor_box_positions
+      - fresh_air_per_person
+    rfi_template: >
+      Banquet hall scope appears incomplete. Missing: {missing_items}. Please
+      confirm: (a) HVAC load at full occupancy (typical 15 m²/person for
+      banquet); (b) Moveable partition STC rating (min STC 50); (c) Acoustic
+      absorption — RT60 target 0.8–1.0 sec; (d) PA system coverage and SPL;
+      (e) Floor power box positions and feeder cable sizes.
+    priority: high
+    building_types: [hospitality]
+
+  # ─────────────────────────────────────────────────────────────────────────────
+  # INDUSTRIAL / SPECIALISED
+  # ─────────────────────────────────────────────────────────────────────────────
+
+  - room_type: factory_floor
+    display_name: "Factory / Production Floor"
+    keywords:
+      - factory floor
+      - production floor
+      - manufacturing floor
+      - shop floor
+      - assembly line
+      - production hall
+      - workshop
+    required_items:
+      - heavy_duty_power_float_concrete_floor_FM2_or_better
+      - floor_hardener_or_epoxy_coating
+      - floor_flatness_tolerance_FM2_or_superflat_if_racking
+      - floor_drainage_channels_with_grating
+      - column_guards_and_floor_marking
+      - overhead_crane_provision_with_structural_capacity
+      - electrical_power_outlets_industrial_three_phase
+      - lighting_minimum_300_lux_at_work_surface
+      - natural_or_mechanical_ventilation
+      - fire_detection_and_sprinkler_system
+      - emergency_exit_signage
+      - fire_extinguisher_points
+      - compressed_air_ring_main_if_required
+      - dust_extraction_provision
+    conditional_items:
+      - item: explosion_proof_electrical_fittings
+        if: flammable_materials_or_ATEX_zone
+      - item: ESD_anti_static_floor
+        if: electronics_assembly
+      - item: crane_gantry_beam_with_structural_tie
+        if: overhead_crane
+    common_omissions:
+      - floor_flatness_spec
+      - crane_structural_capacity
+      - explosion_proof_fittings
+    rfi_template: >
+      Factory floor scope appears incomplete. Missing: {missing_items}.
+      IS 456, IS 3963, and Factory Act 1948 apply. Please confirm: (a) Floor
+      slab design load (kN/m²) and flatness tolerance (FM2 min, superflat for
+      VNA racking); (b) Overhead crane gantry capacity and span; (c) Power
+      supply — 3-phase socket outlets type and spacing; (d) Ventilation — ACH
+      for heat and process fume removal; (e) ATEX zone classification if
+      flammable materials.
+    priority: high
+    building_types: [industrial]
+
+  - room_type: cold_storage
+    display_name: "Cold Storage / Refrigerated Warehouse"
+    keywords:
+      - cold storage
+      - cold room
+      - refrigerated warehouse
+      - chilled store
+      - frozen store
+      - blast freezer
+    required_items:
+      - insulated_panel_walls_and_ceiling_PIR_or_PUR
+      - insulated_floor_panel_with_anti_heave_under_slab
+      - vapour_barrier_and_anti_condensation_treatment
+      - refrigeration_plant_compressor_and_condenser
+      - evaporator_coils_inside_room
+      - temperature_monitoring_and_alarm_system
+      - defrost_system_electric_or_hot_gas
+      - anti_slip_refrigerator_floor_tile_or_epoxy
+      - crash_barrier_column_guards
+      - dock_leveller_and_dock_seal
+      - strip_curtain_or_rapid_roll_door
+      - emergency_release_inside_cold_room
+      - CO2_or_ammonia_leak_detection_if_natural_refrigerant
+      - fire_detection_in_store_and_plant_room
+      - lighting_LED_low_temperature_rated
+    conditional_items:
+      - item: blast_freezer_with_high_capacity_evaporator
+        if: blast_freezing
+      - item: controlled_atmosphere_CA_storage
+        if: fresh_produce
+    common_omissions:
+      - anti_heave_insulation_under_frozen_floor
+      - refrigerant_leak_detection
+      - emergency_release_inside_cold_room
+      - vapour_barrier_spec
+    rfi_template: >
+      Cold storage scope appears incomplete. Missing: {missing_items}. Please
+      confirm: (a) Design temperature (chilled 0–4 degC or frozen -18 to -22
+      degC or blast -35 degC); (b) Floor insulation — PIR board thickness and
+      anti-heave measures for frozen store; (c) Refrigeration load (kW) and
+      refrigerant type (HFC phase-out schedule — check F-Gas/ODS rules); (d)
+      Emergency release mechanism specification; (e) Refrigerant leak detection
+      — type and alarm set point.
+    priority: critical
+    building_types: [industrial, hospitality]
+
+  - room_type: clean_room
+    display_name: "Cleanroom (Pharmaceutical / Semiconductor)"
+    keywords:
+      - clean room
+      - cleanroom
+      - sterile room
+      - sterile area
+      - aseptic area
+      - controlled environment
+      - ISO class room
+      - GMP area
+    required_items:
+      - HEPA_H14_or_ULPA_final_filtration
+      - raised_access_floor_or_flush_sealed_flooring
+      - anti_static_conductive_epoxy_floor
+      - seamless_radius_coving_at_floor_wall_junctions
+      - cove_sealed_wall_panels_GRP_or_powder_coated_steel
+      - stainless_steel_flush_or_epoxy_ceiling
+      - positive_pressure_differential_15_Pa_min
+      - laminar_or_turbulent_air_flow_per_ISO_class
+      - ACH_target_per_ISO_classification
+      - temperature_control_plus_or_minus_0_5_degC
+      - humidity_control_plus_or_minus_5_percent_RH
+      - air_shower_at_entry_gowning_room
+      - pass_box_with_interlock_for_materials
+      - particle_counter_monitoring_points
+      - BMS_continuous_monitoring_logging
+      - cleaning_and_sanitisation_drain_points
+      - cleanroom_rated_luminaires_sealed
+      - gasket_sealed_service_penetrations
+    conditional_items:
+      - item: unidirectional_laminar_airflow_ISO_4_or_better
+        if: aseptic_filling_or_semiconductor
+      - item: contained_isolator_glove_box
+        if: high_potency_API
+      - item: nitrogen_purge_system
+        if: oxygen_sensitive_process
+    common_omissions:
+      - pressure_differential_monitoring_spec
+      - air_shower_spec
+      - pass_box_interlock
+      - coving_radius_and_seamless_junction
+    rfi_template: >
+      Cleanroom scope appears incomplete. Missing: {missing_items}. ISO 14644-1
+      (cleanroom classification), WHO GMP (pharmaceutical), and ASHRAE 170
+      apply. Please confirm: (a) Target ISO class (1–8) and corresponding
+      particle count limit; (b) ACH — class-dependent (ISO 5: 240–360 ACH,
+      ISO 7: 30–60 ACH); (c) Pressure differential — minimum 15 Pa over
+      adjacent space, monitored continuously; (d) Air shower specification
+      (velocity and purge time); (e) Pass box interlock system (both doors
+      cannot open simultaneously); (f) Floor anti-static conductivity spec
+      (<10^6 ohms).
+    priority: critical
+    building_types: [industrial, healthcare]
+
+  - room_type: swimming_pool
+    display_name: "Swimming Pool"
+    keywords:
+      - swimming pool
+      - lap pool
+      - pool
+      - leisure pool
+      - infinity pool
+      - wading pool
+    required_items:
+      - reinforced_concrete_pool_shell_waterproofed
+      - crystalline_or_epoxy_waterproofing_interior
+      - ceramic_or_glass_mosaic_tile_interior
+      - anti_skid_pool_surrounds
+      - pool_balance_tank_or_surge_channel
+      - circulation_pump_and_filter_system_sand_filter
+      - chemical_dosing_system_chlorine_and_pH
+      - UV_or_ozone_supplementary_treatment
+      - pool_main_drain_with_dual_outlet_anti_entrapment
+      - pool_inlets_returns_at_perimeter
+      - overflow_channel_or_skimmer_box
+      - pool_gutters_with_drainage
+      - water_heater_or_heat_pump_for_heated_pool
+      - pool_lighting_underwater_low_voltage
+      - ladder_and_handrails_SS316
+      - depth_marking_tiles
+      - lifeguard_point_provision
+      - backwash_drain
+      - pool_equipment_room
+    conditional_items:
+      - item: moveable_floor_or_boom_pool_divider
+        if: multi_use_competition_pool
+      - item: starting_blocks_and_lane_ropes
+        if: competition_pool
+      - item: toddler_wading_pool_separate_circulation
+        if: leisure_facility
+    common_omissions:
+      - anti_entrapment_dual_drain
+      - UV_supplementary_treatment
+      - waterproofing_spec
+      - balance_tank_sizing
+    rfi_template: >
+      Swimming pool scope appears incomplete. Missing: {missing_items}. IS 3370
+      (liquid retaining structures), BIS / FINA standards, and local authority
+      health regulations apply. Please confirm: (a) Pool shell waterproofing
+      — crystalline additive or membrane system, which side of slab; (b)
+      Circulation — turnover rate (2–4 hours per public pool) and pump
+      capacity; (c) Main drain anti-entrapment compliance (VGB 508 / CPSC
+      pools safety act equivalent); (d) Chemical dosing — automatic or manual,
+      chlorine type (gas/liquid/tablet); (e) Filter media and backwash provision.
+    priority: critical
+    building_types: [residential, hospitality, institutional]
+
+  # ─────────────────────────────────────────────────────────────────────────────
+  # RESIDENTIAL COMMON AREAS
+  # ─────────────────────────────────────────────────────────────────────────────
+
+  - room_type: living_dining
+    display_name: "Living Room / Dining Room"
+    keywords:
+      - living room
+      - drawing room
+      - dining room
+      - living dining
+      - sitting room
+      - lounge
+    required_items:
+      - vitrified_tile_or_engineered_wood_floor
+      - smooth_plastered_and_painted_walls
+      - smooth_plastered_and_painted_ceiling
+      - main_door_with_frame_and_furniture
+      - windows_with_glazing_and_hardware
+      - electrical_points_per_IS_recommendations
+      - fan_provision_ceiling_with_regulator
+      - TV_point_and_data_point
+      - AC_provision_split_unit_sleeve_or_ducted
+      - adequate_lighting_points
+      - balcony_or_verandah_door_if_applicable
+    conditional_items:
+      - item: parquet_or_polished_marble_floor
+        if: premium_spec
+      - item: false_ceiling_gypsum_or_POP_with_cove
+        if: false_ceiling_scope
+    common_omissions:
+      - AC_sleeve_or_outdoor_unit_location
+      - TV_and_data_point
+      - main_door_frame_and_furniture_spec
+    rfi_template: >
+      Living/dining room scope appears incomplete. Missing: {missing_items}.
+      IS 1893 (seismic loads), IS 875 (live loads 2.0 kN/m²), and NBC 2016
+      apply. Please confirm: (a) Floor tile size and joint spec; (b) AC outdoor
+      unit location and sleeve provision; (c) Electrical outlet count and
+      positions (IS 3646 guide: 1 per 3 m² for living).
+    priority: medium
+    building_types: [residential]
+
+  - room_type: bedroom
+    display_name: "Bedroom"
+    keywords:
+      - bedroom
+      - master bedroom
+      - bed room
+      - sleeping room
+    required_items:
+      - vitrified_tile_or_laminate_floor
+      - smooth_wall_paint
+      - smooth_ceiling_paint
+      - window_with_glazing_and_hardware
+      - door_with_hardware
+      - built_in_wardrobe_or_provision
+      - electrical_points_bedroom_standard
+      - fan_provision_ceiling
+      - AC_provision_sleeve
+      - adequate_lighting_points_including_bedside
+    conditional_items:
+      - item: attached_bathroom
+        if: en_suite_toilet
+      - item: parquet_or_carpet_flooring
+        if: premium_spec
+      - item: false_ceiling
+        if: false_ceiling_scope
+    common_omissions:
+      - wardrobe_provision_spec
+      - bedside_electrical_points
+      - AC_sleeve
+    rfi_template: >
+      Bedroom scope appears incomplete. Missing: {missing_items}. Please
+      confirm: (a) Wardrobe — built-in or provision; (b) Electrical outlets —
+      bedside 5A and 15A (IS 3646); (c) AC outdoor unit provision.
+    priority: medium
+    building_types: [residential]
+
+  - room_type: balcony_terrace
+    display_name: "Balcony / Terrace"
+    keywords:
+      - balcony
+      - terrace
+      - verandah
+      - patio
+      - sit out
+    required_items:
+      - anti_skid_ceramic_or_natural_stone_tile
+      - waterproofing_of_slab_with_upturns
+      - stainless_steel_or_powder_coated_balustrade
+      - floor_drain_with_slope_to_drain_minimum_1_50
+      - waterproof_paint_on_walls
+    conditional_items:
+      - item: pergola_or_shade_structure
+        if: rooftop_terrace
+      - item: planting_beds_with_drainage_root_barrier
+        if: landscaped_terrace
+      - item: external_electrical_outlet_weatherproof
+        if: terrace_garden
+    common_omissions:
+      - waterproofing_under_tile
+      - adequate_fall_to_drain
+      - balustrade_height_and_standard
+    rfi_template: >
+      Balcony/terrace scope appears incomplete. Missing: {missing_items}.
+      NBC 2016 (min balustrade height 1000 mm) and IS 3067 waterproofing apply.
+      Please confirm: (a) Waterproofing system and upturn height; (b) Floor
+      slope — minimum 1:50 to drain; (c) Balustrade height (1000 mm min per
+      NBC) and material/finish spec.
+    priority: high
+    building_types: [residential, hospitality]
+
+  - room_type: staircase
+    display_name: "Staircase"
+    keywords:
+      - staircase
+      - stair
+      - stair hall
+      - stair flight
+      - fire stair
+      - escape stair
+    required_items:
+      - anti_skid_nosing_on_all_treads
+      - kota_stone_or_granite_or_tile_on_treads_and_risers
+      - MS_or_SS_handrail_continuous
+      - balustrade_with_min_1000mm_height_on_open_side
+      - adequate_stair_width_per_NBC_min_1000mm_residential
+      - adequate_lighting_at_each_landing
+      - emergency_lighting
+      - fire_door_at_each_floor_landing_if_fire_stair
+      - plaster_and_paint_walls_and_soffit
+    conditional_items:
+      - item: pressurisation_system_for_fire_stair
+        if: high_rise_building
+      - item: wheelchair_accessible_lift_alongside
+        if: public_building
+    common_omissions:
+      - anti_skid_nosing
+      - fire_door_at_landings
+      - emergency_lighting
+      - pressurisation_if_high_rise
+    rfi_template: >
+      Staircase scope appears incomplete. Missing: {missing_items}. NBC 2016
+      Part 4 (fire safety) and Part 3 (development control) apply. Please
+      confirm: (a) Tread anti-skid nosing material and fixing; (b) Handrail
+      height — 900 mm at tread nosing, 1000 mm at landing; (c) Fire stair
+      enclosure — 2-hour fire-rated walls and FD30S doors per floor; (d)
+      Stair pressurisation — required for buildings > 15 m height (NBC).
+    priority: high
+    building_types: [all]
+
+  - room_type: corridor_lobby
+    display_name: "Corridor / Lobby / Lift Lobby"
+    keywords:
+      - corridor
+      - lobby
+      - lift lobby
+      - reception
+      - foyer
+      - hallway
+      - entrance lobby
+    required_items:
+      - durable_hard_wearing_floor_tile_or_stone
+      - smooth_painted_walls
+      - false_ceiling_or_smooth_painted_soffit
+      - adequate_lighting_minimum_150_lux_corridor
+      - emergency_lighting
+      - exit_and_directional_signage_illuminated
+      - fire_detection_and_alarm_devices
+      - sprinkler_heads
+      - wheelchair_accessible_width_min_1200mm_corridor
+      - lobby_door_or_entrance_door_with_glazing
+    conditional_items:
+      - item: reception_desk_and_millwork
+        if: main_entrance_lobby
+      - item: CCTV_surveillance
+        if: commercial_or_institutional
+      - item: visitor_management_system_provision
+        if: office_building
+    common_omissions:
+      - emergency_lighting
+      - exit_signage_spec
+      - lux_level_at_corridor
+    rfi_template: >
+      Corridor/lobby scope appears incomplete. Missing: {missing_items}. NBC
+      2016 Part 4 (fire safety signage) and IS 3646 (lighting) apply. Please
+      confirm: (a) Corridor clear width — min 1200 mm accessible, 1800 mm for
+      healthcare corridors (NBC); (b) Lighting — 150 lux min maintained at
+      floor level; (c) Emergency lighting autonomy — 3 hours min; (d)
+      Directional and exit signage — compliant with IS 9457.
+    priority: medium
+    building_types: [all]
+
+  - room_type: basement_parking
+    display_name: "Basement Car Park"
+    keywords:
+      - basement parking
+      - car park
+      - parking
+      - multi level parking
+      - basement
+      - underground parking
+    required_items:
+      - waterproofing_raft_slab_and_retaining_walls_external_or_internal
+      - tanking_membrane_or_crystalline_waterproofing
+      - vehicle_ramp_with_anti_skid_ribbed_finish
+      - car_bay_markings_and_lane_markings
+      - exhaust_mechanical_ventilation_CO_sensing
+      - CO_detector_with_alarm_and_fan_control
+      - fire_detection_and_sprinkler_system
+      - fire_hose_reels_at_intervals
+      - emergency_lighting
+      - adequate_lighting_minimum_50_lux_parking_bay
+      - vehicle_barriers_wheel_stops_per_bay
+      - drainage_channel_and_sump_with_pump
+      - fire_rated_access_stair_and_lift
+      - signage_entrance_exit_clearance_height
+    conditional_items:
+      - item: EV_charging_points_provision
+        if: EV_charging_required
+      - item: traffic_control_arm_barrier
+        if: managed_access_parking
+      - item: bicycle_parking_area
+        if: mixed_use_development
+    common_omissions:
+      - CO_detection_and_ventilation_interlock
+      - waterproofing_spec_retaining_walls
+      - sump_pump_provision
+      - EV_charging_provision
+    rfi_template: >
+      Basement car park scope appears incomplete. Missing: {missing_items}.
+      NBC 2016 Part 4, IS 3370 (water retaining structure), and NFPA 88A
+      (parking structures) apply. Please confirm: (a) Waterproofing — tanking
+      system or crystalline additive, test pressure; (b) CO ventilation — CO
+      sensor threshold (25 ppm alarm, 50 ppm fan start per ASHRAE 62.1); (c)
+      Ramp gradient (max 1:6 for straight, 1:8 for curved) and anti-skid
+      ribbing; (d) Sprinkler system — ordinary hazard group 2 (NFPA 13).
+    priority: critical
+    building_types: [residential, commercial, institutional, hospitality]
+
+  - room_type: terrace_roof
+    display_name: "Terrace / Roof Slab"
+    keywords:
+      - terrace
+      - roof terrace
+      - roof slab
+      - exposed roof
+      - top floor terrace
+      - podium terrace
+    required_items:
+      - waterproofing_primary_membrane_APP_or_PU
+      - waterproofing_protection_screed_50mm_min
+      - slope_to_drain_minimum_1_80
+      - roof_drain_with_overflow_outlet
+      - parapet_wall_with_DPC_and_coping
+      - insulation_layer_EPS_or_XPS_if_occupied_or_conditioned
+      - reflective_or_cool_roof_coating
+      - anti_skid_tile_or_paving_if_accessible
+      - lightning_conductor_if_required
+    conditional_items:
+      - item: solar_PV_panel_provision_structural_and_electrical
+        if: solar_installation
+      - item: green_roof_growing_medium_and_root_barrier
+        if: green_roof
+      - item: overhead_water_tank_on_terrace
+        if: gravity_fed_water_supply
+    common_omissions:
+      - waterproofing_spec
+      - insulation_layer
+      - reflective_cool_roof_coating
+      - overflow_outlet
+    rfi_template: >
+      Terrace/roof slab scope appears incomplete. Missing: {missing_items}.
+      IS 3067 and RFI-SG-WP-002 apply. Please confirm: (a) Waterproofing
+      system — APP torch-applied or PU liquid applied, thickness and number
+      of layers; (b) Protection screed — thickness (min 50 mm) and slope to
+      drain; (c) Thermal insulation — XPS/EPS board, thickness and R-value;
+      (d) Reflective/cool roof coating — solar reflectance index (SRI) value;
+      (e) Overflow drain positioned 25 mm above primary drain level.
+    priority: critical
+    building_types: [all]

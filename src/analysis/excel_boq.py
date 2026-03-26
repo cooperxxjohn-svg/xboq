@@ -5,6 +5,12 @@ Sprint 21C: India pilot tenders often include BOQ as Excel (Price Bid / SOQ).
 This module detects BOQ sheets, maps columns, and returns structured boq_items
 matching the same schema as PDF-based extract_boq.py output.
 
+Sprint 25: Improved sheet detection for GeM/CPWD template format.
+- Reads Schedule1/Schedule2/Schedule4 tabs (real items) not just BoQ1 (cover).
+- max_header_row raised to 25 to skip GeM template preamble rows.
+- Added DSR/SOR reference column and trade inference from schedule-letter prefix.
+- Parent-item detection: letter + 3 digits with no qty = section header.
+
 Pure module — no Streamlit dependency.
 """
 
@@ -33,6 +39,9 @@ COLUMN_VARIANTS: Dict[str, List[str]] = {
         "desc", "description of item", "description of work",
         "name of work", "specification", "details",
         "brief description", "item of work",
+        # GeM / CPWD template variants
+        "item particulars", "short description", "work description",
+        "description of items", "work item",
     ],
     "unit": [
         "unit", "uom", "u/m", "unit of measurement", "units",
@@ -41,24 +50,46 @@ COLUMN_VARIANTS: Dict[str, List[str]] = {
         "qty", "quantity", "estimated qty", "est. qty", "est qty",
         "estimated quantity", "approx qty", "approx. qty",
         "tender qty", "bill qty",
+        # GeM template variants
+        "nos.", "nos", "quantity (nos)", "quantity in nos",
     ],
     "rate": [
         "rate", "unit rate", "rate (rs.)", "rate(rs)", "rate (rs)",
         "rate per unit", "quoted rate", "offered rate",
         "rate in rs", "rate in figures", "unit price",
+        # GeM / CPWD variants — DSR/SOR rate column
+        "basic unit rate", "basic rate", "dsr rate", "sor rate",
+        "rate as per dsr", "rate as per sor", "basic unit rate as per dsr",
+        "basic unit rate as per sor",
     ],
     "amount": [
         "amount", "total", "amount (rs.)", "amount(rs)", "amount (rs)",
         "total amount", "total cost", "total (rs.)", "value",
+        # GeM template variants
+        "total value", "total basic amount", "extended amount",
+    ],
+    # DSR / SOR reference column — common in CPWD / PWD BOQs
+    "sor_code": [
+        "dsr ref", "dsr reference", "sor ref", "sor reference",
+        "reference of rate", "schedule of rate", "dsr item no",
+        "sor item no", "dsr no", "sor no", "reference no",
+        "rate reference", "dsr/sor", "dsr / sor",
+        "specification reference", "spec ref",
     ],
 }
 
-# Sheet name keywords that indicate a BOQ sheet
+# Sheet name keywords that indicate a BOQ sheet.
+# "SCHEDULE" added for GeM/CPWD template tabs: Schedule1, Schedule2, Schedule4.
 SHEET_NAME_KEYWORDS = [
     "BOQ", "SOQ", "PRICE", "BID", "RATE", "ESTIMATE", "BILL",
     "SCHEDULE OF QUANTITIES", "BILL OF QUANTITIES", "PRICE BID",
     "PRICE SCHEDULE", "ABSTRACT OF COST",
+    # GeM portal template sheet names
+    "SCHEDULE", "SCH", "ITEMS",
 ]
+
+# Alpha parent-item pattern (letter + exactly 3 digits = section header in CPWD format)
+_EXCEL_ALPHA_PARENT_RE = re.compile(r'^[A-Za-z]\d{3}$')
 
 # Totals / summary row patterns (skip these rows)
 _TOTALS_RE = re.compile(
@@ -69,9 +100,17 @@ _TOTALS_RE = re.compile(
     re.IGNORECASE,
 )
 
-# Section / group header patterns (skip these rows)
+# Section / group header patterns (skip these rows).
+# Three sub-patterns (any one sufficient):
+#   1. Keyword prefix  – "Section A:", "Part 2 –", "Group C"
+#   2. Numbered title  – "3.0 STRUCTURAL WORKS", "2) CIVIL WORKS"
+#   3. ALL-CAPS title  – "FINISHING WORKS", "PLUMBING & SANITARY"
 _SECTION_HEADER_RE = re.compile(
-    r'^\s*(?:section|part|chapter|division|group|schedule)\s*[-:\s]',
+    r'^\s*(?:'
+    r'(?:section|part|chapter|division|group|schedule)\s*[-:\s]'   # keyword prefix
+    r'|(?:\d+[.)]\s+)[A-Z][A-Z\s/&,()–-]{6,}'                     # numbered heading
+    r'|[A-Z][A-Z\s/&,()–-]{8,}$'                                   # ALL-CAPS line
+    r')',
     re.IGNORECASE,
 )
 
@@ -185,8 +224,8 @@ def _read_xlsx_sheets(path: Path) -> Optional[List[Tuple[str, list]]]:
 
     try:
         wb.close()
-    except Exception:
-        pass
+    except Exception as e:
+        logger.warning(f"Failed to close workbook {path.name}: {e}")
 
     return result
 
@@ -231,8 +270,8 @@ def _read_xls_sheets(path: Path) -> Optional[List[Tuple[str, list]]]:
 
     try:
         xls.close()
-    except Exception:
-        pass
+    except Exception as e:
+        logger.warning(f"Failed to close workbook {path.name}: {e}")
 
     return result
 
@@ -257,7 +296,7 @@ def _read_workbook(path: Path) -> Optional[List[Tuple[str, list]]]:
 
 def _detect_header_row(
     rows: list,
-    max_header_row: int = 10,
+    max_header_row: int = 25,
 ) -> Optional[Tuple[int, Dict[str, int]]]:
     """
     Find the header row and build a column mapping.
@@ -376,10 +415,19 @@ def parse_boq_sheet(
 
     Returns:
         (items, skipped_count)
+
+    Sprint 25 additions:
+    - Extracts sor_code from DSR/SOR reference column.
+    - Infers trade from schedule-letter item_no prefix (A→civil, R→electrical, etc.).
+    - Parent-item detection: alpha item_no (A101) with no qty = section header.
     """
+    # Inline import to avoid circular dependency
+    from .extractors.extract_boq import infer_boq_trade
+
     items = []
     skipped = 0
     data_start = header_row + 1
+    current_section: str = ""   # tracks the most recent section header text
 
     for row_idx in range(data_start, len(rows)):
         row = rows[row_idx]
@@ -405,25 +453,46 @@ def parse_boq_sheet(
             skipped += 1
             continue
 
-        # Skip section headers (no numeric data)
+        # Parse item number early (needed for parent-item detection)
+        item_no = _cell_str(raw.get("item_no", ""))
+
+        # Skip section headers (no numeric data); record text for child items.
+        # Two cases:
+        #   A. Description text looks like a section header (ALL-CAPS / keyword prefix)
+        #   B. Alpha item_no like A101 (letter + exactly 3 digits) with no qty/rate
+        qty_val = _cell_float(raw.get("qty"))
+        rate_val = _cell_float(raw.get("rate"))
+        amount_val = _cell_float(raw.get("amount"))
+
+        is_parent_item = (
+            item_no and _EXCEL_ALPHA_PARENT_RE.match(item_no)
+            and qty_val is None and rate_val is None and amount_val is None
+        )
+        if is_parent_item:
+            hdr = description or item_no
+            current_section = f"{item_no} — {hdr[:70]}" if description else item_no
+            skipped += 1
+            continue
+
         if description and _is_section_header(description):
-            qty_val = _cell_float(raw.get("qty"))
-            rate_val = _cell_float(raw.get("rate"))
-            amount_val = _cell_float(raw.get("amount"))
             if qty_val is None and rate_val is None and amount_val is None:
+                current_section = description[:80]
                 skipped += 1
                 continue
 
         # Parse numeric fields
-        qty = _cell_float(raw.get("qty"))
-        rate = _cell_float(raw.get("rate"))
-        amount = _cell_float(raw.get("amount"))
-
-        # Parse item number
-        item_no = _cell_str(raw.get("item_no", ""))
+        qty = qty_val
+        rate = rate_val
+        amount = amount_val
 
         # Parse unit
         unit = _cell_str(raw.get("unit", "")) or None
+
+        # Parse DSR/SOR reference (sor_code)
+        raw_sor = _cell_str(raw.get("sor_code", ""))
+        sor_code: Optional[str] = (
+            raw_sor if raw_sor and raw_sor not in ("-", "–", "—", "N/A", "n/a") else None
+        )
 
         # Skip rows with no text AND no numbers
         if not description and not item_no:
@@ -437,18 +506,24 @@ def parse_boq_sheet(
         if rate is None and qty and amount and qty > 0:
             rate = round(amount / qty, 2)
 
+        # Trade inference — schedule prefix takes priority over keywords
+        trade = infer_boq_trade(description, item_no)
+
         # Build boq_item matching the canonical schema
-        item = {
+        item: Dict[str, Any] = {
             "item_no": item_no,
             "description": description,
             "unit": unit,
             "qty": qty,
             "rate": rate,
+            "sor_code": sor_code,
+            "trade": trade,
             "source_page": 0,          # Marker: not from a PDF page
             "confidence": 0.85,        # Structured Excel data = higher confidence
             "source_file": source_file,
             "source_sheet": source_sheet,
             "source_row": row_idx + 1,  # 1-indexed for human readability
+            "section": current_section, # BOQ section header above this item (may be "")
         }
 
         items.append(item)

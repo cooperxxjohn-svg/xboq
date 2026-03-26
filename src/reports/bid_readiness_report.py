@@ -14,6 +14,7 @@ All sections tied together by IDs for traceability.
 """
 
 import json
+import logging
 from pathlib import Path
 from typing import List, Dict, Any, Optional, Tuple
 from dataclasses import dataclass, field
@@ -22,6 +23,8 @@ from collections import defaultdict
 import io
 import zipfile
 import csv
+
+logger = logging.getLogger(__name__)
 
 import sys
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
@@ -1105,43 +1108,45 @@ def export_report_bundle(report: ReportData, output_dir: Path) -> Dict[str, Path
     output_dir.mkdir(parents=True, exist_ok=True)
     outputs = {}
 
-    # HTML Report
-    html_path = output_dir / f"bid_readiness_report_{report.project_id}.html"
-    html_content = generate_report_html(report)
-    with open(html_path, 'w') as f:
-        f.write(html_content)
-    outputs["html_report"] = html_path
+    # Generate all report files with error handling
+    report_files = [
+        ("html_report", f"bid_readiness_report_{report.project_id}.html",
+         lambda: generate_report_html(report)),
+        ("rfi_csv", f"rfi_tracker_{report.project_id}.csv",
+         lambda: generate_rfi_csv(report)),
+        ("rfi_emails", f"rfi_emails_{report.project_id}.txt",
+         lambda: generate_rfi_emails(report)),
+        ("pricing_csv", f"pricing_readiness_{report.project_id}.csv",
+         lambda: generate_pricing_readiness_csv(report)),
+    ]
 
-    # RFI CSV
-    rfi_csv_path = output_dir / f"rfi_tracker_{report.project_id}.csv"
-    with open(rfi_csv_path, 'w') as f:
-        f.write(generate_rfi_csv(report))
-    outputs["rfi_csv"] = rfi_csv_path
-
-    # RFI Emails
-    rfi_emails_path = output_dir / f"rfi_emails_{report.project_id}.txt"
-    with open(rfi_emails_path, 'w') as f:
-        f.write(generate_rfi_emails(report))
-    outputs["rfi_emails"] = rfi_emails_path
-
-    # Pricing Readiness CSV
-    pricing_path = output_dir / f"pricing_readiness_{report.project_id}.csv"
-    with open(pricing_path, 'w') as f:
-        f.write(generate_pricing_readiness_csv(report))
-    outputs["pricing_csv"] = pricing_path
+    for key, filename, generator in report_files:
+        file_path = output_dir / filename
+        try:
+            with open(file_path, 'w') as f:
+                f.write(generator())
+            outputs[key] = file_path
+        except (OSError, IOError) as e:
+            logger.error(f"Failed to write {filename}: {e}")
 
     # Report JSON
     json_path = output_dir / f"report_data_{report.project_id}.json"
-    with open(json_path, 'w') as f:
-        json.dump(report.to_dict(), f, indent=2, default=str)
-    outputs["report_json"] = json_path
+    try:
+        with open(json_path, 'w') as f:
+            json.dump(report.to_dict(), f, indent=2, default=str)
+        outputs["report_json"] = json_path
+    except (OSError, IOError, TypeError) as e:
+        logger.error(f"Failed to write report JSON: {e}")
 
     # ZIP bundle
     zip_path = output_dir / f"bid_readiness_bundle_{report.project_id}.zip"
-    with zipfile.ZipFile(zip_path, 'w') as zf:
-        for name, path in outputs.items():
-            zf.write(path, path.name)
-    outputs["zip_bundle"] = zip_path
+    try:
+        with zipfile.ZipFile(zip_path, 'w') as zf:
+            for name, path in outputs.items():
+                zf.write(path, path.name)
+        outputs["zip_bundle"] = zip_path
+    except (OSError, IOError) as e:
+        logger.error(f"Failed to create ZIP bundle: {e}")
 
     return outputs
 

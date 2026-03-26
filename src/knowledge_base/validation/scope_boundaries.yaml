@@ -1,0 +1,486 @@
+# Scope Boundaries
+# Purpose: Defines what each BOQ item INCLUDES and EXCLUDES.
+# Enables: Double-billing detection and missing-scope flagging.
+# Source: CPWD specifications, IS code clauses, standard tender practice India 2024.
+# Version: 2024-25
+
+scope_boundaries:
+
+  - canonical: rcc_column
+    description: "RCC column in cement concrete M25 or as specified"
+    unit: cum
+    is_code_ref: IS 456:2000
+    includes:
+      - Providing, mixing, placing and compacting concrete to specified grade
+      - Formwork/shuttering and propping for column on all four sides (unless stated separate)
+      - Reinforcement steel Fe500D including cutting, bending, placing (unless stated separate)
+      - Binding wire at laps and links
+      - Cover blocks/spacers to maintain specified cover
+      - Curing minimum 14 days (IS 456 Cl. 13.5)
+      - Column starter bar projection for next floor
+    excludes:
+      - Painting or protective coating of column surface
+      - Waterproofing of column surface
+      - Structural steel connections or base plates
+      - Grouting of column base plate
+      - Expansion joint filler
+      - Insulation or fireproofing cladding
+      - Architectural cladding (stone, tile, GRC panels)
+    ambiguous:
+      - "Formwork: often split out separately at sqm rate — if column rate is concrete-only, formwork must appear as separate item"
+      - "Reinforcement steel: often priced separately at MT rate — check if column rate is composite or concrete-only"
+    typical_separate_items: [formwork_column_sqm, tmt_reinforcement_mt]
+    double_billing_risk: "If column rate > Rs 13,000/cum AND formwork and/or steel also appear as separate line items — likely double-billed."
+    missing_scope_risk: "If column rate < Rs 7,000/cum, check whether formwork and reinforcement have been omitted from BOQ entirely."
+
+  - canonical: rcc_beam
+    description: "RCC beam (plinth, tie, lintel, roof) in cement concrete M25"
+    unit: cum
+    is_code_ref: IS 456:2000
+    includes:
+      - Providing, placing and compacting concrete to specified grade
+      - Formwork for soffit and sides of beam (unless stated separate)
+      - Reinforcement steel including stirrups and main bars (unless stated separate)
+      - Binding wire and cover blocks
+      - Curing minimum 14 days
+      - Bottom props and staging until striking
+    excludes:
+      - Painting or coating of beam surface
+      - Acoustic insulation or fireproofing
+      - Architectural soffit finish (plaster or GRC)
+      - Expansion joint filler between beams
+      - Pre-stressed or post-tensioned cables unless specifically stated
+    ambiguous:
+      - "Formwork: soffit shuttering often billed separately per sqm for beams and slab combined"
+      - "Reinforcement steel: may be billed as composite with beam or separately by MT"
+    typical_separate_items: [formwork_beam_soffit_sqm, tmt_reinforcement_mt]
+    double_billing_risk: "If beam rate > Rs 15,000/cum AND formwork/steel are also separate line items — double billing likely."
+    missing_scope_risk: "If beam rate < Rs 7,000/cum without corresponding formwork/steel items, scope may be missing."
+
+  - canonical: rcc_slab
+    description: "RCC slab (one-way, two-way, flat) in cement concrete M25"
+    unit: cum
+    is_code_ref: IS 456:2000
+    includes:
+      - Providing, placing and compacting concrete to specified grade
+      - Soffit shuttering with props and staging (unless stated separate)
+      - Reinforcement steel top and bottom layers (unless stated separate)
+      - Binding wire and cover blocks
+      - Curing minimum 14 days
+      - Top surface levelling and screed finish where specified
+    excludes:
+      - Waterproofing above slab (separate BOQ item)
+      - Floor finishes (tile, screed)
+      - False ceiling below slab
+      - Openings for MEP penetrations (usually cut after casting)
+      - Post-tensioning tendons unless explicitly stated
+    ambiguous:
+      - "Formwork: soffit shuttering is very commonly priced separately at sqm rate for slabs"
+      - "Reinforcement: often priced by MT separately"
+      - "Top screed: may or may not be included in slab item"
+    typical_separate_items: [formwork_slab_soffit_sqm, tmt_reinforcement_mt, waterproofing_slab_top]
+    double_billing_risk: "If slab rate > Rs 13,000/cum AND soffit shuttering and steel are also separate line items — double billing likely."
+    missing_scope_risk: "Check waterproofing of WC/balcony slabs is not omitted when slab item appears."
+
+  - canonical: rcc_footing
+    description: "RCC isolated or combined footing in cement concrete M20/M25"
+    unit: cum
+    is_code_ref: IS 456:2000
+    includes:
+      - Providing, placing and compacting concrete to specified grade
+      - Formwork on sides (usually nominal for wide shallow footings)
+      - Reinforcement steel Fe500D (unless stated separate)
+      - Binding wire and cover blocks (minimum 75mm cover IS 456 Cl. 26.4)
+      - Curing minimum 14 days
+      - Dewatering allowance for subsoil water at normal depths
+    excludes:
+      - Earthwork excavation for footing (separate BOQ item)
+      - PCC blinding layer (separate BOQ item)
+      - Backfilling after footing (separate BOQ item)
+      - Anti-termite treatment (separate BOQ item)
+      - Waterproofing of footing (rare, only in aggressive soil)
+    ambiguous:
+      - "Reinforcement: commonly split out as separate MT item — verify if footing rate includes steel or not"
+      - "Dewatering: for deep foundations or high water table, dewatering may be a separate provisional sum"
+    typical_separate_items: [excavation_footing_cum, pcc_m75_blinding_cum, tmt_reinforcement_mt, backfilling_cum]
+    double_billing_risk: "If footing rate > Rs 18,000/cum AND steel is also a separate MT item — double billing likely."
+    missing_scope_risk: "Verify PCC blinding and anti-termite treatment both appear as separate items — commonly missed in substructure BOQ."
+
+  - canonical: brick_masonry_230mm
+    description: "Brick masonry 230mm thick in cement mortar 1:6 in superstructure"
+    unit: cum
+    is_code_ref: IS 2212:1991
+    includes:
+      - First class bricks supply and laying
+      - Cement mortar 1:6 mixing and use
+      - Raking of joints on both faces for key to plaster
+      - Curing minimum 7 days
+      - Forming openings for doors, windows, and chases (included within masonry labour)
+      - Lintels placement (concrete lintels cast in-situ are often separate)
+    excludes:
+      - Scaffolding (often a separate BOQ item by sqm or lump sum)
+      - RCC lintels above openings (separate BOQ item)
+      - Precast lintels supply and placing (separate item)
+      - Reinforced masonry bands (separate item)
+      - Plastering (separate BOQ item)
+      - Damp-proof course at plinth level (separate BOQ item)
+    ambiguous:
+      - "Scaffolding: internal scaffolding often included; external scaffolding for multi-storey is a separate major item"
+      - "Damp-proof course at plinth: sometimes included in masonry item, sometimes separate"
+      - "Toothing and bonding to RCC: may or may not be separately priced"
+    typical_separate_items: [external_scaffolding, rcc_lintel, damp_proof_course, plastering]
+    double_billing_risk: "If brick masonry item includes scaffolding AND external scaffolding also appears as a separate item — double billing."
+    missing_scope_risk: "Verify RCC lintels above all openings are present in BOQ — commonly omitted. Also check DPC at plinth level."
+
+  - canonical: cement_plaster_internal
+    description: "Cement plaster 12mm 1:6 on internal masonry and RCC surfaces"
+    unit: sqm
+    is_code_ref: IS 1661:1972
+    includes:
+      - Surface preparation — raking of joints (masonry) or hacking (RCC)
+      - Applying cement mortar 12mm thick in even coat
+      - Curing minimum 7 days
+      - Finishing with wooden float (not POP finish)
+      - Beading at corners where specified
+    excludes:
+      - POP/gypsum punning finish (separate BOQ item in premium specifications)
+      - Wall putty application (separate BOQ item)
+      - Primer coat (part of painting scope)
+      - Bonding agent/SBR for RCC surfaces (sometimes separate)
+      - Chicken mesh at masonry-RCC junctions (sometimes separate)
+    ambiguous:
+      - "POP finish: in residential projects, plaster often includes 6mm POP coat — must verify specification"
+      - "Chicken mesh: often billed per rmt of junction length or included in plaster rate"
+      - "Bonding agent: varies by contractor — may or may not be in plaster rate"
+    typical_separate_items: [pop_punning_6mm, wall_putty_2coats, chicken_mesh_at_junctions]
+    double_billing_risk: "If plaster item explicitly states includes POP finish AND POP punning also appears as a separate item — double billing."
+    missing_scope_risk: "Verify chicken mesh at masonry-RCC column/beam junctions is covered either in masonry or plaster item to prevent cracking."
+
+  - canonical: tile_flooring_vitrified
+    description: "Vitrified tile flooring 600x600mm on cement mortar bed"
+    unit: sqm
+    is_code_ref: IS 15622:2006
+    includes:
+      - Supply and laying of vitrified tiles 600x600mm
+      - Cement mortar screed bed (25-30mm) or tile adhesive as specified
+      - Grouting with matching epoxy or cement grout
+      - Cleaning and curing
+      - Wastage allowance (8-10% for cuts at edges)
+    excludes:
+      - Skirting tiles (separate BOQ item at rmt)
+      - Waterproofing screed below tiles in wet areas (separate BOQ item)
+      - Floor levelling screed if base is uneven (separate item)
+      - Anti-skid treatment in bathrooms (may be specified as separate item)
+      - Nosing strip at floor level transitions (separate item)
+    ambiguous:
+      - "Skirting: sometimes included in flooring rate (at 3-inch or 4-inch height), sometimes separate per rmt — must verify"
+      - "Screed bed vs adhesive: specification must clarify — adhesive laying is faster but adhesive cost is higher"
+      - "Tile supply: in some BOQs, tile supply is separate from labour + consumables"
+    typical_separate_items: [skirting_tile_rmt, waterproofing_wet_area_sqm, floor_levelling_screed]
+    double_billing_risk: "If flooring item includes skirting AND a separate skirting-tile item also appears at the same areas — double billing."
+    missing_scope_risk: "Check that waterproofing below tile in all toilet, bathroom, and balcony areas appears as a separate BOQ item."
+
+  - canonical: wall_painting_interior
+    description: "Interior wall and ceiling painting — emulsion finish"
+    unit: sqm
+    is_code_ref: IS 15489:2004
+    includes:
+      - One coat water-based primer
+      - Two finish coats of acrylic emulsion paint
+      - Labour including scaffolding within room height
+      - Masking and protection of floor/fittings
+    excludes:
+      - Wall putty application (commonly a separate BOQ item — 2 coats)
+      - POP punning if not already plastered to smooth finish
+      - External surface painting (separate item with exterior paint specification)
+      - Enamel or epoxy paint for wet areas (separate item)
+      - Texture paint or designer finish (separate item)
+      - Anti-fungal paint in wet areas (sometimes priced separately)
+    ambiguous:
+      - "Wall putty: some BOQ items state 'primer after putty' implying putty is a prerequisite — verify putty is a separate item or included"
+      - "Number of coats: 2-coat vs 3-coat changes material cost by ~35% — must verify coat count"
+      - "Ceiling vs walls: sometimes ceiling paint is a separate item at same rate but different quantity"
+    typical_separate_items: [wall_putty_2coats_sqm, pop_punning_sqm, exterior_weather_coat_sqm]
+    double_billing_risk: "If interior painting states includes putty AND a separate wall putty item also appears for same areas — double billing."
+    missing_scope_risk: "Count of coats is critical — 1-coat application at 2-coat rate is a common underscope issue."
+
+  - canonical: waterproofing_terrace
+    description: "Terrace/roof slab waterproofing with APP modified bitumen membrane"
+    unit: sqm
+    is_code_ref: IS 1346:1991
+    includes:
+      - Surface preparation (cleaning, filling blow holes, chamfering drains)
+      - One coat bitumen-based primer
+      - APP modified bitumen membrane 4mm torch-applied
+      - Upturn at parapet minimum 300mm height
+      - Lapping and sealing at all joints and penetrations
+    excludes:
+      - Protective cement screed 50mm over membrane (often a separate BOQ item)
+      - Drainage layer or filter fabric (separate item for inverted roofs)
+      - Insulation layer (separate item for green roofs or energy-compliant specs)
+      - Tile paving over waterproofing (separate item)
+      - Parapet coping treatment (separate item)
+      - Expansion joint sealing at roof level (separate item)
+    ambiguous:
+      - "Protective screed: 50mm cement screed is almost always required to protect membrane — check if included or separate"
+      - "Parapet upturn: 300mm minimum is standard but full parapet height waterproofing is sometimes required"
+      - "Drain outlets: making good around drain outlets may or may not be included"
+    typical_separate_items: [protective_screed_50mm_sqm, tile_paving_terrace_sqm, parapet_coping_rmt]
+    double_billing_risk: "If waterproofing item includes 50mm protective screed AND a separate screed item also appears at terrace — double billing."
+    missing_scope_risk: "Protective screed is essential to protect membrane. If absent from BOQ, membrane will be damaged during construction."
+
+  - canonical: false_ceiling_gypsum
+    description: "Gypsum board false ceiling 12.5mm on MS grid (suspended) standard flat"
+    unit: sqm
+    is_code_ref: IS 2095 Part 1:2011
+    includes:
+      - 12.5mm standard gypsum board supply
+      - MS ceiling runner, cross tee, and main tee grid system
+      - Galvanised steel hangers and anchors to RCC slab
+      - Fixing screws, jointing compound, jointing tape, corner bead
+      - Primer coat (white skim coat) ready for paint
+    excludes:
+      - Painting of gypsum ceiling (separate BOQ item)
+      - Light fixture cutouts unless specified (lamp cutouts often separate)
+      - AC grille/diffuser cutouts and frames (separate item)
+      - MEP access panels and hatch doors (separate item)
+      - Perimeter cornices or decorative trim (separate item)
+      - Moisture-resistant or fire-rated board (premium rate if not specified)
+    ambiguous:
+      - "Light cutouts: standard specification includes cutting for downlights but MEP contractors may claim separate charge"
+      - "Fire-rated board: 12.5mm standard vs 15mm Type F fire-rated — check specification"
+      - "Painting: some contractors price false ceiling including one coat emulsion; verify"
+    typical_separate_items: [ceiling_painting_2coats_sqm, light_fixture_cutouts_nos, ac_diffuser_frames_nos, mep_access_hatch_nos]
+    double_billing_risk: "If false ceiling rate includes painting AND a separate ceiling painting item appears for same areas — double billing."
+    missing_scope_risk: "Verify light cutout provision and MEP access panels are included in either false ceiling or MEP BOQ — commonly contested."
+
+  - canonical: aluminium_window_sliding
+    description: "Aluminium sliding window 2-track with float glass, complete"
+    unit: sqm
+    is_code_ref: IS 1948:1961
+    includes:
+      - Aluminium section fabrication and assembly (sliding 2-track system)
+      - 5mm plain float glass supply and glazing
+      - Rollers, latches, handles (basic hardware)
+      - Powder coating or anodising of frame (if specified)
+      - Installation in wall opening
+      - Silicon sealant perimeter seal
+    excludes:
+      - Mosquito mesh frame (often priced separately per sqm or nos)
+      - Grills or security bars (separate BOQ item)
+      - Window sill tile or stone (separate item)
+      - Structural sealant for curtain wall glazing (different specification)
+      - Double-glazed or tempered glass (premium — check specification)
+    ambiguous:
+      - "Mosquito mesh: in residential projects this is commonly expected but not always priced — verify"
+      - "Glass type: 5mm float vs 5mm toughened — significant cost difference; check specification"
+      - "Powder coating: standard vs premium RAL colour — cost varies; verify colour specified"
+    typical_separate_items: [mosquito_mesh_sqm, window_grill_sqm, window_sill_tile_rmt]
+    double_billing_risk: "Mosquito mesh appearing both as part of window rate and as a separate item is a common double-billing scenario."
+    missing_scope_risk: "Mosquito mesh is mandatory per RERA for habitable rooms in most Indian states — verify it is covered somewhere in BOQ."
+
+  - canonical: flush_door_shutter
+    description: "Flush door 35mm commercial grade shutter with frame, hardware"
+    unit: nos
+    is_code_ref: IS 2202:1999
+    includes:
+      - 35mm flush door shutter (hollow core or solid core as specified)
+      - Door frame 100x65mm (teak or pine as specified) with rebate
+      - 3 nos butt hinges 100mm
+      - Tower bolt
+      - Door stopper (floor or wall type)
+    excludes:
+      - Cylindrical lock set or mortise lock (often priced separately per nos)
+      - Door closer (separate item in commercial buildings)
+      - Painting or polishing of door and frame (separate item in painting BOQ)
+      - Vision panel / glass insert (separate item)
+      - Kick plate or push plate (separate item in commercial spec)
+    ambiguous:
+      - "Lock set: residential BOQs sometimes include basic lock in door rate; commercial BOQs split it out"
+      - "Door closer: in commercial buildings this is a separate item; verify if specified"
+      - "Painting: painting of doors is almost always a separate painting BOQ item — but frame painting may be included in carpentry rate"
+    typical_separate_items: [cylindrical_lock_set_nos, door_closer_nos, door_painting_nos]
+    double_billing_risk: "If door rate includes lock set AND a separate lock set item appears for same doors — double billing."
+    missing_scope_risk: "Door frames are commonly missed in BOQs where only door shutters are counted. Verify frame item is present."
+
+  - canonical: electrical_point_concealed_wiring
+    description: "Electrical point complete — concealed wiring, conduit, switch/socket, MCB"
+    unit: nos
+    is_code_ref: IS 732:2019
+    includes:
+      - 1.5 or 2.5 sqmm copper wire as specified from DB to point
+      - 20mm dia PVC conduit concealed in wall
+      - Gang switch/socket plate as specified
+      - Junction box at point
+      - Ferruling and labelling at DB
+    excludes:
+      - MCB in distribution board (DB pricing is usually lump sum or per way)
+      - Distribution board itself (separate BOQ item)
+      - Cable tray or conduit to main switch (separate item)
+      - Earthing of point (earthing sometimes separate)
+      - Testing and commissioning (sometimes a separate item)
+    ambiguous:
+      - "MCB: whether each point includes its MCB or MCBs are priced per DB-way is ambiguous — verify"
+      - "Switch/socket plate: specification must clarify brand and grade (standard vs modular vs premium)"
+      - "Wire size: light points typically 1.5sqmm, power points 2.5sqmm, AC points 4sqmm — verify"
+    typical_separate_items: [distribution_board_nos, mcb_per_way_nos, earthing_strip_rmt, testing_commissioning_lump]
+    double_billing_risk: "If point includes MCB AND MCBs also appear as a separate item counted per DB way for the same circuits — double billing."
+    missing_scope_risk: "Earthing continuity at each point is often omitted. Verify earthing conductor appears in BOQ for all circuits."
+
+  - canonical: plumbing_cpvc_supply_pipe
+    description: "CPVC pipe for hot and cold water supply concealed in walls"
+    unit: rmt
+    is_code_ref: IS 15778:2007
+    includes:
+      - CPVC pipe supply in specified diameter
+      - CPVC fittings (elbows, tees, couplings) at standard intervals
+      - Labour for cutting, solvent welding and fixing
+      - Wall clamps and sleeves at wall crossings
+      - Pressure testing at 1.5x working pressure
+    excludes:
+      - Wall chasing and making good (sometimes a separate item)
+      - Valves and stopcocks at fixtures (usually included in sanitary fixtures item)
+      - Insulation of hot water pipe (separate item in premium specifications)
+      - Testing and commissioning of complete system (sometimes lump sum)
+    ambiguous:
+      - "Fittings: a percentage loading for fittings (10-15% of pipe length) is sometimes priced separately"
+      - "Wall chasing: civil chasing is sometimes done by main contractor and electrical/plumbing sub prices only the pipe"
+      - "Hot vs cold: CPVC is used for both but hot water pipe may need insulation — verify specification"
+    typical_separate_items: [wall_chasing_and_making_good_rmt, pipe_insulation_rmt, stopcock_valves_nos]
+    double_billing_risk: "Fittings billed both as part of pipe rate (per rmt) and again as separate items is a common double-billing risk."
+    missing_scope_risk: "Pressure testing and hydraulic test certificate is often excluded — verify this is covered in plumbing BOQ."
+
+  - canonical: sanitary_ware_cp_fittings
+    description: "Sanitary fixtures — WC, washbasin, faucets, shower complete set"
+    unit: nos
+    is_code_ref: IS 2556:2016
+    includes:
+      - Sanitary ware fixture supply (WC pan + cistern, or washbasin as specified)
+      - CP fittings as per specification (faucets, shower, flush valve)
+      - Fixing to wall or floor
+      - Waste fitting and trap
+      - Connection to supply and drain pipes
+    excludes:
+      - Plumbing pipe up to fixture (covered in pipe run items)
+      - Toilet accessories (paper holder, towel rail, grab bar — separate items)
+      - Tile work behind fixtures (part of tiling scope)
+      - Grouting and silicone sealing around fixture (sometimes disputed between plumbing and tiling contractor)
+    ambiguous:
+      - "CP fittings: in some BOQs faucets are priced separately from the fixture — verify"
+      - "Floor trap: floor trap is sometimes part of drainage item and sometimes part of sanitary item"
+      - "Silicon sealing: sealing joint between fixture and wall tile is often disputed in multi-trade BOQs"
+    typical_separate_items: [toilet_accessories_nos, cp_faucet_set_nos, floor_trap_nos]
+    double_billing_risk: "CP fittings appearing both as part of the sanitary ware item and again as a separate CP fitting item is common."
+    missing_scope_risk: "Floor trap in each bathroom is commonly missed — verify it appears in either drainage or sanitary fixture BOQ."
+
+  - canonical: waterproofing_bathroom_floor
+    description: "Bathroom/WC floor and 300mm wall waterproofing with cementitious or crystalline coating"
+    unit: sqm
+    is_code_ref: IS 2645:2003
+    includes:
+      - Surface preparation and cleaning
+      - Primer coat (brush application)
+      - Two coats of cementitious crystalline or polymer-modified waterproofing slurry
+      - 300mm height upturn on all four walls
+      - Curing and flood test (24-hour ponding test)
+    excludes:
+      - Floor screed over waterproofing (required before tiles — separate item)
+      - Tile adhesive and tiles (separate finishing BOQ)
+      - Drain waterproofing collar (sometimes separate)
+      - Silicone sealant at floor-wall junction (sometimes separate)
+    ambiguous:
+      - "Screed over waterproofing: protective screed above waterproofing coat is essential but often missing from BOQ"
+      - "Wall height: 300mm standard vs full wall height in wet showers — verify"
+      - "Flood test: 24-hour ponding test should be specified and witnessed — check if included or separate"
+    typical_separate_items: [floor_screed_over_wc_waterproofing_sqm, flood_test_certificate_nos]
+    double_billing_risk: "Waterproofing screed appearing in both waterproofing item and floor screed item for same bathroom — double billing."
+    missing_scope_risk: "Floor screed above bathroom waterproofing is almost always required and commonly missing from BOQs."
+
+  - canonical: external_scaffolding
+    description: "External tubular steel scaffolding for multi-storey building"
+    unit: sqm
+    is_code_ref: IS 3696 Part 1:1987
+    includes:
+      - Tubular steel scaffold erection on external face
+      - Boarding and toe boards at each level
+      - Safety netting as required
+      - Use for specified duration (typically construction period)
+      - Dismantling and removal
+    excludes:
+      - Internal room scaffolding (usually included in respective trade items — plaster, paint)
+      - Specialty hanging scaffolding for overhangs (separate item)
+      - Scaffold for water tank or terrace parapet (separate item)
+      - Cantilever scaffold for projections (separate item)
+    ambiguous:
+      - "Duration: scaffold is typically priced for a fixed period — extra time beyond this is a variation"
+      - "Internal vs external: trade contractors (painting, plaster) often assume external scaffold is provided by main contractor"
+      - "Facade cladding: cladding contractors price scaffold separately for their works — verify who provides external scaffold"
+    typical_separate_items: [internal_room_scaffolding_included_in_trade_items]
+    double_billing_risk: "External scaffold appearing both as a standalone item AND included in plaster or painting items — double billing."
+    missing_scope_risk: "If scaffolding is not a separate item, verify each trade item that requires it (plaster, external paint, facade) has included the cost."
+
+  - canonical: anti_termite_treatment
+    description: "Pre-construction anti-termite soil treatment below slab"
+    unit: sqm
+    is_code_ref: IS 6313 Part 2:2001
+    includes:
+      - Approved IS 6313 chemical (chlorpyrifos or approved equivalent)
+      - Application by certified operator to all soil below slab
+      - Horizontal treatment to soil below ground floor slab
+      - Vertical treatment to outer faces of foundation walls
+      - Perimeter treatment trench and back-fill
+      - 10-year warranty certificate from licensed applicator
+    excludes:
+      - Post-construction baiting stations (separate item in premium specs)
+      - Retreatment during construction after heavy rains (additional cost)
+      - Anti-termite treatment to wooden members (separate item for carpentry)
+    ambiguous:
+      - "Warranty: 10-year warranty requires specific approved chemicals — generic application without warranty may be cheaper but non-compliant"
+      - "Area measurement: should be measured on plinth area, not BUA — verify if multi-storey BOQ counts upper floors incorrectly"
+    typical_separate_items: [anti_termite_wood_treatment_carpentry, post_construction_baiting_stations]
+    double_billing_risk: "Anti-termite treatment appearing under both civil BOQ and MEP or finishing BOQ for same area."
+    missing_scope_risk: "10-year warranty certificate from IS 6313 licensed applicator is a legal requirement — verify it is specified, not just chemical application."
+
+  - canonical: waterproofing_basement_retaining_wall
+    description: "External waterproofing of basement retaining walls (tanking)"
+    unit: sqm
+    is_code_ref: IS 1346:1991
+    includes:
+      - Surface preparation and cleaning of RCC retaining wall
+      - Bitumen primer coat
+      - Two coats self-adhesive or torch-applied modified bitumen membrane
+      - Protection board (500 micron HDPE or brick bat coba) against backfill damage
+      - Sealing at construction joints and wall-slab junctions
+    excludes:
+      - Earthwork excavation (separate BOQ item)
+      - Backfilling after waterproofing (separate item)
+      - Drainage membrane or geocomposite (separate item in detailed specification)
+      - Internal crystalline waterproofing of basement floor (separate item)
+    ambiguous:
+      - "Protection board: essential to protect membrane during backfill — sometimes omitted from BOQ"
+      - "Construction joints: sealing at construction joints with waterstop is sometimes a separate item"
+      - "Internal vs external: tanking from outside vs internal crystalline treatment — verify which is specified"
+    typical_separate_items: [basement_drainage_sump_pump, internal_crystalline_waterproofing_sqm, earthwork_backfilling_cum]
+    double_billing_risk: "External and internal basement waterproofing both billed for same wall area — verify distinct zones."
+    missing_scope_risk: "Protection board over membrane during backfill is almost always required — if absent from BOQ, membrane will be punctured."
+
+  - canonical: rcc_staircase
+    description: "RCC staircase with treads, risers, landings in M25 concrete"
+    unit: cum
+    is_code_ref: IS 456:2000
+    includes:
+      - Concrete for waist slab, treads, risers, and landings
+      - Formwork for complete staircase geometry (soffit, risers, landings)
+      - Reinforcement steel including distribution bars
+      - Curing 14 days
+    excludes:
+      - Tile or stone finish on treads and risers (separate finishing item)
+      - Nosing angle or anti-skid inserts (separate item)
+      - MS or SS handrail (separate BOQ item)
+      - Soffit plaster of staircase (part of plastering BOQ)
+    ambiguous:
+      - "Quantity measurement: staircase concrete is sometimes measured as solid volume (full step volume) and sometimes as actual concrete volume only — verify method"
+      - "Handrail: MS handrail is sometimes included in civil BOQ and sometimes in steel/fabrication BOQ — verify"
+    typical_separate_items: [staircase_tile_finish_sqm, ms_handrail_rmt, staircase_nosing_rmt]
+    double_billing_risk: "Staircase tile finish appearing in both civil BOQ (as part of stair item) and in tile flooring BOQ — double billing."
+    missing_scope_risk: "Staircase nosing and anti-skid provision is frequently missing — IS 456 recommends nosing for safety."

@@ -316,6 +316,62 @@ Examples:
                               help='Save debug visualization')
     scale_parser.set_defaults(func=cmd_scale)
 
+    # ── Sprint 24 Phase 4: Ask Tender CLI ────────────────────────────
+    ask_parser = subparsers.add_parser('ask',
+                                       help='Ask natural language questions about a tender')
+    ask_parser.add_argument('--input', '-i', required=True,
+                            help='Path to analysis.json')
+    ask_parser.add_argument('--query', '-q', required=True,
+                            help='Natural language question')
+    ask_parser.add_argument('--json', action='store_true',
+                            help='Output as JSON')
+
+    # ── Sprint 23: Agent Registry CLI ──────────────────────────────────
+    agents_parser = subparsers.add_parser('agents',
+                                          help='Agent registry operations')
+    agents_sub = agents_parser.add_subparsers(dest='agents_command',
+                                               help='Agent commands')
+
+    # agents list
+    agents_list_parser = agents_sub.add_parser('list',
+                                                help='List all registered agents')
+    agents_list_parser.add_argument('--category', '-c',
+                                    choices=['pipeline', 'extractor', 'analysis',
+                                             'structural', 'output', 'project'],
+                                    help='Filter by category')
+    agents_list_parser.add_argument('--standalone', '-s', action='store_true',
+                                    help='Show only standalone agents')
+    agents_list_parser.add_argument('--format', '-f', choices=['table', 'json'],
+                                    default='table', help='Output format')
+
+    # agents info
+    agents_info_parser = agents_sub.add_parser('info',
+                                                help='Show agent details')
+    agents_info_parser.add_argument('name', help='Agent name (slug)')
+    agents_info_parser.add_argument('--format', '-f', choices=['table', 'json'],
+                                    default='table', help='Output format')
+
+    # agents run
+    agents_run_parser = agents_sub.add_parser('run',
+                                               help='Run a single agent')
+    agents_run_parser.add_argument('name', help='Agent name (slug)')
+    agents_run_parser.add_argument('--input', '-i',
+                                    help='Input file (JSON, PDF, or Excel)')
+    agents_run_parser.add_argument('--output', '-o', default='./out',
+                                    help='Output directory')
+    agents_run_parser.add_argument('--params', '-p', nargs='*',
+                                    help='Additional params as key=value')
+    agents_run_parser.add_argument('--verbose', '-v', action='store_true',
+                                    help='Show full traceback on errors')
+
+    # ── Sprint 26: Summary Report CLI ────────────────────────────────
+    summary_parser = subparsers.add_parser('summary',
+                                            help='Generate one-page executive summary and exports')
+    summary_parser.add_argument('--input', '-i', required=True,
+                                 help='Path to analysis.json')
+    summary_parser.add_argument('--export-dir', '-o',
+                                 help='Output directory for all exports (CSV, MD, JSON)')
+
     # Also allow direct process without subcommand
     parser.add_argument('--input', '-i', help='Input file or directory')
     parser.add_argument('--output', '-o', default='./out', help='Output directory')
@@ -326,7 +382,28 @@ Examples:
 
     setup_logging(args.verbose)
 
-    if args.command:
+    if args.command == 'ask':
+        # Lazy import — lightweight module, no heavy deps
+        from .ask_tender import cmd_ask
+        return cmd_ask(args)
+    elif args.command == 'summary':
+        from .summary_report import cmd_summary
+        return cmd_summary(args)
+    elif args.command == 'agents':
+        # Lazy import to avoid loading heavy deps for other commands
+        from .agents_cli import cmd_agents_list, cmd_agents_info, cmd_agents_run
+        agents_dispatch = {
+            'list': cmd_agents_list,
+            'info': cmd_agents_info,
+            'run': cmd_agents_run,
+        }
+        agents_cmd = getattr(args, 'agents_command', None)
+        if agents_cmd in agents_dispatch:
+            return agents_dispatch[agents_cmd](args)
+        else:
+            agents_parser.print_help()
+            return 0
+    elif args.command:
         return args.func(args)
     elif args.input:
         # Direct process mode

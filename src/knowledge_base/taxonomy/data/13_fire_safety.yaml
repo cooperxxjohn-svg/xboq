@@ -1,0 +1,4620 @@
+discipline: mep
+trade: fire_safety
+sub_trades:
+  detection:
+    categories:
+      conventional_detectors:
+        items:
+        - id: FIR.DT.SMK.001
+          standard_name: Conventional Smoke Detector - Photoelectric
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2189
+          dsr_item_ref: ''
+          aliases:
+          - smoke detector
+          - conventional smoke
+          typical_rate_range:
+            min: 500
+            max: 1200
+          notes: ''
+          data_source: IS codes only
+        - id: FIR.DT.SMK.002
+          standard_name: Conventional Heat Detector - Fixed Temperature
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2189
+          dsr_item_ref: ''
+          aliases:
+          - heat detector fixed
+          - conventional heat
+          typical_rate_range:
+            min: 400
+            max: 1000
+          notes: 57/68 degree C fixed temp
+          data_source: IS codes only
+        - id: FIR.DT.SMK.003
+          standard_name: Conventional Heat Detector - Rate of Rise
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2189
+          dsr_item_ref: ''
+          aliases:
+          - ROR detector
+          - rate of rise heat
+          typical_rate_range:
+            min: 500
+            max: 1200
+          notes: ''
+          data_source: IS codes only
+      addressable_detectors:
+        items:
+        - id: FIR.DT.ADR.001
+          standard_name: Addressable Smoke Detector - Photoelectric
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 2189
+          dsr_item_ref: ''
+          aliases:
+          - addressable smoke
+          - intelligent smoke detector
+          typical_rate_range:
+            min: 1500
+            max: 3500
+          notes: ''
+          data_source: IS codes only
+        - id: FIR.DT.ADR.002
+          standard_name: Addressable Heat Detector
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 2189
+          dsr_item_ref: ''
+          aliases:
+          - addressable heat
+          typical_rate_range:
+            min: 1500
+            max: 3500
+          notes: ''
+          data_source: IS codes only
+        - id: FIR.DT.ADR.003
+          standard_name: Addressable Multi-Sensor Detector (Smoke + Heat)
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 2189
+          dsr_item_ref: ''
+          aliases:
+          - multi sensor detector
+          - dual detector
+          typical_rate_range:
+            min: 2000
+            max: 4500
+          notes: ''
+          data_source: estimated
+        - id: FIR.DT.ADR.004
+          standard_name: Addressable Multi-Sensor Detector with CO
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 2189
+          dsr_item_ref: ''
+          aliases:
+          - multi sensor CO
+          typical_rate_range:
+            min: 3000
+            max: 6000
+          notes: Triple technology - smoke + heat + CO
+          data_source: estimated
+      special_detectors:
+        items:
+        - id: FIR.DT.SPL.001
+          standard_name: Beam Detector - Reflective Type 100m
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - industrial
+          requires: []
+          is_code_ref: IS 2189
+          dsr_item_ref: ''
+          aliases:
+          - beam detector
+          - linear beam
+          typical_rate_range:
+            min: 15000
+            max: 35000
+          notes: For high ceiling areas, atriums
+          data_source: estimated
+        - id: FIR.DT.SPL.002
+          standard_name: Flame Detector UV/IR - Indoor
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - industrial
+          requires: []
+          is_code_ref: IS 2189
+          dsr_item_ref: ''
+          aliases:
+          - flame detector
+          - UV IR detector
+          typical_rate_range:
+            min: 20000
+            max: 50000
+          notes: For flammable liquid/gas areas
+          data_source: estimated
+        - id: FIR.DT.SPL.003
+          standard_name: Duct Smoke Detector
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 2189
+          dsr_item_ref: ''
+          aliases:
+          - duct detector
+          - AHU smoke detector
+          typical_rate_range:
+            min: 3000
+            max: 8000
+          notes: For HVAC ducts
+          data_source: estimated
+        - id: FIR.DT.SPL.004
+          standard_name: Aspirating Smoke Detector (VESDA)
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 2189
+          dsr_item_ref: ''
+          aliases:
+          - VESDA
+          - aspirating detector
+          - air sampling
+          typical_rate_range:
+            min: 80000
+            max: 200000
+          notes: Very Early Smoke Detection - data centers
+          data_source: estimated
+        - id: FIR.DT.SPL.005
+          standard_name: Linear Heat Detection Cable
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - industrial
+          - commercial
+          requires: []
+          is_code_ref: IS 2189
+          dsr_item_ref: ''
+          aliases:
+          - linear heat cable
+          - heat sensing cable
+          typical_rate_range:
+            min: 200
+            max: 500
+          notes: For cable trays, tunnels
+          data_source: estimated
+      manual_devices:
+        items:
+        - id: FIR.DT.MCP.001
+          standard_name: Manual Call Point - Conventional
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2189
+          dsr_item_ref: ''
+          aliases:
+          - MCP
+          - break glass
+          - manual call point
+          typical_rate_range:
+            min: 400
+            max: 1000
+          notes: ''
+          data_source: estimated
+        - id: FIR.DT.MCP.002
+          standard_name: Manual Call Point - Addressable
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 2189
+          dsr_item_ref: ''
+          aliases:
+          - addressable MCP
+          typical_rate_range:
+            min: 1200
+            max: 3000
+          notes: ''
+          data_source: estimated
+      fire_alarm_panels:
+        items:
+        - id: FIR.DT.FAP.001
+          standard_name: Fire Alarm Panel Conventional 2 Zone
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: IS 2189
+          dsr_item_ref: ''
+          aliases:
+          - 2 zone panel
+          - conventional panel
+          typical_rate_range:
+            min: 8000
+            max: 18000
+          notes: ''
+          data_source: estimated
+        - id: FIR.DT.FAP.002
+          standard_name: Fire Alarm Panel Conventional 4 Zone
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2189
+          dsr_item_ref: ''
+          aliases:
+          - 4 zone panel
+          typical_rate_range:
+            min: 12000
+            max: 25000
+          notes: ''
+          data_source: estimated
+        - id: FIR.DT.FAP.003
+          standard_name: Fire Alarm Panel Conventional 8 Zone
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2189
+          dsr_item_ref: ''
+          aliases:
+          - 8 zone panel
+          typical_rate_range:
+            min: 18000
+            max: 38000
+          notes: ''
+          data_source: estimated
+        - id: FIR.DT.FAP.004
+          standard_name: Fire Alarm Panel Conventional 16 Zone
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 2189
+          dsr_item_ref: ''
+          aliases:
+          - 16 zone panel
+          typical_rate_range:
+            min: 28000
+            max: 55000
+          notes: ''
+          data_source: estimated
+        - id: FIR.DT.FAP.005
+          standard_name: Fire Alarm Panel Addressable 1 Loop (127 devices)
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 2189
+          dsr_item_ref: ''
+          aliases:
+          - 1 loop addressable panel
+          typical_rate_range:
+            min: 40000
+            max: 80000
+          notes: ''
+          data_source: estimated
+        - id: FIR.DT.FAP.006
+          standard_name: Fire Alarm Panel Addressable 2 Loop
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 2189
+          dsr_item_ref: ''
+          aliases:
+          - 2 loop panel
+          typical_rate_range:
+            min: 60000
+            max: 120000
+          notes: ''
+          data_source: estimated
+        - id: FIR.DT.FAP.007
+          standard_name: Fire Alarm Panel Addressable 4 Loop
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 2189
+          dsr_item_ref: ''
+          aliases:
+          - 4 loop panel
+          typical_rate_range:
+            min: 100000
+            max: 200000
+          notes: ''
+          data_source: estimated
+        - id: FIR.DT.FAP.008
+          standard_name: Fire Alarm Panel Addressable 8 Loop
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 2189
+          dsr_item_ref: ''
+          aliases:
+          - 8 loop panel
+          typical_rate_range:
+            min: 180000
+            max: 380000
+          notes: ''
+          data_source: estimated
+        - id: FIR.DT.FAP.009
+          standard_name: Repeater Panel - Addressable
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 2189
+          dsr_item_ref: ''
+          aliases:
+          - repeater panel
+          typical_rate_range:
+            min: 20000
+            max: 50000
+          notes: ''
+          data_source: estimated
+        - id: FIR.DT.FAP.010
+          standard_name: Mimic Panel - Graphic Display
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 2189
+          dsr_item_ref: ''
+          aliases:
+          - mimic panel
+          - graphic annunciator
+          typical_rate_range:
+            min: 30000
+            max: 80000
+          notes: ''
+          data_source: estimated
+      notification_devices:
+        items:
+        - id: FIR.DT.NTF.001
+          standard_name: Fire Alarm Hooter / Sounder
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2189
+          dsr_item_ref: ''
+          aliases:
+          - fire hooter
+          - alarm sounder
+          typical_rate_range:
+            min: 500
+            max: 1500
+          notes: ''
+          data_source: estimated
+        - id: FIR.DT.NTF.002
+          standard_name: Fire Alarm Hooter with Strobe
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 2189
+          dsr_item_ref: ''
+          aliases:
+          - hooter strobe
+          - sounder beacon
+          typical_rate_range:
+            min: 1000
+            max: 2500
+          notes: ''
+          data_source: estimated
+        - id: FIR.DT.NTF.003
+          standard_name: Voice Evacuation Speaker - Ceiling Mount
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 2189
+          dsr_item_ref: ''
+          aliases:
+          - EVAC speaker
+          - voice evacuation
+          typical_rate_range:
+            min: 2000
+            max: 5000
+          notes: ''
+          data_source: estimated
+        - id: FIR.DT.NTF.004
+          standard_name: Voice Evacuation Amplifier 500W
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 2189
+          dsr_item_ref: ''
+          aliases:
+          - EVAC amplifier
+          typical_rate_range:
+            min: 40000
+            max: 100000
+          notes: ''
+          data_source: estimated
+        - id: FIR.DT.NTF.005
+          standard_name: Voice Evacuation Router
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 2189
+          dsr_item_ref: ''
+          aliases:
+          - EVAC router
+          typical_rate_range:
+            min: 15000
+            max: 35000
+          notes: ''
+          data_source: estimated
+      modules:
+        items:
+        - id: FIR.DT.MOD.001
+          standard_name: Monitor Module - Addressable Input
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 2189
+          dsr_item_ref: ''
+          aliases:
+          - monitor module
+          - input module
+          typical_rate_range:
+            min: 1500
+            max: 3500
+          notes: ''
+          data_source: estimated
+        - id: FIR.DT.MOD.002
+          standard_name: Control Module - Addressable Output
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 2189
+          dsr_item_ref: ''
+          aliases:
+          - control module
+          - output module
+          typical_rate_range:
+            min: 2000
+            max: 4500
+          notes: For AHU trip, damper control
+          data_source: estimated
+  suppression:
+    categories:
+      wet_system:
+        items:
+        - id: FIR.SP.WET.001
+          standard_name: Wet Riser Pipe MS 65mm
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 3844
+          dsr_item_ref: ''
+          aliases:
+          - wet riser 65mm
+          typical_rate_range:
+            min: 600
+            max: 1200
+          notes: ''
+          data_source: IS codes only
+        - id: FIR.SP.WET.002
+          standard_name: Wet Riser Pipe MS 100mm
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 3844
+          dsr_item_ref: ''
+          aliases:
+          - wet riser 100mm
+          typical_rate_range:
+            min: 1000
+            max: 2000
+          notes: ''
+          data_source: IS codes only
+        - id: FIR.SP.WET.003
+          standard_name: Dry Riser Pipe MS 100mm
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 15105, NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - dry riser
+          typical_rate_range:
+            min: 800
+            max: 1600
+          notes: Empty pipe, filled by fire brigade
+          data_source: estimated
+      sprinkler:
+        items:
+        - id: FIR.SP.SPK.001
+          standard_name: Sprinkler Head Pendant K5.6 - Standard Response
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 15105
+          dsr_item_ref: ''
+          aliases:
+          - pendant sprinkler
+          - sprinkler K5.6
+          typical_rate_range:
+            min: 200
+            max: 500
+          notes: 68 degree C fusible link
+          data_source: IS codes only
+        - id: FIR.SP.SPK.002
+          standard_name: Sprinkler Head Upright K5.6 - Standard Response
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - industrial
+          requires: []
+          is_code_ref: IS 15105
+          dsr_item_ref: ''
+          aliases:
+          - upright sprinkler
+          typical_rate_range:
+            min: 200
+            max: 500
+          notes: ''
+          data_source: IS codes only
+        - id: FIR.SP.SPK.003
+          standard_name: Sprinkler Head Sidewall K5.6
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 15105
+          dsr_item_ref: ''
+          aliases:
+          - sidewall sprinkler
+          typical_rate_range:
+            min: 300
+            max: 700
+          notes: ''
+          data_source: estimated
+        - id: FIR.SP.SPK.004
+          standard_name: Sprinkler Head Concealed K5.6
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - hospitality
+          requires: []
+          is_code_ref: IS 15105
+          dsr_item_ref: ''
+          aliases:
+          - concealed sprinkler
+          - flush sprinkler
+          typical_rate_range:
+            min: 500
+            max: 1200
+          notes: Flush with ceiling
+          data_source: estimated
+        - id: FIR.SP.SPK.005
+          standard_name: Sprinkler Head K8.0 - Extended Coverage
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 15105
+          dsr_item_ref: ''
+          aliases:
+          - K8 sprinkler
+          - EC sprinkler
+          typical_rate_range:
+            min: 400
+            max: 800
+          notes: Larger coverage area
+          data_source: estimated
+        - id: FIR.SP.SPK.006
+          standard_name: Sprinkler Piping MS Schedule 40 - 25mm
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 15105
+          dsr_item_ref: ''
+          aliases:
+          - sprinkler pipe 25mm
+          typical_rate_range:
+            min: 200
+            max: 400
+          notes: ''
+          data_source: estimated
+        - id: FIR.SP.SPK.007
+          standard_name: Sprinkler Piping MS Schedule 40 - 50mm
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 15105
+          dsr_item_ref: ''
+          aliases:
+          - sprinkler pipe 50mm
+          typical_rate_range:
+            min: 400
+            max: 800
+          notes: ''
+          data_source: estimated
+        - id: FIR.SP.SPK.008
+          standard_name: Sprinkler Piping MS Schedule 40 - 100mm
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 15105
+          dsr_item_ref: ''
+          aliases:
+          - sprinkler pipe 100mm
+          typical_rate_range:
+            min: 800
+            max: 1500
+          notes: ''
+          data_source: estimated
+      special_suppression:
+        items:
+        - id: FIR.SP.DLG.001
+          standard_name: Deluge Valve Station 100mm
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - industrial
+          requires: []
+          is_code_ref: IS 15105, NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - deluge valve
+          - deluge system
+          typical_rate_range:
+            min: 50000
+            max: 120000
+          notes: ''
+          data_source: estimated
+        - id: FIR.SP.PAC.001
+          standard_name: Pre-Action Valve Station 100mm
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 15105, NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - pre-action valve
+          - pre-action system
+          typical_rate_range:
+            min: 80000
+            max: 180000
+          notes: For server rooms, museums
+          data_source: estimated
+      clean_agent:
+        items:
+        - id: FIR.SP.FM2.001
+          standard_name: FM200 System 42 Bar - Per Kg Agent
+          unit: kg
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - FM200
+          - HFC-227ea
+          typical_rate_range:
+            min: 2000
+            max: 4000
+          notes: Clean agent - no water damage
+          data_source: estimated
+        - id: FIR.SP.NOV.001
+          standard_name: Novec 1230 System - Per Kg Agent
+          unit: kg
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - Novec 1230
+          - FK-5-1-12
+          typical_rate_range:
+            min: 3000
+            max: 6000
+          notes: Zero ODP, low GWP
+          data_source: estimated
+        - id: FIR.SP.CO2.001
+          standard_name: CO2 System High Pressure - Per Kg
+          unit: kg
+          construction_types:
+          - all
+          building_types:
+          - industrial
+          requires: []
+          is_code_ref: IS 15683, NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - CO2 system
+          - carbon dioxide suppression
+          typical_rate_range:
+            min: 500
+            max: 1200
+          notes: Hazardous - requires evac before discharge
+          data_source: estimated
+      foam_system:
+        items:
+        - id: FIR.SP.FOA.001
+          standard_name: AFFF Foam System - Proportioner + Tank
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - industrial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - AFFF foam system
+          - foam proportioner
+          typical_rate_range:
+            min: 100000
+            max: 300000
+          notes: ''
+          data_source: estimated
+        - id: FIR.SP.KHD.001
+          standard_name: Kitchen Hood Suppression System - Wet Chemical
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - hospitality
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - kitchen hood system
+          - wet chemical system
+          typical_rate_range:
+            min: 80000
+            max: 200000
+          notes: For commercial kitchens
+          data_source: estimated
+      water_mist:
+        items:
+        - id: FIR.SP.WMS.001
+          standard_name: Water Mist System - High Pressure
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - hospitality
+          requires: []
+          is_code_ref: IS 15105, NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - water mist
+          - hi-fog
+          typical_rate_range:
+            min: 200000
+            max: 500000
+          notes: Low water usage, minimal damage
+          data_source: estimated
+  hydrant:
+    categories:
+      external_hydrant:
+        items:
+        - id: FIR.HY.PIL.001
+          standard_name: External Fire Hydrant Pillar - Single Outlet
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 908
+          dsr_item_ref: ''
+          aliases:
+          - fire hydrant single
+          - pillar hydrant
+          typical_rate_range:
+            min: 8000
+            max: 18000
+          notes: ''
+          data_source: IS codes only
+        - id: FIR.HY.PIL.002
+          standard_name: External Fire Hydrant Pillar - Double Outlet
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 908
+          dsr_item_ref: ''
+          aliases:
+          - fire hydrant double
+          typical_rate_range:
+            min: 12000
+            max: 25000
+          notes: ''
+          data_source: IS codes only
+      internal_hydrant:
+        items:
+        - id: FIR.HY.LV.001
+          standard_name: Internal Landing Valve Single Outlet 63mm
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 908, IS 884
+          dsr_item_ref: ''
+          aliases:
+          - landing valve single
+          - internal hydrant
+          typical_rate_range:
+            min: 5000
+            max: 12000
+          notes: ''
+          data_source: estimated
+        - id: FIR.HY.LV.002
+          standard_name: Internal Landing Valve Double Outlet 63mm
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 908, IS 884
+          dsr_item_ref: ''
+          aliases:
+          - landing valve double
+          typical_rate_range:
+            min: 8000
+            max: 18000
+          notes: ''
+          data_source: estimated
+      hose_reel:
+        items:
+        - id: FIR.HY.HR.001
+          standard_name: Hose Reel 30m Swing Type with Nozzle
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 884
+          dsr_item_ref: ''
+          aliases:
+          - hose reel
+          - first aid hose reel
+          typical_rate_range:
+            min: 5000
+            max: 12000
+          notes: ''
+          data_source: IS codes only
+      fire_pumps:
+        items:
+        - id: FIR.HY.PMP.001
+          standard_name: Fire Pump Main Electric 100 HP
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 15105, NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - main fire pump 100HP
+          typical_rate_range:
+            min: 300000
+            max: 600000
+          notes: ''
+          data_source: estimated
+        - id: FIR.HY.PMP.002
+          standard_name: Fire Pump Main Electric 200 HP
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 15105, NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - main fire pump 200HP
+          typical_rate_range:
+            min: 500000
+            max: 1000000
+          notes: ''
+          data_source: estimated
+        - id: FIR.HY.PMP.003
+          standard_name: Fire Jockey Pump 5 HP
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 15105, NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - jockey pump 5HP
+          - pressure maintenance pump
+          typical_rate_range:
+            min: 30000
+            max: 60000
+          notes: ''
+          data_source: estimated
+        - id: FIR.HY.PMP.004
+          standard_name: Fire Jockey Pump 10 HP
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 15105, NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - jockey pump 10HP
+          typical_rate_range:
+            min: 40000
+            max: 80000
+          notes: ''
+          data_source: estimated
+        - id: FIR.HY.PMP.005
+          standard_name: Standby Diesel Fire Pump 100 HP
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 15105, NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - diesel fire pump
+          typical_rate_range:
+            min: 400000
+            max: 800000
+          notes: ''
+          data_source: estimated
+        - id: FIR.HY.PMP.006
+          standard_name: Fire Pump Controller - NFPA Compliant
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 15105, NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - fire pump controller
+          typical_rate_range:
+            min: 80000
+            max: 200000
+          notes: ''
+          data_source: estimated
+      fire_tank:
+        items:
+        - id: FIR.HY.TNK.001
+          standard_name: Fire Water Storage Tank RCC 50000L
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - fire tank 50KL
+          typical_rate_range:
+            min: 200000
+            max: 400000
+          notes: ''
+          data_source: estimated
+        - id: FIR.HY.TNK.002
+          standard_name: Fire Water Storage Tank RCC 100000L
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - fire tank 100KL
+          typical_rate_range:
+            min: 350000
+            max: 700000
+          notes: ''
+          data_source: estimated
+        - id: FIR.HY.TNK.003
+          standard_name: Fire Water Storage Tank RCC 200000L
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - fire tank 200KL
+          typical_rate_range:
+            min: 600000
+            max: 1200000
+          notes: ''
+          data_source: estimated
+  passive:
+    categories:
+      fire_rated_doors:
+        items:
+        - id: FIR.PS.DOR.001
+          standard_name: Fire Rated Door 30 Min Single Leaf with Hardware
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 3614
+          dsr_item_ref: ''
+          aliases:
+          - fire door 30 min
+          typical_rate_range:
+            min: 15000
+            max: 30000
+          notes: Including closer, seals, signage
+          data_source: IS codes only
+        - id: FIR.PS.DOR.002
+          standard_name: Fire Rated Door 60 Min Single Leaf with Hardware
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 3614
+          dsr_item_ref: ''
+          aliases:
+          - fire door 60 min
+          typical_rate_range:
+            min: 20000
+            max: 40000
+          notes: ''
+          data_source: IS codes only
+        - id: FIR.PS.DOR.003
+          standard_name: Fire Rated Door 90 Min Double Leaf
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 3614
+          dsr_item_ref: ''
+          aliases:
+          - fire door 90 min double
+          typical_rate_range:
+            min: 45000
+            max: 80000
+          notes: ''
+          data_source: IS codes only
+        - id: FIR.PS.DOR.004
+          standard_name: Fire Rated Door 120 Min Double Leaf
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 3614
+          dsr_item_ref: ''
+          aliases:
+          - fire door 120 min double
+          typical_rate_range:
+            min: 55000
+            max: 100000
+          notes: ''
+          data_source: IS codes only
+        - id: FIR.PS.DOR.005
+          standard_name: Fire Rated Door 180 Min Single Leaf
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - industrial
+          requires: []
+          is_code_ref: IS 3614
+          dsr_item_ref: ''
+          aliases:
+          - fire door 180 min
+          - 3 hour fire door
+          typical_rate_range:
+            min: 40000
+            max: 80000
+          notes: ''
+          data_source: estimated
+      fire_rated_construction:
+        items:
+        - id: FIR.PS.WLL.001
+          standard_name: Fire Rated Wall 60 Min - Twin Gypsum Board
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - 60 min fire wall
+          typical_rate_range:
+            min: 800
+            max: 1500
+          notes: ''
+          data_source: estimated
+        - id: FIR.PS.WLL.002
+          standard_name: Fire Rated Wall 120 Min - Double Twin Board
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - 120 min fire wall
+          typical_rate_range:
+            min: 1200
+            max: 2200
+          notes: ''
+          data_source: estimated
+        - id: FIR.PS.FLR.001
+          standard_name: Fire Rated Floor Assembly 120 Min
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - fire rated floor
+          typical_rate_range:
+            min: 600
+            max: 1200
+          notes: ''
+          data_source: estimated
+      fire_stopping:
+        items:
+        - id: FIR.PS.FST.001
+          standard_name: Fire Stop Sealant - Intumescent (per joint metre)
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - fire stop sealant
+          - intumescent sealant
+          typical_rate_range:
+            min: 200
+            max: 500
+          notes: ''
+          data_source: estimated
+        - id: FIR.PS.FST.002
+          standard_name: Fire Stop Mortar - Per Penetration
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - fire stop mortar
+          typical_rate_range:
+            min: 500
+            max: 1500
+          notes: ''
+          data_source: estimated
+        - id: FIR.PS.FST.003
+          standard_name: Fire Stop Pillow - Per 300x300mm Opening
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - fire pillow
+          - fire stop pillow
+          typical_rate_range:
+            min: 300
+            max: 800
+          notes: Re-enterable
+          data_source: estimated
+        - id: FIR.PS.FST.004
+          standard_name: Fire Stop Wrap / Collar for Pipes
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - fire collar
+          - pipe fire stop
+          typical_rate_range:
+            min: 400
+            max: 1200
+          notes: Intumescent collar for plastic pipes
+          data_source: estimated
+      fire_dampers:
+        items:
+        - id: FIR.PS.DMP.001
+          standard_name: Fire Damper Blade Type 300x300mm
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 3614
+          dsr_item_ref: ''
+          aliases:
+          - fire damper 300
+          typical_rate_range:
+            min: 3000
+            max: 7000
+          notes: Fusible link operated
+          data_source: estimated
+        - id: FIR.PS.DMP.002
+          standard_name: Fire Damper Blade Type 600x400mm
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 3614
+          dsr_item_ref: ''
+          aliases:
+          - fire damper 600x400
+          typical_rate_range:
+            min: 5000
+            max: 12000
+          notes: ''
+          data_source: estimated
+        - id: FIR.PS.DMP.003
+          standard_name: Smoke Damper Motorized 600x400mm
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 3614
+          dsr_item_ref: ''
+          aliases:
+          - smoke damper
+          typical_rate_range:
+            min: 8000
+            max: 18000
+          notes: ''
+          data_source: estimated
+      intumescent_coating:
+        items:
+        - id: FIR.PS.ICT.001
+          standard_name: Intumescent Coating on Steel - 60 Min
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - intumescent paint
+          - fire proof coating steel
+          typical_rate_range:
+            min: 500
+            max: 1200
+          notes: Thin film intumescent
+          data_source: estimated
+        - id: FIR.PS.ICT.002
+          standard_name: Intumescent Coating on Steel - 120 Min
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - 120 min intumescent
+          typical_rate_range:
+            min: 800
+            max: 2000
+          notes: ''
+          data_source: estimated
+        - id: FIR.PS.BRD.001
+          standard_name: Fireproof Board Cladding - Calcium Silicate 12mm
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - calcium silicate board
+          - fire board
+          typical_rate_range:
+            min: 600
+            max: 1200
+          notes: ''
+          data_source: estimated
+        - id: FIR.PS.BRD.002
+          standard_name: Fireproof Board Cladding - Vermiculite 25mm
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - vermiculite board
+          typical_rate_range:
+            min: 800
+            max: 1600
+          notes: ''
+          data_source: estimated
+  egress:
+    categories:
+      fire_escape:
+        items:
+        - id: FIR.EG.STR.001
+          standard_name: Fire Escape Staircase - Enclosed Pressurized
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - pressurized staircase
+          - fire escape
+          typical_rate_range:
+            min: 500000
+            max: 1500000
+          notes: Complete system per floor
+          data_source: IS codes only
+        - id: FIR.EG.STR.002
+          standard_name: Refuge Area - Per Floor
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - highrise
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - refuge area
+          - fire refuge
+          typical_rate_range:
+            min: 2000
+            max: 5000
+          notes: Required every 24m height
+          data_source: IS codes only
+      emergency_lighting:
+        items:
+        - id: FIR.EG.EML.001
+          standard_name: Emergency Light Maintained 1 Hour Battery
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1944, NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - emergency light 1hr
+          typical_rate_range:
+            min: 800
+            max: 2000
+          notes: ''
+          data_source: estimated
+        - id: FIR.EG.EML.002
+          standard_name: Emergency Light Non-Maintained 3 Hour Battery
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 1944, NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - emergency light 3hr
+          typical_rate_range:
+            min: 1200
+            max: 3000
+          notes: ''
+          data_source: estimated
+        - id: FIR.EG.EML.003
+          standard_name: Exit Sign Illuminated - LED Green
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1944, NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - exit sign
+          - emergency exit sign
+          typical_rate_range:
+            min: 500
+            max: 1500
+          notes: ''
+          data_source: estimated
+        - id: FIR.EG.EML.004
+          standard_name: Exit Sign Photoluminescent
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1944, NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - glow sign
+          - photoluminescent exit
+          typical_rate_range:
+            min: 300
+            max: 800
+          notes: No power required
+          data_source: estimated
+        - id: FIR.EG.EML.005
+          standard_name: Evacuation Plan Display Board
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 1944, NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - evacuation plan
+          - escape plan board
+          typical_rate_range:
+            min: 500
+            max: 1500
+          notes: ''
+          data_source: estimated
+  portable:
+    categories:
+      fire_extinguishers:
+        items:
+        - id: FIR.PT.ABC.001
+          standard_name: Fire Extinguisher ABC Dry Powder 1 Kg
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15683
+          dsr_item_ref: ''
+          aliases:
+          - 1 kg extinguisher
+          - ABC 1kg
+          typical_rate_range:
+            min: 400
+            max: 800
+          notes: ''
+          data_source: IS codes only
+        - id: FIR.PT.ABC.002
+          standard_name: Fire Extinguisher ABC Dry Powder 2 Kg
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15683
+          dsr_item_ref: ''
+          aliases:
+          - 2 kg extinguisher
+          - ABC 2kg
+          typical_rate_range:
+            min: 600
+            max: 1200
+          notes: ''
+          data_source: IS codes only
+        - id: FIR.PT.ABC.003
+          standard_name: Fire Extinguisher ABC Dry Powder 4 Kg
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15683
+          dsr_item_ref: ''
+          aliases:
+          - 4 kg extinguisher
+          - ABC 4kg
+          typical_rate_range:
+            min: 800
+            max: 1600
+          notes: ''
+          data_source: IS codes only
+        - id: FIR.PT.ABC.004
+          standard_name: Fire Extinguisher ABC Dry Powder 6 Kg
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15683
+          dsr_item_ref: ''
+          aliases:
+          - 6 kg extinguisher
+          - ABC 6kg
+          typical_rate_range:
+            min: 1000
+            max: 2000
+          notes: ''
+          data_source: IS codes only
+        - id: FIR.PT.ABC.005
+          standard_name: Fire Extinguisher ABC Dry Powder 9 Kg
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15683
+          dsr_item_ref: ''
+          aliases:
+          - 9 kg extinguisher
+          - ABC 9kg
+          typical_rate_range:
+            min: 1500
+            max: 3000
+          notes: ''
+          data_source: IS codes only
+        - id: FIR.PT.CO2.001
+          standard_name: Fire Extinguisher CO2 2 Kg
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2878
+          dsr_item_ref: ''
+          aliases:
+          - CO2 extinguisher 2kg
+          typical_rate_range:
+            min: 1500
+            max: 3000
+          notes: For electrical fires
+          data_source: IS codes only
+        - id: FIR.PT.CO2.002
+          standard_name: Fire Extinguisher CO2 4.5 Kg
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2878
+          dsr_item_ref: ''
+          aliases:
+          - CO2 extinguisher 4.5kg
+          typical_rate_range:
+            min: 2500
+            max: 5000
+          notes: ''
+          data_source: IS codes only
+        - id: FIR.PT.WTR.001
+          standard_name: Fire Extinguisher Water 9 Litre
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 940
+          dsr_item_ref: ''
+          aliases:
+          - water extinguisher 9L
+          typical_rate_range:
+            min: 1000
+            max: 2500
+          notes: ''
+          data_source: IS codes only
+        - id: FIR.PT.FOA.001
+          standard_name: Fire Extinguisher Foam 9 Litre
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15683
+          dsr_item_ref: ''
+          aliases:
+          - foam extinguisher 9L
+          typical_rate_range:
+            min: 1200
+            max: 2800
+          notes: ''
+          data_source: estimated
+        - id: FIR.PT.CLN.001
+          standard_name: Fire Extinguisher Clean Agent 2 Kg
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 15683, NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - clean agent extinguisher
+          typical_rate_range:
+            min: 3000
+            max: 6000
+          notes: For sensitive equipment
+          data_source: estimated
+      fire_accessories:
+        items:
+        - id: FIR.PT.BLK.001
+          standard_name: Fire Blanket 1.2x1.2m
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15683
+          dsr_item_ref: ''
+          aliases:
+          - fire blanket
+          typical_rate_range:
+            min: 500
+            max: 1200
+          notes: ''
+          data_source: estimated
+        - id: FIR.PT.BKT.001
+          standard_name: Fire Bucket - Red Painted MS
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15683
+          dsr_item_ref: ''
+          aliases:
+          - fire bucket
+          typical_rate_range:
+            min: 200
+            max: 500
+          notes: ''
+          data_source: estimated
+        - id: FIR.PT.BKT.002
+          standard_name: Sand Bucket with Stand
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - industrial
+          requires: []
+          is_code_ref: IS 15683
+          dsr_item_ref: ''
+          aliases:
+          - sand bucket
+          typical_rate_range:
+            min: 300
+            max: 700
+          notes: ''
+          data_source: estimated
+        - id: FIR.PT.CAB.001
+          standard_name: Fire Hose Cabinet MS - Single Door
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15683
+          dsr_item_ref: ''
+          aliases:
+          - fire hose cabinet
+          - hose box
+          typical_rate_range:
+            min: 3000
+            max: 7000
+          notes: For hose reel / extinguisher storage
+          data_source: estimated
+        - id: FIR.PT.CAB.002
+          standard_name: Fire Hose Cabinet MS - Double Door
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 15683
+          dsr_item_ref: ''
+          aliases:
+          - double door fire cabinet
+          typical_rate_range:
+            min: 5000
+            max: 10000
+          notes: For hose reel + extinguisher combo
+          data_source: estimated
+  detection_additional:
+    categories:
+      smoke_detectors:
+        items:
+        - id: FIR.DT.SMK.004
+          standard_name: Ionization Smoke Detector - Conventional
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2189
+          dsr_item_ref: ''
+          aliases:
+          - ionization detector
+          - ionization smoke
+          typical_rate_range:
+            min: 500
+            max: 1200
+          notes: Responds to fast-flaming fires
+          data_source: IS codes only
+        - id: FIR.DT.SMK.005
+          standard_name: Dual Sensor Smoke Detector - Photo/Ionization
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 2189
+          dsr_item_ref: ''
+          aliases:
+          - dual sensor smoke
+          - combined smoke detector
+          typical_rate_range:
+            min: 800
+            max: 1800
+          notes: Both photoelectric and ionization
+          data_source: IS codes only
+        - id: FIR.DT.SMK.006
+          standard_name: Aspirating Smoke Detector (VESDA) - Standard
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 2189
+          dsr_item_ref: ''
+          aliases:
+          - VESDA detector
+          - aspirating smoke
+          - ASD
+          typical_rate_range:
+            min: 80000
+            max: 200000
+          notes: Very early warning, per zone unit
+          data_source: estimated
+        - id: FIR.DT.SMK.007
+          standard_name: Aspirating Smoke Detector (VESDA) - Sampling Pipe
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires:
+          - FIR.DT.SMK.006
+          is_code_ref: IS 2189
+          dsr_item_ref: ''
+          aliases:
+          - VESDA pipe
+          - ASD sampling pipe
+          typical_rate_range:
+            min: 300
+            max: 600
+          notes: Including capillary tubes and sampling points
+          data_source: estimated
+      heat_detectors:
+        items:
+        - id: FIR.DT.SMK.008
+          standard_name: Addressable Heat Detector - Rate of Rise
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 2189
+          dsr_item_ref: ''
+          aliases:
+          - addressable ROR heat
+          - smart heat detector
+          typical_rate_range:
+            min: 1500
+            max: 3500
+          notes: Rate of rise addressable type
+          data_source: IS codes only
+        - id: FIR.DT.SMK.009
+          standard_name: Addressable Heat Detector - Fixed Temperature
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 2189
+          dsr_item_ref: ''
+          aliases:
+          - addressable fixed heat
+          typical_rate_range:
+            min: 1200
+            max: 3000
+          notes: Fixed temp addressable
+          data_source: IS codes only
+        - id: FIR.DT.SMK.010
+          standard_name: Linear Heat Detection Cable
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - industrial
+          - commercial
+          requires: []
+          is_code_ref: IS 2189
+          dsr_item_ref: ''
+          aliases:
+          - linear heat cable
+          - heat trace cable
+          typical_rate_range:
+            min: 200
+            max: 500
+          notes: For cable trays, tunnels
+          data_source: estimated
+      beam_flame_gas:
+        items:
+        - id: FIR.DT.BM.001
+          standard_name: Beam Detector - Reflective Type 50m Range
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - industrial
+          requires: []
+          is_code_ref: IS 2189
+          dsr_item_ref: ''
+          aliases:
+          - beam detector
+          - optical beam smoke
+          typical_rate_range:
+            min: 15000
+            max: 35000
+          notes: For high ceiling areas
+          data_source: estimated
+        - id: FIR.DT.BM.002
+          standard_name: Beam Detector - Reflective Type 100m Range
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - industrial
+          requires: []
+          is_code_ref: IS 2189
+          dsr_item_ref: ''
+          aliases:
+          - long range beam detector
+          typical_rate_range:
+            min: 25000
+            max: 55000
+          notes: For warehouses, atriums
+          data_source: estimated
+        - id: FIR.DT.FLM.001
+          standard_name: Flame Detector - UV Type
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - industrial
+          requires: []
+          is_code_ref: IS 2189
+          dsr_item_ref: ''
+          aliases:
+          - UV flame detector
+          typical_rate_range:
+            min: 20000
+            max: 50000
+          notes: Ultraviolet flame detection
+          data_source: estimated
+        - id: FIR.DT.FLM.002
+          standard_name: Flame Detector - IR Type
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - industrial
+          requires: []
+          is_code_ref: IS 2189
+          dsr_item_ref: ''
+          aliases:
+          - IR flame detector
+          typical_rate_range:
+            min: 25000
+            max: 60000
+          notes: Infrared flame detection
+          data_source: estimated
+        - id: FIR.DT.FLM.003
+          standard_name: Flame Detector - UV/IR Combined
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - industrial
+          requires: []
+          is_code_ref: IS 2189
+          dsr_item_ref: ''
+          aliases:
+          - UV IR flame detector
+          - combined flame
+          typical_rate_range:
+            min: 35000
+            max: 80000
+          notes: Dual spectrum, false alarm resistant
+          data_source: estimated
+        - id: FIR.DT.GAS.001
+          standard_name: Gas Detector - LPG/Methane
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - residential
+          requires: []
+          is_code_ref: IS 2189
+          dsr_item_ref: ''
+          aliases:
+          - gas detector LPG
+          - combustible gas sensor
+          typical_rate_range:
+            min: 3000
+            max: 8000
+          notes: For kitchens, gas rooms
+          data_source: estimated
+        - id: FIR.DT.GAS.002
+          standard_name: Gas Detector - CO (Carbon Monoxide)
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - residential
+          requires: []
+          is_code_ref: IS 2189
+          dsr_item_ref: ''
+          aliases:
+          - CO detector
+          - carbon monoxide detector
+          typical_rate_range:
+            min: 2500
+            max: 6000
+          notes: For parking basements, generator rooms
+          data_source: estimated
+  sprinkler_additional:
+    categories:
+      sprinkler_types:
+        items:
+        - id: FIR.SP.SPK.009
+          standard_name: Sprinkler Head Pendant K5.6 - Standard Response
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15105
+          dsr_item_ref: ''
+          aliases:
+          - pendant K5.6 standard
+          - std response pendant
+          typical_rate_range:
+            min: 150
+            max: 350
+          notes: 68 degree C glass bulb
+          data_source: IS codes only
+        - id: FIR.SP.SPK.010
+          standard_name: Sprinkler Head Pendant K5.6 - Quick Response
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15105
+          dsr_item_ref: ''
+          aliases:
+          - pendant K5.6 QR
+          - quick response pendant
+          typical_rate_range:
+            min: 200
+            max: 450
+          notes: Fast response for life safety
+          data_source: IS codes only
+        - id: FIR.SP.SPK.011
+          standard_name: Sprinkler Head Upright K5.6 - Standard Response
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - industrial
+          requires: []
+          is_code_ref: IS 15105
+          dsr_item_ref: ''
+          aliases:
+          - upright K5.6 standard
+          typical_rate_range:
+            min: 150
+            max: 350
+          notes: For exposed piping
+          data_source: IS codes only
+        - id: FIR.SP.SPK.012
+          standard_name: Sprinkler Head Upright K5.6 - Quick Response
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15105
+          dsr_item_ref: ''
+          aliases:
+          - upright K5.6 QR
+          typical_rate_range:
+            min: 200
+            max: 450
+          notes: ''
+          data_source: IS codes only
+        - id: FIR.SP.SPK.013
+          standard_name: Sprinkler Head Sidewall K5.6 - Standard
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - hospitality
+          requires: []
+          is_code_ref: IS 15105
+          dsr_item_ref: ''
+          aliases:
+          - sidewall K5.6
+          - wall mount sprinkler
+          typical_rate_range:
+            min: 250
+            max: 500
+          notes: For corridors, small rooms
+          data_source: IS codes only
+        - id: FIR.SP.SPK.014
+          standard_name: Sprinkler Head Sidewall K5.6 - Quick Response
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15105
+          dsr_item_ref: ''
+          aliases:
+          - sidewall K5.6 QR
+          typical_rate_range:
+            min: 300
+            max: 600
+          notes: ''
+          data_source: IS codes only
+        - id: FIR.SP.SPK.015
+          standard_name: Sprinkler Head Pendant K8.0 - Standard
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - industrial
+          requires: []
+          is_code_ref: IS 15105
+          dsr_item_ref: ''
+          aliases:
+          - pendant K8.0
+          - high flow pendant
+          typical_rate_range:
+            min: 250
+            max: 500
+          notes: Higher discharge for higher hazard
+          data_source: estimated
+        - id: FIR.SP.SPK.016
+          standard_name: Sprinkler Head Pendant K11.2 - ESFR
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - industrial
+          requires: []
+          is_code_ref: IS 15105
+          dsr_item_ref: ''
+          aliases:
+          - ESFR sprinkler K11.2
+          - early suppression
+          typical_rate_range:
+            min: 500
+            max: 1200
+          notes: For high-piled storage
+          data_source: estimated
+        - id: FIR.SP.SPK.017
+          standard_name: Sprinkler Head Concealed Pendant - Decorative
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - hospitality
+          requires: []
+          is_code_ref: IS 15105
+          dsr_item_ref: ''
+          aliases:
+          - concealed sprinkler
+          - flush sprinkler
+          typical_rate_range:
+            min: 400
+            max: 900
+          notes: With cover plate for aesthetic
+          data_source: estimated
+  fire_alarm_additional:
+    categories:
+      panels:
+        items:
+        - id: FIR.DT.FAP.011
+          standard_name: Fire Alarm Panel - Conventional 2 Zone
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - commercial
+          requires: []
+          is_code_ref: IS 2189
+          dsr_item_ref: ''
+          aliases:
+          - 2 zone panel
+          - conventional 2Z
+          typical_rate_range:
+            min: 8000
+            max: 18000
+          notes: ''
+          data_source: IS codes only
+        - id: FIR.DT.FAP.012
+          standard_name: Fire Alarm Panel - Conventional 4 Zone
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 2189
+          dsr_item_ref: ''
+          aliases:
+          - 4 zone panel
+          - conventional 4Z
+          typical_rate_range:
+            min: 12000
+            max: 25000
+          notes: ''
+          data_source: IS codes only
+        - id: FIR.DT.FAP.013
+          standard_name: Fire Alarm Panel - Conventional 8 Zone
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 2189
+          dsr_item_ref: ''
+          aliases:
+          - 8 zone panel
+          typical_rate_range:
+            min: 18000
+            max: 40000
+          notes: ''
+          data_source: IS codes only
+        - id: FIR.DT.FAP.014
+          standard_name: Fire Alarm Panel - Conventional 16 Zone
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 2189
+          dsr_item_ref: ''
+          aliases:
+          - 16 zone panel
+          typical_rate_range:
+            min: 30000
+            max: 60000
+          notes: ''
+          data_source: IS codes only
+        - id: FIR.DT.FAP.015
+          standard_name: Fire Alarm Panel - Conventional 32 Zone
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 2189
+          dsr_item_ref: ''
+          aliases:
+          - 32 zone panel
+          typical_rate_range:
+            min: 50000
+            max: 100000
+          notes: ''
+          data_source: IS codes only
+        - id: FIR.DT.FAP.016
+          standard_name: Fire Alarm Panel - Addressable 1 Loop
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 2189
+          dsr_item_ref: ''
+          aliases:
+          - addressable 1 loop panel
+          typical_rate_range:
+            min: 40000
+            max: 80000
+          notes: Up to 127 devices per loop
+          data_source: estimated
+        - id: FIR.DT.FAP.017
+          standard_name: Fire Alarm Panel - Addressable 4 Loop
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 2189
+          dsr_item_ref: ''
+          aliases:
+          - addressable 4 loop panel
+          typical_rate_range:
+            min: 80000
+            max: 180000
+          notes: ''
+          data_source: estimated
+        - id: FIR.DT.FAP.018
+          standard_name: Fire Alarm Panel - Addressable 8 Loop
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 2189
+          dsr_item_ref: ''
+          aliases:
+          - addressable 8 loop panel
+          typical_rate_range:
+            min: 150000
+            max: 350000
+          notes: ''
+          data_source: estimated
+        - id: FIR.DT.FAP.019
+          standard_name: Fire Alarm Repeater Panel - Graphic
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 2189
+          dsr_item_ref: ''
+          aliases:
+          - repeater panel graphic
+          - fire mimic panel
+          typical_rate_range:
+            min: 20000
+            max: 50000
+          notes: Remote annunciator with graphic display
+          data_source: estimated
+  pumps_additional:
+    categories:
+      fire_pumps:
+        items:
+        - id: FIR.HY.PMP.007
+          standard_name: Fire Pump Main - Diesel Engine 50 HP
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 903
+          dsr_item_ref: ''
+          aliases:
+          - diesel fire pump 50HP
+          typical_rate_range:
+            min: 400000
+            max: 800000
+          notes: Auto-start on pressure drop
+          data_source: IS codes only
+        - id: FIR.HY.PMP.008
+          standard_name: Fire Pump Main - Diesel Engine 100 HP
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 903
+          dsr_item_ref: ''
+          aliases:
+          - diesel fire pump 100HP
+          typical_rate_range:
+            min: 700000
+            max: 1400000
+          notes: ''
+          data_source: IS codes only
+        - id: FIR.HY.PMP.009
+          standard_name: Fire Pump Main - Diesel Engine 150 HP
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 903
+          dsr_item_ref: ''
+          aliases:
+          - diesel fire pump 150HP
+          typical_rate_range:
+            min: 1000000
+            max: 2000000
+          notes: ''
+          data_source: IS codes only
+        - id: FIR.HY.PMP.010
+          standard_name: Jockey Pump 2 HP
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 15105, NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - jockey pump 2HP
+          - pressure maintenance pump
+          typical_rate_range:
+            min: 30000
+            max: 60000
+          notes: Maintains system pressure
+          data_source: estimated
+        - id: FIR.HY.PMP.011
+          standard_name: Jockey Pump 5 HP
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 15105, NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - jockey pump 5HP
+          typical_rate_range:
+            min: 40000
+            max: 80000
+          notes: ''
+          data_source: estimated
+        - id: FIR.HY.PMP.012
+          standard_name: Jockey Pump 7.5 HP
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 15105, NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - jockey pump 7.5HP
+          typical_rate_range:
+            min: 50000
+            max: 100000
+          notes: ''
+          data_source: estimated
+        - id: FIR.HY.PMP.013
+          standard_name: Standby Electric Fire Pump 50 HP
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 15105, NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - standby fire pump 50HP
+          - electric fire pump
+          typical_rate_range:
+            min: 200000
+            max: 400000
+          notes: Electric backup pump
+          data_source: estimated
+  passive_fire_additional:
+    categories:
+      fire_rated_walls:
+        items:
+        - id: FIR.PS.WLL.003
+          standard_name: Fire Rated Wall - 1 Hour Rating (Gypsum Double Layer)
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - 1 hour fire wall gypsum
+          - 1hr rated partition
+          typical_rate_range:
+            min: 1500
+            max: 3000
+          notes: Double layer gypsum on both sides
+          data_source: estimated
+        - id: FIR.PS.WLL.004
+          standard_name: Fire Rated Wall - 2 Hour Rating (Masonry 230mm)
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - 2 hour fire wall
+          - 2hr rated masonry
+          typical_rate_range:
+            min: 2500
+            max: 5000
+          notes: 230mm brick/block with plaster
+          data_source: estimated
+      fire_rated_floors:
+        items:
+        - id: FIR.PS.FLR.002
+          standard_name: Fire Rated Floor Assembly - 1 Hour
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - 1 hour fire floor
+          - 1hr floor assembly
+          typical_rate_range:
+            min: 800
+            max: 1800
+          notes: Including fire rated ceiling below
+          data_source: estimated
+        - id: FIR.PS.FLR.003
+          standard_name: Fire Rated Floor Assembly - 2 Hour
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - 2 hour fire floor
+          typical_rate_range:
+            min: 1200
+            max: 2500
+          notes: ''
+          data_source: estimated
+      fire_doors:
+        items:
+        - id: FIR.PS.DOR.006
+          standard_name: Fire Door 30 Min - Single Leaf 900x2100mm
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 3614
+          dsr_item_ref: ''
+          aliases:
+          - FD30 900mm single
+          - 30 min door 900
+          typical_rate_range:
+            min: 12000
+            max: 22000
+          notes: Including intumescent strips
+          data_source: IS codes only
+        - id: FIR.PS.DOR.007
+          standard_name: Fire Door 60 Min - Single Leaf 900x2100mm
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 3614
+          dsr_item_ref: ''
+          aliases:
+          - FD60 900mm single
+          typical_rate_range:
+            min: 15000
+            max: 28000
+          notes: ''
+          data_source: IS codes only
+        - id: FIR.PS.DOR.008
+          standard_name: Fire Door 90 Min - Single Leaf 900x2100mm
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 3614
+          dsr_item_ref: ''
+          aliases:
+          - FD90 900mm single
+          typical_rate_range:
+            min: 18000
+            max: 35000
+          notes: ''
+          data_source: IS codes only
+        - id: FIR.PS.DOR.009
+          standard_name: Fire Door 120 Min - Single Leaf 900x2100mm
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 3614
+          dsr_item_ref: ''
+          aliases:
+          - FD120 900mm single
+          typical_rate_range:
+            min: 22000
+            max: 42000
+          notes: ''
+          data_source: IS codes only
+      dampers:
+        items:
+        - id: FIR.PS.DMP.004
+          standard_name: Fire Damper - Rectangular Fusible Link
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 3614
+          dsr_item_ref: ''
+          aliases:
+          - fire damper fusible
+          - duct fire damper
+          typical_rate_range:
+            min: 5000
+            max: 12000
+          notes: Automatic closure on heat
+          data_source: estimated
+        - id: FIR.PS.DMP.005
+          standard_name: Smoke Damper - Motorized
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 3614
+          dsr_item_ref: ''
+          aliases:
+          - smoke damper motorized
+          typical_rate_range:
+            min: 8000
+            max: 18000
+          notes: Closes on fire alarm signal
+          data_source: estimated
+        - id: FIR.PS.DMP.006
+          standard_name: Fire-Smoke Combination Damper
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 3614
+          dsr_item_ref: ''
+          aliases:
+          - fire smoke damper
+          - combination damper
+          typical_rate_range:
+            min: 12000
+            max: 25000
+          notes: Both fire and smoke rated
+          data_source: estimated
+      firestop:
+        items:
+        - id: FIR.PS.FST.005
+          standard_name: Fire Stop Sealant - Intumescent (per joint metre)
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - firestop sealant
+          - intumescent sealant
+          typical_rate_range:
+            min: 200
+            max: 500
+          notes: Expansion type fire barrier
+          data_source: estimated
+        - id: FIR.PS.FST.006
+          standard_name: Fire Stop Mortar - Per Penetration
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - firestop mortar
+          - fire cement
+          typical_rate_range:
+            min: 500
+            max: 1500
+          notes: For cable/pipe penetrations
+          data_source: estimated
+        - id: FIR.PS.FST.007
+          standard_name: Fire Stop Pillow - Removable Type
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - firestop pillow
+          - fire pillow
+          typical_rate_range:
+            min: 300
+            max: 700
+          notes: Removable for cable additions
+          data_source: estimated
+        - id: FIR.PS.FST.008
+          standard_name: Fire Stop Wrap - For Plastic Pipes
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - firestop wrap
+          - pipe fire collar
+          typical_rate_range:
+            min: 400
+            max: 900
+          notes: Intumescent collar/wrap for PVC pipes
+          data_source: estimated
+      intumescent_paint:
+        items:
+        - id: FIR.PS.ICT.003
+          standard_name: Intumescent Paint - 30 Min DFT Steel
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - industrial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - intumescent 30 min
+          - fire paint 30 min
+          typical_rate_range:
+            min: 300
+            max: 600
+          notes: Thin film for 30 min rating
+          data_source: estimated
+        - id: FIR.PS.ICT.004
+          standard_name: Intumescent Paint - 60 Min DFT Steel
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - industrial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - intumescent 60 min
+          - fire paint 60 min
+          typical_rate_range:
+            min: 500
+            max: 1000
+          notes: ''
+          data_source: estimated
+        - id: FIR.PS.ICT.005
+          standard_name: Intumescent Paint - 90 Min DFT Steel
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - intumescent 90 min
+          typical_rate_range:
+            min: 700
+            max: 1400
+          notes: ''
+          data_source: estimated
+        - id: FIR.PS.ICT.006
+          standard_name: Intumescent Paint - 120 Min DFT Steel
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - intumescent 120 min
+          - fire paint 2 hour
+          typical_rate_range:
+            min: 1000
+            max: 2000
+          notes: Thick film for 2-hour rating
+          data_source: estimated
+  gas_suppression_additional:
+    categories:
+      gas_systems:
+        items:
+        - id: FIR.SP.FM2.002
+          standard_name: FM200 Gas Suppression System - Per Cylinder
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - FM200 cylinder
+          - HFC-227ea cylinder
+          typical_rate_range:
+            min: 40000
+            max: 100000
+          notes: Per 70L cylinder
+          data_source: estimated
+        - id: FIR.SP.NOV.002
+          standard_name: Novec 1230 Gas Suppression System - Per Cylinder
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - Novec cylinder
+          - FK-5-1-12 cylinder
+          typical_rate_range:
+            min: 50000
+            max: 120000
+          notes: Per cylinder, environmentally friendly
+          data_source: estimated
+        - id: FIR.SP.CO2.002
+          standard_name: CO2 System Low Pressure - Per Cylinder
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - industrial
+          requires: []
+          is_code_ref: IS 15683, NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - low pressure CO2
+          - LP CO2 cylinder
+          typical_rate_range:
+            min: 25000
+            max: 60000
+          notes: Refrigerated low-pressure system
+          data_source: estimated
+        - id: FIR.SP.CO2.003
+          standard_name: CO2 System High Pressure - Per Cylinder
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - industrial
+          requires: []
+          is_code_ref: IS 15683, NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - high pressure CO2
+          - HP CO2 cylinder
+          typical_rate_range:
+            min: 15000
+            max: 40000
+          notes: Standard pressure cylinder
+          data_source: estimated
+  hydrant_additional:
+    categories:
+      hydrant_components:
+        items:
+        - id: FIR.HY.LV.003
+          standard_name: Landing Valve 63mm SS - Double Headed
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 908, IS 884
+          dsr_item_ref: ''
+          aliases:
+          - double landing valve 63mm
+          - twin outlet valve
+          typical_rate_range:
+            min: 5000
+            max: 12000
+          notes: Double outlet for higher flow
+          data_source: estimated
+        - id: FIR.HY.HR.002
+          standard_name: Hose Reel Drum - Swinging Type with 30m Hose
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 908, IS 884
+          dsr_item_ref: ''
+          aliases:
+          - hose reel drum 30m
+          - first aid hose
+          typical_rate_range:
+            min: 8000
+            max: 18000
+          notes: Including 19mm rubber hose
+          data_source: estimated
+        - id: FIR.HY.HS.001
+          standard_name: Fire Hose 63mm - RRL Type 15m
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 636
+          dsr_item_ref: ''
+          aliases:
+          - fire hose 63mm 15m
+          - delivery hose
+          typical_rate_range:
+            min: 3000
+            max: 6000
+          notes: Reinforced rubber lined
+          data_source: IS codes only
+        - id: FIR.HY.HS.002
+          standard_name: Branch Pipe - Gun Metal 63mm
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 908, IS 884
+          dsr_item_ref: ''
+          aliases:
+          - branch pipe 63mm
+          - fire nozzle
+          typical_rate_range:
+            min: 1500
+            max: 3500
+          notes: Shut-off type nozzle
+          data_source: estimated
+        - id: FIR.HY.HS.003
+          standard_name: Y-Connector / Dividing Breeching - 63mm
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 908, IS 884
+          dsr_item_ref: ''
+          aliases:
+          - Y connector fire
+          - dividing breeching
+          typical_rate_range:
+            min: 3000
+            max: 7000
+          notes: Splits one 63mm to two 63mm
+          data_source: estimated
+  portable_additional:
+    categories:
+      extinguishers:
+        items:
+        - id: FIR.PT.ABC.006
+          standard_name: ABC Dry Powder Extinguisher 2 kg
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15683
+          dsr_item_ref: ''
+          aliases:
+          - 2 kg ABC
+          - small fire extinguisher
+          typical_rate_range:
+            min: 600
+            max: 1200
+          notes: For vehicles, small rooms
+          data_source: IS codes only
+        - id: FIR.PT.ABC.007
+          standard_name: ABC Dry Powder Extinguisher 6 kg
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15683
+          dsr_item_ref: ''
+          aliases:
+          - 6 kg ABC
+          typical_rate_range:
+            min: 1200
+            max: 2500
+          notes: ''
+          data_source: IS codes only
+        - id: FIR.PT.ABC.008
+          standard_name: ABC Dry Powder Extinguisher 9 kg
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15683
+          dsr_item_ref: ''
+          aliases:
+          - 9 kg ABC
+          - large ABC extinguisher
+          typical_rate_range:
+            min: 1800
+            max: 3500
+          notes: ''
+          data_source: IS codes only
+        - id: FIR.PT.CO2.003
+          standard_name: CO2 Fire Extinguisher 2 kg
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15683
+          dsr_item_ref: ''
+          aliases:
+          - 2 kg CO2 extinguisher
+          typical_rate_range:
+            min: 2000
+            max: 4000
+          notes: For electrical fires
+          data_source: IS codes only
+        - id: FIR.PT.CO2.004
+          standard_name: CO2 Fire Extinguisher 6.5 kg
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15683
+          dsr_item_ref: ''
+          aliases:
+          - 6.5 kg CO2
+          typical_rate_range:
+            min: 4000
+            max: 8000
+          notes: ''
+          data_source: IS codes only
+        - id: FIR.PT.CO2.005
+          standard_name: CO2 Fire Extinguisher 9 kg
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15683
+          dsr_item_ref: ''
+          aliases:
+          - 9 kg CO2
+          - large CO2 extinguisher
+          typical_rate_range:
+            min: 5000
+            max: 10000
+          notes: ''
+          data_source: IS codes only
+        - id: FIR.PT.WTR.002
+          standard_name: Water Type Fire Extinguisher 9 Litre
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15683
+          dsr_item_ref: ''
+          aliases:
+          - 9L water extinguisher
+          typical_rate_range:
+            min: 1500
+            max: 3000
+          notes: For Class A fires
+          data_source: IS codes only
+        - id: FIR.PT.FOA.002
+          standard_name: Foam Fire Extinguisher 9 Litre
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15683
+          dsr_item_ref: ''
+          aliases:
+          - 9L foam extinguisher
+          typical_rate_range:
+            min: 2000
+            max: 4000
+          notes: For Class A and B fires
+          data_source: IS codes only
+        - id: FIR.PT.BLK.002
+          standard_name: Fire Blanket 1.2m x 1.2m
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15683
+          dsr_item_ref: ''
+          aliases:
+          - fire blanket large
+          - 1.2m fire blanket
+          typical_rate_range:
+            min: 1000
+            max: 2500
+          notes: Kitchen/lab use
+          data_source: estimated
+  sprinkler_extended2:
+    categories:
+      sprinkler_types:
+        items:
+        - id: FIR.SK.UPR.001
+          standard_name: Sprinkler Head Upright K5.6 - 68 Deg C
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - industrial
+          requires: []
+          is_code_ref: IS 15105
+          dsr_item_ref: ''
+          aliases:
+          - upright sprinkler K5.6
+          - K80 upright
+          typical_rate_range:
+            min: 200
+            max: 500
+          notes: Standard response
+          data_source: IS codes only
+        - id: FIR.SK.UPR.002
+          standard_name: Sprinkler Head Upright K8.0 - 68 Deg C
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - industrial
+          requires: []
+          is_code_ref: IS 15105
+          dsr_item_ref: ''
+          aliases:
+          - upright sprinkler K8.0
+          - K115 upright
+          typical_rate_range:
+            min: 250
+            max: 600
+          notes: ''
+          data_source: IS codes only
+        - id: FIR.SK.PDT.001
+          standard_name: Sprinkler Head Pendant K5.6 - 68 Deg C
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 15105
+          dsr_item_ref: ''
+          aliases:
+          - pendant sprinkler K5.6
+          - K80 pendant
+          typical_rate_range:
+            min: 200
+            max: 500
+          notes: ''
+          data_source: IS codes only
+        - id: FIR.SK.PDT.002
+          standard_name: Sprinkler Head Pendant K8.0 - 68 Deg C
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 15105
+          dsr_item_ref: ''
+          aliases:
+          - pendant sprinkler K8.0
+          typical_rate_range:
+            min: 250
+            max: 600
+          notes: ''
+          data_source: IS codes only
+        - id: FIR.SK.SWL.001
+          standard_name: Sprinkler Head Sidewall K5.6 - 68 Deg C
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 15105
+          dsr_item_ref: ''
+          aliases:
+          - sidewall sprinkler K5.6
+          typical_rate_range:
+            min: 350
+            max: 800
+          notes: For corridor and wall mount
+          data_source: IS codes only
+        - id: FIR.SK.CNC.001
+          standard_name: Sprinkler Head Concealed Pendant K5.6
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 15105
+          dsr_item_ref: ''
+          aliases:
+          - concealed sprinkler
+          - flush sprinkler
+          typical_rate_range:
+            min: 500
+            max: 1200
+          notes: With cover plate
+          data_source: estimated
+        - id: FIR.SK.ESF.001
+          standard_name: ESFR Sprinkler Head K14.0 Pendant
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - industrial
+          requires: []
+          is_code_ref: IS 15105
+          dsr_item_ref: ''
+          aliases:
+          - ESFR sprinkler
+          - early suppression sprinkler
+          typical_rate_range:
+            min: 800
+            max: 1800
+          notes: For high-piled storage
+          data_source: estimated
+        - id: FIR.SK.K11.001
+          standard_name: Sprinkler Head Pendant K11.2 - 68 Deg C
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - industrial
+          requires: []
+          is_code_ref: IS 15105
+          dsr_item_ref: ''
+          aliases:
+          - K11.2 pendant
+          - K160 sprinkler
+          typical_rate_range:
+            min: 400
+            max: 900
+          notes: Large orifice
+          data_source: estimated
+        - id: FIR.SK.DRY.001
+          standard_name: Dry Type Sprinkler Head K5.6 Pendant
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - industrial
+          requires: []
+          is_code_ref: IS 15105
+          dsr_item_ref: ''
+          aliases:
+          - dry sprinkler pendant
+          - dry pendent
+          typical_rate_range:
+            min: 600
+            max: 1500
+          notes: For cold storage and parking
+          data_source: estimated
+        - id: FIR.SK.DLG.001
+          standard_name: Deluge Nozzle - Open Type 15mm
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - industrial
+          requires: []
+          is_code_ref: IS 15105
+          dsr_item_ref: ''
+          aliases:
+          - deluge nozzle
+          - open sprinkler nozzle
+          typical_rate_range:
+            min: 300
+            max: 700
+          notes: For deluge system
+          data_source: estimated
+  suppression_extended:
+    categories:
+      foam_systems:
+        items:
+        - id: FIR.SP.AFG.001
+          standard_name: AFFF Foam System - Proportioner
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - industrial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - foam proportioner
+          - AFFF proportioner
+          typical_rate_range:
+            min: 40000
+            max: 100000
+          notes: Bladder tank proportioner
+          data_source: estimated
+        - id: FIR.SP.AFG.002
+          standard_name: AFFF Foam Concentrate 3% - Per Litre
+          unit: ltr
+          construction_types:
+          - all
+          building_types:
+          - industrial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - AFFF 3% concentrate
+          - foam liquid
+          typical_rate_range:
+            min: 200
+            max: 450
+          notes: Aqueous film forming foam
+          data_source: estimated
+        - id: FIR.SP.DCP.001
+          standard_name: Dry Chemical Powder System - 50 kg
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - industrial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - DCP system 50kg
+          - dry powder system
+          typical_rate_range:
+            min: 30000
+            max: 70000
+          notes: With cylinder and piping
+          data_source: estimated
+        - id: FIR.SP.KHS.001
+          standard_name: Kitchen Hood Suppression System
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - kitchen hood system
+          - kitchen fire suppression
+          typical_rate_range:
+            min: 60000
+            max: 150000
+          notes: Wet chemical type for cooking hoods
+          data_source: estimated
+      detection_special:
+        items:
+        - id: FIR.DT.LHD.001
+          standard_name: Linear Heat Detection Cable - Per Metre
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - industrial
+          requires: []
+          is_code_ref: IS 2189
+          dsr_item_ref: ''
+          aliases:
+          - linear heat cable
+          - LHD cable
+          typical_rate_range:
+            min: 300
+            max: 700
+          notes: Restorable type
+          data_source: estimated
+        - id: FIR.DT.LHD.002
+          standard_name: Linear Heat Detection Cable - Non-Restorable
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - industrial
+          requires: []
+          is_code_ref: IS 2189
+          dsr_item_ref: ''
+          aliases:
+          - non-restorable LHD
+          typical_rate_range:
+            min: 150
+            max: 350
+          notes: Fixed temperature
+          data_source: estimated
+        - id: FIR.DT.VSD.001
+          standard_name: Aspirating Smoke Detection (VESDA) - Per Zone
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 2189
+          dsr_item_ref: ''
+          aliases:
+          - VESDA detector
+          - aspirating smoke
+          typical_rate_range:
+            min: 80000
+            max: 200000
+          notes: Very early smoke detection apparatus
+          data_source: estimated
+        - id: FIR.DT.GAS.003
+          standard_name: Gas Detection Sensor - LPG/CNG
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 2189
+          dsr_item_ref: ''
+          aliases:
+          - gas detector LPG
+          - gas leak sensor
+          typical_rate_range:
+            min: 3000
+            max: 8000
+          notes: For basement parking
+          data_source: estimated
+        - id: FIR.DT.FLM.004
+          standard_name: Flame Detector - UV/IR
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - industrial
+          requires: []
+          is_code_ref: IS 2189
+          dsr_item_ref: ''
+          aliases:
+          - flame detector UV
+          - IR flame sensor
+          typical_rate_range:
+            min: 20000
+            max: 50000
+          notes: For outdoor/industrial areas
+          data_source: estimated
+  pressurization:
+    categories:
+      pressurization_fans:
+        items:
+        - id: FIR.PR.STF.001
+          standard_name: Staircase Pressurization Fan - Axial
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - staircase pressurization
+          - stair press fan
+          typical_rate_range:
+            min: 80000
+            max: 200000
+          notes: As per NBC 2016
+          data_source: IS codes only
+        - id: FIR.PR.LBF.001
+          standard_name: Lobby Pressurization Fan
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - lobby pressurization
+          - lift lobby fan
+          typical_rate_range:
+            min: 60000
+            max: 150000
+          notes: ''
+          data_source: IS codes only
+        - id: FIR.PR.SEF.001
+          standard_name: Smoke Extraction Fan - Centrifugal 400 Deg C/2Hr
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - smoke extraction fan
+          - smoke exhaust fan
+          typical_rate_range:
+            min: 100000
+            max: 250000
+          notes: Fire rated motor
+          data_source: IS codes only
+        - id: FIR.PR.JTF.001
+          standard_name: Jet Fan for Basement Ventilation
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - jet fan basement
+          - impulse fan
+          typical_rate_range:
+            min: 40000
+            max: 90000
+          notes: For CO and smoke management
+          data_source: estimated
+  passive_extended2:
+    categories:
+      fire_doors_extended:
+        items:
+        - id: FIR.PS.DOR.010
+          standard_name: Fire Door 30 Min - Double Leaf 1800x2100mm
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 3614
+          dsr_item_ref: ''
+          aliases:
+          - FD30 double 1800
+          - 30 min double door
+          typical_rate_range:
+            min: 22000
+            max: 40000
+          notes: ''
+          data_source: IS codes only
+        - id: FIR.PS.DOR.011
+          standard_name: Fire Door 60 Min - Double Leaf 1800x2100mm
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 3614
+          dsr_item_ref: ''
+          aliases:
+          - FD60 double 1800
+          typical_rate_range:
+            min: 28000
+            max: 52000
+          notes: ''
+          data_source: IS codes only
+        - id: FIR.PS.DOR.012
+          standard_name: Fire Door 120 Min - Double Leaf 1800x2100mm
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 3614
+          dsr_item_ref: ''
+          aliases:
+          - FD120 double 1800
+          typical_rate_range:
+            min: 40000
+            max: 75000
+          notes: ''
+          data_source: IS codes only
+        - id: FIR.PS.DOR.013
+          standard_name: Fire Door with Vision Panel - 60 Min Single
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 3614
+          dsr_item_ref: ''
+          aliases:
+          - FD60 vision panel
+          - glazed fire door
+          typical_rate_range:
+            min: 22000
+            max: 42000
+          notes: With fire-rated glass panel
+          data_source: IS codes only
+        - id: FIR.PS.RST.001
+          standard_name: Fire Rated Rolling Shutter - 2 Hour
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - industrial
+          requires: []
+          is_code_ref: IS 3614
+          dsr_item_ref: ''
+          aliases:
+          - fire rolling shutter
+          - fire rated shutter
+          typical_rate_range:
+            min: 8000
+            max: 16000
+          notes: Motorized with fusible link
+          data_source: estimated
+      firestop_extended:
+        items:
+        - id: FIR.PS.FST.009
+          standard_name: Fire Collar - Intumescent 75mm
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - fire collar 75mm
+          - intumescent collar 75
+          typical_rate_range:
+            min: 500
+            max: 1200
+          notes: For PVC pipe penetrations
+          data_source: estimated
+        - id: FIR.PS.FST.010
+          standard_name: Fire Collar - Intumescent 110mm
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - fire collar 110mm
+          - intumescent collar 110
+          typical_rate_range:
+            min: 700
+            max: 1600
+          notes: ''
+          data_source: estimated
+        - id: FIR.PS.FST.011
+          standard_name: Fire Collar - Intumescent 160mm
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - fire collar 160mm
+          - intumescent collar 160
+          typical_rate_range:
+            min: 1000
+            max: 2200
+          notes: ''
+          data_source: estimated
+        - id: FIR.PS.FST.012
+          standard_name: Fire Board - Calcium Silicate 12mm
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - fire board 12mm
+          - calcium silicate board
+          typical_rate_range:
+            min: 600
+            max: 1200
+          notes: For duct/wall enclosures
+          data_source: estimated
+        - id: FIR.PS.FST.013
+          standard_name: Intumescent Strip - 15x4mm Per Metre
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - intumescent strip 15x4
+          - door strip fire
+          typical_rate_range:
+            min: 80
+            max: 180
+          notes: For fire door frames
+          data_source: estimated
+        - id: FIR.PS.FRG.001
+          standard_name: Fire Rated Glazing - 30 Min
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 2553 Part 2
+          dsr_item_ref: ''
+          aliases:
+          - fire glass 30 min
+          - fire rated glass
+          typical_rate_range:
+            min: 8000
+            max: 18000
+          notes: With fire-rated frame
+          data_source: estimated
+        - id: FIR.PS.FRG.002
+          standard_name: Fire Rated Glazing - 60 Min
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 2553 Part 2
+          dsr_item_ref: ''
+          aliases:
+          - fire glass 60 min
+          typical_rate_range:
+            min: 12000
+            max: 25000
+          notes: ''
+          data_source: estimated
+  fire_pumps_extended:
+    categories:
+      pump_sets:
+        items:
+        - id: FIR.FP.ELC.001
+          standard_name: Electric Fire Pump 20 HP
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 903
+          dsr_item_ref: ''
+          aliases:
+          - fire pump 20HP electric
+          - electric fire pump 20
+          typical_rate_range:
+            min: 150000
+            max: 300000
+          notes: End suction centrifugal
+          data_source: IS codes only
+        - id: FIR.FP.ELC.002
+          standard_name: Electric Fire Pump 40 HP
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 903
+          dsr_item_ref: ''
+          aliases:
+          - fire pump 40HP electric
+          typical_rate_range:
+            min: 250000
+            max: 500000
+          notes: ''
+          data_source: IS codes only
+        - id: FIR.FP.ELC.003
+          standard_name: Electric Fire Pump 60 HP
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 903
+          dsr_item_ref: ''
+          aliases:
+          - fire pump 60HP electric
+          typical_rate_range:
+            min: 350000
+            max: 700000
+          notes: ''
+          data_source: IS codes only
+        - id: FIR.FP.DSL.001
+          standard_name: Diesel Fire Pump 40 HP
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 903
+          dsr_item_ref: ''
+          aliases:
+          - diesel fire pump 40HP
+          typical_rate_range:
+            min: 400000
+            max: 800000
+          notes: With diesel engine and fuel tank
+          data_source: IS codes only
+        - id: FIR.FP.DSL.002
+          standard_name: Diesel Fire Pump 60 HP
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 903
+          dsr_item_ref: ''
+          aliases:
+          - diesel fire pump 60HP
+          typical_rate_range:
+            min: 600000
+            max: 1200000
+          notes: ''
+          data_source: IS codes only
+        - id: FIR.FP.JKY.001
+          standard_name: Jockey Pump 2 HP
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 15105, NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - jockey pump 2HP
+          - pressure maintenance pump
+          typical_rate_range:
+            min: 25000
+            max: 50000
+          notes: Maintains system pressure
+          data_source: estimated
+        - id: FIR.FP.JKY.002
+          standard_name: Jockey Pump 5 HP
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 15105, NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - jockey pump 5HP
+          typical_rate_range:
+            min: 35000
+            max: 70000
+          notes: ''
+          data_source: estimated
+        - id: FIR.FP.CTR.001
+          standard_name: Fire Pump Controller - Electric Pump
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 15105, NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - fire pump controller
+          - pump control panel fire
+          typical_rate_range:
+            min: 40000
+            max: 100000
+          notes: Auto start on pressure drop
+          data_source: estimated
+        - id: FIR.FP.TST.001
+          standard_name: Fire Pump Test Header - 3 Outlet
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 15105, NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - test header fire pump
+          - pump test connection
+          typical_rate_range:
+            min: 8000
+            max: 18000
+          notes: With valved outlets
+          data_source: estimated
+  external_fire:
+    categories:
+      external_equipment:
+        items:
+        - id: FIR.EX.YHD.001
+          standard_name: Yard Hydrant - Double Headed SS
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - industrial
+          requires: []
+          is_code_ref: IS 908, IS 884
+          dsr_item_ref: ''
+          aliases:
+          - yard hydrant double
+          - external hydrant
+          typical_rate_range:
+            min: 8000
+            max: 18000
+          notes: Post type with isolation valve
+          data_source: estimated
+        - id: FIR.EX.FWT.001
+          standard_name: Fire Water Tank - Underground RCC 50000L
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - fire water tank UG 50KL
+          typical_rate_range:
+            min: 300000
+            max: 600000
+          notes: As per NBC requirements
+          data_source: estimated
+        - id: FIR.EX.FWT.002
+          standard_name: Fire Water Tank - Underground RCC 100000L
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - fire water tank UG 100KL
+          typical_rate_range:
+            min: 500000
+            max: 1000000
+          notes: ''
+          data_source: estimated
+        - id: FIR.EX.FWT.003
+          standard_name: Fire Water Tank - Overhead SS 10000L
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - fire tank OH 10KL
+          - overhead fire tank
+          typical_rate_range:
+            min: 80000
+            max: 160000
+          notes: Gravity-fed fire system
+          data_source: estimated
+        - id: FIR.EX.MON.001
+          standard_name: Mobile Fire Monitor - 2000 LPM
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - industrial
+          requires: []
+          is_code_ref: IS 908, IS 884
+          dsr_item_ref: ''
+          aliases:
+          - mobile monitor fire
+          - portable monitor
+          typical_rate_range:
+            min: 30000
+            max: 70000
+          notes: Trailer mounted
+          data_source: estimated
+  portable_extended2:
+    categories:
+      extinguishers_extended:
+        items:
+        - id: FIR.PT.ABC.009
+          standard_name: ABC Dry Powder Extinguisher 1 kg
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15683
+          dsr_item_ref: ''
+          aliases:
+          - 1 kg ABC
+          - mini fire extinguisher
+          typical_rate_range:
+            min: 400
+            max: 800
+          notes: For vehicles and small spaces
+          data_source: IS codes only
+        - id: FIR.PT.ABC.010
+          standard_name: ABC Dry Powder Extinguisher 4 kg
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15683
+          dsr_item_ref: ''
+          aliases:
+          - 4 kg ABC
+          typical_rate_range:
+            min: 900
+            max: 1800
+          notes: ''
+          data_source: IS codes only
+        - id: FIR.PT.CO2.006
+          standard_name: CO2 Fire Extinguisher 4.5 kg
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15683
+          dsr_item_ref: ''
+          aliases:
+          - 4.5 kg CO2
+          typical_rate_range:
+            min: 3000
+            max: 6000
+          notes: For server rooms and electrical
+          data_source: IS codes only
+        - id: FIR.PT.CLN.002
+          standard_name: Clean Agent Extinguisher 2 kg
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 15683, NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - clean agent 2kg
+          - HFC extinguisher
+          typical_rate_range:
+            min: 4000
+            max: 8000
+          notes: No residue, for electronics
+          data_source: estimated
+        - id: FIR.PT.CLN.003
+          standard_name: Clean Agent Extinguisher 4 kg
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 15683, NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - clean agent 4kg
+          typical_rate_range:
+            min: 6000
+            max: 12000
+          notes: ''
+          data_source: estimated
+        - id: FIR.PT.WHL.001
+          standard_name: Wheeled ABC Extinguisher 25 kg
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - industrial
+          requires: []
+          is_code_ref: IS 15683
+          dsr_item_ref: ''
+          aliases:
+          - wheeled extinguisher 25kg
+          - trolley type ABC
+          typical_rate_range:
+            min: 5000
+            max: 10000
+          notes: With trolley and hose
+          data_source: IS codes only
+        - id: FIR.PT.WHL.002
+          standard_name: Wheeled ABC Extinguisher 50 kg
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - industrial
+          requires: []
+          is_code_ref: IS 15683
+          dsr_item_ref: ''
+          aliases:
+          - wheeled extinguisher 50kg
+          typical_rate_range:
+            min: 8000
+            max: 16000
+          notes: ''
+          data_source: IS codes only
+        - id: FIR.PT.WHL.003
+          standard_name: Wheeled CO2 Extinguisher 22.5 kg
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - industrial
+          requires: []
+          is_code_ref: IS 15683
+          dsr_item_ref: ''
+          aliases:
+          - wheeled CO2 22.5kg
+          - trolley CO2
+          typical_rate_range:
+            min: 15000
+            max: 30000
+          notes: ''
+          data_source: IS codes only
+  signage_accessories:
+    categories:
+      fire_signage:
+        items:
+        - id: FIR.SG.PHT.001
+          standard_name: Photoluminescent Fire Exit Sign 300x100mm
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2553
+          dsr_item_ref: ''
+          aliases:
+          - exit sign glow
+          - photoluminescent exit
+          typical_rate_range:
+            min: 200
+            max: 500
+          notes: Glow in dark
+          data_source: IS codes only
+        - id: FIR.SG.PHT.002
+          standard_name: Photoluminescent Fire Extinguisher Location Sign
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2553
+          dsr_item_ref: ''
+          aliases:
+          - extinguisher sign
+          - fire ext location sign
+          typical_rate_range:
+            min: 150
+            max: 350
+          notes: ''
+          data_source: IS codes only
+        - id: FIR.SG.PHT.003
+          standard_name: Photoluminescent Floor Route Marker
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - floor marker fire
+          - escape route marker
+          typical_rate_range:
+            min: 100
+            max: 250
+          notes: ''
+          data_source: estimated
+        - id: FIR.SG.LED.001
+          standard_name: LED Illuminated Fire Exit Sign - Battery Backup
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - LED exit sign
+          - illuminated exit
+          typical_rate_range:
+            min: 800
+            max: 2000
+          notes: 3 hour battery backup
+          data_source: estimated
+      fire_accessories:
+        items:
+        - id: FIR.AC.HSC.001
+          standard_name: Fire Hose Cabinet - MS Powder Coated Single
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 908, IS 884
+          dsr_item_ref: ''
+          aliases:
+          - hose cabinet single
+          - fire cabinet MS
+          typical_rate_range:
+            min: 3000
+            max: 7000
+          notes: For landing valve and hose
+          data_source: estimated
+        - id: FIR.AC.HSC.002
+          standard_name: Fire Hose Cabinet - SS 304 Recessed
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 908, IS 884
+          dsr_item_ref: ''
+          aliases:
+          - SS hose cabinet
+          - recessed fire cabinet
+          typical_rate_range:
+            min: 6000
+            max: 14000
+          notes: ''
+          data_source: estimated
+        - id: FIR.AC.EXS.001
+          standard_name: Fire Extinguisher Stand - Single
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15683
+          dsr_item_ref: ''
+          aliases:
+          - extinguisher stand
+          - fire ext bracket
+          typical_rate_range:
+            min: 300
+            max: 700
+          notes: Wall bracket or floor stand
+          data_source: estimated
+        - id: FIR.AC.EXS.002
+          standard_name: Fire Extinguisher Stand - Double
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 15683
+          dsr_item_ref: ''
+          aliases:
+          - double extinguisher stand
+          typical_rate_range:
+            min: 500
+            max: 1200
+          notes: ''
+          data_source: estimated
+        - id: FIR.AC.SIM.001
+          standard_name: Siamese Connection (FDC) - 4 Way
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 908, IS 884
+          dsr_item_ref: ''
+          aliases:
+          - siamese connection 4 way
+          - FDC 4 way
+          typical_rate_range:
+            min: 8000
+            max: 18000
+          notes: Fire department connection
+          data_source: estimated
+        - id: FIR.AC.OSY.001
+          standard_name: OS&Y Gate Valve 100mm - Fire Rated
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 15105
+          dsr_item_ref: ''
+          aliases:
+          - OS&Y valve 100mm
+          - outside screw gate fire
+          typical_rate_range:
+            min: 5000
+            max: 12000
+          notes: UL/FM approved
+          data_source: estimated
+        - id: FIR.AC.OSY.002
+          standard_name: OS&Y Gate Valve 150mm - Fire Rated
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 15105
+          dsr_item_ref: ''
+          aliases:
+          - OS&Y valve 150mm
+          typical_rate_range:
+            min: 8000
+            max: 18000
+          notes: ''
+          data_source: estimated
+        - id: FIR.AC.AWV.001
+          standard_name: Alarm Valve Set - Wet Type 100mm
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 15105
+          dsr_item_ref: ''
+          aliases:
+          - alarm valve wet 100
+          - sprinkler alarm valve
+          typical_rate_range:
+            min: 25000
+            max: 55000
+          notes: For wet sprinkler system
+          data_source: estimated

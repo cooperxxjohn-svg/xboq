@@ -1,0 +1,784 @@
+# xBOQ.ai Master Construction Knowledge Base
+# Brand Names to Generic Construction Terms Mapping
+# ~100 entries mapping common brand names to their generic product categories
+
+brand_mappings:
+  # ============================================================
+  # WATERPROOFING & CONSTRUCTION CHEMICALS
+  # ============================================================
+  - brand: "Dr. Fixit"
+    manufacturer: "Pidilite Industries"
+    generic_terms: ["waterproofing membrane", "waterproofing compound", "construction chemical"]
+    product_lines:
+      - brand_product: "Dr. Fixit Pidifin 2K"
+        generic: "cementitious waterproofing coating"
+      - brand_product: "Dr. Fixit Roofseal"
+        generic: "acrylic waterproofing membrane"
+      - brand_product: "Dr. Fixit Newcoat"
+        generic: "elastomeric waterproofing coating"
+      - brand_product: "Dr. Fixit Pidicrete URP"
+        generic: "polymer modified waterproofing"
+      - brand_product: "Dr. Fixit Bathseal"
+        generic: "bathroom waterproofing kit"
+    taxonomy_ids: ["WP.GEN.001"]
+    commonly_used_as_generic: true
+
+  - brand: "Fosroc"
+    manufacturer: "Fosroc International"
+    generic_terms: ["construction chemical", "waterproofing", "admixture", "repair mortar", "grout"]
+    product_lines:
+      - brand_product: "Fosroc Conplast"
+        generic: "concrete admixture / plasticizer"
+      - brand_product: "Fosroc Concure"
+        generic: "curing compound"
+      - brand_product: "Fosroc Conbextra"
+        generic: "non-shrink grout"
+      - brand_product: "Fosroc Renderoc"
+        generic: "concrete repair mortar"
+      - brand_product: "Fosroc Nitoseal"
+        generic: "joint sealant"
+    taxonomy_ids: ["WP.GEN.001", "STR.AD.GEN.001"]
+    commonly_used_as_generic: false
+
+  - brand: "Sika"
+    manufacturer: "Sika AG"
+    generic_terms: ["construction chemical", "waterproofing", "admixture", "sealant", "adhesive"]
+    product_lines:
+      - brand_product: "Sika ViscoCrete"
+        generic: "superplasticizer"
+      - brand_product: "SikaTop Seal"
+        generic: "cementitious waterproofing"
+      - brand_product: "Sika Antisol"
+        generic: "curing compound"
+      - brand_product: "Sikaflex"
+        generic: "polyurethane sealant"
+      - brand_product: "SikaCeram"
+        generic: "tile adhesive"
+    taxonomy_ids: ["WP.GEN.001", "STR.AD.GEN.001"]
+    commonly_used_as_generic: false
+
+  - brand: "Roff"
+    manufacturer: "Pidilite Industries"
+    generic_terms: ["tile adhesive", "tile grout", "waterproofing"]
+    product_lines:
+      - brand_product: "Roff Setflex"
+        generic: "tile adhesive"
+      - brand_product: "Roff Rainbow"
+        generic: "tile grout"
+      - brand_product: "Roff Hydrosmart"
+        generic: "waterproofing compound"
+    taxonomy_ids: ["FIN.TA.GEN.001", "FIN.TG.GEN.001"]
+    commonly_used_as_generic: true
+
+  - brand: "MYK Laticrete"
+    manufacturer: "MYK Laticrete India"
+    generic_terms: ["tile adhesive", "tile grout", "waterproofing membrane"]
+    product_lines:
+      - brand_product: "Laticrete 335"
+        generic: "polymer modified tile adhesive"
+      - brand_product: "Laticrete SpectraLOCK"
+        generic: "epoxy tile grout"
+      - brand_product: "Laticrete Hydro Ban"
+        generic: "liquid waterproofing membrane"
+    taxonomy_ids: ["FIN.TA.GEN.001"]
+    commonly_used_as_generic: false
+
+  - brand: "BASF MasterBuilders"
+    manufacturer: "BASF"
+    generic_terms: ["admixture", "grout", "repair", "waterproofing"]
+    product_lines:
+      - brand_product: "MasterGlenium"
+        generic: "superplasticizer"
+      - brand_product: "MasterSeal"
+        generic: "waterproofing system"
+      - brand_product: "MasterFlow"
+        generic: "non-shrink grout"
+      - brand_product: "MasterEmaco"
+        generic: "concrete repair system"
+    taxonomy_ids: ["STR.AD.GEN.001"]
+    commonly_used_as_generic: false
+
+  # ============================================================
+  # PAINTS & COATINGS
+  # ============================================================
+  - brand: "Asian Paints"
+    manufacturer: "Asian Paints Ltd"
+    generic_terms: ["paint", "primer", "putty", "texture", "wood finish"]
+    product_lines:
+      - brand_product: "Asian Paints Royale"
+        generic: "premium interior emulsion"
+      - brand_product: "Asian Paints Tractor Emulsion"
+        generic: "economy interior emulsion"
+      - brand_product: "Asian Paints Apex"
+        generic: "exterior emulsion"
+      - brand_product: "Asian Paints Apcolite"
+        generic: "synthetic enamel"
+      - brand_product: "Asian Paints Royale Play"
+        generic: "texture paint"
+      - brand_product: "Asian Paints Decoprime"
+        generic: "cement primer"
+      - brand_product: "Asian Paints SmartCare"
+        generic: "waterproof exterior paint"
+      - brand_product: "Asian Paints Trucare"
+        generic: "wall putty"
+      - brand_product: "Asian Paints WoodTech"
+        generic: "wood finish / PU polish"
+    taxonomy_ids: ["FIN.PA.IE.001", "FIN.PA.EE.001"]
+    commonly_used_as_generic: true
+
+  - brand: "Berger Paints"
+    manufacturer: "Berger Paints India"
+    generic_terms: ["paint", "primer", "putty"]
+    product_lines:
+      - brand_product: "Berger Silk"
+        generic: "premium interior emulsion"
+      - brand_product: "Berger Easy Clean"
+        generic: "interior emulsion"
+      - brand_product: "Berger WeatherCoat"
+        generic: "exterior emulsion"
+      - brand_product: "Berger Luxol"
+        generic: "synthetic enamel"
+      - brand_product: "Berger Bison Primer"
+        generic: "cement primer"
+    taxonomy_ids: ["FIN.PA.IE.001", "FIN.PA.EE.001"]
+    commonly_used_as_generic: false
+
+  - brand: "Nerolac"
+    manufacturer: "Kansai Nerolac Paints"
+    generic_terms: ["paint", "primer"]
+    product_lines:
+      - brand_product: "Nerolac Impressions"
+        generic: "premium interior emulsion"
+      - brand_product: "Nerolac Excel"
+        generic: "exterior emulsion"
+      - brand_product: "Nerolac Beauty"
+        generic: "economy interior emulsion"
+    taxonomy_ids: ["FIN.PA.IE.001"]
+    commonly_used_as_generic: false
+
+  - brand: "Dulux"
+    manufacturer: "AkzoNobel"
+    generic_terms: ["paint", "primer"]
+    product_lines:
+      - brand_product: "Dulux Velvet Touch"
+        generic: "premium interior emulsion"
+      - brand_product: "Dulux Weathershield"
+        generic: "exterior emulsion"
+    taxonomy_ids: ["FIN.PA.IE.001"]
+    commonly_used_as_generic: false
+
+  - brand: "Birla White"
+    manufacturer: "UltraTech Cement / Aditya Birla Group"
+    generic_terms: ["wall putty", "white cement"]
+    product_lines:
+      - brand_product: "Birla White WallCare Putty"
+        generic: "white cement based wall putty"
+      - brand_product: "Birla White LevelO"
+        generic: "gypsum based plaster"
+    taxonomy_ids: ["FIN.PA.WP.001"]
+    commonly_used_as_generic: true
+
+  - brand: "JK Cement"
+    manufacturer: "JK Cement Ltd"
+    generic_terms: ["wall putty", "white cement"]
+    product_lines:
+      - brand_product: "JK Wall Putty"
+        generic: "white cement based wall putty"
+    taxonomy_ids: ["FIN.PA.WP.001"]
+    commonly_used_as_generic: false
+
+  # ============================================================
+  # TILES
+  # ============================================================
+  - brand: "Kajaria"
+    manufacturer: "Kajaria Ceramics Ltd"
+    generic_terms: ["ceramic tile", "vitrified tile", "floor tile", "wall tile"]
+    product_lines:
+      - brand_product: "Kajaria Eternity"
+        generic: "glazed vitrified tile"
+      - brand_product: "Kajaria Prima"
+        generic: "double charge vitrified tile"
+    taxonomy_ids: ["FIN.FL.VT.001", "FIN.FL.CT.001"]
+    commonly_used_as_generic: true
+
+  - brand: "Somany"
+    manufacturer: "Somany Ceramics"
+    generic_terms: ["ceramic tile", "vitrified tile"]
+    taxonomy_ids: ["FIN.FL.VT.001"]
+    commonly_used_as_generic: false
+
+  - brand: "Johnson"
+    manufacturer: "H&R Johnson"
+    generic_terms: ["ceramic tile", "vitrified tile", "sanitaryware"]
+    taxonomy_ids: ["FIN.FL.VT.001"]
+    commonly_used_as_generic: false
+
+  - brand: "RAK Ceramics"
+    manufacturer: "RAK Ceramics"
+    generic_terms: ["ceramic tile", "vitrified tile", "sanitaryware"]
+    taxonomy_ids: ["FIN.FL.VT.001"]
+    commonly_used_as_generic: false
+
+  - brand: "Orient Bell"
+    manufacturer: "Orient Bell Ltd"
+    generic_terms: ["ceramic tile", "vitrified tile"]
+    taxonomy_ids: ["FIN.FL.VT.001"]
+    commonly_used_as_generic: false
+
+  - brand: "Nitco"
+    manufacturer: "Nitco Ltd"
+    generic_terms: ["vitrified tile", "marble", "natural stone"]
+    taxonomy_ids: ["FIN.FL.VT.001"]
+    commonly_used_as_generic: false
+
+  # ============================================================
+  # SANITARY FIXTURES & CP FITTINGS
+  # ============================================================
+  - brand: "Hindware"
+    manufacturer: "Hindware (HSIL Ltd)"
+    generic_terms: ["sanitary fixtures", "water closet", "wash basin", "urinal"]
+    taxonomy_ids: ["PLB.SF.GEN.001"]
+    commonly_used_as_generic: true
+
+  - brand: "Parryware"
+    manufacturer: "Parryware (Roca Group)"
+    generic_terms: ["sanitary fixtures", "water closet", "wash basin"]
+    taxonomy_ids: ["PLB.SF.GEN.001"]
+    commonly_used_as_generic: false
+
+  - brand: "Kohler"
+    manufacturer: "Kohler Co."
+    generic_terms: ["premium sanitary fixtures", "water closet", "wash basin", "bathtub"]
+    taxonomy_ids: ["PLB.SF.GEN.001"]
+    commonly_used_as_generic: false
+
+  - brand: "Cera"
+    manufacturer: "Cera Sanitaryware"
+    generic_terms: ["sanitary fixtures", "water closet", "wash basin"]
+    taxonomy_ids: ["PLB.SF.GEN.001"]
+    commonly_used_as_generic: false
+
+  - brand: "Duravit"
+    manufacturer: "Duravit AG"
+    generic_terms: ["premium sanitary fixtures"]
+    taxonomy_ids: ["PLB.SF.GEN.001"]
+    commonly_used_as_generic: false
+
+  - brand: "TOTO"
+    manufacturer: "TOTO Ltd"
+    generic_terms: ["premium sanitary fixtures", "smart toilet"]
+    taxonomy_ids: ["PLB.SF.GEN.001"]
+    commonly_used_as_generic: false
+
+  - brand: "Jaquar"
+    manufacturer: "Jaquar Group"
+    generic_terms: ["CP fittings", "bathroom fittings", "shower", "faucet"]
+    taxonomy_ids: ["PLB.CP.GEN.001"]
+    commonly_used_as_generic: true
+
+  - brand: "Grohe"
+    manufacturer: "Grohe (Lixil Group)"
+    generic_terms: ["premium CP fittings", "shower system", "faucet"]
+    taxonomy_ids: ["PLB.CP.GEN.001"]
+    commonly_used_as_generic: false
+
+  # ============================================================
+  # ELECTRICAL
+  # ============================================================
+  - brand: "Polycab"
+    manufacturer: "Polycab India Ltd"
+    generic_terms: ["electrical wire", "cable", "FRLS cable"]
+    taxonomy_ids: ["ELE.WR.GEN.001"]
+    commonly_used_as_generic: true
+
+  - brand: "Finolex"
+    manufacturer: "Finolex Cables Ltd"
+    generic_terms: ["electrical wire", "cable", "PVC pipe"]
+    taxonomy_ids: ["ELE.WR.GEN.001"]
+    commonly_used_as_generic: true
+
+  - brand: "Havells"
+    manufacturer: "Havells India"
+    generic_terms: ["electrical wire", "switch", "MCB", "light fixture", "fan"]
+    taxonomy_ids: ["ELE.WR.GEN.001", "ELE.SW.GEN.001", "ELE.CB.MCB.001"]
+    commonly_used_as_generic: true
+
+  - brand: "Anchor"
+    manufacturer: "Panasonic (formerly Anchor Electricals)"
+    generic_terms: ["modular switch", "switch socket", "electrical accessories"]
+    taxonomy_ids: ["ELE.SW.GEN.001"]
+    commonly_used_as_generic: true
+
+  - brand: "Legrand"
+    manufacturer: "Legrand SA"
+    generic_terms: ["modular switch", "MCB", "distribution board", "cable tray"]
+    taxonomy_ids: ["ELE.SW.GEN.001", "ELE.CB.MCB.001"]
+    commonly_used_as_generic: false
+
+  - brand: "Schneider Electric"
+    manufacturer: "Schneider Electric SE"
+    generic_terms: ["MCB", "MCCB", "distribution board", "switch", "automation"]
+    taxonomy_ids: ["ELE.CB.MCB.001", "ELE.DB.GEN.001"]
+    commonly_used_as_generic: false
+
+  - brand: "ABB"
+    manufacturer: "ABB Ltd"
+    generic_terms: ["MCB", "MCCB", "ACB", "distribution board", "VFD"]
+    taxonomy_ids: ["ELE.CB.MCB.001"]
+    commonly_used_as_generic: false
+
+  - brand: "Siemens"
+    manufacturer: "Siemens AG"
+    generic_terms: ["MCB", "MCCB", "distribution board", "fire alarm", "BMS"]
+    taxonomy_ids: ["ELE.CB.MCB.001"]
+    commonly_used_as_generic: false
+
+  - brand: "KEI"
+    manufacturer: "KEI Industries"
+    generic_terms: ["electrical cable", "power cable"]
+    taxonomy_ids: ["ELE.WR.GEN.001"]
+    commonly_used_as_generic: false
+
+  - brand: "RR Kabel"
+    manufacturer: "RR Kabel"
+    generic_terms: ["electrical wire", "cable"]
+    taxonomy_ids: ["ELE.WR.GEN.001"]
+    commonly_used_as_generic: false
+
+  - brand: "Philips"
+    manufacturer: "Signify (Philips Lighting)"
+    generic_terms: ["LED light", "light fixture", "luminaire"]
+    taxonomy_ids: ["ELE.LT.GEN.001"]
+    commonly_used_as_generic: false
+
+  - brand: "Crompton"
+    manufacturer: "Crompton Greaves Consumer"
+    generic_terms: ["ceiling fan", "light fixture", "pump"]
+    taxonomy_ids: ["ELE.LT.GEN.001"]
+    commonly_used_as_generic: false
+
+  # ============================================================
+  # PLUMBING PIPES
+  # ============================================================
+  - brand: "Astral"
+    manufacturer: "Astral Ltd"
+    generic_terms: ["CPVC pipe", "UPVC pipe", "SWR pipe", "adhesive"]
+    taxonomy_ids: ["PLB.PP.CPVC.001", "PLB.PP.UPVC.001"]
+    commonly_used_as_generic: true
+
+  - brand: "Ashirvad"
+    manufacturer: "Aliaxis (Ashirvad Pipes)"
+    generic_terms: ["CPVC pipe", "UPVC pipe", "SWR pipe"]
+    product_lines:
+      - brand_product: "Ashirvad FlowGuard Plus"
+        generic: "CPVC hot and cold water pipe"
+    taxonomy_ids: ["PLB.PP.CPVC.001"]
+    commonly_used_as_generic: false
+
+  - brand: "Prince"
+    manufacturer: "Prince Pipes & Fittings"
+    generic_terms: ["CPVC pipe", "UPVC pipe", "SWR pipe", "HDPE pipe"]
+    taxonomy_ids: ["PLB.PP.CPVC.001"]
+    commonly_used_as_generic: false
+
+  - brand: "Supreme"
+    manufacturer: "Supreme Industries"
+    generic_terms: ["CPVC pipe", "UPVC pipe", "SWR pipe", "HDPE pipe"]
+    taxonomy_ids: ["PLB.PP.CPVC.001"]
+    commonly_used_as_generic: false
+
+  - brand: "Sintex"
+    manufacturer: "Sintex Plastics"
+    generic_terms: ["plastic water tank", "overhead tank", "septic tank"]
+    taxonomy_ids: ["PLB.TK.GEN.001"]
+    commonly_used_as_generic: true
+
+  # ============================================================
+  # HVAC / AIR CONDITIONING
+  # ============================================================
+  - brand: "Daikin"
+    manufacturer: "Daikin Industries"
+    generic_terms: ["VRV system", "split AC", "air conditioner"]
+    taxonomy_ids: ["HVAC.VRV.GEN.001", "HVAC.SPL.GEN.001"]
+    commonly_used_as_generic: true
+    notes: "VRV is Daikin trademark; generic term is VRF"
+
+  - brand: "Mitsubishi Electric"
+    manufacturer: "Mitsubishi Electric"
+    generic_terms: ["VRF system", "split AC", "air conditioner"]
+    taxonomy_ids: ["HVAC.VRV.GEN.001"]
+    commonly_used_as_generic: false
+
+  - brand: "Samsung"
+    manufacturer: "Samsung"
+    generic_terms: ["VRF system (DVM)", "split AC"]
+    taxonomy_ids: ["HVAC.VRV.GEN.001"]
+    commonly_used_as_generic: false
+
+  - brand: "LG"
+    manufacturer: "LG Electronics"
+    generic_terms: ["VRF system (Multi V)", "split AC"]
+    taxonomy_ids: ["HVAC.VRV.GEN.001"]
+    commonly_used_as_generic: false
+
+  - brand: "Voltas"
+    manufacturer: "Voltas (Tata Group)"
+    generic_terms: ["split AC", "AHU", "chiller"]
+    taxonomy_ids: ["HVAC.SPL.GEN.001"]
+    commonly_used_as_generic: false
+
+  - brand: "Blue Star"
+    manufacturer: "Blue Star Ltd"
+    generic_terms: ["split AC", "AHU", "chiller", "VRF"]
+    taxonomy_ids: ["HVAC.SPL.GEN.001", "HVAC.AHU.GEN.001"]
+    commonly_used_as_generic: false
+
+  - brand: "Carrier"
+    manufacturer: "Carrier Global"
+    generic_terms: ["chiller", "AHU", "split AC"]
+    taxonomy_ids: ["HVAC.CHL.GEN.001"]
+    commonly_used_as_generic: false
+
+  - brand: "Trane"
+    manufacturer: "Trane Technologies"
+    generic_terms: ["chiller", "AHU"]
+    taxonomy_ids: ["HVAC.CHL.GEN.001"]
+    commonly_used_as_generic: false
+
+  # ============================================================
+  # ELEVATORS
+  # ============================================================
+  - brand: "Otis"
+    manufacturer: "Otis Worldwide"
+    generic_terms: ["passenger elevator", "escalator", "lift"]
+    taxonomy_ids: ["LIFT.PE.GEN.001", "LIFT.ESC.GEN.001"]
+    commonly_used_as_generic: false
+
+  - brand: "KONE"
+    manufacturer: "KONE Corporation"
+    generic_terms: ["passenger elevator", "escalator", "lift"]
+    taxonomy_ids: ["LIFT.PE.GEN.001"]
+    commonly_used_as_generic: false
+
+  - brand: "Schindler"
+    manufacturer: "Schindler Group"
+    generic_terms: ["passenger elevator", "escalator", "lift"]
+    taxonomy_ids: ["LIFT.PE.GEN.001"]
+    commonly_used_as_generic: false
+
+  - brand: "ThyssenKrupp"
+    manufacturer: "TK Elevator"
+    generic_terms: ["passenger elevator", "lift"]
+    taxonomy_ids: ["LIFT.PE.GEN.001"]
+    commonly_used_as_generic: false
+
+  - brand: "Johnson Lifts"
+    manufacturer: "Johnson Lifts"
+    generic_terms: ["passenger elevator", "goods elevator", "lift"]
+    taxonomy_ids: ["LIFT.PE.GEN.001"]
+    commonly_used_as_generic: false
+
+  # ============================================================
+  # DOOR HARDWARE
+  # ============================================================
+  - brand: "Dorma"
+    manufacturer: "dormakaba"
+    generic_terms: ["door closer", "floor spring", "glass fitting", "access control"]
+    taxonomy_ids: ["DW.HW.GEN.001"]
+    commonly_used_as_generic: true
+
+  - brand: "Geze"
+    manufacturer: "GEZE GmbH"
+    generic_terms: ["door closer", "automatic door", "smoke control"]
+    taxonomy_ids: ["DW.HW.GEN.001"]
+    commonly_used_as_generic: false
+
+  - brand: "Yale"
+    manufacturer: "ASSA ABLOY"
+    generic_terms: ["door lock", "digital lock", "door closer"]
+    taxonomy_ids: ["DW.HW.GEN.001"]
+    commonly_used_as_generic: true
+
+  - brand: "Godrej"
+    manufacturer: "Godrej & Boyce"
+    generic_terms: ["door lock", "furniture lock", "safe"]
+    taxonomy_ids: ["DW.HW.GEN.001"]
+    commonly_used_as_generic: true
+
+  - brand: "Hafele"
+    manufacturer: "Hafele"
+    generic_terms: ["furniture hardware", "kitchen hardware", "door hardware"]
+    taxonomy_ids: ["DW.HW.GEN.001"]
+    commonly_used_as_generic: false
+
+  - brand: "Hettich"
+    manufacturer: "Hettich"
+    generic_terms: ["furniture hardware", "drawer system", "hinge"]
+    taxonomy_ids: ["DW.HW.GEN.001"]
+    commonly_used_as_generic: false
+
+  # ============================================================
+  # FALSE CEILING
+  # ============================================================
+  - brand: "Armstrong"
+    manufacturer: "Armstrong World Industries"
+    generic_terms: ["grid false ceiling", "mineral fibre ceiling", "metal ceiling"]
+    taxonomy_ids: ["FIN.FC.GRD.001"]
+    commonly_used_as_generic: true
+
+  - brand: "Gyproc"
+    manufacturer: "Saint-Gobain"
+    generic_terms: ["gypsum board", "gypsum false ceiling", "plasterboard"]
+    taxonomy_ids: ["FIN.FC.GYP.001"]
+    commonly_used_as_generic: true
+
+  - brand: "USG Boral"
+    manufacturer: "Knauf (formerly USG Boral)"
+    generic_terms: ["gypsum board", "ceiling tile", "grid ceiling"]
+    taxonomy_ids: ["FIN.FC.GYP.001"]
+    commonly_used_as_generic: false
+
+  # ============================================================
+  # CEMENT
+  # ============================================================
+  - brand: "UltraTech"
+    manufacturer: "UltraTech Cement (Aditya Birla Group)"
+    generic_terms: ["cement", "OPC", "PPC", "RMC"]
+    taxonomy_ids: ["MAT.CM.GEN.001"]
+    commonly_used_as_generic: false
+
+  - brand: "ACC"
+    manufacturer: "ACC Ltd (Adani Group)"
+    generic_terms: ["cement", "OPC", "PPC", "RMC"]
+    taxonomy_ids: ["MAT.CM.GEN.001"]
+    commonly_used_as_generic: false
+
+  - brand: "Ambuja"
+    manufacturer: "Ambuja Cements (Adani Group)"
+    generic_terms: ["cement", "PPC"]
+    taxonomy_ids: ["MAT.CM.GEN.001"]
+    commonly_used_as_generic: false
+
+  - brand: "Shree Cement"
+    manufacturer: "Shree Cement Ltd"
+    generic_terms: ["cement", "OPC", "PPC"]
+    taxonomy_ids: ["MAT.CM.GEN.001"]
+    commonly_used_as_generic: false
+
+  - brand: "Birla Cement"
+    manufacturer: "Aditya Birla Group"
+    generic_terms: ["cement"]
+    taxonomy_ids: ["MAT.CM.GEN.001"]
+    commonly_used_as_generic: false
+
+  - brand: "Dalmia Cement"
+    manufacturer: "Dalmia Bharat Group"
+    generic_terms: ["cement", "PPC", "PSC"]
+    taxonomy_ids: ["MAT.CM.GEN.001"]
+    commonly_used_as_generic: false
+
+  # ============================================================
+  # STEEL
+  # ============================================================
+  - brand: "Tata Tiscon"
+    manufacturer: "Tata Steel"
+    generic_terms: ["TMT bar", "reinforcement steel"]
+    taxonomy_ids: ["STR.RE.TMT.001"]
+    commonly_used_as_generic: true
+
+  - brand: "SAIL"
+    manufacturer: "Steel Authority of India Ltd"
+    generic_terms: ["TMT bar", "structural steel"]
+    taxonomy_ids: ["STR.RE.TMT.001"]
+    commonly_used_as_generic: false
+
+  - brand: "Jindal Panther"
+    manufacturer: "Jindal Steel & Power"
+    generic_terms: ["TMT bar", "structural steel"]
+    taxonomy_ids: ["STR.RE.TMT.001"]
+    commonly_used_as_generic: false
+
+  - brand: "JSW Neosteel"
+    manufacturer: "JSW Steel"
+    generic_terms: ["TMT bar", "reinforcement steel"]
+    taxonomy_ids: ["STR.RE.TMT.001"]
+    commonly_used_as_generic: false
+
+  # ============================================================
+  # PUMPS & DG SETS
+  # ============================================================
+  - brand: "Grundfos"
+    manufacturer: "Grundfos"
+    generic_terms: ["water pump", "booster pump", "fire pump"]
+    taxonomy_ids: ["PLB.PM.GEN.001"]
+    commonly_used_as_generic: false
+
+  - brand: "Kirloskar"
+    manufacturer: "Kirloskar Brothers"
+    generic_terms: ["water pump", "fire pump", "DG set"]
+    taxonomy_ids: ["PLB.PM.GEN.001", "ELE.DG.GEN.001"]
+    commonly_used_as_generic: true
+
+  - brand: "CRI"
+    manufacturer: "CRI Pumps"
+    generic_terms: ["submersible pump", "monoblock pump"]
+    taxonomy_ids: ["PLB.PM.GEN.001"]
+    commonly_used_as_generic: false
+
+  - brand: "Cummins"
+    manufacturer: "Cummins India"
+    generic_terms: ["DG set", "diesel generator"]
+    taxonomy_ids: ["ELE.DG.GEN.001"]
+    commonly_used_as_generic: true
+
+  - brand: "Ashok Leyland"
+    manufacturer: "Ashok Leyland (Hinduja Group)"
+    generic_terms: ["DG set", "diesel generator"]
+    taxonomy_ids: ["ELE.DG.GEN.001"]
+    commonly_used_as_generic: false
+
+  - brand: "Mahindra Powerol"
+    manufacturer: "Mahindra & Mahindra"
+    generic_terms: ["DG set", "diesel generator"]
+    taxonomy_ids: ["ELE.DG.GEN.001"]
+    commonly_used_as_generic: false
+
+  # ============================================================
+  # WINDOWS & FACADES
+  # ============================================================
+  - brand: "Fenesta"
+    manufacturer: "Fenesta (DCM Shriram)"
+    generic_terms: ["UPVC window", "aluminium window"]
+    taxonomy_ids: ["DW.UW.GEN.001", "DW.AW.GEN.001"]
+    commonly_used_as_generic: true
+
+  - brand: "Alucobond"
+    manufacturer: "3A Composites"
+    generic_terms: ["aluminium composite panel", "ACP cladding"]
+    taxonomy_ids: ["FAC.ACP.GEN.001"]
+    commonly_used_as_generic: true
+
+  - brand: "Reynobond"
+    manufacturer: "Arconic"
+    generic_terms: ["aluminium composite panel", "ACP"]
+    taxonomy_ids: ["FAC.ACP.GEN.001"]
+    commonly_used_as_generic: false
+
+  - brand: "Schuco"
+    manufacturer: "Schueco"
+    generic_terms: ["curtain wall system", "aluminium facade"]
+    taxonomy_ids: ["FAC.CW.GEN.001"]
+    commonly_used_as_generic: false
+
+  # ============================================================
+  # AAC BLOCKS
+  # ============================================================
+  - brand: "Ultratech Aerocon"
+    manufacturer: "HIL Ltd (CK Birla Group)"
+    generic_terms: ["AAC block", "lightweight block"]
+    taxonomy_ids: ["MAS.BK.AAC.001"]
+    commonly_used_as_generic: true
+    notes: "'Aerocon' commonly used as generic term for AAC blocks"
+
+  - brand: "Magicrete"
+    manufacturer: "Magicrete Building Solutions"
+    generic_terms: ["AAC block"]
+    taxonomy_ids: ["MAS.BK.AAC.001"]
+    commonly_used_as_generic: false
+
+  - brand: "Siporex"
+    manufacturer: "Siporex (Zydex Industries)"
+    generic_terms: ["AAC block", "lightweight block"]
+    taxonomy_ids: ["MAS.BK.AAC.001"]
+    commonly_used_as_generic: false
+
+  # ============================================================
+  # INSULATION
+  # ============================================================
+  - brand: "Rockwool"
+    manufacturer: "ROXUL / Rockwool"
+    generic_terms: ["mineral wool insulation", "thermal insulation", "acoustic insulation"]
+    taxonomy_ids: ["MISC.INS.GEN.001"]
+    commonly_used_as_generic: true
+
+  - brand: "Armacell"
+    manufacturer: "Armacell International"
+    generic_terms: ["pipe insulation", "duct insulation", "elastomeric insulation"]
+    taxonomy_ids: ["MISC.INS.GEN.001"]
+    commonly_used_as_generic: true
+
+  - brand: "Kingspan"
+    manufacturer: "Kingspan Group"
+    generic_terms: ["insulation panel", "raised floor"]
+    taxonomy_ids: ["MISC.INS.GEN.001"]
+    commonly_used_as_generic: false
+
+  # ============================================================
+  # PLYWOOD & LAMINATES
+  # ============================================================
+  - brand: "Greenply"
+    manufacturer: "Greenply Industries"
+    generic_terms: ["plywood", "flush door", "veneer"]
+    taxonomy_ids: ["DW.WD.GEN.001"]
+    commonly_used_as_generic: false
+
+  - brand: "CenturyPly"
+    manufacturer: "Century Plyboards"
+    generic_terms: ["plywood", "flush door", "laminate"]
+    taxonomy_ids: ["DW.WD.GEN.001"]
+    commonly_used_as_generic: false
+
+  - brand: "Sunmica"
+    manufacturer: "AICA Laminates (formerly Sunmica)"
+    generic_terms: ["laminate", "decorative laminate", "HPL"]
+    taxonomy_ids: ["FIN.CL.HPL.001"]
+    commonly_used_as_generic: true
+    notes: "'Sunmica' universally used in India as generic term for laminate"
+
+  - brand: "Formica"
+    manufacturer: "Formica Group"
+    generic_terms: ["laminate", "decorative laminate"]
+    taxonomy_ids: ["FIN.CL.HPL.001"]
+    commonly_used_as_generic: true
+
+  # ============================================================
+  # BMS & SECURITY
+  # ============================================================
+  - brand: "Honeywell"
+    manufacturer: "Honeywell International"
+    generic_terms: ["BMS", "fire alarm", "access control", "CCTV"]
+    taxonomy_ids: ["ELE.BMS.GEN.001", "FP.FA.GEN.001"]
+    commonly_used_as_generic: false
+
+  - brand: "Bosch"
+    manufacturer: "Robert Bosch"
+    generic_terms: ["fire alarm", "CCTV", "PA system"]
+    taxonomy_ids: ["FP.FA.GEN.001", "SEC.CCTV.GEN.001"]
+    commonly_used_as_generic: false
+
+  - brand: "Hikvision"
+    manufacturer: "Hikvision"
+    generic_terms: ["CCTV camera", "IP camera", "DVR/NVR"]
+    taxonomy_ids: ["SEC.CCTV.GEN.001"]
+    commonly_used_as_generic: false
+
+  - brand: "CP Plus"
+    manufacturer: "Aditya Infotech"
+    generic_terms: ["CCTV camera", "DVR/NVR"]
+    taxonomy_ids: ["SEC.CCTV.GEN.001"]
+    commonly_used_as_generic: false
+
+  # ============================================================
+  # PIPE FITTINGS (STRUCTURAL)
+  # ============================================================
+  - brand: "APL Apollo"
+    manufacturer: "APL Apollo Tubes"
+    generic_terms: ["MS pipe", "structural tube", "GI pipe"]
+    taxonomy_ids: ["STR.SS.GEN.001"]
+    commonly_used_as_generic: false
+
+  - brand: "Tata Structura"
+    manufacturer: "Tata Steel"
+    generic_terms: ["structural hollow section", "steel tube"]
+    taxonomy_ids: ["STR.SS.GEN.001"]
+    commonly_used_as_generic: false

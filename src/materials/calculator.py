@@ -10,6 +10,8 @@ from typing import List, Dict, Optional, Tuple
 from pathlib import Path
 import yaml
 
+from src.materials.wastage import get_wastage_pct
+
 
 @dataclass
 class MaterialItem:
@@ -500,13 +502,16 @@ class MaterialCalculator:
         """Calculate steel reinforcement materials."""
         norms = self.norms.get("steel", {})
 
+        steel_wastage_pct = get_wastage_pct("steel_rebar")
+        steel_wastage_factor = 1 + steel_wastage_pct / 100.0
+
         materials = [
             MaterialItem(
                 material_name="TMT Steel Bar",
-                quantity=round(quantity * 1.03, 2),  # 3% wastage
+                quantity=round(quantity * steel_wastage_factor, 2),
                 unit="kg",
                 norm_reference="CPWD Steel",
-                notes="Including 3% cutting wastage",
+                notes=f"Including {steel_wastage_pct}% cutting wastage",
             ),
         ]
 

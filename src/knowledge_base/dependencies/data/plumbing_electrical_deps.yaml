@@ -1,0 +1,1646 @@
+rules:
+  # ============================================================
+  # BUILDING-LEVEL PLUMBING DEPENDENCIES
+  # ============================================================
+  - id: "DEP-PLE-001"
+    trigger: "every_building"
+    required_items: ["overhead_tank", "underground_sump", "pump_set", "distribution_piping", "drainage_system", "vent_pipe", "water_meter"]
+    trade: "plumbing"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 2065"
+    note: "Every building requires OH tank, sump, pump, distribution, drainage, vent, and meter"
+
+  - id: "DEP-PLE-002"
+    trigger: "every_building"
+    required_items: ["earthing_system", "main_earth_pit", "earth_bus"]
+    trade: "electrical"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 3043"
+    note: "Every building requires earthing system with earth pits and earth bus per IS 3043"
+
+  - id: "DEP-PLE-003"
+    trigger: "water_supply"
+    required_items: ["incoming_main", "isolation_valve", "check_valve", "pressure_gauge", "water_meter"]
+    trade: "plumbing"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 2065"
+    note: "Water supply system: incoming main, isolation valve, check valve, pressure gauge, meter"
+
+  - id: "DEP-PLE-004"
+    trigger: "drainage_system"
+    required_items: ["soil_pipe", "waste_pipe", "vent_pipe", "manholes", "inspection_chambers"]
+    trade: "plumbing"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 1742"
+    note: "Building drainage: soil, waste, and vent pipes with manholes and inspection chambers"
+
+  - id: "DEP-PLE-005"
+    trigger: "water_tank_sump"
+    required_items: ["rcc_sump", "waterproofing", "inlet_valve", "outlet_pipe", "overflow_pipe", "drain_valve", "level_indicator"]
+    trade: "plumbing"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 3370"
+    note: "Underground sump with waterproofing, valves, overflow, drain, and level indicator"
+
+  - id: "DEP-PLE-006"
+    trigger: "pump_room"
+    required_items: ["pump_set_duty_standby", "panel_board", "pressure_vessel", "isolating_valves", "non_return_valve", "flooring", "drainage"]
+    trade: "plumbing"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Pump room: duty-standby pump set, panel, pressure vessel, valves, flooring, drainage"
+
+  # ============================================================
+  # TOILET PLUMBING DEPENDENCIES
+  # ============================================================
+  - id: "DEP-PLE-007"
+    trigger: "toilet_plumbing"
+    required_items: ["cold_water_inlet", "hot_water_inlet", "soil_pipe_100mm", "waste_pipe_50mm", "floor_drain_trap", "concealed_valves"]
+    trade: "plumbing"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: ["toilet", "bathroom"]
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 2065"
+    note: "Every toilet requires cold/hot inlet, soil/waste pipes, floor drain, concealed valves"
+
+  - id: "DEP-PLE-008"
+    trigger: "toilet_plumbing"
+    required_items: ["exhaust_duct", "ventilation_pipe"]
+    trade: "plumbing"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: ["toilet", "bathroom"]
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Toilet exhaust duct and ventilation pipe for odour control"
+
+  - id: "DEP-PLE-009"
+    trigger: "toilet_plumbing"
+    required_items: ["pipe_sleeves_through_slab", "pipe_clamps", "testing_pressure"]
+    trade: "plumbing"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: ["toilet", "bathroom"]
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Pipe sleeves through slab, clamps for support, and pressure testing before closing"
+
+  # ============================================================
+  # KITCHEN PLUMBING DEPENDENCIES
+  # ============================================================
+  - id: "DEP-PLE-010"
+    trigger: "kitchen_plumbing"
+    required_items: ["cold_water_inlet", "hot_water_inlet", "waste_pipe_40mm", "gas_point", "chimney_duct"]
+    trade: "plumbing"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: ["kitchen"]
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Kitchen plumbing: cold/hot inlets, waste pipe, gas point, chimney exhaust duct"
+
+  - id: "DEP-PLE-011"
+    trigger: "kitchen_plumbing"
+    required_items: ["grease_trap"]
+    trade: "plumbing"
+    priority: 1
+    condition: "commercial_kitchen"
+    building_types: ["hotel", "restaurant", "commercial"]
+    room_types: ["kitchen"]
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Commercial kitchen requires grease trap before connecting to drainage"
+
+  # ============================================================
+  # FLOOR-LEVEL ELECTRICAL DEPENDENCIES
+  # ============================================================
+  - id: "DEP-PLE-012"
+    trigger: "every_floor"
+    required_items: ["floor_db", "rccb", "mcb_per_circuit"]
+    trade: "electrical"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 732"
+    note: "Every floor requires distribution board with RCCB and MCB per circuit"
+
+  - id: "DEP-PLE-013"
+    trigger: "every_floor"
+    required_items: ["conduit_system", "wiring", "junction_boxes"]
+    trade: "electrical"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 732"
+    note: "Floor electrical: conduit system, wiring, and junction boxes"
+
+  - id: "DEP-PLE-014"
+    trigger: "every_floor"
+    required_items: ["emergency_light", "exit_sign"]
+    trade: "electrical"
+    priority: 1
+    condition: "multi_storey"
+    building_types: [all]
+    room_types: []
+    min_floors: 3
+    min_area_sqm: 0
+    is_code_ref: "NBC Part 4"
+    note: "Emergency lighting and exit signage on every floor of multi-storey buildings"
+
+  # ============================================================
+  # BEDROOM ELECTRICAL DEPENDENCIES
+  # ============================================================
+  - id: "DEP-PLE-015"
+    trigger: "bedroom_electrical"
+    required_items: ["light_point_2", "fan_point", "ac_point_16a", "socket_5a_2", "socket_16a_1", "tv_point", "telephone_point"]
+    trade: "electrical"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: ["bedroom"]
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 732"
+    note: "Bedroom: 2 lights, fan, AC 16A, 2x5A sockets, 1x16A socket, TV, telephone"
+
+  - id: "DEP-PLE-016"
+    trigger: "bedroom_electrical"
+    required_items: ["two_way_switch_bed_side", "bed_side_socket"]
+    trade: "electrical"
+    priority: 2
+    condition: ""
+    building_types: [all]
+    room_types: ["bedroom"]
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Bedroom convenience: two-way switch at bedside with socket"
+
+  # ============================================================
+  # KITCHEN ELECTRICAL DEPENDENCIES
+  # ============================================================
+  - id: "DEP-PLE-017"
+    trigger: "kitchen_electrical"
+    required_items: ["light_point_2", "exhaust_fan_point", "socket_16a_3", "chimney_point_16a", "purifier_point", "dishwasher_point", "fridge_point"]
+    trade: "electrical"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: ["kitchen"]
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 732"
+    note: "Kitchen: 2 lights, exhaust, 3x16A sockets, chimney, purifier, dishwasher, fridge points"
+
+  - id: "DEP-PLE-018"
+    trigger: "kitchen_electrical"
+    required_items: ["separate_mcb_kitchen", "platform_level_sockets"]
+    trade: "electrical"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: ["kitchen"]
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 732"
+    note: "Kitchen requires separate MCB and sockets at platform height for appliances"
+
+  # ============================================================
+  # TOILET ELECTRICAL DEPENDENCIES
+  # ============================================================
+  - id: "DEP-PLE-019"
+    trigger: "toilet_electrical"
+    required_items: ["light_point", "exhaust_fan_point", "geyser_point_16a"]
+    trade: "electrical"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: ["toilet", "bathroom"]
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 732"
+    note: "Toilet electrical: light, exhaust fan, geyser 16A point with separate MCB"
+
+  - id: "DEP-PLE-020"
+    trigger: "toilet_electrical"
+    required_items: ["ip44_rated_accessories"]
+    trade: "electrical"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: ["toilet", "bathroom"]
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 732"
+    note: "Toilet/bathroom electrical accessories must be IP44 rated for wet area"
+
+  # ============================================================
+  # LIVING ROOM ELECTRICAL DEPENDENCIES
+  # ============================================================
+  - id: "DEP-PLE-021"
+    trigger: "living_room_electrical"
+    required_items: ["light_point_3", "fan_point", "ac_point_16a", "socket_5a_3", "tv_point"]
+    trade: "electrical"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: ["living_room"]
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 732"
+    note: "Living room: 3 lights, fan, AC 16A, 3x5A sockets, TV point"
+
+  - id: "DEP-PLE-022"
+    trigger: "living_room_electrical"
+    required_items: ["dimmer_provision", "scene_control"]
+    trade: "electrical"
+    priority: 2
+    condition: "premium"
+    building_types: [all]
+    room_types: ["living_room"]
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Premium living room: dimmer provision and scene control for lighting"
+
+  # ============================================================
+  # BUILDING-LEVEL ELECTRICAL DEPENDENCIES
+  # ============================================================
+  - id: "DEP-PLE-023"
+    trigger: "building_electrical"
+    required_items: ["main_cable_from_transformer", "msb_main_switch_board", "earthing_system", "energy_meter", "dg_provision"]
+    trade: "electrical"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 732"
+    note: "Building electrical: main cable, MSB, earthing, energy meter, DG provision"
+
+  - id: "DEP-PLE-024"
+    trigger: "building_electrical"
+    required_items: ["lightning_protection"]
+    trade: "electrical"
+    priority: 1
+    condition: "building_above_15m"
+    building_types: [all]
+    room_types: []
+    min_floors: 5
+    min_area_sqm: 0
+    is_code_ref: "IS 2309"
+    note: "Lightning protection system for buildings above 15m per IS 2309"
+
+  - id: "DEP-PLE-025"
+    trigger: "building_electrical"
+    required_items: ["cable_tray", "cable_ladder", "riser_shaft"]
+    trade: "electrical"
+    priority: 1
+    condition: "multi_storey"
+    building_types: [all]
+    room_types: []
+    min_floors: 3
+    min_area_sqm: 0
+    is_code_ref: "IS 732"
+    note: "Multi-storey building requires cable tray, ladder, and riser shaft for vertical distribution"
+
+  - id: "DEP-PLE-026"
+    trigger: "building_electrical"
+    required_items: ["transformer", "ht_cable", "ht_panel"]
+    trade: "electrical"
+    priority: 1
+    condition: "load_above_100kva"
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 500
+    is_code_ref: "IS 732"
+    note: "Large buildings with load above 100kVA require dedicated transformer and HT connection"
+
+  - id: "DEP-PLE-027"
+    trigger: "dg_set"
+    required_items: ["dg_room", "acoustic_enclosure", "fuel_tank", "exhaust_piping", "amf_panel", "earthing"]
+    trade: "electrical"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 4722"
+    note: "DG set requires room, acoustic enclosure, fuel tank, exhaust, AMF panel, earthing"
+
+  # ============================================================
+  # MULTI-STOREY RISER SHAFT DEPENDENCIES
+  # ============================================================
+  - id: "DEP-PLE-028"
+    trigger: "multi_storey"
+    required_items: ["plumbing_riser_shaft", "electrical_riser_shaft", "hvac_riser_shaft", "fire_riser_shaft"]
+    trade: "services"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 4
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Multi-storey building requires separate riser shafts for plumbing, electrical, HVAC, and fire"
+
+  - id: "DEP-PLE-029"
+    trigger: "plumbing_riser"
+    required_items: ["supply_riser", "drainage_stack", "vent_stack", "fire_stop_at_slab"]
+    trade: "plumbing"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 4
+    min_area_sqm: 0
+    is_code_ref: "IS 2065"
+    note: "Plumbing riser: supply riser, drainage stack, vent stack, fire stop at each floor slab"
+
+  - id: "DEP-PLE-030"
+    trigger: "electrical_riser"
+    required_items: ["bus_duct_or_cable", "floor_db", "fire_stop_at_slab", "access_door"]
+    trade: "electrical"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 4
+    min_area_sqm: 0
+    is_code_ref: "IS 732"
+    note: "Electrical riser: bus duct or cable, floor DB, fire stop at each slab, access door"
+
+  # ============================================================
+  # SOLAR SYSTEM DEPENDENCIES
+  # ============================================================
+  - id: "DEP-PLE-031"
+    trigger: "solar_system"
+    required_items: ["solar_panels", "inverter", "net_meter", "dc_cabling", "ac_cabling", "mounting_structure", "earthing"]
+    trade: "electrical"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 14286"
+    note: "Solar system: panels, inverter, net meter, DC/AC cabling, mounting, earthing"
+
+  - id: "DEP-PLE-032"
+    trigger: "solar_system"
+    required_items: ["acdb", "dcdb", "lightning_arrester", "surge_protection"]
+    trade: "electrical"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 14286"
+    note: "Solar system protection: ACDB, DCDB, lightning arrester, surge protection"
+
+  - id: "DEP-PLE-033"
+    trigger: "solar_water_heater"
+    required_items: ["collector_panels", "storage_tank", "piping_insulated", "mixing_valve", "mounting_frame"]
+    trade: "plumbing"
+    priority: 2
+    condition: ""
+    building_types: ["residential"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Solar water heater: collector panels, storage tank, insulated piping, mixing valve"
+
+  # ============================================================
+  # STP DEPENDENCIES
+  # ============================================================
+  - id: "DEP-PLE-034"
+    trigger: "stp_required"
+    required_items: ["stp_plant", "inlet_chamber", "outlet_chamber", "sludge_drying_bed", "treated_water_tank"]
+    trade: "plumbing"
+    priority: 1
+    condition: "no_municipal_sewer_or_above_10000sqft"
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 930
+    is_code_ref: "CPCB Guidelines"
+    note: "STP required if no municipal sewer or built-up above 10000 sqft"
+
+  - id: "DEP-PLE-035"
+    trigger: "stp"
+    required_items: ["electrical_connection", "blower", "dosing_system", "control_panel", "sampling_point"]
+    trade: "plumbing"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "CPCB Guidelines"
+    note: "STP requires electrical, blower, dosing, control panel, sampling point"
+
+  # ============================================================
+  # RWH DEPENDENCIES
+  # ============================================================
+  - id: "DEP-PLE-036"
+    trigger: "rwh_required"
+    required_items: ["roof_collection", "first_flush_diverter", "filter_chamber", "storage_tank_or_recharge_pit"]
+    trade: "plumbing"
+    priority: 1
+    condition: "plot_above_100sqm"
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 100
+    is_code_ref: "Local Bylaws"
+    note: "Rainwater harvesting required for plots above 100 sqm per most local bylaws"
+
+  - id: "DEP-PLE-037"
+    trigger: "rwh"
+    required_items: ["rain_water_pipe", "collection_chamber", "overflow_connection"]
+    trade: "plumbing"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "Local Bylaws"
+    note: "RWH components: rain water down-pipe, collection chamber, overflow to drain"
+
+  # ============================================================
+  # HOT WATER SYSTEM DEPENDENCIES
+  # ============================================================
+  - id: "DEP-PLE-038"
+    trigger: "hot_water_system"
+    required_items: ["hot_water_generator", "insulated_piping", "mixing_valve", "return_line"]
+    trade: "plumbing"
+    priority: 1
+    condition: "central_system"
+    building_types: ["hotel", "hospital"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Central hot water: generator, insulated piping, mixing valve, return line"
+
+  - id: "DEP-PLE-039"
+    trigger: "geyser_point"
+    required_items: ["hot_water_pipe", "cold_water_inlet", "power_point_16a", "mixing_valve"]
+    trade: "plumbing"
+    priority: 1
+    condition: "individual_geyser"
+    building_types: [all]
+    room_types: ["toilet", "bathroom"]
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Individual geyser point: hot/cold pipes, 16A power point, mixing valve"
+
+  # ============================================================
+  # GAS PIPING DEPENDENCIES
+  # ============================================================
+  - id: "DEP-PLE-040"
+    trigger: "gas_piping"
+    required_items: ["gi_pipe", "isolation_valve", "regulator", "gas_detector", "emergency_shutoff"]
+    trade: "plumbing"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: ["kitchen"]
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 5572"
+    note: "Gas piping: GI pipe, isolation valves, regulator, gas detector, emergency shutoff"
+
+  - id: "DEP-PLE-041"
+    trigger: "piped_gas_supply"
+    required_items: ["gas_meter", "manifold", "distribution_pipe", "gas_cock_at_appliance"]
+    trade: "plumbing"
+    priority: 1
+    condition: ""
+    building_types: ["residential_apartment"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 5572"
+    note: "Piped gas supply: meter, manifold, distribution pipes, gas cock at each appliance"
+
+  # ============================================================
+  # FIRE FIGHTING PLUMBING DEPENDENCIES
+  # ============================================================
+  - id: "DEP-PLE-042"
+    trigger: "fire_hydrant_system"
+    required_items: ["fire_tank", "fire_pump_set", "jockey_pump", "wet_riser", "landing_valve", "hose_reel"]
+    trade: "fire_safety"
+    priority: 1
+    condition: "building_above_15m"
+    building_types: [all]
+    room_types: []
+    min_floors: 5
+    min_area_sqm: 0
+    is_code_ref: "IS 3844"
+    note: "Fire hydrant system: tank, pump set, jockey pump, wet riser, landing valve, hose reel"
+
+  - id: "DEP-PLE-043"
+    trigger: "fire_sprinkler_system"
+    required_items: ["sprinkler_heads", "piping_network", "alarm_valve", "fire_pump", "fire_tank"]
+    trade: "fire_safety"
+    priority: 1
+    condition: "building_above_15m"
+    building_types: [all]
+    room_types: []
+    min_floors: 5
+    min_area_sqm: 0
+    is_code_ref: "IS 15105"
+    note: "Fire sprinkler: heads, piping, alarm valve, pump, and dedicated tank"
+
+  # ============================================================
+  # UPS AND POWER BACKUP DEPENDENCIES
+  # ============================================================
+  - id: "DEP-PLE-044"
+    trigger: "ups_system"
+    required_items: ["ups_unit", "battery_bank", "bypass_switch", "ups_db", "dedicated_earthing"]
+    trade: "electrical"
+    priority: 1
+    condition: ""
+    building_types: ["commercial", "hospital", "data_center"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "UPS system: unit, battery bank, bypass switch, distribution board, dedicated earthing"
+
+  - id: "DEP-PLE-045"
+    trigger: "ups_room"
+    required_items: ["ventilation", "fire_detection", "acid_resistant_flooring", "eye_wash_station"]
+    trade: "electrical"
+    priority: 1
+    condition: ""
+    building_types: ["commercial", "hospital", "data_center"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "UPS room requires ventilation, fire detection, acid-resistant floor, eye wash"
+
+  # ============================================================
+  # COMMUNICATION AND DATA DEPENDENCIES
+  # ============================================================
+  - id: "DEP-PLE-046"
+    trigger: "structured_cabling"
+    required_items: ["server_room", "patch_panel", "cat6_cable", "data_sockets", "cable_tray"]
+    trade: "electrical"
+    priority: 1
+    condition: ""
+    building_types: ["commercial", "hospital", "hotel"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Structured cabling: server room, patch panels, Cat6 cable, data sockets, cable tray"
+
+  - id: "DEP-PLE-047"
+    trigger: "intercom_system"
+    required_items: ["intercom_unit_per_flat", "gate_unit", "cabling", "power_supply"]
+    trade: "electrical"
+    priority: 2
+    condition: ""
+    building_types: ["residential_apartment"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Intercom: unit per flat, gate unit, cabling, power supply"
+
+  # ============================================================
+  # CCTV AND SECURITY DEPENDENCIES
+  # ============================================================
+  - id: "DEP-PLE-048"
+    trigger: "cctv_system"
+    required_items: ["cameras", "nvr", "monitor", "cabling", "power_supply", "storage"]
+    trade: "electrical"
+    priority: 2
+    condition: ""
+    building_types: ["commercial", "hotel", "residential_apartment"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "CCTV: cameras, NVR, monitor, cabling, power supply, storage"
+
+  - id: "DEP-PLE-049"
+    trigger: "access_control"
+    required_items: ["card_reader", "electromagnetic_lock", "controller", "power_supply", "software"]
+    trade: "electrical"
+    priority: 2
+    condition: ""
+    building_types: ["commercial", "hotel", "data_center"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Access control: card reader, EM lock, controller, power, software"
+
+  # ============================================================
+  # FIRE DETECTION AND ALARM DEPENDENCIES
+  # ============================================================
+  - id: "DEP-PLE-050"
+    trigger: "fire_alarm_system"
+    required_items: ["smoke_detector", "heat_detector", "manual_call_point", "fire_alarm_panel", "hooter_strobe", "wiring"]
+    trade: "fire_safety"
+    priority: 1
+    condition: "building_above_15m"
+    building_types: [all]
+    room_types: []
+    min_floors: 5
+    min_area_sqm: 0
+    is_code_ref: "IS 2189"
+    note: "Fire alarm: smoke/heat detectors, MCP, panel, hooter, wiring per IS 2189"
+
+  - id: "DEP-PLE-051"
+    trigger: "fire_alarm_system"
+    required_items: ["addressable_panel", "loop_wiring", "repeater_panel"]
+    trade: "fire_safety"
+    priority: 1
+    condition: "commercial_above_500sqm"
+    building_types: ["commercial", "hotel", "hospital"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 500
+    is_code_ref: "IS 2189"
+    note: "Commercial buildings above 500 sqm require addressable fire alarm panel"
+
+  # ============================================================
+  # PA SYSTEM DEPENDENCIES
+  # ============================================================
+  - id: "DEP-PLE-052"
+    trigger: "pa_system"
+    required_items: ["amplifier", "speakers", "microphone", "cabling", "zone_controller"]
+    trade: "electrical"
+    priority: 2
+    condition: ""
+    building_types: ["commercial", "hospital", "school", "hotel"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "PA system: amplifier, speakers, microphone, cabling, zone controller"
+
+  # ============================================================
+  # SWIMMING POOL PLUMBING
+  # ============================================================
+  - id: "DEP-PLE-053"
+    trigger: "swimming_pool"
+    required_items: ["filtration_plant", "pump", "piping", "chlorination", "skimmer", "return_inlet", "overflow_gutter"]
+    trade: "plumbing"
+    priority: 1
+    condition: ""
+    building_types: ["hotel", "residential_apartment"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Swimming pool: filtration, pump, piping, chlorination, skimmer, returns, overflow"
+
+  - id: "DEP-PLE-054"
+    trigger: "swimming_pool"
+    required_items: ["underwater_light", "pool_earthing", "bonding"]
+    trade: "electrical"
+    priority: 1
+    condition: ""
+    building_types: ["hotel", "residential_apartment"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 3043"
+    note: "Swimming pool electrical: underwater lights, earthing, and equipotential bonding"
+
+  # ============================================================
+  # SEWAGE AND DRAINAGE DEPENDENCIES
+  # ============================================================
+  - id: "DEP-PLE-055"
+    trigger: "sewage_system"
+    required_items: ["septic_tank", "soak_pit"]
+    trade: "plumbing"
+    priority: 1
+    condition: "no_municipal_sewer"
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 2470"
+    note: "Septic tank and soak pit where municipal sewer not available"
+
+  - id: "DEP-PLE-056"
+    trigger: "storm_water_drainage"
+    required_items: ["rain_water_pipe", "catch_basin", "storm_drain", "gratings"]
+    trade: "plumbing"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Storm water drainage: rain water pipes, catch basins, storm drains, gratings"
+
+  # ============================================================
+  # PIPE MATERIAL AND TESTING DEPENDENCIES
+  # ============================================================
+  - id: "DEP-PLE-057"
+    trigger: "plumbing_piping"
+    required_items: ["cpvc_hot_water", "upvc_drainage", "ppr_supply", "gi_external"]
+    trade: "plumbing"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 15778"
+    note: "Pipe material selection: CPVC hot, uPVC drainage, PPR supply, GI external"
+
+  - id: "DEP-PLE-058"
+    trigger: "plumbing_piping"
+    required_items: ["pressure_test", "leak_test", "flushing"]
+    trade: "plumbing"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "All plumbing piping must pass pressure test and leak test before concealment"
+
+  # ============================================================
+  # ELECTRICAL EARTHING AND PROTECTION
+  # ============================================================
+  - id: "DEP-PLE-059"
+    trigger: "earthing_system"
+    required_items: ["earth_pit_plate_or_pipe", "earth_electrode", "gi_strip", "earth_bus_bar"]
+    trade: "electrical"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 3043"
+    note: "Earthing system: earth pit (plate/pipe), electrode, GI strip, bus bar per IS 3043"
+
+  - id: "DEP-PLE-060"
+    trigger: "earthing_system"
+    required_items: ["earth_resistance_test"]
+    trade: "electrical"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 3043"
+    note: "Earth resistance testing mandatory before commissioning"
+
+  # ============================================================
+  # CABLE AND SWITCHGEAR DEPENDENCIES
+  # ============================================================
+  - id: "DEP-PLE-061"
+    trigger: "lt_panel"
+    required_items: ["incomer", "outgoing_feeders", "bus_bar", "metering", "protection_relays"]
+    trade: "electrical"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 8623"
+    note: "LT panel: incomer, outgoing feeders, bus bar, metering, protection relays"
+
+  - id: "DEP-PLE-062"
+    trigger: "sub_station"
+    required_items: ["transformer_room", "ht_panel", "lt_panel", "capacitor_bank", "ventilation", "fire_protection"]
+    trade: "electrical"
+    priority: 1
+    condition: ""
+    building_types: ["commercial", "hospital", "hotel"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 732"
+    note: "Sub station: transformer room, HT/LT panels, capacitor bank, ventilation, fire protection"
+
+  # ============================================================
+  # EXTERIOR LIGHTING DEPENDENCIES
+  # ============================================================
+  - id: "DEP-PLE-063"
+    trigger: "exterior_lighting"
+    required_items: ["pole_lights", "bollard_lights", "facade_lights", "landscape_lights", "timer_control"]
+    trade: "electrical"
+    priority: 2
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Exterior lighting: pole, bollard, facade, landscape lights with timer control"
+
+  # ============================================================
+  # WATER TREATMENT DEPENDENCIES
+  # ============================================================
+  - id: "DEP-PLE-064"
+    trigger: "water_treatment"
+    required_items: ["sand_filter", "activated_carbon_filter", "softener", "uv_system", "dosing_pump"]
+    trade: "plumbing"
+    priority: 2
+    condition: ""
+    building_types: ["commercial", "hospital", "hotel"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Water treatment: sand filter, carbon filter, softener, UV, dosing"
+
+  # ============================================================
+  # CONDUIT AND WIRING DEPENDENCIES
+  # ============================================================
+  - id: "DEP-PLE-065"
+    trigger: "concealed_wiring"
+    required_items: ["pvc_conduit", "copper_wire", "junction_boxes", "switch_boxes", "pull_wire"]
+    trade: "electrical"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 732"
+    note: "Concealed wiring: PVC conduit, copper wire, junction boxes, switch boxes, pull wire"
+
+  - id: "DEP-PLE-066"
+    trigger: "surface_wiring"
+    required_items: ["pvc_casing_capping", "copper_wire", "surface_switch_box"]
+    trade: "electrical"
+    priority: 1
+    condition: ""
+    building_types: ["factory", "warehouse"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 732"
+    note: "Surface wiring in industrial: casing-capping, copper wire, surface boxes"
+
+  # ============================================================
+  # ENERGY METERING DEPENDENCIES
+  # ============================================================
+  - id: "DEP-PLE-067"
+    trigger: "energy_metering"
+    required_items: ["main_meter", "sub_meters_per_unit", "meter_board", "ct_coils"]
+    trade: "electrical"
+    priority: 1
+    condition: ""
+    building_types: ["residential_apartment", "commercial"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Energy metering: main meter, sub-meters per unit, meter board, CT coils if needed"
+
+  # ============================================================
+  # BMS DEPENDENCIES
+  # ============================================================
+  - id: "DEP-PLE-068"
+    trigger: "bms_system"
+    required_items: ["controllers", "sensors", "actuators", "cabling", "software", "workstation"]
+    trade: "electrical"
+    priority: 2
+    condition: ""
+    building_types: ["commercial", "hotel", "hospital", "data_center"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "BMS: controllers, sensors, actuators, cabling, software, workstation"
+
+  # ============================================================
+  # WASTE MANAGEMENT DEPENDENCIES
+  # ============================================================
+  - id: "DEP-PLE-069"
+    trigger: "waste_management"
+    required_items: ["garbage_room", "chute_system", "bin_area", "organic_waste_composter"]
+    trade: "plumbing"
+    priority: 2
+    condition: ""
+    building_types: ["residential_apartment", "commercial"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "SWM Rules 2016"
+    note: "Waste management: garbage room, chute, bin area, organic composter per SWM rules"
+
+  # ============================================================
+  # BALCONY/TERRACE PLUMBING DEPENDENCIES
+  # ============================================================
+  - id: "DEP-PLE-070"
+    trigger: "balcony_plumbing"
+    required_items: ["floor_drain", "rain_water_outlet", "washing_machine_drain"]
+    trade: "plumbing"
+    priority: 2
+    condition: ""
+    building_types: [all]
+    room_types: ["balcony"]
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Balcony plumbing: floor drain, rain water outlet, washing machine drain provision"
+
+  # ============================================================
+  # ELECTRICAL TESTING DEPENDENCIES
+  # ============================================================
+  - id: "DEP-PLE-071"
+    trigger: "electrical_testing"
+    required_items: ["insulation_resistance_test", "earth_continuity_test", "polarity_test", "load_test"]
+    trade: "electrical"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 732"
+    note: "Electrical testing: insulation resistance, earth continuity, polarity, load test"
+
+  # ============================================================
+  # SWITCH AND SOCKET DEPENDENCIES
+  # ============================================================
+  - id: "DEP-PLE-072"
+    trigger: "switch_socket_installation"
+    required_items: ["modular_plate", "switch_module", "socket_module", "back_box"]
+    trade: "electrical"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 732"
+    note: "Switch and socket: modular plate, switch/socket modules, back box"
+
+  # ============================================================
+  # WATER BOOSTER SYSTEM
+  # ============================================================
+  - id: "DEP-PLE-073"
+    trigger: "water_booster"
+    required_items: ["booster_pump", "pressure_tank", "pressure_switch", "control_panel", "bypass_valve"]
+    trade: "plumbing"
+    priority: 1
+    condition: "building_above_4_floors"
+    building_types: [all]
+    room_types: []
+    min_floors: 4
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Water booster for buildings above 4 floors: pump, pressure tank, controls"
+
+  # ============================================================
+  # KITCHEN EXHAUST SYSTEM
+  # ============================================================
+  - id: "DEP-PLE-074"
+    trigger: "kitchen_exhaust"
+    required_items: ["exhaust_duct", "exhaust_fan", "grease_filter", "fresh_air_inlet"]
+    trade: "mechanical"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: ["kitchen"]
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Kitchen exhaust: duct, fan, grease filter, fresh air inlet"
+
+  # ============================================================
+  # SANITARY WARE DEPENDENCIES
+  # ============================================================
+  - id: "DEP-PLE-075"
+    trigger: "ewc_installation"
+    required_items: ["ewc", "seat_cover", "flush_valve_or_cistern", "connection_pipe", "floor_flange"]
+    trade: "plumbing"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: ["toilet"]
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 2556"
+    note: "EWC installation: unit, seat cover, flush mechanism, connection, floor flange"
+
+  - id: "DEP-PLE-076"
+    trigger: "wash_basin_installation"
+    required_items: ["basin", "pedestal_or_bracket", "basin_mixer", "waste_coupling", "bottle_trap"]
+    trade: "plumbing"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: ["toilet", "bathroom"]
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Wash basin: unit, pedestal/bracket, mixer, waste coupling, bottle trap"
+
+  # ============================================================
+  # VALVE DEPENDENCIES
+  # ============================================================
+  - id: "DEP-PLE-077"
+    trigger: "valve_provision"
+    required_items: ["isolation_valve_per_unit", "non_return_valve", "pressure_reducing_valve"]
+    trade: "plumbing"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Valve provision: isolation per unit, NRV, PRV for pressure management"
+
+  # ============================================================
+  # ELECTRICAL ROOM DEPENDENCIES
+  # ============================================================
+  - id: "DEP-PLE-078"
+    trigger: "electrical_room"
+    required_items: ["fire_rated_door", "ventilation", "insulating_mat", "fire_extinguisher", "signage"]
+    trade: "electrical"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 732"
+    note: "Electrical room: fire-rated door, ventilation, insulating mat, extinguisher, signage"
+
+  # ============================================================
+  # DOMESTIC ELECTRICAL PANEL DEPENDENCIES
+  # ============================================================
+  - id: "DEP-PLE-079"
+    trigger: "domestic_panel"
+    required_items: ["dp_mcb_incomer", "rccb_30ma", "mcb_lighting", "mcb_power", "mcb_ac", "mcb_geyser"]
+    trade: "electrical"
+    priority: 1
+    condition: ""
+    building_types: ["residential"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 732"
+    note: "Domestic panel: DP MCB incomer, 30mA RCCB, separate MCBs for lighting, power, AC, geyser"
+
+  # ============================================================
+  # TELEPHONE AND DATA INFRASTRUCTURE
+  # ============================================================
+  - id: "DEP-PLE-080"
+    trigger: "telecom_infrastructure"
+    required_items: ["mdf_room", "idf_per_floor", "backbone_cable", "horizontal_cable", "patch_panels"]
+    trade: "electrical"
+    priority: 1
+    condition: ""
+    building_types: ["commercial", "hospital"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 500
+    is_code_ref: ""
+    note: "Telecom: MDF room, IDF per floor, backbone, horizontal cable, patch panels"
+
+  # ============================================================
+  # HOT WATER PIPE INSULATION
+  # ============================================================
+  - id: "DEP-PLE-081"
+    trigger: "hot_water_piping"
+    required_items: ["pipe_insulation_nitrile_rubber_25mm", "aluminium_foil_vapour_barrier", "cladding_at_exposed_locations"]
+    trade: "plumbing"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Hot water pipes above 50°C must be insulated with minimum 25mm nitrile rubber foam with aluminium foil facing — uninsulated hot water pipes lose up to 20% of heat per metre, dramatically reducing system efficiency and increasing energy costs; insulation also prevents condensation on cold water pipes running adjacent to hot water pipes in humid Indian conditions"
+
+  # ============================================================
+  # COLD WATER PRESSURE TESTING
+  # ============================================================
+  - id: "DEP-PLE-082"
+    trigger: "cold_water_supply_piping"
+    required_items: ["hydraulic_pressure_test_1_5x_working_pressure", "pressure_hold_minimum_30_min"]
+    trade: "plumbing"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 779"
+    note: "IS 779 specifies hydraulic pressure test at 1.5 times maximum working pressure (typically 9-15 bar for high-rise cold water systems) held for minimum 30 minutes — pressure drop indicates leaks that must be located and repaired before concealment; testing before plastering or ceiling closure saves enormous remediation cost if leaks are found later"
+
+  # ============================================================
+  # ISI MARKED PIPES COMPLIANCE
+  # ============================================================
+  - id: "DEP-PLE-083"
+    trigger: "plumbing_pipe_supply"
+    required_items: ["isi_marked_cpvc_is15778", "isi_marked_upvc_is4985", "isi_marked_gi_is1239"]
+    trade: "plumbing"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 1239 / IS 15778 / IS 4985"
+    note: "All plumbing pipes must be ISI marked: CPVC per IS 15778, uPVC per IS 4985, GI per IS 1239 — non-ISI pipes are common on Indian construction sites and may have 30-50% less wall thickness than specified; ISI marking requires BIS certification with regular factory audits; non-compliant pipes fail prematurely and void material warranties"
+
+  # ============================================================
+  # ELECTRICAL CIRCUIT DIAGRAM AND LOAD CALCULATION
+  # ============================================================
+  - id: "DEP-PLE-084"
+    trigger: "electrical_wiring"
+    required_items: ["single_line_diagram", "load_calculation_sheet", "cable_schedule"]
+    trade: "electrical"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 732"
+    note: "Electrical single line diagram and load calculation sheet must be prepared before wiring commences — sizing cables and MCBs without calculations leads to overloaded circuits (fire risk) or over-sized cables (cost waste); cable schedule documents size, length, and routing of each circuit and is essential for future modifications and for electrical inspector approval"
+
+  # ============================================================
+  # DISTRIBUTION BOARD MCB PROTECTION
+  # ============================================================
+  - id: "DEP-PLE-085"
+    trigger: "distribution_board"
+    required_items: ["mcb_for_each_circuit", "rccb_30ma_main_incomer", "spare_ways_min_20pct"]
+    trade: "electrical"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 732"
+    note: "Each circuit must be individually protected by a correctly rated MCB — a common site practice is to wire multiple circuits on one MCB, defeating overload protection; 30mA RCCB (residual current device) on the main incomer provides earth fault protection required by IS 732; minimum 20% spare ways in every DB allows future circuit additions without adding a new board"
+
+  # ============================================================
+  # EARTHING IS 3043 TEST
+  # ============================================================
+  - id: "DEP-PLE-086"
+    trigger: "earthing_system"
+    required_items: ["earth_resistance_test_is3043", "resistance_below_5_ohm", "test_certificate_before_commissioning"]
+    trade: "electrical"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 3043"
+    note: "IS 3043 requires earth electrode resistance below 5 ohms (1 ohm for critical installations like hospitals); resistance must be measured with Megger earth tester before any electrical commissioning — high earth resistance fails to clear earth faults quickly, allowing dangerous touch voltages to persist; test certificate is required by Electrical Inspector before issuing clearance for connection to DISCOM supply"
+
+  # ============================================================
+  # GENERATOR AMF PANEL AND NEUTRAL LINK
+  # ============================================================
+  - id: "DEP-PLE-087"
+    trigger: "generator_set"
+    required_items: ["amf_panel_automatic_mains_failure", "neutral_link_or_separate_neutral", "earthing_generator"]
+    trade: "electrical"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 4722"
+    note: "AMF (Automatic Mains Failure) panel auto-starts DG set and transfers loads within 15 seconds of mains failure — manual operation is inadequate for hospitals and data centres; separate neutral is required (two earthing systems cannot share neutral) per IS 3043; DG earthing must be independent from building earthing to prevent fault current returning through building structure"
+
+  # ============================================================
+  # SOLAR SYSTEM - NET METERING AND STRUCTURAL LOAD
+  # ============================================================
+  - id: "DEP-PLE-088"
+    trigger: "solar_pv_system"
+    required_items: ["net_metering_application_to_discom", "structural_load_check_roof", "shadow_free_area_verification"]
+    trade: "electrical"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "CERC Net Metering Regulations"
+    note: "Net metering application to DISCOM must be submitted and approved before commissioning solar system — without net metering connection, exported power is wasted and system economics collapse; structural engineer must verify roof slab can carry solar panel dead load (typically 15-20 kg/sqm for panel + frame); shadow analysis from parapet walls, water tanks, and neighbouring buildings must confirm shadow-free area, as even partial shading of one panel degrades entire string output"
+
+  # ============================================================
+  # EV CHARGING POINT DEDICATED CIRCUIT
+  # ============================================================
+  - id: "DEP-PLE-089"
+    trigger: "ev_charging_point"
+    required_items: ["dedicated_circuit_32a_type2", "rcd_protection_ev", "cable_route_conduit"]
+    trade: "electrical"
+    priority: 2
+    condition: ""
+    building_types: ["residential_apartment", "commercial"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "BIS EV Charging Standard"
+    note: "EV charging points require a dedicated 32A circuit (for AC Level 2 Type 2 charging at 7.4kW) from the DB — sharing with other loads causes nuisance MCB tripping; RCD Type A or B protection is mandatory for EV circuits as EV chargers can produce DC fault currents that regular RCCBs cannot detect; conduit from panel to parking bay must be sized for future upgrades to DC fast charging"
+
+  # ============================================================
+  # DRAINAGE TESTING AND INSPECTION
+  # ============================================================
+  - id: "DEP-PLE-090"
+    trigger: "drainage_system"
+    required_items: ["cctv_inspection_underground_drain", "water_test_drainage_pipes"]
+    trade: "plumbing"
+    priority: 1
+    condition: "large_building"
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 500
+    is_code_ref: "IS 1742"
+    note: "Underground drainage pipes should be water-tested (fill to inspection chamber level and hold 30 minutes) before backfilling — leaking underground drains contaminate soil and groundwater and are extremely expensive to repair after backfill; CCTV inspection of underground drains in large buildings verifies correct gradients, confirms no sagging (which causes blockages), and detects displaced joints before handover"
+
+  # ============================================================
+  # CONCEALED CONDUIT QUALITY CONTROL
+  # ============================================================
+  - id: "DEP-PLE-091"
+    trigger: "concealed_electrical_conduit"
+    required_items: ["conduit_inspection_before_plastering", "pull_wire_installed", "bend_radius_min_4x_od"]
+    trade: "electrical"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 732"
+    note: "All concealed conduit must be inspected (continuity check, pull wire verified) before plastering — discovering missing junction boxes or kinked bends after plastering requires hacking out; bend radius must be minimum 4x conduit OD to allow cable pulling without damage; pull wire must be left in each conduit from panel to outlet to facilitate future wiring"
+
+  # ============================================================
+  # FIRE RATED CABLE AND CONTAINMENT
+  # ============================================================
+  - id: "DEP-PLE-092"
+    trigger: "fire_safety_wiring"
+    required_items: ["fire_rated_cable_2hr_for_critical_circuits", "fire_rated_conduit_or_cable_tray"]
+    trade: "electrical"
+    priority: 1
+    condition: "building_above_15m"
+    building_types: [all]
+    room_types: []
+    min_floors: 5
+    min_area_sqm: 0
+    is_code_ref: "NBC Part 4"
+    note: "Wiring for fire alarm, emergency lighting, fire pumps, and pressurization fans must use fire-resistant cable (FRC, minimum 2-hour resistance) per NBC Part 4 — standard PVC cables melt and fail within minutes of fire, cutting power to life-safety systems exactly when they are needed; fire-resistant containment (mineral-insulated cable or fire-rated conduit) ensures these circuits survive even in areas of active fire"
+
+  # ============================================================
+  # UPS BYPASS AND MAINTENANCE
+  # ============================================================
+  - id: "DEP-PLE-093"
+    trigger: "ups_installation"
+    required_items: ["static_bypass_switch", "manual_maintenance_bypass", "battery_room_ventilation"]
+    trade: "electrical"
+    priority: 1
+    condition: ""
+    building_types: ["commercial", "hospital", "data_center"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "UPS must have static bypass for seamless switchover on overload, and manual maintenance bypass so UPS can be serviced without cutting critical loads — UPS without bypass cannot be maintained without disrupting protected equipment; battery rooms must be ventilated to remove hydrogen gas (evolved during charging) that is explosive above 4% concentration; battery rooms must not have sparking equipment (switches, motors)"
+
+  # ============================================================
+  # WATER METER PROVISION PER UNIT
+  # ============================================================
+  - id: "DEP-PLE-094"
+    trigger: "multi_unit_water_supply"
+    required_items: ["individual_water_meter_per_unit", "meter_reading_access", "isolation_valve_per_unit"]
+    trade: "plumbing"
+    priority: 1
+    condition: "multi_unit_building"
+    building_types: ["residential_apartment", "commercial"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "Local Bylaws"
+    note: "Individual water meters per unit are now required by most municipality bye-laws and RERA regulations — shared meters make it impossible to charge units fairly and deter water conservation; meter must be accessible without entering the dwelling (meter box in common corridor); isolation valve per unit allows water to be cut to one flat without affecting others during repairs"
+
+  # ============================================================
+  # PIPE SLOPE FOR DRAINAGE
+  # ============================================================
+  - id: "DEP-PLE-095"
+    trigger: "horizontal_drainage_pipes"
+    required_items: ["minimum_slope_1_in_50", "slope_check_at_installation"]
+    trade: "plumbing"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 1742"
+    note: "IS 1742 specifies minimum 1:50 gradient for 100mm soil pipes and 1:40 for 75mm waste pipes — insufficient slope causes solid deposits and frequent blockages; excessive slope (> 1:20) causes water to run ahead of solids, also causing blockages; slope must be checked with spirit level at installation before concealment as post-pour correction requires demolishing screed and relaying"
+
+  # ============================================================
+  # PIPE SLEEVES THROUGH STRUCTURE
+  # ============================================================
+  - id: "DEP-PLE-096"
+    trigger: "pipes_through_slab_or_wall"
+    required_items: ["core_sleeve_one_size_larger", "fire_stop_intumescent_collar", "pipe_annulus_seal"]
+    trade: "plumbing"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "NBC Part 4"
+    note: "Sleeves through fire-compartment slabs and walls must be fitted with intumescent fire stop collars (halogen-free, tested to minimum 60-minute fire resistance) per NBC Part 4 — without collars, pipe penetrations are pathways for fire and smoke to spread between floors, negating compartmentation; annulus between pipe and sleeve must be sealed against sound transmission and water ingress"
+
+  # ============================================================
+  # POWER FACTOR CORRECTION
+  # ============================================================
+  - id: "DEP-PLE-097"
+    trigger: "large_electrical_installation"
+    required_items: ["power_factor_correction_capacitor_bank", "target_pf_0_95_lagging"]
+    trade: "electrical"
+    priority: 2
+    condition: "load_above_50kva"
+    building_types: ["commercial", "hospital", "hotel", "factory"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 732"
+    note: "DISCOMs impose power factor surcharge for PF below 0.90 — poor power factor (typically 0.7-0.8 without correction) incurs 3-5% penalty on electricity bills; capacitor bank raises PF to 0.95+ eliminating penalties and reducing apparent load on HT cables and transformer; automatic power factor correction (APFC) panel adjusts capacitance dynamically as load varies throughout the day"
+
+  # ============================================================
+  # SEWAGE EJECTOR / PUMPING STATION
+  # ============================================================
+  - id: "DEP-PLE-098"
+    trigger: "below_grade_toilet_or_kitchen"
+    required_items: ["sewage_ejector_pump", "non_return_valve_sewage", "pump_alarm_system"]
+    trade: "plumbing"
+    priority: 1
+    condition: "drainage_below_sewer_level"
+    building_types: [all]
+    room_types: ["toilet", "basement"]
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 2065"
+    note: "Toilets and kitchens in basement cannot drain by gravity if below the sewer invert — sewage ejector pump (grinder pump) is required; non-return valve prevents sewer backing up into basement if pump fails; high-level alarm is essential to warn before sewage overflows — failure to provide ejector pump in basement toilets results in sewage flooding, a serious health hazard"
+
+  # ============================================================
+  # LIGHTNING PROTECTION SYSTEM
+  # ============================================================
+  - id: "DEP-PLE-099"
+    trigger: "lightning_protection"
+    required_items: ["air_termination_network", "down_conductors_at_4_corners", "test_clamps_each_down_conductor", "earth_termination"]
+    trade: "electrical"
+    priority: 1
+    condition: "building_above_15m"
+    building_types: [all]
+    room_types: []
+    min_floors: 5
+    min_area_sqm: 0
+    is_code_ref: "IS 2309"
+    note: "IS 2309 lightning protection system for buildings above 15m: air termination (Franklin rods or mesh) captures lightning strike; down conductors at building corners carry current to earth termination; test clamps at each down conductor allow individual resistance checks without disconnecting the system; unprotected high-rise buildings in lightning-prone monsoon zones (Kerala, NE India) risk structural damage and fire"
+
+  # ============================================================
+  # CABLE SIZING FOR VOLTAGE DROP
+  # ============================================================
+  - id: "DEP-PLE-100"
+    trigger: "long_cable_runs"
+    required_items: ["voltage_drop_check_max_3pct", "cable_upsized_if_required"]
+    trade: "electrical"
+    priority: 1
+    condition: "cable_run_above_30m"
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 732"
+    note: "IS 732 limits voltage drop to 3% from source to furthest point — long cable runs from distribution board to remote sockets (common in commercial and industrial buildings) require cable upsizing beyond current-carrying capacity to meet voltage drop limits; undersized cables cause motors to run hot, reduce LED driver life, and cause flicker complaints in lighting; voltage drop calculation must accompany cable schedule"
+
+  # ============================================================
+  # PUMP TESTING AND COMMISSIONING
+  # ============================================================
+  - id: "DEP-PLE-101"
+    trigger: "pump_installation"
+    required_items: ["pump_performance_test", "flow_rate_and_head_verified", "vibration_check_pump_set"]
+    trade: "plumbing"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Pumps must be tested to verify flow rate and head match specification before handover — an incorrectly selected or impeller-trimmed pump delivers insufficient water to upper floors; vibration check (maximum 4mm/s RMS) identifies misalignment or bearing faults before they cause premature motor failure; pump test report with flow, head, current, and vibration readings must be included in O&M manual"
+
+  # ============================================================
+  # FIRE PUMP TESTING
+  # ============================================================
+  - id: "DEP-PLE-102"
+    trigger: "fire_pump_system"
+    required_items: ["fire_pump_flow_test_at_100pct_design", "duty_standby_auto_changeover_test", "jockey_pump_cut_in_cut_out_test"]
+    trade: "fire_safety"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 3844"
+    note: "Fire pump must be flow-tested at 100% design flow (typically 2280 LPM for wet riser) to verify it achieves required pressure at the highest hydrant — an untested fire pump that fails when needed during a fire is catastrophic; automatic changeover from duty to standby pump must be tested; jockey pump cut-in (0.5 bar below duty pump pressure) and cut-out settings must be calibrated and documented"
+
+  # ============================================================
+  # MOTOR CONTROL CENTRE
+  # ============================================================
+  - id: "DEP-PLE-103"
+    trigger: "mcc_panel"
+    required_items: ["star_delta_starter_or_vfd", "overload_relay_each_motor", "ammeter_voltmeter_per_feeder"]
+    trade: "electrical"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 8623"
+    note: "MCC feeders for motors above 5kW must have star-delta starters (or VFDs for variable speed) to limit starting current — Direct-On-Line starting of large motors (>15kW) causes voltage dip affecting other loads; thermal overload relay must be sized for each motor's full load current; ammeter and voltmeter per feeder allow operators to detect abnormal currents indicating mechanical overload or electrical faults"
+
+  # ============================================================
+  # SPRINKLER SYSTEM HYDRAULIC CALCULATION
+  # ============================================================
+  - id: "DEP-PLE-104"
+    trigger: "fire_sprinkler_design"
+    required_items: ["hydraulic_calculation_sprinkler", "design_area_and_density_per_hazard", "pump_selection_based_on_calc"]
+    trade: "fire_safety"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 15105"
+    note: "IS 15105 requires hydraulic calculation for sprinkler systems to determine operating pressure and flow at each zone — trial-and-error or rule-of-thumb pipe sizing leads to inadequate pressure at the most hydraulically remote sprinkler; hazard classification (Light, Ordinary, Extra Hazard) determines design density (mm/min) and area of operation, which directly drives pump size and tank capacity"
+
+  # ============================================================
+  # SEPTIC TANK SIZING
+  # ============================================================
+  - id: "DEP-PLE-105"
+    trigger: "septic_tank"
+    required_items: ["septic_tank_sizing_is2470", "soak_pit_sizing_per_soil", "inspection_chambers_both_ends"]
+    trade: "plumbing"
+    priority: 1
+    condition: "no_sewer"
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 2470"
+    note: "IS 2470 specifies septic tank sizing at 0.13 cum per user per day (2 days retention) — under-sized tanks overflow, creating a health hazard; soak pit area must be designed based on soil infiltration rate from percolation test — clay soils with low infiltration rate require larger soak pits; inspection chambers at both ends allow desludging with vacuum tanker, which must be done every 2-3 years"
+
+  # ============================================================
+  # GREASE TRAP FOR COMMERCIAL KITCHENS
+  # ============================================================
+  - id: "DEP-PLE-106"
+    trigger: "commercial_kitchen_drainage"
+    required_items: ["grease_trap_sized_per_meals", "grease_trap_accessible_for_cleaning", "grease_trap_before_main_drain"]
+    trade: "plumbing"
+    priority: 1
+    condition: "commercial_kitchen"
+    building_types: ["hotel", "restaurant", "commercial"]
+    room_types: ["kitchen"]
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 2065"
+    note: "Grease trap intercepts fats, oils, and greases before they enter the main drain and solidify, causing blockages — grease blockages are the most common cause of restaurant drainage failure and attract PCMC/GHMC penalty notices; grease trap must be sized for peak meal throughput (1.5 litres per meal served) and cleaned weekly in high-volume operations; placement before connection to municipal sewer is a condition in most restaurant trade licenses"
+
+  # ============================================================
+  # ELECTRICAL LOAD BALANCING
+  # ============================================================
+  - id: "DEP-PLE-107"
+    trigger: "three_phase_electrical_installation"
+    required_items: ["load_balancing_across_phases", "neutral_current_check", "phase_sequence_verification"]
+    trade: "electrical"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 732"
+    note: "Single-phase loads (lighting, sockets, ACs) must be balanced across three phases within 10% — unbalanced loading causes neutral current heating, voltage imbalance that damages sensitive equipment, and DISCOM penalties; phase sequence must be verified correct before motor connections (incorrect phase sequence reverses motor rotation direction); neutral current must not exceed 20% of phase current"
+
+  # ============================================================
+  # MANHOLE AND INSPECTION CHAMBER
+  # ============================================================
+  - id: "DEP-PLE-108"
+    trigger: "underground_drainage"
+    required_items: ["manhole_at_every_change_of_direction", "inspection_chamber_at_100m_max", "cast_iron_manhole_cover_loading"]
+    trade: "plumbing"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 1742"
+    note: "IS 1742 requires manhole at every change of direction and gradient — without manholes, blockages in underground drains cannot be rodded or jett-cleaned; inspection chambers at maximum 100m spacing allow access for CCTV inspection; manhole covers must be load-rated for the vehicle type in the area (D400 for car parks, E600 for driveways, F900 for HGV routes) — under-rated covers collapse under vehicle loads"
+
+  # ============================================================
+  # CABLING FIRE STOP
+  # ============================================================
+  - id: "DEP-PLE-109"
+    trigger: "cable_penetrations_fire_wall"
+    required_items: ["intumescent_fire_stop_sealant", "fire_stop_test_certificate", "fire_stop_installed_by_certified_contractor"]
+    trade: "electrical"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "NBC Part 4"
+    note: "Cable penetrations through fire-rated walls and slabs must be sealed with tested intumescent fire stop systems (minimum fire rating equal to wall or slab) — cable bundles are one of the most common fire spread pathways in buildings; installation must be done by a contractor certified by the product manufacturer; test certificate with EI (integrity and insulation) rating must be provided for each product used"
+
+  # ============================================================
+  # DOMESTIC HOT WATER MIXING VALVE
+  # ============================================================
+  - id: "DEP-PLE-110"
+    trigger: "hot_water_delivery"
+    required_items: ["thermostatic_mixing_valve_55_to_60c", "legionella_prevention_protocol"]
+    trade: "plumbing"
+    priority: 1
+    condition: "central_hot_water_system"
+    building_types: ["hotel", "hospital", "residential_apartment"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Central hot water must be stored at 60°C to kill Legionella bacteria; thermostatic mixing valve (TMV) blends down to safe delivery temperature of 43-46°C at outlets, preventing scalding — WHO recommends this dual-temperature approach; hospitals and hotels are particularly vulnerable to Legionella liability; without TMV, either water is too hot (scald risk) or too cool (Legionella colonisation risk)"

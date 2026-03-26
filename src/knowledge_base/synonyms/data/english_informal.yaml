@@ -1,0 +1,2256 @@
+# xBOQ.ai Master Construction Knowledge Base
+# English Informal Synonyms - Contractor shorthand and site language
+# ~300 entries covering common site terminology used in Indian construction
+
+terms:
+  # ============================================================
+  # STRUCTURAL - Concrete & Formwork
+  # ============================================================
+  - canonical: "reinforced_cement_concrete"
+    taxonomy_ids: ["STR.CON.RCC.001"]
+    site_terms: ["RCC work", "RCC casting", "concrete pour", "casting"]
+    contractor_shorthand: ["RCC", "RC"]
+    common_misspellings: ["reinforced concrete cement", "RRC"]
+    context_notes: "Most commonly just called 'RCC work' on site"
+
+  - canonical: "plain_cement_concrete"
+    taxonomy_ids: ["STR.CON.PCC.001"]
+    site_terms: ["PCC work", "lean concrete", "blinding", "base concrete", "bed concrete"]
+    contractor_shorthand: ["PCC", "CC"]
+    common_misspellings: ["plain concrete cement"]
+    context_notes: "Called 'blinding' when used as levelling course under footings"
+
+  - canonical: "formwork"
+    taxonomy_ids: ["STR.FW.GEN.001"]
+    site_terms: ["shuttering", "centering", "form", "boxing", "shuttering work", "deshuttering", "form removal", "stripping", "props and centering"]
+    contractor_shorthand: ["shut", "shutt", "centering"]
+    common_misspellings: ["shuttring", "shutring"]
+    context_notes: "'Shuttering' for walls/columns; 'centering' for slab soffit in Indian usage; 'deshuttering' = removing formwork"
+
+  - canonical: "slab_formwork"
+    taxonomy_ids: ["STR.FW.SLB.001"]
+    site_terms: ["centering", "slab centering", "slab shuttering", "soffit shuttering", "props"]
+    contractor_shorthand: ["centering"]
+    common_misspellings: []
+    context_notes: "'Centering' universally used on Indian sites for slab formwork"
+
+  - canonical: "aluminium_formwork"
+    taxonomy_ids: ["STR.FW.ALU.001"]
+    site_terms: ["Mivan", "Mivan shuttering", "aluminium shuttering", "system formwork"]
+    contractor_shorthand: ["Mivan"]
+    common_misspellings: ["Mevan", "Mewan"]
+    context_notes: "'Mivan' has become generic term for all aluminium formwork in India"
+
+  - canonical: "reinforcement_steel"
+    taxonomy_ids: ["STR.RE.TMT.001"]
+    site_terms: ["rebar", "steel bars", "TMT bars", "TMT", "saria", "rod", "steel", "loha"]
+    contractor_shorthand: ["TMT", "steel"]
+    common_misspellings: ["sariya", "sarya"]
+    context_notes: "'Saria' is the most common site term across North India"
+
+  - canonical: "bar_bending_schedule"
+    taxonomy_ids: ["STR.RE.BBS.001"]
+    site_terms: ["BBS", "bending schedule", "bar schedule", "cutting schedule"]
+    contractor_shorthand: ["BBS"]
+    common_misspellings: []
+    context_notes: "Always referred to as BBS on site"
+
+  - canonical: "concrete_testing"
+    taxonomy_ids: ["STR.QC.CT.001"]
+    site_terms: ["cube test", "cube casting", "slump test", "cube strength", "7 day test", "28 day test"]
+    contractor_shorthand: ["cube test"]
+    common_misspellings: []
+    context_notes: "Cube test is the universal term for concrete strength testing"
+
+  - canonical: "curing"
+    taxonomy_ids: ["STR.CUR.GEN.001"]
+    site_terms: ["curing", "water curing", "ponding", "wet curing", "sprinkle curing"]
+    contractor_shorthand: ["curing"]
+    common_misspellings: []
+    context_notes: "'Ponding' specifically for flat slab curing"
+
+  - canonical: "concrete_vibrator"
+    taxonomy_ids: ["STR.EQ.VIB.001"]
+    site_terms: ["vibrator", "needle vibrator", "poker vibrator", "concrete vibrator"]
+    contractor_shorthand: ["vibrator"]
+    common_misspellings: []
+    context_notes: "Just 'vibrator' on site"
+
+  # ============================================================
+  # EARTHWORK & FOUNDATION
+  # ============================================================
+  - canonical: "excavation"
+    taxonomy_ids: ["CIV.EW.EXC.001"]
+    site_terms: ["digging", "pit digging", "trenching", "khudai", "cutting"]
+    contractor_shorthand: ["exc", "digging"]
+    common_misspellings: ["excuvation", "exvacation"]
+    context_notes: "'Khudai' is the standard site term"
+
+  - canonical: "backfilling"
+    taxonomy_ids: ["CIV.EW.BF.001"]
+    site_terms: ["backfill", "filling", "refilling", "earth filling", "bharna"]
+    contractor_shorthand: ["BF", "filling"]
+    common_misspellings: ["back fill", "back filling"]
+    context_notes: ""
+
+  - canonical: "dewatering"
+    taxonomy_ids: ["CIV.EW.DW.001"]
+    site_terms: ["dewatering", "pumping", "pumping out", "well point"]
+    contractor_shorthand: ["DW"]
+    common_misspellings: ["de-watering"]
+    context_notes: ""
+
+  - canonical: "piling"
+    taxonomy_ids: ["STR.FND.PIL.001"]
+    site_terms: ["piling", "pile driving", "boring", "bored pile", "pile work"]
+    contractor_shorthand: ["piling"]
+    common_misspellings: []
+    context_notes: "'Boring' commonly used for bored cast-in-situ piles"
+
+  - canonical: "soil_testing"
+    taxonomy_ids: ["CIV.EW.SI.001"]
+    site_terms: ["soil test", "boring test", "SPT test", "soil report", "geotechnical"]
+    contractor_shorthand: ["SPT", "soil test"]
+    common_misspellings: []
+    context_notes: "'SPT' (Standard Penetration Test) commonly used"
+
+  - canonical: "plate_load_test"
+    taxonomy_ids: ["CIV.EW.PLT.001"]
+    site_terms: ["plate load test", "PLT", "bearing capacity test"]
+    contractor_shorthand: ["PLT"]
+    common_misspellings: []
+    context_notes: ""
+
+  # ============================================================
+  # MASONRY
+  # ============================================================
+  - canonical: "brickwork"
+    taxonomy_ids: ["MAS.BK.GEN.001"]
+    site_terms: ["brick work", "brick wall", "brick masonry", "eent ka kaam"]
+    contractor_shorthand: ["BW"]
+    common_misspellings: ["brick work"]
+    context_notes: ""
+
+  - canonical: "aac_blockwork"
+    taxonomy_ids: ["MAS.BK.AAC.001"]
+    site_terms: ["AAC block", "block work", "light block", "Aerocon block"]
+    contractor_shorthand: ["AAC"]
+    common_misspellings: ["ACC block"]
+    context_notes: "'Aerocon' used as generic term like 'Mivan'"
+
+  - canonical: "concrete_block"
+    taxonomy_ids: ["MAS.BK.CB.001"]
+    site_terms: ["concrete block", "hollow block", "solid block", "cement block"]
+    contractor_shorthand: ["block"]
+    common_misspellings: []
+    context_notes: ""
+
+  - canonical: "mortar"
+    taxonomy_ids: ["MAS.MO.GEN.001"]
+    site_terms: ["mortar", "masala", "mix", "cement mortar", "CM"]
+    contractor_shorthand: ["CM"]
+    common_misspellings: []
+    context_notes: "'Masala' is the universal site term across India"
+
+  - canonical: "lintel"
+    taxonomy_ids: ["STR.LN.GEN.001"]
+    site_terms: ["lintel", "lintel beam", "door lintel", "window lintel", "chaukhat beam"]
+    contractor_shorthand: ["lintel"]
+    common_misspellings: ["lentil"]
+    context_notes: ""
+
+  - canonical: "sunshade"
+    taxonomy_ids: ["STR.SS.GEN.001"]
+    site_terms: ["chajja", "sunshade", "projection", "canopy"]
+    contractor_shorthand: ["chajja"]
+    common_misspellings: ["chhajja"]
+    context_notes: "'Chajja' is universally used on site"
+
+  # ============================================================
+  # FINISHES - Plastering & POP
+  # ============================================================
+  - canonical: "internal_plastering"
+    taxonomy_ids: ["FIN.PL.INT.001"]
+    site_terms: ["inside plaster", "internal plaster", "wall plaster", "andar plaster"]
+    contractor_shorthand: ["int plaster"]
+    common_misspellings: ["plastaring"]
+    context_notes: ""
+
+  - canonical: "external_plastering"
+    taxonomy_ids: ["FIN.PL.EXT.001"]
+    site_terms: ["outside plaster", "external plaster", "bahari plaster", "rough cast"]
+    contractor_shorthand: ["ext plaster"]
+    common_misspellings: []
+    context_notes: ""
+
+  - canonical: "plaster_of_paris"
+    taxonomy_ids: ["FIN.PL.POP.001"]
+    site_terms: ["POP", "POP work", "POP punning", "punning", "POP finish"]
+    contractor_shorthand: ["POP"]
+    common_misspellings: ["pop"]
+    context_notes: "'POP' and 'punning' used interchangeably on site"
+
+  - canonical: "chicken_mesh"
+    taxonomy_ids: ["FIN.PL.CM.001"]
+    site_terms: ["chicken mesh", "wire mesh plaster", "chicken jali", "GI jali", "plaster mesh"]
+    contractor_shorthand: ["chicken mesh"]
+    common_misspellings: []
+    context_notes: "Used at junction of masonry and concrete to prevent cracks"
+
+  # ============================================================
+  # FINISHES - Flooring
+  # ============================================================
+  - canonical: "vitrified_tile_flooring"
+    taxonomy_ids: ["FIN.FL.VT.001"]
+    site_terms: ["vitrified tile", "VT", "glossy tile", "double charge tile", "nano tile"]
+    contractor_shorthand: ["VT"]
+    common_misspellings: ["vetrified", "vitrfied"]
+    context_notes: ""
+
+  - canonical: "ceramic_tile_flooring"
+    taxonomy_ids: ["FIN.FL.CT.001"]
+    site_terms: ["ceramic tile", "wall tile", "floor tile", "bathroom tile"]
+    contractor_shorthand: ["CT"]
+    common_misspellings: ["ceramic"]
+    context_notes: ""
+
+  - canonical: "natural_stone_flooring"
+    taxonomy_ids: ["FIN.FL.NS.001"]
+    site_terms: ["granite floor", "marble floor", "kota floor", "stone floor", "Italian marble"]
+    contractor_shorthand: ["granite", "marble", "kota"]
+    common_misspellings: []
+    context_notes: "'Italian marble' commonly refers to imported marble"
+
+  - canonical: "ips_flooring"
+    taxonomy_ids: ["FIN.FL.IPS.001"]
+    site_terms: ["IPS", "IPS floor", "cement floor", "Indian Patent Stone"]
+    contractor_shorthand: ["IPS"]
+    common_misspellings: []
+    context_notes: ""
+
+  - canonical: "vdf_flooring"
+    taxonomy_ids: ["FIN.FL.VDF.001"]
+    site_terms: ["VDF", "tremix", "tremix floor", "industrial floor", "VDF floor"]
+    contractor_shorthand: ["VDF"]
+    common_misspellings: ["tremex"]
+    context_notes: "'Tremix' is brand name used generically"
+
+  - canonical: "epoxy_flooring"
+    taxonomy_ids: ["FIN.FL.EP.001"]
+    site_terms: ["epoxy", "epoxy floor", "epoxy coating", "self-levelling epoxy"]
+    contractor_shorthand: ["epoxy"]
+    common_misspellings: ["epoxcy"]
+    context_notes: ""
+
+  - canonical: "wooden_flooring"
+    taxonomy_ids: ["FIN.FL.WD.001"]
+    site_terms: ["wood floor", "laminate", "parquet", "wooden floor", "hardwood floor"]
+    contractor_shorthand: ["laminate", "wood"]
+    common_misspellings: []
+    context_notes: ""
+
+  # ============================================================
+  # FINISHES - Wall Finishes & Dado
+  # ============================================================
+  - canonical: "wall_tiling"
+    taxonomy_ids: ["FIN.WT.GEN.001"]
+    site_terms: ["wall tile", "dado tile", "kitchen tile", "bathroom tile", "splashback"]
+    contractor_shorthand: ["dado"]
+    common_misspellings: []
+    context_notes: ""
+
+  - canonical: "dado"
+    taxonomy_ids: ["FIN.WT.DAD.001"]
+    site_terms: ["dado", "half tile", "wainscoting", "wall dado"]
+    contractor_shorthand: ["dado"]
+    common_misspellings: []
+    context_notes: "Typically 3-4 feet high tiling on lower wall"
+
+  - canonical: "skirting"
+    taxonomy_ids: ["FIN.WT.SKT.001"]
+    site_terms: ["skirting", "border", "plinth band", "floor border"]
+    contractor_shorthand: ["skirting"]
+    common_misspellings: ["scirting"]
+    context_notes: ""
+
+  # ============================================================
+  # FINISHES - Painting
+  # ============================================================
+  - canonical: "interior_emulsion"
+    taxonomy_ids: ["FIN.PA.IE.001"]
+    site_terms: ["emulsion", "inside paint", "wall paint", "plastic emulsion", "Royale", "Tractor"]
+    contractor_shorthand: ["emulsion"]
+    common_misspellings: ["emultion"]
+    context_notes: "Brand names like 'Royale' and 'Tractor' used as generic terms"
+
+  - canonical: "exterior_emulsion"
+    taxonomy_ids: ["FIN.PA.EE.001"]
+    site_terms: ["outside paint", "exterior paint", "weather coat", "Apex", "weatherproof paint"]
+    contractor_shorthand: ["exterior"]
+    common_misspellings: []
+    context_notes: "'Apex' (Asian Paints brand) used generically"
+
+  - canonical: "primer"
+    taxonomy_ids: ["FIN.PA.PR.001"]
+    site_terms: ["primer", "base coat", "first coat", "cement primer"]
+    contractor_shorthand: ["primer"]
+    common_misspellings: ["primar"]
+    context_notes: ""
+
+  - canonical: "wall_putty"
+    taxonomy_ids: ["FIN.PA.WP.001"]
+    site_terms: ["putty", "wall putty", "white cement putty", "Birla putty"]
+    contractor_shorthand: ["putty"]
+    common_misspellings: ["puttey"]
+    context_notes: "'Birla putty' used as generic term"
+
+  - canonical: "enamel_paint"
+    taxonomy_ids: ["FIN.PA.EN.001"]
+    site_terms: ["enamel", "oil paint", "gloss paint", "Luxol", "metal paint"]
+    contractor_shorthand: ["enamel"]
+    common_misspellings: ["enaml"]
+    context_notes: "'Luxol' (Berger brand) used as generic term"
+
+  - canonical: "distemper"
+    taxonomy_ids: ["FIN.PA.DS.001"]
+    site_terms: ["distemper", "whitewash", "OBD", "dry distemper", "colour wash"]
+    contractor_shorthand: ["distemper"]
+    common_misspellings: ["distempter"]
+    context_notes: "'OBD' = oil-bound distemper"
+
+  - canonical: "wood_polish"
+    taxonomy_ids: ["FIN.PA.WPL.001"]
+    site_terms: ["polish", "wood polish", "PU polish", "melamine", "french polish"]
+    contractor_shorthand: ["polish"]
+    common_misspellings: []
+    context_notes: ""
+
+  - canonical: "texture_paint"
+    taxonomy_ids: ["FIN.PA.TX.001"]
+    site_terms: ["texture", "designer paint", "Royale Play", "texture finish"]
+    contractor_shorthand: ["texture"]
+    common_misspellings: ["texure"]
+    context_notes: "'Royale Play' used as generic term"
+
+  # ============================================================
+  # FINISHES - False Ceiling
+  # ============================================================
+  - canonical: "gypsum_false_ceiling"
+    taxonomy_ids: ["FIN.FC.GYP.001"]
+    site_terms: ["false ceiling", "FC", "gypsum ceiling", "gypboard ceiling", "drop ceiling"]
+    contractor_shorthand: ["FC"]
+    common_misspellings: ["false cealing", "false sealing"]
+    context_notes: "'FC' universally used for false ceiling"
+
+  - canonical: "grid_false_ceiling"
+    taxonomy_ids: ["FIN.FC.GRD.001"]
+    site_terms: ["grid ceiling", "T-grid", "Armstrong ceiling", "lay-in ceiling"]
+    contractor_shorthand: ["grid ceiling"]
+    common_misspellings: []
+    context_notes: "'Armstrong' used as generic term for grid ceilings"
+
+  - canonical: "pop_false_ceiling"
+    taxonomy_ids: ["FIN.FC.POP.001"]
+    site_terms: ["POP ceiling", "POP false ceiling", "designer ceiling"]
+    contractor_shorthand: ["POP ceiling"]
+    common_misspellings: []
+    context_notes: ""
+
+  # ============================================================
+  # WATERPROOFING
+  # ============================================================
+  - canonical: "waterproofing"
+    taxonomy_ids: ["WP.GEN.001"]
+    site_terms: ["waterproofing", "WP", "WP treatment", "damp proofing", "moisture barrier"]
+    contractor_shorthand: ["WP"]
+    common_misspellings: ["water proffing", "waterproffing"]
+    context_notes: ""
+
+  - canonical: "bituminous_waterproofing"
+    taxonomy_ids: ["WP.BIT.001"]
+    site_terms: ["membrane", "bitumen sheet", "torch-on", "APP membrane", "SBS membrane", "tar sheet"]
+    contractor_shorthand: ["membrane"]
+    common_misspellings: []
+    context_notes: "'Membrane' is the universal site term"
+
+  - canonical: "cementitious_waterproofing"
+    taxonomy_ids: ["WP.CEM.001"]
+    site_terms: ["Pidifin", "cement coating", "Dr. Fixit", "waterproof cement"]
+    contractor_shorthand: ["coating WP"]
+    common_misspellings: []
+    context_notes: "'Dr. Fixit' used as generic term for waterproofing products"
+
+  - canonical: "liquid_waterproofing"
+    taxonomy_ids: ["WP.LIQ.001"]
+    site_terms: ["liquid membrane", "PU coating", "spray WP", "Roofseal"]
+    contractor_shorthand: ["liquid WP"]
+    common_misspellings: []
+    context_notes: ""
+
+  - canonical: "damp_proof_course"
+    taxonomy_ids: ["WP.DPC.001"]
+    site_terms: ["DPC", "damp course", "plinth level WP"]
+    contractor_shorthand: ["DPC"]
+    common_misspellings: []
+    context_notes: "'DPC' universally used"
+
+  - canonical: "injection_grouting"
+    taxonomy_ids: ["WP.IG.001"]
+    site_terms: ["injection grouting", "crack injection", "PU injection", "epoxy injection"]
+    contractor_shorthand: ["injection"]
+    common_misspellings: []
+    context_notes: ""
+
+  # ============================================================
+  # PLUMBING
+  # ============================================================
+  - canonical: "water_supply_system"
+    taxonomy_ids: ["PLB.WS.GEN.001"]
+    site_terms: ["water supply", "water line", "plumbing", "pipe line", "paani ki line"]
+    contractor_shorthand: ["WS"]
+    common_misspellings: []
+    context_notes: ""
+
+  - canonical: "drainage_system"
+    taxonomy_ids: ["PLB.DR.GEN.001"]
+    site_terms: ["drainage", "waste line", "drain pipe", "soil pipe", "nali"]
+    contractor_shorthand: ["DR"]
+    common_misspellings: ["drainege"]
+    context_notes: ""
+
+  - canonical: "water_closet"
+    taxonomy_ids: ["PLB.SF.WC.001"]
+    site_terms: ["WC", "EWC", "IWC", "commode", "toilet", "pot", "latrine"]
+    contractor_shorthand: ["WC", "EWC", "IWC"]
+    common_misspellings: []
+    context_notes: "EWC=European WC (sitting), IWC=Indian WC (squatting)"
+
+  - canonical: "wash_basin"
+    taxonomy_ids: ["PLB.SF.WB.001"]
+    site_terms: ["basin", "wash basin", "counter basin", "pedestal basin", "hand wash"]
+    contractor_shorthand: ["basin"]
+    common_misspellings: []
+    context_notes: ""
+
+  - canonical: "cp_fittings"
+    taxonomy_ids: ["PLB.CP.GEN.001"]
+    site_terms: ["CP fittings", "taps", "faucets", "shower", "Jaquar fittings", "chrome fittings"]
+    contractor_shorthand: ["CP"]
+    common_misspellings: []
+    context_notes: "'CP' = chrome plated; 'Jaquar' used as generic term"
+
+  - canonical: "concealed_plumbing"
+    taxonomy_ids: ["PLB.CN.GEN.001"]
+    site_terms: ["concealed plumbing", "concealed pipe", "wall-embedded pipe", "chase cutting"]
+    contractor_shorthand: ["concealed"]
+    common_misspellings: ["conceled"]
+    context_notes: ""
+
+  - canonical: "cpvc_pipe"
+    taxonomy_ids: ["PLB.PP.CPVC.001"]
+    site_terms: ["CPVC", "CPVC pipe", "hot water pipe", "Astral pipe", "FlowGuard pipe"]
+    contractor_shorthand: ["CPVC"]
+    common_misspellings: []
+    context_notes: "'Astral' and 'FlowGuard' used as generic terms"
+
+  - canonical: "upvc_pipe"
+    taxonomy_ids: ["PLB.PP.UPVC.001"]
+    site_terms: ["PVC pipe", "UPVC", "plastic pipe", "white pipe", "Astral pipe"]
+    contractor_shorthand: ["PVC"]
+    common_misspellings: []
+    context_notes: "'PVC' commonly used even when UPVC is meant"
+
+  - canonical: "swr_pipe"
+    taxonomy_ids: ["PLB.PP.SWR.001"]
+    site_terms: ["SWR pipe", "waste pipe", "drain pipe", "soil pipe"]
+    contractor_shorthand: ["SWR"]
+    common_misspellings: []
+    context_notes: ""
+
+  - canonical: "gi_pipe"
+    taxonomy_ids: ["PLB.PP.GI.001"]
+    site_terms: ["GI pipe", "iron pipe", "galvanized pipe"]
+    contractor_shorthand: ["GI"]
+    common_misspellings: []
+    context_notes: ""
+
+  - canonical: "floor_trap"
+    taxonomy_ids: ["PLB.FT.GEN.001"]
+    site_terms: ["floor trap", "nahni trap", "jali", "drain cover", "gutter"]
+    contractor_shorthand: ["FT", "nahni"]
+    common_misspellings: []
+    context_notes: "'Nahni trap' is the Indian site term for floor trap"
+
+  - canonical: "geyser"
+    taxonomy_ids: ["PLB.HW.GEN.001"]
+    site_terms: ["geyser", "water heater", "hot water", "instant geyser", "storage geyser"]
+    contractor_shorthand: ["geyser"]
+    common_misspellings: ["geezer"]
+    context_notes: "'Geyser' is the universal Indian term for water heater"
+
+  - canonical: "water_pump"
+    taxonomy_ids: ["PLB.PM.GEN.001"]
+    site_terms: ["pump", "water pump", "booster pump", "hydropneumatic", "pressure pump"]
+    contractor_shorthand: ["pump"]
+    common_misspellings: []
+    context_notes: ""
+
+  - canonical: "water_tank"
+    taxonomy_ids: ["PLB.TK.GEN.001"]
+    site_terms: ["tank", "tanki", "overhead tank", "sump", "Sintex tank", "water tank"]
+    contractor_shorthand: ["OHT", "UGT"]
+    common_misspellings: []
+    context_notes: "'Sintex' used as generic term for plastic water tanks"
+
+  - canonical: "sewage_treatment_plant"
+    taxonomy_ids: ["PLB.STP.GEN.001"]
+    site_terms: ["STP", "treatment plant", "sewage plant", "ETP"]
+    contractor_shorthand: ["STP"]
+    common_misspellings: []
+    context_notes: ""
+
+  - canonical: "rainwater_harvesting"
+    taxonomy_ids: ["PLB.RWH.GEN.001"]
+    site_terms: ["RWH", "rainwater harvesting", "rain pit", "recharge pit", "percolation pit"]
+    contractor_shorthand: ["RWH"]
+    common_misspellings: []
+    context_notes: ""
+
+  # ============================================================
+  # ELECTRICAL
+  # ============================================================
+  - canonical: "distribution_board"
+    taxonomy_ids: ["ELE.DB.GEN.001"]
+    site_terms: ["DB", "board", "MCB box", "switch board", "panel", "bijli ka board"]
+    contractor_shorthand: ["DB", "MDB", "SDB"]
+    common_misspellings: []
+    context_notes: "MDB=Main DB, SDB=Sub DB"
+
+  - canonical: "mcb"
+    taxonomy_ids: ["ELE.CB.MCB.001"]
+    site_terms: ["MCB", "breaker", "trip", "switch", "trip switch"]
+    contractor_shorthand: ["MCB"]
+    common_misspellings: []
+    context_notes: ""
+
+  - canonical: "rccb"
+    taxonomy_ids: ["ELE.CB.RCCB.001"]
+    site_terms: ["RCCB", "ELCB", "earth leakage", "safety switch"]
+    contractor_shorthand: ["RCCB", "ELCB"]
+    common_misspellings: []
+    context_notes: "ELCB is older term but still widely used on sites"
+
+  - canonical: "electrical_conduit"
+    taxonomy_ids: ["ELE.CD.GEN.001"]
+    site_terms: ["conduit", "pipe", "electrical pipe", "PVC conduit", "casing pipe"]
+    contractor_shorthand: ["conduit"]
+    common_misspellings: ["conduit"]
+    context_notes: ""
+
+  - canonical: "electrical_wiring"
+    taxonomy_ids: ["ELE.WR.GEN.001"]
+    site_terms: ["wiring", "cable", "wire", "tar", "Polycab", "Finolex"]
+    contractor_shorthand: ["wiring"]
+    common_misspellings: ["wireing"]
+    context_notes: "Brand names used as generic - 'Polycab lagao'"
+
+  - canonical: "earthing"
+    taxonomy_ids: ["ELE.ER.GEN.001"]
+    site_terms: ["earthing", "grounding", "earth pit", "earth rod", "earthing plate"]
+    contractor_shorthand: ["earthing"]
+    common_misspellings: ["erthing"]
+    context_notes: ""
+
+  - canonical: "light_point"
+    taxonomy_ids: ["ELE.PT.LP.001"]
+    site_terms: ["light point", "light", "ceiling point", "light fitting point"]
+    contractor_shorthand: ["LP"]
+    common_misspellings: []
+    context_notes: "'Point' is the standard Indian electrical term for outlet"
+
+  - canonical: "power_point"
+    taxonomy_ids: ["ELE.PT.PP.001"]
+    site_terms: ["power point", "socket", "plug point", "power socket", "5A/15A point"]
+    contractor_shorthand: ["PP"]
+    common_misspellings: []
+    context_notes: "'5A point' = 5 amp socket, '15A point' = 15 amp socket (for AC/geyser)"
+
+  - canonical: "ac_point"
+    taxonomy_ids: ["ELE.PT.AC.001"]
+    site_terms: ["AC point", "AC power point", "20A point", "AC provision"]
+    contractor_shorthand: ["AC point"]
+    common_misspellings: []
+    context_notes: "Dedicated 20A power supply point for air conditioner"
+
+  - canonical: "fan_point"
+    taxonomy_ids: ["ELE.PT.FP.001"]
+    site_terms: ["fan point", "ceiling fan point", "fan hook", "fan outlet"]
+    contractor_shorthand: ["FP"]
+    common_misspellings: []
+    context_notes: ""
+
+  - canonical: "switch_socket"
+    taxonomy_ids: ["ELE.SW.GEN.001"]
+    site_terms: ["switch", "switch board", "modular", "plate", "gang box"]
+    contractor_shorthand: ["switch"]
+    common_misspellings: []
+    context_notes: "'Modular' commonly used for modern switch systems"
+
+  - canonical: "dg_set"
+    taxonomy_ids: ["ELE.DG.GEN.001"]
+    site_terms: ["DG", "generator", "genset", "DG set", "backup power"]
+    contractor_shorthand: ["DG"]
+    common_misspellings: []
+    context_notes: "'DG' universally used"
+
+  - canonical: "ups"
+    taxonomy_ids: ["ELE.UPS.GEN.001"]
+    site_terms: ["UPS", "inverter", "battery backup", "power backup"]
+    contractor_shorthand: ["UPS"]
+    common_misspellings: []
+    context_notes: "'Inverter' used more commonly in residential context"
+
+  - canonical: "cable_tray"
+    taxonomy_ids: ["ELE.CT.GEN.001"]
+    site_terms: ["cable tray", "tray", "ladder tray", "perforated tray"]
+    contractor_shorthand: ["CT"]
+    common_misspellings: []
+    context_notes: ""
+
+  - canonical: "led_light"
+    taxonomy_ids: ["ELE.LT.LED.001"]
+    site_terms: ["LED", "LED light", "downlight", "panel light", "strip light", "LED fitting"]
+    contractor_shorthand: ["LED"]
+    common_misspellings: []
+    context_notes: ""
+
+  - canonical: "solar_panel"
+    taxonomy_ids: ["ELE.SOL.GEN.001"]
+    site_terms: ["solar", "solar panel", "solar plate", "PV panel"]
+    contractor_shorthand: ["solar"]
+    common_misspellings: []
+    context_notes: ""
+
+  # ============================================================
+  # HVAC
+  # ============================================================
+  - canonical: "vrv_system"
+    taxonomy_ids: ["HVAC.VRV.GEN.001"]
+    site_terms: ["VRV", "VRF", "multi-split", "central AC system"]
+    contractor_shorthand: ["VRV", "VRF"]
+    common_misspellings: []
+    context_notes: "VRV=Daikin trademark, VRF=generic term"
+
+  - canonical: "split_ac"
+    taxonomy_ids: ["HVAC.SPL.GEN.001"]
+    site_terms: ["split AC", "AC", "wall AC", "cassette AC", "concealed AC", "ductable"]
+    contractor_shorthand: ["AC"]
+    common_misspellings: []
+    context_notes: ""
+
+  - canonical: "air_handling_unit"
+    taxonomy_ids: ["HVAC.AHU.GEN.001"]
+    site_terms: ["AHU", "air handler", "air handling"]
+    contractor_shorthand: ["AHU"]
+    common_misspellings: []
+    context_notes: ""
+
+  - canonical: "fan_coil_unit"
+    taxonomy_ids: ["HVAC.FCU.GEN.001"]
+    site_terms: ["FCU", "fan coil", "ceiling FCU", "concealed FCU"]
+    contractor_shorthand: ["FCU"]
+    common_misspellings: []
+    context_notes: ""
+
+  - canonical: "ductwork"
+    taxonomy_ids: ["HVAC.DW.GEN.001"]
+    site_terms: ["duct", "AC duct", "GI duct", "return duct", "supply duct", "flexible duct"]
+    contractor_shorthand: ["duct"]
+    common_misspellings: []
+    context_notes: ""
+
+  - canonical: "chilled_water_pipe"
+    taxonomy_ids: ["HVAC.CW.GEN.001"]
+    site_terms: ["chilled water pipe", "CHW pipe", "chiller pipe", "insulated pipe"]
+    contractor_shorthand: ["CHW"]
+    common_misspellings: []
+    context_notes: ""
+
+  - canonical: "refrigerant_piping"
+    taxonomy_ids: ["HVAC.RP.GEN.001"]
+    site_terms: ["copper pipe", "refrigerant pipe", "AC pipe", "gas pipe"]
+    contractor_shorthand: ["ref pipe"]
+    common_misspellings: []
+    context_notes: "'Gas pipe' commonly used on site for refrigerant piping"
+
+  - canonical: "exhaust_fan"
+    taxonomy_ids: ["HVAC.EF.GEN.001"]
+    site_terms: ["exhaust", "exhaust fan", "ventilation fan", "bathroom fan"]
+    contractor_shorthand: ["exhaust"]
+    common_misspellings: ["exaust"]
+    context_notes: ""
+
+  # ============================================================
+  # FIRE PROTECTION
+  # ============================================================
+  - canonical: "fire_sprinkler"
+    taxonomy_ids: ["FP.SPR.GEN.001"]
+    site_terms: ["sprinkler", "fire sprinkler", "sprinkler head", "sprinkler pipe"]
+    contractor_shorthand: ["sprinkler"]
+    common_misspellings: ["sprinkeler"]
+    context_notes: ""
+
+  - canonical: "fire_alarm"
+    taxonomy_ids: ["FP.FA.GEN.001"]
+    site_terms: ["fire alarm", "alarm", "detection system", "alarm panel"]
+    contractor_shorthand: ["FA"]
+    common_misspellings: []
+    context_notes: ""
+
+  - canonical: "smoke_detector"
+    taxonomy_ids: ["FP.SD.GEN.001"]
+    site_terms: ["smoke detector", "detector", "sensor"]
+    contractor_shorthand: ["SD"]
+    common_misspellings: []
+    context_notes: ""
+
+  - canonical: "fire_hydrant"
+    taxonomy_ids: ["FP.HY.GEN.001"]
+    site_terms: ["hydrant", "fire hydrant", "hose reel", "fire point"]
+    contractor_shorthand: ["FH"]
+    common_misspellings: []
+    context_notes: ""
+
+  - canonical: "fire_extinguisher"
+    taxonomy_ids: ["FP.FE.GEN.001"]
+    site_terms: ["extinguisher", "fire extinguisher", "ABC extinguisher", "DCP"]
+    contractor_shorthand: ["FE"]
+    common_misspellings: ["extinguisher"]
+    context_notes: ""
+
+  # ============================================================
+  # DOORS & WINDOWS
+  # ============================================================
+  - canonical: "flush_door"
+    taxonomy_ids: ["DW.WD.FL.001"]
+    site_terms: ["flush door", "ply door", "door", "commercial ply door"]
+    contractor_shorthand: ["flush door"]
+    common_misspellings: []
+    context_notes: ""
+
+  - canonical: "door_frame"
+    taxonomy_ids: ["DW.FR.GEN.001"]
+    site_terms: ["frame", "chaukhat", "door frame", "MS frame", "wooden frame"]
+    contractor_shorthand: ["frame"]
+    common_misspellings: ["chowkhat", "choukhat"]
+    context_notes: "'Chaukhat' is universal site term for door frame"
+
+  - canonical: "door_hardware"
+    taxonomy_ids: ["DW.HW.GEN.001"]
+    site_terms: ["hardware", "hinges", "lock", "handle", "door closer", "stopper", "tower bolt"]
+    contractor_shorthand: ["hardware"]
+    common_misspellings: []
+    context_notes: ""
+
+  - canonical: "aluminium_window"
+    taxonomy_ids: ["DW.AW.GEN.001"]
+    site_terms: ["aluminium window", "sliding window", "Fenesta window", "section window"]
+    contractor_shorthand: ["AL window"]
+    common_misspellings: ["aluminum"]
+    context_notes: ""
+
+  - canonical: "mosquito_mesh"
+    taxonomy_ids: ["DW.MM.GEN.001"]
+    site_terms: ["mosquito mesh", "insect screen", "SS jali", "mesh", "machar jali"]
+    contractor_shorthand: ["mesh"]
+    common_misspellings: []
+    context_notes: ""
+
+  # ============================================================
+  # ELEVATOR / LIFT
+  # ============================================================
+  - canonical: "passenger_elevator"
+    taxonomy_ids: ["LIFT.PE.GEN.001"]
+    site_terms: ["lift", "elevator", "passenger lift", "MRL lift"]
+    contractor_shorthand: ["lift"]
+    common_misspellings: []
+    context_notes: "'Lift' is the standard term in India"
+
+  - canonical: "lift_shaft"
+    taxonomy_ids: ["LIFT.SH.GEN.001"]
+    site_terms: ["lift shaft", "elevator shaft", "lift well", "lift pit"]
+    contractor_shorthand: ["shaft"]
+    common_misspellings: []
+    context_notes: ""
+
+  # ============================================================
+  # EXTERNAL WORKS
+  # ============================================================
+  - canonical: "compound_wall"
+    taxonomy_ids: ["CIV.CW.GEN.001"]
+    site_terms: ["boundary wall", "compound wall", "perimeter wall", "chaar diwari"]
+    contractor_shorthand: ["boundary"]
+    common_misspellings: []
+    context_notes: ""
+
+  - canonical: "paver_block"
+    taxonomy_ids: ["CIV.PV.GEN.001"]
+    site_terms: ["paver", "interlocking paver", "paving block", "interlocking tile"]
+    contractor_shorthand: ["paver"]
+    common_misspellings: ["pavour"]
+    context_notes: ""
+
+  - canonical: "road_work"
+    taxonomy_ids: ["CIV.RD.GEN.001"]
+    site_terms: ["road", "tar road", "CC road", "BT road", "black top", "pavement"]
+    contractor_shorthand: ["road"]
+    common_misspellings: []
+    context_notes: "'BT' = bituminous top; 'CC road' = cement concrete road"
+
+  - canonical: "manhole"
+    taxonomy_ids: ["CIV.MH.GEN.001"]
+    site_terms: ["manhole", "MH", "chamber", "inspection chamber"]
+    contractor_shorthand: ["MH"]
+    common_misspellings: []
+    context_notes: ""
+
+  - canonical: "curb_stone"
+    taxonomy_ids: ["CIV.CS.GEN.001"]
+    site_terms: ["kerb", "curb", "kerb stone", "road divider"]
+    contractor_shorthand: ["kerb"]
+    common_misspellings: ["curb"]
+    context_notes: ""
+
+  # ============================================================
+  # MISCELLANEOUS
+  # ============================================================
+  - canonical: "scaffolding"
+    taxonomy_ids: ["MISC.SC.GEN.001"]
+    site_terms: ["scaffolding", "scaffold", "machan", "staging", "cup-lock"]
+    contractor_shorthand: ["scaffold"]
+    common_misspellings: ["scaffolding"]
+    context_notes: "'Machan' is the Hindi term used on sites"
+
+  - canonical: "anti_termite_treatment"
+    taxonomy_ids: ["MISC.AT.GEN.001"]
+    site_terms: ["anti termite", "termite treatment", "deemak treatment", "chemical treatment"]
+    contractor_shorthand: ["ATT"]
+    common_misspellings: ["anti termit"]
+    context_notes: ""
+
+  - canonical: "construction_joint"
+    taxonomy_ids: ["STR.CJ.GEN.001"]
+    site_terms: ["construction joint", "cold joint", "joint", "day joint"]
+    contractor_shorthand: ["CJ"]
+    common_misspellings: []
+    context_notes: ""
+
+  - canonical: "expansion_joint"
+    taxonomy_ids: ["MAS.EJ.GEN.001"]
+    site_terms: ["expansion joint", "movement joint", "EJ", "gap joint"]
+    contractor_shorthand: ["EJ"]
+    common_misspellings: []
+    context_notes: ""
+
+  - canonical: "steel_structure"
+    taxonomy_ids: ["STR.SS.GEN.001"]
+    site_terms: ["steel structure", "MS structure", "fabrication", "erection"]
+    contractor_shorthand: ["steel", "fab"]
+    common_misspellings: []
+    context_notes: "'Fab' = fabrication; 'MS' = mild steel"
+
+  - canonical: "handrail"
+    taxonomy_ids: ["MISC.HR.GEN.001"]
+    site_terms: ["railing", "handrail", "SS railing", "MS railing", "glass railing", "jangla"]
+    contractor_shorthand: ["railing"]
+    common_misspellings: ["railng"]
+    context_notes: ""
+
+  - canonical: "curtain_wall"
+    taxonomy_ids: ["FAC.CW.GEN.001"]
+    site_terms: ["curtain wall", "glass wall", "structural glazing", "facade"]
+    contractor_shorthand: ["CW", "facade"]
+    common_misspellings: ["fassade"]
+    context_notes: ""
+
+  - canonical: "acp_cladding"
+    taxonomy_ids: ["FAC.ACP.GEN.001"]
+    site_terms: ["ACP", "ACP cladding", "Alucobond", "aluminium panel"]
+    contractor_shorthand: ["ACP"]
+    common_misspellings: []
+    context_notes: "'Alucobond' used as generic term"
+
+  - canonical: "structural_glazing"
+    taxonomy_ids: ["FAC.SG.GEN.001"]
+    site_terms: ["structural glazing", "DGU", "toughened glass", "laminated glass"]
+    contractor_shorthand: ["SG", "DGU"]
+    common_misspellings: []
+    context_notes: "DGU = double glazed unit"
+
+  - canonical: "bms"
+    taxonomy_ids: ["ELE.BMS.GEN.001"]
+    site_terms: ["BMS", "building automation", "DDC", "controls"]
+    contractor_shorthand: ["BMS"]
+    common_misspellings: []
+    context_notes: ""
+
+  - canonical: "cctv"
+    taxonomy_ids: ["SEC.CCTV.GEN.001"]
+    site_terms: ["CCTV", "camera", "surveillance", "IP camera"]
+    contractor_shorthand: ["CCTV"]
+    common_misspellings: []
+    context_notes: ""
+
+  - canonical: "provisional_sum"
+    taxonomy_ids: ["COM.PS.GEN.001"]
+    site_terms: ["PS", "provisional sum", "allowance", "budget provision"]
+    contractor_shorthand: ["PS"]
+    common_misspellings: ["provinsional"]
+    context_notes: ""
+
+  - canonical: "variation_order"
+    taxonomy_ids: ["COM.VO.GEN.001"]
+    site_terms: ["VO", "variation", "change order", "extra item", "deviation"]
+    contractor_shorthand: ["VO", "CO"]
+    common_misspellings: []
+    context_notes: ""
+
+  - canonical: "running_account_bill"
+    taxonomy_ids: ["COM.RA.GEN.001"]
+    site_terms: ["RA bill", "running bill", "interim bill", "progress bill"]
+    contractor_shorthand: ["RA"]
+    common_misspellings: []
+    context_notes: "'RA bill' is the standard Indian term"
+
+  - canonical: "snag_list"
+    taxonomy_ids: ["COM.SN.GEN.001"]
+    site_terms: ["snag list", "punch list", "defect list", "touch-up list"]
+    contractor_shorthand: ["snag"]
+    common_misspellings: []
+    context_notes: ""
+
+  - canonical: "as_built_drawing"
+    taxonomy_ids: ["COM.AB.GEN.001"]
+    site_terms: ["as-built", "as-built drawing", "actual drawing", "record drawing"]
+    contractor_shorthand: ["as-built"]
+    common_misspellings: ["as build"]
+    context_notes: ""
+
+  - canonical: "boq"
+    taxonomy_ids: ["COM.BOQ.GEN.001"]
+    site_terms: ["BOQ", "bill of quantities", "quantity", "item list", "schedule of quantities"]
+    contractor_shorthand: ["BOQ"]
+    common_misspellings: ["BQO"]
+    context_notes: ""
+
+  - canonical: "dsr"
+    taxonomy_ids: ["COM.DSR.GEN.001"]
+    site_terms: ["DSR", "Delhi Schedule of Rates", "schedule of rates", "SOR"]
+    contractor_shorthand: ["DSR", "SOR"]
+    common_misspellings: []
+    context_notes: "DSR=Delhi Schedule of Rates; SOR=Schedule of Rates"
+
+  - canonical: "notice_inviting_tender"
+    taxonomy_ids: ["COM.NIT.GEN.001"]
+    site_terms: ["NIT", "tender", "tender notice", "bid invitation"]
+    contractor_shorthand: ["NIT"]
+    common_misspellings: []
+    context_notes: ""
+
+  - canonical: "work_order"
+    taxonomy_ids: ["COM.WO.GEN.001"]
+    site_terms: ["work order", "LOA", "letter of acceptance", "WO", "PO"]
+    contractor_shorthand: ["WO", "LOA", "PO"]
+    common_misspellings: []
+    context_notes: "LOA=Letter of Acceptance; PO=Purchase Order"
+
+  - canonical: "cement_testing"
+    taxonomy_ids: ["MAT.QC.CM.001"]
+    site_terms: ["cement test", "consistency test", "setting time", "fineness test"]
+    contractor_shorthand: ["cement test"]
+    common_misspellings: []
+    context_notes: ""
+
+  - canonical: "brick_testing"
+    taxonomy_ids: ["MAT.QC.BK.001"]
+    site_terms: ["brick test", "compressive strength", "water absorption", "efflorescence test"]
+    contractor_shorthand: ["brick test"]
+    common_misspellings: []
+    context_notes: ""
+
+  - canonical: "steel_testing"
+    taxonomy_ids: ["MAT.QC.ST.001"]
+    site_terms: ["steel test", "tensile test", "bend test", "MTC", "mill test certificate"]
+    contractor_shorthand: ["MTC"]
+    common_misspellings: []
+    context_notes: "MTC = Mill Test Certificate"
+
+  - canonical: "chipping"
+    taxonomy_ids: ["STR.CH.GEN.001"]
+    site_terms: ["chipping", "hacking", "roughening", "surface prep"]
+    contractor_shorthand: ["chipping"]
+    common_misspellings: []
+    context_notes: "Surface roughening for bonding of plaster/tile"
+
+  - canonical: "grouting"
+    taxonomy_ids: ["FIN.GR.GEN.001"]
+    site_terms: ["grouting", "joint filling", "tile grouting", "gap filling"]
+    contractor_shorthand: ["grouting"]
+    common_misspellings: ["grounting"]
+    context_notes: ""
+
+  - canonical: "kitchen_chimney"
+    taxonomy_ids: ["HVAC.KC.GEN.001"]
+    site_terms: ["chimney", "kitchen chimney", "exhaust hood", "range hood"]
+    contractor_shorthand: ["chimney"]
+    common_misspellings: []
+    context_notes: ""
+
+  - canonical: "gas_connection"
+    taxonomy_ids: ["PLB.GC.GEN.001"]
+    site_terms: ["gas line", "piped gas", "PNG", "gas pipe", "gas connection"]
+    contractor_shorthand: ["gas"]
+    common_misspellings: []
+    context_notes: "PNG = piped natural gas"
+
+  - canonical: "grease_trap"
+    taxonomy_ids: ["PLB.GT.GEN.001"]
+    site_terms: ["grease trap", "oil trap", "kitchen trap"]
+    contractor_shorthand: ["grease trap"]
+    common_misspellings: []
+    context_notes: ""
+
+  # ============================================================
+  # EXCAVATION & EARTHWORK (Expanded)
+  # ============================================================
+  - canonical: "trench_excavation"
+    taxonomy_ids: ["CIV.EW.TRN.001"]
+    site_terms: ["trench cutting", "nala cutting", "trench digging", "pipe trench", "cable trench"]
+    contractor_shorthand: ["trench"]
+    common_misspellings: ["tranch"]
+    context_notes: "Common for utility trenches - plumbing/electrical"
+
+  - canonical: "site_levelling"
+    taxonomy_ids: ["CIV.EW.LEV.001"]
+    site_terms: ["levelling", "site levelling", "ground levelling", "samtal karna", "surface dressing"]
+    contractor_shorthand: ["levelling"]
+    common_misspellings: ["leveling", "levling"]
+    context_notes: "'Samtal karna' used on Hindi-belt sites"
+
+  - canonical: "site_grading"
+    taxonomy_ids: ["CIV.EW.GRD.001"]
+    site_terms: ["grading", "slope grading", "earth grading", "formation level", "ground shaping"]
+    contractor_shorthand: ["grading"]
+    common_misspellings: ["gradeing"]
+    context_notes: "Forming slopes for drainage and site development"
+
+  - canonical: "soil_compaction"
+    taxonomy_ids: ["CIV.EW.CMP.001"]
+    site_terms: ["compaction", "ramming", "rolling", "soil compaction", "plate compaction", "dabana"]
+    contractor_shorthand: ["compaction"]
+    common_misspellings: ["compection"]
+    context_notes: "'Dabana' is Hindi site term; roller/plate compactor used"
+
+  - canonical: "shoring"
+    taxonomy_ids: ["CIV.EW.SH.001"]
+    site_terms: ["shoring", "earth support", "trench shoring", "timber shoring", "sahara"]
+    contractor_shorthand: ["shoring"]
+    common_misspellings: ["shorring"]
+    context_notes: "Temporary lateral support to excavation sides"
+
+  - canonical: "sheet_piling"
+    taxonomy_ids: ["CIV.EW.SP.001"]
+    site_terms: ["sheet pile", "sheet piling", "steel sheet pile", "cofferdam", "interlocking pile"]
+    contractor_shorthand: ["sheet pile"]
+    common_misspellings: ["sheet pilling"]
+    context_notes: "Used for deep excavation and waterfront construction"
+
+  - canonical: "earth_cutting"
+    taxonomy_ids: ["CIV.EW.EC.001"]
+    site_terms: ["cutting", "earth cutting", "hill cutting", "mitti katna", "slope cutting"]
+    contractor_shorthand: ["cutting"]
+    common_misspellings: []
+    context_notes: "Removal of soil to achieve formation level"
+
+  - canonical: "sand_filling"
+    taxonomy_ids: ["CIV.EW.SF.001"]
+    site_terms: ["sand filling", "sand bed", "sand layer", "ret bharna", "cushion sand"]
+    contractor_shorthand: ["sand fill"]
+    common_misspellings: []
+    context_notes: "'Ret bharna' used on North Indian sites for sand filling"
+
+  - canonical: "murum_filling"
+    taxonomy_ids: ["CIV.EW.MF.001"]
+    site_terms: ["murum filling", "murum", "laterite filling", "red earth", "gadda filling"]
+    contractor_shorthand: ["murum"]
+    common_misspellings: ["mooram", "moram", "moorum"]
+    context_notes: "'Murum' is widely used in Maharashtra/West India for laterite gravel"
+
+  - canonical: "rock_breaking"
+    taxonomy_ids: ["CIV.EW.RB.001"]
+    site_terms: ["rock breaking", "rock cutting", "blasting", "patthar todna", "rock excavation"]
+    contractor_shorthand: ["rock"]
+    common_misspellings: []
+    context_notes: "Includes mechanical breaking, chemical splitting, and controlled blasting"
+
+  - canonical: "well_point_dewatering"
+    taxonomy_ids: ["CIV.EW.WP.001"]
+    site_terms: ["well point", "needle pump", "header pipe dewatering", "point well system"]
+    contractor_shorthand: ["well point"]
+    common_misspellings: ["wellpoint"]
+    context_notes: "Multiple well points with header pipe for lowering water table"
+
+  # ============================================================
+  # WATERPROOFING (Expanded)
+  # ============================================================
+  - canonical: "leak_repair"
+    taxonomy_ids: ["WP.LR.001"]
+    site_terms: ["leak repair", "leakage repair", "rishav band", "seepage repair", "water stop"]
+    contractor_shorthand: ["leak fix"]
+    common_misspellings: ["leekage"]
+    context_notes: "Emergency repair of active water leaks in basements/terraces"
+
+  - canonical: "seepage_treatment"
+    taxonomy_ids: ["WP.ST.001"]
+    site_terms: ["seepage treatment", "dampness treatment", "wall seepage", "selan ka ilaaj", "moisture treatment"]
+    contractor_shorthand: ["seepage"]
+    common_misspellings: ["seapage", "sippage"]
+    context_notes: "'Selan' is Hindi for dampness/moisture"
+
+  - canonical: "basement_tanking"
+    taxonomy_ids: ["WP.TNK.001"]
+    site_terms: ["tanking", "basement WP", "box waterproofing", "raft WP", "negative side WP"]
+    contractor_shorthand: ["tanking"]
+    common_misspellings: []
+    context_notes: "Full encapsulation waterproofing for below-grade structures"
+
+  - canonical: "terrace_waterproofing"
+    taxonomy_ids: ["WP.TER.001"]
+    site_terms: ["terrace WP", "roof waterproofing", "chhat WP", "top WP", "terrace treatment"]
+    contractor_shorthand: ["terrace WP"]
+    common_misspellings: ["terrace water proffing"]
+    context_notes: "'Chhat' = roof/terrace in Hindi"
+
+  - canonical: "bathroom_waterproofing"
+    taxonomy_ids: ["WP.BTH.001"]
+    site_terms: ["bathroom WP", "toilet waterproofing", "wet area WP", "shower waterproofing"]
+    contractor_shorthand: ["bath WP"]
+    common_misspellings: []
+    context_notes: "Applied before tiling in wet areas"
+
+  - canonical: "expansion_joint_sealant"
+    taxonomy_ids: ["WP.EJS.001"]
+    site_terms: ["joint sealant", "PU sealant", "silicone sealant", "Sikaflex", "joint filling"]
+    contractor_shorthand: ["sealant"]
+    common_misspellings: ["sealent"]
+    context_notes: "'Sikaflex' used as generic term for PU sealants"
+
+  - canonical: "crystalline_waterproofing"
+    taxonomy_ids: ["WP.CRY.001"]
+    site_terms: ["Xypex", "crystalline WP", "integral WP", "penetrating WP", "Krystol"]
+    contractor_shorthand: ["crystalline"]
+    common_misspellings: []
+    context_notes: "Brand names Xypex/Krystol used generically for crystalline systems"
+
+  - canonical: "waterproofing_admixture"
+    taxonomy_ids: ["WP.ADM.001"]
+    site_terms: ["WP admixture", "integral waterproofing", "Pidifin 2K", "Dr. Fixit Pidiproof", "concrete additive"]
+    contractor_shorthand: ["WP admix"]
+    common_misspellings: []
+    context_notes: "Added to concrete mix for integral waterproofing"
+
+  - canonical: "water_bar"
+    taxonomy_ids: ["WP.WB.001"]
+    site_terms: ["water bar", "water stop", "PVC water stop", "joint water bar", "nali band"]
+    contractor_shorthand: ["water bar"]
+    common_misspellings: ["waterbar"]
+    context_notes: "PVC or rubber strip placed at construction joints"
+
+  - canonical: "drainage_mat"
+    taxonomy_ids: ["WP.DM.001"]
+    site_terms: ["drainage mat", "drain board", "dimple sheet", "protection board", "geomembrane"]
+    contractor_shorthand: ["drain mat"]
+    common_misspellings: []
+    context_notes: "Protection + drainage layer over waterproofing membrane"
+
+  # ============================================================
+  # FLOORING (Expanded)
+  # ============================================================
+  - canonical: "tile_laying"
+    taxonomy_ids: ["FIN.FL.TL.001"]
+    site_terms: ["tile laying", "tiling work", "tile fitting", "tile lagana", "floor tiling"]
+    contractor_shorthand: ["tiling"]
+    common_misspellings: ["tile laying", "tileing"]
+    context_notes: "'Tile lagana' is universal Hindi site term"
+
+  - canonical: "marble_polishing"
+    taxonomy_ids: ["FIN.FL.MP.001"]
+    site_terms: ["marble polishing", "stone polishing", "diamond polishing", "mirror polish", "marble ghisai"]
+    contractor_shorthand: ["polishing"]
+    common_misspellings: ["marble pollishing"]
+    context_notes: "'Ghisai' = grinding/polishing in Hindi"
+
+  - canonical: "granite_fixing"
+    taxonomy_ids: ["FIN.FL.GF.001"]
+    site_terms: ["granite fixing", "granite cladding", "granite counter", "granite slab laying", "granite lagana"]
+    contractor_shorthand: ["granite"]
+    common_misspellings: ["granit"]
+    context_notes: "Includes countertops, flooring, and wall cladding"
+
+  - canonical: "anti_skid_tile"
+    taxonomy_ids: ["FIN.FL.AS.001"]
+    site_terms: ["anti-skid tile", "non-slip tile", "rough tile", "grip tile", "parking tile"]
+    contractor_shorthand: ["anti-skid"]
+    common_misspellings: ["anti skid", "antiskid"]
+    context_notes: "Used in ramps, balconies, bathrooms, and parking areas"
+
+  - canonical: "terrazzo_flooring"
+    taxonomy_ids: ["FIN.FL.TZ.001"]
+    site_terms: ["terrazzo", "mosaic floor", "chip floor", "marble chip", "mosaic tile"]
+    contractor_shorthand: ["terrazzo"]
+    common_misspellings: ["terazo"]
+    context_notes: "'Mosaic' commonly used on Indian sites for terrazzo"
+
+  - canonical: "screeding"
+    taxonomy_ids: ["FIN.FL.SC.001"]
+    site_terms: ["screeding", "floor screed", "levelling screed", "sand-cement screed", "base screed"]
+    contractor_shorthand: ["screed"]
+    common_misspellings: ["screading"]
+    context_notes: "Sand-cement layer to level floor before final finish"
+
+  - canonical: "self_levelling_compound"
+    taxonomy_ids: ["FIN.FL.SLC.001"]
+    site_terms: ["self levelling", "SLC", "self-levelling compound", "floor leveller", "flow screed"]
+    contractor_shorthand: ["SLC"]
+    common_misspellings: ["self leveling"]
+    context_notes: "Pumpable cementitious compound for perfectly level floors"
+
+  - canonical: "hardener_flooring"
+    taxonomy_ids: ["FIN.FL.HF.001"]
+    site_terms: ["floor hardener", "metallic hardener", "dry shake", "surface hardener", "Mastertop"]
+    contractor_shorthand: ["hardener"]
+    common_misspellings: []
+    context_notes: "'Mastertop' (BASF) used as generic term"
+
+  - canonical: "acid_resistant_tile"
+    taxonomy_ids: ["FIN.FL.ART.001"]
+    site_terms: ["acid-proof tile", "acid resistant tile", "chemical resistant", "lab tile", "acid brick"]
+    contractor_shorthand: ["acid tile"]
+    common_misspellings: ["acid proof"]
+    context_notes: "Used in laboratories, chemical plants, battery rooms"
+
+  - canonical: "carpet_flooring"
+    taxonomy_ids: ["FIN.FL.CF.001"]
+    site_terms: ["carpet", "carpet tile", "carpet laying", "broadloom", "office carpet"]
+    contractor_shorthand: ["carpet"]
+    common_misspellings: []
+    context_notes: "Primarily used in offices and hospitality"
+
+  - canonical: "vinyl_flooring"
+    taxonomy_ids: ["FIN.FL.VL.001"]
+    site_terms: ["vinyl floor", "vinyl tile", "LVT", "PVC flooring", "vinyl sheet"]
+    contractor_shorthand: ["vinyl"]
+    common_misspellings: ["vynal"]
+    context_notes: "LVT = luxury vinyl tile"
+
+  - canonical: "stone_cladding"
+    taxonomy_ids: ["FIN.FL.SCL.001"]
+    site_terms: ["stone cladding", "wall stone", "natural stone cladding", "elevation stone", "patthar lagana"]
+    contractor_shorthand: ["stone clad"]
+    common_misspellings: ["cladding"]
+    context_notes: "Stone fixed to walls for aesthetic or weather protection"
+
+  - canonical: "kota_stone_flooring"
+    taxonomy_ids: ["FIN.FL.KS.001"]
+    site_terms: ["kota stone", "kota floor", "kota slab", "kota patthar", "rough kota"]
+    contractor_shorthand: ["kota"]
+    common_misspellings: ["cotta stone"]
+    context_notes: "Limestone from Kota, Rajasthan; common in govt buildings"
+
+  - canonical: "staircase_tiling"
+    taxonomy_ids: ["FIN.FL.ST.001"]
+    site_terms: ["staircase tile", "step tile", "riser tile", "tread tile", "stair nosing"]
+    contractor_shorthand: ["stair tile"]
+    common_misspellings: []
+    context_notes: "Tread + riser tiling with nosing strip"
+
+  # ============================================================
+  # PAINTING (Expanded)
+  # ============================================================
+  - canonical: "painting_work"
+    taxonomy_ids: ["FIN.PA.GEN.001"]
+    site_terms: ["painting work", "paint kaam", "rangai", "colour work", "paint job"]
+    contractor_shorthand: ["paint"]
+    common_misspellings: ["paintng"]
+    context_notes: "'Rangai' and 'paint kaam' common Hindi site terms"
+
+  - canonical: "putty_filling"
+    taxonomy_ids: ["FIN.PA.PF.001"]
+    site_terms: ["putty filling", "putty work", "wall levelling", "putty lagana", "surface filling"]
+    contractor_shorthand: ["putty"]
+    common_misspellings: ["puttey filling"]
+    context_notes: "2-3 coats of putty before primer for smooth finish"
+
+  - canonical: "whitewashing"
+    taxonomy_ids: ["FIN.PA.WW.001"]
+    site_terms: ["whitewash", "chuna paint", "lime wash", "safedi", "white coating"]
+    contractor_shorthand: ["whitewash"]
+    common_misspellings: ["white wash"]
+    context_notes: "'Safedi' and 'chuna paint' used on govt/PWD sites"
+
+  - canonical: "ceiling_painting"
+    taxonomy_ids: ["FIN.PA.CP.001"]
+    site_terms: ["ceiling paint", "roof paint", "soffit paint", "ceiling emulsion", "upar ki paint"]
+    contractor_shorthand: ["ceiling paint"]
+    common_misspellings: []
+    context_notes: "Usually flat/matt emulsion for ceilings"
+
+  - canonical: "metal_painting"
+    taxonomy_ids: ["FIN.PA.MP.001"]
+    site_terms: ["metal paint", "MS painting", "grill paint", "railing paint", "steel painting", "red oxide"]
+    contractor_shorthand: ["metal paint"]
+    common_misspellings: []
+    context_notes: "Red oxide primer + enamel finish for MS surfaces"
+
+  - canonical: "epoxy_paint"
+    taxonomy_ids: ["FIN.PA.EP.001"]
+    site_terms: ["epoxy paint", "two-pack paint", "floor paint", "epoxy wall", "chemical resistant paint"]
+    contractor_shorthand: ["epoxy paint"]
+    common_misspellings: []
+    context_notes: "Used for car parks, hospitals, clean rooms"
+
+  - canonical: "stainer_work"
+    taxonomy_ids: ["FIN.PA.STN.001"]
+    site_terms: ["stainer", "colour stainer", "shade matching", "tinting", "colour mixing"]
+    contractor_shorthand: ["stainer"]
+    common_misspellings: []
+    context_notes: "Colour pigments mixed on site for exact shade"
+
+  - canonical: "anti_fungal_paint"
+    taxonomy_ids: ["FIN.PA.AF.001"]
+    site_terms: ["anti fungal paint", "anti-mold paint", "damp wall paint", "fungus proof", "selan proof paint"]
+    contractor_shorthand: ["anti fungal"]
+    common_misspellings: ["anti fungul"]
+    context_notes: "For walls prone to dampness and fungal growth"
+
+  - canonical: "heat_reflective_paint"
+    taxonomy_ids: ["FIN.PA.HR.001"]
+    site_terms: ["cool roof paint", "heat reflective", "roof coat", "solar reflective", "SRI paint"]
+    contractor_shorthand: ["cool paint"]
+    common_misspellings: []
+    context_notes: "Applied on terrace/roof for heat reduction; SRI = Solar Reflectance Index"
+
+  - canonical: "road_marking_paint"
+    taxonomy_ids: ["FIN.PA.RM.001"]
+    site_terms: ["road marking", "line marking", "parking marking", "thermoplastic marking", "floor marking"]
+    contractor_shorthand: ["marking"]
+    common_misspellings: []
+    context_notes: "Thermoplastic or cold-applied paint for roads and parking"
+
+  # ============================================================
+  # DOORS & WINDOWS (Expanded)
+  # ============================================================
+  - canonical: "fire_rated_door"
+    taxonomy_ids: ["DW.FD.FR.001"]
+    site_terms: ["fire door", "fire rated door", "2-hour door", "fire resistant door", "FR door"]
+    contractor_shorthand: ["fire door"]
+    common_misspellings: ["fire ratted door"]
+    context_notes: "Rated in hours - 1HR, 2HR most common"
+
+  - canonical: "upvc_window"
+    taxonomy_ids: ["DW.UW.GEN.001"]
+    site_terms: ["UPVC window", "plastic window", "Fenesta", "double glazed window", "thermal break window"]
+    contractor_shorthand: ["UPVC"]
+    common_misspellings: ["uPVC", "U-PVC"]
+    context_notes: "'Fenesta' used as generic term for UPVC windows"
+
+  - canonical: "door_shutter"
+    taxonomy_ids: ["DW.DS.GEN.001"]
+    site_terms: ["shutter", "door shutter", "palla", "door leaf", "panel"]
+    contractor_shorthand: ["shutter"]
+    common_misspellings: []
+    context_notes: "'Palla' is Hindi for door leaf/shutter"
+
+  - canonical: "window_grille"
+    taxonomy_ids: ["DW.WG.GEN.001"]
+    site_terms: ["grille", "window grille", "safety grille", "MS grille", "jangla", "grill"]
+    contractor_shorthand: ["grille"]
+    common_misspellings: ["gril"]
+    context_notes: "'Jangla' also used for window grilles in Hindi"
+
+  - canonical: "lock_fitting"
+    taxonomy_ids: ["DW.LF.GEN.001"]
+    site_terms: ["lock fitting", "lock lagana", "mortice lock", "cylindrical lock", "tala fitting"]
+    contractor_shorthand: ["lock"]
+    common_misspellings: ["mortise"]
+    context_notes: "'Tala' is Hindi for lock"
+
+  - canonical: "door_closer"
+    taxonomy_ids: ["DW.DC.GEN.001"]
+    site_terms: ["door closer", "hydraulic closer", "floor spring", "auto closer", "Dorma closer"]
+    contractor_shorthand: ["closer"]
+    common_misspellings: ["door closser"]
+    context_notes: "'Dorma' (Dormakaba) used as generic brand term"
+
+  - canonical: "panic_bar"
+    taxonomy_ids: ["DW.PB.GEN.001"]
+    site_terms: ["panic bar", "panic hardware", "crash bar", "exit device", "push bar"]
+    contractor_shorthand: ["panic bar"]
+    common_misspellings: ["pannic bar"]
+    context_notes: "Required on fire exit doors per NBC"
+
+  - canonical: "roller_shutter"
+    taxonomy_ids: ["DW.RS.GEN.001"]
+    site_terms: ["rolling shutter", "roller shutter", "MS rolling shutter", "shop shutter", "motorized shutter"]
+    contractor_shorthand: ["rolling shutter"]
+    common_misspellings: ["roling shutter"]
+    context_notes: "Common for commercial/parking/service areas"
+
+  - canonical: "glass_door"
+    taxonomy_ids: ["DW.GD.GEN.001"]
+    site_terms: ["glass door", "toughened glass door", "frameless door", "patch fitting door", "swing glass door"]
+    contractor_shorthand: ["glass door"]
+    common_misspellings: ["toughned"]
+    context_notes: "Patch fittings used for frameless glass doors"
+
+  - canonical: "sliding_door"
+    taxonomy_ids: ["DW.SD.GEN.001"]
+    site_terms: ["sliding door", "slider", "track door", "patio door", "balcony slider"]
+    contractor_shorthand: ["slider"]
+    common_misspellings: ["slidding"]
+    context_notes: "Aluminium or UPVC track-based sliding systems"
+
+  - canonical: "main_entrance_door"
+    taxonomy_ids: ["DW.ME.GEN.001"]
+    site_terms: ["main door", "entrance door", "mukhya darwaza", "security door", "front door"]
+    contractor_shorthand: ["main door"]
+    common_misspellings: []
+    context_notes: "'Mukhya darwaza' used in Hindi; typically solid wood or veneer"
+
+  - canonical: "ventilator"
+    taxonomy_ids: ["DW.VN.GEN.001"]
+    site_terms: ["ventilator", "roshandaan", "air vent", "louvre", "toilet ventilator"]
+    contractor_shorthand: ["ventilator"]
+    common_misspellings: ["ventilater"]
+    context_notes: "'Roshandaan' is Hindi for ventilator/skylight"
+
+  - canonical: "skylight"
+    taxonomy_ids: ["DW.SL.GEN.001"]
+    site_terms: ["skylight", "roof light", "dome light", "polycarbonate dome", "glass skylight"]
+    contractor_shorthand: ["skylight"]
+    common_misspellings: ["sky light"]
+    context_notes: "Polycarbonate domes common in Indian construction"
+
+  - canonical: "automatic_door"
+    taxonomy_ids: ["DW.AD.GEN.001"]
+    site_terms: ["automatic door", "auto door", "sensor door", "sliding auto door", "Dorma auto"]
+    contractor_shorthand: ["auto door"]
+    common_misspellings: []
+    context_notes: "Sensor-operated sliding or swing doors for lobbies"
+
+  - canonical: "louver_panel"
+    taxonomy_ids: ["DW.LP.GEN.001"]
+    site_terms: ["louver", "louvre panel", "ventilation louver", "aluminium louver", "air grille"]
+    contractor_shorthand: ["louver"]
+    common_misspellings: ["loover", "louvar"]
+    context_notes: "Fixed or adjustable for ventilation in AHU rooms, electrical panels"
+
+  # ============================================================
+  # PLUMBING (Expanded)
+  # ============================================================
+  - canonical: "pipe_fitting"
+    taxonomy_ids: ["PLB.PF.GEN.001"]
+    site_terms: ["pipe fitting", "fitting work", "nali jodna", "pipe jointing", "pipe connection"]
+    contractor_shorthand: ["fitting"]
+    common_misspellings: ["fiting"]
+    context_notes: "General term for all pipe joint and connection work"
+
+  - canonical: "sewage_line"
+    taxonomy_ids: ["PLB.SL.GEN.001"]
+    site_terms: ["sewage line", "sewer line", "main drain", "ganda paani line", "outfall line"]
+    contractor_shorthand: ["sewer"]
+    common_misspellings: ["sewerage line"]
+    context_notes: "'Ganda paani line' used on Hindi-belt sites"
+
+  - canonical: "sanitary_installation"
+    taxonomy_ids: ["PLB.SI.GEN.001"]
+    site_terms: ["sanitary work", "sanitary fitting", "bathroom fitting", "sanitary lagana", "fixture installation"]
+    contractor_shorthand: ["sanitary"]
+    common_misspellings: ["sanitery"]
+    context_notes: "Installation of WC, basin, urinal, and accessories"
+
+  - canonical: "cistern"
+    taxonomy_ids: ["PLB.CS.GEN.001"]
+    site_terms: ["cistern", "flush tank", "concealed cistern", "dual flush", "flush system"]
+    contractor_shorthand: ["cistern"]
+    common_misspellings: ["cisteren"]
+    context_notes: "Exposed, semi-concealed, or fully concealed types"
+
+  - canonical: "shower_mixer"
+    taxonomy_ids: ["PLB.SM.GEN.001"]
+    site_terms: ["shower mixer", "diverter", "bath mixer", "rain shower", "overhead shower"]
+    contractor_shorthand: ["mixer"]
+    common_misspellings: []
+    context_notes: "Diverter switches water between showerhead and tap"
+
+  - canonical: "interceptor_trap"
+    taxonomy_ids: ["PLB.IT.GEN.001"]
+    site_terms: ["interceptor trap", "gully trap", "P-trap", "S-trap", "anti-siphon trap"]
+    contractor_shorthand: ["trap"]
+    common_misspellings: []
+    context_notes: "Prevents sewer gas from entering building"
+
+  - canonical: "water_meter"
+    taxonomy_ids: ["PLB.WM.GEN.001"]
+    site_terms: ["water meter", "flow meter", "bulk meter", "sub meter", "paani ka meter"]
+    contractor_shorthand: ["meter"]
+    common_misspellings: []
+    context_notes: "Individual and bulk metering for water accounting"
+
+  - canonical: "pipe_insulation"
+    taxonomy_ids: ["PLB.PI.GEN.001"]
+    site_terms: ["pipe insulation", "pipe lagging", "nitrile insulation", "pipe cladding", "foam insulation"]
+    contractor_shorthand: ["insulation"]
+    common_misspellings: ["insullation"]
+    context_notes: "Required for chilled water and hot water pipes"
+
+  - canonical: "valve"
+    taxonomy_ids: ["PLB.VL.GEN.001"]
+    site_terms: ["valve", "gate valve", "ball valve", "check valve", "butterfly valve", "NRV"]
+    contractor_shorthand: ["valve"]
+    common_misspellings: []
+    context_notes: "NRV = non-return valve; prevents backflow"
+
+  - canonical: "urinal"
+    taxonomy_ids: ["PLB.SF.UR.001"]
+    site_terms: ["urinal", "gents urinal", "waterless urinal", "sensor urinal", "wall-hung urinal"]
+    contractor_shorthand: ["urinal"]
+    common_misspellings: ["urinal"]
+    context_notes: "Sensor and waterless types increasingly common"
+
+  - canonical: "bidet_spray"
+    taxonomy_ids: ["PLB.BS.GEN.001"]
+    site_terms: ["bidet spray", "health faucet", "jet spray", "bum gun", "toilet spray"]
+    contractor_shorthand: ["jet spray"]
+    common_misspellings: []
+    context_notes: "'Health faucet' is the Indian market term"
+
+  - canonical: "sump_pump"
+    taxonomy_ids: ["PLB.SP.GEN.001"]
+    site_terms: ["sump pump", "basement pump", "submersible pump", "sewage pump", "lift station"]
+    contractor_shorthand: ["sump pump"]
+    common_misspellings: []
+    context_notes: "Required in basements below sewer invert level"
+
+  - canonical: "fire_hydrant_pipe"
+    taxonomy_ids: ["PLB.FHP.GEN.001"]
+    site_terms: ["hydrant pipe", "fire line", "MS hydrant pipe", "riser pipe", "wet riser"]
+    contractor_shorthand: ["fire line"]
+    common_misspellings: []
+    context_notes: "MS (mild steel) pipes for fire fighting system"
+
+  # ============================================================
+  # ELECTRICAL (Expanded)
+  # ============================================================
+  - canonical: "lightning_arrestor"
+    taxonomy_ids: ["ELE.LA.GEN.001"]
+    site_terms: ["lightning arrestor", "LA", "lightning rod", "surge protector", "bijli ka rod"]
+    contractor_shorthand: ["LA"]
+    common_misspellings: ["lightening arrestor", "lightning arrester"]
+    context_notes: "Required for buildings above 15m as per IS 2309"
+
+  - canonical: "busbar_trunking"
+    taxonomy_ids: ["ELE.BT.GEN.001"]
+    site_terms: ["busbar", "bus duct", "busbar trunking", "rising main", "electrical busbar"]
+    contractor_shorthand: ["busbar"]
+    common_misspellings: ["bus bar"]
+    context_notes: "Vertical power distribution in high-rise buildings"
+
+  - canonical: "transformer"
+    taxonomy_ids: ["ELE.TR.GEN.001"]
+    site_terms: ["transformer", "TC", "transformer center", "substation", "HT/LT"]
+    contractor_shorthand: ["TC", "transformer"]
+    common_misspellings: ["transformar"]
+    context_notes: "TC = transformer center; HT = high tension, LT = low tension"
+
+  - canonical: "electrical_panel"
+    taxonomy_ids: ["ELE.EP.GEN.001"]
+    site_terms: ["panel", "control panel", "MCC panel", "PCC panel", "APFC panel"]
+    contractor_shorthand: ["panel"]
+    common_misspellings: []
+    context_notes: "MCC=Motor Control Center; PCC=Power Control Center; APFC=Auto Power Factor Correction"
+
+  - canonical: "cable_laying"
+    taxonomy_ids: ["ELE.CL.GEN.001"]
+    site_terms: ["cable pulling", "cable laying", "cable routing", "cable installation", "tar daalna"]
+    contractor_shorthand: ["cable"]
+    common_misspellings: []
+    context_notes: "'Tar daalna' = laying cable in Hindi"
+
+  - canonical: "junction_box"
+    taxonomy_ids: ["ELE.JB.GEN.001"]
+    site_terms: ["junction box", "JB", "pull box", "connector box", "biscuit box"]
+    contractor_shorthand: ["JB"]
+    common_misspellings: []
+    context_notes: "'Biscuit box' is informal Indian site term for small JB"
+
+  - canonical: "changeover_switch"
+    taxonomy_ids: ["ELE.CO.GEN.001"]
+    site_terms: ["changeover", "changeover switch", "transfer switch", "ATS", "auto changeover"]
+    contractor_shorthand: ["changeover"]
+    common_misspellings: ["change over"]
+    context_notes: "ATS = automatic transfer switch between mains and DG"
+
+  - canonical: "energy_meter"
+    taxonomy_ids: ["ELE.EM.GEN.001"]
+    site_terms: ["energy meter", "electric meter", "bijli ka meter", "sub meter", "smart meter"]
+    contractor_shorthand: ["meter"]
+    common_misspellings: []
+    context_notes: "Individual and common area metering"
+
+  - canonical: "street_light"
+    taxonomy_ids: ["ELE.SL.GEN.001"]
+    site_terms: ["street light", "road light", "pole light", "area light", "compound light"]
+    contractor_shorthand: ["SL"]
+    common_misspellings: ["street lite"]
+    context_notes: "Includes pole, luminaire, and cabling"
+
+  - canonical: "lt_panel"
+    taxonomy_ids: ["ELE.LTP.GEN.001"]
+    site_terms: ["LT panel", "low tension panel", "main LT panel", "incomer panel"]
+    contractor_shorthand: ["LTP", "LT"]
+    common_misspellings: []
+    context_notes: "Main power distribution panel downstream of transformer"
+
+  - canonical: "electrical_testing"
+    taxonomy_ids: ["ELE.ET.GEN.001"]
+    site_terms: ["megger test", "insulation test", "earth resistance", "IR value", "cable testing"]
+    contractor_shorthand: ["megger"]
+    common_misspellings: ["meger"]
+    context_notes: "'Megger' is brand name used generically for insulation resistance tester"
+
+  - canonical: "intercom_system"
+    taxonomy_ids: ["ELE.IC.GEN.001"]
+    site_terms: ["intercom", "video door phone", "VDP", "door phone", "visitor entry system"]
+    contractor_shorthand: ["intercom"]
+    common_misspellings: []
+    context_notes: "VDP = video door phone; standard in residential"
+
+  - canonical: "pa_system"
+    taxonomy_ids: ["ELE.PA.GEN.001"]
+    site_terms: ["PA system", "public address", "speaker system", "announcement system", "BGM"]
+    contractor_shorthand: ["PA"]
+    common_misspellings: []
+    context_notes: "BGM = background music system"
+
+  # ============================================================
+  # HVAC (Expanded)
+  # ============================================================
+  - canonical: "ac_installation"
+    taxonomy_ids: ["HVAC.AI.GEN.001"]
+    site_terms: ["AC installation", "AC fitting", "AC lagana", "indoor unit fitting", "outdoor unit mounting"]
+    contractor_shorthand: ["AC install"]
+    common_misspellings: ["instalation"]
+    context_notes: "Includes indoor, outdoor unit, piping, drainage, and electrical"
+
+  - canonical: "chiller_plant"
+    taxonomy_ids: ["HVAC.CP.GEN.001"]
+    site_terms: ["chiller", "chiller plant", "chiller room", "chilled water plant", "cooling plant"]
+    contractor_shorthand: ["chiller"]
+    common_misspellings: ["chiller"]
+    context_notes: "Central chilled water system for large buildings"
+
+  - canonical: "cooling_tower"
+    taxonomy_ids: ["HVAC.CT.GEN.001"]
+    site_terms: ["cooling tower", "CT", "condenser water", "tower", "FRP tower"]
+    contractor_shorthand: ["CT"]
+    common_misspellings: []
+    context_notes: "FRP = fibre reinforced plastic; common tower material"
+
+  - canonical: "thermostat"
+    taxonomy_ids: ["HVAC.TH.GEN.001"]
+    site_terms: ["thermostat", "room controller", "AC controller", "temperature controller", "digital thermostat"]
+    contractor_shorthand: ["stat"]
+    common_misspellings: ["thermostate"]
+    context_notes: "Controls temperature for individual zones"
+
+  - canonical: "ventilation_system"
+    taxonomy_ids: ["HVAC.VS.GEN.001"]
+    site_terms: ["ventilation", "fresh air", "mechanical ventilation", "FAHU", "fresh air system"]
+    contractor_shorthand: ["ventilation"]
+    common_misspellings: ["ventillation"]
+    context_notes: "FAHU = fresh air handling unit"
+
+  - canonical: "duct_insulation"
+    taxonomy_ids: ["HVAC.DI.GEN.001"]
+    site_terms: ["duct insulation", "duct lagging", "duct wrap", "thermal insulation", "nitrile duct wrap"]
+    contractor_shorthand: ["duct insulation"]
+    common_misspellings: []
+    context_notes: "Prevents condensation and heat gain/loss in ducts"
+
+  - canonical: "diffuser"
+    taxonomy_ids: ["HVAC.DF.GEN.001"]
+    site_terms: ["diffuser", "AC diffuser", "ceiling diffuser", "supply grille", "return grille"]
+    contractor_shorthand: ["diffuser"]
+    common_misspellings: ["diffusor"]
+    context_notes: "Air distribution terminal at ceiling or wall"
+
+  - canonical: "smoke_exhaust_system"
+    taxonomy_ids: ["HVAC.SE.GEN.001"]
+    site_terms: ["smoke exhaust", "smoke extraction", "basement exhaust", "staircase pressurization", "jet fan"]
+    contractor_shorthand: ["smoke exh"]
+    common_misspellings: []
+    context_notes: "Jet fans common in basement parking ventilation"
+
+  - canonical: "hvac_controls"
+    taxonomy_ids: ["HVAC.HC.GEN.001"]
+    site_terms: ["HVAC controls", "DDC controls", "BMS integration", "VAV control", "chiller automation"]
+    contractor_shorthand: ["controls"]
+    common_misspellings: []
+    context_notes: "DDC = direct digital control; VAV = variable air volume"
+
+  - canonical: "vrf_piping"
+    taxonomy_ids: ["HVAC.VP.GEN.001"]
+    site_terms: ["VRF piping", "VRV piping", "refrigerant line", "copper piping", "AC gas line"]
+    contractor_shorthand: ["VRF pipe"]
+    common_misspellings: []
+    context_notes: "Copper piping network connecting outdoor to indoor units"
+
+  # ============================================================
+  # FIRE SAFETY (Expanded)
+  # ============================================================
+  - canonical: "fire_fighting_system"
+    taxonomy_ids: ["FP.FF.GEN.001"]
+    site_terms: ["fire fighting", "fire protection", "FF system", "aag bujhane ka system", "fire safety"]
+    contractor_shorthand: ["FF"]
+    common_misspellings: ["fire figting"]
+    context_notes: "Umbrella term for all fire suppression systems"
+
+  - canonical: "fire_pump_room"
+    taxonomy_ids: ["FP.FPR.GEN.001"]
+    site_terms: ["fire pump", "jockey pump", "fire pump room", "booster pump", "main fire pump"]
+    contractor_shorthand: ["fire pump"]
+    common_misspellings: []
+    context_notes: "Jockey pump maintains line pressure; main pump for fire events"
+
+  - canonical: "wet_riser_system"
+    taxonomy_ids: ["FP.WR.GEN.001"]
+    site_terms: ["wet riser", "standpipe", "riser pipe", "fire riser", "landing valve"]
+    contractor_shorthand: ["riser"]
+    common_misspellings: []
+    context_notes: "Vertical pipe always charged with water; landing valve at each floor"
+
+  - canonical: "fire_suppression_system"
+    taxonomy_ids: ["FP.FS.GEN.001"]
+    site_terms: ["suppression system", "gas suppression", "FM200", "Novec", "clean agent"]
+    contractor_shorthand: ["suppression"]
+    common_misspellings: []
+    context_notes: "FM200/Novec used in server rooms, electrical panels"
+
+  - canonical: "smoke_management"
+    taxonomy_ids: ["FP.SM.GEN.001"]
+    site_terms: ["smoke management", "pressurization", "staircase pressurization", "lobby pressurization"]
+    contractor_shorthand: ["pressurization"]
+    common_misspellings: ["pressurisation"]
+    context_notes: "Positive pressure in escape routes to prevent smoke entry"
+
+  - canonical: "fire_rated_wall"
+    taxonomy_ids: ["FP.FW.GEN.001"]
+    site_terms: ["fire wall", "fire rated wall", "fire barrier", "fire separation", "2-hour wall"]
+    contractor_shorthand: ["fire wall"]
+    common_misspellings: ["fire ratted wall"]
+    context_notes: "Rated in hours; required between fire compartments"
+
+  - canonical: "fire_damper"
+    taxonomy_ids: ["FP.FD.GEN.001"]
+    site_terms: ["fire damper", "smoke damper", "FSD", "fusible link damper", "motorized damper"]
+    contractor_shorthand: ["FD", "FSD"]
+    common_misspellings: []
+    context_notes: "FSD = fire smoke damper; installed at duct penetrations through fire walls"
+
+  - canonical: "addressable_fire_alarm"
+    taxonomy_ids: ["FP.AFA.GEN.001"]
+    site_terms: ["addressable alarm", "fire alarm panel", "FACP", "MCP", "hooter"]
+    contractor_shorthand: ["FACP"]
+    common_misspellings: []
+    context_notes: "FACP=Fire Alarm Control Panel; MCP=Manual Call Point"
+
+  - canonical: "emergency_exit_light"
+    taxonomy_ids: ["FP.EL.GEN.001"]
+    site_terms: ["exit light", "emergency light", "exit sign", "escape route light", "battery light"]
+    contractor_shorthand: ["exit light"]
+    common_misspellings: []
+    context_notes: "Mandatory per NBC along all escape routes"
+
+  - canonical: "fire_sealant"
+    taxonomy_ids: ["FP.FSL.GEN.001"]
+    site_terms: ["fire sealant", "fire stop", "intumescent sealant", "pipe collar", "fire caulk"]
+    contractor_shorthand: ["fire stop"]
+    common_misspellings: ["fire sealent"]
+    context_notes: "Applied at all penetrations through fire-rated assemblies"
+
+  # ============================================================
+  # EXTERNAL WORKS (Expanded)
+  # ============================================================
+  - canonical: "compound_gate"
+    taxonomy_ids: ["CIV.CG.GEN.001"]
+    site_terms: ["compound gate", "main gate", "entry gate", "MS gate", "automatic gate"]
+    contractor_shorthand: ["gate"]
+    common_misspellings: []
+    context_notes: "MS fabricated or automatic sliding/swing types"
+
+  - canonical: "drain_construction"
+    taxonomy_ids: ["CIV.DC.GEN.001"]
+    site_terms: ["drain work", "nala work", "open drain", "covered drain", "storm drain"]
+    contractor_shorthand: ["drain"]
+    common_misspellings: ["drein"]
+    context_notes: "'Nala' is universal Hindi term for drain/channel"
+
+  - canonical: "fencing_work"
+    taxonomy_ids: ["CIV.FN.GEN.001"]
+    site_terms: ["fencing", "chain link fence", "barbed wire", "GI fencing", "boundary fence", "taar fencing"]
+    contractor_shorthand: ["fencing"]
+    common_misspellings: ["fensing"]
+    context_notes: "'Taar' = wire in Hindi"
+
+  - canonical: "landscaping"
+    taxonomy_ids: ["CIV.LS.GEN.001"]
+    site_terms: ["landscaping", "garden work", "lawn work", "bageechi", "softscape", "hardscape"]
+    contractor_shorthand: ["landscape"]
+    common_misspellings: ["landscapping"]
+    context_notes: "Softscape=planting; hardscape=pathways, walls, features"
+
+  - canonical: "tree_planting"
+    taxonomy_ids: ["CIV.TP.GEN.001"]
+    site_terms: ["tree planting", "plantation", "sapling planting", "ped lagana", "avenue planting"]
+    contractor_shorthand: ["plantation"]
+    common_misspellings: []
+    context_notes: "'Ped lagana' = planting trees in Hindi"
+
+  - canonical: "parking_area"
+    taxonomy_ids: ["CIV.PA.GEN.001"]
+    site_terms: ["parking work", "parking lot", "car park", "parking slab", "parking area"]
+    contractor_shorthand: ["parking"]
+    common_misspellings: []
+    context_notes: "Includes floor, marking, curbing, and drainage"
+
+  - canonical: "retaining_wall"
+    taxonomy_ids: ["CIV.RW.GEN.001"]
+    site_terms: ["retaining wall", "RW", "earth retaining", "gabion wall", "breast wall"]
+    contractor_shorthand: ["retaining"]
+    common_misspellings: ["retainning"]
+    context_notes: "Gabion walls common in hilly terrain"
+
+  - canonical: "flagpole"
+    taxonomy_ids: ["CIV.FP.GEN.001"]
+    site_terms: ["flag pole", "flag mast", "jhanda", "mast", "flagstaff"]
+    contractor_shorthand: ["flag pole"]
+    common_misspellings: ["flag poll"]
+    context_notes: "'Jhanda' = flag in Hindi; required in govt and institutional buildings"
+
+  - canonical: "ramp_construction"
+    taxonomy_ids: ["CIV.RC.GEN.001"]
+    site_terms: ["ramp", "vehicle ramp", "wheelchair ramp", "slope", "disabled ramp"]
+    contractor_shorthand: ["ramp"]
+    common_misspellings: []
+    context_notes: "Vehicle ramps for parking; accessible ramps per NBC norms"
+
+  - canonical: "stormwater_drain"
+    taxonomy_ids: ["CIV.SW.GEN.001"]
+    site_terms: ["stormwater drain", "SWD", "rain drain", "surface drain", "catch pit"]
+    contractor_shorthand: ["SWD"]
+    common_misspellings: ["storm water"]
+    context_notes: "Collects and diverts rainwater runoff"
+
+  - canonical: "guard_house"
+    taxonomy_ids: ["CIV.GH.GEN.001"]
+    site_terms: ["guard room", "security cabin", "guard house", "watchman cabin", "chowki"]
+    contractor_shorthand: ["guard room"]
+    common_misspellings: []
+    context_notes: "'Chowki' is Hindi for guard post/cabin"
+
+  - canonical: "bollard"
+    taxonomy_ids: ["CIV.BL.GEN.001"]
+    site_terms: ["bollard", "safety bollard", "vehicle barrier", "post", "crash bollard"]
+    contractor_shorthand: ["bollard"]
+    common_misspellings: ["bolard"]
+    context_notes: "Fixed or retractable posts for vehicle control"
+
+  - canonical: "open_area_drain_cover"
+    taxonomy_ids: ["CIV.GR.GEN.001"]
+    site_terms: ["drain cover", "grating", "trench grating", "MS grating", "FRP grating"]
+    contractor_shorthand: ["grating"]
+    common_misspellings: ["gratting"]
+    context_notes: "MS or FRP gratings over open drains and trenches"
+
+  - canonical: "signage_work"
+    taxonomy_ids: ["CIV.SG.GEN.001"]
+    site_terms: ["signage", "name board", "directional sign", "way finding", "building signage"]
+    contractor_shorthand: ["signage"]
+    common_misspellings: ["signege"]
+    context_notes: "Includes building name, floor numbers, directional, and safety signs"
+
+  - canonical: "water_feature"
+    taxonomy_ids: ["CIV.WF.GEN.001"]
+    site_terms: ["water feature", "fountain", "cascade", "water body", "decorative fountain"]
+    contractor_shorthand: ["fountain"]
+    common_misspellings: ["fountian"]
+    context_notes: "Includes pump, basin, lighting, and waterproofing"
+
+  # ============================================================
+  # MISCELLANEOUS (Expanded)
+  # ============================================================
+  - canonical: "site_office"
+    taxonomy_ids: ["MISC.SO.GEN.001"]
+    site_terms: ["site office", "field office", "project office", "contractor cabin", "portable cabin"]
+    contractor_shorthand: ["site office"]
+    common_misspellings: []
+    context_notes: "Prefab cabins commonly used as site offices"
+
+  - canonical: "safety_equipment"
+    taxonomy_ids: ["MISC.SE.GEN.001"]
+    site_terms: ["safety gear", "PPE", "helmet", "safety shoes", "harness", "suraksha saman"]
+    contractor_shorthand: ["PPE"]
+    common_misspellings: []
+    context_notes: "PPE = personal protective equipment"
+
+  - canonical: "barricade"
+    taxonomy_ids: ["MISC.BR.GEN.001"]
+    site_terms: ["barricade", "safety barricade", "hoarding", "site barricading", "GI sheet hoarding"]
+    contractor_shorthand: ["barricade"]
+    common_misspellings: ["barricad"]
+    context_notes: "'Hoarding' used for GI sheet perimeter barricading"
+
+  - canonical: "debris_removal"
+    taxonomy_ids: ["MISC.DR.GEN.001"]
+    site_terms: ["debris removal", "malabar", "cleaning", "site clearing", "kachra hatana"]
+    contractor_shorthand: ["clearing"]
+    common_misspellings: []
+    context_notes: "'Malabar' and 'kachra hatana' are common Hindi terms"
+
+  - canonical: "mock_up"
+    taxonomy_ids: ["MISC.MU.GEN.001"]
+    site_terms: ["mock-up", "sample room", "model flat", "sample flat", "trial room"]
+    contractor_shorthand: ["mock-up"]
+    common_misspellings: ["mockup", "mock up"]
+    context_notes: "Full-scale sample of finishes for client approval"
+
+  - canonical: "survey_work"
+    taxonomy_ids: ["MISC.SW.GEN.001"]
+    site_terms: ["survey", "land survey", "total station", "level survey", "napai"]
+    contractor_shorthand: ["survey"]
+    common_misspellings: []
+    context_notes: "'Napai' = measurement/survey in Hindi"
+
+  - canonical: "demolition"
+    taxonomy_ids: ["MISC.DM.GEN.001"]
+    site_terms: ["demolition", "breaking", "todna", "dismantling", "removal work", "todi phodi", "knock down", "demo work"]
+    contractor_shorthand: ["demo"]
+    common_misspellings: ["demolision", "demolishion", "demolation"]
+    context_notes: "'Todna' = breaking in Hindi; 'todi phodi' = break and demolish"
+
+  - canonical: "shuttering_oil"
+    taxonomy_ids: ["MISC.SO.OIL.001"]
+    site_terms: ["shuttering oil", "mould oil", "release agent", "form oil", "tel lagana"]
+    contractor_shorthand: ["shut oil"]
+    common_misspellings: []
+    context_notes: "Applied to formwork before concrete pour for easy de-shuttering"
+
+  - canonical: "sealant_work"
+    taxonomy_ids: ["MISC.SL.GEN.001"]
+    site_terms: ["sealant", "silicone", "weather sealant", "joint sealant", "gap filling"]
+    contractor_shorthand: ["sealant"]
+    common_misspellings: ["sealent"]
+    context_notes: "Silicone sealant for window/door/bathroom joints"
+
+  - canonical: "access_control"
+    taxonomy_ids: ["SEC.AC.GEN.001"]
+    site_terms: ["access control", "card reader", "biometric", "boom barrier", "turnstile"]
+    contractor_shorthand: ["access"]
+    common_misspellings: []
+    context_notes: "Electronic entry control systems for buildings"
+
+  - canonical: "fire_escape_staircase"
+    taxonomy_ids: ["STR.FES.GEN.001"]
+    site_terms: ["fire escape", "fire staircase", "emergency staircase", "external staircase", "escape route"]
+    contractor_shorthand: ["fire escape"]
+    common_misspellings: []
+    context_notes: "Separate pressurized staircase per NBC fire safety"
+
+  - canonical: "swimming_pool"
+    taxonomy_ids: ["MISC.SP.GEN.001"]
+    site_terms: ["swimming pool", "pool", "pool work", "filtration plant", "pool deck"]
+    contractor_shorthand: ["pool"]
+    common_misspellings: []
+    context_notes: "Includes structure, WP, tiling, filtration, and deck"
+
+  - canonical: "septic_tank"
+    taxonomy_ids: ["PLB.ST.GEN.001"]
+    site_terms: ["septic tank", "soak pit", "leach pit", "septic system", "gaddha"]
+    contractor_shorthand: ["septic"]
+    common_misspellings: ["septic tanck"]
+    context_notes: "'Gaddha' used informally; soak pit for effluent dispersal"
+
+  - canonical: "cable_trench"
+    taxonomy_ids: ["ELE.CTR.GEN.001"]
+    site_terms: ["cable trench", "HT trench", "LT trench", "electrical trench", "cable route"]
+    contractor_shorthand: ["cable trench"]
+    common_misspellings: []
+    context_notes: "Below-ground route for power cables"
+
+  - canonical: "plinth_protection"
+    taxonomy_ids: ["CIV.PP.GEN.001"]
+    site_terms: ["plinth protection", "apron", "CC apron", "building apron", "toe protection", "PP", "perimeter apron", "plinth apron", "concrete apron"]
+    contractor_shorthand: ["apron", "PP"]
+    common_misspellings: []
+    context_notes: "Concrete apron around building base to prevent water ingress and soil erosion"
+
+  - canonical: "joint_filler"
+    taxonomy_ids: ["FIN.JF.GEN.001"]
+    site_terms: ["joint filler", "expansion filler", "bitumen filler", "foam strip", "compressible filler"]
+    contractor_shorthand: ["filler"]
+    common_misspellings: []
+    context_notes: "Pre-formed filler boards for expansion joints"
+
+  - canonical: "gc_sheet_roofing"
+    taxonomy_ids: ["MISC.GC.GEN.001"]
+    site_terms: ["GC sheet", "tin sheet", "roofing sheet", "colour coated sheet", "profile sheet"]
+    contractor_shorthand: ["GC sheet"]
+    common_misspellings: ["tin shed"]
+    context_notes: "GC = galvanized corrugated; used for temporary and industrial roofs"
+
+  - canonical: "polycarbonate_sheet"
+    taxonomy_ids: ["MISC.PC.GEN.001"]
+    site_terms: ["polycarbonate", "PC sheet", "multiwall sheet", "transparent roofing", "Lexan sheet"]
+    contractor_shorthand: ["PC sheet"]
+    common_misspellings: ["policarbonate"]
+    context_notes: "'Lexan' used as generic brand term"
+
+  - canonical: "stone_masonry"
+    taxonomy_ids: ["MAS.SM.GEN.001"]
+    site_terms: ["stone masonry", "random rubble", "RR masonry", "coursed rubble", "patthar ka kaam"]
+    contractor_shorthand: ["RR"]
+    common_misspellings: []
+    context_notes: "RR = random rubble; common in rural and hilly areas"
+
+  - canonical: "precast_concrete"
+    taxonomy_ids: ["STR.PC.GEN.001"]
+    site_terms: ["precast", "precast slab", "precast wall", "precast beam", "factory-made concrete"]
+    contractor_shorthand: ["precast"]
+    common_misspellings: ["pre-cast", "pre cast"]
+    context_notes: "Factory manufactured and transported to site for erection"
+
+  - canonical: "ready_mix_concrete"
+    taxonomy_ids: ["STR.CON.RMC.001"]
+    site_terms: ["RMC", "ready mix", "batching plant", "transit mixer", "mixer truck"]
+    contractor_shorthand: ["RMC"]
+    common_misspellings: ["readymix"]
+    context_notes: "Factory-mixed concrete delivered by transit mixer"
+
+  - canonical: "lift_machine_room"
+    taxonomy_ids: ["LIFT.MR.GEN.001"]
+    site_terms: ["lift room", "machine room", "MRL", "lift motor room", "lift machine"]
+    contractor_shorthand: ["machine room"]
+    common_misspellings: []
+    context_notes: "MRL = machine room-less; modern lifts eliminate this room"
+
+  # ============================================================
+  # ELECTRICAL (Expanded Site Shorthand)
+  # ============================================================
+  - canonical: "point_wiring"
+    taxonomy_ids: ["ELE.WR.PT.001"]
+    site_terms: ["point wiring", "wiring per point", "light point wiring", "fan point wiring", "socket point wiring"]
+    contractor_shorthand: ["point"]
+    common_misspellings: ["point wireing"]
+    context_notes: "Standard billing unit for wiring in India - priced per point"
+
+  - canonical: "concealed_conduit_wiring"
+    taxonomy_ids: ["ELE.WR.CC.001"]
+    site_terms: ["concealed conduit", "concealed wiring", "concealed pipe", "in-wall conduit", "embedded conduit", "flush conduit"]
+    contractor_shorthand: ["concealed"]
+    common_misspellings: ["conceled conduit"]
+    context_notes: "PVC conduit embedded in walls/slabs before plastering"
+
+  - canonical: "open_surface_wiring"
+    taxonomy_ids: ["ELE.WR.OS.001"]
+    site_terms: ["open wiring", "surface conduit", "surface wiring", "casing capping", "casing wiring", "surface mount"]
+    contractor_shorthand: ["surface wiring"]
+    common_misspellings: ["casing caping"]
+    context_notes: "Surface-mounted casing-capping common in older buildings"
+
+  - canonical: "mcb_wiring"
+    taxonomy_ids: ["ELE.CB.MCB.WR.001"]
+    site_terms: ["MCB wiring", "MCB connection", "circuit wiring", "MCB point", "breaker wiring"]
+    contractor_shorthand: ["MCB"]
+    common_misspellings: ["MCB wireing"]
+    context_notes: "Wiring connected to MCB breaker"
+
+  - canonical: "conduit_chase"
+    taxonomy_ids: ["ELE.CD.CH.001"]
+    site_terms: ["chase cutting", "groove cutting", "conduit chase", "wall chasing", "wall cutting for conduit", "chase"]
+    contractor_shorthand: ["chase"]
+    common_misspellings: ["chaise cutting"]
+    context_notes: "Cutting groove in wall to embed conduit before plastering"
+
+  # ============================================================
+  # PLUMBING (Expanded Site Shorthand)
+  # ============================================================
+  - canonical: "chromium_plated_fittings"
+    taxonomy_ids: ["PLB.CP.GEN.001"]
+    site_terms: ["CP fitting", "chromium plated fitting", "chrome fitting", "CP tap", "CP shower", "CP accessories", "CP set"]
+    contractor_shorthand: ["CP"]
+    common_misspellings: ["CP fiting"]
+    context_notes: "CP = chromium plated; Jaquar used as generic brand"
+
+  - canonical: "soil_waste_rain_pipe"
+    taxonomy_ids: ["PLB.PP.SWR.001"]
+    site_terms: ["PVC SWR", "SWR pipe", "soil waste rain pipe", "SWR drain", "soil pipe", "waste pipe", "rain pipe", "underground SWR", "SWR column"]
+    contractor_shorthand: ["SWR"]
+    common_misspellings: ["swer pipe"]
+    context_notes: "SWR = soil, waste and rainwater; PVC SWR used for drains and soil stacks"
+
+  - canonical: "european_water_closet"
+    taxonomy_ids: ["PLB.SF.EWC.001"]
+    site_terms: ["EWC", "European water closet", "commode", "sitting WC", "western toilet", "European toilet", "floor mounted WC", "wall hung WC"]
+    contractor_shorthand: ["EWC"]
+    common_misspellings: []
+    context_notes: "EWC = European water closet (sitting type)"
+
+  - canonical: "indian_water_closet"
+    taxonomy_ids: ["PLB.SF.IWC.001"]
+    site_terms: ["IWC", "Indian water closet", "Indian toilet", "squat toilet", "squatting pan", "Indian style WC"]
+    contractor_shorthand: ["IWC"]
+    common_misspellings: []
+    context_notes: "IWC = Indian water closet (squatting type)"
+
+  - canonical: "plumbing_shaft"
+    taxonomy_ids: ["PLB.SH.GEN.001"]
+    site_terms: ["plumbing shaft", "pipe shaft", "wet shaft", "riser shaft", "pipe duct", "PS duct", "plumbing duct"]
+    contractor_shorthand: ["shaft", "PS"]
+    common_misspellings: ["plumbing shafft"]
+    context_notes: "Vertical enclosure for plumbing risers and soil stacks"
+
+  # ============================================================
+  # STRUCTURAL (Expanded Site Shorthand)
+  # ============================================================
+  - canonical: "raft_foundation"
+    taxonomy_ids: ["STR.FND.RFT.001"]
+    site_terms: ["raft", "mat foundation", "raft slab", "full slab foundation", "flat slab foundation", "raft footing"]
+    contractor_shorthand: ["raft"]
+    common_misspellings: []
+    context_notes: "'Mat foundation' used interchangeably with raft"
+
+  - canonical: "column_starter"
+    taxonomy_ids: ["STR.CON.CS.001"]
+    site_terms: ["column starter", "starter bar", "starter", "kicker", "pour stop", "column kicker"]
+    contractor_shorthand: ["starter"]
+    common_misspellings: []
+    context_notes: "Short stub cast at footing level for column alignment"
+
+  # ============================================================
+  # FINISHES (Expanded Site Shorthand)
+  # ============================================================
+  - canonical: "indian_patent_stone"
+    taxonomy_ids: ["FIN.FL.IPS.001"]
+    site_terms: ["IPS", "IPS floor", "Indian Patent Stone", "cement concrete flooring", "CC floor", "IPS topping", "IPS finish"]
+    contractor_shorthand: ["IPS"]
+    common_misspellings: []
+    context_notes: "IPS = Indian Patent Stone; standard govt building floor finish"
+
+  - canonical: "kota_stone"
+    taxonomy_ids: ["FIN.FL.KS.001"]
+    site_terms: ["kota", "kota stone", "kota floor", "kota slab", "kota patthar", "kota limestone", "rough kota", "polished kota"]
+    contractor_shorthand: ["kota"]
+    common_misspellings: ["cotta", "cotta stone"]
+    context_notes: "Kota limestone from Rajasthan; standard in PWD/CPWD and govt buildings"
+
+  - canonical: "obd_painting"
+    taxonomy_ids: ["FIN.PA.DS.001"]
+    site_terms: ["OBD", "oil bound distemper", "oil distemper", "distemper painting", "OBD two coats", "colour wash"]
+    contractor_shorthand: ["OBD"]
+    common_misspellings: ["distempter", "oil bound disteper"]
+    context_notes: "OBD = oil bound distemper; used in CPWD/PWD specifications"
+
+  - canonical: "exterior_texture_plaster"
+    taxonomy_ids: ["FIN.PL.TXT.001"]
+    site_terms: ["texture plaster", "textured finish", "rough cast", "pebble dash", "sand face plaster", "sponge finish", "scraped plaster"]
+    contractor_shorthand: ["texture plaster"]
+    common_misspellings: ["texure plaster"]
+    context_notes: "Applied on external walls for weather protection and aesthetics"
+
+  # ============================================================
+  # HVAC (Expanded Site Shorthand)
+  # ============================================================
+  - canonical: "air_conditioning_point"
+    taxonomy_ids: ["ELE.PT.AC.001"]
+    site_terms: ["AC point", "air conditioning point", "AC provision", "20A AC point", "dedicated AC point", "AC socket", "split AC point"]
+    contractor_shorthand: ["AC point"]
+    common_misspellings: []
+    context_notes: "Dedicated 20A electrical point for air conditioning unit"
+
+  - canonical: "split_air_conditioner"
+    taxonomy_ids: ["HVAC.SPL.GEN.001"]
+    site_terms: ["split AC", "split unit", "split air conditioner", "1 ton AC", "1.5 ton AC", "2 ton AC", "inverter AC", "wall split AC"]
+    contractor_shorthand: ["AC", "split"]
+    common_misspellings: []
+    context_notes: "Capacity in tons; 1 ton = 3.5 kW cooling capacity"
+
+  - canonical: "ac_outdoor_unit"
+    taxonomy_ids: ["HVAC.OU.GEN.001"]
+    site_terms: ["outdoor unit", "OU", "compressor unit", "condensing unit", "outside unit", "outdoor AC"]
+    contractor_shorthand: ["OU", "outdoor unit"]
+    common_misspellings: ["outdore unit"]
+    context_notes: "Condensing unit of split AC; placed on wall bracket or terrace"
+
+  - canonical: "ac_indoor_unit"
+    taxonomy_ids: ["HVAC.IU.GEN.001"]
+    site_terms: ["indoor unit", "IU", "wall unit", "fan unit", "blower unit", "indoor AC", "cassette unit"]
+    contractor_shorthand: ["IU", "indoor unit"]
+    common_misspellings: []
+    context_notes: "Evaporator/fan unit of split AC mounted inside room"
+
+  # ============================================================
+  # MISCELLANEOUS SITE SHORTHAND
+  # ============================================================
+
+  - canonical: "roof_slab_treatment"
+    taxonomy_ids: ["WP.RST.001"]
+    site_terms: ["terrace treatment", "roof treatment", "chhat treatment", "top slab WP", "terrace screed", "slope screed with WP", "terrace waterproofing"]
+    contractor_shorthand: ["terrace treatment"]
+    common_misspellings: []
+    context_notes: "Includes slope screed + waterproofing on RCC roof slab"
+
+  - canonical: "pipe_sleeve"
+    taxonomy_ids: ["PLB.PS.GEN.001"]
+    site_terms: ["sleeve", "pipe sleeve", "MS sleeve", "PVC sleeve", "core cutting", "embedded sleeve", "wall sleeve"]
+    contractor_shorthand: ["sleeve"]
+    common_misspellings: ["sleave"]
+    context_notes: "Sleeve cast into slab/wall for pipe passage without breaking"
+
+  - canonical: "brick_bat_coba"
+    taxonomy_ids: ["WP.BBC.001"]
+    site_terms: ["BBC", "brick bat coba", "lime concrete terrace", "BBC WP", "brick tile terrace", "brick bat filling"]
+    contractor_shorthand: ["BBC"]
+    common_misspellings: ["brick bat cobra"]
+    context_notes: "Traditional terrace waterproofing using brick pieces set in lime concrete"
+
+  - canonical: "sunshade_chajja"
+    taxonomy_ids: ["STR.CJ.CHJ.001"]
+    site_terms: ["chajja", "chhajja", "sunshade", "window projection", "canopy", "horizontal projection", "weather shed"]
+    contractor_shorthand: ["chajja"]
+    common_misspellings: ["chhaja", "chaja"]
+    context_notes: "RCC horizontal projection above windows/doors to block sun and rain"
+
+  - canonical: "tile_adhesive_laying"
+    taxonomy_ids: ["FIN.FL.TAD.001"]
+    site_terms: ["tile adhesive", "adhesive laying", "thin bed", "thin set", "adhesive fixing tiles", "wall tile adhesive"]
+    contractor_shorthand: ["tile adhesive"]
+    common_misspellings: ["tile adhisive"]
+    context_notes: "Modern alternative to cement mortar for tile fixing"
+
+  - canonical: "gravel_soling"
+    taxonomy_ids: ["STR.FND.GS.001"]
+    site_terms: ["soling", "rubble soling", "stone soling", "hardcore", "hard core", "stone packing", "boulder soling"]
+    contractor_shorthand: ["soling"]
+    common_misspellings: ["solling"]
+    context_notes: "Layer of stones/rubble laid in trenches before PCC"

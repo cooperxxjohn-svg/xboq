@@ -120,6 +120,358 @@ INFERENCE_RULES: List[InferenceRule] = [
         required_items=["disposal"],
         priority=11
     ),
+
+    # Beam rules
+    InferenceRule(
+        rule_id="BEM_001",
+        description="Beams detected -> RCC in beams required",
+        trigger_condition="beams",
+        required_items=["rcc_beam"],
+        priority=1
+    ),
+    InferenceRule(
+        rule_id="BEM_002",
+        description="Beams detected -> formwork for beams required",
+        trigger_condition="beams",
+        required_items=["formwork_beam"],
+        priority=2
+    ),
+    InferenceRule(
+        rule_id="BEM_003",
+        description="Beams detected -> reinforcement for beams required",
+        trigger_condition="beams",
+        required_items=["steel_beam"],
+        priority=3
+    ),
+
+    # Slab rules
+    InferenceRule(
+        rule_id="SLB_001",
+        description="Slabs detected -> RCC in slabs required",
+        trigger_condition="slabs",
+        required_items=["rcc_slab"],
+        priority=1
+    ),
+    InferenceRule(
+        rule_id="SLB_002",
+        description="Slabs detected -> formwork for slabs required",
+        trigger_condition="slabs",
+        required_items=["formwork_slab"],
+        priority=2
+    ),
+    InferenceRule(
+        rule_id="SLB_003",
+        description="Slabs detected -> reinforcement for slabs required",
+        trigger_condition="slabs",
+        required_items=["steel_slab"],
+        priority=3
+    ),
+
+    # Lintel rules
+    InferenceRule(
+        rule_id="LNT_001",
+        description="Lintels detected -> RCC in lintels required",
+        trigger_condition="lintels",
+        required_items=["rcc_lintel"],
+        priority=1
+    ),
+    InferenceRule(
+        rule_id="LNT_002",
+        description="Lintels detected -> formwork for lintels required",
+        trigger_condition="lintels",
+        required_items=["formwork_lintel"],
+        priority=2
+    ),
+    InferenceRule(
+        rule_id="LNT_003",
+        description="Lintels detected -> reinforcement for lintels required",
+        trigger_condition="lintels",
+        required_items=["steel_lintel"],
+        priority=3
+    ),
+
+    # Staircase rules
+    InferenceRule(
+        rule_id="STR_001",
+        description="Staircase detected -> RCC in staircase required",
+        trigger_condition="staircase",
+        required_items=["rcc_staircase"],
+        priority=1
+    ),
+    InferenceRule(
+        rule_id="STR_002",
+        description="Staircase detected -> formwork for staircase required",
+        trigger_condition="staircase",
+        required_items=["formwork_staircase"],
+        priority=2
+    ),
+    InferenceRule(
+        rule_id="STR_003",
+        description="Staircase detected -> reinforcement for staircase required",
+        trigger_condition="staircase",
+        required_items=["steel_staircase"],
+        priority=3
+    ),
+
+    # Masonry rules
+    InferenceRule(
+        rule_id="MAS_001",
+        description="Masonry required -> 230mm external brick wall",
+        trigger_condition="masonry",
+        required_items=["masonry_230mm"],
+        priority=1
+    ),
+    InferenceRule(
+        rule_id="MAS_002",
+        description="Masonry required -> 115mm internal brick wall",
+        trigger_condition="masonry",
+        required_items=["masonry_115mm"],
+        priority=2
+    ),
+
+    # Plaster rules
+    InferenceRule(
+        rule_id="PLT_001",
+        description="Plaster required -> 12mm internal cement plaster",
+        trigger_condition="plaster",
+        required_items=["plaster_internal_12mm"],
+        priority=1
+    ),
+    InferenceRule(
+        rule_id="PLT_002",
+        description="Plaster required -> 15mm external cement plaster",
+        trigger_condition="plaster",
+        required_items=["plaster_external_15mm"],
+        priority=2
+    ),
+    InferenceRule(
+        rule_id="PLT_003",
+        description="Plaster required -> neeru/POP finish coat",
+        trigger_condition="plaster",
+        required_items=["plaster_neeru_finish"],
+        priority=3
+    ),
+    InferenceRule(
+        rule_id="PLT_004",
+        description="Plaster required -> ceiling plaster",
+        trigger_condition="plaster",
+        required_items=["plaster_ceiling"],
+        priority=4
+    ),
+
+    # Flooring rules
+    InferenceRule(
+        rule_id="FLR_001",
+        description="Flooring required -> vitrified tile flooring",
+        trigger_condition="flooring",
+        required_items=["flooring_vitrified"],
+        priority=1
+    ),
+    InferenceRule(
+        rule_id="FLR_002",
+        description="Flooring required -> ceramic tile flooring",
+        trigger_condition="flooring",
+        required_items=["flooring_ceramic"],
+        priority=2
+    ),
+
+    # Painting rules
+    InferenceRule(
+        rule_id="PNT_001",
+        description="Painting required -> internal emulsion paint",
+        trigger_condition="painting",
+        required_items=["painting_internal"],
+        priority=1
+    ),
+    InferenceRule(
+        rule_id="PNT_002",
+        description="Painting required -> external emulsion paint",
+        trigger_condition="painting",
+        required_items=["painting_external"],
+        priority=2
+    ),
+    InferenceRule(
+        rule_id="PNT_003",
+        description="Painting required -> ceiling paint",
+        trigger_condition="painting",
+        required_items=["painting_ceiling"],
+        priority=3
+    ),
+
+    # Waterproofing rules
+    InferenceRule(
+        rule_id="WPR_001",
+        description="Wet areas detected -> toilet waterproofing required",
+        trigger_condition="wet_areas",
+        required_items=["waterproofing_toilet"],
+        priority=1
+    ),
+    InferenceRule(
+        rule_id="WPR_002",
+        description="Wet areas detected -> terrace waterproofing required",
+        trigger_condition="wet_areas",
+        required_items=["waterproofing_terrace"],
+        priority=2
+    ),
+    InferenceRule(
+        rule_id="WPR_003",
+        description="Wet areas detected -> sunken slab waterproofing required",
+        trigger_condition="wet_areas",
+        required_items=["waterproofing_sunken"],
+        priority=3
+    ),
+
+    # Plumbing rules
+    InferenceRule(
+        rule_id="PLB_001",
+        description="Plumbing required -> CPVC hot/cold water supply",
+        trigger_condition="plumbing",
+        required_items=["plumbing_cpvc_hot"],
+        priority=1
+    ),
+    InferenceRule(
+        rule_id="PLB_002",
+        description="Plumbing required -> UPVC SWR drainage",
+        trigger_condition="plumbing",
+        required_items=["plumbing_upvc_swr"],
+        priority=2
+    ),
+    InferenceRule(
+        rule_id="PLB_003",
+        description="Plumbing required -> EWC water closet",
+        trigger_condition="plumbing",
+        required_items=["sanitary_ewc"],
+        priority=3
+    ),
+    InferenceRule(
+        rule_id="PLB_004",
+        description="Plumbing required -> wash basin",
+        trigger_condition="plumbing",
+        required_items=["sanitary_wash_basin"],
+        priority=4
+    ),
+    InferenceRule(
+        rule_id="PLB_005",
+        description="Plumbing required -> kitchen sink",
+        trigger_condition="plumbing",
+        required_items=["sanitary_kitchen_sink"],
+        priority=5
+    ),
+    InferenceRule(
+        rule_id="PLB_006",
+        description="Plumbing required -> overhead water tank",
+        trigger_condition="plumbing",
+        required_items=["water_tank_overhead"],
+        priority=6
+    ),
+
+    # Electrical rules
+    InferenceRule(
+        rule_id="ELC_001",
+        description="Electrical required -> light point wiring",
+        trigger_condition="electrical",
+        required_items=["electrical_wiring_light"],
+        priority=1
+    ),
+    InferenceRule(
+        rule_id="ELC_002",
+        description="Electrical required -> power point wiring",
+        trigger_condition="electrical",
+        required_items=["electrical_wiring_power"],
+        priority=2
+    ),
+    InferenceRule(
+        rule_id="ELC_003",
+        description="Electrical required -> MCB distribution board",
+        trigger_condition="electrical",
+        required_items=["electrical_mcb_db"],
+        priority=3
+    ),
+    InferenceRule(
+        rule_id="ELC_004",
+        description="Electrical required -> earthing system",
+        trigger_condition="electrical",
+        required_items=["electrical_earthing"],
+        priority=4
+    ),
+    InferenceRule(
+        rule_id="ELC_005",
+        description="Electrical required -> LED light fixtures",
+        trigger_condition="electrical",
+        required_items=["electrical_light_fixture"],
+        priority=5
+    ),
+
+    # Door/Window rules
+    InferenceRule(
+        rule_id="DRW_001",
+        description="Openings detected -> sal wood door frame",
+        trigger_condition="openings",
+        required_items=["door_frame_sal"],
+        priority=1
+    ),
+    InferenceRule(
+        rule_id="DRW_002",
+        description="Openings detected -> flush door shutter",
+        trigger_condition="openings",
+        required_items=["door_shutter_flush"],
+        priority=2
+    ),
+    InferenceRule(
+        rule_id="DRW_003",
+        description="Openings detected -> aluminium sliding window",
+        trigger_condition="openings",
+        required_items=["window_aluminium"],
+        priority=3
+    ),
+
+    # External works rules
+    InferenceRule(
+        rule_id="EXT_001",
+        description="External works required -> compound wall",
+        trigger_condition="external_works",
+        required_items=["external_compound_wall"],
+        priority=1
+    ),
+    InferenceRule(
+        rule_id="EXT_002",
+        description="External works required -> CC road/driveway",
+        trigger_condition="external_works",
+        required_items=["external_road_cc"],
+        priority=2
+    ),
+    InferenceRule(
+        rule_id="EXT_003",
+        description="External works required -> surface drain",
+        trigger_condition="external_works",
+        required_items=["external_drain"],
+        priority=3
+    ),
+
+    # False ceiling rules
+    InferenceRule(
+        rule_id="FCL_001",
+        description="False ceiling required -> gypsum board false ceiling",
+        trigger_condition="false_ceiling",
+        required_items=["false_ceiling_gypsum"],
+        priority=1
+    ),
+
+    # Miscellaneous additional rules
+    InferenceRule(
+        rule_id="GEN_003",
+        description="Footings detected -> anti-termite treatment required",
+        trigger_condition="footings",
+        required_items=["anti_termite"],
+        priority=12
+    ),
+    InferenceRule(
+        rule_id="GEN_004",
+        description="Concrete work detected -> DPC waterproofing required",
+        trigger_condition="concrete",
+        required_items=["waterproofing_dpc"],
+        priority=13
+    ),
 ]
 
 
@@ -294,6 +646,52 @@ def get_missing_dependencies(
         dependencies.append("requires total concrete surface area")
         qty = None
 
+    elif "beam" in template_key:
+        if hasattr(output, 'beams') and output.beams:
+            # similar pattern to column qty computation
+            qty = sum(b.volume_m3 for b in output.beams if hasattr(b, 'volume_m3'))
+            if "formwork" in template_key:
+                qty = qty * 4.0  # rough formwork ratio
+            elif "steel" in template_key:
+                qty = qty * 150  # kg/m3 for beams
+        else:
+            dependencies.append("no beams detected")
+
+    elif "slab" in template_key:
+        if hasattr(output, 'slab_area_sqm'):
+            slab_vol = output.slab_area_sqm * 0.125  # 125mm thick
+            qty = slab_vol
+            if "formwork" in template_key:
+                qty = output.slab_area_sqm
+            elif "steel" in template_key:
+                qty = slab_vol * 90  # kg/m3 for slabs
+        else:
+            dependencies.append("no slab area detected")
+
+    elif "masonry" in template_key:
+        qty = None  # Requires wall measurement
+
+    elif "plaster" in template_key:
+        qty = None  # Requires wall area
+
+    elif "flooring" in template_key or "painting" in template_key:
+        qty = None  # Requires room areas
+
+    elif "plumbing" in template_key or "sanitary" in template_key:
+        qty = None  # Requires fixture schedule
+
+    elif "electrical" in template_key:
+        qty = None  # Requires point schedule
+
+    elif "external" in template_key:
+        qty = None  # Requires site plan
+
+    elif "false_ceiling" in template_key:
+        qty = None  # Requires room areas
+
+    elif "door" in template_key or "window" in template_key:
+        qty = None  # Requires opening schedule
+
     return dependencies, qty
 
 
@@ -440,6 +838,33 @@ def complete_scope(
         active_triggers.add("concrete")
     if output.total_excavation_m3 > 0:
         active_triggers.add("excavation")
+    if hasattr(output, 'beams') and output.beams:
+        active_triggers.add("beams")
+    # Slabs — infer from total slab area or concrete
+    if hasattr(output, 'slab_area_sqm') and output.slab_area_sqm > 0:
+        active_triggers.add("slabs")
+    elif output.total_concrete_m3 > 5:  # significant concrete implies slabs
+        active_triggers.add("slabs")
+    # Always-on triggers for any building project
+    if output.footings or output.columns or output.total_concrete_m3 > 0:
+        active_triggers.add("masonry")
+        active_triggers.add("plaster")
+        active_triggers.add("flooring")
+        active_triggers.add("painting")
+        active_triggers.add("plumbing")
+        active_triggers.add("electrical")
+        active_triggers.add("openings")
+        active_triggers.add("wet_areas")
+    # Notes-based detection
+    notes_lower = notes_text.lower() if notes_text else ""
+    for keyword, trigger_name in [
+        ("stair", "staircase"), ("lintel", "lintels"),
+        ("false ceiling", "false_ceiling"), ("gypsum", "false_ceiling"),
+        ("external", "external_works"), ("compound wall", "external_works"),
+        ("terrace", "wet_areas"), ("balcony", "wet_areas"),
+    ]:
+        if keyword in notes_lower:
+            active_triggers.add(trigger_name)
 
     # Apply inference rules
     if high_recall:
@@ -472,6 +897,22 @@ def complete_scope(
                 "anti_termite": "anti_termite",
                 "waterproofing": "waterproofing_dpc",
                 "curing": "curing",
+                "beam": "rcc_beam",
+                "slab": "rcc_slab",
+                "lintel": "rcc_lintel",
+                "staircase": "rcc_staircase",
+                "masonry": "masonry_230mm",
+                "plaster": "plaster_internal_12mm",
+                "flooring": "flooring_vitrified",
+                "painting": "painting_internal",
+                "door": "door_frame_sal",
+                "window": "window_aluminium",
+                "false_ceiling": "false_ceiling_gypsum",
+                "plumbing": "plumbing_cpvc_hot",
+                "electrical": "electrical_wiring_light",
+                "external_works": "external_compound_wall",
+                "kitchen": "sanitary_kitchen_sink",
+                "fire_safety": "external_compound_wall",  # placeholder
             }
 
             template_key = term_to_template.get(match.standard_term)
@@ -534,7 +975,11 @@ def complete_scope(
         "unknown_qty_count": len([e for e in all_enhanced if e.item.qty_status == "unknown"]),
         "top_missing_dependencies": sorted(dep_counts.items(), key=lambda x: -x[1])[:10],
         "active_triggers": list(active_triggers),
-        "rules_fired": len([e for e in inferred_items if "RULE" in e.evidence.rule_fired or e.evidence.rule_fired.startswith("FTG") or e.evidence.rule_fired.startswith("COL") or e.evidence.rule_fired.startswith("GEN")])
+        "rules_fired": sum(
+            1 for item in all_enhanced
+            if item.evidence and item.evidence.rule_fired
+            and item.evidence.rule_fired not in ("EXPLICIT", "SYNONYM_MATCH")
+        )
     }
 
     # Update output with all items

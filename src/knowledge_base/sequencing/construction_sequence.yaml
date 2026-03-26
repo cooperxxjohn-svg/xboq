@@ -1,0 +1,487 @@
+# Construction Sequence Rules
+# Purpose: Defines correct construction sequence to detect logical ordering anomalies in BOQs.
+# Enables: "Plastering appears before brickwork in this BOQ — verify sequence or trade packaging."
+# Source: IS 456:2000, IS 2212:1991, NBC 2016, standard construction practice India.
+# Version: 2024-25
+
+sequences:
+
+  - name: substructure_sequence
+    description: "Standard RCC building substructure from site clearance to grade beam"
+    applicable_to: [residential_apartment, commercial_office, industrial_factory, hospital]
+    stages:
+      - stage: 1
+        name: site_preparation
+        items:
+          - site_clearance_and_grubbing
+          - setting_out_and_benchmarks
+          - temporary_site_office
+          - temporary_water_supply_connection
+          - temporary_power_connection
+          - site_boundary_fencing
+      - stage: 2
+        name: earthwork_excavation
+        items:
+          - bulk_excavation
+          - excavation_for_foundation_trenches
+          - excavation_for_column_pits
+          - dewatering_if_required
+          - shoring_strutting_if_required
+          - earthwork_disposal
+      - stage: 3
+        name: substructure_concrete
+        items:
+          - anti_termite_treatment_soil_surface
+          - pcc_blinding_m75_under_footings
+          - formwork_footing_sides
+          - rcc_footing_m20_m25
+          - rcc_grade_beam
+          - rcc_plinth_beam
+      - stage: 4
+        name: substructure_completion
+        items:
+          - backfilling_in_layers_compaction
+          - damp_proof_course_at_plinth_level
+          - plinth_filling_and_compaction
+          - anti_termite_retreatment_after_backfill
+    predecessor_rules:
+      - item: pcc_blinding
+        must_follow: [excavation_for_foundation_trenches, anti_termite_treatment_soil]
+        error: "PCC blinding appears before excavation or anti-termite treatment — check BOQ sequence."
+      - item: rcc_footing
+        must_follow: [excavation, pcc_blinding]
+        error: "RCC footing appears before excavation or PCC blinding — check if PCC/excavation is missing or in separate BOQ."
+      - item: rcc_grade_beam
+        must_follow: [rcc_footing]
+        error: "Grade beam appears before footing — structural sequence error."
+      - item: backfilling
+        must_follow: [rcc_footing, rcc_grade_beam]
+        error: "Backfilling appears before footings are complete — sequence error."
+      - item: damp_proof_course
+        must_follow: [rcc_plinth_beam, backfilling]
+        error: "DPC appears before plinth beam — check sequence."
+      - item: anti_termite_treatment
+        must_precede: [pcc_blinding, backfilling]
+        error: "Anti-termite treatment must be applied before PCC and before backfilling — IS 6313 Part 2."
+
+  - name: superstructure_rcc_sequence
+    description: "RCC superstructure construction sequence, repeated per floor from GF to roof"
+    applicable_to: [residential_apartment, commercial_office, hospital]
+    stages:
+      - stage: 1
+        name: column_construction_per_floor
+        items:
+          - column_starter_and_kicker
+          - reinforcement_cage_column
+          - formwork_column
+          - concrete_pour_column_m25
+          - curing_column_14days
+      - stage: 2
+        name: beam_and_slab_construction
+        items:
+          - staging_and_propping
+          - soffit_formwork_slab_and_beam
+          - reinforcement_cage_beam_and_slab
+          - electrical_conduit_laying_in_slab
+          - plumbing_sleeve_in_slab
+          - concrete_pour_slab_and_beam_together
+          - curing_slab_14days
+      - stage: 3
+        name: striking_and_backpropping
+        items:
+          - side_formwork_striking_after_3days
+          - soffit_striking_after_21days_minimum
+          - backpropping_lower_floor_for_2_storey
+      - stage: 4
+        name: structural_completion_per_floor
+        items:
+          - structural_inspection_sign_off
+          - construction_joint_treatment_next_pour
+    predecessor_rules:
+      - item: rcc_column
+        must_follow: [rcc_footing, column_starter]
+        error: "Column appears before footing or without column starter — verify substructure is complete or in a separate BOQ."
+      - item: rcc_beam_and_slab
+        must_follow: [rcc_column_same_floor]
+        error: "Beam and slab poured before columns at same floor — structural sequence error."
+      - item: soffit_striking
+        must_follow: [concrete_pour_slab, 21_days_curing_minimum]
+        error: "Soffit striking appears too early in programme — IS 456 requires minimum 21 days before striking slab soffit."
+      - item: upper_floor_column
+        must_follow: [lower_floor_slab_complete, lower_floor_slab_achieved_design_strength]
+        error: "Upper floor column appears before lower floor slab is complete — construction sequence error."
+      - item: electrical_conduit_in_slab
+        must_follow: [slab_reinforcement_bottom_layer]
+        must_precede: [slab_reinforcement_top_layer, concrete_pour]
+        error: "Electrical conduit in slab — must be placed between bottom and top reinforcement layers before concrete pour."
+
+  - name: masonry_finishing_sequence
+    description: "Masonry and internal finishing sequence after RCC structure is complete"
+    applicable_to: [residential_apartment, residential_villa, commercial_office, hospital]
+    stages:
+      - stage: 1
+        name: masonry
+        items:
+          - external_brick_masonry_230mm
+          - internal_brick_masonry_115mm
+          - rcc_lintels_above_openings
+          - chicken_mesh_at_rcc_masonry_junctions
+          - block_work_for_shafts_and_ducts
+      - stage: 2
+        name: plasterwork
+        items:
+          - surface_preparation_for_plaster_hacking_rcc_raking_joints
+          - external_plaster_20mm_1_4
+          - internal_plaster_12mm_1_6
+          - ceiling_plaster_6mm_1_4_or_pop
+          - curing_plaster_7days
+      - stage: 3
+        name: surface_preparation_for_painting
+        items:
+          - pop_punning_or_wall_putty_2coats
+          - primer_coat_after_putty
+          - sanding_between_coats
+      - stage: 4
+        name: painting
+        items:
+          - interior_emulsion_2_coats
+          - exterior_weather_proof_emulsion_2_coats
+          - enamel_paint_for_steel_and_wood
+    predecessor_rules:
+      - item: brick_masonry
+        must_follow: [rcc_structure_complete_for_that_floor, rcc_slab_above_struck_and_cured]
+        error: "Masonry appears before RCC structure is complete — if it is infill masonry, verify RCC frame is ready."
+      - item: internal_plaster
+        must_follow: [brick_masonry_complete, chicken_mesh_at_junctions, rcc_lintels_placed]
+        error: "Internal plastering appears before brickwork — check if masonry is missing from BOQ or if items are packaged by trade not by sequence."
+      - item: external_plaster
+        must_follow: [external_masonry_complete, external_scaffolding_erected]
+        error: "External plaster before masonry or scaffolding — check sequence and scaffolding provision."
+      - item: wall_putty
+        must_follow: [internal_plaster_complete, plaster_cured_minimum_28days]
+        error: "Wall putty before plaster — sequence error. Putty must go over cured plaster."
+      - item: interior_painting
+        must_follow: [wall_putty_or_pop_complete, primer_coat]
+        error: "Painting appears before putty and primer — check if putty is a missing scope item."
+      - item: exterior_painting
+        must_follow: [external_plaster_complete, plaster_cured_28days]
+        error: "Exterior painting before external plaster — sequence error."
+
+  - name: waterproofing_sequence
+    description: "Waterproofing sequence for terraces, bathrooms, and basements"
+    applicable_to: [all]
+    stages:
+      - stage: 1
+        name: surface_preparation
+        items:
+          - concrete_surface_grinding_or_scabbling
+          - filling_blow_holes_and_cracks_with_epoxy_mortar
+          - chamfering_150mm_at_slab_wall_junction
+          - cleaning_oil_grease_and_laitance
+          - moisture_check_surface_dry
+      - stage: 2
+        name: priming
+        items:
+          - bitumen_primer_coat_terrace
+          - crystalline_primer_coat_bathroom
+          - allow_primer_to_tack_dry_6_to_12_hrs
+      - stage: 3
+        name: membrane_application
+        items:
+          - app_modified_bitumen_membrane_torch_applied_or_self_adhesive
+          - overlap_at_joints_100mm_minimum
+          - parapet_or_wall_upturn_300mm
+          - pipe_collar_and_drain_sealing
+      - stage: 4
+        name: testing_and_protection
+        items:
+          - flood_test_24hrs_ponding
+          - inspection_and_sign_off
+          - protective_screed_50mm_or_protection_board
+    predecessor_rules:
+      - item: waterproofing_application
+        must_follow: [surface_preparation_complete, primer_tack_dry]
+        error: "Waterproofing membrane applied without surface prep or primer — IS 1346 requires surface preparation."
+      - item: protective_screed
+        must_follow: [waterproofing_membrane_complete, flood_test_passed]
+        error: "Protective screed before waterproofing membrane or flood test — membrane must be tested before covering."
+      - item: tile_over_waterproofing
+        must_follow: [waterproofing_complete, protective_screed_cured]
+        error: "Tiling before waterproofing or protective screed — sequence error."
+      - item: flood_test
+        must_follow: [waterproofing_membrane_complete]
+        must_precede: [protective_screed, tiling, backfilling_over_basement_roof]
+        error: "Flood test must happen after membrane and before any covering — waterproofing integrity cannot be verified after covering."
+
+  - name: flooring_sequence
+    description: "Floor finish sequence from structural slab to final grouted tile"
+    applicable_to: [residential_apartment, residential_villa, commercial_office, hospital]
+    stages:
+      - stage: 1
+        name: base_preparation
+        items:
+          - structural_slab_complete_and_cured
+          - surface_preparation_and_levelling
+          - floor_waterproofing_wet_areas_bathrooms_balconies
+          - flood_test_wet_areas
+      - stage: 2
+        name: screed_layer
+        items:
+          - under_tile_screed_25_to_40mm_cement_mortar_1_4
+          - gradient_screed_for_wet_areas_1_in_80_minimum
+          - screed_curing_3_to_7_days
+      - stage: 3
+        name: tile_laying
+        items:
+          - tile_adhesive_application_or_cement_paste_on_mortar_bed
+          - tile_layout_setting_out_and_dry_run
+          - tile_fixing_with_spacers
+          - cutting_at_edges_and_around_fixtures
+      - stage: 4
+        name: finishing
+        items:
+          - initial_curing_24hrs_do_not_walk_on_tiles
+          - grouting_with_matching_grout_colour
+          - skirting_tile_fixing
+          - cleaning_and_polishing
+          - protection_boards_during_other_trades
+    predecessor_rules:
+      - item: floor_screed
+        must_follow: [rcc_slab_complete, waterproofing_wet_areas_complete_and_tested]
+        error: "Floor screed before RCC slab or before waterproofing in wet areas — check sequence."
+      - item: tile_fixing
+        must_follow: [floor_screed_cured_minimum_3days]
+        error: "Tile fixing on uncured screed — screed must cure minimum 3 days before tile laying."
+      - item: grouting
+        must_follow: [tile_fixing_complete, tile_adhesive_set_minimum_24hrs]
+        error: "Grouting before tile adhesive sets — minimum 24-hour cure before grouting."
+      - item: skirting_tile
+        must_follow: [floor_tile_complete, wall_plaster_complete]
+        error: "Skirting before floor tile or wall plaster — sequence error."
+      - item: flooring
+        must_precede: [door_frame_bottom_trim_fitting, sanitary_ware_fixing_final]
+        error: "Flooring should precede final sanitary ware fixing to avoid tile cutting conflicts."
+
+  - name: mep_sequence
+    description: "MEP (mechanical, electrical, plumbing) installation sequence"
+    applicable_to: [all]
+    stages:
+      - stage: 1
+        name: first_fix_rough_in
+        items:
+          - electrical_conduit_laying_concealed_in_walls_and_slabs
+          - plumbing_pipe_concealed_in_walls_and_slabs
+          - hvac_duct_sleeves_through_slabs
+          - firefighting_pipe_main_runs
+          - wall_chasing_and_box_cutting_for_DB_and_switches
+          - sleeve_insertion_for_pipe_penetrations
+      - stage: 2
+        name: second_fix_wiring_and_piping
+        items:
+          - cable_pulling_through_conduits
+          - upvc_cpvc_piping_runs
+          - swr_drain_pipe_runs
+          - hvac_duct_fabrication_and_installation
+          - firefighting_pipe_distribution
+          - cable_tray_installation
+      - stage: 3
+        name: third_fix_terminations_and_fixtures
+        items:
+          - distribution_board_installation_and_wiring
+          - switch_socket_plate_fitting
+          - light_fixture_installation
+          - sanitary_ware_fixing
+          - cp_fitting_installation
+          - hvac_fan_coil_unit_installation
+          - fire_alarm_detector_installation
+      - stage: 4
+        name: testing_and_commissioning
+        items:
+          - electrical_insulation_resistance_test
+          - earth_continuity_test
+          - hydraulic_pressure_test_plumbing
+          - hvac_balancing_and_commissioning
+          - fire_alarm_and_suppression_acceptance_test
+          - load_testing_and_snag_clearance
+    predecessor_rules:
+      - item: electrical_conduit_in_wall
+        must_follow: [wall_masonry_complete_to_lintel_level_or_as_agreed]
+        must_precede: [plastering_of_that_wall]
+        error: "Electrical conduit must be in wall BEFORE plastering — first fix must precede plastering."
+      - item: plumbing_pipe_in_wall
+        must_follow: [wall_masonry_at_that_location]
+        must_precede: [plastering_of_that_wall]
+        error: "Plumbing pipe first fix must precede plastering of that wall."
+      - item: cable_pulling
+        must_follow: [conduit_laying_complete, junction_boxes_fixed]
+        error: "Cable pulling before conduit is complete — cable will not be protected."
+      - item: switch_and_socket_plates
+        must_follow: [cable_pulling_to_those_points, wall_painting_complete_or_near_complete]
+        error: "Switch plates before painting — plates will be paint-splashed. Fit after finishing."
+      - item: sanitary_ware_fixing
+        must_follow: [wall_tile_complete, floor_tile_complete, plumbing_pipe_in_place_and_tested]
+        error: "Sanitary ware before wall and floor tiles — tiles cannot be cut accurately around already-fixed fittings."
+      - item: light_fixture_installation
+        must_follow: [false_ceiling_complete, ceiling_painting_complete]
+        error: "Light fixtures before false ceiling or painting — fixtures will be damaged during ceiling work."
+      - item: hvac_commissioning
+        must_follow: [all_ductwork_complete, all_diffuser_frames_in_false_ceiling, electrical_connection_to_units]
+        error: "HVAC commissioning before ductwork and electrical connection — cannot commission incomplete system."
+
+  - name: door_window_sequence
+    description: "Door and window installation sequence from frame to finished hardware"
+    applicable_to: [residential_apartment, residential_villa, commercial_office]
+    stages:
+      - stage: 1
+        name: frame_installation
+        items:
+          - door_frame_fixing_with_hold_fast_in_masonry
+          - window_frame_or_buck_fixing_in_masonry_opening
+          - frame_plumb_and_level_check
+          - temporary_bracing_during_masonry_completion
+      - stage: 2
+        name: masonry_and_plaster_around_frames
+        items:
+          - masonry_completion_around_door_and_window_frames
+          - internal_plaster_around_frame_reveals
+          - external_plaster_around_window_frame
+          - sealant_between_frame_and_plaster
+      - stage: 3
+        name: shutter_and_glass_installation
+        items:
+          - door_shutter_hanging_and_adjustment
+          - aluminium_window_shutter_installation
+          - glass_glazing_in_window_or_shutter
+          - mosquito_mesh_frame_installation
+      - stage: 4
+        name: hardware_and_finishing
+        items:
+          - lock_set_installation_door
+          - door_closer_installation
+          - tower_bolt_and_stopper
+          - window_handles_and_latches
+          - silicon_sealant_frame_to_wall_junction
+          - painting_or_polishing_of_door_shutter_and_frame
+    predecessor_rules:
+      - item: door_frame_installation
+        must_follow: [masonry_at_lintel_level_to_create_opening]
+        must_precede: [masonry_jamb_completion, plaster_around_frame]
+        error: "Door frame must be installed before jamb masonry is completed around it — frame goes in with masonry."
+      - item: door_shutter
+        must_follow: [door_frame_installed_and_plumbed, wall_plaster_around_frame_complete]
+        error: "Door shutter before frame or before plaster around frame — shutter cannot be hung on incomplete frame."
+      - item: glass_glazing
+        must_follow: [window_frame_installed, aluminium_shutter_in_frame]
+        error: "Glass before window frame and shutter — cannot glaze without frame."
+      - item: door_painting
+        must_follow: [door_frame_and_shutter_installed, wall_painting_in_room_complete_or_near_complete]
+        error: "Door painting before wall painting — doors will be splashed during wall painting."
+      - item: lock_set_hardware
+        must_follow: [door_shutter_hung_and_adjusted, painting_of_shutter_complete]
+        error: "Hardware installed before painting — hardware will be paint-splashed."
+
+  - name: external_works_sequence
+    description: "External site works sequence from formation to finished landscaping"
+    applicable_to: [residential_apartment, commercial_office, industrial_factory, hospital]
+    stages:
+      - stage: 1
+        name: site_formation
+        items:
+          - bulk_earthwork_filling_or_cutting_to_formation_level
+          - compaction_in_layers_to_95pct_proctor
+          - subgrade_preparation
+          - geotextile_fabric_if_specified
+      - stage: 2
+        name: road_sub_base
+        items:
+          - granular_sub_base_gsb_compacted_150mm
+          - water_bound_macadam_wbm_or_wet_mix_macadam_wmm
+      - stage: 3
+        name: road_surface_and_drainage
+        items:
+          - bituminous_base_course_dbm_50mm
+          - bituminous_concrete_wearing_course_25mm
+          - road_kerb_and_channel
+          - storm_water_drain_lined
+          - catch_basin_and_gully_trap
+          - rain_water_harvesting_pit
+      - stage: 4
+        name: finishing_and_landscaping
+        items:
+          - road_markings_and_signage
+          - footpath_tiles_or_paving
+          - boundary_wall_and_gates
+          - street_lighting_poles_and_fixtures
+          - soft_landscaping_topsoil_planting
+          - irrigation_system_if_specified
+          - outdoor_water_feature_if_specified
+    predecessor_rules:
+      - item: granular_sub_base
+        must_follow: [formation_level_achieved, compaction_to_specification]
+        error: "Road sub-base before formation compaction — base will settle unevenly."
+      - item: bituminous_surface
+        must_follow: [sub_base_complete_and_compacted, wet_mix_macadam_complete_and_tested]
+        error: "Bituminous surface before WMM/sub-base — pavement will fail. Check if sub-base is a missing BOQ item."
+      - item: road_markings
+        must_follow: [bituminous_wearing_course_complete_and_cooled]
+        error: "Road markings before bituminous surface — markings cannot be applied to incomplete surface."
+      - item: footpath_paving
+        must_follow: [underground_utilities_complete_below_footpath, sub_base_compacted]
+        error: "Footpath paving before underground services — utilities will require cutting finished paving."
+      - item: soft_landscaping
+        must_follow: [all_external_works_complete, topsoil_placed, irrigation_system_installed]
+        error: "Soft landscaping before external hard works — plants will be damaged during construction traffic."
+      - item: street_lighting
+        must_follow: [electrical_conduit_in_ground_laid, road_surface_complete]
+        error: "Street lighting before electrical conduit is in ground or before road surface — pole foundations will require cutting finished surface."
+
+  - name: superstructure_rcc_slab_per_floor_detailed
+    description: "Detailed RCC slab construction sequence for one floor — beam-slab monolithic"
+    applicable_to: [residential_apartment, commercial_office, hospital]
+    stages:
+      - stage: 1
+        name: staging_and_soffit_formwork
+        items:
+          - independent_staging_and_props
+          - beam_soffit_plywood_shuttering
+          - beam_side_shuttering
+          - slab_soffit_plywood_shuttering
+          - camber_provision_if_required_long_span
+          - survey_check_of_soffit_level
+      - stage: 2
+        name: reinforcement
+        items:
+          - beam_bottom_bars_and_stirrups
+          - slab_bottom_reinforcement_short_span
+          - slab_bottom_reinforcement_long_span
+          - electrical_conduit_and_junction_boxes_in_slab
+          - plumbing_sleeves_and_pipes_in_slab
+          - slab_top_reinforcement
+          - beam_top_bars
+          - cover_blocks_bottom_and_sides
+          - pre_pour_inspection_MEP_clearance
+      - stage: 3
+        name: concrete_pour
+        items:
+          - concrete_pump_or_crane_bucket_setup
+          - monolithic_pour_beams_and_slab_together
+          - vibration_with_needle_vibrator
+          - top_surface_level_screed
+          - anti_cracking_surface_treatment_if_specified
+      - stage: 4
+        name: curing_and_striking
+        items:
+          - ponding_curing_14_days_minimum_IS456
+          - side_formwork_striking_3_days
+          - soffit_striking_21_days_minimum
+          - back_propping_below_if_required_multi_storey
+    predecessor_rules:
+      - item: slab_reinforcement_top_layer
+        must_follow: [electrical_conduit_in_slab, plumbing_sleeves_placed]
+        error: "Top reinforcement placed before MEP conduit — conduit must be between top and bottom reinforcement."
+      - item: concrete_pour_slab
+        must_follow: [full_reinforcement_inspection_passed, MEP_clearance_obtained, soffit_formwork_surveyed]
+        error: "Concrete poured without complete reinforcement or MEP clearance — pour must not proceed without pre-pour inspection."
+      - item: soffit_striking
+        must_follow: [concrete_pour, minimum_21_days_curing_normal_portland_cement]
+        error: "IS 456 Table 11: soffit props for slabs must remain minimum 14 days, back props minimum 56 days for long spans."

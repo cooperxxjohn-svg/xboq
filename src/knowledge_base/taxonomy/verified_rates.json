@@ -1,0 +1,981 @@
+{
+  "metadata": {
+    "fetched_date": "2026-03-02",
+    "currency": "INR",
+    "notes": "Rates compiled from multiple verified Indian construction sources. Rates are exclusive of GST unless noted. Regional variations apply - these represent pan-India averages or ranges.",
+    "sources": [
+      "https://goa.naikconstruction.com/2023/03/civil-contractor-rates-goa-india.html",
+      "https://hyderabadbuilders.in/construction-labor-cost/",
+      "https://hyderabadbuilders.in/building-materials-price-list/",
+      "https://civiljungles.com/rate-analysis-of-excavation/",
+      "https://civiljungles.com/rate-analysis-of-brick/",
+      "https://civilsir.com/rate-analysis-for-plaster-work-calculate-quantity-and-cost/",
+      "https://civilsir.com/rate-analysis-for-m20-concrete/",
+      "https://architects4design.com/item-rates-construction/",
+      "https://civilsite.in/building-work-labour-rate/",
+      "https://www.contractorbhai.com/cost/door-frame/",
+      "https://www.cbecindia.com/2020/10/how-to-calculate-rate-analysis-of-back.html",
+      "https://ventac.in/vrf-cooling-genuine-cost-and-price.html",
+      "https://buildingandinteriors.com/vitrified-tiles-rate-in-india/",
+      "https://onsiteteams.com/latest-gujarat-schedule-of-rates/",
+      "https://www.gnfc.in/wp-content/uploads/2024/05/22-Schedule-Of-Rates-SOR.PDF",
+      "https://mjp.maharashtra.gov.in/wp-content/uploads/2023/01/MJP-SSR-2023-24_Final.pdf",
+      "https://cevnews.in/2025/09/cpwd-plinth-area-rates-2025/",
+      "https://www.nobroker.in/forum/how-much-does-marble-flooring-cost-per-square-foot/",
+      "https://www.houseyog.com/blog/false-ceiling-cost-per-sq-ft-pop-gypsum-pvc-in-india/",
+      "https://www.99acres.com/articles/anti-termite-treatment.html"
+    ]
+  },
+  "rates": [
+    {
+      "item": "Earthwork excavation soft soil depth 0-1.5m (manual)",
+      "unit": "cum",
+      "min_inr": 200,
+      "max_inr": 300,
+      "source": "civiljungles.com rate analysis 2024",
+      "confidence": "verified",
+      "notes": "50m lead. IS Code 1200 Part 1 basis."
+    },
+    {
+      "item": "Earthwork excavation hard soil depth 0-1.5m (manual)",
+      "unit": "cum",
+      "min_inr": 350,
+      "max_inr": 500,
+      "source": "civiljungles.com / cbecindia.com rate analysis 2024",
+      "confidence": "verified",
+      "notes": "Dense soil requiring picks/jumpers"
+    },
+    {
+      "item": "Earthwork excavation soft soil depth 0-1.5m (machine - backhoe)",
+      "unit": "cum",
+      "min_inr": 100,
+      "max_inr": 200,
+      "source": "civiljungles.com rate analysis 2024",
+      "confidence": "verified",
+      "notes": "Mechanical excavation including dumper. Final rate ~Rs152/cum per analysis."
+    },
+    {
+      "item": "Earthwork excavation soft/disintegrated rock (crowbar quarriable)",
+      "unit": "cum",
+      "min_inr": 600,
+      "max_inr": 900,
+      "source": "civiljungles.com / CPWD rate analysis 2024",
+      "confidence": "verified",
+      "notes": "Laterite included in this category"
+    },
+    {
+      "item": "Earthwork excavation hard rock (blasting required)",
+      "unit": "cum",
+      "min_inr": 1200,
+      "max_inr": 2000,
+      "source": "civiljungles.com / CPWD rate analysis 2024",
+      "confidence": "verified"
+    },
+    {
+      "item": "Backfilling with site excavated material and compaction",
+      "unit": "cum",
+      "min_inr": 100,
+      "max_inr": 130,
+      "source": "cbecindia.com rate analysis 2024",
+      "confidence": "verified",
+      "notes": "Machine backfilling + vibro roller compaction. Base rate Rs115/cum per analysis."
+    },
+    {
+      "item": "Backfilling with outside murum (imported fill material)",
+      "unit": "cum",
+      "min_inr": 480,
+      "max_inr": 600,
+      "source": "cbecindia.com rate analysis 2024",
+      "confidence": "verified",
+      "notes": "Includes murum material cost (within 10km lead). Base rate Rs530/cum per analysis."
+    },
+    {
+      "item": "Earth filling borrowed soil for plot levelling",
+      "unit": "cum",
+      "min_inr": 300,
+      "max_inr": 500,
+      "source": "civiljungles.com / general India market 2024",
+      "confidence": "verified",
+      "notes": "Including transportation within 10km"
+    },
+    {
+      "item": "Plain Cement Concrete (PCC) M10 (1:3:6) lean concrete",
+      "unit": "cum",
+      "min_inr": 4000,
+      "max_inr": 5200,
+      "source": "hyderabadbuilders.in / civilsir.com rate analysis 2024",
+      "confidence": "verified",
+      "notes": "Material cost dominant. Aggregate jelly 1:4:8 shown as Rs70/cft (~Rs2470/cum) at Bangalore."
+    },
+    {
+      "item": "Plain Cement Concrete (PCC) M15 (1:2:4)",
+      "unit": "cum",
+      "min_inr": 4800,
+      "max_inr": 6000,
+      "source": "civilsir.com / India market rate 2024",
+      "confidence": "verified",
+      "notes": "Includes cement, sand, coarse aggregate and labour"
+    },
+    {
+      "item": "RCC M20 (1:1.5:3) - manual mix",
+      "unit": "cum",
+      "min_inr": 6800,
+      "max_inr": 7800,
+      "source": "civilsir.com rate analysis 2024",
+      "confidence": "verified",
+      "notes": "Base rate Rs7221/cum per detailed analysis. Includes 8 bags cement, sand, aggregate, labour, 15% overhead+profit."
+    },
+    {
+      "item": "RCC M25 (1:1:2) - manual mix",
+      "unit": "cum",
+      "min_inr": 7500,
+      "max_inr": 9000,
+      "source": "civilplanets.com / cbecindia.com rate analysis 2024",
+      "confidence": "verified",
+      "notes": "Higher cement content than M20"
+    },
+    {
+      "item": "Ready Mix Concrete (RMC) M15 - plant delivered",
+      "unit": "cum",
+      "min_inr": 3800,
+      "max_inr": 3900,
+      "source": "hyderabadbuilders.in 2024 price list",
+      "confidence": "verified"
+    },
+    {
+      "item": "Ready Mix Concrete (RMC) M20 - plant delivered",
+      "unit": "cum",
+      "min_inr": 3900,
+      "max_inr": 4200,
+      "source": "hyderabadbuilders.in 2024 price list",
+      "confidence": "verified"
+    },
+    {
+      "item": "Ready Mix Concrete (RMC) M25 - plant delivered",
+      "unit": "cum",
+      "min_inr": 4200,
+      "max_inr": 4400,
+      "source": "hyderabadbuilders.in 2024 price list",
+      "confidence": "verified"
+    },
+    {
+      "item": "Ready Mix Concrete (RMC) M30 - plant delivered",
+      "unit": "cum",
+      "min_inr": 4500,
+      "max_inr": 4850,
+      "source": "hyderabadbuilders.in 2024 price list",
+      "confidence": "verified"
+    },
+    {
+      "item": "Ready Mix Concrete (RMC) M35 - plant delivered",
+      "unit": "cum",
+      "min_inr": 4800,
+      "max_inr": 5200,
+      "source": "hyderabadbuilders.in 2024 price list",
+      "confidence": "verified"
+    },
+    {
+      "item": "Steel reinforcement bar bending and fixing (TMT Fe500)",
+      "unit": "MT",
+      "min_inr": 4000,
+      "max_inr": 7000,
+      "source": "hyderabadbuilders.in / civilsite.in 2024",
+      "confidence": "verified",
+      "notes": "Labour only for bending, cutting, and fixing. Rs4-7/kg = Rs4000-7000/MT. Larger dia bars are cheaper per kg."
+    },
+    {
+      "item": "Steel reinforcement bar bending and fixing (TMT Fe500) - per kg",
+      "unit": "kg",
+      "min_inr": 4,
+      "max_inr": 7,
+      "source": "hyderabadbuilders.in / India construction market 2024",
+      "confidence": "verified",
+      "notes": "Labour only. Some sources cite Rs7-12/kg in premium markets."
+    },
+    {
+      "item": "Shuttering/centering for slab and beam",
+      "unit": "sqm",
+      "min_inr": 270,
+      "max_inr": 380,
+      "source": "civilsir.com / houseyog.com 2024",
+      "confidence": "verified",
+      "notes": "Rs25-35/sqft converted. Includes labour and material for conventional wooden/steel shuttering."
+    },
+    {
+      "item": "Shuttering/centering for columns",
+      "unit": "sqm",
+      "min_inr": 650,
+      "max_inr": 860,
+      "source": "houseyog.com 2024",
+      "confidence": "verified",
+      "notes": "Rs60-80/sqft converted. Higher complexity than slab shuttering."
+    },
+    {
+      "item": "Brick masonry 230mm (9-inch) thick wall CM 1:6",
+      "unit": "cum",
+      "min_inr": 5000,
+      "max_inr": 6000,
+      "source": "civiljungles.com rate analysis 2024",
+      "confidence": "verified",
+      "notes": "Base rate Rs5300/cum per detailed analysis with 500 bricks/cum, CM 1:3 mortar, labour, 15% overhead."
+    },
+    {
+      "item": "Brick masonry 115mm (4.5-inch) half brick wall",
+      "unit": "sqm",
+      "min_inr": 550,
+      "max_inr": 750,
+      "source": "architects4design.com Bangalore 2024",
+      "confidence": "verified",
+      "notes": "Rate of Rs70/sqft in Bangalore."
+    },
+    {
+      "item": "AAC block masonry 200mm thick (CM 1:6)",
+      "unit": "sqm",
+      "min_inr": 450,
+      "max_inr": 650,
+      "source": "goa.naikconstruction.com / India market 2024",
+      "confidence": "verified",
+      "notes": "AAC blocks at Rs90/block in Goa (600x200x100mm). Labour extra."
+    },
+    {
+      "item": "Stone masonry random rubble in CM 1:6 (foundation)",
+      "unit": "cum",
+      "min_inr": 4500,
+      "max_inr": 7500,
+      "source": "builtxsdc.com / constructionqueries.wordpress.com 2024",
+      "confidence": "verified",
+      "notes": "Range Rs4693-7210/cum from different sources. Includes stone, mortar, labour."
+    },
+    {
+      "item": "Cement plaster 12mm thick internal (CM 1:6)",
+      "unit": "sqm",
+      "min_inr": 230,
+      "max_inr": 310,
+      "source": "civilsir.com rate analysis 2024",
+      "confidence": "verified",
+      "notes": "Base rate Rs268/sqm per detailed analysis. Material Rs53 + Labour Rs180 + 15% extras."
+    },
+    {
+      "item": "Cement plaster 20mm thick external (CM 1:6)",
+      "unit": "sqm",
+      "min_inr": 320,
+      "max_inr": 420,
+      "source": "civilsir.com rate analysis 2024",
+      "confidence": "verified",
+      "notes": "Base rate Rs360/sqm per detailed analysis. Material Rs88 + Labour Rs225 + 15% extras."
+    },
+    {
+      "item": "Cement plaster 6mm thick ceiling (CM 1:4)",
+      "unit": "sqm",
+      "min_inr": 170,
+      "max_inr": 220,
+      "source": "civilsir.com rate analysis 2024",
+      "confidence": "verified",
+      "notes": "Base rate Rs188/sqm per analysis. Material Rs31 + Labour Rs140 + 15% extras."
+    },
+    {
+      "item": "Brick partition wall 115mm GNFC specification CM 1:4",
+      "unit": "sqm",
+      "min_inr": 480,
+      "max_inr": 540,
+      "source": "gnfc.in SOR 2024-25",
+      "confidence": "verified",
+      "notes": "GNFC TDI-II Dahej SOR 2024. Rate Rs498.85/sqm with extras for height above 5m."
+    },
+    {
+      "item": "IPS (Indian Patent Stone) flooring 40mm thick",
+      "unit": "sqm",
+      "min_inr": 380,
+      "max_inr": 860,
+      "source": "99acres.com / India market 2024",
+      "confidence": "verified",
+      "notes": "Rs35-80/sqft converted to sqm (x10.76). Mix 1:1.5:3, machine-floated finish."
+    },
+    {
+      "item": "Vitrified tile flooring (600x600mm standard) - supply and fix",
+      "unit": "sqft",
+      "min_inr": 95,
+      "max_inr": 170,
+      "source": "buildingandinteriors.com / houseyog.com 2024",
+      "confidence": "verified",
+      "notes": "Tile material Rs60-120/sqft + Labour Rs35-50/sqft installed."
+    },
+    {
+      "item": "Vitrified tile flooring (600x600mm) - supply and fix",
+      "unit": "sqm",
+      "min_inr": 1020,
+      "max_inr": 1830,
+      "source": "buildingandinteriors.com / civillane.com 2024",
+      "confidence": "verified",
+      "notes": "Converted from sqft rates. Branded tile (Kajaria/Somany) starts Rs60-80/sqft."
+    },
+    {
+      "item": "Ceramic wall tile dado 300x450mm bathroom (supply and fix)",
+      "unit": "sqft",
+      "min_inr": 80,
+      "max_inr": 110,
+      "source": "architects4design.com / classicinfrahomesinterior.com 2024",
+      "confidence": "verified",
+      "notes": "Rs80/sqft from Bangalore contractor rates. Tile material Rs55-65/sqft + labor Rs25-45/sqft."
+    },
+    {
+      "item": "Antiskid ceramic tile flooring for wet areas (toilet/bathroom)",
+      "unit": "sqft",
+      "min_inr": 75,
+      "max_inr": 110,
+      "source": "architects4design.com Bangalore 2024",
+      "confidence": "verified",
+      "notes": "Rs80/sqft from Bangalore contractor rate list."
+    },
+    {
+      "item": "Marble flooring Makrana/Indian white (supply and fix)",
+      "unit": "sqft",
+      "min_inr": 200,
+      "max_inr": 400,
+      "source": "nobroker.in / livspace.com 2024",
+      "confidence": "verified",
+      "notes": "Makrana marble base Rs200/sqft. Labor Rs50-100/sqft additional."
+    },
+    {
+      "item": "Granite flooring Indian granite (supply and fix)",
+      "unit": "sqft",
+      "min_inr": 130,
+      "max_inr": 600,
+      "source": "rkmarblesindia.com / petrosstone.com 2024",
+      "confidence": "verified",
+      "notes": "Black/brown granite Rs80-450/sqft material. Labor Rs50-150/sqft. Premium imported granites higher."
+    },
+    {
+      "item": "Granite kitchen countertop slab (supply and fix)",
+      "unit": "sqft",
+      "min_inr": 200,
+      "max_inr": 600,
+      "source": "nobroker.in / houzz.in 2024",
+      "confidence": "verified",
+      "notes": "Installed rate including fabrication and fixing. Material Rs150-500/sqft + Labor Rs50-150/sqft."
+    },
+    {
+      "item": "Internal emulsion paint - new work (putty + primer + 2 coats)",
+      "unit": "sqft",
+      "min_inr": 18,
+      "max_inr": 35,
+      "source": "99acres.com / buildingandinteriors.com 2024",
+      "confidence": "verified",
+      "notes": "Includes putty application on new plaster."
+    },
+    {
+      "item": "External emulsion/weather shield paint (primer + 2 coats)",
+      "unit": "sqft",
+      "min_inr": 15,
+      "max_inr": 50,
+      "source": "buildingandinteriors.com / houseyog.com 2024",
+      "confidence": "verified",
+      "notes": "Weather-resistant formulations for exterior."
+    },
+    {
+      "item": "Distemper paint interior walls (2 coats)",
+      "unit": "sqft",
+      "min_inr": 10,
+      "max_inr": 15,
+      "source": "nobroker.in / 99acres.com 2024",
+      "confidence": "verified",
+      "notes": "Budget option. Short shelf life."
+    },
+    {
+      "item": "Enamel paint on steel grills/railings (2 coats)",
+      "unit": "sqft",
+      "min_inr": 12,
+      "max_inr": 18,
+      "source": "architects4design.com Bangalore 2024",
+      "confidence": "verified",
+      "notes": "Includes primer coat on MS surface."
+    },
+    {
+      "item": "False ceiling gypsum board (supply and fix)",
+      "unit": "sqft",
+      "min_inr": 70,
+      "max_inr": 120,
+      "source": "houseyog.com / livspace.com 2024",
+      "confidence": "verified",
+      "notes": "GI frame + 12mm gypsum board + finishing. Material Rs45/sqft + Labor Rs20/sqft typical."
+    },
+    {
+      "item": "False ceiling POP (Plaster of Paris) plain",
+      "unit": "sqft",
+      "min_inr": 60,
+      "max_inr": 120,
+      "source": "houseyog.com / livspace.com 2024",
+      "confidence": "verified",
+      "notes": "Simple flat POP ceiling. Complex designs add 20-30%."
+    },
+    {
+      "item": "Electrical house wiring per point (concealed conduit - new construction)",
+      "unit": "point",
+      "min_inr": 700,
+      "max_inr": 1000,
+      "source": "civilsite.in / houseyog.com 2024",
+      "confidence": "verified",
+      "notes": "1 point = 1 outlet/switch. Metro cities Rs800-1000, tier-2 cities Rs700-800."
+    },
+    {
+      "item": "Electrical wiring overall (house construction, concealed)",
+      "unit": "sqft",
+      "min_inr": 20,
+      "max_inr": 50,
+      "source": "houseyog.com / nobroker.in 2024",
+      "confidence": "verified",
+      "notes": "Includes copper wiring, conduits, switches, boards. Labour 30-40% of total."
+    },
+    {
+      "item": "Plumbing water supply (concealed CPVC per point)",
+      "unit": "point",
+      "min_inr": 350,
+      "max_inr": 600,
+      "source": "houseyog.com / nobroker.in 2024",
+      "confidence": "verified",
+      "notes": "Per outlet point. Higher for concealed or vertical runs."
+    },
+    {
+      "item": "Plumbing overall (house construction)",
+      "unit": "sqft",
+      "min_inr": 10,
+      "max_inr": 15,
+      "source": "hyderabadbuilders.in 2024",
+      "confidence": "verified",
+      "notes": "Supply and drainage combined rough work during construction."
+    },
+    {
+      "item": "CPVC pipe 15mm (1/2 inch) supply and fix",
+      "unit": "rmt",
+      "min_inr": 80,
+      "max_inr": 150,
+      "source": "hyderabadbuilders.in / moglix.com market 2024",
+      "confidence": "verified",
+      "notes": "CPVC pipe + fittings + labor. Pipe material Rs345-431/unit (3m piece) per hyderabadbuilders."
+    },
+    {
+      "item": "CPVC pipe 25mm (1 inch) supply and fix",
+      "unit": "rmt",
+      "min_inr": 150,
+      "max_inr": 250,
+      "source": "India plumbing market 2024",
+      "confidence": "verified",
+      "notes": "CPVC pipe + fittings + labor installed"
+    },
+    {
+      "item": "Toilet/WC (western) installation - labor only",
+      "unit": "nos",
+      "min_inr": 700,
+      "max_inr": 2000,
+      "source": "nobroker.in / rozgaarlo.com 2024",
+      "confidence": "verified",
+      "notes": "Labour for fixing only. Bangalore WC floor mounted Rs726, wall mounted Rs1748."
+    },
+    {
+      "item": "Waterproofing bituminous coating (terrace/roof)",
+      "unit": "sqft",
+      "min_inr": 20,
+      "max_inr": 35,
+      "source": "asianpaints.com / houseyog.com 2024",
+      "confidence": "verified",
+      "notes": "Bituminous coating system. Rs25/sqft typical market rate."
+    },
+    {
+      "item": "Waterproofing polymer modified cementitious (terrace/basement)",
+      "unit": "sqft",
+      "min_inr": 30,
+      "max_inr": 45,
+      "source": "houseyog.com / mccoymart.com 2024",
+      "confidence": "verified",
+      "notes": "2-coat system. Rs35/sqft cited for polymer cementitious."
+    },
+    {
+      "item": "Waterproofing polyurethane liquid membrane (premium)",
+      "unit": "sqft",
+      "min_inr": 40,
+      "max_inr": 65,
+      "source": "houseyog.com 2024",
+      "confidence": "verified",
+      "notes": "PU membrane. Rs45/sqft cited. Longer durability."
+    },
+    {
+      "item": "Anti-termite pre-construction soil treatment",
+      "unit": "sqft",
+      "min_inr": 6,
+      "max_inr": 10,
+      "source": "99acres.com / pestquit.in 2024",
+      "confidence": "verified",
+      "notes": "Chloropyrifos 20% EC at 1% concentration, 5 litres/sqm application."
+    },
+    {
+      "item": "UPVC window sliding type (supply and fix)",
+      "unit": "sqft",
+      "min_inr": 270,
+      "max_inr": 700,
+      "source": "buildingandinteriors.com 2024",
+      "confidence": "verified",
+      "notes": "Including frame, shutter, glass, hardware, installation."
+    },
+    {
+      "item": "UPVC window casement type (supply and fix)",
+      "unit": "sqft",
+      "min_inr": 250,
+      "max_inr": 710,
+      "source": "buildingandinteriors.com 2024",
+      "confidence": "verified",
+      "notes": "Single glazing Rs250-450/sqft, double glazing Rs500-800/sqft."
+    },
+    {
+      "item": "Sal wood door with skin (supply and fix)",
+      "unit": "sqft",
+      "min_inr": 380,
+      "max_inr": 450,
+      "source": "architects4design.com Bangalore 2024",
+      "confidence": "verified",
+      "notes": "Rs400/sqft cited in Bangalore contractor rate list."
+    },
+    {
+      "item": "Teak wood main door (supply and fix)",
+      "unit": "sqft",
+      "min_inr": 1400,
+      "max_inr": 1700,
+      "source": "architects4design.com Bangalore 2024",
+      "confidence": "verified",
+      "notes": "Rs1500/sqft cited in Bangalore contractor rate list."
+    },
+    {
+      "item": "Granite door frame (supply and fix)",
+      "unit": "rft",
+      "min_inr": 350,
+      "max_inr": 390,
+      "source": "contractorbhai.com 2024",
+      "confidence": "verified",
+      "notes": "Single patti granite strip frame up to 6 inch width. Mumbai Rs375, Delhi Rs385, Pune Rs360, Bengaluru Rs350."
+    },
+    {
+      "item": "Marble door frame (supply and fix)",
+      "unit": "rft",
+      "min_inr": 200,
+      "max_inr": 225,
+      "source": "contractorbhai.com 2024",
+      "confidence": "verified",
+      "notes": "Marble door frame up to 6 inch width. Rs200-225 across major cities."
+    },
+    {
+      "item": "MS grill for windows (supply and fix)",
+      "unit": "sqft",
+      "min_inr": 110,
+      "max_inr": 200,
+      "source": "architects4design.com / contractorbhai.com 2024",
+      "confidence": "verified",
+      "notes": "Rs120/sqft in Bangalore. Design complexity affects rate."
+    },
+    {
+      "item": "MS gate fabrication and fixing",
+      "unit": "sqft",
+      "min_inr": 180,
+      "max_inr": 250,
+      "source": "architects4design.com Bangalore 2024",
+      "confidence": "verified",
+      "notes": "Rs200/sqft cited. Includes material, fabrication, primer paint, fixing."
+    },
+    {
+      "item": "MS balcony railing (supply and fix)",
+      "unit": "sqft",
+      "min_inr": 140,
+      "max_inr": 200,
+      "source": "architects4design.com Bangalore 2024",
+      "confidence": "verified",
+      "notes": "Rs150/sqft cited. Circular pipe railings at Rs95/sqft for 16 gauge."
+    },
+    {
+      "item": "VRF/VRV air conditioning system (supply and install)",
+      "unit": "TR (ton of refrigeration)",
+      "min_inr": 65000,
+      "max_inr": 95000,
+      "source": "ventac.in 2024",
+      "confidence": "verified",
+      "notes": "Complete system cost per ton. 10-ton basic system Rs6-9.5 lakhs, premium Rs10-15 lakhs."
+    },
+    {
+      "item": "VRF/VRV installation labor (10-ton system)",
+      "unit": "lumpsum",
+      "min_inr": 150000,
+      "max_inr": 300000,
+      "source": "ventac.in 2024",
+      "confidence": "verified",
+      "notes": "Labour only for 10-ton system. Includes commissioning."
+    },
+    {
+      "item": "VRF refrigerant copper piping and insulation (10-ton)",
+      "unit": "lumpsum",
+      "min_inr": 80000,
+      "max_inr": 200000,
+      "source": "ventac.in 2024",
+      "confidence": "verified",
+      "notes": "Varies with pipe length and complexity."
+    },
+    {
+      "item": "Split AC installation (1-2 ton wall mount)",
+      "unit": "nos",
+      "min_inr": 1000,
+      "max_inr": 1800,
+      "source": "nobroker.in 2024",
+      "confidence": "verified",
+      "notes": "Standard installation. Extra charges for additional piping beyond 3-5m standard."
+    },
+    {
+      "item": "Mason (1st class) daily wage",
+      "unit": "day",
+      "min_inr": 600,
+      "max_inr": 800,
+      "source": "civilsite.in 2024",
+      "confidence": "verified",
+      "notes": "Pan-India average. Metro cities higher."
+    },
+    {
+      "item": "Carpenter daily wage",
+      "unit": "day",
+      "min_inr": 600,
+      "max_inr": 900,
+      "source": "civilsite.in 2024",
+      "confidence": "verified"
+    },
+    {
+      "item": "Plumber daily wage",
+      "unit": "day",
+      "min_inr": 500,
+      "max_inr": 900,
+      "source": "civilsite.in 2024",
+      "confidence": "verified"
+    },
+    {
+      "item": "Electrician daily wage",
+      "unit": "day",
+      "min_inr": 500,
+      "max_inr": 850,
+      "source": "civilsite.in 2024",
+      "confidence": "verified",
+      "notes": "Hyderabad reference: Rs850/day."
+    },
+    {
+      "item": "Painter daily wage",
+      "unit": "day",
+      "min_inr": 500,
+      "max_inr": 900,
+      "source": "civilsite.in 2024",
+      "confidence": "verified"
+    },
+    {
+      "item": "Tile layer daily wage",
+      "unit": "day",
+      "min_inr": 500,
+      "max_inr": 800,
+      "source": "civilsite.in 2024",
+      "confidence": "verified"
+    },
+    {
+      "item": "Helper/unskilled labour daily wage",
+      "unit": "day",
+      "min_inr": 350,
+      "max_inr": 500,
+      "source": "civilsite.in / civilsir.com 2024",
+      "confidence": "verified",
+      "notes": "Unskilled earthwork labourer: Rs250-400/day."
+    },
+    {
+      "item": "AC technician daily wage",
+      "unit": "day",
+      "min_inr": 600,
+      "max_inr": 800,
+      "source": "civilsite.in 2024",
+      "confidence": "verified"
+    },
+    {
+      "item": "House construction overall (labour only)",
+      "unit": "sqft",
+      "min_inr": 250,
+      "max_inr": 350,
+      "source": "hyderabadbuilders.in 2024",
+      "confidence": "verified",
+      "notes": "Complete house construction labour excluding materials."
+    },
+    {
+      "item": "Brickwork labour (4-inch wall)",
+      "unit": "sqft",
+      "min_inr": 18,
+      "max_inr": 20,
+      "source": "hyderabadbuilders.in 2024",
+      "confidence": "verified"
+    },
+    {
+      "item": "Brickwork labour (6-inch wall)",
+      "unit": "sqft",
+      "min_inr": 24,
+      "max_inr": 26,
+      "source": "hyderabadbuilders.in 2024",
+      "confidence": "verified"
+    },
+    {
+      "item": "Brickwork labour (8-inch wall)",
+      "unit": "sqft",
+      "min_inr": 28,
+      "max_inr": 35,
+      "source": "hyderabadbuilders.in 2024",
+      "confidence": "verified"
+    },
+    {
+      "item": "Plastering labour internal 12mm",
+      "unit": "sqft",
+      "min_inr": 18,
+      "max_inr": 22,
+      "source": "hyderabadbuilders.in 2024",
+      "confidence": "verified"
+    },
+    {
+      "item": "Plastering labour external 20mm",
+      "unit": "sqft",
+      "min_inr": 23,
+      "max_inr": 25,
+      "source": "hyderabadbuilders.in 2024",
+      "confidence": "verified"
+    },
+    {
+      "item": "Concrete work labour",
+      "unit": "cft",
+      "min_inr": 40,
+      "max_inr": 65,
+      "source": "hyderabadbuilders.in 2024",
+      "confidence": "verified"
+    },
+    {
+      "item": "Shuttering work labour",
+      "unit": "sqft",
+      "min_inr": 35,
+      "max_inr": 40,
+      "source": "hyderabadbuilders.in 2024",
+      "confidence": "verified"
+    },
+    {
+      "item": "Waterproofing work labour",
+      "unit": "sqft",
+      "min_inr": 20,
+      "max_inr": 25,
+      "source": "hyderabadbuilders.in 2024",
+      "confidence": "verified"
+    },
+    {
+      "item": "Excavation labour",
+      "unit": "sqft",
+      "min_inr": 7,
+      "max_inr": 10,
+      "source": "hyderabadbuilders.in 2024",
+      "confidence": "verified"
+    },
+    {
+      "item": "Cement OPC/PPC 50kg bag (brand: Ultratech/ACC)",
+      "unit": "bag",
+      "min_inr": 360,
+      "max_inr": 435,
+      "source": "hyderabadbuilders.in / cementsprice.com 2024",
+      "confidence": "verified",
+      "notes": "Ultratech Rs360-435, Ambuja Rs330-410, ACC Rs358-378, JK Super Rs320-358 per bag."
+    },
+    {
+      "item": "TMT steel bars Fe500 (8-25mm dia)",
+      "unit": "kg",
+      "min_inr": 65,
+      "max_inr": 90,
+      "source": "steelmenu.in / tatatiscon.co.in 2024",
+      "confidence": "verified",
+      "notes": "SAIL/JSPL Rs65-85/kg, Tata Tiscon Rs75-90/kg. Hyderabad builders: Rs45-80/kg (older data)."
+    },
+    {
+      "item": "River sand",
+      "unit": "MT",
+      "min_inr": 1500,
+      "max_inr": 3200,
+      "source": "hyderabadbuilders.in 2024",
+      "confidence": "verified",
+      "notes": "Local sand in Goa Rs4500/cum. Wide variation by region."
+    },
+    {
+      "item": "M-sand (manufactured sand)",
+      "unit": "MT",
+      "min_inr": 850,
+      "max_inr": 920,
+      "source": "hyderabadbuilders.in 2024",
+      "confidence": "verified"
+    },
+    {
+      "item": "Coarse aggregate (10-40mm)",
+      "unit": "MT",
+      "min_inr": 625,
+      "max_inr": 800,
+      "source": "hyderabadbuilders.in 2024",
+      "confidence": "verified",
+      "notes": "Local aggregate in Goa Rs2000/cum."
+    },
+    {
+      "item": "Red clay bricks 230x115x75mm",
+      "unit": "nos",
+      "min_inr": 5,
+      "max_inr": 8,
+      "source": "hyderabadbuilders.in 2024",
+      "confidence": "verified",
+      "notes": "4-inch: Rs5.50-6, 6-inch: Rs8.50-12 per piece."
+    },
+    {
+      "item": "Fly ash bricks",
+      "unit": "nos",
+      "min_inr": 8,
+      "max_inr": 14,
+      "source": "hyderabadbuilders.in 2024",
+      "confidence": "verified"
+    },
+    {
+      "item": "AAC blocks 600x200x200mm",
+      "unit": "nos",
+      "min_inr": 45,
+      "max_inr": 100,
+      "source": "ofbusiness.com / hyderabadbuilders.in 2024",
+      "confidence": "verified",
+      "notes": "Rs4000-5500/cum. Goa rate Rs90/block (600x200x100mm). Bigbloc, Ultratech Aerocon brands."
+    },
+    {
+      "item": "Laterite blocks 300x230x150mm (Goa/Coastal region)",
+      "unit": "nos",
+      "min_inr": 35,
+      "max_inr": 50,
+      "source": "goa.naikconstruction.com 2024",
+      "confidence": "verified",
+      "notes": "Goa-specific. Rs40/block Jan 2025."
+    },
+    {
+      "item": "Vitrified tiles 600x600mm (standard quality)",
+      "unit": "sqft",
+      "min_inr": 60,
+      "max_inr": 120,
+      "source": "hyderabadbuilders.in / buildingandinteriors.com 2024",
+      "confidence": "verified",
+      "notes": "Material only. Kajaria/Somany branded Rs60-300/sqft. Standard grade Rs60-120/sqft."
+    },
+    {
+      "item": "CPVC pipes (Prince/Finolex brand)",
+      "unit": "unit (3m piece)",
+      "min_inr": 345,
+      "max_inr": 431,
+      "source": "hyderabadbuilders.in 2024",
+      "confidence": "verified",
+      "notes": "Per 3m length for standard residential sizes."
+    },
+    {
+      "item": "Interior paint (emulsion, 20 litre)",
+      "unit": "litre",
+      "min_inr": 200,
+      "max_inr": 435,
+      "source": "hyderabadbuilders.in 2024",
+      "confidence": "verified",
+      "notes": "Per litre equivalent from 20L drum prices."
+    },
+    {
+      "item": "Rubble (stone pieces) Goa market",
+      "unit": "cum",
+      "min_inr": 1400,
+      "max_inr": 1600,
+      "source": "goa.naikconstruction.com 2024",
+      "confidence": "verified",
+      "notes": "Goa-specific rate. Rs1500/cum or Rs7000/trip (5 cum)."
+    },
+    {
+      "item": "Mild/HYSD steel reinforcement supply and fix (labour + material)",
+      "unit": "MT",
+      "min_inr": 75000,
+      "max_inr": 90000,
+      "source": "architects4design.com Bangalore 2024",
+      "confidence": "verified",
+      "notes": "Rs45000-80000/MT material + Rs4000-7000/MT labour. Bangalore contractor rate: Rs45000/MT (older rate)."
+    },
+    {
+      "item": "Compound wall 4.5-inch brick with plastering both sides (H=4.5ft)",
+      "unit": "rft",
+      "min_inr": 700,
+      "max_inr": 850,
+      "source": "architects4design.com Bangalore 2024",
+      "confidence": "verified",
+      "notes": "Rs750/rft cited in Bangalore contractor rate list."
+    },
+    {
+      "item": "Parapet wall 4.5-inch (H=2.5ft)",
+      "unit": "rft",
+      "min_inr": 280,
+      "max_inr": 350,
+      "source": "architects4design.com Bangalore 2024",
+      "confidence": "verified",
+      "notes": "Rs300/rft cited in Bangalore contractor rate list."
+    },
+    {
+      "item": "RCC staircase (1:2:4 mix)",
+      "unit": "cft",
+      "min_inr": 190,
+      "max_inr": 230,
+      "source": "architects4design.com Bangalore 2024",
+      "confidence": "verified",
+      "notes": "Rs200/cft (~Rs7060/cum). Includes labour and material for casting."
+    },
+    {
+      "item": "RCC column footing (1:1.5:3)",
+      "unit": "cft",
+      "min_inr": 140,
+      "max_inr": 170,
+      "source": "architects4design.com Bangalore 2024",
+      "confidence": "verified",
+      "notes": "Rs150/cft (~Rs5300/cum). Labour and material for isolated footings."
+    },
+    {
+      "item": "Sump tank construction (underground water storage)",
+      "unit": "litre",
+      "min_inr": 2.5,
+      "max_inr": 4,
+      "source": "architects4design.com Bangalore 2024",
+      "confidence": "verified",
+      "notes": "Rs3/litre cited. Includes RCC walls, plaster, waterproofing."
+    },
+    {
+      "item": "Residential building construction all-in cost (load bearing/framed)",
+      "unit": "sqm",
+      "min_inr": 18000,
+      "max_inr": 35000,
+      "source": "goa.naikconstruction.com / CPWD 2024-25",
+      "confidence": "verified",
+      "notes": "Goa rate Rs28000/sqm from Jan 2025. CPWD plinth area rates vary by city and building type."
+    },
+    {
+      "item": "Vitrified tile flooring skirting",
+      "unit": "rft",
+      "min_inr": 65,
+      "max_inr": 80,
+      "source": "architects4design.com Bangalore 2024",
+      "confidence": "verified",
+      "notes": "Rs70/rft in Bangalore. 4-inch height skirting."
+    },
+    {
+      "item": "Window wood (Sal/Honne) supply and fix",
+      "unit": "sqft",
+      "min_inr": 750,
+      "max_inr": 850,
+      "source": "architects4design.com Bangalore 2024",
+      "confidence": "verified",
+      "notes": "Rs800/sqft cited in Bangalore contractor rate list."
+    },
+    {
+      "item": "DPC (Damp Proof Course) chemical treatment walls",
+      "unit": "sqft",
+      "min_inr": 50,
+      "max_inr": 150,
+      "source": "nobroker.in / waterseal.in 2024",
+      "confidence": "verified",
+      "notes": "Varies by method: chemical injection, membrane, or cementitious coating."
+    }
+  ]
+}

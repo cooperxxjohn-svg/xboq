@@ -441,7 +441,7 @@ class QualityChecker:
             'total_area_sqm': round(total_sqm, 2),
             'total_area_sqft': round(total_sqft, 2),
             'rooms_by_type': by_type,
-            'avg_room_area_sqm': round(total_sqm / len(rooms), 2),
+            'avg_room_area_sqm': round(total_sqm / len(rooms), 2) if rooms else 0.0,
             'scale_method': scale.method.value,
             'scale_confidence': scale.confidence,
             'labeled_count': len([r for r in rooms if r.label not in ('Room', 'Unknown')]),

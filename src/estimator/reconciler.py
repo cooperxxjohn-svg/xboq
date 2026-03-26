@@ -41,6 +41,17 @@ class EstimatorAssumptions:
     skirting_height_mm: int = 100
     waterproof_wet_areas: bool = True
     frame_all_openings: bool = True
+    # MEP assumptions
+    electrical_points_per_sqm: float = 0.5  # 1 point per 2 sqm
+    plumbing_points_per_wet_room: int = 4   # avg fixtures per wet room
+    # External works
+    compound_wall_assumed: bool = True
+    # Structural
+    plinth_height_m: float = 0.45
+    parapet_height_m: float = 1.0
+    # Finishes
+    false_ceiling_common_areas: bool = True
+    kitchen_platform_assumed: bool = True
 
     @classmethod
     def from_cli_args(cls, args) -> "EstimatorAssumptions":
@@ -108,6 +119,47 @@ MISSING_SCOPE_RULES = [
         ("wall_tile", "Wall tile dado", "sqm", "dado_area"),
     ]),
 
+    # Kitchen-specific items
+    ("room", "kitchen", [
+        ("kitchen_platform", "Kitchen platform/counter", "rmt", "kitchen_counter_rmt"),
+        ("kitchen_sink", "Kitchen sink", "no", 1),
+        ("kitchen_drain_trap", "Kitchen drain trap", "no", 1),
+        ("kitchen_wall_tiles", "Kitchen wall tiles up to counter", "sqm", "dado_area"),
+        ("kitchen_chimney", "Kitchen chimney provision", "no", 1),
+    ]),
+
+    # Toilet extras (additional fittings beyond waterproofing)
+    ("room", "wet_area", [
+        ("mirror_shelf", "Mirror with shelf", "no", 1),
+        ("soap_dish", "Soap dish", "no", 1),
+        ("towel_rail", "Towel rail", "no", 1),
+        ("toilet_paper_holder", "Toilet paper holder", "no", 1),
+        ("wc_ewc", "WC/EWC", "no", 1),
+        ("health_faucet", "Health faucet", "no", 1),
+        ("washbasin", "Washbasin with pedestal", "no", 1),
+        ("cp_fittings", "CP fittings set", "set", 1),
+        ("floor_trap", "Floor trap", "no", 1),
+        ("pvc_waste_pipe", "PVC waste pipe", "rmt", 3),
+    ]),
+
+    # Bedroom items
+    ("room", "bedroom", [
+        ("wardrobe", "Wardrobe provision", "no", 1),
+    ]),
+
+    # Balcony/terrace items
+    ("room", "balcony", [
+        ("ms_railing", "MS railing", "rmt", "perimeter_m"),
+        ("waterproofing_terrace", "Waterproofing to terrace", "sqm", "area_sqm"),
+        ("slope_screed", "Slope screed", "sqm", "area_sqm"),
+    ]),
+
+    # Staircase items
+    ("room", "staircase", [
+        ("ms_handrail", "MS handrail", "rmt", "perimeter_m"),
+        ("anti_skid_nosing", "Anti-skid nosing", "rmt", 1),
+    ]),
+
     # Every wall needs plaster and paint
     ("wall", "any", [
         ("plaster_internal", "Cement plaster 12mm (internal)", "sqm", "wall_area"),
@@ -116,9 +168,47 @@ MISSING_SCOPE_RULES = [
         ("primer", "Primer coat", "sqm", "wall_area"),
         ("paint", "Emulsion paint 2 coats", "sqm", "wall_area"),
     ]),
+
+    # Building-level rules (fire once, not per room)
+    ("building", "any", [
+        ("plinth_beam", "Plinth beam/DPC", "rmt", 1),
+        ("anti_termite", "Anti-termite treatment", "sqm", 1),
+        ("earth_filling", "Earth filling in plinth", "cum", 1),
+        ("sand_filling", "Sand filling under floor", "sqm", 1),
+        ("parapet_wall", "Parapet wall", "rmt", 1),
+        ("coping", "Coping on parapet", "rmt", 1),
+        ("staircase_rcc", "Staircase RCC", "cum", 1),
+        ("water_tank", "Water tank overhead", "no", 1),
+        ("water_supply_main", "Water supply main line", "rmt", 1),
+        ("drainage_main", "Drainage main line", "rmt", 1),
+        ("swr_pipes", "SWR pipes", "rmt", 1),
+        ("cpvc_pipes", "CPVC hot/cold pipes", "rmt", 1),
+        ("electrical_main_cable", "Electrical main cable", "rmt", 1),
+        ("db_board", "DB board with MCB", "no", 1),
+        ("earthing", "Earthing", "set", 1),
+        ("light_points", "Light points", "point", 1),
+        ("power_points", "Power points", "point", 1),
+        ("fan_points", "Fan points", "point", 1),
+        ("ac_points", "AC points", "point", 1),
+        ("external_plaster", "External plaster", "sqm", 1),
+        ("external_paint", "External paint", "sqm", 1),
+    ]),
+
+    # External works rules (fire once)
+    ("external", "any", [
+        ("compound_wall", "Compound wall", "rmt", 1),
+        ("main_gate", "Main gate", "no", 1),
+        ("internal_road", "Internal road/paving", "sqm", 1),
+        ("open_drain", "Open drain", "rmt", 1),
+        ("septic_tank", "Septic tank/STP", "no", 1),
+        ("soak_pit", "Soak pit", "no", 1),
+        ("borewell", "Borewell/water connection", "no", 1),
+        ("landscaping", "Landscaping", "sqm", 1),
+        ("transformer", "Transformer/electrical panel", "no", 1),
+    ]),
 ]
 
-WET_AREA_TYPES = {"toilet", "bathroom", "kitchen", "utility", "washroom", "wc", "lavatory"}
+WET_AREA_TYPES = {"toilet", "bathroom", "kitchen", "utility", "washroom", "wc", "lavatory", "powder_room", "pantry", "laundry"}
 
 
 class EstimatorReconciler:
@@ -351,6 +441,14 @@ class EstimatorReconciler:
                     applies = True
                 elif trigger_cond == "wet_area":
                     applies = is_wet_area
+                elif trigger_cond == "kitchen":
+                    applies = room_type in ("kitchen", "kitchenette", "pantry")
+                elif trigger_cond == "bedroom":
+                    applies = room_type in ("bedroom", "master_bedroom", "guest_room")
+                elif trigger_cond == "balcony":
+                    applies = room_type in ("balcony", "terrace", "open_terrace", "deck")
+                elif trigger_cond == "staircase":
+                    applies = room_type in ("staircase", "staircase_area", "stairs")
                 else:
                     applies = False
 
@@ -375,6 +473,9 @@ class EstimatorReconciler:
                     elif qty_source == "dado_area":
                         # Dado typically 1.2m height
                         qty = perimeter * 1.2
+                    elif qty_source == "kitchen_counter_rmt":
+                        # Kitchen counter along ~60% of perimeter
+                        qty = perimeter * 0.6
                     elif isinstance(qty_source, (int, float)):
                         qty = qty_source
                     else:
@@ -439,6 +540,85 @@ class EstimatorReconciler:
                     }
                     self.result.missing_scope.append(missing_item)
 
+        # Check wall-based rules
+        for room in self.rooms:
+            room_label = room.get("label", "Unknown")
+            perimeter = room.get("perimeter_m", 16.0)
+            wall_area = perimeter * self.assumptions.wall_height_m
+
+            for trigger_type, trigger_cond, required_items in MISSING_SCOPE_RULES:
+                if trigger_type != "wall":
+                    continue
+                for item_type, item_desc, unit, qty_source in required_items:
+                    desc_lower = item_desc.lower()
+                    if any(desc_lower in existing for existing in existing_descriptions):
+                        continue
+                    if qty_source == "wall_area":
+                        qty = wall_area
+                    elif isinstance(qty_source, (int, float)):
+                        qty = qty_source
+                    else:
+                        qty = wall_area
+
+                    missing_item = {
+                        "item_type": item_type,
+                        "description": f"{item_desc} in {room_label}",
+                        "unit": unit,
+                        "estimated_qty": round(qty, 2),
+                        "room_label": room_label,
+                        "rule": f"wall_{trigger_cond}",
+                        "priority": "MEDIUM",
+                    }
+                    self.result.missing_scope.append(missing_item)
+
+        # Check building-level rules (fire once, not per room)
+        for trigger_type, trigger_cond, required_items in MISSING_SCOPE_RULES:
+            if trigger_type != "building":
+                continue
+            for item_type, item_desc, unit, qty_source in required_items:
+                desc_lower = item_desc.lower()
+                if any(desc_lower in existing for existing in existing_descriptions):
+                    continue
+                qty = qty_source if isinstance(qty_source, (int, float)) else 1
+                missing_item = {
+                    "item_type": item_type,
+                    "description": item_desc,
+                    "unit": unit,
+                    "estimated_qty": qty,
+                    "rule": f"building_{trigger_cond}",
+                    "priority": "HIGH",
+                }
+                self.result.missing_scope.append(missing_item)
+
+                self.result.missing_scope_rfis.append({
+                    "rfi_id": f"RFI-MS-{rfi_id:03d}",
+                    "category": "Missing Scope (Building)",
+                    "description": f"Confirm {item_desc} requirement",
+                    "room": "Whole Building",
+                    "estimated_qty": f"{qty} {unit}",
+                    "impact": "Cost impact if not included",
+                })
+                rfi_id += 1
+
+        # Check external works rules (fire once)
+        for trigger_type, trigger_cond, required_items in MISSING_SCOPE_RULES:
+            if trigger_type != "external":
+                continue
+            for item_type, item_desc, unit, qty_source in required_items:
+                desc_lower = item_desc.lower()
+                if any(desc_lower in existing for existing in existing_descriptions):
+                    continue
+                qty = qty_source if isinstance(qty_source, (int, float)) else 1
+                missing_item = {
+                    "item_type": item_type,
+                    "description": item_desc,
+                    "unit": unit,
+                    "estimated_qty": qty,
+                    "rule": f"external_{trigger_cond}",
+                    "priority": "MEDIUM",
+                }
+                self.result.missing_scope.append(missing_item)
+
         self.result.total_missing = len(self.result.missing_scope)
         logger.info(f"Detected {self.result.total_missing} missing scope items, "
                    f"{len(self.result.missing_scope_rfis)} RFIs generated")
@@ -456,7 +636,8 @@ class EstimatorReconciler:
             # Parse page numbers (could be "1;2;3" format)
             try:
                 pages = [int(p.strip()) for p in str(pages_str).split(";") if p.strip().isdigit()]
-            except (ValueError, AttributeError):
+            except (ValueError, AttributeError) as e:
+                logger.warning(f"Failed to parse pages from '{pages_str}': {e}")
                 pages = []
 
             source = item.get("source", "")
@@ -828,7 +1009,7 @@ def _autofit_columns(ws):
             try:
                 if len(str(cell.value)) > max_length:
                     max_length = len(str(cell.value))
-            except:
+            except (TypeError, AttributeError):
                 pass
         adjusted_width = min(max_length + 2, 50)
         ws.column_dimensions[column_letter].width = adjusted_width

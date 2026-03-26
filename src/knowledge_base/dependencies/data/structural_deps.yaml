@@ -1,0 +1,1562 @@
+rules:
+  # ============================================================
+  # FOOTING DEPENDENCIES
+  # ============================================================
+  - id: "DEP-STR-001"
+    trigger: "footing"
+    required_items: ["excavation", "pcc_blinding", "rcc_footing", "formwork", "reinforcement", "curing"]
+    trade: "structural"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 456"
+    note: "Every footing requires excavation, PCC blinding, RCC, formwork, reinforcement, and curing as mandatory dependencies"
+
+  - id: "DEP-STR-002"
+    trigger: "footing"
+    required_items: ["backfill", "compaction", "sand_filling"]
+    trade: "structural"
+    priority: 2
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 456"
+    note: "Backfill around footing with compaction and sand filling after footing completion"
+
+  - id: "DEP-STR-003"
+    trigger: "footing"
+    required_items: ["anti_termite_treatment"]
+    trade: "structural"
+    priority: 2
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 6313"
+    note: "Anti-termite treatment at footing level is mandatory before backfill"
+
+  - id: "DEP-STR-004"
+    trigger: "footing"
+    required_items: ["soil_investigation_report"]
+    trade: "structural"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 1904"
+    note: "Soil investigation report required to determine safe bearing capacity before footing design"
+
+  - id: "DEP-STR-005"
+    trigger: "isolated_footing"
+    required_items: ["excavation", "pcc_blinding", "rcc_footing", "formwork", "reinforcement", "curing", "pedestal"]
+    trade: "structural"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 456"
+    note: "Isolated footing requires pedestal/column stub in addition to standard footing items"
+
+  - id: "DEP-STR-006"
+    trigger: "combined_footing"
+    required_items: ["excavation", "pcc_blinding", "rcc_footing", "formwork", "reinforcement", "curing", "construction_joint_treatment"]
+    trade: "structural"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 456"
+    note: "Combined footing connecting two or more columns requires construction joint treatment"
+
+  # ============================================================
+  # PILE FOUNDATION DEPENDENCIES
+  # ============================================================
+  - id: "DEP-STR-007"
+    trigger: "pile_foundation"
+    required_items: ["soil_investigation", "pile_integrity_test", "pile_cap", "pile_rcc", "pile_reinforcement"]
+    trade: "structural"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 2911"
+    note: "Pile foundation requires soil investigation, integrity testing, and pile cap"
+
+  - id: "DEP-STR-008"
+    trigger: "pile_foundation"
+    required_items: ["pile_load_test", "pile_boring_log"]
+    trade: "structural"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 2911"
+    note: "Pile load test (initial and routine) and boring log documentation mandatory"
+
+  - id: "DEP-STR-009"
+    trigger: "pile_cap"
+    required_items: ["excavation", "pcc_blinding", "rcc_pile_cap", "formwork", "reinforcement", "curing", "pile_head_treatment"]
+    trade: "structural"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 2911"
+    note: "Pile cap requires pile head treatment to ensure proper bond between pile and cap"
+
+  - id: "DEP-STR-010"
+    trigger: "pile_foundation"
+    required_items: ["dewatering"]
+    trade: "structural"
+    priority: 2
+    condition: "high_water_table"
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 2911"
+    note: "Dewatering required when water table is high during pile construction"
+
+  # ============================================================
+  # RAFT FOUNDATION DEPENDENCIES
+  # ============================================================
+  - id: "DEP-STR-011"
+    trigger: "raft_foundation"
+    required_items: ["excavation", "pcc_blinding", "waterproofing_below_raft", "rcc_raft", "formwork", "reinforcement", "curing"]
+    trade: "structural"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 456"
+    note: "Raft foundation requires waterproofing membrane below the raft before concreting"
+
+  - id: "DEP-STR-012"
+    trigger: "raft_foundation"
+    required_items: ["construction_joints", "joint_treatment", "water_stop"]
+    trade: "structural"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 456"
+    note: "Construction joints in raft require water stops and proper joint treatment"
+
+  - id: "DEP-STR-013"
+    trigger: "raft_foundation"
+    required_items: ["dewatering", "shoring"]
+    trade: "structural"
+    priority: 2
+    condition: "deep_excavation"
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 3764"
+    note: "Deep raft excavation requires dewatering and shoring for safety"
+
+  - id: "DEP-STR-014"
+    trigger: "raft_foundation"
+    required_items: ["protection_screed", "mud_mat"]
+    trade: "structural"
+    priority: 2
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 456"
+    note: "Protection screed or mud mat required above waterproofing before raft reinforcement"
+
+  # ============================================================
+  # COLUMN DEPENDENCIES
+  # ============================================================
+  - id: "DEP-STR-015"
+    trigger: "column"
+    required_items: ["footing_complete", "rcc_column", "formwork_column", "reinforcement_column", "curing"]
+    trade: "structural"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 456"
+    note: "Column requires completed footing, RCC, formwork, reinforcement, and curing"
+
+  - id: "DEP-STR-016"
+    trigger: "column"
+    required_items: ["starter_bars", "kicker"]
+    trade: "structural"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 456"
+    note: "Column starter bars and kicker must be cast with footing for continuity"
+
+  - id: "DEP-STR-017"
+    trigger: "column"
+    required_items: ["cover_blocks", "spacers", "binding_wire"]
+    trade: "structural"
+    priority: 2
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 456"
+    note: "Cover blocks and spacers ensure proper concrete cover to reinforcement"
+
+  - id: "DEP-STR-018"
+    trigger: "column"
+    required_items: ["lap_splice_detailing"]
+    trade: "structural"
+    priority: 1
+    condition: "multi_storey"
+    building_types: [all]
+    room_types: []
+    min_floors: 2
+    min_area_sqm: 0
+    is_code_ref: "IS 13920"
+    note: "Multi-storey columns require proper lap splice detailing at floor levels"
+
+  # ============================================================
+  # BEAM DEPENDENCIES
+  # ============================================================
+  - id: "DEP-STR-019"
+    trigger: "beam"
+    required_items: ["column_support", "rcc_beam", "formwork_beam", "reinforcement_beam", "curing"]
+    trade: "structural"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 456"
+    note: "Beam requires column support, RCC, formwork, reinforcement, and curing"
+
+  - id: "DEP-STR-020"
+    trigger: "beam"
+    required_items: ["shear_reinforcement", "stirrups"]
+    trade: "structural"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 456"
+    note: "Beam shear reinforcement with stirrups is a structural safety requirement"
+
+  - id: "DEP-STR-021"
+    trigger: "beam"
+    required_items: ["propping", "centering"]
+    trade: "structural"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 456"
+    note: "Beam requires propping and centering during and after casting until design strength achieved"
+
+  - id: "DEP-STR-022"
+    trigger: "beam"
+    required_items: ["construction_joint_treatment"]
+    trade: "structural"
+    priority: 2
+    condition: "large_span"
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 456"
+    note: "Large span beams may require construction joint treatment at designated locations"
+
+  # ============================================================
+  # SLAB DEPENDENCIES
+  # ============================================================
+  - id: "DEP-STR-023"
+    trigger: "slab"
+    required_items: ["beam_support", "rcc_slab", "formwork_slab", "reinforcement_slab", "curing"]
+    trade: "structural"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 456"
+    note: "Slab requires beam support, RCC, formwork, reinforcement, and curing"
+
+  - id: "DEP-STR-024"
+    trigger: "slab"
+    required_items: ["propping_slab", "re_propping"]
+    trade: "structural"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 456"
+    note: "Slab propping must remain for minimum 14 days, re-propping for 21 days per IS 456"
+
+  - id: "DEP-STR-025"
+    trigger: "slab"
+    required_items: ["distribution_steel", "main_steel", "chair_bars"]
+    trade: "structural"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 456"
+    note: "Slab reinforcement includes main steel, distribution steel, and chair bars for top steel support"
+
+  - id: "DEP-STR-026"
+    trigger: "slab"
+    required_items: ["sleeve_openings", "mep_conduit_inserts"]
+    trade: "structural"
+    priority: 2
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 456"
+    note: "MEP sleeve openings and conduit inserts must be placed before slab casting"
+
+  - id: "DEP-STR-027"
+    trigger: "slab"
+    required_items: ["concrete_testing_cubes"]
+    trade: "structural"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 456"
+    note: "Concrete cube testing mandatory for every slab pour as per IS 456"
+
+  # ============================================================
+  # STAIRCASE DEPENDENCIES
+  # ============================================================
+  - id: "DEP-STR-028"
+    trigger: "staircase"
+    required_items: ["rcc_staircase", "formwork_staircase", "reinforcement_staircase", "curing"]
+    trade: "structural"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 456"
+    note: "Staircase RCC structure requires formwork, reinforcement, and curing"
+
+  - id: "DEP-STR-029"
+    trigger: "staircase"
+    required_items: ["railing", "handrail"]
+    trade: "structural"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "NBC Part 4"
+    note: "Staircase railing and handrail mandatory for safety per NBC"
+
+  - id: "DEP-STR-030"
+    trigger: "staircase"
+    required_items: ["flooring_staircase", "nosing"]
+    trade: "finishing"
+    priority: 2
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "NBC Part 4"
+    note: "Staircase flooring with anti-skid nosing for safety"
+
+  - id: "DEP-STR-031"
+    trigger: "staircase"
+    required_items: ["landing_slab", "waist_slab"]
+    trade: "structural"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 456"
+    note: "Staircase includes landing slab and waist slab as structural components"
+
+  # ============================================================
+  # RETAINING WALL DEPENDENCIES
+  # ============================================================
+  - id: "DEP-STR-032"
+    trigger: "retaining_wall"
+    required_items: ["drainage_behind_wall", "waterproofing_retaining", "backfill_retaining"]
+    trade: "structural"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 456"
+    note: "Retaining wall requires drainage behind, waterproofing, and controlled backfill"
+
+  - id: "DEP-STR-033"
+    trigger: "retaining_wall"
+    required_items: ["weep_holes", "filter_media"]
+    trade: "structural"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 456"
+    note: "Weep holes with filter media to relieve hydrostatic pressure behind retaining wall"
+
+  - id: "DEP-STR-034"
+    trigger: "retaining_wall"
+    required_items: ["rcc_retaining", "formwork_retaining", "reinforcement_retaining", "base_slab"]
+    trade: "structural"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 456"
+    note: "Retaining wall structural components including base slab/heel/toe"
+
+  - id: "DEP-STR-035"
+    trigger: "retaining_wall"
+    required_items: ["expansion_joints"]
+    trade: "structural"
+    priority: 2
+    condition: "length_above_20m"
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 456"
+    note: "Long retaining walls require expansion joints at intervals"
+
+  # ============================================================
+  # BASEMENT DEPENDENCIES
+  # ============================================================
+  - id: "DEP-STR-036"
+    trigger: "basement"
+    required_items: ["retaining_wall", "waterproofing_basement", "ventilation_basement", "drainage_basement"]
+    trade: "structural"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "NBC Part 4"
+    note: "Basement requires retaining wall, waterproofing, ventilation, and drainage"
+
+  - id: "DEP-STR-037"
+    trigger: "basement"
+    required_items: ["fire_egress_basement", "emergency_exit"]
+    trade: "fire_safety"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "NBC Part 4"
+    note: "Basement fire egress with separate emergency exit mandatory per NBC"
+
+  - id: "DEP-STR-038"
+    trigger: "basement"
+    required_items: ["dewatering", "sump_pit", "sump_pump"]
+    trade: "plumbing"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 456"
+    note: "Basement dewatering with sump pit and pump for water management"
+
+  - id: "DEP-STR-039"
+    trigger: "basement"
+    required_items: ["shoring", "sheet_piling"]
+    trade: "structural"
+    priority: 1
+    condition: "deep_basement"
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 3764"
+    note: "Deep basements require shoring or sheet piling for earth retention during construction"
+
+  - id: "DEP-STR-040"
+    trigger: "basement"
+    required_items: ["ramp_vehicle", "ramp_pedestrian"]
+    trade: "structural"
+    priority: 2
+    condition: "parking_basement"
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "NBC Part 4"
+    note: "Parking basement requires vehicle ramp and separate pedestrian access"
+
+  - id: "DEP-STR-041"
+    trigger: "basement"
+    required_items: ["mechanical_ventilation", "co_detection"]
+    trade: "mechanical"
+    priority: 1
+    condition: "parking_basement"
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "NBC Part 4"
+    note: "Parking basement requires mechanical ventilation with CO detection per NBC"
+
+  # ============================================================
+  # WATER TANK DEPENDENCIES
+  # ============================================================
+  - id: "DEP-STR-042"
+    trigger: "water_tank"
+    required_items: ["waterproofing_tank", "rcc_tank", "reinforcement_tank", "formwork_tank", "curing_tank"]
+    trade: "structural"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 3370"
+    note: "Water tank design per IS 3370 with waterproofing, RCC, reinforcement, formwork, and extended curing"
+
+  - id: "DEP-STR-043"
+    trigger: "water_tank"
+    required_items: ["ladder_tank", "overflow_pipe", "inlet_pipe", "outlet_pipe", "cleaning_access"]
+    trade: "plumbing"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 3370"
+    note: "Water tank requires ladder, overflow, inlet, outlet, and cleaning access provisions"
+
+  - id: "DEP-STR-044"
+    trigger: "water_tank"
+    required_items: ["water_stop_joints", "construction_joint_treatment"]
+    trade: "structural"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 3370"
+    note: "Water tank joints require water stops and proper treatment for leak-proof construction"
+
+  - id: "DEP-STR-045"
+    trigger: "water_tank"
+    required_items: ["leak_test", "chlorination"]
+    trade: "structural"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 3370"
+    note: "Water tank must pass leak test and be chlorinated before use"
+
+  - id: "DEP-STR-046"
+    trigger: "overhead_tank"
+    required_items: ["structural_support_frame", "access_ladder", "lightning_arrester"]
+    trade: "structural"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 3370"
+    note: "Overhead tank requires structural support, access ladder, and lightning protection"
+
+  # ============================================================
+  # POST-TENSIONED SLAB DEPENDENCIES
+  # ============================================================
+  - id: "DEP-STR-047"
+    trigger: "post_tensioned_slab"
+    required_items: ["pt_cables", "anchorage_system", "stressing_operation", "grouting_ducts"]
+    trade: "structural"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 1343"
+    note: "Post-tensioned slab requires PT cables, anchorage, stressing, and grouting"
+
+  - id: "DEP-STR-048"
+    trigger: "post_tensioned_slab"
+    required_items: ["duct_profile_check", "stressing_jack", "elongation_measurement"]
+    trade: "structural"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 1343"
+    note: "PT slab requires duct profile verification, stressing jack, and elongation measurement records"
+
+  - id: "DEP-STR-049"
+    trigger: "post_tensioned_slab"
+    required_items: ["bonded_reinforcement", "edge_reinforcement", "bursting_reinforcement"]
+    trade: "structural"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 1343"
+    note: "PT slab requires supplementary bonded, edge, and bursting reinforcement"
+
+  - id: "DEP-STR-050"
+    trigger: "post_tensioned_beam"
+    required_items: ["pt_cables", "anchorage_system", "stressing_operation", "grouting_ducts", "deviation_blocks"]
+    trade: "structural"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 1343"
+    note: "Post-tensioned beam requires PT cables, anchorage, stressing, grouting, and deviation blocks"
+
+  # ============================================================
+  # PARAPET DEPENDENCIES
+  # ============================================================
+  - id: "DEP-STR-051"
+    trigger: "parapet"
+    required_items: ["coping_stone", "waterproofing_junction"]
+    trade: "structural"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "NBC Part 4"
+    note: "Parapet requires coping stone and waterproofing at wall-slab junction"
+
+  - id: "DEP-STR-052"
+    trigger: "parapet"
+    required_items: ["rcc_parapet", "reinforcement_parapet"]
+    trade: "structural"
+    priority: 1
+    condition: "height_above_600mm"
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 456"
+    note: "Parapets above 600mm height require RCC with reinforcement"
+
+  - id: "DEP-STR-053"
+    trigger: "parapet"
+    required_items: ["metal_railing_on_parapet"]
+    trade: "structural"
+    priority: 2
+    condition: "parapet_below_1200mm"
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "NBC Part 4"
+    note: "If parapet height is less than 1200mm, metal railing must be added to meet minimum height"
+
+  # ============================================================
+  # LIFT PIT DEPENDENCIES
+  # ============================================================
+  - id: "DEP-STR-054"
+    trigger: "lift_pit"
+    required_items: ["waterproofing_lift_pit", "sump_pump_provision"]
+    trade: "structural"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 14665"
+    note: "Lift pit requires waterproofing and sump pump provision for water management"
+
+  - id: "DEP-STR-055"
+    trigger: "lift_pit"
+    required_items: ["rcc_lift_pit", "formwork_lift_pit", "reinforcement_lift_pit"]
+    trade: "structural"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 456"
+    note: "Lift pit structural construction with RCC, formwork, and reinforcement"
+
+  - id: "DEP-STR-056"
+    trigger: "lift_pit"
+    required_items: ["pit_ladder", "pit_light", "pit_switch"]
+    trade: "electrical"
+    priority: 2
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 14665"
+    note: "Lift pit requires access ladder, lighting, and emergency stop switch"
+
+  # ============================================================
+  # PLINTH AND DPC DEPENDENCIES
+  # ============================================================
+  - id: "DEP-STR-057"
+    trigger: "plinth"
+    required_items: ["plinth_beam", "rcc_plinth", "dpc", "anti_termite_treatment"]
+    trade: "structural"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 456"
+    note: "Plinth requires plinth beam, RCC, DPC, and anti-termite treatment"
+
+  - id: "DEP-STR-058"
+    trigger: "dpc"
+    required_items: ["cement_mortar_dpc", "bitumen_coat"]
+    trade: "structural"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 2645"
+    note: "DPC with cement mortar and bitumen coat to prevent moisture rise"
+
+  # ============================================================
+  # SHEAR WALL AND CORE DEPENDENCIES
+  # ============================================================
+  - id: "DEP-STR-059"
+    trigger: "shear_wall"
+    required_items: ["rcc_shear_wall", "formwork_shear_wall", "reinforcement_shear_wall", "curing"]
+    trade: "structural"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 4
+    min_area_sqm: 0
+    is_code_ref: "IS 13920"
+    note: "Shear wall for lateral load resistance in multi-storey buildings"
+
+  - id: "DEP-STR-060"
+    trigger: "shear_wall"
+    required_items: ["boundary_element", "ductile_detailing"]
+    trade: "structural"
+    priority: 1
+    condition: "seismic_zone_III_IV_V"
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 13920"
+    note: "Shear walls in seismic zones require boundary elements and ductile detailing"
+
+  - id: "DEP-STR-061"
+    trigger: "core_wall"
+    required_items: ["slip_formwork", "jump_formwork", "rcc_core", "reinforcement_core"]
+    trade: "structural"
+    priority: 1
+    condition: "high_rise"
+    building_types: [all]
+    room_types: []
+    min_floors: 10
+    min_area_sqm: 0
+    is_code_ref: "IS 456"
+    note: "High-rise core walls may use slip or jump formwork for efficient construction"
+
+  # ============================================================
+  # STRUCTURAL STEEL DEPENDENCIES
+  # ============================================================
+  - id: "DEP-STR-062"
+    trigger: "steel_structure"
+    required_items: ["base_plate", "anchor_bolts", "column_steel", "beam_steel", "bracing"]
+    trade: "structural"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 800"
+    note: "Steel structure requires base plates, anchor bolts, columns, beams, and bracing"
+
+  - id: "DEP-STR-063"
+    trigger: "steel_structure"
+    required_items: ["welding", "bolted_connections", "fire_protection_coating"]
+    trade: "structural"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 800"
+    note: "Steel structure connections and fire protection coating"
+
+  - id: "DEP-STR-064"
+    trigger: "steel_structure"
+    required_items: ["anti_corrosion_treatment", "primer_steel", "finish_paint_steel"]
+    trade: "structural"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 800"
+    note: "Steel structure requires anti-corrosion treatment with primer and finish paint"
+
+  # ============================================================
+  # PRECAST CONCRETE DEPENDENCIES
+  # ============================================================
+  - id: "DEP-STR-065"
+    trigger: "precast_slab"
+    required_items: ["precast_panel", "lifting_inserts", "connection_details", "grouting_joints", "topping_concrete"]
+    trade: "structural"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 15916"
+    note: "Precast slab requires panels, lifting inserts, connections, joint grouting, and topping"
+
+  - id: "DEP-STR-066"
+    trigger: "precast_column"
+    required_items: ["precast_element", "corbel", "connection_plate", "grouting", "temporary_bracing"]
+    trade: "structural"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 15916"
+    note: "Precast columns require corbels, connection plates, grouting, and temporary bracing"
+
+  # ============================================================
+  # EXPANSION AND CONSTRUCTION JOINTS
+  # ============================================================
+  - id: "DEP-STR-067"
+    trigger: "expansion_joint"
+    required_items: ["joint_filler", "sealant", "cover_plate"]
+    trade: "structural"
+    priority: 1
+    condition: "building_length_above_45m"
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 456"
+    note: "Buildings exceeding 45m require expansion joints with filler, sealant, and cover"
+
+  - id: "DEP-STR-068"
+    trigger: "construction_joint"
+    required_items: ["joint_treatment", "water_stop", "roughening_surface"]
+    trade: "structural"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 456"
+    note: "Construction joints require proper treatment, water stops, and surface roughening for bond"
+
+  # ============================================================
+  # CONCRETE TESTING AND QUALITY
+  # ============================================================
+  - id: "DEP-STR-069"
+    trigger: "rcc_work"
+    required_items: ["concrete_mix_design", "cube_testing", "slump_test"]
+    trade: "structural"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 456"
+    note: "All RCC work requires approved mix design, cube testing, and slump testing"
+
+  - id: "DEP-STR-070"
+    trigger: "rcc_work"
+    required_items: ["rebar_testing", "mill_certificate"]
+    trade: "structural"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 1786"
+    note: "Reinforcement must have mill certificates and testing as per IS 1786"
+
+  - id: "DEP-STR-071"
+    trigger: "rcc_work"
+    required_items: ["vibrator", "poker_vibrator"]
+    trade: "structural"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 456"
+    note: "Concrete compaction with vibrator mandatory for all RCC work"
+
+  # ============================================================
+  # CURING DEPENDENCIES
+  # ============================================================
+  - id: "DEP-STR-072"
+    trigger: "curing"
+    required_items: ["water_curing_7_days", "curing_compound"]
+    trade: "structural"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 456"
+    note: "Minimum 7 days water curing for OPC, 10 days for blended cement as per IS 456"
+
+  # ============================================================
+  # LINTEL AND CHAJJA DEPENDENCIES
+  # ============================================================
+  - id: "DEP-STR-073"
+    trigger: "lintel"
+    required_items: ["rcc_lintel", "reinforcement_lintel", "formwork_lintel"]
+    trade: "structural"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 456"
+    note: "RCC lintel over every door and window opening"
+
+  - id: "DEP-STR-074"
+    trigger: "chajja"
+    required_items: ["rcc_chajja", "reinforcement_chajja", "drip_mould", "waterproofing_chajja"]
+    trade: "structural"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 456"
+    note: "Chajja projection requires drip mould and top waterproofing"
+
+  # ============================================================
+  # SUNKEN SLAB DEPENDENCIES
+  # ============================================================
+  - id: "DEP-STR-075"
+    trigger: "sunken_slab"
+    required_items: ["waterproofing_sunken", "filling_material", "screed", "slope_to_drain"]
+    trade: "structural"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: ["toilet", "bathroom"]
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 456"
+    note: "Sunken slab in toilets requires waterproofing, filling, screed, and slope to drain"
+
+  # ============================================================
+  # MACHINE FOUNDATION DEPENDENCIES
+  # ============================================================
+  - id: "DEP-STR-076"
+    trigger: "machine_foundation"
+    required_items: ["vibration_analysis", "isolation_pads", "anchor_bolts", "rcc_foundation"]
+    trade: "structural"
+    priority: 1
+    condition: ""
+    building_types: ["factory", "data_center"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 2974"
+    note: "Machine foundations require vibration analysis and isolation pads per IS 2974"
+
+  # ============================================================
+  # ROOF STRUCTURE DEPENDENCIES
+  # ============================================================
+  - id: "DEP-STR-077"
+    trigger: "roof_truss"
+    required_items: ["steel_truss", "purlins", "roofing_sheet", "ridge_cap", "gutter"]
+    trade: "structural"
+    priority: 1
+    condition: ""
+    building_types: ["factory", "warehouse"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 800"
+    note: "Steel roof truss system with purlins, sheets, ridge, and gutters"
+
+  - id: "DEP-STR-078"
+    trigger: "roof_truss"
+    required_items: ["wind_bracing", "sag_rod", "anchor_bolt"]
+    trade: "structural"
+    priority: 1
+    condition: ""
+    building_types: ["factory", "warehouse"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 875 Part 3"
+    note: "Roof truss requires wind bracing, sag rods, and proper anchoring per IS 875"
+
+  # ============================================================
+  # STRUCTURAL AUDIT AND MONITORING
+  # ============================================================
+  - id: "DEP-STR-079"
+    trigger: "structural_work"
+    required_items: ["third_party_audit"]
+    trade: "structural"
+    priority: 2
+    condition: "building_above_15m"
+    building_types: [all]
+    room_types: []
+    min_floors: 5
+    min_area_sqm: 0
+    is_code_ref: "Local Authority"
+    note: "Buildings above 15m height require third-party structural audit"
+
+  - id: "DEP-STR-080"
+    trigger: "structural_work"
+    required_items: ["as_built_drawings", "structural_completion_certificate"]
+    trade: "structural"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "Local Authority"
+    note: "As-built structural drawings and completion certificate required for occupancy"
+
+  # ============================================================
+  # RAFT FOUNDATION EXTENDED DEPENDENCIES
+  # ============================================================
+  - id: "DEP-STR-081"
+    trigger: "raft_foundation"
+    required_items: ["waterproof_concrete_m30_plus", "waterstop_at_construction_joints", "curing_compound"]
+    trade: "structural"
+    priority: 1
+    condition: "below_ground_water_table"
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 456"
+    note: "Raft below water table requires waterproof concrete (W/C ratio < 0.45), PVC or rubber waterstops at all construction joints, and curing compound to prevent rapid moisture loss — omitting any one of these commonly causes leakage within the first monsoon"
+
+  - id: "DEP-STR-082"
+    trigger: "raft_foundation"
+    required_items: ["concrete_cube_testing_raft", "permeability_test_w_b_ratio"]
+    trade: "structural"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 456"
+    note: "Raft concrete must pass cube testing at 7 and 28 days per IS 456; permeability testing (w/b ratio verification) is critical for watertight basement construction"
+
+  # ============================================================
+  # PILE CAP EXTENDED DEPENDENCIES
+  # ============================================================
+  - id: "DEP-STR-083"
+    trigger: "pile_cap"
+    required_items: ["bar_bending_schedule", "concrete_cube_testing"]
+    trade: "structural"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 2911"
+    note: "Pile cap requires approved bar bending schedule (BBS) before reinforcement cutting — unverified BBS leads to wrong bar lengths; cube testing every pour verifies achieved grade, critical since pile cap failures cascade to the entire superstructure"
+
+  - id: "DEP-STR-084"
+    trigger: "pile_cap"
+    required_items: ["pile_head_chipping", "starter_bars_exposed"]
+    trade: "structural"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 2911"
+    note: "Pile heads must be chipped to expose sound concrete and starter bars before pile cap pour — leaving laitance causes a weak interface between pile and cap, compromising load transfer under seismic or vertical load"
+
+  # ============================================================
+  # COLUMN EXTENDED DEPENDENCIES
+  # ============================================================
+  - id: "DEP-STR-085"
+    trigger: "column"
+    required_items: ["bar_bending_schedule_column", "cover_blocks_40mm_min", "curing_column_7_days"]
+    trade: "structural"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 456"
+    note: "Column BBS prevents bar wastage and ensures correct lapping; 40mm cover blocks (IS 456 Table 16) protect reinforcement from corrosion; 7-day water curing achieves design strength — insufficient curing is among the top causes of premature column failure in India"
+
+  - id: "DEP-STR-086"
+    trigger: "column"
+    required_items: ["column_verticality_check", "plumb_bob_or_total_station"]
+    trade: "structural"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 456"
+    note: "Column verticality must be verified with plumb bob or total station after each lift — a column out of plumb by even 10mm per floor creates significant eccentricity in multi-storey frames, adding undesigned bending moment"
+
+  - id: "DEP-STR-087"
+    trigger: "column"
+    required_items: ["ductile_detailing_column", "closely_spaced_stirrups_in_confinement_zone"]
+    trade: "structural"
+    priority: 1
+    condition: "seismic_zone_iii_plus"
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 13920"
+    note: "Columns in seismic zone III and above require closely spaced stirrups in the confinement zone (top and bottom quarter of column height) per IS 13920 — this ductile detailing prevents brittle shear failure under earthquake loading"
+
+  # ============================================================
+  # SLAB EXTENDED DEPENDENCIES
+  # ============================================================
+  - id: "DEP-STR-088"
+    trigger: "slab"
+    required_items: ["post_pour_curing_7_days_min", "wet_burlap_or_ponding"]
+    trade: "structural"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 456 Cl.13"
+    note: "IS 456 Clause 13 mandates minimum 7 days moist curing for OPC, 10 days for blended cement slabs — inadequate curing causes surface cracking, reduces durability, and can reduce in-situ strength by 10-20% compared to cured cubes"
+
+  - id: "DEP-STR-089"
+    trigger: "slab"
+    required_items: ["concrete_cube_testing_slab", "min_3_cubes_per_50cum"]
+    trade: "structural"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 516"
+    note: "IS 516 requires minimum 3 cube specimens per 50 cum of concrete or fraction thereof for each slab pour — cube results are legal proof of achieved grade and cannot be substituted; failed cubes trigger costly remediation or demolition"
+
+  # ============================================================
+  # STAIRCASE EXTENDED DEPENDENCIES
+  # ============================================================
+  - id: "DEP-STR-090"
+    trigger: "staircase"
+    required_items: ["handrail_900mm_height", "non_slip_nosing", "anti_skid_treatment"]
+    trade: "finishing"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "NBC Part 4"
+    note: "Staircase handrail must be minimum 900mm high per NBC; stair nosing with non-slip metal or carborundum strip at every tread edge prevents falls — staircase injuries are a major liability in completed buildings; anti-skid treatment mandatory in wet areas"
+
+  - id: "DEP-STR-091"
+    trigger: "staircase"
+    required_items: ["rise_not_more_than_190mm", "going_not_less_than_250mm"]
+    trade: "structural"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "NBC Part 4"
+    note: "NBC limits riser to maximum 190mm and going to minimum 250mm for comfortable and safe stair geometry — non-compliant stairs cause user discomfort and are flagged during fire NOC inspection, sometimes requiring demolition and rebuild"
+
+  # ============================================================
+  # RETAINING WALL EXTENDED DEPENDENCIES
+  # ============================================================
+  - id: "DEP-STR-092"
+    trigger: "retaining_wall"
+    required_items: ["weep_holes_100mm_dia_at_1500c_c", "drainage_layer_300mm", "filter_fabric"]
+    trade: "structural"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 456"
+    note: "Weep holes (100mm dia at 1500mm c/c) relieve hydrostatic pressure which can be 10x the earth pressure during monsoon; 300mm granular drainage layer behind wall with geotextile filter fabric prevents clogging — blocked weep holes have caused many retaining wall collapses in India"
+
+  - id: "DEP-STR-093"
+    trigger: "retaining_wall"
+    required_items: ["granular_backfill_controlled_layers", "compaction_in_layers_300mm"]
+    trade: "structural"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 456"
+    note: "Backfill must be granular and placed in 300mm compacted layers — using expansive or cohesive soil as backfill generates undesigned earth pressures that can overturn the wall; compaction in layers prevents differential settlement"
+
+  # ============================================================
+  # RCC WATER TANK EXTENDED DEPENDENCIES
+  # ============================================================
+  - id: "DEP-STR-094"
+    trigger: "rcc_water_tank"
+    required_items: ["is3370_water_tightness_test", "ponding_for_7_days"]
+    trade: "structural"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 3370"
+    note: "IS 3370 mandates water tightness test by filling tank and observing leakage over 7 days — water drop exceeding 20mm is failure; testing before finish works prevents costly waterproofing remediation after tiles or epoxy lining are applied"
+
+  - id: "DEP-STR-095"
+    trigger: "rcc_water_tank"
+    required_items: ["epoxy_lining_or_cement_polymer_coating", "chlorination_before_commissioning"]
+    trade: "structural"
+    priority: 2
+    condition: "potable_water"
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 3370"
+    note: "Potable water tanks benefit from food-grade epoxy or cement polymer coating to prevent algae growth and cement leaching; chlorination at 50ppm before commissioning per IS 10500 ensures bacteriological safety of first fill — skip this and building handover may be delayed by health authority rejection"
+
+  - id: "DEP-STR-096"
+    trigger: "rcc_water_tank"
+    required_items: ["m30_concrete_tank", "nominal_cover_40mm_tank"]
+    trade: "structural"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 3370"
+    note: "IS 3370 specifies minimum M30 grade concrete and 40mm nominal cover for liquid retaining structures — lower grade concrete is more porous and will not remain watertight long-term in wet-dry cycling conditions"
+
+  # ============================================================
+  # PRECAST ELEMENTS EXTENDED DEPENDENCIES
+  # ============================================================
+  - id: "DEP-STR-097"
+    trigger: "precast_elements"
+    required_items: ["connection_plates", "grouting_connection_joints", "structural_certification_precast"]
+    trade: "structural"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 15916"
+    note: "Precast connections rely on embedded plates welded or bolted on site — ungrouted or improperly welded connections create hinge-like weak points; IS 15916 structural certification confirms the precast manufacturer's design, detailing, and factory QC are adequate before elements arrive on site"
+
+  - id: "DEP-STR-098"
+    trigger: "precast_elements"
+    required_items: ["lifting_scheme_approved", "temporary_propping_precast", "erection_sequence"]
+    trade: "structural"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 15916"
+    note: "Precast erection requires an approved lifting scheme (sling angles, capacity) before crane operations; temporary propping holds elements until connections are grouted and achieve strength; erection sequence matters because partially complete frames may be unstable"
+
+  # ============================================================
+  # BUILDING ABOVE 30M STRUCTURAL INSPECTION
+  # ============================================================
+  - id: "DEP-STR-099"
+    trigger: "building_above_30m"
+    required_items: ["structural_engineer_inspection_certificate", "third_party_structural_audit"]
+    trade: "structural"
+    priority: 1
+    condition: "height_above_30m"
+    building_types: [all]
+    room_types: []
+    min_floors: 10
+    min_area_sqm: 0
+    is_code_ref: "Local Authority"
+    note: "Buildings above 30m require periodic structural engineer inspection certificates during construction and third-party structural audit before occupancy — most municipal corporations (MCGM, BBMP, GHMC) now mandate this to prevent high-rise structural failures"
+
+  # ============================================================
+  # AS-BUILT DRAWINGS AND COMPLETION CERTIFICATE
+  # ============================================================
+  - id: "DEP-STR-100"
+    trigger: "project_completion"
+    required_items: ["as_built_drawings_structural", "completion_certificate_structural_engineer"]
+    trade: "structural"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "Local Authority"
+    note: "As-built structural drawings must reflect all site deviations from approved drawings; structural engineer's completion certificate is required by most local authorities before issuing occupancy certificate — without it, building occupancy is illegal"
+
+  # ============================================================
+  # CONCRETE QUALITY AND TESTING EXTENDED
+  # ============================================================
+  - id: "DEP-STR-101"
+    trigger: "rcc_work"
+    required_items: ["concrete_mix_design_is10262", "slump_cone_test_each_batch"]
+    trade: "structural"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 10262"
+    note: "IS 10262 mix design must be approved by structural engineer before first pour — nominal mix (1:1.5:3) is not permitted for structural grades above M20; slump test at each batch ensures consistent workability and prevents unauthorized water addition that weakens concrete"
+
+  - id: "DEP-STR-102"
+    trigger: "rcc_work"
+    required_items: ["admixture_if_required", "superplasticiser_compatibility_test"]
+    trade: "structural"
+    priority: 2
+    condition: "long_distance_transit_or_hot_weather"
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 9103"
+    note: "Chemical admixtures per IS 9103 must be compatibility-tested with the specific cement brand — incompatible admixtures can cause flash set or delayed set; in hot weather (>35°C), retarder is essential to prevent premature stiffening during transit"
+
+  # ============================================================
+  # TMT STEEL QUALITY CONTROL
+  # ============================================================
+  - id: "DEP-STR-103"
+    trigger: "reinforcement_steel"
+    required_items: ["tmt_bar_mill_test_certificate", "third_party_steel_testing"]
+    trade: "structural"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 1786"
+    note: "IS 1786 TMT bars must arrive with mill test certificate showing yield strength, UTS, elongation, and chemical composition — sub-standard re-rolled bars without certificates cause brittle failures; third-party testing from random batches is strongly recommended for large projects"
+
+  # ============================================================
+  # FORMWORK SAFETY
+  # ============================================================
+  - id: "DEP-STR-104"
+    trigger: "formwork"
+    required_items: ["formwork_design_approved", "striking_time_per_is456", "prop_inspection_before_pour"]
+    trade: "structural"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 456"
+    note: "Formwork must be designed for wet concrete pressure plus construction loads — IS 456 Table 9 gives minimum striking times (e.g., slabs must retain soffits for 14 days); prop inspection before each pour prevents catastrophic formwork collapse, which is a leading cause of construction fatalities in India"
+
+  # ============================================================
+  # SEISMIC DETAILING EXTENDED
+  # ============================================================
+  - id: "DEP-STR-105"
+    trigger: "rcc_frame"
+    required_items: ["strong_column_weak_beam_check", "capacity_design_principle"]
+    trade: "structural"
+    priority: 1
+    condition: "seismic_zone_iii_plus"
+    building_types: [all]
+    room_types: []
+    min_floors: 3
+    min_area_sqm: 0
+    is_code_ref: "IS 13920"
+    note: "IS 13920 requires strong column–weak beam (SCWB) design so beams yield before columns in an earthquake, preventing storey mechanism collapse; capacity design ensures energy is dissipated in ductile flexural hinges rather than brittle shear failures — this is the most important seismic design principle for Indian RCC frames"
+
+  # ============================================================
+  # WATERPROOFING FOR BELOW-GRADE STRUCTURES
+  # ============================================================
+  - id: "DEP-STR-106"
+    trigger: "below_grade_structure"
+    required_items: ["external_waterproofing_membrane", "protection_board", "drainage_cell_mat"]
+    trade: "structural"
+    priority: 1
+    condition: "high_water_table_or_heavy_rain_zone"
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 3414"
+    note: "External waterproofing membrane applied to the positive side (soil face) of basement walls is the most effective method — it seals before water penetrates concrete; protection board shields membrane during backfill; drainage cell mat provides secondary drainage path to weep holes, critical in high-rainfall zones like Mumbai, Chennai, Hyderabad"
+
+  # ============================================================
+  # UNDERPINNING / ADJACENT STRUCTURE PROTECTION
+  # ============================================================
+  - id: "DEP-STR-107"
+    trigger: "excavation_near_existing_structure"
+    required_items: ["underpinning_scheme", "settlement_monitoring", "structural_protection_adjacent"]
+    trade: "structural"
+    priority: 1
+    condition: "excavation_within_1_5x_depth_of_neighbour_footing"
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 1498"
+    note: "Excavating close to an existing building can undermine its foundation — an approved underpinning scheme or sheet pile must be in place before excavation; settlement monitoring with datum points detects movement early; failure to protect adjacent structures leads to legal liability and structural damage claims"
+
+  # ============================================================
+  # FLAT PLATE / FLAT SLAB PUNCHING SHEAR
+  # ============================================================
+  - id: "DEP-STR-108"
+    trigger: "flat_slab"
+    required_items: ["punching_shear_check", "shear_head_or_stud_rail", "drop_panel_or_column_head"]
+    trade: "structural"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 456"
+    note: "Flat slabs are vulnerable to punching shear failure at column-slab junction — IS 456 requires punching shear check and if insufficient, shear studs, shear head, drop panel, or column head must be provided; punching failures are sudden and catastrophic (e.g., Ronan Point, several Indian multi-storey failures)"
+
+  # ============================================================
+  # TRANSFER STRUCTURE DEPENDENCIES
+  # ============================================================
+  - id: "DEP-STR-109"
+    trigger: "transfer_slab_or_beam"
+    required_items: ["deep_beam_design", "high_grade_concrete_m40_plus", "detailed_structural_drawing", "specialist_formwork"]
+    trade: "structural"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 456"
+    note: "Transfer structures carry columns from upper floors to different grid positions below — deep beam design (span/depth < 2) applies; M40+ concrete minimises section sizes; specialist formwork and propping is required for the heavy dead load; these are high-consequence structural elements requiring enhanced QA on every pour"
+
+  # ============================================================
+  # LINTEL OVER WIDE OPENINGS
+  # ============================================================
+  - id: "DEP-STR-110"
+    trigger: "wide_opening_lintel"
+    required_items: ["rcc_lintel_span_check", "adequate_bearing_each_side", "crack_control_reinforcement"]
+    trade: "structural"
+    priority: 1
+    condition: "opening_above_1200mm"
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 456"
+    note: "Lintels over openings wider than 1200mm must be span-checked with adequate depth; minimum 150mm bearing on each side prevents bearing failure; crack control reinforcement at mid-span bottom and at top near supports is essential — wide lintel cracking is a common complaint in completed buildings, particularly over large window openings in external walls"

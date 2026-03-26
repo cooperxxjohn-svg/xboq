@@ -1,0 +1,3139 @@
+# xBOQ.ai Master Construction Knowledge Base
+# Hindi/Hindustani Construction Terms
+# ~400 entries - Terms used on Indian construction sites in Hindi/Hindustani
+# Romanized Hindi with canonical English mapping
+
+terms:
+  # ============================================================
+  # STRUCTURAL - Concrete & Steel
+  # ============================================================
+  - canonical: "reinforced_cement_concrete"
+    hindi_terms: ["RCC ka kaam", "lohewala concrete", "saria wala concrete"]
+    phonetic_variants: ["aar see see ka kaam"]
+    regional_variants:
+      north_india: ["RCC ka kaam"]
+      south_india: ["RCC velai"]
+    usage_context: "General term for RCC work"
+
+  - canonical: "plain_cement_concrete"
+    hindi_terms: ["PCC", "sadha concrete", "seedhi concrete", "saada concrete", "bina saria ka concrete", "levelling concrete"]
+    phonetic_variants: ["pee see see", "saadha concrete", "seedhee concrete"]
+    regional_variants:
+      north_india: ["sadha concrete", "saada concrete"]
+      rajasthan: ["bina sariye ka concrete"]
+    usage_context: "Plain concrete without steel reinforcement; used as bed under footings"
+
+  - canonical: "concrete_pouring"
+    hindi_terms: ["dhulai", "casting", "concrete dalna", "concrete girna"]
+    phonetic_variants: ["dhulaaee"]
+    regional_variants:
+      north_india: ["dhulai", "casting"]
+    usage_context: "Process of pouring/placing concrete"
+
+  - canonical: "reinforcement_steel"
+    hindi_terms: ["saria", "sariya", "loha", "chhad", "rod", "patti", "TMT saria", "lohewali rod"]
+    phonetic_variants: ["saariya", "sareeya", "saaria", "sariyaa", "TMT saariya", "lohe waali rod"]
+    regional_variants:
+      north_india: ["saria", "sariya"]
+      bihar_jharkhand: ["chhad"]
+      rajasthan: ["loha"]
+      punjab: ["loh"]
+    usage_context: "TMT reinforcement bars; 'patti' for flat bars; 'saria' is universal"
+
+  - canonical: "binding_wire"
+    hindi_terms: ["binding wire", "bandhan tar", "tar", "baandhne ka tar"]
+    phonetic_variants: ["baandhan taar"]
+    regional_variants:
+      north_india: ["bandhan tar"]
+    usage_context: "Wire for tying rebar"
+
+  - canonical: "cover_blocks"
+    hindi_terms: ["cover block", "cover", "gaddi", "spacer"]
+    phonetic_variants: []
+    regional_variants:
+      north_india: ["cover"]
+    usage_context: "Concrete spacers for maintaining rebar cover"
+
+  - canonical: "formwork"
+    hindi_terms: ["shuttering", "centering", "sanchha", "frame"]
+    phonetic_variants: ["shuttring", "sentring"]
+    regional_variants:
+      north_india: ["shuttering"]
+    usage_context: "'Shuttering' for vertical, 'centering' for horizontal/slab"
+
+  - canonical: "props"
+    hindi_terms: ["prop", "teka", "support", "jack"]
+    phonetic_variants: ["tekaa"]
+    regional_variants:
+      north_india: ["teka"]
+    usage_context: "Vertical supports for slab formwork"
+
+  - canonical: "curing"
+    hindi_terms: ["curing", "paani dena", "geela rakhna", "bheegana"]
+    phonetic_variants: ["paanee denaa", "geelaa rakhnaa"]
+    regional_variants:
+      north_india: ["paani dena"]
+    usage_context: "Keeping concrete wet for strength development"
+
+  - canonical: "vibrator"
+    hindi_terms: ["vibrator", "needle", "hilane wala"]
+    phonetic_variants: []
+    regional_variants:
+      north_india: ["vibrator"]
+    usage_context: "Concrete vibrator for compaction"
+
+  - canonical: "column"
+    hindi_terms: ["pillar", "khambe", "stambh", "column"]
+    phonetic_variants: ["khambaa", "khambhe"]
+    regional_variants:
+      north_india: ["pillar", "khambe"]
+    usage_context: "Vertical structural member"
+
+  - canonical: "beam"
+    hindi_terms: ["beam", "kadhi", "shehtheer", "girder"]
+    phonetic_variants: ["kadhee"]
+    regional_variants:
+      north_india: ["kadhi", "beam"]
+      rajasthan: ["shehtheer"]
+    usage_context: "Horizontal structural member"
+
+  - canonical: "slab"
+    hindi_terms: ["chhat", "slab", "phaad", "farsee"]
+    phonetic_variants: ["chhaat"]
+    regional_variants:
+      north_india: ["chhat", "slab"]
+      rajasthan: ["phaad"]
+    usage_context: "Floor slab / roof slab"
+
+  - canonical: "foundation"
+    hindi_terms: ["neev", "nींव", "buniyaad", "foundation"]
+    phonetic_variants: ["neenv", "bunyaad"]
+    regional_variants:
+      north_india: ["neev"]
+      urdu_influence: ["buniyaad"]
+    usage_context: "Building foundation"
+
+  - canonical: "footing"
+    hindi_terms: ["footing", "neev", "tala"]
+    phonetic_variants: []
+    regional_variants:
+      north_india: ["footing"]
+    usage_context: "Spread footing"
+
+  - canonical: "plinth"
+    hindi_terms: ["plinth", "dehleez", "chatai"]
+    phonetic_variants: ["dehleez"]
+    regional_variants:
+      north_india: ["plinth"]
+    usage_context: "Plinth level of building"
+
+  - canonical: "lintel"
+    hindi_terms: ["lintel", "chhajja beam", "chaukhat ke upar ki beam"]
+    phonetic_variants: []
+    regional_variants:
+      north_india: ["lintel"]
+    usage_context: "Beam above door/window opening"
+
+  - canonical: "staircase"
+    hindi_terms: ["seedhi", "seedhiyan", "zina", "staircase"]
+    phonetic_variants: ["seedheeyan"]
+    regional_variants:
+      north_india: ["seedhi"]
+      urdu_influence: ["zina"]
+    usage_context: "Staircase"
+
+  - canonical: "parapet"
+    hindi_ids: ["mumty", "parapet", "chhat ki deewar"]
+    hindi_terms: ["parapet", "mumty", "chhat ki deewar", "jangla"]
+    phonetic_variants: ["mumtee"]
+    regional_variants:
+      north_india: ["mumty", "parapet"]
+    usage_context: "Wall on top of roof/terrace"
+
+  - canonical: "chajja"
+    hindi_terms: ["chajja", "chhajja", "sunshade", "projection"]
+    phonetic_variants: ["chhajjaa"]
+    regional_variants:
+      north_india: ["chajja"]
+    usage_context: "Horizontal projection/sunshade above window"
+
+  # ============================================================
+  # EARTHWORK
+  # ============================================================
+  - canonical: "excavation"
+    hindi_terms: ["khudai", "khodai", "khudaai", "khodna", "mitti khanna", "zameen khanna"]
+    phonetic_variants: ["khudaaee", "khodaaee", "khudaai", "khodaaee", "mitti khaanaa"]
+    regional_variants:
+      north_india: ["khudai", "khodai"]
+      rajasthan: ["khudaai"]
+      bihar_jharkhand: ["mitti khanna"]
+    usage_context: "Digging/excavation for foundation trenches and pits"
+
+  - canonical: "trench"
+    hindi_terms: ["khandak", "nali", "trench", "khai"]
+    phonetic_variants: ["khandak"]
+    regional_variants:
+      north_india: ["khandak"]
+    usage_context: "Trench for foundation/pipe"
+
+  - canonical: "backfilling"
+    hindi_terms: ["bharna", "bharai", "mitti bharna", "vapas bharna"]
+    phonetic_variants: ["bharaaee"]
+    regional_variants:
+      north_india: ["bharai"]
+    usage_context: "Filling back with earth"
+
+  - canonical: "compaction"
+    hindi_terms: ["dabana", "thokna", "ramming", "compaction"]
+    phonetic_variants: ["thoknaa"]
+    regional_variants:
+      north_india: ["thokna"]
+    usage_context: "Compacting soil"
+
+  - canonical: "levelling"
+    hindi_terms: ["level karna", "barabar karna", "samtal karna"]
+    phonetic_variants: ["level karnaa"]
+    regional_variants:
+      north_india: ["level karna"]
+    usage_context: "Making surface level"
+
+  - canonical: "soil"
+    hindi_terms: ["mitti", "zameen", "bhumi"]
+    phonetic_variants: ["mittee"]
+    regional_variants:
+      north_india: ["mitti"]
+    usage_context: "Earth/soil"
+
+  - canonical: "clay"
+    hindi_terms: ["chikni mitti", "clay", "kaali mitti"]
+    phonetic_variants: ["chiknee mittee"]
+    regional_variants:
+      north_india: ["chikni mitti"]
+    usage_context: "Clayey soil"
+
+  - canonical: "rock"
+    hindi_terms: ["patthar", "chattan", "rock"]
+    phonetic_variants: ["patthar", "chattaan"]
+    regional_variants:
+      north_india: ["patthar"]
+    usage_context: "Rock"
+
+  # ============================================================
+  # MASONRY
+  # ============================================================
+  - canonical: "brick"
+    hindi_terms: ["eent", "int", "eenta", "itta"]
+    phonetic_variants: ["eent", "eentaa", "ittaa"]
+    regional_variants:
+      north_india: ["eent"]
+      bihar: ["int"]
+      punjab: ["itta"]
+    usage_context: "Fired clay brick used in masonry"
+
+  - canonical: "brick_masonry"
+    hindi_terms: ["eent ka kaam", "eent ki chunai", "chunnai", "eent kharei karna", "eent lagana"]
+    phonetic_variants: ["eent kaa kaam", "eent kee chunaaee", "chunnaee"]
+    regional_variants:
+      north_india: ["eent ka kaam", "chunnai"]
+      rajasthan: ["chunai"]
+      punjab: ["eent kharei karna"]
+    usage_context: "Brick masonry work in cement mortar"
+
+  - canonical: "fly_ash_brick"
+    hindi_terms: ["fly ash eent", "safed eent", "neli eent"]
+    phonetic_variants: []
+    regional_variants:
+      north_india: ["fly ash eent"]
+    usage_context: "Fly ash brick"
+
+  - canonical: "aac_block"
+    hindi_terms: ["AAC block", "halka block", "Aerocon block"]
+    phonetic_variants: []
+    regional_variants:
+      north_india: ["AAC block"]
+    usage_context: "Lightweight AAC block"
+
+  - canonical: "mortar"
+    hindi_terms: ["masala", "mortar", "gara", "lep"]
+    phonetic_variants: ["masaalaa", "garaa"]
+    regional_variants:
+      north_india: ["masala"]
+      rajasthan: ["gara"]
+    usage_context: "Cement mortar for bonding"
+
+  - canonical: "cement"
+    hindi_terms: ["cement", "simant", "siment", "simaant"]
+    phonetic_variants: ["simant", "siment", "simaant", "seemant"]
+    regional_variants:
+      north_india: ["cement"]
+      rajasthan: ["siment"]
+      bihar: ["simaant"]
+    usage_context: "Cement - OPC or PPC"
+
+  - canonical: "lime"
+    hindi_terms: ["chunaa", "lime", "choona"]
+    phonetic_variants: ["choonaa"]
+    regional_variants:
+      north_india: ["chunaa"]
+    usage_context: "Lime for mortar/whitewash"
+
+  - canonical: "sand"
+    hindi_terms: ["ret", "reta", "bajri", "baalu"]
+    phonetic_variants: ["retaa", "baaloo"]
+    regional_variants:
+      north_india: ["ret", "bajri"]
+      bihar: ["baalu"]
+    usage_context: "Sand for construction; bajri=fine sand"
+
+  - canonical: "coarse_aggregate"
+    hindi_terms: ["gitti", "rori", "gravel", "pathar ki gitti"]
+    phonetic_variants: ["gittee", "roree"]
+    regional_variants:
+      north_india: ["gitti"]
+      rajasthan: ["rori"]
+    usage_context: "Coarse aggregate/gravel for concrete"
+
+  - canonical: "fine_aggregate"
+    hindi_terms: ["bajri", "ret", "reta", "fine aggregate"]
+    phonetic_variants: ["bajree"]
+    regional_variants:
+      north_india: ["bajri"]
+    usage_context: "Fine aggregate/sand"
+
+  - canonical: "wall"
+    hindi_terms: ["deewar", "diwal", "bhint"]
+    phonetic_variants: ["deewaar"]
+    regional_variants:
+      north_india: ["deewar"]
+      bihar: ["bhint"]
+    usage_context: "Wall"
+
+  - canonical: "partition_wall"
+    hindi_terms: ["partition", "vibhajak deewar", "bich ki deewar"]
+    phonetic_variants: []
+    regional_variants:
+      north_india: ["partition"]
+    usage_context: "Non-structural dividing wall"
+
+  - canonical: "load_bearing_wall"
+    hindi_terms: ["bhaar vahak deewar", "load bearing deewar", "moti deewar"]
+    phonetic_variants: []
+    regional_variants:
+      north_india: ["load bearing deewar"]
+    usage_context: "Load bearing wall"
+
+  - canonical: "pointing"
+    hindi_terms: ["pointing", "joint bharai", "naali bharai"]
+    phonetic_variants: []
+    regional_variants:
+      north_india: ["pointing"]
+    usage_context: "Filling mortar joints in masonry face"
+
+  # ============================================================
+  # FINISHES - Plastering
+  # ============================================================
+  - canonical: "plastering"
+    hindi_terms: ["lepai", "lipai", "plaster", "chuna lipai", "palastar", "palastar kaam", "lepen ka kaam", "plaster karna"]
+    phonetic_variants: ["lepaee", "lipaee", "palaastar", "palaastar kaam", "lepen kaa kaam"]
+    regional_variants:
+      north_india: ["lepai", "palastar"]
+      rajasthan: ["lipai"]
+      punjab: ["plaster karna"]
+    usage_context: "Plastering walls/ceiling with cement mortar"
+
+  - canonical: "internal_plaster"
+    hindi_terms: ["andar ka plaster", "andar ki lepai", "bheetar plaster"]
+    phonetic_variants: []
+    regional_variants:
+      north_india: ["andar ka plaster"]
+    usage_context: "Internal wall plastering"
+
+  - canonical: "external_plaster"
+    hindi_terms: ["bahar ka plaster", "bahari lepai", "bahar ki lipai"]
+    phonetic_variants: []
+    regional_variants:
+      north_india: ["bahar ka plaster"]
+    usage_context: "External wall plastering"
+
+  - canonical: "plaster_of_paris"
+    hindi_terms: ["POP", "punning", "POP ka kaam", "safed plaster"]
+    phonetic_variants: []
+    regional_variants:
+      north_india: ["POP", "punning"]
+    usage_context: "POP finish on plastered surface"
+
+  - canonical: "whitewash"
+    hindi_terms: ["safedi", "choona", "whitewash", "chunai"]
+    phonetic_variants: ["safedee", "choonaaee"]
+    regional_variants:
+      north_india: ["safedi"]
+    usage_context: "Lime whitewashing"
+
+  # ============================================================
+  # FINISHES - Flooring & Tiling
+  # ============================================================
+  - canonical: "flooring"
+    hindi_terms: ["farsh", "floor", "zameen", "farsee", "patthar ka kaam", "farsh ka kaam"]
+    phonetic_variants: ["farash", "farsee", "patthar kaa kaam", "farash kaa kaam"]
+    regional_variants:
+      north_india: ["farsh", "patthar ka kaam"]
+      rajasthan: ["farsee"]
+    usage_context: "Floor/flooring work including stone, tile, and concrete"
+
+  - canonical: "tile"
+    hindi_terms: ["tile", "taaeel", "patia"]
+    phonetic_variants: ["taaeel"]
+    regional_variants:
+      north_india: ["tile"]
+    usage_context: "Tile (generic)"
+
+  - canonical: "marble"
+    hindi_terms: ["sangmarmar", "marble", "makrana"]
+    phonetic_variants: ["sangamarmaar"]
+    regional_variants:
+      north_india: ["marble"]
+      rajasthan: ["makrana"]
+    usage_context: "Marble; 'Makrana' = specific white marble from Rajasthan"
+
+  - canonical: "granite"
+    hindi_terms: ["granite", "patthar"]
+    phonetic_variants: []
+    regional_variants:
+      north_india: ["granite"]
+    usage_context: "Granite stone"
+
+  - canonical: "kota_stone"
+    hindi_terms: ["kota", "kota patthar", "kota stone"]
+    phonetic_variants: []
+    regional_variants:
+      north_india: ["kota"]
+      rajasthan: ["kota patthar"]
+    usage_context: "Kota stone from Rajasthan"
+
+  - canonical: "stone"
+    hindi_terms: ["patthar", "stone", "sila"]
+    phonetic_variants: ["patthar"]
+    regional_variants:
+      north_india: ["patthar"]
+    usage_context: "Stone (generic)"
+
+  - canonical: "skirting"
+    hindi_terms: ["skirting", "patti", "kinara"]
+    phonetic_variants: ["pattee"]
+    regional_variants:
+      north_india: ["skirting", "patti"]
+    usage_context: "Floor skirting at wall junction"
+
+  - canonical: "dado"
+    hindi_terms: ["dado", "aadhi deewar tile"]
+    phonetic_variants: []
+    regional_variants:
+      north_india: ["dado"]
+    usage_context: "Wall tiling up to half height"
+
+  # ============================================================
+  # FINISHES - Painting
+  # ============================================================
+  - canonical: "painting"
+    hindi_terms: ["rangai", "paint", "rangna", "paint karna", "rang kaam", "painting ka kaam", "rangaai ka kaam"]
+    phonetic_variants: ["rangaaee", "raang kaam", "painting kaa kaam", "rangaaee kaa kaam"]
+    regional_variants:
+      north_india: ["rangai", "rang kaam"]
+      rajasthan: ["rangaai"]
+      maharashtra: ["rang kaam"]
+    usage_context: "Painting walls, woodwork, and ironwork"
+
+  - canonical: "paint"
+    hindi_terms: ["paint", "rang", "colour"]
+    phonetic_variants: ["raang"]
+    regional_variants:
+      north_india: ["paint"]
+    usage_context: "Paint material"
+
+  - canonical: "primer"
+    hindi_terms: ["primer", "base coat", "pehla coat"]
+    phonetic_variants: []
+    regional_variants:
+      north_india: ["primer"]
+    usage_context: "First/base coat"
+
+  - canonical: "putty"
+    hindi_terms: ["putty", "white cement", "safed cement"]
+    phonetic_variants: []
+    regional_variants:
+      north_india: ["putty"]
+    usage_context: "Wall putty for smooth finish"
+
+  - canonical: "emulsion_paint"
+    hindi_terms: ["emulsion", "plastic paint", "deewar ka paint"]
+    phonetic_variants: []
+    regional_variants:
+      north_india: ["emulsion"]
+    usage_context: "Emulsion paint for walls"
+
+  - canonical: "enamel_paint"
+    hindi_terms: ["enamel", "tel paint", "oil paint", "chamak paint"]
+    phonetic_variants: ["tel paaint"]
+    regional_variants:
+      north_india: ["enamel"]
+    usage_context: "Enamel/oil paint for wood/metal"
+
+  - canonical: "wood_polish"
+    hindi_terms: ["polish", "lakdi ka polish", "french polish", "PU polish"]
+    phonetic_variants: []
+    regional_variants:
+      north_india: ["polish"]
+    usage_context: "Wood polish/varnish"
+
+  - canonical: "distemper"
+    hindi_terms: ["distemper", "safedi", "sasta paint"]
+    phonetic_variants: []
+    regional_variants:
+      north_india: ["distemper"]
+    usage_context: "Distemper - economical wall finish"
+
+  # ============================================================
+  # PLUMBING & SANITARY
+  # ============================================================
+  - canonical: "pipe"
+    hindi_terms: ["pipe", "nali", "nal", "paani ki nali", "bijli ki pipe"]
+    phonetic_variants: ["naalee", "naal", "paanee kee naalee", "naali"]
+    regional_variants:
+      north_india: ["nali", "nal"]
+      rajasthan: ["nal"]
+    usage_context: "Pipe (generic) - context defines whether water or electrical"
+
+  - canonical: "tap"
+    hindi_terms: ["nal", "tap", "toti"]
+    phonetic_variants: ["naal", "totee"]
+    regional_variants:
+      north_india: ["nal"]
+      rajasthan: ["toti"]
+    usage_context: "Water tap/faucet"
+
+  - canonical: "drain"
+    hindi_terms: ["nali", "drain", "mori", "naala"]
+    phonetic_variants: ["naalee", "naalaa"]
+    regional_variants:
+      north_india: ["nali"]
+    usage_context: "Drain/drainage channel"
+
+  - canonical: "sewer"
+    hindi_terms: ["sewer", "ganda nala", "gutter", "mori"]
+    phonetic_variants: []
+    regional_variants:
+      north_india: ["sewer"]
+    usage_context: "Sewer/sewage line"
+
+  - canonical: "water_closet"
+    hindi_terms: ["commode", "sandaas", "WC", "toilet", "latrine", "shauchalay"]
+    phonetic_variants: ["shauchaalaay"]
+    regional_variants:
+      north_india: ["commode"]
+    usage_context: "Toilet/WC"
+
+  - canonical: "indian_water_closet"
+    hindi_terms: ["Indian style", "baithne wala", "IWC", "neeche wala", "Indian toilet", "ulte baithne wala", "squat toilet"]
+    phonetic_variants: ["indian stail", "baithne waalaa", "aa-double-you-see", "neeche waalaa"]
+    regional_variants:
+      north_india: ["Indian style", "IWC"]
+      south_india: ["Indian WC"]
+    usage_context: "Squatting type toilet - Indian water closet"
+
+  - canonical: "european_water_closet"
+    hindi_terms: ["commode", "English style", "EWC", "baithne wala commode", "western toilet", "gol commode"]
+    phonetic_variants: ["kamode", "inglish stail", "ee-double-you-see", "western toilet"]
+    regional_variants:
+      north_india: ["commode", "EWC"]
+      south_india: ["western toilet"]
+    usage_context: "Sitting type toilet - European water closet"
+
+  - canonical: "wash_basin"
+    hindi_terms: ["basin", "haath dhone ka basin", "wash basin"]
+    phonetic_variants: []
+    regional_variants:
+      north_india: ["basin"]
+    usage_context: "Hand wash basin"
+
+  - canonical: "bathtub"
+    hindi_terms: ["bathtub", "nahane ka tub", "tub"]
+    phonetic_variants: []
+    regional_variants:
+      north_india: ["bathtub"]
+    usage_context: "Bathtub"
+
+  - canonical: "shower"
+    hindi_terms: ["shower", "phuhara", "rain shower"]
+    phonetic_variants: ["phuhaaraa"]
+    regional_variants:
+      north_india: ["shower"]
+    usage_context: "Shower fitting"
+
+  - canonical: "water_tank"
+    hindi_terms: ["tanki", "tank", "paani ki tanki"]
+    phonetic_variants: ["tankee"]
+    regional_variants:
+      north_india: ["tanki"]
+    usage_context: "Water storage tank"
+
+  - canonical: "overhead_tank"
+    hindi_terms: ["upar ki tanki", "OHT", "chhat ki tanki"]
+    phonetic_variants: []
+    regional_variants:
+      north_india: ["upar ki tanki"]
+    usage_context: "Overhead water tank"
+
+  - canonical: "underground_tank"
+    hindi_terms: ["zameen ke neeche tanki", "sump", "UGT", "neeche ki tanki"]
+    phonetic_variants: []
+    regional_variants:
+      north_india: ["neeche ki tanki"]
+    usage_context: "Underground water tank/sump"
+
+  - canonical: "pump"
+    hindi_terms: ["pump", "motor", "paani ka pump"]
+    phonetic_variants: []
+    regional_variants:
+      north_india: ["pump"]
+    usage_context: "Water pump"
+
+  - canonical: "borewell"
+    hindi_terms: ["nalkoop", "borewell", "boring", "tubewell"]
+    phonetic_variants: ["nalkoop"]
+    regional_variants:
+      north_india: ["boring"]
+    usage_context: "Borewell for water"
+
+  - canonical: "geyser"
+    hindi_terms: ["geyser", "heater", "paani garam karne wala"]
+    phonetic_variants: []
+    regional_variants:
+      north_india: ["geyser"]
+    usage_context: "Water heater"
+
+  - canonical: "floor_trap"
+    hindi_terms: ["nahni", "trap", "jali", "drain jali"]
+    phonetic_variants: ["nahnee"]
+    regional_variants:
+      north_india: ["nahni"]
+    usage_context: "Floor drain trap"
+
+  - canonical: "septic_tank"
+    hindi_terms: ["septic tank", "gaddha"]
+    phonetic_variants: ["gaddhaa"]
+    regional_variants:
+      north_india: ["septic tank"]
+    usage_context: "Septic tank"
+
+  # ============================================================
+  # ELECTRICAL
+  # ============================================================
+  - canonical: "electricity"
+    hindi_terms: ["bijli", "current", "light"]
+    phonetic_variants: ["bijlee"]
+    regional_variants:
+      north_india: ["bijli"]
+    usage_context: "Electricity"
+
+  - canonical: "wire"
+    hindi_terms: ["tar", "wire", "cable", "bijli ka tar"]
+    phonetic_variants: ["taar"]
+    regional_variants:
+      north_india: ["tar"]
+    usage_context: "Electrical wire/cable"
+
+  - canonical: "switch"
+    hindi_terms: ["switch", "button", "bijli ka button"]
+    phonetic_variants: []
+    regional_variants:
+      north_india: ["switch"]
+    usage_context: "Electrical switch"
+
+  - canonical: "socket"
+    hindi_terms: ["plug", "socket", "point", "plug point"]
+    phonetic_variants: []
+    regional_variants:
+      north_india: ["plug point"]
+    usage_context: "Power socket/outlet"
+
+  - canonical: "distribution_board"
+    hindi_terms: ["board", "bijli ka board", "DB", "MCB box"]
+    phonetic_variants: []
+    regional_variants:
+      north_india: ["board"]
+    usage_context: "Electrical distribution board"
+
+  - canonical: "meter"
+    hindi_terms: ["meter", "bijli ka meter"]
+    phonetic_variants: []
+    regional_variants:
+      north_india: ["meter"]
+    usage_context: "Electricity meter"
+
+  - canonical: "earthing"
+    hindi_terms: ["earthing", "zameen ka connection"]
+    phonetic_variants: []
+    regional_variants:
+      north_india: ["earthing"]
+    usage_context: "Electrical earthing/grounding"
+
+  - canonical: "generator"
+    hindi_terms: ["generator", "DG", "genset", "bijli machine"]
+    phonetic_variants: []
+    regional_variants:
+      north_india: ["generator"]
+    usage_context: "Diesel generator set"
+
+  - canonical: "inverter"
+    hindi_terms: ["inverter", "UPS", "battery wala", "battery backup"]
+    phonetic_variants: []
+    regional_variants:
+      north_india: ["inverter"]
+    usage_context: "Inverter/UPS for power backup"
+
+  - canonical: "light_fixture"
+    hindi_terms: ["batti", "light", "bulb", "tube", "LED"]
+    phonetic_variants: ["battee"]
+    regional_variants:
+      north_india: ["batti"]
+    usage_context: "Light fitting"
+
+  - canonical: "fan"
+    hindi_terms: ["pankha", "fan", "ceiling fan"]
+    phonetic_variants: ["pankhaa"]
+    regional_variants:
+      north_india: ["pankha"]
+    usage_context: "Ceiling fan"
+
+  - canonical: "conduit"
+    hindi_terms: ["conduit", "pipe", "bijli ki pipe"]
+    phonetic_variants: []
+    regional_variants:
+      north_india: ["conduit"]
+    usage_context: "Electrical conduit pipe"
+
+  # ============================================================
+  # HVAC
+  # ============================================================
+  - canonical: "air_conditioner"
+    hindi_terms: ["AC", "thanda", "AC machine", "thanda karne wala", "AC lagana"]
+    phonetic_variants: ["ee see", "thanda karne waalaa", "ee-see lagaanaa"]
+    regional_variants:
+      north_india: ["AC", "thanda"]
+      rajasthan: ["thanda machine"]
+    usage_context: "Air conditioner - split, window or central"
+
+  - canonical: "exhaust_fan"
+    hindi_terms: ["exhaust", "exhaust fan", "hawa nikalne wala"]
+    phonetic_variants: []
+    regional_variants:
+      north_india: ["exhaust"]
+    usage_context: "Exhaust/ventilation fan"
+
+  - canonical: "ductwork"
+    hindi_terms: ["duct", "AC ki nali", "hawa ki nali"]
+    phonetic_variants: []
+    regional_variants:
+      north_india: ["duct"]
+    usage_context: "HVAC ductwork"
+
+  # ============================================================
+  # DOORS & WINDOWS
+  # ============================================================
+  - canonical: "door"
+    hindi_terms: ["darwaza", "door", "darwajaa"]
+    phonetic_variants: ["darwaazaa"]
+    regional_variants:
+      north_india: ["darwaza"]
+    usage_context: "Door"
+
+  - canonical: "door_frame"
+    hindi_terms: ["chaukhat", "frame", "darwaze ka frame"]
+    phonetic_variants: ["chaukhaat"]
+    regional_variants:
+      north_india: ["chaukhat"]
+    usage_context: "Door frame"
+
+  - canonical: "door_shutter"
+    hindi_terms: ["palla", "shutter", "darwaze ka palla"]
+    phonetic_variants: ["pallaa"]
+    regional_variants:
+      north_india: ["palla"]
+    usage_context: "Door leaf/shutter"
+
+  - canonical: "window"
+    hindi_terms: ["khidki", "khidkee", "window"]
+    phonetic_variants: ["khidkee"]
+    regional_variants:
+      north_india: ["khidki"]
+    usage_context: "Window"
+
+  - canonical: "ventilator"
+    hindi_terms: ["roshandan", "ventilator", "jhilmil"]
+    phonetic_variants: ["roshandaan"]
+    regional_variants:
+      north_india: ["roshandan"]
+    usage_context: "Ventilator/fanlight"
+
+  - canonical: "glass"
+    hindi_terms: ["shesha", "glass", "kaanch"]
+    phonetic_variants: ["sheeshaa", "kaanch"]
+    regional_variants:
+      north_india: ["shesha"]
+    usage_context: "Glass"
+
+  - canonical: "hinge"
+    hindi_terms: ["kabja", "hinge"]
+    phonetic_variants: ["kabjaa"]
+    regional_variants:
+      north_india: ["kabja"]
+    usage_context: "Door/window hinge"
+
+  - canonical: "lock"
+    hindi_terms: ["taala", "lock", "darwaze ka taala"]
+    phonetic_variants: ["taalaa"]
+    regional_variants:
+      north_india: ["taala"]
+    usage_context: "Door lock"
+
+  - canonical: "handle"
+    hindi_terms: ["handle", "dasta"]
+    phonetic_variants: ["dastaa"]
+    regional_variants:
+      north_india: ["handle"]
+    usage_context: "Door handle"
+
+  - canonical: "tower_bolt"
+    hindi_terms: ["tower bolt", "chidkani", "billee"]
+    phonetic_variants: ["chitkani", "billee"]
+    regional_variants:
+      north_india: ["chidkani"]
+    usage_context: "Tower bolt / latch"
+
+  - canonical: "door_closer"
+    hindi_terms: ["door closer", "automatic closer", "hydraulic closer"]
+    phonetic_variants: []
+    regional_variants:
+      north_india: ["door closer"]
+    usage_context: "Automatic door closer"
+
+  - canonical: "door_stopper"
+    hindi_terms: ["stopper", "door stopper", "rokne wala"]
+    phonetic_variants: []
+    regional_variants:
+      north_india: ["stopper"]
+    usage_context: "Door stopper"
+
+  - canonical: "grill"
+    hindi_terms: ["grill", "jali", "jangla", "lohe ki jali"]
+    phonetic_variants: ["jaalee"]
+    regional_variants:
+      north_india: ["jali"]
+    usage_context: "Window grill / security grill"
+
+  - canonical: "mosquito_mesh"
+    hindi_terms: ["machar jali", "insect screen", "jali"]
+    phonetic_variants: ["machhar jaalee"]
+    regional_variants:
+      north_india: ["machar jali"]
+    usage_context: "Mosquito/insect mesh"
+
+  # ============================================================
+  # WATERPROOFING
+  # ============================================================
+  - canonical: "waterproofing"
+    hindi_terms: ["waterproofing", "paani rokna", "nami rokna", "seelun rokna"]
+    phonetic_variants: ["seekun roknaa"]
+    regional_variants:
+      north_india: ["waterproofing"]
+    usage_context: "Waterproofing treatment"
+
+  - canonical: "leakage"
+    hindi_terms: ["leakage", "paani aana", "seepage", "tapakna", "rishna"]
+    phonetic_variants: ["tapaknaa", "rishnaa"]
+    regional_variants:
+      north_india: ["leakage"]
+    usage_context: "Water leakage"
+
+  - canonical: "dampness"
+    hindi_terms: ["seelun", "nami", "dampness", "geela pan"]
+    phonetic_variants: ["seekun", "naamee"]
+    regional_variants:
+      north_india: ["seelun"]
+    usage_context: "Dampness/moisture in walls"
+
+  # ============================================================
+  # TOOLS & EQUIPMENT
+  # ============================================================
+  - canonical: "scaffolding"
+    hindi_terms: ["machan", "scaffold", "teka"]
+    phonetic_variants: ["machaan"]
+    regional_variants:
+      north_india: ["machan"]
+    usage_context: "Scaffolding/staging"
+
+  - canonical: "ladder"
+    hindi_terms: ["seedhi", "ladder", "sabaan"]
+    phonetic_variants: ["sabaaan"]
+    regional_variants:
+      north_india: ["seedhi"]
+    usage_context: "Ladder"
+
+  - canonical: "trolley"
+    hindi_terms: ["thela", "trolley", "rehri"]
+    phonetic_variants: ["thelaa", "rehree"]
+    regional_variants:
+      north_india: ["thela"]
+    usage_context: "Wheelbarrow/trolley"
+
+  - canonical: "concrete_mixer"
+    hindi_terms: ["mixer", "concrete mixer", "mixie"]
+    phonetic_variants: []
+    regional_variants:
+      north_india: ["mixer"]
+    usage_context: "Concrete mixer machine"
+
+  - canonical: "bar_bender"
+    hindi_terms: ["bender", "saria modhne ki machine"]
+    phonetic_variants: []
+    regional_variants:
+      north_india: ["bender"]
+    usage_context: "Rebar bending machine"
+
+  - canonical: "bar_cutter"
+    hindi_terms: ["cutter", "saria kaatne ki machine"]
+    phonetic_variants: []
+    regional_variants:
+      north_india: ["cutter"]
+    usage_context: "Rebar cutting machine"
+
+  - canonical: "crane"
+    hindi_terms: ["crane", "krein"]
+    phonetic_variants: ["krein"]
+    regional_variants:
+      north_india: ["crane"]
+    usage_context: "Crane"
+
+  - canonical: "jcb"
+    hindi_terms: ["JCB", "pokland", "excavator"]
+    phonetic_variants: ["poklaind"]
+    regional_variants:
+      north_india: ["JCB"]
+    usage_context: "'JCB' used generically for all backhoe loaders in India"
+
+  - canonical: "dumper"
+    hindi_terms: ["dumper", "tipper", "truck"]
+    phonetic_variants: []
+    regional_variants:
+      north_india: ["dumper"]
+    usage_context: "Dump truck"
+
+  - canonical: "transit_mixer"
+    hindi_terms: ["transit mixer", "RMC gaadi", "concrete gaadi"]
+    phonetic_variants: []
+    regional_variants:
+      north_india: ["transit mixer"]
+    usage_context: "Ready mix concrete truck"
+
+  - canonical: "batching_plant"
+    hindi_terms: ["batching plant", "concrete plant"]
+    phonetic_variants: []
+    regional_variants:
+      north_india: ["batching plant"]
+    usage_context: "Concrete batching plant"
+
+  - canonical: "tower_crane"
+    hindi_terms: ["tower crane", "bada crane"]
+    phonetic_variants: []
+    regional_variants:
+      north_india: ["tower crane"]
+    usage_context: "Tower crane"
+
+  - canonical: "plate_compactor"
+    hindi_terms: ["compactor", "plate compactor", "rammer"]
+    phonetic_variants: []
+    regional_variants:
+      north_india: ["compactor"]
+    usage_context: "Plate compactor for compaction"
+
+  - canonical: "trowel"
+    hindi_terms: ["karni", "trowel", "karchul"]
+    phonetic_variants: ["karnee"]
+    regional_variants:
+      north_india: ["karni"]
+    usage_context: "Mason's trowel"
+
+  - canonical: "plumb_bob"
+    hindi_terms: ["saahul", "plumb", "sidhai dekhne wala"]
+    phonetic_variants: ["saahul"]
+    regional_variants:
+      north_india: ["saahul"]
+    usage_context: "Plumb bob for checking vertical"
+
+  - canonical: "spirit_level"
+    hindi_terms: ["level", "waterpas", "paani pass"]
+    phonetic_variants: ["paanee paas"]
+    regional_variants:
+      north_india: ["waterpas"]
+    usage_context: "Spirit level"
+
+  - canonical: "measuring_tape"
+    hindi_terms: ["fita", "tape", "naapne ka fita"]
+    phonetic_variants: ["feetaa"]
+    regional_variants:
+      north_india: ["fita"]
+    usage_context: "Measuring tape"
+
+  - canonical: "thread_line"
+    hindi_terms: ["dori", "dhaga", "line", "sutli"]
+    phonetic_variants: ["doree", "dhagaa"]
+    regional_variants:
+      north_india: ["dori"]
+    usage_context: "String line for alignment"
+
+  # ============================================================
+  # PEOPLE / TRADES
+  # ============================================================
+  - canonical: "mason"
+    hindi_terms: ["mistri", "raj mistri", "raaj", "mason"]
+    phonetic_variants: ["mistree", "raaj mistree"]
+    regional_variants:
+      north_india: ["mistri"]
+    usage_context: "Mason / bricklayer"
+
+  - canonical: "head_mason"
+    hindi_terms: ["raj mistri", "mukhya mistri", "head mistri"]
+    phonetic_variants: ["raaj mistree"]
+    regional_variants:
+      north_india: ["raj mistri"]
+    usage_context: "Head mason / skilled mason"
+
+  - canonical: "labourer"
+    hindi_terms: ["mazdoor", "majdoor", "beldar", "coolie"]
+    phonetic_variants: ["mazdoor", "majdoor"]
+    regional_variants:
+      north_india: ["mazdoor"]
+    usage_context: "Unskilled labourer"
+
+  - canonical: "carpenter"
+    hindi_terms: ["barhei", "badhai", "carpenter", "lakdi ka kaam karne wala"]
+    phonetic_variants: ["barhaee", "badhaee"]
+    regional_variants:
+      north_india: ["barhei"]
+      bihar: ["badhai"]
+    usage_context: "Carpenter"
+
+  - canonical: "plumber"
+    hindi_terms: ["plumber", "nalkee", "paani wala mistri"]
+    phonetic_variants: ["nalkee"]
+    regional_variants:
+      north_india: ["plumber"]
+    usage_context: "Plumber"
+
+  - canonical: "electrician"
+    hindi_terms: ["electrician", "bijli wala", "bijli mistri"]
+    phonetic_variants: []
+    regional_variants:
+      north_india: ["bijli wala"]
+    usage_context: "Electrician"
+
+  - canonical: "painter"
+    hindi_terms: ["painter", "rangaai wala", "paint wala"]
+    phonetic_variants: ["rangaaee waalaa"]
+    regional_variants:
+      north_india: ["painter"]
+    usage_context: "Painter"
+
+  - canonical: "welder"
+    hindi_terms: ["welder", "welding wala"]
+    phonetic_variants: []
+    regional_variants:
+      north_india: ["welder"]
+    usage_context: "Welder"
+
+  - canonical: "fitter"
+    hindi_terms: ["fitter", "fitting wala"]
+    phonetic_variants: []
+    regional_variants:
+      north_india: ["fitter"]
+    usage_context: "Pipe/steel fitter"
+
+  - canonical: "contractor"
+    hindi_terms: ["thekedaar", "contractor", "builder"]
+    phonetic_variants: ["thekhedaar"]
+    regional_variants:
+      north_india: ["thekedaar"]
+    usage_context: "Contractor"
+
+  - canonical: "sub_contractor"
+    hindi_terms: ["sub-contractor", "chhota thekedaar", "piece rate wala"]
+    phonetic_variants: []
+    regional_variants:
+      north_india: ["chhota thekedaar"]
+    usage_context: "Sub-contractor"
+
+  - canonical: "engineer"
+    hindi_terms: ["engineer sahab", "engineer", "sahab"]
+    phonetic_variants: ["ingineer saahab"]
+    regional_variants:
+      north_india: ["engineer sahab"]
+    usage_context: "Site engineer"
+
+  - canonical: "supervisor"
+    hindi_terms: ["supervisor", "munshi", "overseer"]
+    phonetic_variants: ["munshee"]
+    regional_variants:
+      north_india: ["supervisor"]
+    usage_context: "Site supervisor"
+
+  - canonical: "watchman"
+    hindi_terms: ["chowkidaar", "watchman", "guard"]
+    phonetic_variants: ["chowkeedaar"]
+    regional_variants:
+      north_india: ["chowkidaar"]
+    usage_context: "Security guard"
+
+  # ============================================================
+  # MEASUREMENTS & UNITS
+  # ============================================================
+  - canonical: "foot"
+    hindi_terms: ["foot", "fut"]
+    phonetic_variants: ["fut"]
+    regional_variants:
+      north_india: ["fut"]
+    usage_context: "Foot (measurement)"
+
+  - canonical: "inch"
+    hindi_terms: ["inch", "ench"]
+    phonetic_variants: ["ench"]
+    regional_variants:
+      north_india: ["inch"]
+    usage_context: "Inch"
+
+  - canonical: "yard"
+    hindi_terms: ["gaj", "gaz"]
+    phonetic_variants: ["gaaj"]
+    regional_variants:
+      north_india: ["gaj"]
+    usage_context: "Yard (= 3 feet)"
+
+  - canonical: "brass"
+    hindi_terms: ["brass", "braas"]
+    phonetic_variants: ["braas"]
+    regional_variants:
+      north_india: ["brass"]
+    usage_context: "100 cubic feet"
+
+  - canonical: "marla"
+    hindi_terms: ["marla", "marlaa"]
+    phonetic_variants: ["marlaa"]
+    regional_variants:
+      punjab: ["marla"]
+    usage_context: "272.25 sq ft (Punjab/Haryana)"
+
+  - canonical: "bigha"
+    hindi_terms: ["bigha", "beegha"]
+    phonetic_variants: ["beegha"]
+    regional_variants:
+      north_india: ["bigha"]
+    usage_context: "Land area unit (varies by state)"
+
+  - canonical: "kanal"
+    hindi_terms: ["kanal", "kanaal"]
+    phonetic_variants: ["kanaal"]
+    regional_variants:
+      north_india: ["kanal"]
+    usage_context: "20 marla = 1 kanal"
+
+  - canonical: "square_feet"
+    hindi_terms: ["square feet", "varg foot", "sq ft"]
+    phonetic_variants: ["varg fut"]
+    regional_variants:
+      north_india: ["varg foot"]
+    usage_context: "Square feet"
+
+  - canonical: "square_meter"
+    hindi_terms: ["square meter", "varg meter", "sq m"]
+    phonetic_variants: ["varg meetar"]
+    regional_variants:
+      north_india: ["varg meter"]
+    usage_context: "Square meter"
+
+  - canonical: "cubic_feet"
+    hindi_terms: ["cubic feet", "ghan foot", "cu ft"]
+    phonetic_variants: ["ghan fut"]
+    regional_variants:
+      north_india: ["ghan foot"]
+    usage_context: "Cubic feet"
+
+  - canonical: "running_feet"
+    hindi_terms: ["running feet", "running foot", "rft"]
+    phonetic_variants: []
+    regional_variants:
+      north_india: ["running feet"]
+    usage_context: "Linear measurement"
+
+  # ============================================================
+  # MISCELLANEOUS CONSTRUCTION TERMS
+  # ============================================================
+  - canonical: "room"
+    hindi_terms: ["kamra", "room"]
+    phonetic_variants: ["kamraa"]
+    regional_variants:
+      north_india: ["kamra"]
+    usage_context: "Room"
+
+  - canonical: "bathroom"
+    hindi_terms: ["bathroom", "guslkhana", "nahane ka kamra", "snaan ghar"]
+    phonetic_variants: ["guslkhaanaa"]
+    regional_variants:
+      north_india: ["bathroom"]
+      urdu_influence: ["guslkhana"]
+    usage_context: "Bathroom"
+
+  - canonical: "toilet"
+    hindi_terms: ["toilet", "shauchalay", "latrine", "sandaas"]
+    phonetic_variants: ["shauchaalaay"]
+    regional_variants:
+      north_india: ["toilet"]
+    usage_context: "Toilet"
+
+  - canonical: "kitchen"
+    hindi_terms: ["kitchen", "rasoi", "rasoighar"]
+    phonetic_variants: ["rasoee"]
+    regional_variants:
+      north_india: ["kitchen", "rasoi"]
+    usage_context: "Kitchen"
+
+  - canonical: "balcony"
+    hindi_terms: ["balcony", "barehra", "chhajja"]
+    phonetic_variants: ["barehraa"]
+    regional_variants:
+      north_india: ["balcony"]
+    usage_context: "Balcony"
+
+  - canonical: "terrace"
+    hindi_terms: ["chhat", "terrace", "kotha"]
+    phonetic_variants: ["chhaat", "kothaa"]
+    regional_variants:
+      north_india: ["chhat"]
+      punjab: ["kotha"]
+    usage_context: "Roof terrace"
+
+  - canonical: "basement"
+    hindi_terms: ["basement", "taahkhana", "neeche ka floor"]
+    phonetic_variants: ["taahkhaanaa"]
+    regional_variants:
+      north_india: ["basement"]
+      urdu_influence: ["taahkhana"]
+    usage_context: "Basement"
+
+  - canonical: "store_room"
+    hindi_terms: ["store", "godown", "bhandaar"]
+    phonetic_variants: ["bhandaar"]
+    regional_variants:
+      north_india: ["store"]
+    usage_context: "Storage room"
+
+  - canonical: "site"
+    hindi_terms: ["site", "kaam ki jagah", "construction site"]
+    phonetic_variants: []
+    regional_variants:
+      north_india: ["site"]
+    usage_context: "Construction site"
+
+  - canonical: "drawing"
+    hindi_terms: ["drawing", "naksha", "plan"]
+    phonetic_variants: ["nakshaa"]
+    regional_variants:
+      north_india: ["drawing", "naksha"]
+    usage_context: "Construction drawing/plan"
+
+  - canonical: "estimate"
+    hindi_terms: ["estimate", "andaaza", "bill"]
+    phonetic_variants: ["andaazaa"]
+    regional_variants:
+      north_india: ["estimate"]
+    usage_context: "Cost estimate"
+
+  - canonical: "measurement"
+    hindi_terms: ["naap", "measurement", "naap jokh"]
+    phonetic_variants: ["naap jokh"]
+    regional_variants:
+      north_india: ["naap"]
+    usage_context: "Taking measurements"
+
+  - canonical: "quality"
+    hindi_terms: ["quality", "gunvatta"]
+    phonetic_variants: ["gunvattaa"]
+    regional_variants:
+      north_india: ["quality"]
+    usage_context: "Quality"
+
+  - canonical: "crack"
+    hindi_terms: ["daraar", "crack", "toot"]
+    phonetic_variants: ["daraar"]
+    regional_variants:
+      north_india: ["daraar"]
+    usage_context: "Crack in wall/slab"
+
+  - canonical: "honeycomb"
+    hindi_terms: ["honeycomb", "chhata", "khali jagah"]
+    phonetic_variants: ["chhataa"]
+    regional_variants:
+      north_india: ["honeycomb"]
+    usage_context: "Voids in concrete"
+
+  - canonical: "alignment"
+    hindi_terms: ["sidhai", "alignment", "line", "seedh"]
+    phonetic_variants: ["seedh"]
+    regional_variants:
+      north_india: ["line"]
+    usage_context: "Checking alignment/straightness"
+
+  - canonical: "plumb"
+    hindi_terms: ["saahul", "plumb", "seedha"]
+    phonetic_variants: ["saahul"]
+    regional_variants:
+      north_india: ["saahul"]
+    usage_context: "Vertical alignment check"
+
+  - canonical: "false_ceiling"
+    hindi_terms: ["false ceiling", "jhooti chhat", "neechi chhat"]
+    phonetic_variants: ["jhootee chhaat"]
+    regional_variants:
+      north_india: ["false ceiling"]
+    usage_context: "Suspended false ceiling"
+
+  - canonical: "railing"
+    hindi_terms: ["jangla", "railing", "reling"]
+    phonetic_variants: ["janglaa"]
+    regional_variants:
+      north_india: ["jangla"]
+    usage_context: "Railing/balustrade"
+
+  - canonical: "lift"
+    hindi_terms: ["lift", "elevator"]
+    phonetic_variants: []
+    regional_variants:
+      north_india: ["lift"]
+    usage_context: "Elevator/lift"
+
+  - canonical: "tank_cleaning"
+    hindi_terms: ["tanki safai", "tank cleaning"]
+    phonetic_variants: []
+    regional_variants:
+      north_india: ["tanki safai"]
+    usage_context: "Water tank cleaning"
+
+  - canonical: "demolition"
+    hindi_terms: ["todna", "giranaa", "demolition", "tod-phod"]
+    phonetic_variants: ["todnaa", "giraanaa"]
+    regional_variants:
+      north_india: ["todna"]
+    usage_context: "Demolition work"
+
+  - canonical: "repair"
+    hindi_terms: ["marammat", "repair", "theek karna"]
+    phonetic_variants: ["maraamat"]
+    regional_variants:
+      north_india: ["marammat"]
+    usage_context: "Repair work"
+
+  - canonical: "cleaning"
+    hindi_terms: ["safai", "cleaning", "saaf karna"]
+    phonetic_variants: ["safaaee"]
+    regional_variants:
+      north_india: ["safai"]
+    usage_context: "Cleaning work"
+
+  - canonical: "compound_wall"
+    hindi_terms: ["chaar diwari", "boundary wall", "haad deewar"]
+    phonetic_variants: ["chaar deewaaree"]
+    regional_variants:
+      north_india: ["chaar diwari"]
+    usage_context: "Boundary/compound wall"
+
+  - canonical: "gate"
+    hindi_terms: ["gate", "darwaza", "phaatak"]
+    phonetic_variants: ["phaataak"]
+    regional_variants:
+      north_india: ["gate"]
+    usage_context: "Entry gate"
+
+  - canonical: "road"
+    hindi_terms: ["sadak", "road", "rasta"]
+    phonetic_variants: ["sadak", "raastaa"]
+    regional_variants:
+      north_india: ["sadak"]
+    usage_context: "Road"
+
+  - canonical: "parking"
+    hindi_terms: ["parking", "gaadi rakhne ki jagah"]
+    phonetic_variants: []
+    regional_variants:
+      north_india: ["parking"]
+    usage_context: "Parking area"
+
+  - canonical: "garden"
+    hindi_terms: ["baagh", "garden", "baagbani"]
+    phonetic_variants: ["baagh"]
+    regional_variants:
+      north_india: ["garden"]
+    usage_context: "Garden/landscaping"
+
+  - canonical: "water_supply"
+    hindi_terms: ["paani ki supply", "jal aapoorthi", "paani"]
+    phonetic_variants: ["paanee kee supply"]
+    regional_variants:
+      north_india: ["paani ki supply"]
+    usage_context: "Water supply"
+
+  - canonical: "drainage"
+    hindi_terms: ["nali", "nala", "drainage", "mori"]
+    phonetic_variants: ["naalee", "naalaa"]
+    regional_variants:
+      north_india: ["nali"]
+    usage_context: "Drainage"
+
+  - canonical: "fire_safety"
+    hindi_terms: ["aag suraksha", "fire safety", "aag bujhana"]
+    phonetic_variants: ["aag surakshaa"]
+    regional_variants:
+      north_india: ["fire safety"]
+    usage_context: "Fire safety/protection"
+
+  - canonical: "safety_equipment"
+    hindi_terms: ["safety saman", "suraksha", "helmet", "safety"]
+    phonetic_variants: []
+    regional_variants:
+      north_india: ["safety"]
+    usage_context: "Safety equipment/PPE"
+
+  - canonical: "helmet"
+    hindi_terms: ["helmet", "topi", "safety topi"]
+    phonetic_variants: ["topee"]
+    regional_variants:
+      north_india: ["helmet"]
+    usage_context: "Safety helmet"
+
+  - canonical: "steel_fabrication"
+    hindi_terms: ["fabrication", "fab", "welding ka kaam", "lohe ka kaam"]
+    phonetic_variants: []
+    regional_variants:
+      north_india: ["fabrication"]
+    usage_context: "Steel fabrication work"
+
+  - canonical: "grouting"
+    hindi_terms: ["grouting", "bharna", "joint bharna"]
+    phonetic_variants: []
+    regional_variants:
+      north_india: ["grouting"]
+    usage_context: "Grouting joints"
+
+  - canonical: "anti_termite"
+    hindi_terms: ["deemak ka ilaaj", "anti termite", "deemak marna", "termite proof", "chemical ilaaj", "deemak treatment"]
+    phonetic_variants: ["deemak kaa ilaaj", "anti tarmaait", "deemak maarnaa", "deemak treatment"]
+    regional_variants:
+      north_india: ["deemak ka ilaaj", "anti termite"]
+    usage_context: "Anti-termite treatment - pre and post construction"
+
+  - canonical: "soil_filling"
+    hindi_terms: ["mitti bharna", "filling", "level karna"]
+    phonetic_variants: ["mittee bharnaa"]
+    regional_variants:
+      north_india: ["mitti bharna"]
+    usage_context: "Earth filling"
+
+  - canonical: "water"
+    hindi_terms: ["paani", "jal"]
+    phonetic_variants: ["paanee"]
+    regional_variants:
+      north_india: ["paani"]
+    usage_context: "Water"
+
+  - canonical: "wood"
+    hindi_terms: ["lakdi", "lakad", "timber"]
+    phonetic_variants: ["lakdee"]
+    regional_variants:
+      north_india: ["lakdi"]
+    usage_context: "Wood/timber"
+
+  - canonical: "iron"
+    hindi_terms: ["loha", "iron"]
+    phonetic_variants: ["lohaa"]
+    regional_variants:
+      north_india: ["loha"]
+    usage_context: "Iron/steel"
+
+  - canonical: "aluminium"
+    hindi_terms: ["aluminium", "aluminium"]
+    phonetic_variants: []
+    regional_variants:
+      north_india: ["aluminium"]
+    usage_context: "Aluminium"
+
+  - canonical: "pvc"
+    hindi_terms: ["PVC", "plastic"]
+    phonetic_variants: []
+    regional_variants:
+      north_india: ["PVC"]
+    usage_context: "PVC material"
+
+  - canonical: "copper"
+    hindi_terms: ["tamba", "copper"]
+    phonetic_variants: ["taambaa"]
+    regional_variants:
+      north_india: ["tamba"]
+    usage_context: "Copper"
+
+  - canonical: "stainless_steel"
+    hindi_terms: ["SS", "stainless steel", "chamakdar loha"]
+    phonetic_variants: []
+    regional_variants:
+      north_india: ["SS"]
+    usage_context: "Stainless steel"
+
+  # ============================================================
+  # WATERPROOFING (Expanded)
+  # ============================================================
+  - canonical: "roof_waterproofing"
+    hindi_terms: ["chhat waterproofing", "chhat ka waterproof", "terrace waterproofing"]
+    phonetic_variants: ["chhaat waterproofing"]
+    regional_variants:
+      north_india: ["chhat waterproofing"]
+    usage_context: "Roof/terrace waterproofing treatment"
+
+  - canonical: "basement_waterproofing"
+    hindi_terms: ["basement waterproofing", "basement tanking", "taahkhane ka waterproof"]
+    phonetic_variants: ["taahkhaane kaa waterproof"]
+    regional_variants:
+      north_india: ["basement waterproofing"]
+    usage_context: "Basement waterproofing / tanking"
+
+  - canonical: "bathroom_waterproofing"
+    hindi_terms: ["bathroom waterproofing", "nahane ke kamre ka waterproof"]
+    phonetic_variants: []
+    regional_variants:
+      north_india: ["bathroom waterproofing"]
+    usage_context: "Wet area waterproofing for bathrooms"
+
+  - canonical: "leak_repair"
+    hindi_terms: ["leak repair", "leakage theek karna", "tapak band karna", "rishna band karna"]
+    phonetic_variants: ["leakage theek karnaa"]
+    regional_variants:
+      north_india: ["leak repair"]
+    usage_context: "Repairing water leaks"
+
+  - canonical: "seepage"
+    hindi_terms: ["seepage", "rishna", "paani chhalna", "nami aana"]
+    phonetic_variants: ["rishnaa", "paanee chhalnaa"]
+    regional_variants:
+      north_india: ["seepage", "rishna"]
+    usage_context: "Water seepage through walls/slabs"
+
+  - canonical: "waterproof_membrane"
+    hindi_terms: ["membrane", "waterproof sheet", "APP membrane", "sheet lagana"]
+    phonetic_variants: []
+    regional_variants:
+      north_india: ["membrane"]
+    usage_context: "Waterproofing membrane/sheet"
+
+  - canonical: "waterproof_coating"
+    hindi_terms: ["waterproof coating", "paani rok coating", "Dr Fixit", "chemical coating"]
+    phonetic_variants: ["paanee rok coating"]
+    regional_variants:
+      north_india: ["waterproof coating"]
+    usage_context: "Liquid applied waterproof coating; Dr Fixit used as generic brand name"
+
+  - canonical: "injection_grouting"
+    hindi_terms: ["injection grouting", "crack injection", "daraar ka ilaaj"]
+    phonetic_variants: ["daraar kaa ilaaj"]
+    regional_variants:
+      north_india: ["injection grouting"]
+    usage_context: "Epoxy/PU injection for crack waterproofing"
+
+  - canonical: "water_stop"
+    hindi_terms: ["water stop", "paani rokne ki patti", "PVC water stop"]
+    phonetic_variants: ["paanee rokne kee pattee"]
+    regional_variants:
+      north_india: ["water stop"]
+    usage_context: "PVC water stop at construction joints"
+
+  - canonical: "damp_proof_course"
+    hindi_terms: ["DPC", "nami rokne ki teh", "damp proof", "DPC ka kaam"]
+    phonetic_variants: ["dee pee see"]
+    regional_variants:
+      north_india: ["DPC"]
+    usage_context: "Damp proof course at plinth level"
+
+  - canonical: "bitumen"
+    hindi_terms: ["bitumen", "coal tar", "tar", "kaali coating"]
+    phonetic_variants: []
+    regional_variants:
+      north_india: ["bitumen", "coal tar"]
+    usage_context: "Bitumen for waterproofing and roads"
+
+  # ============================================================
+  # DOORS & WINDOWS (Expanded)
+  # ============================================================
+  - canonical: "flush_door"
+    hindi_terms: ["flush door", "seedha darwaza", "plywood door"]
+    phonetic_variants: ["seedhaa darwaazaa"]
+    regional_variants:
+      north_india: ["flush door"]
+    usage_context: "Flush door - flat/smooth surface door"
+
+  - canonical: "panel_door"
+    hindi_terms: ["panel door", "panel wala darwaza", "sagwan ka darwaza"]
+    phonetic_variants: ["panel waalaa darwaazaa"]
+    regional_variants:
+      north_india: ["panel door"]
+    usage_context: "Panelled wooden door"
+
+  - canonical: "wire_mesh_door"
+    hindi_terms: ["jali darwaza", "machar jali darwaza", "screen door"]
+    phonetic_variants: ["jaalee darwaazaa"]
+    regional_variants:
+      north_india: ["jali darwaza"]
+    usage_context: "Wire mesh / mosquito net door"
+
+  - canonical: "sliding_door"
+    hindi_terms: ["sliding door", "khisakne wala darwaza", "slider"]
+    phonetic_variants: ["khisakne waalaa darwaazaa"]
+    regional_variants:
+      north_india: ["sliding door"]
+    usage_context: "Sliding door"
+
+  - canonical: "rolling_shutter"
+    hindi_terms: ["rolling shutter", "shutter", "galla shutter", "dukaan ka shutter"]
+    phonetic_variants: []
+    regional_variants:
+      north_india: ["shutter"]
+    usage_context: "Rolling shutter for shop/garage"
+
+  - canonical: "aluminium_window"
+    hindi_terms: ["aluminium window", "aluminium ki khidki", "aluminium section"]
+    phonetic_variants: []
+    regional_variants:
+      north_india: ["aluminium window"]
+    usage_context: "Aluminium framed window"
+
+  - canonical: "upvc_window"
+    hindi_terms: ["UPVC window", "UPVC ki khidki", "plastic window"]
+    phonetic_variants: []
+    regional_variants:
+      north_india: ["UPVC window"]
+    usage_context: "UPVC framed window/door"
+
+  - canonical: "wooden_window"
+    hindi_terms: ["lakdi ki khidki", "wooden window", "sagwan ki khidki"]
+    phonetic_variants: ["lakdee kee khidkee"]
+    regional_variants:
+      north_india: ["lakdi ki khidki"]
+    usage_context: "Timber framed window"
+
+  - canonical: "glass_door"
+    hindi_terms: ["glass door", "sheeshe ka darwaza", "kaanch ka darwaza"]
+    phonetic_variants: ["sheeshe kaa darwaazaa"]
+    regional_variants:
+      north_india: ["glass door"]
+    usage_context: "Glass/glazed door"
+
+  - canonical: "latch"
+    hindi_terms: ["kundi", "aldrop", "hasp"]
+    phonetic_variants: ["kundee"]
+    regional_variants:
+      north_india: ["kundi"]
+    usage_context: "Door latch / aldrop"
+
+  - canonical: "door_chain"
+    hindi_terms: ["chain", "zanjeer", "darwaze ki chain"]
+    phonetic_variants: ["zanjeer"]
+    regional_variants:
+      north_india: ["chain"]
+    usage_context: "Door safety chain"
+
+  - canonical: "spring_door_closer"
+    hindi_terms: ["spring closer", "spring wala", "apne aap band hone wala"]
+    phonetic_variants: ["apne aap band hone waalaa"]
+    regional_variants:
+      north_india: ["spring closer"]
+    usage_context: "Spring-type automatic door closer"
+
+  - canonical: "peephole"
+    hindi_terms: ["magic eye", "peephole", "darwaze ka chhota shesha"]
+    phonetic_variants: []
+    regional_variants:
+      north_india: ["magic eye"]
+    usage_context: "Door peephole/viewer"
+
+  - canonical: "door_seal"
+    hindi_terms: ["door seal", "darwaze ki patti", "rubber seal"]
+    phonetic_variants: ["darwaaze kee pattee"]
+    regional_variants:
+      north_india: ["door seal"]
+    usage_context: "Door weather seal / draught strip"
+
+  - canonical: "window_sill"
+    hindi_terms: ["sill", "khidki ka neeche wala", "chaukhani"]
+    phonetic_variants: []
+    regional_variants:
+      north_india: ["sill"]
+    usage_context: "Window sill"
+
+  - canonical: "curtain_wall"
+    hindi_terms: ["curtain wall", "structural glazing", "sheeshe ki deewar"]
+    phonetic_variants: ["sheeshe kee deewaar"]
+    regional_variants:
+      north_india: ["curtain wall"]
+    usage_context: "Glass curtain wall / structural glazing"
+
+  # ============================================================
+  # FLOORING & TILES (Expanded)
+  # ============================================================
+  - canonical: "tile_laying"
+    hindi_terms: ["tile lagana", "tile ka kaam", "tile fitting", "taaeel lagana"]
+    phonetic_variants: ["taaeel lagaanaa"]
+    regional_variants:
+      north_india: ["tile lagana"]
+    usage_context: "Tile installation work"
+
+  - canonical: "vitrified_tile"
+    hindi_terms: ["vitrified tile", "chamakdar tile", "double charge tile"]
+    phonetic_variants: ["chamakdaar tile"]
+    regional_variants:
+      north_india: ["vitrified tile"]
+    usage_context: "Vitrified / polished tile"
+
+  - canonical: "ceramic_tile"
+    hindi_terms: ["ceramic tile", "china tile", "sadha tile"]
+    phonetic_variants: []
+    regional_variants:
+      north_india: ["ceramic tile"]
+    usage_context: "Ceramic wall/floor tile"
+
+  - canonical: "porcelain_tile"
+    hindi_terms: ["porcelain tile", "GVT", "full body tile"]
+    phonetic_variants: []
+    regional_variants:
+      north_india: ["porcelain tile"]
+    usage_context: "Porcelain / glazed vitrified tile"
+
+  - canonical: "mosaic_tile"
+    hindi_terms: ["mosaic", "mosaic tile", "chhoti tile"]
+    phonetic_variants: []
+    regional_variants:
+      north_india: ["mosaic"]
+    usage_context: "Small mosaic tiles"
+
+  - canonical: "terrazzo"
+    hindi_terms: ["terrazzo", "chips flooring", "chips ka farsh", "marble chips"]
+    phonetic_variants: ["chips kaa farash"]
+    regional_variants:
+      north_india: ["terrazzo", "chips flooring"]
+    usage_context: "Terrazzo/marble chip flooring"
+
+  - canonical: "ips_flooring"
+    hindi_terms: ["IPS", "IPS flooring", "cement flooring", "seedha farsh"]
+    phonetic_variants: []
+    regional_variants:
+      north_india: ["IPS"]
+    usage_context: "Indian Patent Stone / cement concrete flooring"
+
+  - canonical: "epoxy_flooring"
+    hindi_terms: ["epoxy flooring", "epoxy ka farsh", "chemical flooring"]
+    phonetic_variants: ["epoxy kaa farash"]
+    regional_variants:
+      north_india: ["epoxy flooring"]
+    usage_context: "Epoxy resin flooring"
+
+  - canonical: "tile_adhesive"
+    hindi_terms: ["tile adhesive", "tile ka masala", "chipkane wala", "MYK adhesive"]
+    phonetic_variants: ["chipkaane waalaa"]
+    regional_variants:
+      north_india: ["tile adhesive"]
+    usage_context: "Tile adhesive/bonding material"
+
+  - canonical: "tile_grouting"
+    hindi_terms: ["tile grouting", "tile ki naali bharna", "joint filler"]
+    phonetic_variants: ["tile kee naalee bharnaa"]
+    regional_variants:
+      north_india: ["tile grouting"]
+    usage_context: "Filling joints between tiles"
+
+  - canonical: "tile_spacer"
+    hindi_terms: ["spacer", "tile spacer", "plus wala"]
+    phonetic_variants: []
+    regional_variants:
+      north_india: ["spacer"]
+    usage_context: "Plastic tile spacers for uniform gaps"
+
+  - canonical: "marble_polishing"
+    hindi_terms: ["marble polish", "marble ghisai", "polish karna", "marble chamkana"]
+    phonetic_variants: ["marble ghisaaee"]
+    regional_variants:
+      north_india: ["marble polish"]
+    usage_context: "Marble grinding and polishing"
+
+  - canonical: "anti_skid_tile"
+    hindi_terms: ["anti skid tile", "rough tile", "kharkhara tile", "fisal na wali tile"]
+    phonetic_variants: ["kharkharaa tile"]
+    regional_variants:
+      north_india: ["anti skid tile"]
+    usage_context: "Non-slip tile for wet areas"
+
+  - canonical: "wooden_flooring"
+    hindi_terms: ["wooden flooring", "lakdi ka farsh", "laminate flooring"]
+    phonetic_variants: ["lakdee kaa farash"]
+    regional_variants:
+      north_india: ["wooden flooring"]
+    usage_context: "Wooden / laminate flooring"
+
+  - canonical: "floor_hardener"
+    hindi_terms: ["hardener", "floor hardener", "VDF", "vacuum dewatered floor"]
+    phonetic_variants: []
+    regional_variants:
+      north_india: ["hardener"]
+    usage_context: "Floor hardener / VDF flooring"
+
+  # ============================================================
+  # PAINTING (Expanded)
+  # ============================================================
+  - canonical: "wall_putty"
+    hindi_terms: ["wall putty", "Birla putty", "JK putty", "deewar ki putty"]
+    phonetic_variants: ["deewaar kee putty"]
+    regional_variants:
+      north_india: ["wall putty"]
+    usage_context: "Wall care putty; brand names often used generically"
+
+  - canonical: "texture_paint"
+    hindi_terms: ["texture paint", "texture", "design wala paint", "roller texture"]
+    phonetic_variants: []
+    regional_variants:
+      north_india: ["texture paint"]
+    usage_context: "Textured wall finish"
+
+  - canonical: "weather_coat"
+    hindi_terms: ["weather coat", "exterior paint", "bahar ka paint", "Apex"]
+    phonetic_variants: ["baahar kaa paint"]
+    regional_variants:
+      north_india: ["weather coat"]
+    usage_context: "Exterior weather-proof paint; Apex used as generic brand name"
+
+  - canonical: "interior_paint"
+    hindi_terms: ["interior paint", "andar ka paint", "Tractor emulsion", "Royale"]
+    phonetic_variants: ["andar kaa paint"]
+    regional_variants:
+      north_india: ["interior paint"]
+    usage_context: "Interior wall paint; Asian Paints brand names used generically"
+
+  - canonical: "luster_paint"
+    hindi_terms: ["luster paint", "chamak wala paint", "sheen paint"]
+    phonetic_variants: ["chamak waalaa paint"]
+    regional_variants:
+      north_india: ["luster paint"]
+    usage_context: "Lustre/sheen finish paint"
+
+  - canonical: "stainer"
+    hindi_terms: ["stainer", "colour", "rang milane wala"]
+    phonetic_variants: ["raang milaane waalaa"]
+    regional_variants:
+      north_india: ["stainer"]
+    usage_context: "Colour tinting stainer for paint"
+
+  - canonical: "wood_stain"
+    hindi_terms: ["wood stain", "lakdi ka stain", "melamine", "lakdi ka rang"]
+    phonetic_variants: ["lakdee kaa rang"]
+    regional_variants:
+      north_india: ["wood stain"]
+    usage_context: "Wood stain / melamine finish"
+
+  - canonical: "anti_corrosive_paint"
+    hindi_terms: ["anti rust paint", "red oxide", "lal paint", "lohe ka primer"]
+    phonetic_variants: ["laal paint"]
+    regional_variants:
+      north_india: ["red oxide"]
+    usage_context: "Anti-corrosive primer for metal"
+
+  - canonical: "spray_painting"
+    hindi_terms: ["spray paint", "spray karna", "spray gun se paint"]
+    phonetic_variants: ["spray karnaa"]
+    regional_variants:
+      north_india: ["spray paint"]
+    usage_context: "Spray painting method"
+
+  - canonical: "sanding"
+    hindi_terms: ["regmal", "sandpaper", "ghisai", "ragra lagana"]
+    phonetic_variants: ["ghisaaee"]
+    regional_variants:
+      north_india: ["regmal"]
+    usage_context: "Sanding/rubbing wall before painting"
+
+  - canonical: "paint_coat"
+    hindi_terms: ["coat", "teh", "paint ka coat", "ek teh"]
+    phonetic_variants: []
+    regional_variants:
+      north_india: ["coat"]
+    usage_context: "Layer/coat of paint"
+
+  - canonical: "roller"
+    hindi_terms: ["roller", "paint roller", "bel"]
+    phonetic_variants: []
+    regional_variants:
+      north_india: ["roller"]
+    usage_context: "Paint roller"
+
+  - canonical: "paint_brush"
+    hindi_terms: ["brush", "koonchi", "paint brush"]
+    phonetic_variants: ["koonchhee"]
+    regional_variants:
+      north_india: ["brush", "koonchi"]
+    usage_context: "Paint brush"
+
+  - canonical: "lime_wash"
+    hindi_terms: ["choona lagana", "chunai", "safedi lagana", "lime wash"]
+    phonetic_variants: ["choonaa lagaanaa"]
+    regional_variants:
+      north_india: ["choona lagana"]
+    usage_context: "Lime whitewash application"
+
+  - canonical: "colour_shade"
+    hindi_terms: ["shade", "colour shade", "rang ka shade", "shade card"]
+    phonetic_variants: ["raang kaa shade"]
+    regional_variants:
+      north_india: ["shade"]
+    usage_context: "Paint colour shade selection"
+
+  # ============================================================
+  # CEILING (Expanded)
+  # ============================================================
+  - canonical: "gypsum_board_ceiling"
+    hindi_terms: ["gypsum ceiling", "gypsum board", "gypsum ka false ceiling"]
+    phonetic_variants: []
+    regional_variants:
+      north_india: ["gypsum ceiling"]
+    usage_context: "Gypsum plasterboard false ceiling"
+
+  - canonical: "pop_ceiling"
+    hindi_terms: ["POP ceiling", "POP ki chhat", "POP design", "POP moulding"]
+    phonetic_variants: []
+    regional_variants:
+      north_india: ["POP ceiling"]
+    usage_context: "Plaster of Paris decorative ceiling"
+
+  - canonical: "acoustic_ceiling"
+    hindi_terms: ["acoustic ceiling", "sound proof ceiling", "awaaz rokne wali chhat"]
+    phonetic_variants: ["aawaaz rokne waalee chhaat"]
+    regional_variants:
+      north_india: ["acoustic ceiling"]
+    usage_context: "Sound-absorbing acoustic tile ceiling"
+
+  - canonical: "grid_ceiling"
+    hindi_terms: ["grid ceiling", "T-grid ceiling", "mineral fibre ceiling"]
+    phonetic_variants: []
+    regional_variants:
+      north_india: ["grid ceiling"]
+    usage_context: "Suspended grid/T-bar ceiling system"
+
+  - canonical: "metal_ceiling"
+    hindi_terms: ["metal ceiling", "aluminium ceiling", "lohe ki chhat"]
+    phonetic_variants: ["lohe kee chhaat"]
+    regional_variants:
+      north_india: ["metal ceiling"]
+    usage_context: "Metal panel false ceiling"
+
+  - canonical: "wooden_ceiling"
+    hindi_terms: ["wooden ceiling", "lakdi ki chhat", "plyboard ceiling"]
+    phonetic_variants: ["lakdee kee chhaat"]
+    regional_variants:
+      north_india: ["wooden ceiling"]
+    usage_context: "Wood/plywood panelled ceiling"
+
+  - canonical: "pvc_ceiling"
+    hindi_terms: ["PVC ceiling", "PVC panel", "plastic ceiling"]
+    phonetic_variants: []
+    regional_variants:
+      north_india: ["PVC ceiling"]
+    usage_context: "PVC panel ceiling"
+
+  - canonical: "ceiling_cove"
+    hindi_terms: ["cove", "cornice", "gol patti", "ceiling ka kinara"]
+    phonetic_variants: ["gol pattee"]
+    regional_variants:
+      north_india: ["cove", "cornice"]
+    usage_context: "Ceiling cove/cornice moulding"
+
+  - canonical: "ceiling_light_trough"
+    hindi_terms: ["light trough", "light cove", "hidden light", "chhipi hui light"]
+    phonetic_variants: ["chhipee huee light"]
+    regional_variants:
+      north_india: ["light trough"]
+    usage_context: "Concealed light trough in false ceiling"
+
+  - canonical: "ceiling_hanger"
+    hindi_terms: ["hanger", "ceiling hanger", "latakne wala rod", "GI wire hanger"]
+    phonetic_variants: ["latakne waalaa rod"]
+    regional_variants:
+      north_india: ["hanger"]
+    usage_context: "GI wire/rod hanger for suspended ceiling"
+
+  # ============================================================
+  # FIRE SAFETY (Expanded)
+  # ============================================================
+  - canonical: "fire"
+    hindi_terms: ["aag", "agni"]
+    phonetic_variants: ["aag"]
+    regional_variants:
+      north_india: ["aag"]
+    usage_context: "Fire"
+
+  - canonical: "fire_alarm"
+    hindi_terms: ["fire alarm", "aag ki ghanti", "smoke alarm", "alarm"]
+    phonetic_variants: ["aag kee ghantee"]
+    regional_variants:
+      north_india: ["fire alarm"]
+    usage_context: "Fire detection/alarm system"
+
+  - canonical: "fire_sprinkler"
+    hindi_terms: ["sprinkler", "paani wala sprinkler", "aag bujhane wala sprinkler"]
+    phonetic_variants: ["aag bujhaane waalaa sprinkler"]
+    regional_variants:
+      north_india: ["sprinkler"]
+    usage_context: "Automatic fire sprinkler"
+
+  - canonical: "fire_hydrant"
+    hindi_terms: ["hydrant", "fire hydrant", "aag bujhane ka pump", "hose reel"]
+    phonetic_variants: []
+    regional_variants:
+      north_india: ["hydrant"]
+    usage_context: "Fire hydrant and hose reel system"
+
+  - canonical: "fire_extinguisher"
+    hindi_terms: ["fire extinguisher", "aag bujhane wala cylinder", "CO2 cylinder"]
+    phonetic_variants: ["aag bujhaane waalaa cylinder"]
+    regional_variants:
+      north_india: ["fire extinguisher"]
+    usage_context: "Portable fire extinguisher"
+
+  - canonical: "fire_escape"
+    hindi_terms: ["fire escape", "aag ki seedhi", "emergency staircase", "bahar nikalne ka rasta"]
+    phonetic_variants: ["aag kee seedhee"]
+    regional_variants:
+      north_india: ["fire escape"]
+    usage_context: "Fire escape staircase"
+
+  - canonical: "fire_door"
+    hindi_terms: ["fire door", "aag rokne wala darwaza", "fire rated door"]
+    phonetic_variants: ["aag rokne waalaa darwaazaa"]
+    regional_variants:
+      north_india: ["fire door"]
+    usage_context: "Fire rated door"
+
+  - canonical: "smoke_detector"
+    hindi_terms: ["smoke detector", "dhuan pakadne wala", "smoke sensor"]
+    phonetic_variants: ["dhuaan pakadne waalaa"]
+    regional_variants:
+      north_india: ["smoke detector"]
+    usage_context: "Smoke detection sensor"
+
+  - canonical: "fire_pump"
+    hindi_terms: ["fire pump", "aag bujhane ka pump", "jockey pump", "fire fighting pump"]
+    phonetic_variants: ["aag bujhaane kaa pump"]
+    regional_variants:
+      north_india: ["fire pump"]
+    usage_context: "Fire fighting pump set"
+
+  - canonical: "fire_retardant"
+    hindi_terms: ["fire retardant", "aag rokne wala chemical", "fire proof coating"]
+    phonetic_variants: ["aag rokne waalaa chemical"]
+    regional_variants:
+      north_india: ["fire retardant"]
+    usage_context: "Fire retardant paint/coating"
+
+  - canonical: "fire_noc"
+    hindi_terms: ["fire NOC", "fire department ka NOC", "aag suraksha ka praman patra"]
+    phonetic_variants: []
+    regional_variants:
+      north_india: ["fire NOC"]
+    usage_context: "No Objection Certificate from fire department"
+
+  # ============================================================
+  # HVAC (Expanded)
+  # ============================================================
+  - canonical: "split_ac"
+    hindi_terms: ["split AC", "deewar wala AC", "indoor outdoor AC"]
+    phonetic_variants: ["deewaar waalaa AC"]
+    regional_variants:
+      north_india: ["split AC"]
+    usage_context: "Split type air conditioner"
+
+  - canonical: "window_ac"
+    hindi_terms: ["window AC", "khidki AC", "purana AC"]
+    phonetic_variants: ["khidkee AC"]
+    regional_variants:
+      north_india: ["window AC"]
+    usage_context: "Window type air conditioner"
+
+  - canonical: "central_ac"
+    hindi_terms: ["central AC", "centralized AC", "bade building ka AC"]
+    phonetic_variants: []
+    regional_variants:
+      north_india: ["central AC"]
+    usage_context: "Centralized air conditioning system"
+
+  - canonical: "chiller"
+    hindi_terms: ["chiller", "chiller plant", "bada AC", "paani thanda karne wala"]
+    phonetic_variants: ["paanee thandaa karne waalaa"]
+    regional_variants:
+      north_india: ["chiller"]
+    usage_context: "Chiller unit for central AC"
+
+  - canonical: "ahu"
+    hindi_terms: ["AHU", "air handling unit", "hawa dene wala machine"]
+    phonetic_variants: ["hawa dene waalaa machine"]
+    regional_variants:
+      north_india: ["AHU"]
+    usage_context: "Air handling unit"
+
+  - canonical: "ventilation"
+    hindi_terms: ["ventilation", "hawa aana jaana", "hawa ka raasta"]
+    phonetic_variants: ["hawa aanaa jaanaa"]
+    regional_variants:
+      north_india: ["ventilation"]
+    usage_context: "Air ventilation"
+
+  - canonical: "ac_duct"
+    hindi_terms: ["AC duct", "duct", "hawa ki nali", "GI duct"]
+    phonetic_variants: ["hawa kee naalee"]
+    regional_variants:
+      north_india: ["AC duct"]
+    usage_context: "AC ductwork - GI sheet or insulated"
+
+  - canonical: "thermostat"
+    hindi_terms: ["thermostat", "temperature control", "taapman niyantrak"]
+    phonetic_variants: ["taapman niyantrak"]
+    regional_variants:
+      north_india: ["thermostat"]
+    usage_context: "Temperature control device"
+
+  - canonical: "refrigerant_pipe"
+    hindi_terms: ["copper pipe", "AC ki pipe", "refrigerant line", "tamba pipe"]
+    phonetic_variants: ["taamba pipe"]
+    regional_variants:
+      north_india: ["copper pipe"]
+    usage_context: "AC copper refrigerant piping"
+
+  - canonical: "ac_drain"
+    hindi_terms: ["AC drain", "AC ka paani", "condensate drain"]
+    phonetic_variants: ["AC kaa paanee"]
+    regional_variants:
+      north_india: ["AC drain"]
+    usage_context: "AC condensate drain pipe"
+
+  - canonical: "insulation"
+    hindi_terms: ["insulation", "garam thanda rokna", "thermocol", "rockwool"]
+    phonetic_variants: ["garam thandaa roknaa"]
+    regional_variants:
+      north_india: ["insulation"]
+    usage_context: "Thermal/acoustic insulation"
+
+  - canonical: "diffuser"
+    hindi_terms: ["diffuser", "AC ka muh", "hawa nikalne ki jali"]
+    phonetic_variants: ["hawa nikalne kee jaalee"]
+    regional_variants:
+      north_india: ["diffuser"]
+    usage_context: "AC air diffuser/grille"
+
+  # ============================================================
+  # ELEVATOR / LIFT (Expanded)
+  # ============================================================
+  - canonical: "passenger_lift"
+    hindi_terms: ["passenger lift", "sawari lift", "logon ki lift"]
+    phonetic_variants: ["sawaaree lift"]
+    regional_variants:
+      north_india: ["passenger lift"]
+    usage_context: "Passenger elevator"
+
+  - canonical: "goods_lift"
+    hindi_terms: ["goods lift", "saman ki lift", "maal dhone ki lift"]
+    phonetic_variants: ["saamaan kee lift"]
+    regional_variants:
+      north_india: ["goods lift"]
+    usage_context: "Freight/goods elevator"
+
+  - canonical: "escalator"
+    hindi_terms: ["escalator", "chalti seedhi", "automatic seedhi"]
+    phonetic_variants: ["chaltee seedhee"]
+    regional_variants:
+      north_india: ["escalator"]
+    usage_context: "Moving stairway/escalator"
+
+  - canonical: "dumbwaiter"
+    hindi_terms: ["dumbwaiter", "chhoti lift", "khana bhejne ki lift"]
+    phonetic_variants: ["chhotee lift"]
+    regional_variants:
+      north_india: ["dumbwaiter"]
+    usage_context: "Small service lift for food/goods"
+
+  - canonical: "lift_shaft"
+    hindi_terms: ["lift shaft", "lift ka khokhla", "lift well", "lift pit wala area"]
+    phonetic_variants: ["lift kaa khokhlaa"]
+    regional_variants:
+      north_india: ["lift shaft"]
+    usage_context: "Vertical shaft housing the lift"
+
+  - canonical: "lift_pit"
+    hindi_terms: ["lift pit", "lift ka gadha", "neeche ka gadha"]
+    phonetic_variants: ["lift kaa gadhaa"]
+    regional_variants:
+      north_india: ["lift pit"]
+    usage_context: "Pit at bottom of lift shaft"
+
+  - canonical: "lift_machine_room"
+    hindi_terms: ["machine room", "lift ka engine room", "motor room"]
+    phonetic_variants: ["lift kaa engine room"]
+    regional_variants:
+      north_india: ["machine room"]
+    usage_context: "Lift machine/motor room on terrace"
+
+  - canonical: "lift_door"
+    hindi_terms: ["lift door", "lift ka darwaza", "landing door", "auto door"]
+    phonetic_variants: ["lift kaa darwaazaa"]
+    regional_variants:
+      north_india: ["lift door"]
+    usage_context: "Lift landing door"
+
+  - canonical: "lift_car"
+    hindi_terms: ["lift car", "lift ka dabba", "cabin"]
+    phonetic_variants: ["lift kaa dabbaa"]
+    regional_variants:
+      north_india: ["lift car"]
+    usage_context: "Lift cabin/car"
+
+  - canonical: "lift_railing"
+    hindi_terms: ["lift railing", "lift ke andar ki railing", "cabin railing"]
+    phonetic_variants: []
+    regional_variants:
+      north_india: ["lift railing"]
+    usage_context: "Handrail inside lift cabin"
+
+  # ============================================================
+  # EXTERNAL WORKS (Expanded)
+  # ============================================================
+  - canonical: "fencing"
+    hindi_terms: ["fencing", "taar lagana", "baad lagana", "ghera"]
+    phonetic_variants: ["taar lagaanaa", "gherah"]
+    regional_variants:
+      north_india: ["fencing"]
+    usage_context: "Fencing/barbed wire boundary"
+
+  - canonical: "chain_link_fencing"
+    hindi_terms: ["chain link", "jali fencing", "lohe ki jali"]
+    phonetic_variants: ["lohe kee jaalee"]
+    regional_variants:
+      north_india: ["chain link"]
+    usage_context: "Chain link mesh fencing"
+
+  - canonical: "manhole"
+    hindi_terms: ["manhole", "gutter ka dhakkan", "chamber", "nali ka manhole"]
+    phonetic_variants: ["naalee kaa manhole"]
+    regional_variants:
+      north_india: ["manhole"]
+    usage_context: "Manhole / inspection chamber"
+
+  - canonical: "catch_pit"
+    hindi_terms: ["catch pit", "nali ka gadha", "silt trap"]
+    phonetic_variants: ["naalee kaa gadhaa"]
+    regional_variants:
+      north_india: ["catch pit"]
+    usage_context: "Catch pit for drainage"
+
+  - canonical: "soakpit"
+    hindi_terms: ["soak pit", "recharge pit", "paani sokhne ka gadha"]
+    phonetic_variants: ["paanee sokhne kaa gadhaa"]
+    regional_variants:
+      north_india: ["soak pit"]
+    usage_context: "Soak pit for rain water / grey water"
+
+  - canonical: "stormwater_drain"
+    hindi_terms: ["barsaat ka nala", "storm drain", "baarish ki nali"]
+    phonetic_variants: ["baarish kee naalee"]
+    regional_variants:
+      north_india: ["barsaat ka nala"]
+    usage_context: "Storm water drainage"
+
+  - canonical: "rainwater_harvesting"
+    hindi_terms: ["rainwater harvesting", "barsaat ka paani jamaa karna", "RWH"]
+    phonetic_variants: ["barsaat kaa paanee jamaa karnaa"]
+    regional_variants:
+      north_india: ["rainwater harvesting"]
+    usage_context: "Rainwater harvesting system"
+
+  - canonical: "landscape"
+    hindi_terms: ["landscape", "baagbani", "ped paudhe lagana", "landscape kaam"]
+    phonetic_variants: ["baagbaanee", "ped paudhe lagaanaa"]
+    regional_variants:
+      north_india: ["landscape"]
+    usage_context: "Landscaping work"
+
+  - canonical: "paving"
+    hindi_terms: ["paving", "paver block", "interlocking tile", "rasta banana"]
+    phonetic_variants: ["raastaa banaanaa"]
+    regional_variants:
+      north_india: ["paver block"]
+    usage_context: "Paver block / interlocking paving"
+
+  - canonical: "kerb_stone"
+    hindi_terms: ["kerb", "kerb stone", "kinare ka patthar", "footpath stone"]
+    phonetic_variants: ["kinaare kaa patthar"]
+    regional_variants:
+      north_india: ["kerb"]
+    usage_context: "Road kerb/curb stone"
+
+  - canonical: "retaining_wall"
+    hindi_terms: ["retaining wall", "mitti rokne ki deewar", "rok deewar"]
+    phonetic_variants: ["mittee rokne kee deewaar"]
+    regional_variants:
+      north_india: ["retaining wall"]
+    usage_context: "Earth retaining wall"
+
+  - canonical: "culvert"
+    hindi_terms: ["culvert", "pul", "chhota pul", "nali ka pul"]
+    phonetic_variants: ["chhotaa pul"]
+    regional_variants:
+      north_india: ["culvert"]
+    usage_context: "Small bridge/culvert over drain"
+
+  - canonical: "security_cabin"
+    hindi_terms: ["security cabin", "chowki", "guard room", "gate cabin"]
+    phonetic_variants: ["chowkee"]
+    regional_variants:
+      north_india: ["chowki"]
+    usage_context: "Security guard cabin at gate"
+
+  - canonical: "sewage_treatment"
+    hindi_terms: ["STP", "sewage treatment", "ganda paani saaf karna"]
+    phonetic_variants: ["gandaa paanee saaf karnaa"]
+    regional_variants:
+      north_india: ["STP"]
+    usage_context: "Sewage treatment plant"
+
+  - canonical: "ramp"
+    hindi_terms: ["ramp", "dhalan", "chadhai utarai"]
+    phonetic_variants: ["dhalaan"]
+    regional_variants:
+      north_india: ["ramp"]
+    usage_context: "Vehicle/wheelchair ramp"
+
+  # ============================================================
+  # PRELIMS / SITE SETUP (Expanded)
+  # ============================================================
+  - canonical: "safety_net"
+    hindi_terms: ["safety net", "suraksha jali", "girne se rokne ki jali"]
+    phonetic_variants: ["surakshaa jaalee"]
+    regional_variants:
+      north_india: ["safety net"]
+    usage_context: "Fall protection safety net"
+
+  - canonical: "site_office"
+    hindi_terms: ["site office", "office", "site ka daftar"]
+    phonetic_variants: ["site kaa daftar"]
+    regional_variants:
+      north_india: ["site office"]
+    usage_context: "Temporary site office"
+
+  - canonical: "barricading"
+    hindi_terms: ["barricading", "baad lagana", "ghera dalna", "barricade"]
+    phonetic_variants: ["gherah daalnaa"]
+    regional_variants:
+      north_india: ["barricading"]
+    usage_context: "Site barricading/hoarding"
+
+  - canonical: "hoarding"
+    hindi_terms: ["hoarding", "tin ki deewar", "boundary sheet", "CGI sheet"]
+    phonetic_variants: ["tin kee deewaar"]
+    regional_variants:
+      north_india: ["hoarding"]
+    usage_context: "Corrugated sheet site hoarding"
+
+  - canonical: "material_testing"
+    hindi_terms: ["testing", "jaanch", "lab testing", "material ki jaanch"]
+    phonetic_variants: ["jaanch"]
+    regional_variants:
+      north_india: ["testing"]
+    usage_context: "Material quality testing - cube test, slump test etc."
+
+  - canonical: "cube_test"
+    hindi_terms: ["cube test", "concrete ki jaanch", "cube todna", "cube banane"]
+    phonetic_variants: ["cube todnaa"]
+    regional_variants:
+      north_india: ["cube test"]
+    usage_context: "Concrete cube compression test"
+
+  - canonical: "soil_testing"
+    hindi_terms: ["soil test", "mitti ki jaanch", "zameen ki jaanch"]
+    phonetic_variants: ["mittee kee jaanch"]
+    regional_variants:
+      north_india: ["soil test"]
+    usage_context: "Soil/geotechnical testing"
+
+  - canonical: "survey"
+    hindi_terms: ["survey", "surveying", "naap jokh", "bhumi naap"]
+    phonetic_variants: []
+    regional_variants:
+      north_india: ["survey"]
+    usage_context: "Land survey / site survey"
+
+  - canonical: "site_clearing"
+    hindi_terms: ["site safai", "zameen saaf karna", "clearing", "jhaad jhankaar katna"]
+    phonetic_variants: ["zameen saaf karnaa"]
+    regional_variants:
+      north_india: ["site safai"]
+    usage_context: "Site clearing before construction"
+
+  - canonical: "dewatering"
+    hindi_terms: ["dewatering", "paani nikalna", "pump se paani nikalna"]
+    phonetic_variants: ["paanee nikaalnaa"]
+    regional_variants:
+      north_india: ["dewatering"]
+    usage_context: "Removing water from excavation"
+
+  - canonical: "temporary_electricity"
+    hindi_terms: ["temporary bijli", "construction bijli", "kachchi bijli"]
+    phonetic_variants: ["kachhee bijlee"]
+    regional_variants:
+      north_india: ["temporary bijli"]
+    usage_context: "Temporary power supply for construction"
+
+  - canonical: "safety_shoes"
+    hindi_terms: ["safety shoes", "safety joota", "lohe ki nok wala joota"]
+    phonetic_variants: ["safety jootaa"]
+    regional_variants:
+      north_india: ["safety shoes"]
+    usage_context: "Steel toe safety shoes"
+
+  - canonical: "safety_harness"
+    hindi_terms: ["safety harness", "safety belt", "peti baandhna"]
+    phonetic_variants: ["petee baandhnaa"]
+    regional_variants:
+      north_india: ["safety belt"]
+    usage_context: "Fall protection safety harness"
+
+  - canonical: "first_aid"
+    hindi_terms: ["first aid", "pratham upchar", "dawai ka dabba"]
+    phonetic_variants: ["pratham upchaar"]
+    regional_variants:
+      north_india: ["first aid"]
+    usage_context: "First aid kit/station"
+
+  - canonical: "site_signage"
+    hindi_terms: ["sign board", "board lagana", "safety board", "khatre ka board"]
+    phonetic_variants: ["khatre kaa board"]
+    regional_variants:
+      north_india: ["sign board"]
+    usage_context: "Safety and direction signage at site"
+
+  - canonical: "labour_hutment"
+    hindi_terms: ["labour quarter", "mazdoor ki jhopdi", "labour hutment", "rehne ki jagah"]
+    phonetic_variants: ["mazdoor kee jhhopdee"]
+    regional_variants:
+      north_india: ["labour quarter"]
+    usage_context: "Temporary worker accommodation"
+
+  - canonical: "material_storage"
+    hindi_terms: ["store", "material rakhne ki jagah", "godam", "site store"]
+    phonetic_variants: ["godaam"]
+    regional_variants:
+      north_india: ["store"]
+    usage_context: "Site material storage area"
+
+  - canonical: "site_layout"
+    hindi_terms: ["layout", "site ka naksha", "layout marking", "marking"]
+    phonetic_variants: ["site kaa nakshaa"]
+    regional_variants:
+      north_india: ["layout"]
+    usage_context: "Setting out site layout on ground"
+
+  # ============================================================
+  # STEEL STRUCTURAL
+  # ============================================================
+  - canonical: "structural_steel"
+    hindi_terms: ["structural steel", "building ka loha", "steel structure"]
+    phonetic_variants: ["building kaa lohaa"]
+    regional_variants:
+      north_india: ["structural steel"]
+    usage_context: "Structural steel framework"
+
+  - canonical: "i_beam"
+    hindi_terms: ["I beam", "I section", "ISMB", "beam section"]
+    phonetic_variants: []
+    regional_variants:
+      north_india: ["I beam"]
+    usage_context: "I-section steel beam"
+
+  - canonical: "channel_section"
+    hindi_terms: ["channel", "ISMC", "channel section"]
+    phonetic_variants: []
+    regional_variants:
+      north_india: ["channel"]
+    usage_context: "C-channel steel section"
+
+  - canonical: "angle_iron"
+    hindi_terms: ["angle", "angle iron", "L angle", "tikon loha"]
+    phonetic_variants: ["tikon lohaa"]
+    regional_variants:
+      north_india: ["angle"]
+    usage_context: "L-angle steel section"
+
+  - canonical: "ms_plate"
+    hindi_terms: ["MS plate", "lohe ki plate", "mild steel plate"]
+    phonetic_variants: ["lohe kee plate"]
+    regional_variants:
+      north_india: ["MS plate"]
+    usage_context: "Mild steel flat plate"
+
+  - canonical: "purlin"
+    hindi_terms: ["purlin", "chhaat ki patti", "Z purlin", "C purlin"]
+    phonetic_variants: ["chhaat kee pattee"]
+    regional_variants:
+      north_india: ["purlin"]
+    usage_context: "Roof purlin for metal roofing"
+
+  - canonical: "truss"
+    hindi_terms: ["truss", "chhat ka frame", "lohe ka frame"]
+    phonetic_variants: ["chhaat kaa frame"]
+    regional_variants:
+      north_india: ["truss"]
+    usage_context: "Roof truss structure"
+
+  - canonical: "nut_bolt"
+    hindi_terms: ["nut bolt", "bolt", "keel", "pech"]
+    phonetic_variants: ["peench"]
+    regional_variants:
+      north_india: ["nut bolt"]
+    usage_context: "Nut and bolt fasteners"
+
+  - canonical: "welding"
+    hindi_terms: ["welding", "welding ka kaam", "jodna", "weld"]
+    phonetic_variants: ["jodnaa"]
+    regional_variants:
+      north_india: ["welding"]
+    usage_context: "Welding work"
+
+  - canonical: "base_plate"
+    hindi_terms: ["base plate", "neeche ki plate", "anchor plate"]
+    phonetic_variants: ["neeche kee plate"]
+    regional_variants:
+      north_india: ["base plate"]
+    usage_context: "Steel column base plate"
+
+  # ============================================================
+  # ROOFING
+  # ============================================================
+  - canonical: "metal_roofing"
+    hindi_terms: ["tin ki chhat", "sheet ki chhat", "metal roof", "GI sheet roof"]
+    phonetic_variants: ["tin kee chhaat"]
+    regional_variants:
+      north_india: ["tin ki chhat"]
+    usage_context: "Metal sheet roofing - GI/colour coated"
+
+  - canonical: "colour_coated_sheet"
+    hindi_terms: ["colour sheet", "rangin sheet", "profile sheet", "JSW sheet"]
+    phonetic_variants: ["rangin sheet"]
+    regional_variants:
+      north_india: ["colour sheet"]
+    usage_context: "Pre-painted colour coated roofing sheet"
+
+  - canonical: "roof_ridge"
+    hindi_terms: ["ridge", "chhat ka upar", "dhar"]
+    phonetic_variants: ["chhaat kaa upar"]
+    regional_variants:
+      north_india: ["ridge"]
+    usage_context: "Roof ridge capping"
+
+  - canonical: "gutter"
+    hindi_terms: ["gutter", "parnala", "chhat ki nali", "rain gutter"]
+    phonetic_variants: ["parnaalaa"]
+    regional_variants:
+      north_india: ["parnala"]
+    usage_context: "Roof rain water gutter"
+
+  - canonical: "downpipe"
+    hindi_terms: ["downpipe", "rain water pipe", "baarish ka pipe", "neeche ki nali"]
+    phonetic_variants: ["baarish kaa pipe"]
+    regional_variants:
+      north_india: ["rain water pipe"]
+    usage_context: "Rainwater downspout pipe"
+
+  - canonical: "roof_light"
+    hindi_terms: ["skylight", "chhat mein shesha", "polycarbonate sheet"]
+    phonetic_variants: ["chhaat mein sheeshaa"]
+    regional_variants:
+      north_india: ["skylight"]
+    usage_context: "Roof skylight / translucent panel"
+
+  # ============================================================
+  # PLUMBING FIXTURES (Expanded)
+  # ============================================================
+  - canonical: "cock"
+    hindi_terms: ["cock", "valve", "nal band karne wala"]
+    phonetic_variants: ["naal band karne waalaa"]
+    regional_variants:
+      north_india: ["cock"]
+    usage_context: "Stopcock / valve"
+
+  - canonical: "ball_valve"
+    hindi_terms: ["ball valve", "gola valve", "main valve"]
+    phonetic_variants: []
+    regional_variants:
+      north_india: ["ball valve"]
+    usage_context: "Ball valve for main line"
+
+  - canonical: "cpvc_pipe"
+    hindi_terms: ["CPVC pipe", "garam paani ki pipe", "Ashirvad pipe"]
+    phonetic_variants: ["garam paanee kee pipe"]
+    regional_variants:
+      north_india: ["CPVC pipe"]
+    usage_context: "CPVC pipe for hot water supply"
+
+  - canonical: "upvc_pipe"
+    hindi_terms: ["UPVC pipe", "SWR pipe", "ganda paani ki pipe"]
+    phonetic_variants: ["gandaa paanee kee pipe"]
+    regional_variants:
+      north_india: ["SWR pipe"]
+    usage_context: "UPVC/SWR pipe for drainage"
+
+  - canonical: "gi_pipe"
+    hindi_terms: ["GI pipe", "lohe ki pipe", "galvanized pipe"]
+    phonetic_variants: ["lohe kee pipe"]
+    regional_variants:
+      north_india: ["GI pipe"]
+    usage_context: "Galvanized iron pipe"
+
+  - canonical: "elbow"
+    hindi_terms: ["elbow", "modd", "L piece", "ghutna"]
+    phonetic_variants: ["ghutnaa"]
+    regional_variants:
+      north_india: ["elbow"]
+    usage_context: "Pipe elbow fitting"
+
+  - canonical: "tee"
+    hindi_terms: ["tee", "T piece", "teen rasta", "T joint"]
+    phonetic_variants: ["teen raastaa"]
+    regional_variants:
+      north_india: ["tee"]
+    usage_context: "T-junction pipe fitting"
+
+  - canonical: "reducer"
+    hindi_terms: ["reducer", "chhota bada", "size kam karne wala"]
+    phonetic_variants: ["size kam karne waalaa"]
+    regional_variants:
+      north_india: ["reducer"]
+    usage_context: "Pipe reducer fitting"
+
+  - canonical: "kitchen_sink"
+    hindi_terms: ["sink", "kitchen sink", "haath dhone ki jagah", "bartan dhone ki jagah"]
+    phonetic_variants: ["bartan dhone kee jagah"]
+    regional_variants:
+      north_india: ["sink"]
+    usage_context: "Kitchen sink"
+
+  - canonical: "cistern"
+    hindi_terms: ["cistern", "flush tank", "flush", "paani ka dabba"]
+    phonetic_variants: ["paanee kaa dabbaa"]
+    regional_variants:
+      north_india: ["flush tank"]
+    usage_context: "Toilet flush cistern/tank"
+
+  # ============================================================
+  # ELECTRICAL (Expanded)
+  # ============================================================
+  - canonical: "mcb"
+    hindi_terms: ["MCB", "trip", "automatic switch"]
+    phonetic_variants: []
+    regional_variants:
+      north_india: ["MCB"]
+    usage_context: "Miniature circuit breaker"
+
+  - canonical: "rccb"
+    hindi_terms: ["RCCB", "shock se bachane wala", "earth leakage"]
+    phonetic_variants: ["shock se bachaane waalaa"]
+    regional_variants:
+      north_india: ["RCCB"]
+    usage_context: "Residual current circuit breaker"
+
+  - canonical: "cable_tray"
+    hindi_terms: ["cable tray", "tar ki tray", "wire pathway"]
+    phonetic_variants: ["taar kee tray"]
+    regional_variants:
+      north_india: ["cable tray"]
+    usage_context: "Cable management tray"
+
+  - canonical: "junction_box"
+    hindi_terms: ["junction box", "jodd ka dabba", "wire box"]
+    phonetic_variants: ["jodd kaa dabbaa"]
+    regional_variants:
+      north_india: ["junction box"]
+    usage_context: "Electrical junction/pull box"
+
+  - canonical: "modular_switch"
+    hindi_terms: ["modular switch", "fancy switch", "naye zamane ka switch"]
+    phonetic_variants: []
+    regional_variants:
+      north_india: ["modular switch"]
+    usage_context: "Modular type electrical switch plate"
+
+  - canonical: "transformer"
+    hindi_terms: ["transformer", "bijli ka transformer", "bada transformer"]
+    phonetic_variants: []
+    regional_variants:
+      north_india: ["transformer"]
+    usage_context: "Electrical transformer"
+
+  - canonical: "solar_panel"
+    hindi_terms: ["solar panel", "solar plate", "suraj ki bijli", "solar"]
+    phonetic_variants: ["suraj kee bijlee"]
+    regional_variants:
+      north_india: ["solar panel"]
+    usage_context: "Solar photovoltaic panel"
+
+  # ============================================================
+  # MISCELLANEOUS CONSTRUCTION TERMS (Expanded)
+  # ============================================================
+  - canonical: "expansion_joint"
+    hindi_terms: ["expansion joint", "daraar ki jagah", "gap", "hilne ki jagah"]
+    phonetic_variants: ["hilne kee jagah"]
+    regional_variants:
+      north_india: ["expansion joint"]
+    usage_context: "Movement/expansion joint in structure"
+
+  - canonical: "sealant"
+    hindi_terms: ["sealant", "silicone", "band karne wala", "gap bharna"]
+    phonetic_variants: []
+    regional_variants:
+      north_india: ["sealant", "silicone"]
+    usage_context: "Joint sealant / silicone"
+
+  - canonical: "anchor_bolt"
+    hindi_terms: ["anchor bolt", "hilti bolt", "deewar ka bolt", "fastener"]
+    phonetic_variants: ["deewaar kaa bolt"]
+    regional_variants:
+      north_india: ["anchor bolt", "hilti bolt"]
+    usage_context: "Anchor bolt/fastener for fixing to concrete; Hilti used as generic brand"
+
+  - canonical: "construction_chemical"
+    hindi_terms: ["chemical", "construction chemical", "admixture", "bonding agent"]
+    phonetic_variants: []
+    regional_variants:
+      north_india: ["chemical"]
+    usage_context: "Construction chemicals - admixtures, bonding agents etc."
+
+  - canonical: "ready_mix_concrete"
+    hindi_terms: ["RMC", "ready mix", "tayaar concrete", "gaadi wala concrete"]
+    phonetic_variants: ["tayaar concrete"]
+    regional_variants:
+      north_india: ["RMC"]
+    usage_context: "Ready mix concrete from batching plant"
+
+  - canonical: "precast"
+    hindi_terms: ["precast", "pehle se bana hua", "readymade", "factory ka bana"]
+    phonetic_variants: ["pehle se banaa hua"]
+    regional_variants:
+      north_india: ["precast"]
+    usage_context: "Precast concrete elements"
+
+  - canonical: "shuttering_oil"
+    hindi_terms: ["shuttering oil", "tel lagana", "oil", "formwork oil"]
+    phonetic_variants: ["tel lagaanaa"]
+    regional_variants:
+      north_india: ["shuttering oil"]
+    usage_context: "Release agent oil for formwork"
+
+  - canonical: "curing_compound"
+    hindi_terms: ["curing compound", "curing chemical", "paani ki jagah chemical"]
+    phonetic_variants: []
+    regional_variants:
+      north_india: ["curing compound"]
+    usage_context: "Chemical curing compound"
+
+  - canonical: "plywood"
+    hindi_terms: ["plywood", "ply", "board"]
+    phonetic_variants: []
+    regional_variants:
+      north_india: ["ply"]
+    usage_context: "Plywood sheet"
+
+  - canonical: "teak_wood"
+    hindi_terms: ["sagwan", "teak", "sagwan ki lakdi"]
+    phonetic_variants: ["saagwan"]
+    regional_variants:
+      north_india: ["sagwan"]
+    usage_context: "Teak wood"
+
+  - canonical: "hardwood"
+    hindi_terms: ["kattha lakdi", "sakht lakdi", "sal wood", "sheesham"]
+    phonetic_variants: ["sakht lakdee"]
+    regional_variants:
+      north_india: ["sakht lakdi"]
+    usage_context: "Hardwood - sal, sheesham etc."
+
+  - canonical: "cupboard"
+    hindi_terms: ["cupboard", "almaari", "wardrobe"]
+    phonetic_variants: ["almaaree"]
+    regional_variants:
+      north_india: ["almaari"]
+    usage_context: "Built-in cupboard/wardrobe"
+
+  - canonical: "kitchen_platform"
+    hindi_terms: ["kitchen platform", "slab", "rasoi ka platform", "kitchen counter"]
+    phonetic_variants: ["rasoee kaa platform"]
+    regional_variants:
+      north_india: ["kitchen platform"]
+    usage_context: "Kitchen countertop / platform"
+
+  - canonical: "loft"
+    hindi_terms: ["loft", "macha", "upar ka storage"]
+    phonetic_variants: ["machaa"]
+    regional_variants:
+      north_india: ["loft"]
+    usage_context: "Storage loft above doors"
+
+  - canonical: "rate_analysis"
+    hindi_terms: ["rate analysis", "dar vishleshan", "rate banana"]
+    phonetic_variants: ["rate banaanaa"]
+    regional_variants:
+      north_india: ["rate analysis"]
+    usage_context: "Cost rate analysis for BOQ items"
+
+  - canonical: "bill_of_quantities"
+    hindi_terms: ["BOQ", "bill", "quantity ka bill", "item list"]
+    phonetic_variants: []
+    regional_variants:
+      north_india: ["BOQ"]
+    usage_context: "Bill of Quantities"
+
+  - canonical: "running_bill"
+    hindi_terms: ["running bill", "RA bill", "chalti bill", "running account"]
+    phonetic_variants: ["chaltee bill"]
+    regional_variants:
+      north_india: ["RA bill"]
+    usage_context: "Running account / progressive payment bill"
+
+  - canonical: "work_order"
+    hindi_terms: ["work order", "kaam ka order", "theka"]
+    phonetic_variants: ["kaam kaa order"]
+    regional_variants:
+      north_india: ["work order"]
+    usage_context: "Work order / contract"
+
+  - canonical: "variation"
+    hindi_terms: ["variation", "extra kaam", "badlav", "change order"]
+    phonetic_variants: ["badlaav"]
+    regional_variants:
+      north_india: ["variation", "extra kaam"]
+    usage_context: "Variation / change order in contract"
+
+  - canonical: "retention"
+    hindi_terms: ["retention", "roka hua paisa", "guarantee money"]
+    phonetic_variants: ["rokaa huaa paisaa"]
+    regional_variants:
+      north_india: ["retention"]
+    usage_context: "Retention money from contractor bill"
+
+  - canonical: "mobilization"
+    hindi_terms: ["mobilization", "shuru ka kaam", "site banana", "advance"]
+    phonetic_variants: ["shuroo kaa kaam"]
+    regional_variants:
+      north_india: ["mobilization"]
+    usage_context: "Site mobilization / advance payment"
+
+  - canonical: "defect_liability"
+    hindi_terms: ["DLP", "guarantee period", "kharabi ki zimmedari"]
+    phonetic_variants: ["kharaaabee kee zimmedaaree"]
+    regional_variants:
+      north_india: ["DLP"]
+    usage_context: "Defect liability period"
+
+  - canonical: "snag_list"
+    hindi_terms: ["snag list", "kami ki list", "galtiyon ki list", "punch list"]
+    phonetic_variants: ["kamee kee list"]
+    regional_variants:
+      north_india: ["snag list"]
+    usage_context: "Defects/snag list before handover"
+
+  - canonical: "handing_over"
+    hindi_terms: ["handover", "supurd karna", "chaabi dena"]
+    phonetic_variants: ["chaabee denaa"]
+    regional_variants:
+      north_india: ["handover"]
+    usage_context: "Project handover to client"
+
+  - canonical: "ceiling_fan_hook"
+    hindi_terms: ["fan hook", "pankhe ka hook", "jhoola hook"]
+    phonetic_variants: ["pankhe kaa hook"]
+    regional_variants:
+      north_india: ["fan hook"]
+    usage_context: "Embedded hook for ceiling fan"
+
+  - canonical: "concealed_wiring"
+    hindi_terms: ["concealed wiring", "chhipi hui wiring", "andar ki wiring"]
+    phonetic_variants: ["chhipee huee wiring"]
+    regional_variants:
+      north_india: ["concealed wiring"]
+    usage_context: "Concealed electrical wiring in walls"
+
+  - canonical: "surface_wiring"
+    hindi_terms: ["surface wiring", "bahar ki wiring", "upar ki wiring", "casing capping"]
+    phonetic_variants: ["baahar kee wiring"]
+    regional_variants:
+      north_india: ["surface wiring"]
+    usage_context: "Surface-mounted electrical wiring"
+
+  - canonical: "chequered_tile"
+    hindi_terms: ["chequered tile", "parking tile", "kharkhara tile", "rough tile"]
+    phonetic_variants: ["kharkharaa tile"]
+    regional_variants:
+      north_india: ["chequered tile"]
+    usage_context: "Chequered / anti-skid tile for driveways"
+
+  - canonical: "border_tile"
+    hindi_terms: ["border tile", "kinare ki tile", "design tile"]
+    phonetic_variants: ["kinaare kee tile"]
+    regional_variants:
+      north_india: ["border tile"]
+    usage_context: "Decorative border tile for flooring"
+
+  - canonical: "water_meter"
+    hindi_terms: ["water meter", "paani ka meter", "flow meter"]
+    phonetic_variants: ["paanee kaa meter"]
+    regional_variants:
+      north_india: ["water meter"]
+    usage_context: "Water flow meter"
+
+  - canonical: "gate_valve"
+    hindi_terms: ["gate valve", "bada valve", "main line valve"]
+    phonetic_variants: []
+    regional_variants:
+      north_india: ["gate valve"]
+    usage_context: "Gate valve for main water line"
+
+  - canonical: "non_return_valve"
+    hindi_terms: ["NRV", "non return valve", "ulta rokne wala valve"]
+    phonetic_variants: ["ultaa rokne waalaa valve"]
+    regional_variants:
+      north_india: ["NRV"]
+    usage_context: "Non-return / check valve"
+
+  - canonical: "cctv"
+    hindi_terms: ["CCTV", "camera", "nigrani camera"]
+    phonetic_variants: ["nigraanee camera"]
+    regional_variants:
+      north_india: ["CCTV"]
+    usage_context: "CCTV security camera"
+
+  - canonical: "intercom"
+    hindi_terms: ["intercom", "andar ki phone", "door phone"]
+    phonetic_variants: ["andar kee phone"]
+    regional_variants:
+      north_india: ["intercom"]
+    usage_context: "Intercom / video door phone"
+
+  - canonical: "overhead_water_proofing"
+    hindi_terms: ["chhat ki waterproofing", "upar ki waterproofing"]
+    phonetic_variants: ["chhaat kee waterproofing"]
+    regional_variants:
+      north_india: ["chhat ki waterproofing"]
+    usage_context: "Overhead/exposed roof waterproofing"
+
+  - canonical: "sunken_slab"
+    hindi_terms: ["sunken slab", "neeche wala slab", "bathroom ka neeche wala slab"]
+    phonetic_variants: ["neeche waalaa slab"]
+    regional_variants:
+      north_india: ["sunken slab"]
+    usage_context: "Depressed slab in bathroom area"
+
+  # ============================================================
+  # ADDITIONAL HINDI TERMS - STRUCTURAL CONCRETE
+  # ============================================================
+  - canonical: "concrete"
+    hindi_terms: ["kankrit", "beton", "concrete", "pani simaant gitti"]
+    phonetic_variants: ["kaankrit", "beeton", "kaankrete", "pani seemant gitti"]
+    regional_variants:
+      north_india: ["kankrit", "concrete"]
+      urdu_influence: ["beton"]
+    usage_context: "Concrete mix (kankrit is Hindi phonetic adaptation)"
+
+  - canonical: "concrete_mix"
+    hindi_terms: ["mix", "mix design", "pani simaant gitti ka mix", "M20 mix", "RCC mix"]
+    phonetic_variants: ["miks", "miks dizain"]
+    regional_variants:
+      north_india: ["mix"]
+    usage_context: "Concrete mix design"
+
+  - canonical: "steel"
+    hindi_terms: ["sariya", "loha", "steel", "lohewala", "TMT"]
+    phonetic_variants: ["saariyaa", "lohaa", "stileel", "TMT saariya"]
+    regional_variants:
+      north_india: ["sariya", "loha"]
+      rajasthan: ["loha"]
+      bihar: ["loha"]
+    usage_context: "Steel reinforcement bars - sariya is universal Indian site term"
+
+  - canonical: "brickwork_in_cement_mortar"
+    hindi_terms: ["eent ka kaam simaant masale mein", "cement mortar mein eent", "pukki eent ka kaam", "first class eent"]
+    phonetic_variants: ["eent kaa kaam simaant masaale mein", "pakkee eent kaa kaam"]
+    regional_variants:
+      north_india: ["eent ka kaam simaant masale mein"]
+    usage_context: "Brick masonry in cement mortar - CPWD first class brickwork"
+
+  # ============================================================
+  # ADDITIONAL HINDI TERMS - PLUMBING
+  # ============================================================
+  - canonical: "chromium_plated_fittings"
+    hindi_terms: ["CP fitting", "chrome fitting", "chamkdar nal", "chamkdar tap", "CP tap"]
+    phonetic_variants: ["see pee fitting", "chamakdar nal", "see pee tap"]
+    regional_variants:
+      north_india: ["CP fitting", "CP tap"]
+    usage_context: "Chromium plated bathroom fittings - taps, showers, accessories"
+
+  - canonical: "soil_waste_rain_pipe"
+    hindi_terms: ["SWR pipe", "drain pipe", "nali ki pipe", "mori ki pipe", "soil pipe", "waste pipe"]
+    phonetic_variants: ["ess double-you aar", "drain paip", "naalee kee paip"]
+    regional_variants:
+      north_india: ["SWR pipe", "drain pipe"]
+    usage_context: "PVC SWR pipe for drainage - soil, waste and rainwater"
+
+  - canonical: "water_supply_pipe"
+    hindi_terms: ["paani ki line", "pani ki pipe", "water line", "nal ka paani", "supply line"]
+    phonetic_variants: ["paanee kee line", "paanee kee paip", "saplai lain"]
+    regional_variants:
+      north_india: ["paani ki line"]
+    usage_context: "Water supply piping - CPVC or GI"
+
+  - canonical: "drain_nali"
+    hindi_terms: ["nali", "mori", "gutter", "drain", "baarish ka paani ka raasta"]
+    phonetic_variants: ["naalee", "moree", "guttar", "drain"]
+    regional_variants:
+      north_india: ["nali", "mori"]
+      punjab: ["nali"]
+      rajasthan: ["nali"]
+    usage_context: "Drain channel or pipe for waste/rainwater"
+
+  # ============================================================
+  # ADDITIONAL HINDI TERMS - ELECTRICAL
+  # ============================================================
+  - canonical: "distribution_board_hindi"
+    hindi_terms: ["bijli ka board", "board", "DB", "main switch", "MCB box", "bijli ka dabba"]
+    phonetic_variants: ["bijlee kaa board", "dee-bee", "emm-see-bee baks"]
+    regional_variants:
+      north_india: ["board", "bijli ka board"]
+      rural: ["main switch"]
+    usage_context: "Electrical distribution board on site"
+
+  - canonical: "point_wiring_hindi"
+    hindi_terms: ["point", "bijli ka point", "wiring point", "ek point", "light ka point", "socket point"]
+    phonetic_variants: ["point", "bijlee kaa point", "waiering point"]
+    regional_variants:
+      north_india: ["point"]
+    usage_context: "Electrical wiring point - per point billing in India"
+
+  - canonical: "concealed_wiring_hindi"
+    hindi_terms: ["andar ki wiring", "deewar ke andar wiring", "chhupi wiring", "pipe ke andar tar"]
+    phonetic_variants: ["andar kee wairing", "deewaar ke andar waiering", "chhupee waiering"]
+    regional_variants:
+      north_india: ["andar ki wiring"]
+    usage_context: "Concealed conduit wiring inside walls"
+
+  # ============================================================
+  # ADDITIONAL HINDI TERMS - HVAC
+  # ============================================================
+  - canonical: "split_ac_hindi"
+    hindi_terms: ["AC lagana", "thanda lagana", "split AC", "AC machine", "wall AC"]
+    phonetic_variants: ["ee-see lagaanaa", "thanda lagaanaa", "split ee-see", "ee-see machine"]
+    regional_variants:
+      north_india: ["AC lagana", "thanda lagana"]
+    usage_context: "Split air conditioner installation"
+
+  - canonical: "exhaust_fan_hindi"
+    hindi_terms: ["exhaust fan", "exhaust", "hawa nikalne wala", "bathroom fan", "bahar ka pankha"]
+    phonetic_variants: ["egzost fan", "egzost", "haawaa nikaalne waalaa"]
+    regional_variants:
+      north_india: ["exhaust", "hawa nikalne wala"]
+    usage_context: "Exhaust/ventilation fan for bathroom and kitchen"
+
+  # ============================================================
+  # ADDITIONAL HINDI TERMS - FINISHES
+  # ============================================================
+  - canonical: "kota_stone_hindi"
+    hindi_terms: ["kota", "kota patthar", "kota stone", "rajasthani patthar", "kota slab"]
+    phonetic_variants: ["kotaa", "kotaa patthar", "raajasthani patthar", "kotaa slaab"]
+    regional_variants:
+      north_india: ["kota", "kota patthar"]
+      rajasthan: ["kota patthar"]
+    usage_context: "Kota limestone flooring - common in government buildings"
+
+  - canonical: "ips_flooring_hindi"
+    hindi_terms: ["IPS farsh", "cement ka farsh", "IPS floor", "pukka floor", "simaant ka farsh"]
+    phonetic_variants: ["aa-ee-pee-ess farsh", "simaant kaa farsh", "pukkaa floor"]
+    regional_variants:
+      north_india: ["cement ka farsh", "IPS farsh"]
+      government_sites: ["IPS"]
+    usage_context: "Indian Patent Stone flooring - cement-based floor finish"
+
+  - canonical: "obd_paint"
+    hindi_terms: ["OBD", "tel wala distemper", "oil bound distemper", "rangte wali safedi"]
+    phonetic_variants: ["oh-bee-dee", "tel waala distempar", "raangte waali safedee"]
+    regional_variants:
+      north_india: ["OBD", "tel wala distemper"]
+    usage_context: "Oil bound distemper - economical paint used in govt/CPWD buildings"
+
+  - canonical: "marble_work"
+    hindi_terms: ["sangmarmar ka kaam", "marble ka kaam", "marble lagana", "makrana ka kaam"]
+    phonetic_variants: ["sangamarmaar kaa kaam", "maarble kaa kaam", "maarble lagaanaa", "makraanaa kaa kaam"]
+    regional_variants:
+      north_india: ["sangmarmar ka kaam"]
+      rajasthan: ["makrana ka kaam"]
+    usage_context: "Marble flooring and wall cladding work"
+
+  - canonical: "tile_work"
+    hindi_terms: ["tile ka kaam", "tile lagana", "taaeel kaa kaam", "floor tile", "deewar ki tile"]
+    phonetic_variants: ["tail kaa kaam", "tail lagaanaa", "taail kaa kaam"]
+    regional_variants:
+      north_india: ["tile ka kaam", "tile lagana"]
+    usage_context: "Tile laying work for floors and walls"
+
+  # ============================================================
+  # ADDITIONAL HINDI TERMS - MISC CONSTRUCTION
+  # ============================================================
+  - canonical: "waterproofing_hindi"
+    hindi_terms: ["paani rokna", "waterproofing", "nami rokna", "seepage band karna", "chhat band karna"]
+    phonetic_variants: ["paanee roknaa", "waaatarproofing", "naamee roknaa", "seepage band karnaa"]
+    regional_variants:
+      north_india: ["paani rokna", "nami rokna"]
+    usage_context: "Waterproofing treatment for roof, basement and wet areas"
+
+  - canonical: "scaffolding_hindi"
+    hindi_terms: ["machan", "scaffold", "teka", "bamboo machan", "steel scaffold"]
+    phonetic_variants: ["machaan", "tekaa", "baans kaa machaan"]
+    regional_variants:
+      north_india: ["machan"]
+      maharashtra: ["bamboo machan"]
+    usage_context: "Scaffolding and staging for work at height"
+
+  - canonical: "foundation_hindi"
+    hindi_terms: ["neev", "buniyaad", "nींव", "foundation", "tala"]
+    phonetic_variants: ["neenv", "bunyaad", "neeunv", "foundeshun"]
+    regional_variants:
+      north_india: ["neev"]
+      urdu_influence: ["buniyaad"]
+    usage_context: "Building foundation - any type"
+
+  - canonical: "roof_terrace"
+    hindi_terms: ["chhat", "terrace", "chhatt", "dhaan", "upar wali chhat"]
+    phonetic_variants: ["chhaat", "taares", "upar waali chhaat"]
+    regional_variants:
+      north_india: ["chhat", "terrace"]
+      bihar: ["dhaan"]
+    usage_context: "Roof or terrace slab"
+

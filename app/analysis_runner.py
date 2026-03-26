@@ -8,8 +8,8 @@ All analysis pipeline code has been moved to src/analysis/pipeline.py
 import sys
 from pathlib import Path
 
-# Add src to path
-PROJECT_ROOT = Path(__file__).parent.parent
+# Add src to path (use .resolve() to handle symlinks)
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(PROJECT_ROOT))
 sys.path.insert(0, str(PROJECT_ROOT / "src"))
 

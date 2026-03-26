@@ -1,0 +1,162 @@
+{
+  "version": "2024-25",
+  "base_city": "Delhi NCR",
+  "base_index": 100,
+  "effective_date": "2024-04-01",
+  "note": "Labour-intensive items (plastering, painting, tiling) vary more across regions than material-intensive items (concrete, steel). Indices are relative to Delhi NCR = 100 for overall construction cost. Use trade_specific_adjustments for finer calibration.",
+  "data_source": "CPWD Delhi Schedule of Rates 2023, HSRDC, PWD state schedules, industry surveys 2024",
+  "indices": {
+    "delhi_ncr": {
+      "index": 100,
+      "labour_index": 100,
+      "material_index": 100,
+      "notes": "Base reference city. Includes Delhi, Noida, Gurgaon, Faridabad, Ghaziabad."
+    },
+    "mumbai": {
+      "index": 118,
+      "labour_index": 132,
+      "material_index": 106,
+      "notes": "Highest construction labour costs in India. Island city premiums, high scaffolding costs, difficult logistics. Material costs elevated due to port duties and urban congestion."
+    },
+    "pune": {
+      "index": 108,
+      "labour_index": 115,
+      "material_index": 104,
+      "notes": "Strong construction activity. Labour 15% above Delhi NCR. Cement and aggregate costs slightly lower than Mumbai."
+    },
+    "bangalore": {
+      "index": 112,
+      "labour_index": 118,
+      "material_index": 107,
+      "notes": "High demand for skilled labour drives up costs. Material logistics from ports adds ~5% to imported materials. RCC and MEP costs higher than North India average."
+    },
+    "hyderabad": {
+      "index": 105,
+      "labour_index": 108,
+      "material_index": 103,
+      "notes": "Competitive construction market. Telangana DSR rates slightly below CPWD. Good local aggregate and sand availability keeps material costs moderate."
+    },
+    "chennai": {
+      "index": 107,
+      "labour_index": 112,
+      "material_index": 103,
+      "notes": "Coastal city. River sand restrictions have pushed up plastering and masonry costs. Skilled labour shortage in MEP. Material costs similar to Hyderabad."
+    },
+    "kolkata": {
+      "index": 98,
+      "labour_index": 92,
+      "material_index": 103,
+      "notes": "Lower labour costs than national average. Skilled labour relatively more affordable. However, some material costs (steel, waterproofing) are elevated due to logistics. Monsoon season significantly impacts programme costs."
+    },
+    "ahmedabad": {
+      "index": 96,
+      "labour_index": 90,
+      "material_index": 101,
+      "notes": "Competitive construction costs. Strong local cement and aggregate industry. Labour costs 10% below Delhi NCR. Very active construction market keeps competition high."
+    },
+    "jaipur": {
+      "index": 92,
+      "labour_index": 85,
+      "material_index": 98,
+      "notes": "Lower construction costs due to lower labour rates. Good local stone availability reduces some material costs. Sandstone sourcing local advantage for finishing."
+    },
+    "lucknow": {
+      "index": 93,
+      "labour_index": 87,
+      "material_index": 98,
+      "notes": "Capital of UP. Lower labour costs than Delhi NCR. Active infrastructure programme driving construction activity. Material costs comparable to Delhi NCR."
+    },
+    "bhopal": {
+      "index": 89,
+      "labour_index": 80,
+      "material_index": 96,
+      "notes": "Madhya Pradesh capital. Significantly lower labour costs. Good local aggregate supply. Material transport costs add 5-8% for specialised items from major manufacturing centres."
+    },
+    "nagpur": {
+      "index": 91,
+      "labour_index": 83,
+      "material_index": 98,
+      "notes": "Central India location. Lower labour costs. Transport hub status keeps some material costs lower than other Tier-2 cities."
+    },
+    "surat": {
+      "index": 97,
+      "labour_index": 92,
+      "material_index": 102,
+      "notes": "Active industrial and residential construction. Labour costs moderately lower than Mumbai. Port access for imported materials. Strong diamond and textile industry drives commercial construction."
+    },
+    "kochi": {
+      "index": 108,
+      "labour_index": 118,
+      "material_index": 100,
+      "notes": "Kerala wage rates are the highest in South India. Labour costs significantly above national average due to Gulf-driven wage expectations. Material costs competitive due to port access."
+    },
+    "chandigarh": {
+      "index": 98,
+      "labour_index": 95,
+      "material_index": 100,
+      "notes": "Union Territory. Construction costs similar to Delhi NCR. Strong regulatory environment. Labour slightly lower than Delhi. Good access to Punjab/Haryana material supply chains."
+    },
+    "tier2_average": {
+      "index": 90,
+      "labour_index": 82,
+      "material_index": 96,
+      "notes": "Average for Tier-2 cities (population 500k-2M): Indore, Coimbatore, Visakhapatnam, Patna, Ranchi, Vadodara, Rajkot, Ludhiana, etc. Labour costs typically 15-20% below Delhi NCR. Material costs 3-5% lower."
+    },
+    "tier3_average": {
+      "index": 82,
+      "labour_index": 72,
+      "material_index": 91,
+      "notes": "Average for Tier-3 cities and towns (population 100k-500k). Labour costs 25-30% below Delhi NCR. Material logistics to smaller towns can offset some labour savings. Limited specialist contractor availability."
+    },
+    "northeast_india": {
+      "index": 115,
+      "labour_index": 105,
+      "material_index": 125,
+      "notes": "Assam, Meghalaya, Manipur, Mizoram, Nagaland, Arunachal Pradesh, Tripura, Sikkim. Material costs significantly elevated — 20-30% above Delhi NCR due to difficult terrain, limited road access, and transport logistics. Construction in hilly terrain adds 15-25% to structural costs. Skilled contractor availability is limited."
+    }
+  },
+  "trade_specific_adjustments": {
+    "structural_rcc": {
+      "description": "Material-dominant trade (60-70% is concrete and steel). Less regional variation.",
+      "regional_variation_range_pct": "plus or minus 12 to 15",
+      "key_drivers": ["cement prices (varies by proximity to plant)", "steel transport costs", "aggregate and sand availability", "skilled shuttering and RCC labour"],
+      "note": "Steel prices are nationally referenced (SAIL/Tata benchmarks) so structural steel cost variation is lower than labour-intensive trades."
+    },
+    "masonry": {
+      "description": "Labour-moderate, material-moderate. Brick prices vary significantly by region.",
+      "regional_variation_range_pct": "plus or minus 18 to 22",
+      "key_drivers": ["brick/block supply and kiln location", "mason labour rates", "mortar material costs"],
+      "note": "AAC block prices are more uniform nationally than traditional red brick."
+    },
+    "finishes_plastering_tiling": {
+      "description": "Labour-dominant. High variation between metros and Tier-2 cities.",
+      "regional_variation_range_pct": "plus or minus 25 to 35",
+      "key_drivers": ["skilled mason and tile fixer labour rates", "tile supply chain proximity", "sand and cement prices"],
+      "note": "Tile material cost is fairly uniform nationally for branded tiles. Labour variation is the dominant factor."
+    },
+    "painting": {
+      "description": "Labour-dominant. Very high regional variation.",
+      "regional_variation_range_pct": "plus or minus 28 to 38",
+      "key_drivers": ["painter labour rates", "number of coats specified", "access and scaffolding complexity"],
+      "note": "Paint material costs are nationally uniform for branded paints. Labour accounts for 55-65% of painting cost."
+    },
+    "mep_electrical_plumbing": {
+      "description": "Mixed — equipment is nationally priced, installation is labour-dependent.",
+      "regional_variation_range_pct": "plus or minus 15 to 25",
+      "key_drivers": ["electrician and plumber skilled labour rates", "equipment and fitting supply chain", "conduit and pipe material costs"],
+      "note": "Major equipment (switchgear, pumps, HVAC) is procured nationally at similar prices. Installation labour varies significantly — Kerala, Mumbai, Bangalore are highest."
+    },
+    "waterproofing": {
+      "description": "Material-moderate, labour-moderate. Specialised trade with limited contractors.",
+      "regional_variation_range_pct": "plus or minus 15 to 20",
+      "key_drivers": ["waterproofing contractor availability", "membrane material transport", "applicator certification costs"],
+      "note": "Fewer certified waterproofing applicators in Tier-2 and Tier-3 cities. Quality and warranty compliance risk is higher."
+    },
+    "structural_steel_fabrication": {
+      "description": "Material-dominant (80%+ is steel). Lowest regional variation of all trades.",
+      "regional_variation_range_pct": "plus or minus 8 to 12",
+      "key_drivers": ["steel plate and section prices at source", "fabrication yard labour", "transport to site"],
+      "note": "Steel is a commodity priced at national exchange rates. Regional variation is mainly in fabrication labour and logistics."
+    }
+  }
+}

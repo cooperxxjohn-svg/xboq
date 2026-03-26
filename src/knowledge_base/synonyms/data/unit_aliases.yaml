@@ -1,0 +1,483 @@
+# xBOQ.ai Master Construction Knowledge Base
+# Unit Aliases - All variations of construction measurement units
+# ~50 entries covering all unit formats used in Indian construction
+
+units:
+  # ============================================================
+  # AREA UNITS
+  # ============================================================
+  - canonical: "sqm"
+    canonical_full: "square meter"
+    si_unit: true
+    aliases: ["sq.m", "sq m", "m2", "sqmt", "sq.mt", "sq.mtr", "sq mtr", "sqmtr"]
+    unicode_aliases: ["m\u00B2"]
+    hindi_aliases: ["varg meter", "varg metre"]
+    common_in_boq: true
+    dimension: "area"
+    conversion_to_sqm: 1.0
+
+  - canonical: "sqft"
+    canonical_full: "square feet"
+    si_unit: false
+    aliases: ["sq.ft", "sft", "sq ft", "ft2", "sq.feet", "sqfeet", "square foot", "sq.foot"]
+    unicode_aliases: ["ft\u00B2"]
+    hindi_aliases: ["varg foot", "varg fut"]
+    common_in_boq: true
+    dimension: "area"
+    conversion_to_sqm: 0.0929
+
+  - canonical: "sqcm"
+    canonical_full: "square centimeter"
+    si_unit: true
+    aliases: ["sq.cm", "sq cm", "cm2"]
+    unicode_aliases: ["cm\u00B2"]
+    hindi_aliases: []
+    common_in_boq: false
+    dimension: "area"
+    conversion_to_sqm: 0.0001
+
+  - canonical: "sqmm"
+    canonical_full: "square millimeter"
+    si_unit: true
+    aliases: ["sq.mm", "sq mm", "mm2"]
+    unicode_aliases: ["mm\u00B2"]
+    hindi_aliases: []
+    common_in_boq: true
+    dimension: "area"
+    notes: "Used for cable cross-section area"
+    conversion_to_sqm: 0.000001
+
+  - canonical: "sqyd"
+    canonical_full: "square yard"
+    si_unit: false
+    aliases: ["sq.yd", "sq yd", "yd2", "square yard", "sq.yard"]
+    unicode_aliases: ["yd\u00B2"]
+    hindi_aliases: ["varg gaj"]
+    common_in_boq: false
+    dimension: "area"
+    conversion_to_sqm: 0.8361
+
+  - canonical: "acre"
+    canonical_full: "acre"
+    si_unit: false
+    aliases: ["ac", "acres"]
+    unicode_aliases: []
+    hindi_aliases: ["acre", "ekad"]
+    common_in_boq: false
+    dimension: "area"
+    conversion_to_sqm: 4046.86
+
+  - canonical: "hectare"
+    canonical_full: "hectare"
+    si_unit: true
+    aliases: ["ha", "hect", "hectares"]
+    unicode_aliases: []
+    hindi_aliases: ["hectare"]
+    common_in_boq: false
+    dimension: "area"
+    conversion_to_sqm: 10000
+
+  # ============================================================
+  # VOLUME UNITS
+  # ============================================================
+  - canonical: "cum"
+    canonical_full: "cubic meter"
+    si_unit: true
+    aliases: ["cu.m", "cu m", "m3", "cumt", "cu.mt", "cu.mtr", "cbm"]
+    unicode_aliases: ["m\u00B3"]
+    hindi_aliases: ["ghan meter"]
+    common_in_boq: true
+    dimension: "volume"
+    conversion_to_cum: 1.0
+
+  - canonical: "cft"
+    canonical_full: "cubic feet"
+    si_unit: false
+    aliases: ["cu.ft", "cuft", "cu ft", "ft3", "cubic foot", "cu.feet", "cft"]
+    unicode_aliases: ["ft\u00B3"]
+    hindi_aliases: ["ghan foot", "ghan fut"]
+    common_in_boq: true
+    dimension: "volume"
+    conversion_to_cum: 0.0283
+
+  - canonical: "brass"
+    canonical_full: "brass"
+    si_unit: false
+    aliases: ["100 cft", "100cft"]
+    unicode_aliases: []
+    hindi_aliases: ["brass", "braas"]
+    common_in_boq: true
+    dimension: "volume"
+    conversion_to_cum: 2.8317
+    notes: "1 brass = 100 cubic feet, commonly used for sand/aggregate measurement"
+
+  - canonical: "ltr"
+    canonical_full: "litre"
+    si_unit: true
+    aliases: ["lit", "litre", "liter", "litres", "liters", "l", "L"]
+    unicode_aliases: []
+    hindi_aliases: []
+    common_in_boq: true
+    dimension: "volume"
+    conversion_to_cum: 0.001
+
+  - canonical: "kl"
+    canonical_full: "kilolitre"
+    si_unit: true
+    aliases: ["KL", "kilolitre", "kiloliter", "1000 litres"]
+    unicode_aliases: []
+    hindi_aliases: []
+    common_in_boq: true
+    dimension: "volume"
+    conversion_to_cum: 1.0
+
+  # ============================================================
+  # LENGTH UNITS
+  # ============================================================
+  - canonical: "rm"
+    canonical_full: "running meter"
+    si_unit: true
+    aliases: ["rmt", "r.m", "r.m.", "running meter", "running metre", "linear meter", "linear metre", "lm", "l.m", "rmt."]
+    unicode_aliases: []
+    hindi_aliases: ["running meter"]
+    common_in_boq: true
+    dimension: "length"
+    conversion_to_m: 1.0
+
+  - canonical: "m"
+    canonical_full: "meter"
+    si_unit: true
+    aliases: ["mtr", "mt", "meter", "metre", "meters", "metres"]
+    unicode_aliases: []
+    hindi_aliases: ["meter"]
+    common_in_boq: true
+    dimension: "length"
+    conversion_to_m: 1.0
+
+  - canonical: "mm"
+    canonical_full: "millimeter"
+    si_unit: true
+    aliases: ["millimeter", "millimetre", "millimeters", "millimetres"]
+    unicode_aliases: []
+    hindi_aliases: []
+    common_in_boq: true
+    dimension: "length"
+    conversion_to_m: 0.001
+
+  - canonical: "cm"
+    canonical_full: "centimeter"
+    si_unit: true
+    aliases: ["centimeter", "centimetre", "centimeters", "centimetres"]
+    unicode_aliases: []
+    hindi_aliases: []
+    common_in_boq: false
+    dimension: "length"
+    conversion_to_m: 0.01
+
+  - canonical: "km"
+    canonical_full: "kilometer"
+    si_unit: true
+    aliases: ["kilometer", "kilometre", "kilometers", "kilometres"]
+    unicode_aliases: []
+    hindi_aliases: []
+    common_in_boq: false
+    dimension: "length"
+    conversion_to_m: 1000
+
+  - canonical: "ft"
+    canonical_full: "feet"
+    si_unit: false
+    aliases: ["feet", "foot", "ft."]
+    unicode_aliases: ["'"]
+    hindi_aliases: ["fut", "foot"]
+    common_in_boq: false
+    dimension: "length"
+    conversion_to_m: 0.3048
+
+  - canonical: "rft"
+    canonical_full: "running feet"
+    si_unit: false
+    aliases: ["running feet", "running foot", "r.ft", "rft.", "r.feet"]
+    unicode_aliases: []
+    hindi_aliases: ["running feet"]
+    common_in_boq: true
+    dimension: "length"
+    conversion_to_m: 0.3048
+
+  - canonical: "inch"
+    canonical_full: "inch"
+    si_unit: false
+    aliases: ["in", "in.", "inches"]
+    unicode_aliases: ["\""]
+    hindi_aliases: ["inch", "ench"]
+    common_in_boq: false
+    dimension: "length"
+    conversion_to_m: 0.0254
+
+  # ============================================================
+  # WEIGHT UNITS
+  # ============================================================
+  - canonical: "kg"
+    canonical_full: "kilogram"
+    si_unit: true
+    aliases: ["kgs", "kilogram", "kilograms", "kg.", "kgs."]
+    unicode_aliases: []
+    hindi_aliases: ["kilo"]
+    common_in_boq: true
+    dimension: "weight"
+    conversion_to_kg: 1.0
+
+  - canonical: "gm"
+    canonical_full: "gram"
+    si_unit: true
+    aliases: ["gms", "gram", "grams", "g", "grm"]
+    unicode_aliases: []
+    hindi_aliases: []
+    common_in_boq: false
+    dimension: "weight"
+    conversion_to_kg: 0.001
+
+  - canonical: "quintal"
+    canonical_full: "quintal"
+    si_unit: false
+    aliases: ["qtl", "qtl.", "100 kg", "quintals"]
+    unicode_aliases: []
+    hindi_aliases: ["quintal"]
+    common_in_boq: true
+    dimension: "weight"
+    conversion_to_kg: 100
+    notes: "Common in India for bulk material measurement"
+
+  - canonical: "MT"
+    canonical_full: "metric ton"
+    si_unit: true
+    aliases: ["tonne", "metric ton", "metric tonne", "tonnes", "T", "mt"]
+    unicode_aliases: []
+    hindi_aliases: ["tonne"]
+    common_in_boq: true
+    dimension: "weight"
+    conversion_to_kg: 1000
+
+  # ============================================================
+  # COUNT UNITS
+  # ============================================================
+  - canonical: "nos"
+    canonical_full: "numbers"
+    si_unit: false
+    aliases: ["no.", "no", "nos.", "numbers", "each", "ea", "pc", "pcs", "pieces", "piece", "nr", "Nos", "NOS", "nos", "set", "unit", "units"]
+    unicode_aliases: []
+    hindi_aliases: ["nag", "adad", "number"]
+    common_in_boq: true
+    dimension: "count"
+    conversion_to_nos: 1.0
+
+  - canonical: "pair"
+    canonical_full: "pair"
+    si_unit: false
+    aliases: ["pairs", "pr", "pr."]
+    unicode_aliases: []
+    hindi_aliases: ["joda"]
+    common_in_boq: true
+    dimension: "count"
+    conversion_to_nos: 2.0
+
+  - canonical: "set"
+    canonical_full: "set"
+    si_unit: false
+    aliases: ["sets"]
+    unicode_aliases: []
+    hindi_aliases: ["set"]
+    common_in_boq: true
+    dimension: "count"
+    notes: "Used for items that come as a complete set (e.g., door hardware set)"
+
+  - canonical: "dozen"
+    canonical_full: "dozen"
+    si_unit: false
+    aliases: ["doz", "dzn"]
+    unicode_aliases: []
+    hindi_aliases: ["darjan"]
+    common_in_boq: false
+    dimension: "count"
+    conversion_to_nos: 12.0
+
+  # ============================================================
+  # LUMPSUM / JOB UNITS
+  # ============================================================
+  - canonical: "ls"
+    canonical_full: "lump sum"
+    si_unit: false
+    aliases: ["L.S.", "L.S", "lump sum", "lumpsum", "lot", "job", "LS", "Ls"]
+    unicode_aliases: []
+    hindi_aliases: []
+    common_in_boq: true
+    dimension: "lumpsum"
+    notes: "Used for items priced as a complete scope without detailed measurement"
+
+  - canonical: "item"
+    canonical_full: "item"
+    si_unit: false
+    aliases: ["items"]
+    unicode_aliases: []
+    hindi_aliases: []
+    common_in_boq: true
+    dimension: "lumpsum"
+
+  # ============================================================
+  # RATE UNITS (per time)
+  # ============================================================
+  - canonical: "day"
+    canonical_full: "day"
+    si_unit: false
+    aliases: ["days", "per day", "/day", "d"]
+    unicode_aliases: []
+    hindi_aliases: ["din"]
+    common_in_boq: true
+    dimension: "time"
+
+  - canonical: "week"
+    canonical_full: "week"
+    si_unit: false
+    aliases: ["weeks", "per week", "/week", "wk"]
+    unicode_aliases: []
+    hindi_aliases: ["hafta"]
+    common_in_boq: true
+    dimension: "time"
+
+  - canonical: "month"
+    canonical_full: "month"
+    si_unit: false
+    aliases: ["months", "per month", "/month", "mo"]
+    unicode_aliases: []
+    hindi_aliases: ["mahina"]
+    common_in_boq: true
+    dimension: "time"
+
+  - canonical: "hour"
+    canonical_full: "hour"
+    si_unit: false
+    aliases: ["hours", "hrs", "hr", "per hour", "/hour"]
+    unicode_aliases: []
+    hindi_aliases: ["ghanta"]
+    common_in_boq: true
+    dimension: "time"
+
+  # ============================================================
+  # SPECIAL CONSTRUCTION UNITS
+  # ============================================================
+  - canonical: "bag"
+    canonical_full: "bag"
+    si_unit: false
+    aliases: ["bags", "bag of 50kg"]
+    unicode_aliases: []
+    hindi_aliases: ["bori", "bora"]
+    common_in_boq: true
+    dimension: "count"
+    notes: "Standard cement bag = 50 kg"
+
+  - canonical: "bundle"
+    canonical_full: "bundle"
+    si_unit: false
+    aliases: ["bundles"]
+    unicode_aliases: []
+    hindi_aliases: ["gaddi"]
+    common_in_boq: true
+    dimension: "count"
+    notes: "Used for steel bars, pipes etc."
+
+  - canonical: "trip"
+    canonical_full: "trip"
+    si_unit: false
+    aliases: ["trips", "load", "loads"]
+    unicode_aliases: []
+    hindi_aliases: ["trip", "gaadi"]
+    common_in_boq: true
+    dimension: "count"
+    notes: "Used for material transportation"
+
+  - canonical: "point"
+    canonical_full: "point"
+    si_unit: false
+    aliases: ["points", "pt", "pts"]
+    unicode_aliases: []
+    hindi_aliases: ["point"]
+    common_in_boq: true
+    dimension: "count"
+    notes: "Used for electrical points (light point, power point, etc.)"
+
+  - canonical: "coil"
+    canonical_full: "coil"
+    si_unit: false
+    aliases: ["coils", "roll", "rolls"]
+    unicode_aliases: []
+    hindi_aliases: ["coil"]
+    common_in_boq: true
+    dimension: "count"
+    notes: "Used for wire, cable, binding wire"
+
+  - canonical: "drum"
+    canonical_full: "drum"
+    si_unit: false
+    aliases: ["drums"]
+    unicode_aliases: []
+    hindi_aliases: ["drum"]
+    common_in_boq: true
+    dimension: "count"
+    notes: "Used for cables (per drum)"
+
+  # ============================================================
+  # INDIAN LAND MEASUREMENT UNITS
+  # ============================================================
+  - canonical: "marla"
+    canonical_full: "marla"
+    si_unit: false
+    aliases: ["marlaa"]
+    unicode_aliases: []
+    hindi_aliases: ["marla", "marlaa"]
+    common_in_boq: false
+    dimension: "area"
+    conversion_to_sqm: 25.29
+    notes: "1 marla = 272.25 sq ft (Punjab/Haryana/J&K)"
+
+  - canonical: "kanal"
+    canonical_full: "kanal"
+    si_unit: false
+    aliases: ["kanaal"]
+    unicode_aliases: []
+    hindi_aliases: ["kanal", "kanaal"]
+    common_in_boq: false
+    dimension: "area"
+    conversion_to_sqm: 505.86
+    notes: "1 kanal = 20 marla"
+
+  - canonical: "bigha"
+    canonical_full: "bigha"
+    si_unit: false
+    aliases: ["beegha"]
+    unicode_aliases: []
+    hindi_aliases: ["bigha", "beegha"]
+    common_in_boq: false
+    dimension: "area"
+    notes: "Varies by state: Rajasthan 1 bigha = 17427 sq ft, UP 1 bigha = 27000 sq ft"
+
+  - canonical: "gaj"
+    canonical_full: "gaj (yard)"
+    si_unit: false
+    aliases: ["gaz"]
+    unicode_aliases: []
+    hindi_aliases: ["gaj", "gaz"]
+    common_in_boq: false
+    dimension: "length"
+    conversion_to_m: 0.9144
+    notes: "1 gaj = 1 yard = 3 feet"
+
+  - canonical: "varg_gaj"
+    canonical_full: "square yard (varg gaj)"
+    si_unit: false
+    aliases: ["sq gaj", "square gaj", "varg gaz"]
+    unicode_aliases: []
+    hindi_aliases: ["varg gaj", "varg gaz"]
+    common_in_boq: false
+    dimension: "area"
+    conversion_to_sqm: 0.8361
+    notes: "Common land measurement unit in North India"

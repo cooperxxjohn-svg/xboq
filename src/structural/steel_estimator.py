@@ -19,16 +19,33 @@ logger = logging.getLogger(__name__)
 
 
 # Standard TMT bar weights (kg/m) as per IS 1786
+# Formula: weight = d² / 162.2 (where d is diameter in mm)
 BAR_WEIGHTS = {
     6: 0.222,   # Y6/T6
     8: 0.395,   # Y8/T8
     10: 0.617,  # Y10/T10
     12: 0.888,  # Y12/T12
+    14: 1.208,  # Y14/T14 (common in India)
     16: 1.578,  # Y16/T16
+    18: 1.998,  # Y18/T18 (common in India)
     20: 2.466,  # Y20/T20
+    22: 2.984,  # Y22/T22 (common in India)
     25: 3.853,  # Y25/T25
+    28: 4.834,  # Y28/T28 (common in India)
     32: 6.313,  # Y32/T32
+    36: 7.990,  # Y36/T36
+    40: 9.865,  # Y40/T40
 }
+
+def _bar_weight(dia_mm: int) -> float:
+    """Get bar weight (kg/m) for a given diameter, using IS 1786 table or formula fallback."""
+    if dia_mm in BAR_WEIGHTS:
+        return BAR_WEIGHTS[dia_mm]
+    # Fallback: IS formula weight = d² / 162.2
+    weight = (dia_mm ** 2) / 162.2
+    logger.warning(f"Bar diameter {dia_mm}mm not in standard table, using formula: {weight:.3f} kg/m")
+    return weight
+
 
 # Lapping/wastage factors
 LAPPING_FACTOR = 1.08  # 8% extra for laps
@@ -230,7 +247,7 @@ class SteelEstimator:
         main_length = height_mm + dev_length
 
         # Main bar weight
-        main_weight = main_bars * (main_length / 1000) * BAR_WEIGHTS.get(main_dia, 1.58)
+        main_weight = main_bars * (main_length / 1000) * _bar_weight(main_dia)
 
         main_detail = RebarDetail(
             bar_mark="A",
@@ -251,7 +268,7 @@ class SteelEstimator:
         hook_length = 2 * (10 * stirrup_dia + 75)  # Two 135° hooks
         stirrup_length = 2 * (stirrup_width + stirrup_depth) + hook_length
 
-        stirrup_weight = no_stirrups * (stirrup_length / 1000) * BAR_WEIGHTS.get(stirrup_dia, 0.395)
+        stirrup_weight = no_stirrups * (stirrup_length / 1000) * _bar_weight(stirrup_dia)
 
         stirrup_detail = RebarDetail(
             bar_mark="B",
@@ -308,7 +325,7 @@ class SteelEstimator:
         bar_length = span_mm + 2 * dev_length
 
         # Top bars (negative moment at supports)
-        top_weight = top_bars * (bar_length / 1000) * BAR_WEIGHTS.get(main_dia, 1.58)
+        top_weight = top_bars * (bar_length / 1000) * _bar_weight(main_dia)
         top_detail = RebarDetail(
             bar_mark="A",
             bar_dia=main_dia,
@@ -318,7 +335,7 @@ class SteelEstimator:
         )
 
         # Bottom bars (positive moment at midspan)
-        bottom_weight = bottom_bars * (bar_length / 1000) * BAR_WEIGHTS.get(main_dia, 1.58)
+        bottom_weight = bottom_bars * (bar_length / 1000) * _bar_weight(main_dia)
         bottom_detail = RebarDetail(
             bar_mark="B",
             bar_dia=main_dia,
@@ -338,7 +355,7 @@ class SteelEstimator:
         hook_length = 2 * (10 * stirrup_dia + 75)
         stirrup_length = 2 * (stirrup_width + stirrup_depth) + hook_length
 
-        stirrup_weight = no_stirrups * (stirrup_length / 1000) * BAR_WEIGHTS.get(stirrup_dia, 0.395)
+        stirrup_weight = no_stirrups * (stirrup_length / 1000) * _bar_weight(stirrup_dia)
 
         stirrup_detail = RebarDetail(
             bar_mark="C",
@@ -387,7 +404,7 @@ class SteelEstimator:
         no_bars_length = int(effective_width / spacing_mm) + 1
         bar_length_long = length_mm - 2 * clear_cover + 2 * (50 * main_dia)  # + development
 
-        long_weight = no_bars_length * (bar_length_long / 1000) * BAR_WEIGHTS.get(main_dia, 0.888)
+        long_weight = no_bars_length * (bar_length_long / 1000) * _bar_weight(main_dia)
 
         long_detail = RebarDetail(
             bar_mark="A",
@@ -402,7 +419,7 @@ class SteelEstimator:
         no_bars_width = int(effective_length / spacing_mm) + 1
         bar_length_short = width_mm - 2 * clear_cover + 2 * (50 * main_dia)
 
-        short_weight = no_bars_width * (bar_length_short / 1000) * BAR_WEIGHTS.get(main_dia, 0.888)
+        short_weight = no_bars_width * (bar_length_short / 1000) * _bar_weight(main_dia)
 
         short_detail = RebarDetail(
             bar_mark="B",
@@ -454,7 +471,7 @@ class SteelEstimator:
         no_main_bars = int(effective_span / main_spacing) + 1
         main_length = effective_span + 2 * (50 * main_dia)
 
-        main_weight = no_main_bars * (main_length / 1000) * BAR_WEIGHTS.get(main_dia, 0.617)
+        main_weight = no_main_bars * (main_length / 1000) * _bar_weight(main_dia)
 
         main_detail = RebarDetail(
             bar_mark="A",
@@ -468,7 +485,7 @@ class SteelEstimator:
         no_dist_bars = int(effective_span / dist_spacing) + 1
         dist_length = effective_span + 2 * (40 * dist_dia)
 
-        dist_weight = no_dist_bars * (dist_length / 1000) * BAR_WEIGHTS.get(dist_dia, 0.395)
+        dist_weight = no_dist_bars * (dist_length / 1000) * _bar_weight(dist_dia)
 
         dist_detail = RebarDetail(
             bar_mark="B",

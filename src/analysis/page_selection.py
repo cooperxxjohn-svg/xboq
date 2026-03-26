@@ -51,7 +51,12 @@ class SelectedPages:
 
     def summary_line(self) -> str:
         """Human-readable one-liner for progress messages."""
-        mode = "FULL_READ" if self.selection_mode == "full_read" else "FAST_BUDGET"
+        if self.selection_mode == "full_read":
+            mode = "FULL_READ"
+        elif self.selection_mode == "force_text":
+            mode = "FORCE_TEXT"
+        else:
+            mode = "FAST_BUDGET"
         return (
             f"[{mode}] Selected {self.budget_used}/{self.budget_total} pages "
             f"({self.always_include_count} must-read + "
@@ -108,6 +113,7 @@ def select_pages(
     budget_pages: int = 80,
     force_full_read: bool = False,
     deep_cap: Optional[int] = None,
+    force_text_pages: bool = False,
 ) -> SelectedPages:
     """
     Select pages for full OCR within a budget.
@@ -126,6 +132,11 @@ def select_pages(
         deep_cap: Sprint 20G — explicit page budget from RunMode.
                   Overrides budget_pages when provided.
                   Use force_full_read=True for unlimited (FULL_AUDIT).
+        force_text_pages: If True (for TENDER/MIXED packages), promotes ALL
+                          text-bearing page types (spec, conditions, notes,
+                          boq, addendum, schedule, legend) to Tier 1 with no
+                          sub-cap, so every text page is processed regardless
+                          of the drawing budget. Drawing pages remain capped.
 
     Returns:
         SelectedPages with selected indices and reasons.
@@ -150,19 +161,34 @@ def select_pages(
         return result
 
     # --- FAST_BUDGET mode ---
-    result = SelectedPages(budget_total=budget_pages, selection_mode="fast_budget")
+    _mode = "force_text" if force_text_pages else "fast_budget"
+    result = SelectedPages(budget_total=budget_pages, selection_mode=_mode)
     selected_set: set = set()
+
+    # ── force_text_pages: promote all text types to uncapped Tier 1 ──────
+    # Used for TENDER / MIXED packages where every spec/conditions/notes page
+    # contains valuable priceable content and must not be budget-capped.
+    _TEXT_TYPES = {"spec", "conditions", "notes", "boq", "addendum", "schedule", "legend"}
+    if force_text_pages:
+        _effective_no_cap       = TIER_1_NO_CAP | _TEXT_TYPES
+        _effective_sub_caps: dict = {}
+        # Include "spec" in the priority pass so it gets Tier 1 treatment
+        _effective_tier1_priority = TIER_1_PRIORITY + ["spec"]
+    else:
+        _effective_no_cap         = TIER_1_NO_CAP
+        _effective_sub_caps       = TIER_1_SUB_CAPS
+        _effective_tier1_priority = TIER_1_PRIORITY
 
     # ── Phase 1: Tier 1 — collect ALL must-read pages WITHOUT budget cap ──
     # Process in priority order (boq first) so high-value types are never
     # displaced by massive lower-value types (e.g. 103 conditions pages).
-    for doc_type in TIER_1_PRIORITY:
+    for doc_type in _effective_tier1_priority:
         pages_of_type = [p for p in page_index.pages if p.doc_type == doc_type]
         if not pages_of_type:
             continue
 
-        sub_cap = TIER_1_SUB_CAPS.get(doc_type)
-        if doc_type in TIER_1_NO_CAP or sub_cap is None or len(pages_of_type) <= sub_cap:
+        sub_cap = _effective_sub_caps.get(doc_type)
+        if doc_type in _effective_no_cap or sub_cap is None or len(pages_of_type) <= sub_cap:
             # Include ALL pages of this type (no cap)
             for p in pages_of_type:
                 if p.page_idx not in selected_set:
@@ -181,7 +207,7 @@ def select_pages(
 
     # Also collect any Tier 1 types not in the priority list (defensive).
     # Skip types already processed by the priority loop above.
-    _processed_types = set(TIER_1_PRIORITY)
+    _processed_types = set(_effective_tier1_priority)
     for p in page_index.pages:
         if (p.doc_type in TIER_1_ALWAYS
                 and p.doc_type not in _processed_types

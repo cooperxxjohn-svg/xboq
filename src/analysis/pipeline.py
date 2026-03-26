@@ -3,540 +3,46 @@ Analysis Pipeline
 
 Provides a streamlit-compatible interface to run the analysis pipeline
 with progress callbacks for real-time UI updates.
+
+Standalone helpers (dataclasses, PDF loaders, stats builders) live in
+pipeline_helpers.py and are re-exported here for backward compatibility.
 """
 
 import json
 import logging
 import sys
 import traceback
-import uuid
 import shutil
-from pathlib import Path
-from typing import Dict, Any, List, Optional, Callable, Tuple
-from dataclasses import dataclass, field
+import uuid
 from datetime import datetime
+from pathlib import Path
+from typing import Any, Dict, List, Optional, Callable, Tuple
 
 logger = logging.getLogger(__name__)
 
-# Add project root to path
-PROJECT_ROOT = Path(__file__).parent.parent.parent
-sys.path.insert(0, str(PROJECT_ROOT))
-sys.path.insert(0, str(PROJECT_ROOT / "src"))
-
-
-@dataclass
-class AnalysisStage:
-    """Represents a stage in the analysis pipeline."""
-    id: str
-    name: str
-    description: str
-    progress: float = 0.0
-    status: str = "pending"  # pending, running, completed, failed
-    message: str = ""
-    error: str = ""
-
-
-@dataclass
-class AnalysisResult:
-    """Result of the analysis pipeline."""
-    success: bool
-    project_id: str
-    output_dir: Path
-    stages: List[AnalysisStage] = field(default_factory=list)
-    error_message: str = ""
-    stack_trace: str = ""
-    files_generated: List[str] = field(default_factory=list)
-    duration_sec: float = 0.0
-    # Analysis payload for immediate UI display
-    payload: Dict[str, Any] = field(default_factory=dict)
-
-
-def load_pdf_pages(pdf_path: Path) -> Tuple[List[str], int]:
-    """
-    Load PDF and extract raw text from each page (without OCR).
-
-    Args:
-        pdf_path: Path to PDF file
-
-    Returns:
-        Tuple of:
-            - List of text strings, one per page (empty string for image-only pages)
-            - Page count
-
-    Raises:
-        ImportError: if PyMuPDF (fitz) is not installed
-        Exception: propagated so the caller can surface the real error in the UI
-    """
-    try:
-        import fitz  # PyMuPDF
-    except ImportError:
-        raise ImportError(
-            "PyMuPDF is not installed. Add 'PyMuPDF>=1.23.0' to requirements.txt."
-        )
-
-    try:
-        doc = fitz.open(str(pdf_path))
-        page_texts = []
-        for page in doc:
-            text = page.get_text()
-            page_texts.append(text)
-        page_count = len(page_texts)
-        doc.close()
-        return page_texts, page_count
-    except Exception as e:
-        logging.getLogger(__name__).error("Failed to load %s: %s", pdf_path.name, e)
-        raise
-
-
-def run_ocr_extraction(
-    pdf_path: Path,
-    page_texts: List[str],
-    preflight: Optional[Dict[str, Any]] = None,
-    progress_callback: Optional[Callable] = None,
-    selected_pages: Optional[List[int]] = None,
-) -> Tuple[List[str], Dict[str, Any]]:
-    """
-    Run OCR extraction on pages that need it, with adaptive strategy.
-
-    Args:
-        pdf_path: Path to PDF file
-        page_texts: List of already-extracted text per page
-        preflight: Optional preflight result (from pdf_preflight)
-        progress_callback: Optional callable(page_idx, total, message)
-        selected_pages: Optional list of page indices to OCR (from page_selection)
-
-    Returns:
-        Tuple of:
-            - Updated list of text strings (with OCR results merged)
-            - OCR metadata dict
-    """
-    metadata = {
-        'ocr_used': False,
-        'ocr_pages': [],
-        'scales_from_ocr': [],
-        'disciplines_from_ocr': [],
-        'page_profiles': [],
-        'preflight': None,
-    }
-
-    try:
-        from .ocr_fallback import (
-            is_ocr_available,
-            extract_ocr_for_all_pages,
-            page_needs_ocr,
-            pdf_preflight as _pdf_preflight,
-        )
-
-        if not is_ocr_available():
-            return page_texts, metadata
-
-        # Run preflight if not provided
-        if preflight is None:
-            preflight = _pdf_preflight(pdf_path, page_texts)
-        metadata['preflight'] = preflight
-
-        strategy = preflight.get('ocr_strategy', 'full')
-
-        # Adaptive strategy: skip OCR if most pages have text
-        if strategy == 'skip':
-            return page_texts, metadata
-
-        # Determine max pages to OCR
-        max_ocr_pages = 0  # unlimited
-        if strategy == 'adaptive':
-            max_ocr_pages = 80  # hard cap for very large scanned PDFs
-
-        # If selected_pages provided, use them directly (overrides max_ocr_pages)
-        if selected_pages is not None:
-            max_ocr_pages = 0  # no cap needed, selection already limited
-
-        page_texts, ocr_metadata = extract_ocr_for_all_pages(
-            pdf_path, page_texts, dpi=150,
-            progress_callback=progress_callback,
-            max_ocr_pages=max_ocr_pages,
-            selected_pages=selected_pages,
-        )
-        metadata['ocr_used'] = len(ocr_metadata.get('pages_with_ocr', [])) > 0
-        metadata['ocr_pages'] = ocr_metadata.get('pages_with_ocr', [])
-        metadata['scales_from_ocr'] = ocr_metadata.get('scales_detected', [])
-        metadata['disciplines_from_ocr'] = ocr_metadata.get('disciplines_detected', [])
-        metadata['page_profiles'] = ocr_metadata.get('page_profiles', [])
-
-    except ImportError:
-        # OCR module not available, continue without
-        pass
-
-    return page_texts, metadata
-
-
-def extract_text_from_pdf(pdf_path: Path, use_ocr_fallback: bool = True) -> Tuple[List[str], Dict[str, Any]]:
-    """
-    Extract text from each page of a PDF, with optional OCR fallback.
-    (Legacy wrapper for backward compatibility)
-
-    Args:
-        pdf_path: Path to PDF file
-        use_ocr_fallback: Whether to use OCR for pages with no text
-
-    Returns:
-        Tuple of:
-            - List of text strings, one per page
-            - Dict with extraction metadata (OCR info, etc.)
-    """
-    page_texts, _ = load_pdf_pages(pdf_path)
-
-    if use_ocr_fallback:
-        page_texts, metadata = run_ocr_extraction(pdf_path, page_texts)
-    else:
-        metadata = {
-            'ocr_used': False,
-            'ocr_pages': [],
-            'scales_from_ocr': [],
-            'disciplines_from_ocr': [],
-        }
-
-    return page_texts, metadata
-
-
-def _compute_run_compare(prev: Optional[dict], current: dict) -> Optional[dict]:
-    """
-    Compute diffs between the previous cached run and the current run.
-
-    Returns None if no previous run available.
-    """
-    if not prev or not isinstance(prev, dict):
-        return None
-
-    result = {}
-
-    # QA score delta
-    prev_qa = (prev.get("qa_score") or {}).get("score")
-    curr_qa = (current.get("qa_score") or {}).get("score")
-    if prev_qa is not None and curr_qa is not None:
-        result["qa_score_delta"] = curr_qa - prev_qa
-    else:
-        result["qa_score_delta"] = None
-
-    # New RFIs (questions in current not in previous)
-    prev_questions = {r.get("question", "") for r in (prev.get("rfis") or [])}
-    curr_rfis = current.get("rfis") or []
-    new_rfis = [
-        r.get("question", "")[:100]
-        for r in curr_rfis
-        if r.get("question", "") and r.get("question", "") not in prev_questions
-    ]
-    result["new_rfis"] = new_rfis[:20]
-
-    # New conflicts
-    prev_descs = {c.get("description", "") for c in (prev.get("conflicts") or [])}
-    curr_conflicts = current.get("conflicts") or []
-    new_conflicts = [
-        c.get("description", "")[:100]
-        for c in curr_conflicts
-        if c.get("description", "") and c.get("description", "") not in prev_descs
-    ]
-    result["new_conflicts"] = new_conflicts[:20]
-
-    # BOQ / quantities delta
-    prev_qty_count = prev.get("quantities_count", 0)
-    curr_qty_count = len(current.get("quantities") or [])
-    result["boq_delta_summary"] = {
-        "prev_count": prev_qty_count,
-        "curr_count": curr_qty_count,
-        "delta": curr_qty_count - prev_qty_count,
-    }
-
-    # Sprint 13: Approval deltas
-    prev_rfi_statuses = prev.get("rfi_status_snapshot", {})
-    curr_rfi_statuses = current.get("rfi_status_snapshot", {})
-    newly_approved = [
-        rfi_id for rfi_id, status in curr_rfi_statuses.items()
-        if status in ("approved", "sent") and prev_rfi_statuses.get(rfi_id) == "draft"
-    ]
-    result["newly_approved_rfis"] = newly_approved
-
-    prev_qty_accepted = prev.get("quantities_accepted_count", 0)
-    curr_qty_accepted = current.get("quantities_accepted_count", 0)
-    result["qty_accepted_delta"] = curr_qty_accepted - prev_qty_accepted
-
-    prev_conflicts_reviewed = prev.get("conflicts_reviewed_count", 0)
-    curr_conflicts_reviewed = current.get("conflicts_reviewed_count", 0)
-    result["conflicts_reviewed_delta"] = curr_conflicts_reviewed - prev_conflicts_reviewed
-
-    return result
-
-
-def _check_guardrails(page_index, extraction_result, rfis) -> List[dict]:
-    """
-    Post-analysis guardrails: warn if extraction seems incomplete.
-
-    Returns list of warning dicts.
-    """
-    warnings = []
-
-    if not page_index or not extraction_result:
-        return warnings
-
-    # Schedule pages indexed but nothing extracted
-    schedule_count = page_index.counts_by_type.get("schedule", 0)
-    if schedule_count > 0 and len(extraction_result.schedules) == 0:
-        warnings.append({
-            "type": "schedule_extraction_gap",
-            "message": (
-                f"{schedule_count} schedule pages indexed but 0 schedule rows extracted. "
-                "OCR quality may be poor on these pages."
-            ),
-        })
-
-    # BOQ pages indexed but very few items extracted
-    boq_count = page_index.counts_by_type.get("boq", 0)
-    if boq_count > 2 and len(extraction_result.boq_items) < 3:
-        warnings.append({
-            "type": "boq_extraction_gap",
-            "message": (
-                f"{boq_count} BOQ pages indexed but only {len(extraction_result.boq_items)} "
-                "items extracted. BOQ pages may be tabular images that OCR cannot parse."
-            ),
-        })
-
-    # Low RFI count on large tenders
-    if page_index.total_pages > 100 and len(rfis) < 10:
-        warnings.append({
-            "type": "low_rfi_count",
-            "message": (
-                f"Only {len(rfis)} RFIs generated for a {page_index.total_pages}-page tender. "
-                "Expected >15. Extraction may be incomplete."
-            ),
-        })
-
-    # No requirements extracted from notes/spec pages
-    notes_count = (
-        page_index.counts_by_type.get("notes", 0) +
-        page_index.counts_by_type.get("spec", 0) +
-        page_index.counts_by_type.get("conditions", 0)
-    )
-    if notes_count > 3 and len(extraction_result.requirements) < 3:
-        warnings.append({
-            "type": "notes_extraction_gap",
-            "message": (
-                f"{notes_count} notes/spec/conditions pages indexed but only "
-                f"{len(extraction_result.requirements)} requirements extracted."
-            ),
-        })
-
-    return warnings
-
-
-# ── Sprint 19: BOQ Stats + Requirements by Trade ─────────────────────────
-
-def _detect_epc_mode(boq_items: list) -> bool:
-    """Detect EPC/Turnkey contracts from BOQ structure.
-
-    Signal: all priceable BOQ items are lump-sum (unit=LS/LUMP) AND item count is ≤5.
-    This is characteristic of EPC tenders where the entire scope is priced as a single
-    or very small number of lump-sum packages; the real scope lives in the DPR/tech-spec.
-
-    Args:
-        boq_items: Extracted BOQ items list.
-
-    Returns:
-        True if this looks like an EPC/turnkey lump-sum BOQ.
-    """
-    if not boq_items:
-        return False
-    # Only consider rows that have at least a description (exclude pure section headers)
-    data_items = [
-        it for it in boq_items
-        if (it.get("description") or "").strip()
-        and len((it.get("description") or "").strip()) > 5
-    ]
-    if not data_items:
-        return False
-    ls_units = {"LS", "LUMP", "L.S", "L.S.", "JOB", "LOT", "LUMP SUM", "LUMPSUM"}
-    ls_items = [
-        it for it in data_items
-        if (it.get("unit") or "").strip().upper() in ls_units
-        or "lump sum" in (it.get("description") or "").lower()
-        or "complete works" in (it.get("description") or "").lower()
-    ]
-    return len(ls_items) >= max(1, len(data_items)) and len(data_items) <= 5
-
-
-def _compute_boq_stats(boq_items: list) -> dict:
-    """Compute summary statistics for BOQ items.
-
-    Returns: {total_items, by_trade, flagged_items, flagged_count, epc_mode}
-    """
-    if not boq_items:
-        return {"total_items": 0, "by_trade": {}, "flagged_items": [], "flagged_count": 0}
-
-    by_trade: dict = {}
-    flagged = []
-    for item in boq_items:
-        trade = item.get("trade", "general")
-        by_trade[trade] = by_trade.get(trade, 0) + 1
-        flags = item.get("flags", [])
-        if flags:
-            flagged.append({
-                "item_no": item.get("item_no", ""),
-                "description": (item.get("description") or "")[:80],
-                "flags": flags,
-            })
-
-    epc_mode = _detect_epc_mode(boq_items)
-    return {
-        "total_items": len(boq_items),
-        "by_trade": by_trade,
-        "flagged_items": flagged,
-        "flagged_count": len(flagged),
-        "epc_mode": epc_mode,
-        "epc_mode_note": (
-            "EPC/Turnkey contract detected — entire scope priced as lump sum(s). "
-            "Detailed scope of work is in the DPR / technical specification documents. "
-            "Line items above are extracted from spec/conditions pages only."
-        ) if epc_mode else None,
-    }
-
-
-def _build_requirements_by_trade(requirements: list) -> dict:
-    """Group requirements by their 'trade' field.
-
-    Returns: {trade: [req_dicts]}
-    """
-    if not requirements:
-        return {}
-    by_trade: dict = {}
-    for req in requirements:
-        trade = req.get("trade", "general")
-        by_trade.setdefault(trade, []).append(req)
-    return by_trade
-
-
-# ── Sprint 18: Processing Stats Builder ───────────────────────────────────
-
-def _build_processing_stats(
-    page_index_result=None,
-    selected_result=None,
-    ocr_metadata=None,
-    run_coverage=None,
-    toxic_summary=None,
-    file_info=None,
-    extraction_result=None,
-) -> dict:
-    """Compute reliable page-processing counters from pipeline data.
-
-    Returns a stable dict with:
-        total_pages, deep_processed_pages, ocr_pages, text_layer_pages,
-        skipped_pages, per_doc (if multi-doc).
-        Sprint 20F: Also table_attempt_pages, table_success_pages,
-        selection_mode, selected_pages_count.
-    All fields default to 0 if data is unavailable.
-    """
-    stats = {
-        "total_pages": 0,
-        "deep_processed_pages": 0,
-        "ocr_pages": 0,
-        "text_layer_pages": 0,
-        "skipped_pages": 0,
-        "per_doc": {},
-        # Sprint 20F additions
-        "table_attempt_pages": 0,
-        "table_success_pages": 0,
-        "selection_mode": None,
-        "selected_pages_count": 0,
-    }
-
-    try:
-        # Total pages from page_index (most reliable source)
-        if page_index_result and hasattr(page_index_result, 'total_pages'):
-            stats["total_pages"] = page_index_result.total_pages
-        elif run_coverage and hasattr(run_coverage, 'pages_total'):
-            stats["total_pages"] = run_coverage.pages_total
-
-        # Deep processed = pages that went through full extraction (selected)
-        if selected_result and hasattr(selected_result, 'selected'):
-            stats["deep_processed_pages"] = len(selected_result.selected)
-        elif run_coverage and hasattr(run_coverage, 'pages_deep_processed'):
-            stats["deep_processed_pages"] = run_coverage.pages_deep_processed
-
-        # OCR pages vs text-layer pages from stage2 profiles
-        ocr_metadata = ocr_metadata or {}
-        profiles = ocr_metadata.get("page_profiles", [])
-        if profiles:
-            stats["ocr_pages"] = sum(1 for p in profiles if p.get("ocr_used"))
-            stats["text_layer_pages"] = sum(
-                1 for p in profiles
-                if p.get("has_text_layer") and not p.get("ocr_used")
-            )
-        else:
-            # Fallback: if all selected pages were OCR'd (common for scanned docs)
-            ocr_page_list = ocr_metadata.get("ocr_pages", [])
-            stats["ocr_pages"] = len(ocr_page_list)
-            # Text-layer = deep_processed minus OCR
-            stats["text_layer_pages"] = max(
-                0, stats["deep_processed_pages"] - stats["ocr_pages"]
-            )
-
-        # Skipped pages = total minus deep-processed
-        stats["skipped_pages"] = max(
-            0, stats["total_pages"] - stats["deep_processed_pages"]
-        )
-
-        # Toxic/failed pages (subset of skipped)
-        if toxic_summary and isinstance(toxic_summary, dict):
-            stats["toxic_pages"] = toxic_summary.get("total_toxic", 0)
-        elif toxic_summary and isinstance(toxic_summary, list):
-            stats["toxic_pages"] = len(toxic_summary)
-        else:
-            stats["toxic_pages"] = 0
-
-        # Per-doc breakdown (from file_info if available)
-        if file_info and isinstance(file_info, list):
-            for fi in file_info:
-                if not isinstance(fi, dict):
-                    continue
-                doc_id = fi.get("filename", fi.get("doc_id", "unknown"))
-                doc_pages = fi.get("pages", 0)
-                doc_ocr = fi.get("ocr_pages", 0)
-                stats["per_doc"][doc_id] = {
-                    "total_pages": doc_pages,
-                    "ocr_pages": doc_ocr,
-                }
-
-        # Sprint 20F: Selection mode + selected count
-        if selected_result and hasattr(selected_result, 'selected'):
-            stats["selected_pages_count"] = len(selected_result.selected)
-        if run_coverage:
-            sel_mode = None
-            if hasattr(run_coverage, 'selection_mode'):
-                sel_mode = run_coverage.selection_mode
-            elif isinstance(run_coverage, dict):
-                sel_mode = run_coverage.get("selection_mode")
-            stats["selection_mode"] = sel_mode
-
-        # Sprint 20F: Table attempt/success from extraction_diagnostics
-        if extraction_result:
-            diag = None
-            if hasattr(extraction_result, 'extraction_diagnostics'):
-                diag = extraction_result.extraction_diagnostics
-            elif isinstance(extraction_result, dict):
-                diag = extraction_result.get("extraction_diagnostics")
-            if diag and isinstance(diag, dict):
-                boq_diag = diag.get("boq", {})
-                sched_diag = diag.get("schedules", {})
-                stats["table_attempt_pages"] = (
-                    boq_diag.get("pages_attempted", 0) +
-                    sched_diag.get("pages_attempted", 0)
-                )
-                stats["table_success_pages"] = (
-                    boq_diag.get("pages_parsed", 0) +
-                    sched_diag.get("pages_parsed", 0)
-                )
-
-    except Exception as e:
-        logger.debug("Processing stats computation partial: %s", e)
-
-    return stats
+# ---------------------------------------------------------------------------
+# Re-export helpers so all existing imports from pipeline.py keep working
+# ---------------------------------------------------------------------------
+from .pipeline_helpers import (  # noqa: F401 (re-exports)
+    PROJECT_ROOT,
+    AnalysisStage,
+    AnalysisResult,
+    load_pdf_pages,
+    run_ocr_extraction,
+    extract_text_from_pdf,
+    _compute_run_compare,
+    _check_guardrails,
+    _detect_epc_mode,
+    _compute_boq_stats,
+    _build_requirements_by_trade,
+    _build_processing_stats,
+    save_uploaded_files,
+    generate_project_id,
+)
+
+import sys as _sys
+_sys.path.insert(0, str(PROJECT_ROOT))
+_sys.path.insert(0, str(PROJECT_ROOT / "src"))
 
 
 def run_analysis_pipeline(
@@ -548,6 +54,7 @@ def run_analysis_pipeline(
     boq_excel_paths: Optional[List[Path]] = None,
     llm_client=None,
     sub_callback: Optional[Callable[[str, str, str, int], None]] = None,
+    tenant_id: Optional[str] = None,
 ) -> AnalysisResult:
     """
     Run the analysis pipeline on uploaded files.
@@ -564,6 +71,9 @@ def run_analysis_pipeline(
                       status is one of: "working", "done", "error", "skipped".
         llm_client: Optional LLM client (openai.OpenAI or anthropic.Anthropic) for
                     enrichment. If None, enrichment uses template fallbacks.
+        tenant_id: Optional Supabase org_id / tenant identifier.  When set,
+                   the completed payload is persisted to Supabase via
+                   src.auth.project_store.save_project().
 
     Returns:
         AnalysisResult with success status and generated files
@@ -709,6 +219,17 @@ def run_analysis_pipeline(
         selected_result = None
         extraction_result = None
 
+        # Low-confidence flags accumulated during pipeline run
+        _low_confidence_flags: list = []
+
+        # Table coverage tracking
+        _table_tracker = None
+        try:
+            from src.analysis.table_coverage import TableCoverageTracker
+            _table_tracker = TableCoverageTracker()
+        except Exception as _tct_err:
+            logger.debug("TableCoverageTracker unavailable: %s", _tct_err)
+
         # Sprint 10: Try loading page_index from cache
         _cache_pi_loaded = False
         _cached_pi = load_cached_stage(cache_dir, "page_index")
@@ -788,6 +309,34 @@ def run_analysis_pipeline(
                 page_index_result.summary_line(),
                 1.0,
             )
+
+        # T4-2: Merge DXF pages into page_index (if any .dxf files were passed)
+        try:
+            _dxf_files = [str(f) for f in input_files if str(f).lower().endswith(".dxf")]
+            if _dxf_files and page_index_result is not None:
+                from src.analysis.cad_page_index import build_cad_page_index, merge_into_page_index
+                _cad_idx = build_cad_page_index(_dxf_files,
+                                                page_offset=page_index_result.total_pages)
+                _merged = merge_into_page_index(page_index_result.to_dict(), _cad_idx)
+                _merged_pages = []
+                for _p in _merged["pages"]:
+                    if isinstance(_p, dict):
+                        _fields = {k: v for k, v in _p.items()
+                                   if k in IndexedPage.__dataclass_fields__}
+                        _merged_pages.append(IndexedPage(**_fields))
+                    else:
+                        _merged_pages.append(_p)
+                page_index_result = PageIndex(
+                    pdf_name=_merged.get("pdf_name", page_index_result.pdf_name),
+                    total_pages=_merged["total_pages"],
+                    pages=_merged_pages,
+                    counts_by_type=_merged.get("counts_by_type", {}),
+                    counts_by_discipline=_merged.get("counts_by_discipline", {}),
+                )
+                logger.debug("Merged %d DXF page(s) into page index", len(_cad_idx["pages"]))
+        except Exception as _dxf_exc:
+            logger.debug("DXF merge skipped: %s", _dxf_exc)
+
         if "index" not in stage_times:
             stage_times["index"] = time.perf_counter() - stage_start
 
@@ -944,6 +493,41 @@ def run_analysis_pipeline(
                 extraction_result.commercial_terms
             )
 
+            # ── Feed TableCoverageTracker from extraction_diagnostics ──
+            if _table_tracker and hasattr(extraction_result, 'extraction_diagnostics'):
+                _diag = extraction_result.extraction_diagnostics or {}
+                _boq_diag = _diag.get("boq", {})
+                _sched_diag = _diag.get("schedules", {})
+                _methods_used = _diag.get("table_methods_used", {})
+                # Record BOQ page attempts as aggregate entries
+                _boq_attempted = _boq_diag.get("pages_attempted", 0)
+                _boq_parsed = _boq_diag.get("pages_parsed", 0)
+                for _pg_num in range(_boq_attempted):
+                    _method = "pdfplumber"
+                    if _methods_used:
+                        # Use most-used method as representative
+                        _method = max(_methods_used, key=lambda k: _methods_used[k]) if _methods_used else "pdfplumber"
+                    _success = _pg_num < _boq_parsed
+                    _table_tracker.record_attempt(
+                        page=_pg_num,
+                        method=_method,
+                        success=_success,
+                        n_rows=_boq_diag.get("items_extracted", 0) // max(_boq_parsed, 1) if _success else 0,
+                        doc_type="boq",
+                    )
+                # Record schedule page attempts
+                _sched_attempted = _sched_diag.get("pages_attempted", 0)
+                _sched_parsed = _sched_diag.get("pages_parsed", 0)
+                for _pg_num in range(_sched_attempted):
+                    _success = _pg_num < _sched_parsed
+                    _table_tracker.record_attempt(
+                        page=_pg_num,
+                        method=_method if _methods_used else "pdfplumber",
+                        success=_success,
+                        n_rows=_sched_diag.get("rows_extracted", 0) // max(_sched_parsed, 1) if _success else 0,
+                        doc_type="schedule",
+                    )
+
             update_progress(
                 "extract",
                 f"Extracted {len(extraction_result.requirements)} requirements, "
@@ -973,10 +557,7 @@ def run_analysis_pipeline(
                         0.93,
                     )
             except Exception as _excel_err:
-                import logging as _log
-                _log.getLogger(__name__).warning(
-                    f"Excel BOQ parsing failed: {_excel_err}"
-                )
+                logger.warning("Excel BOQ parsing failed: %s", _excel_err)
 
         # ── Sprint 21C: Schedule ↔ BOQ reconciliation ──────────────
         # Links schedule marks (D-01, W-05) to BOQ descriptions;
@@ -995,10 +576,7 @@ def run_analysis_pipeline(
                 "stub_items_added":         len(_recon.stub_items),
             }
         except Exception as _recon_err:
-            import logging as _rlog
-            _rlog.getLogger(__name__).warning(
-                f"Schedule-BOQ reconciliation failed: {_recon_err}"
-            )
+            logger.warning("Schedule-BOQ reconciliation failed: %s", _recon_err)
             _recon = None
 
         # ── Sprint 21D: Universal item normaliser ───────────────────
@@ -1024,10 +602,7 @@ def run_analysis_pipeline(
                 _rate_lookup = _RateLookup()
                 _line_items_payload = _rate_lookup.benchmark_items(_line_items_payload)
             except Exception as _ri_err:
-                import logging as _rilog
-                _rilog.getLogger(__name__).debug(
-                    f"Rate intelligence benchmarking skipped: {_ri_err}"
-                )
+                logger.debug("Rate intelligence benchmarking skipped: %s", _ri_err)
 
             _by_source: dict = {}
             _by_trade: dict  = {}
@@ -1054,605 +629,121 @@ def run_analysis_pipeline(
             # Contractual / administrative clauses (not priceable work items)
             _contractual_raw = build_contractual_items(_spec_items_list)
         except Exception as _norm_err:
-            import logging as _nlog
-            _nlog.getLogger(__name__).warning(
-                f"Item normalisation failed: {_norm_err}"
-            )
+            logger.warning("Item normalisation failed: %s", _norm_err)
             _contractual_raw = []
 
-        # ── QTO: Room-finish takeoff from plan drawings ──────────────────
-        _qto_finish_items: list = []
-        _qto_rooms: list = []
-        fire_sub("finish_agent", "working", "finish takeoff")
-        try:
-            from .qto.finish_takeoff import run_finish_takeoff
-            # Gather (page_idx, text, doc_type) for all processed pages using
-            # all_page_texts (flat list indexed by page_idx) + page_index_result
-            _plan_page_texts = []
-            if page_index_result and all_page_texts:
-                for pg in page_index_result.pages:
-                    pidx = pg.page_idx
-                    if pidx < len(all_page_texts):
-                        _plan_page_texts.append((
-                            pidx,
-                            all_page_texts[pidx],
-                            pg.doc_type,
-                        ))
-            # Filter finish schedules
-            _finish_scheds = [
-                s for s in getattr(extraction_result, 'schedules', [])
-                if str(s.get('schedule_type', '')).lower() in ('finish', 'finishes', 'room_finish')
-            ]
-            if _plan_page_texts:
-                _qto_rooms, _qto_finish_items = run_finish_takeoff(
-                    _plan_page_texts, _finish_scheds
-                )
-            if _qto_finish_items:
-                # Add QTO items into spec_items for normaliser to pick up
-                _spec_items_list = list(_spec_items_list) + _qto_finish_items
-            fire_sub("finish_agent", "done", f"{len(_qto_finish_items)} items", len(_qto_finish_items))
-        except Exception as _qto_err:
-            import logging as _qlog
-            _qlog.getLogger(__name__).warning(f"QTO finish takeoff failed: {_qto_err}")
-            fire_sub("finish_agent", "error", str(_qto_err)[:80])
+        # ── QTO module cascade (21 modules) ─────────────────────────────────
+        # Extracted to src/analysis/pipeline_stages/qto_runner.py to reduce
+        # pipeline.py size by ~890 lines.  All logic is preserved unchanged.
+        from .pipeline_stages import run_qto_modules, QTOInputs
+        _qto = run_qto_modules(QTOInputs(
+            page_index_result   = page_index_result,
+            all_page_texts      = all_page_texts,
+            extraction_result   = extraction_result,
+            spec_items_list     = _spec_items_list,
+            stub_items_list     = _stub_items_list,
+            recon               = _recon,
+            fire_sub            = fire_sub,
+            low_confidence_flags= _low_confidence_flags,
+            tenant_id           = tenant_id,
+            project_id          = project_id,
+            input_files         = input_files,
+            llm_client          = llm_client,
+            primary_pdf_path    = locals().get("primary_pdf_path"),
+        ))
 
-        # ── Scale Detection (Sprint 43 — early, feeds structural + visual) ──
-        # Runs against all page texts before any geometry-dependent QTO module.
-        # Result: ScaleInfo with px_per_mm, ratio, confidence.
-        _detected_scale = None
-        _all_page_texts_for_scale: list = []
-        fire_sub("scale_agent", "working", "detecting scale")
-        try:
-            from .qto.scale_detector import detect_scale as _detect_scale_fn
-            if page_index_result and all_page_texts:
-                for pg in page_index_result.pages:
-                    pidx = pg.page_idx
-                    if pidx < len(all_page_texts):
-                        _all_page_texts_for_scale.append((
-                            pidx,
-                            all_page_texts[pidx] or "",
-                            getattr(pg, "doc_type", "unknown"),
-                        ))
-            elif all_page_texts:
-                _all_page_texts_for_scale = [
-                    (i, t or "", "unknown") for i, t in enumerate(all_page_texts)
-                ]
-            _detected_scale = _detect_scale_fn(_all_page_texts_for_scale)
-            _scale_msg = f"1:{_detected_scale.ratio}" if _detected_scale else "not found"
-            fire_sub("scale_agent", "done", _scale_msg)
-        except Exception as _scale_early_err:
-            import logging as _scaleearly_log
-            _scaleearly_log.getLogger(__name__).debug(
-                "Early scale detection failed (non-critical): %s", _scale_early_err
-            )
-            fire_sub("scale_agent", "skipped", "non-critical")
+        # ── Unpack QTO outputs ────────────────────────────────────────────
+        _qto_rated_items      = _qto.qto_rated_items
+        _qto_grand_total_inr  = _qto.qto_grand_total_inr
+        _line_items_payload   = _qto.line_items_payload
+        _dedup_stats          = _qto.dedup_stats
+        _spec_needs_qty       = _qto.spec_needs_qty
+        _spec_params_payload  = _qto.spec_params_payload
+        _st_area_sqm          = _qto.st_area_sqm
+        _st_floors            = _qto.st_floors
+        _qto_paint_items      = _qto.qto_paint_items
+        _qto_wp_items         = _qto.qto_wp_items
+        _qto_dw_items         = _qto.qto_dw_items
+        _qto_mep_items        = _qto.qto_mep_items
+        _qto_sw_items         = _qto.qto_sw_items
+        _qto_brickwork_items  = _qto.qto_brickwork_items
+        _qto_plaster_items    = _qto.qto_plaster_items
+        _qto_earthwork_items  = _qto.qto_earthwork_items
+        _qto_flooring_items   = _qto.qto_flooring_items
+        _qto_foundation_items = _qto.qto_foundation_items
+        _qto_extdev_items     = _qto.qto_extdev_items
+        _qto_prelims_items    = _qto.qto_prelims_items
+        _qto_elv_items        = _qto.qto_elv_items
+        _qto_wp_wet_area      = _qto.qto_wp_wet_area
+        _qto_wp_roof_area     = _qto.qto_wp_roof_area
+        _qto_paint_int_wall   = _qto.qto_paint_int_wall
 
-        # ── QTO: Structural takeoff from schedule text ──────────────────
-        _qto_structural_items: list = []
-        _qto_structural_elements: list = []
-        _qto_structural_mode = "none"
-        _qto_structural_warnings: list = []
-        fire_sub("structural_agent", "working", "structural QTO")
-        try:
-            from .qto.structural_takeoff import run_structural_takeoff
-
-            # Collect (page_idx, text, doc_type) for structural/plan pages
-            _structural_page_texts = []
-            if page_index_result and all_page_texts:
-                for pg in page_index_result.pages:
-                    pidx = pg.page_idx
-                    if pidx < len(all_page_texts):
-                        _structural_page_texts.append((
-                            pidx,
-                            all_page_texts[pidx],
-                            pg.doc_type,
-                        ))
-
-            # ── Floor count: text extractor first, metadata fallback ────────
-            _st_floors = 1
-            _st_area_sqm = 0.0
-            _st_floor_source = "default"
-            try:
-                from .qto.floor_count_extractor import extract_floor_count
-                _fc = extract_floor_count(_structural_page_texts)
-                if _fc and _fc.count >= 1:
-                    _st_floors = _fc.count
-                    _st_floor_source = (
-                        f"text:{_fc.source_text!r} (p{_fc.source_page+1}, "
-                        f"conf={_fc.confidence:.0%})"
-                    )
-            except Exception as _fc_err:
-                import logging as _fclog
-                _fclog.getLogger(__name__).debug(f"Floor count extractor: {_fc_err}")
-
-            # Override / supplement from metadata if extractor found nothing
-            if hasattr(extraction_result, 'metadata') and extraction_result.metadata:
-                _meta = extraction_result.metadata or {}
-                if _st_floors == 1 and _st_floor_source == "default":
-                    _meta_floors = int(_meta.get('floors', _meta.get('storeys', 1)) or 1)
-                    if _meta_floors > 1:
-                        _st_floors = _meta_floors
-                        _st_floor_source = "metadata"
-
-            # Built-up area from rooms or metadata
-            if _qto_rooms:
-                _st_area_sqm = sum(
-                    r.area_sqm for r in _qto_rooms if r.area_sqm and r.area_sqm > 0
-                )
-            if not _st_area_sqm:
-                _meta2 = getattr(extraction_result, 'metadata', None) or {}
-                _st_area_sqm = float(_meta2.get('total_area_sqm', 0) or 0)
-
-            if _structural_page_texts:
-                _st_result = run_structural_takeoff(
-                    page_texts=_structural_page_texts,
-                    floors=max(1, _st_floors),
-                    total_area_sqm=_st_area_sqm,
-                    px_per_mm=_detected_scale.px_per_mm if _detected_scale else 0.0,
-                    known_scale_ratio=_detected_scale.ratio if _detected_scale else 0,
-                )
-                _qto_structural_items = _st_result.line_items
-                _qto_structural_elements = _st_result.elements
-                _qto_structural_mode = _st_result.mode
-                _qto_structural_warnings = _st_result.warnings
-
-                if _qto_structural_items:
-                    _spec_items_list = list(_spec_items_list) + _qto_structural_items
-            fire_sub("structural_agent", "done",
-                     f"{len(_qto_structural_elements)} elements, {len(_qto_structural_items)} items",
-                     len(_qto_structural_items))
-        except Exception as _st_err:
-            import logging as _stlog
-            _stlog.getLogger(__name__).warning(
-                f"QTO structural takeoff failed: {_st_err}"
-            )
-            fire_sub("structural_agent", "error", str(_st_err)[:80])
-
-        # ── QTO: Implied items rule engine ──────────────────────────────
-        _qto_implied_items: list = []
-        _qto_implied_rules_triggered: list = []
-        try:
-            from .qto.implied_items import run_implied_rules, build_rule_context
-
-            # Collect any drawing callouts from extraction result
-            _drawing_callouts: list = []
-            if extraction_result and hasattr(extraction_result, 'drawing_callouts'):
-                _drawing_callouts = list(extraction_result.drawing_callouts or [])
-
-            _implied_ctx = build_rule_context(
-                structural_elements=_qto_structural_elements,
-                structural_items=_qto_structural_items,
-                rooms=_qto_rooms,
-                total_area_sqm=_st_area_sqm,
-                floors=max(1, _st_floors),
-                building_type="residential",
-                storey_height_mm=3000,
-                drawing_callouts=_drawing_callouts,
-            )
-            _qto_implied_items, _qto_implied_rules_triggered = run_implied_rules(_implied_ctx)
-            if _qto_implied_items:
-                _spec_items_list = list(_spec_items_list) + _qto_implied_items
-        except Exception as _imp_err:
-            import logging as _implog
-            _implog.getLogger(__name__).warning(
-                f"QTO implied items failed: {_imp_err}"
-            )
-
-        # ── QTO: MEP Takeoff (Sprint 37) ────────────────────────────
-        _qto_mep_elements: list = []
-        _qto_mep_items: list = []
-        _qto_mep_mode = "none"
-        _qto_mep_warnings: list = []
-        _mep_page_texts: list = []
-        fire_sub("mep_agent", "working", "MEP takeoff")
-        try:
-            from .qto.mep_takeoff import run_mep_takeoff
-
-            # Reuse page texts already collected for scale detection, or rebuild
-            _mep_page_texts = _all_page_texts_for_scale if _all_page_texts_for_scale else []
-            if not _mep_page_texts:
-                if page_index_result and all_page_texts:
-                    for pg in page_index_result.pages:
-                        pidx = pg.page_idx
-                        if pidx < len(all_page_texts):
-                            _mep_page_texts.append((
-                                pidx,
-                                all_page_texts[pidx] or "",
-                                getattr(pg, "doc_type", "unknown"),
-                            ))
-                elif all_page_texts:
-                    _mep_page_texts = [
-                        (i, t or "", "unknown") for i, t in enumerate(all_page_texts)
-                    ]
-
-            _mep_result = run_mep_takeoff(
-                page_texts=_mep_page_texts,
-                floors=max(1, _st_floors),
-                total_area_sqm=_st_area_sqm,
-                building_type="residential",
-            )
-            _qto_mep_elements = _mep_result.elements
-            _qto_mep_items    = _mep_result.line_items
-            _qto_mep_mode     = _mep_result.mode
-            _qto_mep_warnings = _mep_result.warnings
-
-            if _qto_mep_items:
-                _spec_items_list = list(_spec_items_list) + _qto_mep_items
-            fire_sub("mep_agent", "done",
-                     f"{len(_qto_mep_elements)} elements, {len(_qto_mep_items)} items",
-                     len(_qto_mep_items))
-
-        except Exception as _mep_err:
-            import logging as _meplog
-            _meplog.getLogger(__name__).warning(
-                f"MEP takeoff failed: {_mep_err}"
-            )
-            fire_sub("mep_agent", "error", str(_mep_err)[:80])
-
-        # ── QTO: Visual Element Detection (Sprint 37) ────────────────
-        _qto_visual_elements: list = []
-        _qto_visual_items: list = []
-        _qto_visual_mode = "none"
-        _qto_visual_warnings: list = []
-        _qto_visual_scale = ""
-        _qto_visual_area = 0.0
-        _primary_pdf = payload.get("primary_pdf_path") if payload else None
-        if not _primary_pdf:
-            _primary_pdf = getattr(result, 'pdf_path', None)
-        if llm_client is not None and _primary_pdf and _mep_page_texts:
-            fire_sub("visual_detector", "working", "visual detection")
-        else:
-            fire_sub("visual_detector", "skipped", "no LLM / no PDF")
-        try:
-            if llm_client is not None and _primary_pdf and _mep_page_texts:
-                from .qto.visual_element_detector import run_visual_detection
-                _vis_result = run_visual_detection(
-                    pdf_path=_primary_pdf,
-                    page_texts=_mep_page_texts,
-                    llm_client=llm_client,
-                )
-                _qto_visual_elements = _vis_result.elements
-                _qto_visual_items    = _vis_result.line_items
-                _qto_visual_mode     = _vis_result.mode
-                _qto_visual_warnings = _vis_result.warnings
-                _qto_visual_scale    = _vis_result.detected_scale
-                _qto_visual_area     = _vis_result.detected_area_sqm
-
-                if _qto_visual_items:
-                    _spec_items_list = list(_spec_items_list) + _qto_visual_items
-                fire_sub("visual_detector", "done",
-                         f"{len(_qto_visual_elements)} elements",
-                         len(_qto_visual_items))
-        except Exception as _vis_err:
-            import logging as _vislog
-            _vislog.getLogger(__name__).warning(
-                f"Visual element detection failed: {_vis_err}"
-            )
-            fire_sub("visual_detector", "error", str(_vis_err)[:80])
-
-        # ── QTO: Visual Measurement (Sprint 37) ──────────────────────
-        _qto_vmeas_rooms: list = []
-        _qto_vmeas_items: list = []
-        _qto_vmeas_mode = "none"
-        _qto_vmeas_warnings: list = []
-        _qto_vmeas_scale = ""
-        _qto_vmeas_area = 0.0
-        _qto_vmeas_room_schedule: list = []
-        if llm_client is not None and _primary_pdf and _mep_page_texts:
-            fire_sub("visual_measure", "working", "visual measurement")
-        else:
-            fire_sub("visual_measure", "skipped", "no LLM / no PDF")
-        try:
-            if llm_client is not None and _primary_pdf and _mep_page_texts:
-                from .qto.visual_measurement import run_visual_measurement
-                _vmeas_result = run_visual_measurement(
-                    pdf_path=_primary_pdf,
-                    page_texts=_mep_page_texts,
-                    llm_client=llm_client,
-                    known_scale_ratio=_detected_scale.ratio if _detected_scale else 0,
-                    known_px_per_mm=_detected_scale.px_per_mm if _detected_scale else 0.0,
-                )
-                _qto_vmeas_rooms         = _vmeas_result.all_rooms
-                _qto_vmeas_items         = _vmeas_result.line_items
-                _qto_vmeas_mode          = _vmeas_result.mode
-                _qto_vmeas_warnings      = _vmeas_result.warnings
-                _qto_vmeas_scale         = _vmeas_result.detected_scale
-                _qto_vmeas_area          = _vmeas_result.total_area_sqm
-                _qto_vmeas_room_schedule = _vmeas_result.room_schedule
-
-                # Feed measured rooms into _qto_rooms (used by finish_takeoff)
-                if _vmeas_result.room_schedule and not _qto_rooms:
-                    _qto_rooms = list(_vmeas_result.room_schedule)
-
-                # Add measurement-derived finish items to spec items
-                if _qto_vmeas_items:
-                    _spec_items_list = list(_spec_items_list) + _qto_vmeas_items
-                fire_sub("visual_measure", "done",
-                         f"{len(_qto_vmeas_rooms)} rooms, {len(_qto_vmeas_items)} items",
-                         len(_qto_vmeas_items))
-        except Exception as _vmeas_err:
-            import logging as _vmeaslog
-            _vmeaslog.getLogger(__name__).warning(
-                f"Visual measurement failed: {_vmeas_err}"
-            )
-            fire_sub("visual_measure", "error", str(_vmeas_err)[:80])
-
-        # ── QTO: Door & Window Takeoff (Sprint 38) ───────────────────
-        _qto_dw_elements: list = []
-        _qto_dw_items: list = []
-        _qto_dw_mode = "none"
-        _qto_dw_warnings: list = []
-        _qto_dw_door_count = 0
-        _qto_dw_window_count = 0
-        fire_sub("dw_agent", "working", "door/window takeoff")
-        try:
-            from .qto.door_window_takeoff import run_dw_takeoff
-            _dw_result = run_dw_takeoff(
-                page_texts=_mep_page_texts,
-                floors=max(1, _st_floors),
-                total_area_sqm=_st_area_sqm,
-            )
-            _qto_dw_elements    = _dw_result.elements
-            _qto_dw_items       = _dw_result.line_items
-            _qto_dw_mode        = _dw_result.mode
-            _qto_dw_warnings    = _dw_result.warnings
-            _qto_dw_door_count  = _dw_result.door_count
-            _qto_dw_window_count= _dw_result.window_count
-            if _qto_dw_items:
-                _spec_items_list = list(_spec_items_list) + _qto_dw_items
-            fire_sub("dw_agent", "done",
-                     f"D:{_qto_dw_door_count} W:{_qto_dw_window_count}",
-                     len(_qto_dw_items))
-        except Exception as _dw_err:
-            import logging as _dwlog
-            _dwlog.getLogger(__name__).warning(f"Door/window takeoff failed: {_dw_err}")
-            fire_sub("dw_agent", "error", str(_dw_err)[:80])
-
-        # ── QTO: Painting Takeoff (Sprint 38) ────────────────────────
-        _qto_paint_items: list = []
-        _qto_paint_mode = "none"
-        _qto_paint_warnings: list = []
-        _qto_paint_int_wall = 0.0
-        _qto_paint_ceiling = 0.0
-        _qto_paint_ext_wall = 0.0
-        fire_sub("painting_agent", "working", "painting takeoff")
-        try:
-            from .qto.painting_takeoff import run_painting_takeoff
-            _paint_result = run_painting_takeoff(
-                rooms=_qto_rooms,
-                floor_area_sqm=_st_area_sqm,
-                floors=max(1, _st_floors),
-                door_count=_qto_dw_door_count,
-                window_count=_qto_dw_window_count,
-            )
-            _qto_paint_items    = _paint_result.line_items
-            _qto_paint_mode     = _paint_result.mode
-            _qto_paint_warnings = _paint_result.warnings
-            _qto_paint_int_wall = _paint_result.total_interior_wall_sqm
-            _qto_paint_ceiling  = _paint_result.total_ceiling_sqm
-            _qto_paint_ext_wall = _paint_result.total_exterior_wall_sqm
-            if _qto_paint_items:
-                _spec_items_list = list(_spec_items_list) + _qto_paint_items
-            fire_sub("painting_agent", "done",
-                     f"{len(_qto_paint_items)} items", len(_qto_paint_items))
-        except Exception as _paint_err:
-            import logging as _paintlog
-            _paintlog.getLogger(__name__).warning(f"Painting takeoff failed: {_paint_err}")
-            fire_sub("painting_agent", "error", str(_paint_err)[:80])
-
-        # ── QTO: Waterproofing Takeoff (Sprint 38) ───────────────────
-        _qto_wp_items: list = []
-        _qto_wp_mode = "none"
-        _qto_wp_warnings: list = []
-        _qto_wp_wet_area = 0.0
-        _qto_wp_roof_area = 0.0
-        fire_sub("waterproof_agent", "working", "waterproofing takeoff")
-        try:
-            from .qto.waterproofing_takeoff import run_waterproofing_takeoff
-            _wp_result = run_waterproofing_takeoff(
-                rooms=_qto_rooms,
-                floor_area_sqm=_st_area_sqm,
-                floors=max(1, _st_floors),
-            )
-            _qto_wp_items    = _wp_result.line_items
-            _qto_wp_mode     = _wp_result.mode
-            _qto_wp_warnings = _wp_result.warnings
-            _qto_wp_wet_area = _wp_result.wet_area_sqm
-            _qto_wp_roof_area= _wp_result.roof_area_sqm
-            if _qto_wp_items:
-                _spec_items_list = list(_spec_items_list) + _qto_wp_items
-            fire_sub("waterproof_agent", "done",
-                     f"{len(_qto_wp_items)} items", len(_qto_wp_items))
-        except Exception as _wp_err:
-            import logging as _wplog
-            _wplog.getLogger(__name__).warning(f"Waterproofing takeoff failed: {_wp_err}")
-            fire_sub("waterproof_agent", "error", str(_wp_err)[:80])
-
-        # ── QTO: Site Work Takeoff (Sprint 38) ───────────────────────
-        _qto_sw_items: list = []
-        _qto_sw_mode = "none"
-        _qto_sw_warnings: list = []
-        fire_sub("sitework_agent", "working", "sitework takeoff")
-        try:
-            from .qto.sitework_takeoff import run_sitework_takeoff
-            _sw_result = run_sitework_takeoff(
-                plot_area_sqm=0.0,         # not yet extracted; fallback estimates it
-                built_area_sqm=_st_area_sqm / max(1, _st_floors),
-                total_floor_area_sqm=_st_area_sqm,
-                floors=max(1, _st_floors),
-            )
-            _qto_sw_items    = _sw_result.line_items
-            _qto_sw_mode     = _sw_result.mode
-            _qto_sw_warnings = _sw_result.warnings
-            if _qto_sw_items:
-                _spec_items_list = list(_spec_items_list) + _qto_sw_items
-            fire_sub("sitework_agent", "done",
-                     f"{len(_qto_sw_items)} items", len(_qto_sw_items))
-        except Exception as _sw_err:
-            import logging as _swlog
-            _swlog.getLogger(__name__).warning(f"Sitework takeoff failed: {_sw_err}")
-            fire_sub("sitework_agent", "error", str(_sw_err)[:80])
-
-        # ── Rate Engine: Apply rates to ALL spec items (Sprint 38) ───
-        _qto_rated_items: list = []
-        _qto_trade_summary: dict = {}
-        _qto_grand_total_inr: float = 0.0
-        fire_sub("rate_engine", "working", "applying rates")
-        try:
-            from .qto.rate_engine import apply_rates, compute_trade_summary
-            _qto_rated_items = apply_rates(list(_spec_items_list), region="tier1")
-            _qto_trade_summary = compute_trade_summary(_qto_rated_items)
-            _qto_grand_total_inr = sum(
-                t.get("total_amount", 0) for t in _qto_trade_summary.values()
-            )
-            # Store rated items back as spec_items_list so export sees rates
-            _spec_items_list = _qto_rated_items
-            fire_sub("rate_engine", "done",
-                     f"₹{_qto_grand_total_inr/1e7:.1f}Cr total", len(_qto_rated_items))
-        except Exception as _rate_err:
-            import logging as _ratelog
-            _ratelog.getLogger(__name__).warning(f"Rate engine failed: {_rate_err}")
-            fire_sub("rate_engine", "error", str(_rate_err)[:80])
-
-        # ── Sprint 41: Rebuild unified line_items after all QTO modules ──
-        # The initial build_line_items() call (Sprint 21D above) ran with only
-        # extraction_result.spec_items.  All QTO modules (MEP, visual, D&W,
-        # painting, waterproofing, sitework, rate engine) have now appended to
-        # _spec_items_list.  Rebuild so payload["line_items"] is complete.
-        _dedup_stats: dict = {}
-        try:
-            from .item_normalizer import build_line_items as _build_line_items_full
-            _full_unified = _build_line_items_full(
-                boq_items      = extraction_result.boq_items,
-                spec_items     = list(_spec_items_list),  # full list with QTO items + rates
-                schedule_stubs = _stub_items_list if _recon else [],
-                dedup          = True,
-            )
-            from .item_normalizer import get_last_dedup_stats as _get_dedup_stats
-            _dedup_stats = _get_dedup_stats()
-            _line_items_payload = [li.to_dict() for li in _full_unified]
-        except Exception as _rebuild_err:
-            import logging as _rebuildlog
-            _rebuildlog.getLogger(__name__).warning(
-                "Sprint 41: line_items rebuild failed (non-critical): %s", _rebuild_err
-            )
-
-        # ── Excel Export (Sprint 38) ─────────────────────────────────
-        _qto_excel_bytes: bytes = b""
-        fire_sub("excel_exporter", "working", "exporting Excel BOQ")
-        try:
-            from .export.excel_exporter import export_to_excel
-            _excel_meta = {
-                "total_area_sqm": _st_area_sqm,
-                "floors": _st_floors,
-            }
-            _proj_name = (
-                payload.get("project_name") if payload else None
-            ) or "Project"
-            _excel_result = export_to_excel(
-                list(_spec_items_list),
-                project_name=_proj_name,
-                project_meta=_excel_meta,
-            )
-            _qto_excel_bytes = _excel_result or b""
-            fire_sub("excel_exporter", "done",
-                     f"{len(_spec_items_list)} items")
-        except Exception as _excel_err:
-            import logging as _excellog
-            _excellog.getLogger(__name__).warning(f"Excel export failed: {_excel_err}")
-            fire_sub("excel_exporter", "error", str(_excel_err)[:80])
-
+        # ── Payload workspace: assign qto_summary and Excel artefacts ────
         payload = getattr(result, 'payload', {})
-        payload["qto_summary"] = {
-            "rooms_detected": len(_qto_rooms),
-            "finish_items_generated": len(_qto_finish_items),
-            "structural_elements_detected": len(_qto_structural_elements),
-            "structural_items_generated": len(_qto_structural_items),
-            "structural_mode": _qto_structural_mode,
-            "structural_warnings": _qto_structural_warnings,
-            "implied_items_generated": len(_qto_implied_items),
-            "implied_rules_triggered": _qto_implied_rules_triggered,
-            "mep_elements_detected": len(_qto_mep_elements),
-            "mep_items_generated": len(_qto_mep_items),
-            "mep_mode": _qto_mep_mode,
-            "mep_warnings": _qto_mep_warnings,
-            "visual_elements_detected": len(_qto_visual_elements),
-            "visual_items_generated": len(_qto_visual_items),
-            "visual_mode": _qto_visual_mode,
-            "visual_warnings": _qto_visual_warnings,
-            "visual_scale": _qto_visual_scale,
-            "visual_area_sqm": _qto_visual_area,
-            # Visual measurement
-            "vmeas_rooms_measured": len(_qto_vmeas_rooms),
-            "vmeas_items_generated": len(_qto_vmeas_items),
-            "vmeas_mode": _qto_vmeas_mode,
-            "vmeas_warnings": _qto_vmeas_warnings,
-            "vmeas_scale": _qto_vmeas_scale,
-            "vmeas_area_sqm": _qto_vmeas_area,
-            "vmeas_room_schedule": [
-                {
-                    "name": getattr(r, "name", ""),
-                    "raw_name": getattr(r, "raw_name", ""),
-                    "area_sqm": getattr(r, "area_sqm", 0),
-                    "dim_l": getattr(r, "dim_l", None),
-                    "dim_w": getattr(r, "dim_w", None),
-                    "source_page": getattr(r, "source_page", 0),
-                    "confidence": getattr(r, "confidence", 0),
-                }
-                for r in _qto_vmeas_room_schedule
-            ],
-            # Sprint 38 — new trades
-            "dw_elements_detected": len(_qto_dw_elements),
-            "dw_items_generated": len(_qto_dw_items),
-            "dw_mode": _qto_dw_mode,
-            "dw_warnings": _qto_dw_warnings,
-            "dw_door_count": _qto_dw_door_count,
-            "dw_window_count": _qto_dw_window_count,
-            "paint_items_generated": len(_qto_paint_items),
-            "paint_mode": _qto_paint_mode,
-            "paint_warnings": _qto_paint_warnings,
-            "paint_int_wall_sqm": _qto_paint_int_wall,
-            "paint_ceiling_sqm": _qto_paint_ceiling,
-            "paint_ext_wall_sqm": _qto_paint_ext_wall,
-            "wp_items_generated": len(_qto_wp_items),
-            "wp_mode": _qto_wp_mode,
-            "wp_warnings": _qto_wp_warnings,
-            "wp_wet_area_sqm": _qto_wp_wet_area,
-            "wp_roof_area_sqm": _qto_wp_roof_area,
-            "sw_items_generated": len(_qto_sw_items),
-            "sw_mode": _qto_sw_mode,
-            "sw_warnings": _qto_sw_warnings,
-            # Sprint 42 — detected drawing scale
-            "detected_scale": (
-                {
-                    "ratio": _detected_scale.ratio,
-                    "is_nts": _detected_scale.is_nts,
-                    "px_per_mm": round(_detected_scale.px_per_mm, 6),
-                    "confidence": round(_detected_scale.confidence, 3),
-                    "source_page": _detected_scale.source_page,
-                    "source_text": _detected_scale.source_text,
-                }
-                if _detected_scale is not None else None
-            ),
-            # Cost estimate
-            "grand_total_inr": _qto_grand_total_inr,
-            "trade_summary": {
-                trade: {
-                    "item_count": info.get("item_count", 0),
-                    "total_amount": info.get("total_amount", 0),
-                }
-                for trade, info in _qto_trade_summary.items()
-            },
-            "total_spec_items": len(_spec_items_list),
-            # Excel bytes stored separately to avoid bloating JSON
-            "_excel_available": len(_qto_excel_bytes) > 0,
-        }
-        # Store Excel bytes separately on result for download
-        if _qto_excel_bytes:
-            payload["_excel_bytes"] = _qto_excel_bytes
-        # Store rated items list for Excel download
-        if _qto_rated_items:
-            payload["spec_items"] = _qto_rated_items
+        payload["qto_summary"] = _qto.qto_summary_dict
+        if _qto.qto_excel_bytes:
+            payload["_excel_bytes"] = _qto.qto_excel_bytes
+        if _qto.qto_rated_items:
+            payload["spec_items"] = _qto.qto_rated_items
+
+        # ── Bid Margin Analysis: tender value vs contractor cost ────
+        try:
+            from src.analysis.bid_margin import (
+                compute_bid_margin as _compute_bid_margin,
+                extract_nit_value as _extract_nit_value,
+            )
+            _boq_items_for_margin = (
+                extraction_result.boq_items
+                if extraction_result is not None
+                else []
+            )
+            # Try to extract the NIT stated estimated cost (used when BOQ has no rates)
+            _nit_value_inr = _extract_nit_value(payload.get("commercial_terms") or [])
+            _bid_margin = _compute_bid_margin(
+                _qto_rated_items,
+                boq_items=_boq_items_for_margin,
+                nit_value_inr=_nit_value_inr,
+            )
+            # If contractor cost is zero (rated items had no amount_inr), fall back to
+            # qto_summary grand_total which is always computed from market rates × qty
+            _qto_grand = payload.get("qto_summary", {}).get("grand_total_inr", 0) or 0
+            if _bid_margin.contractor_cost_inr == 0 and _qto_grand > 0:
+                import dataclasses as _dc
+                _bid_margin = _dc.replace(
+                    _bid_margin,
+                    contractor_cost_inr=_qto_grand,
+                    margin_inr=_bid_margin.tender_value_inr - _qto_grand,
+                    margin_pct=(
+                        (_bid_margin.tender_value_inr - _qto_grand)
+                        / _bid_margin.tender_value_inr * 100.0
+                        if _bid_margin.tender_value_inr > 0 else 0.0
+                    ),
+                )
+            payload["bid_margin"] = {
+                "tender_value_inr": _bid_margin.tender_value_inr,
+                "contractor_cost_inr": _bid_margin.contractor_cost_inr,
+                "margin_inr": _bid_margin.margin_inr,
+                "margin_pct": round(_bid_margin.margin_pct, 1),
+                "coverage_pct": round(_bid_margin.coverage_pct, 1),
+                "reliable": _bid_margin.reliable,
+                "note": _bid_margin.note,
+                "nit_value_inr": _nit_value_inr or 0,
+                "scope_coverage_pct": round(_bid_margin.scope_coverage_pct, 1),
+                "by_trade": [
+                    {
+                        "trade": t.trade,
+                        "tender_value_inr": t.tender_value_inr,
+                        "contractor_cost_inr": t.contractor_cost_inr,
+                        "margin_inr": t.margin_inr,
+                        "margin_pct": round(t.margin_pct, 1),
+                        "coverage_pct": round(t.coverage_pct, 1),
+                    }
+                    for t in _bid_margin.by_trade
+                ],
+            }
+        except Exception as _bm_exc:
+            import logging as _logging
+            _logging.getLogger(__name__).debug("bid_margin failed: %s", _bm_exc)
 
         # ── Addendum detection + delta (Sprint 6) ──────────────────
         from .addendum_adapter import extract_addenda
@@ -1835,6 +926,46 @@ def run_analysis_pipeline(
         plan_graph = build_plan_graph(project_id, all_page_texts)
         update_progress("graph", f"Identified {plan_graph.total_pages} sheets", 0.7)
 
+        # BUG-12 FIX: plan_graph._extract_sheet_no() and _detect_scale() run on ALL
+        # pages regardless of doc_type.  On NIT/BOQ documents:
+        #   - Spec codes (M-25, E-350, IS-875, CO-2) match the sheet_no pattern on
+        #     BOQ/conditions pages and inflate pages_with_sheet_no.
+        #   - Standard citations like "ISO 8501-1:1988" produce "1:1988" which matched
+        #     the old scale pattern (fixed in plan_graph.py BUG-12b) — but other
+        #     contextual false positives may still exist on text pages.
+        # Correction: recount both metrics using only non-text-doc-type pages so that
+        # the is_drawing_set gate is not triggered by material codes in BOQ body text.
+        #
+        # BUG-13 FIX: Large composite NITs (473+ pages, e.g. IIM Rohtak, IITK Visitor
+        # Hostel) contain hundreds of pages classified as "unknown" — pages whose text
+        # didn't match any specific doc_type pattern (generic conditions, foreword, etc).
+        # These "unknown" pages still carry spec codes (M-25, IS-875, ratio 1:4) that
+        # match sheet_no/scale patterns, inflating counts even after BUG-12 fix.
+        # Resolution: treat "unknown" the same as text pages — exclude from drawing
+        # detection counts.  Genuine drawing pages are always classified as plan/section/
+        # elevation/detail/rcp/site_plan; if OCR returned zero text the page is
+        # unclassifiable and cannot be evidence of a drawing set.
+        _TEXT_PLAN_DOC_TYPES = frozenset(
+            {"boq", "conditions", "addendum", "spec", "notes", "legend", "unknown"}
+        )
+        if page_index_result is not None:
+            _pi_type_by_idx = {
+                ip.page_idx: ip.doc_type
+                for ip in getattr(page_index_result, "pages", [])
+            }
+            _sheet_count = 0
+            _scale_count = 0
+            for _sheet in getattr(plan_graph, "sheets", []):
+                _pg_type = _pi_type_by_idx.get(_sheet.page_index, "unknown")
+                if _pg_type in _TEXT_PLAN_DOC_TYPES:
+                    continue  # text page — don't count its false sheet_no/scale hits
+                if _sheet.sheet_no is not None:
+                    _sheet_count += 1
+                if _sheet.detected.get("has_scale"):
+                    _scale_count += 1
+            plan_graph.pages_with_sheet_no = _sheet_count
+            plan_graph.pages_with_scale = _scale_count
+
         # Stamp package classification onto graph
         if _pkg_classification is not None:
             plan_graph.package_type = _pkg_classification.package_type.value
@@ -1945,13 +1076,9 @@ def run_analysis_pipeline(
                         _existing_questions.add(_kr.get("question", "")[:80])
                         _added += 1
                 if _added:
-                    import logging as _log
-                    _log.getLogger(__name__).info(
-                        "Knowledge base: +%d RFIs (total: %d)", _added, len(rfi_list)
-                    )
+                    logger.info("Knowledge base: +%d RFIs (total: %d)", _added, len(rfi_list))
         except Exception as _kb_err:
-            import logging as _log
-            _log.getLogger(__name__).debug("KB RFI extension skipped: %s", _kb_err)
+            logger.debug("KB RFI extension skipped: %s", _kb_err)
 
         update_progress("rfi", f"Generated {len(rfi_list)} RFIs", 1.0)
         fire_sub("rfi_generator", "done", f"{len(rfi_list)} RFIs", len(rfi_list))
@@ -2057,6 +1184,7 @@ def run_analysis_pipeline(
             "disciplines_detected": getattr(plan_graph, 'disciplines_found', []),
             "sheet_types_count": len(getattr(plan_graph, 'sheet_types_found', {})),
             "scale_found_pages": getattr(plan_graph, 'pages_with_scale', 0),
+            "pages_with_sheet_no": getattr(plan_graph, 'pages_with_sheet_no', 0),
             "schedules_detected_count": sum([
                 1 if getattr(plan_graph, 'has_door_schedule', False) else 0,
                 1 if getattr(plan_graph, 'has_window_schedule', False) else 0,
@@ -2085,14 +1213,37 @@ def run_analysis_pipeline(
         windows = drawing_overview.get("window_tags_found", 0)
         rooms = drawing_overview.get("room_names_found", 0)
         scale_pages = drawing_overview.get("scale_found_pages", 0)
+        pages_with_sheet_no = drawing_overview.get("pages_with_sheet_no", 0)
         total_pg = drawing_overview.get("pages_total", 0)
 
-        drawing_signals = len(disciplines) + schedules + doors + windows + rooms + scale_pages
-        if drawing_signals == 0:
+        # BUG-4 FIX (v2): use two complementary hard drawing signals.
+        #
+        # scale_pages  — pages with a drawing scale notation (1:100, 1"=10', NTS …).
+        #                NOTE: the generic "1:N" scale pattern was narrowed to denom ≥ 10
+        #                to avoid matching cement mix ratios (1:3, 1:6) in spec text.
+        #
+        # sheet_no_ratio — fraction of pages that carry an engineering sheet number
+        #                (A-101, S-2.01 …).  Drawing sets have ≥ 40 % coverage;
+        #                spec documents referencing drawings have < 10 % coverage.
+        #
+        # Soft signals (door/window tags, room names, schedule mentions) appear in
+        # specification documents too and are not used as the gate criterion.
+        sheet_no_ratio = pages_with_sheet_no / max(total_pg, 1)
+        is_drawing_set_flag = (scale_pages >= 1) or (sheet_no_ratio >= 0.25)
+
+        # Legacy composite kept for diagnostics / downstream code that reads it
+        hard_signals = scale_pages + len(disciplines)
+        soft_signals = schedules + doors + windows + rooms
+        drawing_signals = hard_signals + soft_signals
+
+        if not is_drawing_set_flag:
             is_drawing_set = False
             no_drawing_reason = (
-                f"No construction drawing indicators found in {total_pg} page(s): "
-                "no disciplines, schedules, door/window tags, room names, or scale notations detected."
+                f"No confirmed construction drawing indicators in {total_pg} page(s): "
+                f"scale notation found on {scale_pages} page(s) "
+                f"(need ≥ 1) and only {pages_with_sheet_no}/{total_pg} pages "
+                f"({sheet_no_ratio:.0%}) carry a sheet number (need ≥ 25 %).  "
+                "Document appears to be a specification, report, or schedule only."
             )
 
         drawing_overview["is_drawing_set"] = is_drawing_set
@@ -2134,7 +1285,10 @@ def run_analysis_pipeline(
                     "created_at": datetime.now().isoformat(),
                 }
             ]
-            rfis_payload = []
+            # Keep any RFIs already assembled (e.g. spec/BOQ-only tenders still
+            # produce valid checklist RFIs); only reset if genuinely none exist.
+            if not rfis_payload:
+                rfis_payload = []
             coverage_payload = []
         else:
             final_decision = score_result.status
@@ -2223,6 +1377,16 @@ def run_analysis_pipeline(
                 schedules=extraction_result.schedules if extraction_result else [],
                 boq_items=extraction_result.boq_items if extraction_result else [],
                 callouts=extraction_result.callouts if extraction_result else [],
+                qto_context={
+                    "total_area_sqm": _st_area_sqm,
+                    "building_type": (
+                        (_spec_params_payload.get("building_types") or ["default"])[0]
+                        if _spec_params_payload else "default"
+                    ),
+                    "wp_wet_area_sqm": _qto_wp_wet_area,
+                    "wp_roof_area_sqm": _qto_wp_roof_area,
+                    "paint_int_wall_sqm": _qto_paint_int_wall,
+                },
             )
         except Exception as e:
             logger.warning("Quantity reconciliation failed (non-critical): %s", e, exc_info=True)
@@ -2472,6 +1636,23 @@ def run_analysis_pipeline(
             "requirements_by_trade": _req_by_trade,
             # Sprint 20A: Structural takeoff (optional)
             "structural_takeoff": _structural_takeoff,
+            # Sprint 38 + Q1/Q2: QTO module results (used by boq_from_drawings autofill)
+            "painting_result":      {"line_items": _qto_paint_items}      if _qto_paint_items      else None,
+            "waterproofing_result": {"line_items": _qto_wp_items}         if _qto_wp_items         else None,
+            "dw_takeoff":           {"line_items": _qto_dw_items}         if _qto_dw_items         else None,
+            "mep_qto":              {"line_items": _qto_mep_items}        if _qto_mep_items        else None,
+            "sitework_result":      {"line_items": _qto_sw_items}         if _qto_sw_items         else None,
+            "brickwork_result":     {"line_items": _qto_brickwork_items}  if _qto_brickwork_items  else None,
+            "plaster_result":       {"line_items": _qto_plaster_items}    if _qto_plaster_items    else None,
+            "earthwork_result":     {"line_items": _qto_earthwork_items}  if _qto_earthwork_items  else None,
+            "flooring_result":      {"line_items": _qto_flooring_items}   if _qto_flooring_items   else None,
+            "foundation_result":    {"line_items": _qto_foundation_items} if _qto_foundation_items else None,
+            "extdev_result":        {"line_items": _qto_extdev_items}     if _qto_extdev_items     else None,
+            "prelims_result":       {"line_items": _qto_prelims_items}    if _qto_prelims_items    else None,
+            "elv_result":           {"line_items": _qto_elv_items}        if _qto_elv_items        else None,
+            "items_needs_qty":      _spec_needs_qty                       if _spec_needs_qty       else None,
+            # Spec-driven BOQ generation params (populated for EPC tenders with no BOQ tables)
+            "spec_params": _spec_params_payload or None,
             # Sprint 20C: Estimating playbook (attached from session if available)
             "estimating_playbook": None,
             # Sprint 21C: BOQ source tracking (pdf or excel)
@@ -2481,6 +1662,14 @@ def run_analysis_pipeline(
             # QTO: Room-finish takeoff summary
             "qto_summary": payload.get("qto_summary", {}),
         }
+
+        # ── Table extraction coverage summary ───────────────────────
+        if _table_tracker and _table_tracker.attempt_count > 0:
+            result.payload["table_extraction_coverage"] = _table_tracker.summary().to_dict()
+
+        # ── Low-confidence flags accumulated during run ───────────
+        if _low_confidence_flags:
+            result.payload["_low_confidence_flags"] = _low_confidence_flags
 
         # ── Accuracy report ─────────────────────────────────────────
         try:
@@ -2496,6 +1685,49 @@ def run_analysis_pipeline(
         except Exception:
             _accuracy_report = {}
         result.payload["accuracy_report"] = _accuracy_report
+
+        # Tier-1: Compute per-trade confidence scores
+        try:
+            from src.analysis.trade_confidence import compute_trade_confidence as _ctc
+            _trade_conf = [s.to_dict() for s in _ctc(result.payload)]
+            result.payload["trade_confidence"] = _trade_conf
+        except Exception as _tc_exc:
+            logger.warning("trade_confidence computation skipped: %s", _tc_exc)
+            result.payload["trade_confidence"] = []
+
+        # Tier-1: BOQ auto-fill from drawings (when no BOQ in tender)
+        try:
+            from src.analysis.boq_from_drawings import can_autofill as _can_af, autofill_boq as _af
+            if _can_af(result.payload):
+                _af_result = _af(result.payload)
+                result.payload["boq_autofill"] = _af_result.to_dict()
+                logger.info(
+                    "boq_from_drawings: auto-filled %d items", len(_af_result.items)
+                )
+        except Exception as _af_exc:
+            logger.warning("boq_from_drawings skipped: %s", _af_exc)
+
+        # IS code compliance check
+        try:
+            from src.analysis.is_code_compliance import check_is_compliance, compliance_summary as _cs
+            _is_violations = check_is_compliance(result.payload)
+            result.payload["is_compliance"] = _cs(_is_violations)
+            if _is_violations:
+                logger.info("IS compliance: %d violations found", len(_is_violations))
+        except Exception as _isc_err:
+            logger.debug("IS compliance check skipped: %s", _isc_err)
+
+        # Scope conflict detection
+        try:
+            from src.analysis.scope_conflict_detector import detect_scope_conflicts, conflict_summary as _cfs
+            _scope_conflicts = detect_scope_conflicts(result.payload)
+            result.payload["scope_conflicts"] = _cfs(_scope_conflicts)
+            if _scope_conflicts:
+                logger.info("Scope conflicts: %d found (%d high severity)",
+                            len(_scope_conflicts),
+                            sum(1 for c in _scope_conflicts if c.severity == "high"))
+        except Exception as _scd_err:
+            logger.debug("Scope conflict detection skipped: %s", _scd_err)
 
         # Sprint 13: Add approval snapshots to payload for run compare
         result.payload["rfi_status_snapshot"] = {
@@ -2600,6 +1832,38 @@ def run_analysis_pipeline(
             )
             _intel_n_chunks = _intel_store.index_payload(result.payload, _intel_embedder)
 
+            # Ensure domain KB is up to date (no-op if already built)
+            try:
+                from src.embeddings.kb_interface import get_kb as _get_kb
+                _domain_kb = _get_kb()
+                _domain_kb.build_if_stale(embedder=_intel_embedder)
+            except Exception as _dkb_err:
+                logger.debug("DomainKB build_if_stale skipped: %s", _dkb_err)
+                _domain_kb = None
+
+            # Build BM25 index alongside ChromaDB
+            _bm25_index = None
+            try:
+                from src.embeddings.bm25_index import BM25Index
+                _bm25_index = BM25Index()
+                # Build from OCR text chunks that were indexed into ChromaDB
+                _bm25_texts = []
+                _ocr_cache = result.payload.get("ocr_text_cache") or {}
+                for _page_key, _page_text in _ocr_cache.items():
+                    if isinstance(_page_text, str) and _page_text.strip():
+                        _bm25_texts.append(_page_text)
+                # Also add BOQ items
+                for _item in (result.payload.get("line_items") or []):
+                    _desc = _item.get("description", "")
+                    if _desc:
+                        _bm25_texts.append(_desc)
+                if _bm25_texts:
+                    _bm25_index.build(_bm25_texts)
+                    logger.debug("BM25 index built: %d documents", _bm25_index.doc_count)
+            except Exception as _bm25_err:
+                logger.debug("BM25 index build failed (non-critical): %s", _bm25_err)
+                _bm25_index = None
+
             _intel_gaps = _analyze_gaps(
                 result.payload, _intel_store, _intel_embedder, llm_client,
             )
@@ -2652,6 +1916,35 @@ def run_analysis_pipeline(
             fire_sub("cost_impact",     "error", str(_intel_exc)[:80])
             fire_sub("bid_synthesizer", "error", str(_intel_exc)[:80])
 
+        # ── Tier 3: Tender benchmarks + award probability ─────────────────
+        try:
+            from src.analysis.tender_benchmarks import (
+                record_tender as _record_tender,
+                compare_tender_to_market as _compare_to_market,
+                detect_building_type as _detect_bt,
+            )
+            _bt = _detect_bt(result.payload)
+            _region = getattr(kwargs if "kwargs" in dir() else object(), "region", None) or "tier1"
+            _bm = _compare_to_market(result.payload, _bt, _region)
+            result.payload["benchmark_comparison"] = _bm
+            if project_id and tenant_id:
+                _record_tender(project_id, tenant_id or "local", result.payload, _bt, _region)
+        except Exception as _bm_exc:
+            logger.debug("tender_benchmarks skipped: %s", _bm_exc)
+
+        try:
+            from src.reasoning.award_predictor import AwardPredictor as _AwardPredictor
+            _ap = _AwardPredictor()
+            _ap_features = _ap.extract_features(result.payload)
+            _ap_pred = _ap.predict(_ap_features)
+            result.payload["award_probability"] = _ap_pred.probability_pct
+            result.payload["award_prediction"] = _ap_pred.to_dict()
+            # Also set on bid_synthesis if present
+            if result.payload.get("bid_synthesis"):
+                result.payload["bid_synthesis"]["award_probability"] = _ap_pred.probability_pct
+        except Exception as _ap_exc:
+            logger.debug("award_predictor skipped: %s", _ap_exc)
+
         # Sprint 11: Save current payload snapshot for next run compare
         try:
             _compare_snapshot = {
@@ -2698,30 +1991,62 @@ def run_analysis_pipeline(
         except Exception as e:
             logger.warning("Project run save failed (non-critical): %s", e)
 
-        # Debug: Print paths for verification
-        print(f"\n{'='*60}")
-        print(f"[DEBUG] Analysis complete for project: {project_id}")
-        print(f"[DEBUG] Output directory: {output_dir}")
-        print(f"[DEBUG] Files generated:")
-        for f in result.files_generated:
-            fpath = Path(f)
-            exists = fpath.exists()
-            size = fpath.stat().st_size if exists else 0
-            print(f"  - {fpath.name}: {'OK' if exists else 'MISSING'} ({size} bytes)")
-        print(f"\n[DEBUG] Stage timings:")
-        for stage, duration in stage_times.items():
-            print(f"  - {stage}: {duration:.2f}s")
-        print(f"\n[DEBUG] Payload summary:")
-        print(f"  - Blockers: {len(blockers_payload)}")
-        print(f"  - RFIs: {len(rfis_payload)}")
-        print(f"  - Trade coverage entries: {len(coverage_payload)}")
-        print(f"  - Readiness score: {score_result.total_score}/100")
+        # Validate payload before returning
+        try:
+            from src.analysis.payload_validator import validate_payload as _validate_payload
+            _pv_warnings = _validate_payload(result.payload)
+            _pv_errors = [w for w in _pv_warnings if w.severity == "error"]
+            if _pv_errors:
+                logger.warning("Payload validation: %d error(s) — %s",
+                               len(_pv_errors),
+                               "; ".join(w.message for w in _pv_errors[:3]))
+            result.payload["_validation_warnings"] = [
+                {"field": w.field, "severity": w.severity, "message": w.message}
+                for w in _pv_warnings
+            ]
+        except Exception as _val_err:
+            logger.debug("Payload validation skipped: %s", _val_err)
 
         # Success
         result.success = True
         result.duration_sec = (datetime.now() - start_time).total_seconds()
-        print(f"\n[DEBUG] Total duration: {result.duration_sec:.2f} seconds")
-        print(f"{'='*60}\n")
+        logger.info("Analysis complete: %s (%.2fs)", project_id, result.duration_sec)
+
+        # Persist to Supabase when tenant_id is provided
+        if tenant_id and result.payload:
+            try:
+                from src.auth.project_store import save_project
+                from src.auth.supabase_client import is_configured
+                if is_configured():
+                    payload = result.payload
+                    summary = {
+                        "line_items_count": len(payload.get("line_items", [])),
+                        "rfi_count": len(payload.get("rfis", [])),
+                        "boq_items_count": len(payload.get("boq_items", [])),
+                        "qa_score": (payload.get("qa_score") or {}).get("total_score"),
+                        "duration_sec": result.duration_sec,
+                    }
+                    save_project(
+                        org_id=tenant_id,
+                        user_id=tenant_id,
+                        filename=str(input_files[0].name) if input_files else project_id,
+                        summary=summary,
+                        payload=payload,
+                    )
+                    logger.info("Pipeline result persisted to Supabase for tenant %s", tenant_id)
+            except Exception as _sb_exc:
+                logger.warning("Supabase persistence skipped: %s", _sb_exc)
+
+        # BOQ versioning — save snapshot for revision tracking
+        try:
+            from src.analysis.boq_versioning import BOQVersionStore as _BOQVersionStore
+            _boq_vs = _BOQVersionStore()
+            _snapshot_project_id = tenant_id or project_id or "local"
+            _snap_run_id = _boq_vs.save_snapshot(_snapshot_project_id, result.payload)
+            result.payload["boq_snapshot_run_id"] = _snap_run_id
+            logger.info("BOQ snapshot saved: run_id=%s", _snap_run_id)
+        except Exception as _vs_err:
+            logger.debug("BOQ versioning skipped: %s", _vs_err)
 
     except Exception as e:
         result.error_message = str(e)
@@ -2738,52 +2063,25 @@ def run_analysis_pipeline(
     return result
 
 
-def save_uploaded_files(
-    uploaded_files: List[Any],  # Streamlit UploadedFile objects
-    project_id: str,
-    uploads_dir: Path,
-) -> List[Path]:
-    """
-    Save uploaded files to disk.
-
-    Args:
-        uploaded_files: List of Streamlit UploadedFile objects
-        project_id: Project identifier
-        uploads_dir: Base uploads directory
-
-    Returns:
-        List of saved file paths
-    """
-    project_uploads = uploads_dir / project_id
-    project_uploads.mkdir(parents=True, exist_ok=True)
-
-    saved_paths = []
-    for uploaded_file in uploaded_files:
-        file_path = project_uploads / uploaded_file.name
-        with open(file_path, 'wb') as f:
-            f.write(uploaded_file.getbuffer())
-        saved_paths.append(file_path)
-
-    return saved_paths
-
-
-def generate_project_id() -> str:
-    """Generate a unique project ID."""
-    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    short_uuid = str(uuid.uuid4())[:8]
-    return f"project_{timestamp}_{short_uuid}"
-
-
 # =============================================================================
 # TEST
 # =============================================================================
 
 if __name__ == "__main__":
-    # Test with sample PDF
+    # Ensure project root on sys.path so relative imports resolve when run as script
     import sys
+    _proj_root = str(Path(__file__).resolve().parent.parent.parent)
+    if _proj_root not in sys.path:
+        sys.path.insert(0, _proj_root)
+    # Re-run as module so package context exists (fixes relative import errors)
+    if not __package__:
+        import runpy
+        runpy.run_module("src.analysis.pipeline", run_name="__main__", alter_sys=True)
+        raise SystemExit(0)
 
+    # Test with sample PDF
     if len(sys.argv) < 2:
-        print("Usage: python analysis_runner.py <pdf_path>")
+        print("Usage: python src/analysis/pipeline.py <pdf_path>")
         sys.exit(1)
 
     pdf_path = Path(sys.argv[1])

@@ -111,6 +111,13 @@ DOC_TYPE_RULES: List[Tuple[str, List[str]]] = [
         r'item\s+no.*description.*unit.*qty',
         r'sr\.?\s*no.*description.*unit.*quantity',
         r'rate\s+analysis',
+        # BUG-10 FIX: Match BOQ continuation pages that only have the column header row.
+        # Indian CPWD/PWD BOQs use "SLNo / Sl. No." or "S.No." as the first column.
+        # These pages don't repeat "Schedule of Quantities" heading so were missed.
+        # NOTE: column headings are newline-separated in PDF text extraction, so we
+        # must use [\s\S]{0,N} instead of .* to cross line boundaries.
+        r'(?:slno|sl\.?\s*no\.?)[\s\S]{0,80}description[\s\S]{0,80}(?:qty|quantity)',
+        r'(?:s\.?\s*no\.?|sr\.?\s*no\.?)[\s\S]{0,80}description[\s\S]{0,80}(?:unit|uom)[\s\S]{0,80}rate',
     ]),
     # 2. Contract conditions
     ("conditions", [
@@ -120,6 +127,25 @@ DOC_TYPE_RULES: List[Tuple[str, List[str]]] = [
         r'special\s+conditions',
         r'conditions\s+of\s+contract',
         r'terms\s+and\s+conditions',
+        # Sprint 22: India GCC/SCC patterns
+        r'\bscc\b',
+        r'special\s+conditions\s+of\s+contract',
+        r'additional\s+conditions',
+        r'supplementary\s+conditions',
+        r'instructions?\s+to\s+(?:bidders?|tenderers?)',
+        r'invitation\s+(?:to|for)\s+(?:bid|tender)',
+        # BUG-9 FIX: Added \b word boundary around NIT so it doesn't match
+        # "uNIT", "graNITe", "beNITonite" etc. that appear in BOQ descriptions.
+        r'(?:notice\s+inviting\s+tender|\bNIT\b)',
+        r'(?:form\s+of\s+tender|form\s+of\s+bid)',
+        r'(?:eligibility\s+criteria|qualification\s+criteria)',
+        r'(?:liquidated\s+damages|penalty\s+clause)',
+        r'(?:arbitration\s+clause|dispute\s+resolution)',
+        # Sprint 24: OCR-tolerant patterns for scanned India tenders
+        # OCR garbles "Conditions" → "Coneltions", "Coneitions", "Consltions"
+        # and may insert punctuation: "Conditions of,Contract"
+        r'con\w{1,5}tions?\s+of\s*[,;.]?\s*con\w{1,5}ct',  # fuzzy "Conditions of Contract"
+        r'terms?\s+(?:and|&)\s+con\w{1,5}tions?',  # fuzzy "Terms and Conditions"
     ]),
     # 3. Addendum / Corrigendum
     ("addendum", [
@@ -135,6 +161,10 @@ DOC_TYPE_RULES: List[Tuple[str, List[str]]] = [
         r'^\s*particular\s+specifications?\s*$',
         r'^\s*specifications?\s*$',
         r'specification\s+clause\s+\d',
+        # Sprint 24: relaxed patterns for scanned India tenders
+        # Header strip OCR often gives "CLIENT: ... TECHNICAL SPECIFICATIONS" inline
+        r'technical\s+spec',                    # inline match (no anchors)
+        r'technica\w?\s+spec',                  # OCR error tolerance
     ]),
     # 5. Schedules (door, window, finish, fixture)
     ("schedule", [
@@ -146,6 +176,18 @@ DOC_TYPE_RULES: List[Tuple[str, List[str]]] = [
         r'schedule\s+of\s+doors',
         r'schedule\s+of\s+windows',
         r'schedule\s+of\s+finishes',
+        # Sprint 22: India tender schedule patterns
+        r'schedule\s+of\s+doors?\s*(?:&|and)\s*windows?',
+        r'schedule\s+of\s+materials?',
+        r'room\s+(?:data|finish)\s+sheet',
+        r'room\s+finish\s+schedule',
+        r'internal\s+finish\s+schedule',
+        r'external\s+finish\s+schedule',
+        r'plumbing\s+fixture\s+schedule',
+        r'sanitary\s+fixture\s+schedule',
+        r'door.*window.*schedule',
+        # Content-based: detect mark patterns typical of schedules
+        r'(?:D-?\d{1,3}|W-?\d{1,3})\s+.{5,80}\s+\d{3,4}\s*[xX×]\s*\d{3,4}',
     ]),
     # 6. Cover / Index
     ("cover", [
@@ -165,6 +207,13 @@ DOC_TYPE_RULES: List[Tuple[str, List[str]]] = [
         r'\bgeneral\s+notes\b',
         r'\bnotes\s*:\s*$',
         r'\bnotes\s+and\s+specification',
+        # Sprint 22: India tender notes patterns
+        r'\bspecification\s+notes\b',
+        r'\bstructural\s+notes\b',
+        r'\barchitectural\s+notes\b',
+        r'\bplumbing\s+notes\b',
+        r'\belectrical\s+notes\b',
+        r'\bmaterial\s+specifications?\b',
     ]),
     ("legend", [
         r'\blegend\b',
@@ -333,7 +382,18 @@ def _classify_page(text: str) -> Tuple[str, str, Optional[str], Optional[str], f
             break
 
     # --- sheet_id ---
-    sheet_id = _extract_sheet_id(text_upper)
+    # BUG-11 FIX: Only extract sheet IDs for drawing page types.
+    # Text document types (BOQ, conditions, spec, addendum) should never have a
+    # sheet ID — material specification codes like M-25 (concrete grade), E-350,
+    # T-5, RS-485 etc. that appear in their body text look like sheet IDs but are
+    # not.  Extracting them causes false-positive discipline detection and inflates
+    # pages_with_sheet_no, which in turn incorrectly flags NIT documents as drawing
+    # sets and triggers PASS readiness status for spec-only packs.
+    _TEXT_DOC_TYPES = {"boq", "conditions", "addendum", "spec", "notes", "legend"}
+    if doc_type in _TEXT_DOC_TYPES:
+        sheet_id = None
+    else:
+        sheet_id = _extract_sheet_id(text_upper)
 
     # --- discipline ---
     discipline = _discipline_from_sheet_id(sheet_id)
@@ -347,21 +407,34 @@ def _classify_page(text: str) -> Tuple[str, str, Optional[str], Optional[str], f
     # --- title ---
     title = _extract_title(text)
 
-    # --- confidence ---
-    confidence = 0.2  # base
-    if doc_type != "unknown":
-        confidence += 0.3
-    if sheet_id:
-        confidence += 0.2
-    if discipline != "unknown":
-        confidence += 0.15
-    if len(keywords_hit) > 1:
-        confidence += 0.1
-    if title:
-        confidence += 0.05
-    confidence = min(confidence, 1.0)
+    # --- Sprint 24: Drawing fallback for blank scanned pages ---
+    # Pages with very sparse OCR text (< 15 chars of recognizable content) are
+    # likely scanned drawings where the header strip produced garbled nonsense.
+    # Classify as "plan" (drawing) with low confidence rather than "unknown".
+    if doc_type == "unknown":
+        clean_text = re.sub(r'[^a-zA-Z0-9]', '', text)
+        if len(clean_text) < 15:
+            doc_type = "plan"
+            keywords_hit.append("_drawing_fallback_sparse_text")
 
-    return doc_type, discipline, sheet_id, title, confidence, keywords_hit
+    # --- confidence ---
+    confidence_val = 0.2  # base
+    if doc_type != "unknown":
+        confidence_val += 0.3
+    if sheet_id:
+        confidence_val += 0.2
+    if discipline != "unknown":
+        confidence_val += 0.15
+    if len(keywords_hit) > 1:
+        confidence_val += 0.1
+    if title:
+        confidence_val += 0.05
+    confidence_val = min(confidence_val, 1.0)
+    # Preserve low confidence for drawing fallback
+    if "_drawing_fallback_sparse_text" in keywords_hit:
+        confidence_val = 0.15
+
+    return doc_type, discipline, sheet_id, title, confidence_val, keywords_hit
 
 
 # =============================================================================
@@ -372,7 +445,7 @@ def build_page_index(
     pdf_path: Path,
     existing_texts: List[str],
     strip_fraction: float = 0.18,
-    strip_dpi: int = 90,
+    strip_dpi: int = 150,  # Sprint 24: increased from 90 for better scanned header OCR
     progress_cb: Optional[Callable[[int, int, str], None]] = None,
 ) -> PageIndex:
     """

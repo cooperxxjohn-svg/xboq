@@ -1,0 +1,5781 @@
+discipline: architectural
+trade: wall_finishes
+sub_trades:
+  plaster:
+    categories:
+      cement_plaster:
+        items:
+        - id: FIN.WL.PLS.001
+          standard_name: Cement Sand Plaster 1:4 - 6mm Thick Internal
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1661
+          dsr_item_ref: ''
+          aliases:
+          - 6mm internal plaster
+          - neeru plaster base
+          typical_rate_range:
+            min: 80
+            max: 150
+          notes: Single coat for smooth surfaces
+          data_source: CPWD DSR 2023 + IS codes
+        - id: FIN.WL.PLS.002
+          standard_name: Cement Sand Plaster 1:4 - 12mm Thick Internal
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1661
+          dsr_item_ref: ''
+          aliases:
+          - 12mm internal plaster
+          - single coat plaster
+          typical_rate_range:
+            min: 120
+            max: 220
+          notes: Standard internal wall plaster
+          data_source: CPWD DSR 2023 + IS codes
+        - id: FIN.WL.PLS.003
+          standard_name: Cement Sand Plaster 1:4 - 15mm Thick Internal
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1661
+          dsr_item_ref: ''
+          aliases:
+          - 15mm internal plaster
+          typical_rate_range:
+            min: 150
+            max: 260
+          notes: Thicker coat for uneven masonry
+          data_source: CPWD DSR 2023 + IS codes
+        - id: FIN.WL.PLS.004
+          standard_name: Cement Sand Plaster 1:4 - 20mm Thick Internal
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1661
+          dsr_item_ref: ''
+          aliases:
+          - 20mm internal plaster
+          - double coat plaster
+          typical_rate_range:
+            min: 180
+            max: 320
+          notes: Double coat - 12mm base + 8mm finishing
+          data_source: CPWD DSR 2023 + IS codes
+        - id: FIN.WL.PLS.005
+          standard_name: Cement Sand Plaster 1:3 - 6mm Thick External
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1661
+          dsr_item_ref: ''
+          aliases:
+          - 6mm external plaster
+          typical_rate_range:
+            min: 100
+            max: 180
+          notes: External thin coat
+          data_source: CPWD DSR 2023 + IS codes
+        - id: FIN.WL.PLS.006
+          standard_name: Cement Sand Plaster 1:3 - 12mm Thick External
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1661
+          dsr_item_ref: ''
+          aliases:
+          - 12mm external plaster
+          - external single coat
+          typical_rate_range:
+            min: 140
+            max: 250
+          notes: Standard external wall plaster
+          data_source: CPWD DSR 2023 + IS codes
+        - id: FIN.WL.PLS.007
+          standard_name: Cement Sand Plaster 1:3 - 15mm Thick External
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1661
+          dsr_item_ref: ''
+          aliases:
+          - 15mm external plaster
+          typical_rate_range:
+            min: 170
+            max: 300
+          notes: ''
+          data_source: CPWD DSR 2023 + IS codes
+        - id: FIN.WL.PLS.008
+          standard_name: Cement Sand Plaster 1:3 - 20mm Thick External
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1661
+          dsr_item_ref: ''
+          aliases:
+          - 20mm external plaster
+          - external double coat
+          typical_rate_range:
+            min: 200
+            max: 360
+          notes: Double coat external - 12mm base + 8mm finish
+          data_source: CPWD DSR 2023 + IS codes
+        - id: FIN.WL.PLS.009
+          standard_name: Cement Sand Plaster 1:5 - 12mm Thick Rough Cast
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1661
+          dsr_item_ref: ''
+          aliases:
+          - rough cast plaster
+          - pebble dash
+          typical_rate_range:
+            min: 130
+            max: 230
+          notes: Textured external finish with stone chips
+          data_source: IS codes only
+        - id: FIN.WL.PLS.010
+          standard_name: Sand Faced Plaster 1:4 - 20mm Thick External
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1661
+          dsr_item_ref: ''
+          aliases:
+          - sand faced plaster
+          - granular finish plaster
+          typical_rate_range:
+            min: 190
+            max: 340
+          notes: Sponge finished for sand texture
+          data_source: IS codes only
+      lime_plaster:
+        items:
+        - id: FIN.WL.PLS.011
+          standard_name: Lime Plaster 1:3 - 12mm Thick Internal
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - heritage
+          requires: []
+          is_code_ref: IS 1661
+          dsr_item_ref: ''
+          aliases:
+          - lime plaster
+          - chuna plaster
+          typical_rate_range:
+            min: 160
+            max: 280
+          notes: Traditional lime plaster for heritage / breathable walls
+          data_source: estimated
+        - id: FIN.WL.PLS.012
+          standard_name: Lime Plaster 1:3 - 20mm Thick External
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - heritage
+          requires: []
+          is_code_ref: IS 1661
+          dsr_item_ref: ''
+          aliases:
+          - external lime plaster
+          typical_rate_range:
+            min: 200
+            max: 350
+          notes: ''
+          data_source: estimated
+      gypsum_plaster:
+        items:
+        - id: FIN.WL.PLS.013
+          standard_name: Gypsum Machine Plaster - 12mm Thick Internal
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2547
+          dsr_item_ref: ''
+          aliases:
+          - gypsum plaster
+          - machine plaster
+          - gyproc plaster
+          typical_rate_range:
+            min: 180
+            max: 320
+          notes: Single coat machine application, no curing needed
+          data_source: IS codes only
+        - id: FIN.WL.PLS.014
+          standard_name: Gypsum Machine Plaster - 15mm Thick Internal
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2547
+          dsr_item_ref: ''
+          aliases:
+          - 15mm gypsum plaster
+          typical_rate_range:
+            min: 220
+            max: 380
+          notes: ''
+          data_source: IS codes only
+        - id: FIN.WL.PLS.015
+          standard_name: Gypsum Machine Plaster - 20mm Thick Internal
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2547
+          dsr_item_ref: ''
+          aliases:
+          - 20mm gypsum plaster
+          typical_rate_range:
+            min: 260
+            max: 440
+          notes: For highly uneven surfaces
+          data_source: IS codes only
+      pop_plaster:
+        items:
+        - id: FIN.WL.PLS.016
+          standard_name: POP Plaster 3-Layer - Base Coat 12mm
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - commercial
+          requires: []
+          is_code_ref: IS 2547
+          dsr_item_ref: ''
+          aliases:
+          - POP base coat
+          - plaster of paris base
+          typical_rate_range:
+            min: 120
+            max: 200
+          notes: Base coat of 3-layer POP system
+          data_source: estimated
+        - id: FIN.WL.PLS.017
+          standard_name: POP Plaster 3-Layer - Levelling Coat 6mm
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - commercial
+          requires:
+          - FIN.WL.PLS.016
+          is_code_ref: IS 2547
+          dsr_item_ref: ''
+          aliases:
+          - POP levelling coat
+          typical_rate_range:
+            min: 80
+            max: 150
+          notes: Second coat levelling
+          data_source: estimated
+        - id: FIN.WL.PLS.018
+          standard_name: POP Plaster 3-Layer - Finishing Coat 3mm
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - commercial
+          requires:
+          - FIN.WL.PLS.017
+          is_code_ref: IS 2547
+          dsr_item_ref: ''
+          aliases:
+          - POP finish coat
+          - POP punning
+          typical_rate_range:
+            min: 60
+            max: 120
+          notes: Final smooth coat for painting
+          data_source: estimated
+        - id: FIN.WL.PLS.019
+          standard_name: POP Plaster 3-Layer Complete System
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - commercial
+          requires: []
+          is_code_ref: IS 2547
+          dsr_item_ref: ''
+          aliases:
+          - POP 3 coat plaster
+          - full POP plaster
+          typical_rate_range:
+            min: 260
+            max: 470
+          notes: All 3 layers combined rate
+          data_source: estimated
+      plaster_accessories:
+        items:
+        - id: FIN.WL.PLS.020
+          standard_name: Chicken Wire Mesh for Plaster Reinforcement
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1661
+          dsr_item_ref: ''
+          aliases:
+          - chicken mesh
+          - plaster mesh
+          - wire mesh reinforcement
+          typical_rate_range:
+            min: 40
+            max: 80
+          notes: At junctions of dissimilar materials
+          data_source: estimated
+        - id: FIN.WL.PLS.021
+          standard_name: Fibre Mesh for Plaster Reinforcement
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1661
+          dsr_item_ref: ''
+          aliases:
+          - fibre mesh
+          - alkali resistant mesh
+          typical_rate_range:
+            min: 30
+            max: 60
+          notes: Alkali-resistant glass fibre mesh
+          data_source: estimated
+        - id: FIN.WL.PLS.022
+          standard_name: Corner Bead GI for Plaster Edges
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1661
+          dsr_item_ref: ''
+          aliases:
+          - corner bead
+          - plaster edge bead
+          typical_rate_range:
+            min: 25
+            max: 50
+          notes: Protects external corners
+          data_source: estimated
+        - id: FIN.WL.PLS.023
+          standard_name: Plaster Stop Bead PVC
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1661
+          dsr_item_ref: ''
+          aliases:
+          - stop bead
+          - plaster stop
+          typical_rate_range:
+            min: 20
+            max: 40
+          notes: ''
+          data_source: estimated
+        - id: FIN.WL.PLS.024
+          standard_name: Bonding Agent / Primer for Plaster on Concrete
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1661
+          dsr_item_ref: ''
+          aliases:
+          - bonding agent
+          - plaster primer
+          - SBR latex
+          typical_rate_range:
+            min: 30
+            max: 60
+          notes: Required for plaster adhesion on RCC surfaces
+          data_source: estimated
+        - id: FIN.WL.PLS.025
+          standard_name: Micro Concrete Repair Mortar for Plaster Patching
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1661
+          dsr_item_ref: ''
+          aliases:
+          - repair mortar
+          - patching plaster
+          typical_rate_range:
+            min: 150
+            max: 300
+          notes: ''
+          data_source: estimated
+  tiles:
+    categories:
+      ceramic_tiles:
+        items:
+        - id: FIN.WL.TIL.001
+          standard_name: Ceramic Wall Tile 200x300mm - Economy Grade
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - commercial
+          requires: []
+          is_code_ref: IS 15622
+          dsr_item_ref: ''
+          aliases:
+          - 8x12 ceramic tile
+          - economy wall tile
+          typical_rate_range:
+            min: 350
+            max: 600
+          notes: Including adhesive and grouting
+          data_source: IS codes only
+        - id: FIN.WL.TIL.002
+          standard_name: Ceramic Wall Tile 250x375mm - Standard Grade
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - commercial
+          requires: []
+          is_code_ref: IS 15622
+          dsr_item_ref: ''
+          aliases:
+          - 10x15 ceramic tile
+          - standard wall tile
+          typical_rate_range:
+            min: 450
+            max: 750
+          notes: Including adhesive and grouting
+          data_source: IS codes only
+        - id: FIN.WL.TIL.003
+          standard_name: Ceramic Wall Tile 300x450mm - Standard Grade
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - commercial
+          requires: []
+          is_code_ref: IS 15622
+          dsr_item_ref: ''
+          aliases:
+          - 12x18 ceramic tile
+          typical_rate_range:
+            min: 500
+            max: 850
+          notes: ''
+          data_source: IS codes only
+        - id: FIN.WL.TIL.004
+          standard_name: Ceramic Wall Tile 300x600mm - Premium Grade
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - commercial
+          requires: []
+          is_code_ref: IS 15622
+          dsr_item_ref: ''
+          aliases:
+          - 12x24 ceramic tile
+          - large format ceramic
+          typical_rate_range:
+            min: 600
+            max: 1100
+          notes: ''
+          data_source: IS codes only
+      porcelain_tiles:
+        items:
+        - id: FIN.WL.TIL.005
+          standard_name: Porcelain Wall Tile 300x600mm - Glazed
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15622
+          dsr_item_ref: ''
+          aliases:
+          - porcelain wall tile
+          - glazed porcelain
+          typical_rate_range:
+            min: 800
+            max: 1400
+          notes: ''
+          data_source: IS codes only
+        - id: FIN.WL.TIL.006
+          standard_name: Porcelain Wall Tile 600x600mm - Glazed
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15622
+          dsr_item_ref: ''
+          aliases:
+          - 2x2 porcelain wall
+          - large porcelain
+          typical_rate_range:
+            min: 900
+            max: 1600
+          notes: ''
+          data_source: IS codes only
+        - id: FIN.WL.TIL.007
+          standard_name: Porcelain Wall Tile 600x1200mm - Slab Format
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - hospitality
+          requires: []
+          is_code_ref: IS 15622
+          dsr_item_ref: ''
+          aliases:
+          - slab tile
+          - large format porcelain
+          typical_rate_range:
+            min: 1200
+            max: 2500
+          notes: Requires special adhesive and levelling clips
+          data_source: IS codes only
+        - id: FIN.WL.TIL.008
+          standard_name: Porcelain Wall Tile 800x1600mm - Mega Slab
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - hospitality
+          requires: []
+          is_code_ref: IS 15622
+          dsr_item_ref: ''
+          aliases:
+          - mega slab porcelain
+          typical_rate_range:
+            min: 2000
+            max: 4500
+          notes: Requires mechanical handling and special adhesive
+          data_source: estimated
+        - id: FIN.WL.TIL.009
+          standard_name: Porcelain Wall Tile Full Body Unglazed 600x600mm
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - industrial
+          requires: []
+          is_code_ref: IS 15622
+          dsr_item_ref: ''
+          aliases:
+          - full body porcelain
+          - unglazed porcelain
+          typical_rate_range:
+            min: 1000
+            max: 1800
+          notes: ''
+          data_source: estimated
+      subway_tiles:
+        items:
+        - id: FIN.WL.TIL.010
+          standard_name: Subway Tile 75x150mm Ceramic - White Glossy
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - commercial
+          - hospitality
+          requires: []
+          is_code_ref: IS 15622
+          dsr_item_ref: ''
+          aliases:
+          - metro tile
+          - subway tile
+          - 3x6 tile
+          typical_rate_range:
+            min: 600
+            max: 1000
+          notes: Classic brick bond pattern
+          data_source: estimated
+        - id: FIN.WL.TIL.011
+          standard_name: Subway Tile 75x150mm Ceramic - Coloured Glossy
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - commercial
+          - hospitality
+          requires: []
+          is_code_ref: IS 15622
+          dsr_item_ref: ''
+          aliases:
+          - coloured metro tile
+          - coloured subway
+          typical_rate_range:
+            min: 700
+            max: 1200
+          notes: ''
+          data_source: estimated
+        - id: FIN.WL.TIL.012
+          standard_name: Subway Tile 75x300mm Ceramic - Matt Finish
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - commercial
+          - hospitality
+          requires: []
+          is_code_ref: IS 15622
+          dsr_item_ref: ''
+          aliases:
+          - long subway tile
+          - 3x12 subway
+          typical_rate_range:
+            min: 750
+            max: 1300
+          notes: ''
+          data_source: estimated
+        - id: FIN.WL.TIL.013
+          standard_name: Subway Tile 100x200mm Bevelled Edge
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - hospitality
+          requires: []
+          is_code_ref: IS 15622
+          dsr_item_ref: ''
+          aliases:
+          - bevelled subway
+          - 4x8 subway
+          typical_rate_range:
+            min: 800
+            max: 1400
+          notes: ''
+          data_source: estimated
+      mosaic_tiles:
+        items:
+        - id: FIN.WL.TIL.014
+          standard_name: Ceramic Mosaic Tile 25x25mm on Mesh
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15622
+          dsr_item_ref: ''
+          aliases:
+          - ceramic mosaic
+          - 1x1 mosaic
+          typical_rate_range:
+            min: 800
+            max: 1500
+          notes: Sheet mounted 300x300mm
+          data_source: estimated
+        - id: FIN.WL.TIL.015
+          standard_name: Porcelain Mosaic Tile 25x25mm on Mesh
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15622
+          dsr_item_ref: ''
+          aliases:
+          - porcelain mosaic
+          typical_rate_range:
+            min: 1000
+            max: 1800
+          notes: ''
+          data_source: estimated
+        - id: FIN.WL.TIL.016
+          standard_name: Glass Mosaic Tile 25x25mm on Mesh
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - hospitality
+          - commercial
+          requires: []
+          is_code_ref: IS 15622
+          dsr_item_ref: ''
+          aliases:
+          - glass mosaic
+          - swimming pool mosaic
+          typical_rate_range:
+            min: 1500
+            max: 3500
+          notes: Suitable for wet areas and pools
+          data_source: estimated
+        - id: FIN.WL.TIL.017
+          standard_name: Glass Mosaic Tile 48x48mm on Mesh
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - hospitality
+          - commercial
+          requires: []
+          is_code_ref: IS 15622
+          dsr_item_ref: ''
+          aliases:
+          - large glass mosaic
+          - 2x2 glass mosaic
+          typical_rate_range:
+            min: 1800
+            max: 4000
+          notes: ''
+          data_source: estimated
+        - id: FIN.WL.TIL.018
+          standard_name: Natural Stone Mosaic Tile - Marble Mix
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - hospitality
+          requires: []
+          is_code_ref: IS 1130
+          dsr_item_ref: ''
+          aliases:
+          - stone mosaic
+          - marble mosaic
+          typical_rate_range:
+            min: 2000
+            max: 5000
+          notes: ''
+          data_source: estimated
+        - id: FIN.WL.TIL.019
+          standard_name: Metallic Mosaic Tile - Stainless Steel
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - hospitality
+          requires: []
+          is_code_ref: IS 15622
+          dsr_item_ref: ''
+          aliases:
+          - steel mosaic
+          - metal mosaic
+          typical_rate_range:
+            min: 3000
+            max: 6000
+          notes: ''
+          data_source: estimated
+        - id: FIN.WL.TIL.020
+          standard_name: Hexagonal Mosaic Tile - Porcelain 50mm
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - hospitality
+          requires: []
+          is_code_ref: IS 15622
+          dsr_item_ref: ''
+          aliases:
+          - hex mosaic
+          - hexagonal mosaic
+          typical_rate_range:
+            min: 1200
+            max: 2200
+          notes: ''
+          data_source: estimated
+        - id: FIN.WL.TIL.021
+          standard_name: Penny Round Mosaic Tile - Porcelain 19mm
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - hospitality
+          requires: []
+          is_code_ref: IS 15622
+          dsr_item_ref: ''
+          aliases:
+          - penny round
+          - round mosaic
+          typical_rate_range:
+            min: 1300
+            max: 2400
+          notes: ''
+          data_source: estimated
+      stone_tiles:
+        items:
+        - id: FIN.WL.TIL.022
+          standard_name: Natural Marble Wall Tile 600x600mm - Italian White
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - commercial
+          - hospitality
+          requires: []
+          is_code_ref: IS 1130
+          dsr_item_ref: ''
+          aliases:
+          - marble wall tile
+          - Italian marble tile
+          typical_rate_range:
+            min: 2500
+            max: 6000
+          notes: Including adhesive fixing
+          data_source: estimated
+        - id: FIN.WL.TIL.023
+          standard_name: Natural Marble Wall Tile 300x600mm - Indian Marble
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1130
+          dsr_item_ref: ''
+          aliases:
+          - Indian marble tile
+          typical_rate_range:
+            min: 1200
+            max: 3000
+          notes: ''
+          data_source: estimated
+        - id: FIN.WL.TIL.024
+          standard_name: Slate Wall Tile 300x600mm Natural Cleft
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - hospitality
+          requires: []
+          is_code_ref: IS 1130
+          dsr_item_ref: ''
+          aliases:
+          - slate tile
+          - natural slate
+          typical_rate_range:
+            min: 800
+            max: 1500
+          notes: ''
+          data_source: estimated
+        - id: FIN.WL.TIL.025
+          standard_name: Travertine Wall Tile 300x600mm Honed
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - hospitality
+          requires: []
+          is_code_ref: IS 1130
+          dsr_item_ref: ''
+          aliases:
+          - travertine tile
+          - honed travertine
+          typical_rate_range:
+            min: 1800
+            max: 4000
+          notes: ''
+          data_source: estimated
+        - id: FIN.WL.TIL.026
+          standard_name: Sandstone Wall Tile 300x600mm Natural
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: IS 1130
+          dsr_item_ref: ''
+          aliases:
+          - sandstone tile
+          typical_rate_range:
+            min: 600
+            max: 1200
+          notes: ''
+          data_source: estimated
+      glass_tiles:
+        items:
+        - id: FIN.WL.TIL.027
+          standard_name: Glass Wall Tile 100x100mm - Back Painted
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - glass tile
+          - back painted glass tile
+          typical_rate_range:
+            min: 1800
+            max: 3500
+          notes: ''
+          data_source: estimated
+        - id: FIN.WL.TIL.028
+          standard_name: Glass Wall Tile 300x600mm - Lacquered
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - hospitality
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - lacquered glass tile
+          - large glass tile
+          typical_rate_range:
+            min: 2500
+            max: 5000
+          notes: ''
+          data_source: estimated
+      tile_accessories:
+        items:
+        - id: FIN.WL.TIL.029
+          standard_name: Tile Adhesive - Polymer Modified Grey
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - tile adhesive
+          - tile gum
+          - MYK Laticrete
+          typical_rate_range:
+            min: 80
+            max: 150
+          notes: Standard C1 grade
+          data_source: estimated
+        - id: FIN.WL.TIL.030
+          standard_name: Tile Adhesive - Polymer Modified White
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - white tile adhesive
+          typical_rate_range:
+            min: 100
+            max: 180
+          notes: For light-coloured / translucent tiles
+          data_source: estimated
+        - id: FIN.WL.TIL.031
+          standard_name: Tile Adhesive - High Flex C2 Grade
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - C2 adhesive
+          - flexible adhesive
+          typical_rate_range:
+            min: 130
+            max: 220
+          notes: For large format tiles and external cladding
+          data_source: estimated
+        - id: FIN.WL.TIL.032
+          standard_name: Tile Grout - Cementitious Standard
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15622
+          dsr_item_ref: ''
+          aliases:
+          - tile grout
+          - cement grout
+          typical_rate_range:
+            min: 30
+            max: 60
+          notes: ''
+          data_source: estimated
+        - id: FIN.WL.TIL.033
+          standard_name: Tile Grout - Epoxy Based
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - hospitality
+          - healthcare
+          requires: []
+          is_code_ref: IS 15622
+          dsr_item_ref: ''
+          aliases:
+          - epoxy grout
+          typical_rate_range:
+            min: 120
+            max: 250
+          notes: Stain resistant, suitable for wet areas
+          data_source: estimated
+        - id: FIN.WL.TIL.034
+          standard_name: Tile Levelling Clips and Wedges
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15622
+          dsr_item_ref: ''
+          aliases:
+          - levelling clips
+          - tile spacers
+          typical_rate_range:
+            min: 40
+            max: 80
+          notes: For large format tiles 600mm+
+          data_source: estimated
+        - id: FIN.WL.TIL.035
+          standard_name: Tile Edge Trim - Aluminum L Profile
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1200 Part 2
+          dsr_item_ref: ''
+          aliases:
+          - tile trim
+          - edge profile
+          - Schluter
+          typical_rate_range:
+            min: 80
+            max: 200
+          notes: ''
+          data_source: estimated
+        - id: FIN.WL.TIL.036
+          standard_name: Tile Edge Trim - Stainless Steel
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - hospitality
+          requires: []
+          is_code_ref: IS 1200 Part 2
+          dsr_item_ref: ''
+          aliases:
+          - SS tile trim
+          typical_rate_range:
+            min: 150
+            max: 350
+          notes: ''
+          data_source: estimated
+  cladding:
+    categories:
+      stone_cladding_dry:
+        items:
+        - id: FIN.WL.CLD.001
+          standard_name: Granite Cladding 20mm Dry Fix with SS Clamps
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 1130
+          dsr_item_ref: ''
+          aliases:
+          - granite dry fix
+          - granite curtain wall
+          typical_rate_range:
+            min: 3500
+            max: 7000
+          notes: Including SS 304 brackets, anchors, sealant
+          data_source: estimated
+        - id: FIN.WL.CLD.002
+          standard_name: Granite Cladding 30mm Dry Fix with SS Clamps
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 1130
+          dsr_item_ref: ''
+          aliases:
+          - 30mm granite cladding
+          typical_rate_range:
+            min: 4500
+            max: 8500
+          notes: ''
+          data_source: estimated
+        - id: FIN.WL.CLD.003
+          standard_name: Marble Cladding 20mm Dry Fix with SS Clamps
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - hospitality
+          requires: []
+          is_code_ref: IS 1130
+          dsr_item_ref: ''
+          aliases:
+          - marble dry fix
+          - marble cladding dry
+          typical_rate_range:
+            min: 4000
+            max: 8000
+          notes: ''
+          data_source: estimated
+        - id: FIN.WL.CLD.004
+          standard_name: Sandstone Cladding 25mm Dry Fix
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - institutional
+          requires: []
+          is_code_ref: IS 1130
+          dsr_item_ref: ''
+          aliases:
+          - sandstone dry fix
+          typical_rate_range:
+            min: 2000
+            max: 4000
+          notes: ''
+          data_source: estimated
+        - id: FIN.WL.CLD.005
+          standard_name: Limestone Cladding 25mm Dry Fix
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 1130
+          dsr_item_ref: ''
+          aliases:
+          - limestone dry fix
+          - kota stone cladding
+          typical_rate_range:
+            min: 2500
+            max: 5000
+          notes: ''
+          data_source: estimated
+      stone_cladding_wet:
+        items:
+        - id: FIN.WL.CLD.006
+          standard_name: Granite Cladding 18mm Wet Fix with Cement Mortar
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1130
+          dsr_item_ref: ''
+          aliases:
+          - granite wet fix
+          - granite mortar fix
+          typical_rate_range:
+            min: 2500
+            max: 5000
+          notes: Traditional wet fix method
+          data_source: estimated
+        - id: FIN.WL.CLD.007
+          standard_name: Marble Cladding 18mm Wet Fix with Cement Mortar
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1130
+          dsr_item_ref: ''
+          aliases:
+          - marble wet fix
+          typical_rate_range:
+            min: 2800
+            max: 5500
+          notes: ''
+          data_source: estimated
+        - id: FIN.WL.CLD.008
+          standard_name: Sandstone Cladding 20mm Wet Fix
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1130
+          dsr_item_ref: ''
+          aliases:
+          - sandstone wet fix
+          typical_rate_range:
+            min: 1500
+            max: 3000
+          notes: ''
+          data_source: estimated
+      wood_cladding:
+        items:
+        - id: FIN.WL.CLD.009
+          standard_name: Teak Wood Cladding 18mm on Battens
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - hospitality
+          requires: []
+          is_code_ref: IS 399
+          dsr_item_ref: ''
+          aliases:
+          - teak cladding
+          - wood wall panelling
+          typical_rate_range:
+            min: 4000
+            max: 8000
+          notes: ''
+          data_source: estimated
+        - id: FIN.WL.CLD.010
+          standard_name: Engineered Wood Cladding 12mm Veneer on MDF
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - commercial
+          requires: []
+          is_code_ref: IS 399
+          dsr_item_ref: ''
+          aliases:
+          - engineered wood panel
+          - veneer panelling
+          typical_rate_range:
+            min: 2000
+            max: 4000
+          notes: ''
+          data_source: estimated
+        - id: FIN.WL.CLD.011
+          standard_name: Pine Wood Cladding T&G 19mm
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - hospitality
+          requires: []
+          is_code_ref: IS 399
+          dsr_item_ref: ''
+          aliases:
+          - pine cladding
+          - tongue and groove
+          typical_rate_range:
+            min: 1500
+            max: 3000
+          notes: ''
+          data_source: estimated
+        - id: FIN.WL.CLD.012
+          standard_name: Bamboo Wall Cladding 12mm Strand Woven
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - hospitality
+          requires: []
+          is_code_ref: IS 399
+          dsr_item_ref: ''
+          aliases:
+          - bamboo cladding
+          typical_rate_range:
+            min: 1800
+            max: 3500
+          notes: ''
+          data_source: estimated
+      hpl_cladding:
+        items:
+        - id: FIN.WL.CLD.013
+          standard_name: HPL Wall Cladding 6mm on Aluminum Subframe
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - HPL cladding
+          - Fundermax
+          - Trespa
+          typical_rate_range:
+            min: 3000
+            max: 5500
+          notes: High Pressure Laminate exterior cladding
+          data_source: estimated
+        - id: FIN.WL.CLD.014
+          standard_name: HPL Wall Cladding 8mm on Aluminum Subframe
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - 8mm HPL
+          typical_rate_range:
+            min: 3500
+            max: 6000
+          notes: ''
+          data_source: estimated
+        - id: FIN.WL.CLD.015
+          standard_name: HPL Interior Wall Panelling 1mm Laminate on Plywood
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - laminate panelling
+          - Sunmica panelling
+          typical_rate_range:
+            min: 1200
+            max: 2500
+          notes: ''
+          data_source: estimated
+      wpc_cladding:
+        items:
+        - id: FIN.WL.CLD.016
+          standard_name: WPC Wall Cladding 15mm Hollow Section
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - WPC cladding
+          - wood plastic composite
+          typical_rate_range:
+            min: 1500
+            max: 2800
+          notes: Weather resistant, low maintenance
+          data_source: estimated
+        - id: FIN.WL.CLD.017
+          standard_name: WPC Wall Cladding 20mm Solid Section
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - solid WPC cladding
+          typical_rate_range:
+            min: 2000
+            max: 3500
+          notes: ''
+          data_source: estimated
+      metal_cladding:
+        items:
+        - id: FIN.WL.CLD.018
+          standard_name: ACP Cladding 4mm on Aluminum Subframe
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - ACP cladding
+          - aluminum composite panel
+          - Alucobond
+          typical_rate_range:
+            min: 2500
+            max: 4500
+          notes: FR grade ACP for fire compliance
+          data_source: estimated
+        - id: FIN.WL.CLD.019
+          standard_name: ACP Cladding 4mm FR Grade on Aluminum Subframe
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - fire rated ACP
+          - FR ACP
+          typical_rate_range:
+            min: 3500
+            max: 6000
+          notes: A2/B1 fire rated
+          data_source: estimated
+        - id: FIN.WL.CLD.020
+          standard_name: Zinc Cladding 0.7mm Standing Seam
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - zinc cladding
+          - zinc wall
+          typical_rate_range:
+            min: 5000
+            max: 9000
+          notes: ''
+          data_source: estimated
+        - id: FIN.WL.CLD.021
+          standard_name: Corten Steel Cladding 3mm on Subframe
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - corten cladding
+          - weathering steel
+          typical_rate_range:
+            min: 4000
+            max: 7000
+          notes: ''
+          data_source: estimated
+        - id: FIN.WL.CLD.022
+          standard_name: Perforated Metal Cladding - Aluminum 2mm
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - perforated cladding
+          - perforated aluminum
+          typical_rate_range:
+            min: 3500
+            max: 6500
+          notes: ''
+          data_source: estimated
+        - id: FIN.WL.CLD.023
+          standard_name: GRC Cladding Panel - Glass Reinforced Concrete
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - GRC panel
+          - GFRC
+          - glass fibre reinforced concrete
+          typical_rate_range:
+            min: 3000
+            max: 6000
+          notes: ''
+          data_source: estimated
+        - id: FIN.WL.CLD.024
+          standard_name: Terracotta Cladding Panel - Rainscreen System
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - terracotta cladding
+          - clay panel
+          typical_rate_range:
+            min: 4000
+            max: 8000
+          notes: ''
+          data_source: estimated
+  painting:
+    categories:
+      primers:
+        items:
+        - id: FIN.WL.PNT.001
+          standard_name: Cement Primer - 1 Coat on Plastered Wall
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires:
+          - FIN.WL.PLS.002
+          is_code_ref: IS 5411
+          dsr_item_ref: ''
+          aliases:
+          - cement primer
+          - wall primer
+          typical_rate_range:
+            min: 25
+            max: 50
+          notes: Mandatory before painting on new plaster
+          data_source: IS codes only
+        - id: FIN.WL.PNT.002
+          standard_name: Wood Primer - 1 Coat on Wooden Surface
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 109
+          dsr_item_ref: ''
+          aliases:
+          - wood primer
+          - timber primer
+          typical_rate_range:
+            min: 30
+            max: 60
+          notes: ''
+          data_source: IS codes only
+        - id: FIN.WL.PNT.003
+          standard_name: Metal Primer Red Oxide - 1 Coat on Steel
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 102
+          dsr_item_ref: ''
+          aliases:
+          - red oxide primer
+          - metal primer
+          typical_rate_range:
+            min: 25
+            max: 50
+          notes: ''
+          data_source: IS codes only
+        - id: FIN.WL.PNT.004
+          standard_name: Metal Primer Zinc Chromate - 1 Coat
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 104
+          dsr_item_ref: ''
+          aliases:
+          - zinc chromate primer
+          - ZC primer
+          typical_rate_range:
+            min: 35
+            max: 65
+          notes: ''
+          data_source: IS codes only
+        - id: FIN.WL.PNT.005
+          standard_name: Epoxy Primer - 1 Coat on Concrete
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - industrial
+          requires: []
+          is_code_ref: IS 104
+          dsr_item_ref: ''
+          aliases:
+          - epoxy primer
+          typical_rate_range:
+            min: 60
+            max: 120
+          notes: ''
+          data_source: estimated
+      putty:
+        items:
+        - id: FIN.WL.PNT.006
+          standard_name: Wall Putty - 2 Coat Application (Birla White)
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires:
+          - FIN.WL.PNT.001
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - wall putty
+          - Birla White putty
+          - white cement putty
+          typical_rate_range:
+            min: 60
+            max: 120
+          notes: White cement based
+          data_source: estimated
+        - id: FIN.WL.PNT.007
+          standard_name: Wall Putty - 2 Coat Application (JK Wall Putty)
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires:
+          - FIN.WL.PNT.001
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - JK putty
+          typical_rate_range:
+            min: 55
+            max: 110
+          notes: ''
+          data_source: estimated
+        - id: FIN.WL.PNT.008
+          standard_name: Wall Putty - 2 Coat Application (Asian Trucare)
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires:
+          - FIN.WL.PNT.001
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - Asian putty
+          - Trucare putty
+          typical_rate_range:
+            min: 60
+            max: 115
+          notes: ''
+          data_source: estimated
+        - id: FIN.WL.PNT.009
+          standard_name: Acrylic Wall Putty - 2 Coat for Exterior
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires:
+          - FIN.WL.PNT.001
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - acrylic putty
+          - exterior putty
+          typical_rate_range:
+            min: 70
+            max: 130
+          notes: Weather resistant for external walls
+          data_source: estimated
+      distemper:
+        items:
+        - id: FIN.WL.PNT.010
+          standard_name: Dry Distemper - 2 Coat on Wall
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires:
+          - FIN.WL.PNT.001
+          is_code_ref: IS 428
+          dsr_item_ref: ''
+          aliases:
+          - dry distemper
+          - whitewash
+          typical_rate_range:
+            min: 20
+            max: 40
+          notes: Economy finish
+          data_source: IS codes only
+        - id: FIN.WL.PNT.011
+          standard_name: Oil Bound Distemper - 2 Coat on Wall
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - institutional
+          requires:
+          - FIN.WL.PNT.001
+          is_code_ref: IS 428
+          dsr_item_ref: ''
+          aliases:
+          - OBD
+          - oil bound distemper
+          typical_rate_range:
+            min: 35
+            max: 65
+          notes: Washable, better than dry distemper
+          data_source: IS codes only
+        - id: FIN.WL.PNT.012
+          standard_name: Acrylic Distemper - 2 Coat on Wall
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - institutional
+          requires:
+          - FIN.WL.PNT.001
+          is_code_ref: IS 428
+          dsr_item_ref: ''
+          aliases:
+          - acrylic distemper
+          - Tractor distemper
+          typical_rate_range:
+            min: 30
+            max: 55
+          notes: ''
+          data_source: estimated
+      emulsion:
+        items:
+        - id: FIN.WL.PNT.013
+          standard_name: Interior Plastic Emulsion - 2 Coat Economy
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires:
+          - FIN.WL.PNT.006
+          is_code_ref: IS 15489
+          dsr_item_ref: ''
+          aliases:
+          - plastic emulsion economy
+          - Tractor Emulsion
+          typical_rate_range:
+            min: 40
+            max: 75
+          notes: Economy range - Asian Tractor / Berger Easy Clean
+          data_source: IS codes only
+        - id: FIN.WL.PNT.014
+          standard_name: Interior Plastic Emulsion - 2 Coat Standard
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires:
+          - FIN.WL.PNT.006
+          is_code_ref: IS 15489
+          dsr_item_ref: ''
+          aliases:
+          - plastic emulsion standard
+          - Apcolite Premium
+          typical_rate_range:
+            min: 55
+            max: 100
+          notes: Mid range - Apcolite / Berger Silk
+          data_source: IS codes only
+        - id: FIN.WL.PNT.015
+          standard_name: Interior Plastic Emulsion - 2 Coat Premium
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - commercial
+          - hospitality
+          requires:
+          - FIN.WL.PNT.006
+          is_code_ref: IS 15489
+          dsr_item_ref: ''
+          aliases:
+          - premium emulsion
+          - Royale
+          - Berger Silk Glamor
+          typical_rate_range:
+            min: 80
+            max: 150
+          notes: Premium range - Asian Royale / Nerolac Beauty
+          data_source: IS codes only
+        - id: FIN.WL.PNT.016
+          standard_name: Interior Plastic Emulsion - 2 Coat Luxury
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - hospitality
+          - luxury_residential
+          requires:
+          - FIN.WL.PNT.006
+          is_code_ref: IS 15489
+          dsr_item_ref: ''
+          aliases:
+          - luxury emulsion
+          - Royale Aspira
+          - ultra premium paint
+          typical_rate_range:
+            min: 120
+            max: 220
+          notes: Luxury range with stain guard / Teflon
+          data_source: estimated
+        - id: FIN.WL.PNT.017
+          standard_name: Exterior Emulsion - 2 Coat Economy (Ace/Apex)
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires:
+          - FIN.WL.PNT.001
+          is_code_ref: IS 15489
+          dsr_item_ref: ''
+          aliases:
+          - exterior emulsion economy
+          - Ace exterior
+          typical_rate_range:
+            min: 45
+            max: 80
+          notes: ''
+          data_source: IS codes only
+        - id: FIN.WL.PNT.018
+          standard_name: Exterior Emulsion - 2 Coat Standard (Apex/WeatherCoat)
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires:
+          - FIN.WL.PNT.001
+          is_code_ref: IS 15489
+          dsr_item_ref: ''
+          aliases:
+          - Apex exterior
+          - WeatherCoat
+          - exterior standard
+          typical_rate_range:
+            min: 60
+            max: 110
+          notes: ''
+          data_source: IS codes only
+        - id: FIN.WL.PNT.019
+          standard_name: Exterior Emulsion - 2 Coat Premium (Apex Ultima/Berger WeatherCoat All Guard)
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires:
+          - FIN.WL.PNT.001
+          is_code_ref: IS 15489
+          dsr_item_ref: ''
+          aliases:
+          - Apex Ultima
+          - premium exterior
+          typical_rate_range:
+            min: 90
+            max: 160
+          notes: 10-15 year warranty
+          data_source: estimated
+      enamel:
+        items:
+        - id: FIN.WL.PNT.020
+          standard_name: Synthetic Enamel Paint - 2 Coat on Wood
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires:
+          - FIN.WL.PNT.002
+          is_code_ref: IS 2932
+          dsr_item_ref: ''
+          aliases:
+          - synthetic enamel
+          - oil enamel
+          typical_rate_range:
+            min: 50
+            max: 100
+          notes: ''
+          data_source: IS codes only
+        - id: FIN.WL.PNT.021
+          standard_name: Synthetic Enamel Paint - 2 Coat on Metal
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires:
+          - FIN.WL.PNT.003
+          is_code_ref: IS 2932
+          dsr_item_ref: ''
+          aliases:
+          - metal enamel
+          typical_rate_range:
+            min: 55
+            max: 105
+          notes: ''
+          data_source: IS codes only
+        - id: FIN.WL.PNT.022
+          standard_name: Acrylic Enamel Paint - 2 Coat on Wood
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires:
+          - FIN.WL.PNT.002
+          is_code_ref: IS 2932
+          dsr_item_ref: ''
+          aliases:
+          - acrylic enamel
+          - water based enamel
+          typical_rate_range:
+            min: 60
+            max: 120
+          notes: Low VOC, quick drying
+          data_source: estimated
+        - id: FIN.WL.PNT.023
+          standard_name: Acrylic Enamel Paint - 2 Coat on Metal
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires:
+          - FIN.WL.PNT.003
+          is_code_ref: IS 2932
+          dsr_item_ref: ''
+          aliases:
+          - acrylic metal paint
+          typical_rate_range:
+            min: 65
+            max: 125
+          notes: ''
+          data_source: estimated
+        - id: FIN.WL.PNT.024
+          standard_name: PU Enamel Paint - 2 Coat High Gloss on Wood
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - hospitality
+          requires:
+          - FIN.WL.PNT.002
+          is_code_ref: IS 2932
+          dsr_item_ref: ''
+          aliases:
+          - PU paint
+          - polyurethane enamel
+          - duco paint
+          typical_rate_range:
+            min: 150
+            max: 350
+          notes: High durability, furniture grade
+          data_source: estimated
+        - id: FIN.WL.PNT.025
+          standard_name: PU Enamel Paint - 2 Coat Matt Finish on Wood
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - hospitality
+          requires:
+          - FIN.WL.PNT.002
+          is_code_ref: IS 2932
+          dsr_item_ref: ''
+          aliases:
+          - PU matt paint
+          - matt duco
+          typical_rate_range:
+            min: 160
+            max: 370
+          notes: ''
+          data_source: estimated
+        - id: FIN.WL.PNT.026
+          standard_name: Melamine Polish - 2 Coat on Wood
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: IS 2932
+          dsr_item_ref: ''
+          aliases:
+          - melamine polish
+          - french polish
+          typical_rate_range:
+            min: 80
+            max: 180
+          notes: Clear coat preserving wood grain
+          data_source: estimated
+        - id: FIN.WL.PNT.027
+          standard_name: Lacquer Spray - 2 Coat on Metal
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires:
+          - FIN.WL.PNT.003
+          is_code_ref: IS 2932
+          dsr_item_ref: ''
+          aliases:
+          - lacquer spray
+          - clear lacquer
+          typical_rate_range:
+            min: 70
+            max: 140
+          notes: ''
+          data_source: estimated
+      texture_paint:
+        items:
+        - id: FIN.WL.PNT.028
+          standard_name: Texture Paint - Roller Finish (Interior)
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires:
+          - FIN.WL.PNT.001
+          is_code_ref: IS 15489
+          dsr_item_ref: ''
+          aliases:
+          - roller texture
+          - textured paint
+          typical_rate_range:
+            min: 80
+            max: 160
+          notes: Applied with textured roller
+          data_source: estimated
+        - id: FIN.WL.PNT.029
+          standard_name: Texture Paint - Stucco Finish (Interior)
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - commercial
+          requires:
+          - FIN.WL.PNT.001
+          is_code_ref: IS 15489
+          dsr_item_ref: ''
+          aliases:
+          - stucco texture
+          - stucco finish
+          typical_rate_range:
+            min: 120
+            max: 250
+          notes: Trowel applied thick texture
+          data_source: estimated
+        - id: FIN.WL.PNT.030
+          standard_name: Texture Paint - Knockdown Finish
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - commercial
+          requires:
+          - FIN.WL.PNT.001
+          is_code_ref: IS 15489
+          dsr_item_ref: ''
+          aliases:
+          - knockdown texture
+          typical_rate_range:
+            min: 100
+            max: 200
+          notes: ''
+          data_source: estimated
+        - id: FIN.WL.PNT.031
+          standard_name: Texture Paint - Venetian Plaster Finish
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - hospitality
+          - luxury_residential
+          requires:
+          - FIN.WL.PNT.001
+          is_code_ref: IS 15489
+          dsr_item_ref: ''
+          aliases:
+          - Venetian plaster
+          - Italian plaster
+          - marmorino
+          typical_rate_range:
+            min: 300
+            max: 800
+          notes: Multi-layer polished plaster finish
+          data_source: estimated
+        - id: FIN.WL.PNT.032
+          standard_name: Texture Paint - Rustic Trowel Finish
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - hospitality
+          requires:
+          - FIN.WL.PNT.001
+          is_code_ref: IS 15489
+          dsr_item_ref: ''
+          aliases:
+          - rustic texture
+          - trowel texture
+          typical_rate_range:
+            min: 130
+            max: 260
+          notes: ''
+          data_source: estimated
+        - id: FIN.WL.PNT.033
+          standard_name: Texture Paint - Sand Texture Spray Finish
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires:
+          - FIN.WL.PNT.001
+          is_code_ref: IS 15489
+          dsr_item_ref: ''
+          aliases:
+          - sand texture spray
+          typical_rate_range:
+            min: 90
+            max: 170
+          notes: ''
+          data_source: estimated
+        - id: FIN.WL.PNT.034
+          standard_name: Texture Paint - Exterior Stucco/Granular
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15489
+          dsr_item_ref: ''
+          aliases:
+          - exterior texture
+          - granular texture
+          typical_rate_range:
+            min: 140
+            max: 280
+          notes: Weather resistant exterior texture
+          data_source: estimated
+      metallic_paint:
+        items:
+        - id: FIN.WL.PNT.035
+          standard_name: Metallic Paint - Gold Finish Interior
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - hospitality
+          - luxury_residential
+          requires:
+          - FIN.WL.PNT.006
+          is_code_ref: IS 15489
+          dsr_item_ref: ''
+          aliases:
+          - gold metallic paint
+          typical_rate_range:
+            min: 200
+            max: 500
+          notes: ''
+          data_source: estimated
+        - id: FIN.WL.PNT.036
+          standard_name: Metallic Paint - Silver Finish Interior
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - hospitality
+          - luxury_residential
+          requires:
+          - FIN.WL.PNT.006
+          is_code_ref: IS 15489
+          dsr_item_ref: ''
+          aliases:
+          - silver metallic paint
+          typical_rate_range:
+            min: 200
+            max: 500
+          notes: ''
+          data_source: estimated
+        - id: FIN.WL.PNT.037
+          standard_name: Metallic Paint - Copper/Bronze Finish Interior
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - hospitality
+          - luxury_residential
+          requires:
+          - FIN.WL.PNT.006
+          is_code_ref: IS 15489
+          dsr_item_ref: ''
+          aliases:
+          - copper metallic
+          - bronze metallic
+          typical_rate_range:
+            min: 220
+            max: 520
+          notes: ''
+          data_source: estimated
+      anti_fungal:
+        items:
+        - id: FIN.WL.PNT.038
+          standard_name: Anti-Fungal Paint - Interior 2 Coat
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - healthcare
+          - hospitality
+          requires:
+          - FIN.WL.PNT.001
+          is_code_ref: IS 15489
+          dsr_item_ref: ''
+          aliases:
+          - anti fungal paint
+          - anti mould paint
+          typical_rate_range:
+            min: 80
+            max: 160
+          notes: For bathrooms, kitchens, humid areas
+          data_source: estimated
+        - id: FIN.WL.PNT.039
+          standard_name: Anti-Bacterial Paint - Interior 2 Coat
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - healthcare
+          - hospitality
+          requires:
+          - FIN.WL.PNT.001
+          is_code_ref: IS 15489
+          dsr_item_ref: ''
+          aliases:
+          - anti bacterial paint
+          - hospital paint
+          typical_rate_range:
+            min: 100
+            max: 200
+          notes: Silver ion / zinc based anti-bacterial
+          data_source: estimated
+  texture:
+    categories:
+      interior_texture:
+        items:
+        - id: FIN.WL.TXR.001
+          standard_name: Designer Texture - Crinkle Paper Effect
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - commercial
+          requires:
+          - FIN.WL.PNT.006
+          is_code_ref: IS 15489
+          dsr_item_ref: ''
+          aliases:
+          - crinkle texture
+          typical_rate_range:
+            min: 150
+            max: 300
+          notes: ''
+          data_source: estimated
+        - id: FIN.WL.TXR.002
+          standard_name: Designer Texture - Brush Stroke Effect
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - commercial
+          requires:
+          - FIN.WL.PNT.006
+          is_code_ref: IS 15489
+          dsr_item_ref: ''
+          aliases:
+          - brush stroke texture
+          typical_rate_range:
+            min: 140
+            max: 280
+          notes: ''
+          data_source: estimated
+        - id: FIN.WL.TXR.003
+          standard_name: Designer Texture - Combing Effect
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - commercial
+          requires:
+          - FIN.WL.PNT.006
+          is_code_ref: IS 15489
+          dsr_item_ref: ''
+          aliases:
+          - combing texture
+          - comb effect
+          typical_rate_range:
+            min: 130
+            max: 260
+          notes: ''
+          data_source: estimated
+        - id: FIN.WL.TXR.004
+          standard_name: Designer Texture - Ragging Effect
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - hospitality
+          requires:
+          - FIN.WL.PNT.006
+          is_code_ref: IS 15489
+          dsr_item_ref: ''
+          aliases:
+          - ragging texture
+          - rag roll
+          typical_rate_range:
+            min: 140
+            max: 280
+          notes: ''
+          data_source: estimated
+        - id: FIN.WL.TXR.005
+          standard_name: Designer Texture - Sponging Effect
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - hospitality
+          requires:
+          - FIN.WL.PNT.006
+          is_code_ref: IS 15489
+          dsr_item_ref: ''
+          aliases:
+          - sponge texture
+          typical_rate_range:
+            min: 130
+            max: 260
+          notes: ''
+          data_source: estimated
+        - id: FIN.WL.TXR.006
+          standard_name: Concrete Effect Texture Paint
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - hospitality
+          requires: []
+          is_code_ref: IS 15489
+          dsr_item_ref: ''
+          aliases:
+          - concrete effect
+          - industrial concrete look
+          typical_rate_range:
+            min: 250
+            max: 500
+          notes: ''
+          data_source: estimated
+        - id: FIN.WL.TXR.007
+          standard_name: Rust Effect Texture Paint
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - hospitality
+          requires: []
+          is_code_ref: IS 15489
+          dsr_item_ref: ''
+          aliases:
+          - rust effect
+          - corten effect paint
+          typical_rate_range:
+            min: 280
+            max: 550
+          notes: ''
+          data_source: estimated
+        - id: FIN.WL.TXR.008
+          standard_name: Suede Effect Texture Paint
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - hospitality
+          requires:
+          - FIN.WL.PNT.006
+          is_code_ref: IS 15489
+          dsr_item_ref: ''
+          aliases:
+          - suede texture
+          - suede effect
+          typical_rate_range:
+            min: 180
+            max: 350
+          notes: ''
+          data_source: estimated
+  wallpaper:
+    categories:
+      paper_wallpaper:
+        items:
+        - id: FIN.WL.WLP.001
+          standard_name: Paper Wallpaper - Standard Grade
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - paper wallpaper
+          - standard wallpaper
+          typical_rate_range:
+            min: 200
+            max: 500
+          notes: Including adhesive and installation
+          data_source: estimated
+        - id: FIN.WL.WLP.002
+          standard_name: Paper Wallpaper - Premium Printed
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - hospitality
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - premium paper wallpaper
+          - designer wallpaper
+          typical_rate_range:
+            min: 400
+            max: 900
+          notes: ''
+          data_source: estimated
+      vinyl_wallpaper:
+        items:
+        - id: FIN.WL.WLP.003
+          standard_name: Vinyl Wallpaper - Standard PVC
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - vinyl wallpaper
+          - PVC wallpaper
+          typical_rate_range:
+            min: 300
+            max: 700
+          notes: Washable, moisture resistant
+          data_source: estimated
+        - id: FIN.WL.WLP.004
+          standard_name: Vinyl Wallpaper - Heavy Duty Commercial
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - hospitality
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - heavy duty vinyl
+          - commercial vinyl wallpaper
+          typical_rate_range:
+            min: 500
+            max: 1200
+          notes: Fire rated, high traffic rated
+          data_source: estimated
+        - id: FIN.WL.WLP.005
+          standard_name: Vinyl Wallpaper - Embossed Textured
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - hospitality
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - embossed vinyl
+          - textured vinyl wallpaper
+          typical_rate_range:
+            min: 400
+            max: 900
+          notes: ''
+          data_source: estimated
+      non_woven_wallpaper:
+        items:
+        - id: FIN.WL.WLP.006
+          standard_name: Non-Woven Wallpaper - Standard
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - non-woven wallpaper
+          - fleece wallpaper
+          typical_rate_range:
+            min: 350
+            max: 800
+          notes: Breathable, easy removal
+          data_source: estimated
+        - id: FIN.WL.WLP.007
+          standard_name: Non-Woven Wallpaper - Premium Designer
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - hospitality
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - designer non-woven
+          typical_rate_range:
+            min: 600
+            max: 1500
+          notes: ''
+          data_source: estimated
+      fabric_wallpaper:
+        items:
+        - id: FIN.WL.WLP.008
+          standard_name: Fabric Wallcovering - Polyester
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - hospitality
+          - luxury_residential
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - fabric wallpaper
+          - textile wallcovering
+          typical_rate_range:
+            min: 800
+            max: 2000
+          notes: ''
+          data_source: estimated
+        - id: FIN.WL.WLP.009
+          standard_name: Fabric Wallcovering - Silk
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - hospitality
+          - luxury_residential
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - silk wallpaper
+          - silk wall covering
+          typical_rate_range:
+            min: 1500
+            max: 4000
+          notes: ''
+          data_source: estimated
+        - id: FIN.WL.WLP.010
+          standard_name: Fabric Wallcovering - Jute/Natural Fibre
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - hospitality
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - jute wallpaper
+          - natural fibre wallpaper
+          - grasscloth
+          typical_rate_range:
+            min: 600
+            max: 1400
+          notes: ''
+          data_source: estimated
+      specialty_wallpaper:
+        items:
+        - id: FIN.WL.WLP.011
+          standard_name: 3D Wall Panel - PVC/MDF
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - 3D wall panel
+          - 3D wallpaper
+          typical_rate_range:
+            min: 500
+            max: 1200
+          notes: ''
+          data_source: estimated
+        - id: FIN.WL.WLP.012
+          standard_name: Custom Photo Mural Wallpaper
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - photo mural
+          - custom wallpaper
+          typical_rate_range:
+            min: 400
+            max: 1000
+          notes: Digitally printed to size
+          data_source: estimated
+        - id: FIN.WL.WLP.013
+          standard_name: Peel and Stick Wallpaper
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - self adhesive wallpaper
+          - peel stick
+          typical_rate_range:
+            min: 250
+            max: 600
+          notes: Removable, no paste required
+          data_source: estimated
+  dado:
+    categories:
+      tile_dado:
+        items:
+        - id: FIN.WL.DAD.001
+          standard_name: Ceramic Tile Dado 600mm Height
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15622
+          dsr_item_ref: ''
+          aliases:
+          - 600mm dado
+          - 2ft dado
+          typical_rate_range:
+            min: 300
+            max: 600
+          notes: Per running metre, 600mm high
+          data_source: estimated
+        - id: FIN.WL.DAD.002
+          standard_name: Ceramic Tile Dado 900mm Height
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15622
+          dsr_item_ref: ''
+          aliases:
+          - 900mm dado
+          - 3ft dado
+          typical_rate_range:
+            min: 450
+            max: 850
+          notes: Standard kitchen/bathroom dado
+          data_source: estimated
+        - id: FIN.WL.DAD.003
+          standard_name: Ceramic Tile Dado 1200mm Height
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15622
+          dsr_item_ref: ''
+          aliases:
+          - 1200mm dado
+          - 4ft dado
+          - half height tile
+          typical_rate_range:
+            min: 600
+            max: 1100
+          notes: ''
+          data_source: estimated
+        - id: FIN.WL.DAD.004
+          standard_name: Ceramic Tile Dado Full Height (Floor to Ceiling)
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15622
+          dsr_item_ref: ''
+          aliases:
+          - full height tile
+          - floor to ceiling tile
+          typical_rate_range:
+            min: 500
+            max: 1200
+          notes: Typically bathroom full tiling
+          data_source: estimated
+        - id: FIN.WL.DAD.005
+          standard_name: Porcelain Tile Dado 900mm Height
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15622
+          dsr_item_ref: ''
+          aliases:
+          - porcelain dado
+          typical_rate_range:
+            min: 600
+            max: 1200
+          notes: ''
+          data_source: estimated
+        - id: FIN.WL.DAD.006
+          standard_name: Porcelain Tile Dado 1200mm Height
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15622
+          dsr_item_ref: ''
+          aliases:
+          - porcelain 1200 dado
+          typical_rate_range:
+            min: 800
+            max: 1500
+          notes: ''
+          data_source: estimated
+      stone_dado:
+        items:
+        - id: FIN.WL.DAD.007
+          standard_name: Granite Dado 900mm Height - Polished
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 1130
+          dsr_item_ref: ''
+          aliases:
+          - granite dado
+          typical_rate_range:
+            min: 1200
+            max: 2500
+          notes: ''
+          data_source: estimated
+        - id: FIN.WL.DAD.008
+          standard_name: Marble Dado 900mm Height - Polished
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - hospitality
+          requires: []
+          is_code_ref: IS 1130
+          dsr_item_ref: ''
+          aliases:
+          - marble dado
+          typical_rate_range:
+            min: 1500
+            max: 3500
+          notes: ''
+          data_source: estimated
+      wainscoting:
+        items:
+        - id: FIN.WL.DAD.009
+          standard_name: Wood Wainscoting - MDF with Moulding 900mm
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - hospitality
+          requires: []
+          is_code_ref: IS 399
+          dsr_item_ref: ''
+          aliases:
+          - wainscoting
+          - wall panelling
+          - dado panelling
+          typical_rate_range:
+            min: 1000
+            max: 2500
+          notes: Including moulding profiles and paint
+          data_source: estimated
+        - id: FIN.WL.DAD.010
+          standard_name: Wood Wainscoting - MDF with Moulding 1200mm
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - hospitality
+          requires: []
+          is_code_ref: IS 399
+          dsr_item_ref: ''
+          aliases:
+          - 1200mm wainscoting
+          typical_rate_range:
+            min: 1300
+            max: 3000
+          notes: ''
+          data_source: estimated
+        - id: FIN.WL.DAD.011
+          standard_name: Solid Wood Wainscoting - Teak 900mm
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - hospitality
+          - luxury_residential
+          requires: []
+          is_code_ref: IS 399
+          dsr_item_ref: ''
+          aliases:
+          - teak wainscoting
+          typical_rate_range:
+            min: 3000
+            max: 6000
+          notes: ''
+          data_source: estimated
+      dado_accessories:
+        items:
+        - id: FIN.WL.DAD.012
+          standard_name: Dado Rail - Wood Moulding Profile
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - hospitality
+          requires: []
+          is_code_ref: IS 399
+          dsr_item_ref: ''
+          aliases:
+          - dado rail
+          - chair rail
+          typical_rate_range:
+            min: 150
+            max: 400
+          notes: ''
+          data_source: estimated
+        - id: FIN.WL.DAD.013
+          standard_name: Skirting - Wood 75mm
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15622
+          dsr_item_ref: ''
+          aliases:
+          - skirting
+          - baseboard 75mm
+          typical_rate_range:
+            min: 100
+            max: 250
+          notes: ''
+          data_source: estimated
+        - id: FIN.WL.DAD.014
+          standard_name: Skirting - Wood 100mm
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15622
+          dsr_item_ref: ''
+          aliases:
+          - 100mm skirting
+          - baseboard 100mm
+          typical_rate_range:
+            min: 120
+            max: 300
+          notes: ''
+          data_source: estimated
+        - id: FIN.WL.DAD.015
+          standard_name: Skirting - Tile 75mm
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15622
+          dsr_item_ref: ''
+          aliases:
+          - tile skirting
+          typical_rate_range:
+            min: 80
+            max: 180
+          notes: ''
+          data_source: estimated
+        - id: FIN.WL.DAD.016
+          standard_name: Skirting - Marble/Granite 75mm
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - hospitality
+          requires: []
+          is_code_ref: IS 1130
+          dsr_item_ref: ''
+          aliases:
+          - stone skirting
+          typical_rate_range:
+            min: 200
+            max: 500
+          notes: ''
+          data_source: estimated
+  coatings:
+    categories:
+      protective_coatings:
+        items:
+        - id: FIN.WL.COT.001
+          standard_name: Anti-Carbonation Coating on Concrete
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - industrial
+          - infrastructure
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - anti carbonation
+          - concrete protective coating
+          typical_rate_range:
+            min: 200
+            max: 450
+          notes: Protects reinforcement from carbonation
+          data_source: estimated
+        - id: FIN.WL.COT.002
+          standard_name: Epoxy Wall Coating - 2 Coat
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - industrial
+          - healthcare
+          - commercial
+          requires: []
+          is_code_ref: IS 4631
+          dsr_item_ref: ''
+          aliases:
+          - epoxy wall coating
+          - epoxy wall paint
+          typical_rate_range:
+            min: 250
+            max: 500
+          notes: Chemical and abrasion resistant
+          data_source: estimated
+        - id: FIN.WL.COT.003
+          standard_name: Epoxy Wall Coating - Self Levelling
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - industrial
+          - healthcare
+          requires: []
+          is_code_ref: IS 4631
+          dsr_item_ref: ''
+          aliases:
+          - self levelling epoxy wall
+          typical_rate_range:
+            min: 350
+            max: 700
+          notes: ''
+          data_source: estimated
+        - id: FIN.WL.COT.004
+          standard_name: Anti-Fungal Wall Coating - Specialist
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - healthcare
+          requires: []
+          is_code_ref: IS 15489
+          dsr_item_ref: ''
+          aliases:
+          - anti fungal coating
+          - mould resistant coating
+          typical_rate_range:
+            min: 120
+            max: 250
+          notes: Long-term fungal prevention
+          data_source: estimated
+        - id: FIN.WL.COT.005
+          standard_name: Damp Proof Coating - Crystalline Waterproofing
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - damp proof coating
+          - DPC wall
+          - Xypex
+          typical_rate_range:
+            min: 180
+            max: 400
+          notes: ''
+          data_source: estimated
+        - id: FIN.WL.COT.006
+          standard_name: Damp Proof Coating - Polymer Modified Cementitious
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - polymer DPC
+          - Dr Fixit Dampguard
+          typical_rate_range:
+            min: 140
+            max: 300
+          notes: ''
+          data_source: estimated
+        - id: FIN.WL.COT.007
+          standard_name: Fire Retardant Coating on Wall
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - fire retardant paint
+          - intumescent wall coating
+          typical_rate_range:
+            min: 200
+            max: 500
+          notes: ''
+          data_source: estimated
+        - id: FIN.WL.COT.008
+          standard_name: Heat Reflective Coating - External Wall
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - heat reflective paint
+          - cool wall coating
+          typical_rate_range:
+            min: 100
+            max: 220
+          notes: Reduces heat absorption on external walls
+          data_source: estimated
+        - id: FIN.WL.COT.009
+          standard_name: Silicone Water Repellent Coating - External
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - water repellent
+          - silicone sealer
+          typical_rate_range:
+            min: 60
+            max: 130
+          notes: Transparent hydrophobic treatment
+          data_source: estimated
+        - id: FIN.WL.COT.010
+          standard_name: Anti-Graffiti Coating - Sacrificial Type
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          - infrastructure
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - anti graffiti coating
+          typical_rate_range:
+            min: 150
+            max: 350
+          notes: ''
+          data_source: estimated
+        - id: FIN.WL.COT.011
+          standard_name: Elastomeric Waterproof Coating - External Wall
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - elastomeric coating
+          - elastic waterproof
+          typical_rate_range:
+            min: 120
+            max: 280
+          notes: Crack bridging waterproof coating
+          data_source: estimated
+        - id: FIN.WL.COT.012
+          standard_name: Anti-Fungal Coating - Interior Wall
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - healthcare
+          requires: []
+          is_code_ref: IS 15489
+          dsr_item_ref: ''
+          aliases:
+          - anti fungal coating
+          - mould resistant coating
+          typical_rate_range:
+            min: 80
+            max: 180
+          notes: Prevents mould and fungal growth in damp areas
+          data_source: estimated
+        - id: FIN.WL.COT.013
+          standard_name: Anti-Carbonation Coating - Concrete Wall
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - infrastructure
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - anti carbonation
+          - carbonation barrier
+          typical_rate_range:
+            min: 100
+            max: 220
+          notes: Protects concrete from CO2 ingress
+          data_source: estimated
+        - id: FIN.WL.COT.014
+          standard_name: Epoxy Wall Coating - 2 Coat System
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - industrial
+          - healthcare
+          requires: []
+          is_code_ref: IS 4631
+          dsr_item_ref: ''
+          aliases:
+          - epoxy wall coating
+          - epoxy wall paint
+          typical_rate_range:
+            min: 250
+            max: 500
+          notes: Chemical resistant, easy clean
+          data_source: estimated
+        - id: FIN.WL.COT.015
+          standard_name: Food-Grade Epoxy Coating - Wall
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - industrial
+          - commercial
+          requires: []
+          is_code_ref: IS 4631
+          dsr_item_ref: ''
+          aliases:
+          - food grade coating
+          - FDA approved wall coating
+          typical_rate_range:
+            min: 350
+            max: 650
+          notes: For food processing and commercial kitchen areas
+          data_source: estimated
+        - id: FIN.WL.COT.016
+          standard_name: Cleanroom Wall Coating - Epoxy Based
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - industrial
+          - healthcare
+          requires: []
+          is_code_ref: IS 4631
+          dsr_item_ref: ''
+          aliases:
+          - cleanroom coating
+          - pharma wall coating
+          typical_rate_range:
+            min: 400
+            max: 750
+          notes: Particle-free, anti-static surface
+          data_source: estimated
+        - id: FIN.WL.COT.017
+          standard_name: Polyurethane Wall Coating - 2 Coat
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - industrial
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - PU wall coating
+          - polyurethane wall
+          typical_rate_range:
+            min: 200
+            max: 420
+          notes: Abrasion and chemical resistant
+          data_source: estimated
+        - id: FIN.WL.COT.018
+          standard_name: Thermal Insulation Coating - Ceramic Based
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - industrial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - thermal coating
+          - ceramic insulation paint
+          typical_rate_range:
+            min: 300
+            max: 600
+          notes: Reduces heat transfer through walls
+          data_source: estimated
+  plaster_additional:
+    categories:
+      cement_plaster_variants:
+        items:
+        - id: FIN.WL.PLS.026
+          standard_name: Cement Sand Plaster 1:3 - 12mm Thick Internal
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1661
+          dsr_item_ref: ''
+          aliases:
+          - 12mm 1:3 plaster internal
+          - rich mix plaster 12mm
+          typical_rate_range:
+            min: 140
+            max: 250
+          notes: Rich mix for stronger plaster coat
+          data_source: IS codes only
+        - id: FIN.WL.PLS.027
+          standard_name: Cement Sand Plaster 1:5 - 15mm Thick External
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1661
+          dsr_item_ref: ''
+          aliases:
+          - 15mm external plaster 1:5
+          - external wall plaster 15mm
+          typical_rate_range:
+            min: 160
+            max: 280
+          notes: Standard external wall plaster
+          data_source: IS codes only
+        - id: FIN.WL.PLS.028
+          standard_name: Cement Sand Plaster 1:4 - 20mm Thick External
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1661
+          dsr_item_ref: ''
+          aliases:
+          - 20mm external plaster
+          - thick external plaster
+          typical_rate_range:
+            min: 200
+            max: 340
+          notes: Heavy coat for rough external masonry
+          data_source: IS codes only
+        - id: FIN.WL.PLS.029
+          standard_name: Lime Plaster 1:3 - 12mm Thick Internal
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - heritage
+          requires: []
+          is_code_ref: IS 712
+          dsr_item_ref: ''
+          aliases:
+          - lime plaster 12mm
+          - lime mortar plaster
+          typical_rate_range:
+            min: 130
+            max: 240
+          notes: Traditional lime-based plaster
+          data_source: IS codes only
+        - id: FIN.WL.PLS.030
+          standard_name: Lime Plaster 1:2 - 15mm Thick External
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - heritage
+          requires: []
+          is_code_ref: IS 712
+          dsr_item_ref: ''
+          aliases:
+          - lime plaster 15mm external
+          - external lime plaster
+          typical_rate_range:
+            min: 160
+            max: 290
+          notes: Breathable plaster for heritage structures
+          data_source: IS codes only
+        - id: FIN.WL.PLS.031
+          standard_name: Gypsum Machine Plaster - 12mm Thick Internal
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2547
+          dsr_item_ref: ''
+          aliases:
+          - gypsum plaster 12mm
+          - machine plaster 12mm
+          typical_rate_range:
+            min: 200
+            max: 350
+          notes: Machine applied gypsum plaster
+          data_source: IS codes only
+        - id: FIN.WL.PLS.032
+          standard_name: Gypsum Machine Plaster - 15mm Thick Internal
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2547
+          dsr_item_ref: ''
+          aliases:
+          - gypsum plaster 15mm
+          - machine plaster 15mm
+          typical_rate_range:
+            min: 240
+            max: 400
+          notes: For uneven substrates
+          data_source: IS codes only
+        - id: FIN.WL.PLS.033
+          standard_name: Cement Sand Plaster 1:6 - 12mm Thick Internal
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1661
+          dsr_item_ref: ''
+          aliases:
+          - 12mm 1:6 plaster
+          - lean mix plaster
+          typical_rate_range:
+            min: 100
+            max: 190
+          notes: Lean mix for non-structural surfaces
+          data_source: IS codes only
+        - id: FIN.WL.PLS.034
+          standard_name: Cement Sand Plaster 1:3 - 20mm Thick External
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1661
+          dsr_item_ref: ''
+          aliases:
+          - 20mm 1:3 external plaster
+          - rich external plaster
+          typical_rate_range:
+            min: 220
+            max: 380
+          notes: Rich mix for severe exposure
+          data_source: IS codes only
+        - id: FIN.WL.PLS.035
+          standard_name: Sand Faced Plaster 1:4 - 12mm Thick External
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1661
+          dsr_item_ref: ''
+          aliases:
+          - sand face plaster
+          - rough cast plaster
+          typical_rate_range:
+            min: 160
+            max: 280
+          notes: Rough textured external finish
+          data_source: IS codes only
+        - id: FIN.WL.PLS.036
+          standard_name: Polymer Modified Plaster - 12mm Internal
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - residential
+          requires: []
+          is_code_ref: IS 1661
+          dsr_item_ref: ''
+          aliases:
+          - polymer plaster
+          - acrylic plaster
+          typical_rate_range:
+            min: 250
+            max: 420
+          notes: Enhanced adhesion and flexibility
+          data_source: estimated
+  tiles_additional:
+    categories:
+      wall_tiles_by_size:
+        items:
+        - id: FIN.WL.TIL.037
+          standard_name: Ceramic Wall Tile 200x200mm - Standard Grade
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - commercial
+          requires: []
+          is_code_ref: IS 15622
+          dsr_item_ref: ''
+          aliases:
+          - 200x200 wall tile
+          - 8x8 ceramic tile
+          typical_rate_range:
+            min: 300
+            max: 550
+          notes: Including adhesive and grouting
+          data_source: IS codes only
+        - id: FIN.WL.TIL.038
+          standard_name: Ceramic Wall Tile 300x300mm - Standard Grade
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - commercial
+          requires: []
+          is_code_ref: IS 15622
+          dsr_item_ref: ''
+          aliases:
+          - 300x300 wall tile
+          - 12x12 ceramic tile
+          typical_rate_range:
+            min: 350
+            max: 600
+          notes: Including adhesive and grouting
+          data_source: IS codes only
+        - id: FIN.WL.TIL.039
+          standard_name: Ceramic Wall Tile 300x450mm - Premium Grade
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - commercial
+          requires: []
+          is_code_ref: IS 15622
+          dsr_item_ref: ''
+          aliases:
+          - 300x450 wall tile
+          - 12x18 ceramic
+          typical_rate_range:
+            min: 400
+            max: 700
+          notes: Including adhesive and grouting
+          data_source: IS codes only
+        - id: FIN.WL.TIL.040
+          standard_name: Ceramic Wall Tile 300x600mm - Premium Grade
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - commercial
+          requires: []
+          is_code_ref: IS 15622
+          dsr_item_ref: ''
+          aliases:
+          - 300x600 wall tile
+          - 12x24 ceramic
+          typical_rate_range:
+            min: 450
+            max: 800
+          notes: Including adhesive and grouting
+          data_source: IS codes only
+        - id: FIN.WL.TIL.041
+          standard_name: Porcelain Wall Tile 300x600mm - Glossy
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - commercial
+          requires: []
+          is_code_ref: IS 15622
+          dsr_item_ref: ''
+          aliases:
+          - porcelain wall 300x600
+          - glossy porcelain wall
+          typical_rate_range:
+            min: 600
+            max: 1100
+          notes: Including adhesive and grouting
+          data_source: IS codes only
+        - id: FIN.WL.TIL.042
+          standard_name: Porcelain Wall Tile 600x600mm - Matt Finish
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - hospitality
+          requires: []
+          is_code_ref: IS 15622
+          dsr_item_ref: ''
+          aliases:
+          - porcelain wall 600x600
+          - large format wall tile
+          typical_rate_range:
+            min: 700
+            max: 1300
+          notes: Including adhesive and grouting
+          data_source: IS codes only
+        - id: FIN.WL.TIL.043
+          standard_name: Porcelain Wall Tile 600x1200mm - Large Format
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - hospitality
+          requires: []
+          is_code_ref: IS 15622
+          dsr_item_ref: ''
+          aliases:
+          - porcelain wall 600x1200
+          - slab tile wall
+          typical_rate_range:
+            min: 1000
+            max: 2000
+          notes: Requires mechanical fixing for large format
+          data_source: IS codes only
+        - id: FIN.WL.TIL.044
+          standard_name: Subway Tile 75x150mm - Glossy White
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - hospitality
+          requires: []
+          is_code_ref: IS 15622
+          dsr_item_ref: ''
+          aliases:
+          - subway tile
+          - metro tile 75x150
+          - brick pattern tile
+          typical_rate_range:
+            min: 400
+            max: 750
+          notes: Including adhesive and grouting
+          data_source: estimated
+        - id: FIN.WL.TIL.045
+          standard_name: Subway Tile 100x200mm - Glossy
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - hospitality
+          requires: []
+          is_code_ref: IS 15622
+          dsr_item_ref: ''
+          aliases:
+          - subway 100x200
+          - metro tile 4x8
+          typical_rate_range:
+            min: 380
+            max: 700
+          notes: Including adhesive and grouting
+          data_source: estimated
+        - id: FIN.WL.TIL.046
+          standard_name: Subway Tile 100x300mm - Bevelled Edge
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - hospitality
+          requires: []
+          is_code_ref: IS 15622
+          dsr_item_ref: ''
+          aliases:
+          - bevelled subway tile
+          - metro 100x300
+          typical_rate_range:
+            min: 450
+            max: 800
+          notes: Including adhesive and grouting
+          data_source: estimated
+        - id: FIN.WL.TIL.047
+          standard_name: Porcelain Tile 200x200mm - Wall Application
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - commercial
+          requires: []
+          is_code_ref: IS 15622
+          dsr_item_ref: ''
+          aliases:
+          - porcelain 200x200 wall
+          - small porcelain wall
+          typical_rate_range:
+            min: 500
+            max: 900
+          notes: Including adhesive and grouting
+          data_source: IS codes only
+        - id: FIN.WL.TIL.048
+          standard_name: Porcelain Tile 200x300mm - Wall Application
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - commercial
+          requires: []
+          is_code_ref: IS 15622
+          dsr_item_ref: ''
+          aliases:
+          - porcelain 200x300 wall
+          typical_rate_range:
+            min: 520
+            max: 950
+          notes: Including adhesive and grouting
+          data_source: IS codes only
+        - id: FIN.WL.TIL.049
+          standard_name: Porcelain Tile 250x375mm - Wall Application
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - commercial
+          requires: []
+          is_code_ref: IS 15622
+          dsr_item_ref: ''
+          aliases:
+          - porcelain 250x375 wall
+          - 10x15 porcelain
+          typical_rate_range:
+            min: 550
+            max: 1000
+          notes: Including adhesive and grouting
+          data_source: IS codes only
+        - id: FIN.WL.TIL.050
+          standard_name: Glass Mosaic Tile 25x25mm - Plain Colour
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - hospitality
+          requires: []
+          is_code_ref: IS 15622
+          dsr_item_ref: ''
+          aliases:
+          - glass mosaic
+          - mosaic tile 25mm
+          typical_rate_range:
+            min: 800
+            max: 1600
+          notes: Including adhesive and grouting
+          data_source: estimated
+        - id: FIN.WL.TIL.051
+          standard_name: Glass Mosaic Tile 48x48mm - Designer
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - hospitality
+          - luxury_residential
+          requires: []
+          is_code_ref: IS 15622
+          dsr_item_ref: ''
+          aliases:
+          - glass mosaic 48mm
+          - designer mosaic
+          typical_rate_range:
+            min: 1200
+            max: 2500
+          notes: Including adhesive and grouting
+          data_source: estimated
+        - id: FIN.WL.TIL.052
+          standard_name: Hexagon Tile 200mm - Porcelain Wall
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - hospitality
+          requires: []
+          is_code_ref: IS 15622
+          dsr_item_ref: ''
+          aliases:
+          - hexagon wall tile
+          - hex tile wall
+          typical_rate_range:
+            min: 700
+            max: 1300
+          notes: Including adhesive and grouting
+          data_source: estimated
+        - id: FIN.WL.TIL.053
+          standard_name: Fish Scale Tile - Ceramic Wall
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - hospitality
+          requires: []
+          is_code_ref: IS 15622
+          dsr_item_ref: ''
+          aliases:
+          - fish scale tile
+          - fan shape tile
+          - scallop tile
+          typical_rate_range:
+            min: 800
+            max: 1500
+          notes: Including adhesive and grouting
+          data_source: estimated
+      cladding_additional:
+        items:
+        - id: FIN.WL.CLD.025
+          standard_name: Granite Cladding Polished - 20mm Wet Fix
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 1130
+          dsr_item_ref: ''
+          aliases:
+          - polished granite wet fix
+          - granite wet cladding
+          typical_rate_range:
+            min: 2800
+            max: 5500
+          notes: Mortar bedding with MS clamps
+          data_source: estimated
+        - id: FIN.WL.CLD.026
+          standard_name: Granite Cladding Honed Finish - 20mm Dry Fix
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 1130
+          dsr_item_ref: ''
+          aliases:
+          - honed granite cladding
+          - matt granite
+          typical_rate_range:
+            min: 3200
+            max: 6500
+          notes: Non-reflective honed surface
+          data_source: estimated
+        - id: FIN.WL.CLD.027
+          standard_name: Marble Cladding Polished - 20mm Dry Fix
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - hospitality
+          requires: []
+          is_code_ref: IS 1130
+          dsr_item_ref: ''
+          aliases:
+          - marble wall cladding
+          - polished marble wall
+          typical_rate_range:
+            min: 4000
+            max: 8000
+          notes: Including SS 304 brackets and sealant
+          data_source: estimated
+        - id: FIN.WL.CLD.028
+          standard_name: Marble Cladding Honed - 20mm Wet Fix
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - hospitality
+          requires: []
+          is_code_ref: IS 1130
+          dsr_item_ref: ''
+          aliases:
+          - honed marble cladding
+          - marble wet fix wall
+          typical_rate_range:
+            min: 3500
+            max: 7000
+          notes: Mortar bedding with clamps
+          data_source: estimated
+        - id: FIN.WL.CLD.029
+          standard_name: Sandstone Cladding Natural - 25mm
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - commercial
+          requires: []
+          is_code_ref: IS 1130
+          dsr_item_ref: ''
+          aliases:
+          - sandstone wall cladding
+          - natural sandstone wall
+          typical_rate_range:
+            min: 2000
+            max: 4000
+          notes: Natural split face sandstone
+          data_source: estimated
+        - id: FIN.WL.CLD.030
+          standard_name: Sandstone Cladding Polished - 20mm
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 1130
+          dsr_item_ref: ''
+          aliases:
+          - polished sandstone wall
+          - mirror sandstone cladding
+          typical_rate_range:
+            min: 2500
+            max: 5000
+          notes: Machine polished sandstone
+          data_source: estimated
+        - id: FIN.WL.CLD.031
+          standard_name: Teak Wood Cladding - 18mm on Battens
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - hospitality
+          requires: []
+          is_code_ref: IS 399
+          dsr_item_ref: ''
+          aliases:
+          - teak wall cladding
+          - wood wall cladding teak
+          typical_rate_range:
+            min: 3000
+            max: 6000
+          notes: Solid teak planks on MS/wood battens
+          data_source: estimated
+        - id: FIN.WL.CLD.032
+          standard_name: WPC Cladding Panel - Exterior Grade
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - commercial
+          requires: []
+          is_code_ref: IS 399
+          dsr_item_ref: ''
+          aliases:
+          - WPC wall cladding
+          - wood plastic composite wall
+          typical_rate_range:
+            min: 1200
+            max: 2500
+          notes: Weather resistant, low maintenance
+          data_source: estimated
+        - id: FIN.WL.CLD.033
+          standard_name: HPL Panel Cladding - 8mm Exterior Grade
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - HPL wall panel 8mm
+          - high pressure laminate wall
+          typical_rate_range:
+            min: 2000
+            max: 4000
+          notes: Including aluminium subframe
+          data_source: estimated
+        - id: FIN.WL.CLD.034
+          standard_name: HPL Panel Cladding - 10mm Exterior Grade
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - HPL wall panel 10mm
+          - compact laminate 10mm
+          typical_rate_range:
+            min: 2200
+            max: 4500
+          notes: Including aluminium subframe
+          data_source: estimated
+        - id: FIN.WL.CLD.035
+          standard_name: HPL Panel Cladding - 12mm Exterior Grade
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - HPL wall panel 12mm
+          - compact laminate 12mm
+          typical_rate_range:
+            min: 2500
+            max: 5000
+          notes: Including aluminium subframe
+          data_source: estimated
+        - id: FIN.WL.CLD.036
+          standard_name: WPC Panel Cladding - Interior Grade
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - WPC interior panel
+          - WPC wall panel indoor
+          typical_rate_range:
+            min: 800
+            max: 1800
+          notes: Grooved panels on battens
+          data_source: estimated
+        - id: FIN.WL.CLD.037
+          standard_name: Aluminium Composite Panel (ACP) - 4mm PE Core
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - ACP cladding PE
+          - aluminium composite PE
+          typical_rate_range:
+            min: 1800
+            max: 3500
+          notes: PE core, not for fire-rated applications
+          data_source: estimated
+        - id: FIN.WL.CLD.038
+          standard_name: Aluminium Composite Panel (ACP) - 4mm FR Core
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - ACP cladding FR
+          - fire rated ACP
+          - FR ACP
+          typical_rate_range:
+            min: 2500
+            max: 5000
+          notes: Fire retardant mineral core
+          data_source: estimated
+        - id: FIN.WL.CLD.039
+          standard_name: Aluminium Composite Panel (ACP) - 6mm A2 Core
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - ACP A2 core
+          - non-combustible ACP
+          typical_rate_range:
+            min: 3500
+            max: 7000
+          notes: A2 non-combustible rated
+          data_source: estimated
+  texture_additional:
+    categories:
+      roller_and_spray_texture:
+        items:
+        - id: FIN.WL.TXR.009
+          standard_name: Roller Texture Paint - Standard
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - commercial
+          requires:
+          - FIN.WL.PNT.006
+          is_code_ref: IS 15489
+          dsr_item_ref: ''
+          aliases:
+          - roller texture
+          - textured roller paint
+          typical_rate_range:
+            min: 100
+            max: 200
+          notes: Applied with textured roller
+          data_source: estimated
+        - id: FIN.WL.TXR.010
+          standard_name: Knockdown Texture Paint
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - commercial
+          requires:
+          - FIN.WL.PNT.006
+          is_code_ref: IS 15489
+          dsr_item_ref: ''
+          aliases:
+          - knockdown texture
+          - skip trowel texture
+          typical_rate_range:
+            min: 120
+            max: 240
+          notes: Spray and flatten technique
+          data_source: estimated
+        - id: FIN.WL.TXR.011
+          standard_name: Sand Texture Paint - Fine Grain
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - commercial
+          requires:
+          - FIN.WL.PNT.006
+          is_code_ref: IS 15489
+          dsr_item_ref: ''
+          aliases:
+          - sand texture fine
+          - sandy finish paint
+          typical_rate_range:
+            min: 110
+            max: 220
+          notes: Fine sand aggregate mixed paint
+          data_source: estimated
+        - id: FIN.WL.TXR.012
+          standard_name: Sand Texture Paint - Coarse Grain
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - commercial
+          requires:
+          - FIN.WL.PNT.006
+          is_code_ref: IS 15489
+          dsr_item_ref: ''
+          aliases:
+          - sand texture coarse
+          - rough sand paint
+          typical_rate_range:
+            min: 130
+            max: 260
+          notes: Coarse sand aggregate mixed paint
+          data_source: estimated
+        - id: FIN.WL.TXR.013
+          standard_name: Stucco Texture Finish - External
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - commercial
+          requires: []
+          is_code_ref: IS 15489
+          dsr_item_ref: ''
+          aliases:
+          - stucco finish
+          - stucco wall
+          - exterior stucco
+          typical_rate_range:
+            min: 200
+            max: 400
+          notes: Cement-based textured external finish
+          data_source: estimated
+        - id: FIN.WL.TXR.014
+          standard_name: Venetian Plaster Finish - Polished
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - hospitality
+          - luxury_residential
+          requires: []
+          is_code_ref: IS 15489
+          dsr_item_ref: ''
+          aliases:
+          - Venetian plaster
+          - stucco Veneziano
+          - polished plaster
+          typical_rate_range:
+            min: 500
+            max: 1200
+          notes: Multi-layer burnished lime plaster
+          data_source: estimated
+        - id: FIN.WL.TXR.015
+          standard_name: Venetian Plaster Finish - Matt
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - hospitality
+          - luxury_residential
+          requires: []
+          is_code_ref: IS 15489
+          dsr_item_ref: ''
+          aliases:
+          - matt Venetian plaster
+          - matt polished plaster
+          typical_rate_range:
+            min: 450
+            max: 1000
+          notes: Unburnished Venetian technique
+          data_source: estimated
+        - id: FIN.WL.TXR.016
+          standard_name: Metallic Paint Finish - Gold/Silver/Copper
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - hospitality
+          requires:
+          - FIN.WL.PNT.006
+          is_code_ref: IS 15489
+          dsr_item_ref: ''
+          aliases:
+          - metallic paint
+          - metallic wall finish
+          typical_rate_range:
+            min: 250
+            max: 500
+          notes: Metallic pigment paint
+          data_source: estimated
+        - id: FIN.WL.TXR.017
+          standard_name: Stone Effect Texture Paint - Natural
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - commercial
+          requires: []
+          is_code_ref: IS 15489
+          dsr_item_ref: ''
+          aliases:
+          - stone finish paint
+          - stone effect texture
+          typical_rate_range:
+            min: 200
+            max: 400
+          notes: Multi-colour stone aggregate finish
+          data_source: estimated
+        - id: FIN.WL.TXR.018
+          standard_name: Rustic Texture Paint - Rough Finish
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - hospitality
+          requires: []
+          is_code_ref: IS 15489
+          dsr_item_ref: ''
+          aliases:
+          - rustic texture
+          - rough texture paint
+          typical_rate_range:
+            min: 180
+            max: 350
+          notes: Heavy textured rustic appearance
+          data_source: estimated
+        - id: FIN.WL.TXR.019
+          standard_name: Suede Effect Paint - Interior
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - hospitality
+          requires:
+          - FIN.WL.PNT.006
+          is_code_ref: IS 15489
+          dsr_item_ref: ''
+          aliases:
+          - suede effect
+          - suede paint finish
+          typical_rate_range:
+            min: 160
+            max: 320
+          notes: Soft fabric-like appearance
+          data_source: estimated
+        - id: FIN.WL.TXR.020
+          standard_name: Pearl Finish Texture Paint
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - hospitality
+          requires:
+          - FIN.WL.PNT.006
+          is_code_ref: IS 15489
+          dsr_item_ref: ''
+          aliases:
+          - pearl finish
+          - pearlescent paint
+          typical_rate_range:
+            min: 200
+            max: 400
+          notes: Iridescent pearlescent finish
+          data_source: estimated
+  wallpaper_additional:
+    categories:
+      wallpaper_types:
+        items:
+        - id: FIN.WL.WLP.014
+          standard_name: Wallpaper Paper-Backed - Economy Grade
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - paper wallpaper economy
+          - basic wallpaper
+          typical_rate_range:
+            min: 150
+            max: 300
+          notes: Including adhesive and installation
+          data_source: estimated
+        - id: FIN.WL.WLP.015
+          standard_name: Wallpaper Vinyl - Washable Standard
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - vinyl wallpaper standard
+          - washable wallpaper
+          typical_rate_range:
+            min: 250
+            max: 500
+          notes: Including adhesive and installation
+          data_source: estimated
+        - id: FIN.WL.WLP.016
+          standard_name: Wallpaper Vinyl - Heavy Duty Commercial
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - hospitality
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - heavy duty vinyl wallpaper
+          - commercial vinyl
+          typical_rate_range:
+            min: 400
+            max: 800
+          notes: Fire retardant grade
+          data_source: estimated
+        - id: FIN.WL.WLP.017
+          standard_name: Wallpaper Non-Woven - Standard
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - non-woven wallpaper
+          - fleece wallpaper
+          typical_rate_range:
+            min: 300
+            max: 600
+          notes: Paste-the-wall type
+          data_source: estimated
+        - id: FIN.WL.WLP.018
+          standard_name: Wallpaper Non-Woven - Premium Textured
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - hospitality
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - textured non-woven
+          - premium fleece wallpaper
+          typical_rate_range:
+            min: 500
+            max: 1000
+          notes: Including adhesive and installation
+          data_source: estimated
+        - id: FIN.WL.WLP.019
+          standard_name: Wallpaper Fabric-Backed - Linen Texture
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - hospitality
+          - luxury_residential
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - fabric wallpaper linen
+          - linen wall covering
+          typical_rate_range:
+            min: 800
+            max: 1600
+          notes: Including adhesive and installation
+          data_source: estimated
+        - id: FIN.WL.WLP.020
+          standard_name: Wallpaper Fabric-Backed - Silk Texture
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - hospitality
+          - luxury_residential
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - silk wallpaper
+          - silk wall covering
+          typical_rate_range:
+            min: 1200
+            max: 2500
+          notes: Including adhesive and installation
+          data_source: estimated
+        - id: FIN.WL.WLP.021
+          standard_name: 3D Wall Panel - PVC Decorative
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - 3D wall panel PVC
+          - 3D decorative panel
+          typical_rate_range:
+            min: 500
+            max: 1000
+          notes: Adhesive fixed 3D textured panels
+          data_source: estimated
+        - id: FIN.WL.WLP.022
+          standard_name: 3D Wall Panel - MDF/WPC Decorative
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - 3D MDF panel
+          - 3D WPC wall panel
+          typical_rate_range:
+            min: 800
+            max: 1600
+          notes: Screw/adhesive fixed on battens
+          data_source: estimated
+        - id: FIN.WL.WLP.023
+          standard_name: 3D Wall Panel - Gypsum/Plaster Decorative
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - hospitality
+          requires: []
+          is_code_ref: IS 2547
+          dsr_item_ref: ''
+          aliases:
+          - 3D gypsum panel
+          - plaster 3D wall
+          typical_rate_range:
+            min: 1000
+            max: 2000
+          notes: Adhesive fixed, requires painting
+          data_source: estimated
+  wainscoting_additional:
+    categories:
+      wainscoting_types:
+        items:
+        - id: FIN.WL.DAD.017
+          standard_name: Wood Wainscoting Panel - 900mm Height
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - hospitality
+          requires: []
+          is_code_ref: IS 399
+          dsr_item_ref: ''
+          aliases:
+          - wainscoting 900mm
+          - half wall panel 900
+          typical_rate_range:
+            min: 1500
+            max: 3000
+          notes: Including rail, stiles, and panels
+          data_source: estimated
+        - id: FIN.WL.DAD.018
+          standard_name: Wood Wainscoting Panel - 1200mm Height
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - hospitality
+          requires: []
+          is_code_ref: IS 399
+          dsr_item_ref: ''
+          aliases:
+          - wainscoting 1200mm
+          - half wall panel 1200
+          typical_rate_range:
+            min: 2000
+            max: 4000
+          notes: Including rail, stiles, and panels
+          data_source: estimated
+        - id: FIN.WL.DAD.019
+          standard_name: PVC Wall Panel Wainscoting - 900mm Height
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - PVC wainscoting
+          - PVC panel wainscot
+          typical_rate_range:
+            min: 600
+            max: 1200
+          notes: Including PVC channels and adhesive
+          data_source: estimated
+        - id: FIN.WL.DAD.020
+          standard_name: WPC Fluted Panel - Full Height Wall
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - commercial
+          requires: []
+          is_code_ref: IS 399
+          dsr_item_ref: ''
+          aliases:
+          - WPC fluted panel
+          - fluted wall panel
+          typical_rate_range:
+            min: 1000
+            max: 2000
+          notes: Vertical fluted WPC panels on battens
+          data_source: estimated
+        - id: FIN.WL.DAD.021
+          standard_name: PVC Fluted Panel - Full Height Wall
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - PVC fluted panel
+          - charcoal fluted panel
+          typical_rate_range:
+            min: 600
+            max: 1200
+          notes: Vertical fluted PVC panels
+          data_source: estimated
+        - id: FIN.WL.DAD.022
+          standard_name: MDF Moulding Panel Wainscoting - Classical
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - hospitality
+          requires: []
+          is_code_ref: IS 399
+          dsr_item_ref: ''
+          aliases:
+          - MDF wainscoting moulding
+          - classical wall moulding
+          typical_rate_range:
+            min: 1200
+            max: 2500
+          notes: Including chair rail, base, and panel mouldings
+          data_source: estimated
+  plaster_extended:
+    categories:
+      cement_plaster_special:
+        items:
+        - id: FIN.WL.PSX.001
+          standard_name: Cement Sand Plaster 1:6 - 12mm Thick Internal - Economy Grade
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1661
+          dsr_item_ref: ''
+          aliases:
+          - 1:6 plaster 12mm
+          - economy plaster
+          typical_rate_range:
+            min: 100
+            max: 190
+          notes: Leaner mix for non-structural areas
+          data_source: IS codes only
+        - id: FIN.WL.PSX.002
+          standard_name: Cement Sand Plaster 1:3 - 20mm Thick External with Waterproofing Compound
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1661
+          dsr_item_ref: ''
+          aliases:
+          - waterproof external plaster 20mm
+          - integral WP plaster
+          typical_rate_range:
+            min: 250
+            max: 420
+          notes: With integral waterproofing admixture
+          data_source: IS codes only
+        - id: FIN.WL.PSX.003
+          standard_name: Micro Concrete Plaster - 3mm Thick - Polymer Modified
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 1661
+          dsr_item_ref: ''
+          aliases:
+          - micro concrete plaster
+          - thin coat plaster
+          typical_rate_range:
+            min: 180
+            max: 320
+          notes: Ultra thin polymer modified cementitious plaster
+          data_source: estimated
+        - id: FIN.WL.PSX.004
+          standard_name: Ready Mix Plaster (RMP) - 15mm Thick Internal
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1661
+          dsr_item_ref: ''
+          aliases:
+          - ready mix plaster 15mm
+          - pre-mixed plaster
+          - RMP
+          typical_rate_range:
+            min: 200
+            max: 350
+          notes: Factory premixed dry mortar, just add water
+          data_source: estimated
+        - id: FIN.WL.PSX.005
+          standard_name: Ready Mix Plaster (RMP) - 20mm Thick External
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1661
+          dsr_item_ref: ''
+          aliases:
+          - ready mix external plaster
+          - RMP external
+          typical_rate_range:
+            min: 250
+            max: 400
+          notes: Weather resistant pre-mixed plaster
+          data_source: estimated
+        - id: FIN.WL.PSX.006
+          standard_name: Plaster Repair/Patch Work - Polymer Modified Mortar
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1661
+          dsr_item_ref: ''
+          aliases:
+          - plaster repair
+          - patch plaster
+          - repair mortar
+          typical_rate_range:
+            min: 200
+            max: 400
+          notes: For remedial work and patching
+          data_source: estimated
+        - id: FIN.WL.PSX.007
+          standard_name: Chicken Wire Mesh on Wall Before Plastering
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1661
+          dsr_item_ref: ''
+          aliases:
+          - chicken mesh plaster
+          - wire mesh on wall
+          - GI wire mesh
+          typical_rate_range:
+            min: 40
+            max: 90
+          notes: At junction of masonry and concrete
+          data_source: estimated
+        - id: FIN.WL.PSX.008
+          standard_name: Fibreglass Mesh Embedding in Plaster - Anti-Crack
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1661
+          dsr_item_ref: ''
+          aliases:
+          - fibre mesh plaster
+          - anti-crack mesh
+          - alkali resistant mesh
+          typical_rate_range:
+            min: 30
+            max: 70
+          notes: Alkali resistant glass fibre mesh
+          data_source: estimated
+  paint_extended:
+    categories:
+      primer_types:
+        items:
+        - id: FIN.WL.PRX.001
+          standard_name: Cement Primer - 1 Coat on Internal Wall
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 5411
+          dsr_item_ref: ''
+          aliases:
+          - cement primer internal
+          - wall primer 1 coat
+          typical_rate_range:
+            min: 20
+            max: 40
+          notes: Alkali resistant cement primer
+          data_source: IS codes only
+        - id: FIN.WL.PRX.002
+          standard_name: Cement Primer - 1 Coat on External Wall
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 5411
+          dsr_item_ref: ''
+          aliases:
+          - cement primer external
+          - exterior primer
+          typical_rate_range:
+            min: 22
+            max: 45
+          notes: Weather resistant exterior cement primer
+          data_source: IS codes only
+        - id: FIN.WL.PRX.003
+          standard_name: Water Based Acrylic Primer - 1 Coat
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 104
+          dsr_item_ref: ''
+          aliases:
+          - acrylic primer
+          - water based primer
+          typical_rate_range:
+            min: 18
+            max: 35
+          notes: Quick drying, low VOC
+          data_source: estimated
+        - id: FIN.WL.PRX.004
+          standard_name: Solvent Based Primer - 1 Coat on Metal/Wood Surface
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 109
+          dsr_item_ref: ''
+          aliases:
+          - solvent primer
+          - oil based primer
+          typical_rate_range:
+            min: 25
+            max: 50
+          notes: For metal and wood surfaces
+          data_source: estimated
+      putty_types:
+        items:
+        - id: FIN.WL.PTX.001
+          standard_name: Wall Putty - White Cement Based - 2 Coat Internal
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - wall putty 2 coat
+          - white cement putty
+          typical_rate_range:
+            min: 35
+            max: 65
+          notes: Birla/JK/Asian wall putty, 2 coats
+          data_source: estimated
+        - id: FIN.WL.PTX.002
+          standard_name: Wall Putty - Acrylic Based - 2 Coat (Premium)
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - acrylic putty
+          - premium wall putty
+          typical_rate_range:
+            min: 45
+            max: 80
+          notes: Polymer modified, crack resistant
+          data_source: estimated
+        - id: FIN.WL.PTX.003
+          standard_name: Wall Putty - Single Coat External Grade
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - external putty
+          - outdoor wall putty
+          typical_rate_range:
+            min: 25
+            max: 50
+          notes: Weather grade, single coat application
+          data_source: estimated
+      emulsion_types:
+        items:
+        - id: FIN.WL.EMX.001
+          standard_name: Interior Emulsion Paint - Economy Grade - 2 Coat
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires:
+          - FIN.WL.PTX.001
+          is_code_ref: IS 15489
+          dsr_item_ref: ''
+          aliases:
+          - economy emulsion
+          - basic interior paint
+          typical_rate_range:
+            min: 18
+            max: 35
+          notes: Tractor/Uno type economy paint
+          data_source: IS codes only
+        - id: FIN.WL.EMX.002
+          standard_name: Interior Emulsion Paint - Premium Grade - 2 Coat
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires:
+          - FIN.WL.PTX.001
+          is_code_ref: IS 15489
+          dsr_item_ref: ''
+          aliases:
+          - premium emulsion
+          - Royale/Dulux type paint
+          typical_rate_range:
+            min: 35
+            max: 65
+          notes: Washable, stain resistant
+          data_source: IS codes only
+        - id: FIN.WL.EMX.003
+          standard_name: Interior Emulsion Paint - Luxury/Ultra Premium - 2 Coat
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - hospitality
+          requires:
+          - FIN.WL.PTX.002
+          is_code_ref: IS 15489
+          dsr_item_ref: ''
+          aliases:
+          - luxury emulsion
+          - ultra premium paint
+          typical_rate_range:
+            min: 55
+            max: 100
+          notes: Teflon/ceramic coated, highly washable
+          data_source: estimated
+        - id: FIN.WL.EMX.004
+          standard_name: Exterior Emulsion Paint - Weather Shield/Apex - 2 Coat
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires:
+          - FIN.WL.PRX.002
+          is_code_ref: IS 15489
+          dsr_item_ref: ''
+          aliases:
+          - exterior emulsion
+          - weather coat paint
+          - Apex/Weathershield
+          typical_rate_range:
+            min: 30
+            max: 55
+          notes: UV resistant, algae resistant
+          data_source: IS codes only
+        - id: FIN.WL.EMX.005
+          standard_name: Exterior Emulsion Paint - Premium Silicone Enhanced - 2 Coat
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires:
+          - FIN.WL.PRX.002
+          is_code_ref: IS 15489
+          dsr_item_ref: ''
+          aliases:
+          - silicone exterior paint
+          - premium exterior
+          typical_rate_range:
+            min: 45
+            max: 80
+          notes: Silicone fortified, self-cleaning property
+          data_source: estimated
+        - id: FIN.WL.EMX.006
+          standard_name: Exterior Emulsion Paint - 3rd Coat Additional
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15489
+          dsr_item_ref: ''
+          aliases:
+          - third coat paint
+          - extra coat emulsion
+          typical_rate_range:
+            min: 12
+            max: 25
+          notes: Additional coat over standard 2 coat system
+          data_source: estimated
+  cladding_extended:
+    categories:
+      bamboo_cladding:
+        items:
+        - id: FIN.WL.BCL.001
+          standard_name: Bamboo Wall Cladding - Strand Woven - 12mm Thick
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - hospitality
+          requires: []
+          is_code_ref: IS 399
+          dsr_item_ref: ''
+          aliases:
+          - bamboo cladding
+          - strand woven bamboo wall
+          typical_rate_range:
+            min: 1800
+            max: 3500
+          notes: On MS/wooden battens, adhesive fixed
+          data_source: estimated
+        - id: FIN.WL.BCL.002
+          standard_name: Bamboo Mat Board Cladding - 6mm Thick
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - commercial
+          requires: []
+          is_code_ref: IS 13958
+          dsr_item_ref: ''
+          aliases:
+          - bamboo mat board
+          - bamboo board cladding
+          typical_rate_range:
+            min: 600
+            max: 1200
+          notes: Treated bamboo mat board on frame
+          data_source: IS codes only
+      wood_cladding_extended:
+        items:
+        - id: FIN.WL.WCX.001
+          standard_name: Teak Wood Wall Panelling - 18mm Solid - on Battens
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - hospitality
+          requires: []
+          is_code_ref: IS 399
+          dsr_item_ref: ''
+          aliases:
+          - teak wall panel
+          - solid teak panelling
+          typical_rate_range:
+            min: 4000
+            max: 8000
+          notes: Burma/plantation teak, polished
+          data_source: estimated
+        - id: FIN.WL.WCX.002
+          standard_name: Teak Veneer on MDF/Plywood - 4mm Veneer on 18mm Board
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - commercial
+          requires: []
+          is_code_ref: IS 399
+          dsr_item_ref: ''
+          aliases:
+          - teak veneer panel
+          - veneer on plywood
+          typical_rate_range:
+            min: 1800
+            max: 3500
+          notes: Including plywood backing
+          data_source: estimated
+        - id: FIN.WL.WCX.003
+          standard_name: Laminate Clad Plywood Panel - 1mm HPL on 18mm Plywood
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 399
+          dsr_item_ref: ''
+          aliases:
+          - laminate wall panel
+          - HPL on plywood
+          typical_rate_range:
+            min: 1200
+            max: 2200
+          notes: Including adhesive, edge banding
+          data_source: estimated
+        - id: FIN.WL.WCX.004
+          standard_name: Charcoal Panel / Dark Grooved Wall Panel - PVC/MDF
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - commercial
+          requires: []
+          is_code_ref: IS 399
+          dsr_item_ref: ''
+          aliases:
+          - charcoal panel
+          - dark grooved panel
+          - louver panel
+          typical_rate_range:
+            min: 800
+            max: 1600
+          notes: Modern grooved panel on battens
+          data_source: estimated
+      metal_cladding_extended:
+        items:
+        - id: FIN.WL.MCX.001
+          standard_name: Corten Steel Wall Cladding - 2mm Thick - Weathering Finish
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - hospitality
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - corten wall cladding
+          - weathering steel wall
+          typical_rate_range:
+            min: 3000
+            max: 6000
+          notes: Natural patina develops over time
+          data_source: estimated
+        - id: FIN.WL.MCX.002
+          standard_name: Perforated Metal Screen/Cladding - MS Powder Coated - 2mm
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - perforated metal cladding
+          - metal screen wall
+          typical_rate_range:
+            min: 2500
+            max: 5000
+          notes: CNC laser cut patterns
+          data_source: estimated
+        - id: FIN.WL.MCX.003
+          standard_name: Copper Sheet Wall Cladding - 0.8mm Thick
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - hospitality
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - copper cladding
+          - copper wall finish
+          typical_rate_range:
+            min: 5000
+            max: 10000
+          notes: Develops green patina over time
+          data_source: estimated
+        - id: FIN.WL.MCX.004
+          standard_name: Zinc Composite Panel Cladding - 4mm Thick
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - zinc composite panel
+          - zinc cladding
+          typical_rate_range:
+            min: 3500
+            max: 7000
+          notes: On aluminum sub-frame
+          data_source: estimated
+      concrete_finish:
+        items:
+        - id: FIN.WL.CFN.001
+          standard_name: Exposed Concrete Finish - Patch and Seal with Clear Coat
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - hospitality
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - exposed concrete wall
+          - fair face concrete finish
+          typical_rate_range:
+            min: 250
+            max: 500
+          notes: Honeycombing repair, bug holes fill, clear sealer
+          data_source: estimated
+        - id: FIN.WL.CFN.002
+          standard_name: Concrete Effect Paint/Plaster - Faux Concrete Finish
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - hospitality
+          requires: []
+          is_code_ref: IS 15489
+          dsr_item_ref: ''
+          aliases:
+          - faux concrete finish
+          - concrete effect paint
+          typical_rate_range:
+            min: 400
+            max: 800
+          notes: Decorative plaster mimicking raw concrete
+          data_source: estimated
+        - id: FIN.WL.CFN.003
+          standard_name: Micro Cement / Micro Topping Wall Finish - 2-3mm
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - hospitality
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - micro cement wall
+          - micro topping
+          - seamless wall finish
+          typical_rate_range:
+            min: 800
+            max: 1500
+          notes: Seamless cementitious decorative coating
+          data_source: estimated
+      acoustic_wall:
+        items:
+        - id: FIN.WL.ACW.001
+          standard_name: Acoustic Fabric Wrapped Panel - 50mm Thick - Wall Mounted
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - acoustic wall panel
+          - fabric acoustic panel
+          typical_rate_range:
+            min: 1200
+            max: 2500
+          notes: Glass wool core with fabric wrap
+          data_source: estimated
+        - id: FIN.WL.ACW.002
+          standard_name: Acoustic Wood Slat Panel - on Felt Backing - Wall Mounted
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - hospitality
+          requires: []
+          is_code_ref: IS 399
+          dsr_item_ref: ''
+          aliases:
+          - acoustic slat panel
+          - wood slat acoustic
+          typical_rate_range:
+            min: 2000
+            max: 4000
+          notes: MDF/timber slats on acoustic felt
+          data_source: estimated
+        - id: FIN.WL.ACW.003
+          standard_name: Acoustic Perforated Gypsum Board - 12.5mm - on GI Frame
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - perforated gypsum acoustic
+          - acoustic gypsum wall
+          typical_rate_range:
+            min: 800
+            max: 1500
+          notes: With acoustic infill behind
+          data_source: estimated
+        - id: FIN.WL.ACW.004
+          standard_name: Cork Wall Tiles/Panels - 6mm Thick - Natural
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - residential
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - cork wall tiles
+          - cork panel wall
+          typical_rate_range:
+            min: 800
+            max: 1600
+          notes: Natural sound absorption, pin-up surface
+          data_source: estimated
+      specialty_paint:
+        items:
+        - id: FIN.WL.SPP.001
+          standard_name: Blackboard/Chalkboard Paint - 2 Coat - on Prepared Wall
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - chalkboard paint
+          - blackboard paint
+          typical_rate_range:
+            min: 80
+            max: 160
+          notes: Writable surface finish
+          data_source: estimated
+        - id: FIN.WL.SPP.002
+          standard_name: Magnetic Paint/Primer - 3 Coat - on Wall
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - magnetic paint
+          - magnet wall primer
+          typical_rate_range:
+            min: 150
+            max: 300
+          notes: Iron particle infused primer for magnet adhesion
+          data_source: estimated
+        - id: FIN.WL.SPP.003
+          standard_name: Whiteboard Paint - 2 Coat - Dry Erase Surface
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - whiteboard paint
+          - dry erase paint
+          typical_rate_range:
+            min: 200
+            max: 400
+          notes: Dry erase marker compatible surface
+          data_source: estimated
+        - id: FIN.WL.SPP.004
+          standard_name: Anti-Graffiti Coating - Clear Sacrificial Type
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - anti-graffiti coating
+          - graffiti protection
+          typical_rate_range:
+            min: 100
+            max: 250
+          notes: Removable with hot water/pressure wash
+          data_source: estimated
+        - id: FIN.WL.SPP.005
+          standard_name: Heat Reflective Paint - External Wall - 2 Coat
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - heat reflective paint
+          - cool wall paint
+          - SRI paint
+          typical_rate_range:
+            min: 40
+            max: 80
+          notes: High solar reflectance index coating
+          data_source: estimated
+        - id: FIN.WL.SPP.006
+          standard_name: Damp Proof Paint/Coating - Internal - 2 Coat
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - damp proof paint
+          - moisture barrier paint
+          typical_rate_range:
+            min: 60
+            max: 120
+          notes: For basement walls and damp prone areas
+          data_source: estimated
+      glass_cladding:
+        items:
+        - id: FIN.WL.GCL.001
+          standard_name: Lacquered Glass Wall Cladding - 6mm Thick - on Adhesive
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - lacquered glass wall
+          - back painted glass wall
+          typical_rate_range:
+            min: 1200
+            max: 2500
+          notes: Back-painted toughened glass
+          data_source: estimated
+        - id: FIN.WL.GCL.002
+          standard_name: Mirror Wall Cladding - 6mm Bevelled Edge - on Adhesive
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - mirror wall cladding
+          - full wall mirror
+          typical_rate_range:
+            min: 1500
+            max: 3000
+          notes: Bevelled edge mirror panels
+          data_source: estimated
+        - id: FIN.WL.GCL.003
+          standard_name: Tinted/Smoked Glass Wall Panel - 6mm Thick
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - hospitality
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - tinted glass wall
+          - smoked glass panel
+          typical_rate_range:
+            min: 1400
+            max: 2800
+          notes: Bronze/grey/green tinted toughened glass
+          data_source: estimated
+        - id: FIN.WL.GCL.004
+          standard_name: Frosted/Etched Glass Wall Panel - 6mm Thick
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - frosted glass wall
+          - etched glass panel
+          typical_rate_range:
+            min: 1300
+            max: 2600
+          notes: Sandblasted or acid etched finish
+          data_source: estimated
+        - id: FIN.WL.GCL.005
+          standard_name: 3D Decorative Wall Panel - Gypsum/PVC - Textured
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - 3D wall panel
+          - decorative textured panel
+          typical_rate_range:
+            min: 500
+            max: 1200
+          notes: Modular 3D pattern panels, adhesive fixed
+          data_source: estimated
+        - id: FIN.WL.GCL.006
+          standard_name: Leather/Faux Leather Wall Panel - Upholstered
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - hospitality
+          - residential
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - leather wall panel
+          - upholstered wall
+          typical_rate_range:
+            min: 2000
+            max: 5000
+          notes: Padded faux leather on MDF/plywood backing
+          data_source: estimated

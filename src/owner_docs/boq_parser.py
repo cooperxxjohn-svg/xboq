@@ -42,6 +42,10 @@ class OwnerBOQItem:
             "source_page": self.source_page,
             "is_provisional": self.is_provisional,
             "is_alternate": self.is_alternate,
+            # "section" is the canonical key the matcher callers look for.
+            # Map from "package" so owner-doc items benefit from section
+            # discipline context the same way PDF/Excel BOQ items do.
+            "section": self.package,
         }
 
 

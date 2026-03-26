@@ -1,0 +1,683 @@
+# Rate Tiers Validation
+# Purpose: Defines what rate ranges correspond to different scope inclusions for key construction items.
+# Enables the model to say e.g. "your RCC column rate of Rs 6,500/cum suggests material-only —
+# formwork and steel are likely excluded."
+# Source: CPWD DSR 2023, Delhi NCR market rates 2024, IS code references.
+# Version: 2024-25
+
+rate_tiers:
+
+  - canonical: pcc_m75
+    description: "Plain cement concrete M7.5 (1:4:8) under footings as blinding course"
+    unit: cum
+    is_code_ref: IS 456:2000
+    tiers:
+      material_only:
+        min: 3800
+        max: 5200
+        includes: [cement, sand, aggregate_40mm, mixing, placing]
+        excludes: [centering, shuttering, curing_compound, levelling_charges]
+        flag: "Rate suggests basic concrete supply and place only. Confirm curing and levelling are covered."
+      supply_fix:
+        min: 5300
+        max: 7000
+        includes: [cement, sand, aggregate, mixing, placing, levelling, curing_7days]
+        excludes: [reinforcement]
+        flag: "Rate includes placing and curing. No reinforcement expected for PCC — verify if grade is correct."
+      composite_all_in:
+        min: 7100
+        max: 9000
+        includes: [cement, sand, aggregate, mixing, placing, levelling, curing, dewatering_allowance]
+        excludes: []
+        flag: null
+    red_flag_below: 3200
+    red_flag_above: 10000
+    red_flag_message: "Rate outside expected range for M7.5 PCC blinding. Verify mix design and scope."
+
+  - canonical: rcc_footing_m20
+    description: "RCC M20 isolated or combined footing including formwork and reinforcement"
+    unit: cum
+    is_code_ref: IS 456:2000
+    tiers:
+      material_only:
+        min: 4800
+        max: 7000
+        includes: [concrete_m20_supply, placing, vibration]
+        excludes: [formwork, reinforcement_steel, binding_wire, cover_blocks, curing]
+        flag: "Rate suggests concrete-only. Formwork and reinforcement steel must be separate BOQ items."
+      supply_fix_no_steel:
+        min: 9000
+        max: 14000
+        includes: [concrete_m20, formwork, curing_14days, cover_blocks]
+        excludes: [reinforcement_steel, binding_wire]
+        flag: "Rate includes concrete and formwork. Verify reinforcement steel is a separate BOQ item by MT."
+      composite_all_in:
+        min: 14500
+        max: 22000
+        includes: [concrete_m20, formwork, reinforcement_steel_fe500d, binding_wire, cover_blocks, curing_14days, dewatering_allowance]
+        excludes: []
+        flag: null
+    red_flag_below: 4000
+    red_flag_above: 26000
+    red_flag_message: "Rate outside expected range for M20 RCC footing. Verify scope inclusions."
+
+  - canonical: rcc_column_m25
+    description: "RCC M25 column including formwork and reinforcement"
+    unit: cum
+    is_code_ref: IS 456:2000
+    tiers:
+      material_only:
+        min: 4500
+        max: 6500
+        includes: [concrete_m25_supply, concrete_placing]
+        excludes: [formwork, reinforcement_steel, curing]
+        flag: "Rate suggests concrete-only supply. Formwork and reinforcement must be separate items."
+      supply_fix_no_steel:
+        min: 8000
+        max: 13000
+        includes: [concrete_m25, formwork_column, curing]
+        excludes: [reinforcement_steel]
+        flag: "Rate includes concrete and formwork. Verify reinforcement steel is a separate BOQ item."
+      composite_all_in:
+        min: 14000
+        max: 24000
+        includes: [concrete_m25, formwork_column, reinforcement_steel_fe500d, binding_wire, cover_blocks, curing_14days]
+        excludes: []
+        flag: null
+    red_flag_below: 4000
+    red_flag_above: 28000
+    red_flag_message: "Rate outside expected range for M25 RCC column. Verify scope inclusions."
+
+  - canonical: rcc_beam_m25
+    description: "RCC M25 beam (plinth, tie, lintel, roof) including formwork and reinforcement"
+    unit: cum
+    is_code_ref: IS 456:2000
+    tiers:
+      material_only:
+        min: 4500
+        max: 6500
+        includes: [concrete_m25_supply, placing, vibration]
+        excludes: [formwork, reinforcement_steel, curing]
+        flag: "Rate suggests concrete-only. Formwork and reinforcement steel must appear as separate BOQ items."
+      supply_fix_no_steel:
+        min: 9000
+        max: 14500
+        includes: [concrete_m25, formwork_beam_soffit_sides, curing]
+        excludes: [reinforcement_steel, binding_wire]
+        flag: "Rate includes concrete and formwork. Verify reinforcement steel is a separate BOQ item."
+      composite_all_in:
+        min: 15000
+        max: 26000
+        includes: [concrete_m25, formwork, reinforcement_steel_fe500d, binding_wire, cover_blocks, curing_14days]
+        excludes: []
+        flag: null
+    red_flag_below: 4000
+    red_flag_above: 30000
+    red_flag_message: "Rate outside expected range for M25 RCC beam. Verify scope."
+
+  - canonical: rcc_slab_m25
+    description: "RCC M25 slab (one-way, two-way, flat slab) including formwork and reinforcement"
+    unit: cum
+    is_code_ref: IS 456:2000
+    tiers:
+      material_only:
+        min: 4500
+        max: 6500
+        includes: [concrete_m25_supply, placing, vibration, compaction]
+        excludes: [formwork_soffit, props_staging, reinforcement_steel, curing]
+        flag: "Rate suggests concrete-only. Formwork (soffit shuttering) and reinforcement must be separate items."
+      supply_fix_no_steel:
+        min: 8500
+        max: 13500
+        includes: [concrete_m25, formwork_soffit_props, curing]
+        excludes: [reinforcement_steel, binding_wire]
+        flag: "Rate includes concrete and soffit formwork. Verify reinforcement steel is a separate item."
+      composite_all_in:
+        min: 14000
+        max: 23000
+        includes: [concrete_m25, formwork_soffit, props_staging, reinforcement_steel_fe500d, binding_wire, cover_blocks, curing_14days]
+        excludes: []
+        flag: null
+    red_flag_below: 4000
+    red_flag_above: 27000
+    red_flag_message: "Rate outside expected range for M25 RCC slab. Verify scope inclusions."
+
+  - canonical: formwork_slab
+    description: "Centering and shuttering for RCC slabs using plywood with steel props"
+    unit: sqm
+    is_code_ref: IS 14687:1999
+    tiers:
+      material_only:
+        min: 120
+        max: 200
+        includes: [plywood_shuttering_material_cost_amortised]
+        excludes: [props_staging, labour_erection, labour_striking, transportation]
+        flag: "Rate seems material-only. Labour for erection/striking and prop hire must be separate."
+      supply_fix:
+        min: 220
+        max: 380
+        includes: [plywood, props_hire, erection_labour, striking_labour, cleaning_oiling]
+        excludes: [multiple_use_amortisation_beyond_3_uses]
+        flag: "Standard shuttering rate. Confirm number of uses amortised in rate."
+      composite_all_in:
+        min: 390
+        max: 550
+        includes: [plywood, props, erection, striking, transport, staging_scaffolding, multiple_use_allowance]
+        excludes: []
+        flag: null
+    red_flag_below: 100
+    red_flag_above: 650
+    red_flag_message: "Rate outside expected range for slab formwork. Verify if rate is per sqm or per cum."
+
+  - canonical: tmt_fe500d_reinforcement
+    description: "TMT Fe500D reinforcement steel bars, supply and placement including binding wire"
+    unit: MT
+    is_code_ref: IS 1786:2008
+    tiers:
+      material_only:
+        min: 58000
+        max: 70000
+        includes: [steel_supply_fe500d, mill_test_certificate]
+        excludes: [cutting, bending, placing, binding_wire, wastage]
+        flag: "Rate suggests steel supply only. Cutting, bending, placing, and binding wire must be separate."
+      supply_fix:
+        min: 72000
+        max: 85000
+        includes: [steel_supply, cutting, bending, placing, binding_wire_8kg_per_mt, wastage_3pct]
+        excludes: [hooks_chairs_spacers]
+        flag: "Standard supply-and-fix rate. Verify binding wire, chairs, and spacers are included."
+      composite_all_in:
+        min: 86000
+        max: 98000
+        includes: [steel_supply_fe500d, cutting, bending, placing, binding_wire, chairs_spacers, cover_blocks, mill_cert, 3pct_wastage]
+        excludes: []
+        flag: null
+    red_flag_below: 55000
+    red_flag_above: 110000
+    red_flag_message: "Rate outside expected range for Fe500D TMT. Check if rate is per MT or per kg (divide by 1000)."
+
+  - canonical: brick_masonry_230mm_cm16
+    description: "First class brick masonry in cement mortar 1:6 (230mm thick) in superstructure"
+    unit: cum
+    is_code_ref: IS 2212:1991
+    tiers:
+      material_only:
+        min: 3800
+        max: 5500
+        includes: [bricks_supply, cement, sand]
+        excludes: [labour_laying, scaffolding, curing, raking_joints]
+        flag: "Rate suggests materials only. Labour, scaffolding, and curing must be separate."
+      supply_fix:
+        min: 5800
+        max: 8500
+        includes: [bricks, cement_mortar_1_6, laying_labour, raking_joints, curing_7days]
+        excludes: [scaffolding_erection, scaffolding_dismantling]
+        flag: "Standard masonry rate. Verify if scaffolding is a separate item or included."
+      composite_all_in:
+        min: 8800
+        max: 12500
+        includes: [bricks, cement_mortar, laying, curing, scaffolding_allowance, raking, cleaning]
+        excludes: []
+        flag: null
+    red_flag_below: 3200
+    red_flag_above: 15000
+    red_flag_message: "Rate outside expected range for 230mm brick masonry CM 1:6. Verify thickness and mortar grade."
+
+  - canonical: aac_block_masonry_200mm
+    description: "AAC block masonry 200mm thick using thin bed mortar/block joining mortar"
+    unit: cum
+    is_code_ref: IS 2185 Part 3:2005
+    tiers:
+      material_only:
+        min: 3500
+        max: 5200
+        includes: [aac_blocks_supply_600x200x200]
+        excludes: [jointing_mortar, labour, scaffolding, curing]
+        flag: "Rate suggests AAC blocks supply only. Jointing mortar and labour must be separate."
+      supply_fix:
+        min: 5500
+        max: 8000
+        includes: [aac_blocks, thin_bed_mortar, laying_labour, curing]
+        excludes: [scaffolding, chicken_mesh_at_junctions]
+        flag: "Standard AAC rate. Verify chicken mesh at RCC-block junctions is covered."
+      composite_all_in:
+        min: 8200
+        max: 11500
+        includes: [aac_blocks, thin_bed_mortar, laying, scaffolding, chicken_mesh_junctions, curing, cleaning]
+        excludes: []
+        flag: null
+    red_flag_below: 3000
+    red_flag_above: 14000
+    red_flag_message: "Rate outside expected range for 200mm AAC block masonry. Verify block grade and density."
+
+  - canonical: cement_plaster_12mm_internal
+    description: "12mm thick cement plaster 1:6 for internal walls (single coat)"
+    unit: sqm
+    is_code_ref: IS 1661:1972
+    tiers:
+      material_only:
+        min: 55
+        max: 90
+        includes: [cement, sand, water]
+        excludes: [labour, curing, surface_preparation, beading]
+        flag: "Rate suggests materials only. Labour and surface preparation must be separate."
+      supply_fix:
+        min: 95
+        max: 155
+        includes: [cement_mortar_1_6, labour_application, curing_7days, surface_preparation]
+        excludes: [chicken_mesh_at_junctions, bonding_agent, corner_beads]
+        flag: "Standard internal plaster rate. Verify corner beads and mesh at junctions are covered."
+      composite_all_in:
+        min: 160
+        max: 220
+        includes: [cement_mortar, surface_prep, labour, chicken_mesh, corner_beads, curing, scaffold_allowance]
+        excludes: [POP_punning, putty]
+        flag: null
+    red_flag_below: 50
+    red_flag_above: 280
+    red_flag_message: "Rate outside expected range for 12mm internal plaster. Verify thickness and mortar ratio."
+
+  - canonical: cement_plaster_20mm_external
+    description: "20mm thick cement plaster 1:4 (double coat) for external surfaces"
+    unit: sqm
+    is_code_ref: IS 1661:1972
+    tiers:
+      material_only:
+        min: 90
+        max: 140
+        includes: [cement, sand_washed, water]
+        excludes: [labour, scaffolding, curing, surface_preparation]
+        flag: "Rate suggests materials only. Labour and external scaffolding must be separate."
+      supply_fix:
+        min: 150
+        max: 240
+        includes: [cement_mortar_1_4_double_coat, labour, curing, surface_preparation]
+        excludes: [external_scaffolding, chicken_mesh, drip_mould]
+        flag: "Rate includes labour and curing. External scaffolding is typically a separate BOQ item."
+      composite_all_in:
+        min: 250
+        max: 380
+        includes: [cement_mortar_double_coat, labour, scaffolding, chicken_mesh_junctions, drip_mould, curing, cleaning]
+        excludes: []
+        flag: null
+    red_flag_below: 80
+    red_flag_above: 450
+    red_flag_message: "Rate outside expected range for 20mm external plaster. Verify coat count and scaffolding inclusion."
+
+  - canonical: vitrified_tile_600x600_floor
+    description: "600x600mm double charged vitrified floor tiles laid in cement mortar"
+    unit: sqm
+    is_code_ref: IS 15622:2006
+    tiers:
+      material_only:
+        min: 350
+        max: 700
+        includes: [tile_supply_600x600_double_charged]
+        excludes: [adhesive_or_screed, laying_labour, grouting, skirting]
+        flag: "Rate suggests tile supply only. Adhesive/screed bed, labour, grouting must be separate."
+      supply_fix:
+        min: 750
+        max: 1200
+        includes: [tile_600x600, cement_mortar_screed_bed_or_adhesive, laying_labour, grouting]
+        excludes: [skirting_tiles, waterproofing_screed_below]
+        flag: "Standard tile rate. Verify skirting tiles and waterproofing screed are separate items."
+      composite_all_in:
+        min: 1250
+        max: 1800
+        includes: [tile_supply, screed_bed, adhesive, laying, grouting, skirting_3inch, cleaning, polishing]
+        excludes: []
+        flag: null
+    red_flag_below: 300
+    red_flag_above: 2200
+    red_flag_message: "Rate outside expected range for 600x600 vitrified floor tile. Verify grade (GVT/PGVT) and scope."
+
+  - canonical: ceramic_tile_300x450_wall
+    description: "300x450mm ceramic glazed wall tiles laid in cement mortar up to dado height"
+    unit: sqm
+    is_code_ref: IS 15622:2006
+    tiers:
+      material_only:
+        min: 180
+        max: 380
+        includes: [ceramic_tile_supply_300x450]
+        excludes: [adhesive, laying_labour, grouting, edge_trim]
+        flag: "Rate suggests tile supply only. Adhesive, labour, and grouting must be separate."
+      supply_fix:
+        min: 400
+        max: 700
+        includes: [ceramic_tile, tile_adhesive, laying_labour, grouting, cleaning]
+        excludes: [edge_trim_aluminium, border_tiles]
+        flag: "Standard wall tile rate. Verify edge trim and border tiles are covered."
+      composite_all_in:
+        min: 720
+        max: 1050
+        includes: [tile_supply, adhesive, laying, grouting, edge_trim, border_tiles_allowance, cleaning]
+        excludes: []
+        flag: null
+    red_flag_below: 160
+    red_flag_above: 1300
+    red_flag_message: "Rate outside expected range for 300x450 ceramic wall tile. Verify tile grade and fixing method."
+
+  - canonical: interior_emulsion_3coats
+    description: "Interior acrylic emulsion paint 3 coats (primer + 2 finish coats) on plastered surface"
+    unit: sqm
+    is_code_ref: IS 15489:2004
+    tiers:
+      material_only:
+        min: 40
+        max: 80
+        includes: [paint_supply_3coats_material_only]
+        excludes: [labour, primer, putty, scaffolding]
+        flag: "Rate suggests paint material only. Labour, primer, and putty must be separate."
+      supply_fix:
+        min: 85
+        max: 150
+        includes: [primer_1coat, emulsion_2coats, labour, sanding]
+        excludes: [putty_application, scaffolding]
+        flag: "Rate includes paint and labour. Verify putty/wall care is a separate item."
+      composite_all_in:
+        min: 155
+        max: 260
+        includes: [wall_putty_2coats, primer_1coat, emulsion_2coats, labour, sanding_between_coats, scaffolding_allowance]
+        excludes: []
+        flag: null
+    red_flag_below: 35
+    red_flag_above: 320
+    red_flag_message: "Rate outside expected range for interior emulsion 3 coats. Verify coat count and putty inclusion."
+
+  - canonical: exterior_emulsion_2coats
+    description: "Exterior weather-proof emulsion 2 finish coats with primer on external surfaces"
+    unit: sqm
+    is_code_ref: IS 15489:2004
+    tiers:
+      material_only:
+        min: 60
+        max: 110
+        includes: [exterior_emulsion_supply_2coats]
+        excludes: [labour, primer, scaffolding, crack_filler]
+        flag: "Rate suggests paint material only. Labour, primer, and scaffolding must be separate."
+      supply_fix:
+        min: 120
+        max: 220
+        includes: [primer_exterior_1coat, emulsion_2coats, labour, scaffolding_allowance]
+        excludes: [crack_filler, surface_preparation_chemical_wash]
+        flag: "Rate includes labour and basic scaffolding. Verify crack filler and surface prep are covered."
+      composite_all_in:
+        min: 230
+        max: 380
+        includes: [crack_filler, primer, 2coats_weather_proof_emulsion, labour, full_scaffolding, surface_prep, cleaning]
+        excludes: []
+        flag: null
+    red_flag_below: 55
+    red_flag_above: 450
+    red_flag_message: "Rate outside expected range for exterior emulsion. Verify coat count and scaffolding scope."
+
+  - canonical: waterproofing_app_membrane_terrace
+    description: "APP modified bitumen membrane waterproofing for terrace/roof (4mm thick torch-applied)"
+    unit: sqm
+    is_code_ref: IS 1346:1991
+    tiers:
+      material_only:
+        min: 180
+        max: 280
+        includes: [app_membrane_4mm_supply]
+        excludes: [surface_preparation, primer, labour_application, parapet_upturn, protective_screed]
+        flag: "Rate suggests membrane supply only. Primer, labour, and protective screed must be separate."
+      supply_fix:
+        min: 300
+        max: 480
+        includes: [surface_prep, bitumen_primer, app_membrane_4mm, torch_application_labour, parapet_upturn_300mm]
+        excludes: [protective_cement_screed_50mm, drainage_layer]
+        flag: "Rate includes membrane and application. Verify 50mm protective screed is a separate item."
+      composite_all_in:
+        min: 500
+        max: 750
+        includes: [surface_prep, primer, app_membrane_4mm, torch_application, parapet_upturn_300mm, protective_screed_50mm, drainage_layer]
+        excludes: []
+        flag: null
+    red_flag_below: 150
+    red_flag_above: 900
+    red_flag_message: "Rate outside expected range for APP membrane terrace waterproofing. Verify membrane thickness and screed inclusion."
+
+  - canonical: false_ceiling_gypsum_board
+    description: "12.5mm gypsum board false ceiling on MS frame (suspended) standard grid"
+    unit: sqm
+    is_code_ref: IS 2095:2011
+    tiers:
+      material_only:
+        min: 250
+        max: 400
+        includes: [gypsum_board_12_5mm_supply, ms_frame_supply]
+        excludes: [installation_labour, hangers_anchors, jointing_compound, finishing]
+        flag: "Rate suggests materials only. Labour, hangers, and finishing must be separate."
+      supply_fix:
+        min: 420
+        max: 680
+        includes: [gypsum_board, ms_frame, hangers_anchors, labour_installation, jointing_taping, primer_coat]
+        excludes: [light_cutouts, MEP_access_panels, cornices_beading]
+        flag: "Standard false ceiling rate. Verify light cutouts and MEP openings are included or separate."
+      composite_all_in:
+        min: 700
+        max: 1000
+        includes: [gypsum_board, ms_frame, hangers, installation, jointing, primer, light_cutouts, access_panels, cornices, painting_2coats]
+        excludes: []
+        flag: null
+    red_flag_below: 200
+    red_flag_above: 1200
+    red_flag_message: "Rate outside expected range for gypsum false ceiling. Verify board thickness and frame type."
+
+  - canonical: flush_door_35mm_commercial
+    description: "35mm commercial grade flush door shutter (hollow or solid core) painted finish"
+    unit: nos
+    is_code_ref: IS 2202:1999
+    tiers:
+      material_only:
+        min: 2500
+        max: 5000
+        includes: [flush_door_shutter_only_35mm]
+        excludes: [door_frame, ironmongery, hinges, lock, stopper, painting]
+        flag: "Rate suggests door shutter only. Frame, hardware, and painting must be separate."
+      supply_fix:
+        min: 5500
+        max: 9500
+        includes: [flush_door_shutter, door_frame_100x65mm, hinges_3nos, tower_bolt, door_stopper]
+        excludes: [cylindrical_lock_set, painting_door, door_closer]
+        flag: "Rate includes shutter and frame with basic hardware. Verify lock set and painting are covered."
+      composite_all_in:
+        min: 10000
+        max: 16000
+        includes: [door_shutter, door_frame, hinges, cylindrical_lock_set, tower_bolt, stopper, painting_2coats_both_sides, door_closer]
+        excludes: []
+        flag: null
+    red_flag_below: 2000
+    red_flag_above: 20000
+    red_flag_message: "Rate outside expected range for 35mm flush door. Verify if frame and hardware are included."
+
+  - canonical: aluminum_sliding_window
+    description: "Aluminum sliding window 2-track with 5mm float glass and mosquito mesh"
+    unit: sqm
+    is_code_ref: IS 1948:1961
+    tiers:
+      material_only:
+        min: 1200
+        max: 2000
+        includes: [aluminum_section_supply, fabrication]
+        excludes: [glass, mosquito_mesh, hardware, installation]
+        flag: "Rate suggests aluminum frame fabrication only. Glass, mesh, and installation must be separate."
+      supply_fix:
+        min: 2200
+        max: 3500
+        includes: [aluminum_frame_fabrication, 5mm_float_glass, basic_hardware_rollers_latches, installation]
+        excludes: [mosquito_mesh, anodizing_or_powder_coating_premium, silicon_sealant]
+        flag: "Standard window rate. Verify mosquito mesh and silicon sealing are covered."
+      composite_all_in:
+        min: 3600
+        max: 5500
+        includes: [aluminum_frame, 5mm_glass, mosquito_mesh, hardware, powder_coating, installation, silicon_sealant, finishing]
+        excludes: []
+        flag: null
+    red_flag_below: 1000
+    red_flag_above: 7000
+    red_flag_message: "Rate outside expected range for aluminum sliding window per sqm. Verify glass spec and section weight."
+
+  - canonical: upvc_pipe_25mm_supply
+    description: "UPVC pressure pipe 25mm dia Class 4 for internal water supply (concealed)"
+    unit: rmt
+    is_code_ref: IS 4985:2000
+    tiers:
+      material_only:
+        min: 55
+        max: 100
+        includes: [upvc_pipe_supply_25mm_class4]
+        excludes: [fittings_elbows_tees, labour_laying, clamps, testing]
+        flag: "Rate suggests pipe supply only. Fittings and labour must be separate."
+      supply_fix:
+        min: 110
+        max: 180
+        includes: [upvc_pipe, standard_fittings_allowance, labour_laying_fixing, clamps]
+        excludes: [chasing_wall_for_concealed, hydraulic_testing]
+        flag: "Standard piping rate. Verify wall chasing and hydraulic testing are covered."
+      composite_all_in:
+        min: 190
+        max: 280
+        includes: [pipe, fittings, labour, wall_chasing_making_good, clamps, hydraulic_testing, sleeves_at_walls]
+        excludes: []
+        flag: null
+    red_flag_below: 45
+    red_flag_above: 350
+    red_flag_message: "Rate outside expected range for 25mm UPVC supply pipe. Verify diameter and pressure class."
+
+  - canonical: pvc_swr_110mm_drain
+    description: "110mm dia PVC SWR (Soil Waste Rain) pipe for internal drainage"
+    unit: rmt
+    is_code_ref: IS 13592:1992
+    tiers:
+      material_only:
+        min: 120
+        max: 200
+        includes: [pvc_swr_pipe_supply_110mm]
+        excludes: [fittings_bends_junctions, labour, clamps, testing]
+        flag: "Rate suggests pipe supply only. SWR fittings and labour must be separate."
+      supply_fix:
+        min: 220
+        max: 380
+        includes: [swr_pipe_110mm, fittings_allowance, labour_laying_fixing, clamps, brackets]
+        excludes: [access_doors_for_concealed_pipes, smoke_test]
+        flag: "Standard drain pipe rate. Verify access doors for concealed runs are covered."
+      composite_all_in:
+        min: 400
+        max: 560
+        includes: [pipe, fittings, labour, clamps, access_doors, smoke_testing, making_good_tiles_cut]
+        excludes: []
+        flag: null
+    red_flag_below: 100
+    red_flag_above: 700
+    red_flag_message: "Rate outside expected range for 110mm PVC SWR drain pipe. Verify diameter and pipe class."
+
+  - canonical: concealed_wiring_2_5sqmm
+    description: "2.5 sqmm FR PVC insulated copper wire in concealed conduit for power points"
+    unit: rmt
+    is_code_ref: IS 694:2010
+    tiers:
+      material_only:
+        min: 35
+        max: 60
+        includes: [copper_wire_2_5sqmm_fr_supply]
+        excludes: [pvc_conduit, labour_pulling, clamps, junction_boxes]
+        flag: "Rate suggests wire supply only. Conduit and labour must be separate."
+      supply_fix:
+        min: 65
+        max: 110
+        includes: [copper_wire_2_5sqmm, pvc_conduit_20mm_concealed, labour_drawing_pulling, junction_boxes]
+        excludes: [chasing_grouting_wall, testing_megger]
+        flag: "Standard wiring rate. Verify wall chasing and testing are separate items."
+      composite_all_in:
+        min: 115
+        max: 175
+        includes: [wire, conduit, labour, junction_boxes, wall_chasing_grouting, megger_testing, ferruling_labelling]
+        excludes: []
+        flag: null
+    red_flag_below: 28
+    red_flag_above: 220
+    red_flag_message: "Rate outside expected range for 2.5sqmm wiring. Verify cross-section and conduit inclusion."
+
+  - canonical: led_panel_light_18w
+    description: "18W LED recessed panel light (600x600mm or round 225mm), complete with driver"
+    unit: nos
+    is_code_ref: IS 16107:2012
+    tiers:
+      material_only:
+        min: 800
+        max: 1500
+        includes: [led_panel_18w_supply_with_driver]
+        excludes: [installation_labour, wiring_tail, mcb_share, fitting_cutting_false_ceiling]
+        flag: "Rate suggests LED fixture supply only. Installation and wiring connection must be separate."
+      supply_fix:
+        min: 1600
+        max: 2500
+        includes: [led_panel_18w, driver, installation_in_false_ceiling, wiring_tail_connection, cutting_false_ceiling]
+        excludes: [dedicated_mcb, testing_lux_level]
+        flag: "Standard LED rate includes supply and fix. Verify MCB allocation and lux testing are covered."
+      composite_all_in:
+        min: 2600
+        max: 3800
+        includes: [led_panel, driver, installation, wiring, mcb_share, cutting_patching_false_ceiling, testing, 1yr_warranty]
+        excludes: []
+        flag: null
+    red_flag_below: 600
+    red_flag_above: 5000
+    red_flag_message: "Rate outside expected range for 18W LED panel. Verify wattage and driver quality (non-isolated vs isolated)."
+
+  - canonical: split_ac_1_5tr
+    description: "1.5 TR split air conditioner (5 star rated) supply, installation, copper piping and drainage"
+    unit: nos
+    is_code_ref: IS 1391:1994
+    tiers:
+      material_only:
+        min: 28000
+        max: 42000
+        includes: [split_ac_1_5tr_indoor_outdoor_supply_5star]
+        excludes: [copper_piping_pair, drain_pipe, electrical_wiring, installation_labour, commissioning]
+        flag: "Rate suggests AC unit supply only. Copper piping, drain pipe, wiring, and installation must be separate."
+      supply_fix:
+        min: 44000
+        max: 62000
+        includes: [ac_unit_1_5tr, copper_piping_3mtr_standard, drain_pipe, installation_labour, gas_charging, basic_wiring_connection]
+        excludes: [dedicated_MCB_breaker, stabilizer, additional_piping_beyond_3m]
+        flag: "Standard AC rate. Verify MCB, stabilizer, and long pipe runs are covered."
+      composite_all_in:
+        min: 64000
+        max: 85000
+        includes: [ac_unit, copper_pair_piping_5mtr, drain_pipe, installation, gas_charging, dedicated_mcb, wiring, commissioning, 1yr_amc]
+        excludes: []
+        flag: null
+    red_flag_below: 22000
+    red_flag_above: 100000
+    red_flag_message: "Rate outside expected range for 1.5TR split AC. Verify star rating and copper piping length."
+
+  - canonical: anti_termite_treatment_preconstruction
+    description: "Pre-construction anti-termite chemical treatment (soil poisoning) below slab and around foundation"
+    unit: sqm
+    is_code_ref: IS 6313 Part 2:2001
+    tiers:
+      material_only:
+        min: 15
+        max: 35
+        includes: [chemical_supply_chlorpyrifos_or_approved]
+        excludes: [labour_application, supervision, warranty_certificate]
+        flag: "Rate suggests chemical supply only. Qualified applicator labour and warranty certificate must be separate."
+      supply_fix:
+        min: 38
+        max: 70
+        includes: [approved_chemical, labour_application_certified_operator, horizontal_vertical_treatment]
+        excludes: [10yr_warranty_certificate, perimeter_treatment]
+        flag: "Standard anti-termite rate. Verify IS 6313 compliance and warranty certificate are included."
+      composite_all_in:
+        min: 75
+        max: 130
+        includes: [approved_chemical_IS6313, certified_applicator, horizontal_treatment, vertical_foundation_treatment, perimeter_treatment, 10yr_warranty_cert, report]
+        excludes: []
+        flag: null
+    red_flag_below: 12
+    red_flag_above: 180
+    red_flag_message: "Rate outside expected range for pre-construction anti-termite treatment per sqm. Verify IS 6313 compliance and warranty."

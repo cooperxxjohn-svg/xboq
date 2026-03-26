@@ -18,6 +18,8 @@ from pathlib import Path
 import logging
 import re
 
+from src.materials.wastage import get_wastage_pct
+
 logger = logging.getLogger(__name__)
 
 
@@ -132,10 +134,13 @@ class SteelBOQCalculator:
     def __init__(
         self,
         steel_grade: str = "Fe500",
-        wastage_factor: float = 0.05,  # 5% cutting/lapping wastage
+        wastage_factor: Optional[float] = None,
     ):
         self.steel_grade = steel_grade
-        self.wastage_factor = wastage_factor
+        if wastage_factor is not None:
+            self.wastage_factor = wastage_factor
+        else:
+            self.wastage_factor = get_wastage_pct("steel_rebar") / 100.0
         self.assumptions_used: List[str] = []
 
     def calculate_from_bbs(

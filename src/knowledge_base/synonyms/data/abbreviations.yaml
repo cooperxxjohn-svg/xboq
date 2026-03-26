@@ -1,0 +1,2220 @@
+# xBOQ.ai Master Construction Knowledge Base
+# Standard Construction Abbreviations
+# ~280+ entries covering all Indian construction industry abbreviations
+
+abbreviations:
+  # ============================================================
+  # STRUCTURAL / CONCRETE
+  # ============================================================
+  - abbr: "RCC"
+    full_form: "Reinforced Cement Concrete"
+    taxonomy_ids: ["STR.CON.RCC.001"]
+    trade: "structural"
+    commonly_confused_with: []
+
+  - abbr: "PCC"
+    full_form: "Plain Cement Concrete"
+    taxonomy_ids: ["STR.CON.PCC.001"]
+    trade: "structural"
+    commonly_confused_with: []
+
+  - abbr: "PSC"
+    full_form: "Prestressed Concrete"
+    taxonomy_ids: ["STR.CON.PSC.001"]
+    trade: "structural"
+    commonly_confused_with: ["Portland Slag Cement"]
+
+  - abbr: "TMT"
+    full_form: "Thermo Mechanically Treated"
+    taxonomy_ids: ["STR.RE.TMT.001"]
+    trade: "structural"
+    commonly_confused_with: []
+
+  - abbr: "BBS"
+    full_form: "Bar Bending Schedule"
+    taxonomy_ids: ["STR.RE.BBS.001"]
+    trade: "structural"
+    commonly_confused_with: []
+
+  - abbr: "SCC"
+    full_form: "Self Compacting Concrete"
+    taxonomy_ids: ["STR.CON.SCC.001"]
+    trade: "structural"
+    commonly_confused_with: []
+
+  - abbr: "FRC"
+    full_form: "Fibre Reinforced Concrete"
+    taxonomy_ids: ["STR.CON.FRC.001"]
+    trade: "structural"
+    commonly_confused_with: []
+
+  - abbr: "RMC"
+    full_form: "Ready Mix Concrete"
+    taxonomy_ids: ["STR.CON.RMC.001"]
+    trade: "structural"
+    commonly_confused_with: []
+
+  - abbr: "PT"
+    full_form: "Post-Tensioned"
+    taxonomy_ids: ["STR.CON.PSC.001"]
+    trade: "structural"
+    commonly_confused_with: []
+
+  - abbr: "WWM"
+    full_form: "Welded Wire Mesh"
+    taxonomy_ids: ["STR.RE.WM.001"]
+    trade: "structural"
+    commonly_confused_with: []
+
+  # ============================================================
+  # COMMERCIAL / TENDERING
+  # ============================================================
+  - abbr: "BOQ"
+    full_form: "Bill of Quantities"
+    taxonomy_ids: ["COM.BOQ.GEN.001"]
+    trade: "commercial"
+    commonly_confused_with: []
+
+  - abbr: "DSR"
+    full_form: "Delhi Schedule of Rates"
+    taxonomy_ids: ["COM.DSR.GEN.001"]
+    trade: "commercial"
+    commonly_confused_with: []
+
+  - abbr: "SOR"
+    full_form: "Schedule of Rates"
+    taxonomy_ids: ["COM.SOR.GEN.001"]
+    trade: "commercial"
+    commonly_confused_with: []
+
+  - abbr: "NIT"
+    full_form: "Notice Inviting Tender"
+    taxonomy_ids: ["COM.NIT.GEN.001"]
+    trade: "commercial"
+    commonly_confused_with: []
+
+  - abbr: "LOA"
+    full_form: "Letter of Acceptance"
+    taxonomy_ids: ["COM.LOA.GEN.001"]
+    trade: "commercial"
+    commonly_confused_with: []
+
+  - abbr: "WO"
+    full_form: "Work Order"
+    taxonomy_ids: ["COM.WO.GEN.001"]
+    trade: "commercial"
+    commonly_confused_with: []
+
+  - abbr: "PO"
+    full_form: "Purchase Order"
+    taxonomy_ids: ["COM.PO.GEN.001"]
+    trade: "commercial"
+    commonly_confused_with: []
+
+  - abbr: "RA"
+    full_form: "Running Account"
+    taxonomy_ids: ["COM.RA.GEN.001"]
+    trade: "commercial"
+    commonly_confused_with: []
+
+  - abbr: "VO"
+    full_form: "Variation Order"
+    taxonomy_ids: ["COM.VO.GEN.001"]
+    trade: "commercial"
+    commonly_confused_with: []
+
+  - abbr: "EOT"
+    full_form: "Extension of Time"
+    taxonomy_ids: ["COM.EOT.GEN.001"]
+    trade: "commercial"
+    commonly_confused_with: ["Electric Overhead Travelling (crane)"]
+
+  - abbr: "DLP"
+    full_form: "Defect Liability Period"
+    taxonomy_ids: ["COM.DLP.GEN.001"]
+    trade: "commercial"
+    commonly_confused_with: []
+
+  - abbr: "PS"
+    full_form: "Provisional Sum"
+    taxonomy_ids: ["COM.PS.GEN.001"]
+    trade: "commercial"
+    commonly_confused_with: []
+
+  - abbr: "PC"
+    full_form: "Prime Cost"
+    taxonomy_ids: ["COM.PC.GEN.001"]
+    trade: "commercial"
+    commonly_confused_with: ["Pile Cap"]
+
+  - abbr: "EMD"
+    full_form: "Earnest Money Deposit"
+    taxonomy_ids: ["COM.EMD.GEN.001"]
+    trade: "commercial"
+    commonly_confused_with: []
+
+  - abbr: "SD"
+    full_form: "Security Deposit"
+    taxonomy_ids: ["COM.SD.GEN.001"]
+    trade: "commercial"
+    commonly_confused_with: ["Smoke Detector"]
+
+  # ============================================================
+  # ELECTRICAL - Circuit Breakers & Panels
+  # ============================================================
+  - abbr: "MCB"
+    full_form: "Miniature Circuit Breaker"
+    taxonomy_ids: ["ELE.CB.MCB.001"]
+    trade: "electrical"
+    commonly_confused_with: []
+
+  - abbr: "MCCB"
+    full_form: "Moulded Case Circuit Breaker"
+    taxonomy_ids: ["ELE.CB.MCCB.001"]
+    trade: "electrical"
+    commonly_confused_with: []
+
+  - abbr: "RCCB"
+    full_form: "Residual Current Circuit Breaker"
+    taxonomy_ids: ["ELE.CB.RCCB.001"]
+    trade: "electrical"
+    commonly_confused_with: []
+
+  - abbr: "ELCB"
+    full_form: "Earth Leakage Circuit Breaker"
+    taxonomy_ids: ["ELE.CB.RCCB.001"]
+    trade: "electrical"
+    commonly_confused_with: ["RCCB - modern equivalent"]
+
+  - abbr: "ACB"
+    full_form: "Air Circuit Breaker"
+    taxonomy_ids: ["ELE.CB.ACB.001"]
+    trade: "electrical"
+    commonly_confused_with: []
+
+  - abbr: "DB"
+    full_form: "Distribution Board"
+    taxonomy_ids: ["ELE.DB.GEN.001"]
+    trade: "electrical"
+    commonly_confused_with: []
+
+  - abbr: "MDB"
+    full_form: "Main Distribution Board"
+    taxonomy_ids: ["ELE.DB.MDB.001"]
+    trade: "electrical"
+    commonly_confused_with: []
+
+  - abbr: "SMDB"
+    full_form: "Sub Main Distribution Board"
+    taxonomy_ids: ["ELE.DB.SMDB.001"]
+    trade: "electrical"
+    commonly_confused_with: []
+
+  - abbr: "MSB"
+    full_form: "Main Switch Board"
+    taxonomy_ids: ["ELE.DB.MSB.001"]
+    trade: "electrical"
+    commonly_confused_with: []
+
+  - abbr: "APFC"
+    full_form: "Automatic Power Factor Correction"
+    taxonomy_ids: ["ELE.PF.APFC.001"]
+    trade: "electrical"
+    commonly_confused_with: []
+
+  - abbr: "SDB"
+    full_form: "Sub Distribution Board"
+    taxonomy_ids: ["ELE.DB.SDB.001"]
+    trade: "electrical"
+    commonly_confused_with: []
+
+  - abbr: "ATS"
+    full_form: "Automatic Transfer Switch"
+    taxonomy_ids: ["ELE.ATS.GEN.001"]
+    trade: "electrical"
+    commonly_confused_with: []
+
+  - abbr: "AMF"
+    full_form: "Auto Mains Failure"
+    taxonomy_ids: ["ELE.AMF.GEN.001"]
+    trade: "electrical"
+    commonly_confused_with: []
+
+  - abbr: "DG"
+    full_form: "Diesel Generator"
+    taxonomy_ids: ["ELE.DG.GEN.001"]
+    trade: "electrical"
+    commonly_confused_with: []
+
+  - abbr: "UPS"
+    full_form: "Uninterruptible Power Supply"
+    taxonomy_ids: ["ELE.UPS.GEN.001"]
+    trade: "electrical"
+    commonly_confused_with: []
+
+  - abbr: "VFD"
+    full_form: "Variable Frequency Drive"
+    taxonomy_ids: ["ELE.VFD.GEN.001"]
+    trade: "electrical"
+    commonly_confused_with: ["Vacuum Dewatered Floor"]
+
+  - abbr: "FRLS"
+    full_form: "Fire Retardant Low Smoke"
+    taxonomy_ids: ["ELE.WR.FRLS.001"]
+    trade: "electrical"
+    commonly_confused_with: []
+
+  - abbr: "XLPE"
+    full_form: "Cross-Linked Polyethylene"
+    taxonomy_ids: ["ELE.WR.XLPE.001"]
+    trade: "electrical"
+    commonly_confused_with: []
+
+  - abbr: "CT"
+    full_form: "Cable Tray"
+    taxonomy_ids: ["ELE.CT.GEN.001"]
+    trade: "electrical"
+    commonly_confused_with: ["Current Transformer", "Ceramic Tile", "Cooling Tower"]
+
+  - abbr: "LT"
+    full_form: "Low Tension"
+    taxonomy_ids: ["ELE.LT.GEN.001"]
+    trade: "electrical"
+    commonly_confused_with: ["Light"]
+
+  - abbr: "HT"
+    full_form: "High Tension"
+    taxonomy_ids: ["ELE.HT.GEN.001"]
+    trade: "electrical"
+    commonly_confused_with: ["Hot"]
+
+  # ============================================================
+  # PLUMBING PIPES
+  # ============================================================
+  - abbr: "CPVC"
+    full_form: "Chlorinated Polyvinyl Chloride"
+    taxonomy_ids: ["PLB.PP.CPVC.001"]
+    trade: "plumbing"
+    commonly_confused_with: []
+
+  - abbr: "PPR"
+    full_form: "Polypropylene Random Copolymer"
+    taxonomy_ids: ["PLB.PP.PPR.001"]
+    trade: "plumbing"
+    commonly_confused_with: []
+
+  - abbr: "HDPE"
+    full_form: "High Density Polyethylene"
+    taxonomy_ids: ["PLB.PP.HDPE.001"]
+    trade: "plumbing"
+    commonly_confused_with: []
+
+  - abbr: "GI"
+    full_form: "Galvanized Iron"
+    taxonomy_ids: ["PLB.PP.GI.001"]
+    trade: "plumbing"
+    commonly_confused_with: []
+
+  - abbr: "CI"
+    full_form: "Cast Iron"
+    taxonomy_ids: ["PLB.PP.CI.001"]
+    trade: "plumbing"
+    commonly_confused_with: []
+
+  - abbr: "DI"
+    full_form: "Ductile Iron"
+    taxonomy_ids: ["PLB.PP.DI.001"]
+    trade: "plumbing"
+    commonly_confused_with: []
+
+  - abbr: "PVC"
+    full_form: "Polyvinyl Chloride"
+    taxonomy_ids: ["PLB.PP.PVC.001"]
+    trade: "plumbing"
+    commonly_confused_with: []
+
+  - abbr: "SWR"
+    full_form: "Soil Waste and Rain Water"
+    taxonomy_ids: ["PLB.PP.SWR.001"]
+    trade: "plumbing"
+    commonly_confused_with: []
+
+  - abbr: "UPVC"
+    full_form: "Unplasticized Polyvinyl Chloride"
+    taxonomy_ids: ["PLB.PP.UPVC.001"]
+    trade: "plumbing"
+    commonly_confused_with: []
+
+  - abbr: "DWC"
+    full_form: "Double Wall Corrugated"
+    taxonomy_ids: ["PLB.PP.DWC.001"]
+    trade: "plumbing"
+    commonly_confused_with: []
+
+  # ============================================================
+  # PLUMBING - Systems
+  # ============================================================
+  - abbr: "STP"
+    full_form: "Sewage Treatment Plant"
+    taxonomy_ids: ["PLB.STP.GEN.001"]
+    trade: "plumbing"
+    commonly_confused_with: []
+
+  - abbr: "ETP"
+    full_form: "Effluent Treatment Plant"
+    taxonomy_ids: ["PLB.ETP.GEN.001"]
+    trade: "plumbing"
+    commonly_confused_with: []
+
+  - abbr: "WTP"
+    full_form: "Water Treatment Plant"
+    taxonomy_ids: ["PLB.WTP.GEN.001"]
+    trade: "plumbing"
+    commonly_confused_with: []
+
+  - abbr: "RWH"
+    full_form: "Rain Water Harvesting"
+    taxonomy_ids: ["PLB.RWH.GEN.001"]
+    trade: "plumbing"
+    commonly_confused_with: []
+
+  - abbr: "OHT"
+    full_form: "Overhead Tank"
+    taxonomy_ids: ["PLB.TK.OHT.001"]
+    trade: "plumbing"
+    commonly_confused_with: []
+
+  - abbr: "UGT"
+    full_form: "Underground Tank"
+    taxonomy_ids: ["PLB.TK.UGT.001"]
+    trade: "plumbing"
+    commonly_confused_with: []
+
+  - abbr: "MBR"
+    full_form: "Membrane Bio Reactor"
+    taxonomy_ids: ["PLB.STP.MBR.001"]
+    trade: "plumbing"
+    commonly_confused_with: []
+
+  - abbr: "SBR"
+    full_form: "Sequencing Batch Reactor"
+    taxonomy_ids: ["PLB.STP.SBR.001"]
+    trade: "plumbing"
+    commonly_confused_with: []
+
+  - abbr: "MBBR"
+    full_form: "Moving Bed Biofilm Reactor"
+    taxonomy_ids: ["PLB.STP.MBBR.001"]
+    trade: "plumbing"
+    commonly_confused_with: []
+
+  # ============================================================
+  # PLUMBING - Fixtures
+  # ============================================================
+  - abbr: "EWC"
+    full_form: "European Water Closet"
+    taxonomy_ids: ["PLB.SF.EWC.001"]
+    trade: "plumbing"
+    commonly_confused_with: []
+
+  - abbr: "IWC"
+    full_form: "Indian Water Closet"
+    taxonomy_ids: ["PLB.SF.IWC.001"]
+    trade: "plumbing"
+    commonly_confused_with: []
+
+  - abbr: "CP"
+    full_form: "Chrome Plated"
+    taxonomy_ids: ["PLB.CP.GEN.001"]
+    trade: "plumbing"
+    commonly_confused_with: []
+
+  - abbr: "WB"
+    full_form: "Wash Basin"
+    taxonomy_ids: ["PLB.SF.WB.001"]
+    trade: "plumbing"
+    commonly_confused_with: []
+
+  # ============================================================
+  # HVAC
+  # ============================================================
+  - abbr: "AHU"
+    full_form: "Air Handling Unit"
+    taxonomy_ids: ["HVAC.AHU.GEN.001"]
+    trade: "hvac"
+    commonly_confused_with: []
+
+  - abbr: "FCU"
+    full_form: "Fan Coil Unit"
+    taxonomy_ids: ["HVAC.FCU.GEN.001"]
+    trade: "hvac"
+    commonly_confused_with: []
+
+  - abbr: "VRV"
+    full_form: "Variable Refrigerant Volume"
+    taxonomy_ids: ["HVAC.VRV.GEN.001"]
+    trade: "hvac"
+    commonly_confused_with: ["VRF"]
+
+  - abbr: "VRF"
+    full_form: "Variable Refrigerant Flow"
+    taxonomy_ids: ["HVAC.VRV.GEN.001"]
+    trade: "hvac"
+    commonly_confused_with: ["VRV"]
+
+  - abbr: "FAHU"
+    full_form: "Fresh Air Handling Unit"
+    taxonomy_ids: ["HVAC.FAHU.GEN.001"]
+    trade: "hvac"
+    commonly_confused_with: []
+
+  - abbr: "PAU"
+    full_form: "Primary Air Unit"
+    taxonomy_ids: ["HVAC.PAU.GEN.001"]
+    trade: "hvac"
+    commonly_confused_with: []
+
+  - abbr: "VAV"
+    full_form: "Variable Air Volume"
+    taxonomy_ids: ["HVAC.VAV.GEN.001"]
+    trade: "hvac"
+    commonly_confused_with: []
+
+  - abbr: "CAV"
+    full_form: "Constant Air Volume"
+    taxonomy_ids: ["HVAC.CAV.GEN.001"]
+    trade: "hvac"
+    commonly_confused_with: []
+
+  - abbr: "CFM"
+    full_form: "Cubic Feet per Minute"
+    taxonomy_ids: ["HVAC.UN.CFM.001"]
+    trade: "hvac"
+    commonly_confused_with: []
+
+  - abbr: "TR"
+    full_form: "Ton of Refrigeration"
+    taxonomy_ids: ["HVAC.UN.TR.001"]
+    trade: "hvac"
+    commonly_confused_with: []
+
+  - abbr: "HP"
+    full_form: "Horse Power"
+    taxonomy_ids: ["HVAC.UN.HP.001"]
+    trade: "hvac"
+    commonly_confused_with: []
+
+  - abbr: "CHW"
+    full_form: "Chilled Water"
+    taxonomy_ids: ["HVAC.CW.GEN.001"]
+    trade: "hvac"
+    commonly_confused_with: []
+
+  - abbr: "CW"
+    full_form: "Condenser Water"
+    taxonomy_ids: ["HVAC.CDW.GEN.001"]
+    trade: "hvac"
+    commonly_confused_with: ["Curtain Wall", "Cold Water"]
+
+  - abbr: "DAHU"
+    full_form: "Double Skin Air Handling Unit"
+    taxonomy_ids: ["HVAC.AHU.DS.001"]
+    trade: "hvac"
+    commonly_confused_with: []
+
+  # ============================================================
+  # FIRE PROTECTION
+  # ============================================================
+  - abbr: "ABC"
+    full_form: "Ammonium Bicarbonate (dry chemical)"
+    taxonomy_ids: ["FP.FE.ABC.001"]
+    trade: "fire"
+    commonly_confused_with: []
+
+  - abbr: "DCP"
+    full_form: "Dry Chemical Powder"
+    taxonomy_ids: ["FP.FE.DCP.001"]
+    trade: "fire"
+    commonly_confused_with: []
+
+  - abbr: "AFFF"
+    full_form: "Aqueous Film Forming Foam"
+    taxonomy_ids: ["FP.FE.AFFF.001"]
+    trade: "fire"
+    commonly_confused_with: []
+
+  - abbr: "MCP"
+    full_form: "Manual Call Point"
+    taxonomy_ids: ["FP.FA.MCP.001"]
+    trade: "fire"
+    commonly_confused_with: []
+
+  - abbr: "VESDA"
+    full_form: "Very Early Smoke Detection Apparatus"
+    taxonomy_ids: ["FP.SD.VESDA.001"]
+    trade: "fire"
+    commonly_confused_with: []
+
+  - abbr: "ASD"
+    full_form: "Aspirating Smoke Detector"
+    taxonomy_ids: ["FP.SD.ASD.001"]
+    trade: "fire"
+    commonly_confused_with: []
+
+  - abbr: "HSSD"
+    full_form: "High Sensitivity Smoke Detector"
+    taxonomy_ids: ["FP.SD.HSSD.001"]
+    trade: "fire"
+    commonly_confused_with: []
+
+  - abbr: "PA"
+    full_form: "Public Address"
+    taxonomy_ids: ["SEC.PA.GEN.001"]
+    trade: "fire"
+    commonly_confused_with: []
+
+  - abbr: "PAVA"
+    full_form: "Public Address Voice Alarm"
+    taxonomy_ids: ["SEC.PAVA.GEN.001"]
+    trade: "fire"
+    commonly_confused_with: []
+
+  - abbr: "FM200"
+    full_form: "FM-200 Clean Agent (Heptafluoropropane)"
+    taxonomy_ids: ["FP.FS.FM200.001"]
+    trade: "fire"
+    commonly_confused_with: []
+
+  - abbr: "NFPA"
+    full_form: "National Fire Protection Association"
+    taxonomy_ids: ["FP.STD.NFPA.001"]
+    trade: "fire"
+    commonly_confused_with: []
+
+  # ============================================================
+  # WATERPROOFING
+  # ============================================================
+  - abbr: "DPC"
+    full_form: "Damp Proof Course"
+    taxonomy_ids: ["WP.DPC.001"]
+    trade: "waterproofing"
+    commonly_confused_with: []
+
+  - abbr: "APP"
+    full_form: "Atactic Polypropylene (membrane)"
+    taxonomy_ids: ["WP.BIT.APP.001"]
+    trade: "waterproofing"
+    commonly_confused_with: []
+
+  - abbr: "SBS"
+    full_form: "Styrene Butadiene Styrene (membrane)"
+    taxonomy_ids: ["WP.BIT.SBS.001"]
+    trade: "waterproofing"
+    commonly_confused_with: []
+
+  - abbr: "TPO"
+    full_form: "Thermoplastic Polyolefin"
+    taxonomy_ids: ["WP.MEM.TPO.001"]
+    trade: "waterproofing"
+    commonly_confused_with: []
+
+  - abbr: "PU"
+    full_form: "Polyurethane"
+    taxonomy_ids: ["WP.LIQ.PU.001"]
+    trade: "waterproofing"
+    commonly_confused_with: []
+
+  - abbr: "PUR"
+    full_form: "Polyurethane Resin"
+    taxonomy_ids: ["WP.LIQ.PUR.001"]
+    trade: "waterproofing"
+    commonly_confused_with: []
+
+  # ============================================================
+  # MATERIALS
+  # ============================================================
+  - abbr: "OPC"
+    full_form: "Ordinary Portland Cement"
+    taxonomy_ids: ["MAT.CM.OPC.001"]
+    trade: "materials"
+    commonly_confused_with: []
+
+  - abbr: "PPC"
+    full_form: "Portland Pozzolana Cement"
+    taxonomy_ids: ["MAT.CM.PPC.001"]
+    trade: "materials"
+    commonly_confused_with: []
+
+  - abbr: "SS"
+    full_form: "Stainless Steel"
+    taxonomy_ids: ["MAT.MT.SS.001"]
+    trade: "materials"
+    commonly_confused_with: []
+
+  - abbr: "MS"
+    full_form: "Mild Steel"
+    taxonomy_ids: ["MAT.MT.MS.001"]
+    trade: "materials"
+    commonly_confused_with: []
+
+  - abbr: "AL"
+    full_form: "Aluminium"
+    taxonomy_ids: ["MAT.MT.AL.001"]
+    trade: "materials"
+    commonly_confused_with: []
+
+  - abbr: "GRP"
+    full_form: "Glass Reinforced Plastic"
+    taxonomy_ids: ["MAT.PL.GRP.001"]
+    trade: "materials"
+    commonly_confused_with: []
+
+  - abbr: "FRP"
+    full_form: "Fibre Reinforced Plastic"
+    taxonomy_ids: ["MAT.PL.FRP.001"]
+    trade: "materials"
+    commonly_confused_with: []
+
+  - abbr: "AAC"
+    full_form: "Autoclaved Aerated Concrete"
+    taxonomy_ids: ["MAS.BK.AAC.001"]
+    trade: "masonry"
+    commonly_confused_with: []
+
+  - abbr: "ACP"
+    full_form: "Aluminium Composite Panel"
+    taxonomy_ids: ["FAC.ACP.GEN.001"]
+    trade: "facade"
+    commonly_confused_with: []
+
+  - abbr: "DGU"
+    full_form: "Double Glazed Unit"
+    taxonomy_ids: ["FAC.GL.DGU.001"]
+    trade: "facade"
+    commonly_confused_with: []
+
+  - abbr: "HPL"
+    full_form: "High Pressure Laminate"
+    taxonomy_ids: ["FIN.CL.HPL.001"]
+    trade: "finishes"
+    commonly_confused_with: []
+
+  # ============================================================
+  # CODES & STANDARDS
+  # ============================================================
+  - abbr: "NBC"
+    full_form: "National Building Code"
+    taxonomy_ids: ["STD.NBC.GEN.001"]
+    trade: "codes"
+    commonly_confused_with: []
+
+  - abbr: "IS"
+    full_form: "Indian Standard"
+    taxonomy_ids: ["STD.IS.GEN.001"]
+    trade: "codes"
+    commonly_confused_with: []
+
+  - abbr: "BIS"
+    full_form: "Bureau of Indian Standards"
+    taxonomy_ids: ["STD.BIS.GEN.001"]
+    trade: "codes"
+    commonly_confused_with: []
+
+  - abbr: "CPWD"
+    full_form: "Central Public Works Department"
+    taxonomy_ids: ["ORG.CPWD.GEN.001"]
+    trade: "government"
+    commonly_confused_with: []
+
+  - abbr: "PWD"
+    full_form: "Public Works Department"
+    taxonomy_ids: ["ORG.PWD.GEN.001"]
+    trade: "government"
+    commonly_confused_with: []
+
+  - abbr: "MES"
+    full_form: "Military Engineering Services"
+    taxonomy_ids: ["ORG.MES.GEN.001"]
+    trade: "government"
+    commonly_confused_with: []
+
+  - abbr: "NHAI"
+    full_form: "National Highways Authority of India"
+    taxonomy_ids: ["ORG.NHAI.GEN.001"]
+    trade: "government"
+    commonly_confused_with: []
+
+  - abbr: "RDSO"
+    full_form: "Research Designs and Standards Organisation"
+    taxonomy_ids: ["ORG.RDSO.GEN.001"]
+    trade: "government"
+    commonly_confused_with: []
+
+  - abbr: "IGBC"
+    full_form: "Indian Green Building Council"
+    taxonomy_ids: ["STD.IGBC.GEN.001"]
+    trade: "green_building"
+    commonly_confused_with: []
+
+  - abbr: "GRIHA"
+    full_form: "Green Rating for Integrated Habitat Assessment"
+    taxonomy_ids: ["STD.GRIHA.GEN.001"]
+    trade: "green_building"
+    commonly_confused_with: []
+
+  - abbr: "ECBC"
+    full_form: "Energy Conservation Building Code"
+    taxonomy_ids: ["STD.ECBC.GEN.001"]
+    trade: "green_building"
+    commonly_confused_with: []
+
+  - abbr: "LEED"
+    full_form: "Leadership in Energy and Environmental Design"
+    taxonomy_ids: ["STD.LEED.GEN.001"]
+    trade: "green_building"
+    commonly_confused_with: []
+
+  # ============================================================
+  # BUILDING AUTOMATION & CONTROLS
+  # ============================================================
+  - abbr: "BMS"
+    full_form: "Building Management System"
+    taxonomy_ids: ["ELE.BMS.GEN.001"]
+    trade: "automation"
+    commonly_confused_with: []
+
+  - abbr: "BAS"
+    full_form: "Building Automation System"
+    taxonomy_ids: ["ELE.BAS.GEN.001"]
+    trade: "automation"
+    commonly_confused_with: []
+
+  - abbr: "DDC"
+    full_form: "Direct Digital Control"
+    taxonomy_ids: ["ELE.DDC.GEN.001"]
+    trade: "automation"
+    commonly_confused_with: []
+
+  - abbr: "PLC"
+    full_form: "Programmable Logic Controller"
+    taxonomy_ids: ["ELE.PLC.GEN.001"]
+    trade: "automation"
+    commonly_confused_with: []
+
+  - abbr: "SCADA"
+    full_form: "Supervisory Control and Data Acquisition"
+    taxonomy_ids: ["ELE.SCADA.GEN.001"]
+    trade: "automation"
+    commonly_confused_with: []
+
+  - abbr: "IBMS"
+    full_form: "Integrated Building Management System"
+    taxonomy_ids: ["ELE.IBMS.GEN.001"]
+    trade: "automation"
+    commonly_confused_with: []
+
+  # ============================================================
+  # SECURITY
+  # ============================================================
+  - abbr: "CCTV"
+    full_form: "Closed Circuit Television"
+    taxonomy_ids: ["SEC.CCTV.GEN.001"]
+    trade: "security"
+    commonly_confused_with: []
+
+  - abbr: "ACS"
+    full_form: "Access Control System"
+    taxonomy_ids: ["SEC.AC.GEN.001"]
+    trade: "security"
+    commonly_confused_with: []
+
+  - abbr: "SCS"
+    full_form: "Structured Cabling System"
+    taxonomy_ids: ["ELE.SC.GEN.001"]
+    trade: "networking"
+    commonly_confused_with: []
+
+  - abbr: "LAN"
+    full_form: "Local Area Network"
+    taxonomy_ids: ["ELE.LAN.GEN.001"]
+    trade: "networking"
+    commonly_confused_with: []
+
+  # ============================================================
+  # FLOORING
+  # ============================================================
+  - abbr: "IPS"
+    full_form: "Indian Patent Stone"
+    taxonomy_ids: ["FIN.FL.IPS.001"]
+    trade: "finishes"
+    commonly_confused_with: []
+
+  - abbr: "VDF"
+    full_form: "Vacuum Dewatered Floor"
+    taxonomy_ids: ["FIN.FL.VDF.001"]
+    trade: "finishes"
+    commonly_confused_with: ["Variable Frequency Drive"]
+
+  - abbr: "POP"
+    full_form: "Plaster of Paris"
+    taxonomy_ids: ["FIN.PL.POP.001"]
+    trade: "finishes"
+    commonly_confused_with: []
+
+  - abbr: "VT"
+    full_form: "Vitrified Tile"
+    taxonomy_ids: ["FIN.FL.VT.001"]
+    trade: "finishes"
+    commonly_confused_with: []
+
+  - abbr: "GVT"
+    full_form: "Glazed Vitrified Tile"
+    taxonomy_ids: ["FIN.FL.GVT.001"]
+    trade: "finishes"
+    commonly_confused_with: []
+
+  - abbr: "PGVT"
+    full_form: "Polished Glazed Vitrified Tile"
+    taxonomy_ids: ["FIN.FL.PGVT.001"]
+    trade: "finishes"
+    commonly_confused_with: []
+
+  # ============================================================
+  # ROADWORK
+  # ============================================================
+  - abbr: "WBM"
+    full_form: "Water Bound Macadam"
+    taxonomy_ids: ["CIV.RD.WBM.001"]
+    trade: "civil"
+    commonly_confused_with: []
+
+  - abbr: "WMM"
+    full_form: "Wet Mix Macadam"
+    taxonomy_ids: ["CIV.RD.WMM.001"]
+    trade: "civil"
+    commonly_confused_with: []
+
+  - abbr: "GSB"
+    full_form: "Granular Sub Base"
+    taxonomy_ids: ["CIV.RD.GSB.001"]
+    trade: "civil"
+    commonly_confused_with: []
+
+  - abbr: "DBM"
+    full_form: "Dense Bituminous Macadam"
+    taxonomy_ids: ["CIV.RD.DBM.001"]
+    trade: "civil"
+    commonly_confused_with: []
+
+  - abbr: "BC"
+    full_form: "Bituminous Concrete"
+    taxonomy_ids: ["CIV.RD.BC.001"]
+    trade: "civil"
+    commonly_confused_with: []
+
+  - abbr: "BM"
+    full_form: "Bituminous Macadam"
+    taxonomy_ids: ["CIV.RD.BM.001"]
+    trade: "civil"
+    commonly_confused_with: []
+
+  - abbr: "BT"
+    full_form: "Bituminous Top"
+    taxonomy_ids: ["CIV.RD.BT.001"]
+    trade: "civil"
+    commonly_confused_with: []
+
+  # ============================================================
+  # EARTHWORK & FOUNDATION
+  # ============================================================
+  - abbr: "SPT"
+    full_form: "Standard Penetration Test"
+    taxonomy_ids: ["CIV.EW.SPT.001"]
+    trade: "geotechnical"
+    commonly_confused_with: []
+
+  - abbr: "SBC"
+    full_form: "Safe Bearing Capacity"
+    taxonomy_ids: ["CIV.EW.SBC.001"]
+    trade: "geotechnical"
+    commonly_confused_with: []
+
+  - abbr: "PLT"
+    full_form: "Plate Load Test"
+    taxonomy_ids: ["CIV.EW.PLT.001"]
+    trade: "geotechnical"
+    commonly_confused_with: []
+
+  - abbr: "PIT"
+    full_form: "Pile Integrity Test"
+    taxonomy_ids: ["STR.FND.PIT.001"]
+    trade: "geotechnical"
+    commonly_confused_with: []
+
+  # ============================================================
+  # MISCELLANEOUS
+  # ============================================================
+  - abbr: "ATT"
+    full_form: "Anti Termite Treatment"
+    taxonomy_ids: ["MISC.AT.GEN.001"]
+    trade: "misc"
+    commonly_confused_with: []
+
+  - abbr: "FAL-G"
+    full_form: "Fly Ash Lime Gypsum"
+    taxonomy_ids: ["MAS.BK.FAB.001"]
+    trade: "masonry"
+    commonly_confused_with: []
+
+  - abbr: "MRL"
+    full_form: "Machine Room Less"
+    taxonomy_ids: ["LIFT.PE.MRL.001"]
+    trade: "elevator"
+    commonly_confused_with: []
+
+  - abbr: "ARD"
+    full_form: "Automatic Rescue Device"
+    taxonomy_ids: ["LIFT.ARD.GEN.001"]
+    trade: "elevator"
+    commonly_confused_with: []
+
+  - abbr: "MLCP"
+    full_form: "Multi Level Car Parking"
+    taxonomy_ids: ["EXT.PK.MLCP.001"]
+    trade: "civil"
+    commonly_confused_with: []
+
+  - abbr: "EV"
+    full_form: "Electric Vehicle"
+    taxonomy_ids: ["ELE.EV.GEN.001"]
+    trade: "electrical"
+    commonly_confused_with: []
+
+  - abbr: "SWD"
+    full_form: "Storm Water Drain"
+    taxonomy_ids: ["CIV.SD.GEN.001"]
+    trade: "civil"
+    commonly_confused_with: []
+
+  - abbr: "PPE"
+    full_form: "Personal Protective Equipment"
+    taxonomy_ids: ["SAF.PPE.GEN.001"]
+    trade: "safety"
+    commonly_confused_with: []
+
+  - abbr: "QA"
+    full_form: "Quality Assurance"
+    taxonomy_ids: ["QC.QA.GEN.001"]
+    trade: "quality"
+    commonly_confused_with: []
+
+  - abbr: "QC"
+    full_form: "Quality Control"
+    taxonomy_ids: ["QC.QC.GEN.001"]
+    trade: "quality"
+    commonly_confused_with: []
+
+  - abbr: "NDT"
+    full_form: "Non-Destructive Testing"
+    taxonomy_ids: ["QC.NDT.GEN.001"]
+    trade: "quality"
+    commonly_confused_with: []
+
+  - abbr: "UPT"
+    full_form: "Ultrasonic Pulse Testing"
+    taxonomy_ids: ["QC.UPT.GEN.001"]
+    trade: "quality"
+    commonly_confused_with: []
+
+  - abbr: "RFI"
+    full_form: "Request for Information"
+    taxonomy_ids: ["COM.RFI.GEN.001"]
+    trade: "commercial"
+    commonly_confused_with: []
+
+  - abbr: "RFP"
+    full_form: "Request for Proposal"
+    taxonomy_ids: ["COM.RFP.GEN.001"]
+    trade: "commercial"
+    commonly_confused_with: []
+
+  - abbr: "MEP"
+    full_form: "Mechanical Electrical Plumbing"
+    taxonomy_ids: ["MEP.GEN.001"]
+    trade: "mep"
+    commonly_confused_with: []
+
+  - abbr: "HVAC"
+    full_form: "Heating Ventilation and Air Conditioning"
+    taxonomy_ids: ["HVAC.GEN.001"]
+    trade: "hvac"
+    commonly_confused_with: []
+
+  - abbr: "FLS"
+    full_form: "Fire Life Safety"
+    taxonomy_ids: ["FP.GEN.001"]
+    trade: "fire"
+    commonly_confused_with: []
+
+  - abbr: "ELV"
+    full_form: "Extra Low Voltage"
+    taxonomy_ids: ["ELE.ELV.GEN.001"]
+    trade: "electrical"
+    commonly_confused_with: []
+
+  - abbr: "ICT"
+    full_form: "Information and Communication Technology"
+    taxonomy_ids: ["ELE.ICT.GEN.001"]
+    trade: "networking"
+    commonly_confused_with: []
+
+  - abbr: "SITC"
+    full_form: "Supply Installation Testing and Commissioning"
+    taxonomy_ids: ["COM.SITC.GEN.001"]
+    trade: "commercial"
+    commonly_confused_with: []
+
+  - abbr: "O&M"
+    full_form: "Operation and Maintenance"
+    taxonomy_ids: ["COM.OM.GEN.001"]
+    trade: "commercial"
+    commonly_confused_with: []
+
+  - abbr: "GFC"
+    full_form: "Good for Construction"
+    taxonomy_ids: ["COM.GFC.GEN.001"]
+    trade: "commercial"
+    commonly_confused_with: []
+
+  - abbr: "IFC"
+    full_form: "Issued for Construction"
+    taxonomy_ids: ["COM.IFC.GEN.001"]
+    trade: "commercial"
+    commonly_confused_with: []
+
+  - abbr: "AFC"
+    full_form: "Approved for Construction"
+    taxonomy_ids: ["COM.AFC.GEN.001"]
+    trade: "commercial"
+    commonly_confused_with: []
+
+  - abbr: "MBA"
+    full_form: "Measurement Book Abstract"
+    taxonomy_ids: ["COM.MBA.GEN.001"]
+    trade: "commercial"
+    commonly_confused_with: []
+
+  - abbr: "MB"
+    full_form: "Measurement Book"
+    taxonomy_ids: ["COM.MB.GEN.001"]
+    trade: "commercial"
+    commonly_confused_with: []
+
+  - abbr: "PNG"
+    full_form: "Piped Natural Gas"
+    taxonomy_ids: ["PLB.GC.PNG.001"]
+    trade: "plumbing"
+    commonly_confused_with: []
+
+  - abbr: "LPG"
+    full_form: "Liquefied Petroleum Gas"
+    taxonomy_ids: ["PLB.GC.LPG.001"]
+    trade: "plumbing"
+    commonly_confused_with: []
+
+  # ============================================================
+  # ============================================================
+  #
+  #   NEW ENTRIES BELOW — Expansion to 280+ entries
+  #
+  # ============================================================
+  # ============================================================
+
+  # ============================================================
+  # DSR / SCHEDULE REFERENCES & GOVERNMENT BODIES (NEW)
+  # ============================================================
+  - abbr: "SSR"
+    full_form: "State Schedule of Rates"
+    taxonomy_ids: ["COM.SSR.GEN.001"]
+    trade: "commercial"
+    variations: ["S.S.R.", "s.s.r", "S S R"]
+    commonly_confused_with: []
+
+  - abbr: "CSR"
+    full_form: "Composite Schedule of Rates"
+    taxonomy_ids: ["COM.CSR.GEN.001"]
+    trade: "commercial"
+    variations: ["C.S.R.", "c.s.r", "C S R"]
+    commonly_confused_with: []
+
+  - abbr: "MORTH"
+    full_form: "Ministry of Road Transport and Highways"
+    taxonomy_ids: ["ORG.MORTH.GEN.001"]
+    trade: "government"
+    variations: ["MoRTH", "M.O.R.T.H.", "MORT&H"]
+    commonly_confused_with: []
+
+  - abbr: "IRC"
+    full_form: "Indian Roads Congress"
+    taxonomy_ids: ["STD.IRC.GEN.001"]
+    trade: "codes"
+    variations: ["I.R.C.", "i.r.c", "I R C"]
+    commonly_confused_with: []
+
+  - abbr: "MOEF"
+    full_form: "Ministry of Environment and Forests"
+    taxonomy_ids: ["ORG.MOEF.GEN.001"]
+    trade: "government"
+    variations: ["MoEF", "M.O.E.F.", "MoEFCC"]
+    commonly_confused_with: []
+
+  - abbr: "RERA"
+    full_form: "Real Estate Regulatory Authority"
+    taxonomy_ids: ["ORG.RERA.GEN.001"]
+    trade: "government"
+    variations: ["R.E.R.A.", "r.e.r.a", "R E R A"]
+    commonly_confused_with: []
+
+  - abbr: "DGMS"
+    full_form: "Directorate General of Mines Safety"
+    taxonomy_ids: ["ORG.DGMS.GEN.001"]
+    trade: "government"
+    variations: ["D.G.M.S.", "d.g.m.s"]
+    commonly_confused_with: []
+
+  - abbr: "HUDCO"
+    full_form: "Housing and Urban Development Corporation"
+    taxonomy_ids: ["ORG.HUDCO.GEN.001"]
+    trade: "government"
+    variations: ["H.U.D.C.O.", "Hudco"]
+    commonly_confused_with: []
+
+  - abbr: "NBCC"
+    full_form: "National Buildings Construction Corporation"
+    taxonomy_ids: ["ORG.NBCC.GEN.001"]
+    trade: "government"
+    variations: ["N.B.C.C.", "n.b.c.c"]
+    commonly_confused_with: []
+
+  - abbr: "EPC"
+    full_form: "Engineering Procurement Construction"
+    taxonomy_ids: ["COM.EPC.GEN.001"]
+    trade: "commercial"
+    variations: ["E.P.C.", "e.p.c", "E P C"]
+    commonly_confused_with: []
+
+  - abbr: "PMC"
+    full_form: "Project Management Consultant"
+    taxonomy_ids: ["COM.PMC.GEN.001"]
+    trade: "commercial"
+    variations: ["P.M.C.", "p.m.c", "P M C"]
+    commonly_confused_with: []
+
+  - abbr: "GCC"
+    full_form: "General Conditions of Contract"
+    taxonomy_ids: ["COM.GCC.GEN.001"]
+    trade: "commercial"
+    variations: ["G.C.C.", "g.c.c", "G C C"]
+    commonly_confused_with: []
+
+  - abbr: "SCC"
+    full_form: "Special Conditions of Contract"
+    taxonomy_ids: ["COM.SCC.GEN.001"]
+    trade: "commercial"
+    variations: ["S.C.C.", "s.c.c", "S C C"]
+    commonly_confused_with: ["Self Compacting Concrete"]
+
+  - abbr: "FIDIC"
+    full_form: "Federation Internationale Des Ingenieurs-Conseils"
+    taxonomy_ids: ["STD.FIDIC.GEN.001"]
+    trade: "commercial"
+    variations: ["F.I.D.I.C.", "fidic", "Fidic"]
+    commonly_confused_with: []
+
+  - abbr: "ITB"
+    full_form: "Instructions to Bidders"
+    taxonomy_ids: ["COM.ITB.GEN.001"]
+    trade: "commercial"
+    variations: ["I.T.B.", "i.t.b", "I T B"]
+    commonly_confused_with: []
+
+  - abbr: "BG"
+    full_form: "Bank Guarantee"
+    taxonomy_ids: ["COM.BG.GEN.001"]
+    trade: "commercial"
+    variations: ["B.G.", "b.g", "B G"]
+    commonly_confused_with: []
+
+  - abbr: "PBG"
+    full_form: "Performance Bank Guarantee"
+    taxonomy_ids: ["COM.PBG.GEN.001"]
+    trade: "commercial"
+    variations: ["P.B.G.", "p.b.g", "P B G"]
+    commonly_confused_with: []
+
+  # ============================================================
+  # STRUCTURAL - Steel Sections & Connections (NEW)
+  # ============================================================
+  - abbr: "PEB"
+    full_form: "Pre-Engineered Building"
+    taxonomy_ids: ["STR.ST.PEB.001"]
+    trade: "structural"
+    variations: ["P.E.B.", "p.e.b", "P E B"]
+    commonly_confused_with: []
+
+  - abbr: "ISMB"
+    full_form: "Indian Standard Medium Weight Beam"
+    taxonomy_ids: ["STR.ST.ISMB.001"]
+    trade: "structural"
+    variations: ["I.S.M.B.", "i.s.m.b", "I S M B"]
+    commonly_confused_with: []
+
+  - abbr: "ISMC"
+    full_form: "Indian Standard Medium Weight Channel"
+    taxonomy_ids: ["STR.ST.ISMC.001"]
+    trade: "structural"
+    variations: ["I.S.M.C.", "i.s.m.c", "I S M C"]
+    commonly_confused_with: []
+
+  - abbr: "ISA"
+    full_form: "Indian Standard Angle"
+    taxonomy_ids: ["STR.ST.ISA.001"]
+    trade: "structural"
+    variations: ["I.S.A.", "i.s.a", "I S A"]
+    commonly_confused_with: []
+
+  - abbr: "ISLB"
+    full_form: "Indian Standard Light Weight Beam"
+    taxonomy_ids: ["STR.ST.ISLB.001"]
+    trade: "structural"
+    variations: ["I.S.L.B.", "i.s.l.b", "I S L B"]
+    commonly_confused_with: []
+
+  - abbr: "ISHB"
+    full_form: "Indian Standard Heavy Weight Beam"
+    taxonomy_ids: ["STR.ST.ISHB.001"]
+    trade: "structural"
+    variations: ["I.S.H.B.", "i.s.h.b", "I S H B"]
+    commonly_confused_with: []
+
+  - abbr: "ISWB"
+    full_form: "Indian Standard Wide Flange Beam"
+    taxonomy_ids: ["STR.ST.ISWB.001"]
+    trade: "structural"
+    variations: ["I.S.W.B.", "i.s.w.b", "I S W B"]
+    commonly_confused_with: []
+
+  - abbr: "SHS"
+    full_form: "Square Hollow Section"
+    taxonomy_ids: ["STR.ST.SHS.001"]
+    trade: "structural"
+    variations: ["S.H.S.", "s.h.s", "S H S"]
+    commonly_confused_with: []
+
+  - abbr: "RHS"
+    full_form: "Rectangular Hollow Section"
+    taxonomy_ids: ["STR.ST.RHS.001"]
+    trade: "structural"
+    variations: ["R.H.S.", "r.h.s", "R H S"]
+    commonly_confused_with: []
+
+  - abbr: "CHS"
+    full_form: "Circular Hollow Section"
+    taxonomy_ids: ["STR.ST.CHS.001"]
+    trade: "structural"
+    variations: ["C.H.S.", "c.h.s", "C H S"]
+    commonly_confused_with: []
+
+  - abbr: "HSFG"
+    full_form: "High Strength Friction Grip"
+    taxonomy_ids: ["STR.ST.HSFG.001"]
+    trade: "structural"
+    variations: ["H.S.F.G.", "h.s.f.g", "H S F G"]
+    commonly_confused_with: []
+
+  - abbr: "WPB"
+    full_form: "Wide Parallel Flange Beam"
+    taxonomy_ids: ["STR.ST.WPB.001"]
+    trade: "structural"
+    variations: ["W.P.B.", "w.p.b", "W P B"]
+    commonly_confused_with: []
+
+  - abbr: "UB"
+    full_form: "Universal Beam"
+    taxonomy_ids: ["STR.ST.UB.001"]
+    trade: "structural"
+    variations: ["U.B.", "u.b", "U B"]
+    commonly_confused_with: []
+
+  - abbr: "UC"
+    full_form: "Universal Column"
+    taxonomy_ids: ["STR.ST.UC.001"]
+    trade: "structural"
+    variations: ["U.C.", "u.c", "U C"]
+    commonly_confused_with: []
+
+  - abbr: "NPB"
+    full_form: "Narrow Parallel Flange Beam"
+    taxonomy_ids: ["STR.ST.NPB.001"]
+    trade: "structural"
+    variations: ["N.P.B.", "n.p.b", "N P B"]
+    commonly_confused_with: []
+
+  # ============================================================
+  # MEP - Additional Electrical & Controls (NEW)
+  # ============================================================
+  - abbr: "RCBO"
+    full_form: "Residual Current Breaker with Overcurrent"
+    taxonomy_ids: ["ELE.CB.RCBO.001"]
+    trade: "electrical"
+    variations: ["R.C.B.O.", "r.c.b.o", "R C B O"]
+    commonly_confused_with: []
+
+  - abbr: "SFU"
+    full_form: "Switch Fuse Unit"
+    taxonomy_ids: ["ELE.SW.SFU.001"]
+    trade: "electrical"
+    variations: ["S.F.U.", "s.f.u", "S F U"]
+    commonly_confused_with: []
+
+  - abbr: "SPD"
+    full_form: "Surge Protection Device"
+    taxonomy_ids: ["ELE.SP.SPD.001"]
+    trade: "electrical"
+    variations: ["S.P.D.", "s.p.d", "S P D"]
+    commonly_confused_with: []
+
+  - abbr: "OLTC"
+    full_form: "On Load Tap Changer"
+    taxonomy_ids: ["ELE.TR.OLTC.001"]
+    trade: "electrical"
+    variations: ["O.L.T.C.", "o.l.t.c", "O L T C"]
+    commonly_confused_with: []
+
+  - abbr: "MPCB"
+    full_form: "Motor Protection Circuit Breaker"
+    taxonomy_ids: ["ELE.CB.MPCB.001"]
+    trade: "electrical"
+    variations: ["M.P.C.B.", "m.p.c.b", "M P C B"]
+    commonly_confused_with: []
+
+  - abbr: "MCC"
+    full_form: "Motor Control Centre"
+    taxonomy_ids: ["ELE.MCC.GEN.001"]
+    trade: "electrical"
+    variations: ["M.C.C.", "m.c.c", "M C C"]
+    commonly_confused_with: []
+
+  - abbr: "PDB"
+    full_form: "Power Distribution Board"
+    taxonomy_ids: ["ELE.DB.PDB.001"]
+    trade: "electrical"
+    variations: ["P.D.B.", "p.d.b", "P D B"]
+    commonly_confused_with: []
+
+  - abbr: "LDB"
+    full_form: "Lighting Distribution Board"
+    taxonomy_ids: ["ELE.DB.LDB.001"]
+    trade: "electrical"
+    variations: ["L.D.B.", "l.d.b", "L D B"]
+    commonly_confused_with: []
+
+  - abbr: "MLDB"
+    full_form: "Main Lighting Distribution Board"
+    taxonomy_ids: ["ELE.DB.MLDB.001"]
+    trade: "electrical"
+    variations: ["M.L.D.B.", "m.l.d.b", "M L D B"]
+    commonly_confused_with: []
+
+  - abbr: "KWH"
+    full_form: "Kilowatt Hour"
+    taxonomy_ids: ["ELE.UN.KWH.001"]
+    trade: "electrical"
+    variations: ["kWh", "kwh", "KW-HR", "kW-hr"]
+    commonly_confused_with: []
+
+  - abbr: "KVA"
+    full_form: "Kilo Volt Ampere"
+    taxonomy_ids: ["ELE.UN.KVA.001"]
+    trade: "electrical"
+    variations: ["kVA", "kva", "K.V.A.", "k.v.a"]
+    commonly_confused_with: []
+
+  - abbr: "LED"
+    full_form: "Light Emitting Diode"
+    taxonomy_ids: ["ELE.LT.LED.001"]
+    trade: "electrical"
+    variations: ["L.E.D.", "l.e.d", "Led"]
+    commonly_confused_with: []
+
+  - abbr: "CFL"
+    full_form: "Compact Fluorescent Lamp"
+    taxonomy_ids: ["ELE.LT.CFL.001"]
+    trade: "electrical"
+    variations: ["C.F.L.", "c.f.l", "Cfl"]
+    commonly_confused_with: []
+
+  - abbr: "HID"
+    full_form: "High Intensity Discharge"
+    taxonomy_ids: ["ELE.LT.HID.001"]
+    trade: "electrical"
+    variations: ["H.I.D.", "h.i.d", "Hid"]
+    commonly_confused_with: []
+
+  - abbr: "IP"
+    full_form: "Ingress Protection"
+    taxonomy_ids: ["ELE.RT.IP.001"]
+    trade: "electrical"
+    variations: ["I.P.", "i.p"]
+    commonly_confused_with: ["Internet Protocol"]
+
+  - abbr: "DOL"
+    full_form: "Direct On Line (starter)"
+    taxonomy_ids: ["ELE.MT.DOL.001"]
+    trade: "electrical"
+    variations: ["D.O.L.", "d.o.l", "D O L"]
+    commonly_confused_with: []
+
+  - abbr: "SS"
+    full_form: "Star Delta Starter"
+    taxonomy_ids: ["ELE.MT.SD.001"]
+    trade: "electrical"
+    variations: ["S/D", "S-D", "S.D."]
+    commonly_confused_with: ["Stainless Steel"]
+
+  - abbr: "EPABX"
+    full_form: "Electronic Private Automatic Branch Exchange"
+    taxonomy_ids: ["ELE.TEL.EPABX.001"]
+    trade: "networking"
+    variations: ["E.P.A.B.X.", "Epabx", "epabx"]
+    commonly_confused_with: []
+
+  - abbr: "OFC"
+    full_form: "Optical Fibre Cable"
+    taxonomy_ids: ["ELE.SC.OFC.001"]
+    trade: "networking"
+    variations: ["O.F.C.", "o.f.c", "O F C"]
+    commonly_confused_with: []
+
+  - abbr: "UTP"
+    full_form: "Unshielded Twisted Pair"
+    taxonomy_ids: ["ELE.SC.UTP.001"]
+    trade: "networking"
+    variations: ["U.T.P.", "u.t.p", "U T P"]
+    commonly_confused_with: []
+
+  # ============================================================
+  # FIRE SAFETY - Additional (NEW)
+  # ============================================================
+  - abbr: "FA"
+    full_form: "Fire Alarm"
+    taxonomy_ids: ["FP.FA.GEN.001"]
+    trade: "fire"
+    variations: ["F.A.", "f.a", "F A"]
+    commonly_confused_with: []
+
+  - abbr: "FAP"
+    full_form: "Fire Alarm Panel"
+    taxonomy_ids: ["FP.FA.FAP.001"]
+    trade: "fire"
+    variations: ["F.A.P.", "f.a.p", "F A P"]
+    commonly_confused_with: []
+
+  - abbr: "TAC"
+    full_form: "Thermal Addressable Cable"
+    taxonomy_ids: ["FP.FA.TAC.001"]
+    trade: "fire"
+    variations: ["T.A.C.", "t.a.c", "T A C"]
+    commonly_confused_with: []
+
+  - abbr: "FHC"
+    full_form: "Fire Hose Cabinet"
+    taxonomy_ids: ["FP.FH.FHC.001"]
+    trade: "fire"
+    variations: ["F.H.C.", "f.h.c", "F H C"]
+    commonly_confused_with: []
+
+  - abbr: "FHR"
+    full_form: "Fire Hose Reel"
+    taxonomy_ids: ["FP.FH.FHR.001"]
+    trade: "fire"
+    variations: ["F.H.R.", "f.h.r", "F H R"]
+    commonly_confused_with: []
+
+  - abbr: "WS"
+    full_form: "Wet Sprinkler"
+    taxonomy_ids: ["FP.SP.WS.001"]
+    trade: "fire"
+    variations: ["W.S.", "w.s"]
+    commonly_confused_with: []
+
+  - abbr: "DS"
+    full_form: "Dry Sprinkler"
+    taxonomy_ids: ["FP.SP.DS.001"]
+    trade: "fire"
+    variations: ["D.S.", "d.s"]
+    commonly_confused_with: []
+
+  - abbr: "FRP"
+    full_form: "Fire Rated Partition"
+    taxonomy_ids: ["FP.PS.FRP.001"]
+    trade: "fire"
+    variations: ["F.R.P.", "f.r.p"]
+    commonly_confused_with: ["Fibre Reinforced Plastic"]
+
+  - abbr: "FRL"
+    full_form: "Fire Resistance Level"
+    taxonomy_ids: ["FP.RT.FRL.001"]
+    trade: "fire"
+    variations: ["F.R.L.", "f.r.l", "F R L"]
+    commonly_confused_with: []
+
+  - abbr: "FRD"
+    full_form: "Fire Rated Door"
+    taxonomy_ids: ["FP.DR.FRD.001"]
+    trade: "fire"
+    variations: ["F.R.D.", "f.r.d", "F R D"]
+    commonly_confused_with: []
+
+  - abbr: "HD"
+    full_form: "Hydrant (fire)"
+    taxonomy_ids: ["FP.HY.HD.001"]
+    trade: "fire"
+    variations: ["H.D.", "h.d"]
+    commonly_confused_with: ["Hard Disk"]
+
+  - abbr: "FACP"
+    full_form: "Fire Alarm Control Panel"
+    taxonomy_ids: ["FP.FA.FACP.001"]
+    trade: "fire"
+    variations: ["F.A.C.P.", "f.a.c.p", "F A C P"]
+    commonly_confused_with: []
+
+  # ============================================================
+  # WATERPROOFING / CHEMICAL - Additional (NEW)
+  # ============================================================
+  - abbr: "SBR"
+    full_form: "Styrene Butadiene Rubber"
+    taxonomy_ids: ["WP.AD.SBR.001"]
+    trade: "waterproofing"
+    variations: ["S.B.R.", "s.b.r", "S B R"]
+    commonly_confused_with: ["Sequencing Batch Reactor"]
+
+  - abbr: "EPDM"
+    full_form: "Ethylene Propylene Diene Monomer"
+    taxonomy_ids: ["WP.MEM.EPDM.001"]
+    trade: "waterproofing"
+    variations: ["E.P.D.M.", "e.p.d.m", "E P D M"]
+    commonly_confused_with: []
+
+  - abbr: "LDPE"
+    full_form: "Low Density Polyethylene"
+    taxonomy_ids: ["WP.MEM.LDPE.001"]
+    trade: "waterproofing"
+    variations: ["L.D.P.E.", "l.d.p.e", "L D P E"]
+    commonly_confused_with: []
+
+  - abbr: "IPA"
+    full_form: "Integral Powder Admixture"
+    taxonomy_ids: ["WP.AD.IPA.001"]
+    trade: "waterproofing"
+    variations: ["I.P.A.", "i.p.a", "I P A"]
+    commonly_confused_with: []
+
+  - abbr: "IWP"
+    full_form: "Integral Waterproofing"
+    taxonomy_ids: ["WP.INT.IWP.001"]
+    trade: "waterproofing"
+    variations: ["I.W.P.", "i.w.p", "I W P"]
+    commonly_confused_with: []
+
+  - abbr: "DPM"
+    full_form: "Damp Proof Membrane"
+    taxonomy_ids: ["WP.DPM.001"]
+    trade: "waterproofing"
+    variations: ["D.P.M.", "d.p.m", "D P M"]
+    commonly_confused_with: []
+
+  - abbr: "CCCW"
+    full_form: "Cementitious Capillary Crystalline Waterproofing"
+    taxonomy_ids: ["WP.CEM.CCCW.001"]
+    trade: "waterproofing"
+    variations: ["C.C.C.W.", "c.c.c.w"]
+    commonly_confused_with: []
+
+  - abbr: "WPC"
+    full_form: "Wood Polymer Composite"
+    taxonomy_ids: ["MAT.WD.WPC.001"]
+    trade: "materials"
+    variations: ["W.P.C.", "w.p.c", "W P C"]
+    commonly_confused_with: []
+
+  # ============================================================
+  # MEASUREMENT UNITS (NEW)
+  # ============================================================
+  - abbr: "cum"
+    full_form: "Cubic Metre"
+    taxonomy_ids: ["UOM.VOL.CUM.001"]
+    trade: "measurement"
+    variations: ["cu.m", "cu m", "Cu.m", "CUM", "Cu.M", "cbm", "CBM"]
+    commonly_confused_with: []
+
+  - abbr: "sqm"
+    full_form: "Square Metre"
+    taxonomy_ids: ["UOM.AREA.SQM.001"]
+    trade: "measurement"
+    variations: ["sq.m", "sq m", "Sq.m", "SQM", "Sq.M", "m2"]
+    commonly_confused_with: []
+
+  - abbr: "rmt"
+    full_form: "Running Metre"
+    taxonomy_ids: ["UOM.LEN.RMT.001"]
+    trade: "measurement"
+    variations: ["r.m.t", "Rmt", "RMT", "R.M.T.", "RM", "r.m"]
+    commonly_confused_with: []
+
+  - abbr: "rm"
+    full_form: "Running Metre"
+    taxonomy_ids: ["UOM.LEN.RM.001"]
+    trade: "measurement"
+    variations: ["R.M.", "r.m.", "Rm", "RM"]
+    commonly_confused_with: []
+
+  - abbr: "nos"
+    full_form: "Numbers"
+    taxonomy_ids: ["UOM.COUNT.NOS.001"]
+    trade: "measurement"
+    variations: ["Nos", "NOS", "nos.", "Nos.", "No.", "no.", "no.s"]
+    commonly_confused_with: []
+
+  - abbr: "kg"
+    full_form: "Kilogram"
+    taxonomy_ids: ["UOM.WT.KG.001"]
+    trade: "measurement"
+    variations: ["Kg", "KG", "Kgs", "kgs", "kg.", "Kg."]
+    commonly_confused_with: []
+
+  - abbr: "mt"
+    full_form: "Metric Tonne"
+    taxonomy_ids: ["UOM.WT.MT.001"]
+    trade: "measurement"
+    variations: ["MT", "Mt", "m.t", "M.T.", "MT.", "tonne"]
+    commonly_confused_with: ["metre"]
+
+  - abbr: "ltr"
+    full_form: "Litre"
+    taxonomy_ids: ["UOM.VOL.LTR.001"]
+    trade: "measurement"
+    variations: ["Ltr", "LTR", "ltr.", "lt", "Lt", "L"]
+    commonly_confused_with: []
+
+  - abbr: "sqft"
+    full_form: "Square Feet"
+    taxonomy_ids: ["UOM.AREA.SQFT.001"]
+    trade: "measurement"
+    variations: ["sq.ft", "sq ft", "Sq.ft", "SQFT", "Sq.Ft", "sft", "SFT"]
+    commonly_confused_with: []
+
+  - abbr: "cft"
+    full_form: "Cubic Feet"
+    taxonomy_ids: ["UOM.VOL.CFT.001"]
+    trade: "measurement"
+    variations: ["cu.ft", "cu ft", "Cu.ft", "CFT", "Cu.Ft", "c.ft"]
+    commonly_confused_with: []
+
+  - abbr: "brass"
+    full_form: "Brass (100 cubic feet)"
+    taxonomy_ids: ["UOM.VOL.BRASS.001"]
+    trade: "measurement"
+    variations: ["Brass", "BRASS", "brs"]
+    commonly_confused_with: []
+
+  - abbr: "lm"
+    full_form: "Lineal Metre"
+    taxonomy_ids: ["UOM.LEN.LM.001"]
+    trade: "measurement"
+    variations: ["L.M.", "l.m.", "Lm", "LM"]
+    commonly_confused_with: ["Lumen"]
+
+  - abbr: "ha"
+    full_form: "Hectare"
+    taxonomy_ids: ["UOM.AREA.HA.001"]
+    trade: "measurement"
+    variations: ["Ha", "HA", "ha.", "hect"]
+    commonly_confused_with: []
+
+  - abbr: "LS"
+    full_form: "Lump Sum"
+    taxonomy_ids: ["UOM.LS.001"]
+    trade: "measurement"
+    variations: ["L.S.", "l.s", "ls", "L/S", "lumpsum"]
+    commonly_confused_with: []
+
+  - abbr: "set"
+    full_form: "Set"
+    taxonomy_ids: ["UOM.COUNT.SET.001"]
+    trade: "measurement"
+    variations: ["Set", "SET", "sets", "Sets"]
+    commonly_confused_with: []
+
+  - abbr: "lot"
+    full_form: "Lot"
+    taxonomy_ids: ["UOM.COUNT.LOT.001"]
+    trade: "measurement"
+    variations: ["Lot", "LOT", "lots", "Lots"]
+    commonly_confused_with: []
+
+  - abbr: "pair"
+    full_form: "Pair"
+    taxonomy_ids: ["UOM.COUNT.PAIR.001"]
+    trade: "measurement"
+    variations: ["Pair", "PAIR", "pr", "Pr"]
+    commonly_confused_with: []
+
+  # ============================================================
+  # GENERAL CONSTRUCTION / PROJECT MANAGEMENT (NEW)
+  # ============================================================
+  - abbr: "LD"
+    full_form: "Liquidated Damages"
+    taxonomy_ids: ["COM.LD.GEN.001"]
+    trade: "commercial"
+    variations: ["L.D.", "l.d", "L D"]
+    commonly_confused_with: []
+
+  - abbr: "PERT"
+    full_form: "Programme Evaluation and Review Technique"
+    taxonomy_ids: ["PM.PERT.GEN.001"]
+    trade: "project_management"
+    variations: ["P.E.R.T.", "p.e.r.t", "Pert"]
+    commonly_confused_with: []
+
+  - abbr: "CPM"
+    full_form: "Critical Path Method"
+    taxonomy_ids: ["PM.CPM.GEN.001"]
+    trade: "project_management"
+    variations: ["C.P.M.", "c.p.m", "C P M"]
+    commonly_confused_with: []
+
+  - abbr: "WBS"
+    full_form: "Work Breakdown Structure"
+    taxonomy_ids: ["PM.WBS.GEN.001"]
+    trade: "project_management"
+    variations: ["W.B.S.", "w.b.s", "W B S"]
+    commonly_confused_with: []
+
+  - abbr: "TOR"
+    full_form: "Terms of Reference"
+    taxonomy_ids: ["COM.TOR.GEN.001"]
+    trade: "commercial"
+    variations: ["T.O.R.", "t.o.r", "T O R", "ToR"]
+    commonly_confused_with: []
+
+  - abbr: "LOI"
+    full_form: "Letter of Intent"
+    taxonomy_ids: ["COM.LOI.GEN.001"]
+    trade: "commercial"
+    variations: ["L.O.I.", "l.o.i", "L O I"]
+    commonly_confused_with: []
+
+  - abbr: "NOC"
+    full_form: "No Objection Certificate"
+    taxonomy_ids: ["COM.NOC.GEN.001"]
+    trade: "commercial"
+    variations: ["N.O.C.", "n.o.c", "N O C"]
+    commonly_confused_with: []
+
+  - abbr: "BOM"
+    full_form: "Bill of Materials"
+    taxonomy_ids: ["COM.BOM.GEN.001"]
+    trade: "commercial"
+    variations: ["B.O.M.", "b.o.m", "B O M"]
+    commonly_confused_with: []
+
+  - abbr: "SOW"
+    full_form: "Scope of Work"
+    taxonomy_ids: ["COM.SOW.GEN.001"]
+    trade: "commercial"
+    variations: ["S.O.W.", "s.o.w", "S O W", "SoW"]
+    commonly_confused_with: []
+
+  - abbr: "MOS"
+    full_form: "Method of Statement"
+    taxonomy_ids: ["PM.MOS.GEN.001"]
+    trade: "project_management"
+    variations: ["M.O.S.", "m.o.s", "M O S"]
+    commonly_confused_with: []
+
+  - abbr: "MSS"
+    full_form: "Method Statement for Safety"
+    taxonomy_ids: ["SAF.MSS.GEN.001"]
+    trade: "safety"
+    variations: ["M.S.S.", "m.s.s", "M S S"]
+    commonly_confused_with: []
+
+  - abbr: "TPI"
+    full_form: "Third Party Inspection"
+    taxonomy_ids: ["QC.TPI.GEN.001"]
+    trade: "quality"
+    variations: ["T.P.I.", "t.p.i", "T P I"]
+    commonly_confused_with: []
+
+  - abbr: "FAT"
+    full_form: "Factory Acceptance Test"
+    taxonomy_ids: ["QC.FAT.GEN.001"]
+    trade: "quality"
+    variations: ["F.A.T.", "f.a.t", "F A T"]
+    commonly_confused_with: []
+
+  - abbr: "SAT"
+    full_form: "Site Acceptance Test"
+    taxonomy_ids: ["QC.SAT.GEN.001"]
+    trade: "quality"
+    variations: ["S.A.T.", "s.a.t", "S A T"]
+    commonly_confused_with: []
+
+  - abbr: "TAT"
+    full_form: "Type Approval Test"
+    taxonomy_ids: ["QC.TAT.GEN.001"]
+    trade: "quality"
+    variations: ["T.A.T.", "t.a.t", "T A T"]
+    commonly_confused_with: []
+
+  - abbr: "HAP"
+    full_form: "Hourly Analysis Program"
+    taxonomy_ids: ["HVAC.HAP.GEN.001"]
+    trade: "hvac"
+    variations: ["H.A.P.", "h.a.p", "H A P"]
+    commonly_confused_with: []
+
+  - abbr: "RTU"
+    full_form: "Roof Top Unit"
+    taxonomy_ids: ["HVAC.RTU.GEN.001"]
+    trade: "hvac"
+    variations: ["R.T.U.", "r.t.u", "R T U"]
+    commonly_confused_with: []
+
+  - abbr: "TFA"
+    full_form: "Treated Fresh Air"
+    taxonomy_ids: ["HVAC.TFA.GEN.001"]
+    trade: "hvac"
+    variations: ["T.F.A.", "t.f.a", "T F A"]
+    commonly_confused_with: []
+
+  - abbr: "CDU"
+    full_form: "Condensing Unit"
+    taxonomy_ids: ["HVAC.CDU.GEN.001"]
+    trade: "hvac"
+    variations: ["C.D.U.", "c.d.u", "C D U"]
+    commonly_confused_with: []
+
+  - abbr: "IDU"
+    full_form: "Indoor Unit"
+    taxonomy_ids: ["HVAC.IDU.GEN.001"]
+    trade: "hvac"
+    variations: ["I.D.U.", "i.d.u", "I D U"]
+    commonly_confused_with: []
+
+  - abbr: "ODU"
+    full_form: "Outdoor Unit"
+    taxonomy_ids: ["HVAC.ODU.GEN.001"]
+    trade: "hvac"
+    variations: ["O.D.U.", "o.d.u", "O D U"]
+    commonly_confused_with: []
+
+  - abbr: "EF"
+    full_form: "Exhaust Fan"
+    taxonomy_ids: ["HVAC.EF.GEN.001"]
+    trade: "hvac"
+    variations: ["E.F.", "e.f", "E F"]
+    commonly_confused_with: []
+
+  - abbr: "SF"
+    full_form: "Supply Fan"
+    taxonomy_ids: ["HVAC.SF.GEN.001"]
+    trade: "hvac"
+    variations: ["S.F.", "s.f"]
+    commonly_confused_with: ["Square Foot"]
+
+  # ============================================================
+  # FACADE & CLADDING (NEW)
+  # ============================================================
+  - abbr: "CW"
+    full_form: "Curtain Wall"
+    taxonomy_ids: ["FAC.CW.GEN.001"]
+    trade: "facade"
+    variations: ["C.W.", "c.w", "C W"]
+    commonly_confused_with: ["Condenser Water", "Cold Water"]
+
+  - abbr: "SGU"
+    full_form: "Single Glazed Unit"
+    taxonomy_ids: ["FAC.GL.SGU.001"]
+    trade: "facade"
+    variations: ["S.G.U.", "s.g.u", "S G U"]
+    commonly_confused_with: []
+
+  - abbr: "TGU"
+    full_form: "Triple Glazed Unit"
+    taxonomy_ids: ["FAC.GL.TGU.001"]
+    trade: "facade"
+    variations: ["T.G.U.", "t.g.u", "T G U"]
+    commonly_confused_with: []
+
+  - abbr: "UW"
+    full_form: "Unitized Wall"
+    taxonomy_ids: ["FAC.UW.GEN.001"]
+    trade: "facade"
+    variations: ["U.W.", "u.w", "U W"]
+    commonly_confused_with: []
+
+  - abbr: "PVDF"
+    full_form: "Polyvinylidene Fluoride"
+    taxonomy_ids: ["FAC.CT.PVDF.001"]
+    trade: "facade"
+    variations: ["P.V.D.F.", "p.v.d.f", "Pvdf"]
+    commonly_confused_with: []
+
+  # ============================================================
+  # LANDSCAPE & EXTERNAL WORKS (NEW)
+  # ============================================================
+  - abbr: "RCC"
+    full_form: "Reinforced Cement Concrete (road/pavement)"
+    taxonomy_ids: ["EXT.PV.RCC.001"]
+    trade: "landscape"
+    variations: ["R.C.C.", "r.c.c", "R C C"]
+    commonly_confused_with: []
+
+  - abbr: "CC"
+    full_form: "Cement Concrete"
+    taxonomy_ids: ["EXT.PV.CC.001"]
+    trade: "landscape"
+    variations: ["C.C.", "c.c", "C C"]
+    commonly_confused_with: []
+
+  - abbr: "IP"
+    full_form: "Interlocking Paver"
+    taxonomy_ids: ["EXT.PV.IP.001"]
+    trade: "landscape"
+    variations: ["I.P.", "i.p"]
+    commonly_confused_with: ["Ingress Protection"]
+
+  # ============================================================
+  # PLUMBING - Additional Fittings & Systems (NEW)
+  # ============================================================
+  - abbr: "NRV"
+    full_form: "Non-Return Valve"
+    taxonomy_ids: ["PLB.VL.NRV.001"]
+    trade: "plumbing"
+    variations: ["N.R.V.", "n.r.v", "N R V"]
+    commonly_confused_with: []
+
+  - abbr: "PRV"
+    full_form: "Pressure Reducing Valve"
+    taxonomy_ids: ["PLB.VL.PRV.001"]
+    trade: "plumbing"
+    variations: ["P.R.V.", "p.r.v", "P R V"]
+    commonly_confused_with: []
+
+  - abbr: "BFV"
+    full_form: "Butterfly Valve"
+    taxonomy_ids: ["PLB.VL.BFV.001"]
+    trade: "plumbing"
+    variations: ["B.F.V.", "b.f.v", "B F V"]
+    commonly_confused_with: []
+
+  - abbr: "GV"
+    full_form: "Gate Valve"
+    taxonomy_ids: ["PLB.VL.GV.001"]
+    trade: "plumbing"
+    variations: ["G.V.", "g.v", "G V"]
+    commonly_confused_with: []
+
+  - abbr: "CV"
+    full_form: "Check Valve"
+    taxonomy_ids: ["PLB.VL.CV.001"]
+    trade: "plumbing"
+    variations: ["C.V.", "c.v"]
+    commonly_confused_with: ["Control Valve"]
+
+  - abbr: "BV"
+    full_form: "Ball Valve"
+    taxonomy_ids: ["PLB.VL.BV.001"]
+    trade: "plumbing"
+    variations: ["B.V.", "b.v", "B V"]
+    commonly_confused_with: []
+
+  - abbr: "HWS"
+    full_form: "Hot Water Supply"
+    taxonomy_ids: ["PLB.HW.HWS.001"]
+    trade: "plumbing"
+    variations: ["H.W.S.", "h.w.s", "H W S"]
+    commonly_confused_with: []
+
+  - abbr: "CWS"
+    full_form: "Cold Water Supply"
+    taxonomy_ids: ["PLB.CW.CWS.001"]
+    trade: "plumbing"
+    variations: ["C.W.S.", "c.w.s", "C W S"]
+    commonly_confused_with: []
+
+  - abbr: "GI"
+    full_form: "Grease Interceptor"
+    taxonomy_ids: ["PLB.GT.GI.001"]
+    trade: "plumbing"
+    variations: ["G.I.", "g.i"]
+    commonly_confused_with: ["Galvanized Iron"]
+
+  - abbr: "SV"
+    full_form: "Soil Vent"
+    taxonomy_ids: ["PLB.VP.SV.001"]
+    trade: "plumbing"
+    variations: ["S.V.", "s.v"]
+    commonly_confused_with: []
+
+  - abbr: "VP"
+    full_form: "Vent Pipe"
+    taxonomy_ids: ["PLB.VP.GEN.001"]
+    trade: "plumbing"
+    variations: ["V.P.", "v.p"]
+    commonly_confused_with: []
+
+  # ============================================================
+  # FINISHES - Additional (NEW)
+  # ============================================================
+  - abbr: "PVC"
+    full_form: "PVC False Ceiling"
+    taxonomy_ids: ["FIN.FC.PVC.001"]
+    trade: "finishes"
+    variations: ["P.V.C.", "p.v.c"]
+    commonly_confused_with: ["Polyvinyl Chloride (pipe)"]
+
+  - abbr: "GI"
+    full_form: "Galvanized Iron (ceiling grid)"
+    taxonomy_ids: ["FIN.FC.GI.001"]
+    trade: "finishes"
+    variations: ["G.I.", "g.i"]
+    commonly_confused_with: ["Galvanized Iron (pipe)"]
+
+  - abbr: "FC"
+    full_form: "False Ceiling"
+    taxonomy_ids: ["FIN.FC.GEN.001"]
+    trade: "finishes"
+    variations: ["F.C.", "f.c", "F C"]
+    commonly_confused_with: ["Fibre Cement"]
+
+  - abbr: "GP"
+    full_form: "Gypsum Plaster"
+    taxonomy_ids: ["FIN.PL.GP.001"]
+    trade: "finishes"
+    variations: ["G.P.", "g.p", "G P"]
+    commonly_confused_with: []
+
+  - abbr: "WP"
+    full_form: "Wall Putty"
+    taxonomy_ids: ["FIN.PNT.WP.001"]
+    trade: "finishes"
+    variations: ["W.P.", "w.p"]
+    commonly_confused_with: ["Waterproofing"]
+
+  - abbr: "APE"
+    full_form: "Acrylic Polymer Emulsion"
+    taxonomy_ids: ["FIN.PNT.APE.001"]
+    trade: "finishes"
+    variations: ["A.P.E.", "a.p.e", "A P E"]
+    commonly_confused_with: []
+
+  # ============================================================
+  # SOLAR & RENEWABLE ENERGY (NEW)
+  # ============================================================
+  - abbr: "SPV"
+    full_form: "Solar Photovoltaic"
+    taxonomy_ids: ["ELE.SOL.SPV.001"]
+    trade: "electrical"
+    variations: ["S.P.V.", "s.p.v", "S P V"]
+    commonly_confused_with: []
+
+  - abbr: "SWH"
+    full_form: "Solar Water Heater"
+    taxonomy_ids: ["PLB.HW.SWH.001"]
+    trade: "plumbing"
+    variations: ["S.W.H.", "s.w.h", "S W H"]
+    commonly_confused_with: []
+
+  - abbr: "BIPV"
+    full_form: "Building Integrated Photovoltaic"
+    taxonomy_ids: ["ELE.SOL.BIPV.001"]
+    trade: "electrical"
+    variations: ["B.I.P.V.", "b.i.p.v", "Bipv"]
+    commonly_confused_with: []
+
+  # ============================================================
+  # SURVEYING & SITE (NEW)
+  # ============================================================
+  - abbr: "RL"
+    full_form: "Reduced Level"
+    taxonomy_ids: ["SRV.RL.GEN.001"]
+    trade: "surveying"
+    variations: ["R.L.", "r.l", "R L"]
+    commonly_confused_with: []
+
+  - abbr: "GL"
+    full_form: "Ground Level"
+    taxonomy_ids: ["SRV.GL.GEN.001"]
+    trade: "surveying"
+    variations: ["G.L.", "g.l", "G L"]
+    commonly_confused_with: []
+
+  - abbr: "FFL"
+    full_form: "Finished Floor Level"
+    taxonomy_ids: ["SRV.FFL.GEN.001"]
+    trade: "surveying"
+    variations: ["F.F.L.", "f.f.l", "F F L"]
+    commonly_confused_with: []
+
+  - abbr: "SSL"
+    full_form: "Structural Slab Level"
+    taxonomy_ids: ["SRV.SSL.GEN.001"]
+    trade: "surveying"
+    variations: ["S.S.L.", "s.s.l", "S S L"]
+    commonly_confused_with: []
+
+  - abbr: "NGL"
+    full_form: "Natural Ground Level"
+    taxonomy_ids: ["SRV.NGL.GEN.001"]
+    trade: "surveying"
+    variations: ["N.G.L.", "n.g.l", "N G L"]
+    commonly_confused_with: []
+
+  - abbr: "TBM"
+    full_form: "Temporary Bench Mark"
+    taxonomy_ids: ["SRV.TBM.GEN.001"]
+    trade: "surveying"
+    variations: ["T.B.M.", "t.b.m", "T B M"]
+    commonly_confused_with: ["Tunnel Boring Machine"]
+
+  - abbr: "SOL"
+    full_form: "Soffit of Slab Level"
+    taxonomy_ids: ["SRV.SOL.GEN.001"]
+    trade: "surveying"
+    variations: ["S.O.L.", "s.o.l", "S O L"]
+    commonly_confused_with: []
+
+  - abbr: "TOC"
+    full_form: "Top of Concrete"
+    taxonomy_ids: ["SRV.TOC.GEN.001"]
+    trade: "surveying"
+    variations: ["T.O.C.", "t.o.c", "T O C"]
+    commonly_confused_with: []
+
+  - abbr: "TOS"
+    full_form: "Top of Steel"
+    taxonomy_ids: ["SRV.TOS.GEN.001"]
+    trade: "surveying"
+    variations: ["T.O.S.", "t.o.s", "T O S"]
+    commonly_confused_with: []
+
+  - abbr: "BOE"
+    full_form: "Bottom of Excavation"
+    taxonomy_ids: ["SRV.BOE.GEN.001"]
+    trade: "surveying"
+    variations: ["B.O.E.", "b.o.e", "B O E"]
+    commonly_confused_with: []

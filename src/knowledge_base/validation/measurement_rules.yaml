@@ -1,0 +1,774 @@
+# Measurement rules for xBOQ — how to measure each item per IS 1200 and related codes.
+# Covers: what is included, what is deducted, correct dimensions to take off,
+# and common field / BOQ errors.
+#
+# item_id_prefix: 3-segment taxonomy prefix (e.g. CIV.EW.EXC)
+# standard: primary IS code governing measurement
+# measure_dimension: volume | area | length | number | weight | lump_sum
+# measure_unit: the IS-code unit (cum, sqm, rmt, nos, MT, LS)
+# measurement_basis: detailed description of HOW to measure
+# includes: list of items normally included in this measurement
+# excludes: list of items NOT included (separate BOQ items)
+# deductions: rules for what is deducted from gross measurement
+# common_errors: list of frequent BOQ / take-off mistakes
+# is_code_ref: governing standard reference
+
+measurement_rules:
+
+  # ---------------------------------------------------------------------------
+  # 1. EXCAVATION
+  # ---------------------------------------------------------------------------
+
+  - item_id_prefix: CIV.EW.EXC
+    standard: IS 1200 Part 1
+    description: "Earthwork in excavation — ordinary soil, hard soil, soft rock, hard rock, foundation trenches, pits, bulk"
+    measure_dimension: volume
+    measure_unit: cum
+    measurement_basis: >
+      Measured in place before excavation (bank measure). Length and width are taken
+      as the dimensions of the foundation or structure at the bottom, plus working
+      space allowance: 150mm each side for depths up to 1.5m; 300mm each side for
+      depths exceeding 1.5m. Depth is from existing ground level (or stripped level
+      where applicable) to the bottom of the excavation. Rock and ordinary soil
+      measured separately if both are present in the same trench.
+    includes:
+      - Working space allowance on each side per IS 1200 Part 1
+      - Dressing and trimming of sides and bottom to correct profile
+      - Ramming of bottom where specified
+      - Shoring and timbering where included in the item description
+      - Disposal of excavated material to spoil heap within specified lead (usually 50m or 100m)
+    excludes:
+      - Dewatering and pumping out of water (separate item CIV.EW.DW)
+      - Backfilling with excavated material (separate item CIV.EW.FIL)
+      - Disposal of surplus excavated material beyond specified lead
+      - Anti-termite treatment (separate item CIV.EW.AT)
+      - Rock blasting (separate item if applicable)
+    deductions: >
+      No deduction for isolated boulders smaller than 0.01 cum embedded in soil.
+      Rock measured separately if encountered below a defined strata level. No
+      deduction for reinforcement cages, pile caps, or other items already in ground.
+    common_errors:
+      - "Measuring in sqm (plan area only) — this ignores depth entirely"
+      - "Not adding working space allowance, especially for depths > 1.5m"
+      - "Including backfill volume within the excavation quantity"
+      - "Using stripped level rather than existing ground level as datum"
+      - "Measuring rock and ordinary soil at the same rate without separation"
+    is_code_ref: IS 1200 Part 1
+
+  # ---------------------------------------------------------------------------
+  # 2. EARTH FILLING AND COMPACTION
+  # ---------------------------------------------------------------------------
+
+  - item_id_prefix: CIV.EW.FIL
+    standard: IS 1200 Part 1
+    description: "Earth filling in plinth, under floors, around foundations — manual or mechanised, with compaction in layers"
+    measure_dimension: volume
+    measure_unit: cum
+    measurement_basis: >
+      Measured as the volume of void to be filled (i.e. the compacted in-place
+      volume). Dimensions taken from formation level to finished fill level.
+      Where fill is placed in layers and compacted, the measurement is of the
+      finished compacted volume, not the loose volume before compaction. Bulkage
+      and shrinkage factors are accounted for in the rate, not the quantity.
+    includes:
+      - Spreading and levelling of fill material in layers
+      - Watering to optimum moisture content
+      - Compaction by roller, plate compactor, or hand rammer as specified
+      - Testing of compaction (if included in item description)
+    excludes:
+      - Supply of imported fill material beyond specified source (separate rate if borrow pit is distant)
+      - Disposal of excess excavated material (separate item)
+      - Sub-base and base course layers (measured separately under road works)
+    deductions: >
+      Volume of existing structures, pipes, or concrete elements buried within the
+      fill zone is deducted. No deduction for reinforcement bars or small fittings.
+    common_errors:
+      - "Measuring loose volume instead of compacted in-place volume (overstates quantity by 20-30%)"
+      - "Using plan area (sqm) instead of volume — ignores fill depth"
+      - "Not separating imported fill from site-won fill which have different rates"
+      - "Including compaction layers that are actually sub-base (separate IS 1200 Part 6 item)"
+    is_code_ref: IS 1200 Part 1
+
+  # ---------------------------------------------------------------------------
+  # 3. PLAIN CEMENT CONCRETE (PCC)
+  # ---------------------------------------------------------------------------
+
+  - item_id_prefix: STR.RCC.PCC
+    standard: IS 1200 Part 2
+    description: "Providing, mixing, laying, compacting and curing plain cement concrete — all grades from M7.5 to M15, all applications"
+    measure_dimension: volume
+    measure_unit: cum
+    measurement_basis: >
+      Measured as the net volume of concrete in the finished structure. Length,
+      breadth and thickness taken from structural drawings. For foundations, the
+      PCC bed dimensions are taken to the underside of the footing and the PCC
+      protrudes 75mm beyond footing edge on each side (as per standard practice).
+      For road PCC, area (sqm) may be used if thickness is uniform and specified
+      in the item description, but cum is the IS 1200 standard.
+    includes:
+      - Formwork to sides (plain vertical faces)
+      - Compaction by vibration or hand
+      - Curing for specified period (7-21 days)
+      - Joints and expansion joints where specified
+    excludes:
+      - Reinforcement (separate item STR.RCC.RFT)
+      - Formwork to soffits and complex faces (separate item STR.FW)
+      - Blinding concrete under structural concrete (measured as separate PCC item)
+      - DPC membrane (separate item)
+    deductions: >
+      Deduct volume of all openings, pockets, and cast-in items (pipes, bolts) larger
+      than 0.01 cum individually. No deduction for reinforcement bars. Isolated
+      columns and projections smaller than 0.1 cum are included in the parent item.
+    common_errors:
+      - "Measuring in sqm and quoting a rate per sqm — hides thickness variation"
+      - "Including reinforcement in the concrete rate (should be separate)"
+      - "Not deducting large cast-in conduits or service sleeves > 0.01 cum"
+      - "Measuring blinding PCC and structural PCC at the same rate"
+    is_code_ref: IS 1200 Part 2
+
+  # ---------------------------------------------------------------------------
+  # 4. REINFORCED CEMENT CONCRETE (RCC)
+  # ---------------------------------------------------------------------------
+
+  - item_id_prefix: STR.RCC.COL
+    standard: IS 1200 Part 2
+    description: "Providing, placing and curing RCC — columns, beams, slabs, footings, walls, all grades M20 to M50"
+    measure_dimension: volume
+    measure_unit: cum
+    measurement_basis: >
+      Measured as the gross net volume of concrete in the structural member using
+      dimensions taken from structural drawings or engineer's instruction. For
+      columns, height is taken from top of footing/plinth to soffit of beam above.
+      For beams, length is the clear span plus half bearing at each end; depth is
+      taken from top of slab to soffit of beam (i.e. the beam depth excludes slab
+      thickness where they are cast together). For slabs, the overall thickness
+      including the beam flange is not double-counted. Haunch volumes are measured
+      separately or included in the beam as directed.
+    includes:
+      - Compaction, vibration, and curing
+      - Starter bars pockets and construction joint preparation
+      - Any admixtures specified in the mix design
+    excludes:
+      - Reinforcement steel (separate item STR.RCC.RFT)
+      - Formwork / shuttering (separate items STR.FW.*)
+      - Prestressing works (separate item STR.PC.*)
+      - Expansion joints and joint filler (separate items)
+    deductions: >
+      Deduct openings, sleeves and embedded items individually exceeding 0.01 cum.
+      No deduction for reinforcement. Do not deduct beam volumes from slab if
+      already measured separately as beam.
+    common_errors:
+      - "Double-counting beam volume within slab (beams and slab measured separately — do not overlap)"
+      - "Measuring column height to top of slab instead of soffit of beam"
+      - "Including formwork cost within the concrete rate (formwork is a separate IS 1200 item)"
+      - "Using sqm for slabs and not specifying thickness (different thicknesses at different zones)"
+    is_code_ref: IS 1200 Part 2
+
+  # ---------------------------------------------------------------------------
+  # 5. FORMWORK / SHUTTERING
+  # ---------------------------------------------------------------------------
+
+  - item_id_prefix: STR.FW.COL
+    standard: IS 1200 Part 2
+    description: "Providing, erecting and striking formwork / shuttering to all RCC members — columns, beams, slabs, walls, foundations"
+    measure_dimension: area
+    measure_unit: sqm
+    measurement_basis: >
+      Measured as the contact area between the formwork surface and the concrete.
+      For columns, the perimeter (girth) multiplied by the column height gives
+      the area (4 faces for rectangular, circumference for circular). For beams,
+      the three faces (soffit + two sides) below the slab are measured; the slab
+      face at the top of the beam is not measured as it is part of the slab pour.
+      For slabs, only the soffit area is measured. For walls, both faces are
+      measured unless one face is against earth (the earth face is excluded).
+      Curved and complex formwork measured at a premium; state whether steel,
+      timber or aluminium formwork in the item description.
+    includes:
+      - Strutting, propping and back-propping as required
+      - Release agent application
+      - Chamfers and rebates defined in drawings
+      - Striking and removal on completion
+    excludes:
+      - Scaffolding for access (separate item PRL.EQ.*)
+      - Permanent metal deck (measured separately as a structural item)
+      - Haunch and fillet formwork below 0.05 sqm individual area (included in rate)
+    deductions: >
+      No deduction for individual openings less than 0.5 sqm (e.g. conduit penetrations).
+      Deduct openings greater than 0.5 sqm (doors in walls, large service penetrations).
+    common_errors:
+      - "Measuring formwork in cum (volume of concrete) instead of sqm (contact area)"
+      - "Not measuring beam side shuttering — only soffit included"
+      - "Not measuring column kicker / starter formwork separately (different rate)"
+      - "Measuring wall formwork to one face only when both faces are formed"
+    is_code_ref: IS 1200 Part 2
+
+  # ---------------------------------------------------------------------------
+  # 6. REINFORCEMENT STEEL
+  # ---------------------------------------------------------------------------
+
+  - item_id_prefix: STR.RCC.RFT
+    standard: IS 1200 Part 5
+    description: "Supply, cut, bend and fix TMT reinforcement steel bars (Fe415, Fe500, Fe550) in RCC members"
+    measure_dimension: weight
+    measure_unit: MT
+    measurement_basis: >
+      Measured as the weight (mass) of steel calculated from bar schedules or
+      drawings. Bar weight = (diameter^2 / 162) kg per metre (the IS formula for
+      mild and deformed steel). Total length of each bar size is calculated from
+      bar bending schedules, including hook allowances, lap lengths, and cranks as
+      shown on structural drawings. All laps to be measured even if shown as
+      alternatives. Stirrups, links, and chairs (cover blocks of steel) included.
+      Weight in kg converted to MT (1 MT = 1000 kg) for large packages.
+    includes:
+      - Cutting to length, bending and cranking
+      - Binding wire (approximately 10 kg per MT of steel — included in rate)
+      - Cover blocks / spacers of steel or PVC (if steel type, include in weight)
+      - Lapping lengths as per IS 456 (40-50 diameters)
+    excludes:
+      - Welded mesh fabric (measured separately as sqm)
+      - Pre-stressing tendons (separate item STR.PC.*)
+      - Structural steel sections (separate item STR.SF.*)
+    deductions: >
+      No deduction for bends or hooks (hook allowance is added in the bar
+      schedule, not deducted from the concrete or form measurements).
+    common_errors:
+      - "Listing rmt of bars instead of weight — a 32mm bar and 8mm bar per metre differ in weight by 16x"
+      - "Omitting lapping lengths (adds 8-15% to theoretical straight bar weight)"
+      - "Omitting hook allowances from bar schedule calculations"
+      - "Using diameter in mm as the unit column (sqmm is cross-section size, not quantity)"
+    is_code_ref: IS 1200 Part 5
+
+  # ---------------------------------------------------------------------------
+  # 7. STRUCTURAL STEEL (FABRICATED SECTIONS)
+  # ---------------------------------------------------------------------------
+
+  - item_id_prefix: STR.SF.ISMB
+    standard: IS 1200 Part 8
+    description: "Supply, fabricate and erect structural steel sections — ISMB, ISMC, ISA, hollow sections (SHS, RHS, CHS), plates"
+    measure_dimension: weight
+    measure_unit: MT
+    measurement_basis: >
+      Measured as the mass of steel in the fabricated and erected structure.
+      Section weights taken from IS 808 tables (e.g. ISMB 200 = 25.4 kg/m).
+      Length is the overall length of each member including connections
+      (gussets, end plates, cleats) which are included in the overall weight.
+      Weld metal, bolts and nuts are included in the fabrication rate, not
+      measured separately. Paint and primer weight is not added.
+      For built-up sections (plate girders), plate dimensions are taken
+      and weight calculated from plate area x thickness x 7850 kg/m3.
+    includes:
+      - Cutting, drilling, welding and all fabrication operations
+      - Surface preparation (shot blasting, grinding)
+      - One coat primer unless otherwise specified
+      - Site erection (bolting up, plumbing, levelling)
+      - Connection material (gussets, cleats, end plates) within the weight
+    excludes:
+      - Additional coats of paint beyond one primer (separate painting item)
+      - Holding-down bolts and anchor bolts (separate civil item)
+      - Crane hire for erection beyond 10T lifts (preliminary item PRL.EQ.*)
+      - Fire protection (intumescent paint or boarding — separate item)
+    deductions: >
+      No deduction for holes, notches, or cut-outs in members. Weight calculated
+      on gross plate/section size before fabrication cuts.
+    common_errors:
+      - "Using rmt (length) instead of MT (weight) — a UC 203x203x60 and a UB 533x210x92 have very different kg/m"
+      - "Listing 'nos' of columns/beams without size, giving no basis for weight calculation"
+      - "Omitting connection plates and gussets which can add 10-15% to member weight"
+      - "Confusing structural steel (MT) with reinforcement steel (also MT but different sections and rates)"
+    is_code_ref: IS 1200 Part 8
+
+  # ---------------------------------------------------------------------------
+  # 8. BRICKWORK
+  # ---------------------------------------------------------------------------
+
+  - item_id_prefix: MAS.BRK.CLA
+    standard: IS 1200 Part 3
+    description: "Brick masonry in CM — all thicknesses (half-brick 115mm, one-brick 230mm, one-and-half-brick 345mm)"
+    measure_dimension: volume
+    measure_unit: cum
+    measurement_basis: >
+      Measured as the gross volume of masonry including mortar joints. Dimensions
+      taken from finished face to finished face of masonry. Height measured from
+      top of foundation/floor slab to underside of slab or beam above. For half-
+      brick (115mm) partitions, measurement in sqm is also permissible per IS 1200
+      Part 3 with thickness stated in the item description.
+      Lintels, sills and chajjas of different material are deducted and measured
+      separately. Door and window openings are deducted.
+    includes:
+      - Mortar for bedding and jointing (included in rate — typically 1:4 or 1:6 CM)
+      - Raking out joints for pointing (if pointing is included in the item)
+      - Scaffolding below 3.5m height (included in IS 1200 standard rates)
+      - Squaring off at quoins and jambs
+    excludes:
+      - Lintels, sills, chajjas (separate RCC or stone items)
+      - Scaffolding above 3.5m (separate preliminary item)
+      - Pointing (separate item MAS.JPT.PTG)
+      - DPC (separate item)
+    deductions: >
+      Deduct all openings (doors, windows, ventilators) exceeding 0.1 sqm
+      individually. Do not deduct individual flue holes, pipe sleeves, or openings
+      below 0.1 sqm. Volume of lintel bearing pockets is not deducted.
+    common_errors:
+      - "Measuring all brickwork in sqm regardless of wall thickness"
+      - "Not deducting door and window openings"
+      - "Measuring half-brick and full-brick walls at the same rate"
+      - "Including mortar cost separately when it is already in the rate"
+    is_code_ref: IS 1200 Part 3
+
+  # ---------------------------------------------------------------------------
+  # 9. PLASTERING
+  # ---------------------------------------------------------------------------
+
+  - item_id_prefix: FIN.WL.PLS
+    standard: IS 1200 Part 13
+    description: "Cement plaster — internal walls, external walls, columns, beams, soffits — all thicknesses 6mm to 20mm"
+    measure_dimension: area
+    measure_unit: sqm
+    measurement_basis: >
+      Measured as the superficial area of the surface plastered, taken as the
+      finished plastered face. Internal walls: height from floor finish level to
+      soffit of slab or beam above; length from wall to wall (corner to corner).
+      External walls: height from DPC or plinth top to soffit of roof slab or
+      fascia; measured over window and door reveals (splays measured flat).
+      Columns and pilasters: girth x height for each face. Beams: soffit and
+      visible faces separately stated. Soffits: measured horizontally as plan area.
+      Two-coat work (base coat + finish coat) may be measured as one item or
+      separately — state which in item description.
+    includes:
+      - Hacking or key preparation of the substrate
+      - Application of bonding agent if specified
+      - All coats to achieve specified thickness
+      - Making good at edges, reveals, and junctions
+    excludes:
+      - POP punning / gypsum skim finish (separate item)
+      - Chicken mesh at dissimilar substrate junctions (separate material item)
+      - Curing compound (if specified separately)
+    deductions: >
+      Deduct openings (door, window, ventilator) exceeding 0.5 sqm individually.
+      No deduction for openings below 0.5 sqm. Reveals of openings are measured
+      separately as a linear extra. No deduction for small pipes, conduits, or fittings.
+    common_errors:
+      - "Not deducting window and door openings"
+      - "Measuring internal and external plaster (different mix ratios and rates) as one item"
+      - "Omitting reveals, soffits of lintels, and sides of jambs"
+      - "Measuring plaster to both faces of a wall when only one face is accessible (e.g. external wall with earth backing)"
+    is_code_ref: IS 1200 Part 13
+
+  # ---------------------------------------------------------------------------
+  # 10. FLOOR TILING (ceramic, vitrified, stone)
+  # ---------------------------------------------------------------------------
+
+  - item_id_prefix: FIN.FLR.CER
+    standard: IS 1200 Part 12
+    description: "Floor tiles — ceramic, vitrified (GVT, PGVT), natural stone (marble, granite, kota), mosaic — supply and fix"
+    measure_dimension: area
+    measure_unit: sqm
+    measurement_basis: >
+      Measured as the plan area of the floor covered, taken from wall to wall
+      (skirting line to skirting line). Do not deduct for toilet columns, pilasters,
+      or isolated posts occupying less than 0.1 sqm floor area individually.
+      Flooring under fixed furniture, under sanitary pedestals, and at door
+      threshold strips is included unless otherwise stated. Threshold strips and
+      skirting are measured separately in rmt. Tile cutting wastage is included
+      in the rate (not the quantity) — typically 5-10% for rectangular rooms,
+      15-20% for heavily cut patterns.
+    includes:
+      - Adhesive mortar or cement mortar bed as specified
+      - Grouting of joints with specified colour grout
+      - Cleaning and polishing on completion
+      - All cutting at perimeter, around columns, and at outlets
+    excludes:
+      - Screed / levelling bed below the tile (separate item FIN.FLR.SCR)
+      - Skirting (separate rmt item FIN.FLR.SKT)
+      - Threshold strip / nosing (separate rmt item)
+      - Waterproofing membrane under wet area tiles (separate item WP.*)
+    deductions: >
+      No deduction for individual piers or columns < 0.1 sqm footprint.
+      Deduct floor area of built-in cupboards and permanent counters. Do not
+      deduct for sanitary pedestals or floor drainage gullies.
+    common_errors:
+      - "Using sqft instead of sqm — extremely common in Indian private BOQs"
+      - "Listing 'nos of tiles' without size — not comparable across tenderers"
+      - "Not measuring threshold strips separately in rmt"
+      - "Including screed and waterproofing within the tiling rate (should be separate items)"
+    is_code_ref: IS 1200 Part 12
+
+  # ---------------------------------------------------------------------------
+  # 11. WALL TILING
+  # ---------------------------------------------------------------------------
+
+  - item_id_prefix: FIN.WL.TIL
+    standard: IS 1200 Part 12
+    description: "Wall tiles — ceramic, glazed, porcelain — in bathrooms, kitchens, toilets, utility areas — supply and fix"
+    measure_dimension: area
+    measure_unit: sqm
+    measurement_basis: >
+      Measured as the superficial area of wall surface tiled, taken from finished
+      floor tile level to specified height (or full height to soffit). Width taken
+      as clear width between perpendicular walls or finished tile face to tile
+      face. Deduct door and window openings exceeding 0.5 sqm. Tile reveals at
+      windows and doors are measured separately as a strip (typically rmt).
+      Height of tiling stated explicitly in item description (e.g. 2.1m full
+      height, or 1.2m dado height).
+    includes:
+      - Adhesive (notched trowel ceramic tile adhesive)
+      - Grouting with specified grout colour
+      - Edge trims and corner beads if specified
+      - All cuts at perimeter, sockets, pipes, and accessories
+    excludes:
+      - Plaster base (separate item FIN.WL.PLS)
+      - Waterproofing to wet area walls (separate item WP.*)
+      - Accessories (soap dish, towel bar) — measured in nos separately
+    deductions: >
+      Deduct openings > 0.5 sqm. No deduction for individual sockets, pipe
+      penetrations, or accessories less than 0.05 sqm.
+    common_errors:
+      - "Using sqft — same as floor tiling error"
+      - "Measuring tiles in 'nos' without stating size"
+      - "Not deducting door openings in bathrooms"
+      - "Measuring same rate for floor tile and wall tile (different adhesive, cutting, and wastage)"
+    is_code_ref: IS 1200 Part 12
+
+  # ---------------------------------------------------------------------------
+  # 12. PAINTING (walls, wood, metal)
+  # ---------------------------------------------------------------------------
+
+  - item_id_prefix: FIN.WL.PNT
+    standard: IS 1200 Part 13
+    description: "Interior and exterior painting — emulsion, OBD, acrylic distemper, enamel, texture, anti-carbonation — walls, ceiling, wood, metal"
+    measure_dimension: area
+    measure_unit: sqm
+    measurement_basis: >
+      Walls and ceilings: measured as the gross area of the surface to be painted.
+      Height from finished floor level to soffit; length from corner to corner.
+      No deduction for individual openings (doors, windows) less than 0.5 sqm.
+      Deduct openings exceeding 0.5 sqm; the reveals, soffits, and jambs of
+      deducted openings are added back as supplementary area (measured flat).
+      Doors, window frames, shutters, and grilles are measured separately.
+      For ceilings, the plan area is used (not measured down beams).
+      For external walls, the actual surface including projections (sunshades,
+      bands) is measured.
+      Wood painting: measured as the superficial area of wood (both faces of
+      doors, window shutters, and all exposed faces). Glazed portions of windows
+      are deducted. Mouldings and carved surfaces measured as their plan area.
+      Metal painting: surface area of the metal member. For angles and hollow
+      sections, the girth of the section multiplied by the length gives the area.
+    includes:
+      - Preparatory work (filling cracks, sanding, dusting off)
+      - Primer / sealer coat(s)
+      - Specified number of finish coats
+      - Masking and protection of adjacent surfaces
+    excludes:
+      - Plastering or surface levelling before painting (separate item)
+      - Anti-corrosion treatment for metal (separate rate if different process)
+    deductions: >
+      Deduct openings > 0.5 sqm each. No deduction for individual switches,
+      sockets, pipe penetrations, or small fixtures. For wood painting, deduct
+      glazed areas > 0.5 sqm.
+    common_errors:
+      - "Using sqft — non-SI unit common in India"
+      - "Specifying 'liters of paint' as the BOQ unit — coverage varies by brand and surface porosity"
+      - "Not separating primer from finish coats (different rates)"
+      - "Measuring doors and windows in 'nos' instead of sqm of painted surface"
+      - "Omitting reveals and returns of openings from the add-back"
+    is_code_ref: IS 1200 Part 13
+
+  # ---------------------------------------------------------------------------
+  # 13. WATERPROOFING (membrane and liquid-applied)
+  # ---------------------------------------------------------------------------
+
+  - item_id_prefix: WP.MEM.APP
+    standard: IS 1322
+    description: "Waterproofing — APP/SBS bitumen membrane (torch applied or self-adhesive), liquid-applied elastomeric, crystalline, cementitious"
+    measure_dimension: area
+    measure_unit: sqm
+    measurement_basis: >
+      Measured as the plan area of the surface to be waterproofed. For terraces
+      and roofs, the plan area (horizontal projection) is used, not the sloped
+      surface area. Upturn to parapet walls and at penetrations (pipes, columns)
+      is measured separately in rmt (height of upturn) or added as an extra-over
+      rate per rmt of upturn. For basement retaining walls, the vertical area of
+      the wall is measured. For raft slabs, the plan area of the raft plus all
+      upturns.
+      Number of layers specified in the item description (single-layer vs. double-
+      layer systems have different rates). Lap widths (typically 100-150mm) are
+      included in the rate, not added to the quantity.
+    includes:
+      - Surface preparation (priming with bitumen primer)
+      - Specified number of layers / coats
+      - Lap and seam treatment
+      - Protection screed or board over membrane (if included in the item)
+    excludes:
+      - Structural slope / falls (separate concrete item)
+      - Protection screed if separately specified (separate item FIN.FLR.SCR)
+      - Perimeter pointing and flashing (separate item)
+      - Injection waterproofing at cracks (separate item WP.APP.EXJ)
+    deductions: >
+      No deduction for individual roof penetrations (pipes, vents) less than
+      0.1 sqm. Deduct large openings (skylights, ducts) exceeding 0.5 sqm.
+    common_errors:
+      - "Measuring sloped surfaces along the slope (should be horizontal plan area)"
+      - "Not measuring upturn to parapet or column face"
+      - "Quoting in liter of waterproofing material — coverage varies by product"
+      - "Not separating single-layer and double-layer waterproofing (very different rates)"
+    is_code_ref: IS 1322
+
+  # ---------------------------------------------------------------------------
+  # 14. DOORS AND WINDOWS (measured by opening)
+  # ---------------------------------------------------------------------------
+
+  - item_id_prefix: DW.DR.FLS
+    standard: IS 1200 Part 14
+    description: "Doors, windows, ventilators — supply and fix complete including frame, shutter, hardware — flush doors, panel doors, aluminium windows, UPVC"
+    measure_dimension: number
+    measure_unit: nos
+    measurement_basis: >
+      Each door or window is counted as one number. The overall size (width x
+      height of opening) must be stated in the item description or referenced
+      to a door/window schedule. For double-leaf doors, each pair is one number.
+      Glazing panels and transoms above or beside the door leaf are included in
+      the 'nos' rate unless separately detailed. Hardware (hinges, locks, closers)
+      is included in the nos rate unless separately scheduled.
+      Glass for windows may be measured in sqm if sizes vary significantly.
+    includes:
+      - Frame (or subframe and finish frame) supply and fixing
+      - Shutter / leaf with all ironmongery
+      - Sealant at frame perimeter
+      - Factory-applied primer (included in rate)
+    excludes:
+      - Structural lintel or flat arch above opening (separate RCC item)
+      - Plastering to reveals and jambs (separate plastering item)
+      - Painting or polishing of door/window (separate painting item)
+    deductions: >
+      Not applicable — doors and windows counted individually.
+    common_errors:
+      - "Listing sqm of door opening instead of nos"
+      - "Listing doors without a schedule — impossible to price comparable doors of different sizes"
+      - "Combining supply-only and supply-and-fix into one item"
+      - "Omitting hardware from 'nos' rate and then not measuring it separately"
+    is_code_ref: IS 1200 Part 14
+
+  # ---------------------------------------------------------------------------
+  # 15. FALSE CEILING
+  # ---------------------------------------------------------------------------
+
+  - item_id_prefix: FIN.CL.ACC
+    standard: IS 1200 Part 14
+    description: "False ceiling — gypsum board, calcium silicate board, metal grid with tiles, wood panel, open-cell — supply and fix"
+    measure_dimension: area
+    measure_unit: sqm
+    measurement_basis: >
+      Measured as the plan area (horizontal projection) of the false ceiling
+      surface, taken from wall to wall. For sloped / raked ceilings, measure
+      the actual sloped surface area unless plan area is specified. For coffered
+      ceilings, the total surface area including vertical coffer sides is
+      measured. Reveal panels at edges, bulkheads, and drops are measured
+      separately in rmt (perimeter of drop) or sqm (face of bulkhead).
+      Suspension height (from slab soffit to false ceiling level) is stated
+      in the item description as it affects the hanging system rate.
+    includes:
+      - Primary grid / main runner and cross tee suspension system
+      - Hangers, rods, and clips
+      - Ceiling tiles or boards
+      - Perimeter trim / shadow gap moulding
+      - Access panels if included in item description
+    excludes:
+      - Electrical fixtures in ceiling (separate electrical item)
+      - HVAC diffusers and grilles in ceiling (separate HVAC item)
+      - Fire sprinkler heads (separate fire item)
+      - Acoustic treatment above ceiling (separate item if specified)
+    deductions: >
+      Deduct openings for AHU, large ducts, or skylight wells exceeding 0.5 sqm
+      individually. No deduction for individual diffuser or light cutouts < 0.5 sqm.
+    common_errors:
+      - "Measuring sloped ceiling at plan area when actual surface is significantly larger"
+      - "Not measuring bulkhead drops and coffer sides (omitting vertical faces)"
+      - "Measuring false ceiling and direct plaster ceiling at the same rate"
+      - "Not stating suspension height — affects grid spacing and hanger cost"
+    is_code_ref: IS 1200 Part 14
+
+  # ---------------------------------------------------------------------------
+  # 16. DRAINAGE PIPES (sewer and storm)
+  # ---------------------------------------------------------------------------
+
+  - item_id_prefix: PLB.DR.PVC
+    standard: IS 1200 Part 15
+    description: "Underground sewer and storm drainage pipes — RCC, PVC, HDPE, DI, VC — including laying, jointing and testing"
+    measure_dimension: length
+    measure_unit: rmt
+    measurement_basis: >
+      Measured as the length of pipe laid along the centreline, from
+      centre of one manhole/chamber to centre of the next, or from
+      manhole to outfall point. Measured through manholes and inspection
+      chambers (the pipe run is continuous through the chamber even though
+      the pipe is cut). Laid gradient, falls, and bends do not affect the
+      length measurement (measure horizontal/inclined run along pipe centre).
+      Diameter and pipe class stated in item description. Bedding type
+      (granular, concrete cradle, etc.) stated separately.
+    includes:
+      - Excavation of pipe trench to required depth and width
+      - Bedding material as specified (sand, granular, concrete)
+      - Jointing (rubber ring, solvent weld, or cement mortar joint)
+      - Backfilling and compaction of trench
+      - CCTV inspection and hydraulic testing (if included in item)
+    excludes:
+      - Manholes, inspection chambers, and access points (separate nos items)
+      - Road reinstatement above pipe trench (separate item)
+      - Dewatering of trench (separate item)
+    deductions: >
+      Length measured through manholes; no deduction for chamber walls.
+      No deduction for fittings (bends, reducers) which are included in the rmt rate.
+    common_errors:
+      - "Measuring pipe as 'nos of pipes' (6m sticks) instead of total laid length"
+      - "Not including trench excavation in the pipe laying item (should be included unless separately measured)"
+      - "Measuring drain pipe and sewer pipe at the same rate (different standards, different class)"
+      - "Measuring horizontal distance instead of actual pipe length along gradient"
+    is_code_ref: IS 1200 Part 15
+
+  # ---------------------------------------------------------------------------
+  # 17. PLUMBING PIPES (water supply)
+  # ---------------------------------------------------------------------------
+
+  - item_id_prefix: PLB.WS.GI
+    standard: IS 1200 Part 15
+    description: "Water supply pipes — GI, CPVC, UPVC, PPR, SS — internal and external, concealed and exposed — supply, fix, and test"
+    measure_dimension: length
+    measure_unit: rmt
+    measurement_basis: >
+      Measured as the total length of pipe installed along its centre-line,
+      including all vertical risers, branches, and horizontal runs. Measure
+      actual installed length following the pipe route (not straight-line
+      distances between endpoints). Pipe diameter and material grade stated
+      in item description. Exposed and concealed pipes measured separately
+      if different rates apply.
+    includes:
+      - Pipe hangers, clamps, and supports at specified spacing
+      - Short-radius factory bends and field-fabricated bends (included in rate)
+      - Pipe sleeves where pipe passes through walls and slabs
+      - Hydraulic pressure testing
+    excludes:
+      - Fittings (tees, elbows, unions, reducers) at junctions (measured
+        separately in nos if specified; otherwise included as a percentage
+        in the rate — state which approach is used)
+      - Valves (measured separately in nos)
+      - Insulation (measured separately in rmt)
+    deductions: >
+      No deduction for pipe length through fittings. Measure continuously
+      through junction points.
+    common_errors:
+      - "Listing 'nos of pipes' (number of pipe sticks purchased) instead of installed rmt"
+      - "Not measuring vertical risers separately where a different rate applies"
+      - "Omitting pipe supports and hangers from the item (leaving scope ambiguity)"
+      - "Mixing concealed and exposed pipe in one item when rates differ"
+    is_code_ref: IS 1200 Part 15
+
+  # ---------------------------------------------------------------------------
+  # 18. ELECTRICAL WIRING
+  # ---------------------------------------------------------------------------
+
+  - item_id_prefix: ELC.WR.CDT
+    standard: IS 1200 Part 18
+    description: "Electrical wiring — FR/FRLS/XLPE cables, conductors in conduit, surface wiring, trunking — LV, ELV, data cables"
+    measure_dimension: length
+    measure_unit: rmt
+    measurement_basis: >
+      Measured as the total installed length of cable along its actual run,
+      including all routing through conduits, cable trays, and trunking. Include
+      tails and connection lengths at distribution boards and equipment
+      (typically add 1-2m per connection point for slack). Cable conductor
+      cross-section (sqmm) and number of cores stated in item description.
+      Conduit measured separately in rmt by conduit size and type. Single-core
+      and multi-core cables measured separately.
+    includes:
+      - Drawing in of cable through installed conduit
+      - Ferrule markers and cable ties at specified intervals
+      - Earth continuity conductor (separate green/yellow core or separate run)
+    excludes:
+      - Conduit installation (separate item ELC.CD.*)
+      - Cable trays and ladders (separate item ELC.CT.*)
+      - Terminations, glands and cable lugs (sometimes included in rmt rate,
+        sometimes separate — state which in item description)
+    deductions: >
+      No deduction for cable through junction boxes or draw boxes.
+    common_errors:
+      - "Using sqmm as the unit — sqmm is conductor cross-section size, not installed length"
+      - "Not including tails at both ends of each cable run"
+      - "Measuring conduit and cable as one item (they have different scope)"
+      - "Not separating power and data cables (completely different rates)"
+    is_code_ref: IS 1200 Part 18
+
+  # ---------------------------------------------------------------------------
+  # 19. ROAD WORKS (sub-base, base, surface course)
+  # ---------------------------------------------------------------------------
+
+  - item_id_prefix: EXT.RD.GSB
+    standard: IRC 37 / IS 1200 Part 6
+    description: "Road works — granular sub-base (GSB), water-bound macadam (WBM), wet mix macadam (WMM), bituminous base course (DBM), bituminous surface course (BC/SDBC/BM)"
+    measure_dimension: area
+    measure_unit: sqm
+    measurement_basis: >
+      Measured as the plan area (horizontal projection) of road surface constructed.
+      Width taken as the carriageway width between kerb faces (or between
+      formation edges for rural roads). Length measured along the centreline.
+      Crossfall and camber do not increase the measured area. Different courses
+      (sub-base, base, wearing course) measured separately with thickness stated
+      in each item description. Volume (cum) is an alternative for bulk earthwork
+      courses but sqm with thickness stated is the IRC standard for paving layers.
+    includes:
+      - Spreading and grading of material to specified thickness and camber
+      - Compaction to specified density / deflection criteria
+      - Joints and longitudinal joints (bituminous works)
+      - Prime coat / tack coat (include in base course rate or measure separately)
+    excludes:
+      - Kerbs and edging (separate rmt item EXT.RD.KRB)
+      - Road markings (separate sqm or rmt item EXT.RD.MRK)
+      - Street lighting (separate electrical item)
+      - Storm drainage (separate drainage item)
+    deductions: >
+      Deduct area of manholes, gully grates, and other surface features > 0.1 sqm.
+      No deduction for isolated lamp columns or sign posts penetrating road surface.
+    common_errors:
+      - "Measuring road in rmt (road length) ignoring width variation"
+      - "Measuring all road layers at one combined rate instead of separate items per layer"
+      - "Not separating bituminous layers by type (BM, DBM, BC have different rates)"
+      - "Not including prime coat and tack coat — often missed as a separate BOQ item"
+    is_code_ref: IRC 37
+
+  # ---------------------------------------------------------------------------
+  # 20. PILING (bored cast-in-situ)
+  # ---------------------------------------------------------------------------
+
+  - item_id_prefix: CIV.PL.BCI
+    standard: IS 1200 Part 16
+    description: "Bored cast-in-situ piles (BCIS) — rotary bored, percussion bored, mechanically augered — all diameters, all lengths"
+    measure_dimension: length
+    measure_unit: rmt
+    measurement_basis: >
+      Measured as the length of pile shaft from the underside of the pile cap
+      (cut-off level) to the toe of the pile (founding level), as approved by
+      the geotechnical engineer. Cut-off level and toe level taken from pile
+      records or founding depth schedule. The length above cut-off (break-back
+      length, typically 600mm-1m) is excluded from the payment length unless
+      stated otherwise. Different pile diameters and concrete grades are
+      measured separately. Piles through water are measured separately.
+    includes:
+      - Boring to founding level (including through any obstruction at specified rate)
+      - Temporary casing (included in rate unless permanent casing specified)
+      - Concrete supply, placing, and curing
+      - Reinforcement cage supply and installation (if included in the item)
+      - Spoil disposal within specified lead
+    excludes:
+      - Pile cap concrete and reinforcement (separate RCC items)
+      - Pile integrity testing and static load tests (separate items CIV.PL.TST)
+      - Permanent steel casing if specified (separate item)
+      - Cut-off and break-back of pile head (separate item or excluded)
+    deductions: >
+      Break-back length (the length of pile above cut-off level that is broken
+      off) is deducted from gross length to arrive at the payment length.
+      Measured length is from cut-off level to toe level only.
+    common_errors:
+      - "Billing per 'nos' of piles instead of rmt — pile lengths vary significantly in variable ground"
+      - "Including break-back length in the billable pile length"
+      - "Not separating different pile diameters (300mm, 450mm, 600mm have different rates)"
+      - "Not separating hard stratum founding from soft stratum (hard rock boring attracts a premium)"
+    is_code_ref: IS 1200 Part 16

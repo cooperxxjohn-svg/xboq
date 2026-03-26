@@ -225,6 +225,15 @@ def run_extractors(
             _page_commercial = com_items
             result.commercial_terms.extend(com_items)
             extractor_times["commercial"] += time.perf_counter() - t_com
+            # Extract absolute bid deadline date (Sprint 47+)
+            try:
+                from .extract_commercial_terms import extract_bid_deadline as _ebd
+                _bd = _ebd(text, page_idx)
+                if _bd and not getattr(result, "_bid_deadline_found", False):
+                    result.commercial_terms.append(_bd)
+                    result._bid_deadline_found = True  # keep first match only
+            except Exception:
+                pass
             # Extract numbered priceable spec items (for TENDER/MIXED line-item assembly)
             if doc_type in ("spec", "notes", "conditions", "addendum", "legend"):
                 spec_pages_attempted += 1

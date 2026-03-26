@@ -10,10 +10,23 @@ This module:
 India-specific: CPWD/DSR rate basis, ISR labor rates, regional material prices.
 """
 
+import logging
+
 from .rate_builder import RateBuilder, RateBuildUp
 from .material_prices import MaterialPriceBook
 from .labor_rates import LaborRateBook
-from .location_factors import LocationMultiplier
+from .location_factors import (
+    LocationMultiplier,
+    get_city_factor,
+    get_material_city_factor,
+    adjust_rate_for_location,
+    get_all_cities,
+    get_nearest_city,
+    CITY_FACTORS,
+    MATERIAL_CITY_ADJUSTMENTS,
+)
+
+logger = logging.getLogger(__name__)
 
 __all__ = [
     "RateBuilder",
@@ -21,6 +34,13 @@ __all__ = [
     "MaterialPriceBook",
     "LaborRateBook",
     "LocationMultiplier",
+    "get_city_factor",
+    "get_material_city_factor",
+    "adjust_rate_for_location",
+    "get_all_cities",
+    "get_nearest_city",
+    "CITY_FACTORS",
+    "MATERIAL_CITY_ADJUSTMENTS",
     "run_pricing_engine",
 ]
 
@@ -146,20 +166,29 @@ def run_pricing_engine(
         "missing_rate_items": missing_rates,
     }
 
-    with open(output_dir / "rate_analysis.json", "w") as f:
-        json.dump(rate_analysis, f, indent=2)
+    try:
+        with open(output_dir / "rate_analysis.json", "w") as f:
+            json.dump(rate_analysis, f, indent=2)
+    except (OSError, IOError) as e:
+        logger.error(f"Failed to write rate_analysis.json: {e}")
 
     # Rate buildups JSON
-    with open(output_dir / "rate_buildups.json", "w") as f:
-        json.dump([b.to_dict() for b in rate_buildups], f, indent=2)
+    try:
+        with open(output_dir / "rate_buildups.json", "w") as f:
+            json.dump([b.to_dict() for b in rate_buildups], f, indent=2)
+    except (OSError, IOError) as e:
+        logger.error(f"Failed to write rate_buildups.json: {e}")
 
     # Priced BOQ CSV
     if priced_boq:
-        with open(output_dir / "priced_boq.csv", "w", newline="") as f:
-            fieldnames = ["unified_item_no", "description", "unit", "quantity", "rate", "amount", "package", "rate_source", "rate_confidence"]
-            writer = csv.DictWriter(f, fieldnames=fieldnames, extrasaction="ignore")
-            writer.writeheader()
-            writer.writerows(priced_boq)
+        try:
+            with open(output_dir / "priced_boq.csv", "w", newline="") as f:
+                fieldnames = ["unified_item_no", "description", "unit", "quantity", "rate", "amount", "package", "rate_source", "rate_confidence"]
+                writer = csv.DictWriter(f, fieldnames=fieldnames, extrasaction="ignore")
+                writer.writeheader()
+                writer.writerows(priced_boq)
+        except (OSError, IOError) as e:
+            logger.error(f"Failed to write priced_boq.csv: {e}")
 
     # Rate buildups markdown
     _export_rate_buildups(

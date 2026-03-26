@@ -130,7 +130,7 @@ class ExternalProvisionals:
         # Estimate plot area if not provided
         if not plot_area_sqm and built_up_area_sqm:
             # Assume ground coverage ~40%
-            plot_area_sqm = built_up_area_sqm / (num_floors or 1) / 0.4
+            plot_area_sqm = built_up_area_sqm / max(num_floors, 1) / 0.4
 
         if not plot_area_sqm:
             logger.warning("Cannot estimate external works - no area provided")

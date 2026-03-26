@@ -1,0 +1,457 @@
+# Quantity Benchmarks per sqm of Built-Up Area
+# Purpose: Expected quantity ratios per sqm BUA for different project types.
+# Enables: "Your concrete quantity is 0.15 cum/sqm — 57% below the residential benchmark of 0.35 cum/sqm."
+# Source: CPWD, NBC 2016, RICS India, industry benchmarks for Delhi NCR 2024.
+# Version: 2024-25
+
+project_benchmarks:
+
+  - project_type: residential_apartment
+    description: "RCC framed structure, G+4 to G+15, typical Delhi NCR apartment building"
+    floor_height_assumption_m: 3.0
+    structural_system: "RCC framed"
+    notes: "Includes basement parking. Higher concrete ratios where basement is present."
+    per_sqm_bua:
+      - item: concrete_rcc_total
+        unit: cum
+        min: 0.28
+        max: 0.42
+        typical: 0.35
+        note: "Includes footings, columns, beams, slabs. Higher end for basement buildings."
+      - item: steel_tmt_total
+        unit: kg
+        min: 45
+        max: 75
+        typical: 58
+        note: "Fe500D all structural steel. Higher for seismic zones III and IV."
+      - item: brickwork_total
+        unit: cum
+        min: 0.18
+        max: 0.32
+        typical: 0.24
+        note: "External 230mm + internal 115mm walls. Lower for open-plan layouts."
+      - item: plastering_total
+        unit: sqm
+        min: 3.0
+        max: 4.5
+        typical: 3.6
+        note: "Both faces of all walls plus ceiling. Includes internal and external."
+      - item: flooring_tile
+        unit: sqm
+        min: 0.90
+        max: 1.15
+        typical: 1.02
+        note: "Including wastage 8-12%. Accounts for balconies, corridors, and common areas."
+      - item: painting_interior
+        unit: sqm
+        min: 3.5
+        max: 5.0
+        typical: 4.2
+        note: "Walls and ceiling combined. Ratio > 3.0 due to wall height and room partitions."
+      - item: waterproofing_area
+        unit: sqm
+        min: 0.10
+        max: 0.22
+        typical: 0.15
+        note: "Terraces, toilet floors, utility areas. Higher in top floor units."
+      - item: electrical_points
+        unit: nos
+        min: 1.8
+        max: 3.2
+        typical: 2.4
+        note: "Light + power + AC points combined. Excludes DB and main switchboard."
+      - item: plumbing_pipe_total
+        unit: rmt
+        min: 2.5
+        max: 4.5
+        typical: 3.2
+        note: "Supply (UPVC/CPVC) + SWR drain combined per sqm BUA."
+
+  - project_type: residential_villa_independent
+    description: "Independent villa or bungalow, Ground + 1 or 2 floors, RCC framed or load-bearing"
+    floor_height_assumption_m: 3.2
+    structural_system: "RCC framed or confined masonry"
+    notes: "Higher finishing ratio due to individual floors. Larger window area per sqm BUA."
+    per_sqm_bua:
+      - item: concrete_rcc_total
+        unit: cum
+        min: 0.22
+        max: 0.38
+        typical: 0.30
+        note: "Lower than apartment due to fewer floors and no podium/basement typically."
+      - item: steel_tmt_total
+        unit: kg
+        min: 35
+        max: 65
+        typical: 48
+        note: "Fe500D. Lower ratio than high-rise due to lower seismic/wind load."
+      - item: brickwork_total
+        unit: cum
+        min: 0.22
+        max: 0.38
+        typical: 0.30
+        note: "Higher than apartments due to more external wall perimeter per sqm BUA."
+      - item: plastering_total
+        unit: sqm
+        min: 3.2
+        max: 5.0
+        typical: 3.9
+        note: "Both faces. Higher due to more external wall area per sqm in low-rise."
+      - item: flooring_tile
+        unit: sqm
+        min: 0.95
+        max: 1.20
+        typical: 1.05
+        note: "Including terraces, sit-outs, driveways in total BUA. Includes wastage."
+      - item: painting_interior
+        unit: sqm
+        min: 3.8
+        max: 5.5
+        typical: 4.5
+        note: "Higher wall-to-floor ratio in villas with higher ceilings."
+      - item: waterproofing_area
+        unit: sqm
+        min: 0.12
+        max: 0.28
+        typical: 0.18
+        note: "Terrace, wet areas, basement/cellar if present. Higher share in single-storey."
+      - item: electrical_points
+        unit: nos
+        min: 2.0
+        max: 3.8
+        typical: 2.8
+        note: "Higher than apartments due to garden lights, external fixtures, multiple DBs."
+      - item: plumbing_pipe_total
+        unit: rmt
+        min: 2.8
+        max: 5.0
+        typical: 3.6
+        note: "Longer runs due to spread-out floor plan. Includes garden/outdoor supply."
+
+  - project_type: commercial_office
+    description: "Commercial office building, G+5 to G+20, RCC framed, Delhi NCR"
+    floor_height_assumption_m: 3.5
+    structural_system: "RCC framed or composite steel-RCC"
+    notes: "Higher MEP intensity than residential. Open-plan reduces internal masonry."
+    per_sqm_bua:
+      - item: concrete_rcc_total
+        unit: cum
+        min: 0.30
+        max: 0.48
+        typical: 0.38
+        note: "Higher than residential due to larger column sizes and longer spans."
+      - item: steel_tmt_total
+        unit: kg
+        min: 55
+        max: 90
+        typical: 68
+        note: "Higher due to longer spans in open office floors and heavier floor loads."
+      - item: brickwork_total
+        unit: cum
+        min: 0.08
+        max: 0.18
+        typical: 0.12
+        note: "Lower than residential. Open floor plates with curtain wall or glazed facade."
+      - item: plastering_total
+        unit: sqm
+        min: 1.5
+        max: 2.8
+        typical: 2.0
+        note: "Lower due to less internal partition wall area. Glazed facades reduce external plaster."
+      - item: flooring_tile
+        unit: sqm
+        min: 0.85
+        max: 1.10
+        typical: 0.95
+        note: "Raised access floor possible. Includes lobbies and corridors."
+      - item: painting_interior
+        unit: sqm
+        min: 2.0
+        max: 3.5
+        typical: 2.6
+        note: "Lower wall area in open-plan offices. False ceiling covers much of ceiling."
+      - item: waterproofing_area
+        unit: sqm
+        min: 0.08
+        max: 0.18
+        typical: 0.12
+        note: "Terraces, wet cores, planter boxes. Typically lower percentage of BUA."
+      - item: electrical_points
+        unit: nos
+        min: 3.5
+        max: 7.0
+        typical: 5.0
+        note: "Higher than residential due to data/power per workstation, emergency lighting, UPS points."
+      - item: plumbing_pipe_total
+        unit: rmt
+        min: 1.8
+        max: 3.5
+        typical: 2.4
+        note: "Lower than residential per sqm as wet areas are concentrated in cores."
+
+  - project_type: retail_mall
+    description: "Retail shopping mall with anchor stores, F&B, and multiplex, G+2 to G+4"
+    floor_height_assumption_m: 5.5
+    structural_system: "RCC flat plate or composite steel"
+    notes: "Very high MEP. High structural concrete due to large spans and heavy loads."
+    per_sqm_bua:
+      - item: concrete_rcc_total
+        unit: cum
+        min: 0.40
+        max: 0.60
+        typical: 0.50
+        note: "High due to large column-free spans (12-15m), heavy live loads, and thick flat slabs."
+      - item: steel_tmt_total
+        unit: kg
+        min: 70
+        max: 120
+        typical: 90
+        note: "High for flat slab systems and transfer beams. Long spans need heavy reinforcement."
+      - item: brickwork_total
+        unit: cum
+        min: 0.05
+        max: 0.12
+        typical: 0.08
+        note: "Minimal — mostly glazed facades, internal tenant partitions done by fit-out contractors."
+      - item: plastering_total
+        unit: sqm
+        min: 0.8
+        max: 1.8
+        typical: 1.2
+        note: "Shell and core work only. Tenant areas finished separately."
+      - item: flooring_tile
+        unit: sqm
+        min: 0.50
+        max: 0.75
+        typical: 0.60
+        note: "Common areas, atrium, corridors. Tenant areas excluded from shell-and-core BOQ."
+      - item: painting_interior
+        unit: sqm
+        min: 0.8
+        max: 1.8
+        typical: 1.2
+        note: "Common areas, back-of-house. Tenant painting excluded."
+      - item: waterproofing_area
+        unit: sqm
+        min: 0.15
+        max: 0.30
+        typical: 0.22
+        note: "Basement, roof, water features, food court floors (heavy duty)."
+      - item: electrical_points
+        unit: nos
+        min: 6.0
+        max: 12.0
+        typical: 8.5
+        note: "Very high — includes common area lighting, escalators, HVAC, tenant power, emergency."
+      - item: plumbing_pipe_total
+        unit: rmt
+        min: 2.0
+        max: 4.0
+        typical: 2.8
+        note: "Higher in food court zones. Includes fire suppression distribution piping."
+
+  - project_type: hospital_general
+    description: "General hospital 50-200 bed, multi-storey RCC, Delhi NCR"
+    floor_height_assumption_m: 4.0
+    structural_system: "RCC framed with vibration isolation for OT"
+    notes: "Highest MEP intensity of all building types. Medical gas, HVAC, and specialist services dominant."
+    per_sqm_bua:
+      - item: concrete_rcc_total
+        unit: cum
+        min: 0.35
+        max: 0.55
+        typical: 0.43
+        note: "Heavier slabs for vibration control. Shear walls in taller buildings."
+      - item: steel_tmt_total
+        unit: kg
+        min: 60
+        max: 100
+        typical: 75
+        note: "Higher for seismic performance, heavy MEP loads, and cantilevered features."
+      - item: brickwork_total
+        unit: cum
+        min: 0.15
+        max: 0.28
+        typical: 0.20
+        note: "More partitions than commercial but less than residential."
+      - item: plastering_total
+        unit: sqm
+        min: 2.2
+        max: 3.5
+        typical: 2.8
+        note: "Includes specialist finishes in clinical areas (anti-fungal plaster in OT)."
+      - item: flooring_tile
+        unit: sqm
+        min: 0.95
+        max: 1.20
+        typical: 1.08
+        note: "Includes specialist vinyl in OT/ICU, anti-bacterial tiles in wards."
+      - item: painting_interior
+        unit: sqm
+        min: 2.5
+        max: 4.0
+        typical: 3.2
+        note: "High-coverage anti-microbial paint. More coats required."
+      - item: waterproofing_area
+        unit: sqm
+        min: 0.18
+        max: 0.35
+        typical: 0.25
+        note: "Terraces, sluice rooms, dirty utility, OT, ICU, kitchen, laundry."
+      - item: electrical_points
+        unit: nos
+        min: 8.0
+        max: 18.0
+        typical: 12.0
+        note: "Highest of all types. Medical isolated panels, UPS, nurse call, CCTV, PA, code blue."
+      - item: plumbing_pipe_total
+        unit: rmt
+        min: 5.0
+        max: 9.0
+        typical: 6.5
+        note: "Highest of all types. Includes medical gas, oxygen, vacuum, supply, drain, fire suppression."
+
+  - project_type: industrial_factory
+    description: "Industrial factory building — steel shed with RCC admin block, single storey production"
+    floor_height_assumption_m: 8.0
+    structural_system: "Pre-engineered steel building (PEB) + RCC admin"
+    notes: "Very low finishing intensity in shed areas. Admin block carries most finishes."
+    per_sqm_bua:
+      - item: concrete_rcc_total
+        unit: cum
+        min: 0.12
+        max: 0.25
+        typical: 0.18
+        note: "Low — mostly ground slab and footings. PEB columns replace RCC columns in shed."
+      - item: steel_tmt_total
+        unit: kg
+        min: 15
+        max: 40
+        typical: 25
+        note: "Low RCC steel. Structural steel for PEB frames counted separately (MT of structural steel)."
+      - item: brickwork_total
+        unit: cum
+        min: 0.05
+        max: 0.15
+        typical: 0.08
+        note: "Mostly admin block. Shed perimeter may be metal cladding not brickwork."
+      - item: plastering_total
+        unit: sqm
+        min: 0.4
+        max: 1.2
+        typical: 0.7
+        note: "Admin block and entrance only. Shed interior typically unplastered."
+      - item: flooring_tile
+        unit: sqm
+        min: 0.10
+        max: 0.30
+        typical: 0.18
+        note: "Admin and office areas only. Shed floor is hardened industrial screed, not tiles."
+      - item: painting_interior
+        unit: sqm
+        min: 0.5
+        max: 1.5
+        typical: 0.9
+        note: "Admin areas and shed structural steel (epoxy paint). Low per sqm ratio."
+      - item: waterproofing_area
+        unit: sqm
+        min: 0.05
+        max: 0.15
+        typical: 0.10
+        note: "Roof of admin block and utility areas. Shed roof is profiled metal sheet."
+      - item: electrical_points
+        unit: nos
+        min: 0.8
+        max: 2.5
+        typical: 1.5
+        note: "Low finishes points. High power DBs for machinery — rated by kW, not point count."
+      - item: plumbing_pipe_total
+        unit: rmt
+        min: 0.8
+        max: 2.0
+        typical: 1.2
+        note: "Admin block and washrooms only. Process water and effluent piping separate."
+
+  - project_type: hostel_institutional
+    description: "Student hostel block, G+3 to G+7, RCC framed, IIT/NIT/CPWD standard"
+    floor_height_assumption_m: 3.2
+    structural_system: "RCC framed"
+    notes: "Cellular room layout drives high internal partition wall area. DSR 2023 norms."
+    per_sqm_bua:
+      - item: concrete_rcc_total
+        unit: cum
+        min: 0.30
+        max: 0.45
+        typical: 0.36
+      - item: steel_tmt_total
+        unit: kg
+        min: 50
+        max: 80
+        typical: 62
+      - item: brickwork_total
+        unit: cum
+        min: 0.20
+        max: 0.35
+        typical: 0.27
+      - item: plastering_total
+        unit: sqm
+        min: 3.5
+        max: 5.0
+        typical: 4.2
+      - item: flooring_tile
+        unit: sqm
+        min: 0.92
+        max: 1.10
+        typical: 1.00
+      - item: painting_interior
+        unit: sqm
+        min: 3.5
+        max: 5.0
+        typical: 4.2
+      - item: earthwork_excavation
+        unit: cum
+        min: 0.25
+        max: 0.55
+        typical: 0.38
+
+  - project_type: academic_institutional
+    description: "Academic building (lecture halls, labs, admin), G+2 to G+5, CPWD/IIT"
+    floor_height_assumption_m: 3.6
+    structural_system: "RCC framed"
+    notes: "Larger spans for lecture halls. Lower internal partition factor vs hostel."
+    per_sqm_bua:
+      - item: concrete_rcc_total
+        unit: cum
+        min: 0.32
+        max: 0.48
+        typical: 0.38
+      - item: steel_tmt_total
+        unit: kg
+        min: 55
+        max: 85
+        typical: 65
+      - item: brickwork_total
+        unit: cum
+        min: 0.14
+        max: 0.25
+        typical: 0.19
+      - item: plastering_total
+        unit: sqm
+        min: 2.8
+        max: 4.2
+        typical: 3.4
+      - item: flooring_tile
+        unit: sqm
+        min: 0.88
+        max: 1.05
+        typical: 0.95
+      - item: painting_interior
+        unit: sqm
+        min: 2.8
+        max: 4.2
+        typical: 3.4
+      - item: earthwork_excavation
+        unit: cum
+        min: 0.28
+        max: 0.58
+        typical: 0.40

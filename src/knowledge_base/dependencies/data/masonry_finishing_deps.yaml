@@ -1,0 +1,1864 @@
+rules:
+  # ============================================================
+  # EXTERNAL WALL FINISHING DEPENDENCIES
+  # ============================================================
+  - id: "DEP-MAS-001"
+    trigger: "external_wall"
+    required_items: ["plaster_ext_2_coat", "primer_ext", "ext_emulsion_2_coat", "scaffolding"]
+    trade: "masonry"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 1661"
+    note: "External wall requires 2-coat plaster, primer, and 2-coat exterior emulsion with scaffolding"
+
+  - id: "DEP-MAS-002"
+    trigger: "external_wall"
+    required_items: ["chicken_mesh_at_junction", "drip_mould"]
+    trade: "masonry"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 1661"
+    note: "Chicken mesh at RCC-masonry junction to prevent cracks, drip mould at projections"
+
+  - id: "DEP-MAS-003"
+    trigger: "external_wall"
+    required_items: ["expansion_joint_sealant", "control_joint"]
+    trade: "masonry"
+    priority: 2
+    condition: "long_wall"
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 1905"
+    note: "Long external walls require expansion joints and control joints"
+
+  - id: "DEP-MAS-004"
+    trigger: "external_wall"
+    required_items: ["weather_coat_texture"]
+    trade: "painting"
+    priority: 2
+    condition: "premium_finish"
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Premium external finish with texture coat as alternative to standard emulsion"
+
+  # ============================================================
+  # INTERNAL WALL FINISHING DEPENDENCIES
+  # ============================================================
+  - id: "DEP-MAS-005"
+    trigger: "internal_wall"
+    required_items: ["plaster_int_2_coat", "putty_2_coat", "primer_int", "emulsion_int_2_coat"]
+    trade: "masonry"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 1661"
+    note: "Internal wall requires 2-coat plaster, 2-coat putty, primer, and 2-coat emulsion"
+
+  - id: "DEP-MAS-006"
+    trigger: "internal_wall"
+    required_items: ["electrical_chasing", "conduit_embedding", "patch_plaster"]
+    trade: "masonry"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Electrical chasing and conduit embedding must be done before plastering, patch plaster after"
+
+  - id: "DEP-MAS-007"
+    trigger: "internal_wall"
+    required_items: ["plumbing_chasing", "pipe_embedding"]
+    trade: "plumbing"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: ["toilet", "bathroom", "kitchen"]
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Plumbing chasing and pipe embedding in walls before plastering in wet areas"
+
+  # ============================================================
+  # TILE ON WALL DEPENDENCIES
+  # ============================================================
+  - id: "DEP-MAS-008"
+    trigger: "tile_on_wall"
+    required_items: ["surface_preparation", "tile_adhesive", "tile", "grouting", "edge_trim"]
+    trade: "tiling"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 13753"
+    note: "Wall tiling requires surface prep, adhesive, tiles, grouting, and edge trim"
+
+  - id: "DEP-MAS-009"
+    trigger: "tile_on_wall"
+    required_items: ["waterproofing_behind_tile"]
+    trade: "waterproofing"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: ["toilet", "bathroom"]
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Waterproofing required behind wall tiles in wet areas before tiling"
+
+  - id: "DEP-MAS-010"
+    trigger: "tile_on_wall"
+    required_items: ["tile_spacers", "level_clips"]
+    trade: "tiling"
+    priority: 2
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Tile spacers and leveling clips for uniform grout lines and flat surface"
+
+  # ============================================================
+  # STONE CLADDING DEPENDENCIES
+  # ============================================================
+  - id: "DEP-MAS-011"
+    trigger: "stone_cladding"
+    required_items: ["backing_wall", "anchor_system", "stone_panel", "sealant_joints"]
+    trade: "cladding"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Stone cladding requires backing wall, anchor system, stone panels, and sealant"
+
+  - id: "DEP-MAS-012"
+    trigger: "stone_cladding"
+    required_items: ["insulation_behind", "damp_proof_membrane"]
+    trade: "cladding"
+    priority: 2
+    condition: "external"
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "External stone cladding may require insulation and damp proof membrane behind"
+
+  - id: "DEP-MAS-013"
+    trigger: "stone_cladding"
+    required_items: ["flashing_at_openings", "drip_detail"]
+    trade: "cladding"
+    priority: 1
+    condition: "external"
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "External stone cladding requires flashing at openings and drip details"
+
+  # ============================================================
+  # FALSE CEILING DEPENDENCIES
+  # ============================================================
+  - id: "DEP-MAS-014"
+    trigger: "false_ceiling"
+    required_items: ["gi_framework", "board_fixing", "jointing_compound", "finishing", "access_panels"]
+    trade: "ceiling"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "False ceiling requires GI framework, board, jointing, finishing, and access panels"
+
+  - id: "DEP-MAS-015"
+    trigger: "false_ceiling"
+    required_items: ["mep_above_ceiling_complete"]
+    trade: "ceiling"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "All MEP services above false ceiling must be completed before ceiling installation"
+
+  - id: "DEP-MAS-016"
+    trigger: "false_ceiling"
+    required_items: ["light_cutouts", "ac_grille_cutouts", "sprinkler_cutouts"]
+    trade: "ceiling"
+    priority: 2
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Cutouts for lights, AC grilles, and sprinklers in false ceiling boards"
+
+  - id: "DEP-MAS-017"
+    trigger: "false_ceiling"
+    required_items: ["perimeter_angle", "suspension_system", "hanger_rods"]
+    trade: "ceiling"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "False ceiling suspension system with perimeter angle, main/cross tees, and hangers"
+
+  # ============================================================
+  # ROOM-LEVEL DEPENDENCIES - EVERY ROOM
+  # ============================================================
+  - id: "DEP-MAS-018"
+    trigger: "every_room"
+    required_items: ["flooring", "skirting", "ceiling_finish", "painting", "light_provision"]
+    trade: "finishing"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: [all]
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Every room requires flooring, skirting, ceiling finish, painting, and light provision"
+
+  # ============================================================
+  # TOILET COMPLETE DEPENDENCIES
+  # ============================================================
+  - id: "DEP-MAS-019"
+    trigger: "toilet"
+    required_items: ["waterproofing_floor", "waterproofing_wall", "anti_skid_tile_floor", "wall_tile_full_height"]
+    trade: "finishing"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: ["toilet"]
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Toilet requires waterproofing on floor and walls, anti-skid floor tile, and full-height wall tile"
+
+  - id: "DEP-MAS-020"
+    trigger: "toilet"
+    required_items: ["ewc_or_iwc", "wash_basin", "floor_trap", "cp_fittings"]
+    trade: "plumbing"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: ["toilet"]
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 2556"
+    note: "Toilet sanitary fixtures: EWC/IWC, wash basin, floor trap, and CP fittings"
+
+  - id: "DEP-MAS-021"
+    trigger: "toilet"
+    required_items: ["mirror", "accessories_set", "towel_rail", "soap_dish", "toilet_paper_holder"]
+    trade: "finishing"
+    priority: 2
+    condition: ""
+    building_types: [all]
+    room_types: ["toilet"]
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Toilet accessories: mirror, towel rail, soap dish, toilet paper holder"
+
+  - id: "DEP-MAS-022"
+    trigger: "toilet"
+    required_items: ["exhaust_fan", "light_fitting", "door"]
+    trade: "electrical"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: ["toilet"]
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Toilet requires exhaust fan, light fitting, and door"
+
+  - id: "DEP-MAS-023"
+    trigger: "toilet"
+    required_items: ["concealed_cistern_or_flush_valve", "angle_valve", "flexible_hose"]
+    trade: "plumbing"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: ["toilet"]
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Toilet plumbing fittings: concealed cistern or flush valve, angle valves, flexible hose"
+
+  - id: "DEP-MAS-024"
+    trigger: "toilet"
+    required_items: ["health_faucet", "overhead_shower_provision"]
+    trade: "plumbing"
+    priority: 2
+    condition: ""
+    building_types: [all]
+    room_types: ["toilet"]
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Health faucet and overhead shower provision in toilets"
+
+  # ============================================================
+  # BATHROOM COMPLETE DEPENDENCIES
+  # ============================================================
+  - id: "DEP-MAS-025"
+    trigger: "bathroom"
+    required_items: ["bathtub_or_shower_enclosure", "hot_water_provision", "geyser_point"]
+    trade: "plumbing"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: ["bathroom"]
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Bathroom requires bathtub/shower, hot water provision, and geyser point in addition to toilet items"
+
+  - id: "DEP-MAS-026"
+    trigger: "bathroom"
+    required_items: ["shower_mixer", "diverter", "overhead_shower", "hand_shower"]
+    trade: "plumbing"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: ["bathroom"]
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Bathroom shower fittings: mixer, diverter, overhead shower, hand shower"
+
+  - id: "DEP-MAS-027"
+    trigger: "bathroom"
+    required_items: ["glass_partition_shower", "niche_shelf"]
+    trade: "finishing"
+    priority: 2
+    condition: "premium"
+    building_types: [all]
+    room_types: ["bathroom"]
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Premium bathroom includes glass shower partition and niche shelf"
+
+  # ============================================================
+  # KITCHEN COMPLETE DEPENDENCIES
+  # ============================================================
+  - id: "DEP-MAS-028"
+    trigger: "kitchen"
+    required_items: ["granite_platform", "sink_with_drain_board", "dado_tile", "waterproofing_under_platform"]
+    trade: "finishing"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: ["kitchen"]
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Kitchen requires granite platform, sink, dado tiles, and waterproofing under platform"
+
+  - id: "DEP-MAS-029"
+    trigger: "kitchen"
+    required_items: ["chimney_point", "exhaust_fan", "gas_point"]
+    trade: "mechanical"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: ["kitchen"]
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Kitchen requires chimney point/duct, exhaust fan, and gas pipeline point"
+
+  - id: "DEP-MAS-030"
+    trigger: "kitchen"
+    required_items: ["multiple_power_points_16a", "light_fitting", "anti_skid_floor_tile"]
+    trade: "electrical"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: ["kitchen"]
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Kitchen electrical: multiple 16A power points for appliances, light, anti-skid floor"
+
+  - id: "DEP-MAS-031"
+    trigger: "kitchen"
+    required_items: ["water_purifier_point", "dishwasher_point", "refrigerator_point"]
+    trade: "electrical"
+    priority: 2
+    condition: ""
+    building_types: [all]
+    room_types: ["kitchen"]
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Kitchen appliance points: water purifier, dishwasher, refrigerator"
+
+  - id: "DEP-MAS-032"
+    trigger: "kitchen"
+    required_items: ["sink_mixer", "cold_water_inlet", "hot_water_inlet", "waste_pipe"]
+    trade: "plumbing"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: ["kitchen"]
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Kitchen plumbing: sink mixer, cold and hot water inlets, waste pipe connection"
+
+  # ============================================================
+  # BEDROOM COMPLETE DEPENDENCIES
+  # ============================================================
+  - id: "DEP-MAS-033"
+    trigger: "bedroom"
+    required_items: ["flooring_bedroom", "skirting", "paint_walls_ceiling", "ac_point_16a"]
+    trade: "finishing"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: ["bedroom"]
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Bedroom requires flooring, skirting, wall and ceiling paint, AC point"
+
+  - id: "DEP-MAS-034"
+    trigger: "bedroom"
+    required_items: ["light_points_2", "fan_point", "power_socket_5a_2", "power_socket_16a_1", "tv_point"]
+    trade: "electrical"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: ["bedroom"]
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 732"
+    note: "Bedroom electrical: 2 light points, fan, 2x5A sockets, 1x16A socket, TV point"
+
+  - id: "DEP-MAS-035"
+    trigger: "bedroom"
+    required_items: ["telephone_point", "data_point"]
+    trade: "electrical"
+    priority: 2
+    condition: ""
+    building_types: [all]
+    room_types: ["bedroom"]
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Bedroom communication points: telephone and data/LAN"
+
+  # ============================================================
+  # LIVING ROOM COMPLETE DEPENDENCIES
+  # ============================================================
+  - id: "DEP-MAS-036"
+    trigger: "living_room"
+    required_items: ["flooring_living", "skirting", "paint_walls_ceiling", "ac_point_16a"]
+    trade: "finishing"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: ["living_room"]
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Living room requires flooring, skirting, wall and ceiling paint, AC point"
+
+  - id: "DEP-MAS-037"
+    trigger: "living_room"
+    required_items: ["light_points_3", "fan_point", "power_socket_5a_3", "tv_point"]
+    trade: "electrical"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: ["living_room"]
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 732"
+    note: "Living room electrical: 3 light points, fan, 3x5A sockets, TV point"
+
+  - id: "DEP-MAS-038"
+    trigger: "living_room"
+    required_items: ["intercom_point", "doorbell"]
+    trade: "electrical"
+    priority: 2
+    condition: ""
+    building_types: [all]
+    room_types: ["living_room"]
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Living room provisions: intercom and doorbell near entrance"
+
+  # ============================================================
+  # BALCONY DEPENDENCIES
+  # ============================================================
+  - id: "DEP-MAS-039"
+    trigger: "balcony"
+    required_items: ["anti_skid_tile", "waterproofing_balcony", "railing_balcony", "light_point", "drain_outlet"]
+    trade: "finishing"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: ["balcony"]
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "NBC Part 4"
+    note: "Balcony requires anti-skid tile, waterproofing, railing, light, and drain"
+
+  - id: "DEP-MAS-040"
+    trigger: "balcony"
+    required_items: ["slope_to_drain", "drip_edge"]
+    trade: "finishing"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: ["balcony"]
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Balcony floor must slope to drain outlet with drip edge at outer edge"
+
+  - id: "DEP-MAS-041"
+    trigger: "balcony"
+    required_items: ["ms_railing_or_glass_railing"]
+    trade: "metalwork"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: ["balcony"]
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "NBC Part 4"
+    note: "Balcony railing minimum 1050mm height per NBC, MS or glass railing"
+
+  # ============================================================
+  # TERRACE DEPENDENCIES
+  # ============================================================
+  - id: "DEP-MAS-042"
+    trigger: "terrace"
+    required_items: ["waterproofing_terrace", "ips_or_tile", "mumty", "drain_terrace", "light_terrace"]
+    trade: "finishing"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: ["terrace"]
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Terrace requires waterproofing, IPS/tile finish, mumty over stair, drain, and light"
+
+  - id: "DEP-MAS-043"
+    trigger: "terrace"
+    required_items: ["insulation_terrace", "slope_to_drain"]
+    trade: "finishing"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: ["terrace"]
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Terrace insulation (brick bat coba or foam) with slope to drain outlets"
+
+  - id: "DEP-MAS-044"
+    trigger: "terrace"
+    required_items: ["parapet_with_coping", "rain_water_spout"]
+    trade: "structural"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: ["terrace"]
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Terrace parapet with coping and rain water spouts for drainage"
+
+  # ============================================================
+  # STAIRCASE AREA FINISHING DEPENDENCIES
+  # ============================================================
+  - id: "DEP-MAS-045"
+    trigger: "staircase_area"
+    required_items: ["stone_or_tile_flooring", "handrail", "wall_paint", "light_per_landing"]
+    trade: "finishing"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: ["staircase"]
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "NBC Part 4"
+    note: "Staircase area requires stone/tile flooring, handrail, wall paint, and light per landing"
+
+  - id: "DEP-MAS-046"
+    trigger: "staircase_area"
+    required_items: ["anti_skid_nosing", "tread_riser_tile", "landing_tile"]
+    trade: "finishing"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: ["staircase"]
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Staircase finishing: anti-skid nosing, tread/riser tiles, landing tiles"
+
+  - id: "DEP-MAS-047"
+    trigger: "staircase_area"
+    required_items: ["fire_door_at_staircase"]
+    trade: "fire_safety"
+    priority: 1
+    condition: "building_above_15m"
+    building_types: [all]
+    room_types: ["staircase"]
+    min_floors: 5
+    min_area_sqm: 0
+    is_code_ref: "NBC Part 4"
+    note: "Fire-rated door at staircase entry on each floor for buildings above 15m"
+
+  # ============================================================
+  # CORRIDOR DEPENDENCIES
+  # ============================================================
+  - id: "DEP-MAS-048"
+    trigger: "corridor"
+    required_items: ["flooring_corridor", "skirting_corridor", "ceiling_finish_corridor", "light_corridor"]
+    trade: "finishing"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: ["corridor"]
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Corridor requires flooring, skirting, ceiling finish, and lighting"
+
+  - id: "DEP-MAS-049"
+    trigger: "corridor"
+    required_items: ["exit_signage", "emergency_light"]
+    trade: "electrical"
+    priority: 1
+    condition: "commercial_institutional"
+    building_types: ["commercial", "hospital", "school", "hotel"]
+    room_types: ["corridor"]
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "NBC Part 4"
+    note: "Corridor in commercial/institutional buildings requires exit signage and emergency lighting"
+
+  # ============================================================
+  # DOOR COMPLETE DEPENDENCIES
+  # ============================================================
+  - id: "DEP-MAS-050"
+    trigger: "door_internal"
+    required_items: ["door_frame", "door_shutter", "hinges", "lock_set", "door_stopper", "tower_bolt", "painting_door"]
+    trade: "joinery"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 4021"
+    note: "Internal door complete: frame, shutter, hinges, lock, stopper, bolt, painting"
+
+  - id: "DEP-MAS-051"
+    trigger: "door_internal"
+    required_items: ["architrave", "threshold"]
+    trade: "joinery"
+    priority: 2
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Door architrave/frame cover and threshold strip for finished appearance"
+
+  - id: "DEP-MAS-052"
+    trigger: "main_door"
+    required_items: ["heavy_frame", "solid_shutter", "night_latch", "door_viewer", "safety_chain", "mortise_lock"]
+    trade: "joinery"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 4021"
+    note: "Main door requires heavy frame, solid core shutter, night latch, viewer, chain, and mortise lock"
+
+  - id: "DEP-MAS-053"
+    trigger: "fire_door"
+    required_items: ["fire_rated_frame", "fire_rated_shutter", "intumescent_strip", "self_closer", "panic_bar"]
+    trade: "fire_safety"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "NBC Part 4"
+    note: "Fire door: fire-rated frame and shutter, intumescent strip, self-closer, panic bar"
+
+  - id: "DEP-MAS-054"
+    trigger: "toilet_door"
+    required_items: ["wpc_frame", "wpc_or_flush_shutter", "ventilation_louver", "lock_indicator", "hinges"]
+    trade: "joinery"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: ["toilet", "bathroom"]
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Toilet door with moisture-resistant material, ventilation louver, and indicator lock"
+
+  # ============================================================
+  # WINDOW COMPLETE DEPENDENCIES
+  # ============================================================
+  - id: "DEP-MAS-055"
+    trigger: "window"
+    required_items: ["window_frame", "glass_pane", "sealant_window", "hardware_window", "mosquito_mesh"]
+    trade: "joinery"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 1361"
+    note: "Window complete: frame, glass, sealant, hardware, and mosquito mesh"
+
+  - id: "DEP-MAS-056"
+    trigger: "window"
+    required_items: ["window_grill"]
+    trade: "metalwork"
+    priority: 1
+    condition: "residential_ground_floor"
+    building_types: ["residential"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Window grills for security in residential ground floor windows"
+
+  - id: "DEP-MAS-057"
+    trigger: "window"
+    required_items: ["window_sill", "drip_mould_window"]
+    trade: "masonry"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Window sill with slope and drip mould to prevent water ingress"
+
+  - id: "DEP-MAS-058"
+    trigger: "sliding_window"
+    required_items: ["upvc_or_aluminium_frame", "glass_dgu", "roller_track", "locking_handle", "drainage_slot"]
+    trade: "joinery"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Sliding window: UPVC/aluminium frame, DGU glass, roller track, handle, drainage slot"
+
+  # ============================================================
+  # MASONRY WALL CONSTRUCTION DEPENDENCIES
+  # ============================================================
+  - id: "DEP-MAS-059"
+    trigger: "brick_wall"
+    required_items: ["brick", "cement_mortar", "lintels", "sill", "dpc"]
+    trade: "masonry"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 1905"
+    note: "Brick wall requires bricks, cement mortar, lintels over openings, sills, and DPC"
+
+  - id: "DEP-MAS-060"
+    trigger: "aac_block_wall"
+    required_items: ["aac_block", "block_adhesive", "lintels", "sill", "mesh_at_junction"]
+    trade: "masonry"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 2185"
+    note: "AAC block wall with block adhesive, lintels, sills, and mesh at RCC-block junction"
+
+  - id: "DEP-MAS-061"
+    trigger: "partition_wall"
+    required_items: ["wall_material", "mortar_or_adhesive", "lintel_if_opening"]
+    trade: "masonry"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 1905"
+    note: "Partition wall with appropriate material, bonding agent, and lintel for openings"
+
+  # ============================================================
+  # FLOORING DEPENDENCIES
+  # ============================================================
+  - id: "DEP-MAS-062"
+    trigger: "vitrified_tile_floor"
+    required_items: ["base_screed", "tile_adhesive", "vitrified_tile", "grouting", "skirting"]
+    trade: "flooring"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Vitrified tile flooring: base screed, adhesive, tile, grouting, and skirting"
+
+  - id: "DEP-MAS-063"
+    trigger: "marble_floor"
+    required_items: ["base_screed", "marble_slab", "cement_slurry", "polishing", "skirting"]
+    trade: "flooring"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Marble flooring: base screed, marble slab, cement slurry bedding, polishing, skirting"
+
+  - id: "DEP-MAS-064"
+    trigger: "granite_floor"
+    required_items: ["base_screed", "granite_slab", "cement_slurry", "polishing", "skirting"]
+    trade: "flooring"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Granite flooring: base screed, granite slab, cement slurry bedding, polishing, skirting"
+
+  - id: "DEP-MAS-065"
+    trigger: "wooden_floor"
+    required_items: ["leveling_compound", "underlay", "wooden_plank", "beading", "transition_strip"]
+    trade: "flooring"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Wooden/laminate flooring: leveling, underlay, planks, beading, and transition strips"
+
+  - id: "DEP-MAS-066"
+    trigger: "epoxy_floor"
+    required_items: ["surface_preparation", "primer_epoxy", "base_coat", "top_coat", "curing_epoxy"]
+    trade: "flooring"
+    priority: 1
+    condition: ""
+    building_types: ["factory", "hospital", "data_center"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Epoxy flooring: surface prep, primer, base coat, top coat, and curing"
+
+  - id: "DEP-MAS-067"
+    trigger: "vdf_floor"
+    required_items: ["sub_base", "dpm", "concrete_slab", "dry_shake_hardener", "power_trowel", "joint_cutting", "joint_sealant"]
+    trade: "flooring"
+    priority: 1
+    condition: ""
+    building_types: ["factory", "warehouse"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "VDF industrial floor: sub-base, DPM, concrete, dry shake, power trowel, joints"
+
+  # ============================================================
+  # PAINTING DEPENDENCIES
+  # ============================================================
+  - id: "DEP-MAS-068"
+    trigger: "interior_painting"
+    required_items: ["surface_preparation", "putty_2_coat", "primer", "emulsion_2_coat"]
+    trade: "painting"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 2395"
+    note: "Interior painting sequence: surface prep, 2-coat putty, primer, 2-coat emulsion"
+
+  - id: "DEP-MAS-069"
+    trigger: "exterior_painting"
+    required_items: ["surface_preparation", "primer_ext", "exterior_emulsion_2_coat"]
+    trade: "painting"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 2395"
+    note: "Exterior painting sequence: surface prep, primer, 2-coat exterior emulsion"
+
+  - id: "DEP-MAS-070"
+    trigger: "enamel_painting"
+    required_items: ["surface_preparation", "primer_metal", "enamel_paint_2_coat"]
+    trade: "painting"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 2395"
+    note: "Enamel painting for metalwork: surface prep, metal primer, 2-coat enamel"
+
+  - id: "DEP-MAS-071"
+    trigger: "wood_polishing"
+    required_items: ["sanding", "sealer_coat", "polish_2_coat"]
+    trade: "painting"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Wood polishing: sanding, sealer coat, 2-coat polish (melamine/PU)"
+
+  # ============================================================
+  # WATERPROOFING DEPENDENCIES
+  # ============================================================
+  - id: "DEP-MAS-072"
+    trigger: "waterproofing_toilet"
+    required_items: ["surface_preparation", "primer_wp", "membrane_2_coat", "corner_strip", "test_48hr"]
+    trade: "waterproofing"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: ["toilet", "bathroom"]
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Toilet waterproofing: surface prep, primer, 2-coat membrane, corner strips, 48hr flood test"
+
+  - id: "DEP-MAS-073"
+    trigger: "waterproofing_terrace"
+    required_items: ["surface_preparation", "primer_wp", "membrane", "protection_screed", "test_72hr"]
+    trade: "waterproofing"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: ["terrace"]
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Terrace waterproofing: surface prep, primer, membrane, protection screed, 72hr test"
+
+  - id: "DEP-MAS-074"
+    trigger: "waterproofing_basement"
+    required_items: ["surface_preparation", "crystalline_treatment", "membrane", "protection_wall"]
+    trade: "waterproofing"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: ["basement"]
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Basement waterproofing with crystalline treatment and membrane with protection"
+
+  # ============================================================
+  # UTILITY ROOM DEPENDENCIES
+  # ============================================================
+  - id: "DEP-MAS-075"
+    trigger: "utility_room"
+    required_items: ["flooring_anti_skid", "wall_paint", "light", "power_socket_16a", "washing_machine_drain", "water_inlet"]
+    trade: "finishing"
+    priority: 1
+    condition: ""
+    building_types: ["residential"]
+    room_types: ["utility"]
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Utility/wash area requires anti-skid floor, drainage, water inlet, power point"
+
+  # ============================================================
+  # POOJA ROOM DEPENDENCIES
+  # ============================================================
+  - id: "DEP-MAS-076"
+    trigger: "pooja_room"
+    required_items: ["marble_or_tile_floor", "wall_finish", "light_point", "power_socket", "ventilation"]
+    trade: "finishing"
+    priority: 2
+    condition: ""
+    building_types: ["residential"]
+    room_types: ["pooja_room"]
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Pooja room finishing with marble/tile, wall finish, lighting, and ventilation"
+
+  # ============================================================
+  # LOBBY AND ENTRANCE DEPENDENCIES
+  # ============================================================
+  - id: "DEP-MAS-077"
+    trigger: "entrance_lobby"
+    required_items: ["premium_flooring", "false_ceiling", "feature_wall", "lighting_decorative", "signage"]
+    trade: "finishing"
+    priority: 1
+    condition: ""
+    building_types: ["commercial", "hotel", "residential_apartment"]
+    room_types: ["lobby"]
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Entrance lobby requires premium finishing, false ceiling, feature wall, lighting, signage"
+
+  - id: "DEP-MAS-078"
+    trigger: "entrance_lobby"
+    required_items: ["ramp_at_entrance", "automatic_door", "mat_well"]
+    trade: "finishing"
+    priority: 1
+    condition: ""
+    building_types: ["commercial", "hotel"]
+    room_types: ["lobby"]
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "RPwD Act 2016"
+    note: "Entrance ramp for disabled access, automatic door, and mat well"
+
+  # ============================================================
+  # PLASTER DEPENDENCIES
+  # ============================================================
+  - id: "DEP-MAS-079"
+    trigger: "plaster_internal"
+    required_items: ["curing_masonry_complete", "chasing_complete", "chicken_mesh_junction", "pcc_dots_plumb", "sand_cement_plaster"]
+    trade: "masonry"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 1661"
+    note: "Internal plaster requires masonry cured, chasing done, chicken mesh at junctions, PCC dots"
+
+  - id: "DEP-MAS-080"
+    trigger: "plaster_external"
+    required_items: ["scaffolding", "chicken_mesh_junction", "base_coat", "finish_coat", "curing_plaster"]
+    trade: "masonry"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 1661"
+    note: "External plaster requires scaffolding, chicken mesh, base coat, finish coat, curing"
+
+  # ============================================================
+  # METALWORK DEPENDENCIES
+  # ============================================================
+  - id: "DEP-MAS-081"
+    trigger: "ms_railing"
+    required_items: ["ms_pipe_or_flat", "welding", "grinding", "primer_metal", "enamel_paint"]
+    trade: "metalwork"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "MS railing: pipe/flat sections, welding, grinding, metal primer, enamel paint"
+
+  - id: "DEP-MAS-082"
+    trigger: "ss_railing"
+    required_items: ["ss_pipe", "base_plate", "glass_panel", "clamps", "polishing"]
+    trade: "metalwork"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "SS railing: SS pipe, base plate, glass panels, clamps, and polishing"
+
+  # ============================================================
+  # GRANITE AND STONE WORK DEPENDENCIES
+  # ============================================================
+  - id: "DEP-MAS-083"
+    trigger: "granite_platform_kitchen"
+    required_items: ["ms_frame", "granite_slab", "sink_cutout", "edge_profile", "sealant"]
+    trade: "stonework"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: ["kitchen"]
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Kitchen granite platform: MS frame, granite slab, sink cutout, edge profile, sealant"
+
+  - id: "DEP-MAS-084"
+    trigger: "granite_staircase"
+    required_items: ["granite_tread", "granite_riser", "granite_landing", "nosing", "adhesive"]
+    trade: "stonework"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: ["staircase"]
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Granite staircase: tread, riser, landing slabs, nosing strip, adhesive bedding"
+
+  # ============================================================
+  # GLASS WORK DEPENDENCIES
+  # ============================================================
+  - id: "DEP-MAS-085"
+    trigger: "glass_partition"
+    required_items: ["aluminium_frame", "toughened_glass", "door_hardware", "sealant"]
+    trade: "glazing"
+    priority: 1
+    condition: ""
+    building_types: ["commercial", "hotel"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 2553"
+    note: "Glass partition: aluminium frame, toughened glass, door hardware, sealant"
+
+  # ============================================================
+  # SIGNAGE AND WAYFINDING DEPENDENCIES
+  # ============================================================
+  - id: "DEP-MAS-086"
+    trigger: "signage_system"
+    required_items: ["room_numbers", "floor_numbers", "directional_signs", "exit_signs", "fire_safety_signs"]
+    trade: "finishing"
+    priority: 2
+    condition: ""
+    building_types: ["commercial", "hospital", "hotel", "school"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "NBC Part 4"
+    note: "Signage system: room numbers, floor numbers, directional, exit, and fire safety signs"
+
+  # ============================================================
+  # DADO AND WAINSCOTING
+  # ============================================================
+  - id: "DEP-MAS-087"
+    trigger: "dado_tile"
+    required_items: ["surface_prep", "adhesive", "tile", "grouting", "edge_profile"]
+    trade: "tiling"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: ["kitchen"]
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Kitchen dado tiling: surface prep, adhesive, tile, grouting, edge profile"
+
+  # ============================================================
+  # WARDROBE AND STORAGE DEPENDENCIES
+  # ============================================================
+  - id: "DEP-MAS-088"
+    trigger: "built_in_wardrobe"
+    required_items: ["carcass", "shutters", "hardware", "laminate_or_veneer", "internal_fittings"]
+    trade: "joinery"
+    priority: 2
+    condition: ""
+    building_types: ["residential"]
+    room_types: ["bedroom"]
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Built-in wardrobe: carcass, shutters, hardware, finish, internal fittings"
+
+  # ============================================================
+  # EXTERNAL FINISH DEPENDENCIES
+  # ============================================================
+  - id: "DEP-MAS-089"
+    trigger: "texture_finish_external"
+    required_items: ["surface_preparation", "base_coat", "texture_coat", "sealer"]
+    trade: "painting"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "External texture finish: surface prep, base coat, texture coat, and sealer"
+
+  # ============================================================
+  # CLADDING DEPENDENCIES
+  # ============================================================
+  - id: "DEP-MAS-090"
+    trigger: "hpl_cladding"
+    required_items: ["sub_frame_aluminium", "hpl_panel", "rivets", "sealant"]
+    trade: "cladding"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "HPL cladding: aluminium sub-frame, HPL panels, rivets, and sealant"
+
+  # ============================================================
+  # WATERPROOFING ADDITIONAL
+  # ============================================================
+  - id: "DEP-MAS-091"
+    trigger: "waterproofing_balcony"
+    required_items: ["surface_preparation", "primer_wp", "membrane", "upturn_150mm", "drain_sleeve"]
+    trade: "waterproofing"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: ["balcony"]
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Balcony waterproofing with membrane, 150mm upturn at walls, and drain sleeve"
+
+  - id: "DEP-MAS-092"
+    trigger: "waterproofing_kitchen"
+    required_items: ["surface_preparation", "primer_wp", "membrane_under_platform", "upturn_at_wall"]
+    trade: "waterproofing"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: ["kitchen"]
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Kitchen waterproofing under platform and upturn at wall junctions"
+
+  # ============================================================
+  # LIFT LOBBY FINISHING
+  # ============================================================
+  - id: "DEP-MAS-093"
+    trigger: "lift_lobby"
+    required_items: ["premium_flooring", "wall_finish", "false_ceiling", "lighting", "floor_indicator"]
+    trade: "finishing"
+    priority: 1
+    condition: ""
+    building_types: ["commercial", "hotel", "residential_apartment"]
+    room_types: ["lift_lobby"]
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Lift lobby requires premium flooring, wall finish, false ceiling, lighting, floor indicator"
+
+  # ============================================================
+  # STORE ROOM / SERVICE ROOM
+  # ============================================================
+  - id: "DEP-MAS-094"
+    trigger: "store_room"
+    required_items: ["flooring_basic", "wall_paint", "light_point", "power_socket", "door"]
+    trade: "finishing"
+    priority: 2
+    condition: ""
+    building_types: [all]
+    room_types: ["store"]
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Store room basic finishing: flooring, paint, light, socket, door"
+
+  # ============================================================
+  # SERVANT QUARTER / DRIVER ROOM
+  # ============================================================
+  - id: "DEP-MAS-095"
+    trigger: "servant_quarter"
+    required_items: ["flooring", "wall_paint", "attached_toilet", "light_points", "fan_point", "power_sockets"]
+    trade: "finishing"
+    priority: 2
+    condition: ""
+    building_types: ["residential"]
+    room_types: ["servant_quarter"]
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Servant quarter with basic finishing and attached toilet"
+
+  # ============================================================
+  # DRESSING ROOM
+  # ============================================================
+  - id: "DEP-MAS-096"
+    trigger: "dressing_room"
+    required_items: ["flooring", "wall_paint", "light_points", "mirror", "power_sockets", "wardrobe_provision"]
+    trade: "finishing"
+    priority: 2
+    condition: ""
+    building_types: ["residential"]
+    room_types: ["dressing"]
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Dressing room finishing with mirror, lighting, and wardrobe provision"
+
+  # ============================================================
+  # STUDY ROOM
+  # ============================================================
+  - id: "DEP-MAS-097"
+    trigger: "study_room"
+    required_items: ["flooring", "skirting", "wall_paint", "light_points_2", "power_sockets_3", "data_point"]
+    trade: "finishing"
+    priority: 2
+    condition: ""
+    building_types: ["residential"]
+    room_types: ["study"]
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Study room finishing with adequate power sockets and data point"
+
+  # ============================================================
+  # CEILING FINISH OPTIONS
+  # ============================================================
+  - id: "DEP-MAS-098"
+    trigger: "pop_ceiling"
+    required_items: ["chicken_mesh", "pop_base_coat", "pop_finish_coat", "cornice"]
+    trade: "ceiling"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "POP ceiling: chicken mesh, base coat, finish coat, and cornice at edges"
+
+  - id: "DEP-MAS-099"
+    trigger: "grid_ceiling"
+    required_items: ["suspension_grid", "mineral_fibre_tile", "perimeter_trim", "access_panel"]
+    trade: "ceiling"
+    priority: 1
+    condition: ""
+    building_types: ["commercial", "hospital", "hotel"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Grid ceiling: suspension system, mineral fibre tiles, perimeter trim, access panels"
+
+  - id: "DEP-MAS-100"
+    trigger: "metal_ceiling"
+    required_items: ["suspension_system", "metal_panel", "perimeter_trim", "clip_system"]
+    trade: "ceiling"
+    priority: 1
+    condition: ""
+    building_types: ["commercial", "hotel"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Metal ceiling: suspension, metal panels, perimeter trim, clip fixing system"
+
+  # ============================================================
+  # EXTERNAL PLASTER EXTENDED DEPENDENCIES
+  # ============================================================
+  - id: "DEP-MAS-101"
+    trigger: "external_plaster"
+    required_items: ["chicken_mesh_at_rcc_masonry_junction", "expansion_joint_at_10m_intervals"]
+    trade: "masonry"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 1661"
+    note: "Chicken mesh (galvanised, 20mm aperture) bridging the RCC-masonry junction is the single most effective way to prevent junction cracks — differential thermal and structural movement between frame and infill is the primary cause of staircase-step cracking; expansion joints at 10m intervals in long external plaster runs accommodate thermal expansion without cracking"
+
+  - id: "DEP-MAS-102"
+    trigger: "external_plaster"
+    required_items: ["bonding_agent_on_rcc_surfaces", "pre_wetting_masonry_before_plaster"]
+    trade: "masonry"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 1661"
+    note: "RCC surfaces must be treated with bonding agent (polymer bonding liquid or cement slurry) before external plaster — smooth RCC provides poor mechanical key; masonry must be pre-wetted to absorb moisture evenly, preventing plaster water being sucked out too quickly which causes sand-face and delamination"
+
+  # ============================================================
+  # INTERNAL PLASTER DEPENDENCIES
+  # ============================================================
+  - id: "DEP-MAS-103"
+    trigger: "internal_plaster"
+    required_items: ["bond_coat_or_bonding_agent", "curing_7_days_internal"]
+    trade: "masonry"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 1661"
+    note: "Internal plaster on RCC surfaces requires a bond coat (cement slurry 1:1 or proprietary bonding agent) to achieve adhesion — without it, plaster delaminates within 1-2 years, typically in patches; 7-day water curing of internal plaster prevents shrinkage cracking and surface dusting, especially with rapid-set OPC mixes"
+
+  - id: "DEP-MAS-104"
+    trigger: "internal_plaster"
+    required_items: ["beading_at_corners", "screed_dots_for_level_control"]
+    trade: "masonry"
+    priority: 2
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "PVC or metal corner beading at internal and external corners gives clean, durable arises that survive furniture contact without chipping; screed dots and screeds (patches to control thickness) ensure plaster is applied to uniform thickness, critical for level wall surfaces and consistent tile adhesive bed thickness"
+
+  # ============================================================
+  # GYPSUM PLASTER DEPENDENCIES
+  # ============================================================
+  - id: "DEP-MAS-105"
+    trigger: "gypsum_plaster"
+    required_items: ["priming_before_paint", "alkali_resistant_primer"]
+    trade: "painting"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Gypsum plaster is alkaline and must be allowed to dry fully (minimum 4 weeks) before priming with alkali-resistant primer — applying emulsion paint directly on undried gypsum causes saponification (paint goes chalky and peels); a dedicated alkali-resistant primer seals the surface and creates a stable bond layer for the finish coat"
+
+  - id: "DEP-MAS-106"
+    trigger: "gypsum_plaster"
+    required_items: ["joint_tape_at_board_joints", "gypsum_finish_coat"]
+    trade: "masonry"
+    priority: 1
+    condition: "gypsum_board_ceiling_or_partition"
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Gypsum board joints must be taped with paper or fibreglass mesh tape embedded in joint compound before skim coat — untaped joints crack and become visible through paint within months; a finish skim coat of gypsum achieves smooth surface required for premium paint finishes in commercial and hospitality projects"
+
+  # ============================================================
+  # FALSE CEILING DEPENDENCIES
+  # ============================================================
+  - id: "DEP-MAS-107"
+    trigger: "false_ceiling"
+    required_items: ["soffit_level_marking", "mep_clearance_check", "fire_rating_check_if_required"]
+    trade: "ceiling"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "NBC Part 4"
+    note: "Soffit level must be marked before false ceiling hangers are fixed — MEP clearance (minimum 150mm above ceiling for ducts, pipes, cables) must be confirmed with all service trades to prevent clashing; in escape corridors and public areas, fire-rated ceiling boards (60 min) are required by NBC Part 4 to maintain corridor fire compartmentation"
+
+  - id: "DEP-MAS-108"
+    trigger: "false_ceiling"
+    required_items: ["access_panels_at_valves_and_junctions", "perimeter_trim_angle"]
+    trade: "ceiling"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Access panels must be provided at every plumbing valve, drain clean-out, fire sprinkler isolating valve, electrical junction box, and AHU service point above the false ceiling — sealed ceilings with no access result in costly ceiling demolition for routine maintenance; perimeter trim angle gives a clean, level finish at the wall junction"
+
+  # ============================================================
+  # FLOORING DEPENDENCIES
+  # ============================================================
+  - id: "DEP-MAS-109"
+    trigger: "flooring"
+    required_items: ["screed_bed_or_adhesive_bed", "level_check_with_4m_straightedge"]
+    trade: "flooring"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 1237"
+    note: "Flooring requires either a screed bed (12-25mm cement:sand 1:4) or tile adhesive bed — without a proper bed, tiles hollow and crack under foot traffic; level check with 4m straightedge (maximum 5mm variation in 4m per IS 1237) before laying ensures even floor that does not pond water or cause lippage between tiles"
+
+  - id: "DEP-MAS-110"
+    trigger: "flooring"
+    required_items: ["expansion_joint_flooring_at_6m_to_9m", "perimeter_isolation_joint"]
+    trade: "flooring"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 13630"
+    note: "Large format tile flooring must have expansion joints at maximum 6-9m centres and around all columns and walls — thermal and moisture movement in a 10m tile field without joints creates compressive stress that causes tiles to tent and pop; perimeter isolation joint (filled with silicone or flexible sealant) prevents the floor slab transmitting settlement to tiles"
+
+  # ============================================================
+  # STONE FLOORING DEPENDENCIES
+  # ============================================================
+  - id: "DEP-MAS-111"
+    trigger: "stone_flooring"
+    required_items: ["protective_coating_after_polish", "penetrating_sealer_granite_or_marble"]
+    trade: "flooring"
+    priority: 2
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Polished granite and marble must be treated with a penetrating stone sealer after final polish and before handover — unsealed stone absorbs oil, wine, and cleaning chemicals that permanently stain; sealer application after polish protects the surface without changing appearance; this step is frequently skipped by flooring contractors and is extremely difficult to remedy after occupation"
+
+  - id: "DEP-MAS-112"
+    trigger: "stone_flooring"
+    required_items: ["anti_skid_treatment_in_wet_areas", "honed_finish_in_bathrooms"]
+    trade: "flooring"
+    priority: 1
+    condition: "wet_area_or_exterior"
+    building_types: [all]
+    room_types: ["toilet", "bathroom", "balcony"]
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "NBC Part 3"
+    note: "Polished stone in wet areas is dangerous — NBC Part 3 requires slip resistance coefficient > 0.5 (wet); honed finish (not polished) or sand-blast treatment achieves adequate slip resistance in bathrooms and balconies; anti-skid treatment strips or chemical etching can be applied to existing polished surfaces but must be renewed periodically"
+
+  # ============================================================
+  # TILE WORK WATERPROOFING DEPENDENCIES
+  # ============================================================
+  - id: "DEP-MAS-113"
+    trigger: "tile_work_wet_area"
+    required_items: ["waterproof_membrane_below_tiles", "flood_test_before_tiling"]
+    trade: "waterproofing"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: ["toilet", "bathroom"]
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 2645"
+    note: "Waterproof membrane (cementitious or liquid-applied) must be applied to walls and floors in all wet areas before tile adhesive and tiles — tiles alone are not waterproof; flood test (fill to overflow level, hold 24 hours) must be done and observed for leakage before tiling to verify membrane integrity; a single pinhole in the membrane allows water to reach the slab and the ceiling of the floor below"
+
+  - id: "DEP-MAS-114"
+    trigger: "tile_work_wet_area"
+    required_items: ["tile_adhesive_c2_grade_wet_area", "anti_fungal_grout"]
+    trade: "flooring"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: ["toilet", "bathroom"]
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "C2 grade tile adhesive (improved adhesive per ISO 13007) with water resistance is mandatory in wet areas — standard C1 grade adhesive dissolves in persistent moisture causing tile de-bonding; anti-fungal grout with polymer additive resists mould growth in bathroom grout joints, one of the most common complaints at handover"
+
+  # ============================================================
+  # PAINT DEPENDENCIES
+  # ============================================================
+  - id: "DEP-MAS-115"
+    trigger: "interior_paint"
+    required_items: ["wall_putty_coat", "primer_coat", "min_2_finish_coats"]
+    trade: "painting"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Interior paint system must be separate measured BOQ items — wall putty fills pores and micro-cracks for smooth base; primer seals substrate and improves adhesion; minimum 2 finish coats achieve uniform sheen and specified washability; combining these into a single 'paint' item in the BOQ leads to contractors skipping putty or primer, resulting in patchy, peeling paint within the defect liability period"
+
+  - id: "DEP-MAS-116"
+    trigger: "interior_paint"
+    required_items: ["surface_dry_before_paint", "moisture_content_below_5pct"]
+    trade: "painting"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Plaster and masonry must have moisture content below 5% before painting — painting on damp surfaces causes efflorescence (white salt deposits), blistering, and peeling; moisture meter readings must be taken and recorded before primer application; walls adjacent to bathrooms and external walls are particularly prone to residual construction moisture"
+
+  # ============================================================
+  # EXTERNAL PAINT DEPENDENCIES
+  # ============================================================
+  - id: "DEP-MAS-117"
+    trigger: "external_paint"
+    required_items: ["weather_coat_elastomeric", "anti_carbonation_check"]
+    trade: "painting"
+    priority: 2
+    condition: "rcc_exposed_or_coastal"
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Elastomeric weather coat (2mm DFT minimum) bridges hairline cracks up to 0.3mm width, preventing water ingress that drives carbonation — carbonation of concrete reduces alkalinity and triggers rebar corrosion; anti-carbonation check (phenolphthalein test) on existing concrete before repainting identifies depth of existing carbonation; in coastal zones (< 50km from sea), chloride penetration is the critical durability threat and must be assessed"
+
+  - id: "DEP-MAS-118"
+    trigger: "external_paint"
+    required_items: ["scaffolding_inspection_before_painting", "mastic_sealant_at_junctions"]
+    trade: "painting"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Scaffolding must be inspected and certified safe before external painting commences — unsupported or inadequately braced scaffolding is a leading cause of painter fatalities; mastic sealant (polyurethane or silicone) at window-wall, door-wall, and chajja-wall junctions must be applied before paint to prevent the most common source of post-handover water leakage complaints"
+
+  # ============================================================
+  # MASONRY WALL QUALITY CONTROL
+  # ============================================================
+  - id: "DEP-MAS-119"
+    trigger: "brick_or_block_masonry"
+    required_items: ["soaking_bricks_before_laying", "uniform_mortar_joint_10mm"]
+    trade: "masonry"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 2212"
+    note: "Bricks must be soaked in water for minimum 8 hours before laying — dry bricks absorb water from mortar, reducing mortar strength by up to 40% and causing premature cracking; IS 2212 specifies 10mm ± 3mm uniform mortar joints — thick joints (>15mm) are weak and variable-thickness joints cause uneven load distribution and cracking"
+
+  - id: "DEP-MAS-120"
+    trigger: "aac_block_masonry"
+    required_items: ["thin_bed_mortar_aac", "curing_aac_blocks_before_plaster", "vertical_joints_staggered"]
+    trade: "masonry"
+    priority: 1
+    condition: "aac_autoclaved_aerated_concrete"
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 6441"
+    note: "AAC blocks require thin-bed mortar (2-3mm) not traditional cement mortar — using 10mm mortar with AAC negates the block's dimensional precision and causes cracking at mortar joints; AAC must cure for minimum 7 days after laying before plaster is applied to allow moisture equilibration; vertical joints must be staggered minimum half-block length to prevent continuous vertical crack planes"
+
+  # ============================================================
+  # WATERPROOFING - TERRACE AND SUNKEN SLAB
+  # ============================================================
+  - id: "DEP-MAS-121"
+    trigger: "terrace_waterproofing"
+    required_items: ["slope_to_drain_min_1_in_100", "waterproof_membrane_terrace", "protective_screed_over_membrane"]
+    trade: "waterproofing"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 3067"
+    note: "Terrace must slope minimum 1:100 (preferably 1:60) to rain water pipes before waterproofing — ponding on a flat terrace creates hydrostatic head that drives water through even good membranes; waterproof membrane (modified bituminous or liquid-applied) must be protected with screed or paver tiles to prevent damage during maintenance; inadequate terrace slope is India's single most common post-handover leakage complaint"
+
+  - id: "DEP-MAS-122"
+    trigger: "sunken_slab_waterproofing"
+    required_items: ["brick_bat_coba_or_puf_filling", "screed_slope_to_drain", "upturned_membrane_at_junction"]
+    trade: "waterproofing"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: ["toilet", "bathroom"]
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 2645"
+    note: "Sunken slab filling with brick bat coba (broken brick aggregate in CM 1:3) or PUF blocks reduces dead load while providing drainage gradient; screed slope (1:60 minimum) ensures no standing water in the void; waterproofing membrane must be turned up minimum 150mm on all walls at the slab-wall junction — without this upstand, water migrates at the joint, causing ceiling stains in the flat below"
+
+  # ============================================================
+  # DOOR AND WINDOW FRAME FIXING
+  # ============================================================
+  - id: "DEP-MAS-123"
+    trigger: "door_frame_installation"
+    required_items: ["door_frame_holdfast_at_600mm_c_c", "frame_fixed_before_masonry", "gap_filling_with_cement_mortar"]
+    trade: "masonry"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Door frames must be fixed with MS holdfasts (200x25x3mm) at maximum 600mm spacing before surrounding masonry is raised — frames fixed after masonry cannot be adequately anchored and rock under load; gap between frame and masonry must be packed with cement mortar (not plaster), providing solid backing that prevents door slamming cracks"
+
+  - id: "DEP-MAS-124"
+    trigger: "window_frame_installation"
+    required_items: ["window_sill_waterproofing", "drip_groove_at_sill", "gap_sealant_frame_to_wall"]
+    trade: "masonry"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Window sill requires a slope of minimum 1:20 with waterproof screed to throw rainwater away from the wall; a drip groove (5mm deep x 5mm wide, 25mm from wall face) on the underside of the sill prevents water tracking back to the wall; the frame-to-wall gap is the most critical point for water ingress and must be sealed with polyurethane sealant after plaster"
+
+  # ============================================================
+  # FLOOR HARDENER FOR INDUSTRIAL
+  # ============================================================
+  - id: "DEP-MAS-125"
+    trigger: "industrial_floor"
+    required_items: ["floor_hardener_aggregate_shaker", "power_float_finish", "surface_hardness_min_6_mohs"]
+    trade: "flooring"
+    priority: 1
+    condition: ""
+    building_types: ["factory", "warehouse"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Industrial floors require dry-shake floor hardener (metallic aggregate or quartz) applied while concrete is still green, then power-floated — this creates a surface hardness of Mohs 6-7, resisting forklift traffic and chemical spills; plain concrete floors in warehouses dust within months under heavy traffic; the floor hardener must be specified per the anticipated forklift axle load and traffic frequency"
+
+  # ============================================================
+  # EPOXY FLOORING SYSTEM
+  # ============================================================
+  - id: "DEP-MAS-126"
+    trigger: "epoxy_flooring"
+    required_items: ["substrate_preparation_shot_blasting", "moisture_vapour_barrier", "epoxy_primer_epoxy_body_coat_epoxy_topcoat"]
+    trade: "flooring"
+    priority: 1
+    condition: ""
+    building_types: ["factory", "hospital", "laboratory"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Epoxy flooring requires shot-blast preparation of concrete surface to SSPC SP-6 (3-4 concrete surface profile) for mechanical key; residual moisture in slab must be below 4% (75% RH) — high moisture causes epoxy delamination through osmotic blistering; full system (primer + body coat + sealer/topcoat) achieves required chemical resistance and hygienic finish in OTs, labs, and food-processing areas"
+
+  # ============================================================
+  # CORNICE AND MOULDING FINISHING
+  # ============================================================
+  - id: "DEP-MAS-127"
+    trigger: "decorative_plaster_moulding"
+    required_items: ["gypsum_cornice_glue_fix", "joint_tape_cornice", "paint_system_cornice"]
+    trade: "ceiling"
+    priority: 2
+    condition: "premium_finish"
+    building_types: ["hotel", "residential_villa"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Gypsum cornice must be fixed with appropriate adhesive (Cornice Fix or equivalent) and screwed to ceiling at 450mm centres for stability — loose cornice is a safety hazard; joints between cornice sections must be taped and skimmed to conceal; paint system must match main ceiling paint to avoid different sheen levels highlighting joints"
+
+  # ============================================================
+  # ANTI-TERMITE TREATMENT BEFORE FLOORING
+  # ============================================================
+  - id: "DEP-MAS-128"
+    trigger: "ground_floor_flooring"
+    required_items: ["anti_termite_treatment_under_floor", "soil_treatment_is6313"]
+    trade: "specialist"
+    priority: 1
+    condition: "ground_floor"
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 6313"
+    note: "Anti-termite chemical treatment to soil under ground floor slabs per IS 6313 Part 2 is mandatory before PCC or flooring is laid — treatment after slab completion requires core drilling and cannot achieve uniform coverage; wood-framed furniture in untreated buildings in India is typically destroyed within 5-7 years; IS 6313 specifies application rate, chemical concentration, and treatment methodology"
+
+  # ============================================================
+  # DADO TILE WORK IN WET AREAS
+  # ============================================================
+  - id: "DEP-MAS-129"
+    trigger: "dado_tile_wet_area"
+    required_items: ["waterproof_adhesive_dado", "full_bed_adhesive_no_dot_fixing", "silicone_joint_at_floor_wall_junction"]
+    trade: "flooring"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: ["toilet", "bathroom"]
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Bathroom wall (dado) tiles must be fixed with water-resistant C2 adhesive in full-bed application — dot-fixing creates voids behind tiles where moisture accumulates, causing hollow tiles and mould; silicone sealant at the floor-wall junction instead of cement grout accommodates movement between floor and wall tiles, preventing the joint from cracking and allowing water infiltration behind dado"
+
+  # ============================================================
+  # PAINTING SYSTEM FOR METAL SURFACES
+  # ============================================================
+  - id: "DEP-MAS-130"
+    trigger: "metal_surface_paint"
+    required_items: ["rust_removal_before_primer", "zinc_phosphate_primer", "enamel_or_epoxy_finish_coat"]
+    trade: "painting"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 2339"
+    note: "All structural steel, grilles, gates, and metal railings must have rust removed (wire brush minimum, blast clean preferred) before primer — applying primer over mill scale or rust locks in corrosion underneath; zinc phosphate primer provides corrosion inhibition; minimum 2 coats enamel or epoxy topcoat for durability; IS 2339 specifies paint system for metal in different exposure environments"

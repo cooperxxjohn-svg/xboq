@@ -1,0 +1,3774 @@
+discipline: architectural
+trade: waterproofing
+sub_trades:
+  membrane_waterproofing:
+    categories:
+      app_membrane:
+        items:
+        - id: WP.MEM.APP.001
+          standard_name: APP Modified Bitumen Membrane 3mm Thick - Torch Applied
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1322
+          dsr_item_ref: ''
+          aliases:
+          - APP membrane 3mm
+          - torch applied membrane 3mm
+          - bitumen sheet 3mm
+          typical_rate_range:
+            min: 180
+            max: 320
+          notes: Single layer APP membrane for terrace/podium
+          data_source: IS codes only
+        - id: WP.MEM.APP.002
+          standard_name: APP Modified Bitumen Membrane 4mm Thick - Torch Applied
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1322
+          dsr_item_ref: ''
+          aliases:
+          - APP membrane 4mm
+          - torch applied membrane 4mm
+          - bitumen sheet 4mm
+          typical_rate_range:
+            min: 220
+            max: 380
+          notes: Heavy duty single layer APP membrane
+          data_source: IS codes only
+        - id: WP.MEM.APP.003
+          standard_name: APP Modified Bitumen Membrane 3mm + 3mm Double Layer - Torch Applied
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1322
+          dsr_item_ref: ''
+          aliases:
+          - double layer APP
+          - 3+3mm membrane
+          typical_rate_range:
+            min: 350
+            max: 580
+          notes: Double layer system for high-risk areas
+          data_source: IS codes only
+        - id: WP.MEM.APP.004
+          standard_name: APP Modified Bitumen Membrane 3mm - Self Adhesive
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1322
+          dsr_item_ref: ''
+          aliases:
+          - self adhesive APP
+          - peel and stick membrane
+          typical_rate_range:
+            min: 250
+            max: 420
+          notes: Cold applied self-adhesive membrane
+          data_source: IS codes only
+        - id: WP.MEM.APP.005
+          standard_name: APP Membrane with Aluminium Foil Top Surface - 4mm
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1322
+          dsr_item_ref: ''
+          aliases:
+          - aluminium faced APP
+          - reflective membrane
+          typical_rate_range:
+            min: 280
+            max: 450
+          notes: Reflective top surface for heat reduction
+          data_source: IS codes only
+      sbs_membrane:
+        items:
+        - id: WP.MEM.SBS.001
+          standard_name: SBS Modified Bitumen Membrane 3mm Thick - Torch Applied
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1322
+          dsr_item_ref: ''
+          aliases:
+          - SBS membrane 3mm
+          - rubber bitumen membrane
+          typical_rate_range:
+            min: 250
+            max: 420
+          notes: Elastomeric membrane for cold climates
+          data_source: estimated
+        - id: WP.MEM.SBS.002
+          standard_name: SBS Modified Bitumen Membrane 4mm Thick - Torch Applied
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1322
+          dsr_item_ref: ''
+          aliases:
+          - SBS membrane 4mm
+          typical_rate_range:
+            min: 300
+            max: 500
+          notes: Heavy duty SBS elastomeric membrane
+          data_source: estimated
+        - id: WP.MEM.SBS.003
+          standard_name: SBS Modified Bitumen Membrane 4mm - Mineral Granule Top
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1322
+          dsr_item_ref: ''
+          aliases:
+          - mineral granule SBS
+          - exposed SBS membrane
+          typical_rate_range:
+            min: 320
+            max: 520
+          notes: Exposed finish with mineral granule protection
+          data_source: estimated
+      hdpe_membrane:
+        items:
+        - id: WP.MEM.HDP.001
+          standard_name: HDPE Pre-applied Membrane 1.5mm - Self Adhesive
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 4984
+          dsr_item_ref: ''
+          aliases:
+          - HDPE membrane
+          - pre-applied HDPE
+          typical_rate_range:
+            min: 350
+            max: 550
+          notes: Pre-applied membrane for below-grade concrete
+          data_source: estimated
+        - id: WP.MEM.HDP.002
+          standard_name: HDPE Geomembrane 1.0mm - For Retaining Wall
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 4984
+          dsr_item_ref: ''
+          aliases:
+          - HDPE geomembrane
+          - retaining wall membrane
+          typical_rate_range:
+            min: 280
+            max: 450
+          notes: External waterproofing for retaining structures
+          data_source: estimated
+        - id: WP.MEM.HDP.003
+          standard_name: HDPE Geomembrane 1.5mm - For Water Tank/Pond Lining
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 4984
+          dsr_item_ref: ''
+          aliases:
+          - HDPE liner 1.5mm
+          - pond liner
+          typical_rate_range:
+            min: 350
+            max: 550
+          notes: Thicker HDPE for water containment
+          data_source: estimated
+        - id: WP.MEM.HDP.004
+          standard_name: HDPE Geomembrane 2.0mm - For Landfill/STP Lining
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - industrial
+          requires: []
+          is_code_ref: IS 4984
+          dsr_item_ref: ''
+          aliases:
+          - HDPE liner 2mm
+          - landfill liner
+          typical_rate_range:
+            min: 450
+            max: 700
+          notes: Heavy duty HDPE for waste containment
+          data_source: estimated
+      tpo_membrane:
+        items:
+        - id: WP.MEM.TPO.001
+          standard_name: TPO Single-Ply Roofing Membrane 1.2mm - Mechanically Fastened
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - TPO membrane 1.2mm
+          - thermoplastic polyolefin
+          typical_rate_range:
+            min: 500
+            max: 850
+          notes: Heat-welded TPO membrane for flat roofs
+          data_source: estimated
+        - id: WP.MEM.TPO.002
+          standard_name: TPO Single-Ply Roofing Membrane 1.5mm - Fully Adhered
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - TPO membrane 1.5mm
+          - adhered TPO
+          typical_rate_range:
+            min: 600
+            max: 1000
+          notes: Fully adhered TPO for high wind areas
+          data_source: estimated
+        - id: WP.MEM.TPO.003
+          standard_name: TPO Single-Ply Roofing Membrane 2.0mm - Premium
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - TPO membrane 2mm
+          - heavy duty TPO
+          typical_rate_range:
+            min: 750
+            max: 1200
+          notes: Premium heavy duty TPO for exposed roofs
+          data_source: estimated
+      pvc_membrane:
+        items:
+        - id: WP.MEM.PVC.001
+          standard_name: PVC Single-Ply Waterproofing Membrane 1.2mm - Mechanically Fastened
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - PVC membrane 1.2mm
+          - PVC roofing membrane
+          typical_rate_range:
+            min: 550
+            max: 900
+          notes: Heat-welded PVC for flat roof waterproofing
+          data_source: estimated
+        - id: WP.MEM.PVC.002
+          standard_name: PVC Single-Ply Waterproofing Membrane 1.5mm - Fully Adhered
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - PVC membrane 1.5mm
+          - adhered PVC membrane
+          typical_rate_range:
+            min: 650
+            max: 1050
+          notes: Heavy duty fully adhered PVC
+          data_source: estimated
+        - id: WP.MEM.PVC.003
+          standard_name: PVC Waterproofing Membrane 1.5mm - For Tunnel/Underground
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - PVC tunnel membrane
+          - underground PVC membrane
+          typical_rate_range:
+            min: 700
+            max: 1100
+          notes: Signal layer PVC for tunnel and underground structures
+          data_source: estimated
+      epdm_membrane:
+        items:
+        - id: WP.MEM.EPD.001
+          standard_name: EPDM Rubber Membrane 1.2mm - Fully Adhered
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - EPDM membrane 1.2mm
+          - rubber membrane
+          typical_rate_range:
+            min: 600
+            max: 1000
+          notes: Synthetic rubber membrane for exposed roofing
+          data_source: estimated
+        - id: WP.MEM.EPD.002
+          standard_name: EPDM Rubber Membrane 1.5mm - For Exposed Roof
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - EPDM 1.5mm
+          - thick rubber membrane
+          typical_rate_range:
+            min: 750
+            max: 1200
+          notes: Heavy duty EPDM for long-life roofing
+          data_source: estimated
+        - id: WP.MEM.EPD.003
+          standard_name: EPDM Rubber Membrane 1.5mm - For Pond/Tank Lining
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - EPDM pond liner
+          - rubber tank liner
+          typical_rate_range:
+            min: 700
+            max: 1100
+          notes: Potable water safe EPDM for water features
+          data_source: estimated
+      self_adhesive_membrane:
+        items:
+        - id: WP.MEM.SAD.001
+          standard_name: Self-Adhesive Bituminous Membrane 1.5mm - Cold Applied
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1322
+          dsr_item_ref: ''
+          aliases:
+          - self adhesive bitumen 1.5mm
+          - peel stick WP
+          typical_rate_range:
+            min: 200
+            max: 350
+          notes: No torch required, cold self-adhesive application
+          data_source: estimated
+        - id: WP.MEM.SAD.002
+          standard_name: Self-Adhesive Bituminous Membrane 2.0mm - Cold Applied
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1322
+          dsr_item_ref: ''
+          aliases:
+          - self adhesive bitumen 2mm
+          typical_rate_range:
+            min: 280
+            max: 450
+          notes: Heavier self-adhesive membrane
+          data_source: estimated
+        - id: WP.MEM.SAD.003
+          standard_name: Self-Adhesive Bituminous Flashing Strip 300mm Wide
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1322
+          dsr_item_ref: ''
+          aliases:
+          - self adhesive flashing
+          - peel stick flashing
+          typical_rate_range:
+            min: 80
+            max: 150
+          notes: For detail flashings at upstands and penetrations
+          data_source: estimated
+  liquid_waterproofing:
+    categories:
+      pu_liquid:
+        items:
+        - id: WP.LIQ.PU.001
+          standard_name: Polyurethane Liquid Membrane Single Component - 1.5mm DFT
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 13112
+          dsr_item_ref: ''
+          aliases:
+          - PU coating 1.5mm
+          - polyurethane waterproofing
+          - liquid PU membrane
+          typical_rate_range:
+            min: 350
+            max: 550
+          notes: Single component moisture curing PU
+          data_source: estimated
+        - id: WP.LIQ.PU.002
+          standard_name: Polyurethane Liquid Membrane Two Component - 2.0mm DFT
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 13112
+          dsr_item_ref: ''
+          aliases:
+          - PU coating 2mm
+          - two part PU membrane
+          typical_rate_range:
+            min: 450
+            max: 700
+          notes: Two component PU for terrace and podium
+          data_source: estimated
+        - id: WP.LIQ.PU.003
+          standard_name: Polyurethane Liquid Membrane - Exposed UV Resistant 2.0mm DFT
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 13112
+          dsr_item_ref: ''
+          aliases:
+          - exposed PU membrane
+          - UV resistant PU
+          typical_rate_range:
+            min: 550
+            max: 850
+          notes: UV stable PU for exposed terrace application
+          data_source: estimated
+      acrylic_liquid:
+        items:
+        - id: WP.LIQ.ACR.001
+          standard_name: Acrylic Elastomeric Waterproof Coating - 2 Coats
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - acrylic waterproofing
+          - elastomeric coating
+          typical_rate_range:
+            min: 120
+            max: 220
+          notes: Water based acrylic for terrace and external walls
+          data_source: estimated
+        - id: WP.LIQ.ACR.002
+          standard_name: Acrylic Elastomeric Waterproof Coating with Mesh Reinforcement
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - acrylic with mesh
+          - reinforced acrylic coating
+          typical_rate_range:
+            min: 180
+            max: 320
+          notes: With fiberglass mesh at joints and cracks
+          data_source: estimated
+        - id: WP.LIQ.ACR.003
+          standard_name: Acrylic Copolymer Waterproof Coating - High Build 3 Coats
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - high build acrylic
+          - 3 coat acrylic
+          typical_rate_range:
+            min: 200
+            max: 350
+          notes: High build system for podium and planter boxes
+          data_source: estimated
+      bitumen_liquid:
+        items:
+        - id: WP.LIQ.BIT.001
+          standard_name: Bitumen Emulsion Waterproof Coating - 2 Coats
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 3384
+          dsr_item_ref: ''
+          aliases:
+          - bitumen emulsion WP
+          - cold applied bitumen
+          typical_rate_range:
+            min: 60
+            max: 120
+          notes: Cold applied bitumen emulsion for below-grade
+          data_source: IS codes only
+        - id: WP.LIQ.BIT.002
+          standard_name: Bitumen Emulsion Waterproof Coating - 3 Coats with Fibreglass Mesh
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 3384
+          dsr_item_ref: ''
+          aliases:
+          - bitumen emulsion with mesh
+          - reinforced bitumen coating
+          typical_rate_range:
+            min: 100
+            max: 180
+          notes: Reinforced bitumen emulsion for better crack bridging
+          data_source: IS codes only
+        - id: WP.LIQ.BIT.003
+          standard_name: Rubberized Bitumen Emulsion Coating - 2 Coats
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 3384
+          dsr_item_ref: ''
+          aliases:
+          - rubberized bitumen
+          - rubber bitumen coating
+          typical_rate_range:
+            min: 80
+            max: 150
+          notes: Rubberized for improved flexibility
+          data_source: estimated
+      polyurea:
+        items:
+        - id: WP.LIQ.PLY.001
+          standard_name: Polyurea Spray Coating - 1.5mm DFT
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - industrial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - polyurea spray
+          - spray applied polyurea
+          typical_rate_range:
+            min: 800
+            max: 1400
+          notes: Rapid cure spray-applied waterproofing
+          data_source: estimated
+        - id: WP.LIQ.PLY.002
+          standard_name: Polyurea Spray Coating - 2.0mm DFT
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - industrial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - polyurea 2mm
+          - heavy polyurea
+          typical_rate_range:
+            min: 1000
+            max: 1800
+          notes: Heavy duty polyurea for vehicular traffic
+          data_source: estimated
+        - id: WP.LIQ.PLY.003
+          standard_name: Hybrid Polyurea-Polyurethane Coating - 2.0mm DFT
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - industrial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - hybrid polyurea
+          - PU-polyurea hybrid
+          typical_rate_range:
+            min: 900
+            max: 1600
+          notes: Combined PU-polyurea for optimal properties
+          data_source: estimated
+      silicone_liquid:
+        items:
+        - id: WP.LIQ.SIL.001
+          standard_name: Silicone Liquid Waterproof Coating - 2 Coats
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - silicone liquid WP
+          - silicone roof coating
+          typical_rate_range:
+            min: 400
+            max: 700
+          notes: UV resistant silicone for exposed roofing
+          data_source: estimated
+        - id: WP.LIQ.SIL.002
+          standard_name: Silicone Water Repellent Impregnation - External Walls
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - silane siloxane
+          - water repellent spray
+          - hydrophobic impregnation
+          typical_rate_range:
+            min: 80
+            max: 160
+          notes: Breathable water repellent for masonry walls
+          data_source: estimated
+      pu_additional:
+        items:
+        - id: WP.LIQ.PU.004
+          standard_name: Polyurethane Liquid Membrane Single Component - 1.0mm DFT
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 13112
+          dsr_item_ref: ''
+          aliases:
+          - PU coating 1mm
+          - thin PU membrane
+          typical_rate_range:
+            min: 250
+            max: 400
+          notes: Light duty single coat PU
+          data_source: estimated
+        - id: WP.LIQ.PU.005
+          standard_name: Polyurethane Liquid Membrane - 3 Coats with Mesh Reinforcement 2.5mm DFT
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 13112
+          dsr_item_ref: ''
+          aliases:
+          - PU 3 coat with mesh
+          - reinforced PU WP
+          typical_rate_range:
+            min: 650
+            max: 1000
+          notes: Heavy duty PU with glass fibre mesh reinforcement
+          data_source: estimated
+        - id: WP.LIQ.PU.006
+          standard_name: Hybrid PU-Acrylic Waterproof Coating - 2 Coats
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 13112
+          dsr_item_ref: ''
+          aliases:
+          - hybrid PU acrylic
+          - PU acrylic coating
+          typical_rate_range:
+            min: 300
+            max: 500
+          notes: Combined PU-acrylic for cost-effective waterproofing
+          data_source: estimated
+  cementitious_waterproofing:
+    categories:
+      crystalline:
+        items:
+        - id: WP.CEM.CRY.001
+          standard_name: Cementitious Crystalline Waterproofing Coating - 2 Coats (1.0 kg/sqm)
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2645
+          dsr_item_ref: ''
+          aliases:
+          - crystalline waterproofing
+          - xypex type
+          - penetron type
+          typical_rate_range:
+            min: 250
+            max: 450
+          notes: Penetrating crystalline system for concrete
+          data_source: estimated
+        - id: WP.CEM.CRY.002
+          standard_name: Cementitious Crystalline Waterproofing Coating - 3 Coats (1.5 kg/sqm)
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2645
+          dsr_item_ref: ''
+          aliases:
+          - heavy crystalline coating
+          typical_rate_range:
+            min: 350
+            max: 600
+          notes: Heavy duty application for water tanks and basements
+          data_source: estimated
+        - id: WP.CEM.CRY.003
+          standard_name: Cementitious Crystalline Waterproofing Admixture - In Concrete
+          unit: kg
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2645
+          dsr_item_ref: ''
+          aliases:
+          - crystalline admixture
+          - integral crystalline
+          typical_rate_range:
+            min: 300
+            max: 500
+          notes: Added to concrete mix at batching plant
+          data_source: estimated
+      polymer_modified:
+        items:
+        - id: WP.CEM.PLM.001
+          standard_name: Polymer Modified Cementitious Coating Two Component - 2 Coats (2.0 kg/sqm)
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2645
+          dsr_item_ref: ''
+          aliases:
+          - polymer cement coating
+          - 2K cementitious WP
+          typical_rate_range:
+            min: 200
+            max: 380
+          notes: Standard 2K polymer modified cementitious for wet areas
+          data_source: estimated
+        - id: WP.CEM.PLM.002
+          standard_name: Polymer Modified Cementitious Coating Two Component - 3 Coats (3.0 kg/sqm)
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2645
+          dsr_item_ref: ''
+          aliases:
+          - heavy duty polymer cement
+          - 3 coat cementitious WP
+          typical_rate_range:
+            min: 300
+            max: 520
+          notes: Heavy duty for water tanks, swimming pools
+          data_source: estimated
+        - id: WP.CEM.PLM.003
+          standard_name: Flexible Polymer Modified Cementitious Membrane - With Fabric
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2645
+          dsr_item_ref: ''
+          aliases:
+          - flexible cementitious with fabric
+          - reinforced cementitious WP
+          typical_rate_range:
+            min: 350
+            max: 550
+          notes: Fabric reinforced for movement joints
+          data_source: estimated
+        - id: WP.CEM.PLM.004
+          standard_name: Polymer Modified Cementitious Coating Single Component - 2 Coats
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2645
+          dsr_item_ref: ''
+          aliases:
+          - 1K cementitious WP
+          - single component cement WP
+          typical_rate_range:
+            min: 150
+            max: 300
+          notes: Single component ready to use after water mixing
+          data_source: estimated
+        - id: WP.CEM.PLM.005
+          standard_name: Acrylic-Cement Slurry Waterproofing - 2 Coats
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2645
+          dsr_item_ref: ''
+          aliases:
+          - acrylic cement slurry
+          - cement slurry WP
+          typical_rate_range:
+            min: 100
+            max: 200
+          notes: Thin acrylic-cement slurry for concrete surfaces
+          data_source: estimated
+        - id: WP.CEM.PLM.006
+          standard_name: Micro-Concrete Overlay Waterproofing - 10mm Thick
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2645
+          dsr_item_ref: ''
+          aliases:
+          - micro concrete overlay
+          - cementitious overlay WP
+          typical_rate_range:
+            min: 250
+            max: 420
+          notes: Polymer modified micro-concrete overlay for terrace repair
+          data_source: estimated
+      crystalline_additional:
+        items:
+        - id: WP.CEM.CRY.004
+          standard_name: Cementitious Crystalline Slurry - For Honeycomb Repair
+          unit: kg
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2645
+          dsr_item_ref: ''
+          aliases:
+          - crystalline repair mortar
+          - honeycomb WP repair
+          typical_rate_range:
+            min: 350
+            max: 600
+          notes: Crystalline repair mortar for honeycombed concrete
+          data_source: estimated
+        - id: WP.CEM.CRY.005
+          standard_name: Cementitious Crystalline Dry Shake - For Fresh Concrete
+          unit: kg
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2645
+          dsr_item_ref: ''
+          aliases:
+          - crystalline dry shake
+          - surface hardener WP
+          typical_rate_range:
+            min: 200
+            max: 400
+          notes: Broadcast onto fresh concrete surface
+          data_source: estimated
+  integral_waterproofing:
+    categories:
+      admixtures:
+        items:
+        - id: WP.INT.ADM.001
+          standard_name: Integral Waterproofing Compound - Liquid Admixture
+          unit: ltr
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2645
+          dsr_item_ref: ''
+          aliases:
+          - waterproofing compound
+          - integral WP liquid
+          typical_rate_range:
+            min: 40
+            max: 80
+          notes: Liquid admixture added to concrete/plaster mix
+          data_source: IS codes only
+        - id: WP.INT.ADM.002
+          standard_name: Integral Waterproofing Compound - Powder Admixture
+          unit: kg
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2645
+          dsr_item_ref: ''
+          aliases:
+          - waterproofing powder
+          - integral WP powder
+          typical_rate_range:
+            min: 30
+            max: 60
+          notes: Powder admixture for concrete mix
+          data_source: IS codes only
+        - id: WP.INT.ADM.003
+          standard_name: Hydrophobic Pore Blocking Admixture for Concrete
+          unit: ltr
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2645
+          dsr_item_ref: ''
+          aliases:
+          - hydrophobic admixture
+          - pore blocker
+          typical_rate_range:
+            min: 100
+            max: 200
+          notes: Reduces permeability of concrete permanently
+          data_source: estimated
+  tanking:
+    categories:
+      bentonite:
+        items:
+        - id: WP.TNK.BNT.001
+          standard_name: Bentonite Clay Sheet Waterproofing - 5mm Thick
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - bentonite sheet
+          - bentonite clay membrane
+          - volclay type
+          typical_rate_range:
+            min: 400
+            max: 650
+          notes: Self-healing bentonite sheet for below-grade
+          data_source: estimated
+        - id: WP.TNK.BNT.002
+          standard_name: Bentonite Waterstop for Construction Joints
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 3414
+          dsr_item_ref: ''
+          aliases:
+          - bentonite waterstop
+          - swellable waterstop
+          typical_rate_range:
+            min: 120
+            max: 250
+          notes: Swelling type bentonite waterstop strip
+          data_source: estimated
+        - id: WP.TNK.BNT.003
+          standard_name: Bentonite Injection Grout for Leak Arrest
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - bentonite grout injection
+          typical_rate_range:
+            min: 250
+            max: 450
+          notes: Injection grouting for active leaks in basement
+          data_source: estimated
+      bitumen_tanking:
+        items:
+        - id: WP.TNK.BIT.001
+          standard_name: Bitumen Primer Coat on Concrete Surface
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 3384
+          dsr_item_ref: ''
+          aliases:
+          - bitumen primer
+          - bituminous primer coat
+          typical_rate_range:
+            min: 30
+            max: 60
+          notes: Primer coat before membrane application
+          data_source: IS codes only
+        - id: WP.TNK.BIT.002
+          standard_name: Hot Applied Bitumen Tanking - 2 Coats with Hessian
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 3384
+          dsr_item_ref: ''
+          aliases:
+          - bitumen tanking
+          - hot bitumen 2 coat
+          - mastic asphalt tanking
+          typical_rate_range:
+            min: 150
+            max: 280
+          notes: Traditional hot bitumen tanking with hessian cloth
+          data_source: CPWD DSR 2023 + IS codes
+        - id: WP.TNK.BIT.003
+          standard_name: Hot Applied Bitumen Tanking - 3 Coats with Hessian
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 3384
+          dsr_item_ref: ''
+          aliases:
+          - bitumen tanking 3 coat
+          - heavy bitumen tanking
+          typical_rate_range:
+            min: 200
+            max: 380
+          notes: Heavy duty hot applied bitumen system
+          data_source: IS codes only
+  injection_waterproofing:
+    categories:
+      pu_injection:
+        items:
+        - id: WP.INJ.PU.001
+          standard_name: Polyurethane Injection Grouting - Single Component Flexible
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 9012
+          dsr_item_ref: ''
+          aliases:
+          - PU injection grouting
+          - polyurethane crack injection
+          typical_rate_range:
+            min: 800
+            max: 1500
+          notes: Flexible PU foam for active water leaks
+          data_source: estimated
+        - id: WP.INJ.PU.002
+          standard_name: Polyurethane Injection Grouting - Two Component Rigid
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 9012
+          dsr_item_ref: ''
+          aliases:
+          - rigid PU injection
+          - 2K PU grouting
+          typical_rate_range:
+            min: 900
+            max: 1600
+          notes: Rigid PU for structural crack sealing
+          data_source: estimated
+        - id: WP.INJ.PU.003
+          standard_name: Polyurethane Injection Grouting - Hydrophilic Gel
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 9012
+          dsr_item_ref: ''
+          aliases:
+          - hydrophilic PU gel
+          - water reactive gel
+          typical_rate_range:
+            min: 700
+            max: 1300
+          notes: Water reactive gel for joint sealing
+          data_source: estimated
+      epoxy_injection:
+        items:
+        - id: WP.INJ.EPX.001
+          standard_name: Epoxy Injection Grouting - Low Viscosity Crack Injection
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 4631
+          dsr_item_ref: ''
+          aliases:
+          - epoxy crack injection
+          - structural epoxy grouting
+          typical_rate_range:
+            min: 600
+            max: 1200
+          notes: Structural crack repair with low viscosity epoxy
+          data_source: estimated
+        - id: WP.INJ.EPX.002
+          standard_name: Epoxy Injection Grouting - Medium Viscosity
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 4631
+          dsr_item_ref: ''
+          aliases:
+          - medium viscosity epoxy injection
+          typical_rate_range:
+            min: 700
+            max: 1400
+          notes: For wider cracks 1-5mm
+          data_source: estimated
+        - id: WP.INJ.EPX.003
+          standard_name: Micro-cement Injection Grouting for Honeycombs
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 9012
+          dsr_item_ref: ''
+          aliases:
+          - micro-cement injection
+          - cementitious grout injection
+          typical_rate_range:
+            min: 500
+            max: 1000
+          notes: For honeycomb and void filling
+          data_source: estimated
+      acrylic_injection:
+        items:
+        - id: WP.INJ.ACR.001
+          standard_name: Acrylic Gel Injection Grouting - For Fine Cracks
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 9012
+          dsr_item_ref: ''
+          aliases:
+          - acrylic gel injection
+          - acrylic grout injection
+          typical_rate_range:
+            min: 600
+            max: 1100
+          notes: Low viscosity acrylic gel for fine crack sealing
+          data_source: estimated
+        - id: WP.INJ.ACR.002
+          standard_name: Acrylic Gel Injection - Curtain Grouting Behind Wall
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 9012
+          dsr_item_ref: ''
+          aliases:
+          - curtain grouting acrylic
+          - behind wall injection
+          typical_rate_range:
+            min: 800
+            max: 1500
+          notes: Curtain of injection points behind leaking wall
+          data_source: estimated
+      cement_injection:
+        items:
+        - id: WP.INJ.CMT.001
+          standard_name: Cement-Based Injection Grouting - For Structural Cracks
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 9012
+          dsr_item_ref: ''
+          aliases:
+          - cement injection grouting
+          - cementitious crack injection
+          typical_rate_range:
+            min: 400
+            max: 800
+          notes: Cement-based grout for non-active structural cracks
+          data_source: estimated
+        - id: WP.INJ.CMT.002
+          standard_name: Cement-Bentonite Injection Grouting - For Soil Stabilization
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 9012
+          dsr_item_ref: ''
+          aliases:
+          - cement bentonite grout
+          - soil injection grouting
+          typical_rate_range:
+            min: 500
+            max: 1000
+          notes: For ground water cut-off and soil stabilization
+          data_source: estimated
+      pu_curtain_grouting:
+        items:
+        - id: WP.INJ.PUC.001
+          standard_name: Polyurethane Curtain Grouting - Behind Basement Wall
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 9012
+          dsr_item_ref: ''
+          aliases:
+          - PU curtain grouting
+          - curtain injection basement
+          typical_rate_range:
+            min: 1200
+            max: 2200
+          notes: Grid pattern injection to create waterproof curtain
+          data_source: estimated
+        - id: WP.INJ.PUC.002
+          standard_name: Polyurethane Curtain Grouting - Below Raft Foundation
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 9012
+          dsr_item_ref: ''
+          aliases:
+          - PU curtain raft
+          - under-slab curtain injection
+          typical_rate_range:
+            min: 1500
+            max: 2800
+          notes: Injection from inside through raft to create barrier below
+          data_source: estimated
+  dpc:
+    categories:
+      bitumen_dpc:
+        items:
+        - id: WP.DPC.BIT.001
+          standard_name: DPC with Bitumen Felt 2.36 kg/sqm Grade
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1322
+          dsr_item_ref: ''
+          aliases:
+          - bitumen felt DPC
+          - tar felt DPC
+          typical_rate_range:
+            min: 80
+            max: 150
+          notes: Standard bitumen felt damp proof course at plinth
+          data_source: CPWD DSR 2023 + IS codes
+        - id: WP.DPC.BIT.002
+          standard_name: DPC with Bitumen Felt 3.34 kg/sqm Grade
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1322
+          dsr_item_ref: ''
+          aliases:
+          - heavy bitumen felt DPC
+          typical_rate_range:
+            min: 100
+            max: 180
+          notes: Heavy grade bitumen felt DPC
+          data_source: IS codes only
+      polythene_dpc:
+        items:
+        - id: WP.DPC.PLY.001
+          standard_name: DPC with Polythene Sheet 400 Gauge
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 3495
+          dsr_item_ref: ''
+          aliases:
+          - polythene DPC
+          - plastic sheet DPC
+          - 400 gauge poly
+          typical_rate_range:
+            min: 25
+            max: 50
+          notes: Polythene sheet DPC under floors and at plinth
+          data_source: estimated
+        - id: WP.DPC.PLY.002
+          standard_name: DPC with Polythene Sheet 1000 Gauge
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 3495
+          dsr_item_ref: ''
+          aliases:
+          - 1000 gauge polythene DPC
+          - heavy poly DPC
+          typical_rate_range:
+            min: 40
+            max: 75
+          notes: Heavy gauge polythene for under-slab DPC
+          data_source: estimated
+      cement_concrete_dpc:
+        items:
+        - id: WP.DPC.CC.001
+          standard_name: DPC with Cement Concrete 1:2:4 - 40mm Thick
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2645
+          dsr_item_ref: ''
+          aliases:
+          - CC DPC 40mm
+          - concrete DPC
+          typical_rate_range:
+            min: 120
+            max: 220
+          notes: Cement concrete DPC with waterproofing compound
+          data_source: CPWD DSR 2023 + IS codes
+        - id: WP.DPC.CC.002
+          standard_name: DPC with Cement Concrete 1:2:4 - 50mm Thick
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2645
+          dsr_item_ref: ''
+          aliases:
+          - CC DPC 50mm
+          typical_rate_range:
+            min: 140
+            max: 260
+          notes: Thicker CC DPC for higher moisture conditions
+          data_source: IS codes only
+      polythene_dpc_additional:
+        items:
+        - id: WP.DPC.PLY.003
+          standard_name: DPC with Polythene Sheet 200 Micron
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 3495
+          dsr_item_ref: ''
+          aliases:
+          - 200 micron polythene DPC
+          - light poly DPC
+          typical_rate_range:
+            min: 15
+            max: 30
+          notes: Light gauge polythene DPC
+          data_source: estimated
+        - id: WP.DPC.PLY.004
+          standard_name: DPC with Polythene Sheet 400 Micron - Under Slab
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 3495
+          dsr_item_ref: ''
+          aliases:
+          - under slab polythene
+          - slab DPC 400 micron
+          typical_rate_range:
+            min: 25
+            max: 50
+          notes: Under ground floor slab moisture barrier
+          data_source: estimated
+      dpc_compound:
+        items:
+        - id: WP.DPC.CMP.001
+          standard_name: DPC Compound Treatment - Brush Applied on Masonry
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2645
+          dsr_item_ref: ''
+          aliases:
+          - DPC compound
+          - waterproof DPC treatment
+          typical_rate_range:
+            min: 30
+            max: 60
+          notes: Liquid DPC compound applied on masonry surface
+          data_source: IS codes only
+        - id: WP.DPC.CMP.002
+          standard_name: Chemical DPC Injection - For Existing Buildings
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2212
+          dsr_item_ref: ''
+          aliases:
+          - chemical DPC
+          - injection DPC
+          - rising damp treatment
+          typical_rate_range:
+            min: 400
+            max: 800
+          notes: Silicone/silane injection to create DPC in existing walls
+          data_source: estimated
+  protection_layers:
+    categories:
+      screed:
+        items:
+        - id: WP.PRT.SCR.001
+          standard_name: Protective Screed over Waterproofing - 20mm Thick CM 1:4
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 456:2000
+          dsr_item_ref: ''
+          aliases:
+          - protection screed 20mm
+          - screed over WP
+          typical_rate_range:
+            min: 80
+            max: 150
+          notes: Protective screed before floor finish
+          data_source: estimated
+        - id: WP.PRT.SCR.002
+          standard_name: Protective Screed over Waterproofing - 40mm Thick CM 1:4
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 456:2000
+          dsr_item_ref: ''
+          aliases:
+          - protection screed 40mm
+          typical_rate_range:
+            min: 120
+            max: 220
+          notes: Thicker screed for vehicular traffic areas
+          data_source: estimated
+        - id: WP.PRT.SCR.003
+          standard_name: Slope Correction Screed - Average 50mm Thick
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 456:2000
+          dsr_item_ref: ''
+          aliases:
+          - slope screed
+          - screed to falls
+          typical_rate_range:
+            min: 150
+            max: 280
+          notes: Providing slope towards drain outlets
+          data_source: estimated
+      geotextile:
+        items:
+        - id: WP.PRT.GEO.001
+          standard_name: Non-woven Geotextile Fabric 200 GSM - Protection Layer
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 4984
+          dsr_item_ref: ''
+          aliases:
+          - geotextile 200gsm
+          - protection fabric
+          typical_rate_range:
+            min: 30
+            max: 60
+          notes: Protection layer over waterproofing membrane
+          data_source: estimated
+        - id: WP.PRT.GEO.002
+          standard_name: Non-woven Geotextile Fabric 300 GSM - Protection Layer
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 4984
+          dsr_item_ref: ''
+          aliases:
+          - geotextile 300gsm
+          - heavy protection fabric
+          typical_rate_range:
+            min: 45
+            max: 80
+          notes: Heavier grade for basement walls and podium
+          data_source: estimated
+      drainage_board:
+        items:
+        - id: WP.PRT.DRN.001
+          standard_name: HDPE Drainage Board 8mm - For Retaining Wall
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 4984
+          dsr_item_ref: ''
+          aliases:
+          - drainage board 8mm
+          - dimpled sheet
+          - drain cell
+          typical_rate_range:
+            min: 120
+            max: 220
+          notes: Dimpled HDPE drainage board for basement walls
+          data_source: estimated
+        - id: WP.PRT.DRN.002
+          standard_name: HDPE Drainage Board 20mm - For Podium/Terrace
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 4984
+          dsr_item_ref: ''
+          aliases:
+          - drainage board 20mm
+          - podium drain board
+          typical_rate_range:
+            min: 180
+            max: 320
+          notes: Thick drainage board for horizontal applications
+          data_source: estimated
+        - id: WP.PRT.DRN.003
+          standard_name: HDPE Drainage Board 30mm with Geotextile - For Planter
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 4984
+          dsr_item_ref: ''
+          aliases:
+          - planter drainage board
+          - 30mm drain cell
+          typical_rate_range:
+            min: 250
+            max: 420
+          notes: Composite drainage layer for planters and green roofs
+          data_source: estimated
+        - id: WP.PRT.DRN.004
+          standard_name: HDPE Drainage Board 25mm Egg-Crate Type
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 4984
+          dsr_item_ref: ''
+          aliases:
+          - egg crate drainage board
+          - 25mm drain board
+          typical_rate_range:
+            min: 200
+            max: 350
+          notes: Egg-crate profile for horizontal drainage
+          data_source: estimated
+      protection_board:
+        items:
+        - id: WP.PRT.PBD.001
+          standard_name: Protection Board 6mm - Fibre Cement Over Membrane
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - protection board 6mm
+          - membrane protection sheet
+          typical_rate_range:
+            min: 80
+            max: 150
+          notes: Fibre cement board protection over waterproofing
+          data_source: estimated
+        - id: WP.PRT.PBD.002
+          standard_name: Protection Board 8mm - Fibre Cement Over Membrane
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - protection board 8mm
+          typical_rate_range:
+            min: 100
+            max: 180
+          notes: Thicker protection for vehicular areas
+          data_source: estimated
+        - id: WP.PRT.PBD.003
+          standard_name: XPS Insulation Board 25mm Over Waterproofing - Inverted Roof
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - XPS insulation inverted roof
+          - extruded polystyrene WP
+          typical_rate_range:
+            min: 200
+            max: 350
+          notes: XPS insulation above membrane in inverted roof system
+          data_source: estimated
+        - id: WP.PRT.PBD.004
+          standard_name: XPS Insulation Board 50mm Over Waterproofing - Inverted Roof
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - 50mm XPS inverted roof
+          typical_rate_range:
+            min: 350
+            max: 550
+          notes: Thicker insulation for inverted roof system
+          data_source: estimated
+      geotextile_additional:
+        items:
+        - id: WP.PRT.GEO.003
+          standard_name: Non-woven Geotextile Fabric 400 GSM - Heavy Duty Protection
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 4984
+          dsr_item_ref: ''
+          aliases:
+          - geotextile 400gsm
+          - heavy duty geotextile
+          typical_rate_range:
+            min: 60
+            max: 100
+          notes: Heavy duty protection for underground structures
+          data_source: estimated
+        - id: WP.PRT.GEO.004
+          standard_name: Woven Geotextile Fabric 200 GSM - Separation Layer
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 4984
+          dsr_item_ref: ''
+          aliases:
+          - woven geotextile
+          - separation geotextile
+          typical_rate_range:
+            min: 35
+            max: 65
+          notes: Woven type for separation and filtration
+          data_source: estimated
+      screed_additional:
+        items:
+        - id: WP.PRT.SCR.004
+          standard_name: Lightweight Screed over Waterproofing - 50mm Thick Foamed Concrete
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 456:2000
+          dsr_item_ref: ''
+          aliases:
+          - lightweight screed
+          - foamed concrete screed
+          typical_rate_range:
+            min: 180
+            max: 320
+          notes: Lightweight screed to reduce dead load on terrace
+          data_source: estimated
+        - id: WP.PRT.SCR.005
+          standard_name: Brick Bat Coba - 100mm Average Thick over Waterproofing
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 456:2000
+          dsr_item_ref: ''
+          aliases:
+          - brick bat coba
+          - BBC
+          - broken brick filling
+          typical_rate_range:
+            min: 200
+            max: 350
+          notes: Traditional Indian waterproofing filler with brick bats and lime
+          data_source: estimated
+        - id: WP.PRT.SCR.006
+          standard_name: Lime Concrete Terracing - 100mm Thick with Surkhi
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 456:2000
+          dsr_item_ref: ''
+          aliases:
+          - lime concrete terrace
+          - surkhi terracing
+          typical_rate_range:
+            min: 180
+            max: 300
+          notes: Traditional lime concrete terracing with crushed brick
+          data_source: estimated
+  application_specific:
+    categories:
+      terrace:
+        items:
+        - id: WP.APP.TER.001
+          standard_name: Terrace Waterproofing System - APP Membrane with Protection Screed
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2115
+          dsr_item_ref: ''
+          aliases:
+          - terrace WP system
+          - roof waterproofing complete
+          typical_rate_range:
+            min: 350
+            max: 600
+          notes: 'Complete system: primer + APP membrane + screed'
+          data_source: estimated
+        - id: WP.APP.TER.002
+          standard_name: Terrace Waterproofing System - PU Liquid Membrane
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2115
+          dsr_item_ref: ''
+          aliases:
+          - terrace PU WP system
+          typical_rate_range:
+            min: 500
+            max: 800
+          notes: Complete PU system with primer and topcoat
+          data_source: estimated
+      basement:
+        items:
+        - id: WP.APP.BSM.001
+          standard_name: Basement External Waterproofing System - Membrane + Drainage Board
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - basement external WP
+          - positive side WP
+          typical_rate_range:
+            min: 500
+            max: 850
+          notes: External positive side waterproofing with drainage
+          data_source: estimated
+        - id: WP.APP.BSM.002
+          standard_name: Basement Internal Waterproofing System - Cementitious Crystalline
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2645
+          dsr_item_ref: ''
+          aliases:
+          - basement internal WP
+          - negative side WP
+          typical_rate_range:
+            min: 350
+            max: 600
+          notes: Internal negative side crystalline system
+          data_source: estimated
+        - id: WP.APP.BSM.003
+          standard_name: Basement Raft Waterproofing - Pre-applied HDPE Membrane
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - raft WP membrane
+          - under-slab WP
+          typical_rate_range:
+            min: 400
+            max: 650
+          notes: Pre-applied membrane below raft foundation
+          data_source: estimated
+      toilet_wet_area:
+        items:
+        - id: WP.APP.WET.001
+          standard_name: Toilet Waterproofing - Polymer Modified Cementitious System
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2645
+          dsr_item_ref: ''
+          aliases:
+          - toilet WP
+          - bathroom waterproofing
+          - wet area WP
+          typical_rate_range:
+            min: 200
+            max: 380
+          notes: Standard toilet WP system - floor + wall up to 300mm
+          data_source: estimated
+        - id: WP.APP.WET.002
+          standard_name: Sunken Slab Waterproofing - Complete System with Brick Bat Coba
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2645
+          dsr_item_ref: ''
+          aliases:
+          - sunken slab WP
+          - BBC waterproofing
+          typical_rate_range:
+            min: 300
+            max: 500
+          notes: Brick bat coba with waterproofing compound in sunken portion
+          data_source: estimated
+        - id: WP.APP.WET.003
+          standard_name: Sunken Slab Waterproofing - APP Membrane System
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2645
+          dsr_item_ref: ''
+          aliases:
+          - sunken slab APP WP
+          typical_rate_range:
+            min: 350
+            max: 550
+          notes: APP membrane in sunken slab before filling
+          data_source: estimated
+      water_tank:
+        items:
+        - id: WP.APP.TNK.001
+          standard_name: Water Tank Internal Waterproofing - Crystalline Cementitious
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2645
+          dsr_item_ref: ''
+          aliases:
+          - tank WP crystalline
+          - OHT WP
+          - UGT WP
+          typical_rate_range:
+            min: 300
+            max: 500
+          notes: Potable water safe crystalline system
+          data_source: estimated
+        - id: WP.APP.TNK.002
+          standard_name: Water Tank Internal Waterproofing - Polymer Modified Cementitious
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2645
+          dsr_item_ref: ''
+          aliases:
+          - tank WP polymer
+          typical_rate_range:
+            min: 250
+            max: 450
+          notes: Polymer modified system for water retaining structures
+          data_source: estimated
+      retaining_wall:
+        items:
+        - id: WP.APP.RTW.001
+          standard_name: Retaining Wall Waterproofing - Membrane + Drainage Board System
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - retaining wall WP
+          - earth retaining WP
+          typical_rate_range:
+            min: 450
+            max: 750
+          notes: Complete system with membrane, drainage board and geotextile
+          data_source: estimated
+        - id: WP.APP.RTW.002
+          standard_name: Retaining Wall Waterproofing - Cementitious Crystalline External
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2645
+          dsr_item_ref: ''
+          aliases:
+          - retaining wall crystalline WP
+          typical_rate_range:
+            min: 300
+            max: 500
+          notes: External crystalline coating before backfill
+          data_source: estimated
+      balcony:
+        items:
+        - id: WP.APP.BAL.001
+          standard_name: Balcony Waterproofing - Polymer Modified Cementitious with Mesh
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2645
+          dsr_item_ref: ''
+          aliases:
+          - balcony WP
+          - balcony waterproofing
+          typical_rate_range:
+            min: 250
+            max: 420
+          notes: Flexible cementitious WP with mesh at edge junctions
+          data_source: estimated
+        - id: WP.APP.BAL.002
+          standard_name: Balcony Waterproofing - PU Liquid Membrane
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - residential
+          requires: []
+          is_code_ref: IS 13112
+          dsr_item_ref: ''
+          aliases:
+          - balcony PU WP
+          typical_rate_range:
+            min: 400
+            max: 650
+          notes: Seamless PU membrane for balcony
+          data_source: estimated
+      plinth:
+        items:
+        - id: WP.APP.PLN.001
+          standard_name: Plinth Protection Waterproofing - Bitumen Coat + Polythene
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 3384
+          dsr_item_ref: ''
+          aliases:
+          - plinth WP
+          - plinth protection
+          typical_rate_range:
+            min: 80
+            max: 150
+          notes: Damp proofing at plinth level
+          data_source: estimated
+        - id: WP.APP.PLN.002
+          standard_name: Plinth Protection Apron - CC 1:2:4 75mm Thick 600mm Wide
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2645
+          dsr_item_ref: ''
+          aliases:
+          - plinth apron
+          - plinth protection band
+          typical_rate_range:
+            min: 120
+            max: 220
+          notes: Concrete apron around building at plinth level
+          data_source: estimated
+      pool:
+        items:
+        - id: WP.APP.POL.001
+          standard_name: Swimming Pool Waterproofing - Crystalline + Polymer Modified System
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2645
+          dsr_item_ref: ''
+          aliases:
+          - pool WP
+          - swimming pool waterproofing
+          typical_rate_range:
+            min: 500
+            max: 850
+          notes: Combined crystalline internal + polymer modified external
+          data_source: estimated
+        - id: WP.APP.POL.002
+          standard_name: Swimming Pool Waterproofing - PU Membrane System
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 13112
+          dsr_item_ref: ''
+          aliases:
+          - pool PU WP
+          typical_rate_range:
+            min: 600
+            max: 1000
+          notes: Heavy duty PU membrane for pool shell
+          data_source: estimated
+      lift_pit:
+        items:
+        - id: WP.APP.LFT.001
+          standard_name: Lift Pit Waterproofing - Crystalline Cementitious System
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2645
+          dsr_item_ref: ''
+          aliases:
+          - lift pit WP
+          - elevator pit waterproofing
+          typical_rate_range:
+            min: 350
+            max: 600
+          notes: Crystalline system for lift pit walls and floor
+          data_source: estimated
+        - id: WP.APP.LFT.002
+          standard_name: Lift Pit Waterproofing - Polymer Modified Cementitious System
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2645
+          dsr_item_ref: ''
+          aliases:
+          - lift pit polymer WP
+          typical_rate_range:
+            min: 280
+            max: 480
+          notes: Polymer modified system for lift pit
+          data_source: estimated
+        - id: WP.APP.LFT.003
+          standard_name: Lift Pit Sump Waterproofing with PU Coating
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2645
+          dsr_item_ref: ''
+          aliases:
+          - lift pit sump WP
+          typical_rate_range:
+            min: 500
+            max: 800
+          notes: PU coating for lift pit sump area
+          data_source: estimated
+      expansion_joint:
+        items:
+        - id: WP.APP.EXJ.001
+          standard_name: Expansion Joint Waterproofing - PU Sealant with PVC Flashing
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - expansion joint WP
+          - movement joint treatment
+          typical_rate_range:
+            min: 400
+            max: 700
+          notes: Complete expansion joint waterproofing treatment
+          data_source: estimated
+        - id: WP.APP.EXJ.002
+          standard_name: Expansion Joint Waterproofing - Metal Cover Plate System
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - expansion joint cover plate
+          - metal joint cover
+          typical_rate_range:
+            min: 800
+            max: 1500
+          notes: Aluminium or SS cover plate with neoprene seal
+          data_source: estimated
+        - id: WP.APP.EXJ.003
+          standard_name: Expansion Joint Waterproofing - Rubber Bellows Type
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - rubber bellows joint
+          - flexible joint cover
+          typical_rate_range:
+            min: 600
+            max: 1200
+          notes: Flexible rubber bellows for roof expansion joints
+          data_source: estimated
+        - id: WP.APP.EXJ.004
+          standard_name: Expansion Joint Fire Barrier - Mineral Wool System
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - joint fire barrier
+          - expansion joint fire seal
+          typical_rate_range:
+            min: 500
+            max: 900
+          notes: Fire rated expansion joint filler system
+          data_source: estimated
+      terrace_inverted:
+        items:
+        - id: WP.APP.TER.003
+          standard_name: Inverted Roof Waterproofing System - Membrane + XPS + Ballast
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 2115
+          dsr_item_ref: ''
+          aliases:
+          - inverted roof WP
+          - IRMA system
+          - protected membrane roof
+          typical_rate_range:
+            min: 600
+            max: 1000
+          notes: Complete inverted roof system with insulation above membrane
+          data_source: estimated
+        - id: WP.APP.TER.004
+          standard_name: Green Roof Waterproofing System - Anti-Root Membrane + Drainage
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 2115
+          dsr_item_ref: ''
+          aliases:
+          - green roof WP
+          - vegetated roof WP
+          typical_rate_range:
+            min: 800
+            max: 1400
+          notes: Anti-root membrane with drainage for green roofs
+          data_source: estimated
+        - id: WP.APP.TER.005
+          standard_name: Terrace Waterproofing System - Cementitious with Brick Bat Coba
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: IS 2115
+          dsr_item_ref: ''
+          aliases:
+          - terrace BBC WP
+          - traditional terrace WP
+          typical_rate_range:
+            min: 250
+            max: 420
+          notes: Traditional Indian system with BBC and IPS finish
+          data_source: estimated
+        - id: WP.APP.TER.006
+          standard_name: Terrace Waterproofing Repair - Remove Old + New System
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2115
+          dsr_item_ref: ''
+          aliases:
+          - terrace WP repair
+          - roof WP renovation
+          typical_rate_range:
+            min: 400
+            max: 700
+          notes: Removal of old WP and application of new system
+          data_source: estimated
+      podium:
+        items:
+        - id: WP.APP.POD.001
+          standard_name: Podium Waterproofing System - APP Membrane + Protection + Drainage
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - residential
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - podium WP
+          - podium waterproofing
+          typical_rate_range:
+            min: 500
+            max: 850
+          notes: Complete podium WP system with drainage layer
+          data_source: estimated
+        - id: WP.APP.POD.002
+          standard_name: Podium Waterproofing System - PU Membrane + Drainage Board
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - podium PU WP
+          typical_rate_range:
+            min: 650
+            max: 1100
+          notes: Premium PU system for podium with vehicular traffic
+          data_source: estimated
+        - id: WP.APP.POD.003
+          standard_name: Planter Box Waterproofing - Flexible Cementitious with Drain Board
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - planter WP
+          - planter box waterproofing
+          typical_rate_range:
+            min: 400
+            max: 700
+          notes: Complete planter box waterproofing with drainage
+          data_source: estimated
+      wet_area_additional:
+        items:
+        - id: WP.APP.WET.004
+          standard_name: Toilet Waterproofing - Wall Up to 1800mm Height
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2645
+          dsr_item_ref: ''
+          aliases:
+          - toilet wall WP full height
+          - shower area WP
+          typical_rate_range:
+            min: 200
+            max: 380
+          notes: WP on toilet walls up to shower height
+          data_source: estimated
+        - id: WP.APP.WET.005
+          standard_name: Kitchen Waterproofing - Floor and Wall Up to 300mm
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2645
+          dsr_item_ref: ''
+          aliases:
+          - kitchen WP
+          - kitchen floor waterproofing
+          typical_rate_range:
+            min: 180
+            max: 320
+          notes: Kitchen area floor waterproofing
+          data_source: estimated
+        - id: WP.APP.WET.006
+          standard_name: Sunken Slab Light Weight Filling - AAC Block/Pumice in Lieu of BBC
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2645
+          dsr_item_ref: ''
+          aliases:
+          - lightweight sunken fill
+          - AAC block filling sunken
+          typical_rate_range:
+            min: 3000
+            max: 5000
+          notes: Lightweight filling material for sunken slab
+          data_source: estimated
+  testing:
+    categories:
+      leak_testing:
+        items:
+        - id: WP.TST.FLD.001
+          standard_name: Flood Test for Waterproofing - 72 Hours Ponding
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - flood test
+          - ponding test
+          - water test 72hr
+          typical_rate_range:
+            min: 15
+            max: 35
+          notes: 72 hour ponding test at 50-75mm depth
+          data_source: estimated
+        - id: WP.TST.FLD.002
+          standard_name: Flood Test for Waterproofing - 24 Hours Ponding
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - flood test 24hr
+          - quick ponding test
+          typical_rate_range:
+            min: 10
+            max: 25
+          notes: 24 hour quick ponding test
+          data_source: estimated
+        - id: WP.TST.FLD.003
+          standard_name: Hose Test for Vertical Waterproofing
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - hose test
+          - spray test WP
+          typical_rate_range:
+            min: 8
+            max: 20
+          notes: Water spray test for vertical surfaces
+          data_source: estimated
+        - id: WP.TST.FLD.004
+          standard_name: Electronic Leak Detection Test - Low Voltage
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - ELD test
+          - electronic leak detection
+          - EFVM test
+          typical_rate_range:
+            min: 40
+            max: 80
+          notes: Electronic field vector mapping for membrane integrity
+          data_source: estimated
+        - id: WP.TST.FLD.005
+          standard_name: Electronic Leak Detection Test - High Voltage Spark
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - high voltage spark test
+          - holiday detection
+          typical_rate_range:
+            min: 50
+            max: 100
+          notes: High voltage spark test for exposed membranes
+          data_source: estimated
+        - id: WP.TST.FLD.006
+          standard_name: Infrared Thermography Survey for Leak Location
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - IR survey WP
+          - thermography leak detection
+          typical_rate_range:
+            min: 25
+            max: 60
+          notes: Non-destructive thermal imaging for leak identification
+          data_source: estimated
+        - id: WP.TST.FLD.007
+          standard_name: Adhesion Pull-Off Test for Applied Membranes
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - adhesion test WP
+          - pull off test membrane
+          typical_rate_range:
+            min: 200
+            max: 500
+          notes: Per test location for membrane adhesion verification
+          data_source: estimated
+        - id: WP.TST.FLD.008
+          standard_name: DFT (Dry Film Thickness) Measurement for Liquid Membranes
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - DFT test
+          - thickness test WP
+          typical_rate_range:
+            min: 50
+            max: 150
+          notes: Per test point - destructive DFT gauge measurement
+          data_source: estimated
+  surface_preparation:
+    categories:
+      concrete_prep:
+        items:
+        - id: WP.SRP.GRD.001
+          standard_name: Concrete Surface Grinding/Levelling for Waterproofing
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - surface grinding WP
+          - concrete grinding
+          typical_rate_range:
+            min: 40
+            max: 80
+          notes: Remove protrusions and level surface for membrane
+          data_source: estimated
+        - id: WP.SRP.GRD.002
+          standard_name: Shot Blasting of Concrete Surface for Membrane Adhesion
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - shot blasting concrete
+          - surface profiling
+          typical_rate_range:
+            min: 60
+            max: 120
+          notes: Mechanical surface preparation for optimal adhesion
+          data_source: estimated
+        - id: WP.SRP.GRD.003
+          standard_name: High Pressure Water Jetting for Surface Preparation
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - water jetting WP
+          - pressure wash surface
+          typical_rate_range:
+            min: 30
+            max: 60
+          notes: High pressure water cleaning before WP application
+          data_source: estimated
+        - id: WP.SRP.FLT.001
+          standard_name: Fillet/Cove Formation at Wall-Floor Junction - CM 1:3
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - fillet formation
+          - cove formation
+          - chamfer at junction
+          typical_rate_range:
+            min: 30
+            max: 60
+          notes: 50x50mm fillet at internal corners before membrane
+          data_source: estimated
+        - id: WP.SRP.FLT.002
+          standard_name: Fillet/Cove Formation at Wall-Floor Junction - Polymer Modified
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - polymer fillet
+          - modified cove
+          typical_rate_range:
+            min: 40
+            max: 80
+          notes: Polymer modified mortar fillet for better adhesion
+          data_source: estimated
+        - id: WP.SRP.PRR.001
+          standard_name: Honeycomb Repair Before Waterproofing - Polymer Modified Mortar
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - honeycomb repair
+          - concrete repair WP
+          typical_rate_range:
+            min: 200
+            max: 400
+          notes: Repair honeycombed concrete before WP application
+          data_source: estimated
+        - id: WP.SRP.PRR.002
+          standard_name: Crack Repair Before Waterproofing - V-Cut and Fill
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - crack repair before WP
+          - V-groove repair
+          typical_rate_range:
+            min: 80
+            max: 180
+          notes: V-cut crack and fill with polymer mortar before WP
+          data_source: estimated
+        - id: WP.SRP.PRR.003
+          standard_name: Pipe/Penetration Sealing Before Waterproofing
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - pipe seal WP
+          - penetration sealing
+          typical_rate_range:
+            min: 150
+            max: 350
+          notes: Seal around pipes and penetrations with PU/bitumen
+          data_source: estimated
+        - id: WP.SRP.PRM.001
+          standard_name: Primer Application - Bitumen Based for Membrane WP
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - bitumen primer WP
+          - membrane primer
+          typical_rate_range:
+            min: 25
+            max: 50
+          notes: Bitumen based primer before APP/SBS membrane
+          data_source: estimated
+        - id: WP.SRP.PRM.002
+          standard_name: Primer Application - PU Based for Liquid Membrane
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - PU primer WP
+          - polyurethane primer
+          typical_rate_range:
+            min: 30
+            max: 60
+          notes: PU primer before liquid PU membrane application
+          data_source: estimated
+        - id: WP.SRP.PRM.003
+          standard_name: Primer Application - Acrylic Based for Cementitious WP
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - acrylic primer WP
+          - cementitious WP primer
+          typical_rate_range:
+            min: 20
+            max: 40
+          notes: Acrylic primer before cementitious WP coating
+          data_source: estimated
+  waterproofing_repair:
+    categories:
+      leak_repair:
+        items:
+        - id: WP.RPR.LKR.001
+          standard_name: Active Leak Arrest - Quick Setting Cement Plug
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - leak plug
+          - quick set cement
+          - water stop plug
+          typical_rate_range:
+            min: 200
+            max: 500
+          notes: Per plug point for active water seepage
+          data_source: estimated
+        - id: WP.RPR.LKR.002
+          standard_name: Leak Repair at Construction Joint - PU Injection
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - joint leak repair PU
+          - construction joint leak fix
+          typical_rate_range:
+            min: 800
+            max: 1500
+          notes: PU injection to seal leaking construction joints
+          data_source: estimated
+        - id: WP.RPR.LKR.003
+          standard_name: Terrace Leak Repair - Localized Patch with PU/Acrylic
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - terrace patch repair
+          - roof leak repair
+          typical_rate_range:
+            min: 250
+            max: 500
+          notes: Localized repair of damaged terrace waterproofing
+          data_source: estimated
+        - id: WP.RPR.LKR.004
+          standard_name: Removal of Existing Failed Waterproofing Membrane
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - membrane removal
+          - WP demolition
+          typical_rate_range:
+            min: 50
+            max: 120
+          notes: Removal and disposal of failed WP membrane
+          data_source: estimated
+        - id: WP.RPR.LKR.005
+          standard_name: Removal of Existing Protection Screed Over Waterproofing
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - screed removal
+          - protection screed demolition
+          typical_rate_range:
+            min: 80
+            max: 150
+          notes: Breaking and removal of protection screed to access membrane
+          data_source: estimated
+        - id: WP.RPR.LKR.006
+          standard_name: Basement Leak Repair - Negative Side Crystalline Treatment
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - basement leak repair
+          - negative side repair
+          typical_rate_range:
+            min: 400
+            max: 700
+          notes: Treating basement leaks from inside with crystalline
+          data_source: estimated
+  waterproofing_accessories:
+    categories:
+      flashings:
+        items:
+        - id: WP.FLS.BIT.001
+          standard_name: Bituminous Flashing Strip 300mm Wide at Upstands
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - bitumen flashing
+          - upstand flashing
+          typical_rate_range:
+            min: 80
+            max: 160
+          notes: Reinforced bituminous flashing at wall-roof junction
+          data_source: estimated
+        - id: WP.FLS.BIT.002
+          standard_name: Bituminous Flashing Strip 450mm Wide at Upstands
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - wide bitumen flashing
+          typical_rate_range:
+            min: 120
+            max: 220
+          notes: Wider flashing for higher upstands
+          data_source: estimated
+        - id: WP.FLS.MTL.001
+          standard_name: Metal Counter Flashing - GI Sheet at Upstand Top
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - counter flashing GI
+          - metal apron flashing
+          typical_rate_range:
+            min: 150
+            max: 280
+          notes: GI sheet counter flashing tucked into wall chase
+          data_source: estimated
+        - id: WP.FLS.MTL.002
+          standard_name: Metal Counter Flashing - Aluminium at Upstand Top
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - counter flashing aluminium
+          typical_rate_range:
+            min: 200
+            max: 350
+          notes: Aluminium counter flashing for premium finish
+          data_source: estimated
+        - id: WP.FLS.PIP.001
+          standard_name: Pipe Boot/Collar Flashing for Roof Penetrations
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - pipe boot
+          - roof penetration seal
+          - pipe collar
+          typical_rate_range:
+            min: 200
+            max: 500
+          notes: Flexible EPDM or lead pipe boot for roof pipes
+          data_source: estimated
+      drain_outlets:
+        items:
+        - id: WP.FLS.DRN.001
+          standard_name: Roof Drain Outlet with Clamping Ring and Leaf Guard
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - roof drain outlet
+          - terrace drain
+          - flat roof outlet
+          typical_rate_range:
+            min: 800
+            max: 1800
+          notes: Complete roof drain outlet with membrane clamp
+          data_source: estimated
+        - id: WP.FLS.DRN.002
+          standard_name: Balcony Drain Outlet - Side Wall Type with Flange
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - balcony scupper
+          - side drain outlet
+          typical_rate_range:
+            min: 500
+            max: 1200
+          notes: Side wall drain outlet for balcony/terrace
+          data_source: estimated
+        - id: WP.FLS.DRN.003
+          standard_name: Overflow Drain Outlet - Emergency Roof Drainage
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - overflow drain
+          - emergency outlet
+          typical_rate_range:
+            min: 600
+            max: 1500
+          notes: Secondary overflow outlet for terrace/podium
+          data_source: estimated
+  waterstops_sealants:
+    categories:
+      waterstops:
+        items:
+        - id: WP.WTS.PVC.001
+          standard_name: PVC Waterstop 150mm - For Construction Joints
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 12200
+          dsr_item_ref: ''
+          aliases:
+          - PVC waterstop 150
+          - construction joint waterstop
+          typical_rate_range:
+            min: 150
+            max: 280
+          notes: Dumbbell type PVC waterstop for construction joints
+          data_source: IS codes only
+        - id: WP.WTS.PVC.002
+          standard_name: PVC Waterstop 225mm - For Expansion Joints
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 12200
+          dsr_item_ref: ''
+          aliases:
+          - PVC waterstop 225
+          - expansion joint waterstop
+          typical_rate_range:
+            min: 220
+            max: 380
+          notes: Centre bulb type for expansion joints
+          data_source: IS codes only
+        - id: WP.WTS.PVC.003
+          standard_name: PVC Waterstop 300mm - For Movement Joints
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 12200
+          dsr_item_ref: ''
+          aliases:
+          - PVC waterstop 300
+          - large waterstop
+          typical_rate_range:
+            min: 300
+            max: 500
+          notes: Heavy duty for large movement joints
+          data_source: IS codes only
+      sealants:
+        items:
+        - id: WP.WTS.SEL.001
+          standard_name: Polysulphide Sealant for Expansion Joints - 20x20mm
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - polysulphide sealant
+          - expansion joint sealant
+          typical_rate_range:
+            min: 120
+            max: 220
+          notes: Two part polysulphide for movement joints
+          data_source: estimated
+        - id: WP.WTS.SEL.002
+          standard_name: Polyurethane Sealant for Joints - 20x20mm
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - PU sealant
+          - polyurethane joint sealant
+          typical_rate_range:
+            min: 100
+            max: 200
+          notes: Flexible PU sealant for general joints
+          data_source: estimated
+        - id: WP.WTS.SEL.003
+          standard_name: Silicone Sealant for Joints - 10x10mm
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - silicone sealant
+          - neutral cure silicone
+          typical_rate_range:
+            min: 60
+            max: 120
+          notes: Neutral cure silicone for wet area joints
+          data_source: estimated
+        - id: WP.WTS.SEL.004
+          standard_name: Injection Hose System for Construction Joints
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - injection hose
+          - re-injectable hose
+          typical_rate_range:
+            min: 200
+            max: 380
+          notes: Re-injectable hose for post-construction grouting
+          data_source: estimated
+        - id: WP.WTS.SEL.005
+          standard_name: Polysulphide Sealant for Expansion Joints - 30x30mm
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - large polysulphide sealant
+          - wide joint sealant
+          typical_rate_range:
+            min: 180
+            max: 320
+          notes: Wider joint sealant for large expansion joints
+          data_source: estimated
+        - id: WP.WTS.SEL.006
+          standard_name: Silicone Sealant for Joints - 20x10mm
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - silicone sealant 20x10
+          typical_rate_range:
+            min: 80
+            max: 150
+          notes: Wider silicone sealant joint
+          data_source: estimated
+        - id: WP.WTS.SEL.007
+          standard_name: Polyurethane Sealant for Joints - 30x15mm
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - PU sealant wide
+          - wide PU joint
+          typical_rate_range:
+            min: 150
+            max: 280
+          notes: Wider PU joint for movement joints
+          data_source: estimated
+        - id: WP.WTS.SEL.008
+          standard_name: Backer Rod (Closed Cell PE Foam) - 10mm dia
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - backer rod 10mm
+          - foam rod
+          typical_rate_range:
+            min: 8
+            max: 18
+          notes: Closed cell PE foam backing for sealant joints
+          data_source: estimated
+        - id: WP.WTS.SEL.009
+          standard_name: Backer Rod (Closed Cell PE Foam) - 20mm dia
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - backer rod 20mm
+          typical_rate_range:
+            min: 12
+            max: 25
+          notes: ''
+          data_source: estimated
+        - id: WP.WTS.SEL.010
+          standard_name: Backer Rod (Closed Cell PE Foam) - 30mm dia
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - backer rod 30mm
+          typical_rate_range:
+            min: 18
+            max: 35
+          notes: ''
+          data_source: estimated
+      hydrophilic_strip:
+        items:
+        - id: WP.WTS.HYD.001
+          standard_name: Hydrophilic Rubber Waterstop Strip - 20x10mm
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - hydrophilic strip
+          - swelling strip waterstop
+          typical_rate_range:
+            min: 80
+            max: 160
+          notes: Swells on contact with water to seal construction joints
+          data_source: estimated
+        - id: WP.WTS.HYD.002
+          standard_name: Hydrophilic Rubber Waterstop Strip - 25x20mm
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - large hydrophilic strip
+          typical_rate_range:
+            min: 120
+            max: 220
+          notes: Larger cross-section for wider joints
+          data_source: estimated
+      pvc_waterstop_additional:
+        items:
+        - id: WP.WTS.PVC.004
+          standard_name: PVC Waterstop 200mm - Flat Dumbbell Type
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 12200
+          dsr_item_ref: ''
+          aliases:
+          - PVC waterstop 200 flat
+          - dumbbell waterstop 200
+          typical_rate_range:
+            min: 180
+            max: 320
+          notes: Flat dumbbell type for construction joints
+          data_source: IS codes only
+        - id: WP.WTS.PVC.005
+          standard_name: PVC Waterstop 300mm - Centre Bulb Type
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 12200
+          dsr_item_ref: ''
+          aliases:
+          - centre bulb waterstop 300
+          typical_rate_range:
+            min: 320
+            max: 520
+          notes: Centre bulb type for expansion joints with movement
+          data_source: IS codes only
+        - id: WP.WTS.PVC.006
+          standard_name: PVC Waterstop External Type - 150mm
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 12200
+          dsr_item_ref: ''
+          aliases:
+          - external PVC waterstop
+          - kicker waterstop
+          typical_rate_range:
+            min: 150
+            max: 280
+          notes: External type for kicker/wall-slab junction
+          data_source: IS codes only
+      stainless_steel_waterstop:
+        items:
+        - id: WP.WTS.SSW.001
+          standard_name: Stainless Steel Waterstop Strip 1.0mm x 200mm - For Expansion Joints
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - SS waterstop
+          - stainless steel waterstop
+          typical_rate_range:
+            min: 500
+            max: 900
+          notes: SS 304 waterstop for permanent below-grade joints
+          data_source: estimated
+        - id: WP.WTS.SSW.002
+          standard_name: Stainless Steel Waterstop Strip 1.5mm x 300mm
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - large SS waterstop
+          typical_rate_range:
+            min: 800
+            max: 1400
+          notes: Heavy duty SS waterstop for large movement joints
+          data_source: estimated
+  specialized_waterproofing:
+    categories:
+      swimming_pool:
+        items:
+        - id: WP.SPL.SWP.001
+          standard_name: Swimming Pool Waterproofing - Flexible Cementitious Coating 2-Coat System
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - pool waterproofing
+          - swimming pool coating
+          typical_rate_range:
+            min: 350
+            max: 650
+          notes: Chlorine-resistant flexible cementitious coating for pool interiors
+          data_source: estimated
+        - id: WP.SPL.SWP.002
+          standard_name: Swimming Pool Tile Bedding with Waterproof Adhesive
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - pool tile adhesive
+          - underwater tile fixing
+          typical_rate_range:
+            min: 250
+            max: 450
+          notes: Polymer-modified tile adhesive for submerged conditions
+          data_source: estimated
+        - id: WP.SPL.SWP.003
+          standard_name: Swimming Pool Joint Sealant - Chlorine Resistant Epoxy
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - pool joint sealant
+          - chlorine resistant sealant
+          typical_rate_range:
+            min: 180
+            max: 350
+          notes: Two-part epoxy sealant for pool construction and expansion joints
+          data_source: estimated
+      water_retaining:
+        items:
+        - id: WP.SPL.WRT.001
+          standard_name: Underground Water Tank Waterproofing - Crystalline System Complete
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - UG tank waterproofing
+          - sump waterproofing
+          typical_rate_range:
+            min: 400
+            max: 750
+          notes: Complete crystalline system for potable water tank - IS 3370 compliant
+          data_source: estimated
+        - id: WP.SPL.WRT.002
+          standard_name: Overhead Water Tank Internal Waterproofing - Food Grade Epoxy Coating
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - OHT waterproofing
+          - overhead tank coating
+          typical_rate_range:
+            min: 500
+            max: 900
+          notes: NSF/ANSI 61 compliant food grade epoxy for drinking water tanks
+          data_source: estimated
+        - id: WP.SPL.WRT.003
+          standard_name: STP/ETP Tank Waterproofing - Chemical Resistant Epoxy System
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - industrial
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - STP waterproofing
+          - ETP tank lining
+          typical_rate_range:
+            min: 600
+            max: 1200
+          notes: Chemical-resistant epoxy lining for sewage/effluent treatment plant tanks
+          data_source: estimated
+      tunnel_shaft:
+        items:
+        - id: WP.SPL.TNL.001
+          standard_name: Tunnel Waterproofing - PVC Membrane with Geotextile Protection
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - tunnel membrane
+          - tunnel waterproofing system
+          typical_rate_range:
+            min: 800
+            max: 1500
+          notes: Complete tunnel waterproofing with compartmentalized membrane sheets
+          data_source: estimated
+        - id: WP.SPL.TNL.002
+          standard_name: Lift Shaft Waterproofing - Bentonite Sheet Membrane System
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - residential
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - lift shaft waterproofing
+          - elevator pit bentonite
+          typical_rate_range:
+            min: 450
+            max: 850
+          notes: Self-sealing bentonite sheet membrane for lift shaft exteriors
+          data_source: estimated
+        - id: WP.SPL.TNL.003
+          standard_name: Utility Shaft/Duct Waterproofing - Spray Applied Membrane
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - residential
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - shaft waterproofing spray
+          - duct seal membrane
+          typical_rate_range:
+            min: 350
+            max: 700
+          notes: Spray-applied rubberized membrane for utility shafts
+          data_source: estimated
+        - id: WP.SPL.TNL.004
+          standard_name: Cable Duct Waterproofing - Cementitious Slurry Tanking
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - cable duct tanking
+          - utility trench waterproofing
+          typical_rate_range:
+            min: 250
+            max: 500
+          notes: Polymer-modified cementitious tanking for cable/service ducts
+          data_source: estimated
+        - id: WP.SPL.TNL.005
+          standard_name: Retaining Wall Drain Board with Filter Fabric - 20mm Dimple
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - drain board retaining wall
+          - dimple sheet drainage
+          typical_rate_range:
+            min: 180
+            max: 350
+          notes: HDPE dimpled drainage sheet with non-woven geotextile bonded
+          data_source: estimated

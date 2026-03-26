@@ -1,0 +1,3844 @@
+discipline: specialised
+trade: specialised
+sub_trades:
+  swimming_pool:
+    categories:
+      pool_structure:
+        items:
+        - id: SPC.PL.RCC.001
+          standard_name: Swimming Pool RCC Shell - M30 Grade Waterproof Concrete
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 456
+          dsr_item_ref: ''
+          aliases:
+          - pool RCC shell
+          - swimming pool concrete
+          - pool structure
+          typical_rate_range:
+            min: 8000
+            max: 14000
+          notes: Waterproof concrete with integral admixture
+          data_source: IS codes only
+        - id: SPC.PL.RCC.002
+          standard_name: Swimming Pool RCC Shell Reinforcement - Fe500D
+          unit: kg
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1786
+          dsr_item_ref: ''
+          aliases:
+          - pool rebar
+          - pool reinforcement steel
+          typical_rate_range:
+            min: 65
+            max: 95
+          notes: Cut, bent, placed and tied reinforcement
+          data_source: IS codes only
+        - id: SPC.PL.RCC.003
+          standard_name: Swimming Pool Formwork - For Curved/Sloping Surfaces
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 3370:2009
+          dsr_item_ref: ''
+          aliases:
+          - pool formwork
+          - curved pool shuttering
+          typical_rate_range:
+            min: 600
+            max: 1100
+          notes: Special formwork for pool shape
+          data_source: estimated
+      pool_waterproofing:
+        items:
+        - id: SPC.PL.WP.001
+          standard_name: Swimming Pool Internal Waterproofing - Crystalline Cementitious 3 Coat
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 3370:2009, NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - pool internal WP
+          - pool crystalline WP
+          typical_rate_range:
+            min: 350
+            max: 600
+          notes: Chlorine resistant crystalline system
+          data_source: estimated
+        - id: SPC.PL.WP.002
+          standard_name: Swimming Pool External Waterproofing - Polymer Modified Cementitious
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 3370:2009, NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - pool external WP
+          - pool outside WP
+          typical_rate_range:
+            min: 280
+            max: 480
+          notes: External positive side waterproofing
+          data_source: estimated
+        - id: SPC.PL.WP.003
+          standard_name: Swimming Pool Waterproofing - Flexible Membrane (PVC)
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 3370:2009, NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - pool PVC liner
+          - pool membrane WP
+          typical_rate_range:
+            min: 400
+            max: 700
+          notes: PVC liner membrane for pool shell
+          data_source: estimated
+      pool_tiling:
+        items:
+        - id: SPC.PL.TIL.001
+          standard_name: Swimming Pool Ceramic Tile 150x150mm - Anti-Skid
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15622
+          dsr_item_ref: ''
+          aliases:
+          - pool tile ceramic
+          - pool anti-skid tile
+          - talab tile
+          typical_rate_range:
+            min: 800
+            max: 1400
+          notes: Chlorine resistant with epoxy grout
+          data_source: estimated
+        - id: SPC.PL.TIL.002
+          standard_name: Swimming Pool Glass Mosaic Tile 20x20mm
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15622
+          dsr_item_ref: ''
+          aliases:
+          - pool mosaic tile
+          - glass mosaic pool
+          typical_rate_range:
+            min: 2000
+            max: 4500
+          notes: Premium glass mosaic with epoxy grout
+          data_source: estimated
+        - id: SPC.PL.TIL.003
+          standard_name: Pool Deck Tile - Anti-Skid Porcelain 300x300mm
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15622
+          dsr_item_ref: ''
+          aliases:
+          - pool deck tile
+          - pool surround tile
+          - pool coping tile
+          typical_rate_range:
+            min: 900
+            max: 1600
+          notes: Anti-skid deck area tile
+          data_source: estimated
+        - id: SPC.PL.TIL.004
+          standard_name: Pool Overflow Grating - PVC/PP 250mm Wide
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - pool grating
+          - overflow channel grating
+          typical_rate_range:
+            min: 600
+            max: 1200
+          notes: Overflow channel finger grip grating
+          data_source: estimated
+        - id: SPC.PL.TIL.005
+          standard_name: Pool Coping Stone - Granite/Marble
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - pool coping
+          - pool edge stone
+          typical_rate_range:
+            min: 800
+            max: 1500
+          notes: Bull-nose finished coping stone
+          data_source: estimated
+      pool_filtration:
+        items:
+        - id: SPC.PL.FLT.001
+          standard_name: Swimming Pool Sand Filter - 1200mm dia
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - pool sand filter
+          - pool filter 1200
+          typical_rate_range:
+            min: 80000
+            max: 150000
+          notes: Commercial grade sand filter with multiport valve
+          data_source: estimated
+        - id: SPC.PL.FLT.002
+          standard_name: Swimming Pool Sand Filter - 900mm dia
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - pool sand filter small
+          - residential pool filter
+          typical_rate_range:
+            min: 40000
+            max: 75000
+          notes: Residential grade sand filter
+          data_source: estimated
+        - id: SPC.PL.FLT.003
+          standard_name: Swimming Pool Cartridge Filter - 150 sqft
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - pool cartridge filter
+          - paper filter pool
+          typical_rate_range:
+            min: 15000
+            max: 30000
+          notes: Cartridge filter for small pools
+          data_source: estimated
+        - id: SPC.PL.FLT.004
+          standard_name: Swimming Pool Circulation Pump - 3 HP
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - pool pump 3HP
+          - small pool pump
+          typical_rate_range:
+            min: 20000
+            max: 38000
+          notes: Self-priming pool pump
+          data_source: estimated
+        - id: SPC.PL.FLT.005
+          standard_name: Swimming Pool Circulation Pump - 5 HP
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - pool pump 5HP
+          - pool circulation pump
+          typical_rate_range:
+            min: 30000
+            max: 55000
+          notes: Self-priming pool pump commercial
+          data_source: estimated
+        - id: SPC.PL.FLT.006
+          standard_name: Swimming Pool Filtration Plant Room Piping Complete
+          unit: LS
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - pool plant room piping
+          - pool piping system
+          typical_rate_range:
+            min: 100000
+            max: 250000
+          notes: Complete PVC piping, valves, fittings in plant room
+          data_source: estimated
+      pool_chemical_dosing:
+        items:
+        - id: SPC.PL.DOS.001
+          standard_name: Swimming Pool Auto Chlorine Dosing System
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - pool chlorinator
+          - auto dosing system
+          typical_rate_range:
+            min: 60000
+            max: 120000
+          notes: Automated chlorine dosing with ORP/pH controller
+          data_source: estimated
+        - id: SPC.PL.DOS.002
+          standard_name: Swimming Pool pH Dosing System
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - pool pH controller
+          - pH dosing pump
+          typical_rate_range:
+            min: 40000
+            max: 80000
+          notes: pH correction dosing system
+          data_source: estimated
+        - id: SPC.PL.DOS.003
+          standard_name: Swimming Pool Ozonator System
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - pool ozonator
+          - ozone treatment pool
+          typical_rate_range:
+            min: 80000
+            max: 180000
+          notes: Ozone generator for pool water treatment
+          data_source: estimated
+        - id: SPC.PL.DOS.004
+          standard_name: Swimming Pool UV Disinfection System
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - pool UV system
+          - ultraviolet pool treatment
+          typical_rate_range:
+            min: 50000
+            max: 120000
+          notes: UV-C disinfection system
+          data_source: estimated
+        - id: SPC.PL.DOS.005
+          standard_name: Salt Water Chlorination System
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - salt chlorinator
+          - salt water pool system
+          typical_rate_range:
+            min: 30000
+            max: 70000
+          notes: Electrolytic salt chlorine generator
+          data_source: estimated
+      pool_heating:
+        items:
+        - id: SPC.PL.HTG.001
+          standard_name: Swimming Pool Heat Pump - 50 kW
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - pool heat pump
+          - pool heater
+          typical_rate_range:
+            min: 300000
+            max: 550000
+          notes: Air source heat pump for pool heating
+          data_source: estimated
+        - id: SPC.PL.HTG.002
+          standard_name: Swimming Pool Solar Heating System - Per sqm Collector
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - pool solar heater
+          - solar pool heating
+          typical_rate_range:
+            min: 5000
+            max: 9000
+          notes: Solar flat plate collector for pool heating
+          data_source: estimated
+        - id: SPC.PL.HTG.003
+          standard_name: Swimming Pool Electric Heater - 18 kW
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - pool electric heater
+          - electric pool warmer
+          typical_rate_range:
+            min: 20000
+            max: 40000
+          notes: Inline electric pool heater
+          data_source: estimated
+      pool_accessories:
+        items:
+        - id: SPC.PL.ACC.001
+          standard_name: Underwater LED Pool Light - 25W IP68
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - pool light LED
+          - underwater light
+          typical_rate_range:
+            min: 8000
+            max: 18000
+          notes: Stainless steel niche with LED lamp
+          data_source: estimated
+        - id: SPC.PL.ACC.002
+          standard_name: Underwater LED Pool Light - RGB Colour Changing
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - RGB pool light
+          - colour changing pool light
+          typical_rate_range:
+            min: 15000
+            max: 30000
+          notes: With DMX controller option
+          data_source: estimated
+        - id: SPC.PL.ACC.003
+          standard_name: Pool Ladder - SS 304 Grade 3-Step
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - pool ladder
+          - swimming pool ladder
+          - talab seedhi
+          typical_rate_range:
+            min: 8000
+            max: 18000
+          notes: Stainless steel 3-step pool ladder
+          data_source: estimated
+        - id: SPC.PL.ACC.004
+          standard_name: Pool Grab Rail - SS 304 Grade 750mm
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - pool grab rail
+          - pool handrail
+          typical_rate_range:
+            min: 3000
+            max: 7000
+          notes: SS grab rail for pool entry/exit
+          data_source: estimated
+        - id: SPC.PL.ACC.005
+          standard_name: Pool Diving Board - 1.5m Fibreglass
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - diving board
+          - springboard
+          typical_rate_range:
+            min: 40000
+            max: 80000
+          notes: Competition fibreglass diving board
+          data_source: estimated
+        - id: SPC.PL.ACC.006
+          standard_name: Pool Cover - Automatic Roller Type
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - pool cover
+          - automatic pool cover
+          typical_rate_range:
+            min: 3000
+            max: 6000
+          notes: Motorised roller pool cover per sqm
+          data_source: estimated
+        - id: SPC.PL.ACC.007
+          standard_name: Pool Overflow Channel - Precast Concrete
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 3370:2009
+          dsr_item_ref: ''
+          aliases:
+          - overflow channel
+          - pool gutter
+          - balance tank channel
+          typical_rate_range:
+            min: 2000
+            max: 4000
+          notes: Precast concrete overflow trough
+          data_source: estimated
+        - id: SPC.PL.ACC.008
+          standard_name: Pool Inlet Nozzle - SS Return Fitting
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - pool inlet
+          - return nozzle
+          - pool jet
+          typical_rate_range:
+            min: 1500
+            max: 3500
+          notes: Adjustable return wall fitting
+          data_source: estimated
+        - id: SPC.PL.ACC.009
+          standard_name: Pool Main Drain - SS Anti-Vortex
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - pool main drain
+          - anti-vortex drain
+          typical_rate_range:
+            min: 3000
+            max: 6000
+          notes: Anti-vortex main drain cover
+          data_source: estimated
+        - id: SPC.PL.ACC.010
+          standard_name: Pool Skimmer Box - ABS/PP
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - pool skimmer
+          - surface skimmer
+          typical_rate_range:
+            min: 3000
+            max: 7000
+          notes: Wide-mouth surface skimmer
+          data_source: estimated
+  auditorium:
+    categories:
+      acoustic_treatment:
+        items:
+        - id: SPC.AU.ACP.001
+          standard_name: Acoustic Panel - Fabric Wrapped 50mm Thick (NRC 0.8+)
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - fabric acoustic panel
+          - sound absorbing panel
+          - dhwani panel
+          typical_rate_range:
+            min: 1500
+            max: 3000
+          notes: Glass wool core with fire retardant fabric
+          data_source: estimated
+        - id: SPC.AU.ACP.002
+          standard_name: Acoustic Panel - Wood Perforated/Slotted 18mm
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - wood acoustic panel
+          - perforated acoustic
+          - slotted wood panel
+          typical_rate_range:
+            min: 2000
+            max: 4000
+          notes: MDF/plywood perforated with acoustic fleece backing
+          data_source: estimated
+        - id: SPC.AU.ACP.003
+          standard_name: Acoustic Panel - Polyester Fibre 25mm (Pinboard Type)
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - polyester acoustic
+          - PET acoustic panel
+          typical_rate_range:
+            min: 800
+            max: 1600
+          notes: Eco-friendly recycled PET fibre panel
+          data_source: estimated
+        - id: SPC.AU.ACP.004
+          standard_name: Acoustic Diffuser Panel - QRD Type Wooden
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - QRD diffuser
+          - sound diffuser
+          - acoustic diffuser
+          typical_rate_range:
+            min: 4000
+            max: 8000
+          notes: Quadratic residue diffuser for stage walls
+          data_source: estimated
+        - id: SPC.AU.ACP.005
+          standard_name: Acoustic Spray Plaster - 25mm Thick (NRC 0.7+)
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - acoustic plaster
+          - spray acoustic
+          - K13 type
+          typical_rate_range:
+            min: 1200
+            max: 2200
+          notes: Spray applied cellulose acoustic finish
+          data_source: estimated
+        - id: SPC.AU.ACP.006
+          standard_name: Acoustic Wall Panel - Fabric Wrapped Curved 100mm
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - curved acoustic panel
+          - bass trap panel
+          typical_rate_range:
+            min: 3000
+            max: 6000
+          notes: Curved bass absorber panel
+          data_source: estimated
+        - id: SPC.AU.ACP.007
+          standard_name: Acoustic Ceiling Cloud - Suspended 50mm
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - acoustic cloud
+          - ceiling cloud
+          - floating acoustic
+          typical_rate_range:
+            min: 2500
+            max: 5000
+          notes: Suspended acoustic ceiling island/cloud
+          data_source: estimated
+      seating:
+        items:
+        - id: SPC.AU.SET.001
+          standard_name: Auditorium Fixed Seat - Standard Tip-Up with Armrest
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - auditorium seat standard
+          - tip-up chair
+          - lecture hall seat
+          typical_rate_range:
+            min: 3500
+            max: 7000
+          notes: Moulded PU foam with fabric upholstery
+          data_source: estimated
+        - id: SPC.AU.SET.002
+          standard_name: Auditorium Fixed Seat - Premium Push-Back with Writing Pad
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - premium auditorium seat
+          - push-back chair with tablet
+          typical_rate_range:
+            min: 7000
+            max: 14000
+          notes: Premium push-back with folding writing tablet
+          data_source: estimated
+        - id: SPC.AU.SET.003
+          standard_name: Auditorium Fixed Seat - VIP/Executive with Leather
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - VIP auditorium seat
+          - executive theatre chair
+          typical_rate_range:
+            min: 12000
+            max: 25000
+          notes: High back leather/leatherette with wider spacing
+          data_source: estimated
+        - id: SPC.AU.SET.004
+          standard_name: Retractable/Telescopic Seating System - Per Seat
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - retractable seating
+          - telescopic bleacher
+          - folding tribune
+          typical_rate_range:
+            min: 8000
+            max: 18000
+          notes: Motorised retractable seating for multi-use halls
+          data_source: estimated
+      stage:
+        items:
+        - id: SPC.AU.STG.001
+          standard_name: Stage Platform - Steel Frame with Plywood Deck and Carpet
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - stage platform
+          - auditorium stage
+          - manch
+          typical_rate_range:
+            min: 3000
+            max: 6000
+          notes: Elevated stage platform 600-900mm height
+          data_source: estimated
+        - id: SPC.AU.STG.002
+          standard_name: Stage Curtain - Main Drape (Velvet/Fire Retardant)
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - stage curtain
+          - main drape
+          - proscenium curtain
+          typical_rate_range:
+            min: 1500
+            max: 3500
+          notes: Fire retardant velvet with motorised track
+          data_source: estimated
+        - id: SPC.AU.STG.003
+          standard_name: Stage Curtain - Side Wings and Borders
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - stage wings
+          - stage borders
+          - masking curtain
+          typical_rate_range:
+            min: 1000
+            max: 2500
+          notes: Black masking curtains
+          data_source: estimated
+        - id: SPC.AU.STG.004
+          standard_name: Stage Lighting Rig - Aluminium Truss Batten
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - lighting truss
+          - stage batten
+          - light rig
+          typical_rate_range:
+            min: 3000
+            max: 6000
+          notes: Aluminium truss lighting batten with motor hoist
+          data_source: estimated
+        - id: SPC.AU.STG.005
+          standard_name: Cyclorama Screen - White Fabric 6m Height
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - cyclorama
+          - cyc screen
+          - backdrop screen
+          typical_rate_range:
+            min: 800
+            max: 1500
+          notes: Curved cyclorama backdrop screen
+          data_source: estimated
+      av_system:
+        items:
+        - id: SPC.AU.AV.001
+          standard_name: Auditorium Sound System - Line Array Speaker with Amplifier
+          unit: set
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - auditorium sound system
+          - line array PA
+          typical_rate_range:
+            min: 500000
+            max: 2000000
+          notes: Complete PA system with DSP and mixing console
+          data_source: estimated
+        - id: SPC.AU.AV.002
+          standard_name: Auditorium Projection System - 5000+ Lumens Projector with Screen
+          unit: set
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - auditorium projector
+          - projection system
+          typical_rate_range:
+            min: 200000
+            max: 800000
+          notes: Laser projector with motorised screen
+          data_source: estimated
+        - id: SPC.AU.AV.003
+          standard_name: LED Video Wall - P2.5 Indoor
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - LED wall
+          - video wall
+          - LED display
+          typical_rate_range:
+            min: 60000
+            max: 120000
+          notes: Per sqm of LED panel with controller
+          data_source: estimated
+        - id: SPC.AU.AV.004
+          standard_name: Conference Room AV System - Display/Camera/Mic
+          unit: set
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - conference AV
+          - video conference system
+          typical_rate_range:
+            min: 100000
+            max: 400000
+          notes: Integrated display, camera, microphone system
+          data_source: estimated
+        - id: SPC.AU.AV.005
+          standard_name: Simultaneous Interpretation System - 4 Channel
+          unit: set
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - interpretation system
+          - translation booth
+          typical_rate_range:
+            min: 200000
+            max: 500000
+          notes: Multi-language interpretation with booths
+          data_source: estimated
+      auditorium_lighting:
+        items:
+        - id: SPC.AU.LTG.001
+          standard_name: Stage Lighting - LED Profile Spot 200W
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - profile spot
+          - stage spotlight
+          typical_rate_range:
+            min: 25000
+            max: 50000
+          notes: LED ellipsoidal profile spot
+          data_source: estimated
+        - id: SPC.AU.LTG.002
+          standard_name: Stage Lighting - LED Fresnel 200W
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - fresnel light
+          - stage wash light
+          typical_rate_range:
+            min: 20000
+            max: 40000
+          notes: LED fresnel wash light
+          data_source: estimated
+        - id: SPC.AU.LTG.003
+          standard_name: Lighting Control Console - DMX 512 Channel
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - DMX controller
+          - lighting console
+          typical_rate_range:
+            min: 50000
+            max: 200000
+          notes: DMX lighting control desk
+          data_source: estimated
+        - id: SPC.AU.LTG.004
+          standard_name: Stage Lighting - LED Par Can 100W RGBW
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - LED par can
+          - stage par light
+          - colour wash light
+          typical_rate_range:
+            min: 8000
+            max: 18000
+          notes: RGBW LED par can for colour wash
+          data_source: estimated
+        - id: SPC.AU.LTG.005
+          standard_name: House Lighting Dimmer System - 12 Channel
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - house dimmer
+          - auditorium dimmer rack
+          typical_rate_range:
+            min: 50000
+            max: 120000
+          notes: 12-channel dimmer rack with presets
+          data_source: estimated
+      control_room:
+        items:
+        - id: SPC.AU.CTR.001
+          standard_name: AV Control Room - Complete Fit-out
+          unit: LS
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - AV control room
+          - sound control room
+          - projection room
+          typical_rate_range:
+            min: 200000
+            max: 600000
+          notes: Control room furniture, cabling, acoustic treatment
+          data_source: estimated
+        - id: SPC.AU.CTR.002
+          standard_name: Green Room - Basic Fit-out
+          unit: LS
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - green room
+          - backstage room
+          - artist room
+          typical_rate_range:
+            min: 100000
+            max: 300000
+          notes: Green room with mirror, lighting, furniture
+          data_source: estimated
+  cold_storage:
+    categories:
+      puf_panels:
+        items:
+        - id: SPC.CS.PNL.001
+          standard_name: PUF Insulated Panel 80mm Thick - Cold Room (0 to 8 deg C)
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - industrial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - PUF panel 80mm
+          - cold room panel
+          - insulated sandwich panel
+          typical_rate_range:
+            min: 1800
+            max: 3200
+          notes: 0.5mm PPGI both sides with PUF core
+          data_source: estimated
+        - id: SPC.CS.PNL.002
+          standard_name: PUF Insulated Panel 100mm Thick - Cold Room (0 to 4 deg C)
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - industrial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - PUF panel 100mm
+          - thick cold room panel
+          typical_rate_range:
+            min: 2200
+            max: 3800
+          notes: Load bearing floor panel with anti-skid surface
+          data_source: estimated
+        - id: SPC.CS.PNL.003
+          standard_name: PUF Insulated Panel 120mm Thick - Freezer Room (-18 to -25 deg C)
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - industrial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - PUF panel 120mm
+          - freezer panel
+          typical_rate_range:
+            min: 2500
+            max: 4200
+          notes: Heavy duty for deep freeze applications
+          data_source: estimated
+        - id: SPC.CS.PNL.004
+          standard_name: PUF Insulated Panel 150mm Thick - Blast Freezer (-30 to -40 deg C)
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - industrial
+          requires: []
+          is_code_ref: IS 4991
+          dsr_item_ref: ''
+          aliases:
+          - PUF panel 150mm
+          - deep freeze panel
+          - blast freezer panel
+          typical_rate_range:
+            min: 3200
+            max: 5500
+          notes: Blast freezer grade insulation
+          data_source: estimated
+      cs_rooms:
+        items:
+        - id: SPC.CS.CRM.001
+          standard_name: Cold Room Complete 3x3x3m - (2 to 8 deg C)
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - cold room small
+          - walk-in cooler
+          - thanda kamra
+          typical_rate_range:
+            min: 250000
+            max: 450000
+          notes: Complete with panels, door, refrigeration, controls
+          data_source: estimated
+        - id: SPC.CS.CRM.002
+          standard_name: Freezer Room Complete 3x3x3m - (-18 to -22 deg C)
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - freezer room small
+          - walk-in freezer
+          typical_rate_range:
+            min: 400000
+            max: 700000
+          notes: Complete freezer with heater mats and defrost
+          data_source: estimated
+        - id: SPC.CS.CRM.003
+          standard_name: Blast Freezer Room 3x3x3m - (-35 deg C)
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - industrial
+          requires: []
+          is_code_ref: IS 4991
+          dsr_item_ref: ''
+          aliases:
+          - blast freezer
+          - quick freeze room
+          typical_rate_range:
+            min: 600000
+            max: 1100000
+          notes: Rapid freezing with high-velocity air
+          data_source: estimated
+        - id: SPC.CS.CRM.004
+          standard_name: Cold Room Complete 6x4x3m - (2 to 8 deg C)
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - industrial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - large cold room
+          - walk-in cooler large
+          typical_rate_range:
+            min: 500000
+            max: 900000
+          notes: Large cold room for commercial kitchen/warehouse
+          data_source: estimated
+      cs_doors_accessories:
+        items:
+        - id: SPC.CS.DR.001
+          standard_name: Cold Room Hinged Door - 900x2100mm Insulated
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - industrial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - cold room door
+          - insulated hinged door
+          typical_rate_range:
+            min: 35000
+            max: 65000
+          notes: Insulated door with heater frame and closer
+          data_source: estimated
+        - id: SPC.CS.DR.002
+          standard_name: Cold Room Sliding Door - 1500x2400mm Insulated
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - industrial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - cold room sliding door
+          - large insulated door
+          typical_rate_range:
+            min: 80000
+            max: 150000
+          notes: Heavy duty sliding door for large openings
+          data_source: estimated
+        - id: SPC.CS.DR.003
+          standard_name: Dock Leveller - Mechanical 2000x2500mm
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - industrial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - dock leveller
+          - loading dock ramp
+          typical_rate_range:
+            min: 120000
+            max: 250000
+          notes: Mechanical dock leveller for truck loading
+          data_source: estimated
+        - id: SPC.CS.DR.004
+          standard_name: Air Curtain - 900mm Wide
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - industrial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - air curtain 900
+          - door air barrier
+          - hawa ka parda
+          typical_rate_range:
+            min: 15000
+            max: 30000
+          notes: Cross-flow air curtain for cold room entrance
+          data_source: estimated
+        - id: SPC.CS.DR.005
+          standard_name: Strip Curtain - PVC 200mm Wide Strips
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - industrial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - strip curtain
+          - PVC curtain
+          - clear strip door
+          typical_rate_range:
+            min: 1500
+            max: 3000
+          notes: Clear PVC strip curtain for cold room entry
+          data_source: estimated
+      cs_refrigeration:
+        items:
+        - id: SPC.CS.REF.001
+          standard_name: Cold Storage Condensing Unit - 5 HP Air Cooled (Freon)
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - industrial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - condensing unit 5HP
+          - cold room compressor
+          typical_rate_range:
+            min: 80000
+            max: 150000
+          notes: Copeland/Bitzer semi-hermetic type
+          data_source: estimated
+        - id: SPC.CS.REF.002
+          standard_name: Cold Storage Condensing Unit - 10 HP Air Cooled (Freon)
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - industrial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - condensing unit 10HP
+          - large cold compressor
+          typical_rate_range:
+            min: 150000
+            max: 280000
+          notes: Large semi-hermetic condensing unit
+          data_source: estimated
+        - id: SPC.CS.REF.003
+          standard_name: Cold Storage Evaporator/Air Cooler Unit
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - industrial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - cold room evaporator
+          - unit cooler
+          typical_rate_range:
+            min: 40000
+            max: 80000
+          notes: Ceiling mounted unit cooler with defrost heater
+          data_source: estimated
+        - id: SPC.CS.REF.004
+          standard_name: Ammonia Refrigeration Plant - 30 TR
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - industrial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - ammonia plant
+          - NH3 compressor
+          typical_rate_range:
+            min: 500000
+            max: 900000
+          notes: Ammonia-based refrigeration plant room
+          data_source: estimated
+  clean_room:
+    categories:
+      hepa_filtration:
+        items:
+        - id: SPC.CR.HPA.001
+          standard_name: HEPA Filter Terminal Unit 600x600mm - H13 (99.97%)
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          - industrial
+          requires: []
+          is_code_ref: ISO 14644
+          dsr_item_ref: ''
+          aliases:
+          - HEPA filter H13
+          - terminal HEPA 600
+          typical_rate_range:
+            min: 12000
+            max: 25000
+          notes: Ceiling mounted HEPA terminal H13 grade
+          data_source: estimated
+        - id: SPC.CR.HPA.002
+          standard_name: HEPA Filter Terminal Unit 600x600mm - H14 (99.995%)
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          - industrial
+          requires: []
+          is_code_ref: ISO 14644
+          dsr_item_ref: ''
+          aliases:
+          - HEPA filter H14
+          - terminal HEPA H14
+          typical_rate_range:
+            min: 15000
+            max: 30000
+          notes: Ceiling mounted HEPA terminal H14 grade
+          data_source: estimated
+        - id: SPC.CR.HPA.003
+          standard_name: HEPA Filter Terminal Unit 1200x600mm - H14
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          - industrial
+          requires: []
+          is_code_ref: ISO 14644
+          dsr_item_ref: ''
+          aliases:
+          - HEPA filter 1200x600
+          - large terminal HEPA
+          typical_rate_range:
+            min: 25000
+            max: 45000
+          notes: Large HEPA terminal unit
+          data_source: estimated
+        - id: SPC.CR.HPA.004
+          standard_name: Fan Filter Unit (FFU) 1200x600mm - H14
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - industrial
+          requires: []
+          is_code_ref: ISO 14644
+          dsr_item_ref: ''
+          aliases:
+          - FFU
+          - fan filter unit
+          typical_rate_range:
+            min: 35000
+            max: 60000
+          notes: Self-powered fan filter unit with EC motor
+          data_source: estimated
+      air_shower_pass_box:
+        items:
+        - id: SPC.CR.ASH.001
+          standard_name: Air Shower - Single Person 1000x1000mm
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          - industrial
+          requires: []
+          is_code_ref: ISO 14644
+          dsr_item_ref: ''
+          aliases:
+          - air shower single
+          - personnel air shower
+          typical_rate_range:
+            min: 120000
+            max: 220000
+          notes: SS construction with HEPA nozzles and interlocked doors
+          data_source: estimated
+        - id: SPC.CR.ASH.002
+          standard_name: Air Shower - Double Person/Tunnel 2000x1000mm
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          - industrial
+          requires: []
+          is_code_ref: ISO 14644
+          dsr_item_ref: ''
+          aliases:
+          - air shower tunnel
+          - double air shower
+          typical_rate_range:
+            min: 200000
+            max: 380000
+          notes: Tunnel type for higher throughput
+          data_source: estimated
+        - id: SPC.CR.PBX.001
+          standard_name: Pass Box Static - 600x600x600mm SS
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          - industrial
+          requires: []
+          is_code_ref: ISO 14644
+          dsr_item_ref: ''
+          aliases:
+          - pass box static
+          - material pass through
+          typical_rate_range:
+            min: 25000
+            max: 50000
+          notes: Interlocked static pass box
+          data_source: estimated
+        - id: SPC.CR.PBX.002
+          standard_name: Pass Box Dynamic with HEPA - 600x600x600mm SS
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          - industrial
+          requires: []
+          is_code_ref: ISO 14644
+          dsr_item_ref: ''
+          aliases:
+          - dynamic pass box
+          - HEPA pass box
+          typical_rate_range:
+            min: 60000
+            max: 110000
+          notes: With HEPA air shower inside pass box
+          data_source: estimated
+      clean_room_finishes:
+        items:
+        - id: SPC.CR.FLR.001
+          standard_name: Clean Room Epoxy Floor Self-Levelling 3mm - Anti-Static
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          - industrial
+          requires: []
+          is_code_ref: ISO 14644
+          dsr_item_ref: ''
+          aliases:
+          - clean room epoxy
+          - ESD epoxy floor
+          typical_rate_range:
+            min: 800
+            max: 1500
+          notes: Electrostatic dissipative self-levelling epoxy
+          data_source: estimated
+        - id: SPC.CR.FLR.002
+          standard_name: Clean Room Vinyl Floor 2mm - Conductive
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          - industrial
+          requires: []
+          is_code_ref: ISO 14644
+          dsr_item_ref: ''
+          aliases:
+          - clean room vinyl
+          - conductive vinyl floor
+          typical_rate_range:
+            min: 1200
+            max: 2200
+          notes: Conductive homogeneous vinyl with welded joints
+          data_source: estimated
+        - id: SPC.CR.WL.001
+          standard_name: Clean Room SS Wall Panel - 0.8mm SS 304
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          - industrial
+          requires: []
+          is_code_ref: ISO 14644
+          dsr_item_ref: ''
+          aliases:
+          - SS wall panel
+          - stainless wall cladding
+          typical_rate_range:
+            min: 3500
+            max: 6000
+          notes: Flush-joint SS wall panel system
+          data_source: estimated
+        - id: SPC.CR.WL.002
+          standard_name: Clean Room Modular Wall Panel - PPGI/HPL Faced
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          - industrial
+          requires: []
+          is_code_ref: ISO 14644
+          dsr_item_ref: ''
+          aliases:
+          - modular wall panel
+          - HPL clean room wall
+          typical_rate_range:
+            min: 2000
+            max: 4000
+          notes: Modular sandwich panel with HPL finish
+          data_source: estimated
+      clean_room_accessories:
+        items:
+        - id: SPC.CR.ACC.001
+          standard_name: Ante Room / Gowning Area Fit-Out - Per sqm
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          - industrial
+          requires: []
+          is_code_ref: ISO 14644
+          dsr_item_ref: ''
+          aliases:
+          - ante room
+          - gowning area
+          - change room
+          typical_rate_range:
+            min: 4000
+            max: 8000
+          notes: Gowning area with bench, locker, mirror
+          data_source: estimated
+        - id: SPC.CR.ACC.002
+          standard_name: Differential Pressure Monitor - Digital Display
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          - industrial
+          requires: []
+          is_code_ref: ISO 14644
+          dsr_item_ref: ''
+          aliases:
+          - DP monitor
+          - room pressure monitor
+          - delta P display
+          typical_rate_range:
+            min: 8000
+            max: 18000
+          notes: Digital differential pressure indicator with alarm
+          data_source: estimated
+        - id: SPC.CR.ACC.003
+          standard_name: Particle Counter - Portable Handheld
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          - industrial
+          requires: []
+          is_code_ref: ISO 14644
+          dsr_item_ref: ''
+          aliases:
+          - particle counter
+          - airborne particle monitor
+          typical_rate_range:
+            min: 80000
+            max: 200000
+          notes: Laser particle counter for clean room validation
+          data_source: estimated
+        - id: SPC.CR.ACC.004
+          standard_name: Clean Room Ceiling Grid System - Aluminium T-Bar
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          - industrial
+          requires: []
+          is_code_ref: ISO 14644
+          dsr_item_ref: ''
+          aliases:
+          - clean room ceiling grid
+          - flush ceiling system
+          typical_rate_range:
+            min: 1500
+            max: 3000
+          notes: Gel-sealed aluminium T-bar grid for HEPA/FFU
+          data_source: estimated
+  laboratory:
+    categories:
+      lab_furniture:
+        items:
+        - id: SPC.LB.FRN.001
+          standard_name: Laboratory Work Bench - Epoxy Resin Top 1500x750mm
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - lab bench epoxy
+          - laboratory table
+          - lab work bench
+          typical_rate_range:
+            min: 25000
+            max: 50000
+          notes: Chemical resistant epoxy resin top on steel frame
+          data_source: estimated
+        - id: SPC.LB.FRN.002
+          standard_name: Laboratory Work Bench - Granite Top 1500x750mm
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - lab bench granite
+          - granite top lab table
+          typical_rate_range:
+            min: 30000
+            max: 60000
+          notes: Polished granite top for precision work
+          data_source: estimated
+        - id: SPC.LB.FRN.003
+          standard_name: Laboratory Island Bench - Double Sided with Reagent Shelf
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - island bench
+          - central lab bench
+          typical_rate_range:
+            min: 35000
+            max: 70000
+          notes: Double sided island with services and shelf
+          data_source: estimated
+        - id: SPC.LB.FRN.004
+          standard_name: Laboratory Work Bench - SS 304 Top 1500x750mm
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - SS lab bench
+          - stainless steel lab table
+          typical_rate_range:
+            min: 35000
+            max: 65000
+          notes: SS top for biology/food labs
+          data_source: estimated
+        - id: SPC.LB.FRN.005
+          standard_name: Laboratory Wall Cabinet - 900x300x600mm
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - lab wall cabinet
+          - overhead cabinet
+          typical_rate_range:
+            min: 8000
+            max: 16000
+          notes: Wall-mounted storage cabinet
+          data_source: estimated
+        - id: SPC.LB.FRN.006
+          standard_name: Laboratory Sink - PP/Epoxy Resin
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - lab sink
+          - chemical resistant sink
+          typical_rate_range:
+            min: 8000
+            max: 18000
+          notes: Acid-resistant laboratory sink
+          data_source: estimated
+      fume_hood:
+        items:
+        - id: SPC.LB.FMH.001
+          standard_name: Fume Hood 1200mm Wide - Ducted Type
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - fume hood 1200
+          - fume cupboard
+          - chemical hood
+          typical_rate_range:
+            min: 80000
+            max: 150000
+          notes: PP/SS lined with sash, blower and ducting
+          data_source: estimated
+        - id: SPC.LB.FMH.002
+          standard_name: Fume Hood 1500mm Wide - Ducted Type
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - fume hood 1500
+          - large fume cupboard
+          typical_rate_range:
+            min: 100000
+            max: 200000
+          notes: Large ducted fume hood
+          data_source: estimated
+        - id: SPC.LB.FMH.003
+          standard_name: Fume Hood 1200mm Wide - Ductless (Filtered)
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - ductless fume hood
+          - filtered fume hood
+          - recirculating hood
+          typical_rate_range:
+            min: 60000
+            max: 120000
+          notes: Carbon filter recirculating fume hood
+          data_source: estimated
+        - id: SPC.LB.FMH.004
+          standard_name: Laminar Flow Bench - Horizontal 1200mm
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - laminar flow bench
+          - clean bench
+          - LAF bench
+          typical_rate_range:
+            min: 60000
+            max: 120000
+          notes: Horizontal laminar flow clean bench
+          data_source: estimated
+        - id: SPC.LB.FMH.005
+          standard_name: Bio Safety Cabinet Class II Type A2 - 1200mm
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - BSC class II
+          - biosafety cabinet
+          typical_rate_range:
+            min: 200000
+            max: 400000
+          notes: For biological laboratory work
+          data_source: estimated
+      lab_gas_piping:
+        items:
+        - id: SPC.LB.GAS.001
+          standard_name: Laboratory Gas Piping - Copper for Nitrogen/Oxygen
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - lab gas piping
+          - nitrogen piping copper
+          typical_rate_range:
+            min: 800
+            max: 1500
+          notes: Medical grade copper piping with fittings
+          data_source: estimated
+        - id: SPC.LB.GAS.002
+          standard_name: Laboratory Gas Outlet Point - Wall Mounted
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - gas outlet point
+          - lab gas tap
+          typical_rate_range:
+            min: 2000
+            max: 4000
+          notes: Quick connect gas outlet with shutoff
+          data_source: estimated
+        - id: SPC.LB.GAS.003
+          standard_name: Laboratory Gas Manifold System - 4 Cylinder
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - gas manifold
+          - cylinder manifold
+          typical_rate_range:
+            min: 40000
+            max: 80000
+          notes: Auto changeover manifold with regulator
+          data_source: estimated
+      lab_safety:
+        items:
+        - id: SPC.LB.SAF.001
+          standard_name: Emergency Eye Wash Station - Wall Mounted
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          - industrial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - eye wash station
+          - emergency eye wash
+          typical_rate_range:
+            min: 8000
+            max: 18000
+          notes: ANSI Z358.1 compliant
+          data_source: estimated
+        - id: SPC.LB.SAF.002
+          standard_name: Emergency Shower with Eye Wash - Free Standing
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          - industrial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - safety shower
+          - emergency shower combo
+          typical_rate_range:
+            min: 25000
+            max: 50000
+          notes: Combined shower and eye wash station
+          data_source: estimated
+        - id: SPC.LB.SAF.003
+          standard_name: Chemical Storage Cabinet - Acid 90L
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - acid cabinet
+          - chemical storage
+          - acid locker
+          typical_rate_range:
+            min: 20000
+            max: 40000
+          notes: Fire-rated acid storage cabinet
+          data_source: estimated
+        - id: SPC.LB.SAF.004
+          standard_name: Laboratory Waste Treatment Unit - Neutralisation
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - waste treatment
+          - lab effluent treatment
+          typical_rate_range:
+            min: 100000
+            max: 250000
+          notes: Chemical waste neutralisation unit
+          data_source: estimated
+  kitchen_commercial:
+    categories:
+      cooking_equipment:
+        items:
+        - id: SPC.KT.CK.001
+          standard_name: Commercial Cooking Range - 4 Burner Gas
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - commercial gas range
+          - 4 burner stove
+          - badi gas chulha
+          typical_rate_range:
+            min: 40000
+            max: 80000
+          notes: Heavy-duty 4-burner gas range
+          data_source: estimated
+        - id: SPC.KT.CK.002
+          standard_name: Commercial Cooking Range - 6 Burner Gas with Oven
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - 6 burner range
+          - gas range with oven
+          typical_rate_range:
+            min: 80000
+            max: 150000
+          notes: 6-burner range with oven below
+          data_source: estimated
+        - id: SPC.KT.CK.003
+          standard_name: Commercial Induction Cooktop - 4 Zone
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - induction cooktop
+          - commercial induction
+          typical_rate_range:
+            min: 60000
+            max: 120000
+          notes: Heavy-duty 4-zone induction cooktop
+          data_source: estimated
+        - id: SPC.KT.CK.004
+          standard_name: Commercial Tandoor Oven - Gas Fired SS
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - tandoor oven
+          - commercial tandoor
+          typical_rate_range:
+            min: 30000
+            max: 60000
+          notes: Stainless steel gas-fired tandoor
+          data_source: estimated
+        - id: SPC.KT.CK.005
+          standard_name: Commercial Chimney Hood - SS 304 with Filters 1500mm
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - kitchen chimney
+          - commercial hood
+          - exhaust hood
+          typical_rate_range:
+            min: 40000
+            max: 80000
+          notes: SS hood with baffle filters and light
+          data_source: estimated
+      kitchen_equipment:
+        items:
+        - id: SPC.KT.EQ.001
+          standard_name: Grease Trap - SS 304 Grade Under Sink
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - grease trap
+          - grease interceptor
+          - tel jali
+          typical_rate_range:
+            min: 15000
+            max: 30000
+          notes: Under-sink stainless steel grease trap
+          data_source: estimated
+        - id: SPC.KT.EQ.002
+          standard_name: Walk-In Cooler 2x2x2.4m - (2 to 8 deg C)
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - walk-in cooler kitchen
+          - cold room small kitchen
+          typical_rate_range:
+            min: 200000
+            max: 380000
+          notes: Kitchen walk-in cooler with shelving
+          data_source: estimated
+        - id: SPC.KT.EQ.003
+          standard_name: Walk-In Freezer 2x2x2.4m - (-18 deg C)
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - walk-in freezer kitchen
+          - kitchen freezer room
+          typical_rate_range:
+            min: 350000
+            max: 600000
+          notes: Kitchen walk-in freezer
+          data_source: estimated
+        - id: SPC.KT.EQ.004
+          standard_name: SS Prep Table - 1500x750mm with Undershelf
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - prep table SS
+          - work table stainless
+          typical_rate_range:
+            min: 15000
+            max: 30000
+          notes: SS 304 food preparation table
+          data_source: estimated
+        - id: SPC.KT.EQ.005
+          standard_name: Commercial Dishwasher - Hood Type
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - commercial dishwasher
+          - hood dishwasher
+          typical_rate_range:
+            min: 200000
+            max: 400000
+          notes: Pass-through hood-type dishwasher
+          data_source: estimated
+        - id: SPC.KT.EQ.006
+          standard_name: Kitchen Exhaust System - Ductwork and Fan Complete
+          unit: LS
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - kitchen exhaust system
+          - commercial kitchen ventilation
+          typical_rate_range:
+            min: 100000
+            max: 300000
+          notes: Complete exhaust duct, fan, and make-up air
+          data_source: estimated
+        - id: SPC.KT.EQ.007
+          standard_name: Kitchen Fire Suppression System - Wet Chemical
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - kitchen fire system
+          - wet chemical suppression
+          - ansul system
+          typical_rate_range:
+            min: 80000
+            max: 180000
+          notes: Automatic wet chemical fire suppression for hoods
+          data_source: estimated
+  sports_facilities:
+    categories:
+      running_track:
+        items:
+        - id: SPC.SF.TRK.001
+          standard_name: Synthetic Running Track - 13mm PU/Rubber Spray System
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - synthetic track
+          - running track surface
+          - athletic track
+          typical_rate_range:
+            min: 2000
+            max: 3800
+          notes: IAAF compliant spray coat system
+          data_source: estimated
+        - id: SPC.SF.TRK.002
+          standard_name: Synthetic Running Track - 14mm Prefabricated Rubber
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - prefab track
+          - rubber track surface
+          typical_rate_range:
+            min: 3000
+            max: 5500
+          notes: Factory made vulcanized rubber sheets
+          data_source: estimated
+        - id: SPC.SF.TRK.003
+          standard_name: Running Track Sub-Base - Asphalt 50mm
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - track sub-base
+          - asphalt base layer
+          typical_rate_range:
+            min: 300
+            max: 550
+          notes: Asphalt sub-base for synthetic track
+          data_source: estimated
+      courts:
+        items:
+        - id: SPC.SF.CRT.001
+          standard_name: Tennis Court Surface - Acrylic 7 Layer System
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - tennis court surface
+          - acrylic court surface
+          typical_rate_range:
+            min: 600
+            max: 1200
+          notes: ITF approved multi-layer acrylic
+          data_source: estimated
+        - id: SPC.SF.CRT.002
+          standard_name: Tennis Court Surface - Synthetic Clay
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - clay court
+          - synthetic clay tennis
+          typical_rate_range:
+            min: 800
+            max: 1500
+          notes: Artificial clay surface for tennis
+          data_source: estimated
+        - id: SPC.SF.CRT.003
+          standard_name: Basketball Court PU Surface 5mm
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - basketball court surface
+          - PU court surface
+          typical_rate_range:
+            min: 1200
+            max: 2200
+          notes: Multi-sport PU surface
+          data_source: estimated
+        - id: SPC.SF.CRT.004
+          standard_name: Badminton Court PVC/Vinyl Mat 4.5mm - Indoor
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - badminton mat
+          - indoor court vinyl
+          typical_rate_range:
+            min: 800
+            max: 1500
+          notes: BWF approved vinyl sports mat
+          data_source: estimated
+        - id: SPC.SF.CRT.005
+          standard_name: Cricket Practice Pitch - Artificial Turf
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - cricket pitch
+          - artificial cricket surface
+          - naqli pitch
+          typical_rate_range:
+            min: 1500
+            max: 3000
+          notes: Synthetic cricket pitch surface
+          data_source: estimated
+      floodlighting:
+        items:
+        - id: SPC.SF.FLD.001
+          standard_name: Sports Floodlight - LED 500W with Pole
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - sports floodlight
+          - LED mast light
+          typical_rate_range:
+            min: 40000
+            max: 80000
+          notes: LED floodlight on 15-20m galvanised pole
+          data_source: estimated
+        - id: SPC.SF.FLD.002
+          standard_name: Sports Floodlight - LED 1000W with Pole
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - large floodlight
+          - stadium light
+          typical_rate_range:
+            min: 80000
+            max: 160000
+          notes: High-power LED flood for large grounds
+          data_source: estimated
+        - id: SPC.SF.FLD.003
+          standard_name: Floodlight GI Pole - 15m High Hinged
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - flood pole 15m
+          - light mast
+          - roshni ka khamba
+          typical_rate_range:
+            min: 40000
+            max: 80000
+          notes: Hinged/tilt-down galvanised lighting pole
+          data_source: estimated
+      gymnasium:
+        items:
+        - id: SPC.SF.GYM.001
+          standard_name: Gymnasium Rubber Flooring 15mm - Interlocking Tile
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - gym rubber tile
+          - fitness floor tile
+          typical_rate_range:
+            min: 1000
+            max: 2000
+          notes: EPDM rubber interlocking tiles
+          data_source: estimated
+        - id: SPC.SF.GYM.002
+          standard_name: Gymnasium Wooden Floor - Maple Sprung 22mm
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - gym wooden floor
+          - maple sports floor
+          typical_rate_range:
+            min: 1800
+            max: 3500
+          notes: Sprung maple flooring for gymnasium
+          data_source: estimated
+        - id: SPC.SF.GYM.003
+          standard_name: Gymnasium Synthetic Floor - PVC/PU 4.5mm
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - gym PVC floor
+          - synthetic gym floor
+          typical_rate_range:
+            min: 800
+            max: 1500
+          notes: Multi-sport synthetic surface for gym
+          data_source: estimated
+  telecom:
+    categories:
+      server_room:
+        items:
+        - id: SPC.TC.SR.001
+          standard_name: Server Room Raised Floor - 600x600mm Steel Panel
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - raised floor
+          - server room floor
+          - false floor
+          typical_rate_range:
+            min: 1500
+            max: 3000
+          notes: Steel panel with HPL finish on pedestals
+          data_source: estimated
+        - id: SPC.TC.SR.002
+          standard_name: Server Room Raised Floor - Perforated Panel 25% Open
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - perforated raised floor
+          - ventilated floor panel
+          typical_rate_range:
+            min: 2000
+            max: 3800
+          notes: Perforated panel for under-floor air distribution
+          data_source: estimated
+        - id: SPC.TC.SR.003
+          standard_name: Network Rack - 42U 600x1000mm
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - server rack 42U
+          - network cabinet
+          - IT rack
+          typical_rate_range:
+            min: 25000
+            max: 50000
+          notes: Standard 42U floor-standing network rack
+          data_source: estimated
+        - id: SPC.TC.SR.004
+          standard_name: Network Rack - 12U Wall Mount 600x450mm
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - wall rack 12U
+          - small network cabinet
+          typical_rate_range:
+            min: 6000
+            max: 12000
+          notes: Wall-mounted network rack
+          data_source: estimated
+      structured_cabling:
+        items:
+        - id: SPC.TC.SC.001
+          standard_name: Structured Cabling - Cat6 UTP Per Point (Cable + Patch Panel + Faceplate)
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - Cat6 point
+          - LAN point
+          - network point
+          typical_rate_range:
+            min: 2500
+            max: 5000
+          notes: Cat6 UTP data point complete
+          data_source: estimated
+        - id: SPC.TC.SC.002
+          standard_name: Structured Cabling - Cat6A STP Per Point
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - Cat6A point
+          - shielded data point
+          typical_rate_range:
+            min: 4000
+            max: 7000
+          notes: Cat6A shielded 10G-ready data point
+          data_source: estimated
+        - id: SPC.TC.SC.003
+          standard_name: Structured Cabling - Fibre Optic SM Per Point (6-Core)
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - fibre point
+          - fiber optic point
+          - optical cable
+          typical_rate_range:
+            min: 6000
+            max: 12000
+          notes: Single-mode fibre with LC connectors
+          data_source: estimated
+        - id: SPC.TC.SC.004
+          standard_name: Structured Cabling - Fibre Optic MM Per Point (12-Core)
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - MM fibre point
+          - multimode fibre
+          typical_rate_range:
+            min: 8000
+            max: 15000
+          notes: Multi-mode OM3/OM4 fibre with MPO
+          data_source: estimated
+        - id: SPC.TC.SC.005
+          standard_name: Patch Panel - 24 Port Cat6
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - patch panel 24
+          - Cat6 patch panel
+          typical_rate_range:
+            min: 3000
+            max: 6000
+          notes: 24-port loaded Cat6 patch panel
+          data_source: estimated
+        - id: SPC.TC.SC.006
+          standard_name: Fibre Patch Panel - 24 Port LC
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - fibre patch panel
+          - LC patch panel
+          typical_rate_range:
+            min: 5000
+            max: 10000
+          notes: 24-port LC fibre patch panel
+          data_source: estimated
+      telecom_infrastructure:
+        items:
+        - id: SPC.TC.INF.001
+          standard_name: UPS Room - Complete Fit-Out (Rack, Cabling, Earthing)
+          unit: LS
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - UPS room
+          - battery room fit-out
+          typical_rate_range:
+            min: 200000
+            max: 500000
+          notes: UPS room with ventilation and fire suppression
+          data_source: estimated
+        - id: SPC.TC.INF.002
+          standard_name: DG Room - Complete Fit-Out (Base Frame, Exhaust, Fuel Tank)
+          unit: LS
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - DG room
+          - generator room fit-out
+          typical_rate_range:
+            min: 300000
+            max: 800000
+          notes: Generator room with acoustic treatment
+          data_source: estimated
+        - id: SPC.TC.INF.003
+          standard_name: Telecom Earth Pit - Chemical with GI Strip
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - earth pit telecom
+          - IT earthing
+          - grounding pit
+          typical_rate_range:
+            min: 5000
+            max: 12000
+          notes: Maintenance-free chemical earthing electrode
+          data_source: estimated
+        - id: SPC.TC.INF.004
+          standard_name: Cable Tray - Perforated GI 300mm Wide
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - cable tray 300
+          - GI tray
+          - wire tray
+          typical_rate_range:
+            min: 400
+            max: 750
+          notes: Perforated GI cable tray with cover
+          data_source: estimated
+        - id: SPC.TC.INF.005
+          standard_name: Cable Tray - Ladder Type GI 600mm Wide
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - ladder tray 600
+          - heavy cable tray
+          typical_rate_range:
+            min: 600
+            max: 1100
+          notes: Ladder-type cable tray for heavy cables
+          data_source: estimated
+  swimming_pool_extended:
+    categories:
+      pool_lighting:
+        items:
+        - id: SPC.PX.LGT.001
+          standard_name: Swimming Pool Underwater LED Light - 20W RGB - IP68
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - pool underwater light
+          - RGB pool light
+          typical_rate_range:
+            min: 5000
+            max: 12000
+          notes: 12V submersible LED with niche
+          data_source: estimated
+        - id: SPC.PX.LGT.002
+          standard_name: Swimming Pool Perimeter LED Strip Lighting
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - pool perimeter light
+          - pool edge LED
+          typical_rate_range:
+            min: 500
+            max: 1200
+          notes: IP68 rated LED strip in channel
+          data_source: estimated
+      pool_deck:
+        items:
+        - id: SPC.PX.DCK.001
+          standard_name: Pool Deck - Anti-Skid Ceramic Tiles - 300x300mm
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - pool deck tile
+          - anti-skid pool tile
+          typical_rate_range:
+            min: 800
+            max: 1500
+          notes: R11 anti-slip rated tiles
+          data_source: estimated
+        - id: SPC.PX.DCK.002
+          standard_name: Pool Deck - Kota Stone - Honed Anti-Slip Finish
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - kota stone pool deck
+          - natural stone pool deck
+          typical_rate_range:
+            min: 600
+            max: 1200
+          notes: Honed finish for anti-slip
+          data_source: estimated
+        - id: SPC.PX.DCK.003
+          standard_name: Pool Overflow Channel/Gutter Grating - SS/Plastic
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - pool overflow grating
+          - pool gutter grate
+          typical_rate_range:
+            min: 800
+            max: 1800
+          notes: Anti-slip finger-safe grating
+          data_source: estimated
+      pool_safety:
+        items:
+        - id: SPC.PX.SAF.001
+          standard_name: Pool Safety Cover - Retractable Automatic - Polycarbonate Slat
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - pool cover automatic
+          - retractable pool cover
+          typical_rate_range:
+            min: 3000
+            max: 7000
+          notes: Motor driven slatted cover
+          data_source: estimated
+        - id: SPC.PX.SAF.002
+          standard_name: Pool Handrail - SS 316 Grade - 50mm OD
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - pool handrail SS
+          - swimming pool grab rail
+          typical_rate_range:
+            min: 5000
+            max: 12000
+          notes: Marine grade stainless steel
+          data_source: estimated
+        - id: SPC.PX.SAF.003
+          standard_name: Pool Ladder - SS 316 Grade - 3 Step
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - pool ladder SS
+          - swimming pool steps
+          typical_rate_range:
+            min: 8000
+            max: 18000
+          notes: Marine grade stainless steel ladder
+          data_source: estimated
+  acoustic_treatment:
+    categories:
+      acoustic_panels:
+        items:
+        - id: SPC.AC.PNL.001
+          standard_name: Acoustic Panel - Glass Wool 50mm - Fabric Wrapped - NRC 0.85
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - acoustic glass wool panel
+          - sound absorbing panel
+          typical_rate_range:
+            min: 1200
+            max: 2500
+          notes: High NRC for speech intelligibility
+          data_source: estimated
+        - id: SPC.AC.PNL.002
+          standard_name: Acoustic Panel - Perforated Wood/MDF - 18mm - on Battens
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - perforated wood acoustic
+          - micro-perforated MDF
+          typical_rate_range:
+            min: 1500
+            max: 3000
+          notes: Perforated face with acoustic backing
+          data_source: estimated
+        - id: SPC.AC.PNL.003
+          standard_name: Acoustic Diffuser Panel - QRD (Quadratic Residue) Type
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - acoustic diffuser
+          - QRD diffuser
+          - sound diffuser
+          typical_rate_range:
+            min: 3000
+            max: 6000
+          notes: For studios, auditoriums
+          data_source: estimated
+        - id: SPC.AC.PNL.004
+          standard_name: Acoustic Door - STC 35-40 - Solid Core with Seals
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - acoustic door STC 35
+          - sound proof door
+          typical_rate_range:
+            min: 25000
+            max: 60000
+          notes: Including frame, seals, drop seal
+          data_source: estimated
+        - id: SPC.AC.PNL.005
+          standard_name: Acoustic Door - STC 45-50 - Double Seal Heavy Type
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - heavy acoustic door
+          - studio door
+          typical_rate_range:
+            min: 50000
+            max: 120000
+          notes: For recording studios and server rooms
+          data_source: estimated
+      sound_insulation:
+        items:
+        - id: SPC.AC.INS.001
+          standard_name: Sound Insulation - Resilient Channel on Wall/Ceiling
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - residential
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - resilient channel
+          - RC channel sound
+          typical_rate_range:
+            min: 150
+            max: 300
+          notes: Vibration decoupling channel
+          data_source: estimated
+        - id: SPC.AC.INS.002
+          standard_name: Sound Insulation - Mass Loaded Vinyl (MLV) Barrier - 2mm
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - mass loaded vinyl
+          - MLV barrier
+          - sound barrier
+          typical_rate_range:
+            min: 400
+            max: 800
+          notes: High density sound barrier membrane
+          data_source: estimated
+        - id: SPC.AC.INS.003
+          standard_name: Floating Floor System - for Acoustic Isolation
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - floating floor acoustic
+          - vibration isolated floor
+          typical_rate_range:
+            min: 800
+            max: 1800
+          notes: Neoprene/spring isolators with concrete slab
+          data_source: estimated
+  sports_facility:
+    categories:
+      sports_surfaces:
+        items:
+        - id: SPC.SP.SRF.001
+          standard_name: Badminton Court - Wooden Sprung Floor (Teak/Maple)
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          - residential
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - badminton wooden court
+          - sprung floor badminton
+          typical_rate_range:
+            min: 400000
+            max: 800000
+          notes: Per court 13.4x6.1m including markings
+          data_source: estimated
+        - id: SPC.SP.SRF.002
+          standard_name: Badminton Court - PU/Vinyl Roll Surface
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          - residential
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - badminton PU court
+          - vinyl badminton court
+          typical_rate_range:
+            min: 200000
+            max: 450000
+          notes: Per court including sub-floor prep and markings
+          data_source: estimated
+        - id: SPC.SP.SRF.003
+          standard_name: Basketball/Volleyball Court - Acrylic/PU Surface
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - basketball court surface
+          - indoor court surface
+          typical_rate_range:
+            min: 600000
+            max: 1500000
+          notes: Per court including markings and equipment
+          data_source: estimated
+        - id: SPC.SP.SRF.004
+          standard_name: Squash Court - Complete (Glass Back Wall, Sprung Floor, Finishes)
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - squash court complete
+          - squash court build
+          typical_rate_range:
+            min: 1500000
+            max: 3500000
+          notes: Complete court including plaster system
+          data_source: estimated
+        - id: SPC.SP.SRF.005
+          standard_name: Table Tennis Floor - PVC/Vinyl Roll - per Court Area
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          - residential
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - TT court floor
+          - table tennis flooring
+          typical_rate_range:
+            min: 80000
+            max: 200000
+          notes: Per court area 14x7m
+          data_source: estimated
+      sports_equipment:
+        items:
+        - id: SPC.SP.EQP.001
+          standard_name: Gymnasium Rubber Flooring - 15mm Thick - Interlocking Tiles
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          - residential
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - gym rubber floor
+          - gym tiles
+          - rubber mat gym
+          typical_rate_range:
+            min: 800
+            max: 1600
+          notes: Heavy duty rubber tiles
+          data_source: estimated
+        - id: SPC.SP.EQP.002
+          standard_name: Gymnasium Wall Mirror - 6mm Toughened - Full Height
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          - residential
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - gym mirror
+          - exercise room mirror
+          typical_rate_range:
+            min: 1200
+            max: 2500
+          notes: Safety backed toughened glass mirror
+          data_source: estimated
+        - id: SPC.SP.EQP.003
+          standard_name: Yoga/Dance Studio Sprung Floor - Timber on Foam Base
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - dance studio floor
+          - sprung floor yoga
+          - studio floor
+          typical_rate_range:
+            min: 1500
+            max: 3000
+          notes: Including foam base, plywood, vinyl/wood finish
+          data_source: estimated
+  cold_storage_extended:
+    categories:
+      cold_storage_systems:
+        items:
+        - id: SPC.CS.SYS.001
+          standard_name: Cold Storage Anti-Frost Heave System - Under Floor Heating
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - industrial
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - anti-frost heave
+          - sub-floor heating cold store
+          typical_rate_range:
+            min: 1500
+            max: 3000
+          notes: Prevents ground freezing below cold store
+          data_source: estimated
+        - id: SPC.CS.SYS.002
+          standard_name: Cold Storage Insulated Floor - PUF 150mm + VCI + Concrete Topping
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - industrial
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - cold store insulated floor
+          - frozen floor system
+          typical_rate_range:
+            min: 2000
+            max: 4000
+          notes: Including vapour barrier and protection screed
+          data_source: estimated
+        - id: SPC.CS.SYS.003
+          standard_name: Cold Storage Sliding Insulated Door - 2.5x3.0m - Manual
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - industrial
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - cold room sliding door
+          - insulated door cold
+          typical_rate_range:
+            min: 80000
+            max: 180000
+          notes: PUF insulated with heater strip
+          data_source: estimated
+        - id: SPC.CS.SYS.004
+          standard_name: Cold Storage Strip Curtain - PVC - for Doorway
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - industrial
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - PVC strip curtain
+          - cold room curtain
+          typical_rate_range:
+            min: 1000
+            max: 2500
+          notes: Overlapping PVC strips to reduce cold loss
+          data_source: estimated
+  laboratory_extended:
+    categories:
+      lab_services:
+        items:
+        - id: SPC.LB.SRV.001
+          standard_name: Laboratory Compressed Air System - Oil Free Compressor + Piping
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          - industrial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - lab compressed air
+          - oil free compressor lab
+          typical_rate_range:
+            min: 200000
+            max: 500000
+          notes: Including compressor, dryer, piping
+          data_source: estimated
+        - id: SPC.LB.SRV.002
+          standard_name: Laboratory Vacuum System - Central Vacuum Pump + Piping
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          - industrial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - lab vacuum system
+          - central vacuum lab
+          typical_rate_range:
+            min: 150000
+            max: 400000
+          notes: Rotary vane pump with SS piping
+          data_source: estimated
+        - id: SPC.LB.SRV.003
+          standard_name: Laboratory DI/RO Water System - Purification + Distribution
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          - industrial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - lab DI water
+          - lab RO system
+          - purified water lab
+          typical_rate_range:
+            min: 300000
+            max: 800000
+          notes: DI/RO purification with PVDF/PP piping
+          data_source: estimated
+        - id: SPC.LB.SRV.004
+          standard_name: Laboratory Emergency Shower and Eye Wash Station - Combination
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          - industrial
+          requires: []
+          is_code_ref: ANSI Z358.1
+          dsr_item_ref: ''
+          aliases:
+          - emergency shower lab
+          - eye wash shower combo
+          typical_rate_range:
+            min: 25000
+            max: 60000
+          notes: Including drainage and plumbing
+          data_source: IS codes only
+        - id: SPC.LB.SRV.005
+          standard_name: Laboratory Waste Neutralization Tank - PP/HDPE - 500L
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          - industrial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - lab waste neutralizer
+          - acid waste tank
+          typical_rate_range:
+            min: 50000
+            max: 120000
+          notes: Chemical resistant waste treatment tank
+          data_source: estimated
+  clean_room_extended:
+    categories:
+      clean_room_systems:
+        items:
+        - id: SPC.CR.SYS.001
+          standard_name: Clean Room FFU (Fan Filter Unit) - HEPA - 1200x600mm
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - industrial
+          - institutional
+          requires: []
+          is_code_ref: ISO 14644
+          dsr_item_ref: ''
+          aliases:
+          - FFU clean room
+          - fan filter unit
+          typical_rate_range:
+            min: 25000
+            max: 55000
+          notes: Self-contained HEPA fan filter unit
+          data_source: IS codes only
+        - id: SPC.CR.SYS.002
+          standard_name: Clean Room Sticky Mat/Tacky Mat Station
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - industrial
+          - institutional
+          requires: []
+          is_code_ref: ISO 14644
+          dsr_item_ref: ''
+          aliases:
+          - sticky mat
+          - tacky mat
+          - clean room mat
+          typical_rate_range:
+            min: 2000
+            max: 5000
+          notes: Including frame and initial mat set
+          data_source: estimated
+        - id: SPC.CR.SYS.003
+          standard_name: Clean Room Particle Counter - Installed Monitoring System
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - industrial
+          - institutional
+          requires: []
+          is_code_ref: ISO 14644
+          dsr_item_ref: ''
+          aliases:
+          - particle counter
+          - clean room monitor
+          typical_rate_range:
+            min: 80000
+            max: 200000
+          notes: Continuous air monitoring per point
+          data_source: IS codes only
+        - id: SPC.CR.SYS.004
+          standard_name: Clean Room Differential Pressure Monitor - with Digital Display
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - industrial
+          - institutional
+          requires: []
+          is_code_ref: ISO 14644
+          dsr_item_ref: ''
+          aliases:
+          - DP monitor clean room
+          - pressure gauge clean room
+          typical_rate_range:
+            min: 8000
+            max: 20000
+          notes: Magnehelic/digital pressure gauge
+          data_source: IS codes only
+  sports_extended:
+    categories:
+      sports_infrastructure:
+        items:
+        - id: SPC.SX.INF.001
+          standard_name: Swimming Pool Starting Block - Competition Grade - SS 316
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          requires: []
+          is_code_ref: FINA standards
+          dsr_item_ref: ''
+          aliases:
+          - pool starting block
+          - competition dive block
+          typical_rate_range:
+            min: 30000
+            max: 70000
+          notes: FINA approved starting platform
+          data_source: IS codes only
+        - id: SPC.SX.INF.002
+          standard_name: Swimming Pool Lane Divider/Rope - Competition Grade - 25m
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - pool lane rope
+          - lane divider
+          typical_rate_range:
+            min: 15000
+            max: 35000
+          notes: Anti-wave design per lane
+          data_source: estimated
+        - id: SPC.SX.INF.003
+          standard_name: Cricket Practice Net - Steel Structure with Nylon Net
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - cricket net
+          - practice net cricket
+          typical_rate_range:
+            min: 100000
+            max: 250000
+          notes: Per bay, including turf/matting
+          data_source: estimated
+        - id: SPC.SX.INF.004
+          standard_name: Tennis Court - Acrylic Surface - Complete with Fencing
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          - residential
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - tennis court
+          - hard court tennis
+          typical_rate_range:
+            min: 1500000
+            max: 3500000
+          notes: Per court including net, posts, fencing
+          data_source: estimated
+        - id: SPC.SX.INF.005
+          standard_name: Indoor Climbing Wall - Modular Panel System
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - climbing wall
+          - rock climbing wall
+          typical_rate_range:
+            min: 5000
+            max: 12000
+          notes: Including structural steel frame and holds
+          data_source: estimated
+        - id: SPC.SX.INF.006
+          standard_name: Bowling Alley Lane - Complete with Equipment
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - bowling lane
+          - bowling alley
+          typical_rate_range:
+            min: 2000000
+            max: 5000000
+          notes: Per lane including pinsetter, ball return, scoring
+          data_source: estimated
+        - id: SPC.SX.INF.007
+          standard_name: Billiards/Snooker Room - Complete Fit-Out with Table
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - residential
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - snooker room
+          - billiards room setup
+          typical_rate_range:
+            min: 300000
+            max: 800000
+          notes: Including table, lighting, cue rack, flooring
+          data_source: estimated
+        - id: SPC.SX.INF.008
+          standard_name: Sauna Room - Dry Heat - Cedar/Pine - 4 Person
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - hospitality
+          - residential
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - sauna room
+          - dry sauna
+          - Finnish sauna
+          typical_rate_range:
+            min: 200000
+            max: 500000
+          notes: Including heater, benches, insulation, controls
+          data_source: estimated

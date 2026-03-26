@@ -1,0 +1,1110 @@
+rules:
+  # ============================================================
+  # EVERY BUILDING - EXTERNAL WORKS DEPENDENCIES
+  # ============================================================
+  - id: "DEP-EXT-001"
+    trigger: "every_building"
+    required_items: ["compound_wall", "main_gate", "approach_road", "external_drainage", "external_lighting"]
+    trade: "external"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Every building requires compound wall, gate, approach road, external drainage, lighting"
+
+  - id: "DEP-EXT-002"
+    trigger: "compound_wall"
+    required_items: ["foundation_compound", "masonry_compound", "plaster_compound", "coping", "painting"]
+    trade: "external"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Compound wall: foundation, masonry, plaster, coping stone, painting"
+
+  - id: "DEP-EXT-003"
+    trigger: "main_gate"
+    required_items: ["gate_frame", "gate_shutter", "hinges_heavy", "locking_system", "gate_motor"]
+    trade: "external"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Main gate: frame, shutter, heavy duty hinges, locking, motorized operation if needed"
+
+  - id: "DEP-EXT-004"
+    trigger: "wicket_gate"
+    required_items: ["gate_frame_pedestrian", "gate_shutter_pedestrian", "lock", "intercom"]
+    trade: "external"
+    priority: 2
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Pedestrian wicket gate with frame, shutter, lock, and intercom"
+
+  # ============================================================
+  # MULTI-UNIT / APARTMENT EXTERNAL DEPENDENCIES
+  # ============================================================
+  - id: "DEP-EXT-005"
+    trigger: "multi_unit"
+    required_items: ["common_water_tank", "pump_room", "dg_room", "stp", "parking_area"]
+    trade: "external"
+    priority: 1
+    condition: ""
+    building_types: ["residential_apartment", "commercial"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Multi-unit development requires common water tank, pump room, DG room, STP, parking"
+
+  - id: "DEP-EXT-006"
+    trigger: "multi_unit"
+    required_items: ["security_cabin", "visitor_parking", "fire_tender_access"]
+    trade: "external"
+    priority: 1
+    condition: ""
+    building_types: ["residential_apartment", "commercial"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "NBC Part 4"
+    note: "Multi-unit: security cabin, visitor parking, fire tender access road"
+
+  - id: "DEP-EXT-007"
+    trigger: "multi_unit"
+    required_items: ["children_play_area", "garden_area", "walking_path"]
+    trade: "landscape"
+    priority: 2
+    condition: ""
+    building_types: ["residential_apartment"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Residential complex: children play area, garden, walking paths"
+
+  - id: "DEP-EXT-008"
+    trigger: "multi_unit"
+    required_items: ["community_hall", "gym_room", "swimming_pool_area"]
+    trade: "external"
+    priority: 2
+    condition: "premium_project"
+    building_types: ["residential_apartment"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Premium residential: community hall, gym, swimming pool area"
+
+  # ============================================================
+  # CONSTRUCTION PRELIMINARIES DEPENDENCIES
+  # ============================================================
+  - id: "DEP-EXT-009"
+    trigger: "construction_prelims"
+    required_items: ["site_office", "barricading", "temp_water_supply", "temp_power_supply", "safety_equipment"]
+    trade: "preliminaries"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "BIS"
+    note: "Construction preliminaries: site office, barricading, temp water, temp power, safety"
+
+  - id: "DEP-EXT-010"
+    trigger: "construction_prelims"
+    required_items: ["material_storage_shed", "labour_hutment", "sanitary_facility"]
+    trade: "preliminaries"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Construction facilities: material storage, labour hutment, sanitary facilities"
+
+  - id: "DEP-EXT-011"
+    trigger: "construction_prelims"
+    required_items: ["first_aid_kit", "fire_extinguisher_site", "safety_signage"]
+    trade: "preliminaries"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "Building and Other Construction Workers Act"
+    note: "Site safety: first aid, fire extinguisher, safety signage per BOCW Act"
+
+  - id: "DEP-EXT-012"
+    trigger: "construction_prelims"
+    required_items: ["scaffolding_full_height", "safety_net", "toe_board"]
+    trade: "preliminaries"
+    priority: 1
+    condition: "building_above_10m"
+    building_types: [all]
+    room_types: []
+    min_floors: 3
+    min_area_sqm: 0
+    is_code_ref: "IS 3696"
+    note: "High-rise construction safety: full-height scaffolding, safety nets, toe boards"
+
+  - id: "DEP-EXT-013"
+    trigger: "construction_prelims"
+    required_items: ["tower_crane", "hoist", "batching_plant"]
+    trade: "preliminaries"
+    priority: 1
+    condition: "large_project"
+    building_types: [all]
+    room_types: []
+    min_floors: 5
+    min_area_sqm: 1000
+    is_code_ref: ""
+    note: "Large project construction equipment: tower crane, hoist, batching plant"
+
+  - id: "DEP-EXT-014"
+    trigger: "construction_prelims"
+    required_items: ["survey_instruments", "benchmark", "setting_out"]
+    trade: "preliminaries"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Survey: instruments, benchmark establishment, setting out before construction"
+
+  - id: "DEP-EXT-015"
+    trigger: "construction_prelims"
+    required_items: ["insurance_car", "insurance_tpli", "performance_guarantee"]
+    trade: "preliminaries"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Insurance: CAR policy, TPLI, performance guarantee for construction"
+
+  # ============================================================
+  # HANDOVER DEPENDENCIES
+  # ============================================================
+  - id: "DEP-EXT-016"
+    trigger: "handover"
+    required_items: ["final_cleaning", "snag_list", "as_built_drawings", "om_manuals", "warranties"]
+    trade: "preliminaries"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Handover: final cleaning, snag list clearance, as-built drawings, O&M manuals, warranties"
+
+  - id: "DEP-EXT-017"
+    trigger: "handover"
+    required_items: ["testing_commissioning_report", "occupancy_certificate"]
+    trade: "preliminaries"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "Local Authority"
+    note: "Handover: testing and commissioning reports, occupancy certificate from authority"
+
+  - id: "DEP-EXT-018"
+    trigger: "handover"
+    required_items: ["fire_noc", "lift_license", "electrical_inspection"]
+    trade: "preliminaries"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "Local Authority"
+    note: "Statutory: fire NOC, lift license, electrical inspector certificate"
+
+  - id: "DEP-EXT-019"
+    trigger: "handover"
+    required_items: ["spare_keys", "spare_tiles", "spare_paint", "maintenance_tools"]
+    trade: "preliminaries"
+    priority: 2
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Handover spares: keys, tiles, paint, and basic maintenance tools"
+
+  - id: "DEP-EXT-020"
+    trigger: "handover"
+    required_items: ["defect_liability_period"]
+    trade: "preliminaries"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Defect liability period definition and warranty obligations"
+
+  # ============================================================
+  # ROAD DEPENDENCIES
+  # ============================================================
+  - id: "DEP-EXT-021"
+    trigger: "internal_road"
+    required_items: ["sub_base_gsb", "base_wmm", "wearing_coat_bitumen", "kerb_stone", "drain_side", "road_markings"]
+    trade: "external"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IRC"
+    note: "Internal road: GSB sub-base, WMM base, bitumen wearing coat, kerb, drain, markings"
+
+  - id: "DEP-EXT-022"
+    trigger: "paver_block_road"
+    required_items: ["sub_base", "sand_bedding", "paver_blocks", "edge_restraint", "joint_sand"]
+    trade: "external"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Paver block road: sub-base, sand bedding, paver blocks, edge restraint, joint sand"
+
+  - id: "DEP-EXT-023"
+    trigger: "concrete_road"
+    required_items: ["sub_base", "dpm", "concrete_slab", "joint_cutting", "joint_sealant"]
+    trade: "external"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IRC"
+    note: "Concrete road: sub-base, DPM, concrete slab, joint cutting and sealing"
+
+  - id: "DEP-EXT-024"
+    trigger: "speed_breaker"
+    required_items: ["rcc_hump", "marking_paint", "signage"]
+    trade: "external"
+    priority: 2
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IRC"
+    note: "Speed breaker: RCC hump, reflective marking paint, signage"
+
+  # ============================================================
+  # LANDSCAPE DEPENDENCIES
+  # ============================================================
+  - id: "DEP-EXT-025"
+    trigger: "landscaping"
+    required_items: ["topsoil_spreading", "planting", "irrigation_system", "edging"]
+    trade: "landscape"
+    priority: 2
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Landscaping: topsoil, planting, irrigation system, edging"
+
+  - id: "DEP-EXT-026"
+    trigger: "landscaping"
+    required_items: ["lawn_grass", "shrubs", "trees", "ground_cover"]
+    trade: "landscape"
+    priority: 2
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Planting: lawn grass, shrubs, trees, and ground cover plants"
+
+  - id: "DEP-EXT-027"
+    trigger: "irrigation_system"
+    required_items: ["drip_irrigation", "sprinkler_irrigation", "timer_controller", "valve_box"]
+    trade: "landscape"
+    priority: 2
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Irrigation: drip and sprinkler systems with timer controller and valve boxes"
+
+  - id: "DEP-EXT-028"
+    trigger: "garden_features"
+    required_items: ["pergola", "seating_area", "water_feature", "garden_lighting"]
+    trade: "landscape"
+    priority: 2
+    condition: "premium_project"
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Garden features: pergola, seating, water feature, landscape lighting"
+
+  # ============================================================
+  # EXTERNAL DRAINAGE DEPENDENCIES
+  # ============================================================
+  - id: "DEP-EXT-029"
+    trigger: "external_drainage"
+    required_items: ["open_drain", "gratings", "manholes", "catch_pits", "outfall"]
+    trade: "external"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "External drainage: drains, gratings, manholes, catch pits, outfall connection"
+
+  - id: "DEP-EXT-030"
+    trigger: "storm_water_drain"
+    required_items: ["rcc_drain", "gratings", "silt_trap", "outfall_to_municipal"]
+    trade: "external"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Storm water drainage: RCC drain, gratings, silt trap, outfall to municipal drain"
+
+  # ============================================================
+  # PARKING AREA DEPENDENCIES
+  # ============================================================
+  - id: "DEP-EXT-031"
+    trigger: "open_parking"
+    required_items: ["paving", "parking_markings", "wheel_stopper", "lighting", "drainage"]
+    trade: "external"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Open parking: paving, markings, wheel stoppers, lighting, drainage"
+
+  - id: "DEP-EXT-032"
+    trigger: "covered_parking"
+    required_items: ["structure", "roofing", "lighting", "drainage", "fire_extinguisher"]
+    trade: "external"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Covered parking: structure, roofing, lighting, drainage, fire extinguisher"
+
+  # ============================================================
+  # EXTERNAL SERVICES DEPENDENCIES
+  # ============================================================
+  - id: "DEP-EXT-033"
+    trigger: "external_electrification"
+    required_items: ["cable_trench", "outdoor_cables", "street_lights", "junction_boxes", "feeder_pillar"]
+    trade: "electrical"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "External electrification: cable trench, cables, street lights, junction boxes, feeder pillar"
+
+  - id: "DEP-EXT-034"
+    trigger: "external_water_supply"
+    required_items: ["underground_pipe", "isolation_valve", "fire_hydrant_yard", "meter"]
+    trade: "plumbing"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "External water supply: underground pipe, isolation valves, yard hydrant, meter"
+
+  - id: "DEP-EXT-035"
+    trigger: "external_sewerage"
+    required_items: ["sewer_line", "manholes_external", "connection_to_municipal"]
+    trade: "plumbing"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "External sewerage: sewer line, manholes, connection to municipal sewer"
+
+  # ============================================================
+  # SIGNAGE AND WAYFINDING DEPENDENCIES
+  # ============================================================
+  - id: "DEP-EXT-036"
+    trigger: "external_signage"
+    required_items: ["building_name_board", "directional_signs", "parking_signs", "traffic_signs"]
+    trade: "external"
+    priority: 2
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "External signage: building name, directional, parking, and traffic signs"
+
+  # ============================================================
+  # STP AND WTP AREA DEPENDENCIES
+  # ============================================================
+  - id: "DEP-EXT-037"
+    trigger: "stp_area"
+    required_items: ["stp_plant_civil", "stp_equipment", "electrical_connection", "treated_water_pipe", "odour_control"]
+    trade: "external"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "CPCB"
+    note: "STP area: civil works, equipment, electrical, treated water piping, odour control"
+
+  # ============================================================
+  # DG ROOM EXTERNAL DEPENDENCIES
+  # ============================================================
+  - id: "DEP-EXT-038"
+    trigger: "dg_room_external"
+    required_items: ["dg_room_civil", "acoustic_treatment", "fuel_storage", "exhaust_stack", "ventilation"]
+    trade: "external"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "CPCB"
+    note: "DG room: civil works, acoustic treatment, fuel storage, exhaust stack, ventilation"
+
+  # ============================================================
+  # BOUNDARY FENCING DEPENDENCIES
+  # ============================================================
+  - id: "DEP-EXT-039"
+    trigger: "boundary_fencing"
+    required_items: ["ms_posts", "chain_link_mesh", "barbed_wire_top", "concrete_base"]
+    trade: "external"
+    priority: 2
+    condition: ""
+    building_types: ["factory", "warehouse"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Boundary fencing: MS posts, chain link mesh, barbed wire, concrete base"
+
+  # ============================================================
+  # GUARD HOUSE / SECURITY CABIN
+  # ============================================================
+  - id: "DEP-EXT-040"
+    trigger: "security_cabin"
+    required_items: ["prefab_cabin", "boom_barrier", "cctv", "intercom", "power_connection"]
+    trade: "external"
+    priority: 2
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Security cabin: prefab cabin, boom barrier, CCTV, intercom, power"
+
+  # ============================================================
+  # FOOTPATH AND WALKWAY DEPENDENCIES
+  # ============================================================
+  - id: "DEP-EXT-041"
+    trigger: "footpath"
+    required_items: ["sub_base", "paver_or_concrete", "kerb", "tactile_paving", "ramp_at_crossing"]
+    trade: "external"
+    priority: 2
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "RPwD Act 2016"
+    note: "Footpath: sub-base, paver/concrete, kerb, tactile paving, ramp at crossings"
+
+  # ============================================================
+  # SITE PREPARATION DEPENDENCIES
+  # ============================================================
+  - id: "DEP-EXT-042"
+    trigger: "site_preparation"
+    required_items: ["site_clearing", "tree_removal_if_needed", "demolition_if_existing", "soil_testing"]
+    trade: "preliminaries"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Site preparation: clearing, tree removal if needed, demolition, soil testing"
+
+  - id: "DEP-EXT-043"
+    trigger: "site_preparation"
+    required_items: ["site_grading", "compaction", "retaining_if_sloped"]
+    trade: "preliminaries"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Site grading, compaction, and retaining structure if site is sloped"
+
+  # ============================================================
+  # OUTDOOR AMENITIES DEPENDENCIES
+  # ============================================================
+  - id: "DEP-EXT-044"
+    trigger: "outdoor_gym"
+    required_items: ["equipment_outdoor", "rubber_flooring", "shade_structure", "lighting"]
+    trade: "external"
+    priority: 2
+    condition: ""
+    building_types: ["residential_apartment"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Outdoor gym: equipment, rubber flooring, shade, lighting"
+
+  - id: "DEP-EXT-045"
+    trigger: "children_play_area"
+    required_items: ["play_equipment", "rubber_safety_surface", "fencing", "shade", "seating"]
+    trade: "external"
+    priority: 2
+    condition: ""
+    building_types: ["residential_apartment", "school"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Play area: equipment, safety surface, fencing, shade, seating"
+
+  # ============================================================
+  # UTILITY AREA DEPENDENCIES
+  # ============================================================
+  - id: "DEP-EXT-046"
+    trigger: "garbage_collection_area"
+    required_items: ["enclosure", "washing_facility", "drainage", "ventilation"]
+    trade: "external"
+    priority: 2
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "SWM Rules 2016"
+    note: "Garbage area: enclosure, washing facility, drainage, ventilation"
+
+  # ============================================================
+  # EV CHARGING INFRASTRUCTURE
+  # ============================================================
+  - id: "DEP-EXT-047"
+    trigger: "ev_charging"
+    required_items: ["charging_station", "dedicated_power_circuit", "cable_management", "signage"]
+    trade: "electrical"
+    priority: 2
+    condition: ""
+    building_types: ["residential_apartment", "commercial"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "EV charging: stations, dedicated power circuit, cable management, signage"
+
+  # ============================================================
+  # RAIN WATER HARVESTING EXTERNAL
+  # ============================================================
+  - id: "DEP-EXT-048"
+    trigger: "rwh_external"
+    required_items: ["percolation_pit", "recharge_well", "collection_sump", "filter_bed"]
+    trade: "external"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "Local Bylaws"
+    note: "External RWH: percolation pit, recharge well, collection sump, filter bed"
+
+  # ============================================================
+  # FIRE TENDER ACCESS DEPENDENCIES
+  # ============================================================
+  - id: "DEP-EXT-049"
+    trigger: "fire_tender_access"
+    required_items: ["access_road_6m_wide", "turning_radius", "hard_standing", "hydrant_at_road"]
+    trade: "external"
+    priority: 1
+    condition: "building_above_15m"
+    building_types: [all]
+    room_types: []
+    min_floors: 5
+    min_area_sqm: 0
+    is_code_ref: "NBC Part 4"
+    note: "Fire tender access: 6m wide road, turning radius, hard standing, hydrant per NBC"
+
+  # ============================================================
+  # TERRACE GARDEN DEPENDENCIES
+  # ============================================================
+  - id: "DEP-EXT-050"
+    trigger: "terrace_garden"
+    required_items: ["waterproofing_heavy_duty", "root_barrier", "drainage_layer", "soil_medium", "planting", "irrigation"]
+    trade: "landscape"
+    priority: 2
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Terrace garden: heavy duty waterproofing, root barrier, drainage, soil, planting, irrigation"
+
+  # ============================================================
+  # SITE MOBILISATION - SAFETY PLAN AND BOCW
+  # ============================================================
+  - id: "DEP-EXT-051"
+    trigger: "site_mobilisation"
+    required_items: ["written_safety_plan_site", "bocw_registration_certificate", "labour_insurance_esic_epf"]
+    trade: "preliminaries"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "BOCW Act 1996"
+    note: "Before any construction work commences, BOCW registration with Labour Department is mandatory for projects > Rs.10 lakhs — registration triggers the cess (1%) that funds worker welfare; a written site safety plan must be prepared and approved by the safety officer; ESIC and EPF registration is required for labour welfare and is checked by Labour Inspector during routine inspections; absent registrations expose the developer to criminal liability"
+
+  - id: "DEP-EXT-052"
+    trigger: "site_mobilisation"
+    required_items: ["site_hoarding_approved_height", "watchman_cabin", "site_address_board"]
+    trade: "preliminaries"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "Local Authority"
+    note: "Site hoarding (minimum 2.1m high opaque sheet) is required by most municipal bye-laws within 2 days of commencement — hoardings prevent material theft and protect the public from site hazards; site address board (required by NBC and RERA) must display building permit number, architect, structural engineer, and RERA registration number; watchman cabin with telephone prevents unauthorised entry"
+
+  # ============================================================
+  # CONCRETE WORK - MIX DESIGN IS 10262
+  # ============================================================
+  - id: "DEP-EXT-053"
+    trigger: "concrete_work_on_site"
+    required_items: ["concrete_mix_design_is10262_approved", "trial_mixes_before_production", "batching_plant_calibration"]
+    trade: "structural"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 10262"
+    note: "IS 10262 mix design must be approved by structural consultant before first pour — mix design uses actual materials (specific cement, aggregates from the project source) and is not transferable between sites; trial mixes must be cast, cured, and tested before production to confirm design strength is achievable; batching plant weighing systems must be calibrated monthly to ensure water/cement ratio is controlled to ± 2% — uncalibrated plants are responsible for many low cube strength incidents"
+
+  # ============================================================
+  # THIRD PARTY LAB APPOINTMENT
+  # ============================================================
+  - id: "DEP-EXT-054"
+    trigger: "any_material_testing"
+    required_items: ["nabl_accredited_lab_appointment", "testing_schedule_before_work_starts", "site_laboratory_if_large_project"]
+    trade: "preliminaries"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 456"
+    note: "All material testing (concrete cubes, steel, soil, bricks) must be done at NABL-accredited laboratory — test certificates from non-accredited labs are not accepted by structural consultants, local authorities, or RERA; testing schedule (what tests, frequency, responsibility) must be agreed with the structural consultant before construction starts; large projects (>5000 sqm) justify a site laboratory for routine cube testing with calibrated compression machine"
+
+  # ============================================================
+  # COMPLETION - SNAGGING AND DEFECT RECTIFICATION
+  # ============================================================
+  - id: "DEP-EXT-055"
+    trigger: "project_completion"
+    required_items: ["snagging_list_joint_inspection", "defect_rectification_before_handover", "reinspection_after_rectification"]
+    trade: "preliminaries"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Joint snagging inspection with client, consultant, and contractor before handover produces an agreed defect list — without a formal snagging process, disputes about what was defective before handover are common during the DLP; all items on snagging list must be rectified and reinspected before handover documents are signed; RERA regulations give buyers the right to withhold 5-10% of payment until snagging is cleared"
+
+  # ============================================================
+  # HANDOVER O&M MANUALS AND AS-BUILT
+  # ============================================================
+  - id: "DEP-EXT-056"
+    trigger: "project_handover"
+    required_items: ["om_manuals_all_systems", "as_built_drawings_all_services_stamped", "training_facility_management_team"]
+    trade: "preliminaries"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "O&M manuals for every installed system (HVAC, electrical, plumbing, lifts, fire) must be submitted at handover — without O&M manuals, facilities management teams cannot maintain equipment correctly, resulting in premature failure and loss of warranties; as-built drawings stamped by the installed contractor reflect actual pipe routes, cable routes, and equipment locations needed for future modifications; facility management team training on BMS, fire panel, and generator operation must be documented"
+
+  # ============================================================
+  # EXTERNAL STORM WATER DRAINAGE DESIGN
+  # ============================================================
+  - id: "DEP-EXT-057"
+    trigger: "external_works"
+    required_items: ["storm_water_drainage_design", "rainfall_intensity_based_on_local_data", "retention_pond_or_percolation_if_required"]
+    trade: "external"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "Local Bylaws"
+    note: "Storm water drainage design must be based on local rainfall intensity data (100-year return period storm event) — under-designed drainage causes site flooding, basement seepage, and road damage; impervious site coverage increases runoff over pre-development levels and several states now require on-site retention or percolation to restore pre-development runoff coefficient; storm water design must be submitted with building plan application in many municipalities"
+
+  # ============================================================
+  # LANDSCAPING - IRRIGATION AND PLANTING SCHEME
+  # ============================================================
+  - id: "DEP-EXT-058"
+    trigger: "landscaping"
+    required_items: ["irrigation_system_design", "water_efficient_drip_or_sprinkler", "planting_scheme_approved_species"]
+    trade: "landscape"
+    priority: 2
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Irrigation system must be designed for the specific plant palette and local climate — drip irrigation for trees and shrubs reduces water consumption by 50-70% over overhead sprinklers; water-efficient drip irrigation is required for GRIHA and LEED water credit; planting scheme must use locally adapted species (ideally native) that require minimal irrigation once established — exotic species with high water demand routinely die during summer, requiring expensive replacement"
+
+  - id: "DEP-EXT-059"
+    trigger: "landscaping"
+    required_items: ["landscape_architect_approved_species_list", "soil_preparation_organic_matter", "mulching_after_planting"]
+    trade: "landscape"
+    priority: 2
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Landscape architect must approve species selection for site microclimate, soil conditions, and maintenance requirements; soil must be prepared with organic matter (compost, vermicompost) before planting as construction sites have degraded, compacted soil with no topsoil; mulching (75-100mm bark chip or coir) after planting dramatically reduces moisture loss and weed growth, reducing irrigation demand by 30-40% in the first year"
+
+  # ============================================================
+  # SIGNAGE AND NUMBERING
+  # ============================================================
+  - id: "DEP-EXT-060"
+    trigger: "building_completion"
+    required_items: ["flat_numbering_and_floor_signage", "fire_exit_signage_illuminated", "emergency_contact_board"]
+    trade: "external"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "NBC Part 4"
+    note: "Flat numbering and floor level signage are required before occupancy — emergency services cannot locate a fire or medical incident without clear flat number identification; illuminated fire exit signs (continuous) per NBC Part 4 must be connected to emergency power (UPS or central battery); emergency contact board at main entrance with fire, police, gas emergency, and building management contacts is required by most RWA rules"
+
+  # ============================================================
+  # PORTABLE WATER TESTING AT HANDOVER
+  # ============================================================
+  - id: "DEP-EXT-061"
+    trigger: "water_system_handover"
+    required_items: ["potable_water_bacteriological_test_at_handover", "chlorination_documentation"]
+    trade: "plumbing"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 10500"
+    note: "Bacteriological water quality test per IS 10500 at point of delivery (tap, not just tank) must be done and passed before building handover — construction debris and biofilm accumulate in new pipework; chlorination at 50ppm minimum followed by flushing, then final test confirms zero E. coli and total coliforms; handover without water quality certificate creates legal liability if occupants fall ill"
+
+  # ============================================================
+  # PROJECT INSURANCE AT COMPLETION
+  # ============================================================
+  - id: "DEP-EXT-062"
+    trigger: "project_handover"
+    required_items: ["latent_defect_insurance_10_years", "structural_warranty_provision"]
+    trade: "preliminaries"
+    priority: 2
+    condition: "residential_apartment"
+    building_types: ["residential_apartment", "commercial"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "RERA 2016"
+    note: "RERA Section 14 makes developer liable for structural defects for 5 years after handover — latent defect insurance (available from Indian insurers) transfers this risk to an insurer; structural warranty for 10 years protects buyers and is a marketing differentiator; documentation of design compliance, testing records, and construction supervision must be retained to defend warranty claims"
+
+  # ============================================================
+  # FIRE TENDER ROAD AND ACCESS
+  # ============================================================
+  - id: "DEP-EXT-063"
+    trigger: "site_external_works"
+    required_items: ["fire_tender_access_road_complete_before_occupation", "hard_standing_area_at_building_face"]
+    trade: "external"
+    priority: 1
+    condition: "building_above_15m"
+    building_types: [all]
+    room_types: []
+    min_floors: 5
+    min_area_sqm: 0
+    is_code_ref: "NBC Part 4"
+    note: "NBC Part 4 requires fire tender access road (minimum 6m wide, 4m clear height, 180 kN turning radius for 18-tonne appliance) to be complete before the building is occupied — fire brigade cannot access a burning high-rise without a prepared road; hard standing at building face must support fire appliance outriggers; road must be available 24/7 and not blocked by parked vehicles (clear signage and enforcement mechanism required)"
+
+  # ============================================================
+  # EXTERNAL PLINTH PROTECTION
+  # ============================================================
+  - id: "DEP-EXT-064"
+    trigger: "external_works_complete"
+    required_items: ["plinth_protection_600mm_wide_slope_away", "anti_termite_treatment_external"]
+    trade: "external"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 6313"
+    note: "Plinth protection apron (PCC 1:2:4 minimum 75mm thick, 600mm wide, sloped 1:20 away from building) prevents rain splashing back onto DPC and directs surface water away from foundations — absent plinth protection causes DPC bridging by fill, leading to rising damp in ground floor walls within 2-3 monsoons; perimeter anti-termite chemical treatment (IS 6313 Part 3) as final external work before handover prevents subterranean termite attack from surrounding soil"
+
+  # ============================================================
+  # SOIL TESTING BEFORE EXCAVATION
+  # ============================================================
+  - id: "DEP-EXT-065"
+    trigger: "pre_construction"
+    required_items: ["soil_investigation_with_spt_borehole", "chemical_analysis_soil_sulphate_chloride", "ground_water_table_level_report"]
+    trade: "structural"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 1892"
+    note: "IS 1892 soil investigation with SPT boreholes (minimum 2 per 500 sqm footprint, depth 1.5x building depth below ground) is essential before footing design — presumed safe bearing capacity is often wrong; chemical analysis for sulphates (>0.3% requires sulphate-resistant cement) and chlorides (>0.5% accelerates rebar corrosion) affects concrete specification; ground water table level determines need for dewatering and waterproofing category"
+
+  # ============================================================
+  # SURVEY AND SETTING OUT
+  # ============================================================
+  - id: "DEP-EXT-066"
+    trigger: "pre_construction_survey"
+    required_items: ["topographic_survey_before_design", "permanent_benchmark_fixed", "building_layout_verified_by_licensed_surveyor"]
+    trade: "preliminaries"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Topographic survey before design confirms actual levels, existing utilities, and boundary conditions — designing from assumed or outdated survey data leads to drainage design errors and disputes with neighbours; a permanent benchmark (BM) fixed to a structure before excavation provides a datum for all level control throughout construction; building layout must be verified by a licensed surveyor against approved plan coordinates before excavation begins — encroachment on setback or neighbour's land requires demolition"
+
+  # ============================================================
+  # TEMPORARY SERVICES
+  # ============================================================
+  - id: "DEP-EXT-067"
+    trigger: "construction_site"
+    required_items: ["temporary_power_connection_from_discom", "temporary_water_connection", "site_drainage_during_construction"]
+    trade: "preliminaries"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Temporary DISCOM power connection (with meter) must be obtained before DG-only sites switch to permanent supply — sites running entirely on DG for years incur 3-4x higher power cost; temporary water connection must provide adequate supply for curing concrete (7 days after each pour), plastering, and labour use; site drainage must be established before excavation to prevent waterlogged working conditions that slow construction and damage completed foundations"
+
+  # ============================================================
+  # WASTE MANAGEMENT DURING CONSTRUCTION
+  # ============================================================
+  - id: "DEP-EXT-068"
+    trigger: "construction_site"
+    required_items: ["construction_waste_segregation_bins", "disposal_to_approved_site", "no_burning_on_site"]
+    trade: "preliminaries"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "Construction and Demolition Waste Management Rules 2016"
+    note: "C&D Waste Management Rules 2016 require construction waste to be segregated (concrete, masonry, steel, wood) and disposed of only at designated C&D waste recycling facilities — burning wood and other site waste on site violates CPCB Air Quality norms and results in fines; project must maintain a waste management log documenting quantities removed; green building ratings (GRIHA, LEED) require minimum 50% diversion of construction waste from landfill"
+
+  # ============================================================
+  # DOCUMENTATION FOR RERA
+  # ============================================================
+  - id: "DEP-EXT-069"
+    trigger: "project_registration_rera"
+    required_items: ["rera_registration_before_marketing", "quarterly_progress_report_rera_portal", "escrow_account_70pct_funds"]
+    trade: "statutory"
+    priority: 1
+    condition: "residential_apartment"
+    building_types: ["residential_apartment"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "RERA 2016"
+    note: "Real Estate (Regulation and Development) Act 2016 requires RERA registration before any marketing or sales of a residential project — marketing without RERA registration carries Rs. 10 lakh per day penalty; quarterly progress reports must be uploaded to state RERA portal; 70% of sale proceeds must be deposited in a dedicated escrow account and can only be withdrawn for land and construction costs with CA certificate — escrow ensures project completion funds are not diverted"
+
+  # ============================================================
+  # PRE-HANDOVER COMMISSIONING TESTING
+  # ============================================================
+  - id: "DEP-EXT-070"
+    trigger: "pre_handover"
+    required_items: ["all_systems_commissioned_before_handover", "integrated_testing_fire_systems", "lift_load_test_before_use"]
+    trade: "preliminaries"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "All building systems (HVAC, plumbing, electrical, fire, lifts) must be commissioned and tested before handover — systems handed over untested routinely fail within weeks of occupancy leading to expensive emergency repairs, dissatisfied occupants, and loss of developer reputation; integrated fire system testing (fire alarm triggers sprinkler flow switch, BMS shuts AHU) must be witnessed by Fire Officer before fire NOC is issued; lift load test (IS 14665: 125% rated load) is mandatory before passengers can use the lift"
+
+  # ============================================================
+  # NOISE BARRIER FOR CONSTRUCTION
+  # ============================================================
+  - id: "DEP-EXT-071"
+    trigger: "construction_adjacent_sensitive_use"
+    required_items: ["noise_barrier_hoarding", "restricted_working_hours_as_per_local_rules", "vibration_monitoring_adjacent_structures"]
+    trade: "preliminaries"
+    priority: 1
+    condition: "adjacent_hospital_school_residential"
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "CPCB Noise Rules 2000"
+    note: "Construction adjacent to hospitals, schools, and residential areas must use noise barriers (dense hoarding) and restrict noisy operations (pile driving, compaction) to permitted hours per local rules (typically 7am-10pm residential, 9am-6pm commercial); vibration monitoring on adjacent structures during piling and heavy compaction is required — CPCB Noise Rules 2000 set construction site limits; courts routinely grant injunctions stopping construction near hospitals based on noise complaints, causing project delays of months"
+
+  # ============================================================
+  # STREET REINSTATEMENT
+  # ============================================================
+  - id: "DEP-EXT-072"
+    trigger: "site_access_construction"
+    required_items: ["road_reinstatement_after_construction", "utility_crossing_permit", "footpath_restoration"]
+    trade: "external"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "Local Authority"
+    note: "Any road or footpath disturbed for utility crossings (water, sewer, electrical) must be reinstated to the original (or better) condition with a road-opening permit — without permit, municipality imposes penalty and may require additional reinstatement; utility crossing permit defines the reinstatement specification (e.g., asphaltic concrete wearing course on arterial roads); incomplete reinstatement is a common reason for municipality withholding completion certificate"
+
+  # ============================================================
+  # ENVIRONMENTAL PROTECTION DURING CONSTRUCTION
+  # ============================================================
+  - id: "DEP-EXT-073"
+    trigger: "construction_site_environment"
+    required_items: ["dust_suppression_water_sprinkler_on_site", "vehicle_wash_exit", "green_netting_on_scaffolding"]
+    trade: "preliminaries"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "CPCB Air Quality Guidelines"
+    note: "Construction dust suppression is mandatory under CPCB Air Quality norms — automated water sprinklers or manual spraying on exposed soil and material stockpiles must be done daily; vehicle wheel-wash at site exit prevents road mud that creates PM10 pollution and accident hazards; green netting on scaffolding above 10m containing dust from breaking of external plaster or brickwork is required in most metropolitan cities (NMCG/BMTPC guidelines)"
+
+  # ============================================================
+  # COMPLETION OF EXTERNAL WORKS BEFORE OCCUPATION
+  # ============================================================
+  - id: "DEP-EXT-074"
+    trigger: "occupation_of_building"
+    required_items: ["external_works_substantially_complete", "access_roads_surfaced", "external_lighting_operational"]
+    trade: "external"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "Local Authority"
+    note: "External works — roads, drainage, compound wall, external lighting — should be substantially complete before occupation; newly occupied buildings with incomplete external works attract complaints and can delay Occupancy Certificate; access roads must be surfaced before heavy moving-in traffic damages sub-base; external lighting must be operational for safety — many handover disputes begin because developers hand over buildings with external works only 30-40% complete"
+
+  # ============================================================
+  # PEST CONTROL BEFORE OCCUPATION
+  # ============================================================
+  - id: "DEP-EXT-075"
+    trigger: "pre_handover"
+    required_items: ["general_pest_control_treatment", "anti_termite_certificate", "rodent_proofing_all_pipe_penetrations"]
+    trade: "specialist"
+    priority: 2
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 6313"
+    note: "General pest control treatment before handover eliminates insects (cockroaches, ants) that have established during construction — once occupants move in, pest control is disruptive and occupants resist; anti-termite certificate from IS 6313-certified contractor must be part of the handover package; all pipe penetrations through external walls must be rodent-proofed with steel wool and sealant — rats entering through pipe gaps are among the most common post-occupancy complaints in Indian housing projects"

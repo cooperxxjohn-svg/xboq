@@ -1,0 +1,1320 @@
+rules:
+- id: RFI-MD-ST-001
+  trigger_type: missing_doc
+  trigger_keywords:
+  - structural drawing
+  - structural design
+  - RCC drawing
+  - framing plan
+  trigger_trade: structural
+  question_template: 'Structural drawings have not been provided for {area}. These are required for accurate estimation. Please provide: (a) Foundation layout — footing locations, sizes, depths, and reinforcement
+    details? (b) Column schedule — column marks, sizes at each level, reinforcement, and splice details? (c) Beam schedule — beam marks, sizes, reinforcement, and stirrup spacing? (d) Slab reinforcement
+    — typical and special slab details, openings, and step details? (e) Staircase structural detail — waist slab thickness, landing reinforcement, and flight details?
+
+    '
+  why_it_matters: 'Structural drawings are the basis for 25-35% of building cost (concrete + steel + formwork). Without structural drawings, quantities are estimated from thumb rules with 20-30% error.
+    Inaccurate structural estimation leads to major cost overruns or under-bidding.
+
+    '
+  suggested_resolution: Provide complete set of structural drawings including foundation layout, column/beam/slab schedules, staircase details, and reinforcement drawings for all levels.
+  priority: critical
+  building_types:
+  - all
+  package: structural
+- id: RFI-MD-ST-002
+  trigger_type: missing_doc
+  trigger_keywords:
+  - soil investigation
+  - soil report
+  - geotechnical
+  - bore log
+  - SBC
+  trigger_trade: structural
+  question_template: 'Soil investigation report has not been provided for {area}. This is required to assess: (a) Safe bearing capacity (SBC) at proposed foundation level — what is the recommended SBC?
+    (b) Water table level — depth below ground and seasonal variation? (c) Soil profile — type, stratification, and N-value from SPT (Standard Penetration Test)? (d) Foundation type recommendation — isolated
+    footing, raft, or pile foundation? (e) Chemical analysis — is the soil/groundwater aggressive (sulphate/chloride content)?
+
+    '
+  why_it_matters: 'Soil conditions determine foundation type and cost. Pile foundation costs 3-5x isolated footing. High water table requires dewatering (INR 5-15 lakh). Without soil report, foundation
+    cost estimation has 50-100% uncertainty.
+
+    '
+  suggested_resolution: Provide geotechnical investigation report with bore logs, SBC, water table, soil profile, chemical analysis, and foundation type recommendation.
+  priority: critical
+  building_types:
+  - all
+  package: structural
+- id: RFI-MD-ST-003
+  trigger_type: missing_doc
+  trigger_keywords:
+  - design calculation
+  - structural calculation
+  - design basis report
+  trigger_trade: structural
+  question_template: 'Structural design calculations/basis report not provided for {area}. Please provide: (a) Design loads — dead load, live load, wind load, and seismic load as per IS codes? (b) Load
+    combinations used in design? (c) Software used for analysis (ETABS, STAAD, SAFE) and model files? (d) Design code compliance — IS 456, IS 1893 (seismic), IS 875 (loading)? (e) Serviceability checks
+    — deflection limits, crack width, and vibration criteria?
+
+    '
+  why_it_matters: 'Design basis report confirms that the structural design meets code requirements. Without it, the contractor cannot verify design adequacy or claim design liability. Third-party structural
+    audit requires design calculations.
+
+    '
+  suggested_resolution: Provide structural design basis report with load assumptions, analysis output, and design compliance statement signed by structural engineer.
+  priority: high
+  building_types:
+  - all
+  package: structural
+- id: RFI-MD-ST-004
+  trigger_type: missing_doc
+  trigger_keywords:
+  - column schedule
+  - column layout
+  - column detail
+  trigger_trade: structural
+  question_template: 'Column schedule/layout not provided separately for {area}. Please provide: (a) Column location plan at each floor level? (b) Column sizes — do they reduce with height? At which floors?
+    (c) Column reinforcement details — main bars, ties, spacing, and lap locations? (d) Column orientation — are any columns rotated or offset between floors? (e) Special columns — transfer columns, shear
+    walls, or composite columns?
+
+    '
+  why_it_matters: 'Column schedule is essential for concrete and steel quantity calculation, formwork estimation, and construction sequence planning. Missing column sizes prevent accurate BOQ preparation.
+
+    '
+  suggested_resolution: Provide column schedule showing mark, size, reinforcement, and changes at each floor level.
+  priority: high
+  building_types:
+  - all
+  package: structural
+- id: RFI-MD-ST-005
+  trigger_type: missing_doc
+  trigger_keywords:
+  - beam schedule
+  - beam layout
+  - beam detail
+  trigger_trade: structural
+  question_template: 'Beam schedule/layout not provided for {area}. Please provide: (a) Beam layout at each floor level showing beam marks and spans? (b) Beam sizes — width and depth for each beam mark?
+    (c) Beam reinforcement — top, bottom, and stirrup details at support and mid-span? (d) Concealed beams — are any beams within slab thickness? (e) Special beams — transfer beams, grade beams, or lintel
+    beams?
+
+    '
+  why_it_matters: 'Beam schedule determines concrete volume, steel weight, and formwork area for the largest structural element category. Missing beam details prevent accurate estimation of 30-40% of structural
+    cost.
+
+    '
+  suggested_resolution: Provide beam schedule with mark, size, span, and reinforcement details for all floor levels.
+  priority: high
+  building_types:
+  - all
+  package: structural
+- id: RFI-MD-ST-006
+  trigger_type: missing_doc
+  trigger_keywords:
+  - footing layout
+  - foundation layout
+  - footing detail
+  - pile layout
+  trigger_trade: structural
+  question_template: 'Foundation/footing layout not provided for {area}. Please provide: (a) Footing layout plan with footing marks, sizes, and column locations? (b) Footing types — isolated, combined,
+    strip, or raft? (c) Foundation depth below ground level? (d) Reinforcement details for each footing type? (e) If pile foundation — pile diameter, depth, pile cap details, and load test requirement?
+
+    '
+  why_it_matters: 'Foundation is typically 8-15% of structural cost. Foundation type dramatically affects cost and timeline. Pile foundation requires specialist mobilization with 4-8 week lead time. Without
+    layout, foundation scope cannot be estimated.
+
+    '
+  suggested_resolution: Provide foundation layout with footing marks, sizes, depths, reinforcement, and pile details if applicable.
+  priority: critical
+  building_types:
+  - all
+  package: structural
+- id: RFI-MD-AR-001
+  trigger_type: missing_doc
+  trigger_keywords:
+  - door schedule
+  - door list
+  - door mark
+  trigger_trade: doors_windows
+  question_template: 'Door schedule has not been provided for {area}. Please provide a schedule showing: (a) Door mark/reference for each door? (b) Door size — width x height, single or double leaf? (c)
+    Door type — flush, panel, glass, fire-rated, or specialty? (d) Frame material and size — MS, wood, aluminum, or WPC? (e) Shutter material — BWP ply, WPC, steel, or glass? (f) Hardware specification
+    — lock, hinge, closer, handle, and accessories per door?
+
+    '
+  why_it_matters: 'Door schedule is the only way to accurately estimate door quantities by type. A typical building has 5-10 door types with different costs. Without a schedule, doors are estimated uniformly,
+    leading to 20-40% pricing error.
+
+    '
+  suggested_resolution: Provide door schedule spreadsheet with door mark, size, type, frame, shutter, finish, and hardware for every door in the project.
+  priority: high
+  building_types:
+  - all
+  package: doors_windows
+- id: RFI-MD-AR-002
+  trigger_type: missing_doc
+  trigger_keywords:
+  - window schedule
+  - window list
+  - window mark
+  - fenestration schedule
+  trigger_trade: doors_windows
+  question_template: 'Window schedule has not been provided for {area}. Please provide a schedule showing: (a) Window mark/reference for each window type? (b) Window size — width x height? (c) Window type
+    — casement, sliding, fixed, top-hung, or combination? (d) Frame material and section — aluminum, uPVC, or steel? (e) Glass type and thickness — clear, tinted, DGU, or toughened? (f) Accessories — insect
+    screen, safety grill, and hardware?
+
+    '
+  why_it_matters: 'Window schedule determines facade cost and appearance. Window quantities and types affect aluminum/uPVC material procurement (4-6 week lead time), glass ordering, and masonry opening
+    coordination.
+
+    '
+  suggested_resolution: Provide window schedule with mark, size, type, frame, glass, and hardware for every window type.
+  priority: high
+  building_types:
+  - all
+  package: doors_windows
+- id: RFI-MD-AR-003
+  trigger_type: missing_doc
+  trigger_keywords:
+  - toilet layout
+  - bathroom layout
+  - WC layout
+  - sanitary layout
+  trigger_trade: plumbing
+  question_template: 'Toilet/bathroom layout drawing not provided for {area}. Please provide: (a) Fixture locations — EWC, wash basin, shower, bathtub positions? (b) Fixture types — wall-hung EWC or floor-mounted?
+    Counter-top basin or pedestal? (c) Plumbing point locations — hot/cold water, soil, waste, and vent? (d) Floor drain and slope direction? (e) Tile layout — wall tile height, floor tile pattern, and
+    accent tiles?
+
+    '
+  why_it_matters: 'Toilet layout determines plumbing rough-in locations, tile quantities, and fixture procurement. Changes to fixture positions after plumbing rough-in cause significant rework. Each toilet
+    type needs a separate layout.
+
+    '
+  suggested_resolution: Provide toilet layout drawing for each toilet type showing fixture positions, plumbing points, drain locations, and tile details.
+  priority: high
+  building_types:
+  - all
+  package: plumbing
+- id: RFI-MD-AR-004
+  trigger_type: missing_doc
+  trigger_keywords:
+  - kitchen layout
+  - kitchen detail
+  - kitchen drawing
+  - modular kitchen
+  trigger_trade: interiors
+  question_template: 'Kitchen layout/detail drawing not provided for {area}. Please provide: (a) Kitchen platform layout — L-shape, U-shape, parallel, or straight? (b) Platform dimensions — length, depth,
+    and height? (c) Sink location and type — single bowl, double bowl, or integrated? (d) Plumbing points — hot/cold water supply, waste, and gas point locations? (e) Electrical points — chimney, hob, oven,
+    microwave, refrigerator, RO, and dishwasher?
+
+    '
+  why_it_matters: 'Kitchen layout drives plumbing and electrical rough-in locations. Modular kitchen dimensions must be coordinated with platform. Incorrect point locations cause rework after platform installation.
+
+    '
+  suggested_resolution: Provide kitchen layout drawing showing platform dimensions, sink position, plumbing points, electrical points, and appliance locations.
+  priority: medium
+  building_types:
+  - all
+  package: interiors
+- id: RFI-MD-AR-005
+  trigger_type: missing_doc
+  trigger_keywords:
+  - floor pattern
+  - flooring drawing
+  - floor layout
+  - tile pattern drawing
+  trigger_trade: flooring
+  question_template: 'Floor pattern/layout drawing not provided for {area}. Please provide: (a) Tile/stone laying pattern for each room type — straight, diagonal, herringbone, or custom? (b) Border and
+    dado design — width, material, and color? (c) Floor level chart — FFL (finished floor level) for each room relative to datum? (d) Transition details between different floor materials (e.g., tile to
+    wood)? (e) Floor medallion or feature areas if any?
+
+    '
+  why_it_matters: 'Floor pattern drawing is essential for accurate material estimation (wastage depends on pattern), procurement planning (border tiles are special orders), and ensuring design intent is
+    achieved. Without it, tilers follow their own interpretation.
+
+    '
+  suggested_resolution: Provide floor pattern drawing for each typical room/area type showing laying pattern, border details, and FFL chart.
+  priority: medium
+  building_types:
+  - all
+  package: flooring
+- id: RFI-MD-AR-006
+  trigger_type: missing_doc
+  trigger_keywords:
+  - false ceiling layout
+  - RCP
+  - reflected ceiling plan
+  - ceiling design
+  trigger_trade: interiors
+  question_template: 'Reflected ceiling plan (RCP) / false ceiling layout not provided for {area}. Please provide: (a) Ceiling type per area — gypsum board, mineral fiber grid, exposed slab, or combination?
+    (b) Ceiling height and profile — flat, coved, multi-level, or bulkhead? (c) Light fixture locations and types integrated with ceiling design? (d) AC grille/diffuser locations coordinated with ceiling
+    layout? (e) Sprinkler head locations and access panel positions?
+
+    '
+  why_it_matters: 'RCP is critical for MEP coordination — light fixtures, AC grilles, sprinklers, and access panels must be integrated into ceiling design. Without RCP, false ceiling quantities cannot be
+    measured and MEP coordination fails.
+
+    '
+  suggested_resolution: Provide reflected ceiling plan for each floor showing ceiling type, height, profile, and all MEP integration points.
+  priority: medium
+  building_types:
+  - all
+  package: interiors
+- id: RFI-MD-AR-007
+  trigger_type: missing_doc
+  trigger_keywords:
+  - finish schedule
+  - room finish
+  - material schedule
+  trigger_trade: finishing
+  question_template: 'Room finish schedule not provided for {area}. Please provide a schedule showing for each room/area: (a) Floor finish — material, size, and brand? (b) Wall finish — plaster type, paint/wallpaper/tile?
+    (c) Ceiling finish — exposed slab, POP, gypsum board, or grid ceiling? (d) Skirting — type, height, and material? (e) Dado — height, material, and areas where applicable?
+
+    '
+  why_it_matters: 'Room finish schedule is the basis for all finishing material estimation. Without it, uniform finishes are assumed for all rooms, which is never the case. Premium rooms (master bedroom,
+    living) typically have different finishes from utility rooms.
+
+    '
+  suggested_resolution: Provide room-wise finish schedule in tabular format showing floor, wall, ceiling, skirting, and dado specifications for each room type.
+  priority: high
+  building_types:
+  - all
+  package: finishing
+- id: RFI-MD-ME-001
+  trigger_type: missing_doc
+  trigger_keywords:
+  - electrical SLD
+  - single line diagram
+  - electrical schematic
+  - power distribution
+  trigger_trade: electrical
+  question_template: 'Electrical single line diagram (SLD) not provided for {area}. Please provide: (a) Power source — utility supply voltage, phases, and connection point? (b) Transformer — capacity, type,
+    and location? (c) Main switchboard — bus rating, incoming, and outgoing feeders? (d) Distribution hierarchy — main panel to sub-main to final distribution boards? (e) DG set connection — changeover
+    arrangement and essential load segregation?
+
+    '
+  why_it_matters: 'SLD is the master document for electrical installation. Without it, panel ratings, cable sizes, and protective device coordination cannot be determined. All electrical quantities flow
+    from the SLD.
+
+    '
+  suggested_resolution: Provide electrical SLD from utility/transformer to final distribution boards showing all panels, feeders, and protective devices.
+  priority: critical
+  building_types:
+  - all
+  package: electrical
+- id: RFI-MD-ME-002
+  trigger_type: missing_doc
+  trigger_keywords:
+  - plumbing layout
+  - plumbing drawing
+  - water supply layout
+  - drainage layout
+  trigger_trade: plumbing
+  question_template: 'Plumbing layout drawings not provided for {area}. Please provide: (a) Water supply layout — riser locations, branch routing, and valve locations? (b) Drainage layout — soil pipe, waste
+    pipe, and vent pipe routing? (c) Riser diagram — showing pipe sizes, connections at each floor, and tank levels? (d) External drainage — building drain to manhole to outfall routing? (e) Rainwater drainage
+    — downpipe locations and connection to stormwater system?
+
+    '
+  why_it_matters: 'Plumbing layout determines pipe lengths, fitting counts, and shaft sizes. Without drawings, plumbing is estimated on per-fixture basis with 30-40% uncertainty. Shaft coordination with
+    structural is impossible without plumbing layout.
+
+    '
+  suggested_resolution: Provide complete plumbing drawings — floor-wise supply layout, drainage layout, riser diagram, and external drainage plan.
+  priority: high
+  building_types:
+  - all
+  package: plumbing
+- id: RFI-MD-ME-003
+  trigger_type: missing_doc
+  trigger_keywords:
+  - fire fighting layout
+  - fire system drawing
+  - sprinkler layout
+  - fire hydrant layout
+  trigger_trade: fire_safety
+  question_template: 'Fire fighting system layout not provided for {area}. Please provide: (a) Sprinkler layout — head locations, pipe routing, and zone valves? (b) Hydrant layout — landing valve, hose
+    reel, and yard hydrant locations? (c) Fire alarm layout — detector, MCP, hooter, and panel locations? (d) Fire pump room layout — pump set arrangement, suction/delivery piping? (e) Fire water storage
+    — tank location, capacity, and piping to pump room?
+
+    '
+  why_it_matters: 'Fire fighting system is a statutory requirement and must match the fire NOC approved layout. Without drawings, sprinkler head counts, pipe lengths, and equipment cannot be estimated.
+    Fire system is typically 3-5% of building cost.
+
+    '
+  suggested_resolution: Provide fire fighting layout drawings approved by fire consultant/department showing all systems — sprinkler, hydrant, alarm, and pump room.
+  priority: critical
+  building_types:
+  - all
+  package: fire_safety
+- id: RFI-MD-ME-004
+  trigger_type: missing_doc
+  trigger_keywords:
+  - HVAC layout
+  - AC layout
+  - duct layout
+  - chilled water layout
+  trigger_trade: hvac
+  question_template: 'HVAC layout drawings not provided for {area}. Please provide: (a) Equipment layout — indoor/outdoor unit locations, AHU, and chiller positions? (b) Duct layout — supply and return
+    duct routing, sizes, and grille/diffuser locations? (c) Refrigerant/chilled water piping layout — routing, sizes, and valve locations? (d) Controls layout — thermostat, sensor, and BMS point locations?
+    (e) Ventilation layout — exhaust fan locations, fresh air intake, and duct routing?
+
+    '
+  why_it_matters: 'HVAC is typically 15-25% of commercial building cost. Without layout drawings, duct sizes, pipe lengths, and equipment capacity cannot be verified or estimated accurately. Ceiling void
+    coordination requires HVAC duct layout.
+
+    '
+  suggested_resolution: Provide complete HVAC drawings — equipment layout, duct layout with sizes, piping layout, and controls diagram for all floors.
+  priority: high
+  building_types:
+  - all
+  package: hvac
+- id: RFI-MD-ME-005
+  trigger_type: missing_doc
+  trigger_keywords:
+  - electrical load schedule
+  - load calculation
+  - power schedule
+  trigger_trade: electrical
+  question_template: 'Electrical load schedule not provided for {area}. Please provide: (a) Room-wise/area-wise connected load (kW) — lighting, power, HVAC, and special loads? (b) Demand factor and diversity
+    factor applied? (c) Total maximum demand (kVA) for transformer/DG sizing? (d) Phase-wise load balancing? (e) Future provision — spare capacity percentage?
+
+    '
+  why_it_matters: 'Load schedule determines transformer capacity, DG set rating, cable sizes, and utility contract demand. Without it, electrical infrastructure is either under-sized (causing tripping)
+    or over-sized (wasting capital).
+
+    '
+  suggested_resolution: Provide electrical load schedule in tabular format showing connected load, demand factor, and maximum demand for each panel and total project.
+  priority: critical
+  building_types:
+  - all
+  package: electrical
+- id: RFI-MD-ME-006
+  trigger_type: missing_doc
+  trigger_keywords:
+  - light fixture schedule
+  - luminaire schedule
+  - lighting schedule
+  - light layout
+  trigger_trade: electrical
+  question_template: 'Light fixture schedule/layout not provided for {area}. Please provide: (a) Fixture types — recessed downlight, surface-mounted, pendant, track, or linear? (b) Fixture wattage and color
+    temperature (3000K/4000K/6500K)? (c) Quantity per room type and total? (d) Fixture locations on reflected ceiling plan? (e) Emergency lighting locations — battery backup or central inverter?
+
+    '
+  why_it_matters: 'Light fixtures are 5-10% of electrical cost. Without a schedule, fixture types and quantities are assumed, leading to procurement errors. Emergency lighting is a code requirement that
+    is often omitted from initial estimates.
+
+    '
+  suggested_resolution: Provide light fixture schedule with type, wattage, quantity per room, and fixture locations on RCP. Include emergency lighting layout.
+  priority: medium
+  building_types:
+  - all
+  package: electrical
+- id: RFI-MD-LA-001
+  trigger_type: missing_doc
+  trigger_keywords:
+  - landscape drawing
+  - landscape layout
+  - planting plan
+  - softscape
+  trigger_trade: landscape
+  question_template: 'Landscape layout drawing not provided for {area}. Please provide: (a) Hardscape layout — paving areas, pathways, seating, pergola, and water features? (b) Softscape/planting plan —
+    tree species, shrubs, ground cover, and lawn areas? (c) Plant schedule — species name, size at planting, and quantity? (d) Level plan — finished levels for soft and hard landscape areas? (e) Soil preparation
+    details — garden soil depth, amendments, and drainage layer?
+
+    '
+  why_it_matters: 'Landscape can be 2-5% of total project cost. Without drawings, hardscape paving areas, planting quantities, and soil preparation scope cannot be estimated. Landscape design also affects
+    site drainage and utility routing.
+
+    '
+  suggested_resolution: Provide landscape layout drawing with hardscape, softscape, planting schedule, level plan, and irrigation layout.
+  priority: medium
+  building_types:
+  - all
+  package: landscape
+- id: RFI-MD-LA-002
+  trigger_type: missing_doc
+  trigger_keywords:
+  - irrigation layout
+  - drip irrigation
+  - sprinkler irrigation
+  - landscape water
+  trigger_trade: landscape
+  question_template: 'Landscape irrigation layout not provided for {area}. Please provide: (a) Irrigation system type — drip, sprinkler, or combination? (b) Zone layout — how many zones and controller specification?
+    (c) Water source — dedicated irrigation line, treated water (STP), or rainwater? (d) Pipe material and sizes — HDPE, PVC, or PE lateral? (e) Automation — timer-based controller, soil moisture sensor,
+    or weather-based?
+
+    '
+  why_it_matters: 'Irrigation system is 15-25% of landscape cost. Without layout, pipe lengths and head/emitter counts cannot be estimated. Water source determination affects plumbing design (STP reuse
+    line).
+
+    '
+  suggested_resolution: Provide irrigation layout showing zones, head/emitter locations, pipe routing, and controller specification.
+  priority: low
+  building_types:
+  - all
+  package: landscape
+- id: RFI-MD-EX-001
+  trigger_type: missing_doc
+  trigger_keywords:
+  - site plan
+  - site layout
+  - external development
+  - site development
+  trigger_trade: external_works
+  question_template: 'Site development plan not provided for {area}. Please provide: (a) Building footprint location on site with setbacks? (b) Internal road layout — alignment, width, and pavement type?
+    (c) Parking layout — surface, basement entry ramp, and parking count? (d) Utility building locations — STP, DG room, pump room, electrical substation? (e) Compound wall alignment, gate locations, and
+    security cabin?
+
+    '
+  why_it_matters: 'Site development plan defines the scope of external works which can be 5-15% of total project cost. Road lengths, drain runs, compound wall perimeter, and utility building sizes all depend
+    on the site plan.
+
+    '
+  suggested_resolution: Provide site development plan showing all external elements — roads, drainage, parking, utilities, compound wall, and landscape zones.
+  priority: high
+  building_types:
+  - all
+  package: external_works
+- id: RFI-MD-EX-002
+  trigger_type: missing_doc
+  trigger_keywords:
+  - drainage plan
+  - stormwater plan
+  - site drainage
+  - drain layout
+  trigger_trade: external_works
+  question_template: 'External drainage/stormwater plan not provided for {area}. Please provide: (a) Surface drain layout — open channel or covered drain, sizes, and slopes? (b) Underground storm drain
+    — pipe sizes, manhole locations, and invert levels? (c) Catch pit and gully trap locations? (d) Outfall point — municipal drain connection or on-site recharge? (e) Retention/detention pond if required
+    by local norms?
+
+    '
+  why_it_matters: 'External drainage prevents site flooding and foundation damage. Without a drainage plan, drain sizes and lengths cannot be estimated. Municipal outfall connection requires authority approval
+    with long lead time.
+
+    '
+  suggested_resolution: Provide external drainage plan showing drain layout, pipe sizes, manholes, and outfall details. Include design rainfall calculation.
+  priority: high
+  building_types:
+  - all
+  package: external_works
+- id: RFI-MD-FA-001
+  trigger_type: missing_doc
+  trigger_keywords:
+  - facade elevation
+  - building elevation
+  - facade drawing
+  - external elevation
+  trigger_trade: facade
+  question_template: 'Facade/building elevation drawings not provided for {area}. Please provide: (a) All four elevations (or more for irregular buildings)? (b) Material legend — showing different facade
+    materials per zone? (c) Color scheme — paint colors, cladding colors, and glazing appearance? (d) Signage/branding locations on facade? (e) Facade opening schedule — coordinated with window/door schedules?
+
+    '
+  why_it_matters: 'Elevation drawings define external finish quantities — paint area, cladding area, glazing area, and material types. Without elevations, facade estimation relies on plan dimensions only,
+    missing articulations and features.
+
+    '
+  suggested_resolution: Provide all building elevations with material legend, color scheme, and coordinated with window/door schedules.
+  priority: high
+  building_types:
+  - all
+  package: facade
+- id: RFI-MD-FA-002
+  trigger_type: missing_doc
+  trigger_keywords:
+  - glass schedule
+  - glazing schedule
+  - glass specification document
+  trigger_trade: facade
+  question_template: 'Glass schedule/specification document not provided for {area}. Please provide: (a) Glass type per location — clear, tinted, reflective, low-E, or DGU? (b) Glass thickness — 5mm, 6mm,
+    8mm, 10mm, or 12mm? (c) Safety glass requirements — toughened or laminated per location? (d) Performance parameters — SHGC, U-value, and VLT for energy code compliance? (e) Spandrel glass specification
+    for curtain wall areas?
+
+    '
+  why_it_matters: 'Glass is the most expensive component of a facade system. A glass schedule prevents over-ordering or under-specifying. Different zones of the same building may require different glass
+    types based on orientation and performance needs.
+
+    '
+  suggested_resolution: Provide glass schedule showing glass type, thickness, safety treatment, and performance parameters per window/curtain wall zone.
+  priority: high
+  building_types:
+  - commercial
+  - office
+  - hotel
+  - high_rise
+  package: facade
+- id: RFI-MD-FA-003
+  trigger_type: missing_doc
+  trigger_keywords:
+  - facade section
+  - curtain wall detail
+  - cladding detail
+  - facade detail
+  trigger_trade: facade
+  question_template: 'Facade section/detail drawings not provided for {area}. Please provide: (a) Typical horizontal and vertical sections through curtain wall/cladding? (b) Head, sill, and jamb details
+    at window/curtain wall perimeter? (c) Connection detail to main structure — embed plates, brackets? (d) Fire barrier detail at floor slab edge? (e) Expansion joint and movement accommodation details?
+
+    '
+  why_it_matters: 'Facade section details are essential for material estimation (brackets, seals, insulation) and for verifying weather tightness and fire safety. Without details, facade system cannot be
+    accurately priced or installed.
+
+    '
+  suggested_resolution: Provide facade section details showing typical and special conditions — head/sill/jamb, structural connection, fire barrier, and movement joints.
+  priority: high
+  building_types:
+  - commercial
+  - office
+  - hotel
+  - high_rise
+  package: facade
+- id: RFI-MD-IN-001
+  trigger_type: missing_doc
+  trigger_keywords:
+  - furniture layout
+  - furniture plan
+  - furniture drawing
+  trigger_trade: interiors
+  question_template: 'Furniture layout plan not provided for {area}. Please provide: (a) Room-wise furniture placement showing beds, tables, chairs, and storage? (b) Fixed furniture — built-in wardrobes,
+    vanity units, and TV units? (c) Loose furniture — is it in scope or client/buyer scope? (d) Furniture dimensions — to coordinate with electrical and data point locations? (e) Material and finish specification
+    for built-in furniture?
+
+    '
+  why_it_matters: 'Furniture layout determines electrical point locations (switched socket behind TV, bedside sockets, study table power). Without it, electrical rough-in is done based on assumptions, causing
+    relocation after furniture installation.
+
+    '
+  suggested_resolution: Provide furniture layout for each room type showing all fixed and loose furniture positions with dimensions.
+  priority: medium
+  building_types:
+  - all
+  package: interiors
+- id: RFI-MD-IN-002
+  trigger_type: missing_doc
+  trigger_keywords:
+  - wardrobe detail
+  - wardrobe drawing
+  - closet detail
+  - storage detail
+  trigger_trade: interiors
+  question_template: 'Wardrobe/storage detail drawing not provided for {area}. Please provide: (a) Wardrobe dimensions — width, height, and depth? (b) Internal layout — shelves, hanging rods, drawers, and
+    accessories? (c) Material — MDF, plywood, or particle board? Carcass and shutter separately? (d) Finish — laminate, veneer, PU paint, or membrane? (e) Hardware — soft-close hinges, channels, handles,
+    and accessories brand?
+
+    '
+  why_it_matters: 'Wardrobe specification affects cost by 3-5x (basic laminate on particle board vs plywood with veneer PU finish). Internal layout determines hardware count. Walk-in closets are significantly
+    more expensive than built-in wardrobes.
+
+    '
+  suggested_resolution: Provide wardrobe detail drawing showing dimensions, internal layout, material, finish, and hardware specification.
+  priority: medium
+  building_types:
+  - residential
+  - residential_apartment
+  - hotel
+  package: interiors
+- id: RFI-MD-IN-003
+  trigger_type: missing_doc
+  trigger_keywords:
+  - signage plan
+  - signage drawing
+  - wayfinding
+  - sign schedule
+  trigger_trade: interiors
+  question_template: 'Signage/wayfinding plan not provided for {area}. Please provide: (a) Signage types — directional, room identification, floor directory, and emergency? (b) Sign material — acrylic,
+    metal (SS/aluminum), painted, or digital/LED? (c) Sign sizes and locations? (d) Illumination — backlit, edge-lit, or non-illuminated? (e) Braille/tactile signage — required for accessibility compliance?
+
+    '
+  why_it_matters: 'Signage is often excluded from initial estimates then added late, causing cost overrun. Illuminated signage requires electrical provision. Accessibility-compliant signage (Braille/tactile)
+    is mandatory per building accessibility code.
+
+    '
+  suggested_resolution: Provide signage schedule showing type, material, size, illumination, and locations. Include Braille/tactile compliance for accessibility.
+  priority: low
+  building_types:
+  - commercial
+  - hospital
+  - hotel
+  - school
+  - retail_mall
+  package: interiors
+- id: RFI-MD-IN-004
+  trigger_type: missing_doc
+  trigger_keywords:
+  - kitchen detail
+  - kitchen drawing
+  - modular kitchen drawing
+  trigger_trade: interiors
+  question_template: 'Kitchen detail drawing not provided for {area}. Please provide: (a) Platform layout — L/U/parallel/straight configuration with dimensions? (b) Upper and lower cabinet layout — sizes,
+    shelf heights, and soft-close hardware? (c) Countertop material — granite, quartz, Corian, or solid surface? (d) Backsplash detail — tile, glass, or countertop material extension? (e) Plumbing and electrical
+    point locations coordinated with layout?
+
+    '
+  why_it_matters: 'Kitchen is the most specification-intensive room. Modular kitchen costs INR 1-5 lakh depending on material and brand. Platform, backsplash, and cabinet specifications must be coordinated
+    with plumbing and electrical rough-in.
+
+    '
+  suggested_resolution: Provide kitchen detail drawing with platform layout, cabinet arrangement, countertop specification, and coordinated MEP point locations.
+  priority: medium
+  building_types:
+  - all
+  package: interiors
+- id: RFI-MD-CP-001
+  trigger_type: missing_doc
+  trigger_keywords:
+  - fire NOC
+  - fire approval
+  - fire department
+  - fire compliance
+  trigger_trade: fire_safety
+  question_template: 'Fire NOC / fire department approved layout not provided for {area}. Please provide: (a) Fire NOC approved floor plans showing escape routes, fire exits, and refuge areas? (b) Fire
+    department conditions/stipulations? (c) Fire system type and coverage approved by fire department? (d) Has the fire NOC been obtained or is it pending? (e) Is a fire consultant appointed? Contact details
+    for coordination?
+
+    '
+  why_it_matters: 'Fire system design must match the fire NOC approved layout. Without fire NOC, the fire fighting scope cannot be finalized. Fire NOC conditions may mandate additional systems (e.g., sprinkler,
+    pressurization) that significantly affect cost.
+
+    '
+  suggested_resolution: Provide fire NOC approved layout with conditions. If NOC is pending, provide the applied layout and expected approval timeline.
+  priority: critical
+  building_types:
+  - all
+  package: fire_safety
+- id: RFI-MD-CP-002
+  trigger_type: missing_doc
+  trigger_keywords:
+  - structural stability certificate
+  - structural audit
+  - third party audit
+  trigger_trade: structural
+  question_template: 'Structural stability certificate / third-party audit report not provided for {area}. Please confirm: (a) Is third-party structural audit required by local authority? (b) Who appoints
+    the third-party auditor — client or contractor? (c) Audit frequency — foundation, each floor, or specific milestones? (d) Testing requirements for audit — cube testing, steel testing, NDT? (e) Who bears
+    the cost of third-party audit and testing?
+
+    '
+  why_it_matters: 'Third-party structural audit is mandatory in many cities for buildings above certain height. Audit cost can be INR 5-15 lakh. Testing requirements add to structural quality control cost.
+    Non-compliance delays occupancy certificate.
+
+    '
+  suggested_resolution: Confirm third-party audit requirement, appointing authority, audit frequency, testing scope, and cost responsibility.
+  priority: high
+  building_types:
+  - all
+  package: structural
+- id: RFI-MD-CP-003
+  trigger_type: missing_doc
+  trigger_keywords:
+  - green building
+  - IGBC
+  - LEED
+  - GRIHA
+  - energy compliance
+  - ECBC
+  trigger_trade: all
+  question_template: 'Green building / energy compliance documentation not provided for {area}. Please confirm: (a) Is green building certification targeted — IGBC, LEED, GRIHA, or none? (b) Target rating
+    — Silver, Gold, Platinum? (c) ECBC (Energy Conservation Building Code) compliance — mandatory or voluntary? (d) Which green building credits affect construction specification? (e) Is a green building
+    consultant appointed for guidance?
+
+    '
+  why_it_matters: 'Green building certification affects material specifications (low-VOC paint, high SRI roof, efficient fixtures), HVAC design (higher efficiency), and construction practices (waste management,
+    indoor air quality). Platinum rating adds 5-10% to construction cost.
+
+    '
+  suggested_resolution: Confirm green building certification target and provide credit-wise specification requirements affecting construction.
+  priority: medium
+  building_types:
+  - commercial
+  - office
+  - hospital
+  - hotel
+  package: all
+- id: RFI-MD-CP-004
+  trigger_type: missing_doc
+  trigger_keywords:
+  - approved plan
+  - sanctioned plan
+  - building permit
+  - building approval
+  trigger_trade: all
+  question_template: 'Approved/sanctioned building plan from local authority not provided for {area}. Please provide: (a) Sanctioned floor plans with approval stamp and date? (b) Approval conditions and
+    stipulations? (c) Approved FAR/FSI calculation? (d) Mandatory provisions per approval — RWH, STP, solar, parking, fire safety? (e) Validity period of the approval and any extension required?
+
+    '
+  why_it_matters: 'Construction must strictly follow approved plans. Deviations require revision approval which takes 2-6 months. Approval conditions mandate specific items (RWH, STP, solar) that must be
+    included in scope and cost. Working without approved plans is illegal.
+
+    '
+  suggested_resolution: Provide approved/sanctioned building plans with conditions. Highlight mandatory provisions that affect construction scope.
+  priority: critical
+  building_types:
+  - all
+  package: all
+- id: RFI-MD-GE-001
+  trigger_type: missing_doc
+  trigger_keywords:
+  - soil investigation
+  - geotechnical report
+  - bore log
+  - SBC report
+  trigger_trade: structural
+  question_template: 'Soil investigation/geotechnical report has not been provided for {area}. Please provide:
+
+    (a) Bore logs with SPT (Standard Penetration Test) N-values at each depth and stratum description?
+
+    (b) Safe bearing capacity (SBC) at proposed foundation level with recommended foundation type?
+
+    (c) Water table depth — seasonal variation and dewatering implications?
+
+    (d) Chemical analysis — soil and groundwater sulphate/chloride content for concrete durability design?
+
+    '
+  why_it_matters: IS 1904 requires geotechnical investigation before foundation design. Without it, foundation type and depth cannot be confirmed — isolated vs pile foundation cost differs by 3-5x. High
+    water table requires dewatering (INR 5-20 lakh additional cost). Aggressive soil chemistry requires special cement and concrete cover — if not identified, early corrosion occurs. Geotechnical report
+    is required by structural consultant before structural design can begin.
+  suggested_resolution: Provide geotechnical investigation report with bore logs, SBC recommendation, water table data, chemical analysis, and foundation type recommendation. Minimum 2 boreholes per 500
+    sqm of footprint.
+  priority: critical
+  building_types:
+  - all
+  package: structural
+- id: RFI-MD-QA-001
+  trigger_type: missing_doc
+  trigger_keywords:
+  - concrete mix design
+  - IS 10262
+  - mix design report
+  - trial mix
+  trigger_trade: structural
+  question_template: 'Concrete mix design report per IS 10262 has not been provided for {area}. Please provide:
+
+    (a) Mix design for each concrete grade (M20, M25, M30, M35, M40) proposed on this project?
+
+    (b) Mix proportions — cement, fine aggregate, coarse aggregate, water, and admixture dosage?
+
+    (c) Trial mix results — target mean strength achieved from 6 trial cubes at 28 days?
+
+    (d) Source and testing data for aggregates — grading, specific gravity, and absorption?
+
+    '
+  why_it_matters: IS 456 mandates design mix for M20 and above. Without approved mix design, concrete quality at site cannot be controlled or verified. Mix design optimises cement content — saving 5-10%
+    cement (INR 50-100/cum) while meeting strength targets. Trial mix approval takes 28 days (cube curing) — starting the process late delays concrete production. Third-party structural audits and PMC require
+    approved mix design as a pre-pour check.
+  suggested_resolution: Provide IS 10262 mix design for each concrete grade with trial mix cube results. Mix to be approved by structural consultant and PMC before first concrete pour of each grade.
+  priority: high
+  building_types:
+  - all
+  package: structural
+- id: RFI-MD-ST-007
+  trigger_type: missing_doc
+  trigger_keywords:
+  - bar bending schedule document
+  - BBS document
+  - reinforcement BBS
+  - rebar schedule
+  trigger_trade: structural
+  question_template: 'Bar bending schedule (BBS) document has not been provided for {area}. Please provide:
+
+    (a) Complete BBS for all structural elements — footing, column, beam, slab, and staircase?
+
+    (b) Format — tabular with bar mark, dia, length, shape code, and number of bars per element?
+
+    (c) Preparation basis — structural design drawings from consultant, or as-designed field conditions?
+
+    (d) Steel weight summary by element type for verification against BOQ quantities?
+
+    '
+  why_it_matters: BBS is the definitive document for steel procurement, cutting, and bending. Without BBS, steel is cut by estimation, resulting in 8-12% wastage versus 3-5% with BBS. BBS is required for
+    accurate quantity reconciliation and stage payment verification. For developer projects, BBS is used to verify the structural consultant's quantity estimates against on-site consumption.
+  suggested_resolution: Confirm whether BBS is consultant-provided or contractor-scope. If consultant-provided, share BBS for each floor before structural pour. If contractor-scope, define approval workflow
+    and lead time.
+  priority: high
+  building_types:
+  - all
+  package: structural
+- id: RFI-MD-ST-008
+  trigger_type: missing_doc
+  trigger_keywords:
+  - formwork drawing
+  - formwork design
+  - shuttering design
+  - complex shape formwork
+  trigger_trade: structural
+  question_template: 'Formwork/shuttering design drawing has not been provided for complex structural shapes at {area}. Please provide:
+
+    (a) Formwork scheme drawing for cantilever slabs, curved beams, or double-height columns?
+
+    (b) Prop/shore design — spacing, size, and height for high-bay areas (above 4m soffit)?
+
+    (c) Reshoring plan — where floors below must remain propped during upper floor concreting?
+
+    (d) Stripping sequence and minimum concrete strength at stripping?
+
+    '
+  why_it_matters: Standard formwork design is adequate for routine elements, but complex shapes require engineered formwork drawings. Cantilever slabs with large spans, curved walls, and high-bay areas
+    (>4m) require structural check of formwork loads. Formwork failure is a leading cause of construction fatalities — NBM&CW and BIS guidelines require formwork design certification for complex elements.
+    Reshoring inadequacy causes slab deflection and cracking.
+  suggested_resolution: Provide engineered formwork/shoring scheme for all complex structural elements (cantilevers, curves, high-bay). Include prop design, stripping sequence, and minimum strength at stripping.
+  priority: medium
+  building_types:
+  - all
+  package: structural
+- id: RFI-MD-ME-007
+  trigger_type: missing_doc
+  trigger_keywords:
+  - MEP coordination drawing
+  - clash detection
+  - BIM MEP
+  - service coordination drawing
+  trigger_trade: all
+  question_template: 'MEP services coordination drawing has not been provided for {area}. Please provide:
+
+    (a) Composite MEP drawing showing HVAC ducts, electrical cable trays, plumbing pipes, and fire mains in the same ceiling void?
+
+    (b) Critical sections through service corridors, plant rooms, and ceiling voids with elevation dimensions?
+
+    (c) Has BIM/3D clash detection been done — are clashes resolved before drawings are issued for construction?
+
+    (d) Sleeve/opening schedule derived from coordination drawing — approved by structural consultant?
+
+    '
+  why_it_matters: MEP services in ceiling voids and shafts frequently clash, discovered only during installation. Resolving clashes on site requires rerouting (waste material), delays, and extended preliminaries.
+    A coordination drawing reduces site clashes by 70-80%. Sleeve/opening schedule from coordination drawing prevents post-casting core cutting (5-10x cost). BIM-based coordination is increasingly standard
+    on commercial projects — absence signals a coordination gap.
+  suggested_resolution: Provide composite MEP coordination drawing for all ceiling voids and risers. Confirm BIM clash detection is complete. Issue sleeve/opening schedule to structural team before slab
+    casting.
+  priority: high
+  building_types:
+  - commercial
+  - hospital
+  - hotel
+  - office
+  package: all
+- id: RFI-MD-CP-005
+  trigger_type: missing_doc
+  trigger_keywords:
+  - fire NOC
+  - fire department approval
+  - fire clearance
+  - NOC fire
+  trigger_trade: fire_safety
+  question_template: 'Fire NOC from the fire department has not been provided for building above 15m at {area}. Please provide:
+
+    (a) Fire NOC approved floor plans showing escape routes, hydrant points, and fire system layout?
+
+    (b) Fire department conditions/stipulations specific to this building?
+
+    (c) If NOC is pending — what is the application status and expected approval timeline?
+
+    (d) Is a fire consultant/liaisoning consultant appointed for fire NOC process?
+
+    '
+  why_it_matters: Fire NOC is mandatory for buildings above 15m before construction can proceed in many states, and before occupancy certificate in all cases. Fire system design and layout must match the
+    NOC approved drawings — deviations require revised NOC (2-6 months additional delay). Without fire NOC, the fire fighting BOQ cannot be finalised, as conditions may mandate additional systems. Last-mile
+    fire NOC delays are among the top reasons for project handover delays in India.
+  suggested_resolution: Provide fire NOC with approved floor plans and conditions. If pending, share the applied layout and timeline. Appoint a fire consultant immediately if not already done.
+  priority: critical
+  building_types:
+  - all
+  package: fire_safety
+- id: RFI-MD-EV-001
+  trigger_type: missing_doc
+  trigger_keywords:
+  - lift inspection certificate
+  - elevator certificate
+  - lift approval
+  - lift inspectorate
+  trigger_trade: elevator
+  question_template: 'Lift inspection certificate from the Inspectorate of Factories/Lifts has not been provided for {area}. Please confirm:
+
+    (a) Lift plan submission to state lift inspectorate — submitted or pending?
+
+    (b) Approved lift drawings from inspectorate — are these available?
+
+    (c) For existing building with lifts — has annual inspection and certificate been obtained?
+
+    (d) Who is responsible for obtaining lift inspection certificate — client or lift contractor?
+
+    '
+  why_it_matters: Lift installation requires approval from the state lift inspectorate under the Factories Act or state-specific Lifts and Escalators Act before commissioning. Without this approval, lifts
+    cannot be operated. The approval process takes 4-12 weeks and requires submission of design drawings, test results, and manufacturer certificates. Certificate is also required for building occupancy
+    certificate. Scope ambiguity about responsibility between client and lift contractor is a frequent delay cause.
+  suggested_resolution: Submit lift plans to state inspectorate during construction phase (not after completion). Define responsibility for obtaining inspection certificate in lift contract. Allow 8-12
+    weeks for approval.
+  priority: high
+  building_types:
+  - all
+  package: elevator
+- id: RFI-MD-EL-001
+  trigger_type: missing_doc
+  trigger_keywords:
+  - CEIG approval
+  - HT approval
+  - chief electrical inspector
+  - HT installation approval
+  trigger_trade: electrical
+  question_template: 'CEIG (Chief Electrical Inspector to Government) approval for HT installation has not been provided for {area}. Please confirm:
+
+    (a) HT voltage level — 11 kV, 22 kV, or 33 kV system at this project?
+
+    (b) CEIG drawing submission status — submitted, under review, or approved?
+
+    (c) CEIG conditions — any specific requirements from the inspector for the substation/HT switchgear?
+
+    (d) Who files for CEIG approval — client, electrical consultant, or HT contractor?
+
+    '
+  why_it_matters: CEIG approval is mandatory under the Electricity Act 2003 and IE Rules for all HT installations before energisation. Without CEIG approval, the utility (DISCOM) will not energise the HT
+    supply — a project-stopping bottleneck. Approval process takes 4-8 weeks and requires submission of approved SLD, protection relay settings, and test reports. HT substation equipment procurement also
+    needs to be based on CEIG-approved specifications.
+  suggested_resolution: Submit CEIG approval application during HT equipment procurement phase. Share approved SLD and substation layout with HT contractor. Allow 8 weeks for CEIG process in project programme.
+  priority: critical
+  building_types:
+  - commercial
+  - hospital
+  - hotel
+  - industrial
+  - data_center
+  package: electrical
+- id: RFI-MD-CP-006
+  trigger_type: missing_doc
+  trigger_keywords:
+  - MOEF clearance
+  - environmental clearance
+  - EC
+  - environment impact assessment
+  trigger_trade: all
+  question_template: 'MoEF (Ministry of Environment, Forest and Climate Change) environmental clearance (EC) has not been provided for project above 20,000 sqm at {area}. Please confirm:
+
+    (a) Total built-up area — does it trigger EC threshold (20,000 sqm for Category B1 projects)?
+
+    (b) EC status — applied, under appraisal, or granted?
+
+    (c) EC conditions — specific conditions relating to STP, RWH, landscaping, or environmental monitoring?
+
+    (d) Is an Environmental Management Plan (EMP) required for construction phase?
+
+    '
+  why_it_matters: Environmental clearance from MoEF is mandatory under EIA Notification 2006 for projects above 20,000 sqm built-up area. Commencing construction without EC is a legal violation attracting
+    project shutdown and penalties. EC conditions mandate specific provisions (STP, RWH, green cover) that must be incorporated in design and BOQ. EMP requires monitoring and reporting during construction
+    — contractor must provision for this.
+  suggested_resolution: Confirm total built-up area and EC requirement. Share EC clearance with all conditions. Incorporate EC conditions into design specifications and BOQ. Prepare Environmental Management
+    Plan for construction phase.
+  priority: critical
+  building_types:
+  - all
+  package: all
+- id: RFI-MD-CP-007
+  trigger_type: missing_doc
+  trigger_keywords:
+  - completion certificate
+  - OC
+  - occupancy certificate
+  - CC building
+  trigger_trade: all
+  question_template: 'Building completion/occupancy certificate documents have not been provided for {area}. Please confirm:
+
+    (a) For existing buildings — is occupancy certificate (OC) available or is building unauthorised/under deviation?
+
+    (b) For renovation/fit-out projects — does the existing OC cover the proposed floor plates and use?
+
+    (c) Change of use — if project involves change of occupancy classification, has revised approval been obtained?
+
+    (d) Who coordinates with local authority for OC — client, PMC, or main contractor?
+
+    '
+  why_it_matters: Without occupancy certificate, a building cannot be legally occupied, mortgaged, or insured. Renovation of buildings without OC is technically illegal in many states. Change of use (residential
+    to commercial) requires fresh planning permission and may require structural upgrade. OC conditions may mandate specific systems (fire, STP, RWH) that must be completed before certificate is issued.
+    Clarifying OC status at bid stage prevents post-contract surprises.
+  suggested_resolution: Provide existing occupancy certificate. For new construction, confirm OC requirements with local authority. List all OC-mandatory provisions (fire NOC, STP, lifts) and ensure they
+    are in BOQ scope.
+  priority: high
+  building_types:
+  - all
+  package: all
+- id: RFI-MD-ST-009
+  trigger_type: missing_doc
+  trigger_keywords:
+  - structural stability certificate
+  - structural certificate
+  - third party structural audit
+  trigger_trade: structural
+  question_template: 'Structural stability certificate from a licensed structural engineer has not been provided for {area}. Please confirm:
+
+    (a) Is structural stability certificate required by local authority for renovation/addition to existing structure?
+
+    (b) Has an existing building structural assessment been conducted before design of additions?
+
+    (c) Third-party structural audit — mandated by local authority or insurance requirement?
+
+    (d) Interim stability certificates — at key stages (foundation, each floor) or only at completion?
+
+    '
+  why_it_matters: Structural stability certificate is mandatory for renovation, addition, and change of use under most state building bylaws. Without assessing existing structure capacity, additions may
+    overstress columns, beams, and foundations. Third-party structural audit is mandated in Maharashtra, Gujarat, and several other states for buildings above G+4. Certificate is required for building completion
+    and for obtaining occupancy certificate from local authority.
+  suggested_resolution: Obtain structural stability certificate from licensed structural engineer. For existing buildings, conduct structural assessment before design begins. Define audit stages and incorporate
+    audit cost in project budget.
+  priority: high
+  building_types:
+  - all
+  package: structural
+- id: RFI-MD-GE-002
+  trigger_type: missing_doc
+  trigger_keywords:
+  - soil bearing capacity test
+  - plate load test
+  - SBC test
+  - bearing capacity report
+  trigger_trade: structural
+  question_template: 'Soil bearing capacity test report has not been provided separately for {area}. Please provide:
+
+    (a) Plate load test results at proposed foundation level — ultimate and safe bearing capacity?
+
+    (b) SPT N-value at each metre depth — used to estimate SBC from correlations?
+
+    (c) Settlement analysis — predicted differential settlement under design loads?
+
+    (d) Laboratory soil classification tests — grain size, Atterberg limits, and compaction data?
+
+    '
+  why_it_matters: SBC test report is the primary input for foundation design. Soil investigation without plate load test relies on SPT correlations, which have 25-50% uncertainty. Plate load test costs
+    INR 10,000-25,000 per test but reduces foundation over-design. Settlement analysis is critical for buildings on compressible soils (black cotton, reclaimed land). Without confirmed SBC, foundation design
+    is conservative, increasing cost by 20-40%.
+  suggested_resolution: Conduct plate load test at each proposed foundation level. Provide laboratory soil classification results. Include settlement analysis in geotechnical report before finalising foundation
+    design.
+  priority: high
+  building_types:
+  - all
+  package: structural
+- id: RFI-MD-PL-001
+  trigger_type: missing_doc
+  trigger_keywords:
+  - water quality test
+  - water testing report
+  - potable water test
+  - IS 10500 water
+  trigger_trade: plumbing
+  question_template: 'Water quality test report for drinking water source has not been provided for {area}. Please provide:
+
+    (a) Source of drinking water — municipal supply, borewell, or tanker? Test report for each source?
+
+    (b) Bacteriological test — total coliform, E. coli, and total viable count per IS 10500?
+
+    (c) Chemical test — pH, TDS, hardness, nitrates, fluoride, heavy metals per IS 10500?
+
+    (d) Treatment required — chlorination, UV, RO, or softener based on test results?
+
+    '
+  why_it_matters: IS 10500 specifies drinking water quality standards. Without water quality testing, appropriate treatment cannot be specified. Borewell water frequently fails chemical or bacteriological
+    standards — common issues include high TDS (requiring RO), high hardness (softener), or iron/manganese (filtration). Specifying water treatment without knowing raw water quality results in either over-treatment
+    (capital waste) or under-treatment (health risk and regulatory liability).
+  suggested_resolution: Conduct water quality test from all proposed sources per IS 10500. Provide test reports to plumbing consultant. Specify treatment system based on test results — not on assumed quality.
+  priority: high
+  building_types:
+  - all
+  package: plumbing
+- id: RFI-MD-GB-001
+  trigger_type: missing_doc
+  trigger_keywords:
+  - GRIHA documentation
+  - LEED documentation
+  - green rating documentation
+  - IGBC document
+  trigger_trade: all
+  question_template: 'Green building rating documentation has not been provided despite green certification being mentioned for {area}. Please provide:
+
+    (a) Target rating system and level — GRIHA (1-5 star), IGBC Green Homes (Certified/Silver/Gold/Platinum), LEED (BD+C rating level)?
+
+    (b) Credit-wise gap analysis — which credits are being targeted and what are the construction specification requirements?
+
+    (c) Low-VOC paint, adhesive, and sealant specification per credit requirements?
+
+    (d) Construction waste management plan — recycled content targets and waste diversion from landfill?
+
+    '
+  why_it_matters: Green building certification requirements directly affect material specifications, construction practices, and documentation. IGBC Platinum rating requires low-VOC products, high SRI roofing,
+    water-efficient fixtures, and energy modelling. Construction waste management credit requires sorting, recording, and disposing waste responsibly. Without credit-specific specifications in BOQ, contractors
+    supply standard materials that may fail credit requirements, causing deregistration or rating downgrade.
+  suggested_resolution: Provide credit-wise specification requirements affecting construction. Update BOQ to include green material specifications. Appoint green building consultant if not already done.
+  priority: medium
+  building_types:
+  - commercial
+  - office
+  - hotel
+  - hospital
+  package: all
+- id: RFI-MD-EL-002
+  trigger_type: missing_doc
+  trigger_keywords:
+  - energy audit
+  - energy report
+  - ECBC compliance report
+  - energy analysis
+  trigger_trade: electrical
+  question_template: 'Energy audit/ECBC compliance report has not been provided for commercial building above 500 sqm at {area}. Please provide:
+
+    (a) ECBC 2017 compliance report — envelope (WWR, U-value, SHGC), lighting (LPD), and HVAC (COP/IPLV) compliance?
+
+    (b) Energy simulation model — annual energy consumption in kWh/sqm per year?
+
+    (c) EPI (Energy Performance Index) target — BEE label or GRIHA energy performance credit target?
+
+    (d) Proposed energy conservation measures — specific to this building design?
+
+    '
+  why_it_matters: ECBC 2017 is mandatory for commercial buildings above 500 sqm in BEE Star Labelling states. ECBC sets minimum standards for envelope, lighting power density, and HVAC efficiency. Non-compliance
+    requires design revision — late discovery during construction causes expensive changes. Energy simulation is required for GRIHA/IGBC certification and for buildings with complex geometry or occupancy.
+    EPI target sets the benchmark for energy-efficient design.
+  suggested_resolution: Conduct ECBC compliance check and energy simulation before construction begins. Provide credit-wise compliance report. Update specifications to meet ECBC minimum requirements for
+    envelope, lighting, and HVAC.
+  priority: medium
+  building_types:
+  - commercial
+  - office
+  - hotel
+  - hospital
+  - retail_mall
+  package: electrical
+- id: RFI-MD-EL-003
+  trigger_type: missing_doc
+  trigger_keywords:
+  - generator load calculation
+  - DG load schedule
+  - genset load
+  - essential load DG
+  trigger_trade: electrical
+  question_template: 'Generator (DG set) load calculation document has not been provided for {area}. Please provide:
+
+    (a) Essential load schedule — list of all loads on generator supply with kW ratings?
+
+    (b) Demand factor and diversity factor applied to essential loads?
+
+    (c) Starting sequence — which motor loads start together (affects generator voltage dip)?
+
+    (d) Generator kVA at 0.8 power factor — prime rating for continuous operation?
+
+    '
+  why_it_matters: DG set sizing without load calculation leads to either under-sizing (tripping under load) or over-sizing (30-50% capital waste). Motor starting causes voltage dip — starting multiple large
+    motors together requires generator to be sized 1.5-2x running load. Prime vs standby rating must be specified — standby rating is 10-15% higher but for intermittent use only. Without the load calculation,
+    generator procurement is guesswork.
+  suggested_resolution: Provide essential load schedule with kW ratings, demand factor, and motor starting sequence. Size generator at prime rating based on calculated maximum demand. Share calculation
+    for PMC/client review.
+  priority: high
+  building_types:
+  - all
+  package: electrical
+- id: RFI-MD-EL-004
+  trigger_type: missing_doc
+  trigger_keywords:
+  - lightning protection design
+  - LPS design drawing
+  - IS 62305 LPS design
+  - air terminal layout
+  trigger_trade: electrical
+  question_template: 'Lightning protection system (LPS) design drawing has not been provided for {area}. Please provide:
+
+    (a) Risk assessment per IS/IEC 62305-2 — risk level and LPS class selected?
+
+    (b) Air termination system layout — rod/conductor positions on roof plan?
+
+    (c) Down conductor routing — number, material, and route from air termination to earth pits?
+
+    (d) Earth termination layout — number of pits, type, and interconnection ring conductor?
+
+    '
+  why_it_matters: LPS design drawing is needed for accurate material quantity estimation (conductor length, number of earth pits, surge protectors) and for planning conductor routes through the building.
+    Without a design drawing, LPS is installed ad hoc with conductor routes clashing with architectural features. IS/IEC 62305 risk assessment determines whether LPS is required and what protection class
+    is needed — hospital, data centre, and explosive storage always require LPS regardless of height.
+  suggested_resolution: Provide LPS design drawing from qualified lightning protection designer. Include risk assessment, air termination plan, down conductor routing, and earth termination layout. Share
+    with structural team for conductor penetration coordination.
+  priority: high
+  building_types:
+  - all
+  package: electrical
+- id: RFI-MD-AC-001
+  trigger_type: missing_doc
+  trigger_keywords:
+  - acoustic report
+  - STC requirement
+  - acoustic design
+  - sound insulation report
+  trigger_trade: finishing
+  question_template: 'Acoustic design report has not been provided despite STC/NRC requirements being mentioned for {area}. Please provide:
+
+    (a) Required noise criterion for each space — NC level for offices, bedrooms, studios?
+
+    (b) Airborne sound insulation — STC requirement for walls, floors, and doors between spaces?
+
+    (c) Impact sound — IIC (Impact Isolation Class) requirement for floors above occupied spaces?
+
+    (d) Reverberation time (RT60) target — for conference rooms, classrooms, or auditoriums?
+
+    '
+  why_it_matters: Without an acoustic design report, STC and NRC requirements are vague targets. Wall construction achieving STC 45 (for hotel bedrooms between adjoining units) requires specific wall build-up
+    with mass and decoupling — not achievable with a standard 115mm brick wall. Impact sound from footfalls requires floating floor system (expensive) if not addressed at design stage. Acoustic remediation
+    post-construction costs 5-10x the original acoustic specification.
+  suggested_resolution: Provide acoustic design report with NC/STC/IIC/RT60 targets per space. Specify wall, floor, and ceiling build-up to achieve each target. Coordinate acoustic treatment with MEP penetration
+    details (sealing is critical for STC).
+  priority: medium
+  building_types:
+  - hotel
+  - hospital
+  - school
+  - office
+  - studio
+  package: finishing
+- id: RFI-MD-ST-010
+  trigger_type: missing_doc
+  trigger_keywords:
+  - pool structural calculation
+  - swimming pool structural
+  - pool design calculation
+  trigger_trade: structural
+  question_template: 'Swimming pool structural design calculation has not been provided for {area}. Please provide:
+
+    (a) Pool basin structural design — wall thickness, reinforcement, and water pressure analysis?
+
+    (b) Pool deck — dead load (pool water + soil backfill) and live load for structural slab/beam design?
+
+    (c) Pool water pressure on basement walls — if pool is above another occupied space?
+
+    (d) Expansion/movement joint design — to prevent cracking of pool basin under temperature and water pressure cycling?
+
+    '
+  why_it_matters: Swimming pool structural design is specialist work — pool water pressure (10 kN/sqm per metre depth) is significant and must be combined with soil pressure for below-grade pools. Roof
+    pools create concentrated loads that must be transferred through the structure. Without structural calculations, pool basin cracks due to inadequate reinforcement, causing leakage. Pool structural failure
+    is both a safety risk and a very expensive remediation.
+  suggested_resolution: Provide swimming pool structural design calculations including water pressure analysis, wall/slab design, and deck loading. Ensure pool basin design is coordinated with waterproofing
+    consultant for watertight detailing.
+  priority: high
+  building_types:
+  - hotel
+  - residential_complex
+  - sports_complex
+  package: structural
+- id: RFI-MD-SP-001
+  trigger_type: missing_doc
+  trigger_keywords:
+  - clean room
+  - cleanroom qualification
+  - ISO 14644
+  - GMP clean room
+  trigger_trade: hvac
+  question_template: 'Clean room qualification report/specification has not been provided for {area}. Please provide:
+
+    (a) Clean room class per ISO 14644-1 — Class 5 (100), Class 6, Class 7 (10,000), or Class 8 (100,000)?
+
+    (b) Air change rate per hour for each clean room class?
+
+    (c) HEPA/ULPA filter grade — H13, H14, or U15?
+
+    (d) Qualification testing required — IQ (Installation Qualification), OQ (Operational Qualification), PQ (Performance Qualification)?
+
+    '
+  why_it_matters: Clean room class determines HVAC complexity and cost dramatically. ISO Class 5 (100 particles) requires 250-600 ACH with laminar flow — 10-20x the ACH of a standard room. This drives fan
+    and duct sizing, electrical load, and cost. GMP (Good Manufacturing Practice) pharmaceutical clean rooms require IQ/OQ/PQ qualification testing (cost INR 10-30 lakh) and specific construction materials
+    (no particle-shedding surfaces). Without qualification specification, both design and BOQ are impossibly vague.
+  suggested_resolution: Provide clean room specification with ISO class, ACH, filter grade, pressure cascade, temperature/humidity requirements, and qualification test protocol. Appoint clean room specialist
+    contractor early.
+  priority: high
+  building_types:
+  - hospital
+  - industrial
+  - data_center
+  package: hvac

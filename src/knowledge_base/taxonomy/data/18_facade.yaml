@@ -1,0 +1,3789 @@
+discipline: architectural
+trade: facade
+sub_trades:
+  acp:
+    categories:
+      panel:
+        items:
+        - id: FAC.ACP.PNL.001
+          standard_name: ACP panel - 2mm thick - PE core - standard colour
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 15477
+          dsr_item_ref: ''
+          aliases:
+          - ACP 2mm PE
+          - aluminum composite panel 2mm
+          typical_rate_range:
+            min: 800
+            max: 1400
+          notes: Panel only, sub-frame separate
+          data_source: IS codes only
+        - id: FAC.ACP.PNL.002
+          standard_name: ACP panel - 3mm thick - PE core - standard colour
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 15477
+          dsr_item_ref: ''
+          aliases:
+          - ACP 3mm PE
+          - aluminum composite panel 3mm
+          typical_rate_range:
+            min: 1000
+            max: 1700
+          notes: ''
+          data_source: IS codes only
+        - id: FAC.ACP.PNL.003
+          standard_name: ACP panel - 4mm thick - PE core - standard colour
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 15477
+          dsr_item_ref: ''
+          aliases:
+          - ACP 4mm PE
+          - aluminum composite panel 4mm
+          typical_rate_range:
+            min: 1200
+            max: 2000
+          notes: ''
+          data_source: IS codes only
+        - id: FAC.ACP.PNL.004
+          standard_name: ACP panel - 4mm thick - FR (fire retardant) core - B1 rated
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 15477, NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - ACP FR core
+          - fire retardant ACP
+          typical_rate_range:
+            min: 1600
+            max: 2600
+          notes: Fire retardant mineral core
+          data_source: IS codes only
+        - id: FAC.ACP.PNL.005
+          standard_name: ACP panel - 4mm thick - A2 core (non-combustible) - for high-rise
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - high_rise
+          - institutional
+          requires: []
+          is_code_ref: IS 15477, NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - ACP A2 core
+          - non-combustible ACP
+          - fire-safe ACP
+          typical_rate_range:
+            min: 2200
+            max: 3500
+          notes: Mandatory for buildings above 15m per NBC 2016
+          data_source: IS codes only
+        - id: FAC.ACP.PNL.006
+          standard_name: ACP panel - 4mm thick - PVDF coated - premium finish
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 277
+          dsr_item_ref: ''
+          aliases:
+          - PVDF ACP
+          - kynar coated ACP
+          typical_rate_range:
+            min: 1800
+            max: 3000
+          notes: Superior weather resistance, 20-year colour warranty
+          data_source: estimated
+        - id: FAC.ACP.PNL.007
+          standard_name: ACP panel - 4mm thick - wood/stone/metallic texture finish
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - hospitality
+          requires: []
+          is_code_ref: IS 277
+          dsr_item_ref: ''
+          aliases:
+          - textured ACP
+          - wood finish ACP
+          - stone finish ACP
+          typical_rate_range:
+            min: 1500
+            max: 2800
+          notes: ''
+          data_source: estimated
+      sub_frame:
+        items:
+        - id: FAC.ACP.SFA.001
+          standard_name: ACP sub-frame - aluminum section 50x25mm with brackets
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 277, IS 1948
+          dsr_item_ref: ''
+          aliases:
+          - aluminum sub-frame 50x25
+          - ACP framework
+          typical_rate_range:
+            min: 400
+            max: 750
+          notes: Per sqm of facade area
+          data_source: estimated
+        - id: FAC.ACP.SFA.002
+          standard_name: ACP sub-frame - aluminum section 50x50mm with brackets
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 277, IS 1948
+          dsr_item_ref: ''
+          aliases:
+          - aluminum sub-frame 50x50
+          typical_rate_range:
+            min: 500
+            max: 900
+          notes: ''
+          data_source: estimated
+        - id: FAC.ACP.SFM.001
+          standard_name: ACP sub-frame - MS section (galvanized) with brackets
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 277, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - MS sub-frame ACP
+          - steel sub-frame
+          typical_rate_range:
+            min: 350
+            max: 650
+          notes: For heavy panels or large spans
+          data_source: estimated
+      accessories:
+        items:
+        - id: FAC.ACP.INS.001
+          standard_name: Insulation behind ACP - mineral wool 50mm thick (48 kg/m3)
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 3144, IS 8183
+          dsr_item_ref: ''
+          aliases:
+          - rockwool insulation ACP
+          - mineral wool behind ACP
+          typical_rate_range:
+            min: 200
+            max: 400
+          notes: Fire barrier insulation
+          data_source: estimated
+        - id: FAC.ACP.INS.002
+          standard_name: Insulation behind ACP - mineral wool 100mm thick (48 kg/m3)
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 3144, IS 8183
+          dsr_item_ref: ''
+          aliases:
+          - thick rockwool insulation
+          typical_rate_range:
+            min: 350
+            max: 650
+          notes: ''
+          data_source: estimated
+        - id: FAC.ACP.SEL.001
+          standard_name: Joint sealant - structural silicone (between panels)
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - structural silicone
+          - panel joint sealant
+          typical_rate_range:
+            min: 80
+            max: 180
+          notes: Per running meter of joint
+          data_source: estimated
+        - id: FAC.ACP.SEL.002
+          standard_name: Joint sealant - weather silicone (perimeter/window joints)
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - weather sealant
+          - silicone sealant facade
+          typical_rate_range:
+            min: 60
+            max: 140
+          notes: ''
+          data_source: estimated
+        - id: FAC.ACP.BRK.001
+          standard_name: ACP bracket/cleat - aluminum/MS (L-bracket or Z-bracket)
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 277, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - ACP bracket
+          - facade cleat
+          - Z-bracket
+          typical_rate_range:
+            min: 50
+            max: 150
+          notes: Per piece
+          data_source: estimated
+        - id: FAC.ACP.FLS.001
+          standard_name: Flashing - aluminum/GI - at parapet, sill, head
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 277
+          dsr_item_ref: ''
+          aliases:
+          - facade flashing
+          - weather flashing
+          - drip flashing
+          typical_rate_range:
+            min: 150
+            max: 350
+          notes: ''
+          data_source: estimated
+  curtain_wall:
+    categories:
+      stick_system:
+        items:
+        - id: FAC.CW.STK.001
+          standard_name: Curtain wall - stick system - aluminum mullion/transom 100x50mm - single glazed
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 14900
+          dsr_item_ref: ''
+          aliases:
+          - stick curtain wall
+          - mullion-transom system
+          typical_rate_range:
+            min: 4000
+            max: 7000
+          notes: Including all hardware, gaskets, sealants
+          data_source: IS codes only
+        - id: FAC.CW.STK.002
+          standard_name: Curtain wall - stick system - aluminum mullion/transom 100x50mm - DGU (double glazed)
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 14900
+          dsr_item_ref: ''
+          aliases:
+          - DGU curtain wall
+          - double glazed curtain wall
+          typical_rate_range:
+            min: 5500
+            max: 9000
+          notes: With insulating glass unit
+          data_source: IS codes only
+        - id: FAC.CW.STK.003
+          standard_name: Curtain wall - stick system - aluminum mullion/transom 150x50mm - DGU
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - high_rise
+          requires: []
+          is_code_ref: IS 14900
+          dsr_item_ref: ''
+          aliases:
+          - heavy duty curtain wall
+          - 150mm curtain wall
+          typical_rate_range:
+            min: 6500
+            max: 10000
+          notes: For taller floor heights and higher wind loads
+          data_source: IS codes only
+      unitized:
+        items:
+        - id: FAC.CW.UNT.001
+          standard_name: Curtain wall - unitized system - factory assembled panels - DGU
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - high_rise
+          - commercial
+          requires: []
+          is_code_ref: IS 14900
+          dsr_item_ref: ''
+          aliases:
+          - unitized curtain wall
+          - panelized curtain wall
+          typical_rate_range:
+            min: 8000
+            max: 14000
+          notes: Factory-assembled units, faster installation for high-rise
+          data_source: IS codes only
+        - id: FAC.CW.UNT.002
+          standard_name: Curtain wall - unitized system - with integrated spandrel panel
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - high_rise
+          requires: []
+          is_code_ref: IS 14900, IS 1948
+          dsr_item_ref: ''
+          aliases:
+          - unitized with spandrel
+          typical_rate_range:
+            min: 9000
+            max: 16000
+          notes: Including opaque spandrel areas with insulation
+          data_source: estimated
+      structural_glazing:
+        items:
+        - id: FAC.CW.SG4.001
+          standard_name: Structural glazing - 4-side silicone bonded - single glazed
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 14900, IS 2553
+          dsr_item_ref: ''
+          aliases:
+          - 4-side structural glazing
+          - full SG
+          - flush glazing
+          typical_rate_range:
+            min: 5000
+            max: 8000
+          notes: No visible frame from outside
+          data_source: estimated
+        - id: FAC.CW.SG4.002
+          standard_name: Structural glazing - 4-side silicone bonded - DGU
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 14900, IS 2553
+          dsr_item_ref: ''
+          aliases:
+          - 4-side SG DGU
+          typical_rate_range:
+            min: 6500
+            max: 10500
+          notes: ''
+          data_source: estimated
+        - id: FAC.CW.SG2.001
+          standard_name: Structural glazing - 2-side silicone bonded (horizontal mullion exposed)
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 14900, IS 2553
+          dsr_item_ref: ''
+          aliases:
+          - 2-side structural glazing
+          - semi-SG
+          typical_rate_range:
+            min: 4500
+            max: 7500
+          notes: ''
+          data_source: estimated
+      point_fixed:
+        items:
+        - id: FAC.CW.SPD.001
+          standard_name: Spider/point-fixed glazing - 4 point fixing - toughened glass
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 14900
+          dsr_item_ref: ''
+          aliases:
+          - spider glazing 4-point
+          - point fixed glass
+          typical_rate_range:
+            min: 6000
+            max: 10000
+          notes: Including spiders, bolts, patch fittings
+          data_source: estimated
+        - id: FAC.CW.SPD.002
+          standard_name: Spider/point-fixed glazing - 6 point fixing - large panels
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 14900
+          dsr_item_ref: ''
+          aliases:
+          - spider glazing 6-point
+          typical_rate_range:
+            min: 7000
+            max: 12000
+          notes: ''
+          data_source: estimated
+        - id: FAC.CW.CBL.001
+          standard_name: Cable net glazing - SS cable truss with point-fixed glass
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 14900, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - cable net facade
+          - cable truss glazing
+          typical_rate_range:
+            min: 10000
+            max: 18000
+          notes: For large atriums and lobbies
+          data_source: estimated
+      double_skin:
+        items:
+        - id: FAC.CW.DSK.001
+          standard_name: Double-skin facade - outer glass + cavity + inner glass
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - high_rise
+          requires: []
+          is_code_ref: IS 14900, IS 2553
+          dsr_item_ref: ''
+          aliases:
+          - double skin facade
+          - ventilated facade
+          - twin wall facade
+          typical_rate_range:
+            min: 12000
+            max: 22000
+          notes: High-performance energy efficient facade
+          data_source: estimated
+  stone_cladding:
+    categories:
+      granite:
+        items:
+        - id: FAC.SC.GRN.001
+          standard_name: Granite cladding - 30mm thick - polished finish - dry-fix system
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 1130
+          dsr_item_ref: ''
+          aliases:
+          - granite facade polished
+          - granite cladding dry fix
+          typical_rate_range:
+            min: 2500
+            max: 4500
+          notes: Including SS anchors, backing, sealant
+          data_source: estimated
+        - id: FAC.SC.GRN.002
+          standard_name: Granite cladding - 30mm thick - flamed/honed finish - dry-fix system
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 1130
+          dsr_item_ref: ''
+          aliases:
+          - granite facade flamed
+          - textured granite cladding
+          typical_rate_range:
+            min: 2200
+            max: 4000
+          notes: ''
+          data_source: estimated
+        - id: FAC.SC.GRN.003
+          standard_name: Granite cladding - 40mm thick - split face/rock face - dry-fix
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1130
+          dsr_item_ref: ''
+          aliases:
+          - rock face granite
+          - split face granite
+          typical_rate_range:
+            min: 2000
+            max: 3500
+          notes: Rustic appearance
+          data_source: estimated
+      marble:
+        items:
+        - id: FAC.SC.MRB.001
+          standard_name: Marble cladding - 30mm thick - polished - dry-fix system
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - hospitality
+          requires: []
+          is_code_ref: IS 1130
+          dsr_item_ref: ''
+          aliases:
+          - marble facade
+          - marble cladding
+          typical_rate_range:
+            min: 3000
+            max: 6000
+          notes: Including SS anchors
+          data_source: estimated
+        - id: FAC.SC.MRB.002
+          standard_name: Marble cladding - Italian/imported - 20mm thick - back-anchored
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - hospitality
+          - commercial
+          requires: []
+          is_code_ref: IS 1130
+          dsr_item_ref: ''
+          aliases:
+          - Italian marble facade
+          - imported marble cladding
+          typical_rate_range:
+            min: 5000
+            max: 12000
+          notes: ''
+          data_source: estimated
+      sandstone:
+        items:
+        - id: FAC.SC.SND.001
+          standard_name: Sandstone cladding - 40mm thick - natural finish
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1130
+          dsr_item_ref: ''
+          aliases:
+          - sandstone facade 40mm
+          typical_rate_range:
+            min: 1500
+            max: 2800
+          notes: ''
+          data_source: estimated
+        - id: FAC.SC.SND.002
+          standard_name: Sandstone cladding - 50mm thick - hand carved/dressed
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          requires: []
+          is_code_ref: IS 1130
+          dsr_item_ref: ''
+          aliases:
+          - carved sandstone
+          - dressed sandstone
+          typical_rate_range:
+            min: 2000
+            max: 4000
+          notes: ''
+          data_source: estimated
+      limestone:
+        items:
+        - id: FAC.SC.LMS.001
+          standard_name: Limestone cladding - 30mm thick - honed finish - dry-fix
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 1130
+          dsr_item_ref: ''
+          aliases:
+          - limestone facade
+          - limestone cladding
+          typical_rate_range:
+            min: 2500
+            max: 4500
+          notes: ''
+          data_source: estimated
+      anchor_system:
+        items:
+        - id: FAC.SC.ANK.001
+          standard_name: Stone anchor system - kerf clip type (SS 316)
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1130, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - kerf anchor
+          - kerf clip
+          typical_rate_range:
+            min: 80
+            max: 180
+          notes: 4 per stone slab typically
+          data_source: estimated
+        - id: FAC.SC.ANK.002
+          standard_name: Stone anchor system - dowel pin type (SS 316)
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1130, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - dowel anchor
+          - pin anchor
+          typical_rate_range:
+            min: 60
+            max: 140
+          notes: ''
+          data_source: estimated
+        - id: FAC.SC.ANK.003
+          standard_name: Stone anchor system - back-anchor/undercut type (SS 316)
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1130, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - back anchor
+          - undercut anchor
+          typical_rate_range:
+            min: 120
+            max: 250
+          notes: For thin stone and heavy panels
+          data_source: estimated
+        - id: FAC.SC.BKG.001
+          standard_name: Backing board - cement board 12mm behind stone
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - cement board backing
+          - backer board
+          typical_rate_range:
+            min: 250
+            max: 450
+          notes: ''
+          data_source: estimated
+        - id: FAC.SC.SLT.001
+          standard_name: Stone sealant - silicone weather seal at joints
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - stone joint sealant
+          typical_rate_range:
+            min: 60
+            max: 140
+          notes: ''
+          data_source: estimated
+      special:
+        items:
+        - id: FAC.SC.COL.001
+          standard_name: Stone column cladding - granite/marble - curved/faceted
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 1130
+          dsr_item_ref: ''
+          aliases:
+          - column cladding stone
+          - pillar cladding
+          typical_rate_range:
+            min: 3500
+            max: 6500
+          notes: Complex geometry with custom anchoring
+          data_source: estimated
+        - id: FAC.SC.SFT.001
+          standard_name: Stone soffit cladding - overhead stone fixing with epoxy anchors
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 1130
+          dsr_item_ref: ''
+          aliases:
+          - soffit stone
+          - ceiling stone cladding
+          typical_rate_range:
+            min: 4000
+            max: 7000
+          notes: High safety factor anchoring required
+          data_source: estimated
+  grc:
+    categories:
+      flat_panel:
+        items:
+        - id: FAC.GR.FLT.001
+          standard_name: GRC flat panel - 12-15mm thick - with embedded frame
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 456:2000
+          dsr_item_ref: ''
+          aliases:
+          - GRC panel flat
+          - GFRC panel
+          - glass fibre reinforced concrete
+          typical_rate_range:
+            min: 2500
+            max: 4500
+          notes: Including fixing frame and brackets
+          data_source: estimated
+        - id: FAC.GR.3DP.001
+          standard_name: GRC 3D shaped panel - custom moulded
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 456:2000
+          dsr_item_ref: ''
+          aliases:
+          - 3D GRC panel
+          - sculpted GRC
+          typical_rate_range:
+            min: 4000
+            max: 8000
+          notes: Mould cost additional
+          data_source: estimated
+      decorative:
+        items:
+        - id: FAC.GR.COL.001
+          standard_name: GRC column cover/cladding - round/square profile
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 456:2000
+          dsr_item_ref: ''
+          aliases:
+          - GRC column cover
+          - decorative column GRC
+          typical_rate_range:
+            min: 3000
+            max: 6000
+          notes: Per running meter of column height
+          data_source: estimated
+        - id: FAC.GR.SUN.001
+          standard_name: GRC sunshade/fin - horizontal/vertical projection
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 456:2000
+          dsr_item_ref: ''
+          aliases:
+          - GRC brise soleil
+          - GRC sunshade
+          - GRC fin
+          typical_rate_range:
+            min: 2000
+            max: 5000
+          notes: ''
+          data_source: estimated
+        - id: FAC.GR.CRN.001
+          standard_name: GRC cornice/moulding - profiled decorative element
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          requires: []
+          is_code_ref: IS 456:2000
+          dsr_item_ref: ''
+          aliases:
+          - GRC cornice
+          - decorative moulding GRC
+          typical_rate_range:
+            min: 2500
+            max: 5500
+          notes: ''
+          data_source: estimated
+        - id: FAC.GR.DOM.001
+          standard_name: GRC dome - segmented assembly
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          - religious
+          requires: []
+          is_code_ref: IS 456:2000
+          dsr_item_ref: ''
+          aliases:
+          - GRC dome
+          - fibre dome
+          typical_rate_range:
+            min: 5000
+            max: 10000
+          notes: Per sqm of surface area
+          data_source: estimated
+        - id: FAC.GR.SCR.001
+          standard_name: GRC screen/jali - perforated decorative panel
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 456:2000
+          dsr_item_ref: ''
+          aliases:
+          - GRC jali
+          - GRC screen
+          - decorative screen GRC
+          typical_rate_range:
+            min: 3500
+            max: 7000
+          notes: ''
+          data_source: estimated
+  metal:
+    categories:
+      zinc:
+        items:
+        - id: FAC.MT.ZSS.001
+          standard_name: Zinc cladding - standing seam - 0.7mm thick
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 277
+          dsr_item_ref: ''
+          aliases:
+          - zinc standing seam
+          - zinc facade
+          typical_rate_range:
+            min: 4000
+            max: 7000
+          notes: Including clips, substrate, sealant
+          data_source: estimated
+        - id: FAC.MT.ZFL.001
+          standard_name: Zinc cladding - flat lock panel - 0.7mm thick
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 277
+          dsr_item_ref: ''
+          aliases:
+          - zinc flat lock
+          - zinc shingle
+          typical_rate_range:
+            min: 4500
+            max: 8000
+          notes: ''
+          data_source: estimated
+      copper:
+        items:
+        - id: FAC.MT.COP.001
+          standard_name: Copper cladding - standing seam/flat lock - 0.6mm thick
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          requires: []
+          is_code_ref: IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - copper facade
+          - copper cladding
+          typical_rate_range:
+            min: 6000
+            max: 12000
+          notes: Develops natural patina
+          data_source: estimated
+      corten:
+        items:
+        - id: FAC.MT.CRT.001
+          standard_name: Corten steel cladding - 3mm thick - weathering steel panel
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 277, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - corten cladding
+          - weathering steel facade
+          - rusted steel facade
+          typical_rate_range:
+            min: 3000
+            max: 5500
+          notes: Pre-weathered or natural weathering
+          data_source: estimated
+      perforated:
+        items:
+        - id: FAC.MT.PFA.001
+          standard_name: Perforated metal panel - aluminum - 2mm thick - custom pattern
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 277, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - perforated aluminum panel
+          - perforated facade
+          typical_rate_range:
+            min: 2500
+            max: 5000
+          notes: Including sub-frame
+          data_source: estimated
+        - id: FAC.MT.PFS.001
+          standard_name: Perforated metal panel - steel (powder coated) - 2mm thick
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 277, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - perforated steel panel
+          typical_rate_range:
+            min: 2000
+            max: 4000
+          notes: ''
+          data_source: estimated
+        - id: FAC.MT.EXP.001
+          standard_name: Expanded metal mesh cladding - aluminum/steel - decorative
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 277, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - expanded metal facade
+          - metal mesh cladding
+          typical_rate_range:
+            min: 2000
+            max: 4500
+          notes: ''
+          data_source: estimated
+      profiled:
+        items:
+        - id: FAC.MT.PRF.001
+          standard_name: Profiled metal sheet cladding - GI/color coated - 0.5mm
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - industrial
+          - commercial
+          requires: []
+          is_code_ref: IS 277, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - metal sheet cladding
+          - profiled sheet facade
+          typical_rate_range:
+            min: 600
+            max: 1200
+          notes: Including purlins and fasteners
+          data_source: estimated
+        - id: FAC.MT.PRF.002
+          standard_name: Insulated metal panel (sandwich panel) - PUF/PIR core - 50mm
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - industrial
+          requires: []
+          is_code_ref: IS 277, IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - sandwich panel facade
+          - insulated metal panel
+          typical_rate_range:
+            min: 1200
+            max: 2200
+          notes: Including fasteners and trims
+          data_source: estimated
+  louver:
+    categories:
+      fixed:
+        items:
+        - id: FAC.LV.AFE.001
+          standard_name: Aluminum fixed louver - elliptical blade - 150mm pitch
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1948
+          dsr_item_ref: ''
+          aliases:
+          - elliptical louver
+          - aluminum louver fixed
+          typical_rate_range:
+            min: 2500
+            max: 4500
+          notes: Including frame, blade, fixing
+          data_source: estimated
+        - id: FAC.LV.AFZ.001
+          standard_name: Aluminum fixed louver - Z-blade profile - 100mm pitch
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1948
+          dsr_item_ref: ''
+          aliases:
+          - Z-blade louver
+          - inverted V louver
+          typical_rate_range:
+            min: 2200
+            max: 4000
+          notes: ''
+          data_source: estimated
+        - id: FAC.LV.AFC.001
+          standard_name: Aluminum fixed louver - chevron blade - weather-resistant
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1948
+          dsr_item_ref: ''
+          aliases:
+          - chevron louver
+          - chevron blade louver
+          typical_rate_range:
+            min: 2800
+            max: 5000
+          notes: Better rain protection
+          data_source: estimated
+      operable:
+        items:
+        - id: FAC.LV.AOP.001
+          standard_name: Aluminum operable louver - manual linkage operated
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1948
+          dsr_item_ref: ''
+          aliases:
+          - adjustable louver
+          - operable louver manual
+          typical_rate_range:
+            min: 3500
+            max: 6000
+          notes: ''
+          data_source: estimated
+        - id: FAC.LV.AOM.001
+          standard_name: Aluminum operable louver - motorized actuator
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 1948
+          dsr_item_ref: ''
+          aliases:
+          - motorized louver
+          - automated louver
+          typical_rate_range:
+            min: 5000
+            max: 9000
+          notes: Including actuator motor and controller
+          data_source: estimated
+      special:
+        items:
+        - id: FAC.LV.GIL.001
+          standard_name: GI louver - fixed type - for utility areas
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 277
+          dsr_item_ref: ''
+          aliases:
+          - GI louver
+          - galvanized louver
+          typical_rate_range:
+            min: 1500
+            max: 2800
+          notes: ''
+          data_source: estimated
+        - id: FAC.LV.RPL.001
+          standard_name: Rain-proof louver - drainable blade design
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1948
+          dsr_item_ref: ''
+          aliases:
+          - drainable louver
+          - rain-proof louver
+          typical_rate_range:
+            min: 3000
+            max: 5500
+          notes: Water drain channels in blades
+          data_source: estimated
+        - id: FAC.LV.ACL.001
+          standard_name: Acoustic louver - with sound attenuating infill
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 1948
+          dsr_item_ref: ''
+          aliases:
+          - acoustic louver
+          - sound attenuating louver
+          typical_rate_range:
+            min: 4000
+            max: 7000
+          notes: For DG room, plant room ventilation
+          data_source: estimated
+        - id: FAC.LV.STL.001
+          standard_name: Sand trap louver - for desert/dusty environments
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1948
+          dsr_item_ref: ''
+          aliases:
+          - sand trap louver
+          - dust trap louver
+          typical_rate_range:
+            min: 3500
+            max: 6000
+          notes: Multi-stage blade configuration for sand filtration
+          data_source: estimated
+  canopy:
+    categories:
+      glass:
+        items:
+        - id: FAC.CN.GLT.001
+          standard_name: Glass canopy - toughened glass 12mm - SS spider/fin support
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 14900, IS 2553
+          dsr_item_ref: ''
+          aliases:
+          - glass canopy
+          - entrance canopy glass
+          typical_rate_range:
+            min: 5000
+            max: 9000
+          notes: Including structural support
+          data_source: estimated
+        - id: FAC.CN.GLL.001
+          standard_name: Glass canopy - laminated glass 12.76mm - SS spider/fin support
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 14900, IS 2553
+          dsr_item_ref: ''
+          aliases:
+          - laminated glass canopy
+          - safety glass canopy
+          typical_rate_range:
+            min: 6000
+            max: 10000
+          notes: Laminated for overhead safety
+          data_source: estimated
+        - id: FAC.CN.GLP.001
+          standard_name: Glass canopy - polycarbonate sheet 10mm - aluminum frame
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 14900, IS 2553
+          dsr_item_ref: ''
+          aliases:
+          - polycarbonate canopy
+          - PC sheet canopy
+          typical_rate_range:
+            min: 2000
+            max: 4000
+          notes: ''
+          data_source: estimated
+      metal:
+        items:
+        - id: FAC.CN.MSC.001
+          standard_name: Metal canopy - MS structure with metal sheet roofing
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - MS canopy
+          - steel canopy
+          typical_rate_range:
+            min: 2500
+            max: 4500
+          notes: ''
+          data_source: estimated
+        - id: FAC.CN.SSC.001
+          standard_name: Metal canopy - SS structure with SS sheet cladding
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - hospitality
+          requires: []
+          is_code_ref: IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - SS canopy
+          - stainless steel canopy
+          typical_rate_range:
+            min: 5000
+            max: 9000
+          notes: ''
+          data_source: estimated
+        - id: FAC.CN.ALC.001
+          standard_name: Metal canopy - aluminum structure with aluminum composite cladding
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 1948
+          dsr_item_ref: ''
+          aliases:
+          - aluminum canopy
+          typical_rate_range:
+            min: 3500
+            max: 6000
+          notes: ''
+          data_source: estimated
+      fabric:
+        items:
+        - id: FAC.CN.FBT.001
+          standard_name: Fabric tensile canopy - PTFE/PVC coated membrane - with MS/SS structure
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - tensile canopy
+          - membrane canopy
+          - fabric canopy
+          typical_rate_range:
+            min: 2500
+            max: 5500
+          notes: Including mast, cables, membrane
+          data_source: estimated
+        - id: FAC.CN.FBT.002
+          standard_name: Fabric tensile canopy - ETFE cushion/foil - pneumatic
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - ETFE canopy
+          - ETFE cushion
+          typical_rate_range:
+            min: 8000
+            max: 15000
+          notes: High-tech transparent membrane system
+          data_source: estimated
+  glazing:
+    categories:
+      dgu:
+        items:
+        - id: FAC.GL.DGU.001
+          standard_name: DGU - 6mm clear + 12mm air gap + 6mm clear (6+12+6)
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 14900
+          dsr_item_ref: ''
+          aliases:
+          - DGU 6+12+6
+          - double glazed unit 24mm
+          typical_rate_range:
+            min: 1800
+            max: 3200
+          notes: Standard insulating glass unit
+          data_source: IS codes only
+        - id: FAC.GL.DGU.002
+          standard_name: DGU - 6mm clear + 16mm air gap + 6mm clear (6+16+6)
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 14900
+          dsr_item_ref: ''
+          aliases:
+          - DGU 6+16+6
+          - double glazed unit 28mm
+          typical_rate_range:
+            min: 2000
+            max: 3500
+          notes: Better thermal performance with wider cavity
+          data_source: IS codes only
+        - id: FAC.GL.DGU.003
+          standard_name: DGU - 6mm low-E + 12mm argon + 6mm clear (6+12+6 low-E)
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - high_rise
+          requires: []
+          is_code_ref: IS 14900
+          dsr_item_ref: ''
+          aliases:
+          - low-E DGU
+          - energy efficient DGU
+          - argon filled DGU
+          typical_rate_range:
+            min: 2800
+            max: 4800
+          notes: Low-E coating on surface 2 or 3, argon gas fill
+          data_source: IS codes only
+        - id: FAC.GL.DGU.004
+          standard_name: DGU - 6mm low-E + 16mm argon + 6mm clear (6+16+6 low-E)
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - high_rise
+          requires: []
+          is_code_ref: IS 14900
+          dsr_item_ref: ''
+          aliases:
+          - large cavity low-E DGU
+          typical_rate_range:
+            min: 3000
+            max: 5200
+          notes: Premium insulating unit
+          data_source: IS codes only
+        - id: FAC.GL.DGU.005
+          standard_name: DGU - 8mm toughened + 12mm air + 6mm toughened (8+12+6)
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - high_rise
+          requires: []
+          is_code_ref: IS 14900
+          dsr_item_ref: ''
+          aliases:
+          - DGU 8+12+6 toughened
+          typical_rate_range:
+            min: 2400
+            max: 4000
+          notes: For high wind load areas
+          data_source: IS codes only
+        - id: FAC.GL.DGU.006
+          standard_name: DGU - 6mm toughened + 12mm air + 6mm toughened (both sides toughened)
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 14900, IS 2553
+          dsr_item_ref: ''
+          aliases:
+          - DGU toughened both sides
+          typical_rate_range:
+            min: 2200
+            max: 3800
+          notes: Safety glass both faces
+          data_source: IS codes only
+        - id: FAC.GL.DGU.007
+          standard_name: DGU - solar control reflective coating - 6+12+6
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 14900
+          dsr_item_ref: ''
+          aliases:
+          - reflective DGU
+          - solar control DGU
+          typical_rate_range:
+            min: 2600
+            max: 4500
+          notes: Reduces solar heat gain
+          data_source: IS codes only
+      laminated:
+        items:
+        - id: FAC.GL.LAM.001
+          standard_name: Laminated glass - 6.38mm (3+0.38PVB+3) - clear
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2553 Part 3
+          dsr_item_ref: ''
+          aliases:
+          - laminated 6.38mm
+          - safety glass 6.38
+          typical_rate_range:
+            min: 1200
+            max: 2000
+          notes: Standard safety laminated glass
+          data_source: IS codes only
+        - id: FAC.GL.LAM.002
+          standard_name: Laminated glass - 8.76mm (4+0.76PVB+4) - clear
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2553 Part 3
+          dsr_item_ref: ''
+          aliases:
+          - laminated 8.76mm
+          typical_rate_range:
+            min: 1600
+            max: 2600
+          notes: ''
+          data_source: IS codes only
+        - id: FAC.GL.LAM.003
+          standard_name: Laminated glass - 10.76mm (5+0.76PVB+5) - clear
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2553 Part 3
+          dsr_item_ref: ''
+          aliases:
+          - laminated 10.76mm
+          typical_rate_range:
+            min: 2000
+            max: 3200
+          notes: For overhead and balustrade applications
+          data_source: IS codes only
+        - id: FAC.GL.LAM.004
+          standard_name: Laminated glass - 12.76mm (6+0.76PVB+6) - clear
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 2553 Part 3
+          dsr_item_ref: ''
+          aliases:
+          - laminated 12.76mm
+          - heavy laminated glass
+          typical_rate_range:
+            min: 2400
+            max: 3800
+          notes: For canopies and structural applications
+          data_source: IS codes only
+        - id: FAC.GL.LAM.005
+          standard_name: Laminated glass - toughened laminated 10.76mm (5T+0.76+5T)
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - high_rise
+          requires: []
+          is_code_ref: IS 2553
+          dsr_item_ref: ''
+          aliases:
+          - toughened laminated
+          - tempered laminated 10.76
+          typical_rate_range:
+            min: 2800
+            max: 4200
+          notes: Both panes toughened then laminated
+          data_source: IS codes only
+        - id: FAC.GL.LAM.006
+          standard_name: Laminated glass - acoustic PVB interlayer - 10.76mm
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 2553 Part 2
+          dsr_item_ref: ''
+          aliases:
+          - acoustic laminated glass
+          - sound reduction glass
+          typical_rate_range:
+            min: 2800
+            max: 4500
+          notes: Enhanced sound insulation
+          data_source: estimated
+      toughened:
+        items:
+        - id: FAC.GL.TGH.001
+          standard_name: Toughened glass - 6mm clear
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2553 Part 2
+          dsr_item_ref: ''
+          aliases:
+          - tempered glass 6mm
+          - toughened 6mm
+          typical_rate_range:
+            min: 600
+            max: 1100
+          notes: 4-5 times stronger than annealed
+          data_source: IS codes only
+        - id: FAC.GL.TGH.002
+          standard_name: Toughened glass - 8mm clear
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2553 Part 2
+          dsr_item_ref: ''
+          aliases:
+          - tempered glass 8mm
+          - toughened 8mm
+          typical_rate_range:
+            min: 800
+            max: 1400
+          notes: ''
+          data_source: IS codes only
+        - id: FAC.GL.TGH.003
+          standard_name: Toughened glass - 10mm clear
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2553 Part 2
+          dsr_item_ref: ''
+          aliases:
+          - tempered glass 10mm
+          - toughened 10mm
+          typical_rate_range:
+            min: 1000
+            max: 1800
+          notes: ''
+          data_source: IS codes only
+        - id: FAC.GL.TGH.004
+          standard_name: Toughened glass - 12mm clear
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 2553 Part 2
+          dsr_item_ref: ''
+          aliases:
+          - tempered glass 12mm
+          - toughened 12mm
+          typical_rate_range:
+            min: 1200
+            max: 2200
+          notes: For frameless doors and partitions
+          data_source: IS codes only
+        - id: FAC.GL.TGH.005
+          standard_name: Toughened glass - 15mm clear
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 2553 Part 2
+          dsr_item_ref: ''
+          aliases:
+          - tempered glass 15mm
+          typical_rate_range:
+            min: 1800
+            max: 3000
+          notes: For heavy-duty structural glazing
+          data_source: IS codes only
+      heat_strengthened:
+        items:
+        - id: FAC.GL.HSG.001
+          standard_name: Heat-strengthened glass - 6mm clear
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 2553
+          dsr_item_ref: ''
+          aliases:
+          - heat strengthened 6mm
+          - HS glass 6mm
+          typical_rate_range:
+            min: 700
+            max: 1200
+          notes: 2x strength of annealed, does not dice on breakage
+          data_source: IS codes only
+        - id: FAC.GL.HSG.002
+          standard_name: Heat-strengthened glass - 8mm clear
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 2553
+          dsr_item_ref: ''
+          aliases:
+          - heat strengthened 8mm
+          - HS glass 8mm
+          typical_rate_range:
+            min: 900
+            max: 1500
+          notes: ''
+          data_source: IS codes only
+        - id: FAC.GL.HSG.003
+          standard_name: Heat-strengthened glass - 10mm clear
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 2553
+          dsr_item_ref: ''
+          aliases:
+          - heat strengthened 10mm
+          typical_rate_range:
+            min: 1100
+            max: 1800
+          notes: Preferred for laminated spandrel panels
+          data_source: IS codes only
+      special_glass:
+        items:
+        - id: FAC.GL.CFR.001
+          standard_name: Ceramic frit glass - 6mm toughened - dot/line pattern
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 2553 Part 2
+          dsr_item_ref: ''
+          aliases:
+          - frit glass
+          - ceramic printed glass
+          - silk screen glass
+          typical_rate_range:
+            min: 1800
+            max: 3200
+          notes: Decorative and solar control
+          data_source: estimated
+        - id: FAC.GL.CFR.002
+          standard_name: Ceramic frit glass - 8mm toughened - custom pattern/gradient
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 2553 Part 2
+          dsr_item_ref: ''
+          aliases:
+          - custom frit glass
+          - gradient frit
+          typical_rate_range:
+            min: 2200
+            max: 4000
+          notes: Custom design additional mould cost
+          data_source: estimated
+        - id: FAC.GL.COL.001
+          standard_name: Colored/tinted glass - 6mm (grey/green/blue/bronze)
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 14900
+          dsr_item_ref: ''
+          aliases:
+          - tinted glass 6mm
+          - colored glass
+          - body tinted glass
+          typical_rate_range:
+            min: 500
+            max: 900
+          notes: ''
+          data_source: IS codes only
+        - id: FAC.GL.COL.002
+          standard_name: Colored/tinted glass - 8mm (grey/green/blue/bronze)
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 14900
+          dsr_item_ref: ''
+          aliases:
+          - tinted glass 8mm
+          typical_rate_range:
+            min: 650
+            max: 1100
+          notes: ''
+          data_source: IS codes only
+        - id: FAC.GL.RFL.001
+          standard_name: Reflective coated glass - 6mm - solar control
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 14900, IS 2553
+          dsr_item_ref: ''
+          aliases:
+          - reflective glass 6mm
+          - mirror glass facade
+          typical_rate_range:
+            min: 800
+            max: 1400
+          notes: Pyrolytic or sputtered coating
+          data_source: estimated
+        - id: FAC.GL.RFL.002
+          standard_name: Reflective coated glass - 8mm - solar control
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 14900, IS 2553
+          dsr_item_ref: ''
+          aliases:
+          - reflective glass 8mm
+          typical_rate_range:
+            min: 1000
+            max: 1700
+          notes: ''
+          data_source: estimated
+        - id: FAC.GL.LOW.001
+          standard_name: Low-E glass - single pane - 6mm - soft coat
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 14900, IS 2553
+          dsr_item_ref: ''
+          aliases:
+          - low-E single 6mm
+          - low emissivity glass
+          typical_rate_range:
+            min: 1200
+            max: 2000
+          notes: Must be used in IGU for soft coat type
+          data_source: estimated
+        - id: FAC.GL.LOW.002
+          standard_name: Low-E glass - single pane - 6mm - hard coat (pyrolytic)
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 14900, IS 2553
+          dsr_item_ref: ''
+          aliases:
+          - hard coat low-E
+          - pyrolytic low-E
+          typical_rate_range:
+            min: 1000
+            max: 1600
+          notes: Can be used as single pane
+          data_source: estimated
+        - id: FAC.GL.BKP.001
+          standard_name: Back-painted glass - 6mm toughened - opaque color
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - residential
+          requires: []
+          is_code_ref: IS 2553 Part 2
+          dsr_item_ref: ''
+          aliases:
+          - lacquered glass
+          - back painted glass
+          - spandrel glass
+          typical_rate_range:
+            min: 1200
+            max: 2200
+          notes: For spandrel areas, backsplash, cladding
+          data_source: estimated
+        - id: FAC.GL.OPQ.001
+          standard_name: Opaque/spandrel glass - ceramic frit opacified - 6mm
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 2553 Part 2
+          dsr_item_ref: ''
+          aliases:
+          - spandrel glass opaque
+          - opacified glass
+          typical_rate_range:
+            min: 1500
+            max: 2800
+          notes: Hides floor slab and services behind curtain wall
+          data_source: estimated
+        - id: FAC.GL.SWG.001
+          standard_name: Switchable glass (smart glass) - PDLC film type
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - hospitality
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - smart glass
+          - switchable glass
+          - privacy glass
+          - PDLC glass
+          typical_rate_range:
+            min: 8000
+            max: 15000
+          notes: Electrically switchable transparent/opaque
+          data_source: estimated
+  cladding:
+    categories:
+      hpl:
+        items:
+        - id: FAC.CL.HPL.001
+          standard_name: HPL (high pressure laminate) cladding - 6mm thick - exterior grade
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 12823
+          dsr_item_ref: ''
+          aliases:
+          - HPL facade 6mm
+          - compact laminate 6mm
+          - Fundermax
+          - Trespa
+          typical_rate_range:
+            min: 2500
+            max: 4000
+          notes: Including sub-frame and rivets
+          data_source: IS codes only
+        - id: FAC.CL.HPL.002
+          standard_name: HPL (high pressure laminate) cladding - 8mm thick - exterior grade
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 12823
+          dsr_item_ref: ''
+          aliases:
+          - HPL facade 8mm
+          - compact laminate 8mm
+          typical_rate_range:
+            min: 3000
+            max: 4800
+          notes: ''
+          data_source: IS codes only
+        - id: FAC.CL.HPL.003
+          standard_name: HPL (high pressure laminate) cladding - 10mm thick - exterior grade
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 12823
+          dsr_item_ref: ''
+          aliases:
+          - HPL facade 10mm
+          typical_rate_range:
+            min: 3500
+            max: 5500
+          notes: ''
+          data_source: IS codes only
+        - id: FAC.CL.HPL.004
+          standard_name: HPL (high pressure laminate) cladding - 12mm thick - exterior grade
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 12823
+          dsr_item_ref: ''
+          aliases:
+          - HPL facade 12mm
+          - thick HPL
+          typical_rate_range:
+            min: 4000
+            max: 6500
+          notes: For large span panels
+          data_source: IS codes only
+      terracotta:
+        items:
+        - id: FAC.CL.TRC.001
+          standard_name: Terracotta cladding panel - extruded hollow - natural finish
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - terracotta facade
+          - clay cladding
+          - terracotta panel
+          typical_rate_range:
+            min: 4000
+            max: 7000
+          notes: Including aluminum sub-frame
+          data_source: estimated
+        - id: FAC.CL.TRC.002
+          standard_name: Terracotta cladding panel - glazed finish - custom colour
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - glazed terracotta
+          - colored terracotta panel
+          typical_rate_range:
+            min: 5000
+            max: 8500
+          notes: ''
+          data_source: estimated
+        - id: FAC.CL.TRC.003
+          standard_name: Terracotta baguette/sunshade - extruded profile
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - terracotta baguette
+          - terracotta fin
+          typical_rate_range:
+            min: 2000
+            max: 4000
+          notes: Per running meter of baguette
+          data_source: estimated
+      fiber_cement:
+        items:
+        - id: FAC.CL.FCB.001
+          standard_name: Fiber cement board cladding - 8mm thick - painted finish
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 14862
+          dsr_item_ref: ''
+          aliases:
+          - fiber cement facade
+          - cement board cladding 8mm
+          typical_rate_range:
+            min: 800
+            max: 1500
+          notes: Including sub-frame
+          data_source: IS codes only
+        - id: FAC.CL.FCB.002
+          standard_name: Fiber cement board cladding - 12mm thick - textured finish
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 14862
+          dsr_item_ref: ''
+          aliases:
+          - fiber cement 12mm
+          - planked fiber cement
+          typical_rate_range:
+            min: 1000
+            max: 1800
+          notes: ''
+          data_source: IS codes only
+        - id: FAC.CL.FCB.003
+          standard_name: Fiber cement board cladding - 16mm thick - through-colored
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 14862
+          dsr_item_ref: ''
+          aliases:
+          - through colored fiber cement
+          - Equitone type
+          typical_rate_range:
+            min: 2000
+            max: 3500
+          notes: Factory colored, no painting needed
+          data_source: IS codes only
+      natural_stone_dry:
+        items:
+        - id: FAC.CL.NSD.001
+          standard_name: Natural stone cladding - granite - dry-fixed with SS brackets
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 1130
+          dsr_item_ref: ''
+          aliases:
+          - dry fix granite
+          - ventilated granite facade
+          typical_rate_range:
+            min: 3000
+            max: 5500
+          notes: Ventilated facade system with stone
+          data_source: estimated
+        - id: FAC.CL.NSD.002
+          standard_name: Natural stone cladding - slate/kota - dry-fixed
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1130
+          dsr_item_ref: ''
+          aliases:
+          - slate cladding dry fix
+          - kota stone cladding
+          typical_rate_range:
+            min: 2000
+            max: 3500
+          notes: ''
+          data_source: estimated
+        - id: FAC.CL.NSD.003
+          standard_name: Natural stone cladding - travertine - dry-fixed
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - hospitality
+          requires: []
+          is_code_ref: IS 1130
+          dsr_item_ref: ''
+          aliases:
+          - travertine facade
+          - travertine cladding
+          typical_rate_range:
+            min: 4000
+            max: 7000
+          notes: ''
+          data_source: estimated
+      composite_panel:
+        items:
+        - id: FAC.CL.ALP.001
+          standard_name: Aluminum honeycomb panel cladding - 15mm thick
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 277, IS 1948
+          dsr_item_ref: ''
+          aliases:
+          - honeycomb panel
+          - aluminum honeycomb facade
+          typical_rate_range:
+            min: 3000
+            max: 5000
+          notes: Lightweight, high rigidity
+          data_source: estimated
+        - id: FAC.CL.ALP.002
+          standard_name: Aluminum honeycomb panel - stone veneer face - 20mm thick
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - hospitality
+          requires: []
+          is_code_ref: IS 277, IS 1948
+          dsr_item_ref: ''
+          aliases:
+          - stone honeycomb panel
+          - lightweight stone panel
+          typical_rate_range:
+            min: 5000
+            max: 8500
+          notes: 3mm stone veneer bonded to honeycomb core
+          data_source: estimated
+  sealants:
+    categories:
+      structural:
+        items:
+        - id: FAC.SL.SSI.001
+          standard_name: Structural silicone sealant - two-part - for structural glazing
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: ASTM C1184
+          dsr_item_ref: ''
+          aliases:
+          - structural silicone 2-part
+          - SG sealant
+          typical_rate_range:
+            min: 120
+            max: 250
+          notes: For load-bearing bonds in SG systems
+          data_source: IS codes only
+        - id: FAC.SL.SSI.002
+          standard_name: Structural silicone sealant - one-part - for secondary seal
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: ASTM C1184
+          dsr_item_ref: ''
+          aliases:
+          - structural silicone 1-part
+          typical_rate_range:
+            min: 80
+            max: 180
+          notes: ''
+          data_source: IS codes only
+      weather:
+        items:
+        - id: FAC.SL.WSI.001
+          standard_name: Weather silicone sealant - neutral cure - facade joints
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - weather seal silicone
+          - facade joint sealant
+          - neutral silicone
+          typical_rate_range:
+            min: 50
+            max: 120
+          notes: UV and weather resistant
+          data_source: estimated
+        - id: FAC.SL.WSI.002
+          standard_name: Weather silicone sealant - acetoxy cure - general purpose
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - acetoxy silicone
+          - GP silicone
+          typical_rate_range:
+            min: 30
+            max: 80
+          notes: Not for structural or alkaline surfaces
+          data_source: estimated
+      pu_sealant:
+        items:
+        - id: FAC.SL.PUS.001
+          standard_name: PU (polyurethane) sealant - facade and window perimeter
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - PU sealant facade
+          - polyurethane sealant
+          typical_rate_range:
+            min: 40
+            max: 100
+          notes: Paintable, good adhesion to concrete/masonry
+          data_source: estimated
+        - id: FAC.SL.PUS.002
+          standard_name: PU (polyurethane) sealant - fire rated - intumescent
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - high_rise
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - fire rated PU sealant
+          - intumescent PU
+          typical_rate_range:
+            min: 150
+            max: 300
+          notes: Fire-stop sealant for perimeter joints
+          data_source: IS codes only
+      gaskets:
+        items:
+        - id: FAC.SL.EPD.001
+          standard_name: EPDM gasket - for curtain wall glazing channel
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - EPDM gasket curtain wall
+          - rubber gasket CW
+          typical_rate_range:
+            min: 30
+            max: 80
+          notes: ''
+          data_source: estimated
+        - id: FAC.SL.EPD.002
+          standard_name: EPDM gasket - for window/door glazing bead
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - EPDM window gasket
+          - glazing rubber
+          typical_rate_range:
+            min: 20
+            max: 50
+          notes: ''
+          data_source: estimated
+        - id: FAC.SL.EPD.003
+          standard_name: EPDM sponge gasket - compression seal - for panel joints
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - sponge gasket
+          - compression seal EPDM
+          typical_rate_range:
+            min: 25
+            max: 60
+          notes: ''
+          data_source: estimated
+        - id: FAC.SL.BKR.001
+          standard_name: Backer rod - closed cell foam - 10mm dia
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - backer rod 10mm
+          - foam rod
+          typical_rate_range:
+            min: 5
+            max: 15
+          notes: Support for sealant application
+          data_source: estimated
+        - id: FAC.SL.BKR.002
+          standard_name: Backer rod - closed cell foam - 20mm dia
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - backer rod 20mm
+          typical_rate_range:
+            min: 8
+            max: 20
+          notes: ''
+          data_source: estimated
+        - id: FAC.SL.BKR.003
+          standard_name: Backer rod - closed cell foam - 25mm dia
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - backer rod 25mm
+          - large backer rod
+          typical_rate_range:
+            min: 10
+            max: 25
+          notes: ''
+          data_source: estimated
+  facade_accessories:
+    categories:
+      flashings:
+        items:
+        - id: FAC.FA.FLS.001
+          standard_name: Aluminum flashing - parapet coping - 1.2mm thick
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1948, IS 277
+          dsr_item_ref: ''
+          aliases:
+          - parapet coping aluminum
+          - parapet cap flashing
+          typical_rate_range:
+            min: 250
+            max: 500
+          notes: ''
+          data_source: estimated
+        - id: FAC.FA.FLS.002
+          standard_name: Aluminum flashing - window head drip - 1mm thick
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1948, IS 277
+          dsr_item_ref: ''
+          aliases:
+          - head flashing
+          - drip mould aluminum
+          typical_rate_range:
+            min: 150
+            max: 300
+          notes: ''
+          data_source: estimated
+        - id: FAC.FA.FLS.003
+          standard_name: Aluminum flashing - window sill - sloped - 1mm thick
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1948, IS 277
+          dsr_item_ref: ''
+          aliases:
+          - sill flashing
+          - window sill flashing aluminum
+          typical_rate_range:
+            min: 180
+            max: 350
+          notes: Sloped for water drainage
+          data_source: estimated
+        - id: FAC.FA.FLS.004
+          standard_name: GI flashing - general purpose - 0.63mm thick
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1948, IS 277
+          dsr_item_ref: ''
+          aliases:
+          - GI flashing
+          - galvanized flashing
+          typical_rate_range:
+            min: 100
+            max: 200
+          notes: ''
+          data_source: estimated
+        - id: FAC.FA.DRP.001
+          standard_name: Drip mould - aluminum extruded - at floor slab edge
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 1948
+          dsr_item_ref: ''
+          aliases:
+          - drip mould
+          - slab edge drip
+          - water nose
+          typical_rate_range:
+            min: 200
+            max: 400
+          notes: Prevents water staining on facade
+          data_source: estimated
+        - id: FAC.FA.PCP.001
+          standard_name: Parapet capping - SS 304 - 1mm thick - with drip
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - SS parapet capping
+          - stainless steel coping
+          typical_rate_range:
+            min: 400
+            max: 750
+          notes: ''
+          data_source: estimated
+        - id: FAC.FA.PCP.002
+          standard_name: Parapet capping - aluminum - powder coated - with drip
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 800:2007
+          dsr_item_ref: ''
+          aliases:
+          - aluminum parapet cap
+          - PC aluminum coping
+          typical_rate_range:
+            min: 300
+            max: 550
+          notes: ''
+          data_source: estimated
+      sunshade:
+        items:
+        - id: FAC.FA.SNF.001
+          standard_name: Sunshade fin - aluminum extruded - vertical - 150mm projection
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 1948
+          dsr_item_ref: ''
+          aliases:
+          - aluminum fin vertical
+          - sun fin vertical
+          typical_rate_range:
+            min: 1500
+            max: 3000
+          notes: ''
+          data_source: estimated
+        - id: FAC.FA.SNF.002
+          standard_name: Sunshade fin - aluminum extruded - horizontal - 200mm projection
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 1948
+          dsr_item_ref: ''
+          aliases:
+          - horizontal sun fin
+          - brise soleil aluminum
+          typical_rate_range:
+            min: 1800
+            max: 3500
+          notes: ''
+          data_source: estimated
+        - id: FAC.FA.SNF.003
+          standard_name: Sunshade fin - aluminum extruded - horizontal - 300mm projection
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 1948
+          dsr_item_ref: ''
+          aliases:
+          - deep sun fin aluminum
+          typical_rate_range:
+            min: 2200
+            max: 4200
+          notes: ''
+          data_source: estimated
+        - id: FAC.FA.SNF.004
+          standard_name: Sunshade fin - MS fabricated - powder coated - 300mm projection
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1948
+          dsr_item_ref: ''
+          aliases:
+          - MS sun shade fin
+          - steel sunshade
+          typical_rate_range:
+            min: 1200
+            max: 2500
+          notes: Including MS bracket and powder coating
+          data_source: estimated
+        - id: FAC.FA.SNF.005
+          standard_name: Sunshade - RCC chajja projection - cast in situ
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1948
+          dsr_item_ref: ''
+          aliases:
+          - RCC chajja
+          - concrete sunshade
+          - chajja
+          typical_rate_range:
+            min: 800
+            max: 1800
+          notes: Traditional Indian sunshade
+          data_source: estimated
+      railing:
+        items:
+        - id: FAC.FA.RLC.001
+          standard_name: Aluminum composite railing - glass + aluminum post - 1050mm height
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - residential
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - aluminum glass railing
+          - composite balustrade
+          typical_rate_range:
+            min: 3500
+            max: 6000
+          notes: Including glass, posts, top rail, base channel
+          data_source: IS codes only
+        - id: FAC.FA.RLC.002
+          standard_name: Aluminum railing - tubular/profile - powder coated - 1050mm height
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - aluminum railing tubular
+          typical_rate_range:
+            min: 2500
+            max: 4500
+          notes: ''
+          data_source: IS codes only
+  insulation:
+    categories:
+      mineral_wool:
+        items:
+        - id: FAC.IN.RKW.001
+          standard_name: Rock wool insulation - 50mm thick - 48 kg/m3 density
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 8183
+          dsr_item_ref: ''
+          aliases:
+          - rockwool 50mm facade
+          - mineral wool 50mm
+          typical_rate_range:
+            min: 200
+            max: 400
+          notes: Non-combustible, A1 fire rated
+          data_source: IS codes only
+        - id: FAC.IN.RKW.002
+          standard_name: Rock wool insulation - 75mm thick - 48 kg/m3 density
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 8183
+          dsr_item_ref: ''
+          aliases:
+          - rockwool 75mm facade
+          typical_rate_range:
+            min: 280
+            max: 500
+          notes: ''
+          data_source: IS codes only
+        - id: FAC.IN.RKW.003
+          standard_name: Rock wool insulation - 100mm thick - 48 kg/m3 density
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 8183
+          dsr_item_ref: ''
+          aliases:
+          - rockwool 100mm facade
+          - thick rockwool
+          typical_rate_range:
+            min: 380
+            max: 650
+          notes: ''
+          data_source: IS codes only
+        - id: FAC.IN.RKW.004
+          standard_name: Rock wool insulation - 100mm thick - 80 kg/m3 density (high density)
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - high_rise
+          requires: []
+          is_code_ref: IS 8183
+          dsr_item_ref: ''
+          aliases:
+          - high density rockwool 100mm
+          typical_rate_range:
+            min: 500
+            max: 850
+          notes: For better thermal and acoustic performance
+          data_source: IS codes only
+        - id: FAC.IN.GLW.001
+          standard_name: Glass wool insulation - 50mm thick - 24 kg/m3 density
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 8183
+          dsr_item_ref: ''
+          aliases:
+          - glass wool 50mm
+          - fiberglass insulation 50mm
+          typical_rate_range:
+            min: 120
+            max: 250
+          notes: Lighter than rock wool
+          data_source: IS codes only
+        - id: FAC.IN.GLW.002
+          standard_name: Glass wool insulation - 75mm thick - 24 kg/m3 density
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 8183
+          dsr_item_ref: ''
+          aliases:
+          - glass wool 75mm
+          typical_rate_range:
+            min: 160
+            max: 320
+          notes: ''
+          data_source: IS codes only
+        - id: FAC.IN.GLW.003
+          standard_name: Glass wool insulation - 100mm thick - 24 kg/m3 density
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 8183
+          dsr_item_ref: ''
+          aliases:
+          - glass wool 100mm
+          typical_rate_range:
+            min: 200
+            max: 400
+          notes: ''
+          data_source: IS codes only
+      board_insulation:
+        items:
+        - id: FAC.IN.XPS.001
+          standard_name: XPS board insulation - 25mm thick - for facade/spandrel
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 3144, IS 8183
+          dsr_item_ref: ''
+          aliases:
+          - XPS 25mm facade
+          - extruded polystyrene 25mm
+          typical_rate_range:
+            min: 150
+            max: 300
+          notes: Closed cell, moisture resistant
+          data_source: estimated
+        - id: FAC.IN.XPS.002
+          standard_name: XPS board insulation - 50mm thick - for facade/spandrel
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 3144, IS 8183
+          dsr_item_ref: ''
+          aliases:
+          - XPS 50mm facade
+          typical_rate_range:
+            min: 250
+            max: 450
+          notes: ''
+          data_source: estimated
+        - id: FAC.IN.PIR.001
+          standard_name: PIR (polyisocyanurate) board insulation - 30mm thick
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 3144, IS 8183
+          dsr_item_ref: ''
+          aliases:
+          - PIR board 30mm
+          - polyiso 30mm
+          typical_rate_range:
+            min: 200
+            max: 400
+          notes: Better R-value per mm than XPS
+          data_source: estimated
+        - id: FAC.IN.PIR.002
+          standard_name: PIR (polyisocyanurate) board insulation - 50mm thick
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 3144, IS 8183
+          dsr_item_ref: ''
+          aliases:
+          - PIR board 50mm
+          - polyiso 50mm
+          typical_rate_range:
+            min: 350
+            max: 600
+          notes: ''
+          data_source: estimated
+        - id: FAC.IN.EPS.001
+          standard_name: EPS (expanded polystyrene) board insulation - 50mm thick - for EIFS
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 3144, IS 8183
+          dsr_item_ref: ''
+          aliases:
+          - EPS 50mm facade
+          - thermocol board facade
+          typical_rate_range:
+            min: 100
+            max: 200
+          notes: For EIFS/external insulation finish system
+          data_source: estimated
+  finishes:
+    categories:
+      coating:
+        items:
+        - id: FAC.FN.PWC.001
+          standard_name: Powder coating - polyester - aluminum sections/panels - standard color
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1948
+          dsr_item_ref: ''
+          aliases:
+          - powder coating standard
+          - PC aluminum
+          typical_rate_range:
+            min: 150
+            max: 300
+          notes: 50-70 micron DFT
+          data_source: estimated
+        - id: FAC.FN.PWC.002
+          standard_name: Powder coating - super durable polyester - for exterior facade
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 1948
+          dsr_item_ref: ''
+          aliases:
+          - super durable powder coat
+          - SDP coating
+          typical_rate_range:
+            min: 200
+            max: 400
+          notes: Improved UV resistance
+          data_source: estimated
+        - id: FAC.FN.ANO.001
+          standard_name: Anodizing - natural/silver - aluminum sections - 15 micron
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1868
+          dsr_item_ref: ''
+          aliases:
+          - anodizing natural
+          - silver anodize
+          - anodised aluminum
+          typical_rate_range:
+            min: 250
+            max: 450
+          notes: 15 micron minimum for exterior
+          data_source: IS codes only
+        - id: FAC.FN.ANO.002
+          standard_name: Anodizing - colored (bronze/black/champagne) - 20 micron
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 1868
+          dsr_item_ref: ''
+          aliases:
+          - colored anodizing
+          - bronze anodize
+          - black anodize
+          typical_rate_range:
+            min: 350
+            max: 600
+          notes: 20 micron for exterior colored
+          data_source: IS codes only
+        - id: FAC.FN.PVD.001
+          standard_name: PVDF coating - fluoropolymer - 2 coat system - on aluminum
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - high_rise
+          requires: []
+          is_code_ref: IS 1948
+          dsr_item_ref: ''
+          aliases:
+          - PVDF coating
+          - Kynar coating
+          - fluoropolymer paint
+          typical_rate_range:
+            min: 400
+            max: 700
+          notes: 25+ year color warranty, premium exterior finish
+          data_source: estimated
+        - id: FAC.FN.PVD.002
+          standard_name: PVDF coating - fluoropolymer - 3 coat system (with metallic) - on aluminum
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 1948
+          dsr_item_ref: ''
+          aliases:
+          - 3 coat PVDF
+          - metallic PVDF
+          typical_rate_range:
+            min: 500
+            max: 900
+          notes: For metallic and special effect finishes
+          data_source: estimated
+        - id: FAC.FN.WGT.001
+          standard_name: Wood-grain transfer finish - sublimation on aluminum
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1948
+          dsr_item_ref: ''
+          aliases:
+          - wood grain aluminum
+          - sublimation wood finish
+          - timber look aluminum
+          typical_rate_range:
+            min: 350
+            max: 650
+          notes: Realistic wood appearance on aluminum
+          data_source: estimated
+        - id: FAC.FN.SPL.001
+          standard_name: Natural stone polishing - facade stone re-polishing/restoration
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1130
+          dsr_item_ref: ''
+          aliases:
+          - stone polishing facade
+          - stone restoration
+          typical_rate_range:
+            min: 200
+            max: 500
+          notes: On-site diamond polishing
+          data_source: estimated
+  fire_barrier:
+    categories:
+      perimeter:
+        items:
+        - id: FAC.FB.MWB.001
+          standard_name: Mineral wool fire barrier - 100mm thick - at floor slab edge
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - high_rise
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - fire barrier mineral wool
+          - slab edge fire stop
+          - perimeter fire barrier
+          typical_rate_range:
+            min: 500
+            max: 1000
+          notes: Mandatory at every floor slab-curtain wall junction
+          data_source: IS codes only
+        - id: FAC.FB.MWB.002
+          standard_name: Mineral wool fire barrier - 150mm thick - at floor slab edge - high rise
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - high_rise
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - thick fire barrier slab edge
+          typical_rate_range:
+            min: 700
+            max: 1400
+          notes: For high-rise above 30m
+          data_source: IS codes only
+        - id: FAC.FB.ITM.001
+          standard_name: Intumescent fire-stop sealant - at curtain wall perimeter joint
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - high_rise
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - intumescent sealant facade
+          - fire stop sealant CW
+          typical_rate_range:
+            min: 200
+            max: 450
+          notes: Expands in fire to seal gaps
+          data_source: IS codes only
+        - id: FAC.FB.ITM.002
+          standard_name: Intumescent fire-stop collar - at pipe/duct penetration through facade
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - high_rise
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - fire collar facade
+          - pipe fire stop
+          typical_rate_range:
+            min: 500
+            max: 1500
+          notes: Per penetration
+          data_source: IS codes only
+        - id: FAC.FB.PFC.001
+          standard_name: Perimeter fire containment system - complete (barrier + sealant + bracket)
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - high_rise
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - perimeter fire containment
+          - PFC system facade
+          typical_rate_range:
+            min: 800
+            max: 1800
+          notes: Complete system at slab edge
+          data_source: IS codes only
+        - id: FAC.FB.FRS.001
+          standard_name: Fire rated spandrel panel - 1 hour fire rating - insulated
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - high_rise
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - fire rated spandrel
+          - fire spandrel panel
+          typical_rate_range:
+            min: 3000
+            max: 5500
+          notes: Minimum 900mm height per NBC
+          data_source: IS codes only
+        - id: FAC.FB.FRS.002
+          standard_name: Fire rated spandrel panel - 2 hour fire rating - insulated
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - high_rise
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - 2 hour fire spandrel
+          typical_rate_range:
+            min: 4000
+            max: 7000
+          notes: For buildings above 30m
+          data_source: IS codes only
+        - id: FAC.FB.FRG.001
+          standard_name: Fire rated glass - 30 min integrity (E30) - for vision panel in fire wall
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - high_rise
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - fire rated glass E30
+          - fire glass 30 min
+          typical_rate_range:
+            min: 5000
+            max: 9000
+          notes: ''
+          data_source: IS codes only
+        - id: FAC.FB.FRG.002
+          standard_name: Fire rated glass - 60 min integrity + insulation (EI60)
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - high_rise
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - fire rated glass EI60
+          - fire glass 60 min
+          typical_rate_range:
+            min: 8000
+            max: 15000
+          notes: Multi-layer intumescent interlayer
+          data_source: IS codes only
+  window_system:
+    categories:
+      aluminum_window:
+        items:
+        - id: FAC.WN.ALW.001
+          standard_name: Aluminum sliding window - 2 track - powder coated - 5mm glass
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: IS 1948
+          dsr_item_ref: ''
+          aliases:
+          - sliding window aluminum
+          - 2 track window
+          typical_rate_range:
+            min: 600
+            max: 1200
+          notes: Economy residential window
+          data_source: CPWD DSR 2023 + IS codes
+        - id: FAC.WN.ALW.002
+          standard_name: Aluminum sliding window - 3 track - powder coated - 5mm glass
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: IS 1948
+          dsr_item_ref: ''
+          aliases:
+          - 3 track sliding window
+          typical_rate_range:
+            min: 800
+            max: 1500
+          notes: ''
+          data_source: IS codes only
+        - id: FAC.WN.ALW.003
+          standard_name: Aluminum casement window - outward opening - powder coated - DGU
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 1948
+          dsr_item_ref: ''
+          aliases:
+          - casement window aluminum
+          - outward casement
+          typical_rate_range:
+            min: 2500
+            max: 4500
+          notes: With friction stay and multi-point lock
+          data_source: IS codes only
+        - id: FAC.WN.ALW.004
+          standard_name: Aluminum tilt-and-turn window - thermally broken - DGU
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - high_rise
+          requires: []
+          is_code_ref: IS 1948
+          dsr_item_ref: ''
+          aliases:
+          - tilt and turn window
+          - European window
+          typical_rate_range:
+            min: 4000
+            max: 7000
+          notes: High-performance window system
+          data_source: estimated
+        - id: FAC.WN.ALW.005
+          standard_name: Aluminum top-hung/awning window - powder coated - with restrictor
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1948
+          dsr_item_ref: ''
+          aliases:
+          - top hung window
+          - awning window
+          typical_rate_range:
+            min: 2000
+            max: 3800
+          notes: ''
+          data_source: estimated
+        - id: FAC.WN.ALW.006
+          standard_name: Aluminum fixed window/picture window - powder coated - DGU
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1948
+          dsr_item_ref: ''
+          aliases:
+          - fixed glass window
+          - picture window
+          typical_rate_range:
+            min: 1800
+            max: 3200
+          notes: Non-openable glazed panel
+          data_source: estimated
+      upvc_window:
+        items:
+        - id: FAC.WN.UPV.001
+          standard_name: UPVC sliding window - 2 track - 60mm profile - 5mm glass
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - UPVC sliding window
+          - PVC window
+          typical_rate_range:
+            min: 400
+            max: 800
+          notes: Low maintenance, no painting needed
+          data_source: estimated
+        - id: FAC.WN.UPV.002
+          standard_name: UPVC casement window - 60mm profile - DGU
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - UPVC casement window
+          typical_rate_range:
+            min: 700
+            max: 1400
+          notes: ''
+          data_source: estimated
+        - id: FAC.WN.UPV.003
+          standard_name: UPVC sliding window - 3 track - 70mm profile - DGU
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - UPVC 3 track DGU
+          typical_rate_range:
+            min: 900
+            max: 1600
+          notes: Premium UPVC system
+          data_source: estimated
+      door:
+        items:
+        - id: FAC.WN.ALD.001
+          standard_name: Aluminum door - casement type - outward opening - with closer
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1948
+          dsr_item_ref: ''
+          aliases:
+          - aluminum swing door
+          - aluminum casement door
+          typical_rate_range:
+            min: 3000
+            max: 5500
+          notes: Including hardware, closer, handle
+          data_source: IS codes only
+        - id: FAC.WN.ALD.002
+          standard_name: Aluminum sliding door - 2 panel - floor track - 6mm glass
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: IS 1948
+          dsr_item_ref: ''
+          aliases:
+          - aluminum sliding balcony door
+          typical_rate_range:
+            min: 2000
+            max: 3800
+          notes: For balcony/terrace access
+          data_source: estimated
+        - id: FAC.WN.ALD.003
+          standard_name: Aluminum folding/bi-fold door - multi-panel - with DGU
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - hospitality
+          requires: []
+          is_code_ref: IS 1948
+          dsr_item_ref: ''
+          aliases:
+          - bi-fold door aluminum
+          - folding door aluminum
+          typical_rate_range:
+            min: 5000
+            max: 9000
+          notes: For large openings
+          data_source: estimated
+        - id: FAC.WN.ALD.004
+          standard_name: Aluminum lift-and-slide door - heavy duty track - DGU
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - hospitality
+          requires: []
+          is_code_ref: IS 1948
+          dsr_item_ref: ''
+          aliases:
+          - lift and slide door
+          - heavy sliding door
+          typical_rate_range:
+            min: 6000
+            max: 11000
+          notes: For large panels up to 250kg
+          data_source: estimated
+      ventilator:
+        items:
+        - id: FAC.WN.VNT.001
+          standard_name: Aluminum ventilator - fixed louver type - for toilets
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1948
+          dsr_item_ref: ''
+          aliases:
+          - toilet ventilator
+          - aluminum ventilator fixed
+          typical_rate_range:
+            min: 1200
+            max: 2200
+          notes: ''
+          data_source: estimated
+        - id: FAC.WN.VNT.002
+          standard_name: Aluminum ventilator - operable type - with insect screen
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1948
+          dsr_item_ref: ''
+          aliases:
+          - operable ventilator with screen
+          typical_rate_range:
+            min: 1500
+            max: 2800
+          notes: ''
+          data_source: estimated
+        - id: FAC.WN.MSQ.001
+          standard_name: Mosquito/insect screen - aluminum frame - SS mesh - openable
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - mosquito screen
+          - insect screen window
+          - fly mesh
+          typical_rate_range:
+            min: 300
+            max: 700
+          notes: Hinged or sliding type
+          data_source: estimated
+  waterproofing_facade:
+    categories:
+      treatment:
+        items:
+        - id: FAC.WP.SLR.001
+          standard_name: Silicone water repellent treatment - for exposed brick/stone facade
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - water repellent facade
+          - silicone sealer exterior
+          typical_rate_range:
+            min: 50
+            max: 120
+          notes: Invisible breathable coating
+          data_source: estimated
+        - id: FAC.WP.ACR.001
+          standard_name: Acrylic elastomeric waterproofing - for exterior plaster/concrete
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - elastomeric coating exterior
+          - elastic waterproofing facade
+          typical_rate_range:
+            min: 80
+            max: 180
+          notes: Crack-bridging flexible coating
+          data_source: estimated
+        - id: FAC.WP.PUM.001
+          standard_name: PU membrane waterproofing - for exposed concrete facade joints
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - PU membrane facade
+          - polyurethane membrane exterior
+          typical_rate_range:
+            min: 120
+            max: 250
+          notes: For balcony edges, window surrounds
+          data_source: estimated
+        - id: FAC.WP.CSB.001
+          standard_name: Cementitious waterproofing slurry - for exposed RCC facade elements
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - cement slurry waterproofing
+          - crystalline waterproofing facade
+          typical_rate_range:
+            min: 60
+            max: 140
+          notes: 2 coat application on concrete surfaces
+          data_source: estimated
+        - id: FAC.WP.EXP.001
+          standard_name: Expansion joint cover - aluminum/SS - wall type - with EPDM
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - expansion joint cover facade
+          - wall expansion joint
+          typical_rate_range:
+            min: 500
+            max: 1200
+          notes: Per running meter
+          data_source: estimated
+        - id: FAC.WP.EXP.002
+          standard_name: Expansion joint sealant - polysulphide based - for facade joints
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - polysulphide sealant
+          - expansion joint sealant facade
+          typical_rate_range:
+            min: 100
+            max: 220
+          notes: For movement joints in masonry/concrete
+          data_source: estimated

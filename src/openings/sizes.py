@@ -133,7 +133,7 @@ class SizeInferrer:
         header_row = table_data[0]
         col_map = self._identify_columns(header_row, opening_type)
 
-        if not col_map.get("tag"):
+        if col_map.get("tag") is None:
             logger.warning("Could not identify tag column in schedule")
             return entries
 
@@ -199,31 +199,31 @@ class SizeInferrer:
         for i, cell in enumerate(header_row):
             cell_upper = cell.upper().strip()
 
-            if not col_map.get("tag"):
+            if col_map.get("tag") is None:
                 for pattern in tag_patterns:
                     if re.search(pattern, cell_upper):
                         col_map["tag"] = i
                         break
 
-            if not col_map.get("size"):
+            if col_map.get("size") is None:
                 for pattern in size_patterns:
                     if re.search(pattern, cell_upper):
                         col_map["size"] = i
                         break
 
-            if not col_map.get("qty"):
+            if col_map.get("qty") is None:
                 for pattern in qty_patterns:
                     if re.search(pattern, cell_upper):
                         col_map["qty"] = i
                         break
 
-            if not col_map.get("material"):
+            if col_map.get("material") is None:
                 for pattern in material_patterns:
                     if re.search(pattern, cell_upper):
                         col_map["material"] = i
                         break
 
-            if not col_map.get("remarks"):
+            if col_map.get("remarks") is None:
                 for pattern in remarks_patterns:
                     if re.search(pattern, cell_upper):
                         col_map["remarks"] = i

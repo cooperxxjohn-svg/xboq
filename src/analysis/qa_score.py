@@ -57,7 +57,13 @@ def _score_addenda_churn(payload: dict) -> int:
 def _score_parse_completeness(payload: dict) -> int:
     """
     Parse completeness: have we successfully extracted BOQ, schedules, and requirements?
-    Score: (has_boq + has_schedule + has_requirements) / 3 * 20.
+    Score: (has_boq + has_schedule + has_requirements) / N * 20.
+
+    BUG-8 FIX: For drawing-only sets (is_drawing_set=True, boq_items=0) the BOQ is
+    expected to arrive as a separate document.  Penalising these documents for a missing
+    BOQ produces an artificially low score and a misleading "Upload BOQ" action.  When a
+    confirmed drawing set has no BOQ, we score over 2 components (schedule +
+    requirements) rather than 3.
     """
     ext = payload.get("extraction_summary", {})
     counts = ext.get("counts", {})
@@ -72,8 +78,17 @@ def _score_parse_completeness(payload: dict) -> int:
         has_schedule = 1 if ext.get("schedules", 0) > 0 else 0
         has_requirements = 1 if ext.get("requirements", 0) > 0 else 0
 
-    total = has_boq + has_schedule + has_requirements
-    return round(total / 3 * 20)
+    # Drawing-only set: BOQ is a separate document, do not penalise for its absence
+    drawing_overview = payload.get("drawing_overview", {})
+    is_confirmed_drawing_set = drawing_overview.get("is_drawing_set", True)
+    if is_confirmed_drawing_set and has_boq == 0:
+        denom = 2  # score over schedule + requirements only
+        total = has_schedule + has_requirements
+    else:
+        denom = 3
+        total = has_boq + has_schedule + has_requirements
+
+    return round(total / denom * 20)
 
 
 def _score_toxic_penalty(payload: dict) -> int:
@@ -105,7 +120,7 @@ _ACTION_TEMPLATES = {
         "Verify all addendum changes are reflected in base documents",
     ],
     "parse_completeness": [
-        "Upload BOQ document to enable quantity extraction",
+        "Upload BOQ document alongside drawings to enable quantity extraction",
         "Upload schedule documents for schedule parsing",
         "Check that specifications are in text-searchable format",
     ],

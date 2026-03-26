@@ -130,7 +130,8 @@ class PrelimsFromQuantities:
 
         # Default plot area
         if not plot_area_sqm:
-            plot_area_sqm = built_up_area_sqm / num_floors / 0.4
+            safe_floors = max(num_floors, 1)
+            plot_area_sqm = built_up_area_sqm / safe_floors / 0.4
 
         # Default formwork area
         if not formwork_area_sqm:

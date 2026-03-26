@@ -153,6 +153,30 @@ class SimpleAuth:
             })
         return sorted(result, key=lambda t: t.get("name", "").lower())
 
+    def reset_password(self, tenant_id: str, new_password: str) -> bool:
+        """Reset password for an existing tenant. Returns True on success, False if not found."""
+        tenants = self._load_tenants()
+        if tenant_id not in tenants:
+            return False
+
+        salt = secrets.token_hex(16)
+        password_hash = self._hash_password(new_password, salt)
+        tenants[tenant_id]["password_hash"] = password_hash
+        tenants[tenant_id]["salt"] = salt
+        tenants[tenant_id]["password_reset_at"] = datetime.now().isoformat()
+        self._save_tenants(tenants)
+        return True
+
+    def delete_tenant(self, tenant_id: str) -> bool:
+        """Remove a tenant from the registry. Returns True on success, False if not found.
+        NOTE: Does NOT delete the tenant's data directory."""
+        tenants = self._load_tenants()
+        if tenant_id not in tenants:
+            return False
+        del tenants[tenant_id]
+        self._save_tenants(tenants)
+        return True
+
     def get_storage_for_tenant(self, tenant_id: str) -> "LocalStorage":
         """Return a tenant-scoped LocalStorage instance.
 
@@ -192,5 +216,10 @@ class SimpleAuth:
 
     @staticmethod
     def _hash_password(password: str, salt: str) -> str:
-        """Hash password with salt using SHA-256. Returns hex digest."""
-        return hashlib.sha256((salt + password).encode("utf-8")).hexdigest()
+        """Hash password with salt using PBKDF2-SHA256 (100k iterations). Returns hex digest."""
+        return hashlib.pbkdf2_hmac(
+            "sha256",
+            password.encode("utf-8"),
+            salt.encode("utf-8"),
+            iterations=100_000,
+        ).hex()

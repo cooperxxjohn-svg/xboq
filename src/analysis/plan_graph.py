@@ -122,11 +122,25 @@ ROOM_NAME_PATTERNS = [
 ]
 
 # Scale detection patterns
+#
+# IMPORTANT: the generic "1:N" pattern must require a denominator ≥ 10.
+# Small ratios like 1:2, 1:3, 1:6, 1:12 are cement/mortar mix ratios that appear
+# in specification documents (e.g. "1:3 cement mortar", "1:6 lime mortar") and cause
+# false-positive scale-page counts for spec-only documents.  Drawing scales are almost
+# always ≥ 1:10 (e.g. 1:10, 1:20, 1:50, 1:100, 1:200, 1:500).
 SCALE_PATTERNS = [
-    r'\b1\s*:\s*(\d+)\b',                  # 1:100
-    r'\bSCALE\s*[=:]?\s*1\s*:\s*(\d+)\b',  # SCALE = 1:100
-    r'\bSCALE\s*[=:]?\s*1/(\d+)\b',        # SCALE = 1/100
-    r"\b(\d+)'\s*=\s*1[\"']",              # 1/4" = 1'-0"
+    # BUG-12b FIX: max 3-digit denominator (10–999) to avoid matching year citations
+    # in ISO standard references like "ISO 8501-1:1988" (which contain "1:1988").
+    # Common architectural scales (1:10 … 1:500) are always ≤ 3 digits.
+    # Larger site-plan scales (1:1000, 1:2000) are still caught by the SCALE= pattern below.
+    r'\b1\s*:\s*([1-9]\d{1,2})\b',                 # 1:10 – 1:999 (denom 2-3 digits; avoids cement ratios AND ISO years)
+    r'\bSCALE\s*[=:]?\s*1\s*:\s*(\d+)\b',          # SCALE = 1:100  (explicit keyword — any denom OK)
+    r'\bSCALE\s*[=:]?\s*1/(\d+)\b',                # SCALE = 1/100
+    r"1[\"']\s*=\s*[\d,.]+\s*['\"\-0]",            # 1"= 10'  or  1" = 500'  (imperial drawing scale)
+    r"1/\d+[\"']\s*=\s*1[\s]*['\"\-0]",            # 1/4" = 1'-0"  (architectural scale)
+    r"\bSCALE\s*[=:]?\s*\d+[\"']\s*=\s*[\d,.]+['\"]",  # Scale: 1" = 500'
+    r"\bN\.?T\.?S\.?\b",                           # NTS / N.T.S. (not to scale — still marks a scale field)
+    r"\bNOT\s+TO\s+SCALE\b",                       # NOT TO SCALE
 ]
 
 # Reference patterns (callouts to other sheets)
@@ -143,6 +157,28 @@ DETAIL_REF_PATTERNS = [
 
 
 # =============================================================================
+# BOQ TRADE KEYWORD DETECTION
+# =============================================================================
+
+# Keywords that indicate a trade is covered by a BOQ (even without drawing sheets).
+# Used to populate PlanSetGraph.boq_trades_detected so the coverage reasoner can
+# give civil/general non-zero coverage when their BOQ items are present.
+_BOQ_TRADE_KEYWORDS: Dict[str, List[str]] = {
+    "civil": [
+        "earthwork", "excavation", "pcc", "backfill", "compound wall",
+        "soling", "filling", "site drainage", "earth filling", "levelling",
+        "grading", "road work", "culvert", "retaining wall",
+    ],
+    "general": [
+        "scaffolding", "curing", "site clearance", "temporary works",
+        "testing", "commissioning", "p&g", "preliminary", "mobilisation",
+        "mobilization", "establishment", "demobilisation", "demobilization",
+        "sundries", "provisional sum",
+    ],
+}
+
+
+# =============================================================================
 # PLAN GRAPH BUILDER
 # =============================================================================
 
@@ -156,6 +192,7 @@ class PlanGraphBuilder:
     def __init__(self, project_id: str):
         self.project_id = project_id
         self.sheets: List[PlanSheet] = []
+        self._page_texts: List[str] = []
 
     def build(self, page_texts: List[str]) -> PlanSetGraph:
         """
@@ -168,6 +205,7 @@ class PlanGraphBuilder:
             PlanSetGraph with all sheets and aggregates
         """
         self.sheets = []
+        self._page_texts = page_texts  # store for BOQ trade detection
 
         for page_idx, text in enumerate(page_texts):
             sheet = self._process_page(page_idx, text)
@@ -232,7 +270,14 @@ class PlanGraphBuilder:
         return None
 
     def _classify_discipline(self, sheet_no: Optional[str], text: str) -> Discipline:
-        """Classify discipline from sheet number prefix."""
+        """Classify discipline from sheet number prefix ONLY.
+
+        Intentionally does NOT fall back to text-keyword detection — that causes
+        false-positive disciplines for specification documents that merely mention
+        structural/electrical/plumbing subject matter without containing actual
+        drawing sheets (BUG-3 fix).  Disciplines must be grounded in a proper
+        engineering sheet number (e.g. A-101, S-2.01, M-301).
+        """
         if sheet_no:
             # Extract prefix (letters before number)
             prefix_match = re.match(r'^([A-Z]+)', sheet_no)
@@ -240,16 +285,6 @@ class PlanGraphBuilder:
                 prefix = prefix_match.group(1)
                 if prefix in DISCIPLINE_PREFIXES:
                     return DISCIPLINE_PREFIXES[prefix]
-
-        # Fallback: check text for discipline keywords
-        if any(kw in text for kw in ['STRUCTURAL', 'BEAM', 'COLUMN', 'SLAB']):
-            return Discipline.STRUCTURAL
-        if any(kw in text for kw in ['ELECTRICAL', 'LIGHTING', 'POWER']):
-            return Discipline.ELECTRICAL
-        if any(kw in text for kw in ['PLUMBING', 'DRAINAGE', 'SANITARY']):
-            return Discipline.PLUMBING
-        if any(kw in text for kw in ['MECHANICAL', 'HVAC', 'AIR CONDITIONING']):
-            return Discipline.MECHANICAL
 
         return Discipline.UNKNOWN
 
@@ -411,7 +446,32 @@ class PlanGraphBuilder:
         graph.has_finish_schedule = self._has_schedule_type('finish')
         graph.has_legend = any(s.detected.get('has_legend') for s in self.sheets)
 
+        # Pages that have a properly-formatted engineering sheet number (A-101, S-2.01 etc.)
+        # Used in the drawing-presence check: spec documents rarely have > 25 % of pages
+        # with their own sheet number, while drawing sets typically have > 50 % coverage.
+        graph.pages_with_sheet_no = sum(1 for s in self.sheets if s.sheet_no is not None)
+
+        # Detect trades from BOQ text (for civil/general coverage when no drawings)
+        graph.boq_trades_detected = self._detect_boq_trades(self._page_texts)
+
         return graph
+
+    def _detect_boq_trades(self, page_texts: List[str]) -> List[str]:
+        """
+        Scan all page texts for BOQ trade keywords.
+
+        Returns a sorted list of trade names whose keywords appear in the
+        combined page text (e.g. ["civil", "general"]).  Used to give
+        civil and general non-zero coverage when their BOQ items are present
+        but no matching drawing discipline sheets exist.
+        """
+        combined = " ".join(page_texts).lower()
+        detected = sorted(
+            trade
+            for trade, keywords in _BOQ_TRADE_KEYWORDS.items()
+            if any(kw in combined for kw in keywords)
+        )
+        return detected
 
     def _has_schedule_type(self, schedule_type: str) -> bool:
         """Check if a specific schedule type exists."""

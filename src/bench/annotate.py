@@ -320,8 +320,9 @@ class AnnotationHelper:
                 # Parse polygon from string
                 polygon_str = row.get("polygon", "[]")
                 try:
-                    polygon = eval(polygon_str)  # Simple parsing
-                except:
+                    import ast
+                    polygon = ast.literal_eval(polygon_str)  # Safe parsing
+                except (ValueError, SyntaxError):
                     polygon = []
 
                 rooms.append(RoomAnnotation(
@@ -457,7 +458,7 @@ class AnnotationHelper:
 
                 for room in annotation.rooms:
                     label_counts[room.label] = label_counts.get(room.label, 0) + 1
-            except:
+            except (FileNotFoundError, ValueError, KeyError):
                 pass
 
         print(f"\nAnnotation Statistics:")

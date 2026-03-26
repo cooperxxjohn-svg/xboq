@@ -1,0 +1,1383 @@
+rules:
+  # ============================================================
+  # VRV / SPLIT AC SYSTEM DEPENDENCIES
+  # ============================================================
+  - id: "DEP-MEP-001"
+    trigger: "vrv_system"
+    required_items: ["indoor_unit", "outdoor_unit", "refrigerant_pipe", "drain_pipe", "power_supply", "controls"]
+    trade: "hvac"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "ASHRAE"
+    note: "VRV system: indoor/outdoor units, refrigerant piping, drain, power, controls"
+
+  - id: "DEP-MEP-002"
+    trigger: "vrv_system"
+    required_items: ["copper_pipe_insulated", "branch_selector", "condensate_pump"]
+    trade: "hvac"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "VRV piping: insulated copper pipe, branch selectors, condensate pump where needed"
+
+  - id: "DEP-MEP-003"
+    trigger: "split_ac"
+    required_items: ["indoor_unit", "outdoor_unit", "copper_pipe", "drain_pipe", "power_16a", "bracket_outdoor"]
+    trade: "hvac"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Split AC: indoor/outdoor units, copper pipe, drain, 16A power, outdoor bracket"
+
+  - id: "DEP-MEP-004"
+    trigger: "split_ac"
+    required_items: ["core_cut_wall", "pipe_sleeve", "outdoor_platform"]
+    trade: "hvac"
+    priority: 2
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Split AC installation: core cut in wall, pipe sleeve, outdoor unit platform"
+
+  # ============================================================
+  # AHU SYSTEM DEPENDENCIES
+  # ============================================================
+  - id: "DEP-MEP-005"
+    trigger: "ahu_system"
+    required_items: ["supply_duct", "return_duct", "fresh_air_duct", "filter_section", "cooling_coil", "fan_section", "controls"]
+    trade: "hvac"
+    priority: 1
+    condition: ""
+    building_types: ["commercial", "hospital", "hotel"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "ASHRAE"
+    note: "AHU system: supply/return/FA ducts, filter, cooling coil, fan, controls"
+
+  - id: "DEP-MEP-006"
+    trigger: "ahu_system"
+    required_items: ["chilled_water_pipe", "insulation", "control_valve", "balancing_valve"]
+    trade: "hvac"
+    priority: 1
+    condition: ""
+    building_types: ["commercial", "hospital", "hotel"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "AHU chilled water: piping, insulation, control valve, balancing valve"
+
+  - id: "DEP-MEP-007"
+    trigger: "ahu_room"
+    required_items: ["acoustic_lining", "vibration_isolator", "drain_connection", "access_door"]
+    trade: "hvac"
+    priority: 1
+    condition: ""
+    building_types: ["commercial", "hospital", "hotel"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "AHU room: acoustic lining, vibration isolators, drain, access for maintenance"
+
+  # ============================================================
+  # CHILLER PLANT DEPENDENCIES
+  # ============================================================
+  - id: "DEP-MEP-008"
+    trigger: "chiller_plant"
+    required_items: ["chiller_unit", "cooling_tower", "chilled_water_pump", "condenser_water_pump", "piping", "insulation", "vfd"]
+    trade: "hvac"
+    priority: 1
+    condition: ""
+    building_types: ["commercial", "hospital", "hotel"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Chiller plant: chiller, cooling tower, CW/CDW pumps, piping, insulation, VFD"
+
+  - id: "DEP-MEP-009"
+    trigger: "chiller_plant"
+    required_items: ["expansion_tank", "air_separator", "chemical_dosing", "water_treatment"]
+    trade: "hvac"
+    priority: 1
+    condition: ""
+    building_types: ["commercial", "hospital", "hotel"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Chiller plant accessories: expansion tank, air separator, chemical dosing, water treatment"
+
+  - id: "DEP-MEP-010"
+    trigger: "chiller_room"
+    required_items: ["ventilation", "crane_provision", "equipment_pad", "drainage", "fire_detection"]
+    trade: "hvac"
+    priority: 1
+    condition: ""
+    building_types: ["commercial", "hospital", "hotel"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Chiller room: ventilation, crane provision for maintenance, equipment pads, drainage"
+
+  # ============================================================
+  # DUCTED SYSTEM DEPENDENCIES
+  # ============================================================
+  - id: "DEP-MEP-011"
+    trigger: "ducted_system"
+    required_items: ["gi_duct", "diffuser", "grille", "damper", "insulation_duct", "supports_hangers"]
+    trade: "hvac"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Ducted system: GI duct, diffusers, grilles, dampers, insulation, supports"
+
+  - id: "DEP-MEP-012"
+    trigger: "ducted_system"
+    required_items: ["fire_damper", "smoke_damper", "volume_control_damper"]
+    trade: "hvac"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "NBC Part 4"
+    note: "Duct fire safety: fire dampers, smoke dampers, volume control dampers"
+
+  - id: "DEP-MEP-013"
+    trigger: "ducted_system"
+    required_items: ["flexible_duct_connection", "access_panel_duct"]
+    trade: "hvac"
+    priority: 2
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Ducted system accessories: flexible connections, access panels for cleaning"
+
+  # ============================================================
+  # ELEVATOR DEPENDENCIES
+  # ============================================================
+  - id: "DEP-MEP-014"
+    trigger: "elevator"
+    required_items: ["elevator_shaft", "elevator_pit", "machine_room_or_mrl", "power_supply_dedicated", "ventilation_shaft", "fire_rated_doors"]
+    trade: "vertical_transport"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 4
+    min_area_sqm: 0
+    is_code_ref: "IS 14665"
+    note: "Elevator: shaft, pit, machine room/MRL, dedicated power, shaft ventilation, fire doors"
+
+  - id: "DEP-MEP-015"
+    trigger: "elevator"
+    required_items: ["ard_device", "intercom", "emergency_light", "ventilation_fan"]
+    trade: "vertical_transport"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 14665"
+    note: "Elevator safety: ARD (automatic rescue device), intercom, emergency light, ventilation"
+
+  - id: "DEP-MEP-016"
+    trigger: "elevator"
+    required_items: ["guide_rails", "car_frame", "counterweight", "traction_machine", "controller"]
+    trade: "vertical_transport"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 14665"
+    note: "Elevator components: guide rails, car frame, counterweight, traction machine, controller"
+
+  - id: "DEP-MEP-017"
+    trigger: "fire_lift"
+    required_items: ["fire_rated_shaft", "pressurization", "fireman_switch", "dedicated_power", "fire_rated_doors_2hr"]
+    trade: "vertical_transport"
+    priority: 1
+    condition: "building_above_24m"
+    building_types: [all]
+    room_types: []
+    min_floors: 8
+    min_area_sqm: 0
+    is_code_ref: "NBC Part 4"
+    note: "Fire lift: fire-rated shaft, pressurization, fireman switch, dedicated power, 2hr doors"
+
+  # ============================================================
+  # FACADE ACP CLADDING DEPENDENCIES
+  # ============================================================
+  - id: "DEP-MEP-018"
+    trigger: "acp_cladding"
+    required_items: ["aluminium_sub_frame", "insulation_behind", "acp_panel", "sealant", "flashing"]
+    trade: "facade"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "ACP cladding: aluminium sub-frame, insulation, ACP panels, sealant, flashing"
+
+  - id: "DEP-MEP-019"
+    trigger: "acp_cladding"
+    required_items: ["fire_rated_acp_fr_grade", "fire_barrier_at_floor"]
+    trade: "facade"
+    priority: 1
+    condition: "building_above_15m"
+    building_types: [all]
+    room_types: []
+    min_floors: 5
+    min_area_sqm: 0
+    is_code_ref: "NBC Part 4"
+    note: "Buildings above 15m must use FR grade ACP with fire barriers at each floor level"
+
+  # ============================================================
+  # CURTAIN WALL DEPENDENCIES
+  # ============================================================
+  - id: "DEP-MEP-020"
+    trigger: "curtain_wall"
+    required_items: ["mullion", "transom", "glass_panel", "sealant_structural", "thermal_break", "anchor_to_slab"]
+    trade: "facade"
+    priority: 1
+    condition: ""
+    building_types: ["commercial", "hotel"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 2553"
+    note: "Curtain wall: mullion, transom, glass, structural sealant, thermal break, slab anchor"
+
+  - id: "DEP-MEP-021"
+    trigger: "curtain_wall"
+    required_items: ["spandrel_panel", "fire_safing", "condensation_gutter"]
+    trade: "facade"
+    priority: 1
+    condition: ""
+    building_types: ["commercial", "hotel"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Curtain wall accessories: spandrel panels, fire safing at floor line, condensation gutter"
+
+  - id: "DEP-MEP-022"
+    trigger: "curtain_wall"
+    required_items: ["bmu_provision", "cradle_track"]
+    trade: "facade"
+    priority: 2
+    condition: "building_above_24m"
+    building_types: ["commercial", "hotel"]
+    room_types: []
+    min_floors: 8
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "High-rise curtain wall requires BMU (building maintenance unit) provision"
+
+  # ============================================================
+  # FIRE SPRINKLER SYSTEM DEPENDENCIES
+  # ============================================================
+  - id: "DEP-MEP-023"
+    trigger: "fire_sprinkler"
+    required_items: ["sprinkler_head", "piping_network", "alarm_valve", "flow_switch", "pump_set", "jockey_pump", "fire_tank"]
+    trade: "fire_safety"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 15105"
+    note: "Fire sprinkler: heads, piping, alarm valve, flow switch, pumps, tank"
+
+  - id: "DEP-MEP-024"
+    trigger: "fire_sprinkler"
+    required_items: ["zone_valve", "test_drain", "inspector_test_valve"]
+    trade: "fire_safety"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 15105"
+    note: "Fire sprinkler zoning: zone valves, test drains, inspector test valves"
+
+  # ============================================================
+  # FIRE HYDRANT SYSTEM DEPENDENCIES
+  # ============================================================
+  - id: "DEP-MEP-025"
+    trigger: "fire_hydrant"
+    required_items: ["hydrant_valve", "hose_box", "hose_reel", "pump_set", "jockey_pump", "fire_tank", "piping"]
+    trade: "fire_safety"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 3844"
+    note: "Fire hydrant: valve, hose box, hose reel, pumps, tank, piping"
+
+  - id: "DEP-MEP-026"
+    trigger: "fire_hydrant"
+    required_items: ["yard_hydrant", "fire_brigade_connection", "isolation_valve"]
+    trade: "fire_safety"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 3844"
+    note: "External fire hydrant: yard hydrant, fire brigade inlet, isolation valves"
+
+  # ============================================================
+  # FIRE DETECTION SYSTEM DEPENDENCIES
+  # ============================================================
+  - id: "DEP-MEP-027"
+    trigger: "fire_detection"
+    required_items: ["smoke_detector", "manual_call_point", "fire_alarm_panel", "hooter_strobe", "wiring", "battery_backup"]
+    trade: "fire_safety"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 2189"
+    note: "Fire detection: smoke detectors, MCPs, panel, hooter/strobe, wiring, battery backup"
+
+  - id: "DEP-MEP-028"
+    trigger: "fire_detection"
+    required_items: ["beam_detector", "aspirating_system"]
+    trade: "fire_safety"
+    priority: 2
+    condition: "high_ceiling"
+    building_types: ["warehouse", "factory", "retail_mall"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "High-ceiling areas require beam detectors or aspirating detection systems"
+
+  # ============================================================
+  # STAIRCASE PRESSURIZATION DEPENDENCIES
+  # ============================================================
+  - id: "DEP-MEP-029"
+    trigger: "staircase_pressurization"
+    required_items: ["pressurization_fan", "ductwork", "pressure_relief_damper", "fire_rated_door_stair"]
+    trade: "fire_safety"
+    priority: 1
+    condition: "building_above_15m"
+    building_types: [all]
+    room_types: []
+    min_floors: 5
+    min_area_sqm: 0
+    is_code_ref: "NBC Part 4"
+    note: "Pressurized staircase: fan, ductwork, pressure relief damper, fire doors"
+
+  # ============================================================
+  # SMOKE EXTRACTION DEPENDENCIES
+  # ============================================================
+  - id: "DEP-MEP-030"
+    trigger: "smoke_extraction"
+    required_items: ["smoke_exhaust_fan", "smoke_duct", "smoke_damper", "makeup_air_fan"]
+    trade: "fire_safety"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: ["basement", "atrium"]
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "NBC Part 4"
+    note: "Smoke extraction: exhaust fan, duct, smoke dampers, makeup air fan"
+
+  # ============================================================
+  # ESCALATOR DEPENDENCIES
+  # ============================================================
+  - id: "DEP-MEP-031"
+    trigger: "escalator"
+    required_items: ["structural_opening", "truss", "steps", "handrail", "motor", "controller", "safety_switch"]
+    trade: "vertical_transport"
+    priority: 1
+    condition: ""
+    building_types: ["retail_mall", "commercial", "hotel"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 14665"
+    note: "Escalator: structural opening, truss, steps, handrail, motor, controller, safety"
+
+  - id: "DEP-MEP-032"
+    trigger: "travelator"
+    required_items: ["structural_provision", "moving_walkway", "motor", "controller", "safety_switch"]
+    trade: "vertical_transport"
+    priority: 1
+    condition: ""
+    building_types: ["retail_mall", "commercial"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Travelator: structural provision, moving walkway, motor, controller, safety switches"
+
+  # ============================================================
+  # HVAC CONTROLS AND BMS DEPENDENCIES
+  # ============================================================
+  - id: "DEP-MEP-033"
+    trigger: "hvac_controls"
+    required_items: ["thermostat", "humidity_sensor", "co2_sensor", "ddc_controller", "bms_integration"]
+    trade: "hvac"
+    priority: 2
+    condition: ""
+    building_types: ["commercial", "hospital", "hotel"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "HVAC controls: thermostat, humidity/CO2 sensors, DDC controller, BMS integration"
+
+  # ============================================================
+  # PIPING INSULATION DEPENDENCIES
+  # ============================================================
+  - id: "DEP-MEP-034"
+    trigger: "chilled_water_piping"
+    required_items: ["ms_pipe", "insulation_nitrile_rubber", "vapor_barrier", "cladding_aluminum"]
+    trade: "hvac"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Chilled water piping: MS pipe, nitrile rubber insulation, vapor barrier, aluminium cladding"
+
+  # ============================================================
+  # DX SYSTEM DEPENDENCIES
+  # ============================================================
+  - id: "DEP-MEP-035"
+    trigger: "dx_ac_system"
+    required_items: ["dx_unit", "condenser", "refrigerant_pipe", "drain_pipe", "power_supply"]
+    trade: "hvac"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "DX AC system: indoor unit, condenser, refrigerant pipe, drain, power"
+
+  # ============================================================
+  # CLEAN ROOM HVAC DEPENDENCIES
+  # ============================================================
+  - id: "DEP-MEP-036"
+    trigger: "clean_room_hvac"
+    required_items: ["hepa_filter", "pre_filter", "ahu_dedicated", "pressure_cascade", "airlock"]
+    trade: "hvac"
+    priority: 1
+    condition: ""
+    building_types: ["hospital", "factory"]
+    room_types: ["ot", "clean_room"]
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Clean room HVAC: HEPA filter, pre-filter, dedicated AHU, pressure cascade, airlock"
+
+  # ============================================================
+  # KITCHEN HOOD AND EXHAUST DEPENDENCIES
+  # ============================================================
+  - id: "DEP-MEP-037"
+    trigger: "commercial_kitchen_exhaust"
+    required_items: ["exhaust_hood_ss", "grease_filter", "exhaust_duct_ms", "exhaust_fan", "fire_suppression_hood", "makeup_air"]
+    trade: "hvac"
+    priority: 1
+    condition: ""
+    building_types: ["hotel", "restaurant"]
+    room_types: ["kitchen"]
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Commercial kitchen exhaust: SS hood, grease filter, MS duct, fan, fire suppression, makeup air"
+
+  # ============================================================
+  # PARKING VENTILATION DEPENDENCIES
+  # ============================================================
+  - id: "DEP-MEP-038"
+    trigger: "basement_parking_ventilation"
+    required_items: ["jet_fans", "supply_fan", "exhaust_fan", "co_detection", "controls"]
+    trade: "hvac"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: ["basement_parking"]
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "NBC Part 4"
+    note: "Basement parking ventilation: jet fans, supply/exhaust fans, CO detection, controls"
+
+  # ============================================================
+  # COMPRESSED AIR SYSTEM DEPENDENCIES
+  # ============================================================
+  - id: "DEP-MEP-039"
+    trigger: "compressed_air"
+    required_items: ["compressor", "air_dryer", "receiver_tank", "distribution_piping", "frl_unit"]
+    trade: "mechanical"
+    priority: 1
+    condition: ""
+    building_types: ["factory", "hospital"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Compressed air: compressor, dryer, receiver, distribution, FRL units"
+
+  # ============================================================
+  # MEDICAL GAS SYSTEM DEPENDENCIES
+  # ============================================================
+  - id: "DEP-MEP-040"
+    trigger: "medical_gas"
+    required_items: ["oxygen_manifold", "vacuum_plant", "medical_air_plant", "copper_piping", "gas_outlets", "alarm_panel"]
+    trade: "medical"
+    priority: 1
+    condition: ""
+    building_types: ["hospital"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 7484"
+    note: "Medical gas: O2 manifold, vacuum plant, air plant, copper piping, outlets, alarms"
+
+  # ============================================================
+  # GAS SUPPRESSION SYSTEM DEPENDENCIES
+  # ============================================================
+  - id: "DEP-MEP-041"
+    trigger: "gas_suppression"
+    required_items: ["gas_cylinders", "piping", "nozzles", "detection_system", "abort_switch", "signage"]
+    trade: "fire_safety"
+    priority: 1
+    condition: ""
+    building_types: ["data_center", "commercial"]
+    room_types: ["server_room", "electrical_room"]
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Gas suppression: cylinders, piping, nozzles, detection, abort switch, signage"
+
+  # ============================================================
+  # SOLAR SHADING AND LOUVER DEPENDENCIES
+  # ============================================================
+  - id: "DEP-MEP-042"
+    trigger: "facade_louver"
+    required_items: ["aluminium_louver", "frame", "fixing_bracket", "bird_mesh"]
+    trade: "facade"
+    priority: 2
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Facade louver: aluminium louver, frame, fixing brackets, bird mesh"
+
+  # ============================================================
+  # SWIMMING POOL MECHANICAL DEPENDENCIES
+  # ============================================================
+  - id: "DEP-MEP-043"
+    trigger: "pool_mechanical"
+    required_items: ["pool_pump", "sand_filter", "ozone_or_chlorine", "heat_exchanger", "dehumidifier"]
+    trade: "mechanical"
+    priority: 1
+    condition: ""
+    building_types: ["hotel", "residential_apartment"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Pool mechanical: pump, sand filter, sanitization, heat exchanger, dehumidifier"
+
+  # ============================================================
+  # KITCHEN EQUIPMENT DEPENDENCIES
+  # ============================================================
+  - id: "DEP-MEP-044"
+    trigger: "commercial_kitchen_equipment"
+    required_items: ["cooking_range", "oven", "fryer", "prep_table", "cold_room", "dishwasher", "bain_marie"]
+    trade: "kitchen"
+    priority: 1
+    condition: ""
+    building_types: ["hotel", "restaurant"]
+    room_types: ["kitchen"]
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Commercial kitchen: range, oven, fryer, prep table, cold room, dishwasher, bain marie"
+
+  # ============================================================
+  # LAUNDRY EQUIPMENT DEPENDENCIES
+  # ============================================================
+  - id: "DEP-MEP-045"
+    trigger: "laundry_room"
+    required_items: ["washer_extractor", "tumble_dryer", "flatwork_ironer", "boiler", "water_softener"]
+    trade: "mechanical"
+    priority: 1
+    condition: ""
+    building_types: ["hotel", "hospital"]
+    room_types: ["laundry"]
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Laundry: washer, dryer, ironer, boiler, water softener"
+
+  # ============================================================
+  # TRANSFORMER ROOM DEPENDENCIES
+  # ============================================================
+  - id: "DEP-MEP-046"
+    trigger: "transformer_room"
+    required_items: ["transformer", "ht_panel", "lt_panel", "cable_trench", "ventilation", "fire_protection", "oil_sump"]
+    trade: "electrical"
+    priority: 1
+    condition: ""
+    building_types: ["commercial", "hospital", "hotel"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 732"
+    note: "Transformer room: transformer, HT/LT panels, cable trench, ventilation, fire protection, oil sump"
+
+  # ============================================================
+  # CANOPY AND PORCH DEPENDENCIES
+  # ============================================================
+  - id: "DEP-MEP-047"
+    trigger: "entrance_canopy"
+    required_items: ["steel_structure", "glass_or_metal_cover", "lighting", "rain_water_drain"]
+    trade: "structural"
+    priority: 2
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Entrance canopy: steel structure, cover, lighting, drainage"
+
+  # ============================================================
+  # FUEL SYSTEM DEPENDENCIES
+  # ============================================================
+  - id: "DEP-MEP-048"
+    trigger: "fuel_system_dg"
+    required_items: ["fuel_storage_tank", "day_tank", "fuel_piping", "fuel_pump", "leak_detection"]
+    trade: "mechanical"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "PESO"
+    note: "DG fuel system: storage tank, day tank, piping, pump, leak detection per PESO"
+
+  # ============================================================
+  # RAISED FLOOR SYSTEM DEPENDENCIES
+  # ============================================================
+  - id: "DEP-MEP-049"
+    trigger: "raised_floor"
+    required_items: ["pedestal", "stringer", "panel", "ramp", "grounding"]
+    trade: "finishing"
+    priority: 1
+    condition: ""
+    building_types: ["data_center", "commercial"]
+    room_types: ["server_room"]
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Raised floor: pedestal, stringer, panels, ramp at entry, static grounding"
+
+  # ============================================================
+  # BUILDING MAINTENANCE UNIT DEPENDENCIES
+  # ============================================================
+  - id: "DEP-MEP-050"
+    trigger: "bmu"
+    required_items: ["roof_track", "davit_arm", "cradle", "motor", "safety_system"]
+    trade: "facade"
+    priority: 2
+    condition: "building_above_24m"
+    building_types: [all]
+    room_types: []
+    min_floors: 8
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "BMU for facade maintenance: roof track, davit arm, cradle, motor, safety system"
+
+  # ============================================================
+  # HVAC TESTING AND COMMISSIONING
+  # ============================================================
+  - id: "DEP-MEP-051"
+    trigger: "hvac_commissioning"
+    required_items: ["air_balancing", "water_balancing", "performance_test", "iaq_test"]
+    trade: "hvac"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "HVAC commissioning: air balancing, water balancing, performance test, IAQ test"
+
+  # ============================================================
+  # FIRE PUMP ROOM DEPENDENCIES
+  # ============================================================
+  - id: "DEP-MEP-052"
+    trigger: "fire_pump_room"
+    required_items: ["main_pump", "standby_pump", "jockey_pump", "controller", "test_header", "fire_rated_room"]
+    trade: "fire_safety"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 3844"
+    note: "Fire pump room: main/standby/jockey pumps, controller, test header, fire-rated construction"
+
+  # ============================================================
+  # CABLE TRAY AND CONTAINMENT DEPENDENCIES
+  # ============================================================
+  - id: "DEP-MEP-053"
+    trigger: "cable_containment"
+    required_items: ["cable_tray", "cable_ladder", "supports", "fire_stop", "labeling"]
+    trade: "electrical"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Cable containment: tray, ladder, supports, fire stops at penetrations, labeling"
+
+  # ============================================================
+  # PLUMBING SHAFT DEPENDENCIES
+  # ============================================================
+  - id: "DEP-MEP-054"
+    trigger: "plumbing_shaft"
+    required_items: ["access_door", "fire_stop", "pipe_supports", "waterproofing_at_base"]
+    trade: "plumbing"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 3
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Plumbing shaft: access door, fire stops, pipe supports, waterproofing at base"
+
+  # ============================================================
+  # CENTRAL BATTERY SYSTEM DEPENDENCIES
+  # ============================================================
+  - id: "DEP-MEP-055"
+    trigger: "central_battery_emergency"
+    required_items: ["battery_unit", "charger", "distribution", "emergency_luminaires", "exit_signs"]
+    trade: "electrical"
+    priority: 1
+    condition: ""
+    building_types: ["commercial", "hospital", "hotel"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "NBC Part 4"
+    note: "Central battery system: battery unit, charger, distribution, emergency lights, exit signs"
+
+  # ============================================================
+  # WASTE HEAT RECOVERY
+  # ============================================================
+  - id: "DEP-MEP-056"
+    trigger: "heat_recovery"
+    required_items: ["heat_wheel", "plate_exchanger", "piping", "controls"]
+    trade: "hvac"
+    priority: 2
+    condition: ""
+    building_types: ["commercial", "hospital", "hotel"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "ECBC"
+    note: "Heat recovery system: heat wheel or plate exchanger, piping, controls"
+
+  # ============================================================
+  # GONDOLA / WINDOW CLEANING SYSTEM
+  # ============================================================
+  - id: "DEP-MEP-057"
+    trigger: "window_cleaning_system"
+    required_items: ["roof_anchor", "davit", "cradle", "safety_line"]
+    trade: "facade"
+    priority: 2
+    condition: "glass_facade"
+    building_types: [all]
+    room_types: []
+    min_floors: 4
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Window cleaning: roof anchors, davit, cradle, safety line for glass facade maintenance"
+
+  # ============================================================
+  # VESTIBULE AND AIRLOCK DEPENDENCIES
+  # ============================================================
+  - id: "DEP-MEP-058"
+    trigger: "vestibule"
+    required_items: ["double_door", "air_curtain", "interlocking_door"]
+    trade: "hvac"
+    priority: 2
+    condition: ""
+    building_types: ["hospital", "data_center"]
+    room_types: ["vestibule"]
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Vestibule/airlock: double door, air curtain, interlocking mechanism"
+
+  # ============================================================
+  # ELECTRICAL BUSBAR TRUNKING
+  # ============================================================
+  - id: "DEP-MEP-059"
+    trigger: "busbar_trunking"
+    required_items: ["busbar_riser", "tap_off_units", "end_feed_unit", "supports"]
+    trade: "electrical"
+    priority: 1
+    condition: "multi_storey_commercial"
+    building_types: ["commercial", "hotel"]
+    room_types: []
+    min_floors: 5
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Busbar trunking: riser busbar, tap-off units, end feed unit, supports"
+
+  # ============================================================
+  # FIRE CURTAIN DEPENDENCIES
+  # ============================================================
+  - id: "DEP-MEP-060"
+    trigger: "fire_curtain"
+    required_items: ["fire_curtain_fabric", "guide_rails", "motor", "gravity_failsafe", "integration_fire_alarm"]
+    trade: "fire_safety"
+    priority: 1
+    condition: ""
+    building_types: ["retail_mall", "commercial"]
+    room_types: ["atrium"]
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "NBC Part 4"
+    note: "Fire curtain: fire-rated fabric, guide rails, motor, gravity failsafe, alarm integration"
+
+  # ============================================================
+  # SPLIT AC DEDICATED CIRCUIT AND SUPPORT
+  # ============================================================
+  - id: "DEP-MEP-061"
+    trigger: "split_ac"
+    required_items: ["dedicated_electrical_circuit_16a", "condensate_drain_to_outlet", "structural_support_bracket"]
+    trade: "hvac"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Split AC outdoor unit must have a dedicated 16A circuit (shared circuits cause nuisance tripping when compressor starts); condensate drain pipe from indoor unit must reach a designated drain point — condensate discharged to balcony is a nuisance and stains facade; outdoor unit structural bracket must be sized for unit weight plus wind load, especially at heights above 10m where wind uplift is significant"
+
+  # ============================================================
+  # CHILLER COOLING TOWER AND CHEMICAL DOSING
+  # ============================================================
+  - id: "DEP-MEP-062"
+    trigger: "chiller_plant"
+    required_items: ["cooling_tower_sized_for_heat_rejection", "condenser_water_pump_vfd", "chemical_dosing_system"]
+    trade: "hvac"
+    priority: 1
+    condition: ""
+    building_types: ["commercial", "hospital", "hotel"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Cooling tower must be sized for the chiller's heat rejection load (typically 1.2-1.3x cooling capacity) accounting for Indian summer wet bulb temperatures — undersized cooling tower drives up chilled water supply temperature, reducing chiller efficiency by 2-3% per °C; VFD on condenser water pump saves 40-60% pump energy; chemical dosing (biocide, corrosion inhibitor, scale inhibitor) prevents Legionella growth in cooling tower fill, which is a major public health risk"
+
+  # ============================================================
+  # AHU FRESH AIR DAMPER AND RETURN AIR DUCT
+  # ============================================================
+  - id: "DEP-MEP-063"
+    trigger: "ahu_system"
+    required_items: ["fresh_air_damper_motorised", "return_air_duct_sized", "filter_access_panel_ahu"]
+    trade: "hvac"
+    priority: 1
+    condition: ""
+    building_types: ["commercial", "hospital", "hotel"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "ASHRAE 62.1"
+    note: "Motorised fresh air damper enables BMS to modulate outside air per CO2 level and occupancy (ASHRAE 62.1 demand control ventilation) — fixed open dampers waste enormous cooling energy; return air duct must be sized for full return air volume (building operates at slight positive pressure); filter access panel must be generous enough for a maintenance worker to change bags without removing duct sections"
+
+  # ============================================================
+  # BMS DDC PANELS AND TRAINING
+  # ============================================================
+  - id: "DEP-MEP-064"
+    trigger: "bms_system"
+    required_items: ["ddc_panels_per_system", "field_devices_sensors_and_actuators", "operator_training_40_hours_min"]
+    trade: "hvac"
+    priority: 2
+    condition: ""
+    building_types: ["commercial", "hospital", "hotel"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "BMS DDC panels must be commissioned for each HVAC, fire, and electrical system; field devices (temperature sensors, differential pressure transducers, actuated valves) must be calibrated after installation; minimum 40 hours operator training is essential — untrained facility managers frequently override setpoints, turn off sub-systems, or fail to respond to alarms, negating 60-70% of BMS energy savings potential; training record should be contractually required"
+
+  # ============================================================
+  # FIRE ALARM ZONE WIRING AND CAUSE-AND-EFFECT
+  # ============================================================
+  - id: "DEP-MEP-065"
+    trigger: "fire_alarm_system"
+    required_items: ["zone_wiring_diagram", "cause_and_effect_matrix", "integration_with_hvac_and_fire_suppression"]
+    trade: "fire_safety"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 2189"
+    note: "Fire alarm zone wiring diagram showing which detectors are on each zone is required for panel programming and troubleshooting; cause-and-effect matrix (C&E matrix) documents exactly which outputs (HVAC shutdown, door release, sprinkler alert, PA evacuation) are triggered by which detector zone and alarm level — without a verified C&E matrix, incorrect sequences (e.g., not shutting down fresh air during fire) negate the fire protection strategy"
+
+  # ============================================================
+  # SPRINKLER HYDRAULIC CALCULATION AND PUMP SIZING
+  # ============================================================
+  - id: "DEP-MEP-066"
+    trigger: "fire_sprinkler_system"
+    required_items: ["hydraulic_calculation_most_remote_zone", "pump_sizing_from_calculation", "tank_sizing_30_min_operation"]
+    trade: "fire_safety"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 15105"
+    note: "Hydraulic calculation for the most hydraulically unfavourable zone determines required inlet pressure and flow — pump must be selected to deliver this pressure at full design flow; IS 15105 specifies tank capacity for minimum 30 minutes operation at design flow rate; using rule-of-thumb pump sizing (very common in India) routinely results in insufficient pressure at upper-floor sprinklers and is only discovered during commissioning testing when pump motor overloads"
+
+  # ============================================================
+  # HVAC TAB REPORT
+  # ============================================================
+  - id: "DEP-MEP-067"
+    trigger: "hvac_commissioning"
+    required_items: ["tab_report_testing_adjusting_balancing", "air_flow_measured_at_each_grille", "water_flow_balanced_each_coil"]
+    trade: "hvac"
+    priority: 1
+    condition: ""
+    building_types: ["commercial", "hospital", "hotel"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "ASHRAE"
+    note: "TAB (Testing, Adjusting, Balancing) report is mandatory for complex HVAC systems — air flow must be measured (Pitot tube or anemometer) at every supply and return grille and adjusted to design CFM by volume control dampers; chilled water flow must be balanced at each AHU coil; without TAB, some zones are overcooled and others are sweltering; TAB by a certified AABC/NEBB contractor provides a legal commissioning record required for LEED/GRIHA rating"
+
+  # ============================================================
+  # LIFT MACHINE ROOM VENTILATION AND LIGHTING
+  # ============================================================
+  - id: "DEP-MEP-068"
+    trigger: "lift_machine_room"
+    required_items: ["machine_room_ventilation_10_ach", "machine_room_lighting_200_lux", "pit_drainage_sump"]
+    trade: "vertical_transport"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 14665"
+    note: "IS 14665 Part 5 requires lift machine room to be maintained below 40°C — 10 ACH ventilation (supply and extract) is needed for heat generated by drive motors and transformers; 200 lux lighting is required for maintenance work in machine room; pit drainage sump prevents water accumulation from condensation and roof leaks that damage controller electronics at the bottom of the pit"
+
+  # ============================================================
+  # VRF REFRIGERANT PIPING CALCULATION AND LEAK TEST
+  # ============================================================
+  - id: "DEP-MEP-069"
+    trigger: "vrf_vrvs_system"
+    required_items: ["refrigerant_piping_length_calculation", "oil_return_slope_check", "nitrogen_pressure_test_before_refrigerant_charge", "leak_test_electronic_detector"]
+    trade: "hvac"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "VRF piping total equivalent length must be within manufacturer's limits (typically 200-300m) — excessive piping length causes refrigerant distribution problems and reduced capacity; oil return slope (minimum 1:250 on horizontal runs away from compressor) prevents oil accumulating in piping; nitrogen pressure test at 1.5x design pressure before refrigerant charging finds leaks — R410A/R32 refrigerant is expensive and environmentally harmful; electronic leak detector must be used post-charge as a final check"
+
+  # ============================================================
+  # FIRE DAMPER AND TESTING
+  # ============================================================
+  - id: "DEP-MEP-070"
+    trigger: "hvac_duct_through_fire_wall"
+    required_items: ["fire_damper_at_every_fire_wall_penetration", "fire_damper_access_door", "fire_damper_test_certificate"]
+    trade: "hvac"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "NBC Part 4"
+    note: "Every HVAC duct penetrating a fire-rated wall or slab must have a fire damper rated equal to or greater than the wall rating — without fire dampers, ducts become chimneys carrying fire and smoke between compartments; each fire damper must have an access door of adequate size for fusible link replacement; fire damper test certificate (drop test and thermal trip test) is required for fire NOC; dampers must be inspected annually per NBC"
+
+  # ============================================================
+  # MEDICAL GAS ZONE VALVE AND ALARMS
+  # ============================================================
+  - id: "DEP-MEP-071"
+    trigger: "medical_gas_piping"
+    required_items: ["zone_valve_box_each_ward", "area_alarm_panel", "pressure_test_and_purity_test"]
+    trade: "medical"
+    priority: 1
+    condition: ""
+    building_types: ["hospital"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 7484"
+    note: "Medical gas zone valve box in each ward allows isolation of that ward without cutting gas to the whole floor — essential for maintenance and emergency shutdown; area alarm panels display gas pressure and sound audible alarm if pressure drops outside 90-110% of design; pressure test at 1.5x working pressure and gas purity test per IS 7484 are mandatory before commissioning — contaminated medical oxygen is a direct patient safety risk"
+
+  # ============================================================
+  # PRECISION AIR CONDITIONING DATA CENTRE
+  # ============================================================
+  - id: "DEP-MEP-072"
+    trigger: "precision_air_conditioning"
+    required_items: ["pac_unit_n_plus_1_redundancy", "temperature_humidity_control", "underfloor_air_delivery", "ec_fan_motor"]
+    trade: "hvac"
+    priority: 1
+    condition: ""
+    building_types: ["data_center"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "TIA-942"
+    note: "PAC (Precision Air Conditioning) units for data centres must maintain temperature 18-27°C and humidity 40-60%RH per ASHRAE A1-class server environment; N+1 redundancy ensures no single PAC failure causes thermal runaway; underfloor air delivery through perforated tiles aims cold air directly at server intake; EC (electronically commutated) fan motors are 30-40% more efficient than AC fans and provide variable speed control"
+
+  # ============================================================
+  # SMOKE EXTRACTION DESIGN
+  # ============================================================
+  - id: "DEP-MEP-073"
+    trigger: "smoke_extraction_system"
+    required_items: ["smoke_exhaust_fan_high_temp_rated_400c_2hr", "smoke_duct_class_b_minimum", "makeup_air_50pct_of_exhaust"]
+    trade: "hvac"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: ["basement", "atrium"]
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "NBC Part 4"
+    note: "Smoke exhaust fans in fire mode must operate at 400°C for minimum 2 hours (certified per EN 12101-3) — standard AC fans fail within minutes in smoke; smoke ductwork must be Class B minimum (60-minute fire resistance) to ensure smoke is exhausted through the designated path; makeup air (50% of exhaust) prevents excessive negative pressure that prevents building exit doors from opening and limits smoke-filling delay"
+
+  # ============================================================
+  # LIFT ANNUAL MAINTENANCE CONTRACT
+  # ============================================================
+  - id: "DEP-MEP-074"
+    trigger: "elevator_commissioning"
+    required_items: ["lift_amc_first_year_included", "lift_log_book", "emergency_rescue_procedure"]
+    trade: "vertical_transport"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 14665"
+    note: "Lift AMC (annual maintenance contract) for at least the first year must be included in handover package — lift without AMC will have no maintenance until residents negotiate separately, during which period the lift may fail and trap passengers; lift log book (IS 14665 requirement) records all maintenance visits, tests, and incidents; emergency rescue procedure must be posted in machine room for fire brigade and maintenance staff"
+
+  # ============================================================
+  # HVAC NOISE CRITERIA
+  # ============================================================
+  - id: "DEP-MEP-075"
+    trigger: "hvac_ductwork"
+    required_items: ["duct_velocity_within_nc_limits", "duct_lining_if_noise_criterion_nc35_or_lower", "flexible_duct_connection_ahu_to_main_duct"]
+    trade: "hvac"
+    priority: 2
+    condition: "noise_sensitive_area"
+    building_types: ["hotel", "hospital", "commercial"]
+    room_types: ["bedroom", "conference_room", "ot"]
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "ASHRAE"
+    note: "Hotel bedrooms require NC-30 (equivalent to 35 dB background noise); duct velocity above 5 m/s in branch ducts causes audible noise from turbulence; acoustic duct lining (25mm mineral wool) required in supply ducts serving quiet areas; flexible duct connection between AHU discharge and rigid ductwork absorbs vibration and prevents motor hum from being transmitted along the duct — a common cause of noise complaints in hotel rooms above plant rooms"
+
+  # ============================================================
+  # ELECTRICAL ROOM COOLING
+  # ============================================================
+  - id: "DEP-MEP-076"
+    trigger: "electrical_room_hvac"
+    required_items: ["cooling_system_electrical_room", "temperature_below_40c", "separate_cooling_from_common_system"]
+    trade: "hvac"
+    priority: 1
+    condition: ""
+    building_types: ["commercial", "hospital", "data_center"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 8623"
+    note: "Electrical rooms with switchgear, UPS, and transformers generate significant heat — transformer rooms require 10 ACH ventilation with inlet/exhaust vented outside; IS 8623 requires switchgear to operate below 40°C ambient; electrical room cooling must be independent from common HVAC (dedicated splits or ventilation) so electrical systems remain cool even if main building HVAC fails"
+
+  # ============================================================
+  # HELIPAD NAVIGATION LIGHTS
+  # ============================================================
+  - id: "DEP-MEP-077"
+    trigger: "helipad"
+    required_items: ["perimeter_lights_red_low_intensity", "floodlighting_500_lux_at_pad", "wind_cone", "aviation_authority_noc"]
+    trade: "electrical"
+    priority: 1
+    condition: ""
+    building_types: ["hospital", "hotel"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "DGCA"
+    note: "Hospital and hotel helipads require DGCA NOC and must have: perimeter low-intensity steady red lights; pad flood lighting at 500 lux; wind cone to indicate wind direction; edge lighting must be fail-safe on UPS power — missing or failed helipad lighting prevents night or poor-visibility operations and can be a life-safety issue for emergency medical evacuations"
+
+  # ============================================================
+  # AUTOMATIC TRANSFER SWITCH
+  # ============================================================
+  - id: "DEP-MEP-078"
+    trigger: "power_changeover"
+    required_items: ["ats_automatic_transfer_switch", "transfer_time_below_15_seconds", "interlocking_between_mains_and_dg"]
+    trade: "electrical"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 4722"
+    note: "ATS must mechanically and electrically interlock mains and DG supplies to prevent paralleling — back-feeding mains supply onto DG is an extremely dangerous fault that can kill DISCOM linesmen working on the apparently dead supply; transfer time below 15 seconds is required for hospitals (NABH) and data centres; ATS logic must also handle 3-phase mains failure detection (loss of any one phase, not just all-three)"
+
+  # ============================================================
+  # HVAC REFRIGERANT LEAK DETECTION
+  # ============================================================
+  - id: "DEP-MEP-079"
+    trigger: "refrigerant_system"
+    required_items: ["refrigerant_leak_detector_enclosed_plant_room", "emergency_exhaust_fan_plant_room", "refrigerant_type_low_gwp"]
+    trade: "hvac"
+    priority: 1
+    condition: "plant_room_enclosed"
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "ASHRAE 15"
+    note: "Enclosed plant rooms with refrigerant-containing equipment require fixed refrigerant leak detectors per ASHRAE 15 — R410A is non-toxic but displaces oxygen at high concentration; R32 and R290 (propane) are mildly and highly flammable respectively; emergency exhaust fan must activate on leak detection to prevent dangerous concentrations; new systems should prefer low-GWP refrigerants (R32, R454B) to future-proof against HFC phase-down under the Kigali Amendment"
+
+  # ============================================================
+  # HVAC ENERGY EFFICIENCY
+  # ============================================================
+  - id: "DEP-MEP-080"
+    trigger: "chiller_or_vrf_selection"
+    required_items: ["minimum_cop_or_iplv_per_ecbc", "vfd_on_all_pumps_and_fans_above_11kw", "energy_meter_per_hvac_system"]
+    trade: "hvac"
+    priority: 2
+    condition: ""
+    building_types: ["commercial", "hotel", "hospital"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "ECBC 2017"
+    note: "ECBC 2017 specifies minimum efficiency for chillers (COP 5.5+ for screw, 6.0+ for centrifugal), VRF systems, and packaged units; VFDs on pumps and fans above 11kW are required by ECBC and save 40-60% of part-load energy which represents 80-90% of operating hours; sub-metering each major HVAC system enables fault detection, energy benchmarking, and GRIHA documentation"
+
+  # ============================================================
+  # COMPRESSED GAS CYLINDER STORAGE
+  # ============================================================
+  - id: "DEP-MEP-081"
+    trigger: "medical_gas_cylinder_storage"
+    required_items: ["cylinder_store_ventilated", "cylinder_chaining_to_wall", "oxidiser_fuel_separate_storage"]
+    trade: "medical"
+    priority: 1
+    condition: ""
+    building_types: ["hospital"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 7484"
+    note: "Medical gas cylinders (O2, N2O) must be stored in a dedicated, naturally ventilated room — oxygen-enriched atmosphere from leaking cylinders dramatically increases fire risk; cylinders must be chained or racked to prevent falling (a full oxygen cylinder falling and snapping its valve is a projectile hazard); oxidising gases (O2, N2O) and fuel gases (C2H2) must not be stored in the same compartment per PESO regulations"
+
+  # ============================================================
+  # HVAC OUTDOOR UNIT PLACEMENT
+  # ============================================================
+  - id: "DEP-MEP-082"
+    trigger: "outdoor_unit_placement"
+    required_items: ["minimum_clearance_for_air_discharge", "vibration_isolation_pads", "condenser_not_facing_prevailing_wind"]
+    trade: "hvac"
+    priority: 2
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "Outdoor units require minimum clearance per manufacturer specification (typically 500mm on sides, 1000mm above) for condenser air discharge — recirculation of hot discharge air back to condenser inlet reduces cooling capacity by 10-25% and increases power consumption; vibration isolation pads prevent structure-borne noise transmission into occupied spaces; condenser should face away from the prevailing summer wind direction to avoid hot wind driving into the coil"
+
+  # ============================================================
+  # BMS OPEN PROTOCOL REQUIREMENT
+  # ============================================================
+  - id: "DEP-MEP-083"
+    trigger: "bms_procurement"
+    required_items: ["open_protocol_bacnet_or_modbus", "web_based_interface", "historian_data_logging"]
+    trade: "hvac"
+    priority: 2
+    condition: ""
+    building_types: ["commercial", "hospital", "hotel"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: ""
+    note: "BMS must use open protocols (BACnet/IP or Modbus TCP) so that future expansions and maintenance can be done by any qualified vendor — proprietary protocol BMS systems lock clients into a single vendor for life-cycle support at inflated prices; web-based interface allows remote monitoring via any browser without proprietary software; historian data logging (minimum 1-year storage) is required for ECBC energy reporting and GRIHA credit documentation"
+
+  # ============================================================
+  # ACCESS FLOOR FOR DATA CENTRE COOLING
+  # ============================================================
+  - id: "DEP-MEP-084"
+    trigger: "data_centre_cooling"
+    required_items: ["raised_floor_600mm_minimum", "perforated_tiles_in_cold_aisle", "blanking_panels_all_empty_rack_slots"]
+    trade: "hvac"
+    priority: 1
+    condition: ""
+    building_types: ["data_center"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "TIA-942"
+    note: "600mm underfloor plenum provides adequate airflow distribution to perforated floor tiles in cold aisles — insufficient plenum depth causes airflow starvation in remote rows; blanking panels in all empty rack unit spaces prevent hot server exhaust recirculating through empty slots to cold aisle (bypass airflow), which is the most common cause of hot spots in data centres and server thermal throttling"
+
+  # ============================================================
+  # FIRE SUPPRESSION FM200 / NOVEC DATA CENTRE
+  # ============================================================
+  - id: "DEP-MEP-085"
+    trigger: "gas_fire_suppression_data_centre"
+    required_items: ["agent_concentration_design_c_factor", "discharge_time_10_seconds_max", "room_integrity_test"]
+    trade: "fire_safety"
+    priority: 1
+    condition: ""
+    building_types: ["data_center"]
+    room_types: ["server_room"]
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "NFPA 2001"
+    note: "FM200 or Novec 1230 concentration must achieve design extinguishing concentration throughout the protected volume within 10 seconds — slow discharge allows fire to grow beyond suppressible limits; room integrity test (door fan test) verifies that protected room retains agent for minimum 10 minutes (hold time); unsealed floor/ceiling penetrations (cable entry points) routinely fail integrity tests and must be sealed with fire stop before system commissioning"
+
+  # ============================================================
+  # PRESSURISED STAIRCASE TESTING
+  # ============================================================
+  - id: "DEP-MEP-086"
+    trigger: "staircase_pressurization_system"
+    required_items: ["pressure_differential_test_50pa_minimum", "flow_test_with_doors_open", "commissioning_report"]
+    trade: "fire_safety"
+    priority: 1
+    condition: "building_above_15m"
+    building_types: [all]
+    room_types: []
+    min_floors: 5
+    min_area_sqm: 0
+    is_code_ref: "NBC Part 4"
+    note: "NBC Part 4 requires staircase overpressure of minimum 50 Pa above the corridor with all exit doors closed — this prevents smoke entering the staircase; system must also be tested with one or more exit doors open (representing evacuation scenario) to ensure pressure differential is maintained; commissioning report documenting pressure readings at each floor is required for fire NOC; undertested pressurization systems fail to prevent smoke entry, which kills evacuees in staircase"
+
+  # ============================================================
+  # HVAC DUCT LEAKAGE TEST
+  # ============================================================
+  - id: "DEP-MEP-087"
+    trigger: "hvac_ductwork"
+    required_items: ["duct_leakage_test_class_b_max_6pct", "duct_sealing_mastic_at_joints"]
+    trade: "hvac"
+    priority: 2
+    condition: "supply_duct_above_ceiling"
+    building_types: ["commercial", "hospital", "hotel"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "ASHRAE"
+    note: "Ductwork leakage of 10-20% is common in Indian construction — poorly sealed duct joints dump conditioned air into the ceiling void, increasing HVAC energy consumption by 10-15%; ASHRAE duct leakage class B allows maximum 6% of design flow; duct sealing with mastic compound (not duct tape which dries and cracks) at all longitudinal seams and joints before ceiling closure must be contractually required; testing with duct blaster before ceiling closure is strongly recommended on large projects"
+
+  # ============================================================
+  # ELECTRICAL SUBSTATION EARTHING
+  # ============================================================
+  - id: "DEP-MEP-088"
+    trigger: "electrical_substation"
+    required_items: ["substation_earthing_mesh", "transformer_neutral_earthing", "touch_voltage_check"]
+    trade: "electrical"
+    priority: 1
+    condition: ""
+    building_types: [all]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 3043"
+    note: "Substation earthing mesh must achieve < 1 ohm for HT equipment per IS 3043; transformer neutral must be solidly earthed at the star point to provide a fault return path and stabilise phase voltages; touch voltage at earth pit conductors and equipment frames must be below 50V during a fault condition — high touch voltage during earth faults can be fatal; these calculations and tests are required before DISCOM energises HT equipment"
+
+  # ============================================================
+  # HVAC INDOOR AIR QUALITY MONITORING
+  # ============================================================
+  - id: "DEP-MEP-089"
+    trigger: "commercial_hvac"
+    required_items: ["co2_sensor_per_zone", "iaq_monitor_pm2_5_and_voc", "outside_air_damper_modulation_by_co2"]
+    trade: "hvac"
+    priority: 2
+    condition: ""
+    building_types: ["commercial", "hospital", "hotel", "school"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "ASHRAE 62.1"
+    note: "CO2 sensors per zone enable demand-controlled ventilation — when zone CO2 exceeds 1000 ppm, outside air damper opens to increase fresh air; IAQ monitors tracking PM2.5 and total VOC enable GRIHA/LEED credit documentation and real-time dashboard display (WELL Building Standard requirement in premium commercial and healthcare); post-COVID, building occupants increasingly expect IAQ to be monitored and displayed"
+
+  # ============================================================
+  # SOLAR THERMAL SYSTEM
+  # ============================================================
+  - id: "DEP-MEP-090"
+    trigger: "solar_water_heating"
+    required_items: ["solar_collector_area_calculation", "storage_tank_4_6_hours_capacity", "auxiliary_heating_backup", "scale_prevention_treatment"]
+    trade: "plumbing"
+    priority: 2
+    condition: ""
+    building_types: ["hotel", "hospital", "residential_apartment"]
+    room_types: []
+    min_floors: 0
+    min_area_sqm: 0
+    is_code_ref: "IS 12933"
+    note: "IS 12933 specifies solar collector area for different solar zones (Zone I-IV) — under-specification means the system cannot heat the full daily demand on cloudy days without heavy auxiliary dependence; storage tank at 4-6x daily hot water use allows overnight draw-down; auxiliary heating (electric element or heat pump) covers nights and monsoon periods; Indian hard water causes scale in collectors that reduces efficiency by 20-30% annually without anti-scale treatment (water softener or scale inhibitor dosing)"

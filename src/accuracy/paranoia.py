@@ -15,8 +15,59 @@ import logging
 import yaml
 import re
 import math
+import ast
+import operator
 
 logger = logging.getLogger(__name__)
+
+
+def _safe_eval_numeric(expr: str) -> float:
+    """
+    Safely evaluate a numeric arithmetic expression WITHOUT using eval().
+
+    Supports: +, -, *, /, **, parentheses, float/int literals.
+    Rejects: function calls, imports, attribute access, assignments.
+
+    Args:
+        expr: Arithmetic expression string (e.g., "3.5 * 2 + 1.0")
+
+    Returns:
+        Numeric result as float
+
+    Raises:
+        ValueError: If expression contains non-arithmetic operations
+    """
+    # Whitelist of safe AST node types for arithmetic
+    _SAFE_NODES = [
+        ast.Expression, ast.BinOp, ast.UnaryOp, ast.Constant,
+        ast.Add, ast.Sub, ast.Mult, ast.Div, ast.Pow, ast.FloorDiv,
+        ast.Mod, ast.USub, ast.UAdd,
+    ]
+    # Python 3.13 removed ast.Num, but older versions need it
+    if hasattr(ast, "Num"):
+        _SAFE_NODES.append(ast.Num)
+    _SAFE_NODES = tuple(_SAFE_NODES)
+
+    expr = expr.strip()
+    if not expr:
+        raise ValueError("Empty expression")
+
+    try:
+        tree = ast.parse(expr, mode='eval')
+    except SyntaxError as e:
+        raise ValueError(f"Invalid expression syntax: {expr}") from e
+
+    # Walk the AST and verify every node is in our whitelist
+    for node in ast.walk(tree):
+        if not isinstance(node, _SAFE_NODES):
+            raise ValueError(
+                f"Unsafe operation in expression: {type(node).__name__} in '{expr}'"
+            )
+
+    # Safe to compile and evaluate — only arithmetic operations
+    code = compile(tree, "<paranoia_formula>", "eval")
+    result = eval(code)  # noqa: S307 — AST-validated arithmetic only
+    return float(result)
 
 
 class InferencePriority(Enum):
@@ -465,12 +516,12 @@ class EstimatorParanoiaEngine:
             # Handle max() function
             max_match = re.search(r"max\(([^,]+),([^)]+)\)", formula)
             if max_match:
-                a = float(eval(max_match.group(1).strip()))
-                b = float(eval(max_match.group(2).strip()))
+                a = float(_safe_eval_numeric(max_match.group(1).strip()))
+                b = float(_safe_eval_numeric(max_match.group(2).strip()))
                 formula = formula.replace(max_match.group(0), str(max(a, b)))
 
-            # Evaluate
-            result = eval(formula)
+            # Evaluate safely (arithmetic only, no code execution)
+            result = _safe_eval_numeric(formula)
             return round(float(result), 2)
         except Exception as e:
             logger.debug(f"Formula evaluation failed: {formula} - {e}")
@@ -498,7 +549,7 @@ class EstimatorParanoiaEngine:
             formula = formula.replace("door_area", str(area_sqm))
             formula = formula.replace("element_area", str(area_sqm))
 
-            result = eval(formula)
+            result = _safe_eval_numeric(formula)
             return round(float(result), 2)
         except Exception:
             return 1.0
@@ -518,7 +569,7 @@ class EstimatorParanoiaEngine:
             formula = formula.replace("plot_area", str(floor_area))
             formula = formula.replace("plot_perimeter", str(perimeter))
 
-            result = eval(formula)
+            result = _safe_eval_numeric(formula)
             return round(float(result), 2)
         except Exception:
             return 1.0

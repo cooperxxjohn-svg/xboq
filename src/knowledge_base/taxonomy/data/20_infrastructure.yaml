@@ -1,0 +1,3723 @@
+discipline: infrastructure
+trade: infrastructure
+sub_trades:
+  bridges:
+    categories:
+      superstructure:
+        items:
+        - id: INF.BR.SLB.001
+          standard_name: RCC slab bridge - 6m clear span - M30 grade
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IRC 112, IRC 6
+          dsr_item_ref: ''
+          aliases:
+          - slab culvert 6m
+          - RCC bridge 6m
+          typical_rate_range:
+            min: 8000
+            max: 14000
+          notes: Per sqm of deck area
+          data_source: IS codes only
+        - id: INF.BR.SLB.002
+          standard_name: RCC slab bridge - 8m clear span - M35 grade
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IRC 112
+          dsr_item_ref: ''
+          aliases:
+          - RCC bridge 8m
+          typical_rate_range:
+            min: 10000
+            max: 18000
+          notes: ''
+          data_source: IS codes only
+        - id: INF.BR.SLB.003
+          standard_name: RCC slab bridge - 10m clear span - M35 grade
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IRC 112
+          dsr_item_ref: ''
+          aliases:
+          - RCC bridge 10m
+          typical_rate_range:
+            min: 12000
+            max: 22000
+          notes: ''
+          data_source: IS codes only
+        - id: INF.BR.SLB.004
+          standard_name: RCC slab bridge - 12m clear span - M40 grade
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IRC 112
+          dsr_item_ref: ''
+          aliases:
+          - RCC bridge 12m
+          typical_rate_range:
+            min: 14000
+            max: 25000
+          notes: ''
+          data_source: IS codes only
+        - id: INF.BR.PSC.001
+          standard_name: PSC girder bridge - 12m span - post-tensioned I-girder
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IRC 112, IRC 18
+          dsr_item_ref: ''
+          aliases:
+          - prestressed bridge 12m
+          - PSC girder 12m
+          typical_rate_range:
+            min: 15000
+            max: 25000
+          notes: ''
+          data_source: IS codes only
+        - id: INF.BR.PSC.002
+          standard_name: PSC girder bridge - 20m span - post-tensioned I-girder
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IRC 112, IRC 18
+          dsr_item_ref: ''
+          aliases:
+          - prestressed bridge 20m
+          typical_rate_range:
+            min: 18000
+            max: 30000
+          notes: ''
+          data_source: IS codes only
+        - id: INF.BR.PSC.003
+          standard_name: PSC girder bridge - 30m span - post-tensioned box girder
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IRC 112, IRC 18
+          dsr_item_ref: ''
+          aliases:
+          - box girder bridge 30m
+          typical_rate_range:
+            min: 22000
+            max: 38000
+          notes: ''
+          data_source: IS codes only
+        - id: INF.BR.STL.001
+          standard_name: Steel girder bridge - plate girder composite
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IRC 24
+          dsr_item_ref: ''
+          aliases:
+          - steel bridge
+          - steel girder bridge
+          typical_rate_range:
+            min: 20000
+            max: 35000
+          notes: ''
+          data_source: IS codes only
+        - id: INF.BR.DKS.001
+          standard_name: Bridge deck slab - RCC M35 - 200-250mm thick
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IRC 112
+          dsr_item_ref: ''
+          aliases:
+          - deck slab
+          - bridge deck
+          typical_rate_range:
+            min: 3000
+            max: 5500
+          notes: ''
+          data_source: IS codes only
+        - id: INF.BR.WRC.001
+          standard_name: Bridge wearing coat - 75mm thick - M30 grade - asphaltic concrete
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IRC 112, IRC 6
+          dsr_item_ref: ''
+          aliases:
+          - bridge wearing coat
+          - overlay
+          typical_rate_range:
+            min: 400
+            max: 800
+          notes: ''
+          data_source: estimated
+      substructure:
+        items:
+        - id: INF.BR.PLF.001
+          standard_name: Bridge pile foundation - bored cast-in-situ - 800mm dia
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IS 2911
+          dsr_item_ref: ''
+          aliases:
+          - bridge pile 800mm
+          - bored pile 800mm
+          typical_rate_range:
+            min: 8000
+            max: 15000
+          notes: Per running meter of pile
+          data_source: IS codes only
+        - id: INF.BR.PLF.002
+          standard_name: Bridge pile foundation - bored cast-in-situ - 1000mm dia
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IS 2911
+          dsr_item_ref: ''
+          aliases:
+          - bridge pile 1000mm
+          - large bore pile
+          typical_rate_range:
+            min: 12000
+            max: 22000
+          notes: ''
+          data_source: IS codes only
+        - id: INF.BR.PLF.003
+          standard_name: Bridge pile foundation - bored cast-in-situ - 1200mm dia
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IS 2911
+          dsr_item_ref: ''
+          aliases:
+          - bridge pile 1200mm
+          typical_rate_range:
+            min: 16000
+            max: 30000
+          notes: ''
+          data_source: IS codes only
+        - id: INF.BR.PLF.004
+          standard_name: Bridge pile foundation - driven precast - 350x350mm
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IS 2911
+          dsr_item_ref: ''
+          aliases:
+          - driven pile 350mm
+          typical_rate_range:
+            min: 5000
+            max: 10000
+          notes: ''
+          data_source: IS codes only
+        - id: INF.BR.OPF.001
+          standard_name: Bridge open foundation - RCC footing - M30 grade
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IRC 78
+          dsr_item_ref: ''
+          aliases:
+          - spread footing bridge
+          - open foundation
+          typical_rate_range:
+            min: 6000
+            max: 10000
+          notes: ''
+          data_source: IS codes only
+        - id: INF.BR.WLF.001
+          standard_name: Well foundation - open caisson - RCC steining
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IRC 78
+          dsr_item_ref: ''
+          aliases:
+          - well foundation
+          - caisson foundation
+          typical_rate_range:
+            min: 8000
+            max: 15000
+          notes: ''
+          data_source: IS codes only
+        - id: INF.BR.ABT.001
+          standard_name: Bridge abutment - gravity type - RCC M30
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IRC 78
+          dsr_item_ref: ''
+          aliases:
+          - gravity abutment
+          - bridge abutment
+          typical_rate_range:
+            min: 7000
+            max: 12000
+          notes: ''
+          data_source: IS codes only
+        - id: INF.BR.ABT.002
+          standard_name: Bridge abutment - cantilever type - RCC M35
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IRC 78
+          dsr_item_ref: ''
+          aliases:
+          - cantilever abutment
+          typical_rate_range:
+            min: 8000
+            max: 14000
+          notes: ''
+          data_source: IS codes only
+        - id: INF.BR.PIR.001
+          standard_name: Bridge pier - solid RCC - M35 grade
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IRC 78
+          dsr_item_ref: ''
+          aliases:
+          - bridge pier solid
+          - RCC pier
+          typical_rate_range:
+            min: 8000
+            max: 14000
+          notes: ''
+          data_source: IS codes only
+        - id: INF.BR.PIR.002
+          standard_name: Bridge pier - hollow RCC - M40 grade
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IRC 78
+          dsr_item_ref: ''
+          aliases:
+          - hollow pier
+          typical_rate_range:
+            min: 10000
+            max: 18000
+          notes: For tall piers
+          data_source: IS codes only
+      accessories:
+        items:
+        - id: INF.BR.EXJ.001
+          standard_name: Bridge expansion joint - strip seal type (movement up to 80mm)
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IRC 119
+          dsr_item_ref: ''
+          aliases:
+          - strip seal joint
+          - expansion joint bridge
+          typical_rate_range:
+            min: 8000
+            max: 15000
+          notes: ''
+          data_source: IS codes only
+        - id: INF.BR.EXJ.002
+          standard_name: Bridge expansion joint - modular type (movement up to 320mm)
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IRC 119
+          dsr_item_ref: ''
+          aliases:
+          - modular expansion joint
+          typical_rate_range:
+            min: 25000
+            max: 50000
+          notes: ''
+          data_source: IS codes only
+        - id: INF.BR.BRG.001
+          standard_name: Bridge bearing - elastomeric/neoprene pad (POT type)
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IRC 83
+          dsr_item_ref: ''
+          aliases:
+          - POT bearing
+          - bridge bearing
+          typical_rate_range:
+            min: 15000
+            max: 40000
+          notes: Rate depends on load capacity
+          data_source: IS codes only
+        - id: INF.BR.BRG.002
+          standard_name: Bridge bearing - PTFE sliding type
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IRC 83
+          dsr_item_ref: ''
+          aliases:
+          - PTFE bearing
+          - sliding bearing
+          typical_rate_range:
+            min: 25000
+            max: 60000
+          notes: ''
+          data_source: IS codes only
+        - id: INF.BR.RLG.001
+          standard_name: Bridge railing - MS/SS tubular - 1050mm height
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IRC 119
+          dsr_item_ref: ''
+          aliases:
+          - bridge railing
+          - guardrail bridge
+          typical_rate_range:
+            min: 3000
+            max: 6000
+          notes: ''
+          data_source: IS codes only
+        - id: INF.BR.RLG.002
+          standard_name: Bridge railing - RCC parapet wall - 1050mm height
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IRC 112, IRC 6
+          dsr_item_ref: ''
+          aliases:
+          - RCC parapet bridge
+          typical_rate_range:
+            min: 2500
+            max: 5000
+          notes: ''
+          data_source: estimated
+        - id: INF.BR.APS.001
+          standard_name: Bridge approach slab - RCC 300mm thick - 3.5m long
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IRC 112, IRC 6
+          dsr_item_ref: ''
+          aliases:
+          - approach slab
+          - transition slab
+          typical_rate_range:
+            min: 3000
+            max: 5500
+          notes: ''
+          data_source: estimated
+        - id: INF.BR.CRB.001
+          standard_name: Crash barrier - new jersey type - RCC
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IRC 119
+          dsr_item_ref: ''
+          aliases:
+          - crash barrier
+          - jersey barrier
+          - median barrier
+          typical_rate_range:
+            min: 4000
+            max: 8000
+          notes: ''
+          data_source: IS codes only
+  water_treatment:
+    categories:
+      intake:
+        items:
+        - id: INF.WT.INT.001
+          standard_name: Intake structure - RCC with screens and sluice gate
+          unit: LS
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IS 10430
+          dsr_item_ref: ''
+          aliases:
+          - water intake
+          - intake well
+          typical_rate_range:
+            min: 500000
+            max: 2000000
+          notes: Design-dependent, varies with capacity
+          data_source: IS codes only
+        - id: INF.WT.RWP.001
+          standard_name: Raw water pumping station - complete with pumps and piping
+          unit: LS
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IS 1200
+          dsr_item_ref: ''
+          aliases:
+          - raw water pump house
+          typical_rate_range:
+            min: 800000
+            max: 5000000
+          notes: Varies with capacity
+          data_source: estimated
+      treatment_units:
+        items:
+        - id: INF.WT.COG.001
+          standard_name: Coagulation/flash mixing tank - RCC
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IS 10500
+          dsr_item_ref: ''
+          aliases:
+          - flash mixer
+          - coagulation tank
+          typical_rate_range:
+            min: 200000
+            max: 800000
+          notes: ''
+          data_source: IS codes only
+        - id: INF.WT.FLC.001
+          standard_name: Flocculator - mechanical/hydraulic - RCC chamber
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IS 1200
+          dsr_item_ref: ''
+          aliases:
+          - flocculator
+          - flocculation tank
+          typical_rate_range:
+            min: 300000
+            max: 1200000
+          notes: ''
+          data_source: estimated
+        - id: INF.WT.CLR.001
+          standard_name: Clarifier/settling tank - circular/rectangular - RCC
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IS 1200
+          dsr_item_ref: ''
+          aliases:
+          - clarifier
+          - settling tank
+          - sedimentation tank
+          typical_rate_range:
+            min: 500000
+            max: 2500000
+          notes: ''
+          data_source: estimated
+        - id: INF.WT.RSF.001
+          standard_name: Rapid sand filter - gravity type - RCC
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IS 10500
+          dsr_item_ref: ''
+          aliases:
+          - sand filter WTP
+          - rapid gravity filter
+          typical_rate_range:
+            min: 400000
+            max: 1500000
+          notes: ''
+          data_source: IS codes only
+        - id: INF.WT.ACF.001
+          standard_name: Activated carbon filter - pressure vessel type
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IS 1200
+          dsr_item_ref: ''
+          aliases:
+          - carbon filter
+          - activated carbon
+          typical_rate_range:
+            min: 200000
+            max: 800000
+          notes: ''
+          data_source: estimated
+      disinfection:
+        items:
+        - id: INF.WT.UVD.001
+          standard_name: UV disinfection system - complete with lamps and chamber
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IS 1200
+          dsr_item_ref: ''
+          aliases:
+          - UV system WTP
+          - ultraviolet disinfection
+          typical_rate_range:
+            min: 100000
+            max: 500000
+          notes: ''
+          data_source: estimated
+        - id: INF.WT.CHL.001
+          standard_name: Chlorination system - gas type (chlorine cylinder/ton)
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IS 1200
+          dsr_item_ref: ''
+          aliases:
+          - gas chlorination
+          - chlorinator gas
+          typical_rate_range:
+            min: 150000
+            max: 500000
+          notes: ''
+          data_source: estimated
+        - id: INF.WT.CHL.002
+          standard_name: Chlorination system - liquid/sodium hypochlorite dosing
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IS 1200
+          dsr_item_ref: ''
+          aliases:
+          - hypochlorite dosing
+          - liquid chlorination
+          typical_rate_range:
+            min: 80000
+            max: 300000
+          notes: ''
+          data_source: estimated
+      storage_distribution:
+        items:
+        - id: INF.WT.CWS.001
+          standard_name: Clear water sump/reservoir - RCC underground
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IS 3370
+          dsr_item_ref: ''
+          aliases:
+          - CW sump
+          - treated water tank
+          typical_rate_range:
+            min: 4000
+            max: 8000
+          notes: Per cum of storage capacity
+          data_source: IS codes only
+        - id: INF.WT.DSP.001
+          standard_name: Distribution pumping station - complete
+          unit: LS
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IS 1200
+          dsr_item_ref: ''
+          aliases:
+          - pump house WTP
+          typical_rate_range:
+            min: 500000
+            max: 3000000
+          notes: ''
+          data_source: estimated
+        - id: INF.WT.ESR.001
+          standard_name: Elevated service reservoir (ESR) - RCC - Intze/circular type
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IS 3370
+          dsr_item_ref: ''
+          aliases:
+          - overhead tank
+          - ESR
+          - elevated tank
+          typical_rate_range:
+            min: 6000
+            max: 12000
+          notes: Per cum of capacity
+          data_source: IS codes only
+        - id: INF.WT.PVL.001
+          standard_name: WTP piping and valves - MS/DI/SS - complete system
+          unit: LS
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: NBC 2016, CPCB norms
+          dsr_item_ref: ''
+          aliases:
+          - plant piping WTP
+          typical_rate_range:
+            min: 300000
+            max: 2000000
+          notes: ''
+          data_source: estimated
+        - id: INF.WT.SCD.001
+          standard_name: SCADA system for WTP - complete with PLC, HMI, instruments
+          unit: LS
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: NBC 2016, CPCB norms
+          dsr_item_ref: ''
+          aliases:
+          - SCADA WTP
+          - automation system
+          typical_rate_range:
+            min: 500000
+            max: 3000000
+          notes: ''
+          data_source: estimated
+  sewage:
+    categories:
+      stp:
+        items:
+        - id: INF.SW.STP.001
+          standard_name: STP - 10 KLD - MBBR technology
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: CPCB guidelines
+          dsr_item_ref: ''
+          aliases:
+          - STP 10KLD
+          - small sewage plant
+          typical_rate_range:
+            min: 300000
+            max: 600000
+          notes: ''
+          data_source: IS codes only
+        - id: INF.SW.STP.002
+          standard_name: STP - 50 KLD - SBR technology
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - commercial
+          requires: []
+          is_code_ref: CPCB guidelines
+          dsr_item_ref: ''
+          aliases:
+          - STP 50KLD
+          - SBR plant
+          typical_rate_range:
+            min: 1000000
+            max: 2500000
+          notes: ''
+          data_source: IS codes only
+        - id: INF.SW.STP.003
+          standard_name: STP - 100 KLD - MBR technology
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: CPCB guidelines
+          dsr_item_ref: ''
+          aliases:
+          - STP 100KLD
+          - MBR plant
+          typical_rate_range:
+            min: 3000000
+            max: 7000000
+          notes: ''
+          data_source: IS codes only
+        - id: INF.SW.STP.004
+          standard_name: STP - 200 KLD - MBBR technology
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: CPCB guidelines
+          dsr_item_ref: ''
+          aliases:
+          - STP 200KLD
+          typical_rate_range:
+            min: 5000000
+            max: 12000000
+          notes: ''
+          data_source: IS codes only
+        - id: INF.SW.STP.005
+          standard_name: STP - 500 KLD - activated sludge process
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          - infrastructure
+          requires: []
+          is_code_ref: CPCB guidelines
+          dsr_item_ref: ''
+          aliases:
+          - STP 500KLD
+          - ASP plant
+          typical_rate_range:
+            min: 12000000
+            max: 25000000
+          notes: ''
+          data_source: IS codes only
+        - id: INF.SW.STP.006
+          standard_name: STP - 1000 KLD - extended aeration
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: CPCB guidelines
+          dsr_item_ref: ''
+          aliases:
+          - STP 1MLD
+          typical_rate_range:
+            min: 20000000
+            max: 50000000
+          notes: ''
+          data_source: IS codes only
+      collection:
+        items:
+        - id: INF.SW.CPR.001
+          standard_name: Sewage collection pipe - RCC NP3 - 200mm dia
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IS 458
+          dsr_item_ref: ''
+          aliases:
+          - sewer pipe RCC 200mm
+          typical_rate_range:
+            min: 500
+            max: 900
+          notes: Including excavation, bedding, backfill
+          data_source: IS codes only
+        - id: INF.SW.CPR.002
+          standard_name: Sewage collection pipe - RCC NP3 - 300mm dia
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IS 458
+          dsr_item_ref: ''
+          aliases:
+          - sewer pipe RCC 300mm
+          typical_rate_range:
+            min: 750
+            max: 1400
+          notes: ''
+          data_source: IS codes only
+        - id: INF.SW.CPH.001
+          standard_name: Sewage collection pipe - HDPE DWC - 200mm dia
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IS 16098
+          dsr_item_ref: ''
+          aliases:
+          - sewer pipe HDPE 200mm
+          typical_rate_range:
+            min: 400
+            max: 750
+          notes: ''
+          data_source: IS codes only
+        - id: INF.SW.CPD.001
+          standard_name: Sewage collection pipe - DI (ductile iron) - 200mm dia
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IS 8329
+          dsr_item_ref: ''
+          aliases:
+          - DI sewer pipe 200mm
+          typical_rate_range:
+            min: 800
+            max: 1500
+          notes: ''
+          data_source: IS codes only
+        - id: INF.SW.MHL.001
+          standard_name: Sewer manhole - RCC - 1.2m dia - 1.0-1.5m depth
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IS 1726
+          dsr_item_ref: ''
+          aliases:
+          - sewer manhole 1.2m
+          typical_rate_range:
+            min: 15000
+            max: 28000
+          notes: ''
+          data_source: IS codes only
+        - id: INF.SW.MHL.002
+          standard_name: Sewer manhole - RCC - 1.5m dia - 1.5-3.0m depth
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IS 1726
+          dsr_item_ref: ''
+          aliases:
+          - sewer manhole 1.5m deep
+          typical_rate_range:
+            min: 25000
+            max: 45000
+          notes: ''
+          data_source: IS codes only
+        - id: INF.SW.PMS.001
+          standard_name: Sewage pumping station - wet well type - complete
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IS 1742
+          dsr_item_ref: ''
+          aliases:
+          - sewage pump station
+          - lift station
+          typical_rate_range:
+            min: 500000
+            max: 2000000
+          notes: Including pumps, piping, controls
+          data_source: estimated
+        - id: INF.SW.PMS.002
+          standard_name: Sewage pumping station - dry well type - complete
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IS 1742
+          dsr_item_ref: ''
+          aliases:
+          - dry well pump station
+          typical_rate_range:
+            min: 800000
+            max: 3000000
+          notes: ''
+          data_source: estimated
+      sludge:
+        items:
+        - id: INF.SW.SLT.001
+          standard_name: Sludge thickener - gravity type - RCC circular tank
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IS 1742
+          dsr_item_ref: ''
+          aliases:
+          - sludge thickener
+          typical_rate_range:
+            min: 300000
+            max: 1000000
+          notes: ''
+          data_source: estimated
+        - id: INF.SW.SLD.001
+          standard_name: Sludge dewatering - filter press/belt press
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IS 1742
+          dsr_item_ref: ''
+          aliases:
+          - dewatering system
+          - filter press STP
+          typical_rate_range:
+            min: 500000
+            max: 2000000
+          notes: ''
+          data_source: estimated
+        - id: INF.SW.SDB.001
+          standard_name: Sludge drying bed - RCC - open type
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IS 1742
+          dsr_item_ref: ''
+          aliases:
+          - drying bed
+          - sludge bed
+          typical_rate_range:
+            min: 2000
+            max: 4000
+          notes: ''
+          data_source: estimated
+        - id: INF.SW.TWR.001
+          standard_name: Treated water reuse system - filtration + storage + pumping
+          unit: LS
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1742
+          dsr_item_ref: ''
+          aliases:
+          - recycled water system
+          - treated water reuse
+          typical_rate_range:
+            min: 200000
+            max: 1000000
+          notes: For flushing, gardening, cooling tower
+          data_source: estimated
+  roads:
+    categories:
+      earthwork:
+        items:
+        - id: INF.RD.EWC.001
+          standard_name: Earthwork in cutting - mechanical - all types of soil
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: MORTH 301
+          dsr_item_ref: ''
+          aliases:
+          - earth cutting
+          - road cutting
+          typical_rate_range:
+            min: 80
+            max: 200
+          notes: ''
+          data_source: IS codes only
+        - id: INF.RD.EWE.001
+          standard_name: Earthwork in embankment - compacted in layers (300mm)
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: MORTH 305
+          dsr_item_ref: ''
+          aliases:
+          - embankment filling
+          - road embankment
+          typical_rate_range:
+            min: 120
+            max: 280
+          notes: 95% MDD compaction
+          data_source: IS codes only
+        - id: INF.RD.SBG.001
+          standard_name: Sub-grade preparation - compacted earth (97% MDD)
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: MORTH 305
+          dsr_item_ref: ''
+          aliases:
+          - sub-grade compaction
+          - formation level
+          typical_rate_range:
+            min: 30
+            max: 80
+          notes: ''
+          data_source: IS codes only
+      base_course:
+        items:
+        - id: INF.RD.GSB.001
+          standard_name: Granular sub-base (GSB) - 200mm thick - compacted
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: MORTH 401
+          dsr_item_ref: ''
+          aliases:
+          - GSB 200mm infra
+          typical_rate_range:
+            min: 150
+            max: 280
+          notes: ''
+          data_source: IS codes only
+        - id: INF.RD.GSB.002
+          standard_name: Granular sub-base (GSB) - 225mm thick - compacted
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: MORTH 401
+          dsr_item_ref: ''
+          aliases:
+          - GSB 225mm
+          typical_rate_range:
+            min: 170
+            max: 310
+          notes: ''
+          data_source: IS codes only
+        - id: INF.RD.WMM.001
+          standard_name: Wet mix macadam (WMM) - 150mm thick - compacted
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: MORTH 406
+          dsr_item_ref: ''
+          aliases:
+          - WMM 150mm infra
+          typical_rate_range:
+            min: 180
+            max: 320
+          notes: ''
+          data_source: IS codes only
+        - id: INF.RD.WMM.002
+          standard_name: Wet mix macadam (WMM) - 200mm thick - compacted
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: MORTH 406
+          dsr_item_ref: ''
+          aliases:
+          - WMM 200mm infra
+          typical_rate_range:
+            min: 230
+            max: 400
+          notes: ''
+          data_source: IS codes only
+        - id: INF.RD.WMM.003
+          standard_name: Wet mix macadam (WMM) - 250mm thick - compacted
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: MORTH 406
+          dsr_item_ref: ''
+          aliases:
+          - WMM 250mm
+          typical_rate_range:
+            min: 280
+            max: 480
+          notes: ''
+          data_source: IS codes only
+        - id: INF.RD.WBM.001
+          standard_name: Water bound macadam (WBM) - 75mm thick
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: MORTH 404
+          dsr_item_ref: ''
+          aliases:
+          - WBM 75mm infra
+          typical_rate_range:
+            min: 120
+            max: 220
+          notes: ''
+          data_source: IS codes only
+      surface_course:
+        items:
+        - id: INF.RD.DBM.001
+          standard_name: Dense bituminous macadam (DBM) - 50mm thick
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: MORTH 507
+          dsr_item_ref: ''
+          aliases:
+          - DBM 50mm infra
+          typical_rate_range:
+            min: 250
+            max: 450
+          notes: ''
+          data_source: IS codes only
+        - id: INF.RD.DBM.002
+          standard_name: Dense bituminous macadam (DBM) - 75mm thick
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: MORTH 507
+          dsr_item_ref: ''
+          aliases:
+          - DBM 75mm infra
+          typical_rate_range:
+            min: 350
+            max: 600
+          notes: ''
+          data_source: IS codes only
+        - id: INF.RD.BC.001
+          standard_name: Bituminous concrete (BC) wearing course - 25mm thick
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: MORTH 508
+          dsr_item_ref: ''
+          aliases:
+          - BC 25mm infra
+          typical_rate_range:
+            min: 180
+            max: 320
+          notes: ''
+          data_source: IS codes only
+        - id: INF.RD.BC.002
+          standard_name: SDBC (semi-dense bituminous concrete) - 25mm thick
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: MORTH 508
+          dsr_item_ref: ''
+          aliases:
+          - SDBC 25mm
+          typical_rate_range:
+            min: 160
+            max: 300
+          notes: ''
+          data_source: IS codes only
+        - id: INF.RD.BC.003
+          standard_name: Bituminous concrete (BC) wearing course - 40mm thick
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: MORTH 508
+          dsr_item_ref: ''
+          aliases:
+          - BC 40mm infra
+          typical_rate_range:
+            min: 280
+            max: 480
+          notes: ''
+          data_source: IS codes only
+        - id: INF.RD.PQC.001
+          standard_name: CC pavement (PQC) - 150mm thick - M40 grade
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IRC 58
+          dsr_item_ref: ''
+          aliases:
+          - PQC 150mm
+          - cement concrete road infra
+          typical_rate_range:
+            min: 1000
+            max: 1800
+          notes: ''
+          data_source: IS codes only
+        - id: INF.RD.PQC.002
+          standard_name: CC pavement (PQC) - 200mm thick - M40 grade
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IRC 58
+          dsr_item_ref: ''
+          aliases:
+          - PQC 200mm
+          typical_rate_range:
+            min: 1300
+            max: 2200
+          notes: ''
+          data_source: IS codes only
+        - id: INF.RD.PQC.003
+          standard_name: CC pavement (PQC) - 250mm thick - M40 grade
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IRC 58
+          dsr_item_ref: ''
+          aliases:
+          - PQC 250mm
+          typical_rate_range:
+            min: 1600
+            max: 2800
+          notes: ''
+          data_source: IS codes only
+      road_furniture:
+        items:
+        - id: INF.RD.MDN.001
+          standard_name: Road median - RCC divider - 450mm wide
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IRC 86
+          dsr_item_ref: ''
+          aliases:
+          - road median
+          - central divider
+          typical_rate_range:
+            min: 1500
+            max: 3000
+          notes: ''
+          data_source: IS codes only
+        - id: INF.RD.MDN.002
+          standard_name: Road median - stone/granite kerb divider
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IRC 58
+          dsr_item_ref: ''
+          aliases:
+          - stone median
+          typical_rate_range:
+            min: 2000
+            max: 4000
+          notes: ''
+          data_source: estimated
+        - id: INF.RD.SGN.001
+          standard_name: Road sign board - regulatory/informatory - aluminum retro-reflective
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IRC 67
+          dsr_item_ref: ''
+          aliases:
+          - road sign
+          - traffic sign
+          typical_rate_range:
+            min: 3000
+            max: 8000
+          notes: Including post
+          data_source: IS codes only
+        - id: INF.RD.DLN.001
+          standard_name: Road delineator post - PVC/FRP - retro-reflective
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IRC 58
+          dsr_item_ref: ''
+          aliases:
+          - delineator
+          - road post marker
+          typical_rate_range:
+            min: 500
+            max: 1200
+          notes: ''
+          data_source: estimated
+        - id: INF.RD.GRL.001
+          standard_name: Metal beam crash barrier (W-beam) - galvanized
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IRC 119
+          dsr_item_ref: ''
+          aliases:
+          - W-beam guardrail
+          - metal crash barrier
+          typical_rate_range:
+            min: 2000
+            max: 4500
+          notes: Including posts, spacer blocks
+          data_source: IS codes only
+        - id: INF.RD.CRC.001
+          standard_name: Crash cushion/impact attenuator
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IS 1200
+          dsr_item_ref: ''
+          aliases:
+          - crash cushion
+          - impact attenuator
+          typical_rate_range:
+            min: 80000
+            max: 250000
+          notes: At toll plazas, gore points
+          data_source: estimated
+  retaining_structures:
+    categories:
+      walls:
+        items:
+        - id: INF.RS.GRV.001
+          standard_name: Gravity retaining wall - stone masonry - up to 3m height
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 14458
+          dsr_item_ref: ''
+          aliases:
+          - stone gravity wall
+          - masonry retaining wall
+          typical_rate_range:
+            min: 3000
+            max: 5500
+          notes: ''
+          data_source: IS codes only
+        - id: INF.RS.GRV.002
+          standard_name: Gravity retaining wall - RCC - up to 3m height
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 14458
+          dsr_item_ref: ''
+          aliases:
+          - RCC gravity wall
+          typical_rate_range:
+            min: 5000
+            max: 9000
+          notes: ''
+          data_source: IS codes only
+        - id: INF.RS.CNT.001
+          standard_name: Cantilever retaining wall - RCC - up to 6m height
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 14458
+          dsr_item_ref: ''
+          aliases:
+          - cantilever retaining wall
+          - L-wall
+          typical_rate_range:
+            min: 6000
+            max: 10000
+          notes: ''
+          data_source: IS codes only
+        - id: INF.RS.CTF.001
+          standard_name: Counterfort retaining wall - RCC - above 6m height
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 14458
+          dsr_item_ref: ''
+          aliases:
+          - counterfort wall
+          typical_rate_range:
+            min: 7000
+            max: 12000
+          notes: ''
+          data_source: IS codes only
+      sheet_pile:
+        items:
+        - id: INF.RS.SHP.001
+          standard_name: Sheet pile wall - steel - temporary shoring
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1200
+          dsr_item_ref: ''
+          aliases:
+          - sheet pile temporary
+          - steel sheet pile
+          typical_rate_range:
+            min: 3000
+            max: 6000
+          notes: Including driving and extraction
+          data_source: estimated
+        - id: INF.RS.SHP.002
+          standard_name: Sheet pile wall - steel - permanent installation
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1200
+          dsr_item_ref: ''
+          aliases:
+          - permanent sheet pile
+          typical_rate_range:
+            min: 5000
+            max: 10000
+          notes: ''
+          data_source: estimated
+      reinforced_earth:
+        items:
+        - id: INF.RS.GBN.001
+          standard_name: Gabion wall - wire mesh basket with stone fill
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1200
+          dsr_item_ref: ''
+          aliases:
+          - gabion wall
+          - wire basket wall
+          typical_rate_range:
+            min: 2500
+            max: 4500
+          notes: ''
+          data_source: estimated
+        - id: INF.RS.MSE.001
+          standard_name: MSE (mechanically stabilized earth) wall - geogrid reinforced
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IS 1200
+          dsr_item_ref: ''
+          aliases:
+          - MSE wall
+          - reinforced earth wall
+          typical_rate_range:
+            min: 3000
+            max: 6000
+          notes: Per sqm of wall face
+          data_source: estimated
+        - id: INF.RS.SNL.001
+          standard_name: Soil nailing - SS/MS nail with shotcrete facing
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1200
+          dsr_item_ref: ''
+          aliases:
+          - soil nailing
+          - nail wall
+          typical_rate_range:
+            min: 3000
+            max: 6000
+          notes: Per sqm of face area
+          data_source: estimated
+        - id: INF.RS.GAN.001
+          standard_name: Ground anchoring - pre-stressed cable anchor
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1200
+          dsr_item_ref: ''
+          aliases:
+          - ground anchor
+          - tieback anchor
+          typical_rate_range:
+            min: 15000
+            max: 40000
+          notes: Per anchor
+          data_source: estimated
+  drainage:
+    categories:
+      pipes:
+        items:
+        - id: INF.DR.HMP.001
+          standard_name: RCC hume pipe - NP3 class - 150mm dia - laid in trench
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IS 458
+          dsr_item_ref: ''
+          aliases:
+          - hume pipe 150mm
+          - RCC drain pipe 150mm
+          typical_rate_range:
+            min: 300
+            max: 550
+          notes: Including excavation, bedding, backfill
+          data_source: CPWD DSR 2023 + IS codes
+        - id: INF.DR.HMP.002
+          standard_name: RCC hume pipe - NP3 class - 300mm dia - laid in trench
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IS 458
+          dsr_item_ref: ''
+          aliases:
+          - hume pipe 300mm
+          typical_rate_range:
+            min: 500
+            max: 900
+          notes: ''
+          data_source: CPWD DSR 2023 + IS codes
+        - id: INF.DR.HMP.003
+          standard_name: RCC hume pipe - NP3 class - 450mm dia - laid in trench
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IS 458
+          dsr_item_ref: ''
+          aliases:
+          - hume pipe 450mm
+          typical_rate_range:
+            min: 800
+            max: 1400
+          notes: ''
+          data_source: IS codes only
+        - id: INF.DR.HMP.004
+          standard_name: RCC hume pipe - NP3 class - 600mm dia - laid in trench
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IS 458
+          dsr_item_ref: ''
+          aliases:
+          - hume pipe 600mm
+          typical_rate_range:
+            min: 1200
+            max: 2000
+          notes: ''
+          data_source: IS codes only
+        - id: INF.DR.HMP.005
+          standard_name: RCC hume pipe - NP3 class - 900mm dia - laid in trench
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IS 458
+          dsr_item_ref: ''
+          aliases:
+          - hume pipe 900mm
+          typical_rate_range:
+            min: 2000
+            max: 3500
+          notes: ''
+          data_source: IS codes only
+        - id: INF.DR.HMP.006
+          standard_name: RCC hume pipe - NP3 class - 1200mm dia - laid in trench
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IS 458
+          dsr_item_ref: ''
+          aliases:
+          - hume pipe 1200mm
+          typical_rate_range:
+            min: 3500
+            max: 6000
+          notes: ''
+          data_source: IS codes only
+      culvert:
+        items:
+        - id: INF.DR.BXC.001
+          standard_name: Box culvert - RCC - single cell - 1.5x1.5m clear
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IRC 112
+          dsr_item_ref: ''
+          aliases:
+          - box culvert 1.5m
+          - RCC box culvert
+          typical_rate_range:
+            min: 15000
+            max: 28000
+          notes: Per running meter of culvert
+          data_source: IS codes only
+        - id: INF.DR.BXC.002
+          standard_name: Box culvert - RCC - single cell - 2.0x2.0m clear
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IRC 112
+          dsr_item_ref: ''
+          aliases:
+          - box culvert 2m
+          typical_rate_range:
+            min: 22000
+            max: 40000
+          notes: ''
+          data_source: IS codes only
+        - id: INF.DR.BXC.003
+          standard_name: Box culvert - RCC - double cell - 2x(1.5x1.5m) clear
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IRC 112
+          dsr_item_ref: ''
+          aliases:
+          - double cell box culvert
+          typical_rate_range:
+            min: 28000
+            max: 50000
+          notes: ''
+          data_source: IS codes only
+        - id: INF.DR.SLC.001
+          standard_name: Slab culvert - RCC - 3m clear span
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IS 1200
+          dsr_item_ref: ''
+          aliases:
+          - slab culvert 3m
+          typical_rate_range:
+            min: 5000
+            max: 9000
+          notes: Per sqm of deck area
+          data_source: estimated
+        - id: INF.DR.PPC.001
+          standard_name: Pipe culvert - RCC hume pipe - single barrel - 900mm dia
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IS 458
+          dsr_item_ref: ''
+          aliases:
+          - pipe culvert 900mm
+          typical_rate_range:
+            min: 3000
+            max: 5500
+          notes: Including headwall and wing wall
+          data_source: IS codes only
+        - id: INF.DR.PPC.002
+          standard_name: Pipe culvert - RCC hume pipe - double barrel - 900mm dia
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IS 458
+          dsr_item_ref: ''
+          aliases:
+          - double barrel pipe culvert
+          typical_rate_range:
+            min: 5000
+            max: 9000
+          notes: ''
+          data_source: IS codes only
+      open_drain:
+        items:
+        - id: INF.DR.OPD.001
+          standard_name: Open drain - trapezoidal section - brick/stone lined
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IS 1200
+          dsr_item_ref: ''
+          aliases:
+          - trapezoidal drain
+          - open nalla
+          typical_rate_range:
+            min: 500
+            max: 1200
+          notes: Per running meter
+          data_source: estimated
+        - id: INF.DR.OPD.002
+          standard_name: Open drain - rectangular section - RCC
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IS 1200
+          dsr_item_ref: ''
+          aliases:
+          - rectangular open drain
+          - RCC open drain
+          typical_rate_range:
+            min: 800
+            max: 1800
+          notes: ''
+          data_source: estimated
+        - id: INF.DR.CVD.001
+          standard_name: Covered drain - RCC - with slab cover - 450mm wide
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IS 1200
+          dsr_item_ref: ''
+          aliases:
+          - covered drain 450mm
+          - RCC covered drain
+          typical_rate_range:
+            min: 1200
+            max: 2200
+          notes: ''
+          data_source: estimated
+        - id: INF.DR.CVD.002
+          standard_name: Covered drain - RCC - with slab cover - 600mm wide
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IS 1200
+          dsr_item_ref: ''
+          aliases:
+          - covered drain 600mm
+          typical_rate_range:
+            min: 1500
+            max: 2800
+          notes: ''
+          data_source: estimated
+        - id: INF.DR.CVD.003
+          standard_name: Covered drain - RCC - with slab cover - 900mm wide
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IS 1200
+          dsr_item_ref: ''
+          aliases:
+          - covered drain 900mm
+          typical_rate_range:
+            min: 2000
+            max: 3800
+          notes: ''
+          data_source: estimated
+  water_supply:
+    categories:
+      mains:
+        items:
+        - id: INF.WS.PVC.001
+          standard_name: PVC water main - 63mm dia - class 6 (6 kg/cm2) - laid
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IS 4985
+          dsr_item_ref: ''
+          aliases:
+          - PVC pipe 63mm water
+          - PVC main 63mm
+          typical_rate_range:
+            min: 200
+            max: 400
+          notes: Including excavation, bedding, backfill
+          data_source: IS codes only
+        - id: INF.WS.PVC.002
+          standard_name: PVC water main - 110mm dia - class 6 - laid
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IS 4985
+          dsr_item_ref: ''
+          aliases:
+          - PVC pipe 110mm water
+          typical_rate_range:
+            min: 350
+            max: 650
+          notes: ''
+          data_source: IS codes only
+        - id: INF.WS.PVC.003
+          standard_name: PVC water main - 160mm dia - class 6 - laid
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IS 4985
+          dsr_item_ref: ''
+          aliases:
+          - PVC pipe 160mm water
+          typical_rate_range:
+            min: 500
+            max: 900
+          notes: ''
+          data_source: IS codes only
+        - id: INF.WS.DIP.001
+          standard_name: DI (ductile iron) water main - 100mm dia - class K9 - laid
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IS 8329
+          dsr_item_ref: ''
+          aliases:
+          - DI pipe 100mm water
+          typical_rate_range:
+            min: 800
+            max: 1400
+          notes: ''
+          data_source: IS codes only
+        - id: INF.WS.DIP.002
+          standard_name: DI (ductile iron) water main - 150mm dia - class K9 - laid
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IS 8329
+          dsr_item_ref: ''
+          aliases:
+          - DI pipe 150mm water
+          typical_rate_range:
+            min: 1000
+            max: 1800
+          notes: ''
+          data_source: IS codes only
+        - id: INF.WS.DIP.003
+          standard_name: DI (ductile iron) water main - 200mm dia - class K9 - laid
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IS 8329
+          dsr_item_ref: ''
+          aliases:
+          - DI pipe 200mm water
+          typical_rate_range:
+            min: 1400
+            max: 2500
+          notes: ''
+          data_source: IS codes only
+        - id: INF.WS.HDP.001
+          standard_name: HDPE water main - 63mm dia - PE 100 PN 10 - laid
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IS 4984
+          dsr_item_ref: ''
+          aliases:
+          - HDPE pipe 63mm water
+          typical_rate_range:
+            min: 180
+            max: 350
+          notes: ''
+          data_source: IS codes only
+        - id: INF.WS.HDP.002
+          standard_name: HDPE water main - 110mm dia - PE 100 PN 10 - laid
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IS 4984
+          dsr_item_ref: ''
+          aliases:
+          - HDPE pipe 110mm water
+          typical_rate_range:
+            min: 300
+            max: 600
+          notes: ''
+          data_source: IS codes only
+        - id: INF.WS.HDP.003
+          standard_name: HDPE water main - 160mm dia - PE 100 PN 10 - laid
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IS 4984
+          dsr_item_ref: ''
+          aliases:
+          - HDPE pipe 160mm water
+          typical_rate_range:
+            min: 500
+            max: 950
+          notes: ''
+          data_source: IS codes only
+      storage:
+        items:
+        - id: INF.WS.OHT.001
+          standard_name: Overhead tank - RCC - 10,000 litres capacity
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: IS 3370
+          dsr_item_ref: ''
+          aliases:
+          - RCC OHT 10KL
+          - overhead water tank 10000L
+          typical_rate_range:
+            min: 150000
+            max: 300000
+          notes: Including staging
+          data_source: IS codes only
+        - id: INF.WS.OHT.002
+          standard_name: Overhead tank - RCC - 50,000 litres capacity
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - institutional
+          requires: []
+          is_code_ref: IS 3370
+          dsr_item_ref: ''
+          aliases:
+          - RCC OHT 50KL
+          typical_rate_range:
+            min: 500000
+            max: 1000000
+          notes: ''
+          data_source: IS codes only
+        - id: INF.WS.OHT.003
+          standard_name: Overhead tank - SS 304 - panel type - 10,000 litres
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - commercial
+          requires: []
+          is_code_ref: IS 4984, IS 8329
+          dsr_item_ref: ''
+          aliases:
+          - SS panel tank 10KL
+          - stainless steel OHT
+          typical_rate_range:
+            min: 100000
+            max: 200000
+          notes: Bolt-assembled panels
+          data_source: estimated
+        - id: INF.WS.UGS.001
+          standard_name: Underground sump - RCC - 20,000 litres capacity
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: IS 3370
+          dsr_item_ref: ''
+          aliases:
+          - underground sump 20KL
+          - RCC UG tank
+          typical_rate_range:
+            min: 200000
+            max: 400000
+          notes: Including waterproofing
+          data_source: IS codes only
+        - id: INF.WS.UGS.002
+          standard_name: Underground sump - RCC - 50,000 litres capacity
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 3370
+          dsr_item_ref: ''
+          aliases:
+          - underground sump 50KL
+          typical_rate_range:
+            min: 400000
+            max: 800000
+          notes: ''
+          data_source: IS codes only
+      accessories:
+        items:
+        - id: INF.WS.WMT.001
+          standard_name: Water meter - multi-jet - 15mm (domestic)
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 779
+          dsr_item_ref: ''
+          aliases:
+          - water meter 15mm
+          - domestic water meter
+          typical_rate_range:
+            min: 1500
+            max: 3000
+          notes: ''
+          data_source: IS codes only
+        - id: INF.WS.WMT.002
+          standard_name: Water meter - bulk type - 50mm (commercial)
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 779
+          dsr_item_ref: ''
+          aliases:
+          - bulk water meter 50mm
+          typical_rate_range:
+            min: 8000
+            max: 18000
+          notes: ''
+          data_source: IS codes only
+        - id: INF.WS.VLC.001
+          standard_name: Valve chamber - RCC - with CI sluice valve - 100mm
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IS 1536
+          dsr_item_ref: ''
+          aliases:
+          - valve chamber 100mm
+          - sluice valve pit
+          typical_rate_range:
+            min: 8000
+            max: 15000
+          notes: Including valve and chamber construction
+          data_source: estimated
+        - id: INF.WS.VLC.002
+          standard_name: Valve chamber - RCC - with butterfly valve - 200mm
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IS 4984, IS 8329
+          dsr_item_ref: ''
+          aliases:
+          - valve chamber 200mm
+          - butterfly valve pit
+          typical_rate_range:
+            min: 15000
+            max: 28000
+          notes: ''
+          data_source: estimated
+  electrical_infra:
+    categories:
+      ht_system:
+        items:
+        - id: INF.EL.HTC.001
+          standard_name: HT cable - 11kV - 3x95 sqmm XLPE - laid in trench
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IS 7098
+          dsr_item_ref: ''
+          aliases:
+          - 11kV cable 95mm
+          - HT cable 11kV
+          typical_rate_range:
+            min: 1500
+            max: 2800
+          notes: Including cable, trench, sand bedding
+          data_source: IS codes only
+        - id: INF.EL.HTC.002
+          standard_name: HT cable - 22kV - 3x120 sqmm XLPE - laid in trench
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IS 7098
+          dsr_item_ref: ''
+          aliases:
+          - 22kV cable
+          typical_rate_range:
+            min: 2500
+            max: 4500
+          notes: ''
+          data_source: IS codes only
+        - id: INF.EL.HTC.003
+          standard_name: HT cable - 33kV - 3x240 sqmm XLPE - laid in trench
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IS 7098
+          dsr_item_ref: ''
+          aliases:
+          - 33kV cable
+          typical_rate_range:
+            min: 4000
+            max: 7000
+          notes: ''
+          data_source: IS codes only
+        - id: INF.EL.TRF.001
+          standard_name: Transformer - oil type - 100 kVA - 11kV/433V
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IS 1180
+          dsr_item_ref: ''
+          aliases:
+          - transformer 100kVA
+          - distribution transformer 100
+          typical_rate_range:
+            min: 200000
+            max: 400000
+          notes: ''
+          data_source: IS codes only
+        - id: INF.EL.TRF.002
+          standard_name: Transformer - oil type - 500 kVA - 11kV/433V
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IS 1180
+          dsr_item_ref: ''
+          aliases:
+          - transformer 500kVA
+          typical_rate_range:
+            min: 500000
+            max: 900000
+          notes: ''
+          data_source: IS codes only
+        - id: INF.EL.TRF.003
+          standard_name: Transformer - oil type - 1000 kVA - 11kV/433V
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IS 1180
+          dsr_item_ref: ''
+          aliases:
+          - transformer 1000kVA
+          - transformer 1MVA
+          typical_rate_range:
+            min: 800000
+            max: 1500000
+          notes: ''
+          data_source: IS codes only
+        - id: INF.EL.TRF.004
+          standard_name: Transformer - dry type - 2000 kVA - 11kV/433V
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IS 11171
+          dsr_item_ref: ''
+          aliases:
+          - dry transformer 2000kVA
+          - cast resin transformer
+          typical_rate_range:
+            min: 2500000
+            max: 4500000
+          notes: For indoor installation
+          data_source: IS codes only
+      panels:
+        items:
+        - id: INF.EL.HTP.001
+          standard_name: HT panel - 11kV - VCB type - incoming/outgoing
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IS 12729
+          dsr_item_ref: ''
+          aliases:
+          - HT panel 11kV
+          - VCB panel
+          typical_rate_range:
+            min: 300000
+            max: 600000
+          notes: Per panel section
+          data_source: IS codes only
+        - id: INF.EL.LTP.001
+          standard_name: LT panel (PCC) - 415V - main distribution - up to 2000A
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IS 8623
+          dsr_item_ref: ''
+          aliases:
+          - LT panel
+          - PCC panel
+          - main distribution board
+          typical_rate_range:
+            min: 200000
+            max: 500000
+          notes: ''
+          data_source: IS codes only
+        - id: INF.EL.LTP.002
+          standard_name: LT panel (MCC) - motor control center - 415V
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IS 8623
+          dsr_item_ref: ''
+          aliases:
+          - MCC panel
+          - motor control center
+          typical_rate_range:
+            min: 300000
+            max: 800000
+          notes: ''
+          data_source: IS codes only
+      street_lighting:
+        items:
+        - id: INF.EL.STL.001
+          standard_name: Street light pole - MS octagonal - 6m height - with 60W LED
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IS 1200
+          dsr_item_ref: ''
+          aliases:
+          - street light 6m 60W
+          - road light pole
+          typical_rate_range:
+            min: 12000
+            max: 22000
+          notes: Including pole, luminaire, foundation
+          data_source: estimated
+        - id: INF.EL.STL.002
+          standard_name: Street light pole - MS octagonal - 9m height - with 120W LED
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IS 1200
+          dsr_item_ref: ''
+          aliases:
+          - street light 9m 120W
+          typical_rate_range:
+            min: 18000
+            max: 35000
+          notes: ''
+          data_source: estimated
+        - id: INF.EL.STL.003
+          standard_name: High mast light - 15m height - with 4x200W LED floodlight
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IS 1200
+          dsr_item_ref: ''
+          aliases:
+          - high mast 15m
+          - area flood light
+          typical_rate_range:
+            min: 150000
+            max: 300000
+          notes: Including raising/lowering mechanism
+          data_source: estimated
+        - id: INF.EL.STL.004
+          standard_name: Solar street light - 6m pole - 30W LED - standalone with battery
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - solar street light
+          - solar LED light
+          typical_rate_range:
+            min: 20000
+            max: 40000
+          notes: Including solar panel, battery, controller
+          data_source: estimated
+      substation:
+        items:
+        - id: INF.EL.SSC.001
+          standard_name: Substation civil work - outdoor type - transformer plinth + yard
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IS 2026
+          dsr_item_ref: ''
+          aliases:
+          - substation plinth
+          - transformer yard civil
+          typical_rate_range:
+            min: 200000
+            max: 500000
+          notes: Including plinth, oil pit, earthing, fencing
+          data_source: estimated
+        - id: INF.EL.SSC.002
+          standard_name: Substation civil work - indoor type - RCC room construction
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IS 2026
+          dsr_item_ref: ''
+          aliases:
+          - indoor substation room
+          - transformer room civil
+          typical_rate_range:
+            min: 500000
+            max: 1500000
+          notes: Including fire rated construction
+          data_source: estimated
+  telecom:
+    categories:
+      duct_network:
+        items:
+        - id: INF.TC.DKB.001
+          standard_name: Duct bank - 2-way HDPE 110mm dia - laid in trench
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IS 1200
+          dsr_item_ref: ''
+          aliases:
+          - telecom duct 2-way
+          - cable duct bank
+          typical_rate_range:
+            min: 400
+            max: 800
+          notes: Including excavation, sand bedding, marker tape
+          data_source: estimated
+        - id: INF.TC.DKB.002
+          standard_name: Duct bank - 4-way HDPE 110mm dia - laid in trench
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IS 1200
+          dsr_item_ref: ''
+          aliases:
+          - telecom duct 4-way
+          typical_rate_range:
+            min: 700
+            max: 1400
+          notes: ''
+          data_source: estimated
+        - id: INF.TC.DRP.001
+          standard_name: Draw pit/manhole - RCC - 600x600x600mm
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IS 1200
+          dsr_item_ref: ''
+          aliases:
+          - draw pit
+          - telecom manhole
+          - cable pit
+          typical_rate_range:
+            min: 5000
+            max: 10000
+          notes: ''
+          data_source: estimated
+        - id: INF.TC.DRP.002
+          standard_name: Draw pit/manhole - RCC - 900x900x900mm
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IS 1200
+          dsr_item_ref: ''
+          aliases:
+          - large draw pit
+          typical_rate_range:
+            min: 8000
+            max: 16000
+          notes: ''
+          data_source: estimated
+      fiber_optic:
+        items:
+        - id: INF.TC.FOC.001
+          standard_name: Fiber optic cable - 6 core single mode - backbone
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IS 1200
+          dsr_item_ref: ''
+          aliases:
+          - fiber optic 6 core
+          - OFC 6F
+          typical_rate_range:
+            min: 30
+            max: 60
+          notes: Cable only, duct separate
+          data_source: estimated
+        - id: INF.TC.FOC.002
+          standard_name: Fiber optic cable - 12 core single mode - backbone
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IS 1200
+          dsr_item_ref: ''
+          aliases:
+          - fiber optic 12 core
+          - OFC 12F
+          typical_rate_range:
+            min: 40
+            max: 80
+          notes: ''
+          data_source: estimated
+        - id: INF.TC.FOC.003
+          standard_name: Fiber optic cable - 24 core single mode - backbone
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IS 1200
+          dsr_item_ref: ''
+          aliases:
+          - fiber optic 24 core
+          - OFC 24F
+          typical_rate_range:
+            min: 50
+            max: 100
+          notes: ''
+          data_source: estimated
+        - id: INF.TC.DCB.001
+          standard_name: Distribution cabinet - fiber - outdoor - wall/pole mounted
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IS 1200
+          dsr_item_ref: ''
+          aliases:
+          - fiber distribution cabinet
+          - FDC outdoor
+          typical_rate_range:
+            min: 5000
+            max: 15000
+          notes: ''
+          data_source: estimated
+  boundary:
+    categories:
+      compound_wall:
+        items:
+        - id: INF.BW.BRK.001
+          standard_name: Compound wall - brick masonry - 230mm thick - 2.4m height
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1200
+          dsr_item_ref: ''
+          aliases:
+          - brick compound wall
+          - masonry boundary wall
+          typical_rate_range:
+            min: 2500
+            max: 4500
+          notes: Including foundation, plaster, coping
+          data_source: estimated
+        - id: INF.BW.RCC.001
+          standard_name: Compound wall - RCC precast panel - 2.4m height
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1200
+          dsr_item_ref: ''
+          aliases:
+          - precast compound wall
+          - RCC panel boundary
+          typical_rate_range:
+            min: 2000
+            max: 3500
+          notes: Including columns and panels
+          data_source: estimated
+        - id: INF.BW.STN.001
+          standard_name: Compound wall - stone masonry - random rubble - 2.4m height
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1200
+          dsr_item_ref: ''
+          aliases:
+          - stone compound wall
+          - rubble boundary wall
+          typical_rate_range:
+            min: 3000
+            max: 5500
+          notes: ''
+          data_source: estimated
+      fencing:
+        items:
+        - id: INF.BW.CLF.001
+          standard_name: Chain link fencing - GI wire - 1.8m height - with MS angle posts
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1200
+          dsr_item_ref: ''
+          aliases:
+          - chain link fence
+          - wire mesh fencing GI
+          typical_rate_range:
+            min: 400
+            max: 800
+          notes: Including posts, foundation, straining wire
+          data_source: estimated
+        - id: INF.BW.CLF.002
+          standard_name: Chain link fencing - PVC coated - 1.8m height - with MS posts
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1200
+          dsr_item_ref: ''
+          aliases:
+          - PVC chain link fence
+          typical_rate_range:
+            min: 500
+            max: 1000
+          notes: ''
+          data_source: estimated
+        - id: INF.BW.BWF.001
+          standard_name: Barbed wire fencing - GI - 5 lines - with RCC/MS posts
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1200
+          dsr_item_ref: ''
+          aliases:
+          - barbed wire fence
+          - barbed wire fencing
+          typical_rate_range:
+            min: 200
+            max: 450
+          notes: ''
+          data_source: estimated
+        - id: INF.BW.WMF.001
+          standard_name: Welded mesh fencing - GI - 1.8m height - with MS posts
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 1200
+          dsr_item_ref: ''
+          aliases:
+          - welded mesh fence
+          - rigid mesh fence
+          typical_rate_range:
+            min: 600
+            max: 1200
+          notes: Higher security than chain link
+          data_source: estimated
+        - id: INF.BW.WMF.002
+          standard_name: Welded mesh fencing - powder coated - 2.1m height - anti-climb
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 1200
+          dsr_item_ref: ''
+          aliases:
+          - anti-climb fence
+          - security mesh fence
+          typical_rate_range:
+            min: 900
+            max: 1800
+          notes: With anti-climb profile
+          data_source: estimated
+      gates:
+        items:
+        - id: INF.BW.GTM.001
+          standard_name: Gate - MS fabricated - swing type - double leaf - 3.6m wide
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1200
+          dsr_item_ref: ''
+          aliases:
+          - MS swing gate
+          - main gate MS
+          typical_rate_range:
+            min: 25000
+            max: 50000
+          notes: Including posts, hinges, locking
+          data_source: estimated
+        - id: INF.BW.GTM.002
+          standard_name: Gate - MS fabricated - sliding type - motorized - 6m wide
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 1200
+          dsr_item_ref: ''
+          aliases:
+          - sliding gate motorized
+          - automatic gate
+          typical_rate_range:
+            min: 80000
+            max: 180000
+          notes: Including motor, track, remote
+          data_source: estimated
+        - id: INF.BW.GTS.001
+          standard_name: Gate - SS 304 - swing type - double leaf - 3.6m wide
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 1200
+          dsr_item_ref: ''
+          aliases:
+          - SS gate
+          - stainless steel gate
+          typical_rate_range:
+            min: 60000
+            max: 120000
+          notes: ''
+          data_source: estimated
+        - id: INF.BW.GTS.002
+          standard_name: Gate - SS 304 - sliding type - motorized - 6m wide
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 1200
+          dsr_item_ref: ''
+          aliases:
+          - SS sliding gate
+          typical_rate_range:
+            min: 150000
+            max: 300000
+          notes: ''
+          data_source: estimated
+        - id: INF.BW.GRD.001
+          standard_name: Guardhouse/security cabin - prefab/RCC - 3x3m
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1200
+          dsr_item_ref: ''
+          aliases:
+          - guard house
+          - security cabin
+          - guard room
+          typical_rate_range:
+            min: 100000
+            max: 250000
+          notes: Including toilet, electrical fittings
+          data_source: estimated
+  landscaping:
+    categories:
+      site_preparation:
+        items:
+        - id: INF.LS.SPR.001
+          standard_name: Soil preparation - spreading good earth/garden soil - 300mm thick
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1200
+          dsr_item_ref: ''
+          aliases:
+          - garden soil spreading
+          - topsoil placement
+          typical_rate_range:
+            min: 50
+            max: 120
+          notes: Including manure mixing
+          data_source: estimated
+        - id: INF.LS.SPR.002
+          standard_name: Soil preparation - bio-compost enrichment - 150mm thick
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1200
+          dsr_item_ref: ''
+          aliases:
+          - compost enrichment
+          - organic soil preparation
+          typical_rate_range:
+            min: 30
+            max: 70
+          notes: ''
+          data_source: estimated
+      planting:
+        items:
+        - id: INF.LS.LWN.001
+          standard_name: Lawn - natural grass (doob/bermuda/korean) - sodding/turfing
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1200
+          dsr_item_ref: ''
+          aliases:
+          - natural lawn
+          - grass turfing
+          - doob grass
+          typical_rate_range:
+            min: 30
+            max: 70
+          notes: Including preparation and watering
+          data_source: estimated
+        - id: INF.LS.LWN.002
+          standard_name: Lawn - artificial turf - 35mm pile height - UV stabilized
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 1200
+          dsr_item_ref: ''
+          aliases:
+          - artificial grass
+          - synthetic turf
+          - astroturf
+          typical_rate_range:
+            min: 300
+            max: 600
+          notes: Including base preparation
+          data_source: estimated
+        - id: INF.LS.TRE.001
+          standard_name: Tree planting - native species - 3-5 year old - with pit
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1200
+          dsr_item_ref: ''
+          aliases:
+          - tree plantation
+          - avenue tree planting
+          typical_rate_range:
+            min: 500
+            max: 1500
+          notes: Including pit excavation, manure, staking
+          data_source: estimated
+        - id: INF.LS.TRE.002
+          standard_name: Tree planting - palm tree - 8-10ft height - transplanted
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 1200
+          dsr_item_ref: ''
+          aliases:
+          - palm tree planting
+          - royal palm
+          typical_rate_range:
+            min: 2000
+            max: 6000
+          notes: ''
+          data_source: estimated
+        - id: INF.LS.SHR.001
+          standard_name: Shrubs/hedges - planting - mixed species - per sqm of bed
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1200
+          dsr_item_ref: ''
+          aliases:
+          - hedge planting
+          - shrub bed
+          - bush planting
+          typical_rate_range:
+            min: 80
+            max: 200
+          notes: ''
+          data_source: estimated
+        - id: INF.LS.SHR.002
+          standard_name: Ground cover planting - creeper/grass alternative - per sqm
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1200
+          dsr_item_ref: ''
+          aliases:
+          - ground cover
+          - creeper planting
+          typical_rate_range:
+            min: 50
+            max: 120
+          notes: ''
+          data_source: estimated
+      irrigation:
+        items:
+        - id: INF.LS.DRP.001
+          standard_name: Drip irrigation system - complete - for shrub/tree beds
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1200
+          dsr_item_ref: ''
+          aliases:
+          - drip irrigation garden
+          - drip system landscape
+          typical_rate_range:
+            min: 30
+            max: 70
+          notes: Including pipe, emitters, filter, timer
+          data_source: estimated
+        - id: INF.LS.SPK.001
+          standard_name: Sprinkler irrigation system - pop-up type - for lawn areas
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1200
+          dsr_item_ref: ''
+          aliases:
+          - lawn sprinkler
+          - pop-up sprinkler garden
+          typical_rate_range:
+            min: 40
+            max: 90
+          notes: Including pipe, heads, controller
+          data_source: estimated
+        - id: INF.LS.GDL.001
+          standard_name: Garden light - bollard type - LED - 600mm height
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1200
+          dsr_item_ref: ''
+          aliases:
+          - garden bollard light
+          - landscape bollard
+          typical_rate_range:
+            min: 2000
+            max: 5000
+          notes: ''
+          data_source: estimated
+        - id: INF.LS.GDL.002
+          standard_name: Garden light - post top lantern - LED - 3m height
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1200
+          dsr_item_ref: ''
+          aliases:
+          - garden post light
+          - pathway light
+          typical_rate_range:
+            min: 5000
+            max: 12000
+          notes: Including pole and foundation
+          data_source: estimated
+        - id: INF.LS.GDL.003
+          standard_name: Garden light - in-ground/uplight - LED spot
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1200
+          dsr_item_ref: ''
+          aliases:
+          - in-ground light
+          - garden uplight
+          - tree spotlight
+          typical_rate_range:
+            min: 1500
+            max: 4000
+          notes: For tree/facade uplighting
+          data_source: estimated
+      hardscape:
+        items:
+        - id: INF.LS.EDG.001
+          standard_name: Garden edging - RCC precast kerb - 150mm height
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1200
+          dsr_item_ref: ''
+          aliases:
+          - garden kerb
+          - landscape edging
+          typical_rate_range:
+            min: 100
+            max: 250
+          notes: ''
+          data_source: estimated
+        - id: INF.LS.EDG.002
+          standard_name: Garden edging - natural stone - rough cut
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1200
+          dsr_item_ref: ''
+          aliases:
+          - stone garden edging
+          typical_rate_range:
+            min: 200
+            max: 400
+          notes: ''
+          data_source: estimated
+  miscellaneous:
+    categories:
+      signage_outdoor:
+        items:
+        - id: INF.MS.NBD.001
+          standard_name: Name board/project signage - MS frame with acrylic/aluminum face - illuminated
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1200
+          dsr_item_ref: ''
+          aliases:
+          - project name board
+          - building signage
+          typical_rate_range:
+            min: 15000
+            max: 50000
+          notes: Rate varies with size
+          data_source: estimated
+        - id: INF.MS.FLM.001
+          standard_name: Flag mast - SS/MS - 6m height - with pulley and base
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1200
+          dsr_item_ref: ''
+          aliases:
+          - flag pole
+          - flag mast
+          typical_rate_range:
+            min: 8000
+            max: 20000
+          notes: ''
+          data_source: estimated
+        - id: INF.MS.FLM.002
+          standard_name: Flag mast - SS/MS - 10m height - with pulley and base
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          requires: []
+          is_code_ref: IS 1200
+          dsr_item_ref: ''
+          aliases:
+          - tall flag mast
+          typical_rate_range:
+            min: 15000
+            max: 35000
+          notes: ''
+          data_source: estimated
+      outdoor_furniture:
+        items:
+        - id: INF.MS.BNC.001
+          standard_name: Outdoor bench - RCC/MS frame with wooden/WPC slats
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1200
+          dsr_item_ref: ''
+          aliases:
+          - garden bench
+          - outdoor seating bench
+          typical_rate_range:
+            min: 5000
+            max: 12000
+          notes: 4-5 seater
+          data_source: estimated
+        - id: INF.MS.BNC.002
+          standard_name: Outdoor bench - stone/granite - carved
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          requires: []
+          is_code_ref: IS 1200
+          dsr_item_ref: ''
+          aliases:
+          - stone bench
+          - granite bench
+          typical_rate_range:
+            min: 8000
+            max: 18000
+          notes: ''
+          data_source: estimated
+        - id: INF.MS.DBN.001
+          standard_name: Dustbin - outdoor - MS/SS - dual compartment - with lid
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1200
+          dsr_item_ref: ''
+          aliases:
+          - outdoor dustbin
+          - garbage bin outdoor
+          typical_rate_range:
+            min: 3000
+            max: 8000
+          notes: ''
+          data_source: estimated
+        - id: INF.MS.DBN.002
+          standard_name: Dustbin - outdoor - FRP/concrete - decorative
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1200
+          dsr_item_ref: ''
+          aliases:
+          - decorative dustbin
+          - FRP dustbin outdoor
+          typical_rate_range:
+            min: 2000
+            max: 5000
+          notes: ''
+          data_source: estimated
+      recreation:
+        items:
+        - id: INF.MS.PLY.001
+          standard_name: Playground equipment set - children - FRP/MS - multi-play station
+          unit: set
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - institutional
+          requires: []
+          is_code_ref: IS 1200
+          dsr_item_ref: ''
+          aliases:
+          - playground equipment
+          - children play equipment
+          - multi-play station
+          typical_rate_range:
+            min: 200000
+            max: 600000
+          notes: Complete set with slide, swing, climber
+          data_source: estimated
+        - id: INF.MS.PLY.002
+          standard_name: Playground - rubber flooring/EPDM - safety surfacing
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - institutional
+          requires: []
+          is_code_ref: IS 1200
+          dsr_item_ref: ''
+          aliases:
+          - EPDM playground surface
+          - rubber playground floor
+          typical_rate_range:
+            min: 1500
+            max: 3000
+          notes: Fall-height rated safety surface
+          data_source: estimated
+        - id: INF.MS.PLY.003
+          standard_name: Outdoor gym equipment - MS powder coated - multi-station
+          unit: set
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: IS 1200
+          dsr_item_ref: ''
+          aliases:
+          - outdoor gym
+          - open gym equipment
+          typical_rate_range:
+            min: 100000
+            max: 300000
+          notes: Set of 8-10 stations
+          data_source: estimated
+        - id: INF.MS.SWP.001
+          standard_name: Swimming pool - RCC shell - 12x6m - with filtration system
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - institutional
+          requires: []
+          is_code_ref: IS 1200
+          dsr_item_ref: ''
+          aliases:
+          - swimming pool RCC
+          - residential pool
+          typical_rate_range:
+            min: 2000000
+            max: 5000000
+          notes: Including filtration, tiling, deck
+          data_source: estimated
+        - id: INF.MS.SWP.002
+          standard_name: Swimming pool - tile finish (ceramic/glass mosaic)
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - institutional
+          requires: []
+          is_code_ref: IS 1200
+          dsr_item_ref: ''
+          aliases:
+          - pool tiling
+          - swimming pool tiles
+          typical_rate_range:
+            min: 800
+            max: 1800
+          notes: Per sqm of pool surface area
+          data_source: estimated
+      road_marking:
+        items:
+        - id: INF.MS.RMK.001
+          standard_name: Road marking - thermoplastic - white/yellow - 100mm width
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IRC 35
+          dsr_item_ref: ''
+          aliases:
+          - road line marking
+          - thermoplastic marking
+          typical_rate_range:
+            min: 30
+            max: 60
+          notes: Per running meter
+          data_source: IS codes only
+        - id: INF.MS.RMK.002
+          standard_name: Road marking - thermoplastic - zebra crossing - per crossing
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IRC 35
+          dsr_item_ref: ''
+          aliases:
+          - zebra crossing marking
+          - pedestrian crossing
+          typical_rate_range:
+            min: 5000
+            max: 12000
+          notes: Per crossing
+          data_source: IS codes only
+        - id: INF.MS.SPB.001
+          standard_name: Speed breaker - thermoplastic/rubber - 75mm height
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IRC 99
+          dsr_item_ref: ''
+          aliases:
+          - speed breaker
+          - speed hump
+          - speed bump
+          typical_rate_range:
+            min: 500
+            max: 1200
+          notes: Per running meter
+          data_source: IS codes only
+        - id: INF.MS.KRB.001
+          standard_name: Kerb stone - precast RCC - 300x150mm - for road edge
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - infrastructure
+          requires: []
+          is_code_ref: IS 5842
+          dsr_item_ref: ''
+          aliases:
+          - kerb stone
+          - road kerb
+          - curbstone
+          typical_rate_range:
+            min: 200
+            max: 400
+          notes: ''
+          data_source: IS codes only
+        - id: INF.MS.KRB.002
+          standard_name: Kerb stone - natural granite - polished - for premium areas
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 1200
+          dsr_item_ref: ''
+          aliases:
+          - granite kerb
+          - premium kerb stone
+          typical_rate_range:
+            min: 400
+            max: 800
+          notes: ''
+          data_source: estimated
+      paving:
+        items:
+        - id: INF.MS.ILK.001
+          standard_name: Interlocking paver block - 60mm thick - M30 grade - herringbone
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15658
+          dsr_item_ref: ''
+          aliases:
+          - interlocking paver 60mm
+          - paver block 60mm
+          typical_rate_range:
+            min: 400
+            max: 750
+          notes: Including sand bedding
+          data_source: IS codes only
+        - id: INF.MS.ILK.002
+          standard_name: Interlocking paver block - 80mm thick - M35 grade - for vehicular areas
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15658
+          dsr_item_ref: ''
+          aliases:
+          - paver block 80mm heavy duty
+          typical_rate_range:
+            min: 550
+            max: 1000
+          notes: For driveways and parking
+          data_source: IS codes only
+        - id: INF.MS.FLG.001
+          standard_name: Flagstone paving - natural stone - 30mm thick - for pathways
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1200
+          dsr_item_ref: ''
+          aliases:
+          - flagstone paving
+          - natural stone pathway
+          typical_rate_range:
+            min: 600
+            max: 1200
+          notes: ''
+          data_source: estimated
+      rainwater:
+        items:
+        - id: INF.MS.RWH.001
+          standard_name: Rainwater harvesting - recharge pit - 1.2m dia x 3m deep
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - recharge pit
+          - rainwater pit
+          - RWH pit
+          typical_rate_range:
+            min: 15000
+            max: 30000
+          notes: Including filter media
+          data_source: IS codes only
+        - id: INF.MS.RWH.002
+          standard_name: Rainwater harvesting - collection tank - RCC - 10,000 litres
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - rainwater tank
+          - RWH collection tank
+          typical_rate_range:
+            min: 80000
+            max: 180000
+          notes: Including filter and first flush diverter
+          data_source: IS codes only

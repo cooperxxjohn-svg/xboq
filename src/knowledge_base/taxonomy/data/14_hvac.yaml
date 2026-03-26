@@ -1,0 +1,5581 @@
+discipline: mep
+trade: hvac
+sub_trades:
+  split_systems:
+    categories:
+      wall_mounted:
+        items:
+        - id: HVC.SPL.WM.001
+          standard_name: Split AC Wall Mounted 1.0 Ton - Inverter 3 Star
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - commercial
+          requires: []
+          is_code_ref: IS 1391
+          dsr_item_ref: ''
+          aliases:
+          - 1 ton split AC
+          - wall AC 1T
+          - deewar AC
+          typical_rate_range:
+            min: 32000
+            max: 48000
+          notes: Inverter split AC with copper condenser
+          data_source: IS codes only
+        - id: HVC.SPL.WM.002
+          standard_name: Split AC Wall Mounted 1.5 Ton - Inverter 3 Star
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - commercial
+          requires: []
+          is_code_ref: IS 1391
+          dsr_item_ref: ''
+          aliases:
+          - 1.5 ton split AC
+          - wall AC 1.5T
+          - deewar AC bada
+          typical_rate_range:
+            min: 38000
+            max: 58000
+          notes: Standard residential split AC
+          data_source: IS codes only
+        - id: HVC.SPL.WM.003
+          standard_name: Split AC Wall Mounted 2.0 Ton - Inverter 3 Star
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - commercial
+          requires: []
+          is_code_ref: IS 1391
+          dsr_item_ref: ''
+          aliases:
+          - 2 ton split AC
+          - wall AC 2T
+          typical_rate_range:
+            min: 48000
+            max: 72000
+          notes: Large capacity wall split AC
+          data_source: IS codes only
+        - id: HVC.SPL.WM.004
+          standard_name: Split AC Wall Mounted 1.5 Ton - Inverter 5 Star
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - commercial
+          requires: []
+          is_code_ref: IS 1391
+          dsr_item_ref: ''
+          aliases:
+          - 5 star split AC
+          - energy efficient AC
+          typical_rate_range:
+            min: 45000
+            max: 68000
+          notes: High efficiency 5-star rated unit
+          data_source: IS codes only
+        - id: HVC.SPL.WM.005
+          standard_name: Split AC Wall Mounted 2.0 Ton - Inverter 5 Star
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - commercial
+          requires: []
+          is_code_ref: IS 1391
+          dsr_item_ref: ''
+          aliases:
+          - 2T 5 star AC
+          - premium split AC
+          typical_rate_range:
+            min: 55000
+            max: 85000
+          notes: Premium high efficiency split AC
+          data_source: IS codes only
+        - id: HVC.SPL.WM.006
+          standard_name: Split AC Installation - Copper Piping and Wiring up to 3m
+          unit: set
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1391 Part 2
+          dsr_item_ref: ''
+          aliases:
+          - AC installation
+          - split AC fitting
+          - AC lagana
+          typical_rate_range:
+            min: 3000
+            max: 6000
+          notes: Standard installation with drain and electrical
+          data_source: estimated
+      cassette:
+        items:
+        - id: HVC.SPL.CS.001
+          standard_name: Split AC Cassette Type 2.0 Ton - 4-Way
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 1391
+          dsr_item_ref: ''
+          aliases:
+          - 2T cassette AC
+          - ceiling cassette AC
+          typical_rate_range:
+            min: 65000
+            max: 95000
+          notes: 4-way ceiling cassette with panel
+          data_source: IS codes only
+        - id: HVC.SPL.CS.002
+          standard_name: Split AC Cassette Type 3.0 Ton - 4-Way
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 1391
+          dsr_item_ref: ''
+          aliases:
+          - 3T cassette AC
+          - large cassette
+          typical_rate_range:
+            min: 85000
+            max: 130000
+          notes: 4-way ceiling cassette for open offices
+          data_source: IS codes only
+        - id: HVC.SPL.CS.003
+          standard_name: Split AC Cassette Type 5.0 Ton - 4-Way
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 1391
+          dsr_item_ref: ''
+          aliases:
+          - 5T cassette AC
+          - large commercial cassette
+          typical_rate_range:
+            min: 120000
+            max: 180000
+          notes: Large capacity ceiling cassette
+          data_source: IS codes only
+        - id: HVC.SPL.CS.004
+          standard_name: Split AC Cassette Type 2.0 Ton - Compact 1-Way
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 1391
+          dsr_item_ref: ''
+          aliases:
+          - 1-way cassette
+          - compact cassette AC
+          typical_rate_range:
+            min: 60000
+            max: 90000
+          notes: Single-way compact ceiling cassette
+          data_source: IS codes only
+      floor_standing:
+        items:
+        - id: HVC.SPL.FS.001
+          standard_name: Split AC Floor Standing 2.0 Ton
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 1391
+          dsr_item_ref: ''
+          aliases:
+          - floor standing AC 2T
+          - tower AC
+          - khada AC
+          typical_rate_range:
+            min: 70000
+            max: 110000
+          notes: Floor-standing tower type split AC
+          data_source: IS codes only
+        - id: HVC.SPL.FS.002
+          standard_name: Split AC Floor Standing 3.0 Ton
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 1391
+          dsr_item_ref: ''
+          aliases:
+          - floor standing AC 3T
+          - large tower AC
+          typical_rate_range:
+            min: 95000
+            max: 150000
+          notes: Large floor-standing split AC
+          data_source: IS codes only
+      concealed_duct:
+        items:
+        - id: HVC.SPL.CD.001
+          standard_name: Split AC Concealed Duct Type 2.0 Ton
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 1391
+          dsr_item_ref: ''
+          aliases:
+          - concealed AC 2T
+          - ducted split 2T
+          - hidden AC
+          typical_rate_range:
+            min: 75000
+            max: 115000
+          notes: Ceiling concealed ducted split unit
+          data_source: IS codes only
+        - id: HVC.SPL.CD.002
+          standard_name: Split AC Concealed Duct Type 3.0 Ton
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 1391
+          dsr_item_ref: ''
+          aliases:
+          - concealed AC 3T
+          - ducted split 3T
+          typical_rate_range:
+            min: 95000
+            max: 150000
+          notes: Medium concealed ducted unit
+          data_source: IS codes only
+        - id: HVC.SPL.CD.003
+          standard_name: Split AC Concealed Duct Type 5.0 Ton
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 1391
+          dsr_item_ref: ''
+          aliases:
+          - concealed AC 5T
+          - ducted split 5T
+          typical_rate_range:
+            min: 140000
+            max: 220000
+          notes: Large concealed ducted unit
+          data_source: IS codes only
+  vrv_vrf:
+    categories:
+      outdoor_units:
+        items:
+        - id: HVC.VRV.OU.001
+          standard_name: VRV/VRF Outdoor Unit 8HP - Heat Pump
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 1391 Part 2
+          dsr_item_ref: ''
+          aliases:
+          - VRV 8HP
+          - VRF 8HP outdoor
+          - variable refrigerant 8HP
+          typical_rate_range:
+            min: 350000
+            max: 550000
+          notes: Including refrigerant charge and commissioning
+          data_source: estimated
+        - id: HVC.VRV.OU.002
+          standard_name: VRV/VRF Outdoor Unit 14HP - Heat Pump
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 1391 Part 2
+          dsr_item_ref: ''
+          aliases:
+          - VRV 14HP
+          - VRF 14HP outdoor
+          typical_rate_range:
+            min: 550000
+            max: 850000
+          notes: Medium capacity VRF outdoor unit
+          data_source: estimated
+        - id: HVC.VRV.OU.003
+          standard_name: VRV/VRF Outdoor Unit 22HP - Heat Pump
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 1391 Part 2
+          dsr_item_ref: ''
+          aliases:
+          - VRV 22HP
+          - VRF 22HP outdoor
+          typical_rate_range:
+            min: 750000
+            max: 1200000
+          notes: Large VRF outdoor unit
+          data_source: estimated
+        - id: HVC.VRV.OU.004
+          standard_name: VRV/VRF Outdoor Unit 34HP - Heat Pump
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 1391 Part 2
+          dsr_item_ref: ''
+          aliases:
+          - VRV 34HP
+          - VRF 34HP outdoor
+          typical_rate_range:
+            min: 1100000
+            max: 1800000
+          notes: Extra-large VRF outdoor combination
+          data_source: estimated
+        - id: HVC.VRV.OU.005
+          standard_name: VRV/VRF Outdoor Unit 48HP - Heat Pump
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 1391 Part 2
+          dsr_item_ref: ''
+          aliases:
+          - VRV 48HP
+          - VRF 48HP outdoor
+          typical_rate_range:
+            min: 1500000
+            max: 2500000
+          notes: Maximum capacity VRF system
+          data_source: estimated
+        - id: HVC.VRV.OU.006
+          standard_name: VRV/VRF Outdoor Unit 10HP - Heat Recovery
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 1391 Part 2
+          dsr_item_ref: ''
+          aliases:
+          - heat recovery VRF 10HP
+          - 3-pipe VRF
+          typical_rate_range:
+            min: 450000
+            max: 700000
+          notes: Simultaneous heating and cooling
+          data_source: estimated
+      indoor_units:
+        items:
+        - id: HVC.VRV.IU.001
+          standard_name: VRF Indoor Unit - Wall Mounted 1.5 Ton
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 1391 Part 2
+          dsr_item_ref: ''
+          aliases:
+          - VRF wall indoor 1.5T
+          - VRV wall unit
+          typical_rate_range:
+            min: 25000
+            max: 40000
+          notes: Wall-mounted VRF indoor unit
+          data_source: estimated
+        - id: HVC.VRV.IU.002
+          standard_name: VRF Indoor Unit - Wall Mounted 2.0 Ton
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 1391 Part 2
+          dsr_item_ref: ''
+          aliases:
+          - VRF wall indoor 2T
+          - VRV wall unit large
+          typical_rate_range:
+            min: 30000
+            max: 48000
+          notes: Large wall-mounted VRF indoor
+          data_source: estimated
+        - id: HVC.VRV.IU.003
+          standard_name: VRF Indoor Unit - 4-Way Cassette 2.0 Ton
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 1391 Part 2
+          dsr_item_ref: ''
+          aliases:
+          - VRF cassette 2T
+          - VRV cassette indoor
+          typical_rate_range:
+            min: 45000
+            max: 70000
+          notes: 4-way cassette VRF indoor unit
+          data_source: estimated
+        - id: HVC.VRV.IU.004
+          standard_name: VRF Indoor Unit - 4-Way Cassette 3.0 Ton
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 1391 Part 2
+          dsr_item_ref: ''
+          aliases:
+          - VRF cassette 3T
+          - VRV large cassette
+          typical_rate_range:
+            min: 55000
+            max: 85000
+          notes: Large cassette VRF indoor unit
+          data_source: estimated
+        - id: HVC.VRV.IU.005
+          standard_name: VRF Indoor Unit - Concealed Duct 2.0 Ton
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 1391 Part 2
+          dsr_item_ref: ''
+          aliases:
+          - VRF duct indoor 2T
+          - VRV ducted unit
+          typical_rate_range:
+            min: 40000
+            max: 65000
+          notes: Concealed duct VRF indoor unit
+          data_source: estimated
+        - id: HVC.VRV.IU.006
+          standard_name: VRF Indoor Unit - Concealed Duct 3.0 Ton
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 1391 Part 2
+          dsr_item_ref: ''
+          aliases:
+          - VRF duct indoor 3T
+          - VRV large ducted
+          typical_rate_range:
+            min: 50000
+            max: 80000
+          notes: Large concealed duct VRF indoor
+          data_source: estimated
+        - id: HVC.VRV.IU.007
+          standard_name: VRF Indoor Unit - Concealed Duct 5.0 Ton
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 1391 Part 2
+          dsr_item_ref: ''
+          aliases:
+          - VRF duct indoor 5T
+          - VRV extra large ducted
+          typical_rate_range:
+            min: 70000
+            max: 110000
+          notes: Extra large concealed duct VRF
+          data_source: estimated
+        - id: HVC.VRV.IU.008
+          standard_name: VRF Indoor Unit - Floor Standing 2.0 Ton
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 1391 Part 2
+          dsr_item_ref: ''
+          aliases:
+          - VRF floor indoor 2T
+          - VRV floor unit
+          typical_rate_range:
+            min: 40000
+            max: 65000
+          notes: Floor-standing VRF indoor unit
+          data_source: estimated
+      vrv_accessories:
+        items:
+        - id: HVC.VRV.ACC.001
+          standard_name: VRF Branch Selector Box (BSB)
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 1391 Part 2
+          dsr_item_ref: ''
+          aliases:
+          - branch selector box
+          - BSB
+          - VRF junction
+          typical_rate_range:
+            min: 15000
+            max: 30000
+          notes: Branch selector for heat recovery systems
+          data_source: estimated
+        - id: HVC.VRV.ACC.002
+          standard_name: VRF Refnet Joint/Header
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 1391 Part 2
+          dsr_item_ref: ''
+          aliases:
+          - refnet joint
+          - VRF header
+          - Y-branch
+          typical_rate_range:
+            min: 3000
+            max: 8000
+          notes: Refrigerant distribution joint
+          data_source: estimated
+        - id: HVC.VRV.ACC.003
+          standard_name: VRF Copper Refrigerant Piping - 6.35mm (1/4 inch)
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 1391 Part 2
+          dsr_item_ref: ''
+          aliases:
+          - VRF copper 1/4
+          - refrigerant pipe small
+          typical_rate_range:
+            min: 150
+            max: 280
+          notes: Insulated copper pipe with fittings
+          data_source: estimated
+        - id: HVC.VRV.ACC.004
+          standard_name: VRF Copper Refrigerant Piping - 9.52mm (3/8 inch)
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 1391 Part 2
+          dsr_item_ref: ''
+          aliases:
+          - VRF copper 3/8
+          - refrigerant pipe medium
+          typical_rate_range:
+            min: 200
+            max: 380
+          notes: Insulated copper pipe with fittings
+          data_source: estimated
+        - id: HVC.VRV.ACC.005
+          standard_name: VRF Copper Refrigerant Piping - 15.88mm (5/8 inch)
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 1391 Part 2
+          dsr_item_ref: ''
+          aliases:
+          - VRF copper 5/8
+          - refrigerant pipe large
+          typical_rate_range:
+            min: 300
+            max: 550
+          notes: Insulated copper pipe with fittings
+          data_source: estimated
+        - id: HVC.VRV.ACC.006
+          standard_name: VRF Copper Refrigerant Piping - 19.05mm (3/4 inch)
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 1391 Part 2
+          dsr_item_ref: ''
+          aliases:
+          - VRF copper 3/4
+          - main refrigerant pipe
+          typical_rate_range:
+            min: 400
+            max: 700
+          notes: Main trunk insulated copper pipe
+          data_source: estimated
+        - id: HVC.VRV.ACC.007
+          standard_name: VRF Copper Refrigerant Piping - 28.58mm (1-1/8 inch)
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 1391 Part 2
+          dsr_item_ref: ''
+          aliases:
+          - VRF copper 1-1/8
+          - header refrigerant pipe
+          typical_rate_range:
+            min: 600
+            max: 1000
+          notes: Large header copper pipe
+          data_source: estimated
+        - id: HVC.VRV.ACC.008
+          standard_name: VRF Centralised Controller - Touch Panel
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 1391 Part 2
+          dsr_item_ref: ''
+          aliases:
+          - VRF central controller
+          - intelligent touch controller
+          typical_rate_range:
+            min: 40000
+            max: 80000
+          notes: Centralised touch panel for VRF management
+          data_source: estimated
+        - id: HVC.VRV.ACC.009
+          standard_name: VRF Individual Wired Remote Controller
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 1391 Part 2
+          dsr_item_ref: ''
+          aliases:
+          - VRF wired remote
+          - individual controller
+          typical_rate_range:
+            min: 3000
+            max: 6000
+          notes: Wired remote for individual indoor unit
+          data_source: estimated
+  chiller_systems:
+    categories:
+      air_cooled_chiller:
+        items:
+        - id: HVC.CHL.AC.001
+          standard_name: Air Cooled Scroll Chiller - 30 TR
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016, IS 1391
+          dsr_item_ref: ''
+          aliases:
+          - scroll chiller 30TR
+          - air cooled chiller small
+          typical_rate_range:
+            min: 600000
+            max: 1000000
+          notes: Scroll compressor air-cooled chiller
+          data_source: estimated
+        - id: HVC.CHL.AC.002
+          standard_name: Air Cooled Scroll Chiller - 60 TR
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016, IS 1391
+          dsr_item_ref: ''
+          aliases:
+          - scroll chiller 60TR
+          - medium scroll chiller
+          typical_rate_range:
+            min: 1000000
+            max: 1600000
+          notes: Medium scroll chiller
+          data_source: estimated
+        - id: HVC.CHL.AC.003
+          standard_name: Air Cooled Screw Chiller - 100 TR
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016, IS 1391
+          dsr_item_ref: ''
+          aliases:
+          - screw chiller 100TR
+          - air cooled screw
+          typical_rate_range:
+            min: 1500000
+            max: 2500000
+          notes: Screw compressor air-cooled chiller
+          data_source: estimated
+        - id: HVC.CHL.AC.004
+          standard_name: Air Cooled Screw Chiller - 200 TR
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016, IS 1391
+          dsr_item_ref: ''
+          aliases:
+          - screw chiller 200TR
+          - large air cooled screw
+          typical_rate_range:
+            min: 2800000
+            max: 4500000
+          notes: Large air-cooled screw chiller
+          data_source: estimated
+        - id: HVC.CHL.AC.005
+          standard_name: Air Cooled Screw Chiller - 300 TR
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016, IS 1391
+          dsr_item_ref: ''
+          aliases:
+          - screw chiller 300TR
+          - extra large screw
+          typical_rate_range:
+            min: 4000000
+            max: 6500000
+          notes: Extra-large air-cooled screw chiller
+          data_source: estimated
+      water_cooled_chiller:
+        items:
+        - id: HVC.CHL.WC.001
+          standard_name: Water Cooled Screw Chiller - 150 TR
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016, IS 1391
+          dsr_item_ref: ''
+          aliases:
+          - WC screw chiller 150TR
+          - water cooled screw
+          typical_rate_range:
+            min: 2000000
+            max: 3500000
+          notes: Water-cooled screw chiller
+          data_source: estimated
+        - id: HVC.CHL.WC.002
+          standard_name: Water Cooled Screw Chiller - 300 TR
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016, IS 1391
+          dsr_item_ref: ''
+          aliases:
+          - WC screw chiller 300TR
+          - large water cooled
+          typical_rate_range:
+            min: 3500000
+            max: 5500000
+          notes: Large water-cooled screw chiller
+          data_source: estimated
+        - id: HVC.CHL.WC.003
+          standard_name: Water Cooled Centrifugal Chiller - 500 TR
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016, IS 1391
+          dsr_item_ref: ''
+          aliases:
+          - centrifugal chiller 500TR
+          - WC centrifugal
+          typical_rate_range:
+            min: 5000000
+            max: 8000000
+          notes: Centrifugal water-cooled chiller
+          data_source: estimated
+        - id: HVC.CHL.WC.004
+          standard_name: Water Cooled Centrifugal Chiller - 1000 TR
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016, IS 1391
+          dsr_item_ref: ''
+          aliases:
+          - centrifugal chiller 1000TR
+          - large centrifugal
+          typical_rate_range:
+            min: 9000000
+            max: 15000000
+          notes: Large centrifugal chiller for campus/district
+          data_source: estimated
+        - id: HVC.CHL.WC.005
+          standard_name: Absorption Chiller - Vapour Absorption 500 TR
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - industrial
+          requires: []
+          is_code_ref: NBC 2016, IS 1391
+          dsr_item_ref: ''
+          aliases:
+          - VAM chiller
+          - absorption chiller
+          - waste heat chiller
+          typical_rate_range:
+            min: 8000000
+            max: 14000000
+          notes: LiBr vapour absorption machine
+          data_source: estimated
+      cooling_tower:
+        items:
+        - id: HVC.CHL.CT.001
+          standard_name: Cooling Tower - Cross Flow FRP 100 TR
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - cooling tower 100TR
+          - FRP cooling tower
+          - CT
+          typical_rate_range:
+            min: 200000
+            max: 350000
+          notes: FRP cross-flow induced draft cooling tower
+          data_source: estimated
+        - id: HVC.CHL.CT.002
+          standard_name: Cooling Tower - Cross Flow FRP 200 TR
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - cooling tower 200TR
+          - medium CT
+          typical_rate_range:
+            min: 350000
+            max: 550000
+          notes: Medium FRP cooling tower
+          data_source: estimated
+        - id: HVC.CHL.CT.003
+          standard_name: Cooling Tower - Counter Flow FRP 300 TR
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - counter flow CT 300TR
+          - large cooling tower
+          typical_rate_range:
+            min: 500000
+            max: 800000
+          notes: Counter-flow induced draft
+          data_source: estimated
+        - id: HVC.CHL.CT.004
+          standard_name: Cooling Tower - Counter Flow FRP 500 TR
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - counter flow CT 500TR
+          - extra large CT
+          typical_rate_range:
+            min: 800000
+            max: 1300000
+          notes: Large counter-flow cooling tower
+          data_source: estimated
+      chw_pumps:
+        items:
+        - id: HVC.CHL.PM.001
+          standard_name: Chilled Water Pump - Primary 10 HP
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - CHW pump 10HP
+          - primary pump
+          - chiller pump
+          typical_rate_range:
+            min: 60000
+            max: 100000
+          notes: End-suction centrifugal pump
+          data_source: estimated
+        - id: HVC.CHL.PM.002
+          standard_name: Chilled Water Pump - Primary 20 HP
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - CHW pump 20HP
+          - large primary pump
+          typical_rate_range:
+            min: 100000
+            max: 170000
+          notes: Medium centrifugal pump
+          data_source: estimated
+        - id: HVC.CHL.PM.003
+          standard_name: Chilled Water Pump - Secondary 15 HP
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - secondary pump 15HP
+          - distribution pump
+          typical_rate_range:
+            min: 80000
+            max: 140000
+          notes: Variable speed secondary pump
+          data_source: estimated
+        - id: HVC.CHL.PM.004
+          standard_name: Condenser Water Pump - 20 HP
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - CW pump 20HP
+          - condenser pump
+          typical_rate_range:
+            min: 100000
+            max: 170000
+          notes: Condenser water circulation pump
+          data_source: estimated
+        - id: HVC.CHL.PM.005
+          standard_name: Condenser Water Pump - 40 HP
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - CW pump 40HP
+          - large condenser pump
+          typical_rate_range:
+            min: 180000
+            max: 300000
+          notes: Large condenser water pump
+          data_source: estimated
+  air_handling:
+    categories:
+      ahu:
+        items:
+        - id: HVC.AHU.FL.001
+          standard_name: AHU Floor Mounted - 2000 CFM
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016, IS 655
+          dsr_item_ref: ''
+          aliases:
+          - AHU 2000 CFM
+          - small AHU
+          - air handling unit
+          typical_rate_range:
+            min: 120000
+            max: 200000
+          notes: Floor-mounted AHU with filter, coil, fan section
+          data_source: estimated
+        - id: HVC.AHU.FL.002
+          standard_name: AHU Floor Mounted - 5000 CFM
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016, IS 655
+          dsr_item_ref: ''
+          aliases:
+          - AHU 5000 CFM
+          - medium AHU
+          typical_rate_range:
+            min: 200000
+            max: 350000
+          notes: Medium floor-mounted AHU
+          data_source: estimated
+        - id: HVC.AHU.FL.003
+          standard_name: AHU Floor Mounted - 10000 CFM
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016, IS 655
+          dsr_item_ref: ''
+          aliases:
+          - AHU 10000 CFM
+          - large AHU
+          typical_rate_range:
+            min: 350000
+            max: 600000
+          notes: Large floor AHU for open floors
+          data_source: estimated
+        - id: HVC.AHU.FL.004
+          standard_name: AHU Floor Mounted - 20000 CFM
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016, IS 655
+          dsr_item_ref: ''
+          aliases:
+          - AHU 20000 CFM
+          - extra large AHU
+          typical_rate_range:
+            min: 600000
+            max: 1000000
+          notes: Extra-large AHU for large spaces
+          data_source: estimated
+        - id: HVC.AHU.CL.001
+          standard_name: AHU Ceiling Suspended - 1500 CFM
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016, IS 655
+          dsr_item_ref: ''
+          aliases:
+          - ceiling AHU 1500
+          - suspended AHU small
+          typical_rate_range:
+            min: 100000
+            max: 180000
+          notes: Compact ceiling-hung AHU
+          data_source: estimated
+        - id: HVC.AHU.CL.002
+          standard_name: AHU Ceiling Suspended - 3000 CFM
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016, IS 655
+          dsr_item_ref: ''
+          aliases:
+          - ceiling AHU 3000
+          - suspended AHU medium
+          typical_rate_range:
+            min: 150000
+            max: 280000
+          notes: Medium ceiling-hung AHU
+          data_source: estimated
+      pau_fahu:
+        items:
+        - id: HVC.AHU.PA.001
+          standard_name: Primary Air Unit (PAU) - 3000 CFM
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016, IS 655
+          dsr_item_ref: ''
+          aliases:
+          - PAU 3000 CFM
+          - primary air unit
+          - fresh air AHU
+          typical_rate_range:
+            min: 180000
+            max: 300000
+          notes: Dedicated outdoor air AHU with heat recovery
+          data_source: estimated
+        - id: HVC.AHU.PA.002
+          standard_name: Primary Air Unit (PAU) - 8000 CFM
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016, IS 655
+          dsr_item_ref: ''
+          aliases:
+          - PAU 8000 CFM
+          - large PAU
+          typical_rate_range:
+            min: 350000
+            max: 600000
+          notes: Large primary air unit
+          data_source: estimated
+        - id: HVC.AHU.FA.001
+          standard_name: Fresh Air Handling Unit (FAHU) - 5000 CFM
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016, IS 655
+          dsr_item_ref: ''
+          aliases:
+          - FAHU 5000
+          - fresh air handler
+          typical_rate_range:
+            min: 220000
+            max: 380000
+          notes: 100% fresh air handling unit
+          data_source: estimated
+        - id: HVC.AHU.FA.002
+          standard_name: Fresh Air Handling Unit (FAHU) - 15000 CFM
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016, IS 655
+          dsr_item_ref: ''
+          aliases:
+          - FAHU 15000
+          - large FAHU
+          typical_rate_range:
+            min: 500000
+            max: 850000
+          notes: Large fresh air handling unit
+          data_source: estimated
+      fcu:
+        items:
+        - id: HVC.AHU.FC.001
+          standard_name: Fan Coil Unit - Horizontal Concealed 1.0 TR
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - FCU 1TR
+          - fan coil unit small
+          - horizontal FCU
+          typical_rate_range:
+            min: 15000
+            max: 28000
+          notes: Concealed horizontal fan coil unit
+          data_source: estimated
+        - id: HVC.AHU.FC.002
+          standard_name: Fan Coil Unit - Horizontal Concealed 2.0 TR
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - FCU 2TR
+          - medium fan coil
+          typical_rate_range:
+            min: 22000
+            max: 40000
+          notes: Medium concealed FCU
+          data_source: estimated
+        - id: HVC.AHU.FC.003
+          standard_name: Fan Coil Unit - Horizontal Concealed 3.0 TR
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - FCU 3TR
+          - large fan coil
+          typical_rate_range:
+            min: 30000
+            max: 55000
+          notes: Large concealed FCU
+          data_source: estimated
+        - id: HVC.AHU.FC.004
+          standard_name: Fan Coil Unit - Cassette Type 2.0 TR
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - cassette FCU 2TR
+          - ceiling cassette FCU
+          typical_rate_range:
+            min: 35000
+            max: 55000
+          notes: 4-way cassette fan coil unit
+          data_source: estimated
+        - id: HVC.AHU.FC.005
+          standard_name: Fan Coil Unit - Cassette Type 3.0 TR
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - cassette FCU 3TR
+          - large cassette FCU
+          typical_rate_range:
+            min: 45000
+            max: 70000
+          notes: Large cassette fan coil
+          data_source: estimated
+        - id: HVC.AHU.FC.006
+          standard_name: Fan Coil Unit - Floor Standing Exposed
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - exposed FCU
+          - visible fan coil
+          typical_rate_range:
+            min: 12000
+            max: 22000
+          notes: Exposed floor-standing FCU
+          data_source: estimated
+  ductwork:
+    categories:
+      gi_rectangular:
+        items:
+        - id: HVC.DCT.GR.001
+          standard_name: GI Rectangular Duct - 0.63mm Thick (up to 750mm)
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 655
+          dsr_item_ref: ''
+          aliases:
+          - GI duct 24G
+          - rectangular duct thin
+          - nali 24G
+          typical_rate_range:
+            min: 350
+            max: 550
+          notes: 24 gauge GI sheet rectangular duct
+          data_source: IS codes only
+        - id: HVC.DCT.GR.002
+          standard_name: GI Rectangular Duct - 0.80mm Thick (751-1500mm)
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 655
+          dsr_item_ref: ''
+          aliases:
+          - GI duct 22G
+          - rectangular duct medium
+          - nali 22G
+          typical_rate_range:
+            min: 400
+            max: 650
+          notes: 22 gauge GI sheet rectangular duct
+          data_source: IS codes only
+        - id: HVC.DCT.GR.003
+          standard_name: GI Rectangular Duct - 1.00mm Thick (1501-2250mm)
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 655
+          dsr_item_ref: ''
+          aliases:
+          - GI duct 20G
+          - rectangular duct thick
+          - nali 20G
+          typical_rate_range:
+            min: 500
+            max: 800
+          notes: 20 gauge GI sheet rectangular duct
+          data_source: IS codes only
+        - id: HVC.DCT.GR.004
+          standard_name: GI Rectangular Duct - 1.25mm Thick (above 2250mm)
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 655
+          dsr_item_ref: ''
+          aliases:
+          - GI duct 18G
+          - heavy duct
+          - nali 18G
+          typical_rate_range:
+            min: 600
+            max: 950
+          notes: 18 gauge GI sheet for large ducts
+          data_source: IS codes only
+      gi_circular:
+        items:
+        - id: HVC.DCT.GC.001
+          standard_name: GI Circular/Spiral Duct - 150mm to 300mm dia
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 655
+          dsr_item_ref: ''
+          aliases:
+          - spiral duct small
+          - round duct
+          - gol nali
+          typical_rate_range:
+            min: 300
+            max: 550
+          notes: Spiral-wound GI circular duct
+          data_source: IS codes only
+        - id: HVC.DCT.GC.002
+          standard_name: GI Circular/Spiral Duct - 350mm to 500mm dia
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 655
+          dsr_item_ref: ''
+          aliases:
+          - spiral duct medium
+          - round duct medium
+          typical_rate_range:
+            min: 450
+            max: 750
+          notes: Medium spiral duct
+          data_source: IS codes only
+        - id: HVC.DCT.GC.003
+          standard_name: GI Circular/Spiral Duct - 550mm to 800mm dia
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 655
+          dsr_item_ref: ''
+          aliases:
+          - spiral duct large
+          - round duct large
+          typical_rate_range:
+            min: 650
+            max: 1100
+          notes: Large spiral duct
+          data_source: IS codes only
+      pre_insulated:
+        items:
+        - id: HVC.DCT.PI.001
+          standard_name: Pre-Insulated Duct Panel (PIR) - 20mm
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 277, IS 655
+          dsr_item_ref: ''
+          aliases:
+          - PIR duct panel
+          - pre-insulated panel 20mm
+          typical_rate_range:
+            min: 400
+            max: 700
+          notes: PIR foam pre-insulated duct panel
+          data_source: estimated
+        - id: HVC.DCT.PI.002
+          standard_name: Pre-Insulated Duct Panel (PIR) - 30mm
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 277, IS 655
+          dsr_item_ref: ''
+          aliases:
+          - PIR duct panel 30mm
+          - thick pre-insulated
+          typical_rate_range:
+            min: 500
+            max: 850
+          notes: Thick PIR pre-insulated duct panel
+          data_source: estimated
+        - id: HVC.DCT.PI.003
+          standard_name: Pre-Insulated Duct Panel (PUF) - 25mm
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 277, IS 655
+          dsr_item_ref: ''
+          aliases:
+          - PUF duct panel
+          - polyurethane duct panel
+          typical_rate_range:
+            min: 450
+            max: 750
+          notes: PUF foam pre-insulated duct panel
+          data_source: estimated
+        - id: HVC.DCT.PI.004
+          standard_name: Pre-Insulated Duct - Fabrication and Installation
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 277, IS 655
+          dsr_item_ref: ''
+          aliases:
+          - PIR duct fabrication
+          - pre-insulated duct install
+          typical_rate_range:
+            min: 200
+            max: 400
+          notes: Labour for cutting and assembly
+          data_source: estimated
+      flexible_duct:
+        items:
+        - id: HVC.DCT.FX.001
+          standard_name: Flexible Duct - Insulated 150mm dia
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 277
+          dsr_item_ref: ''
+          aliases:
+          - flex duct 150
+          - insulated flex small
+          typical_rate_range:
+            min: 120
+            max: 220
+          notes: Insulated flexible aluminium duct
+          data_source: estimated
+        - id: HVC.DCT.FX.002
+          standard_name: Flexible Duct - Insulated 200mm dia
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 277
+          dsr_item_ref: ''
+          aliases:
+          - flex duct 200
+          - insulated flex 8 inch
+          typical_rate_range:
+            min: 150
+            max: 280
+          notes: Medium insulated flexible duct
+          data_source: estimated
+        - id: HVC.DCT.FX.003
+          standard_name: Flexible Duct - Insulated 250mm dia
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 277
+          dsr_item_ref: ''
+          aliases:
+          - flex duct 250
+          - insulated flex 10 inch
+          typical_rate_range:
+            min: 180
+            max: 350
+          notes: Large insulated flexible duct
+          data_source: estimated
+        - id: HVC.DCT.FX.004
+          standard_name: Flexible Duct - Insulated 300mm dia
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 277
+          dsr_item_ref: ''
+          aliases:
+          - flex duct 300
+          - insulated flex 12 inch
+          typical_rate_range:
+            min: 220
+            max: 400
+          notes: Extra large insulated flexible duct
+          data_source: estimated
+      fabric_duct:
+        items:
+        - id: HVC.DCT.FB.001
+          standard_name: Fabric Duct - 300mm dia
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - industrial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - fabric duct 300
+          - textile duct
+          - sock duct
+          typical_rate_range:
+            min: 600
+            max: 1100
+          notes: Permeable fabric air dispersion duct
+          data_source: estimated
+        - id: HVC.DCT.FB.002
+          standard_name: Fabric Duct - 500mm dia
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - industrial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - fabric duct 500
+          - large fabric duct
+          typical_rate_range:
+            min: 900
+            max: 1600
+          notes: Large fabric air dispersion duct
+          data_source: estimated
+        - id: HVC.DCT.FB.003
+          standard_name: Fabric Duct - 800mm dia
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - industrial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - fabric duct 800
+          - warehouse fabric duct
+          typical_rate_range:
+            min: 1200
+            max: 2200
+          notes: Extra large fabric duct for warehouses
+          data_source: estimated
+  diffusers_grilles:
+    categories:
+      diffusers:
+        items:
+        - id: HVC.DIF.SQ.001
+          standard_name: Square Ceiling Diffuser 4-Way - 300x300mm
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 655
+          dsr_item_ref: ''
+          aliases:
+          - square diffuser 300
+          - 4-way diffuser small
+          - ceiling diffuser
+          typical_rate_range:
+            min: 600
+            max: 1200
+          notes: Aluminium 4-way supply diffuser
+          data_source: estimated
+        - id: HVC.DIF.SQ.002
+          standard_name: Square Ceiling Diffuser 4-Way - 450x450mm
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 655
+          dsr_item_ref: ''
+          aliases:
+          - square diffuser 450
+          - 4-way diffuser medium
+          typical_rate_range:
+            min: 800
+            max: 1500
+          notes: Medium 4-way supply diffuser
+          data_source: estimated
+        - id: HVC.DIF.SQ.003
+          standard_name: Square Ceiling Diffuser 4-Way - 600x600mm
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 655
+          dsr_item_ref: ''
+          aliases:
+          - square diffuser 600
+          - 4-way diffuser large
+          typical_rate_range:
+            min: 1000
+            max: 1800
+          notes: Large 4-way supply diffuser
+          data_source: estimated
+        - id: HVC.DIF.RD.001
+          standard_name: Round Ceiling Diffuser - 150mm Neck
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 655
+          dsr_item_ref: ''
+          aliases:
+          - round diffuser 150
+          - circular diffuser small
+          typical_rate_range:
+            min: 400
+            max: 800
+          notes: Aluminium round ceiling diffuser
+          data_source: estimated
+        - id: HVC.DIF.RD.002
+          standard_name: Round Ceiling Diffuser - 250mm Neck
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 655
+          dsr_item_ref: ''
+          aliases:
+          - round diffuser 250
+          - circular diffuser medium
+          typical_rate_range:
+            min: 600
+            max: 1100
+          notes: Medium round ceiling diffuser
+          data_source: estimated
+        - id: HVC.DIF.LS.001
+          standard_name: Linear Slot Diffuser - 1 Slot 600mm Long
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 655
+          dsr_item_ref: ''
+          aliases:
+          - linear slot diffuser
+          - slot diffuser 1-way
+          typical_rate_range:
+            min: 800
+            max: 1400
+          notes: 1-slot linear ceiling diffuser
+          data_source: estimated
+        - id: HVC.DIF.LS.002
+          standard_name: Linear Slot Diffuser - 2 Slot 1200mm Long
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 655
+          dsr_item_ref: ''
+          aliases:
+          - 2-slot diffuser
+          - long linear diffuser
+          typical_rate_range:
+            min: 1500
+            max: 2800
+          notes: 2-slot linear diffuser for premium ceilings
+          data_source: estimated
+      grilles:
+        items:
+        - id: HVC.GRL.BR.001
+          standard_name: Bar Grille - Aluminium 300x150mm
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 655
+          dsr_item_ref: ''
+          aliases:
+          - bar grille small
+          - aluminium grille
+          - hawa ka jali
+          typical_rate_range:
+            min: 300
+            max: 600
+          notes: Aluminium fixed bar supply/return grille
+          data_source: estimated
+        - id: HVC.GRL.BR.002
+          standard_name: Bar Grille - Aluminium 600x200mm
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 655
+          dsr_item_ref: ''
+          aliases:
+          - bar grille medium
+          - large bar grille
+          typical_rate_range:
+            min: 450
+            max: 850
+          notes: Medium bar grille
+          data_source: estimated
+        - id: HVC.GRL.BR.003
+          standard_name: Bar Grille - Aluminium 900x300mm
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 655
+          dsr_item_ref: ''
+          aliases:
+          - bar grille large
+          - XL bar grille
+          typical_rate_range:
+            min: 600
+            max: 1100
+          notes: Large bar grille
+          data_source: estimated
+        - id: HVC.GRL.SP.001
+          standard_name: Supply Grille with Damper - 450x200mm
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 655
+          dsr_item_ref: ''
+          aliases:
+          - supply grille
+          - adjustable grille
+          typical_rate_range:
+            min: 500
+            max: 900
+          notes: Double deflection supply grille with OBD
+          data_source: estimated
+        - id: HVC.GRL.SP.002
+          standard_name: Supply Grille with Damper - 600x300mm
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 655
+          dsr_item_ref: ''
+          aliases:
+          - large supply grille
+          - supply grille 600
+          typical_rate_range:
+            min: 700
+            max: 1200
+          notes: Large supply grille with OBD
+          data_source: estimated
+        - id: HVC.GRL.RT.001
+          standard_name: Return Air Grille - 450x300mm
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 655
+          dsr_item_ref: ''
+          aliases:
+          - return grille
+          - RA grille
+          - return air jali
+          typical_rate_range:
+            min: 400
+            max: 750
+          notes: Fixed bar return air grille
+          data_source: estimated
+        - id: HVC.GRL.RT.002
+          standard_name: Return Air Grille - 600x400mm
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 655
+          dsr_item_ref: ''
+          aliases:
+          - large return grille
+          - RA grille large
+          typical_rate_range:
+            min: 550
+            max: 1000
+          notes: Large return air grille
+          data_source: estimated
+        - id: HVC.GRL.TF.001
+          standard_name: Transfer Grille - 300x200mm
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 655
+          dsr_item_ref: ''
+          aliases:
+          - transfer grille
+          - door grille
+          - through-wall grille
+          typical_rate_range:
+            min: 300
+            max: 550
+          notes: Transfer grille for door/wall
+          data_source: estimated
+        - id: HVC.GRL.EG.001
+          standard_name: Eggcrate Grille - Aluminium 600x600mm
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 655
+          dsr_item_ref: ''
+          aliases:
+          - eggcrate grille
+          - eggcrate return
+          typical_rate_range:
+            min: 600
+            max: 1100
+          notes: Aluminium eggcrate grille for return air
+          data_source: estimated
+  dampers:
+    categories:
+      fire_smoke_dampers:
+        items:
+        - id: HVC.DMP.FD.001
+          standard_name: Fire Damper - 300x200mm Fusible Link
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 3614, IS 655
+          dsr_item_ref: ''
+          aliases:
+          - fire damper small
+          - FD 300x200
+          - aag ka damper
+          typical_rate_range:
+            min: 2500
+            max: 4500
+          notes: UL listed curtain-type fire damper
+          data_source: estimated
+        - id: HVC.DMP.FD.002
+          standard_name: Fire Damper - 600x400mm Fusible Link
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 3614, IS 655
+          dsr_item_ref: ''
+          aliases:
+          - fire damper medium
+          - FD 600x400
+          typical_rate_range:
+            min: 4000
+            max: 7000
+          notes: Medium fire damper
+          data_source: estimated
+        - id: HVC.DMP.FD.003
+          standard_name: Fire Damper - 900x600mm Fusible Link
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 3614, IS 655
+          dsr_item_ref: ''
+          aliases:
+          - fire damper large
+          - FD 900x600
+          typical_rate_range:
+            min: 6000
+            max: 10000
+          notes: Large fire damper
+          data_source: estimated
+        - id: HVC.DMP.SD.001
+          standard_name: Smoke Damper - Motorized 300x200mm
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016, IS 655
+          dsr_item_ref: ''
+          aliases:
+          - smoke damper small
+          - motorized smoke damper
+          typical_rate_range:
+            min: 5000
+            max: 8500
+          notes: Motorized smoke damper with actuator
+          data_source: estimated
+        - id: HVC.DMP.SD.002
+          standard_name: Smoke Damper - Motorized 600x400mm
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016, IS 655
+          dsr_item_ref: ''
+          aliases:
+          - smoke damper medium
+          - MSD 600x400
+          typical_rate_range:
+            min: 7500
+            max: 12000
+          notes: Medium motorized smoke damper
+          data_source: estimated
+        - id: HVC.DMP.SD.003
+          standard_name: Combination Fire Smoke Damper - 600x400mm
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016, IS 655
+          dsr_item_ref: ''
+          aliases:
+          - combo FSD
+          - fire smoke damper
+          typical_rate_range:
+            min: 10000
+            max: 18000
+          notes: Combined fire and smoke damper
+          data_source: estimated
+      control_dampers:
+        items:
+        - id: HVC.DMP.VC.001
+          standard_name: Volume Control Damper (VCD) - Manual 300x200mm
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 655
+          dsr_item_ref: ''
+          aliases:
+          - VCD small
+          - manual damper
+          - balancing damper
+          typical_rate_range:
+            min: 800
+            max: 1500
+          notes: Manual opposed blade volume control damper
+          data_source: estimated
+        - id: HVC.DMP.VC.002
+          standard_name: Volume Control Damper (VCD) - Manual 600x400mm
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 655
+          dsr_item_ref: ''
+          aliases:
+          - VCD medium
+          - manual damper large
+          typical_rate_range:
+            min: 1200
+            max: 2200
+          notes: Medium manual VCD
+          data_source: estimated
+        - id: HVC.DMP.MT.001
+          standard_name: Motorized Damper - 300x200mm
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 655
+          dsr_item_ref: ''
+          aliases:
+          - motorized damper small
+          - actuated damper
+          typical_rate_range:
+            min: 3000
+            max: 5500
+          notes: Motorized modulating damper with actuator
+          data_source: estimated
+        - id: HVC.DMP.MT.002
+          standard_name: Motorized Damper - 600x400mm
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 655
+          dsr_item_ref: ''
+          aliases:
+          - motorized damper medium
+          - large actuated damper
+          typical_rate_range:
+            min: 4500
+            max: 8000
+          notes: Medium motorized damper
+          data_source: estimated
+        - id: HVC.DMP.BD.001
+          standard_name: Backdraft Damper - 200mm dia
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 655
+          dsr_item_ref: ''
+          aliases:
+          - backdraft damper
+          - non-return damper
+          - check damper
+          typical_rate_range:
+            min: 400
+            max: 800
+          notes: Gravity backdraft prevention damper
+          data_source: estimated
+        - id: HVC.DMP.BD.002
+          standard_name: Backdraft Damper - 300mm dia
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 655
+          dsr_item_ref: ''
+          aliases:
+          - backdraft damper 300
+          - large non-return
+          typical_rate_range:
+            min: 600
+            max: 1100
+          notes: Large backdraft damper
+          data_source: estimated
+      louvers:
+        items:
+        - id: HVC.DMP.LV.001
+          standard_name: Weather-Proof Louver - Aluminium 600x600mm
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 655
+          dsr_item_ref: ''
+          aliases:
+          - weather louver
+          - rain-proof louver
+          - outdoor grille
+          typical_rate_range:
+            min: 2000
+            max: 3800
+          notes: Aluminium weather-proof intake/exhaust louver
+          data_source: estimated
+        - id: HVC.DMP.LV.002
+          standard_name: Weather-Proof Louver - Aluminium 900x900mm
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 655
+          dsr_item_ref: ''
+          aliases:
+          - large weather louver
+          - rain louver 900
+          typical_rate_range:
+            min: 3500
+            max: 6000
+          notes: Large weather-proof louver
+          data_source: estimated
+        - id: HVC.DMP.LV.003
+          standard_name: Weather-Proof Louver - Aluminium 1200x1200mm
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 655
+          dsr_item_ref: ''
+          aliases:
+          - XL weather louver
+          - rain louver 1200
+          typical_rate_range:
+            min: 5000
+            max: 8500
+          notes: Extra-large weather-proof louver
+          data_source: estimated
+        - id: HVC.DMP.LV.004
+          standard_name: Acoustic Louver - Aluminium 600x600mm
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 655
+          dsr_item_ref: ''
+          aliases:
+          - acoustic louver
+          - sound attenuating louver
+          typical_rate_range:
+            min: 4000
+            max: 7000
+          notes: Acoustically treated louver NR<35dB
+          data_source: estimated
+        - id: HVC.DMP.LV.005
+          standard_name: Sand Trap Louver - 900x900mm
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 655
+          dsr_item_ref: ''
+          aliases:
+          - sand trap louver
+          - desert louver
+          typical_rate_range:
+            min: 3000
+            max: 5500
+          notes: Sand/dust filtering louver for arid areas
+          data_source: estimated
+  piping:
+    categories:
+      chilled_water:
+        items:
+        - id: HVC.PIP.CW.001
+          standard_name: Chilled Water Pipe MS - 50mm NB (2 inch)
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 1239
+          dsr_item_ref: ''
+          aliases:
+          - CHW pipe 50mm
+          - MS pipe 2 inch
+          - thanda pani pipe
+          typical_rate_range:
+            min: 350
+            max: 600
+          notes: MS ERW pipe with fittings and supports
+          data_source: IS codes only
+        - id: HVC.PIP.CW.002
+          standard_name: Chilled Water Pipe MS - 80mm NB (3 inch)
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 1239
+          dsr_item_ref: ''
+          aliases:
+          - CHW pipe 80mm
+          - MS pipe 3 inch
+          typical_rate_range:
+            min: 500
+            max: 850
+          notes: Medium MS chilled water pipe
+          data_source: IS codes only
+        - id: HVC.PIP.CW.003
+          standard_name: Chilled Water Pipe MS - 100mm NB (4 inch)
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 1239
+          dsr_item_ref: ''
+          aliases:
+          - CHW pipe 100mm
+          - MS pipe 4 inch
+          typical_rate_range:
+            min: 650
+            max: 1100
+          notes: Large MS chilled water pipe
+          data_source: IS codes only
+        - id: HVC.PIP.CW.004
+          standard_name: Chilled Water Pipe MS - 150mm NB (6 inch)
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 1239
+          dsr_item_ref: ''
+          aliases:
+          - CHW pipe 150mm
+          - MS pipe 6 inch
+          - header pipe
+          typical_rate_range:
+            min: 900
+            max: 1500
+          notes: Header/riser MS chilled water pipe
+          data_source: IS codes only
+        - id: HVC.PIP.CW.005
+          standard_name: Chilled Water Pipe MS - 200mm NB (8 inch)
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 1239
+          dsr_item_ref: ''
+          aliases:
+          - CHW pipe 200mm
+          - MS pipe 8 inch
+          typical_rate_range:
+            min: 1200
+            max: 2000
+          notes: Main header chilled water pipe
+          data_source: IS codes only
+        - id: HVC.PIP.CW.006
+          standard_name: Chilled Water Pipe HDPE - 63mm
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - HDPE CHW 63mm
+          - HDPE pipe 63
+          typical_rate_range:
+            min: 200
+            max: 380
+          notes: HDPE pipe for chilled water
+          data_source: estimated
+        - id: HVC.PIP.CW.007
+          standard_name: Chilled Water Pipe HDPE - 110mm
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - HDPE CHW 110mm
+          - HDPE pipe 110
+          typical_rate_range:
+            min: 400
+            max: 700
+          notes: Large HDPE pipe for chilled water
+          data_source: estimated
+      refrigerant:
+        items:
+        - id: HVC.PIP.RF.001
+          standard_name: Refrigerant Copper Pipe - 6.35mm (1/4 inch)
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - copper pipe 1/4
+          - AC copper small
+          typical_rate_range:
+            min: 120
+            max: 220
+          notes: ACR copper tube with insulation
+          data_source: estimated
+        - id: HVC.PIP.RF.002
+          standard_name: Refrigerant Copper Pipe - 9.52mm (3/8 inch)
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - copper pipe 3/8
+          - AC copper medium
+          typical_rate_range:
+            min: 180
+            max: 320
+          notes: Medium ACR copper tube
+          data_source: estimated
+        - id: HVC.PIP.RF.003
+          standard_name: Refrigerant Copper Pipe - 12.7mm (1/2 inch)
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - copper pipe 1/2
+          - AC copper large
+          typical_rate_range:
+            min: 250
+            max: 420
+          notes: Large ACR copper tube
+          data_source: estimated
+        - id: HVC.PIP.RF.004
+          standard_name: Refrigerant Copper Pipe - 15.88mm (5/8 inch)
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - copper pipe 5/8
+          - suction line copper
+          typical_rate_range:
+            min: 320
+            max: 550
+          notes: Suction line copper tube
+          data_source: estimated
+      drain_piping:
+        items:
+        - id: HVC.PIP.DR.001
+          standard_name: Condensate Drain Pipe PVC - 25mm
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - AC drain pipe 25mm
+          - condensate drain small
+          typical_rate_range:
+            min: 60
+            max: 120
+          notes: PVC condensate drain pipe
+          data_source: estimated
+        - id: HVC.PIP.DR.002
+          standard_name: Condensate Drain Pipe PVC - 40mm
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - AC drain pipe 40mm
+          - condensate drain medium
+          typical_rate_range:
+            min: 80
+            max: 150
+          notes: Medium PVC drain pipe
+          data_source: estimated
+        - id: HVC.PIP.DR.003
+          standard_name: Condensate Drain Pipe CPVC - 25mm
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - CPVC drain 25mm
+          - hot water condensate drain
+          typical_rate_range:
+            min: 100
+            max: 180
+          notes: CPVC for hot condensate
+          data_source: estimated
+      pipe_insulation:
+        items:
+        - id: HVC.PIP.IN.001
+          standard_name: Pipe Insulation - Nitrile Rubber 13mm Wall (up to 42mm pipe)
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 3144, IS 8183
+          dsr_item_ref: ''
+          aliases:
+          - nitrile insulation small
+          - rubber pipe insulation
+          typical_rate_range:
+            min: 120
+            max: 220
+          notes: Closed-cell nitrile rubber pipe insulation
+          data_source: estimated
+        - id: HVC.PIP.IN.002
+          standard_name: Pipe Insulation - Nitrile Rubber 19mm Wall (42-89mm pipe)
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 3144, IS 8183
+          dsr_item_ref: ''
+          aliases:
+          - nitrile insulation medium
+          - rubber insulation 19mm
+          typical_rate_range:
+            min: 180
+            max: 320
+          notes: Medium nitrile rubber pipe insulation
+          data_source: estimated
+        - id: HVC.PIP.IN.003
+          standard_name: Pipe Insulation - Nitrile Rubber 25mm Wall (89-114mm pipe)
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 3144, IS 8183
+          dsr_item_ref: ''
+          aliases:
+          - nitrile insulation large
+          - rubber insulation 25mm
+          typical_rate_range:
+            min: 250
+            max: 420
+          notes: Large nitrile rubber pipe insulation
+          data_source: estimated
+        - id: HVC.PIP.IN.004
+          standard_name: Pipe Insulation - Glass Wool 50mm with Aluminium Cladding
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 3144, IS 8183
+          dsr_item_ref: ''
+          aliases:
+          - glass wool pipe
+          - aluminium clad insulation
+          typical_rate_range:
+            min: 300
+            max: 550
+          notes: Glass wool with GI/aluminium sheet cladding
+          data_source: estimated
+        - id: HVC.PIP.IN.005
+          standard_name: Pipe Insulation - PUF 50mm with Aluminium Cladding
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 3144, IS 8183
+          dsr_item_ref: ''
+          aliases:
+          - PUF pipe insulation
+          - polyurethane pipe clad
+          typical_rate_range:
+            min: 350
+            max: 600
+          notes: PUF insulation with aluminium cladding
+          data_source: estimated
+  controls:
+    categories:
+      thermostats_sensors:
+        items:
+        - id: HVC.CTL.TH.001
+          standard_name: Room Thermostat - Digital Programmable
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - digital thermostat
+          - room thermostat
+          - AC thermostat
+          typical_rate_range:
+            min: 1500
+            max: 3500
+          notes: Programmable digital room thermostat
+          data_source: estimated
+        - id: HVC.CTL.TH.002
+          standard_name: Room Thermostat - Touchscreen Smart
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - smart thermostat
+          - touch thermostat
+          typical_rate_range:
+            min: 4000
+            max: 8000
+          notes: Smart touchscreen thermostat with WiFi
+          data_source: estimated
+        - id: HVC.CTL.SN.001
+          standard_name: Temperature Sensor - Duct Mounted
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - duct temp sensor
+          - duct temperature probe
+          typical_rate_range:
+            min: 1500
+            max: 3000
+          notes: Duct-mounted temperature sensor/transmitter
+          data_source: estimated
+        - id: HVC.CTL.SN.002
+          standard_name: Temperature Sensor - Immersion Type (Pipe)
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - pipe temp sensor
+          - immersion sensor
+          typical_rate_range:
+            min: 2000
+            max: 4000
+          notes: Pipe immersion temperature sensor
+          data_source: estimated
+        - id: HVC.CTL.SN.003
+          standard_name: Humidity Sensor - Duct Mounted
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - humidity sensor
+          - duct RH sensor
+          typical_rate_range:
+            min: 3000
+            max: 6000
+          notes: Duct-mounted humidity transmitter
+          data_source: estimated
+        - id: HVC.CTL.SN.004
+          standard_name: CO2 Sensor - Wall Mounted
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - CO2 sensor
+          - carbon dioxide sensor
+          - IAQ sensor
+          typical_rate_range:
+            min: 5000
+            max: 10000
+          notes: Wall CO2 sensor for demand-controlled ventilation
+          data_source: estimated
+        - id: HVC.CTL.SN.005
+          standard_name: Differential Pressure Sensor - Duct
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - DP sensor duct
+          - pressure sensor
+          typical_rate_range:
+            min: 2500
+            max: 5000
+          notes: Differential pressure transmitter for duct/filter
+          data_source: estimated
+        - id: HVC.CTL.SN.006
+          standard_name: Differential Pressure Switch - Filter
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - DP switch
+          - filter pressure switch
+          typical_rate_range:
+            min: 1000
+            max: 2500
+          notes: Differential pressure switch for filter alarm
+          data_source: estimated
+      vfd_ddc:
+        items:
+        - id: HVC.CTL.VF.001
+          standard_name: Variable Frequency Drive (VFD) - 5 HP
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - VFD 5HP
+          - variable speed drive
+          - frequency inverter
+          typical_rate_range:
+            min: 15000
+            max: 28000
+          notes: AC motor VFD for fan/pump
+          data_source: estimated
+        - id: HVC.CTL.VF.002
+          standard_name: Variable Frequency Drive (VFD) - 10 HP
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - VFD 10HP
+          - large VFD
+          typical_rate_range:
+            min: 25000
+            max: 45000
+          notes: Medium VFD for AHU/pump
+          data_source: estimated
+        - id: HVC.CTL.VF.003
+          standard_name: Variable Frequency Drive (VFD) - 20 HP
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - VFD 20HP
+          - heavy VFD
+          typical_rate_range:
+            min: 40000
+            max: 70000
+          notes: Large VFD
+          data_source: estimated
+        - id: HVC.CTL.VF.004
+          standard_name: Variable Frequency Drive (VFD) - 50 HP
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - VFD 50HP
+          - extra large VFD
+          typical_rate_range:
+            min: 80000
+            max: 140000
+          notes: Extra-large VFD for chiller pumps
+          data_source: estimated
+        - id: HVC.CTL.DD.001
+          standard_name: DDC Controller - 16 Point
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - DDC 16 point
+          - direct digital controller
+          typical_rate_range:
+            min: 15000
+            max: 30000
+          notes: 16 I/O point DDC controller
+          data_source: estimated
+        - id: HVC.CTL.DD.002
+          standard_name: DDC Controller - 32 Point
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - DDC 32 point
+          - large DDC controller
+          typical_rate_range:
+            min: 25000
+            max: 50000
+          notes: 32 I/O point DDC controller
+          data_source: estimated
+        - id: HVC.CTL.BM.001
+          standard_name: BMS Integration - Per Point (Hardware + Software)
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - BMS point
+          - building management point
+          typical_rate_range:
+            min: 2000
+            max: 5000
+          notes: Per point BMS integration cost
+          data_source: estimated
+        - id: HVC.CTL.BM.002
+          standard_name: BMS Head End Server and Software License
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - BMS server
+          - BMS head end
+          - building management server
+          typical_rate_range:
+            min: 300000
+            max: 800000
+          notes: Central BMS server with operator station
+          data_source: estimated
+  ventilation:
+    categories:
+      exhaust_fans:
+        items:
+        - id: HVC.VNT.EF.001
+          standard_name: Exhaust Fan - Toilet/Utility 150mm (6 inch)
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 3103
+          dsr_item_ref: ''
+          aliases:
+          - toilet exhaust fan
+          - 6 inch exhaust
+          - bathroom fan
+          typical_rate_range:
+            min: 800
+            max: 1800
+          notes: Wall/window mounted exhaust fan
+          data_source: estimated
+        - id: HVC.VNT.EF.002
+          standard_name: Exhaust Fan - Kitchen Inline 200mm (8 inch)
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 3103
+          dsr_item_ref: ''
+          aliases:
+          - kitchen exhaust
+          - 8 inch inline fan
+          typical_rate_range:
+            min: 2000
+            max: 4000
+          notes: Inline duct exhaust for kitchens
+          data_source: estimated
+        - id: HVC.VNT.EF.003
+          standard_name: Centrifugal Exhaust Fan - 1000 CFM
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 3103
+          dsr_item_ref: ''
+          aliases:
+          - centrifugal exhaust 1000
+          - inline exhaust fan
+          typical_rate_range:
+            min: 8000
+            max: 15000
+          notes: Belt-driven centrifugal exhaust
+          data_source: estimated
+        - id: HVC.VNT.EF.004
+          standard_name: Centrifugal Exhaust Fan - 3000 CFM
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 3103
+          dsr_item_ref: ''
+          aliases:
+          - centrifugal exhaust 3000
+          - large exhaust fan
+          typical_rate_range:
+            min: 15000
+            max: 28000
+          notes: Large centrifugal exhaust
+          data_source: estimated
+        - id: HVC.VNT.EF.005
+          standard_name: Centrifugal Exhaust Fan - 8000 CFM
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 3103
+          dsr_item_ref: ''
+          aliases:
+          - centrifugal exhaust 8000
+          - XL exhaust fan
+          typical_rate_range:
+            min: 30000
+            max: 55000
+          notes: Extra-large centrifugal exhaust
+          data_source: estimated
+      smoke_exhaust:
+        items:
+        - id: HVC.VNT.SE.001
+          standard_name: Smoke Exhaust Fan Axial - 10000 CFM (400 deg C/2hr)
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016, IS 3103
+          dsr_item_ref: ''
+          aliases:
+          - axial smoke fan
+          - smoke exhaust axial
+          typical_rate_range:
+            min: 60000
+            max: 100000
+          notes: Fire-rated axial smoke exhaust fan
+          data_source: estimated
+        - id: HVC.VNT.SE.002
+          standard_name: Smoke Exhaust Fan Axial - 20000 CFM (400 deg C/2hr)
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016, IS 3103
+          dsr_item_ref: ''
+          aliases:
+          - large axial smoke fan
+          - big smoke exhaust
+          typical_rate_range:
+            min: 100000
+            max: 180000
+          notes: Large fire-rated axial smoke fan
+          data_source: estimated
+        - id: HVC.VNT.SE.003
+          standard_name: Smoke Exhaust Fan Centrifugal - 15000 CFM (400 deg C/2hr)
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016, IS 3103
+          dsr_item_ref: ''
+          aliases:
+          - centrifugal smoke fan
+          - smoke centrifugal
+          typical_rate_range:
+            min: 80000
+            max: 150000
+          notes: Fire-rated centrifugal smoke exhaust
+          data_source: estimated
+      jet_fans:
+        items:
+        - id: HVC.VNT.JF.001
+          standard_name: Jet Fan - Parking Ventilation 40N Thrust
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016, IS 3103
+          dsr_item_ref: ''
+          aliases:
+          - jet fan 40N
+          - parking fan
+          - car park ventilator
+          typical_rate_range:
+            min: 35000
+            max: 60000
+          notes: Uni-directional jet fan for parking ventilation
+          data_source: estimated
+        - id: HVC.VNT.JF.002
+          standard_name: Jet Fan - Parking Ventilation 60N Thrust
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016, IS 3103
+          dsr_item_ref: ''
+          aliases:
+          - jet fan 60N
+          - large parking fan
+          typical_rate_range:
+            min: 50000
+            max: 85000
+          notes: Large jet fan for deep basements
+          data_source: estimated
+        - id: HVC.VNT.JF.003
+          standard_name: Jet Fan - Reversible 50N Thrust
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016, IS 3103
+          dsr_item_ref: ''
+          aliases:
+          - reversible jet fan
+          - bi-directional jet fan
+          typical_rate_range:
+            min: 55000
+            max: 90000
+          notes: Reversible jet fan for fire mode
+          data_source: estimated
+      heat_recovery:
+        items:
+        - id: HVC.VNT.HR.001
+          standard_name: Energy Recovery Ventilator (ERV) - 500 CFM
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - ERV 500
+          - energy recovery unit small
+          typical_rate_range:
+            min: 40000
+            max: 70000
+          notes: Enthalpy wheel ERV unit
+          data_source: estimated
+        - id: HVC.VNT.HR.002
+          standard_name: Energy Recovery Ventilator (ERV) - 1500 CFM
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - ERV 1500
+          - medium energy recovery
+          typical_rate_range:
+            min: 80000
+            max: 140000
+          notes: Medium ERV unit
+          data_source: estimated
+        - id: HVC.VNT.HR.003
+          standard_name: Heat Recovery Ventilator (HRV) - 500 CFM
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - HRV 500
+          - heat recovery unit
+          typical_rate_range:
+            min: 35000
+            max: 60000
+          notes: Plate-type heat recovery ventilator
+          data_source: estimated
+        - id: HVC.VNT.HR.004
+          standard_name: Energy Recovery Ventilator (ERV) - 3000 CFM
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - ERV 3000
+          - large energy recovery
+          typical_rate_range:
+            min: 140000
+            max: 240000
+          notes: Large ERV for commercial buildings
+          data_source: estimated
+      fresh_air:
+        items:
+        - id: HVC.VNT.FA.001
+          standard_name: Fresh Air Fan - Inline Duct 500 CFM
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 3103
+          dsr_item_ref: ''
+          aliases:
+          - fresh air fan 500
+          - inline supply fan
+          typical_rate_range:
+            min: 8000
+            max: 15000
+          notes: Inline duct fresh air supply fan
+          data_source: estimated
+        - id: HVC.VNT.FA.002
+          standard_name: Fresh Air Fan - Inline Duct 2000 CFM
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 3103
+          dsr_item_ref: ''
+          aliases:
+          - fresh air fan 2000
+          - medium supply fan
+          typical_rate_range:
+            min: 20000
+            max: 38000
+          notes: Medium inline fresh air fan
+          data_source: estimated
+  package_ac:
+    categories:
+      rooftop_package:
+        items:
+        - id: HVC.PKG.RT.001
+          standard_name: Rooftop Package Unit - 5 TR
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016, IS 1391 Part 2
+          dsr_item_ref: ''
+          aliases:
+          - RTU 5TR
+          - rooftop AC 5 ton
+          typical_rate_range:
+            min: 200000
+            max: 350000
+          notes: Rooftop packaged unit with DX cooling
+          data_source: estimated
+        - id: HVC.PKG.RT.002
+          standard_name: Rooftop Package Unit - 10 TR
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016, IS 1391 Part 2
+          dsr_item_ref: ''
+          aliases:
+          - RTU 10TR
+          - rooftop AC 10 ton
+          typical_rate_range:
+            min: 350000
+            max: 550000
+          notes: Medium rooftop packaged unit
+          data_source: estimated
+        - id: HVC.PKG.RT.003
+          standard_name: Rooftop Package Unit - 20 TR
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016, IS 1391 Part 2
+          dsr_item_ref: ''
+          aliases:
+          - RTU 20TR
+          - large rooftop AC
+          typical_rate_range:
+            min: 550000
+            max: 900000
+          notes: Large rooftop packaged unit
+          data_source: estimated
+      precision_ac:
+        items:
+        - id: HVC.PKG.PR.001
+          standard_name: Precision AC - Down Flow 5 TR
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016, IS 1391 Part 2
+          dsr_item_ref: ''
+          aliases:
+          - precision AC 5TR
+          - server room AC
+          - CRAC unit
+          typical_rate_range:
+            min: 300000
+            max: 500000
+          notes: Close control precision AC for server rooms
+          data_source: estimated
+        - id: HVC.PKG.PR.002
+          standard_name: Precision AC - Down Flow 10 TR
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016, IS 1391 Part 2
+          dsr_item_ref: ''
+          aliases:
+          - precision AC 10TR
+          - large CRAC
+          typical_rate_range:
+            min: 500000
+            max: 800000
+          notes: Large precision AC for data centres
+          data_source: estimated
+        - id: HVC.PKG.PR.003
+          standard_name: Precision AC - Down Flow 20 TR
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016, IS 1391 Part 2
+          dsr_item_ref: ''
+          aliases:
+          - precision AC 20TR
+          - XL server room AC
+          typical_rate_range:
+            min: 800000
+            max: 1300000
+          notes: Extra-large precision AC
+          data_source: estimated
+        - id: HVC.PKG.PR.004
+          standard_name: In-Row Cooling Unit - 10 kW
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016, IS 1391 Part 2
+          dsr_item_ref: ''
+          aliases:
+          - in-row cooler
+          - rack cooling
+          - between rack AC
+          typical_rate_range:
+            min: 400000
+            max: 650000
+          notes: In-row cooling for high-density server racks
+          data_source: estimated
+      floor_standing_package:
+        items:
+        - id: HVC.PKG.FS.001
+          standard_name: Floor Standing Package AC - 5 TR
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 1391 Part 2
+          dsr_item_ref: ''
+          aliases:
+          - package AC 5TR
+          - floor package AC
+          typical_rate_range:
+            min: 180000
+            max: 300000
+          notes: Floor-standing air-cooled packaged AC
+          data_source: estimated
+        - id: HVC.PKG.FS.002
+          standard_name: Floor Standing Package AC - 10 TR
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - industrial
+          requires: []
+          is_code_ref: IS 1391 Part 2
+          dsr_item_ref: ''
+          aliases:
+          - package AC 10TR
+          - large floor package
+          typical_rate_range:
+            min: 300000
+            max: 500000
+          notes: Large floor-standing package AC
+          data_source: estimated
+  specialty:
+    categories:
+      clean_room_hvac:
+        items:
+        - id: HVC.SPC.CR.001
+          standard_name: Clean Room AHU with HEPA - 3000 CFM
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          - industrial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - clean room AHU
+          - HEPA AHU
+          - pharma AHU
+          typical_rate_range:
+            min: 350000
+            max: 600000
+          notes: AHU with pre-filter + HEPA for clean rooms
+          data_source: estimated
+        - id: HVC.SPC.CR.002
+          standard_name: Clean Room AHU with HEPA - 8000 CFM
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          - industrial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - large clean room AHU
+          - large HEPA AHU
+          typical_rate_range:
+            min: 600000
+            max: 1000000
+          notes: Large clean room AHU
+          data_source: estimated
+        - id: HVC.SPC.CR.003
+          standard_name: Laminar Air Flow Ceiling Module - 1200x600mm
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - LAF ceiling module
+          - laminar flow ceiling
+          typical_rate_range:
+            min: 80000
+            max: 150000
+          notes: Unidirectional flow HEPA ceiling module
+          data_source: estimated
+      hospital_ot:
+        items:
+        - id: HVC.SPC.OT.001
+          standard_name: OT AHU with HEPA - 3000 CFM (Positive Pressure)
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - OT AHU
+          - operation theatre AHU
+          typical_rate_range:
+            min: 400000
+            max: 700000
+          notes: Dedicated OT AHU with 20 ACH minimum
+          data_source: estimated
+        - id: HVC.SPC.OT.002
+          standard_name: OT Laminar Flow Canopy - 2400x1200mm
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - OT canopy
+          - laminar flow OT
+          - surgical canopy
+          typical_rate_range:
+            min: 150000
+            max: 300000
+          notes: Surgical zone laminar airflow canopy
+          data_source: estimated
+      cold_storage_ref:
+        items:
+        - id: HVC.SPC.CL.001
+          standard_name: Cold Storage Refrigeration Plant - 10 TR Freon
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - industrial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - cold storage compressor
+          - freon plant 10TR
+          typical_rate_range:
+            min: 200000
+            max: 350000
+          notes: Freon-based refrigeration for cold rooms
+          data_source: estimated
+        - id: HVC.SPC.CL.002
+          standard_name: Cold Storage Refrigeration Plant - 30 TR Ammonia
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - industrial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - ammonia plant 30TR
+          - NH3 refrigeration
+          typical_rate_range:
+            min: 500000
+            max: 900000
+          notes: Ammonia refrigeration for large cold storage
+          data_source: estimated
+      data_center:
+        items:
+        - id: HVC.SPC.DC.001
+          standard_name: Data Centre PAC Unit - 20 TR Chilled Water
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016, IS 1391 Part 2
+          dsr_item_ref: ''
+          aliases:
+          - PAC unit 20TR
+          - perimeter cooling unit
+          typical_rate_range:
+            min: 500000
+            max: 800000
+          notes: Perimeter air conditioning unit for data centres
+          data_source: estimated
+        - id: HVC.SPC.DC.002
+          standard_name: Rear Door Heat Exchanger - For Server Rack
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - rear door cooler
+          - rack heat exchanger
+          typical_rate_range:
+            min: 200000
+            max: 400000
+          notes: Passive/active rear door cooling
+          data_source: estimated
+  insulation:
+    categories:
+      duct_insulation:
+        items:
+        - id: HVC.INS.DI.001
+          standard_name: Duct Insulation - Glass Wool 25mm with Aluminium Foil
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 3144, IS 8183
+          dsr_item_ref: ''
+          aliases:
+          - duct GW insulation 25mm
+          - glass wool duct
+          - duct lagging
+          typical_rate_range:
+            min: 120
+            max: 220
+          notes: 25mm glass wool with FSK foil facing
+          data_source: estimated
+        - id: HVC.INS.DI.002
+          standard_name: Duct Insulation - Glass Wool 50mm with Aluminium Foil
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 3144, IS 8183
+          dsr_item_ref: ''
+          aliases:
+          - duct GW insulation 50mm
+          - thick duct insulation
+          typical_rate_range:
+            min: 180
+            max: 320
+          notes: 50mm glass wool with FSK foil facing
+          data_source: estimated
+        - id: HVC.INS.DI.003
+          standard_name: Duct Insulation - Nitrile Rubber Sheet 13mm
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 3144, IS 8183
+          dsr_item_ref: ''
+          aliases:
+          - rubber duct insulation 13mm
+          - nitrile sheet duct
+          typical_rate_range:
+            min: 200
+            max: 380
+          notes: Closed-cell nitrile rubber sheet for ducts
+          data_source: estimated
+        - id: HVC.INS.DI.004
+          standard_name: Duct Insulation - Nitrile Rubber Sheet 19mm
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 3144, IS 8183
+          dsr_item_ref: ''
+          aliases:
+          - rubber duct insulation 19mm
+          - thick nitrile duct
+          typical_rate_range:
+            min: 280
+            max: 480
+          notes: Thick nitrile rubber duct insulation
+          data_source: estimated
+        - id: HVC.INS.DI.005
+          standard_name: Duct Insulation - PUF Spray 25mm
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 3144, IS 8183
+          dsr_item_ref: ''
+          aliases:
+          - PUF spray duct
+          - spray foam duct insulation
+          typical_rate_range:
+            min: 250
+            max: 420
+          notes: Spray-applied PUF insulation on duct
+          data_source: estimated
+      acoustic_insulation:
+        items:
+        - id: HVC.INS.AC.001
+          standard_name: Acoustic Duct Lining - Glass Wool 25mm Internal
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 3144, IS 8183
+          dsr_item_ref: ''
+          aliases:
+          - duct acoustic lining
+          - internal duct insulation
+          typical_rate_range:
+            min: 180
+            max: 320
+          notes: Internal acoustic lining of ductwork
+          data_source: estimated
+        - id: HVC.INS.AC.002
+          standard_name: Acoustic Duct Lining - Glass Wool 50mm Internal
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 3144, IS 8183
+          dsr_item_ref: ''
+          aliases:
+          - thick duct lining
+          - 50mm duct acoustic
+          typical_rate_range:
+            min: 250
+            max: 450
+          notes: Thick internal acoustic duct lining
+          data_source: estimated
+        - id: HVC.INS.AC.003
+          standard_name: Sound Attenuator - Rectangular 600x400mm
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 3144, IS 8183
+          dsr_item_ref: ''
+          aliases:
+          - sound attenuator
+          - duct silencer
+          - noise trap
+          typical_rate_range:
+            min: 8000
+            max: 15000
+          notes: Rectangular duct-mounted silencer
+          data_source: estimated
+        - id: HVC.INS.AC.004
+          standard_name: Sound Attenuator - Rectangular 900x600mm
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 3144, IS 8183
+          dsr_item_ref: ''
+          aliases:
+          - large sound attenuator
+          - big duct silencer
+          typical_rate_range:
+            min: 12000
+            max: 22000
+          notes: Large duct-mounted silencer
+          data_source: estimated
+        - id: HVC.INS.AC.005
+          standard_name: Sound Attenuator - Circular 300mm dia
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 3144, IS 8183
+          dsr_item_ref: ''
+          aliases:
+          - circular attenuator
+          - round duct silencer
+          typical_rate_range:
+            min: 4000
+            max: 8000
+          notes: Circular duct-mounted silencer
+          data_source: estimated
+  split_ac_additional:
+    categories:
+      wall_mounted:
+        items:
+        - id: HVC.SPL.WM.007
+          standard_name: Split AC Wall Mounted 1.0 Ton - 3 Star
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: IS 1391 Part 2
+          dsr_item_ref: ''
+          aliases:
+          - 1T split AC
+          - 1 ton wall AC
+          typical_rate_range:
+            min: 25000
+            max: 40000
+          notes: Including installation
+          data_source: estimated
+        - id: HVC.SPL.WM.008
+          standard_name: Split AC Wall Mounted 1.0 Ton - 5 Star Inverter
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: IS 1391 Part 2
+          dsr_item_ref: ''
+          aliases:
+          - 1T inverter split
+          - 1 ton 5 star
+          typical_rate_range:
+            min: 35000
+            max: 55000
+          notes: Energy efficient inverter
+          data_source: estimated
+        - id: HVC.SPL.WM.009
+          standard_name: Split AC Wall Mounted 1.5 Ton - 3 Star
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: IS 1391 Part 2
+          dsr_item_ref: ''
+          aliases:
+          - 1.5T split AC 3 star
+          typical_rate_range:
+            min: 30000
+            max: 48000
+          notes: ''
+          data_source: estimated
+        - id: HVC.SPL.WM.010
+          standard_name: Split AC Wall Mounted 2.0 Ton - 3 Star
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - commercial
+          requires: []
+          is_code_ref: IS 1391 Part 2
+          dsr_item_ref: ''
+          aliases:
+          - 2T split AC 3 star
+          typical_rate_range:
+            min: 40000
+            max: 65000
+          notes: ''
+          data_source: estimated
+      cassette:
+        items:
+        - id: HVC.SPL.CS.005
+          standard_name: Cassette AC 2 Ton - 4 Way Blow
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 1391 Part 2
+          dsr_item_ref: ''
+          aliases:
+          - 2T cassette AC
+          - ceiling cassette 2T
+          typical_rate_range:
+            min: 55000
+            max: 90000
+          notes: Including panel and installation
+          data_source: estimated
+        - id: HVC.SPL.CS.006
+          standard_name: Cassette AC 3 Ton - 4 Way Blow
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 1391 Part 2
+          dsr_item_ref: ''
+          aliases:
+          - 3T cassette AC
+          typical_rate_range:
+            min: 70000
+            max: 120000
+          notes: ''
+          data_source: estimated
+        - id: HVC.SPL.CS.007
+          standard_name: Cassette AC 4 Ton - 4 Way Blow
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 1391 Part 2
+          dsr_item_ref: ''
+          aliases:
+          - 4T cassette AC
+          typical_rate_range:
+            min: 90000
+            max: 150000
+          notes: ''
+          data_source: estimated
+        - id: HVC.SPL.CS.008
+          standard_name: Cassette AC 5 Ton - 4 Way Blow
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 1391 Part 2
+          dsr_item_ref: ''
+          aliases:
+          - 5T cassette AC
+          typical_rate_range:
+            min: 110000
+            max: 180000
+          notes: ''
+          data_source: estimated
+      floor_standing:
+        items:
+        - id: HVC.SPL.FS.003
+          standard_name: Floor Standing AC 2 Ton
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 1391 Part 2
+          dsr_item_ref: ''
+          aliases:
+          - 2T floor AC
+          - floor standing 2 ton
+          typical_rate_range:
+            min: 60000
+            max: 100000
+          notes: ''
+          data_source: estimated
+        - id: HVC.SPL.FS.004
+          standard_name: Floor Standing AC 3 Ton
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 1391 Part 2
+          dsr_item_ref: ''
+          aliases:
+          - 3T floor AC
+          typical_rate_range:
+            min: 80000
+            max: 130000
+          notes: ''
+          data_source: estimated
+        - id: HVC.SPL.FS.005
+          standard_name: Floor Standing AC 5 Ton
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 1391 Part 2
+          dsr_item_ref: ''
+          aliases:
+          - 5T floor AC
+          typical_rate_range:
+            min: 120000
+            max: 200000
+          notes: ''
+          data_source: estimated
+      duct_type:
+        items:
+        - id: HVC.SPL.CD.004
+          standard_name: Duct Type Split AC 3 Ton
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 1391 Part 2
+          dsr_item_ref: ''
+          aliases:
+          - 3T duct split
+          - ducted split 3T
+          typical_rate_range:
+            min: 80000
+            max: 140000
+          notes: Concealed in false ceiling with ductwork
+          data_source: estimated
+        - id: HVC.SPL.CD.005
+          standard_name: Duct Type Split AC 5 Ton
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 1391 Part 2
+          dsr_item_ref: ''
+          aliases:
+          - 5T duct split
+          - ducted split 5T
+          typical_rate_range:
+            min: 120000
+            max: 200000
+          notes: ''
+          data_source: estimated
+        - id: HVC.SPL.CD.006
+          standard_name: Duct Type Split AC 8 Ton
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 1391 Part 2
+          dsr_item_ref: ''
+          aliases:
+          - 8T duct split
+          typical_rate_range:
+            min: 180000
+            max: 320000
+          notes: ''
+          data_source: estimated
+        - id: HVC.SPL.CD.007
+          standard_name: Duct Type Split AC 10 Ton
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 1391 Part 2
+          dsr_item_ref: ''
+          aliases:
+          - 10T duct split
+          typical_rate_range:
+            min: 250000
+            max: 450000
+          notes: ''
+          data_source: estimated
+  vrv_additional:
+    categories:
+      vrv_outdoor:
+        items:
+        - id: HVC.VRV.OU.007
+          standard_name: VRV/VRF Outdoor Unit 8 HP
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 1391 Part 2
+          dsr_item_ref: ''
+          aliases:
+          - VRV 8HP outdoor
+          - VRF 8HP
+          typical_rate_range:
+            min: 300000
+            max: 500000
+          notes: ''
+          data_source: estimated
+        - id: HVC.VRV.OU.008
+          standard_name: VRV/VRF Outdoor Unit 10 HP
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 1391 Part 2
+          dsr_item_ref: ''
+          aliases:
+          - VRV 10HP outdoor
+          - VRF 10HP
+          typical_rate_range:
+            min: 350000
+            max: 600000
+          notes: ''
+          data_source: estimated
+        - id: HVC.VRV.OU.009
+          standard_name: VRV/VRF Outdoor Unit 14 HP
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 1391 Part 2
+          dsr_item_ref: ''
+          aliases:
+          - VRV 14HP outdoor
+          typical_rate_range:
+            min: 450000
+            max: 750000
+          notes: ''
+          data_source: estimated
+        - id: HVC.VRV.OU.010
+          standard_name: VRV/VRF Outdoor Unit 16 HP
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 1391 Part 2
+          dsr_item_ref: ''
+          aliases:
+          - VRV 16HP outdoor
+          typical_rate_range:
+            min: 500000
+            max: 850000
+          notes: ''
+          data_source: estimated
+        - id: HVC.VRV.OU.011
+          standard_name: VRV/VRF Outdoor Unit 20 HP
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 1391 Part 2
+          dsr_item_ref: ''
+          aliases:
+          - VRV 20HP outdoor
+          typical_rate_range:
+            min: 600000
+            max: 1000000
+          notes: ''
+          data_source: estimated
+        - id: HVC.VRV.OU.012
+          standard_name: VRV/VRF Outdoor Unit 24 HP
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 1391 Part 2
+          dsr_item_ref: ''
+          aliases:
+          - VRV 24HP outdoor
+          typical_rate_range:
+            min: 700000
+            max: 1200000
+          notes: ''
+          data_source: estimated
+        - id: HVC.VRV.OU.013
+          standard_name: VRV/VRF Outdoor Unit 28 HP
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 1391 Part 2
+          dsr_item_ref: ''
+          aliases:
+          - VRV 28HP outdoor
+          typical_rate_range:
+            min: 800000
+            max: 1400000
+          notes: ''
+          data_source: estimated
+        - id: HVC.VRV.OU.014
+          standard_name: VRV/VRF Outdoor Unit 34 HP
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 1391 Part 2
+          dsr_item_ref: ''
+          aliases:
+          - VRV 34HP outdoor
+          typical_rate_range:
+            min: 950000
+            max: 1600000
+          notes: ''
+          data_source: estimated
+        - id: HVC.VRV.OU.015
+          standard_name: VRV/VRF Outdoor Unit 40 HP
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 1391 Part 2
+          dsr_item_ref: ''
+          aliases:
+          - VRV 40HP outdoor
+          typical_rate_range:
+            min: 1100000
+            max: 1900000
+          notes: ''
+          data_source: estimated
+        - id: HVC.VRV.OU.016
+          standard_name: VRV/VRF Outdoor Unit 48 HP
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 1391 Part 2
+          dsr_item_ref: ''
+          aliases:
+          - VRV 48HP outdoor
+          typical_rate_range:
+            min: 1300000
+            max: 2200000
+          notes: ''
+          data_source: estimated
+        - id: HVC.VRV.OU.017
+          standard_name: VRV/VRF Outdoor Unit 56 HP
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 1391 Part 2
+          dsr_item_ref: ''
+          aliases:
+          - VRV 56HP outdoor
+          typical_rate_range:
+            min: 1500000
+            max: 2500000
+          notes: Multiple compressor module
+          data_source: estimated
+  chiller_additional:
+    categories:
+      air_cooled_chillers:
+        items:
+        - id: HVC.CHL.AC.006
+          standard_name: Air Cooled Scroll Chiller 30 TR
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016, IS 1391
+          dsr_item_ref: ''
+          aliases:
+          - 30 TR air cooled scroll
+          - scroll chiller 30T
+          typical_rate_range:
+            min: 800000
+            max: 1400000
+          notes: ''
+          data_source: estimated
+        - id: HVC.CHL.AC.007
+          standard_name: Air Cooled Scroll Chiller 50 TR
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016, IS 1391
+          dsr_item_ref: ''
+          aliases:
+          - 50 TR air cooled scroll
+          typical_rate_range:
+            min: 1200000
+            max: 2000000
+          notes: ''
+          data_source: estimated
+        - id: HVC.CHL.AC.008
+          standard_name: Air Cooled Scroll Chiller 70 TR
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016, IS 1391
+          dsr_item_ref: ''
+          aliases:
+          - 70 TR air cooled scroll
+          typical_rate_range:
+            min: 1600000
+            max: 2800000
+          notes: ''
+          data_source: estimated
+        - id: HVC.CHL.AC.009
+          standard_name: Air Cooled Scroll Chiller 100 TR
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016, IS 1391
+          dsr_item_ref: ''
+          aliases:
+          - 100 TR air cooled scroll
+          typical_rate_range:
+            min: 2200000
+            max: 3800000
+          notes: ''
+          data_source: estimated
+        - id: HVC.CHL.AC.010
+          standard_name: Air Cooled Screw Chiller 100 TR
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016, IS 1391
+          dsr_item_ref: ''
+          aliases:
+          - 100 TR air cooled screw
+          typical_rate_range:
+            min: 2500000
+            max: 4200000
+          notes: ''
+          data_source: estimated
+        - id: HVC.CHL.AC.011
+          standard_name: Air Cooled Screw Chiller 150 TR
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016, IS 1391
+          dsr_item_ref: ''
+          aliases:
+          - 150 TR air cooled screw
+          typical_rate_range:
+            min: 3500000
+            max: 6000000
+          notes: ''
+          data_source: estimated
+        - id: HVC.CHL.AC.012
+          standard_name: Air Cooled Screw Chiller 200 TR
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016, IS 1391
+          dsr_item_ref: ''
+          aliases:
+          - 200 TR air cooled screw
+          typical_rate_range:
+            min: 4500000
+            max: 8000000
+          notes: ''
+          data_source: estimated
+        - id: HVC.CHL.AC.013
+          standard_name: Air Cooled Screw Chiller 300 TR
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016, IS 1391
+          dsr_item_ref: ''
+          aliases:
+          - 300 TR air cooled screw
+          typical_rate_range:
+            min: 6500000
+            max: 11000000
+          notes: ''
+          data_source: estimated
+      water_cooled_chillers:
+        items:
+        - id: HVC.CHL.WC.006
+          standard_name: Water Cooled Screw Chiller 150 TR
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016, IS 1391
+          dsr_item_ref: ''
+          aliases:
+          - 150 TR water cooled screw
+          typical_rate_range:
+            min: 3000000
+            max: 5500000
+          notes: ''
+          data_source: estimated
+        - id: HVC.CHL.WC.007
+          standard_name: Water Cooled Screw Chiller 200 TR
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016, IS 1391
+          dsr_item_ref: ''
+          aliases:
+          - 200 TR water cooled screw
+          typical_rate_range:
+            min: 4000000
+            max: 7000000
+          notes: ''
+          data_source: estimated
+        - id: HVC.CHL.WC.008
+          standard_name: Water Cooled Screw Chiller 300 TR
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016, IS 1391
+          dsr_item_ref: ''
+          aliases:
+          - 300 TR water cooled screw
+          typical_rate_range:
+            min: 5500000
+            max: 9500000
+          notes: ''
+          data_source: estimated
+        - id: HVC.CHL.WC.009
+          standard_name: Water Cooled Screw Chiller 500 TR
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016, IS 1391
+          dsr_item_ref: ''
+          aliases:
+          - 500 TR water cooled screw
+          typical_rate_range:
+            min: 8000000
+            max: 14000000
+          notes: ''
+          data_source: estimated
+        - id: HVC.CHL.WC.010
+          standard_name: Water Cooled Centrifugal Chiller 300 TR
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016, IS 1391
+          dsr_item_ref: ''
+          aliases:
+          - 300 TR centrifugal chiller
+          typical_rate_range:
+            min: 6000000
+            max: 10000000
+          notes: Oil-free magnetic bearing
+          data_source: estimated
+        - id: HVC.CHL.WC.011
+          standard_name: Water Cooled Centrifugal Chiller 500 TR
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016, IS 1391
+          dsr_item_ref: ''
+          aliases:
+          - 500 TR centrifugal chiller
+          typical_rate_range:
+            min: 9000000
+            max: 16000000
+          notes: ''
+          data_source: estimated
+        - id: HVC.CHL.WC.012
+          standard_name: Water Cooled Centrifugal Chiller 700 TR
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016, IS 1391
+          dsr_item_ref: ''
+          aliases:
+          - 700 TR centrifugal chiller
+          typical_rate_range:
+            min: 12000000
+            max: 22000000
+          notes: ''
+          data_source: estimated
+        - id: HVC.CHL.WC.013
+          standard_name: Water Cooled Centrifugal Chiller 1000 TR
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016, IS 1391
+          dsr_item_ref: ''
+          aliases:
+          - 1000 TR centrifugal chiller
+          typical_rate_range:
+            min: 18000000
+            max: 32000000
+          notes: ''
+          data_source: estimated
+      cooling_towers:
+        items:
+        - id: HVC.CHL.CT.005
+          standard_name: Cooling Tower Induced Draft 50 TR
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - 50 TR cooling tower
+          - induced draft CT 50
+          typical_rate_range:
+            min: 150000
+            max: 300000
+          notes: ''
+          data_source: estimated
+        - id: HVC.CHL.CT.006
+          standard_name: Cooling Tower Induced Draft 100 TR
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - 100 TR cooling tower
+          typical_rate_range:
+            min: 250000
+            max: 500000
+          notes: ''
+          data_source: estimated
+        - id: HVC.CHL.CT.007
+          standard_name: Cooling Tower Induced Draft 150 TR
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - 150 TR cooling tower
+          typical_rate_range:
+            min: 350000
+            max: 700000
+          notes: ''
+          data_source: estimated
+        - id: HVC.CHL.CT.008
+          standard_name: Cooling Tower Induced Draft 200 TR
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - 200 TR cooling tower
+          typical_rate_range:
+            min: 450000
+            max: 900000
+          notes: ''
+          data_source: estimated
+        - id: HVC.CHL.CT.009
+          standard_name: Cooling Tower Induced Draft 300 TR
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - 300 TR cooling tower
+          typical_rate_range:
+            min: 600000
+            max: 1200000
+          notes: ''
+          data_source: estimated
+        - id: HVC.CHL.CT.010
+          standard_name: Cooling Tower Cross-Flow 200 TR
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - 200 TR cross-flow CT
+          typical_rate_range:
+            min: 500000
+            max: 1000000
+          notes: Cross-flow design for lower noise
+          data_source: estimated
+  ahu_additional:
+    categories:
+      ahu_units:
+        items:
+        - id: HVC.AHU.FL.005
+          standard_name: AHU Floor Standing 2000 CFM
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016, IS 655
+          dsr_item_ref: ''
+          aliases:
+          - 2000 CFM AHU
+          - AHU 2000
+          typical_rate_range:
+            min: 200000
+            max: 400000
+          notes: Including coil, filter, fan
+          data_source: estimated
+        - id: HVC.AHU.FL.006
+          standard_name: AHU Floor Standing 3000 CFM
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016, IS 655
+          dsr_item_ref: ''
+          aliases:
+          - 3000 CFM AHU
+          typical_rate_range:
+            min: 280000
+            max: 550000
+          notes: ''
+          data_source: estimated
+        - id: HVC.AHU.FL.007
+          standard_name: AHU Floor Standing 5000 CFM
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016, IS 655
+          dsr_item_ref: ''
+          aliases:
+          - 5000 CFM AHU
+          typical_rate_range:
+            min: 400000
+            max: 750000
+          notes: ''
+          data_source: estimated
+        - id: HVC.AHU.FL.008
+          standard_name: AHU Floor Standing 8000 CFM
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016, IS 655
+          dsr_item_ref: ''
+          aliases:
+          - 8000 CFM AHU
+          typical_rate_range:
+            min: 550000
+            max: 1000000
+          notes: ''
+          data_source: estimated
+        - id: HVC.AHU.FL.009
+          standard_name: AHU Floor Standing 10000 CFM
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016, IS 655
+          dsr_item_ref: ''
+          aliases:
+          - 10000 CFM AHU
+          typical_rate_range:
+            min: 700000
+            max: 1300000
+          notes: ''
+          data_source: estimated
+        - id: HVC.AHU.CL.003
+          standard_name: AHU Ceiling Suspended 2000 CFM
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016, IS 655
+          dsr_item_ref: ''
+          aliases:
+          - ceiling AHU 2000 CFM
+          - suspended AHU
+          typical_rate_range:
+            min: 180000
+            max: 350000
+          notes: Compact unit for false ceiling
+          data_source: estimated
+  duct_additional:
+    categories:
+      duct_sizes:
+        items:
+        - id: HVC.DCT.GR.005
+          standard_name: GI Duct 200x200mm (0.8mm thick)
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 277, IS 655
+          dsr_item_ref: ''
+          aliases:
+          - GI duct 200x200
+          - small duct
+          typical_rate_range:
+            min: 600
+            max: 1100
+          notes: Per sqm of duct surface area
+          data_source: estimated
+        - id: HVC.DCT.GR.006
+          standard_name: GI Duct 300x200mm (0.8mm thick)
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 277, IS 655
+          dsr_item_ref: ''
+          aliases:
+          - GI duct 300x200
+          typical_rate_range:
+            min: 600
+            max: 1100
+          notes: ''
+          data_source: estimated
+        - id: HVC.DCT.GR.007
+          standard_name: GI Duct 400x200mm (0.8mm thick)
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 277, IS 655
+          dsr_item_ref: ''
+          aliases:
+          - GI duct 400x200
+          typical_rate_range:
+            min: 600
+            max: 1100
+          notes: ''
+          data_source: estimated
+        - id: HVC.DCT.GR.008
+          standard_name: GI Duct 400x300mm (0.8mm thick)
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 277, IS 655
+          dsr_item_ref: ''
+          aliases:
+          - GI duct 400x300
+          typical_rate_range:
+            min: 650
+            max: 1200
+          notes: ''
+          data_source: estimated
+        - id: HVC.DCT.GR.009
+          standard_name: GI Duct 600x300mm (0.8mm thick)
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 277, IS 655
+          dsr_item_ref: ''
+          aliases:
+          - GI duct 600x300
+          typical_rate_range:
+            min: 650
+            max: 1200
+          notes: ''
+          data_source: estimated
+        - id: HVC.DCT.GR.010
+          standard_name: GI Duct 600x400mm (1.0mm thick)
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 277, IS 655
+          dsr_item_ref: ''
+          aliases:
+          - GI duct 600x400
+          typical_rate_range:
+            min: 700
+            max: 1300
+          notes: ''
+          data_source: estimated
+        - id: HVC.DCT.GR.011
+          standard_name: GI Duct 800x400mm (1.0mm thick)
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 277, IS 655
+          dsr_item_ref: ''
+          aliases:
+          - GI duct 800x400
+          typical_rate_range:
+            min: 700
+            max: 1300
+          notes: ''
+          data_source: estimated
+        - id: HVC.DCT.GR.012
+          standard_name: GI Duct 800x600mm (1.0mm thick)
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 277, IS 655
+          dsr_item_ref: ''
+          aliases:
+          - GI duct 800x600
+          typical_rate_range:
+            min: 750
+            max: 1400
+          notes: ''
+          data_source: estimated
+        - id: HVC.DCT.GR.013
+          standard_name: GI Duct 1000x600mm (1.2mm thick)
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 277, IS 655
+          dsr_item_ref: ''
+          aliases:
+          - GI duct 1000x600
+          typical_rate_range:
+            min: 800
+            max: 1500
+          notes: ''
+          data_source: estimated
+        - id: HVC.DCT.GR.014
+          standard_name: GI Duct 1200x600mm (1.2mm thick)
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 277, IS 655
+          dsr_item_ref: ''
+          aliases:
+          - GI duct 1200x600
+          typical_rate_range:
+            min: 850
+            max: 1600
+          notes: ''
+          data_source: estimated
+  diffuser_additional:
+    categories:
+      diffusers:
+        items:
+        - id: HVC.DIF.SQ.004
+          standard_name: Square Diffuser 4-Way 300x300mm
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 655
+          dsr_item_ref: ''
+          aliases:
+          - square diffuser 300
+          - 4 way diffuser 300
+          typical_rate_range:
+            min: 600
+            max: 1200
+          notes: ''
+          data_source: estimated
+        - id: HVC.DIF.SQ.005
+          standard_name: Square Diffuser 4-Way 450x450mm
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 655
+          dsr_item_ref: ''
+          aliases:
+          - square diffuser 450
+          typical_rate_range:
+            min: 800
+            max: 1500
+          notes: ''
+          data_source: estimated
+        - id: HVC.DIF.SQ.006
+          standard_name: Square Diffuser 4-Way 600x600mm
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 655
+          dsr_item_ref: ''
+          aliases:
+          - square diffuser 600
+          typical_rate_range:
+            min: 1000
+            max: 1800
+          notes: ''
+          data_source: estimated
+        - id: HVC.DIF.RD.003
+          standard_name: Round Diffuser 150mm dia
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 655
+          dsr_item_ref: ''
+          aliases:
+          - round diffuser 150mm
+          typical_rate_range:
+            min: 400
+            max: 800
+          notes: ''
+          data_source: estimated
+        - id: HVC.DIF.RD.004
+          standard_name: Round Diffuser 200mm dia
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 655
+          dsr_item_ref: ''
+          aliases:
+          - round diffuser 200mm
+          typical_rate_range:
+            min: 500
+            max: 1000
+          notes: ''
+          data_source: estimated
+        - id: HVC.DIF.RD.005
+          standard_name: Round Diffuser 250mm dia
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 655
+          dsr_item_ref: ''
+          aliases:
+          - round diffuser 250mm
+          typical_rate_range:
+            min: 600
+            max: 1100
+          notes: ''
+          data_source: estimated
+        - id: HVC.DIF.RD.006
+          standard_name: Round Diffuser 300mm dia
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 655
+          dsr_item_ref: ''
+          aliases:
+          - round diffuser 300mm
+          typical_rate_range:
+            min: 700
+            max: 1300
+          notes: ''
+          data_source: estimated
+        - id: HVC.DIF.LS.003
+          standard_name: Linear Slot Diffuser 1m Length
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - hospitality
+          requires: []
+          is_code_ref: IS 655
+          dsr_item_ref: ''
+          aliases:
+          - linear diffuser 1m
+          - slot diffuser 1m
+          typical_rate_range:
+            min: 1500
+            max: 3000
+          notes: Including plenum box
+          data_source: estimated
+        - id: HVC.DIF.LS.004
+          standard_name: Linear Slot Diffuser 2m Length
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - hospitality
+          requires: []
+          is_code_ref: IS 655
+          dsr_item_ref: ''
+          aliases:
+          - linear diffuser 2m
+          - slot diffuser 2m
+          typical_rate_range:
+            min: 2500
+            max: 5000
+          notes: ''
+          data_source: estimated
+        - id: HVC.DIF.LS.005
+          standard_name: Linear Slot Diffuser 3m Length
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - hospitality
+          requires: []
+          is_code_ref: IS 655
+          dsr_item_ref: ''
+          aliases:
+          - linear diffuser 3m
+          typical_rate_range:
+            min: 3500
+            max: 7000
+          notes: ''
+          data_source: estimated
+  piping_additional:
+    categories:
+      chw_piping:
+        items:
+        - id: HVC.PIP.CW.008
+          standard_name: CHW MS Pipe 50mm (2 inch) with Insulation
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - CHW pipe 50mm
+          - chilled water 2 inch
+          typical_rate_range:
+            min: 500
+            max: 950
+          notes: Including fittings and insulation
+          data_source: estimated
+        - id: HVC.PIP.CW.009
+          standard_name: CHW MS Pipe 65mm (2.5 inch) with Insulation
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - CHW pipe 65mm
+          typical_rate_range:
+            min: 650
+            max: 1200
+          notes: ''
+          data_source: estimated
+        - id: HVC.PIP.CW.010
+          standard_name: CHW MS Pipe 80mm (3 inch) with Insulation
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - CHW pipe 80mm
+          typical_rate_range:
+            min: 800
+            max: 1500
+          notes: ''
+          data_source: estimated
+        - id: HVC.PIP.CW.011
+          standard_name: CHW MS Pipe 100mm (4 inch) with Insulation
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - CHW pipe 100mm
+          typical_rate_range:
+            min: 1000
+            max: 1800
+          notes: ''
+          data_source: estimated
+        - id: HVC.PIP.CW.012
+          standard_name: CHW MS Pipe 125mm (5 inch) with Insulation
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - CHW pipe 125mm
+          typical_rate_range:
+            min: 1200
+            max: 2200
+          notes: ''
+          data_source: estimated
+        - id: HVC.PIP.CW.013
+          standard_name: CHW MS Pipe 150mm (6 inch) with Insulation
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - CHW pipe 150mm
+          typical_rate_range:
+            min: 1500
+            max: 2800
+          notes: ''
+          data_source: estimated
+        - id: HVC.PIP.CW.014
+          standard_name: CHW MS Pipe 200mm (8 inch) with Insulation
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - CHW pipe 200mm
+          typical_rate_range:
+            min: 2000
+            max: 3800
+          notes: ''
+          data_source: estimated
+      refrigerant_piping:
+        items:
+        - id: HVC.PIP.RF.005
+          standard_name: Copper Refrigerant Pipe 6.35mm (1/4 inch)
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - copper 6.35mm
+          - 1/4 inch copper refrig
+          typical_rate_range:
+            min: 80
+            max: 160
+          notes: Including insulation
+          data_source: estimated
+        - id: HVC.PIP.RF.006
+          standard_name: Copper Refrigerant Pipe 9.52mm (3/8 inch)
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - copper 9.52mm
+          - 3/8 inch copper
+          typical_rate_range:
+            min: 120
+            max: 230
+          notes: ''
+          data_source: estimated
+        - id: HVC.PIP.RF.007
+          standard_name: Copper Refrigerant Pipe 12.7mm (1/2 inch)
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - copper 12.7mm
+          - 1/2 inch copper refrig
+          typical_rate_range:
+            min: 160
+            max: 300
+          notes: ''
+          data_source: estimated
+        - id: HVC.PIP.RF.008
+          standard_name: Copper Refrigerant Pipe 15.88mm (5/8 inch)
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - copper 15.88mm
+          - 5/8 inch copper
+          typical_rate_range:
+            min: 200
+            max: 380
+          notes: ''
+          data_source: estimated
+        - id: HVC.PIP.RF.009
+          standard_name: Copper Refrigerant Pipe 19.05mm (3/4 inch)
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - copper 19.05mm
+          - 3/4 inch copper refrig
+          typical_rate_range:
+            min: 250
+            max: 480
+          notes: ''
+          data_source: estimated
+  insulation_additional:
+    categories:
+      pipe_insulation:
+        items:
+        - id: HVC.INS.DI.006
+          standard_name: Closed Cell Rubber Insulation 9mm - 15mm Pipe
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 3144, IS 8183
+          dsr_item_ref: ''
+          aliases:
+          - 9mm rubber insulation 15mm pipe
+          - Armaflex 9mm
+          typical_rate_range:
+            min: 40
+            max: 80
+          notes: For small diameter CHW pipes
+          data_source: estimated
+        - id: HVC.INS.DI.007
+          standard_name: Closed Cell Rubber Insulation 13mm - 25mm Pipe
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 3144, IS 8183
+          dsr_item_ref: ''
+          aliases:
+          - 13mm rubber insulation 25mm pipe
+          typical_rate_range:
+            min: 60
+            max: 120
+          notes: ''
+          data_source: estimated
+        - id: HVC.INS.DI.008
+          standard_name: Closed Cell Rubber Insulation 19mm - 50mm Pipe
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 3144, IS 8183
+          dsr_item_ref: ''
+          aliases:
+          - 19mm rubber insulation 50mm pipe
+          typical_rate_range:
+            min: 100
+            max: 200
+          notes: ''
+          data_source: estimated
+        - id: HVC.INS.DI.009
+          standard_name: Closed Cell Rubber Insulation 25mm - 100mm Pipe
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 3144, IS 8183
+          dsr_item_ref: ''
+          aliases:
+          - 25mm rubber insulation 100mm pipe
+          typical_rate_range:
+            min: 180
+            max: 350
+          notes: ''
+          data_source: estimated
+        - id: HVC.INS.DI.010
+          standard_name: Closed Cell Rubber Insulation 25mm - 150mm Pipe
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 3144, IS 8183
+          dsr_item_ref: ''
+          aliases:
+          - 25mm rubber insulation 150mm pipe
+          typical_rate_range:
+            min: 250
+            max: 480
+          notes: ''
+          data_source: estimated
+  controls_bms:
+    categories:
+      bms_points:
+        items:
+        - id: HVC.BMS.PNT.001
+          standard_name: BMS Point - Analog Input (AI) - Temperature/Pressure/Humidity Sensor
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - BMS AI point
+          - analog input point
+          - sensor point BMS
+          typical_rate_range:
+            min: 3000
+            max: 7000
+          notes: Including sensor, wiring, programming
+          data_source: estimated
+        - id: HVC.BMS.PNT.002
+          standard_name: BMS Point - Analog Output (AO) - Valve/Damper Actuator Control
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - BMS AO point
+          - analog output point
+          - actuator control
+          typical_rate_range:
+            min: 4000
+            max: 9000
+          notes: Including actuator, wiring, programming
+          data_source: estimated
+        - id: HVC.BMS.PNT.003
+          standard_name: BMS Point - Digital Input (DI) - Status/Alarm Monitoring
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - BMS DI point
+          - digital input
+          - status monitoring
+          typical_rate_range:
+            min: 1500
+            max: 4000
+          notes: On/off status, alarm, trip signals
+          data_source: estimated
+        - id: HVC.BMS.PNT.004
+          standard_name: BMS Point - Digital Output (DO) - On/Off Command
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - BMS DO point
+          - digital output
+          - on-off command
+          typical_rate_range:
+            min: 2000
+            max: 5000
+          notes: Start/stop, open/close commands
+          data_source: estimated
+        - id: HVC.BMS.PNT.005
+          standard_name: BMS DDC Controller Panel - 32 Point Capacity
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - DDC panel
+          - BMS controller
+          - direct digital controller
+          typical_rate_range:
+            min: 40000
+            max: 90000
+          notes: Including enclosure, power supply, communication
+          data_source: estimated

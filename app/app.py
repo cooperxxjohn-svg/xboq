@@ -15,7 +15,7 @@ import sys
 # Add project to path
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from src.pipeline import FloorPlanPipeline, PipelineConfig, PipelineResult
+from src.floorplan_pipeline import FloorPlanPipeline, PipelineConfig, PipelineResult
 from src.scale import ScaleResult, ScaleMethod
 from src.area import AreaComputer, RoomWithArea
 from src.qc import QualityChecker

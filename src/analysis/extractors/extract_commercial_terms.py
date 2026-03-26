@@ -4,12 +4,13 @@ Commercial / Contract-clause extractor.
 Parses OCR text from conditions, spec, and addendum pages to identify
 key commercial terms needed for bid pricing:
     LD, retention, warranty/DLP, bid validity, EMD, PBG,
-    mobilization advance, insurance, escalation.
+    mobilization advance, insurance, escalation, bid_deadline.
 
 Pure module — no Streamlit, no I/O.
 """
 
 import re
+from datetime import date, datetime
 from typing import List, Optional
 
 
@@ -94,16 +95,45 @@ _PATTERNS = [
         ),
         1, "%", None,
     ),
-    # Insurance / CAR policy
+    # Insurance / CAR policy — Indian (lakh/crore) AND US/international (million/$)
     (
         "insurance",
         re.compile(
-            r'(?:insurance|CAR\s+policy|contractor.?s?\s+all\s+risk)'
+            r'(?:insurance|CAR\s+policy|contractor.?s?\s+all\s+risk'
+            r'|general\s+liability|commercial\s+general\s+liability)'
             r'[^.]{0,120}?'
-            r'(\d[\d,]*(?:\.\d+)?)\s*(lakh|crore|%)',
+            r'(\d[\d,]*(?:\.\d+)?)\s*(lakh|crore|million|%)',
             re.IGNORECASE,
         ),
         1, None, 2,  # unit from group 2
+    ),
+    # Retainage (US equivalent of retention)
+    (
+        "retention",
+        re.compile(
+            r'retainage\s*(?:of|[:\-])?\s*(\d+(?:\.\d+)?)\s*%',
+            re.IGNORECASE,
+        ),
+        1, "%", None,
+    ),
+    # Bid bond / bid security (US) — percentage or dollar amount
+    (
+        "emd_bid_security",
+        re.compile(
+            r'(?:bid\s+bond|bid\s+security|bidder.?s?\s+bond)'
+            r'\s*(?:of|[:\-])?\s*(?:\$\s*)?(\d[\d,]*(?:\.\d+)?)\s*(%|percent|million|thousand)?',
+            re.IGNORECASE,
+        ),
+        1, None, 2,
+    ),
+    # Payment terms — net days (US convention: Net 30, Net 45)
+    (
+        "payment_terms",
+        re.compile(
+            r'(?:net|payment\s+within|pay\s+within)\s+(\d+)\s*(days?|calendar\s+days?)',
+            re.IGNORECASE,
+        ),
+        1, None, 2,
     ),
     # Escalation / price variation clause (boolean detection)
     (
@@ -113,6 +143,72 @@ _PATTERNS = [
             re.IGNORECASE,
         ),
         None, None, None,  # boolean — no numeric value
+    ),
+    # NIT Estimated Cost / Put-to-Tender Amount (India: "Estimated Cost Rs. X Crore")
+    (
+        "nit_estimated_cost",
+        re.compile(
+            r'(?:estimated\s+cost(?:\s+put\s+to\s+tender)?'
+            r'|cost\s+put\s+to\s+tender'
+            r'|tender\s+value'
+            r'|approximate\s+(?:estimated\s+)?cost)'
+            r'\s*(?:of\s+work\s*)?'
+            r'[^.]{0,200}?'
+            r'(?:Rs\.?\s*|INR\s*|₹\s*)?'
+            r'(\d[\d,]*(?:\.\d+)?)\s*(crore|lakh|lac|million|billion)?',
+            re.IGNORECASE,
+        ),
+        1, None, 2,  # value group=1, unit from group 2
+    ),
+    # Sprint 22: Completion time / period
+    (
+        "completion_time",
+        re.compile(
+            r'(?:time\s+for\s+completion|completion\s+period|period\s+of\s+completion'
+            r'|contract\s+period|project\s+duration)'
+            r'\s*(?:of|[:\-])?\s*(\d+)\s*(day|week|month|year|days|weeks|months|years)',
+            re.IGNORECASE,
+        ),
+        1, None, 2,
+    ),
+    # Sprint 22: Payment terms
+    (
+        "payment_terms",
+        re.compile(
+            r'(?:payment\s+(?:shall\s+be\s+made|within|of\s+running\s+account)|running\s+account\s+bill)'
+            r'[^.]{0,80}?(\d+)\s*(day|days|month|months)',
+            re.IGNORECASE,
+        ),
+        1, None, 2,
+    ),
+    # Sprint 22: Dispute resolution / Arbitration
+    (
+        "dispute_resolution",
+        re.compile(
+            r'(?:arbitration|dispute\s+resolution|settlement\s+of\s+disputes?)'
+            r'\s*(?:clause|under|as\s+per)',
+            re.IGNORECASE,
+        ),
+        None, None, None,  # boolean
+    ),
+    # Sprint 22: Security deposit (percentage)
+    (
+        "security_deposit",
+        re.compile(
+            r'security\s+deposit\s*(?:of|[:\-@])?\s*(\d+(?:\.\d+)?)\s*%',
+            re.IGNORECASE,
+        ),
+        1, "%", None,
+    ),
+    # Sprint 22: Penalty clause
+    (
+        "penalty",
+        re.compile(
+            r'penalty\s+(?:of|@|[:\-])?\s*(\d+(?:\.\d+)?)\s*%'
+            r'(?:\s*(?:per|\/|each)\s*(day|week|month))?',
+            re.IGNORECASE,
+        ),
+        1, "%", 2,
     ),
 ]
 
@@ -178,6 +274,33 @@ _FALLBACK_PATTERNS = [
         "mobilization_advance",
         re.compile(
             r'(?:mobilization|mobilisation)\s+advance\s+of\s+(\d+(?:\.\d+)?)\s*%',
+            re.IGNORECASE,
+        ),
+        1, "%", None,
+    ),
+    # Sprint 22: Completion fallback "complete within X months"
+    (
+        "completion_time",
+        re.compile(
+            r'(?:complete|completed)\s+within\s+(\d+)\s*(day|week|month|year)s?',
+            re.IGNORECASE,
+        ),
+        1, None, 2,
+    ),
+    # Sprint 22: Penalty fallback "LD/penalty @ X%"
+    (
+        "penalty",
+        re.compile(
+            r'(?:penalty|LD)\s*@\s*(\d+(?:\.\d+)?)\s*%\s*(?:per\s*(day|week|month))?',
+            re.IGNORECASE,
+        ),
+        1, "%", 2,
+    ),
+    # Sprint 22: Interest-free advance
+    (
+        "mobilization_advance",
+        re.compile(
+            r'(?:interest[\s-]*free\s+advance|advance\s+payment)\s*(?:of|[:\-])?\s*(\d+(?:\.\d+)?)\s*%',
             re.IGNORECASE,
         ),
         1, "%", None,
@@ -294,3 +417,116 @@ def extract_commercial_terms(
                 })
 
     return results
+
+
+# =============================================================================
+# BID DEADLINE EXTRACTION  (absolute date, not duration)
+# =============================================================================
+
+_MONTH_MAP = {
+    "january": 1, "jan": 1,
+    "february": 2, "feb": 2,
+    "march": 3, "mar": 3,
+    "april": 4, "apr": 4,
+    "may": 5,
+    "june": 6, "jun": 6,
+    "july": 7, "jul": 7,
+    "august": 8, "aug": 8,
+    "september": 9, "sep": 9, "sept": 9,
+    "october": 10, "oct": 10,
+    "november": 11, "nov": 11,
+    "december": 12, "dec": 12,
+}
+
+# Patterns that capture an absolute bid/submission/closing date
+_DEADLINE_LABEL = (
+    r'(?:last\s+date\s+(?:for\s+)?(?:submission|receipt)|'
+    r'bid\s+(?:submission|due|closing|deadline)|'
+    r'tender\s+(?:submission|due|closing|deadline)|'
+    r'due\s+date\s+for\s+(?:bid|tender|submission)|'
+    r'closing\s+date|'
+    r'submission\s+deadline|'
+    r'date\s+of\s+(?:bid|tender)\s+(?:submission|opening))'
+)
+
+# DD/MM/YYYY or DD-MM-YYYY or DD.MM.YYYY
+_RE_DMY_NUMERIC = re.compile(
+    _DEADLINE_LABEL + r'\s*[:\-]?\s*'
+    r'(\d{1,2})[/\-.](\d{1,2})[/\-.](\d{4})',
+    re.IGNORECASE,
+)
+
+# DD Month YYYY  (e.g. "15 March 2026")
+_RE_DMY_TEXT = re.compile(
+    _DEADLINE_LABEL + r'\s*[:\-]?\s*'
+    r'(\d{1,2})\s+(' + '|'.join(_MONTH_MAP.keys()) + r')\s+(\d{4})',
+    re.IGNORECASE,
+)
+
+# Month DD, YYYY  (e.g. "March 15, 2026")
+_RE_MDY_TEXT = re.compile(
+    _DEADLINE_LABEL + r'\s*[:\-]?\s*'
+    r'(' + '|'.join(_MONTH_MAP.keys()) + r')\s+(\d{1,2}),?\s+(\d{4})',
+    re.IGNORECASE,
+)
+
+
+def _try_date(day: int, month: int, year: int) -> Optional[str]:
+    """Return ISO date string or None if invalid."""
+    try:
+        return date(year, month, day).isoformat()
+    except ValueError:
+        return None
+
+
+def extract_bid_deadline(text: str, source_page: int) -> Optional[dict]:
+    """
+    Extract an absolute bid submission deadline from OCR text.
+
+    Returns a dict with keys:
+        term_type="bid_deadline", iso_date (str YYYY-MM-DD),
+        snippet, source_page, confidence
+    or None if no deadline found.
+    """
+    if not text or not text.strip():
+        return None
+
+    def _make(iso: str, m) -> dict:
+        snippet = _snippet_around(text, m.start(), m.end())
+        return {
+            "term_type":  "bid_deadline",
+            "iso_date":   iso,
+            "snippet":    snippet,
+            "source_page": source_page,
+            "confidence": 0.80,
+        }
+
+    # DD/MM/YYYY
+    m = _RE_DMY_NUMERIC.search(text)
+    if m:
+        d, mo, y = int(m.group(1)), int(m.group(2)), int(m.group(3))
+        iso = _try_date(d, mo, y)
+        if iso:
+            return _make(iso, m)
+
+    # DD Month YYYY
+    m = _RE_DMY_TEXT.search(text)
+    if m:
+        d = int(m.group(1))
+        mo = _MONTH_MAP.get(m.group(2).lower(), 0)
+        y = int(m.group(3))
+        iso = _try_date(d, mo, y) if mo else None
+        if iso:
+            return _make(iso, m)
+
+    # Month DD, YYYY
+    m = _RE_MDY_TEXT.search(text)
+    if m:
+        mo = _MONTH_MAP.get(m.group(1).lower(), 0)
+        d = int(m.group(2))
+        y = int(m.group(3))
+        iso = _try_date(d, mo, y) if mo else None
+        if iso:
+            return _make(iso, m)
+
+    return None

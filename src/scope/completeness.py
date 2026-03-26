@@ -263,7 +263,7 @@ class CompletenessScorer:
         score.evidence_score = min(
             (total_evidence * 10 + total_keywords * 5) / len(items),
             100
-        )
+        ) if items else 0
 
         # Schedule score (based on has_schedule flag)
         schedule_items = [item for item in items if item.has_schedule]

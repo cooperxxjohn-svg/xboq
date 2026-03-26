@@ -166,11 +166,11 @@ class ConfidenceCalculator:
                 by_category[category] = []
             by_category[category].append(conf)
 
-        overall = sum(all_confidences) / len(all_confidences)
+        overall = sum(all_confidences) / len(all_confidences) if all_confidences else 0.5
 
         # Average by category
         category_averages = {
-            cat: sum(confs) / len(confs)
+            cat: sum(confs) / len(confs) if confs else 0.5
             for cat, confs in by_category.items()
         }
 

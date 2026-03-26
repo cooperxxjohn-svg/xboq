@@ -22,6 +22,27 @@ from .reconciler import (
 
 
 # =============================================================================
+# A5: QUANTITY RECONCILIATION EXTENSION CONSTANTS
+# =============================================================================
+
+# Expected prelims as % of civil cost (band: min, max)
+_PRELIMS_PCT_BY_TYPE: dict = {
+    "hostel":      (0.08, 0.10),
+    "hospital":    (0.10, 0.12),
+    "office":      (0.07, 0.09),
+    "residential": (0.07, 0.09),
+    "academic":    (0.08, 0.10),
+    "industrial":  (0.06, 0.08),
+    "default":     (0.05, 0.12),
+}
+_PAINT_RATIO_MIN = 2.5
+_PAINT_RATIO_MAX = 4.0
+_PAINT_RATIO_MID = 3.2
+_WP_WET_FRACTION_MIN = 0.08
+_WP_WET_FRACTION_MAX = 0.25
+
+
+# =============================================================================
 # FINISH KEYWORD DETECTION
 # =============================================================================
 
@@ -80,6 +101,7 @@ def reconcile_quantities(
     schedules: List[dict],
     boq_items: List[dict],
     callouts: List[dict],
+    qto_context: Optional[dict] = None,
 ) -> List[dict]:
     """
     Build quantity reconciliation table comparing counts across sources.
@@ -176,6 +198,257 @@ def reconcile_quantities(
             "action": None,
             "evidence_refs": [],
             "notes": "",
+        })
+
+    # Sprint 22 Phase 4: BOQ item-level reconciliation against structural takeoff
+    # Compare key BOQ items (concrete, steel) against drawing-derived quantities
+    recon_rows.extend(
+        _reconcile_boq_vs_structural(boq_items, quantities)
+    )
+
+    # A5: Extend with prelims, waterproofing, and painting area checks
+    if qto_context:
+        recon_rows = list(recon_rows) if not isinstance(recon_rows, list) else recon_rows
+        recon_rows.extend(_reconcile_prelims(
+            boq_items,
+            qto_context.get("total_area_sqm", 0.0),
+            qto_context.get("building_type", "default"),
+        ))
+        wp_wet   = qto_context.get("wp_wet_area_sqm", 0.0)
+        wp_roof  = qto_context.get("wp_roof_area_sqm", 0.0)
+        total_a  = qto_context.get("total_area_sqm", 0.0)
+        paint_w  = qto_context.get("paint_int_wall_sqm", 0.0)
+        if wp_wet > 0 or wp_roof > 0:
+            recon_rows.extend(_reconcile_waterproofing_area(wp_wet, wp_roof, total_a))
+        if paint_w > 0:
+            recon_rows.extend(_reconcile_painting_area(paint_w, total_a))
+
+    return recon_rows
+
+
+# =============================================================================
+# A5: PRELIMS, WATERPROOFING, AND PAINTING RECONCILIATION HELPERS
+# =============================================================================
+
+def _reconcile_prelims(boq_items: list, total_area_sqm: float, building_type: str = "default") -> list:
+    """Check prelims BOQ total falls within expected % of civil cost."""
+    prelims_keywords = {"prelim", "mobilisation", "site establishment", "overhead", "temporary work"}
+    civil_cost = sum(
+        float(i.get("qty") or 0) * float(i.get("rate_inr") or i.get("rate") or 0)
+        for i in boq_items
+        if not any(k in (i.get("description") or "").lower() for k in prelims_keywords)
+    )
+    prelims_cost = sum(
+        float(i.get("qty") or 0) * float(i.get("rate_inr") or i.get("rate") or 0)
+        for i in boq_items
+        if any(k in (i.get("description") or "").lower() for k in prelims_keywords)
+    )
+    if civil_cost <= 0:
+        return []
+    actual_pct = prelims_cost / civil_cost
+    bt = (building_type or "default").lower()
+    band = next(
+        (v for k, v in _PRELIMS_PCT_BY_TYPE.items() if k != "default" and k in bt),
+        _PRELIMS_PCT_BY_TYPE["default"],
+    )
+    lo, hi = band
+    mismatch = not (lo <= actual_pct <= hi)
+    return [{
+        "category": "prelims_pct",
+        "schedule_count": None,
+        "boq_count": round(actual_pct * 100, 2),
+        "drawing_count": round(((lo + hi) / 2) * 100, 2),
+        "mismatch": mismatch,
+        "max_delta": round(abs(actual_pct - (lo + hi) / 2) * 100, 2),
+        "preferred_source": None,
+        "preferred_qty": None,
+        "action": "review_prelims_cost" if mismatch else None,
+        "evidence_refs": [],
+        "notes": f"Prelims {actual_pct*100:.1f}% of civil cost; expected {lo*100:.0f}–{hi*100:.0f}%",
+    }]
+
+
+def _reconcile_waterproofing_area(wp_wet_area_sqm: float, wp_roof_area_sqm: float, total_area_sqm: float) -> list:
+    """Waterproofing area sanity check."""
+    rows = []
+    if total_area_sqm <= 0:
+        return rows
+    if wp_wet_area_sqm > 0:
+        ratio = wp_wet_area_sqm / total_area_sqm
+        expected = total_area_sqm * 0.15
+        mismatch = not (_WP_WET_FRACTION_MIN <= ratio <= _WP_WET_FRACTION_MAX)
+        rows.append({
+            "category": "wp_wet_area",
+            "schedule_count": None,
+            "boq_count": round(wp_wet_area_sqm, 1),
+            "drawing_count": round(expected, 1),
+            "mismatch": mismatch,
+            "max_delta": round(abs(wp_wet_area_sqm - expected), 1),
+            "preferred_source": None,
+            "preferred_qty": None,
+            "action": "verify_wet_area" if mismatch else None,
+            "evidence_refs": [],
+            "notes": f"WP wet area {wp_wet_area_sqm:.0f} sqm = {ratio*100:.1f}% of BUA; expected 8–25%",
+        })
+    if wp_roof_area_sqm > 0:
+        expected_roof = total_area_sqm * 0.20
+        mismatch = wp_roof_area_sqm < expected_roof * 0.4
+        rows.append({
+            "category": "wp_roof_area",
+            "schedule_count": None,
+            "boq_count": round(wp_roof_area_sqm, 1),
+            "drawing_count": round(expected_roof, 1),
+            "mismatch": mismatch,
+            "max_delta": round(abs(wp_roof_area_sqm - expected_roof), 1),
+            "preferred_source": None,
+            "preferred_qty": None,
+            "action": "verify_roof_waterproofing" if mismatch else None,
+            "evidence_refs": [],
+            "notes": f"WP roof area {wp_roof_area_sqm:.0f} sqm vs expected ≥{expected_roof:.0f} sqm",
+        })
+    return rows
+
+
+def _reconcile_painting_area(paint_int_wall_sqm: float, total_area_sqm: float) -> list:
+    """Painting area sanity check: interior wall paint expected 2.5–4.0× floor area."""
+    if total_area_sqm <= 0 or paint_int_wall_sqm <= 0:
+        return []
+    ratio = paint_int_wall_sqm / total_area_sqm
+    expected = total_area_sqm * _PAINT_RATIO_MID
+    mismatch = not (_PAINT_RATIO_MIN <= ratio <= _PAINT_RATIO_MAX)
+    return [{
+        "category": "painting_int_wall",
+        "schedule_count": None,
+        "boq_count": round(paint_int_wall_sqm, 1),
+        "drawing_count": round(expected, 1),
+        "mismatch": mismatch,
+        "max_delta": round(abs(paint_int_wall_sqm - expected), 1),
+        "preferred_source": None,
+        "preferred_qty": None,
+        "action": "verify_painting_area" if mismatch else None,
+        "evidence_refs": [],
+        "notes": f"Int. paint area {paint_int_wall_sqm:.0f} sqm = {ratio:.1f}× BUA; expected 2.5–4.0×",
+    }]
+
+
+# =============================================================================
+# Sprint 22: BOQ vs STRUCTURAL TAKEOFF RECONCILIATION
+# =============================================================================
+
+_BOQ_CONCRETE_RE = re.compile(
+    r'\b(rcc|pcc|concrete|m\s*\d{2})\b', re.IGNORECASE
+)
+_BOQ_STEEL_RE = re.compile(
+    r'\b(reinforcement|rebar|steel|tmt|fe\s*\d{3}|bar\s*bending)\b', re.IGNORECASE
+)
+_BOQ_MASONRY_RE = re.compile(
+    r'\b(brick|block|masonry|aac)\b', re.IGNORECASE
+)
+_BOQ_PLASTER_RE = re.compile(
+    r'\b(plaster|rendering|cement\s*mortar)\b', re.IGNORECASE
+)
+_BOQ_PAINT_RE = re.compile(
+    r'\b(paint|primer|putty|distemper|emulsion)\b', re.IGNORECASE
+)
+
+
+def _reconcile_boq_vs_structural(
+    boq_items: List[dict],
+    quantities: List[dict],
+) -> List[dict]:
+    """Reconcile BOQ items against structural/drawing-derived quantities.
+
+    Groups BOQ items by material type (concrete, steel, masonry, etc.)
+    and compares against any drawing-derived quantities of the same type.
+
+    Returns additional reconciliation rows for significant discrepancies.
+    """
+    if not boq_items:
+        return []
+
+    recon_rows = []
+
+    # Group BOQ items by material type
+    material_groups: Dict[str, List[dict]] = {
+        "concrete": [],
+        "steel": [],
+        "masonry": [],
+        "plaster": [],
+        "paint": [],
+    }
+    material_re = {
+        "concrete": _BOQ_CONCRETE_RE,
+        "steel": _BOQ_STEEL_RE,
+        "masonry": _BOQ_MASONRY_RE,
+        "plaster": _BOQ_PLASTER_RE,
+        "paint": _BOQ_PAINT_RE,
+    }
+
+    for item in boq_items:
+        desc = (item.get("description") or "").lower()
+        for mat_type, pattern in material_re.items():
+            if pattern.search(desc):
+                material_groups[mat_type].append(item)
+                break  # assign to first matching group
+
+    # Get drawing-derived quantities for comparison
+    drawing_qtys: Dict[str, float] = {}
+    for q in (quantities or []):
+        if q.get("source_type") in ("callout", "schedule"):
+            item_lower = q.get("item", "").lower()
+            for mat_type, pattern in material_re.items():
+                if pattern.search(item_lower):
+                    drawing_qtys[mat_type] = drawing_qtys.get(mat_type, 0) + (q.get("qty") or 0)
+
+    # Build reconciliation rows for each material group
+    for mat_type, items in material_groups.items():
+        if not items:
+            continue
+
+        # Sum BOQ quantities for this material type
+        boq_total = 0.0
+        boq_unit = None
+        for item in items:
+            qty = item.get("qty")
+            if qty is not None:
+                try:
+                    boq_total += float(qty)
+                except (TypeError, ValueError):
+                    pass
+            if not boq_unit and item.get("unit"):
+                boq_unit = item.get("unit")
+
+        if boq_total <= 0:
+            continue
+
+        drawing_total = drawing_qtys.get(mat_type)
+
+        # Calculate delta percentage
+        delta_pct = None
+        mismatch = False
+        if drawing_total is not None and drawing_total > 0:
+            delta_pct = ((boq_total - drawing_total) / drawing_total) * 100
+            mismatch = abs(delta_pct) > 15
+
+        recon_rows.append({
+            "category": mat_type,
+            "schedule_count": None,
+            "boq_count": round(boq_total, 1),
+            "drawing_count": round(drawing_total, 1) if drawing_total is not None else None,
+            "boq_unit": boq_unit,
+            "boq_item_count": len(items),
+            "mismatch": mismatch,
+            "max_delta": round(abs(delta_pct), 1) if delta_pct is not None else 0,
+            "delta_pct": round(delta_pct, 1) if delta_pct is not None else None,
+            "preferred_source": None,
+            "preferred_qty": None,
+            "action": "verify_qty" if mismatch else None,
+            "evidence_refs": [],
+            "notes": (
+                f"BOQ {mat_type}: {boq_total:.1f} {boq_unit or ''} from {len(items)} items"
+                + (f", drawing: {drawing_total:.1f}" if drawing_total else "")
+                + (f", delta: {delta_pct:+.1f}%" if delta_pct is not None else "")
+            ),
         })
 
     return recon_rows

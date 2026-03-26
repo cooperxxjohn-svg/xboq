@@ -48,6 +48,7 @@ BOQ SKELETON (Lines 660-708):
 ================================================================================
 """
 
+from abc import ABC, abstractmethod
 from typing import List, Dict, Any, Optional, Tuple
 from pathlib import Path
 import json
@@ -69,13 +70,14 @@ from src.models.analysis_models import (
 # DEPENDENCY RULES
 # =============================================================================
 
-class DependencyRule:
-    """Base class for dependency rules."""
+class DependencyRule(ABC):
+    """Abstract base class for dependency rules."""
 
     def __init__(self, rule_id: str, description: str):
         self.rule_id = rule_id
         self.description = description
 
+    @abstractmethod
     def check(self, graph: PlanSetGraph, run_coverage: Optional['RunCoverage'] = None) -> Optional[Blocker]:
         """
         Check the rule against the graph.
@@ -87,7 +89,7 @@ class DependencyRule:
         Returns:
             Blocker if rule is violated, None otherwise
         """
-        raise NotImplementedError
+        ...
 
 
 class DoorsNeedScheduleRule(DependencyRule):
@@ -851,6 +853,19 @@ class DependencyReasoner:
             trades_with_evidence.add(Trade.ARCHITECTURAL)
         if graph.all_room_names:
             trades_with_evidence.add(Trade.FINISHES)
+
+        # BOQ evidence path for trades that have no drawing discipline / sheet type
+        # (Fix 7: civil and general can now get non-zero coverage from BOQ text).
+        _BOQ_TO_TRADE = {
+            "civil":   Trade.CIVIL,
+            "general": Trade.GENERAL,
+        }
+        for trade_name, trade_enum in _BOQ_TO_TRADE.items():
+            if (
+                trade_name in (graph.boq_trades_detected or [])
+                and trade_enum not in trades_with_evidence
+            ):
+                trades_with_evidence.add(trade_enum)
 
         # Group blockers by ALL affected trades (primary + affected_trades)
         blockers_by_trade: Dict[Trade, List[Blocker]] = {}

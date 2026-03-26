@@ -1,0 +1,1702 @@
+rules:
+- id: RFI-MS-PT-001
+  trigger_type: missing_spec
+  trigger_keywords:
+  - paint coats
+  - number of coats
+  - coat specification
+  trigger_trade: painting
+  question_template: 'Paint specification mentions painting but number of coats is unclear for {area}. Please clarify: (a) Number of finish coats — 2 coats (standard) or 3 coats (premium)? (b) Is the coat
+    count inclusive or exclusive of primer coat? (c) Dry film thickness (DFT) per coat — 30-40 microns per coat for emulsion? (d) Is sanding/rubbing between coats required for premium finish? (e) Touch-up
+    coat after other trades complete — is this a separate measured item or included?
+
+    '
+  why_it_matters: 'Each additional paint coat adds 15-20% to painting cost. Ambiguity about coat count leads to disputes during execution. Touch-up scope is a common claim item.
+
+    '
+  suggested_resolution: Specify exact number of coats for primer and finish paint separately. Clarify if touch-up after trades is included in rates or measured separately.
+  priority: medium
+  building_types:
+  - all
+  package: painting
+- id: RFI-MS-PT-002
+  trigger_type: missing_spec
+  trigger_keywords:
+  - paint brand
+  - paint manufacturer
+  - approved paint
+  trigger_trade: painting
+  question_template: 'Paint brand/manufacturer not specified or marked as "approved make" for {area}. Please clarify: (a) Approved brands — Asian Paints, Berger, Nerolac, or all three interchangeable? (b)
+    Product line within brand — economy (Tractor), mid-range (Apcolite), or premium (Royale)? (c) Are brand equivalents acceptable or is it a single-brand specification? (d) Who approves the shade — architect,
+    client, or PMC? (e) Is a paint mock-up/sample panel required before full application?
+
+    '
+  why_it_matters: 'Paint product line within the same brand varies by 2-3x in cost. "Approved make" without product line specification leads to lowest-cost interpretation by contractor and quality disputes
+    with client.
+
+    '
+  suggested_resolution: Specify paint brand AND product line (e.g., Asian Paints Royale Luxury Emulsion). Provide shade card reference and mock-up approval process.
+  priority: medium
+  building_types:
+  - all
+  package: painting
+- id: RFI-MS-PT-003
+  trigger_type: missing_spec
+  trigger_keywords:
+  - putty
+  - wall putty
+  - paint putty
+  - surface preparation
+  trigger_trade: painting
+  question_template: 'Wall putty specification is vague for {area}. Please clarify: (a) Putty type — acrylic wall putty (water-based) or white cement putty? (b) Number of coats — 1 coat (budget) or 2 coats
+    (standard for smooth finish)? (c) Putty brand — same as paint manufacturer or independent (Birla, JK, etc.)? (d) Application method — manual (hand applied) or spray applied? (e) Is putty required on
+    ceilings or walls only?
+
+    '
+  why_it_matters: 'Putty is 30-40% of total painting cost. 2-coat putty costs nearly double 1-coat. Acrylic putty provides better adhesion but costs more than white cement putty. Missing putty on ceilings
+    is a common scope dispute.
+
+    '
+  suggested_resolution: Specify putty type, number of coats, and application scope (walls + ceiling or walls only). Include brand and application method.
+  priority: medium
+  building_types:
+  - all
+  package: painting
+- id: RFI-MS-PT-004
+  trigger_type: missing_spec
+  trigger_keywords:
+  - paint finish
+  - matt
+  - sheen
+  - gloss
+  - finish type
+  trigger_trade: painting
+  question_template: 'Paint finish type (matt/sheen/gloss) not clearly specified for {area}. Please clarify: (a) Wall finish — dead matt, soft sheen (silk), or semi-gloss? (b) Ceiling finish — matt (standard)
+    or same as wall finish? (c) Woodwork finish — enamel gloss, semi-gloss, or satin? (d) Metal surface finish — enamel or synthetic enamel? Gloss level? (e) Is washable/scrubbable paint required for high-traffic
+    areas (corridors, lobbies)?
+
+    '
+  why_it_matters: 'Finish type affects appearance, durability, and cost. Silk/sheen finish costs 1.5-2x matt finish. Washable paint is essential for common areas but adds 30% cost. Different finishes on
+    adjacent surfaces look inconsistent.
+
+    '
+  suggested_resolution: Specify paint finish type for each area — walls, ceilings, woodwork, and metal. Identify areas requiring washable/scrubbable finish.
+  priority: low
+  building_types:
+  - all
+  package: painting
+- id: RFI-MS-PT-005
+  trigger_type: missing_spec
+  trigger_keywords:
+  - texture paint
+  - textured finish
+  - wall texture
+  - designer paint
+  trigger_trade: painting
+  question_template: 'Texture paint specification is incomplete for {area}. Please clarify: (a) Texture type — sand texture, rustic, stone effect, metallic, or custom pattern? (b) Application method — roller,
+    trowel, comb, spray, or stencil? (c) Product name — e.g., Asian Paints Royale Play, Berger Silk Glamor? (d) Base coat and top coat colors — same or contrasting? (e) Coverage area — accent wall only,
+    entire room, or specific surfaces? (f) Is a sample panel/mock-up required for approval before full application?
+
+    '
+  why_it_matters: 'Texture paint costs 3-8x regular emulsion paint. Application method significantly affects the final look and cost. Without specific product reference, the outcome varies drastically between
+    applicators.
+
+    '
+  suggested_resolution: Provide texture paint product name, technique reference (photo or sample), and coverage area. Include mock-up approval requirement.
+  priority: medium
+  building_types:
+  - all
+  package: painting
+- id: RFI-MS-PT-006
+  trigger_type: missing_spec
+  trigger_keywords:
+  - primer type
+  - primer specification
+  - primer coat
+  trigger_trade: painting
+  question_template: 'Primer type mentioned but specification incomplete for {area}. Please clarify: (a) Wall primer — cement primer (for new plaster) or acrylic primer (for repainting)? (b) Is alkali-resistant
+    primer required for basements and areas with moisture exposure? (c) Metal primer — red oxide primer, zinc chromate, or epoxy primer? (d) Is anti-fungal primer required for coastal/humid locations? (e)
+    Primer brand — must match finish paint manufacturer''s system?
+
+    '
+  why_it_matters: 'Primer compatibility with finish paint is critical for adhesion and warranty. Using incorrect primer voids paint manufacturer warranty. Anti-fungal primer adds 10-15% cost but prevents
+    long-term fungal growth in humid climates.
+
+    '
+  suggested_resolution: Specify primer type for each substrate (plaster, metal, wood) with brand and product name. Confirm compatibility with finish paint system.
+  priority: low
+  building_types:
+  - all
+  package: painting
+- id: RFI-MS-TL-001
+  trigger_type: missing_spec
+  trigger_keywords:
+  - tile size
+  - tile dimension
+  - tile format
+  trigger_trade: flooring
+  question_template: 'Tile is specified but size/format is unclear for {area}. Please clarify: (a) Tile size — 300x300mm, 600x600mm, 600x1200mm, 800x800mm, or 1200x1200mm? (b) Is the size consistent across
+    all rooms or varies by area type? (c) Wall tile size — same as floor tile or different (typically 300x600mm or 300x450mm)? (d) Is rectified (precision-cut) tile required for narrow grout joints (1.5mm)?
+    (e) Are cut pieces acceptable or does layout require full tiles only?
+
+    '
+  why_it_matters: 'Tile size determines adhesive type (large format needs C2 class adhesive), substrate flatness requirement, labor productivity (large tiles need 2 workers), and wastage percentage (3%
+    for standard vs 10-12% for large format or diagonal layout).
+
+    '
+  suggested_resolution: Confirm tile size for each area type (living, bedroom, bathroom floor, bathroom wall, kitchen, balcony). Update floor finish schedule.
+  priority: medium
+  building_types:
+  - all
+  package: flooring
+- id: RFI-MS-TL-002
+  trigger_type: missing_spec
+  trigger_keywords:
+  - tile grade
+  - tile quality
+  - tile class
+  - first quality
+  trigger_trade: flooring
+  question_template: 'Tile quality grade not specified or mentioned as "first quality" for {area}. Please clarify: (a) Quality classification — ISO 13006 Grade 1 (first quality) or commercial grade? (b)
+    Water absorption class — BIa (porcelain, less than 0.5%), BIb (vitrified, less than 3%), or BII (ceramic, 6-10%)? (c) PEI (wear rating) for floor tiles — PEI 3 (residential), PEI 4 (commercial), or
+    PEI 5 (heavy traffic)? (d) Breaking strength and modulus of rupture requirement? (e) Surface hardness — Mohs scale requirement for high-traffic areas?
+
+    '
+  why_it_matters: '"First quality" is a vague term — it could mean best of any category. Water absorption class determines if tile is suitable for wet areas and frost zones. PEI rating determines suitability
+    for traffic level. Wrong grade causes premature wear and cracking.
+
+    '
+  suggested_resolution: Specify tile technical parameters — water absorption (%), PEI rating, breaking strength, and surface hardness for each application area.
+  priority: medium
+  building_types:
+  - all
+  package: flooring
+- id: RFI-MS-TL-003
+  trigger_type: missing_spec
+  trigger_keywords:
+  - tile brand
+  - tile manufacturer
+  - approved tile
+  trigger_trade: flooring
+  question_template: 'Tile brand mentioned as "approved make" without specific product for {area}. Please clarify: (a) Approved brands — Kajaria, Somany, Johnson, RAK, or others? (b) Product line/series
+    within brand — value range, mid-range, or premium? (c) Price range per sqft for budgeting — INR 30-50, 50-80, or 80-150? (d) Is imported tile considered or only domestic manufacture? (e) Tile collection/catalog
+    reference number or name?
+
+    '
+  why_it_matters: 'Same manufacturer has tiles ranging from INR 25/sqft to INR 300/sqft. Without product line specification, contractor prices the cheapest option while designer expects premium. This is
+    the most common finishing specification dispute.
+
+    '
+  suggested_resolution: Specify tile brand, product line (or catalog reference), and indicative price range. Provide sample approval process.
+  priority: high
+  building_types:
+  - all
+  package: flooring
+- id: RFI-MS-TL-004
+  trigger_type: missing_spec
+  trigger_keywords:
+  - tile adhesive
+  - tile fixing
+  - adhesive type
+  - mortar bed
+  trigger_trade: flooring
+  question_template: 'Tile fixing method/adhesive specification vague for {area}. Please clarify: (a) Fixing method — cement mortar bed (thick bed) or tile adhesive (thin bed)? (b) Adhesive class — C1 (standard),
+    C2 (improved), or C2TE (deformable, for large format)? (c) Adhesive brand — MYK Laticrete, Ardex Endura, Fosroc, or equivalent? (d) Is back-buttering required for tiles larger than 600x600mm? (e) Open
+    time requirement — standard or extended for site conditions?
+
+    '
+  why_it_matters: 'Adhesive specification is critical for tile longevity. Wrong adhesive class causes tile debonding (hollow tiles). Large format tiles on C1 adhesive is a known failure mode. Adhesive cost
+    is 8-15% of total tiling cost.
+
+    '
+  suggested_resolution: Specify tile adhesive class and brand for each tile type/size. Confirm back-buttering requirement for large format tiles.
+  priority: medium
+  building_types:
+  - all
+  package: flooring
+- id: RFI-MS-TL-005
+  trigger_type: missing_spec
+  trigger_keywords:
+  - grout
+  - grout color
+  - grout type
+  - tile joint
+  trigger_trade: flooring
+  question_template: 'Tile grout specification incomplete for {area}. Please clarify: (a) Grout type — cementitious, epoxy, or hybrid polymer? (b) Grout joint width — 1.5mm (rectified tile), 3mm (standard),
+    or 5mm (rustic)? (c) Grout color — matching tile, contrasting, or specific color code? (d) Is epoxy grout required for wet areas, kitchens, and laboratories? (e) Grout brand — MYK Laticrete, Ardex,
+    or tile adhesive manufacturer''s matching product?
+
+    '
+  why_it_matters: 'Grout type affects stain resistance, water resistance, and maintenance. Epoxy grout costs 5-8x cementitious but is essential in wet areas and food preparation zones. Wrong grout color
+    is an aesthetic defect requiring rework.
+
+    '
+  suggested_resolution: Specify grout type and color for each area. Mandate epoxy grout for wet areas and food zones. Confirm grout brand.
+  priority: low
+  building_types:
+  - all
+  package: flooring
+- id: RFI-MS-TL-006
+  trigger_type: missing_spec
+  trigger_keywords:
+  - anti-skid
+  - slip resistance
+  - anti-slip
+  - coefficient of friction
+  trigger_trade: flooring
+  question_template: 'Anti-skid/slip resistance specification vague for {area}. Please clarify: (a) Required slip resistance rating — DIN 51130 (R9-R13) or DCOF (ANSI A137.1)? (b) Minimum dynamic coefficient
+    of friction (DCOF) — 0.42 (ANSI minimum for wet areas)? (c) Which areas require anti-skid — bathrooms, pool deck, ramps, kitchen, external areas? (d) Is testing/certification of anti-skid property required
+    from tile supplier? (e) Surface type — structured, matt, or specifically manufactured anti-skid?
+
+    '
+  why_it_matters: 'Slip resistance is a safety and liability issue. Many tenders mention "anti-skid" without specifying the standard. R9 (barefoot safe) is very different from R12 (industrial). Untested
+    tiles can fail slip resistance requirements post-installation.
+
+    '
+  suggested_resolution: Specify anti-skid standard and minimum rating for each wet/external area. Require slip resistance test certificate from tile manufacturer.
+  priority: high
+  building_types:
+  - all
+  package: flooring
+- id: RFI-MS-TL-007
+  trigger_type: missing_spec
+  trigger_keywords:
+  - tile laying pattern
+  - herringbone
+  - diagonal
+  - floor layout
+  trigger_trade: flooring
+  question_template: 'Tile laying pattern mentioned but detail is insufficient for {area}. Please clarify: (a) Pattern type — straight bond, running bond (50% offset), herringbone (45 or 90 degree), or
+    diagonal? (b) Direction of laying — parallel to longest wall, perpendicular to entrance, or as per drawing? (c) Border treatment — single row border, double border, or no border? (d) Is a floor pattern
+    drawing provided for each typical room? (e) Centerline alignment — from room center, from entrance, or from a reference wall?
+
+    '
+  why_it_matters: 'Laying pattern affects wastage (straight 3-5%, diagonal/herringbone 10-15%), labor time, and visual outcome. Without a layout drawing, the tiler''s interpretation may not match the designer''s
+    intent, causing rework.
+
+    '
+  suggested_resolution: Provide floor tile layout drawing for each typical room type showing pattern, starting point, and border detail.
+  priority: low
+  building_types:
+  - all
+  package: flooring
+- id: RFI-MS-PB-001
+  trigger_type: missing_spec
+  trigger_keywords:
+  - pipe material
+  - GI pipe
+  - CPVC
+  - PPR
+  - uPVC
+  - pipe type
+  trigger_trade: plumbing
+  question_template: 'Pipe material mentioned but specification incomplete for {area}. Please clarify: (a) Cold water supply — CPVC, PPR, composite (CPVC + PPR), or GI? (b) Hot water supply — CPVC (up to
+    93C), PPR (up to 95C), or copper? (c) Soil/waste — SWR (soil waste rain) uPVC, or cast iron (for noise-sensitive areas)? (d) Rainwater — uPVC or HDPE? Specification standard — IS 4985 or IS 14151? (e)
+    Pressure rating — PN 6, PN 10, or PN 16 for supply pipes? (f) Pipe brand — Ashirvad, Finolex, Supreme, Astral, or approved equivalent?
+
+    '
+  why_it_matters: 'Pipe material affects cost (PPR is 1.5x CPVC), joining method (PPR needs heat fusion equipment), and durability. GI pipes are obsolete for water supply due to corrosion. Cast iron soil
+    pipes cost 3x uPVC but reduce noise significantly in multi-story buildings.
+
+    '
+  suggested_resolution: Specify pipe material and brand for each system (cold water, hot water, soil, waste, vent, rainwater) with pressure rating and IS standard reference.
+  priority: high
+  building_types:
+  - all
+  package: plumbing
+- id: RFI-MS-PB-002
+  trigger_type: missing_spec
+  trigger_keywords:
+  - pipe diameter
+  - pipe size
+  - pipe dimension
+  - nominal bore
+  trigger_trade: plumbing
+  question_template: 'Pipe sizes mentioned but sizing basis not clear for {area}. Please clarify: (a) Is pipe sizing based on fixture unit calculation (IS 2065) or hydraulic analysis? (b) Riser pipe sizes
+    — are they consistent per floor or reducing with height? (c) Branch pipe sizes — minimum diameter for each fixture type? (d) Vent pipe sizing — based on fixture units or minimum 75mm throughout? (e)
+    Is the sizing calculation document available for review?
+
+    '
+  why_it_matters: 'Pipe sizing determines water pressure, flow rate, and noise. Under-sized pipes cause low pressure at upper floors. Over-sized pipes waste material and increase shaft space. Sizing calculation
+    is needed for design verification.
+
+    '
+  suggested_resolution: Provide pipe sizing calculation showing fixture units, pipe sizes, and velocity check. Include riser diagram with marked sizes.
+  priority: medium
+  building_types:
+  - all
+  package: plumbing
+- id: RFI-MS-PB-003
+  trigger_type: missing_spec
+  trigger_keywords:
+  - pipe pressure
+  - pressure rating
+  - working pressure
+  - test pressure
+  trigger_trade: plumbing
+  question_template: 'Pipe pressure rating specification incomplete for {area}. Please clarify: (a) Working pressure — what is the maximum static pressure at lowest point in the system? (b) Pipe pressure
+    class — PN 6 (6 bar), PN 10 (10 bar), or PN 16 (16 bar)? (c) Test pressure — 1.5x working pressure as per IS or specific value? (d) Pressure reducing valve (PRV) — required at which floors (typically
+    above 6 bar static)? (e) Is pressure zoning done for high-rise buildings?
+
+    '
+  why_it_matters: 'Incorrect pressure rating causes pipe burst, joint failure, and water damage. High-rise buildings generate significant static pressure at lower floors (1 bar per 10m height). PRV and
+    pressure zoning are essential for buildings above G+5.
+
+    '
+  suggested_resolution: Provide pressure analysis showing static pressure at each floor. Specify pipe pressure class and PRV locations.
+  priority: high
+  building_types:
+  - all
+  package: plumbing
+- id: RFI-MS-PB-004
+  trigger_type: missing_spec
+  trigger_keywords:
+  - pipe joint
+  - joint type
+  - pipe connection
+  - coupling
+  trigger_trade: plumbing
+  question_template: 'Pipe jointing method not clearly specified for {area}. Please clarify: (a) CPVC jointing — solvent cement (one-step or two-step) or threaded? (b) PPR jointing — socket fusion (butt/electro-fusion
+    for large diameter)? (c) GI jointing — threaded with teflon tape or flanged? (d) uPVC (SWR) — solvent cement or ring seal (rubber gasket)? (e) HDPE — butt fusion or electro-fusion? (f) Transition joints
+    — what method for joining dissimilar pipe materials?
+
+    '
+  why_it_matters: 'Joint method is the most critical factor for leak-free plumbing. Wrong solvent cement for CPVC causes joint failure. Ring seal joints allow thermal movement while solvent joints are rigid.
+    Transition fittings between materials must be specified.
+
+    '
+  suggested_resolution: Specify jointing method for each pipe material. Include approved solvent/fusion equipment and transition fitting details.
+  priority: medium
+  building_types:
+  - all
+  package: plumbing
+- id: RFI-MS-EL-001
+  trigger_type: missing_spec
+  trigger_keywords:
+  - wire gauge
+  - cable size
+  - conductor size
+  - wire specification
+  trigger_trade: electrical
+  question_template: 'Wire/cable specification mentioned but details vague for {area}. Please clarify: (a) Wiring for light and fan circuits — 1.0 sqmm or 1.5 sqmm? (b) Wiring for power circuits (5A/6A
+    sockets) — 2.5 sqmm? (c) Wiring for heavy-duty circuits (15A/16A sockets) — 4.0 sqmm? (d) Cable type — FRLS (fire retardant low smoke) or standard PVC insulated? (e) Conductor — copper or aluminum?
+    Solid or stranded? (f) Cable brand — Havells, Polycab, Finolex, KEI, or equivalent?
+
+    '
+  why_it_matters: 'Wire gauge directly affects current carrying capacity and safety. Under-sized wires cause overheating and fire. FRLS cable is mandatory in high-rise buildings per NBC. Cable brand quality
+    significantly affects insulation life.
+
+    '
+  suggested_resolution: Provide cable schedule showing wire size, type (FRLS/PVC), and brand for each circuit type. Confirm FRLS compliance requirement.
+  priority: high
+  building_types:
+  - all
+  package: electrical
+- id: RFI-MS-EL-002
+  trigger_type: missing_spec
+  trigger_keywords:
+  - conduit type
+  - conduit size
+  - PVC conduit
+  - MS conduit
+  - GI conduit
+  trigger_trade: electrical
+  question_template: 'Conduit specification mentioned but incomplete for {area}. Please clarify: (a) Concealed conduit — PVC (heavy gauge) or GI? Size — 20mm or 25mm standard? (b) Surface/exposed conduit
+    — MS, GI, or PVC rigid? Saddle type and spacing? (c) Flexible conduit for equipment connection — PVC flex or GI braided? (d) Conduit for data/telephone — separate or combined with power? (e) Conduit
+    fill factor — maximum 40% as per IS 732? (f) Conduit in slab — is conduit embedding in slab permitted or only in walls?
+
+    '
+  why_it_matters: 'Conduit type affects fire performance (PVC melts, GI does not), cost (GI is 2-3x PVC), and maintenance. NBC mandates MS/GI conduit for common areas in high-rise buildings. Slab conduit
+    embedding reduces floor-to-floor height but needs structural coordination.
+
+    '
+  suggested_resolution: Specify conduit type and size for concealed, exposed, and flexible sections. Confirm if slab embedding is permitted with structural consultant.
+  priority: medium
+  building_types:
+  - all
+  package: electrical
+- id: RFI-MS-EL-003
+  trigger_type: missing_spec
+  trigger_keywords:
+  - switch
+  - socket
+  - modular switch
+  - switch brand
+  - switch plate
+  trigger_trade: electrical
+  question_template: 'Switch/socket specification mentioned as "modular type" but details insufficient for {area}. Please clarify: (a) Brand — Legrand, Schneider, Havells, Anchor (Panasonic), GM, or equivalent?
+    (b) Range/series within brand — economy, standard, or premium (designer)? (c) Color — white, grey, champagne, or specific color to match interiors? (d) Plate material — polycarbonate (standard), glass,
+    or metal finish? (e) USB charging socket — required in bedrooms, study, and workstations? (f) Smart/WiFi-enabled switches — any provision for home automation?
+
+    '
+  why_it_matters: 'Switch brand and range affects cost by 2-5x (economy INR 50/module vs premium INR 200/module). With 50-100 modules per residential unit, the total cost difference is significant. Designer
+    range switches require specific plate sizes and box depths.
+
+    '
+  suggested_resolution: Specify switch brand, range/series, color, and plate material. Indicate if USB and smart switch provisions are required.
+  priority: medium
+  building_types:
+  - all
+  package: electrical
+- id: RFI-MS-EL-004
+  trigger_type: missing_spec
+  trigger_keywords:
+  - MCB rating
+  - MCCB
+  - breaker
+  - protection device
+  - circuit breaker
+  trigger_trade: electrical
+  question_template: 'Protective device specification is vague for {area}. Please clarify: (a) MCB type — B curve (resistive loads), C curve (motor/inductive), or D curve (transformer)? (b) MCB rating for
+    each circuit type — 6A (lighting), 16A (power), 32A (heavy duty)? (c) MCCB breaking capacity — 25kA, 36kA, or 50kA based on fault level? (d) RCCB/RCD — 30mA sensitivity for socket circuits, 100mA for
+    main? (e) SPD (surge protection device) — Type 2 at DB level? (f) Approved brands — Schneider, Legrand, ABB, Siemens, or Havells?
+
+    '
+  why_it_matters: 'Protective devices ensure electrical safety — under-rated breaking capacity causes explosive failure during fault. Missing RCCB causes electrocution risk. Device brand affects reliability
+    and cost by 1.5-3x.
+
+    '
+  suggested_resolution: Provide protection device schedule showing type, rating, and curve for each circuit. Confirm RCCB requirement and breaking capacity based on fault level study.
+  priority: high
+  building_types:
+  - all
+  package: electrical
+- id: RFI-MS-CO-001
+  trigger_type: missing_spec
+  trigger_keywords:
+  - mix design
+  - concrete mix
+  - nominal mix
+  - design mix
+  trigger_trade: structural
+  question_template: 'Concrete mix specification is vague — mentions grade but not mix type for {area}. Please clarify: (a) Mix type — design mix (IS 10262) mandatory for M20 and above, or nominal mix acceptable?
+    (b) If design mix — has the mix been designed and approved by structural consultant? (c) Cement type to be used — OPC 43 grade, OPC 53 grade, PPC, or PSC? (d) Aggregate — 20mm nominal size (standard)
+    or 40mm (for mass concrete)? (e) Water-cement ratio — maximum as per IS 456 Table 5 for exposure condition?
+
+    '
+  why_it_matters: 'Design mix vs nominal mix affects concrete consistency, strength assurance, and cost optimization. Design mix can save 5-10% cement while achieving target strength. IS 456 mandates design
+    mix for M20 and above, yet many tenders still specify nominal mix.
+
+    '
+  suggested_resolution: Confirm design mix requirement for all grades. Provide approved mix design or specify that contractor shall prepare and get approval. Include cement type.
+  priority: high
+  building_types:
+  - all
+  package: structural
+- id: RFI-MS-CO-002
+  trigger_type: missing_spec
+  trigger_keywords:
+  - admixture
+  - superplasticizer
+  - retarder
+  - concrete admixture
+  - accelerator
+  trigger_trade: structural
+  question_template: 'Concrete admixture specification is incomplete for {area}. Please clarify: (a) Admixture type — plasticizer, superplasticizer (SNF/PCE based), retarder, or accelerator? (b) Approved
+    brands — BASF, Fosroc, Sika, MC Bauchemie, or equivalent? (c) Is integral waterproofing admixture required for water-retaining structures and basements? (d) Dosage — manufacturer''s recommended dosage
+    or specific limit? (e) Compatibility testing with cement — required before use?
+
+    '
+  why_it_matters: 'Admixture selection affects workability, strength development, and durability. PCE-based superplasticizers allow 20-30% water reduction vs SNF type. Incompatible admixture-cement combinations
+    cause retardation or rapid setting failures.
+
+    '
+  suggested_resolution: Specify admixture type, brand, and dosage for each concrete grade. Require compatibility test with selected cement before production.
+  priority: medium
+  building_types:
+  - all
+  package: structural
+- id: RFI-MS-CO-003
+  trigger_type: missing_spec
+  trigger_keywords:
+  - concrete slump
+  - workability
+  - slump requirement
+  - concrete consistency
+  trigger_trade: structural
+  question_template: 'Concrete slump/workability requirement not clearly specified for {area}. Please clarify: (a) Target slump at point of placement — 75mm, 100mm, 125mm, or 150mm? (b) Is higher slump
+    (150mm+) required for pumped concrete or congested reinforcement areas? (c) Slump tolerance — as per IS 456 (+/- 25mm for slump 50-75mm, +/- 50mm for slump >75mm)? (d) Is slump retention required —
+    holding period for transit mix delivery? (e) Self-compacting concrete (SCC) — required for any heavily reinforced sections?
+
+    '
+  why_it_matters: 'Slump specification affects concrete placing method, admixture dosage, and quality control. Low slump concrete in congested reinforcement causes honeycombing. Excessive slump causes segregation.
+    Pumped concrete needs minimum 100mm slump.
+
+    '
+  suggested_resolution: Specify target slump for each placement condition (footing, column, beam, slab, and pumped concrete). Include slump retention requirement for ready-mix.
+  priority: medium
+  building_types:
+  - all
+  package: structural
+- id: RFI-MS-CO-004
+  trigger_type: missing_spec
+  trigger_keywords:
+  - curing
+  - concrete curing
+  - curing method
+  - curing period
+  trigger_trade: structural
+  question_template: 'Concrete curing specification is incomplete for {area}. Please clarify: (a) Curing method — ponding, wet hessian/gunny bags, sprinkler, or curing compound? (b) Minimum curing period
+    — 7 days (OPC) or 14 days (PPC/PSC) as per IS 456? (c) Is curing compound acceptable as alternative to water curing? Brand and application rate? (d) Temperature monitoring — required during hot/cold
+    weather concreting? (e) Stripping time for formwork — based on strength or time? What percentage of design strength?
+
+    '
+  why_it_matters: 'Inadequate curing reduces concrete strength by 30-40% and causes surface cracking. PPC concrete requires longer curing than OPC. Premature formwork removal causes deflection and structural
+    distress.
+
+    '
+  suggested_resolution: Specify curing method, minimum duration, and formwork stripping criteria for each element type. Include hot/cold weather concreting protocol.
+  priority: medium
+  building_types:
+  - all
+  package: structural
+- id: RFI-MS-ST-001
+  trigger_type: missing_spec
+  trigger_keywords:
+  - steel grade
+  - Fe500
+  - Fe500D
+  - Fe550
+  - TMT grade
+  - rebar grade
+  trigger_trade: structural
+  question_template: 'Steel grade specification is ambiguous for {area}. Please clarify: (a) Steel grade — Fe500, Fe500D, Fe550, or Fe550D as per IS 1786? (b) Is Fe500D mandatory for ductility compliance
+    in seismic zone (IS 13920)? (c) Are different grades permitted for different element types (e.g., Fe500D for columns, Fe500 for slabs)? (d) Minimum elongation requirement — 12% (Fe500D) or 10% (Fe500)?
+    (e) Is thermo-mechanical treatment (TMT) the only acceptable process?
+
+    '
+  why_it_matters: 'Fe500D steel has higher ductility than Fe500, which is critical for seismic performance. Fe500D costs 3-5% more but is mandatory in seismic zones III-V. Mixing grades on site causes confusion
+    and non-compliance.
+
+    '
+  suggested_resolution: Confirm steel grade for all elements. Specify if Fe500D is mandatory throughout or Fe500 acceptable for specific elements. Confirm IS 13920 applicability.
+  priority: high
+  building_types:
+  - all
+  package: structural
+- id: RFI-MS-ST-002
+  trigger_type: missing_spec
+  trigger_keywords:
+  - bar bending schedule
+  - BBS
+  - reinforcement detail
+  - bending schedule
+  trigger_trade: structural
+  question_template: 'Bar bending schedule (BBS) provision unclear for {area}. Please clarify: (a) Is BBS provided by structural consultant or to be prepared by contractor? (b) If contractor scope — what
+    approval process and turnaround time? (c) BBS format — manual spreadsheet or software-generated (ETABS/SAFE output)? (d) Does BBS include all elements — footing, column, beam, slab, staircase, and retaining
+    wall? (e) Are lap lengths, development lengths, and hook dimensions as per IS 2502 or design-specific?
+
+    '
+  why_it_matters: 'BBS is essential for accurate steel quantity estimation, cutting optimization, and procurement. Contractor-prepared BBS shifts design responsibility and risk. BBS accuracy affects wastage
+    — good BBS limits wastage to 3-5% vs 8-10% without BBS.
+
+    '
+  suggested_resolution: Confirm if BBS is consultant-provided or contractor scope. If contractor scope, define approval process, software, and turnaround time.
+  priority: high
+  building_types:
+  - all
+  package: structural
+- id: RFI-MS-ST-003
+  trigger_type: missing_spec
+  trigger_keywords:
+  - coupler
+  - mechanical coupler
+  - rebar coupler
+  - lap splice
+  trigger_trade: structural
+  question_template: 'Rebar coupler specification unclear for {area}. Please clarify: (a) Coupler type — parallel thread, taper thread, bolted, or press-swaged? (b) For which bar sizes — 16mm and above,
+    20mm and above, or only 25mm and above? (c) Coupler standard — IS 16172, ISO 15835, or manufacturer''s proprietary testing? (d) Is coupler mandatory at all splice locations or only where lap is impractical?
+    (e) Approved coupler manufacturers — Dextra, BarSplice, or equivalent? (f) Testing — is pull-out test required for each batch?
+
+    '
+  why_it_matters: 'Couplers cost INR 100-300 per connection but save 50-60% of lap splice steel. For large diameter bars (32mm+), couplers are preferred to avoid 1.5m+ lap lengths. Wrong coupler type or
+    installation quality causes joint failure.
+
+    '
+  suggested_resolution: Specify coupler type, applicable bar sizes, testing requirement, and approved manufacturers. Confirm if couplers are mandatory or optional.
+  priority: medium
+  building_types:
+  - all
+  package: structural
+- id: RFI-MS-ST-004
+  trigger_type: missing_spec
+  trigger_keywords:
+  - lap length
+  - splice length
+  - development length
+  - anchorage
+  trigger_trade: structural
+  question_template: 'Reinforcement lap/splice details vague for {area}. Please clarify: (a) Lap length — as per IS 456 clause 26.2.5 (design-specific) or standard 50d? (b) Staggering requirement — what
+    percentage of bars can be lapped at same section? (c) Lap location restrictions — which zones of beam/column prohibit lapping (plastic hinge zone)? (d) Hook requirement — standard 90-degree bend or
+    specific hook detail? (e) Are different lap lengths specified for different bar sizes and stress conditions?
+
+    '
+  why_it_matters: 'Lap length affects steel quantity by 5-10%. Incorrect lapping in plastic hinge zones (column ends, beam mid-span) causes failure during seismic events. IS 13920 restricts lapping in critical
+    zones.
+
+    '
+  suggested_resolution: Provide lap length schedule for each bar size and element type. Mark restricted lapping zones on structural drawings. Confirm IS 13920 compliance.
+  priority: high
+  building_types:
+  - all
+  package: structural
+- id: RFI-MS-DR-001
+  trigger_type: missing_spec
+  trigger_keywords:
+  - door core
+  - flush door
+  - door construction
+  - shutter core
+  trigger_trade: doors_windows
+  question_template: 'Door shutter core type mentioned but specification incomplete for {area}. Please clarify: (a) Core type — solid core (block board), semi-solid, honeycomb, or particle board? (b) Core
+    material — pine block board, commercial ply, BWR ply, or BWP (marine) ply? (c) Face veneer — natural veneer (teak, walnut), laminate, or paint finish? (d) Shutter thickness — 30mm, 35mm, or 40mm? (e)
+    Is IS 2202 compliance required for flush door construction? (f) Manufacturer — branded (Greenply, Century, Kitply) or local fabrication?
+
+    '
+  why_it_matters: 'Door core type determines durability, weight, and cost. BWP ply flush door costs 2-3x honeycomb core. Wrong core in wet areas (bathroom) causes swelling and failure. IS 2202 ensures minimum
+    quality standards.
+
+    '
+  suggested_resolution: Specify door core type, face finish, and thickness for each door category (internal, bathroom, external, fire-rated). Include IS compliance requirement.
+  priority: medium
+  building_types:
+  - all
+  package: doors_windows
+- id: RFI-MS-DR-002
+  trigger_type: missing_spec
+  trigger_keywords:
+  - door finish
+  - laminate
+  - veneer
+  - door surface
+  - polish
+  trigger_trade: doors_windows
+  question_template: 'Door finish specification vague for {area}. Please clarify: (a) Finish type — high-pressure laminate (HPL), low-pressure laminate, natural wood veneer, or PU paint? (b) If laminate
+    — brand (Greenlam, Merino, Sundek), thickness (0.8mm or 1.0mm), and color/pattern? (c) If veneer — wood species (teak, walnut, oak), and finish (PU polish, melamine, or lacquer)? (d) Number of PU polish
+    coats (if applicable) — 3 coats (satin), 5 coats (high gloss)? (e) Both faces same finish or different (e.g., laminate outside, paint inside)?
+
+    '
+  why_it_matters: 'Door finish is 20-40% of door cost. HPL finish INR 200/sqft vs PU polish teak veneer INR 600+/sqft. Laminate is more durable but veneer is aesthetically superior. Different finishes on
+    two faces is common but must be specified.
+
+    '
+  suggested_resolution: Specify door finish for each door type — face material, brand/species, and coating. Confirm if both faces have same finish.
+  priority: medium
+  building_types:
+  - all
+  package: doors_windows
+- id: RFI-MS-DR-003
+  trigger_type: missing_spec
+  trigger_keywords:
+  - fire rating
+  - fire rated
+  - fire door rating
+  - fire resistance
+  trigger_trade: doors_windows
+  question_template: 'Fire door rating mentioned but detail insufficient for {area}. Please clarify: (a) Fire resistance rating — 30 min, 60 min, 90 min, or 120 min? (b) Rating standard — IS 3614 Part 2,
+    BS 476 Part 22, or EN 1634-1? (c) Door construction — steel, timber with intumescent seals, or composite? (d) Is fire door to be tested and certified by an approved laboratory? (e) Smoke seal — is intumescent
+    + cold smoke seal required or just intumescent? (f) Does fire rating apply to frame, glass (if vision panel), and hardware as well?
+
+    '
+  why_it_matters: 'Fire rating must be verified with test certificate — self-declared ratings are not acceptable for fire NOC. 60-min fire door costs 2-3x 30-min. Rating applies to complete assembly (door
+    + frame + hardware + glass), not just shutter.
+
+    '
+  suggested_resolution: Specify fire rating (minutes), testing standard, and certification requirement. Confirm that rating applies to complete door assembly.
+  priority: critical
+  building_types:
+  - all
+  package: doors_windows
+- id: RFI-MS-DR-004
+  trigger_type: missing_spec
+  trigger_keywords:
+  - acoustic door
+  - acoustic rating
+  - STC
+  - sound insulation door
+  trigger_trade: doors_windows
+  question_template: 'Acoustic door rating mentioned but specification incomplete for {area}. Please clarify: (a) STC (Sound Transmission Class) requirement — STC 30, STC 35, STC 40, or STC 45+? (b) Which
+    doors require acoustic rating — conference room, studio, theater, bedroom? (c) Is drop-down bottom seal/threshold seal required? (d) Perimeter seal type — neoprene, magnetic, or compression seal? (e)
+    Is acoustic testing certification required from door manufacturer? (f) Is double-door/vestibule arrangement needed for high STC requirements?
+
+    '
+  why_it_matters: 'Acoustic doors cost 3-5x standard doors. STC rating depends on door mass, seals, and installation quality. A door with STC 35 can degrade to STC 20 with poor seals. Studio and theater
+    doors may need STC 50+, requiring specialized construction.
+
+    '
+  suggested_resolution: Specify STC rating for each door requiring acoustic performance. Include seal type, threshold detail, and testing certification requirement.
+  priority: medium
+  building_types:
+  - hotel
+  - hospital
+  - school
+  - office
+  - studio
+  package: doors_windows
+- id: RFI-MS-WN-001
+  trigger_type: missing_spec
+  trigger_keywords:
+  - window section
+  - aluminum section
+  - window profile
+  - frame section
+  trigger_trade: doors_windows
+  question_template: 'Window frame section size mentioned but specification incomplete for {area}. Please clarify: (a) Profile series — standard (45mm), heavy (55mm), or thermal break (65mm)? (b) Section
+    wall thickness — minimum 1.5mm or 2.0mm for structural performance? (c) Profile type — standard extruded, thermal break, or unitized? (d) Finish — anodized (natural/bronze), powder coated (RAL color),
+    or PVDF coated? (e) Anodizing thickness — 15 microns (AA15) or 20 microns (AA20)? (f) Profile brand — Hindalco, Jindal, Hydro, Schuco, or equivalent?
+
+    '
+  why_it_matters: 'Section size and wall thickness determine structural capacity for wind load resistance. Thermal break profiles cost 2x standard but reduce heat transfer by 60%. Thin-wall sections (below
+    1.5mm) fail under wind load and cause premature hardware failure.
+
+    '
+  suggested_resolution: Specify window profile series, wall thickness, finish type, and brand. Provide structural calculation confirming adequacy for wind load.
+  priority: high
+  building_types:
+  - all
+  package: doors_windows
+- id: RFI-MS-WN-002
+  trigger_type: missing_spec
+  trigger_keywords:
+  - DGU
+  - double glazed
+  - insulated glass
+  - sealed unit
+  - IGU
+  trigger_trade: doors_windows
+  question_template: 'DGU (double glazed unit) is specified but configuration details missing for {area}. Please clarify: (a) Glass combination — outer pane (toughened/heat-strengthened) and inner pane
+    thickness? (b) Spacer bar width — 12mm, 16mm, or 20mm air gap? (c) Spacer type — aluminum (standard), warm edge (thermally improved), or super spacer? (d) Gas fill — air (standard), argon (improved),
+    or krypton (premium)? (e) Primary and secondary sealant type — PIB + silicone or PIB + polysulphide? (f) DGU manufacturer — sealed unit from approved IGU manufacturer with warranty?
+
+    '
+  why_it_matters: 'DGU configuration determines thermal and acoustic performance. Argon-filled DGU with warm edge spacer performs 30% better than air-filled with aluminum spacer. DGU seal quality determines
+    unit life — poor sealant causes fogging within 5-8 years.
+
+    '
+  suggested_resolution: Specify complete DGU configuration — glass types, spacer, gas fill, and sealant. Require DGU manufacturer warranty (minimum 10 years against fogging).
+  priority: high
+  building_types:
+  - commercial
+  - office
+  - hotel
+  - hospital
+  - high_rise
+  package: doors_windows
+- id: RFI-MS-WN-003
+  trigger_type: missing_spec
+  trigger_keywords:
+  - window hardware
+  - window handle
+  - friction stay
+  - window lock
+  - espagnolette
+  trigger_trade: doors_windows
+  question_template: 'Window hardware specification vague for {area}. Please clarify: (a) Handle type — cockspur (budget), espagnolette (standard), or multipoint locking? (b) Friction stay — 8-inch, 10-inch,
+    or 12-inch? Stainless steel or zinc die-cast? (c) Restrictor — window opening restrictor for child safety (above ground floor)? (d) Weatherstripping — brush seal, rubber gasket (EPDM), or foam? (e)
+    Hardware brand — Dorset, Ozone, Assa Abloy, or window profile manufacturer''s system? (f) Multi-point locking — required for sliding windows larger than 1800mm?
+
+    '
+  why_it_matters: 'Window hardware determines air tightness, water tightness, and security. Poor friction stays cause sagging within months. Missing child safety restrictors are a safety hazard. Multi-point
+    locking improves weather seal for large openings.
+
+    '
+  suggested_resolution: Specify window hardware for each window type — handle, friction stay, lock, weatherstrip, and child safety restrictor. List approved brands.
+  priority: medium
+  building_types:
+  - all
+  package: doors_windows
+- id: RFI-MS-WP-001
+  trigger_type: missing_spec
+  trigger_keywords:
+  - waterproofing product
+  - waterproofing brand
+  - waterproofing manufacturer
+  trigger_trade: waterproofing
+  question_template: 'Waterproofing product name not specified — only system type mentioned for {area}. Please clarify: (a) Product manufacturer — BASF, Fosroc, Sika, Pidilite (Dr. Fixit), or equivalent?
+    (b) Specific product name within manufacturer''s range? (c) Product standard compliance — IS 3384, ASTM D6083, or EN 15814? (d) Application method — brush, roller, spray, or torch applied? (e) Coverage
+    rate — kg/sqm or litres/sqm for liquid applied products?
+
+    '
+  why_it_matters: 'Waterproofing is brand and product-specific — same manufacturer has products ranging from INR 30/sqm to INR 300/sqm. Product performance varies significantly even within the same system
+    type. Warranty is product-specific.
+
+    '
+  suggested_resolution: Specify waterproofing product name, manufacturer, application method, and coverage rate. Include product technical data sheet reference.
+  priority: high
+  building_types:
+  - all
+  package: waterproofing
+- id: RFI-MS-WP-002
+  trigger_type: missing_spec
+  trigger_keywords:
+  - waterproofing warranty
+  - warranty period
+  - guarantee
+  - membrane life
+  trigger_trade: waterproofing
+  question_template: 'Waterproofing warranty requirement not specified for {area}. Please clarify: (a) Warranty period — 5 years, 10 years, or 15 years? (b) Warranty type — material warranty (manufacturer)
+    or system warranty (manufacturer + applicator)? (c) Does warranty cover consequential damage or only re-application? (d) Warranty conditions — approved applicator mandatory? Special surface preparation?
+    (e) Who is the warranty issuer — product manufacturer, applicator, or main contractor?
+
+    '
+  why_it_matters: 'Warranty requirement drives product selection and applicator qualification. A 10-year system warranty requires manufacturer-certified applicators and costs 30-50% more than basic material
+    warranty. Without clarity, warranty disputes are inevitable.
+
+    '
+  suggested_resolution: Specify warranty period, warranty type (material/system), and issuer. Include approved applicator certification requirement.
+  priority: high
+  building_types:
+  - all
+  package: waterproofing
+- id: RFI-MS-WP-003
+  trigger_type: missing_spec
+  trigger_keywords:
+  - waterproofing applicator
+  - applicator qualification
+  - certified applicator
+  trigger_trade: waterproofing
+  question_template: 'Waterproofing applicator qualification not specified for {area}. Please clarify: (a) Is manufacturer-certified/trained applicator mandatory? (b) Minimum experience requirement — number
+    of years or completed projects? (c) Applicator to be nominated by manufacturer or selected by contractor? (d) Is applicator training/certification document required before work commencement? (e) Who
+    supervises application — manufacturer''s technical representative on-site?
+
+    '
+  why_it_matters: 'Waterproofing performance depends 70% on application quality. Uncertified applicators cause 80% of waterproofing failures. Manufacturer''s warranty is void without certified applicator
+    in most cases.
+
+    '
+  suggested_resolution: Mandate certified applicator from product manufacturer. Require applicator certification documents and manufacturer's technical supervision during application.
+  priority: medium
+  building_types:
+  - all
+  package: waterproofing
+- id: RFI-MS-HV-001
+  trigger_type: missing_spec
+  trigger_keywords:
+  - BEE star
+  - energy rating
+  - EER
+  - ISEER
+  - efficiency rating
+  trigger_trade: hvac
+  question_template: 'HVAC equipment energy efficiency rating mentioned but unclear for {area}. Please clarify: (a) BEE star rating — 3 star, 4 star, or 5 star minimum? (b) Is ISEER (Indian Seasonal Energy
+    Efficiency Ratio) value specified? (c) For chillers — IPLV (Integrated Part Load Value) requirement? (d) ECBC compliance — is ECBC 2017 mandatory for this building type? (e) Is energy simulation (eQUEST/EnergyPlus)
+    required for compliance demonstration?
+
+    '
+  why_it_matters: 'BEE 5-star equipment costs 15-25% more than 3-star but saves 20-40% energy annually. ECBC compliance is becoming mandatory in many states. Equipment efficiency directly impacts connected
+    load and DG sizing.
+
+    '
+  suggested_resolution: Specify minimum BEE star rating or ISEER value. Confirm ECBC compliance requirement and whether energy simulation is needed.
+  priority: medium
+  building_types:
+  - all
+  package: hvac
+- id: RFI-MS-HV-002
+  trigger_type: missing_spec
+  trigger_keywords:
+  - refrigerant
+  - R32
+  - R410A
+  - R22
+  - refrigerant type
+  trigger_trade: hvac
+  question_template: 'Refrigerant type not specified for HVAC equipment in {area}. Please clarify: (a) Refrigerant type — R32 (low GWP), R410A (standard), or R290 (natural)? (b) Is R22 phase-out compliance
+    required (HCFC phase-out schedule)? (c) GWP (Global Warming Potential) limit — for green building compliance? (d) Refrigerant charge monitoring — leak detection system required? (e) Does the refrigerant
+    choice affect insurance or building certification (IGBC/LEED)?
+
+    '
+  why_it_matters: 'R22 is being phased out globally (India deadline 2030). R32 has lower GWP than R410A but is mildly flammable. Refrigerant type affects equipment compatibility, servicing cost, and green
+    building certification points.
+
+    '
+  suggested_resolution: Specify acceptable refrigerant types. Confirm ODP and GWP limits if green building certification is targeted.
+  priority: medium
+  building_types:
+  - all
+  package: hvac
+- id: RFI-MS-HV-003
+  trigger_type: missing_spec
+  trigger_keywords:
+  - copper pipe
+  - refrigerant pipe
+  - copper tube
+  - AC pipe
+  - insulation
+  trigger_trade: hvac
+  question_template: 'HVAC refrigerant piping specification incomplete for {area}. Please clarify: (a) Copper pipe class — L type (light), K type (heavy), or ACR (air conditioning grade)? (b) Insulation
+    material — nitrile rubber (Armaflex/K-Flex) or PE foam? (c) Insulation thickness — 10mm, 13mm, 19mm, or 25mm based on pipe size? (d) Copper pipe brand — Mandev, Hindcopper, Mueller, or equivalent? (e)
+    Maximum pipe length — as per VRF/split system manufacturer''s limit? (f) Is nitrogen brazing mandatory during installation?
+
+    '
+  why_it_matters: 'Copper pipe class affects wall thickness and pressure rating. ACR grade is specifically for refrigerant and comes cleaned and capped. Wrong insulation causes condensation (dripping).
+    Nitrogen brazing prevents internal oxidation and compressor failure.
+
+    '
+  suggested_resolution: Specify copper pipe class, insulation type and thickness, and brazing requirement. Confirm compatibility with HVAC equipment manufacturer's specifications.
+  priority: medium
+  building_types:
+  - all
+  package: hvac
+- id: RFI-MS-FN-001
+  trigger_type: missing_spec
+  trigger_keywords:
+  - POP
+  - plaster of paris
+  - gypsum plaster
+  - wall plaster
+  - plaster type
+  trigger_trade: plastering
+  question_template: 'Wall/ceiling plaster type mentioned but specification incomplete for {area}. Please clarify: (a) Plaster type — cement plaster + POP punning, single-coat gypsum plaster, or pre-mixed
+    dry mortar? (b) If gypsum plaster — brand (Gyproc Saint-Gobain, UltraTech, JK, Birla)? (c) Thickness — 12mm (gypsum), or 15-20mm (cement plaster)? (d) Is POP punning over cement plaster required or
+    direct paint on gypsum plaster? (e) Finish level — Level 3 (standard), Level 4 (smooth), or Level 5 (premium — highlight lighting)?
+
+    '
+  why_it_matters: 'Gypsum plaster eliminates POP punning and curing, saving 7-10 days per floor vs cement plaster + POP. Cost is comparable but gypsum gives smoother finish. Mixing specifications (cement
+    plaster on some walls, gypsum on others) causes cracking at junctions.
+
+    '
+  suggested_resolution: Specify plaster type for all internal walls and ceilings. If gypsum, confirm brand. If cement plaster, specify POP punning requirement. Confirm finish level.
+  priority: medium
+  building_types:
+  - all
+  package: plastering
+- id: RFI-MS-FN-002
+  trigger_type: missing_spec
+  trigger_keywords:
+  - false ceiling
+  - suspended ceiling
+  - grid ceiling
+  - gypsum board ceiling
+  trigger_trade: interiors
+  question_template: 'False ceiling type mentioned but specification incomplete for {area}. Please clarify: (a) Ceiling type — gypsum board (plain/moisture resistant), mineral fiber tile (grid), metal,
+    or combination? (b) Grid type for mineral fiber — exposed T-grid (15mm/24mm) or concealed grid? (c) Gypsum board — 12.5mm thickness? Single layer or double layer (for fire/acoustic)? (d) Finish — paint
+    grade, vinyl faced, or pre-finished? (e) Height below slab soffit — 150mm, 200mm, or custom (for service zone)? (f) Access panels — number, size, and locations for maintenance?
+
+    '
+  why_it_matters: 'False ceiling type affects cost (mineral fiber INR 60/sqft vs gypsum INR 85/sqft), acoustic performance, fire rating, and maintenance access. Height below slab determines usable space
+    for HVAC ducts, cable trays, and sprinkler pipes.
+
+    '
+  suggested_resolution: Specify false ceiling type for each area with material, finish, and height. Include reflected ceiling plan (RCP) showing grid layout and access panels.
+  priority: medium
+  building_types:
+  - all
+  package: interiors
+- id: RFI-MS-FN-003
+  trigger_type: missing_spec
+  trigger_keywords:
+  - stone
+  - granite
+  - marble
+  - stone polish
+  - stone finish
+  - stone cladding
+  trigger_trade: flooring
+  question_template: 'Natural stone specification is vague for {area}. Please clarify: (a) Stone type — granite, marble, kota stone, sandstone, or slate? (b) Origin — Indian or imported? Specific quarry/color
+    name? (c) Thickness — 15mm, 18mm, 20mm, or 30mm? (d) Finish — polished (mirror), honed (matt), flamed (anti-skid), or leather/bush-hammered? (e) Size — standard slab (600x300mm) or jumbo slab (custom
+    cut)? (f) Polish grade for granite/marble — machine polished or site-polished?
+
+    '
+  why_it_matters: 'Natural stone varies massively in cost — Indian granite INR 80-300/sqft vs Italian marble INR 500-2000+/sqft. Thickness affects dead load and level with adjacent tiles. Site polishing
+    vs factory polished affects finish quality and cost.
+
+    '
+  suggested_resolution: Specify stone type, color/quarry name, thickness, and finish. Provide sample approval process and approved supplier list.
+  priority: high
+  building_types:
+  - all
+  package: flooring
+- id: RFI-MS-TL-008
+  trigger_type: missing_spec
+  trigger_keywords:
+  - grout colour
+  - grout color
+  - tile grout spec
+  - joint colour
+  trigger_trade: flooring
+  question_template: 'Tile grout colour is not specified for {area}. Please clarify:
+
+    (a) Grout colour reference — RAL/NCS code or sample tile number from manufacturer (e.g., Laticrete, Ardex)?
+
+    (b) Should grout match tile body colour (low contrast) or be a contrasting accent colour?
+
+    (c) Is the same grout colour to be used for floor and wall tiles, or specified separately?
+
+    (d) Epoxy grout specified for wet areas and kitchens — colour consistent with cementitious grout selection?
+
+    '
+  why_it_matters: Grout colour significantly affects the visual outcome of tiled surfaces. A wrong grout colour is highly visible and replacing grout post-installation requires grinding and re-grouting
+    — an expensive and disruptive rework. Matching vs contrasting grout changes the perception of tile size and room scale. Without specification, the tiler selects the most convenient colour, rarely matching
+    design intent.
+  suggested_resolution: Specify grout colour with manufacturer reference code for each tile area type. Provide a sample tile with intended grout for approval before full installation begins.
+  priority: low
+  building_types:
+  - all
+  package: flooring
+- id: RFI-MS-FN-004
+  trigger_type: missing_spec
+  trigger_keywords:
+  - stone finish
+  - granite finish
+  - marble finish
+  - polished honed flamed
+  trigger_trade: flooring
+  question_template: 'Surface finish for granite/marble/natural stone is not specified for {area}. Please clarify:
+
+    (a) Finish type — polished (mirror), honed (satin matt), flamed/thermal (rough anti-skid), brushed, or leather finish?
+
+    (b) Is anti-skid finish required for external areas, ramps, and wet surfaces (flamed or brushed)?
+
+    (c) Edge profile — square, bullnose, bevelled, or pencil-round for countertop and sill edges?
+
+    (d) Sealing requirement — impregnating sealer applied post-installation for porous stones (marble, limestone)?
+
+    '
+  why_it_matters: Stone surface finish affects both appearance and safety. Polished marble is slippery when wet — unsuitable for external use. Flamed granite is the standard for external paving but costs
+    20-30% more than polished. Honed finish shows fewer scratches in high-traffic areas but requires sealing. Edge profile selection affects fabrication cost — bullnose requires extra grinding. Without
+    specification, the stonemason applies the easiest (polished) finish to all surfaces.
+  suggested_resolution: Specify stone surface finish for each application area (internal floor, external paving, countertop, cladding). Mandate anti-skid finish for all wet/external areas. Specify edge
+    profile and sealer.
+  priority: medium
+  building_types:
+  - all
+  package: flooring
+- id: RFI-MS-WN-004
+  trigger_type: missing_spec
+  trigger_keywords:
+  - window glass type
+  - glass type window
+  - clear tinted reflective glass
+  trigger_trade: doors_windows
+  question_template: 'Window glass type is not specified for {area}. Please clarify:
+
+    (a) Glass type — clear float, tinted (grey/bronze/blue/green), reflective coated, or low-E coated?
+
+    (b) Safety treatment — toughened (tempered), laminated, or toughened-laminated for large panes?
+
+    (c) DGU requirement — is double glazing required for thermal or acoustic performance?
+
+    (d) Visible light transmittance (VLT) — minimum value for daylighting, or maximum for privacy?
+
+    '
+  why_it_matters: Glass type has the largest single impact on facade appearance and energy performance. Clear glass maximises daylight but increases solar heat gain (SHGC 0.8 vs 0.3 for reflective glass).
+    ECBC 2017 mandates maximum SHGC of 0.25 for west-facing glass in hot-dry climates — clear glass fails this requirement. Toughened glass is mandatory for panes larger than 1.5 sqm per NBC. DGU with low-E
+    coating costs 2-3x single-pane but reduces cooling load by 30-40%.
+  suggested_resolution: Specify glass type for each window orientation (north/south/east/west) with SHGC, U-value, VLT, and safety treatment. Confirm ECBC 2017 compliance for each glass zone.
+  priority: high
+  building_types:
+  - all
+  package: doors_windows
+- id: RFI-MS-WN-005
+  trigger_type: missing_spec
+  trigger_keywords:
+  - glass thickness
+  - window glass thickness
+  - 5mm 6mm 8mm glass
+  trigger_trade: doors_windows
+  question_template: 'Window glass thickness is not specified for {area}. Please clarify:
+
+    (a) Glass thickness per pane size — 5mm (up to 1.0 sqm), 6mm (up to 2.0 sqm), 8mm (up to 4.0 sqm), or 10mm+?
+
+    (b) Is structural glass thickness calculation provided for maximum wind load on the largest pane?
+
+    (c) For DGU — outer and inner pane thickness separately (e.g., 6mm + 12mm air + 6mm)?
+
+    (d) Acoustic glass requirement — minimum 6.38mm laminated or 8mm for STC 35 performance?
+
+    '
+  why_it_matters: Glass thickness is a structural requirement, not just an aesthetic choice. Under-thickness glass deflects excessively under wind load, causing seal failure in DGU units and frame distortion.
+    IS 2553 and NBC specify minimum glass thickness based on pane area and wind speed. Acoustic performance requires minimum laminated glass thickness — 4mm glass gives STC 26 vs STC 34 for 6.38mm laminated.
+    Specifying only "glass" without thickness allows the cheapest 4mm glass to be used.
+  suggested_resolution: Specify glass thickness for each window type based on pane size and wind load calculation per IS 2553. Provide structural glass calculation from facade engineer. Confirm DGU configuration.
+  priority: high
+  building_types:
+  - all
+  package: doors_windows
+- id: RFI-MS-DR-005
+  trigger_type: missing_spec
+  trigger_keywords:
+  - door hardware finish
+  - handle finish
+  - SS brass chrome hardware
+  trigger_trade: doors_windows
+  question_template: 'Door hardware finish is not specified for {area}. Please clarify:
+
+    (a) Handle and lock finish — satin stainless steel (SS 304), polished SS, brass (PVD), chrome, or antique brass?
+
+    (b) Is the same finish to be maintained throughout the floor/building for consistency?
+
+    (c) Coastal/corrosive environment — is SS 316 (marine grade) or PVD coating required over standard brass?
+
+    (d) Closer and hinge finish — matching handle finish or concealed/integrated?
+
+    '
+  why_it_matters: Hardware finish defines the visual quality of door installations. Mixing finishes (chrome handles with brass hinges) is an aesthetic defect that is costly to remedy. Polished finishes
+    show fingerprints and scratches — satin is preferred for high-traffic doors. Brass hardware in coastal environments corrodes within 2-3 years without PVD coating. Hardware finish selection should be
+    coordinated with interior design palette early to avoid procurement issues.
+  suggested_resolution: Specify door hardware finish for each door category. Confirm consistency across all hardware items (handle, hinge, lock, closer). Specify marine-grade finish for coastal/high-humidity
+    areas.
+  priority: low
+  building_types:
+  - all
+  package: doors_windows
+- id: RFI-MS-DR-006
+  trigger_type: missing_spec
+  trigger_keywords:
+  - lock type
+  - mortise lock
+  - deadbolt
+  - lever lock
+  - digital lock
+  trigger_trade: doors_windows
+  question_template: 'Lock type is not clearly specified for {area}. Please clarify:
+
+    (a) Lock mechanism — cylindrical (tubular) lock, mortise (multipoint) lock, deadbolt, or digital/smart lock?
+
+    (b) Function — passage (no lock), privacy (bathroom), entry (key+thumb), or storeroom (key only outside)?
+
+    (c) Security level — standard residential or enhanced security (3-star BS EN 12209 or IS 7196)?
+
+    (d) Master key system — is a master key/grand master system required for common area doors?
+
+    '
+  why_it_matters: Lock type directly affects security, user experience, and cost. Mortise locks cost 2-3x cylindrical but provide superior security and fire-door compliance. Digital locks (biometric/card)
+    are 5-10x the cost of mechanical locks and require electrical provision. Master key system requires careful planning before locks are procured. Security level specification is critical for entrance,
+    utility, and exit doors.
+  suggested_resolution: Specify lock type and security function for each door category. Confirm if a master key system is required. Identify doors needing digital/access control locks and provide electrical
+    provision in scope.
+  priority: medium
+  building_types:
+  - all
+  package: doors_windows
+- id: RFI-MS-IC-001
+  trigger_type: missing_spec
+  trigger_keywords:
+  - false ceiling height
+  - ceiling height
+  - finished ceiling level
+  - FCL
+  trigger_trade: interiors
+  question_template: 'False ceiling finished height (FCL) is not specified for {area}. Please clarify:
+
+    (a) FCL for each room type — from finished floor level (FFL), or from structural slab soffit?
+
+    (b) Minimum ceiling void required — for MEP services (ducts, trays, sprinkler, data cables)?
+
+    (c) Does ceiling height vary within the same room (bulkheads, coffers, multi-level design)?
+
+    (d) Fire-rated ceiling — specific height required to achieve fire resistance or acoustic performance?
+
+    '
+  why_it_matters: False ceiling height determines the available MEP void space. A 300mm void is adequate for residential lighting; a 900mm void is needed for commercial HVAC ductwork. Setting ceiling height
+    too high eliminates MEP space and causes expensive re-routing. Ceiling height below NBC minimum (2.6m habitable) requires approval deviation. Multi-level ceiling design requires careful FFL-to-ceiling
+    coordination with furniture heights.
+  suggested_resolution: Provide ceiling height schedule showing FCL for each room type relative to FFL datum. Confirm minimum MEP void required with HVAC and electrical consultants before finalising FCL.
+  priority: high
+  building_types:
+  - all
+  package: interiors
+- id: RFI-MS-HV-004
+  trigger_type: missing_spec
+  trigger_keywords:
+  - AC type
+  - split cassette duct VRF
+  - air conditioning type
+  - AC system type
+  trigger_trade: hvac
+  question_template: 'Air conditioning type is not specified for {area}. Please clarify:
+
+    (a) AC unit type — wall-mounted split, floor-standing, ceiling cassette, concealed duct, or VRF indoor unit?
+
+    (b) If VRF — is this part of a centralised VRF system or individual split systems per room?
+
+    (c) If concealed duct — is space for fan coil unit in false ceiling void available (minimum 350mm void)?
+
+    (d) Drain routing — where does condensate discharge? Is a condensate pump required?
+
+    '
+  why_it_matters: AC type determines false ceiling void requirement, wall penetration for refrigerant piping, condensate drain routing, and electrical load per unit. Concealed duct units require minimum
+    350mm ceiling void; cassette units need 450mm. VRF system requires a central outdoor unit and refrigerant piping riser — fundamentally different from individual splits. Specifying "AC" without type
+    means ceiling, civil, and electrical works cannot be coordinated.
+  suggested_resolution: Specify AC type per room category in the HVAC schedule. Coordinate ceiling void with MEP requirements. Confirm if VRF system is centralised or room-by-room and provide refrigerant
+    piping routing.
+  priority: high
+  building_types:
+  - all
+  package: hvac
+- id: RFI-MS-HV-005
+  trigger_type: missing_spec
+  trigger_keywords:
+  - AC tonnage
+  - cooling capacity
+  - TR per room
+  - AC capacity room
+  trigger_trade: hvac
+  question_template: 'AC tonnage (cooling capacity) is not specified per room for {area}. Please clarify:
+
+    (a) Room-wise cooling load calculation — TR (tons of refrigeration) or kW per room?
+
+    (b) Calculation basis — room area thumb rule or full HAP/Trace heat load analysis?
+
+    (c) Diversity factor applied — is simultaneous operation of all rooms assumed?
+
+    (d) Outdoor unit placement and total connected outdoor capacity — does it match indoor unit total?
+
+    '
+  why_it_matters: Incorrect AC tonnage causes either inadequate cooling (occupant comfort failure) or oversized equipment (higher capital cost, poor part-load efficiency). Room area alone is an unreliable
+    sizing basis — orientation, glazing area, occupancy, and equipment load must be considered. For VRF systems, indoor-to-outdoor capacity ratio (typically 80-130%) must be within manufacturer limits.
+    Under-specifying capacity in commercial spaces leads to occupancy-linked complaints.
+  suggested_resolution: Provide room-wise AC tonnage schedule based on heat load calculation (not area thumb rule). Share HAP/Trace calculation files for verification. Confirm outdoor unit selection and
+    placement.
+  priority: high
+  building_types:
+  - all
+  package: hvac
+- id: RFI-MS-EV-001
+  trigger_type: missing_spec
+  trigger_keywords:
+  - lift speed
+  - elevator speed
+  - lift m/s
+  - elevator velocity
+  trigger_trade: elevator
+  question_template: 'Lift/elevator speed is not specified for {area}. Please clarify:
+
+    (a) Lift speed — 0.5 m/s (economy residential), 1.0 m/s (standard residential/commercial), or 1.75 m/s (high-speed commercial)?
+
+    (b) Speed selection basis — building height (floors served), traffic analysis, or client standard?
+
+    (c) Does lift speed affect shaft dimensions — higher speed requires longer overrun and pit depth?
+
+    (d) Motor type — gearless (for higher speeds, lower noise) or geared (for lower speeds)?
+
+    '
+  why_it_matters: Lift speed is not merely a performance parameter — it affects capital cost significantly. A 1.75 m/s lift costs 20-35% more than a 1.0 m/s lift of the same capacity. Higher speed requires
+    gearless motor drive which is quieter but more expensive. For buildings above G+6, 1.0 m/s is the minimum practical speed; above G+12, 1.75 m/s is recommended. Wrong speed selection results in slow
+    service and tenant dissatisfaction or cost overrun.
+  suggested_resolution: Specify lift speed based on building height and traffic analysis. Provide elevator traffic study for commercial buildings. Confirm impact of speed on shaft dimensions (overrun, pit
+    depth) with civil design.
+  priority: medium
+  building_types:
+  - all
+  package: elevator
+- id: RFI-MS-EV-002
+  trigger_type: missing_spec
+  trigger_keywords:
+  - lift finish
+  - elevator cabin finish
+  - lift cabin
+  - elevator interior
+  trigger_trade: elevator
+  question_template: 'Lift cabin interior finish is not specified for {area}. Please clarify:
+
+    (a) Cabin walls — standard hairline SS panels, mirror SS, powder-coated steel, decorative laminate, or glass cabin?
+
+    (b) Cabin floor — chequered steel (standard), stone/tile, or carpet?
+
+    (c) Ceiling — flush LED panel (standard), feature ceiling with downlights, or glass ceiling?
+
+    (d) Door finish — standard powder-coated or hairline SS — matching cabin or contrasting?
+
+    '
+  why_it_matters: Lift cabin finish defines the building's perceived quality. A standard SS cabin costs INR 1-2 lakh whereas a premium glass cabin with stone floor and feature lighting costs INR 5-10 lakh
+    per lift. Cabin finish selection must be made at the time of lift order (4-6 months lead time) as it is factory-fitted. For hotels and premium commercial buildings, cabin finish is a key design element
+    that must be approved early and coordinated with interior design.
+  suggested_resolution: Specify lift cabin interior finish for each lift (standard, premium, or designer) at time of placing lift order. Provide interior design reference images. Coordinate with main interior
+    designer.
+  priority: medium
+  building_types:
+  - all
+  package: elevator
+- id: RFI-MS-PT-007
+  trigger_type: missing_spec
+  trigger_keywords:
+  - external paint
+  - exterior paint system
+  - external wall paint
+  - weather shield
+  trigger_trade: painting
+  question_template: 'External paint system is not fully specified for {area}. Please clarify:
+
+    (a) Paint system type — standard exterior emulsion (primer + 2 coats), elastomeric (flexible, crack-bridging), or silicone-based?
+
+    (b) Is anti-carbonation coating required for RCC surfaces on marine/coastal or polluted environments?
+
+    (c) Alkali-resistant primer specification — is new plaster primer from same manufacturer system?
+
+    (d) Warranty period — standard 3 years or extended 7-10 years under performance warranty scheme?
+
+    '
+  why_it_matters: External paint is exposed to UV radiation, rain, thermal cycling, and pollution. Standard exterior emulsion fails in 3-5 years in Indian climate. Elastomeric paint bridges hairline cracks
+    (up to 1mm) and prevents water ingress at 1.5-2x the cost but with 7-10 year lifespan. Coastal environments require silicone or anti-carbonation coating to prevent reinforcement corrosion. Without specifying
+    the system (primer + intermediate + finish), contractors use the minimum number of coats.
+  suggested_resolution: Specify complete external paint system — primer type, number of coats, DFT per coat, product name (not just brand), and warranty period. Confirm if elastomeric or performance coating
+    is required for climate zone.
+  priority: medium
+  building_types:
+  - all
+  package: painting
+- id: RFI-MS-WP-004
+  trigger_type: missing_spec
+  trigger_keywords:
+  - membrane thickness
+  - waterproofing thickness
+  - DFT waterproofing
+  - membrane DFT
+  trigger_trade: waterproofing
+  question_template: 'Waterproofing membrane thickness (DFT) is not specified for {area}. Please clarify:
+
+    (a) For liquid-applied systems — total dry film thickness (DFT) in microns or wet film thickness (WFT) per coat?
+
+    (b) For sheet membranes — thickness in mm (standard APP/SBS torch-applied is 4mm or 5mm)?
+
+    (c) Is DFT verification by magnetic or ultrasonic gauge required at handover?
+
+    (d) Manufacturer''s minimum DFT for warranty validity — does the specified thickness meet this?
+
+    '
+  why_it_matters: Membrane thickness directly determines waterproofing performance and longevity. Under-thickness membrane has reduced life, especially for liquid-applied polyurethane where minimum 1.5mm
+    DFT is critical. Without specifying DFT, contractors apply minimum material to reduce cost — a common malpractice. Warranty is typically void if DFT is below manufacturer's minimum. DFT testing at handover
+    is the only way to verify compliance.
+  suggested_resolution: Specify minimum total DFT or membrane sheet thickness for each waterproofing application. Mandate DFT verification by third party at handover and include DFT in quality assurance
+    plan.
+  priority: high
+  building_types:
+  - all
+  package: waterproofing
+- id: RFI-MS-WP-005
+  trigger_type: missing_spec
+  trigger_keywords:
+  - waterproofing warranty
+  - warranty period waterproofing
+  - guarantee waterproofing
+  trigger_trade: waterproofing
+  question_template: 'Waterproofing warranty period is not specified for {area}. Please clarify:
+
+    (a) Required warranty period — 5 years, 10 years, or 15 years for different applications (terrace, toilet, basement)?
+
+    (b) Is this material warranty (product only) or system warranty (product + workmanship from manufacturer)?
+
+    (c) System warranty requirements — manufacturer-certified applicator, supervised application, and test report?
+
+    (d) In event of leakage during warranty — is consequential damage (flooring, furniture) also covered?
+
+    '
+  why_it_matters: Warranty period drives product selection — long-term system warranty requires premium products and certified applicators. Standard contractor's defect liability (DLP) is 12-24 months;
+    waterproofing warranty of 10 years is a separate, higher standard. Material warranty from manufacturer is limited — system warranty covers both material and application. Without clarity, clients receive
+    only contractor DLP, not manufacturer warranty, for the most failure-prone element.
+  suggested_resolution: Specify warranty period for each waterproofing application. Mandate system warranty (manufacturer + applicator) for critical areas (terrace, basement). Include certified applicator
+    requirement.
+  priority: high
+  building_types:
+  - all
+  package: waterproofing
+- id: RFI-MS-PB-005
+  trigger_type: missing_spec
+  trigger_keywords:
+  - drainage pipe material
+  - soil pipe material
+  - CI uPVC SWG drainage
+  - waste pipe material
+  trigger_trade: plumbing
+  question_template: 'Pipe material for internal drainage (soil and waste) is not specified for {area}. Please clarify:
+
+    (a) Internal soil and waste pipe material — SWR uPVC (IS 4985), cast iron (CI), or HDPE?
+
+    (b) Is cast iron required for noise-sensitive locations (hotel bedrooms adjacent to shafts, hospital quiet areas)?
+
+    (c) External underground drainage material — SW (stoneware), RCC, UPVC, or HDPE pipe?
+
+    (d) Is CPVC or PP-R required for high-temperature waste (commercial kitchen or laboratory discharge)?
+
+    '
+  why_it_matters: uPVC SWR pipe costs 1/3 of cast iron but transmits drainage noise significantly more. In hotels and hospitals, cast iron soil pipes adjacent to occupied rooms are mandatory for acoustic
+    compliance. High-temperature waste from commercial kitchens (up to 80°C) degrades standard uPVC and requires PP-H or CI. External underground drainage material affects durability and root intrusion
+    resistance. Specifying just "drainage pipe" without material leads to cheapest option being used.
+  suggested_resolution: Specify drainage pipe material for internal (soil, waste, vent) and external (underground) applications. Mandate cast iron for noise-sensitive areas. Specify material for high-temperature
+    discharge zones.
+  priority: high
+  building_types:
+  - all
+  package: plumbing
+- id: RFI-MS-PB-006
+  trigger_type: missing_spec
+  trigger_keywords:
+  - sanitary fixture grade
+  - sanitaryware grade
+  - EWC grade
+  - basin grade
+  trigger_trade: plumbing
+  question_template: 'Sanitary fixture grade is not specified for {area}. Please clarify:
+
+    (a) Grade — economy (mass market), standard (mid-range), or premium (designer brand)?
+
+    (b) Approved brands — Jaquar, Hindware, Cera, Parryware, American Standard, TOTO, or Duravit?
+
+    (c) EWC type — floor-mounted S-trap, wall-hung (requires carrier frame), or squatting plate?
+
+    (d) Wash basin type — under-counter, over-counter, wall-hung, or pedestal?
+
+    '
+  why_it_matters: Sanitaryware grade spans a 5-10x cost range. Economy EWC costs INR 2,000-4,000; premium wall-hung EWC with concealed cistern costs INR 15,000-50,000. Wall-hung EWC requires a concealed
+    carrier frame (INR 5,000-15,000 extra) that must be installed during masonry construction — late specification causes rework. Without brand and product line, contractors procure the cheapest items.
+    Approved brands and grade must be defined before plumbing rough-in begins.
+  suggested_resolution: Specify sanitaryware grade (economy/standard/premium) and approved brands for each toilet type. Confirm EWC type (floor/wall-hung). For wall-hung EWC, include carrier frame in BOQ.
+  priority: high
+  building_types:
+  - all
+  package: plumbing
+- id: RFI-MS-PB-007
+  trigger_type: missing_spec
+  trigger_keywords:
+  - tap brand
+  - faucet brand
+  - bathroom accessories brand
+  - CP fittings brand
+  trigger_trade: plumbing
+  question_template: 'Tap/faucet and bathroom accessories brand is not specified for {area}. Please clarify:
+
+    (a) Approved brand — Jaquar, Grohe, American Standard, Cera, Hindware, or local?
+
+    (b) Product range within brand — economy, standard, or premium series?
+
+    (c) Finish — chrome plated, brushed nickel, gold (PVD), matte black, or rose gold?
+
+    (d) Fittings required — basin tap/mixer, shower set, bath mixer, angle valve, flush valve — complete list per toilet type?
+
+    '
+  why_it_matters: CP (chrome plated) fittings cost varies 5-20x between economy and premium (Jaquar economy INR 800 vs Grohe Essence INR 8,000 per basin mixer). Finish selection must match sanitaryware
+    and hardware finishes throughout. PVD gold or matte black finishes cost 1.5-2x chrome. Complete fittings list per toilet type is needed to prevent missing items (angle valves, thermostatic mixers, shower
+    enclosures) from BOQ.
+  suggested_resolution: Specify fittings brand, product series, and finish for each toilet/bathroom type. Provide a complete fittings schedule per bathroom type including all valves, mixers, showers, and
+    accessories.
+  priority: medium
+  building_types:
+  - all
+  package: plumbing
+- id: RFI-MS-EL-005
+  trigger_type: missing_spec
+  trigger_keywords:
+  - wire gauge
+  - conductor size wiring
+  - sqmm wire
+  - circuit wire size
+  trigger_trade: electrical
+  question_template: 'Electrical wire gauge for final sub-circuits is not specified for {area}. Please clarify:
+
+    (a) Light/fan circuits — 1.0 sqmm, 1.5 sqmm, or 2.5 sqmm (IS 732 recommendation)?
+
+    (b) Power socket circuits (5A/6A) — 2.5 sqmm or 4.0 sqmm?
+
+    (c) Heavy-duty circuits (15A/16A socket, AC, geyser) — 4.0 sqmm or 6.0 sqmm?
+
+    (d) Cable type — FRLS (fire retardant low smoke) mandatory for high-rise and hospital, or standard PVC?
+
+    '
+  why_it_matters: Wire gauge directly affects current carrying capacity and voltage drop. Under-sized wiring causes overheating, voltage drop at equipment, and fire hazard. 1.0 sqmm light circuit wiring
+    is common but 1.5 sqmm is safer and provides better voltage regulation. FRLS cable is mandatory in high-rise buildings per NBC and IS 1554. The cost difference between 1.0 sqmm and 1.5 sqmm is small
+    but the safety improvement is significant.
+  suggested_resolution: Specify wire gauge for each circuit type (light, fan, power, heavy-duty, HVAC) per IS 732. Mandate FRLS cable for all buildings above G+3. Confirm cable brand (Havells/Polycab/Finolex/KEI).
+  priority: high
+  building_types:
+  - all
+  package: electrical
+- id: RFI-MS-EL-006
+  trigger_type: missing_spec
+  trigger_keywords:
+  - switch brand
+  - socket brand
+  - modular switch brand
+  - electrical accessories brand
+  trigger_trade: electrical
+  question_template: 'Switch and socket brand/grade is not specified for {area}. Please clarify:
+
+    (a) Grade — economy (Anchor/GM basic), standard (Legrand Mosaic, Schneider), or premium (Legrand Arteor, Honeywell Designer)?
+
+    (b) Approved brand list — Legrand, Schneider, Havells, Anchor Panasonic, GM, Wipro, or equivalent?
+
+    (c) Plate material and colour — standard white polycarbonate, or designer glass/metal finish?
+
+    (d) Special provisions — USB-A/USB-C charging sockets, TV/data outlets, home automation readiness?
+
+    '
+  why_it_matters: Switch module cost varies 3-5x between economy and premium (INR 50 vs INR 200 per module). A 3-BHK apartment has 80-120 switch modules — a INR 4,000-24,000 cost range per unit depending
+    on grade. Economy switches have shorter life and poor tactile feedback. Premium switches have 10-year warranty. Without brand specification, contractor procures economy grade regardless of design intent.
+    USB socket provision must be decided before conduit work begins.
+  suggested_resolution: Specify switch/socket brand and product range for each space category. Confirm plate material and colour. Identify locations requiring USB and special outlets. Include smart-ready
+    provisions if needed.
+  priority: medium
+  building_types:
+  - all
+  package: electrical
+- id: RFI-MS-EL-007
+  trigger_type: missing_spec
+  trigger_keywords:
+  - MCB rating
+  - circuit breaker rating
+  - MCB schedule
+  - protection device rating
+  trigger_trade: electrical
+  question_template: 'MCB/MCCB rating for each circuit is not specified for {area}. Please clarify:
+
+    (a) Light circuit MCB — 6A or 10A; curve type — B (general) or C (inductive)?
+
+    (b) Power socket circuit MCB — 16A or 20A; is RCCB (30mA) required on all socket circuits?
+
+    (c) Heavy-duty circuit MCB — 25A or 32A for AC/geyser/HVAC?
+
+    (d) Main incomer MCCB — breaking capacity based on short-circuit fault level study (kA)?
+
+    '
+  why_it_matters: MCB rating must match the cable size and connected load. Oversized MCB allows the cable to overheat without tripping — a fire and shock hazard. Undersized MCB trips under normal load causing
+    nuisance trips. RCCB on socket circuits is mandatory per IE Rules for safety. MCCB breaking capacity must exceed the available fault current — under-rated MCCB explodes during fault, causing fire and
+    injury. Breaking capacity can only be determined after fault level study.
+  suggested_resolution: Provide protection device schedule showing MCB type, rating, and curve for each circuit. Confirm RCCB on all socket circuits. Provide short-circuit fault level calculation to size
+    MCCB breaking capacity.
+  priority: high
+  building_types:
+  - all
+  package: electrical
+- id: RFI-MS-EL-008
+  trigger_type: missing_spec
+  trigger_keywords:
+  - panel board type
+  - distribution board type
+  - DB type
+  - surface flush weatherproof panel
+  trigger_trade: electrical
+  question_template: 'Distribution board (panel board) type and mounting is not specified for {area}. Please clarify:
+
+    (a) Mounting type — surface-mounted, flush (recessed), or pole-top for external areas?
+
+    (b) Enclosure — sheet steel (standard), moulded case, or weatherproof (IP65) for outdoor and wet areas?
+
+    (c) Bus bar rating — phase bus and neutral bus rating to match main incomer ampacity?
+
+    (d) Metering provision — is a kWh meter required within the DB or at separate meter panel?
+
+    '
+  why_it_matters: DB type determines installation method (flush requires wall chasing and box casting before plastering), IP rating (outdoor/basement areas need IP65), and cost (standard DB vs weatherproof
+    is 2-3x). Undersized bus bar causes overheating and voltage drop within the DB. Flush mounting must be coordinated before plastering — change to surface mount after plastering requires patching. Without
+    specifying DB type, supply of the wrong enclosure is common.
+  suggested_resolution: Specify DB type (surface/flush/weatherproof) for each location. Provide DB schedule with bus bar rating, number of ways, and metering provision. Confirm IP rating for outdoor and
+    wet area DBs.
+  priority: medium
+  building_types:
+  - all
+  package: electrical
+- id: RFI-MS-EL-009
+  trigger_type: missing_spec
+  trigger_keywords:
+  - cable tray material
+  - GI tray
+  - SS tray
+  - FRP tray
+  - cable tray specification
+  trigger_trade: electrical
+  question_template: 'Cable tray material is not specified for {area}. Please clarify:
+
+    (a) Material — hot-dip galvanised steel (HDG GI), pre-galvanised, stainless steel (SS 304/316), or FRP?
+
+    (b) Tray type — perforated sheet, ladder, or solid bottom with cover?
+
+    (c) Corrosive environment — is SS 316 or FRP required for chemical plants, food industry, or coastal installations?
+
+    (d) Tray sizing — fill ratio (40% max) and support spacing (1.5m standard) as per IS 13947?
+
+    '
+  why_it_matters: Cable tray material determines longevity and corrosion resistance. Pre-galvanised tray degrades in 5-8 years in humid or chemical environments; HDG tray lasts 15-20 years. SS 316 is mandatory
+    in food processing and corrosive chemical areas. FRP tray is required in hazardous areas (Zone 1/Zone 2) as it is non-sparking. Without material specification, cheapest pre-galvanised tray is procured
+    regardless of environment.
+  suggested_resolution: Specify cable tray material type based on environment. Mandate HDG as minimum for all standard installations. Require SS 316 or FRP for corrosive and hazardous areas. Provide tray
+    sizing calculation.
+  priority: medium
+  building_types:
+  - all
+  package: electrical
+- id: RFI-MS-EL-010
+  trigger_type: missing_spec
+  trigger_keywords:
+  - earthing type
+  - plate earth
+  - pipe earth
+  - strip earth
+  - chemical earth
+  trigger_trade: electrical
+  question_template: 'Earthing electrode type is specified as "earthing" without defining the type for {area}. Please clarify:
+
+    (a) Electrode type — GI plate (600x600x6mm), GI pipe (50mm dia x 3m), copper strip, or chemical (maintenance-free)?
+
+    (b) Why selected — rocky terrain, high soil resistivity, or maintenance-free requirement for chemical earth?
+
+    (c) Conductor size — GI strip 25x6mm or copper 25x4mm? Strip or stranded for interconnection?
+
+    (d) Soil treatment — bentonite/charcoal/salt backfill mixture for high-resistivity soil?
+
+    '
+  why_it_matters: Earthing electrode selection depends on soil type and resistivity. Plate earth is unreliable in rocky or dry soil. Chemical earth electrodes maintain low resistance (<1 ohm) year-round
+    in all soil types but cost 3-5x GI plate. Data centres and hospitals require <1 ohm resistance — achievable only with chemical earth in most urban soils. Wrong electrode type results in high earth resistance,
+    failing electrical inspection and compromising safety.
+  suggested_resolution: Specify earthing electrode type based on soil resistivity test results. Require chemical (maintenance-free) earth for critical facilities. Provide earthing design drawing with strip
+    conductor sizing per IS 3043.
+  priority: medium
+  building_types:
+  - all
+  package: electrical
+- id: RFI-MS-EL-011
+  trigger_type: missing_spec
+  trigger_keywords:
+  - generator capacity
+  - DG capacity
+  - genset kVA
+  - DG set rating
+  trigger_trade: electrical
+  question_template: 'Generator (DG set) capacity is mentioned but not defined for {area}. Please clarify:
+
+    (a) Essential load schedule — which loads are on generator backup (lifts, common lighting, fire pump, UPS, HVAC)?
+
+    (b) DG capacity in kVA at 0.8 power factor — prime rating or standby rating?
+
+    (c) Number of DG sets — single unit or parallel operation for redundancy?
+
+    (d) Voltage regulation and harmonic distortion limits — for UPS/inverter loads?
+
+    '
+  why_it_matters: DG set capacity must be based on essential load schedule, not total building load. A 100% backup DG (full load) costs 2-3x a 30% essential load DG. Prime vs standby rating is a frequent
+    source of disputes — standby rating is 10% higher but for emergency use only. Non-linear loads (UPS, VFD) require generator with low harmonic distortion — standard DG sets may not be suitable. Wrong
+    DG sizing causes tripping under load or wasted capital.
+  suggested_resolution: Provide essential load schedule defining which loads are backed up and at what diversity. Specify DG capacity (prime/standby), voltage regulation, harmonic distortion limit, and
+    approved makes.
+  priority: high
+  building_types:
+  - all
+  package: electrical
+- id: RFI-MS-EL-012
+  trigger_type: missing_spec
+  trigger_keywords:
+  - UPS backup
+  - battery backup duration
+  - UPS battery
+  - inverter backup time
+  trigger_trade: electrical
+  question_template: 'UPS/inverter battery backup duration is not specified for {area}. Please clarify:
+
+    (a) Backup duration — 15 minutes (standard for bridging to DG start), 1 hour (extended), or 4-8 hours (critical facilities)?
+
+    (b) Load on UPS — computers/workstations only, or includes servers, medical equipment, and HVAC controls?
+
+    (c) Battery type — VRLA (sealed lead-acid), tubular lead-acid, or lithium-ion?
+
+    (d) Battery room requirement — ventilation, temperature control, and acid-proof flooring if VRLA?
+
+    '
+  why_it_matters: Backup duration drives battery bank size and cost significantly — 15-minute backup costs 20-30% of a 4-hour backup system. Lithium-ion batteries cost 2-3x VRLA but last 3-4x longer and
+    require no maintenance. Battery rooms for large VRLA banks require dedicated ventilation (hydrogen gas emission) and acid-proof flooring — civil and MEP scope that must be planned early. Without specifying
+    backup duration, the UPS vendor assumes minimum, which may be inadequate.
+  suggested_resolution: Define UPS backup duration requirement for each critical load. Specify battery type and quantity. Include battery room requirements (size, ventilation, temperature) in civil/MEP
+    scope.
+  priority: medium
+  building_types:
+  - all
+  package: electrical

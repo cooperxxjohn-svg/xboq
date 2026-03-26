@@ -119,6 +119,41 @@ def normalize_requirement_text(text: str) -> str:
 # BOQ ITEM NORMALIZATION
 # =============================================================================
 
+# Keywords that indicate a row is administrative/contractual, NOT a BOQ work item.
+# Only applied when BOTH qty and unit are missing — genuine BOQ items rarely lack both.
+_NON_BOQ_KEYWORDS = re.compile(
+    r'\b('
+    r'clause|condition|article|schedule of|annexure|appendix|'
+    r'tender notice|notice inviting|nit|general condition|special condition|'
+    r'instruction to bidder|bid document|technical specification|'
+    r'penalty|liquidated damage|retention|earnest money|emd|'
+    r'time limit|period of completion|defect liability|'
+    r'contractor shall|engineer in charge|superintending engineer|'
+    r'the contractor|the employer|the engineer|work order|'
+    r'bank guarantee|performance security|arbitration|dispute|jurisdiction'
+    r')\b',
+    re.IGNORECASE,
+)
+
+# Minimum description length for a real BOQ work item (very short = header/page noise)
+_MIN_DESC_LEN = 10
+
+
+def _is_non_boq_row(item: dict) -> bool:
+    """Return True if this row is administrative/contractual content, not a BOQ work item.
+
+    Criterion: both qty AND unit are missing, AND description matches non-BOQ keywords.
+    We never reject rows that have either qty or unit — they may be valid provisional items.
+    """
+    flags = item.get("flags") or []
+    if "qty_missing" not in flags or "unit_missing" not in flags:
+        return False  # has qty or unit → keep regardless
+    desc = (item.get("description") or "").strip()
+    if len(desc) < _MIN_DESC_LEN:
+        return True  # too short to be a work item
+    return bool(_NON_BOQ_KEYWORDS.search(desc))
+
+
 def normalize_boq_items(items: List[dict]) -> List[dict]:
     """
     Normalize BOQ items in-place (returns new list of dicts):
@@ -126,6 +161,7 @@ def normalize_boq_items(items: List[dict]) -> List[dict]:
     - Unit: canonical form via _normalize_unit (reused from extract_boq.py)
     - Qty/Rate: parse Indian-format strings to float
     - Description: strip trailing whitespace and dots
+    - Non-BOQ rows (both qty+unit missing AND administrative keywords) are excluded.
     """
     # Late import to avoid circular dependency at module level
     from .extractors.extract_boq import _normalize_unit, infer_boq_trade, flag_boq_item
@@ -155,6 +191,9 @@ def normalize_boq_items(items: List[dict]) -> List[dict]:
         # Item flags (new)
         if "flags" not in new:
             new["flags"] = flag_boq_item(new)
+        # Drop administrative/contractual rows that are not work items
+        if _is_non_boq_row(new):
+            continue
         normalized.append(new)
     return normalized
 

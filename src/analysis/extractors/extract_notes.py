@@ -35,6 +35,14 @@ REQUIREMENT_PATTERNS = [
     re.compile(r'shall\s+(?:be|have|comply|conform|meet)\s+.{5,120}', re.IGNORECASE),
     re.compile(r'must\s+(?:be|have|comply|conform|meet)\s+.{5,120}', re.IGNORECASE),
     re.compile(r'(?:minimum|maximum|not\s+less\s+than|not\s+more\s+than)\s+.{3,80}', re.IGNORECASE),
+    # Sprint 22: India tender patterns
+    re.compile(r'(?:as\s+per|conforming\s+to|in\s+accordance\s+with)\s+(?:IS|BS|ASTM|CPWD|NBC).{3,120}', re.IGNORECASE),
+    re.compile(r'(?:approved\s+by|subject\s+to\s+approval\s+of)\s+(?:the\s+)?(?:engineer|architect|client|employer).{0,80}', re.IGNORECASE),
+    re.compile(r'(?:the\s+contractor\s+shall|contractor\s+is\s+required\s+to)\s+.{5,120}', re.IGNORECASE),
+    re.compile(r'(?:work\s+shall\s+be|works?\s+to\s+be)\s+(?:carried\s+out|executed|completed)\s+.{5,120}', re.IGNORECASE),
+    re.compile(r'(?:prior\s+approval|written\s+approval|prior\s+permission)\s+.{5,80}', re.IGNORECASE),
+    re.compile(r'(?:should\s+not|shall\s+not)\s+(?:exceed|be\s+less\s+than|be\s+more\s+than)\s+.{3,80}', re.IGNORECASE),
+    re.compile(r'(?:tolerance|permissible\s+variation)\s+.{3,80}', re.IGNORECASE),
 ]
 
 # Material specification indicators
@@ -168,6 +176,21 @@ def _extract_approved_makes(text: str) -> list:
     return makes
 
 
+def _clean_ocr_text(text: str) -> str:
+    """Pre-clean OCR text for better pattern matching.
+
+    - Collapse multiple spaces (OCR artifact)
+    - Fix common OCR broken words
+    - Normalize line breaks
+    """
+    # Collapse runs of spaces (but preserve single newlines)
+    cleaned = re.sub(r'[ \t]{2,}', ' ', text)
+    # Fix OCR broken words: "s h a l l" → "shall" (rare but handle)
+    # Fix "con crete" → "concrete" etc. (common OCR errors)
+    cleaned = re.sub(r'(?<=[a-z])\s(?=[a-z]{2})', '', cleaned)
+    return cleaned
+
+
 def extract_requirements(
     text: str,
     source_page: int,
@@ -183,6 +206,9 @@ def extract_requirements(
     """
     requirements = []
     seen_texts = set()
+
+    # Sprint 22: Pre-clean OCR text for better matching
+    cleaned = _clean_ocr_text(text)
 
     def _add(req_text: str, confidence: float = 0.6):
         # Normalize whitespace
@@ -203,20 +229,20 @@ def extract_requirements(
             "doc_type": doc_type,
         })
 
-    # 1. Extract "shall be" / "must be" requirement sentences
+    # 1. Extract "shall be" / "must be" / India-specific requirement sentences
     for pattern in REQUIREMENT_PATTERNS:
-        for match in pattern.finditer(text):
+        for match in pattern.finditer(cleaned):
             _add(match.group(0), confidence=0.8)
 
     # 2. Extract code references (IS:456, ASTM C150, etc.)
     for pattern in CODE_PATTERNS:
-        for match in pattern.finditer(text):
+        for match in pattern.finditer(cleaned):
             # Get surrounding context (whole line)
-            start = text.rfind('\n', 0, match.start()) + 1
-            end = text.find('\n', match.end())
+            start = cleaned.rfind('\n', 0, match.start()) + 1
+            end = cleaned.find('\n', match.end())
             if end == -1:
-                end = min(match.end() + 150, len(text))
-            context = text[start:end].strip()
+                end = min(match.end() + 150, len(cleaned))
+            context = cleaned[start:end].strip()
             _add(context, confidence=0.7)
 
     # 3. Extract numbered items (1. ... , 2. ... , i) ... , a) ... )
@@ -224,17 +250,26 @@ def extract_requirements(
         r'(?:^|\n)\s*(?:\d{1,3}[\.\)]\s+|[a-z][\.\)]\s+|[ivxlc]+[\.\)]\s+)(.{15,200})',
         re.IGNORECASE | re.MULTILINE,
     )
-    for match in numbered_pattern.finditer(text):
+    for match in numbered_pattern.finditer(cleaned):
         _add(match.group(0).strip(), confidence=0.5)
 
     # 4. Extract material specification lines
     for pattern in MATERIAL_PATTERNS:
-        for match in pattern.finditer(text):
-            start = text.rfind('\n', 0, match.start()) + 1
-            end = text.find('\n', match.end())
+        for match in pattern.finditer(cleaned):
+            start = cleaned.rfind('\n', 0, match.start()) + 1
+            end = cleaned.find('\n', match.end())
             if end == -1:
-                end = min(match.end() + 150, len(text))
-            context = text[start:end].strip()
+                end = min(match.end() + 150, len(cleaned))
+            context = cleaned[start:end].strip()
             _add(context, confidence=0.65)
+
+    # 5. Sprint 22: Extract clause-structured paragraphs
+    # India tenders use "Clause X.Y.Z:" format
+    clause_pattern = re.compile(
+        r'(?:^|\n)\s*(?:clause|cl\.?)\s*(\d+(?:\.\d+)*)\s*[:\-]\s*(.{15,200})',
+        re.IGNORECASE | re.MULTILINE,
+    )
+    for match in clause_pattern.finditer(cleaned):
+        _add(match.group(0).strip(), confidence=0.6)
 
     return requirements

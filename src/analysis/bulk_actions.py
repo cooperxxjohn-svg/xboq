@@ -71,17 +71,31 @@ def generate_rfis_for_high_mismatches(
 
     for row in recon_rows:
         if row.get("mismatch") and row.get("max_delta", 0) >= 5:
-            # Build a finding-like dict for recon_actions
+            # Build description based on row type (structural vs count-based)
+            cat = row.get("category", "").title()
+            delta_pct = row.get("delta_pct")
+            if delta_pct is not None:
+                # Structural reconciliation row (BOQ vs drawing qty)
+                unit = row.get("boq_unit", "")
+                desc = (
+                    f"{cat} quantity mismatch: "
+                    f"BOQ={row.get('boq_count')} {unit}, "
+                    f"drawing={row.get('drawing_count')} {unit}, "
+                    f"delta={delta_pct:+.1f}%"
+                )
+            else:
+                # Count-based reconciliation row (doors/windows/finishes)
+                desc = (
+                    f"{cat} mismatch: "
+                    f"schedule={row.get('schedule_count')}, "
+                    f"boq={row.get('boq_count')}, "
+                    f"drawing={row.get('drawing_count')}"
+                )
             finding = {
                 "type": "conflict",
                 "category": "boq_vs_schedule",
                 "impact": "high",
-                "description": (
-                    f"{row.get('category', '').title()} mismatch: "
-                    f"schedule={row.get('schedule_count')}, "
-                    f"boq={row.get('boq_count')}, "
-                    f"drawing={row.get('drawing_count')}"
-                ),
+                "description": desc,
                 "evidence": {"pages": [], "items": [row.get("category", "")]},
                 "confidence": 0.8,
             }

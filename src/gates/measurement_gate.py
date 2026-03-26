@@ -237,7 +237,15 @@ class MeasurementGate:
                     data["confidence"] = meas_data.get("scale_confidence", 0.5)
 
         # Check for dimension text that could verify scale
-        # TODO: Load from dimension extraction
+        dim_file = self.output_dir / "dimensions" / "dimension_text.json"
+        if dim_file.exists():
+            try:
+                with open(dim_file) as f:
+                    dim_data = json.load(f)
+                if dim_data.get("dimensions") and not data["scale_determined"]:
+                    data["scale_basis"] = "dimension_text_fallback"
+            except Exception:
+                pass  # Non-critical: dimension text is supplementary
 
         return data
 

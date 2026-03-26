@@ -26,6 +26,10 @@ class DrawingType(Enum):
     SECTION_DETAIL = "section_detail"
     ELEVATION = "elevation"
     SITE_PLAN = "site_plan"
+    # Sprint 25: structural pipeline requires these
+    BEAM_LAYOUT = "beam_layout"
+    COLUMN_SCHEDULE = "column_schedule"
+    BEAM_SCHEDULE = "beam_schedule"
     UNKNOWN = "unknown"
 
 
@@ -413,6 +417,8 @@ class PageClassifier:
             total_length += np.sqrt((x2-x1)**2 + (y2-y1)**2)
 
         area = image.shape[0] * image.shape[1]
+        if area == 0:
+            return 0.0
         return total_length / area * 1000  # Normalize
 
     def _detect_table(self, image: np.ndarray, text_lower: str) -> bool:

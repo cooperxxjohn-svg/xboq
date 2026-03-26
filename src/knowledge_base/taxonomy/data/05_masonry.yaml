@@ -1,0 +1,5559 @@
+discipline: architectural
+trade: masonry
+sub_trades:
+  brick_masonry:
+    categories:
+      class_a_brick:
+        items:
+        - id: MAS.BRK.CLA.001
+          standard_name: Class A Brick Masonry 115mm Thick in CM 1:4
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2212
+          dsr_item_ref: ''
+          aliases:
+          - half brick wall 1:4
+          - 115mm brick wall
+          typical_rate_range:
+            min: 5500
+            max: 8000
+          notes: Half brick thick partition wall
+          data_source: CPWD DSR 2023 + IS codes
+        - id: MAS.BRK.CLA.002
+          standard_name: Class A Brick Masonry 230mm Thick in CM 1:4
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2212
+          dsr_item_ref: ''
+          aliases:
+          - one brick wall 1:4
+          - 230mm brick wall
+          - 9 inch wall
+          typical_rate_range:
+            min: 5200
+            max: 7500
+          notes: Standard one brick thick wall
+          data_source: CPWD DSR 2023 + IS codes
+        - id: MAS.BRK.CLA.003
+          standard_name: Class A Brick Masonry 345mm Thick in CM 1:4
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2212
+          dsr_item_ref: ''
+          aliases:
+          - one and half brick wall 1:4
+          - 345mm brick wall
+          - 13.5 inch wall
+          typical_rate_range:
+            min: 5000
+            max: 7200
+          notes: One and half brick thick load bearing wall
+          data_source: CPWD DSR 2023 + IS codes
+        - id: MAS.BRK.CLA.004
+          standard_name: Class A Brick Masonry 115mm Thick in CM 1:6
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2212
+          dsr_item_ref: ''
+          aliases:
+          - half brick wall 1:6
+          typical_rate_range:
+            min: 5000
+            max: 7200
+          notes: Half brick wall with leaner mortar
+          data_source: CPWD DSR 2023 + IS codes
+        - id: MAS.BRK.CLA.005
+          standard_name: Class A Brick Masonry 230mm Thick in CM 1:6
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2212
+          dsr_item_ref: ''
+          aliases:
+          - one brick wall 1:6
+          - 230mm wall 1:6
+          typical_rate_range:
+            min: 4800
+            max: 7000
+          notes: Standard wall with CM 1:6 for non-load bearing
+          data_source: CPWD DSR 2023 + IS codes
+        - id: MAS.BRK.CLA.006
+          standard_name: Class A Brick Masonry 345mm Thick in CM 1:6
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2212
+          dsr_item_ref: ''
+          aliases:
+          - one and half brick wall 1:6
+          - 345mm wall 1:6
+          typical_rate_range:
+            min: 4600
+            max: 6800
+          notes: ''
+          data_source: CPWD DSR 2023 + IS codes
+        - id: MAS.BRK.CLA.007
+          standard_name: Class A Brick Masonry in CM 1:4 - Superstructure
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2212
+          dsr_item_ref: ''
+          aliases:
+          - superstructure brickwork 1:4
+          typical_rate_range:
+            min: 5500
+            max: 8200
+          notes: Above plinth level brickwork
+          data_source: CPWD DSR 2023 + IS codes
+        - id: MAS.BRK.CLA.008
+          standard_name: Class A Brick Masonry in CM 1:6 - Superstructure
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2212
+          dsr_item_ref: ''
+          aliases:
+          - superstructure brickwork 1:6
+          typical_rate_range:
+            min: 5000
+            max: 7500
+          notes: ''
+          data_source: CPWD DSR 2023 + IS codes
+        - id: MAS.BRK.CLA.009
+          standard_name: Class A Brick Masonry in CM 1:4 - Foundation and Plinth
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2212
+          dsr_item_ref: ''
+          aliases:
+          - foundation brickwork
+          - plinth brickwork
+          typical_rate_range:
+            min: 5600
+            max: 8400
+          notes: Below plinth level brickwork
+          data_source: CPWD DSR 2023 + IS codes
+        - id: MAS.BRK.CLA.010
+          standard_name: Class A Brick Masonry in CM 1:4 - Parapet Wall 115mm
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2212
+          dsr_item_ref: ''
+          aliases:
+          - parapet brickwork
+          - parapet wall
+          typical_rate_range:
+            min: 6000
+            max: 9000
+          notes: Parapet wall at terrace level including scaffolding
+          data_source: IS codes only
+      class_b_brick:
+        items:
+        - id: MAS.BRK.CLB.001
+          standard_name: Class B Brick Masonry 115mm Thick in CM 1:4
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: IS 2212
+          dsr_item_ref: ''
+          aliases:
+          - class B half brick wall
+          typical_rate_range:
+            min: 4500
+            max: 6500
+          notes: Lower grade brick for non-structural walls
+          data_source: IS codes only
+        - id: MAS.BRK.CLB.002
+          standard_name: Class B Brick Masonry 230mm Thick in CM 1:6
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: IS 2212
+          dsr_item_ref: ''
+          aliases:
+          - class B one brick wall
+          typical_rate_range:
+            min: 4200
+            max: 6200
+          notes: ''
+          data_source: IS codes only
+        - id: MAS.BRK.CLB.003
+          standard_name: Class B Brick Masonry 345mm Thick in CM 1:6
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: IS 2212
+          dsr_item_ref: ''
+          aliases:
+          - class B one and half brick wall
+          typical_rate_range:
+            min: 4000
+            max: 5800
+          notes: One and half brick thick wall with class B bricks
+          data_source: IS codes only
+        - id: MAS.BRK.CLB.004
+          standard_name: Class B Brick Masonry 230mm Thick in CM 1:4
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: IS 2212
+          dsr_item_ref: ''
+          aliases:
+          - class B 230mm 1:4
+          typical_rate_range:
+            min: 4500
+            max: 6500
+          notes: Class B bricks with stronger mortar
+          data_source: IS codes only
+      wire_cut_brick:
+        items:
+        - id: MAS.BRK.WCT.001
+          standard_name: Wire-Cut Brick Masonry 115mm Thick in CM 1:4
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2212
+          dsr_item_ref: ''
+          aliases:
+          - wire cut brick half wall
+          - machine brick 115mm
+          typical_rate_range:
+            min: 5800
+            max: 8500
+          notes: Precision wire-cut bricks for fair-face work
+          data_source: IS codes only
+        - id: MAS.BRK.WCT.002
+          standard_name: Wire-Cut Brick Masonry 230mm Thick in CM 1:4
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2212
+          dsr_item_ref: ''
+          aliases:
+          - wire cut brick 230mm
+          - machine brick one wall
+          typical_rate_range:
+            min: 5500
+            max: 8000
+          notes: Uniform size and shape for exposed brickwork
+          data_source: IS codes only
+        - id: MAS.BRK.WCT.003
+          standard_name: Wire-Cut Brick Masonry 115mm Thick in CM 1:3
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2212
+          dsr_item_ref: ''
+          aliases:
+          - wire cut 115mm rich mortar
+          typical_rate_range:
+            min: 6200
+            max: 9000
+          notes: Rich mortar for wet areas and structural use
+          data_source: IS codes only
+        - id: MAS.BRK.WCT.004
+          standard_name: Wire-Cut Brick Masonry 230mm Thick in CM 1:3
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2212
+          dsr_item_ref: ''
+          aliases:
+          - wire cut 230mm 1:3
+          typical_rate_range:
+            min: 5900
+            max: 8500
+          notes: Structural walls in wet areas
+          data_source: IS codes only
+        - id: MAS.BRK.WCT.005
+          standard_name: Wire-Cut Brick Masonry 230mm Thick in CM 1:6
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2212
+          dsr_item_ref: ''
+          aliases:
+          - wire cut 230mm lean mortar
+          typical_rate_range:
+            min: 5000
+            max: 7500
+          notes: Non-structural internal walls
+          data_source: IS codes only
+      table_moulded_brick:
+        items:
+        - id: MAS.BRK.TBM.001
+          standard_name: Table-Moulded Brick Masonry 115mm Thick in CM 1:4
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: IS 2212
+          dsr_item_ref: ''
+          aliases:
+          - table moulded half wall
+          - hand moulded brick
+          typical_rate_range:
+            min: 4800
+            max: 7000
+          notes: Table-moulded bricks for internal partition
+          data_source: IS codes only
+        - id: MAS.BRK.TBM.002
+          standard_name: Table-Moulded Brick Masonry 230mm Thick in CM 1:4
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: IS 2212
+          dsr_item_ref: ''
+          aliases:
+          - table moulded 230mm wall
+          typical_rate_range:
+            min: 4500
+            max: 6800
+          notes: ''
+          data_source: IS codes only
+        - id: MAS.BRK.TBM.003
+          standard_name: Table-Moulded Brick Masonry 230mm Thick in CM 1:6
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: IS 2212
+          dsr_item_ref: ''
+          aliases:
+          - table moulded 230mm 1:6
+          typical_rate_range:
+            min: 4200
+            max: 6200
+          notes: ''
+          data_source: IS codes only
+      machine_pressed_brick:
+        items:
+        - id: MAS.BRK.MCP.001
+          standard_name: Machine-Pressed Brick Masonry 115mm Thick in CM 1:4
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2212
+          dsr_item_ref: ''
+          aliases:
+          - machine pressed brick 115mm
+          - pressed brick half wall
+          typical_rate_range:
+            min: 5200
+            max: 7800
+          notes: High-density machine-pressed bricks
+          data_source: IS codes only
+        - id: MAS.BRK.MCP.002
+          standard_name: Machine-Pressed Brick Masonry 230mm Thick in CM 1:4
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2212
+          dsr_item_ref: ''
+          aliases:
+          - machine pressed 230mm
+          - pressed brick one wall
+          typical_rate_range:
+            min: 5000
+            max: 7500
+          notes: ''
+          data_source: IS codes only
+        - id: MAS.BRK.MCP.003
+          standard_name: Machine-Pressed Brick Masonry 230mm Thick in CM 1:6
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2212
+          dsr_item_ref: ''
+          aliases:
+          - machine pressed 230mm 1:6
+          typical_rate_range:
+            min: 4600
+            max: 7000
+          notes: ''
+          data_source: IS codes only
+      special_mortar_mixes:
+        items:
+        - id: MAS.BRK.SMM.001
+          standard_name: Brick Masonry 230mm Thick in CM 1:3 - Superstructure
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2212
+          dsr_item_ref: ''
+          aliases:
+          - 230mm wall rich mortar 1:3
+          typical_rate_range:
+            min: 6000
+            max: 8800
+          notes: Rich mortar for load-bearing and wet area walls
+          data_source: IS codes only
+        - id: MAS.BRK.SMM.002
+          standard_name: Brick Masonry 115mm Thick in CM 1:3 - Superstructure
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2212
+          dsr_item_ref: ''
+          aliases:
+          - 115mm wall rich mortar 1:3
+          typical_rate_range:
+            min: 6200
+            max: 9200
+          notes: Rich mortar for toilet and kitchen partition walls
+          data_source: IS codes only
+        - id: MAS.BRK.SMM.003
+          standard_name: Brick Masonry 230mm Thick in CM 1:5 - Superstructure
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2212
+          dsr_item_ref: ''
+          aliases:
+          - 230mm wall 1:5 mortar
+          typical_rate_range:
+            min: 5300
+            max: 7800
+          notes: Intermediate mortar strength
+          data_source: IS codes only
+        - id: MAS.BRK.SMM.004
+          standard_name: Brick Masonry 115mm Thick in CM 1:5 - Superstructure
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2212
+          dsr_item_ref: ''
+          aliases:
+          - 115mm wall 1:5 mortar
+          typical_rate_range:
+            min: 5500
+            max: 8000
+          notes: ''
+          data_source: IS codes only
+        - id: MAS.BRK.SMM.005
+          standard_name: Brick Masonry 345mm Thick in CM 1:3 - Foundation
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2212
+          dsr_item_ref: ''
+          aliases:
+          - 345mm wall 1:3 foundation
+          typical_rate_range:
+            min: 5800
+            max: 8500
+          notes: Rich mortar for below-grade load-bearing walls
+          data_source: IS codes only
+        - id: MAS.BRK.SMM.006
+          standard_name: Brick Masonry 230mm Thick in CM 1:8 - Non-Structural
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: IS 2212
+          dsr_item_ref: ''
+          aliases:
+          - 230mm wall 1:8
+          - lean mortar wall
+          typical_rate_range:
+            min: 4200
+            max: 6200
+          notes: Very lean mortar for temporary or non-structural walls
+          data_source: IS codes only
+        - id: MAS.BRK.SMM.007
+          standard_name: Brick Masonry 115mm Thick in CM 1:8 - Non-Structural
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: IS 2212
+          dsr_item_ref: ''
+          aliases:
+          - 115mm wall 1:8
+          typical_rate_range:
+            min: 4400
+            max: 6400
+          notes: Lean mortar for internal partitions
+          data_source: IS codes only
+        - id: MAS.BRK.SMM.008
+          standard_name: Brick Masonry 460mm Thick in CM 1:4 - Foundation
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2212
+          dsr_item_ref: ''
+          aliases:
+          - two brick wall
+          - 460mm wall
+          - 18 inch wall
+          typical_rate_range:
+            min: 4800
+            max: 7200
+          notes: Two brick thick load-bearing foundation wall
+          data_source: CPWD DSR 2023 + IS codes
+      special_bonds:
+        items:
+        - id: MAS.BRK.SBD.001
+          standard_name: Rat-Trap Bond Brick Masonry 230mm Thick in CM 1:6
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: IS 2212
+          dsr_item_ref: ''
+          aliases:
+          - rat trap bond
+          - Chinese bond
+          - Silverlock bond
+          typical_rate_range:
+            min: 4200
+            max: 6500
+          notes: Cavity bond saving 25% bricks with better insulation
+          data_source: IS codes only
+        - id: MAS.BRK.SBD.002
+          standard_name: Rat-Trap Bond Brick Masonry 230mm Thick in CM 1:4
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: IS 2212
+          dsr_item_ref: ''
+          aliases:
+          - rat trap 1:4
+          typical_rate_range:
+            min: 4500
+            max: 6800
+          notes: ''
+          data_source: IS codes only
+        - id: MAS.BRK.SBD.003
+          standard_name: Brick-on-Edge Masonry 115mm Thick in CM 1:4
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2212
+          dsr_item_ref: ''
+          aliases:
+          - brick on edge
+          - brick on end
+          - soldier course wall
+          typical_rate_range:
+            min: 450
+            max: 750
+          notes: Brick laid on edge for thin partitions and parapets
+          data_source: IS codes only
+        - id: MAS.BRK.SBD.004
+          standard_name: Brick-on-Edge Masonry 75mm Thick in CM 1:4
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2212
+          dsr_item_ref: ''
+          aliases:
+          - brick on flat edge
+          - thin brick partition
+          typical_rate_range:
+            min: 380
+            max: 600
+          notes: Thinnest brick partition possible
+          data_source: IS codes only
+        - id: MAS.BRK.SBD.005
+          standard_name: Curved Brick Masonry Wall 230mm Thick in CM 1:4
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 2212
+          dsr_item_ref: ''
+          aliases:
+          - curved brick wall
+          - radius brick wall
+          typical_rate_range:
+            min: 7500
+            max: 12000
+          notes: Curved wall with cut bricks, minimum radius 1.5m
+          data_source: IS codes only
+        - id: MAS.BRK.SBD.006
+          standard_name: Curved Brick Masonry Wall 115mm Thick in CM 1:4
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 2212
+          dsr_item_ref: ''
+          aliases:
+          - curved half brick wall
+          typical_rate_range:
+            min: 800
+            max: 1300
+          notes: Curved partition wall
+          data_source: IS codes only
+        - id: MAS.BRK.SBD.007
+          standard_name: English Bond Brick Masonry 230mm Thick in CM 1:4
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2212
+          dsr_item_ref: ''
+          aliases:
+          - english bond wall
+          - alternate header stretcher
+          typical_rate_range:
+            min: 5500
+            max: 8200
+          notes: Standard English bond - alternate header and stretcher courses
+          data_source: IS codes only
+        - id: MAS.BRK.SBD.008
+          standard_name: Flemish Bond Brick Masonry 230mm Thick in CM 1:4
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          - heritage
+          requires: []
+          is_code_ref: IS 2212
+          dsr_item_ref: ''
+          aliases:
+          - flemish bond wall
+          - decorative brick bond
+          typical_rate_range:
+            min: 6000
+            max: 9000
+          notes: Decorative Flemish bond with header and stretcher in same course
+          data_source: IS codes only
+        - id: MAS.BRK.SBD.009
+          standard_name: Herringbone Bond Brick Panel in CM 1:3
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 2212
+          dsr_item_ref: ''
+          aliases:
+          - herringbone brick
+          - diagonal brick panel
+          typical_rate_range:
+            min: 900
+            max: 1500
+          notes: Decorative herringbone pattern within framed panel
+          data_source: estimated
+        - id: MAS.BRK.SBD.010
+          standard_name: Brick Masonry 230mm Thick in Lime Mortar 1:2
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - heritage
+          requires: []
+          is_code_ref: IS 2212
+          dsr_item_ref: ''
+          aliases:
+          - lime mortar brick wall
+          - heritage brick masonry
+          typical_rate_range:
+            min: 6500
+            max: 10000
+          notes: For heritage restoration work with lime mortar
+          data_source: IS codes only
+        - id: MAS.BRK.SBD.011
+          standard_name: Brick Masonry in Mud Mortar 230mm Thick
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: IS 2212
+          dsr_item_ref: ''
+          aliases:
+          - mud mortar wall
+          - kachchi wall
+          - rural brick wall
+          typical_rate_range:
+            min: 2500
+            max: 4000
+          notes: Traditional mud mortar masonry for rural construction
+          data_source: estimated
+        - id: MAS.BRK.SBD.012
+          standard_name: Exposed Brick Masonry 230mm Thick with Flush Pointing CM 1:3
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 2212
+          dsr_item_ref: ''
+          aliases:
+          - exposed brick wall
+          - face brick wall
+          - fair face brick
+          typical_rate_range:
+            min: 750
+            max: 1200
+          notes: Exposed finish brickwork with special pointing
+          data_source: IS codes only
+  aac_block:
+    categories:
+      aac_block_walls:
+        items:
+        - id: MAS.AAC.100.001
+          standard_name: AAC Block Masonry 100mm Thick with Polymer Modified Mortar
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2185 Part 3
+          dsr_item_ref: ''
+          aliases:
+          - 100mm AAC block
+          - 4 inch AAC wall
+          - aerated block 100
+          typical_rate_range:
+            min: 4800
+            max: 7000
+          notes: Lightweight partition wall
+          data_source: IS codes only
+        - id: MAS.AAC.100.002
+          standard_name: AAC Block Masonry 150mm Thick with Polymer Modified Mortar
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2185 Part 3
+          dsr_item_ref: ''
+          aliases:
+          - 150mm AAC block
+          - 6 inch AAC wall
+          - aerated block 150
+          typical_rate_range:
+            min: 4600
+            max: 6800
+          notes: Standard internal partition
+          data_source: IS codes only
+        - id: MAS.AAC.100.003
+          standard_name: AAC Block Masonry 200mm Thick with Polymer Modified Mortar
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2185 Part 3
+          dsr_item_ref: ''
+          aliases:
+          - 200mm AAC block
+          - 8 inch AAC wall
+          - aerated block 200
+          typical_rate_range:
+            min: 4400
+            max: 6500
+          notes: External wall or thicker partition
+          data_source: IS codes only
+        - id: MAS.AAC.100.004
+          standard_name: AAC Block Masonry 250mm Thick with Polymer Modified Mortar
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 2185 Part 3
+          dsr_item_ref: ''
+          aliases:
+          - 250mm AAC block
+          - 10 inch AAC wall
+          typical_rate_range:
+            min: 4300
+            max: 6400
+          notes: Thick external wall for thermal insulation
+          data_source: IS codes only
+        - id: MAS.AAC.100.005
+          standard_name: AAC Block Masonry 100mm Thick with Thin Bed Adhesive Mortar
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2185 Part 3
+          dsr_item_ref: ''
+          aliases:
+          - AAC thin joint 100mm
+          typical_rate_range:
+            min: 5000
+            max: 7200
+          notes: Thin joint system - 2-3mm adhesive mortar
+          data_source: IS codes only
+        - id: MAS.AAC.100.006
+          standard_name: AAC Block Masonry 200mm Thick with Thin Bed Adhesive Mortar
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2185 Part 3
+          dsr_item_ref: ''
+          aliases:
+          - AAC thin joint 200mm
+          typical_rate_range:
+            min: 4600
+            max: 6800
+          notes: Thin joint system - improved thermal performance
+          data_source: IS codes only
+        - id: MAS.AAC.100.007
+          standard_name: AAC Block Masonry 75mm Thick with Polymer Modified Mortar
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2185 Part 3
+          dsr_item_ref: ''
+          aliases:
+          - 75mm AAC block
+          - 3 inch AAC wall
+          typical_rate_range:
+            min: 380
+            max: 550
+          notes: Thin AAC partition wall
+          data_source: IS codes only
+        - id: MAS.AAC.100.008
+          standard_name: AAC Block Masonry 125mm Thick with Polymer Modified Mortar
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2185 Part 3
+          dsr_item_ref: ''
+          aliases:
+          - 125mm AAC block
+          - 5 inch AAC wall
+          typical_rate_range:
+            min: 4700
+            max: 6900
+          notes: Intermediate thickness AAC partition
+          data_source: IS codes only
+        - id: MAS.AAC.100.009
+          standard_name: AAC Block Masonry 150mm Thick with Thin Bed Adhesive Mortar
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2185 Part 3
+          dsr_item_ref: ''
+          aliases:
+          - AAC thin joint 150mm
+          typical_rate_range:
+            min: 4800
+            max: 7100
+          notes: 150mm partition with thin bed adhesive
+          data_source: IS codes only
+        - id: MAS.AAC.100.010
+          standard_name: AAC Block Masonry 250mm Thick with Thin Bed Adhesive Mortar
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 2185 Part 3
+          dsr_item_ref: ''
+          aliases:
+          - AAC thin joint 250mm
+          typical_rate_range:
+            min: 4500
+            max: 6600
+          notes: Thick external wall with thin bed system
+          data_source: IS codes only
+        - id: MAS.AAC.100.011
+          standard_name: AAC Block Masonry 100mm Thick with CM 1:6
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: IS 2185 Part 3
+          dsr_item_ref: ''
+          aliases:
+          - AAC 100mm cement mortar
+          typical_rate_range:
+            min: 4400
+            max: 6500
+          notes: AAC block laid with conventional cement mortar
+          data_source: IS codes only
+        - id: MAS.AAC.100.012
+          standard_name: AAC Block Masonry 200mm Thick with CM 1:6
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: IS 2185 Part 3
+          dsr_item_ref: ''
+          aliases:
+          - AAC 200mm cement mortar
+          typical_rate_range:
+            min: 4100
+            max: 6000
+          notes: AAC block with conventional mortar for cost economy
+          data_source: IS codes only
+        - id: MAS.AAC.100.013
+          standard_name: AAC Block Masonry 300mm Thick with Polymer Modified Mortar
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 2185 Part 3
+          dsr_item_ref: ''
+          aliases:
+          - 300mm AAC block
+          - 12 inch AAC wall
+          typical_rate_range:
+            min: 4200
+            max: 6200
+          notes: Extra thick AAC wall for high thermal insulation
+          data_source: IS codes only
+        - id: MAS.AAC.100.014
+          standard_name: AAC Block Masonry - Curved Wall 200mm Thick
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 2185 Part 3
+          dsr_item_ref: ''
+          aliases:
+          - curved AAC wall
+          - radius AAC block wall
+          typical_rate_range:
+            min: 700
+            max: 1100
+          notes: AAC blocks cut and shaped for curved walls
+          data_source: IS codes only
+  concrete_block:
+    categories:
+      solid_block:
+        items:
+        - id: MAS.CBK.SLD.001
+          standard_name: Solid Concrete Block Masonry 100mm Thick in CM 1:4
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2185 Part 1
+          dsr_item_ref: ''
+          aliases:
+          - 100mm solid block
+          - 4 inch concrete block
+          typical_rate_range:
+            min: 4200
+            max: 6000
+          notes: Solid concrete block partition
+          data_source: IS codes only
+        - id: MAS.CBK.SLD.002
+          standard_name: Solid Concrete Block Masonry 150mm Thick in CM 1:4
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2185 Part 1
+          dsr_item_ref: ''
+          aliases:
+          - 150mm solid block
+          - 6 inch solid block
+          typical_rate_range:
+            min: 4000
+            max: 5800
+          notes: ''
+          data_source: IS codes only
+        - id: MAS.CBK.SLD.003
+          standard_name: Solid Concrete Block Masonry 200mm Thick in CM 1:4
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2185 Part 1
+          dsr_item_ref: ''
+          aliases:
+          - 200mm solid block
+          - 8 inch solid block
+          typical_rate_range:
+            min: 3800
+            max: 5600
+          notes: Standard external wall block
+          data_source: IS codes only
+      hollow_block:
+        items:
+        - id: MAS.CBK.HLW.001
+          standard_name: Hollow Concrete Block Masonry 100mm Thick in CM 1:4
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2185 Part 1
+          dsr_item_ref: ''
+          aliases:
+          - 100mm hollow block
+          - hollow partition block
+          typical_rate_range:
+            min: 3500
+            max: 5200
+          notes: Lightweight hollow block partition
+          data_source: IS codes only
+        - id: MAS.CBK.HLW.002
+          standard_name: Hollow Concrete Block Masonry 150mm Thick in CM 1:4
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2185 Part 1
+          dsr_item_ref: ''
+          aliases:
+          - 150mm hollow block
+          typical_rate_range:
+            min: 3300
+            max: 5000
+          notes: ''
+          data_source: IS codes only
+        - id: MAS.CBK.HLW.003
+          standard_name: Hollow Concrete Block Masonry 200mm Thick in CM 1:4
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2185 Part 1
+          dsr_item_ref: ''
+          aliases:
+          - 200mm hollow block
+          - 8 inch hollow block
+          typical_rate_range:
+            min: 3200
+            max: 4800
+          notes: Common for external walls with rebar grouting option
+          data_source: IS codes only
+        - id: MAS.CBK.HLW.004
+          standard_name: Hollow Concrete Block Masonry 300mm Thick in CM 1:4
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 2185 Part 1
+          dsr_item_ref: ''
+          aliases:
+          - 300mm hollow block
+          - 12 inch hollow block
+          typical_rate_range:
+            min: 3100
+            max: 4600
+          notes: Thick wall with grouted cores for structural use
+          data_source: IS codes only
+        - id: MAS.CBK.HLW.005
+          standard_name: Hollow Concrete Block Masonry 200mm Thick in CM 1:6
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2185 Part 1
+          dsr_item_ref: ''
+          aliases:
+          - 200mm hollow block 1:6
+          typical_rate_range:
+            min: 3000
+            max: 4500
+          notes: Lean mortar for non-structural walls
+          data_source: IS codes only
+        - id: MAS.CBK.HLW.006
+          standard_name: Hollow Concrete Block Masonry 150mm Thick in CM 1:6
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2185 Part 1
+          dsr_item_ref: ''
+          aliases:
+          - 150mm hollow block 1:6
+          typical_rate_range:
+            min: 3100
+            max: 4700
+          notes: ''
+          data_source: IS codes only
+      solid_block_additional:
+        items:
+        - id: MAS.CBK.SLD.004
+          standard_name: Solid Concrete Block Masonry 200mm Thick in CM 1:6
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2185 Part 1
+          dsr_item_ref: ''
+          aliases:
+          - 200mm solid block 1:6
+          typical_rate_range:
+            min: 3600
+            max: 5400
+          notes: ''
+          data_source: IS codes only
+        - id: MAS.CBK.SLD.005
+          standard_name: Solid Concrete Block Masonry 100mm Thick in CM 1:6
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2185 Part 1
+          dsr_item_ref: ''
+          aliases:
+          - 100mm solid block 1:6
+          typical_rate_range:
+            min: 4000
+            max: 5800
+          notes: ''
+          data_source: IS codes only
+        - id: MAS.CBK.SLD.006
+          standard_name: Solid Concrete Block Masonry 300mm Thick in CM 1:4
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 2185 Part 1
+          dsr_item_ref: ''
+          aliases:
+          - 300mm solid block
+          - 12 inch solid block
+          typical_rate_range:
+            min: 3600
+            max: 5200
+          notes: Heavy duty solid block wall
+          data_source: IS codes only
+      fly_ash_block:
+        items:
+        - id: MAS.CBK.FAB.001
+          standard_name: Fly Ash Concrete Block Masonry 100mm Thick in CM 1:4
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2185 Part 1
+          dsr_item_ref: ''
+          aliases:
+          - fly ash block 100mm
+          - FAL-G block
+          typical_rate_range:
+            min: 3800
+            max: 5500
+          notes: Eco-friendly fly ash based concrete block
+          data_source: IS codes only
+        - id: MAS.CBK.FAB.002
+          standard_name: Fly Ash Concrete Block Masonry 150mm Thick in CM 1:4
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2185 Part 1
+          dsr_item_ref: ''
+          aliases:
+          - fly ash block 150mm
+          typical_rate_range:
+            min: 3600
+            max: 5200
+          notes: ''
+          data_source: IS codes only
+        - id: MAS.CBK.FAB.003
+          standard_name: Fly Ash Concrete Block Masonry 200mm Thick in CM 1:4
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2185 Part 1
+          dsr_item_ref: ''
+          aliases:
+          - fly ash block 200mm
+          typical_rate_range:
+            min: 3400
+            max: 5000
+          notes: ''
+          data_source: IS codes only
+        - id: MAS.CBK.FAB.004
+          standard_name: Fly Ash Concrete Block Masonry 200mm Thick in CM 1:6
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2185 Part 1
+          dsr_item_ref: ''
+          aliases:
+          - fly ash block 200mm 1:6
+          typical_rate_range:
+            min: 3200
+            max: 4700
+          notes: ''
+          data_source: IS codes only
+      clc_block:
+        items:
+        - id: MAS.CBK.CLC.001
+          standard_name: CLC Block Masonry 100mm Thick with Polymer Modified Mortar
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2185 Part 3
+          dsr_item_ref: ''
+          aliases:
+          - CLC block 100mm
+          - cellular lightweight concrete block
+          typical_rate_range:
+            min: 3500
+            max: 5200
+          notes: Cellular lightweight concrete block - density 800-1000 kg/cum
+          data_source: IS codes only
+        - id: MAS.CBK.CLC.002
+          standard_name: CLC Block Masonry 150mm Thick with Polymer Modified Mortar
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2185 Part 3
+          dsr_item_ref: ''
+          aliases:
+          - CLC block 150mm
+          typical_rate_range:
+            min: 3300
+            max: 5000
+          notes: ''
+          data_source: IS codes only
+        - id: MAS.CBK.CLC.003
+          standard_name: CLC Block Masonry 200mm Thick with Polymer Modified Mortar
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2185 Part 3
+          dsr_item_ref: ''
+          aliases:
+          - CLC block 200mm
+          typical_rate_range:
+            min: 3200
+            max: 4800
+          notes: ''
+          data_source: IS codes only
+        - id: MAS.CBK.CLC.004
+          standard_name: CLC Block Masonry 200mm Thick with CM 1:6
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: IS 2185 Part 3
+          dsr_item_ref: ''
+          aliases:
+          - CLC block 200mm cement mortar
+          typical_rate_range:
+            min: 2900
+            max: 4400
+          notes: CLC with conventional mortar
+          data_source: IS codes only
+  fly_ash_brick:
+    categories:
+      fly_ash_brick_walls:
+        items:
+        - id: MAS.FAB.STD.001
+          standard_name: Fly Ash Brick Masonry 115mm Thick in CM 1:4
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 12894
+          dsr_item_ref: ''
+          aliases:
+          - fly ash brick half wall
+          - FAL-G brick 115mm
+          typical_rate_range:
+            min: 4000
+            max: 5800
+          notes: Eco-friendly alternative to clay brick
+          data_source: IS codes only
+        - id: MAS.FAB.STD.002
+          standard_name: Fly Ash Brick Masonry 230mm Thick in CM 1:4
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 12894
+          dsr_item_ref: ''
+          aliases:
+          - fly ash brick one wall
+          - FAL-G brick 230mm
+          typical_rate_range:
+            min: 3800
+            max: 5500
+          notes: ''
+          data_source: IS codes only
+        - id: MAS.FAB.STD.003
+          standard_name: Fly Ash Brick Masonry 230mm Thick in CM 1:6
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 12894
+          dsr_item_ref: ''
+          aliases:
+          - fly ash brick 1:6
+          typical_rate_range:
+            min: 3500
+            max: 5200
+          notes: ''
+          data_source: IS codes only
+        - id: MAS.FAB.STD.004
+          standard_name: Fly Ash Brick Masonry 115mm Thick in CM 1:6
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 12894
+          dsr_item_ref: ''
+          aliases:
+          - fly ash half brick 1:6
+          typical_rate_range:
+            min: 3600
+            max: 5200
+          notes: ''
+          data_source: IS codes only
+        - id: MAS.FAB.STD.005
+          standard_name: Fly Ash Brick Masonry 345mm Thick in CM 1:4
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 12894
+          dsr_item_ref: ''
+          aliases:
+          - fly ash brick 345mm
+          - fly ash 1.5 brick wall
+          typical_rate_range:
+            min: 3600
+            max: 5200
+          notes: One and half brick thick fly ash wall
+          data_source: IS codes only
+        - id: MAS.FAB.STD.006
+          standard_name: Fly Ash Brick Masonry 230mm Thick in CM 1:3
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 12894
+          dsr_item_ref: ''
+          aliases:
+          - fly ash brick 1:3
+          typical_rate_range:
+            min: 4200
+            max: 6000
+          notes: Rich mortar for structural and wet areas
+          data_source: IS codes only
+        - id: MAS.FAB.STD.007
+          standard_name: Fly Ash Brick Masonry 115mm Thick in CM 1:3
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 12894
+          dsr_item_ref: ''
+          aliases:
+          - fly ash half brick 1:3
+          typical_rate_range:
+            min: 4400
+            max: 6200
+          notes: ''
+          data_source: IS codes only
+        - id: MAS.FAB.STD.008
+          standard_name: Fly Ash Brick Masonry 115mm Thick in CM 1:5
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 12894
+          dsr_item_ref: ''
+          aliases:
+          - fly ash half brick 1:5
+          typical_rate_range:
+            min: 3800
+            max: 5500
+          notes: ''
+          data_source: IS codes only
+        - id: MAS.FAB.STD.009
+          standard_name: Fly Ash Brick Masonry 230mm Thick in CM 1:5
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 12894
+          dsr_item_ref: ''
+          aliases:
+          - fly ash one brick 1:5
+          typical_rate_range:
+            min: 3600
+            max: 5300
+          notes: ''
+          data_source: IS codes only
+        - id: MAS.FAB.STD.010
+          standard_name: Fly Ash Brick Masonry in CM 1:4 - Foundation and Plinth
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 12894
+          dsr_item_ref: ''
+          aliases:
+          - fly ash brick foundation
+          typical_rate_range:
+            min: 4000
+            max: 5800
+          notes: Below plinth level fly ash brickwork
+          data_source: IS codes only
+  stone_masonry:
+    categories:
+      coursed_rubble:
+        items:
+        - id: MAS.STN.CRS.001
+          standard_name: Coursed Rubble Stone Masonry in CM 1:4 - Foundation
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1597
+          dsr_item_ref: ''
+          aliases:
+          - CRS masonry foundation
+          - coursed rubble foundation
+          typical_rate_range:
+            min: 3500
+            max: 5500
+          notes: Foundation and plinth level stone masonry
+          data_source: CPWD DSR 2023 + IS codes
+        - id: MAS.STN.CRS.002
+          standard_name: Coursed Rubble Stone Masonry in CM 1:6 - Foundation
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1597
+          dsr_item_ref: ''
+          aliases:
+          - CRS 1:6 foundation
+          typical_rate_range:
+            min: 3200
+            max: 5000
+          notes: ''
+          data_source: CPWD DSR 2023 + IS codes
+        - id: MAS.STN.CRS.003
+          standard_name: Coursed Rubble Stone Masonry in CM 1:4 - Superstructure
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1597
+          dsr_item_ref: ''
+          aliases:
+          - CRS masonry superstructure
+          typical_rate_range:
+            min: 3800
+            max: 6000
+          notes: Above plinth level stone masonry
+          data_source: CPWD DSR 2023 + IS codes
+        - id: MAS.STN.CRS.004
+          standard_name: Coursed Rubble Stone Masonry in CM 1:6 - Superstructure
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1597
+          dsr_item_ref: ''
+          aliases:
+          - CRS 1:6 superstructure
+          typical_rate_range:
+            min: 3500
+            max: 5500
+          notes: ''
+          data_source: CPWD DSR 2023 + IS codes
+      random_rubble:
+        items:
+        - id: MAS.STN.RRM.001
+          standard_name: Random Rubble Stone Masonry in CM 1:4 - Foundation
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1597
+          dsr_item_ref: ''
+          aliases:
+          - RR masonry foundation
+          - uncoursed rubble foundation
+          typical_rate_range:
+            min: 3000
+            max: 4800
+          notes: Uncoursed random rubble for foundations
+          data_source: CPWD DSR 2023 + IS codes
+        - id: MAS.STN.RRM.002
+          standard_name: Random Rubble Stone Masonry in CM 1:6 - Foundation
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1597
+          dsr_item_ref: ''
+          aliases:
+          - RR 1:6 foundation
+          typical_rate_range:
+            min: 2800
+            max: 4500
+          notes: ''
+          data_source: CPWD DSR 2023 + IS codes
+        - id: MAS.STN.RRM.003
+          standard_name: Random Rubble Stone Masonry in CM 1:4 - Superstructure
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1597
+          dsr_item_ref: ''
+          aliases:
+          - RR masonry superstructure
+          typical_rate_range:
+            min: 3200
+            max: 5200
+          notes: ''
+          data_source: IS codes only
+      ashlar_masonry:
+        items:
+        - id: MAS.STN.ASH.001
+          standard_name: Ashlar Fine Dressed Stone Masonry in CM 1:3
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          - heritage
+          requires: []
+          is_code_ref: IS 1597
+          dsr_item_ref: ''
+          aliases:
+          - ashlar fine masonry
+          - dressed stone wall
+          typical_rate_range:
+            min: 12000
+            max: 22000
+          notes: Fine dressed stone with uniform courses
+          data_source: IS codes only
+        - id: MAS.STN.ASH.002
+          standard_name: Ashlar Rough Tooled Stone Masonry in CM 1:3
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          - heritage
+          requires: []
+          is_code_ref: IS 1597
+          dsr_item_ref: ''
+          aliases:
+          - ashlar rough masonry
+          - rough tooled stone
+          typical_rate_range:
+            min: 9000
+            max: 16000
+          notes: Rough tooled finish with regular courses
+          data_source: IS codes only
+        - id: MAS.STN.ASH.003
+          standard_name: Ashlar Chamfered Stone Masonry in CM 1:3
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          - heritage
+          requires: []
+          is_code_ref: IS 1597
+          dsr_item_ref: ''
+          aliases:
+          - chamfered ashlar
+          - chamfered stone wall
+          typical_rate_range:
+            min: 10000
+            max: 18000
+          notes: Chamfered edge finish for exposed stone walls
+          data_source: IS codes only
+        - id: MAS.STN.ASH.004
+          standard_name: Ashlar Polished Granite Masonry in CM 1:3
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          - heritage
+          requires: []
+          is_code_ref: IS 1597
+          dsr_item_ref: ''
+          aliases:
+          - polished granite ashlar
+          - mirror finish stone
+          typical_rate_range:
+            min: 15000
+            max: 28000
+          notes: Mirror polished granite for premium facade
+          data_source: IS codes only
+      granite_masonry:
+        items:
+        - id: MAS.STN.GRN.001
+          standard_name: Granite Rubble Stone Masonry in CM 1:4 - Foundation
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1597
+          dsr_item_ref: ''
+          aliases:
+          - granite rubble foundation
+          - granite masonry
+          typical_rate_range:
+            min: 4000
+            max: 6500
+          notes: Granite stone masonry for foundations
+          data_source: CPWD DSR 2023 + IS codes
+        - id: MAS.STN.GRN.002
+          standard_name: Granite Rubble Stone Masonry in CM 1:6 - Foundation
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1597
+          dsr_item_ref: ''
+          aliases:
+          - granite rubble 1:6
+          typical_rate_range:
+            min: 3700
+            max: 6000
+          notes: ''
+          data_source: IS codes only
+        - id: MAS.STN.GRN.003
+          standard_name: Granite Coursed Rubble Masonry in CM 1:4 - Superstructure
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1597
+          dsr_item_ref: ''
+          aliases:
+          - granite CRS superstructure
+          typical_rate_range:
+            min: 4500
+            max: 7000
+          notes: Coursed granite rubble above plinth
+          data_source: IS codes only
+        - id: MAS.STN.GRN.004
+          standard_name: Granite Dressed Stone Masonry in CM 1:3 - Exposed Wall
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          - heritage
+          requires: []
+          is_code_ref: IS 1597
+          dsr_item_ref: ''
+          aliases:
+          - dressed granite wall
+          - granite facing
+          typical_rate_range:
+            min: 2500
+            max: 4500
+          notes: Hammer-dressed granite for exposed walls
+          data_source: IS codes only
+      basalt_masonry:
+        items:
+        - id: MAS.STN.BST.001
+          standard_name: Basalt Rubble Stone Masonry in CM 1:4 - Foundation
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1597
+          dsr_item_ref: ''
+          aliases:
+          - basalt rubble foundation
+          - trap rock masonry
+          typical_rate_range:
+            min: 3500
+            max: 5500
+          notes: Basalt/trap rock masonry common in Deccan region
+          data_source: IS codes only
+        - id: MAS.STN.BST.002
+          standard_name: Basalt Rubble Stone Masonry in CM 1:6 - Foundation
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1597
+          dsr_item_ref: ''
+          aliases:
+          - basalt rubble 1:6
+          typical_rate_range:
+            min: 3200
+            max: 5000
+          notes: ''
+          data_source: IS codes only
+        - id: MAS.STN.BST.003
+          standard_name: Basalt Coursed Rubble Masonry in CM 1:4 - Superstructure
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1597
+          dsr_item_ref: ''
+          aliases:
+          - basalt CRS superstructure
+          typical_rate_range:
+            min: 3800
+            max: 6000
+          notes: ''
+          data_source: IS codes only
+      laterite_masonry:
+        items:
+        - id: MAS.STN.LAT.001
+          standard_name: Laterite Stone Masonry in CM 1:4 - Foundation
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1597
+          dsr_item_ref: ''
+          aliases:
+          - laterite masonry foundation
+          - red stone masonry
+          typical_rate_range:
+            min: 2800
+            max: 4500
+          notes: Laterite stone common in coastal Karnataka, Kerala, Goa
+          data_source: IS codes only
+        - id: MAS.STN.LAT.002
+          standard_name: Laterite Stone Masonry in CM 1:6 - Foundation
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1597
+          dsr_item_ref: ''
+          aliases:
+          - laterite 1:6 foundation
+          typical_rate_range:
+            min: 2500
+            max: 4000
+          notes: ''
+          data_source: IS codes only
+        - id: MAS.STN.LAT.003
+          standard_name: Laterite Stone Masonry in CM 1:4 - Superstructure
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1597
+          dsr_item_ref: ''
+          aliases:
+          - laterite superstructure wall
+          typical_rate_range:
+            min: 3000
+            max: 5000
+          notes: ''
+          data_source: IS codes only
+        - id: MAS.STN.LAT.004
+          standard_name: Laterite Stone Dressed Masonry 200mm Thick - Exposed Wall
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - heritage
+          requires: []
+          is_code_ref: IS 1597
+          dsr_item_ref: ''
+          aliases:
+          - dressed laterite wall
+          - laterite block wall
+          typical_rate_range:
+            min: 600
+            max: 1000
+          notes: Machine-cut laterite blocks for exposed walls
+          data_source: IS codes only
+      sandstone_masonry:
+        items:
+        - id: MAS.STN.SND.001
+          standard_name: Sandstone Rubble Masonry in CM 1:4 - Foundation
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1597
+          dsr_item_ref: ''
+          aliases:
+          - sandstone rubble foundation
+          typical_rate_range:
+            min: 3200
+            max: 5200
+          notes: Sandstone masonry common in Rajasthan
+          data_source: IS codes only
+        - id: MAS.STN.SND.002
+          standard_name: Sandstone Ashlar Masonry in CM 1:3 - Exposed Wall
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - institutional
+          - heritage
+          requires: []
+          is_code_ref: IS 1597
+          dsr_item_ref: ''
+          aliases:
+          - sandstone ashlar
+          - dressed sandstone
+          typical_rate_range:
+            min: 2000
+            max: 4000
+          notes: Dressed sandstone for architectural facade
+          data_source: IS codes only
+        - id: MAS.STN.SND.003
+          standard_name: Sandstone Coursed Rubble Masonry in CM 1:4 - Superstructure
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1597
+          dsr_item_ref: ''
+          aliases:
+          - sandstone CRS superstructure
+          typical_rate_range:
+            min: 3500
+            max: 5500
+          notes: ''
+          data_source: IS codes only
+      dry_stone_gabion:
+        items:
+        - id: MAS.STN.DRY.001
+          standard_name: Dry Stone Masonry - Retaining Wall
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1597
+          dsr_item_ref: ''
+          aliases:
+          - dry stone wall
+          - dry rubble retaining
+          typical_rate_range:
+            min: 2000
+            max: 3500
+          notes: Without mortar, for retaining walls and bunds
+          data_source: CPWD DSR 2023 + IS codes
+        - id: MAS.STN.DRY.002
+          standard_name: Dry Stone Masonry - Boundary Wall with Coping
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1597
+          dsr_item_ref: ''
+          aliases:
+          - dry stone boundary
+          typical_rate_range:
+            min: 2200
+            max: 3800
+          notes: ''
+          data_source: IS codes only
+        - id: MAS.STN.GAB.001
+          standard_name: Gabion Wall - GI Wire Mesh Box 1x1x2m Filled with Stone
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 16014
+          dsr_item_ref: ''
+          aliases:
+          - gabion wall
+          - gabion basket
+          - stone cage wall
+          typical_rate_range:
+            min: 2500
+            max: 4200
+          notes: GI wire mesh gabion box filled with rubble stone
+          data_source: IS codes only
+        - id: MAS.STN.GAB.002
+          standard_name: Gabion Wall - PVC Coated Wire Mesh Box Filled with Stone
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 16014
+          dsr_item_ref: ''
+          aliases:
+          - PVC coated gabion
+          - corrosion resistant gabion
+          typical_rate_range:
+            min: 3000
+            max: 5000
+          notes: PVC coated for corrosion resistance in marine areas
+          data_source: IS codes only
+        - id: MAS.STN.GAB.003
+          standard_name: Gabion Mattress 300mm Thick - For Slope Protection
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 16014
+          dsr_item_ref: ''
+          aliases:
+          - gabion mattress
+          - reno mattress
+          typical_rate_range:
+            min: 800
+            max: 1400
+          notes: Thin gabion mattress for slope and channel protection
+          data_source: IS codes only
+        - id: MAS.STN.GAB.004
+          standard_name: Gabion Mattress 500mm Thick - For Erosion Protection
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 16014
+          dsr_item_ref: ''
+          aliases:
+          - thick gabion mattress
+          typical_rate_range:
+            min: 1200
+            max: 2000
+          notes: ''
+          data_source: IS codes only
+  mortar:
+    categories:
+      cement_mortar:
+        items:
+        - id: MAS.MRT.CM.001
+          standard_name: Cement Mortar 1:3 - For Masonry
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2250
+          dsr_item_ref: ''
+          aliases:
+          - CM 1:3
+          - rich cement mortar
+          typical_rate_range:
+            min: 5500
+            max: 7500
+          notes: Rich mix for load bearing and wet areas
+          data_source: IS codes only
+        - id: MAS.MRT.CM.002
+          standard_name: Cement Mortar 1:4 - For Masonry
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2250
+          dsr_item_ref: ''
+          aliases:
+          - CM 1:4
+          - standard cement mortar
+          typical_rate_range:
+            min: 4800
+            max: 6500
+          notes: Standard masonry mortar
+          data_source: IS codes only
+        - id: MAS.MRT.CM.003
+          standard_name: Cement Mortar 1:6 - For Masonry
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2250
+          dsr_item_ref: ''
+          aliases:
+          - CM 1:6
+          - lean cement mortar
+          typical_rate_range:
+            min: 4000
+            max: 5500
+          notes: Lean mix for non-structural work
+          data_source: IS codes only
+        - id: MAS.MRT.CM.004
+          standard_name: Cement Lime Mortar 1:1:6 - For Masonry
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2250
+          dsr_item_ref: ''
+          aliases:
+          - cement lime mortar
+          - CLM 1:1:6
+          typical_rate_range:
+            min: 4500
+            max: 6000
+          notes: Improved workability with lime addition
+          data_source: IS codes only
+        - id: MAS.MRT.CM.005
+          standard_name: Polymer Modified Mortar - For AAC/Block Masonry
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2250
+          dsr_item_ref: ''
+          aliases:
+          - polymer mortar
+          - block jointing mortar
+          - AAC mortar
+          typical_rate_range:
+            min: 6000
+            max: 9000
+          notes: Ready-mix polymer modified mortar for block jointing
+          data_source: estimated
+        - id: MAS.MRT.CM.006
+          standard_name: Cement Mortar 1:5 - For Masonry
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2250
+          dsr_item_ref: ''
+          aliases:
+          - CM 1:5
+          - intermediate cement mortar
+          typical_rate_range:
+            min: 4400
+            max: 6000
+          notes: Intermediate strength mortar
+          data_source: IS codes only
+        - id: MAS.MRT.CM.007
+          standard_name: Cement Mortar 1:8 - For Non-Structural Masonry
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: IS 2250
+          dsr_item_ref: ''
+          aliases:
+          - CM 1:8
+          - very lean mortar
+          typical_rate_range:
+            min: 3200
+            max: 4500
+          notes: Very lean mortar for non-structural internal walls
+          data_source: IS codes only
+      lime_mortar:
+        items:
+        - id: MAS.MRT.LM.001
+          standard_name: Lime Mortar 1:2 (Lime:Sand) - For Heritage/Restoration
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - heritage
+          requires: []
+          is_code_ref: IS 1624
+          dsr_item_ref: ''
+          aliases:
+          - lime mortar 1:2
+          - fat lime mortar
+          typical_rate_range:
+            min: 5000
+            max: 8000
+          notes: Traditional lime mortar for heritage buildings
+          data_source: CPWD DSR 2023 + IS codes
+        - id: MAS.MRT.LM.002
+          standard_name: Lime Mortar 1:3 (Lime:Surkhi) - For Foundation
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1624
+          dsr_item_ref: ''
+          aliases:
+          - lime surkhi mortar
+          - surkhi mortar
+          typical_rate_range:
+            min: 4500
+            max: 7000
+          notes: Lime with crushed brick (surkhi) for waterproofing
+          data_source: IS codes only
+        - id: MAS.MRT.LM.003
+          standard_name: Hydraulic Lime Mortar 1:2 - For Structural Work
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - heritage
+          requires: []
+          is_code_ref: IS 1624
+          dsr_item_ref: ''
+          aliases:
+          - hydraulic lime mortar
+          - NHL mortar
+          typical_rate_range:
+            min: 6000
+            max: 9500
+          notes: Sets under water, suitable for damp conditions
+          data_source: IS codes only
+        - id: MAS.MRT.LM.004
+          standard_name: Cement-Lime Mortar 1:2:9 - For General Masonry
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2250
+          dsr_item_ref: ''
+          aliases:
+          - CLM 1:2:9
+          - lean cement lime mortar
+          typical_rate_range:
+            min: 3800
+            max: 5500
+          notes: Improved workability with lime
+          data_source: IS codes only
+        - id: MAS.MRT.LM.005
+          standard_name: Cement-Lime Mortar 1:0.5:4.5 - For Load Bearing Masonry
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2250
+          dsr_item_ref: ''
+          aliases:
+          - CLM 1:0.5:4.5
+          - strong cement lime
+          typical_rate_range:
+            min: 5000
+            max: 7000
+          notes: Stronger mix with lime for workability
+          data_source: IS codes only
+      special_mortar:
+        items:
+        - id: MAS.MRT.SPL.001
+          standard_name: Ready-Mix Dry Mortar for Brick/Block Masonry
+          unit: kg
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 2250
+          dsr_item_ref: ''
+          aliases:
+          - ready mix mortar
+          - dry mix mortar
+          - pre-mixed mortar
+          typical_rate_range:
+            min: 8
+            max: 15
+          notes: Factory-produced consistent quality mortar
+          data_source: estimated
+        - id: MAS.MRT.SPL.002
+          standard_name: Waterproof Mortar with Integral Waterproofing Compound
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2645
+          dsr_item_ref: ''
+          aliases:
+          - waterproof mortar
+          - WP mortar
+          typical_rate_range:
+            min: 5500
+            max: 8000
+          notes: For masonry in wet areas and below ground
+          data_source: IS codes only
+        - id: MAS.MRT.SPL.003
+          standard_name: Thin Bed Adhesive Mortar for AAC Blocks - 2-3mm Joint
+          unit: kg
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2250
+          dsr_item_ref: ''
+          aliases:
+          - thin bed mortar
+          - AAC adhesive
+          - block adhesive
+          typical_rate_range:
+            min: 12
+            max: 22
+          notes: Polymer modified thin joint adhesive for AAC
+          data_source: estimated
+        - id: MAS.MRT.SPL.004
+          standard_name: Non-Shrink Grout for Masonry Core Filling
+          unit: kg
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2250
+          dsr_item_ref: ''
+          aliases:
+          - non shrink grout masonry
+          - core fill grout
+          typical_rate_range:
+            min: 15
+            max: 30
+          notes: For grouting cores of hollow concrete blocks
+          data_source: estimated
+  partition:
+    categories:
+      gypsum_board:
+        items:
+        - id: MAS.PRT.GYP.001
+          standard_name: Gypsum Board Partition - Single Layer Both Sides 75mm Stud
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - drywall partition
+          - gypsum partition single
+          - gyp board wall
+          typical_rate_range:
+            min: 650
+            max: 1100
+          notes: Single 12.5mm board each side on 75mm GI stud
+          data_source: estimated
+        - id: MAS.PRT.GYP.002
+          standard_name: Gypsum Board Partition - Double Layer Both Sides 75mm Stud
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - double layer drywall
+          - gypsum partition double
+          typical_rate_range:
+            min: 950
+            max: 1600
+          notes: Double 12.5mm board each side for fire/sound rating
+          data_source: estimated
+        - id: MAS.PRT.GYP.003
+          standard_name: Gypsum Board Partition - Single Layer Both Sides 100mm Stud
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - drywall 100mm stud
+          typical_rate_range:
+            min: 700
+            max: 1200
+          notes: Wider stud for services routing
+          data_source: estimated
+        - id: MAS.PRT.GYP.004
+          standard_name: Moisture Resistant Gypsum Board Partition - Single Layer Both Sides
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - MR board partition
+          - green board partition
+          typical_rate_range:
+            min: 750
+            max: 1300
+          notes: For wet areas - toilets, pantry adjacency
+          data_source: estimated
+        - id: MAS.PRT.GYP.005
+          standard_name: Fire Rated Gypsum Board Partition - 1 Hour Rating
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - fire rated drywall 1hr
+          - FR partition
+          typical_rate_range:
+            min: 1100
+            max: 1800
+          notes: 1 hour fire rated partition with mineral wool infill
+          data_source: estimated
+        - id: MAS.PRT.GYP.006
+          standard_name: Fire Rated Gypsum Board Partition - 2 Hour Rating
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - fire rated drywall 2hr
+          - 2hr FR partition
+          typical_rate_range:
+            min: 1400
+            max: 2200
+          notes: 2 hour fire rated partition
+          data_source: estimated
+      glass_block:
+        items:
+        - id: MAS.PRT.GLB.001
+          standard_name: Glass Block Partition - 190x190x80mm Clear
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - glass block wall
+          - glass brick partition
+          typical_rate_range:
+            min: 3500
+            max: 6000
+          notes: Decorative translucent partition
+          data_source: estimated
+        - id: MAS.PRT.GLB.002
+          standard_name: Glass Block Partition - 190x190x80mm Frosted
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - frosted glass block
+          - opaque glass block
+          typical_rate_range:
+            min: 3800
+            max: 6500
+          notes: ''
+          data_source: estimated
+      calcium_silicate_board:
+        items:
+        - id: MAS.PRT.CSB.001
+          standard_name: Calcium Silicate Board Partition - 8mm Both Sides on 75mm Stud
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - calcium silicate partition
+          - promat type partition
+          typical_rate_range:
+            min: 800
+            max: 1400
+          notes: Non-combustible board for fire-rated areas
+          data_source: estimated
+        - id: MAS.PRT.CSB.002
+          standard_name: Calcium Silicate Board Partition - 12mm Both Sides Fire Rated 2hr
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - fire rated calcium silicate
+          - 2hr CS board
+          typical_rate_range:
+            min: 1200
+            max: 2000
+          notes: 2 hour fire rated non-combustible partition
+          data_source: estimated
+      cement_board:
+        items:
+        - id: MAS.PRT.CMB.001
+          standard_name: Fibre Cement Board Partition - 6mm Both Sides on 75mm Stud
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - cement board partition
+          - fibre cement partition
+          typical_rate_range:
+            min: 600
+            max: 1000
+          notes: Moisture resistant for wet areas
+          data_source: estimated
+        - id: MAS.PRT.CMB.002
+          standard_name: Fibre Cement Board Partition - 8mm Both Sides on 75mm Stud
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - 8mm cement board partition
+          typical_rate_range:
+            min: 700
+            max: 1150
+          notes: ''
+          data_source: estimated
+        - id: MAS.PRT.CMB.003
+          standard_name: Fibre Cement Board Partition - 12mm Both Sides on 100mm Stud
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - thick cement board partition
+          typical_rate_range:
+            min: 900
+            max: 1500
+          notes: Heavy duty cement board partition
+          data_source: estimated
+      demountable_partition:
+        items:
+        - id: MAS.PRT.DEM.001
+          standard_name: Demountable Partition System - Full Height with Aluminium Frame
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - demountable partition
+          - movable wall
+          - relocatable partition
+          typical_rate_range:
+            min: 2500
+            max: 5000
+          notes: Re-configurable office partition system
+          data_source: estimated
+        - id: MAS.PRT.DEM.002
+          standard_name: Operable Partition System - Acoustically Rated STC 45
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - operable wall
+          - folding partition
+          - sliding partition
+          typical_rate_range:
+            min: 6000
+            max: 12000
+          notes: Top-hung operable partition for conference/banquet halls
+          data_source: estimated
+        - id: MAS.PRT.DEM.003
+          standard_name: Operable Partition System - Acoustically Rated STC 52
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - high STC operable wall
+          - premium folding partition
+          typical_rate_range:
+            min: 8000
+            max: 15000
+          notes: High acoustic performance operable partition
+          data_source: estimated
+      toilet_cubicle:
+        items:
+        - id: MAS.PRT.TCB.001
+          standard_name: Toilet Cubicle Partition - SS 304 Frame with Compact Laminate 12mm
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - toilet cubicle SS
+          - WC partition compact laminate
+          typical_rate_range:
+            min: 3500
+            max: 6000
+          notes: Stainless steel frame with HPL compact laminate panels
+          data_source: estimated
+        - id: MAS.PRT.TCB.002
+          standard_name: Toilet Cubicle Partition - Nylon Hardware with Compact Laminate 12mm
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - toilet cubicle nylon
+          - nylon hardware WC partition
+          typical_rate_range:
+            min: 2800
+            max: 4800
+          notes: Nylon fittings with compact laminate
+          data_source: estimated
+        - id: MAS.PRT.TCB.003
+          standard_name: Toilet Cubicle Partition - Aluminium Frame with Compact Laminate
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - toilet cubicle aluminium
+          typical_rate_range:
+            min: 2500
+            max: 4200
+          notes: ''
+          data_source: estimated
+        - id: MAS.PRT.TCB.004
+          standard_name: Toilet Cubicle Partition - SS 316 Frame for Marine/Coastal Areas
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - SS 316 toilet cubicle
+          - marine grade cubicle
+          typical_rate_range:
+            min: 5000
+            max: 8500
+          notes: Marine grade SS for coastal environments
+          data_source: estimated
+        - id: MAS.PRT.TCB.005
+          standard_name: Urinal Screen - Compact Laminate with SS Fittings
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - urinal screen
+          - urinal divider
+          typical_rate_range:
+            min: 3000
+            max: 5500
+          notes: Per screen divider between urinals
+          data_source: estimated
+  joints_pointing:
+    categories:
+      pointing:
+        items:
+        - id: MAS.JPT.PTG.001
+          standard_name: Flush Pointing with CM 1:3
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2212
+          dsr_item_ref: ''
+          aliases:
+          - flush pointing
+          - flat pointing
+          typical_rate_range:
+            min: 80
+            max: 150
+          notes: Standard flush pointing for masonry joints
+          data_source: CPWD DSR 2023 + IS codes
+        - id: MAS.JPT.PTG.002
+          standard_name: Raised/Ruled Pointing with CM 1:3
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2212
+          dsr_item_ref: ''
+          aliases:
+          - raised pointing
+          - ruled pointing
+          - tuck pointing
+          typical_rate_range:
+            min: 100
+            max: 180
+          notes: Decorative raised joint pointing
+          data_source: CPWD DSR 2023 + IS codes
+        - id: MAS.JPT.PTG.003
+          standard_name: Struck/Weathered Pointing with CM 1:3
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2212
+          dsr_item_ref: ''
+          aliases:
+          - struck pointing
+          - weathered pointing
+          typical_rate_range:
+            min: 90
+            max: 160
+          notes: Angled joint to shed water
+          data_source: IS codes only
+        - id: MAS.JPT.PTG.004
+          standard_name: Keyed/Recessed Pointing with CM 1:3
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2212
+          dsr_item_ref: ''
+          aliases:
+          - keyed pointing
+          - recessed pointing
+          - raked joint
+          typical_rate_range:
+            min: 110
+            max: 190
+          notes: Recessed joint for exposed brick walls
+          data_source: IS codes only
+      raking:
+        items:
+        - id: MAS.JPT.RKG.001
+          standard_name: Raking Out Joints in Brick Masonry 10mm Deep
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2212
+          dsr_item_ref: ''
+          aliases:
+          - joint raking
+          - raking out old joints
+          typical_rate_range:
+            min: 40
+            max: 80
+          notes: Raking existing mortar joints for re-pointing
+          data_source: estimated
+        - id: MAS.JPT.RKG.002
+          standard_name: Raking Out Joints in Brick Masonry 20mm Deep
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2212
+          dsr_item_ref: ''
+          aliases:
+          - deep joint raking
+          typical_rate_range:
+            min: 55
+            max: 100
+          notes: Deeper raking for structural re-pointing
+          data_source: estimated
+      additional_pointing:
+        items:
+        - id: MAS.JPT.PTG.005
+          standard_name: Tooled/Concave Pointing with CM 1:3
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2212
+          dsr_item_ref: ''
+          aliases:
+          - tooled pointing
+          - concave pointing
+          - bucket handle pointing
+          typical_rate_range:
+            min: 95
+            max: 170
+          notes: Concave profile using jointing tool
+          data_source: IS codes only
+        - id: MAS.JPT.PTG.006
+          standard_name: V-Joint Pointing with CM 1:3
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2212
+          dsr_item_ref: ''
+          aliases:
+          - V joint pointing
+          - V groove pointing
+          typical_rate_range:
+            min: 100
+            max: 175
+          notes: V-shaped groove for decorative effect
+          data_source: IS codes only
+        - id: MAS.JPT.PTG.007
+          standard_name: Tuck Pointing with CM 1:3 and Lime Putty Ribbon
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - heritage
+          requires: []
+          is_code_ref: IS 2212
+          dsr_item_ref: ''
+          aliases:
+          - tuck pointing
+          - lime ribbon pointing
+          typical_rate_range:
+            min: 250
+            max: 450
+          notes: Traditional tuck pointing with contrasting lime ribbon
+          data_source: estimated
+        - id: MAS.JPT.PTG.008
+          standard_name: Weather-Struck Pointing with CM 1:3
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2212
+          dsr_item_ref: ''
+          aliases:
+          - weather struck pointing
+          - weather pointing
+          typical_rate_range:
+            min: 100
+            max: 175
+          notes: Sloped to shed water on horizontal joints
+          data_source: IS codes only
+        - id: MAS.JPT.PTG.009
+          standard_name: Flush Pointing with Coloured Mortar
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 2212
+          dsr_item_ref: ''
+          aliases:
+          - coloured pointing
+          - pigmented mortar pointing
+          typical_rate_range:
+            min: 120
+            max: 220
+          notes: With oxide pigment in mortar for decorative effect
+          data_source: estimated
+        - id: MAS.JPT.PTG.010
+          standard_name: Re-Pointing Old Masonry Joints with CM 1:3
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2212
+          dsr_item_ref: ''
+          aliases:
+          - re-pointing
+          - repointing masonry
+          typical_rate_range:
+            min: 150
+            max: 280
+          notes: Including raking out old mortar and new pointing
+          data_source: estimated
+        - id: MAS.JPT.PTG.011
+          standard_name: Pointing in Stone Masonry with CM 1:3
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1597
+          dsr_item_ref: ''
+          aliases:
+          - stone masonry pointing
+          typical_rate_range:
+            min: 100
+            max: 200
+          notes: Pointing for stone masonry walls
+          data_source: CPWD DSR 2023 + IS codes
+        - id: MAS.JPT.PTG.012
+          standard_name: Lime Mortar Pointing 1:2 - Heritage Restoration
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - heritage
+          requires: []
+          is_code_ref: IS 2212
+          dsr_item_ref: ''
+          aliases:
+          - lime pointing
+          - heritage pointing
+          typical_rate_range:
+            min: 200
+            max: 400
+          notes: Lime mortar pointing for heritage conservation
+          data_source: estimated
+  reinforced_masonry:
+    categories:
+      reinforced_walls:
+        items:
+        - id: MAS.RFM.BED.001
+          standard_name: Bed Joint Reinforcement - Truss Type Ladder Mesh
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1905
+          dsr_item_ref: ''
+          aliases:
+          - bed joint reinforcement
+          - ladder mesh
+          - truss mesh
+          typical_rate_range:
+            min: 60
+            max: 120
+          notes: Horizontal bed joint reinforcement for crack control
+          data_source: IS codes only
+        - id: MAS.RFM.BED.002
+          standard_name: Vertical Reinforcement Bar 10mm dia in Grouted Core
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1905
+          dsr_item_ref: ''
+          aliases:
+          - vertical rebar masonry
+          - grouted core rebar
+          typical_rate_range:
+            min: 150
+            max: 280
+          notes: Vertical reinforcement in hollow block cores
+          data_source: IS codes only
+        - id: MAS.RFM.BED.003
+          standard_name: Vertical Reinforcement Bar 12mm dia in Grouted Core
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1905
+          dsr_item_ref: ''
+          aliases:
+          - 12mm vertical rebar masonry
+          typical_rate_range:
+            min: 200
+            max: 350
+          notes: ''
+          data_source: IS codes only
+        - id: MAS.RFM.BED.004
+          standard_name: Horizontal Bond Beam in Masonry Wall - 200x200mm
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1905
+          dsr_item_ref: ''
+          aliases:
+          - bond beam
+          - lintel band in masonry
+          typical_rate_range:
+            min: 350
+            max: 600
+          notes: Horizontal reinforced concrete bond beam within masonry
+          data_source: IS codes only
+        - id: MAS.RFM.BED.005
+          standard_name: L-Shaped Wall Connector - Stainless Steel
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1905
+          dsr_item_ref: ''
+          aliases:
+          - wall connector
+          - L connector
+          - masonry tie
+          typical_rate_range:
+            min: 25
+            max: 60
+          notes: L-shaped connector between masonry and RCC column/beam
+          data_source: estimated
+        - id: MAS.RFM.BED.006
+          standard_name: Chicken Wire Mesh at RCC-Masonry Junction
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1905
+          dsr_item_ref: ''
+          aliases:
+          - chicken mesh junction
+          - anti-crack mesh
+          typical_rate_range:
+            min: 40
+            max: 80
+          notes: Crack prevention mesh at masonry-concrete junction
+          data_source: estimated
+        - id: MAS.RFM.BED.007
+          standard_name: Grouted Cavity Reinforced Masonry Wall 230mm Overall
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 1905
+          dsr_item_ref: ''
+          aliases:
+          - grouted cavity wall
+          - reinforced cavity masonry
+          typical_rate_range:
+            min: 1200
+            max: 2000
+          notes: Double-skin masonry with grouted reinforced cavity
+          data_source: IS codes only
+        - id: MAS.RFM.BED.008
+          standard_name: Reinforced Hollow Concrete Block Masonry 200mm - Fully Grouted
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1905
+          dsr_item_ref: ''
+          aliases:
+          - reinforced hollow block wall
+          - grouted block masonry
+          typical_rate_range:
+            min: 900
+            max: 1500
+          notes: All cores grouted with rebar - structural wall
+          data_source: IS codes only
+        - id: MAS.RFM.BED.009
+          standard_name: Reinforced Hollow Concrete Block Masonry 200mm - Partially Grouted
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1905
+          dsr_item_ref: ''
+          aliases:
+          - partially grouted block wall
+          typical_rate_range:
+            min: 700
+            max: 1200
+          notes: Selected cores grouted with rebar at specified spacing
+          data_source: IS codes only
+        - id: MAS.RFM.BED.010
+          standard_name: Horizontal Reinforcement Bar 8mm in Masonry Bed Joint
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1905
+          dsr_item_ref: ''
+          aliases:
+          - 8mm bed joint rebar
+          typical_rate_range:
+            min: 40
+            max: 80
+          notes: Horizontal bar in mortar bed joint
+          data_source: IS codes only
+        - id: MAS.RFM.BED.011
+          standard_name: Vertical Reinforcement Bar 16mm dia in Grouted Core
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1905
+          dsr_item_ref: ''
+          aliases:
+          - 16mm vertical rebar masonry
+          typical_rate_range:
+            min: 280
+            max: 450
+          notes: Heavy reinforcement for seismic zones
+          data_source: IS codes only
+        - id: MAS.RFM.BED.012
+          standard_name: Stainless Steel Wall Tie - Butterfly Type
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1905
+          dsr_item_ref: ''
+          aliases:
+          - butterfly wall tie
+          - cavity wall tie
+          typical_rate_range:
+            min: 8
+            max: 20
+          notes: SS wall tie for cavity wall construction
+          data_source: estimated
+        - id: MAS.RFM.BED.013
+          standard_name: Stainless Steel Wall Tie - Fishtail/Flat Type
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1905
+          dsr_item_ref: ''
+          aliases:
+          - fishtail wall tie
+          - flat wall tie
+          typical_rate_range:
+            min: 10
+            max: 25
+          notes: For tying masonry to RCC frame
+          data_source: estimated
+  masonry_accessories:
+    categories:
+      lintels_sills:
+        items:
+        - id: MAS.ACC.LNT.001
+          standard_name: RCC Lintel 150mm Deep - Up to 1200mm Span
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 456
+          dsr_item_ref: ''
+          aliases:
+          - RCC lintel small
+          - door lintel
+          typical_rate_range:
+            min: 350
+            max: 600
+          notes: Cast in situ RCC lintel over openings
+          data_source: IS codes only
+        - id: MAS.ACC.LNT.002
+          standard_name: RCC Lintel 200mm Deep - 1200 to 1800mm Span
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 456
+          dsr_item_ref: ''
+          aliases:
+          - RCC lintel medium
+          - window lintel
+          typical_rate_range:
+            min: 450
+            max: 750
+          notes: ''
+          data_source: IS codes only
+        - id: MAS.ACC.LNT.003
+          standard_name: RCC Lintel 300mm Deep - Above 1800mm Span
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 456
+          dsr_item_ref: ''
+          aliases:
+          - RCC lintel large
+          - wide span lintel
+          typical_rate_range:
+            min: 600
+            max: 1000
+          notes: ''
+          data_source: IS codes only
+        - id: MAS.ACC.LNT.004
+          standard_name: Precast Concrete Lintel - 150mm Deep
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2212, IS 1200 Part 3
+          dsr_item_ref: ''
+          aliases:
+          - precast lintel
+          typical_rate_range:
+            min: 300
+            max: 500
+          notes: Factory made precast lintel
+          data_source: estimated
+        - id: MAS.ACC.SIL.001
+          standard_name: RCC Window Sill - 75mm Thick with Drip Groove
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2212, IS 1200 Part 3
+          dsr_item_ref: ''
+          aliases:
+          - window sill RCC
+          - sill with drip
+          typical_rate_range:
+            min: 200
+            max: 400
+          notes: Window sill with weather drip groove
+          data_source: estimated
+        - id: MAS.ACC.SIL.002
+          standard_name: Stone Window Sill - 40mm Thick Polished Granite
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 1200 Part 3
+          dsr_item_ref: ''
+          aliases:
+          - granite sill
+          - stone sill polished
+          typical_rate_range:
+            min: 400
+            max: 800
+          notes: Polished granite window sill
+          data_source: estimated
+        - id: MAS.ACC.LNT.005
+          standard_name: RCC Lintel 150mm Deep - Up to 900mm Span
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 456
+          dsr_item_ref: ''
+          aliases:
+          - small span lintel
+          - ventilator lintel
+          typical_rate_range:
+            min: 280
+            max: 500
+          notes: Short span lintel for ventilators and small openings
+          data_source: IS codes only
+        - id: MAS.ACC.LNT.006
+          standard_name: RCC Lintel 200mm Deep - 1500mm Span
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 456
+          dsr_item_ref: ''
+          aliases:
+          - 1500mm span lintel
+          typical_rate_range:
+            min: 500
+            max: 800
+          notes: ''
+          data_source: IS codes only
+        - id: MAS.ACC.LNT.007
+          standard_name: RCC Lintel 250mm Deep - 2100mm Span
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 456
+          dsr_item_ref: ''
+          aliases:
+          - wide lintel 2100
+          - large opening lintel
+          typical_rate_range:
+            min: 700
+            max: 1100
+          notes: For wide window and door openings
+          data_source: IS codes only
+        - id: MAS.ACC.LNT.008
+          standard_name: Steel Angle Lintel - ISA 75x75x6mm
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 808
+          dsr_item_ref: ''
+          aliases:
+          - steel angle lintel
+          - MS angle lintel
+          typical_rate_range:
+            min: 250
+            max: 450
+          notes: Mild steel angle iron lintel for small openings
+          data_source: IS codes only
+        - id: MAS.ACC.LNT.009
+          standard_name: Steel Angle Lintel - ISA 100x100x8mm
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 808
+          dsr_item_ref: ''
+          aliases:
+          - heavy angle lintel
+          typical_rate_range:
+            min: 400
+            max: 650
+          notes: Heavier angle lintel for wider openings
+          data_source: IS codes only
+        - id: MAS.ACC.LNT.010
+          standard_name: RCC Lintel cum Chajja - 150mm Deep with 450mm Projection
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 456
+          dsr_item_ref: ''
+          aliases:
+          - lintel chajja
+          - lintel with sunshade
+          typical_rate_range:
+            min: 600
+            max: 1000
+          notes: Combined lintel and sunshade projection
+          data_source: IS codes only
+        - id: MAS.ACC.LNT.011
+          standard_name: RCC Lintel cum Chajja - 200mm Deep with 600mm Projection
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 456
+          dsr_item_ref: ''
+          aliases:
+          - lintel chajja 600mm
+          typical_rate_range:
+            min: 800
+            max: 1300
+          notes: Larger sunshade projection over windows
+          data_source: IS codes only
+        - id: MAS.ACC.LNT.012
+          standard_name: Precast RCC Lintel - 200mm Deep
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2212, IS 1200 Part 3
+          dsr_item_ref: ''
+          aliases:
+          - precast lintel 200mm
+          typical_rate_range:
+            min: 350
+            max: 600
+          notes: Factory made precast lintel for larger openings
+          data_source: estimated
+        - id: MAS.ACC.SIL.003
+          standard_name: Marble Window Sill - 20mm Thick Polished
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - commercial
+          requires: []
+          is_code_ref: IS 1200 Part 3
+          dsr_item_ref: ''
+          aliases:
+          - marble sill
+          - marble window ledge
+          typical_rate_range:
+            min: 350
+            max: 700
+          notes: Polished marble window sill
+          data_source: estimated
+        - id: MAS.ACC.SIL.004
+          standard_name: Kota Stone Window Sill - 25mm Thick
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1200 Part 3
+          dsr_item_ref: ''
+          aliases:
+          - kota sill
+          - kota stone window sill
+          typical_rate_range:
+            min: 200
+            max: 400
+          notes: Natural Kota stone sill
+          data_source: estimated
+        - id: MAS.ACC.SIL.005
+          standard_name: Concrete Window Sill - 75mm Thick Precast
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2212, IS 1200 Part 3
+          dsr_item_ref: ''
+          aliases:
+          - precast concrete sill
+          typical_rate_range:
+            min: 150
+            max: 300
+          notes: Precast concrete window sill with drip groove
+          data_source: estimated
+        - id: MAS.ACC.SIL.006
+          standard_name: Ceramic Tile Window Sill - On Cement Mortar Bed
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: IS 2212, IS 1200 Part 3
+          dsr_item_ref: ''
+          aliases:
+          - tile sill
+          - ceramic sill
+          typical_rate_range:
+            min: 120
+            max: 250
+          notes: Tiled sill matching internal finish
+          data_source: estimated
+      copings:
+        items:
+        - id: MAS.ACC.COP.001
+          standard_name: CC Coping on Parapet Wall - 75mm Thick with Drip Groove
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2212, IS 1200 Part 3
+          dsr_item_ref: ''
+          aliases:
+          - CC coping
+          - concrete coping
+          - parapet coping
+          typical_rate_range:
+            min: 200
+            max: 400
+          notes: Cement concrete coping with weathering slope
+          data_source: estimated
+        - id: MAS.ACC.COP.002
+          standard_name: CC Coping on Parapet Wall - 100mm Thick with Drip Groove
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2212, IS 1200 Part 3
+          dsr_item_ref: ''
+          aliases:
+          - thick CC coping
+          typical_rate_range:
+            min: 250
+            max: 450
+          notes: ''
+          data_source: estimated
+        - id: MAS.ACC.COP.003
+          standard_name: Stone Coping - 50mm Thick Granite on Parapet
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 1200 Part 3
+          dsr_item_ref: ''
+          aliases:
+          - granite coping
+          - stone coping
+          typical_rate_range:
+            min: 500
+            max: 900
+          notes: Polished granite coping with drip
+          data_source: estimated
+        - id: MAS.ACC.COP.004
+          standard_name: Stone Coping - 40mm Thick Sandstone on Parapet
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1200 Part 3
+          dsr_item_ref: ''
+          aliases:
+          - sandstone coping
+          typical_rate_range:
+            min: 350
+            max: 650
+          notes: ''
+          data_source: estimated
+        - id: MAS.ACC.COP.005
+          standard_name: Metal Coping - Aluminium Pressed with Clips
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 1200 Part 3
+          dsr_item_ref: ''
+          aliases:
+          - aluminium coping
+          - metal coping
+          typical_rate_range:
+            min: 400
+            max: 750
+          notes: Pre-formed aluminium coping on parapet
+          data_source: estimated
+        - id: MAS.ACC.COP.006
+          standard_name: Metal Coping - GI Sheet Pressed with Clips
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1200 Part 3
+          dsr_item_ref: ''
+          aliases:
+          - GI coping
+          - GI sheet coping
+          typical_rate_range:
+            min: 250
+            max: 450
+          notes: Galvanized iron sheet coping
+          data_source: estimated
+        - id: MAS.ACC.COP.007
+          standard_name: Precast Concrete Coping - 100mm Thick with Once Weathered
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2212, IS 1200 Part 3
+          dsr_item_ref: ''
+          aliases:
+          - precast coping
+          typical_rate_range:
+            min: 300
+            max: 550
+          notes: Factory-made precast concrete coping
+          data_source: estimated
+      thresholds:
+        items:
+        - id: MAS.ACC.THR.001
+          standard_name: Granite Threshold - 40mm Thick Polished
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1200 Part 3
+          dsr_item_ref: ''
+          aliases:
+          - granite threshold
+          - door threshold granite
+          typical_rate_range:
+            min: 400
+            max: 750
+          notes: Polished granite threshold at door openings
+          data_source: estimated
+        - id: MAS.ACC.THR.002
+          standard_name: Marble Threshold - 25mm Thick Polished
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - commercial
+          requires: []
+          is_code_ref: IS 1200 Part 3
+          dsr_item_ref: ''
+          aliases:
+          - marble threshold
+          - door threshold marble
+          typical_rate_range:
+            min: 350
+            max: 650
+          notes: ''
+          data_source: estimated
+        - id: MAS.ACC.THR.003
+          standard_name: Kota Stone Threshold - 25mm Thick
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1200 Part 3
+          dsr_item_ref: ''
+          aliases:
+          - kota threshold
+          - kota stone door sill
+          typical_rate_range:
+            min: 200
+            max: 400
+          notes: Natural Kota stone threshold
+          data_source: estimated
+        - id: MAS.ACC.THR.004
+          standard_name: CC Threshold - 75mm Thick with Waterproofing
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2212, IS 1200 Part 3
+          dsr_item_ref: ''
+          aliases:
+          - concrete threshold
+          - CC door sill
+          typical_rate_range:
+            min: 150
+            max: 300
+          notes: Concrete threshold at toilet/wet area doors
+          data_source: estimated
+        - id: MAS.ACC.THR.005
+          standard_name: Aluminium Threshold Strip - Surface Mounted
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 1200 Part 3
+          dsr_item_ref: ''
+          aliases:
+          - aluminium threshold
+          - door sill strip
+          typical_rate_range:
+            min: 200
+            max: 400
+          notes: Aluminium threshold strip for commercial doors
+          data_source: estimated
+      sundries:
+        items:
+        - id: MAS.ACC.SND.001
+          standard_name: Hoop Iron - 25x1.6mm in Masonry at Every 4th Course
+          unit: kg
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2212
+          dsr_item_ref: ''
+          aliases:
+          - hoop iron
+          - masonry reinforcement strip
+          typical_rate_range:
+            min: 80
+            max: 130
+          notes: Horizontal hoop iron for masonry crack prevention
+          data_source: IS codes only
+        - id: MAS.ACC.SND.002
+          standard_name: Dowel Bar 8mm dia 300mm Long into RCC
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1905
+          dsr_item_ref: ''
+          aliases:
+          - dowel bar masonry
+          - starter bar
+          typical_rate_range:
+            min: 15
+            max: 35
+          notes: Epoxy fixed dowel connecting masonry to RCC
+          data_source: estimated
+        - id: MAS.ACC.SND.003
+          standard_name: Expanded Metal Lath at Junction - 300mm Wide
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1905
+          dsr_item_ref: ''
+          aliases:
+          - expanded metal lath
+          - EML junction strip
+          typical_rate_range:
+            min: 60
+            max: 110
+          notes: Anti-crack expanded metal at RCC-masonry junction
+          data_source: estimated
+        - id: MAS.ACC.SND.004
+          standard_name: Curing of Masonry Work - 7 Days
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2212
+          dsr_item_ref: ''
+          aliases:
+          - masonry curing
+          - wall curing
+          typical_rate_range:
+            min: 10
+            max: 25
+          notes: Water curing of masonry for minimum 7 days
+          data_source: IS codes only
+        - id: MAS.ACC.SND.005
+          standard_name: Scaffolding for Masonry Work - Above 3m Height
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2750
+          dsr_item_ref: ''
+          aliases:
+          - masonry scaffolding
+          - brick work staging
+          typical_rate_range:
+            min: 45
+            max: 90
+          notes: Single scaffolding for masonry at height
+          data_source: estimated
+        - id: MAS.ACC.SND.006
+          standard_name: Movement Joint in Masonry - 10mm Wide with Sealant
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2212
+          dsr_item_ref: ''
+          aliases:
+          - movement joint masonry
+          - expansion joint brick wall
+          typical_rate_range:
+            min: 80
+            max: 160
+          notes: Vertical movement joint filled with compressible filler and sealant
+          data_source: IS codes only
+        - id: MAS.ACC.SND.007
+          standard_name: Movement Joint in Masonry - 20mm Wide with Sealant
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2212
+          dsr_item_ref: ''
+          aliases:
+          - wide movement joint masonry
+          typical_rate_range:
+            min: 120
+            max: 220
+          notes: Wider joint for longer wall runs
+          data_source: IS codes only
+        - id: MAS.ACC.SND.008
+          standard_name: DPC in Masonry - CM 1:3 with WP Compound 20mm Thick
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2212
+          dsr_item_ref: ''
+          aliases:
+          - masonry DPC
+          - damp proof course CM
+          typical_rate_range:
+            min: 60
+            max: 120
+          notes: Cement mortar DPC at plinth level
+          data_source: CPWD DSR 2023 + IS codes
+        - id: MAS.ACC.SND.009
+          standard_name: Cavity Tray DPC - HDPE Sheet in Cavity Wall
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 3495
+          dsr_item_ref: ''
+          aliases:
+          - cavity tray
+          - cavity DPC tray
+          typical_rate_range:
+            min: 100
+            max: 200
+          notes: HDPE cavity tray to prevent moisture bridging
+          data_source: estimated
+        - id: MAS.ACC.SND.010
+          standard_name: Lintel Bearing Pad - Felt/Neoprene 150x150mm
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1905
+          dsr_item_ref: ''
+          aliases:
+          - lintel bearing pad
+          - lintel seating pad
+          typical_rate_range:
+            min: 15
+            max: 35
+          notes: Bearing pad under lintel ends to prevent stress concentration
+          data_source: estimated
+        - id: MAS.ACC.SND.011
+          standard_name: Concrete Block Filling - Below Window Sill
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2185 Part 1
+          dsr_item_ref: ''
+          aliases:
+          - sill block filling
+          - window base block
+          typical_rate_range:
+            min: 100
+            max: 200
+          notes: Concrete block filler course below sill level
+          data_source: estimated
+        - id: MAS.ACC.SND.012
+          standard_name: Weep Hole in Masonry - 75mm PVC Pipe at 1m c/c
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2212
+          dsr_item_ref: ''
+          aliases:
+          - weep hole
+          - drain hole masonry
+          typical_rate_range:
+            min: 20
+            max: 45
+          notes: Weep hole for drainage in retaining and cavity walls
+          data_source: estimated
+        - id: MAS.ACC.SND.013
+          standard_name: Galvanized Wire Mesh in Masonry Bed Joints
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1905
+          dsr_item_ref: ''
+          aliases:
+          - GI mesh bed joint
+          - galvanized joint mesh
+          typical_rate_range:
+            min: 50
+            max: 100
+          notes: GI wire mesh placed in mortar joints for crack prevention
+          data_source: estimated
+        - id: MAS.ACC.SND.014
+          standard_name: Compressible Filler Board 10mm at RCC-Masonry Junction
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1905
+          dsr_item_ref: ''
+          aliases:
+          - filler board junction
+          - compressible filler
+          typical_rate_range:
+            min: 30
+            max: 60
+          notes: Thermocol or foam filler at column-wall junction
+          data_source: estimated
+        - id: MAS.ACC.SND.015
+          standard_name: Scaffolding for Masonry Work - Above 6m Height (Double)
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2750
+          dsr_item_ref: ''
+          aliases:
+          - double scaffolding masonry
+          - high level staging
+          typical_rate_range:
+            min: 70
+            max: 140
+          notes: Double scaffolding for masonry above 6m height
+          data_source: estimated
+  jali_screen_walls:
+    categories:
+      brick_jali:
+        items:
+        - id: MAS.JAL.BRK.001
+          standard_name: Brick Jali Wall - Diamond Pattern 115mm Thick in CM 1:4
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2212
+          dsr_item_ref: ''
+          aliases:
+          - brick jali
+          - brick screen wall
+          - open brick wall
+          typical_rate_range:
+            min: 600
+            max: 1000
+          notes: Perforated brick screen with diamond pattern
+          data_source: estimated
+        - id: MAS.JAL.BRK.002
+          standard_name: Brick Jali Wall - Honeycomb Pattern 115mm Thick in CM 1:4
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2212
+          dsr_item_ref: ''
+          aliases:
+          - honeycomb brick jali
+          - honeycomb screen
+          typical_rate_range:
+            min: 650
+            max: 1050
+          notes: Honeycomb pattern brick screen
+          data_source: estimated
+        - id: MAS.JAL.BRK.003
+          standard_name: Brick Jali Wall - Staggered Pattern 230mm Thick in CM 1:4
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2212
+          dsr_item_ref: ''
+          aliases:
+          - staggered brick jali
+          - thick brick screen
+          typical_rate_range:
+            min: 800
+            max: 1300
+          notes: Thicker jali wall with staggered openings
+          data_source: estimated
+        - id: MAS.JAL.BRK.004
+          standard_name: Decorative Brick Jali Wall - Custom Pattern
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 2212
+          dsr_item_ref: ''
+          aliases:
+          - decorative brick screen
+          - custom brick jali
+          typical_rate_range:
+            min: 900
+            max: 1600
+          notes: Architect-designed custom pattern brick jali
+          data_source: estimated
+      concrete_jali:
+        items:
+        - id: MAS.JAL.CON.001
+          standard_name: Precast Concrete Block Jali - 200x200x100mm Units
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15916, IS 456:2000
+          dsr_item_ref: ''
+          aliases:
+          - concrete jali block
+          - CC screen block
+          typical_rate_range:
+            min: 500
+            max: 900
+          notes: Standard precast concrete screen block
+          data_source: estimated
+        - id: MAS.JAL.CON.002
+          standard_name: Precast Concrete Block Jali - 300x300x100mm Decorative Units
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 15916, IS 456:2000
+          dsr_item_ref: ''
+          aliases:
+          - decorative concrete jali
+          - large CC screen block
+          typical_rate_range:
+            min: 700
+            max: 1200
+          notes: Larger decorative precast jali blocks
+          data_source: estimated
+        - id: MAS.JAL.CON.003
+          standard_name: Precast Concrete Jali Panel - Custom Design
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 15916, IS 456:2000
+          dsr_item_ref: ''
+          aliases:
+          - custom concrete jali panel
+          typical_rate_range:
+            min: 1500
+            max: 3000
+          notes: Full panel precast jali with custom design
+          data_source: estimated
+      terracotta_grc_screen:
+        items:
+        - id: MAS.JAL.TRC.001
+          standard_name: Terracotta Screen Panel - 300x300mm Modular Units
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - terracotta screen
+          - terracotta jali
+          - clay screen
+          typical_rate_range:
+            min: 2000
+            max: 4000
+          notes: Fired terracotta screen panels
+          data_source: estimated
+        - id: MAS.JAL.TRC.002
+          standard_name: Terracotta Louver Screen - Extruded Units
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - terracotta louver
+          - clay louver screen
+          typical_rate_range:
+            min: 3000
+            max: 6000
+          notes: Extruded terracotta louver system
+          data_source: estimated
+        - id: MAS.JAL.GRC.001
+          standard_name: GRC Screen Panel - Custom Design Pattern
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - GRC screen
+          - glass reinforced concrete screen
+          - GFRC jali
+          typical_rate_range:
+            min: 2500
+            max: 5000
+          notes: Glass fibre reinforced concrete screen panel
+          data_source: estimated
+        - id: MAS.JAL.GRC.002
+          standard_name: GRC Cladding Panel - Flat with Textured Finish
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - GRC cladding
+          - GFRC panel
+          typical_rate_range:
+            min: 3000
+            max: 5500
+          notes: Flat GRC panel for facade cladding
+          data_source: estimated
+        - id: MAS.JAL.GRC.003
+          standard_name: GRC Cornice/Moulding Profile
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - GRC cornice
+          - GRC moulding
+          - GFRC decorative profile
+          typical_rate_range:
+            min: 800
+            max: 1800
+          notes: Decorative GRC moulding for facade
+          data_source: estimated
+  cavity_walls:
+    categories:
+      cavity_wall_construction:
+        items:
+        - id: MAS.CAV.BRK.001
+          standard_name: Cavity Wall - 115mm Brick + 50mm Cavity + 115mm Brick in CM 1:4
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 2212
+          dsr_item_ref: ''
+          aliases:
+          - cavity wall brick
+          - double skin wall
+          typical_rate_range:
+            min: 1200
+            max: 1800
+          notes: 280mm overall, cavity for thermal insulation
+          data_source: IS codes only
+        - id: MAS.CAV.BRK.002
+          standard_name: Cavity Wall - 115mm Brick + 50mm Insulation Filled + 115mm Brick
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 2212
+          dsr_item_ref: ''
+          aliases:
+          - insulated cavity wall
+          - filled cavity wall
+          typical_rate_range:
+            min: 1400
+            max: 2200
+          notes: Cavity filled with EPS/XPS insulation boards
+          data_source: IS codes only
+        - id: MAS.CAV.BRK.003
+          standard_name: Cavity Wall - 230mm Brick + 50mm Cavity + 115mm Brick
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 2212
+          dsr_item_ref: ''
+          aliases:
+          - thick cavity wall
+          typical_rate_range:
+            min: 1600
+            max: 2400
+          notes: 395mm overall with load-bearing inner leaf
+          data_source: IS codes only
+        - id: MAS.CAV.BRK.004
+          standard_name: Cavity Wall Insulation - EPS Board 50mm in Cavity
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - cavity insulation EPS
+          - wall cavity filler
+          typical_rate_range:
+            min: 150
+            max: 280
+          notes: EPS insulation board placed in wall cavity
+          data_source: estimated
+        - id: MAS.CAV.BRK.005
+          standard_name: Cavity Wall Insulation - XPS Board 50mm in Cavity
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - cavity insulation XPS
+          typical_rate_range:
+            min: 200
+            max: 350
+          notes: XPS insulation for higher moisture resistance
+          data_source: estimated
+        - id: MAS.CAV.BRK.006
+          standard_name: Cavity Wall Insulation - Mineral Wool 50mm in Cavity
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - cavity mineral wool
+          - rockwool cavity
+          typical_rate_range:
+            min: 180
+            max: 300
+          notes: Fire-rated mineral wool cavity insulation
+          data_source: estimated
+  masonry_bands:
+    categories:
+      seismic_bands:
+        items:
+        - id: MAS.BND.PLN.001
+          standard_name: RCC Plinth Band - 150x75mm with 2 nos 10mm Bars
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 4326, IS 13920
+          dsr_item_ref: ''
+          aliases:
+          - plinth band
+          - plinth beam masonry
+          typical_rate_range:
+            min: 200
+            max: 380
+          notes: Seismic band at plinth level per IS 4326
+          data_source: IS codes only
+        - id: MAS.BND.LNT.001
+          standard_name: RCC Lintel Band - 150x75mm Continuous at Lintel Level
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 4326, IS 13920
+          dsr_item_ref: ''
+          aliases:
+          - lintel band
+          - continuous lintel
+          typical_rate_range:
+            min: 220
+            max: 400
+          notes: Continuous band at lintel level for seismic resistance
+          data_source: IS codes only
+        - id: MAS.BND.RFL.001
+          standard_name: RCC Roof Band - 150x75mm at Roof/Floor Level
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 4326, IS 13920
+          dsr_item_ref: ''
+          aliases:
+          - roof band
+          - floor band
+          - tie band
+          typical_rate_range:
+            min: 220
+            max: 400
+          notes: Continuous band at roof/floor level
+          data_source: IS codes only
+        - id: MAS.BND.GBL.001
+          standard_name: RCC Gable Band - At Gable Wall Top
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: IS 4326
+          dsr_item_ref: ''
+          aliases:
+          - gable band
+          - gable wall band
+          typical_rate_range:
+            min: 250
+            max: 420
+          notes: Sloped band following gable wall profile
+          data_source: IS codes only
+        - id: MAS.BND.VRT.001
+          standard_name: RCC Vertical Band at Corner - 230x150mm
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 4326, IS 13920
+          dsr_item_ref: ''
+          aliases:
+          - vertical band corner
+          - corner reinforcement band
+          typical_rate_range:
+            min: 300
+            max: 500
+          notes: Vertical RC band at wall corners for seismic zones
+          data_source: IS codes only
+        - id: MAS.BND.VRT.002
+          standard_name: RCC Vertical Band at T-Junction - 230x150mm
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 4326, IS 13920
+          dsr_item_ref: ''
+          aliases:
+          - vertical band T junction
+          - T junction reinforcement
+          typical_rate_range:
+            min: 300
+            max: 500
+          notes: Vertical RC band at wall T-junctions
+          data_source: IS codes only
+        - id: MAS.BND.VRT.003
+          standard_name: RCC Vertical Band at Door/Window Jambs - 150x150mm
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 4326, IS 13920
+          dsr_item_ref: ''
+          aliases:
+          - jamb band
+          - opening reinforcement band
+          typical_rate_range:
+            min: 250
+            max: 420
+          notes: Vertical band at sides of openings wider than 1200mm
+          data_source: IS codes only
+  masonry_repair:
+    categories:
+      repair_restoration:
+        items:
+        - id: MAS.RPR.DEM.001
+          standard_name: Demolition of Existing Brick Masonry Wall
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 3764
+          dsr_item_ref: ''
+          aliases:
+          - brick wall demolition
+          - masonry dismantling
+          typical_rate_range:
+            min: 600
+            max: 1200
+          notes: Careful demolition with disposal of debris
+          data_source: estimated
+        - id: MAS.RPR.DEM.002
+          standard_name: Demolition of Existing Stone Masonry Wall
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 3764
+          dsr_item_ref: ''
+          aliases:
+          - stone wall demolition
+          typical_rate_range:
+            min: 800
+            max: 1500
+          notes: Stone masonry dismantling
+          data_source: estimated
+        - id: MAS.RPR.DEM.003
+          standard_name: Demolition of Gypsum Board Partition
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 3764
+          dsr_item_ref: ''
+          aliases:
+          - drywall demolition
+          - partition removal
+          typical_rate_range:
+            min: 80
+            max: 180
+          notes: Removal of gypsum board partition including studs
+          data_source: estimated
+        - id: MAS.RPR.CRK.001
+          standard_name: Crack Repair in Masonry - V-Cut and Fill with Polymer Mortar
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1905, NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - masonry crack repair
+          - wall crack filling
+          typical_rate_range:
+            min: 80
+            max: 180
+          notes: V-cut along crack and fill with polymer modified mortar
+          data_source: estimated
+        - id: MAS.RPR.CRK.002
+          standard_name: Crack Repair in Masonry - Stitching with SS Bars
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1905, NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - crack stitching
+          - masonry stitching repair
+          typical_rate_range:
+            min: 250
+            max: 500
+          notes: Drilling and inserting SS bars across crack with epoxy
+          data_source: estimated
+        - id: MAS.RPR.RBD.001
+          standard_name: Rebuilding Damaged Brick Masonry Patch in CM 1:4
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2212
+          dsr_item_ref: ''
+          aliases:
+          - masonry patch repair
+          - brick wall rebuild
+          typical_rate_range:
+            min: 7000
+            max: 11000
+          notes: Removing damaged portion and rebuilding with new bricks
+          data_source: IS codes only
+        - id: MAS.RPR.RBD.002
+          standard_name: Tuckpointing and Repointing Existing Masonry - Full Wall
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2212
+          dsr_item_ref: ''
+          aliases:
+          - full wall repointing
+          - complete repointing
+          typical_rate_range:
+            min: 200
+            max: 400
+          notes: Complete raking and repointing of all joints
+          data_source: estimated
+        - id: MAS.RPR.CLN.001
+          standard_name: Cleaning Exposed Brick Masonry - Acid Wash
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - brick acid wash
+          - masonry cleaning
+          typical_rate_range:
+            min: 30
+            max: 60
+          notes: Dilute hydrochloric acid wash for mortar stain removal
+          data_source: estimated
+        - id: MAS.RPR.CLN.002
+          standard_name: Cleaning Stone Masonry - High Pressure Water Jet
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - pressure wash masonry
+          - stone cleaning
+          typical_rate_range:
+            min: 25
+            max: 50
+          notes: High pressure water cleaning of stone surfaces
+          data_source: estimated
+        - id: MAS.RPR.WTR.001
+          standard_name: Water Repellent Treatment on External Masonry Walls
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - water repellent masonry
+          - silicone treatment wall
+          typical_rate_range:
+            min: 40
+            max: 80
+          notes: Silane/siloxane breathable water repellent
+          data_source: estimated
+  fire_rated_masonry:
+    categories:
+      fire_walls:
+        items:
+        - id: MAS.FRM.BRK.001
+          standard_name: Fire Rated Brick Masonry Wall 230mm - 2 Hour Fire Rating
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 1642
+          dsr_item_ref: ''
+          aliases:
+          - fire wall brick 2hr
+          - fire rated masonry 230mm
+          typical_rate_range:
+            min: 800
+            max: 1300
+          notes: Plastered both sides for 2-hour fire resistance
+          data_source: IS codes only
+        - id: MAS.FRM.BRK.002
+          standard_name: Fire Rated Brick Masonry Wall 345mm - 4 Hour Fire Rating
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 1642
+          dsr_item_ref: ''
+          aliases:
+          - fire wall brick 4hr
+          - fire rated masonry 345mm
+          typical_rate_range:
+            min: 1000
+            max: 1600
+          notes: 345mm brick wall for 4-hour fire separation
+          data_source: IS codes only
+        - id: MAS.FRM.CBK.001
+          standard_name: Fire Rated Concrete Block Wall 200mm - 2 Hour Fire Rating
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 1642
+          dsr_item_ref: ''
+          aliases:
+          - fire wall block 2hr
+          - concrete block firewall
+          typical_rate_range:
+            min: 700
+            max: 1200
+          notes: 200mm concrete block with plaster for fire rating
+          data_source: IS codes only
+        - id: MAS.FRM.CBK.002
+          standard_name: Fire Rated AAC Block Wall 200mm - 4 Hour Fire Rating
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 2212, NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - fire wall AAC 4hr
+          - AAC firewall
+          typical_rate_range:
+            min: 650
+            max: 1100
+          notes: AAC blocks inherently fire resistant
+          data_source: estimated
+        - id: MAS.FRM.STP.001
+          standard_name: Fire Stopping at Masonry-Slab Junction - Mineral Wool + Sealant
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 2212, NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - fire stop masonry
+          - fire stopping junction
+          typical_rate_range:
+            min: 200
+            max: 400
+          notes: Fire stopping at gap between wall top and slab soffit
+          data_source: estimated
+        - id: MAS.FRM.STP.002
+          standard_name: Fire Stopping at Service Penetrations Through Masonry
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 2212, NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - fire stop penetration
+          - service seal fire
+          typical_rate_range:
+            min: 150
+            max: 350
+          notes: Intumescent collar/wrap at pipe/cable penetrations
+          data_source: estimated
+  masonry_surface_treatment:
+    categories:
+      plastering_base:
+        items:
+        - id: MAS.SRF.BDC.001
+          standard_name: Bonding Coat/Scratch Coat on AAC Block Surface - Polymer Modified
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2212, IS 1200 Part 3
+          dsr_item_ref: ''
+          aliases:
+          - AAC bonding coat
+          - scratch coat AAC
+          typical_rate_range:
+            min: 60
+            max: 120
+          notes: Essential primer coat before plastering AAC blocks
+          data_source: estimated
+        - id: MAS.SRF.BDC.002
+          standard_name: Bonding Coat on Concrete Block Surface - SBR Latex Based
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2212, IS 1200 Part 3
+          dsr_item_ref: ''
+          aliases:
+          - block bonding coat
+          - SBR bonding
+          typical_rate_range:
+            min: 50
+            max: 100
+          notes: SBR latex bonding agent for smooth block surfaces
+          data_source: estimated
+        - id: MAS.SRF.BDC.003
+          standard_name: Chicken Mesh Fixing on Masonry Before Plastering
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1905
+          dsr_item_ref: ''
+          aliases:
+          - plaster mesh
+          - anti-crack mesh plaster
+          typical_rate_range:
+            min: 35
+            max: 70
+          notes: GI chicken mesh fixed with nails before plastering
+          data_source: estimated
+        - id: MAS.SRF.BDC.004
+          standard_name: Fiberglass Mesh Embedding in Plaster Base Coat
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1905
+          dsr_item_ref: ''
+          aliases:
+          - fiberglass mesh plaster
+          - alkali resistant mesh
+          typical_rate_range:
+            min: 40
+            max: 80
+          notes: Alkali-resistant fiberglass mesh in base coat
+          data_source: estimated
+        - id: MAS.SRF.BDC.005
+          standard_name: Corner Bead - GI Perforated Angle for Plastering
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1200 Part 3
+          dsr_item_ref: ''
+          aliases:
+          - corner bead
+          - plastering angle bead
+          typical_rate_range:
+            min: 30
+            max: 60
+          notes: GI corner bead for sharp plaster edges
+          data_source: estimated
+        - id: MAS.SRF.BDC.006
+          standard_name: PVC Corner Bead for External Plastering
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1200 Part 3
+          dsr_item_ref: ''
+          aliases:
+          - PVC corner bead
+          - plastic angle bead
+          typical_rate_range:
+            min: 20
+            max: 45
+          notes: PVC corner protection bead
+          data_source: estimated
+        - id: MAS.SRF.BDC.007
+          standard_name: Plaster Stop Bead/Drip Bead - GI for Soffits
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1200 Part 3
+          dsr_item_ref: ''
+          aliases:
+          - stop bead
+          - drip bead
+          - plaster edge trim
+          typical_rate_range:
+            min: 25
+            max: 50
+          notes: Edge bead for clean plaster termination
+          data_source: estimated
+  compound_boundary_walls:
+    categories:
+      boundary_walls:
+        items:
+        - id: MAS.CMP.BDY.001
+          standard_name: Brick Masonry Compound Wall 230mm Thick in CM 1:6 - Up to 1.5m Height
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1905
+          dsr_item_ref: ''
+          aliases:
+          - boundary wall brick
+          - compound wall 230mm
+          typical_rate_range:
+            min: 2800
+            max: 4500
+          notes: One brick thick boundary wall including foundation
+          data_source: IS codes only
+        - id: MAS.CMP.BDY.002
+          standard_name: Brick Masonry Compound Wall 115mm Thick in CM 1:4 - With RCC Posts at 3m c/c
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1905
+          dsr_item_ref: ''
+          aliases:
+          - panel compound wall
+          - brick infill boundary
+          typical_rate_range:
+            min: 2200
+            max: 3600
+          notes: Half brick panels between RCC posts
+          data_source: IS codes only
+        - id: MAS.CMP.BDY.003
+          standard_name: Concrete Block Compound Wall 200mm - With RCC Posts at 3m c/c
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          - industrial
+          requires: []
+          is_code_ref: IS 2185
+          dsr_item_ref: ''
+          aliases:
+          - block compound wall
+          - block boundary
+          typical_rate_range:
+            min: 2400
+            max: 3800
+          notes: Hollow concrete block panels between RCC posts
+          data_source: IS codes only
+        - id: MAS.CMP.BDY.004
+          standard_name: Stone Masonry Compound Wall in Random Rubble - 450mm Thick Up to 2m
+          unit: cum
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - institutional
+          requires: []
+          is_code_ref: IS 1597
+          dsr_item_ref: ''
+          aliases:
+          - stone boundary wall
+          - RR compound wall
+          typical_rate_range:
+            min: 3500
+            max: 5500
+          notes: Random rubble boundary wall in CM 1:6
+          data_source: IS codes only
+        - id: MAS.CMP.BDY.005
+          standard_name: Precast Concrete Compound Wall Panel 50mm Thick - 2m High
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - industrial
+          - commercial
+          requires: []
+          is_code_ref: IS 15916, IS 2212
+          dsr_item_ref: ''
+          aliases:
+          - precast boundary wall
+          - readymade compound wall
+          typical_rate_range:
+            min: 1800
+            max: 3200
+          notes: Precast concrete panels slotted into RCC posts
+          data_source: estimated
+        - id: MAS.CMP.BDY.006
+          standard_name: Barbed Wire Fencing Over Compound Wall - 3 Rows
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2062
+          dsr_item_ref: ''
+          aliases:
+          - barbed wire fencing
+          - BW on wall
+          typical_rate_range:
+            min: 120
+            max: 250
+          notes: MS angle posts with 3 rows GI barbed wire
+          data_source: estimated
+        - id: MAS.CMP.BDY.007
+          standard_name: Concertina Wire Coil Over Compound Wall
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - industrial
+          - institutional
+          requires: []
+          is_code_ref: IS 2062
+          dsr_item_ref: ''
+          aliases:
+          - concertina wire
+          - razor wire fencing
+          typical_rate_range:
+            min: 200
+            max: 400
+          notes: Single coil concertina wire on wall top
+          data_source: estimated
+  arch_masonry:
+    categories:
+      brick_arches:
+        items:
+        - id: MAS.ARC.BRK.001
+          standard_name: Semi-Circular Brick Arch in CM 1:4 - Up to 1.0m Span
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - heritage
+          requires: []
+          is_code_ref: IS 2212
+          dsr_item_ref: ''
+          aliases:
+          - brick arch semicircular
+          - round arch brick
+          typical_rate_range:
+            min: 2500
+            max: 5000
+          notes: Including centering and shuttering
+          data_source: IS codes only
+        - id: MAS.ARC.BRK.002
+          standard_name: Segmental Brick Arch in CM 1:4 - Up to 1.2m Span
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - heritage
+          requires: []
+          is_code_ref: IS 2212
+          dsr_item_ref: ''
+          aliases:
+          - segmental arch
+          - flat arch brick
+          typical_rate_range:
+            min: 2000
+            max: 4000
+          notes: Segmental arch with proper voussoirs
+          data_source: IS codes only
+        - id: MAS.ARC.BRK.003
+          standard_name: Pointed/Gothic Brick Arch in CM 1:4 - Up to 1.0m Span
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - heritage
+          - institutional
+          requires: []
+          is_code_ref: IS 2212
+          dsr_item_ref: ''
+          aliases:
+          - gothic arch
+          - pointed arch brick
+          typical_rate_range:
+            min: 3000
+            max: 6000
+          notes: Two-centred pointed arch
+          data_source: IS codes only
+        - id: MAS.ARC.BRK.004
+          standard_name: Flat/Jack Arch in Brick Over Door/Window Opening - Up to 1.5m
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2212
+          dsr_item_ref: ''
+          aliases:
+          - jack arch
+          - flat arch
+          - soldier course arch
+          typical_rate_range:
+            min: 1500
+            max: 3000
+          notes: Flat arch with soldier course bricks
+          data_source: IS codes only
+        - id: MAS.ARC.BRK.005
+          standard_name: Brick Arch Repair/Restoration - Heritage Structure
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - heritage
+          requires: []
+          is_code_ref: IS 2212
+          dsr_item_ref: ''
+          aliases:
+          - arch restoration
+          - heritage arch repair
+          typical_rate_range:
+            min: 5000
+            max: 15000
+          notes: Careful brick-by-brick restoration of heritage arches
+          data_source: estimated
+  masonry_chimney:
+    categories:
+      chimney_construction:
+        items:
+        - id: MAS.CHM.BRK.001
+          standard_name: Brick Masonry Chimney Construction 345mm x 345mm in CM 1:4
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - industrial
+          requires: []
+          is_code_ref: IS 2212
+          dsr_item_ref: ''
+          aliases:
+          - brick chimney
+          - masonry chimney
+          typical_rate_range:
+            min: 3500
+            max: 6000
+          notes: Per running metre height, including flue lining
+          data_source: IS codes only
+        - id: MAS.CHM.BRK.002
+          standard_name: Brick Masonry Chimney Construction 460mm x 460mm in CM 1:4
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - industrial
+          requires: []
+          is_code_ref: IS 2212
+          dsr_item_ref: ''
+          aliases:
+          - large brick chimney
+          - industrial chimney brick
+          typical_rate_range:
+            min: 5000
+            max: 8500
+          notes: Larger flue for industrial applications
+          data_source: IS codes only
+        - id: MAS.CHM.BRK.003
+          standard_name: Chimney Cap/Cowl - Precast Concrete
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15916, NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - chimney cap
+          - chimney cowl precast
+          typical_rate_range:
+            min: 1500
+            max: 3000
+          notes: Precast concrete cap with rain guard
+          data_source: estimated
+        - id: MAS.CHM.BRK.004
+          standard_name: Chimney Flue Lining - Fire Clay Pipe 150mm Dia
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - residential
+          - industrial
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - flue lining clay
+          - fire clay flue pipe
+          typical_rate_range:
+            min: 800
+            max: 1500
+          notes: Fire clay pipe lining inside masonry chimney
+          data_source: estimated
+  masonry_waterproofing_treatment:
+    categories:
+      damp_treatment:
+        items:
+        - id: MAS.DMP.TRT.001
+          standard_name: Rising Damp Treatment - Silicone Injection into Masonry Wall
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 3495, NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - damp injection
+          - rising damp treatment
+          - silicone DPC injection
+          typical_rate_range:
+            min: 500
+            max: 1200
+          notes: Chemical injection DPC to arrest rising damp in existing walls
+          data_source: estimated
+        - id: MAS.DMP.TRT.002
+          standard_name: External Wall Waterproofing Treatment - Silicone-Based Impregnation
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 3495, NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - wall waterproofing
+          - silicone impregnation external
+          typical_rate_range:
+            min: 80
+            max: 200
+          notes: Transparent silicone-based water repellent for exposed masonry
+          data_source: estimated
+        - id: MAS.DMP.TRT.003
+          standard_name: Anti-Carbonation Coating on Masonry/Concrete Surface
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - anti carbonation coat
+          - protective coating masonry
+          typical_rate_range:
+            min: 120
+            max: 250
+          notes: Acrylic-based anti-carbonation protective coating
+          data_source: estimated
+        - id: MAS.DMP.TRT.004
+          standard_name: Integral Water Repellent Admixture in Masonry Mortar
+          unit: kg
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 3495, NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - waterproof mortar admixture
+          - integral waterproofing mortar
+          typical_rate_range:
+            min: 40
+            max: 80
+          notes: Liquid admixture added to mortar for water repellency
+          data_source: estimated
+        - id: MAS.DMP.TRT.005
+          standard_name: Crystalline Waterproofing Slurry Coat on Masonry Surface
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 3495, NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - crystalline coat masonry
+          - penetrating waterproofing masonry
+          typical_rate_range:
+            min: 150
+            max: 300
+          notes: Brush-applied crystalline slurry for below-grade masonry walls
+          data_source: estimated
+        - id: MAS.DMP.TRT.006
+          standard_name: Bituminous Damp Proof Coating on Basement Masonry - 2 Coats
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 3495, NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - bitumen DPC coat
+          - tar coating basement wall
+          typical_rate_range:
+            min: 60
+            max: 120
+          notes: Hot applied bitumen coating on external face of basement walls
+          data_source: estimated
+        - id: MAS.DMP.TRT.007
+          standard_name: Cementitious Waterproofing Coat on Water Tank Masonry Walls
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 3495, IS 3370:2009
+          dsr_item_ref: ''
+          aliases:
+          - tank waterproofing coat
+          - water tank masonry seal
+          typical_rate_range:
+            min: 180
+            max: 350
+          notes: Polymer-modified cementitious coating for potable water tanks
+          data_source: estimated

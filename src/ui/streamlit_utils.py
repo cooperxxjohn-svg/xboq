@@ -91,7 +91,7 @@ def df_to_styled(
                 return 'background-color: #fff3cd'
             else:
                 return 'background-color: #f8d7da'
-        except:
+        except (ValueError, TypeError):
             return ''
 
     styled = df.style

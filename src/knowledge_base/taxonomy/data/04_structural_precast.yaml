@@ -1,0 +1,2849 @@
+discipline: structural
+trade: precast
+sub_trades:
+  wall_panels:
+    categories:
+      solid_panels:
+        items:
+        - id: STR.PC.WP.001
+          standard_name: Providing precast RCC solid wall panel 150mm thick in M30 concrete including reinforcement, mould, casting, and curing
+          unit: sqm
+          construction_types:
+          - precast
+          building_types:
+          - residential
+          - commercial
+          requires: []
+          is_code_ref: IS 15916, IS 456:2000
+          dsr_item_ref: ''
+          aliases:
+          - precast wall panel 150
+          - solid wall panel
+          - PC wall
+          typical_rate_range:
+            min: 2500
+            max: 4500
+          notes: Standard panel size 3x3m. Rate excludes transport and erection
+          data_source: IS codes only
+        - id: STR.PC.WP.002
+          standard_name: Providing precast RCC solid wall panel 200mm thick in M30 concrete including reinforcement, mould, casting, and curing
+          unit: sqm
+          construction_types:
+          - precast
+          building_types:
+          - residential
+          - commercial
+          requires: []
+          is_code_ref: IS 15916, IS 456:2000
+          dsr_item_ref: ''
+          aliases:
+          - precast wall panel 200
+          - thick wall panel
+          typical_rate_range:
+            min: 3000
+            max: 5200
+          notes: ''
+          data_source: IS codes only
+        - id: STR.PC.WP.003
+          standard_name: Providing precast RCC solid external wall panel 200mm thick with architectural finish (exposed aggregate/textured)
+          unit: sqm
+          construction_types:
+          - precast
+          building_types:
+          - residential
+          - commercial
+          requires: []
+          is_code_ref: IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - architectural precast panel
+          - decorative wall panel
+          typical_rate_range:
+            min: 4000
+            max: 7000
+          notes: With exposed aggregate or textured finish
+          data_source: IS codes only
+      sandwich_panels:
+        items:
+        - id: STR.PC.WP.004
+          standard_name: Providing precast concrete sandwich wall panel (75mm concrete + 50mm EPS/XPS + 75mm concrete) including reinforcement
+          unit: sqm
+          construction_types:
+          - precast
+          building_types:
+          - residential
+          - commercial
+          requires: []
+          is_code_ref: IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - sandwich wall panel
+          - insulated precast panel
+          typical_rate_range:
+            min: 3500
+            max: 6000
+          notes: Total thickness 200mm. Thermal insulation U-value < 1.0 W/sqm.K
+          data_source: IS codes only
+        - id: STR.PC.WP.005
+          standard_name: Providing precast concrete sandwich wall panel (100mm + 75mm EPS + 100mm) for external walls
+          unit: sqm
+          construction_types:
+          - precast
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - thick sandwich panel
+          - heavy insulated panel
+          typical_rate_range:
+            min: 4200
+            max: 7200
+          notes: Total thickness 275mm
+          data_source: IS codes only
+      partition_panels:
+        items:
+        - id: STR.PC.WP.006
+          standard_name: Providing precast lightweight concrete partition panel 75mm thick (density 1200-1400 kg/cum)
+          unit: sqm
+          construction_types:
+          - precast
+          building_types:
+          - residential
+          - commercial
+          requires: []
+          is_code_ref: IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - precast partition
+          - lightweight precast panel
+          typical_rate_range:
+            min: 1200
+            max: 2200
+          notes: For internal partitions
+          data_source: IS codes only
+        - id: STR.PC.WP.007
+          standard_name: Providing precast lightweight concrete partition panel 100mm thick
+          unit: sqm
+          construction_types:
+          - precast
+          building_types:
+          - residential
+          - commercial
+          requires: []
+          is_code_ref: IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - precast partition 100mm
+          typical_rate_range:
+            min: 1500
+            max: 2600
+          notes: ''
+          data_source: IS codes only
+        - id: STR.PC.WP.008
+          standard_name: Providing precast concrete boundary wall panel 100mm thick, 2.4m high, with integral columns
+          unit: rm
+          construction_types:
+          - precast
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - precast compound wall
+          - precast boundary wall
+          typical_rate_range:
+            min: 3000
+            max: 5500
+          notes: Per running metre. Including column element
+          data_source: IS codes only
+      additional_wall_panels:
+        items:
+        - id: STR.PC.WP.009
+          standard_name: Providing precast RCC solid wall panel 100mm thick in M30 concrete including reinforcement
+          unit: sqm
+          construction_types:
+          - precast
+          building_types:
+          - residential
+          - commercial
+          requires: []
+          is_code_ref: IS 15916, IS 456:2000
+          dsr_item_ref: ''
+          aliases:
+          - precast wall panel 100
+          - thin wall panel
+          typical_rate_range:
+            min: 2000
+            max: 3800
+          notes: Thin non-load-bearing wall panel
+          data_source: IS codes only
+        - id: STR.PC.WP.010
+          standard_name: Providing precast RCC solid wall panel 125mm thick in M30 concrete including reinforcement
+          unit: sqm
+          construction_types:
+          - precast
+          building_types:
+          - residential
+          - commercial
+          requires: []
+          is_code_ref: IS 15916, IS 456:2000
+          dsr_item_ref: ''
+          aliases:
+          - precast wall panel 125
+          typical_rate_range:
+            min: 2200
+            max: 4000
+          notes: ''
+          data_source: IS codes only
+        - id: STR.PC.WP.011
+          standard_name: Providing precast RCC load-bearing wall panel 200mm thick in M40 concrete
+          unit: sqm
+          construction_types:
+          - precast
+          building_types:
+          - residential
+          - commercial
+          requires: []
+          is_code_ref: IS 15916, IS 456:2000
+          dsr_item_ref: ''
+          aliases:
+          - load bearing precast wall
+          - structural wall panel 200
+          typical_rate_range:
+            min: 3500
+            max: 5800
+          notes: Structural load-bearing wall panel in higher grade concrete
+          data_source: IS codes only
+        - id: STR.PC.WP.012
+          standard_name: Providing precast RCC solid wall panel 250mm thick in M40 concrete for shear wall
+          unit: sqm
+          construction_types:
+          - precast
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 15916, IS 456:2000
+          dsr_item_ref: ''
+          aliases:
+          - precast shear wall
+          - structural wall 250
+          typical_rate_range:
+            min: 4500
+            max: 7500
+          notes: Structural shear wall panel with heavy reinforcement
+          data_source: IS codes only
+        - id: STR.PC.WP.013
+          standard_name: Providing precast concrete sandwich wall panel (75mm + 50mm EPS + 75mm) with textured finish
+          unit: sqm
+          construction_types:
+          - precast
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - textured sandwich panel
+          - architectural sandwich panel
+          typical_rate_range:
+            min: 4500
+            max: 7500
+          notes: Total 200mm with architectural textured finish
+          data_source: IS codes only
+        - id: STR.PC.WP.014
+          standard_name: Providing precast concrete sandwich wall panel (100mm + 100mm EPS + 100mm) for cold regions
+          unit: sqm
+          construction_types:
+          - precast
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - thick insulated sandwich
+          - cold climate panel
+          typical_rate_range:
+            min: 5000
+            max: 8500
+          notes: Total 300mm with high thermal insulation U-value < 0.5 W/sqm.K
+          data_source: IS codes only
+        - id: STR.PC.WP.015
+          standard_name: Providing precast RCC wall panel with window/door openings formed
+          unit: sqm
+          construction_types:
+          - precast
+          building_types:
+          - residential
+          - commercial
+          requires: []
+          is_code_ref: IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - precast wall with openings
+          - panel with cutouts
+          typical_rate_range:
+            min: 3500
+            max: 6000
+          notes: Rate per sqm of total panel area including openings
+          data_source: IS codes only
+        - id: STR.PC.WP.016
+          standard_name: Providing precast RCC external wall panel 200mm with built-in MEP conduits
+          unit: sqm
+          construction_types:
+          - precast
+          building_types:
+          - residential
+          - commercial
+          requires: []
+          is_code_ref: IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - precast with conduits
+          - integrated MEP panel
+          typical_rate_range:
+            min: 4000
+            max: 6500
+          notes: Panel with pre-embedded electrical and plumbing conduits
+          data_source: IS codes only
+        - id: STR.PC.WP.017
+          standard_name: Providing precast RCC parapet wall panel 150mm thick
+          unit: rmt
+          construction_types:
+          - precast
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - precast parapet
+          - PC parapet panel
+          typical_rate_range:
+            min: 1500
+            max: 3000
+          notes: Per running metre, typically 900-1200mm high
+          data_source: IS codes only
+        - id: STR.PC.WP.018
+          standard_name: Providing precast concrete cladding panel 75mm thick with exposed aggregate finish
+          unit: sqm
+          construction_types:
+          - precast
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - precast cladding panel
+          - exposed aggregate cladding
+          typical_rate_range:
+            min: 3000
+            max: 5500
+          notes: Non-structural facade cladding panel
+          data_source: IS codes only
+  beams:
+    categories:
+      rectangular_beams:
+        items:
+        - id: STR.PC.BM.001
+          standard_name: Providing precast RCC rectangular beam 230x400mm in M40 concrete including reinforcement and mould
+          unit: rm
+          construction_types:
+          - precast
+          building_types:
+          - residential
+          - commercial
+          requires: []
+          is_code_ref: IS 15916, IS 456:2000
+          dsr_item_ref: ''
+          aliases:
+          - precast beam 230x400
+          - PC beam
+          typical_rate_range:
+            min: 3500
+            max: 6000
+          notes: Per running metre. Span up to 6m
+          data_source: IS codes only
+        - id: STR.PC.BM.002
+          standard_name: Providing precast RCC rectangular beam 300x500mm in M40 concrete including reinforcement
+          unit: rm
+          construction_types:
+          - precast
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 15916, IS 456:2000
+          dsr_item_ref: ''
+          aliases:
+          - precast beam 300x500
+          typical_rate_range:
+            min: 5000
+            max: 8500
+          notes: For larger spans up to 8m
+          data_source: IS codes only
+        - id: STR.PC.BM.003
+          standard_name: Providing precast RCC rectangular beam 300x600mm in M40 concrete including reinforcement
+          unit: rm
+          construction_types:
+          - precast
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 15916, IS 456:2000
+          dsr_item_ref: ''
+          aliases:
+          - precast beam 300x600
+          - large precast beam
+          typical_rate_range:
+            min: 6500
+            max: 11000
+          notes: For spans up to 10m
+          data_source: IS codes only
+      inverted_t_l_beams:
+        items:
+        - id: STR.PC.BM.004
+          standard_name: Providing precast pre-stressed inverted T-beam for supporting hollow core slabs
+          unit: rm
+          construction_types:
+          - precast
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 1343, IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - inverted T beam
+          - IT beam precast
+          - ledger beam
+          typical_rate_range:
+            min: 7000
+            max: 12000
+          notes: With ledges for slab bearing. Span up to 12m
+          data_source: IS codes only
+        - id: STR.PC.BM.005
+          standard_name: Providing precast pre-stressed L-beam (spandrel) for edge support of slabs
+          unit: rm
+          construction_types:
+          - precast
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 1343, IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - L-beam precast
+          - spandrel beam
+          typical_rate_range:
+            min: 6000
+            max: 10000
+          notes: Edge beam with one ledge
+          data_source: IS codes only
+      additional_beams:
+        items:
+        - id: STR.PC.BM.006
+          standard_name: Providing precast RCC rectangular beam 230x300mm in M40 concrete
+          unit: rm
+          construction_types:
+          - precast
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: IS 15916, IS 456:2000
+          dsr_item_ref: ''
+          aliases:
+          - precast beam 230x300
+          - small precast beam
+          typical_rate_range:
+            min: 2800
+            max: 4800
+          notes: Smaller beam for residential spans up to 4m
+          data_source: IS codes only
+        - id: STR.PC.BM.007
+          standard_name: Providing precast RCC rectangular beam 300x450mm in M40 concrete
+          unit: rm
+          construction_types:
+          - precast
+          building_types:
+          - residential
+          - commercial
+          requires: []
+          is_code_ref: IS 15916, IS 456:2000
+          dsr_item_ref: ''
+          aliases:
+          - precast beam 300x450
+          typical_rate_range:
+            min: 4200
+            max: 7200
+          notes: Medium span beam up to 7m
+          data_source: IS codes only
+        - id: STR.PC.BM.008
+          standard_name: Providing precast RCC rectangular beam 300x900mm in M45 concrete
+          unit: rm
+          construction_types:
+          - precast
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 15916, IS 456:2000
+          dsr_item_ref: ''
+          aliases:
+          - precast beam 300x900
+          - deep precast beam
+          typical_rate_range:
+            min: 9000
+            max: 15000
+          notes: Deep beam for long spans up to 12m
+          data_source: IS codes only
+        - id: STR.PC.BM.009
+          standard_name: Providing precast pre-stressed rectangular beam 300x600mm in M50 concrete
+          unit: rm
+          construction_types:
+          - precast
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 1343, IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - prestressed beam 300x600
+          typical_rate_range:
+            min: 8000
+            max: 14000
+          notes: Pre-tensioned beam for longer spans
+          data_source: IS codes only
+        - id: STR.PC.BM.010
+          standard_name: Providing precast pre-stressed rectangular beam 400x800mm in M50 concrete
+          unit: rm
+          construction_types:
+          - precast
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 1343, IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - prestressed beam 400x800
+          - large prestressed beam
+          typical_rate_range:
+            min: 12000
+            max: 20000
+          notes: Large prestressed beam for heavy loads and long spans
+          data_source: IS codes only
+        - id: STR.PC.BM.011
+          standard_name: Providing precast RCC spandrel beam for cladding support
+          unit: rm
+          construction_types:
+          - precast
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - precast spandrel
+          - facade support beam
+          typical_rate_range:
+            min: 5000
+            max: 9000
+          notes: Edge beam supporting cladding and slab
+          data_source: IS codes only
+        - id: STR.PC.BM.012
+          standard_name: Providing precast pre-stressed inverted T-beam 500mm deep
+          unit: rm
+          construction_types:
+          - precast
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 1343, IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - IT beam 500mm
+          - inverted T 500
+          typical_rate_range:
+            min: 6000
+            max: 10000
+          notes: 500mm deep IT beam for medium spans
+          data_source: IS codes only
+        - id: STR.PC.BM.013
+          standard_name: Providing precast pre-stressed inverted T-beam 800mm deep
+          unit: rm
+          construction_types:
+          - precast
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 1343, IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - IT beam 800mm
+          - deep inverted T
+          typical_rate_range:
+            min: 10000
+            max: 18000
+          notes: Deep IT beam for long spans up to 15m
+          data_source: IS codes only
+        - id: STR.PC.BM.014
+          standard_name: Providing precast RCC lintel beam 150x230mm for masonry openings
+          unit: rm
+          construction_types:
+          - precast
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - precast lintel beam
+          - PC lintel
+          typical_rate_range:
+            min: 800
+            max: 1500
+          notes: Standard precast lintel for door/window openings
+          data_source: IS codes only
+        - id: STR.PC.BM.015
+          standard_name: Providing precast RCC ring beam/bond beam 200x200mm
+          unit: rm
+          construction_types:
+          - precast
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - precast ring beam
+          - precast bond beam
+          typical_rate_range:
+            min: 700
+            max: 1300
+          notes: Precast ring beam at floor/roof level
+          data_source: IS codes only
+  slabs:
+    categories:
+      hollow_core:
+        items:
+        - id: STR.PC.SL.001
+          standard_name: Providing precast pre-stressed hollow core slab 150mm thick, span up to 6m
+          unit: sqm
+          construction_types:
+          - precast
+          building_types:
+          - residential
+          - commercial
+          requires: []
+          is_code_ref: IS 1343, IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - hollow core slab 150
+          - HC slab
+          - voided slab 150
+          typical_rate_range:
+            min: 1800
+            max: 3000
+          notes: Width typically 1200mm. Weight approx 220 kg/sqm
+          data_source: IS codes only
+        - id: STR.PC.SL.002
+          standard_name: Providing precast pre-stressed hollow core slab 200mm thick, span up to 8m
+          unit: sqm
+          construction_types:
+          - precast
+          building_types:
+          - residential
+          - commercial
+          requires: []
+          is_code_ref: IS 1343, IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - hollow core slab 200
+          - HC slab 200
+          typical_rate_range:
+            min: 2200
+            max: 3600
+          notes: Weight approx 280 kg/sqm
+          data_source: IS codes only
+        - id: STR.PC.SL.003
+          standard_name: Providing precast pre-stressed hollow core slab 250mm thick, span up to 10m
+          unit: sqm
+          construction_types:
+          - precast
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 1343, IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - hollow core slab 250
+          typical_rate_range:
+            min: 2600
+            max: 4200
+          notes: Weight approx 350 kg/sqm
+          data_source: IS codes only
+        - id: STR.PC.SL.004
+          standard_name: Providing precast pre-stressed hollow core slab 300mm thick, span up to 12m
+          unit: sqm
+          construction_types:
+          - precast
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 1343, IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - hollow core slab 300
+          - heavy HC slab
+          typical_rate_range:
+            min: 3000
+            max: 5000
+          notes: Weight approx 400 kg/sqm
+          data_source: IS codes only
+        - id: STR.PC.SL.005
+          standard_name: Providing structural topping concrete 75mm thick over hollow core slabs with welded wire mesh
+          unit: sqm
+          construction_types:
+          - precast
+          building_types:
+          - all
+          requires:
+          - STR.PC.SL.001
+          is_code_ref: IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - structural topping
+          - composite topping
+          - screed over HC slab
+          typical_rate_range:
+            min: 500
+            max: 900
+          notes: M25 grade. For composite action and diaphragm
+          data_source: IS codes only
+      solid_slabs:
+        items:
+        - id: STR.PC.SL.006
+          standard_name: Providing precast RCC solid slab panel 125mm thick in M30 concrete including reinforcement
+          unit: sqm
+          construction_types:
+          - precast
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - precast solid slab 125
+          - flat slab panel
+          typical_rate_range:
+            min: 2000
+            max: 3500
+          notes: For small spans up to 4m
+          data_source: IS codes only
+        - id: STR.PC.SL.007
+          standard_name: Providing precast RCC solid slab panel 150mm thick in M30 concrete
+          unit: sqm
+          construction_types:
+          - precast
+          building_types:
+          - residential
+          - commercial
+          requires: []
+          is_code_ref: IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - precast solid slab 150
+          typical_rate_range:
+            min: 2400
+            max: 4000
+          notes: ''
+          data_source: IS codes only
+      half_slab:
+        items:
+        - id: STR.PC.SL.008
+          standard_name: Providing precast half-slab (lattice girder slab) 60mm thick as permanent formwork with in-situ topping
+          unit: sqm
+          construction_types:
+          - precast
+          building_types:
+          - residential
+          - commercial
+          requires: []
+          is_code_ref: IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - half slab
+          - lattice girder slab
+          - filigree slab
+          - precast plank
+          typical_rate_range:
+            min: 1200
+            max: 2200
+          notes: Acts as permanent formwork. Total slab with topping 150-200mm
+          data_source: IS codes only
+        - id: STR.PC.SL.009
+          standard_name: Providing precast half-slab 80mm thick as permanent formwork
+          unit: sqm
+          construction_types:
+          - precast
+          building_types:
+          - residential
+          - commercial
+          requires: []
+          is_code_ref: IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - half slab 80mm
+          - thick lattice slab
+          typical_rate_range:
+            min: 1400
+            max: 2500
+          notes: ''
+          data_source: IS codes only
+      double_t_slabs:
+        items:
+        - id: STR.PC.SL.010
+          standard_name: Providing precast pre-stressed double-T slab 500mm overall depth, span up to 15m
+          unit: sqm
+          construction_types:
+          - precast
+          building_types:
+          - commercial
+          - industrial
+          requires: []
+          is_code_ref: IS 1343, IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - double T slab
+          - DT slab
+          - twin-T slab
+          typical_rate_range:
+            min: 3500
+            max: 6000
+          notes: Width 2.4m typical. For long span floors and parking
+          data_source: IS codes only
+        - id: STR.PC.SL.011
+          standard_name: Providing precast pre-stressed double-T slab 700mm overall depth, span up to 20m
+          unit: sqm
+          construction_types:
+          - precast
+          building_types:
+          - commercial
+          - industrial
+          requires: []
+          is_code_ref: IS 1343, IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - deep double T
+          - DT slab 700
+          typical_rate_range:
+            min: 4500
+            max: 7500
+          notes: For long span structures
+          data_source: IS codes only
+      staircase:
+        items:
+        - id: STR.PC.SL.012
+          standard_name: Providing precast RCC staircase flight in M40 concrete including steps, waist slab, and reinforcement
+          unit: nos
+          construction_types:
+          - precast
+          building_types:
+          - residential
+          - commercial
+          requires: []
+          is_code_ref: IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - precast staircase
+          - precast stair flight
+          typical_rate_range:
+            min: 40000
+            max: 80000
+          notes: Per flight. Typical 10-12 risers per flight
+          data_source: IS codes only
+        - id: STR.PC.SL.013
+          standard_name: Providing precast RCC half landing for staircase
+          unit: nos
+          construction_types:
+          - precast
+          building_types:
+          - residential
+          - commercial
+          requires: []
+          is_code_ref: IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - precast landing
+          - precast half landing
+          typical_rate_range:
+            min: 15000
+            max: 30000
+          notes: Per landing piece
+          data_source: IS codes only
+      additional_slabs:
+        items:
+        - id: STR.PC.SL.014
+          standard_name: Providing precast pre-stressed hollow core slab 400mm thick, span up to 16m
+          unit: sqm
+          construction_types:
+          - precast
+          building_types:
+          - commercial
+          - industrial
+          requires: []
+          is_code_ref: IS 1343, IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - hollow core slab 400
+          - deep HC slab
+          typical_rate_range:
+            min: 3800
+            max: 6000
+          notes: Deep hollow core for long span and heavy loads
+          data_source: IS codes only
+        - id: STR.PC.SL.015
+          standard_name: Providing structural topping concrete 50mm thick over hollow core slabs
+          unit: sqm
+          construction_types:
+          - precast
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - thin topping over HC
+          - 50mm structural topping
+          typical_rate_range:
+            min: 350
+            max: 650
+          notes: Thinner topping for lighter loads
+          data_source: IS codes only
+        - id: STR.PC.SL.016
+          standard_name: Providing precast RCC solid slab panel 100mm thick in M30 concrete
+          unit: sqm
+          construction_types:
+          - precast
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - precast solid slab 100
+          typical_rate_range:
+            min: 1800
+            max: 3000
+          notes: Thin solid slab for short spans up to 3m
+          data_source: IS codes only
+        - id: STR.PC.SL.017
+          standard_name: Providing precast RCC solid slab panel 200mm thick in M35 concrete
+          unit: sqm
+          construction_types:
+          - precast
+          building_types:
+          - residential
+          - commercial
+          requires: []
+          is_code_ref: IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - precast solid slab 200
+          typical_rate_range:
+            min: 2800
+            max: 4500
+          notes: Thicker solid slab for spans up to 6m
+          data_source: IS codes only
+        - id: STR.PC.SL.018
+          standard_name: Providing precast pre-stressed double-T slab 300mm overall depth
+          unit: sqm
+          construction_types:
+          - precast
+          building_types:
+          - commercial
+          - industrial
+          requires: []
+          is_code_ref: IS 1343, IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - DT slab 300
+          - shallow double T
+          typical_rate_range:
+            min: 2500
+            max: 4500
+          notes: Shallow DT slab for spans up to 10m
+          data_source: IS codes only
+        - id: STR.PC.SL.019
+          standard_name: Providing precast pre-stressed double-T slab 900mm overall depth, span up to 25m
+          unit: sqm
+          construction_types:
+          - precast
+          building_types:
+          - commercial
+          - industrial
+          requires: []
+          is_code_ref: IS 1343, IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - DT slab 900
+          - deep double T
+          typical_rate_range:
+            min: 6000
+            max: 10000
+          notes: Deep DT slab for very long spans
+          data_source: IS codes only
+        - id: STR.PC.SL.020
+          standard_name: Providing precast half-slab 50mm thick as permanent formwork
+          unit: sqm
+          construction_types:
+          - precast
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - thin half slab
+          - precast plank 50mm
+          typical_rate_range:
+            min: 1000
+            max: 1800
+          notes: Thin precast plank for short spans
+          data_source: IS codes only
+        - id: STR.PC.SL.021
+          standard_name: Providing precast half-slab 100mm thick as permanent formwork
+          unit: sqm
+          construction_types:
+          - precast
+          building_types:
+          - residential
+          - commercial
+          requires: []
+          is_code_ref: IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - half slab 100mm
+          - thick lattice slab 100
+          typical_rate_range:
+            min: 1600
+            max: 2800
+          notes: Thicker lattice girder slab for longer spans
+          data_source: IS codes only
+        - id: STR.PC.SL.022
+          standard_name: Providing in-situ concrete topping over half-slab 100mm thick in M30
+          unit: sqm
+          construction_types:
+          - precast
+          building_types:
+          - all
+          requires:
+          - STR.PC.SL.008
+          is_code_ref: IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - topping over half slab
+          - in-situ topping 100mm
+          typical_rate_range:
+            min: 400
+            max: 700
+          notes: In-situ concrete topping poured over half-slab
+          data_source: IS codes only
+      additional_stairs:
+        items:
+        - id: STR.PC.SL.023
+          standard_name: Providing precast RCC full flight staircase with integral landing in M40 concrete
+          unit: nos
+          construction_types:
+          - precast
+          building_types:
+          - residential
+          - commercial
+          requires: []
+          is_code_ref: IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - precast full flight stair
+          - one-piece staircase
+          typical_rate_range:
+            min: 60000
+            max: 120000
+          notes: Single piece flight with integrated landing
+          data_source: IS codes only
+        - id: STR.PC.SL.024
+          standard_name: Providing precast RCC spiral staircase element
+          unit: nos
+          construction_types:
+          - precast
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - precast spiral stair
+          - spiral staircase precast
+          typical_rate_range:
+            min: 80000
+            max: 180000
+          notes: Per segment, 90-180 degree turn
+          data_source: IS codes only
+        - id: STR.PC.SL.025
+          standard_name: Providing precast RCC staircase with anti-slip nosing
+          unit: nos
+          construction_types:
+          - precast
+          building_types:
+          - residential
+          - commercial
+          requires: []
+          is_code_ref: IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - precast stair anti-slip
+          - nosing stair precast
+          typical_rate_range:
+            min: 45000
+            max: 90000
+          notes: Per flight with embedded anti-slip strips
+          data_source: IS codes only
+        - id: STR.PC.SL.026
+          standard_name: Providing precast RCC full landing platform
+          unit: nos
+          construction_types:
+          - precast
+          building_types:
+          - residential
+          - commercial
+          requires: []
+          is_code_ref: IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - precast full landing
+          - floor landing precast
+          typical_rate_range:
+            min: 20000
+            max: 40000
+          notes: Full floor level landing platform
+          data_source: IS codes only
+  columns:
+    categories:
+      precast_columns:
+        items:
+        - id: STR.PC.CL.001
+          standard_name: Providing precast RCC column 300x300mm in M40 concrete including reinforcement, mould, and corbels
+          unit: rm
+          construction_types:
+          - precast
+          building_types:
+          - residential
+          - commercial
+          requires: []
+          is_code_ref: IS 15916, IS 456:2000
+          dsr_item_ref: ''
+          aliases:
+          - precast column 300
+          - PC column
+          typical_rate_range:
+            min: 4000
+            max: 7000
+          notes: Per running metre height. Typically single storey height 3-3.6m
+          data_source: IS codes only
+        - id: STR.PC.CL.002
+          standard_name: Providing precast RCC column 400x400mm in M40 concrete including reinforcement and corbels
+          unit: rm
+          construction_types:
+          - precast
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 15916, IS 456:2000
+          dsr_item_ref: ''
+          aliases:
+          - precast column 400
+          typical_rate_range:
+            min: 5500
+            max: 9500
+          notes: ''
+          data_source: IS codes only
+        - id: STR.PC.CL.003
+          standard_name: Providing precast RCC column 500x500mm in M45 concrete for multi-storey frames
+          unit: rm
+          construction_types:
+          - precast
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 15916, IS 456:2000
+          dsr_item_ref: ''
+          aliases:
+          - precast column 500
+          - large PC column
+          typical_rate_range:
+            min: 7500
+            max: 13000
+          notes: For multi-storey precast frame buildings
+          data_source: IS codes only
+        - id: STR.PC.CL.004
+          standard_name: Providing precast RCC circular column 400mm dia in M40 concrete
+          unit: rm
+          construction_types:
+          - precast
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - precast round column
+          - circular PC column
+          typical_rate_range:
+            min: 6000
+            max: 10000
+          notes: Better finish than cast-in-situ circular columns
+          data_source: IS codes only
+        - id: STR.PC.CL.005
+          standard_name: Providing precast RCC column with multi-storey height (2 or 3 floors) in M45 concrete
+          unit: rm
+          construction_types:
+          - precast
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - multi-storey precast column
+          - tall PC column
+          typical_rate_range:
+            min: 8000
+            max: 14000
+          notes: Reduces number of connections. Height 6-10m
+          data_source: IS codes only
+      additional_columns:
+        items:
+        - id: STR.PC.CL.006
+          standard_name: Providing precast RCC column 300x400mm in M40 concrete including corbels
+          unit: rm
+          construction_types:
+          - precast
+          building_types:
+          - residential
+          - commercial
+          requires: []
+          is_code_ref: IS 15916, IS 456:2000
+          dsr_item_ref: ''
+          aliases:
+          - precast column 300x400
+          - rectangular PC column
+          typical_rate_range:
+            min: 4500
+            max: 8000
+          notes: Rectangular section for specific architectural requirements
+          data_source: IS codes only
+        - id: STR.PC.CL.007
+          standard_name: Providing precast RCC column 450x450mm in M40 concrete
+          unit: rm
+          construction_types:
+          - precast
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 15916, IS 456:2000
+          dsr_item_ref: ''
+          aliases:
+          - precast column 450
+          typical_rate_range:
+            min: 6500
+            max: 11000
+          notes: ''
+          data_source: IS codes only
+        - id: STR.PC.CL.008
+          standard_name: Providing precast RCC circular column 300mm dia in M40 concrete
+          unit: rm
+          construction_types:
+          - precast
+          building_types:
+          - residential
+          - commercial
+          requires: []
+          is_code_ref: IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - circular PC column 300
+          - small round column
+          typical_rate_range:
+            min: 4500
+            max: 8000
+          notes: Small diameter circular column
+          data_source: IS codes only
+        - id: STR.PC.CL.009
+          standard_name: Providing precast RCC circular column 450mm dia in M45 concrete
+          unit: rm
+          construction_types:
+          - precast
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - circular PC column 450
+          - medium round column
+          typical_rate_range:
+            min: 7000
+            max: 12000
+          notes: Medium circular column
+          data_source: IS codes only
+        - id: STR.PC.CL.010
+          standard_name: Providing precast RCC circular column 600mm dia in M50 concrete
+          unit: rm
+          construction_types:
+          - precast
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - circular PC column 600
+          - large round column
+          typical_rate_range:
+            min: 10000
+            max: 17000
+          notes: Large diameter circular column for heavy loads
+          data_source: IS codes only
+        - id: STR.PC.CL.011
+          standard_name: Providing precast RCC column 600x600mm in M50 concrete for heavy load
+          unit: rm
+          construction_types:
+          - precast
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 15916, IS 456:2000
+          dsr_item_ref: ''
+          aliases:
+          - precast column 600
+          - heavy precast column
+          typical_rate_range:
+            min: 11000
+            max: 18000
+          notes: Large square column for multi-storey and heavy loads
+          data_source: IS codes only
+        - id: STR.PC.CL.012
+          standard_name: Providing precast RCC column with integral corbels on both sides
+          unit: nos
+          construction_types:
+          - precast
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - corbelled precast column
+          - column with beam seats
+          typical_rate_range:
+            min: 2000
+            max: 5000
+          notes: Extra over for corbels on precast columns
+          data_source: IS codes only
+        - id: STR.PC.CL.013
+          standard_name: Providing precast RCC column tree (column with stub beams) in M45 concrete
+          unit: nos
+          construction_types:
+          - precast
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - column tree precast
+          - column with stub beams
+          typical_rate_range:
+            min: 35000
+            max: 70000
+          notes: Single piece column with protruding beam stubs
+          data_source: IS codes only
+  connections:
+    categories:
+      wet_connections:
+        items:
+        - id: STR.PC.CN.001
+          standard_name: Providing wet joint connection between precast wall panels with cast-in-situ concrete and reinforcement
+          unit: rm
+          construction_types:
+          - precast
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - wet joint wall
+          - cast-in-situ joint
+          - stitching joint
+          typical_rate_range:
+            min: 1500
+            max: 3000
+          notes: Per running metre of joint
+          data_source: IS codes only
+        - id: STR.PC.CN.002
+          standard_name: Providing wet joint connection for beam-to-column including protruding reinforcement splice and grouting
+          unit: nos
+          construction_types:
+          - precast
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - beam-column wet joint
+          - moment connection precast
+          typical_rate_range:
+            min: 5000
+            max: 12000
+          notes: Per connection. Critical structural connection
+          data_source: IS codes only
+        - id: STR.PC.CN.003
+          standard_name: Providing wet joint at column-to-column splice using grouted sleeve couplers
+          unit: nos
+          construction_types:
+          - precast
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - column splice joint
+          - grouted sleeve connection
+          typical_rate_range:
+            min: 8000
+            max: 18000
+          notes: Using proprietary grouted sleeve couplers
+          data_source: IS codes only
+        - id: STR.PC.CN.004
+          standard_name: Providing wet joint between slab panels with in-situ strip including reinforcement
+          unit: rm
+          construction_types:
+          - precast
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - slab joint
+          - slab stitching
+          - in-situ strip
+          typical_rate_range:
+            min: 800
+            max: 1800
+          notes: Longitudinal joint between slab panels
+          data_source: IS codes only
+      dry_connections:
+        items:
+        - id: STR.PC.CN.005
+          standard_name: Providing dry connection for column-to-foundation using anchor bolts and base plate
+          unit: nos
+          construction_types:
+          - precast
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - column base dry connection
+          - bolted base connection
+          typical_rate_range:
+            min: 5000
+            max: 12000
+          notes: Per column base
+          data_source: IS codes only
+        - id: STR.PC.CN.006
+          standard_name: Providing dry connection for beam-to-column using steel brackets/corbels and bolts
+          unit: nos
+          construction_types:
+          - precast
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - corbel connection
+          - bracket connection precast
+          typical_rate_range:
+            min: 3000
+            max: 8000
+          notes: Pinned connection. Per beam end
+          data_source: IS codes only
+        - id: STR.PC.CN.007
+          standard_name: Providing embedded steel inserts/plates in precast elements for connections
+          unit: nos
+          construction_types:
+          - precast
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - embedded plate
+          - steel insert
+          - cast-in plate
+          typical_rate_range:
+            min: 500
+            max: 2000
+          notes: Per insert. Various sizes and capacities
+          data_source: IS codes only
+        - id: STR.PC.CN.008
+          standard_name: Providing elastomeric bearing pad (neoprene) for precast beam support
+          unit: nos
+          construction_types:
+          - precast
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - bearing pad
+          - neoprene pad
+          - elastomeric bearing
+          typical_rate_range:
+            min: 200
+            max: 800
+          notes: Placed between beam and corbel/ledge
+          data_source: IS codes only
+      additional_connections:
+        items:
+        - id: STR.PC.CN.009
+          standard_name: Providing hidden/concealed connection for beam-to-column using bolted steel plates
+          unit: nos
+          construction_types:
+          - precast
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - hidden connection precast
+          - concealed joint
+          typical_rate_range:
+            min: 6000
+            max: 15000
+          notes: Concealed connection for architectural finish
+          data_source: IS codes only
+        - id: STR.PC.CN.010
+          standard_name: Providing corbel connection - RCC corbel on column for beam seating
+          unit: nos
+          construction_types:
+          - precast
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - RCC corbel
+          - concrete corbel connection
+          typical_rate_range:
+            min: 1500
+            max: 4000
+          notes: Per corbel, including reinforcement
+          data_source: IS codes only
+        - id: STR.PC.CN.011
+          standard_name: Providing steel corbel bracket for beam support
+          unit: nos
+          construction_types:
+          - precast
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - steel corbel bracket
+          - metal beam bracket
+          typical_rate_range:
+            min: 2000
+            max: 5000
+          notes: Fabricated steel corbel for beam support
+          data_source: IS codes only
+        - id: STR.PC.CN.012
+          standard_name: Providing dowel bar connection between precast elements - 16mm dia
+          unit: nos
+          construction_types:
+          - precast
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - dowel connection precast
+          - reinforcement dowel
+          typical_rate_range:
+            min: 100
+            max: 300
+          notes: Per dowel bar with grouting
+          data_source: IS codes only
+        - id: STR.PC.CN.013
+          standard_name: Providing dowel bar connection between precast elements - 20mm dia
+          unit: nos
+          construction_types:
+          - precast
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - large dowel connection
+          - 20mm dowel
+          typical_rate_range:
+            min: 150
+            max: 400
+          notes: ''
+          data_source: IS codes only
+        - id: STR.PC.CN.014
+          standard_name: Providing mechanical splice coupler for precast column connection
+          unit: nos
+          construction_types:
+          - precast
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - splice coupler
+          - rebar coupler
+          - mechanical coupler
+          typical_rate_range:
+            min: 400
+            max: 1200
+          notes: Per coupler, various diameters available
+          data_source: IS codes only
+        - id: STR.PC.CN.015
+          standard_name: Providing wall panel vertical joint - shear key type
+          unit: rm
+          construction_types:
+          - precast
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - shear key joint
+          - vertical wall joint
+          typical_rate_range:
+            min: 600
+            max: 1200
+          notes: Shear key type vertical joint between wall panels
+          data_source: IS codes only
+        - id: STR.PC.CN.016
+          standard_name: Providing wall panel horizontal joint - mortar bed type
+          unit: rm
+          construction_types:
+          - precast
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - horizontal wall joint
+          - mortar bed joint
+          typical_rate_range:
+            min: 400
+            max: 900
+          notes: Horizontal joint between stacked wall panels
+          data_source: IS codes only
+        - id: STR.PC.CN.017
+          standard_name: Providing PTFE sliding bearing pad for precast beam support
+          unit: nos
+          construction_types:
+          - precast
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 15916, IS 456:2000
+          dsr_item_ref: ''
+          aliases:
+          - PTFE bearing pad
+          - sliding bearing precast
+          typical_rate_range:
+            min: 500
+            max: 1500
+          notes: Low-friction PTFE pad for movement accommodation
+          data_source: estimated
+        - id: STR.PC.CN.018
+          standard_name: Providing steel angle connection bracket for slab-to-beam
+          unit: nos
+          construction_types:
+          - precast
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - angle bracket slab
+          - slab connection angle
+          typical_rate_range:
+            min: 200
+            max: 600
+          notes: Steel angle for connecting slab edges to beams
+          data_source: IS codes only
+        - id: STR.PC.CN.019
+          standard_name: Providing lifting insert (anchor) cast into precast element
+          unit: nos
+          construction_types:
+          - precast
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15916, IS 456:2000
+          dsr_item_ref: ''
+          aliases:
+          - lifting anchor
+          - lifting insert
+          - erection anchor
+          typical_rate_range:
+            min: 150
+            max: 500
+          notes: Per insert, capacity 1-5 tonne
+          data_source: estimated
+  grouting:
+    categories:
+      joint_grouting:
+        items:
+        - id: STR.PC.GR.001
+          standard_name: Providing non-shrink cementitious grout for precast connections and joints
+          unit: ltr
+          construction_types:
+          - precast
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - non-shrink grout
+          - connection grout
+          - joint grout
+          typical_rate_range:
+            min: 40
+            max: 80
+          notes: High strength non-shrink type. Per litre placed
+          data_source: IS codes only
+        - id: STR.PC.GR.002
+          standard_name: Providing epoxy grout for critical precast connections
+          unit: ltr
+          construction_types:
+          - precast
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - epoxy grout
+          - resin grout
+          typical_rate_range:
+            min: 200
+            max: 450
+          notes: For high-load and critical connections
+          data_source: IS codes only
+        - id: STR.PC.GR.003
+          standard_name: Providing and applying sealant (PU/silicone) at precast panel joints including backer rod
+          unit: rm
+          construction_types:
+          - precast
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - joint sealant
+          - panel sealant
+          - weatherproofing joint
+          typical_rate_range:
+            min: 200
+            max: 450
+          notes: For weatherproofing external panel joints
+          data_source: estimated
+        - id: STR.PC.GR.004
+          standard_name: Providing grouting of precast column base pockets with non-shrink grout
+          unit: nos
+          construction_types:
+          - precast
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - pocket grouting
+          - column pocket grout
+          typical_rate_range:
+            min: 2000
+            max: 5000
+          notes: For socket/pocket type column base connections
+          data_source: IS codes only
+      additional_grouting:
+        items:
+        - id: STR.PC.GR.005
+          standard_name: Providing high-strength micro-grout for precast sleeve connections
+          unit: ltr
+          construction_types:
+          - precast
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - micro grout
+          - high strength sleeve grout
+          typical_rate_range:
+            min: 80
+            max: 180
+          notes: Min 60 MPa strength for grouted sleeve couplers
+          data_source: IS codes only
+        - id: STR.PC.GR.006
+          standard_name: Providing grouting of hollow core slab keyways with M25 concrete
+          unit: rm
+          construction_types:
+          - precast
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - keyway grouting
+          - slab joint grouting
+          typical_rate_range:
+            min: 80
+            max: 180
+          notes: Per running metre of joint between HC slabs
+          data_source: IS codes only
+        - id: STR.PC.GR.007
+          standard_name: Providing grouting of precast beam-column joint with non-shrink grout
+          unit: nos
+          construction_types:
+          - precast
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - beam column joint grout
+          typical_rate_range:
+            min: 500
+            max: 1500
+          notes: Per joint location
+          data_source: IS codes only
+        - id: STR.PC.GR.008
+          standard_name: Providing fireproofing caulking/sealant at precast panel joints
+          unit: rm
+          construction_types:
+          - precast
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15916, NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - fire sealant joint
+          - intumescent sealant precast
+          typical_rate_range:
+            min: 300
+            max: 600
+          notes: Fire-rated intumescent sealant at panel joints
+          data_source: estimated
+        - id: STR.PC.GR.009
+          standard_name: Providing pre-stressing strand anchorage grouting
+          unit: nos
+          construction_types:
+          - precast
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1343
+          dsr_item_ref: ''
+          aliases:
+          - strand grouting
+          - tendon grouting
+          typical_rate_range:
+            min: 500
+            max: 1200
+          notes: Grouting of post-tensioning anchorage pockets
+          data_source: IS codes only
+  erection:
+    categories:
+      transport:
+        items:
+        - id: STR.PC.ER.001
+          standard_name: Transport of precast elements from factory to site, lead up to 50 km, weight up to 5 tonne
+          unit: nos
+          construction_types:
+          - precast
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - precast transport
+          - element delivery
+          typical_rate_range:
+            min: 3000
+            max: 8000
+          notes: Per element. Using flatbed trailer
+          data_source: estimated
+        - id: STR.PC.ER.002
+          standard_name: Transport of precast elements from factory to site, lead up to 50 km, weight 5-15 tonne
+          unit: nos
+          construction_types:
+          - precast
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - heavy precast transport
+          typical_rate_range:
+            min: 6000
+            max: 15000
+          notes: Using low-bed trailer
+          data_source: estimated
+        - id: STR.PC.ER.003
+          standard_name: Transport of precast elements, lead exceeding 50 km but not exceeding 100 km, weight up to 10 tonne
+          unit: nos
+          construction_types:
+          - precast
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - long distance precast transport
+          typical_rate_range:
+            min: 8000
+            max: 20000
+          notes: ''
+          data_source: estimated
+      crane_erection:
+        items:
+        - id: STR.PC.ER.004
+          standard_name: Erection of precast wall panels using mobile crane up to 25 tonne capacity
+          unit: sqm
+          construction_types:
+          - precast
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - wall panel erection
+          - precast wall installation
+          typical_rate_range:
+            min: 400
+            max: 800
+          notes: Per sqm of panel. Including propping and alignment
+          data_source: estimated
+        - id: STR.PC.ER.005
+          standard_name: Erection of precast columns using mobile crane, weight up to 3 tonne per piece
+          unit: nos
+          construction_types:
+          - precast
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - column erection
+          - precast column installation
+          typical_rate_range:
+            min: 5000
+            max: 12000
+          notes: Per column piece. Including temporary bracing
+          data_source: estimated
+        - id: STR.PC.ER.006
+          standard_name: Erection of precast beams using mobile crane, weight up to 5 tonne per piece
+          unit: nos
+          construction_types:
+          - precast
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - beam erection
+          - precast beam installation
+          typical_rate_range:
+            min: 4000
+            max: 10000
+          notes: ''
+          data_source: estimated
+        - id: STR.PC.ER.007
+          standard_name: Erection of precast hollow core slabs using mobile crane
+          unit: sqm
+          construction_types:
+          - precast
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - slab erection
+          - HC slab installation
+          typical_rate_range:
+            min: 250
+            max: 550
+          notes: Per sqm of slab area. Including levelling
+          data_source: estimated
+        - id: STR.PC.ER.008
+          standard_name: Erection of precast staircase flights using mobile crane
+          unit: nos
+          construction_types:
+          - precast
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - stair erection
+          - precast stair installation
+          typical_rate_range:
+            min: 8000
+            max: 18000
+          notes: Per flight
+          data_source: estimated
+        - id: STR.PC.ER.009
+          standard_name: Tower crane hire for high-rise precast erection including operation and maintenance
+          unit: month
+          construction_types:
+          - precast
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - tower crane hire
+          - crane rental
+          typical_rate_range:
+            min: 300000
+            max: 700000
+          notes: Per month. Includes operator. Capacity 5-10 tonne at working radius
+          data_source: estimated
+      moulds:
+        items:
+        - id: STR.PC.ER.010
+          standard_name: Providing steel mould for precast wall panel (reusable 100+ times)
+          unit: nos
+          construction_types:
+          - precast
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - wall panel mould
+          - precast mould
+          - steel form
+          typical_rate_range:
+            min: 50000
+            max: 150000
+          notes: Per mould. Cost amortized over repetitions
+          data_source: estimated
+        - id: STR.PC.ER.011
+          standard_name: Providing steel mould for precast beam section (reusable 100+ times)
+          unit: nos
+          construction_types:
+          - precast
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - beam mould
+          - precast beam form
+          typical_rate_range:
+            min: 40000
+            max: 120000
+          notes: ''
+          data_source: estimated
+        - id: STR.PC.ER.012
+          standard_name: Providing steel mould for precast column (reusable 100+ times)
+          unit: nos
+          construction_types:
+          - precast
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - column mould
+          - precast column form
+          typical_rate_range:
+            min: 35000
+            max: 100000
+          notes: ''
+          data_source: estimated
+        - id: STR.PC.ER.013
+          standard_name: Providing battery mould system for mass production of precast wall panels
+          unit: nos
+          construction_types:
+          - precast
+          building_types:
+          - residential
+          requires: []
+          is_code_ref: IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - battery mould
+          - mass production mould
+          typical_rate_range:
+            min: 500000
+            max: 1500000
+          notes: For large volume production. 8-12 panels per cycle
+          data_source: estimated
+        - id: STR.PC.ER.014
+          standard_name: Providing tilting table for precast panel production
+          unit: nos
+          construction_types:
+          - precast
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - tilting table
+          - casting table
+          typical_rate_range:
+            min: 300000
+            max: 800000
+          notes: Hydraulic tilting table for panel demoulding
+          data_source: estimated
+      additional_erection:
+        items:
+        - id: STR.PC.ER.015
+          standard_name: Mobile crane hire 25 tonne capacity for precast erection - daily rate
+          unit: day
+          construction_types:
+          - precast
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - 25T crane hire
+          - small mobile crane
+          typical_rate_range:
+            min: 15000
+            max: 30000
+          notes: Per day including operator. For low-rise work
+          data_source: estimated
+        - id: STR.PC.ER.016
+          standard_name: Mobile crane hire 50 tonne capacity for precast erection - daily rate
+          unit: day
+          construction_types:
+          - precast
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - 50T crane hire
+          - medium mobile crane
+          typical_rate_range:
+            min: 25000
+            max: 50000
+          notes: Per day including operator
+          data_source: estimated
+        - id: STR.PC.ER.017
+          standard_name: Mobile crane hire 100 tonne capacity for precast erection - daily rate
+          unit: day
+          construction_types:
+          - precast
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - 100T crane hire
+          - large mobile crane
+          typical_rate_range:
+            min: 50000
+            max: 100000
+          notes: Per day including operator. For heavy elements
+          data_source: estimated
+        - id: STR.PC.ER.018
+          standard_name: Temporary steel props for precast beam/slab support during grouting
+          unit: nos
+          construction_types:
+          - precast
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - temporary props precast
+          - shoring precast
+          typical_rate_range:
+            min: 200
+            max: 500
+          notes: Per prop per month rental
+          data_source: estimated
+        - id: STR.PC.ER.019
+          standard_name: Temporary steel bracing for precast column stabilization
+          unit: nos
+          construction_types:
+          - precast
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - column bracing precast
+          - temporary braces
+          typical_rate_range:
+            min: 500
+            max: 1200
+          notes: Per column, diagonal steel braces until grouting
+          data_source: estimated
+        - id: STR.PC.ER.020
+          standard_name: Leveling and alignment of precast elements using shims and survey
+          unit: nos
+          construction_types:
+          - precast
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - leveling precast
+          - alignment precast
+          typical_rate_range:
+            min: 300
+            max: 800
+          notes: Per element, including survey check
+          data_source: estimated
+        - id: STR.PC.ER.021
+          standard_name: Erection of precast double-T slabs using mobile crane
+          unit: nos
+          construction_types:
+          - precast
+          building_types:
+          - commercial
+          - industrial
+          requires: []
+          is_code_ref: IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - DT slab erection
+          - double T installation
+          typical_rate_range:
+            min: 6000
+            max: 15000
+          notes: Per DT slab element, including levelling
+          data_source: estimated
+        - id: STR.PC.ER.022
+          standard_name: Erection of precast sandwich wall panels using mobile crane
+          unit: sqm
+          construction_types:
+          - precast
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - sandwich panel erection
+          - insulated panel installation
+          typical_rate_range:
+            min: 450
+            max: 900
+          notes: Per sqm including propping and sealing
+          data_source: estimated
+        - id: STR.PC.ER.023
+          standard_name: Erection of precast boundary wall panels
+          unit: rm
+          construction_types:
+          - precast
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15916, IS 2212
+          dsr_item_ref: ''
+          aliases:
+          - boundary wall erection
+          - compound wall installation
+          typical_rate_range:
+            min: 800
+            max: 1800
+          notes: Per running metre including column setting
+          data_source: estimated
+        - id: STR.PC.ER.024
+          standard_name: Crane mobilization and demobilization charges
+          unit: lumpsum
+          construction_types:
+          - precast
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - crane mob demob
+          - crane mobilization
+          typical_rate_range:
+            min: 30000
+            max: 100000
+          notes: One-time charge for crane transport to/from site
+          data_source: estimated
+      quality_control:
+        items:
+        - id: STR.PC.QC.001
+          standard_name: Cube testing of precast concrete - 150mm cubes
+          unit: set
+          construction_types:
+          - precast
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 516
+          dsr_item_ref: ''
+          aliases:
+          - cube test precast
+          - concrete testing
+          typical_rate_range:
+            min: 500
+            max: 1200
+          notes: Set of 6 cubes as per IS 456 requirements
+          data_source: IS codes only
+        - id: STR.PC.QC.002
+          standard_name: NDT testing of precast elements - Rebound hammer test
+          unit: nos
+          construction_types:
+          - precast
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 13311 Part 2
+          dsr_item_ref: ''
+          aliases:
+          - rebound hammer precast
+          - Schmidt hammer test
+          typical_rate_range:
+            min: 300
+            max: 600
+          notes: Per element tested
+          data_source: IS codes only
+        - id: STR.PC.QC.003
+          standard_name: NDT testing of precast elements - Ultrasonic pulse velocity
+          unit: nos
+          construction_types:
+          - precast
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 13311 Part 1
+          dsr_item_ref: ''
+          aliases:
+          - UPV test precast
+          - ultrasonic test
+          typical_rate_range:
+            min: 500
+            max: 1000
+          notes: Per element, for quality uniformity check
+          data_source: IS codes only
+        - id: STR.PC.QC.004
+          standard_name: Dimensional survey and quality check of precast elements
+          unit: nos
+          construction_types:
+          - precast
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - dimensional check precast
+          - QC survey
+          typical_rate_range:
+            min: 200
+            max: 500
+          notes: Per element, tolerance check against drawings
+          data_source: IS codes only
+      miscellaneous_precast:
+        items:
+        - id: STR.PC.MSC.001
+          standard_name: Providing precast RCC drain channel/U-channel
+          unit: rm
+          construction_types:
+          - precast
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - precast drain channel
+          - precast U channel
+          typical_rate_range:
+            min: 800
+            max: 1500
+          notes: Per running metre, various widths 300-600mm
+          data_source: IS codes only
+        - id: STR.PC.MSC.002
+          standard_name: Providing precast concrete kerb stone 150x300mm
+          unit: rm
+          construction_types:
+          - precast
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - precast kerb
+          - precast curb stone
+          typical_rate_range:
+            min: 300
+            max: 600
+          notes: Per running metre
+          data_source: IS codes only
+        - id: STR.PC.MSC.003
+          standard_name: Providing precast concrete cable trench cover slab
+          unit: sqm
+          construction_types:
+          - precast
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - precast trench cover
+          - cable trench slab
+          typical_rate_range:
+            min: 800
+            max: 1500
+          notes: Precast cover slab for cable/service trenches
+          data_source: IS codes only
+        - id: STR.PC.MSC.004
+          standard_name: Providing precast concrete sunshade/chajja 75mm thick
+          unit: sqm
+          construction_types:
+          - precast
+          building_types:
+          - residential
+          - commercial
+          requires: []
+          is_code_ref: IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - precast sunshade
+          - precast chajja
+          typical_rate_range:
+            min: 1200
+            max: 2200
+          notes: Precast window sunshade/canopy
+          data_source: IS codes only
+        - id: STR.PC.MSC.005
+          standard_name: Providing precast concrete manhole chamber rings 900mm dia
+          unit: nos
+          construction_types:
+          - precast
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - precast manhole ring
+          - concrete chamber ring
+          typical_rate_range:
+            min: 1500
+            max: 3000
+          notes: Per ring, typically 500mm height
+          data_source: IS codes only
+        - id: STR.PC.MSC.006
+          standard_name: Providing precast concrete manhole chamber rings 1200mm dia
+          unit: nos
+          construction_types:
+          - precast
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - large precast manhole ring
+          typical_rate_range:
+            min: 2500
+            max: 4500
+          notes: Per ring, for larger manholes
+          data_source: IS codes only
+        - id: STR.PC.MSC.007
+          standard_name: Providing precast concrete manhole cover slab with access opening
+          unit: nos
+          construction_types:
+          - precast
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - precast manhole cover
+          - concrete cover slab
+          typical_rate_range:
+            min: 2000
+            max: 4000
+          notes: Per cover slab with reinforced opening
+          data_source: IS codes only
+        - id: STR.PC.MSC.008
+          standard_name: Providing precast concrete bollard 150mm dia 900mm high
+          unit: nos
+          construction_types:
+          - precast
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15916, NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - precast bollard
+          - concrete bollard
+          typical_rate_range:
+            min: 1000
+            max: 2500
+          notes: Precast traffic bollard with reinforcement
+          data_source: estimated
+        - id: STR.PC.MSC.009
+          standard_name: Providing precast concrete planter box
+          unit: nos
+          construction_types:
+          - precast
+          building_types:
+          - commercial
+          - residential
+          requires: []
+          is_code_ref: IS 15916, NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - precast planter
+          - concrete planter box
+          typical_rate_range:
+            min: 3000
+            max: 8000
+          notes: Various sizes, with drainage provision
+          data_source: estimated
+        - id: STR.PC.MSC.010
+          standard_name: Providing precast concrete tree grate/guard
+          unit: nos
+          construction_types:
+          - precast
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: IS 15916, NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - precast tree grate
+          - concrete tree guard
+          typical_rate_range:
+            min: 2000
+            max: 5000
+          notes: Precast concrete tree surround
+          data_source: estimated
+        - id: STR.PC.MSC.011
+          standard_name: Providing precast concrete seating bench 1500mm long
+          unit: nos
+          construction_types:
+          - precast
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 15916, NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - precast bench
+          - concrete seating
+          typical_rate_range:
+            min: 4000
+            max: 8000
+          notes: Precast concrete outdoor seating
+          data_source: estimated
+        - id: STR.PC.MSC.012
+          standard_name: Steam curing of precast elements
+          unit: nos
+          construction_types:
+          - precast
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - steam curing precast
+          - accelerated curing
+          typical_rate_range:
+            min: 200
+            max: 500
+          notes: Per element, for early strength development
+          data_source: IS codes only
+        - id: STR.PC.MSC.013
+          standard_name: Surface repair and patching of precast elements
+          unit: sqm
+          construction_types:
+          - precast
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15916, NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - precast surface repair
+          - patching precast
+          typical_rate_range:
+            min: 200
+            max: 500
+          notes: Repair of minor surface defects with polymer mortar
+          data_source: estimated
+  precast_transport:
+    categories:
+      transport_handling:
+        items:
+        - id: STR.PC.TRN.001
+          standard_name: Transportation of precast elements by trailer - within 50km
+          unit: trip
+          construction_types:
+          - precast
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - precast transport
+          - trailer transport precast
+          typical_rate_range:
+            min: 8000
+            max: 15000
+          notes: Per trip, 40ft trailer with hydraulic loading/unloading
+          data_source: estimated
+        - id: STR.PC.TRN.002
+          standard_name: Transportation of precast elements by trailer - 50 to 100km
+          unit: trip
+          construction_types:
+          - precast
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - long distance precast transport
+          typical_rate_range:
+            min: 15000
+            max: 25000
+          notes: Per trip, longer haul including police escort for oversize elements
+          data_source: estimated
+        - id: STR.PC.TRN.003
+          standard_name: Stacking and storage of precast elements at site
+          unit: nos
+          construction_types:
+          - precast
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - precast storage
+          - element stacking
+          typical_rate_range:
+            min: 200
+            max: 500
+          notes: Per element, includes timber dunnage and support arrangement
+          data_source: IS codes only
+  precast_design:
+    categories:
+      design_services:
+        items:
+        - id: STR.PC.DSN.001
+          standard_name: Precast connection design and shop drawings
+          unit: lumpsum
+          construction_types:
+          - precast
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - precast design
+          - connection design drawings
+          typical_rate_range:
+            min: 50000
+            max: 200000
+          notes: Per project, structural design of connections and shop drawings
+          data_source: IS codes only
+        - id: STR.PC.DSN.002
+          standard_name: Precast erection sequence plan and method statement
+          unit: lumpsum
+          construction_types:
+          - precast
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - erection plan
+          - method statement precast
+          typical_rate_range:
+            min: 25000
+            max: 75000
+          notes: Per project, erection sequence with crane positions and lifting plans
+          data_source: estimated
+        - id: STR.PC.DSN.003
+          standard_name: Precast mould/formwork fabrication charge
+          unit: sqm
+          construction_types:
+          - precast
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - precast mould
+          - formwork fabrication precast
+          typical_rate_range:
+            min: 1500
+            max: 4000
+          notes: Steel mould fabrication, amortized over number of reuses
+          data_source: estimated
+  precast_finishing:
+    categories:
+      surface_finish:
+        items:
+        - id: STR.PC.FIN.001
+          standard_name: Exposed aggregate finish on precast panel surface
+          unit: sqm
+          construction_types:
+          - precast
+          building_types:
+          - commercial
+          - residential
+          requires: []
+          is_code_ref: IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - exposed aggregate precast
+          - washed finish precast
+          typical_rate_range:
+            min: 250
+            max: 500
+          notes: Chemical retarder applied, washed to expose aggregate
+          data_source: estimated
+        - id: STR.PC.FIN.002
+          standard_name: Acid-etched finish on precast concrete surface
+          unit: sqm
+          construction_types:
+          - precast
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - acid etch precast
+          - etched concrete finish
+          typical_rate_range:
+            min: 200
+            max: 400
+          notes: Light acid wash to reveal fine aggregate texture
+          data_source: estimated
+        - id: STR.PC.FIN.003
+          standard_name: Polished/honed finish on precast concrete panel
+          unit: sqm
+          construction_types:
+          - precast
+          building_types:
+          - commercial
+          - institutional
+          requires: []
+          is_code_ref: IS 15916
+          dsr_item_ref: ''
+          aliases:
+          - polished precast
+          - honed concrete panel
+          typical_rate_range:
+            min: 350
+            max: 700
+          notes: Machine polished smooth finish, high-quality fair face
+          data_source: estimated

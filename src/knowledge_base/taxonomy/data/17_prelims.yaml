@@ -1,0 +1,3850 @@
+discipline: general
+trade: prelims
+sub_trades:
+  site_setup:
+    categories:
+      offices:
+        items:
+        - id: PRL.SS.OFF.001
+          standard_name: Site office - prefab/porta cabin - 20 sqm
+          unit: month
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: BOCW Act
+          dsr_item_ref: ''
+          aliases:
+          - site office 20sqm
+          - porta cabin
+          - prefab office
+          typical_rate_range:
+            min: 15000
+            max: 30000
+          notes: Monthly rental including furniture, AC, electrification
+          data_source: estimated
+        - id: PRL.SS.OFF.002
+          standard_name: Site office - prefab/porta cabin - 40 sqm
+          unit: month
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: BOCW Act
+          dsr_item_ref: ''
+          aliases:
+          - site office 40sqm
+          - large site office
+          typical_rate_range:
+            min: 25000
+            max: 50000
+          notes: ''
+          data_source: estimated
+        - id: PRL.SS.OFF.003
+          standard_name: Site office - container type (modified shipping container) - 20ft
+          unit: month
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: BOCW Act
+          dsr_item_ref: ''
+          aliases:
+          - container office
+          - shipping container office
+          typical_rate_range:
+            min: 12000
+            max: 25000
+          notes: ''
+          data_source: estimated
+        - id: PRL.SS.OFF.004
+          standard_name: Site office - container type (modified shipping container) - 40ft
+          unit: month
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: BOCW Act
+          dsr_item_ref: ''
+          aliases:
+          - large container office
+          typical_rate_range:
+            min: 20000
+            max: 40000
+          notes: ''
+          data_source: estimated
+        - id: PRL.SS.OFF.005
+          standard_name: Client/PMC site office - furnished with meeting room
+          unit: month
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: BOCW Act
+          dsr_item_ref: ''
+          aliases:
+          - client office
+          - PMC office
+          - engineer office
+          typical_rate_range:
+            min: 30000
+            max: 60000
+          notes: As per contract requirement
+          data_source: estimated
+      storage:
+        items:
+        - id: PRL.SS.STR.001
+          standard_name: Material store/godown - temporary MS sheet structure
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: BOCW Act
+          dsr_item_ref: ''
+          aliases:
+          - material store
+          - godown
+          - site store
+          typical_rate_range:
+            min: 200
+            max: 450
+          notes: Per sqm, one-time cost
+          data_source: estimated
+        - id: PRL.SS.STR.002
+          standard_name: Cement store - covered with raised platform
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: BOCW Act
+          dsr_item_ref: ''
+          aliases:
+          - cement godown
+          - cement store
+          typical_rate_range:
+            min: 300
+            max: 600
+          notes: Raised 150mm from ground, damp-proof
+          data_source: estimated
+        - id: PRL.SS.STR.003
+          standard_name: Steel/rebar storage yard - levelled with drainage
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: BOCW Act
+          dsr_item_ref: ''
+          aliases:
+          - steel yard
+          - rebar yard
+          typical_rate_range:
+            min: 50
+            max: 150
+          notes: Open yard with supports
+          data_source: estimated
+      labour_accommodation:
+        items:
+        - id: PRL.SS.LBR.001
+          standard_name: Labour hutment/camp - temporary structure (per person)
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: BOCW Act
+          dsr_item_ref: ''
+          aliases:
+          - labour camp
+          - worker accommodation
+          - labour hutment
+          typical_rate_range:
+            min: 2000
+            max: 5000
+          notes: Per person capacity, one-time setup
+          data_source: IS codes only
+        - id: PRL.SS.LBR.002
+          standard_name: Labour hutment - prefab barracks with bunks (20 person)
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: BOCW Act
+          dsr_item_ref: ''
+          aliases:
+          - prefab barracks
+          - worker barracks
+          typical_rate_range:
+            min: 80000
+            max: 180000
+          notes: Including electrical and ventilation
+          data_source: IS codes only
+      barricading:
+        items:
+        - id: PRL.SS.BAR.001
+          standard_name: Site barricading - MS sheet corrugated - 2.4m height
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2062
+          dsr_item_ref: ''
+          aliases:
+          - MS sheet barricade
+          - site hoarding MS
+          typical_rate_range:
+            min: 600
+            max: 1200
+          notes: Including MS angle posts at 3m c/c
+          data_source: estimated
+        - id: PRL.SS.BAR.002
+          standard_name: Site barricading - GI sheet - 2.4m height
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2062
+          dsr_item_ref: ''
+          aliases:
+          - GI sheet barricade
+          - site hoarding GI
+          typical_rate_range:
+            min: 500
+            max: 1000
+          notes: ''
+          data_source: estimated
+        - id: PRL.SS.BAR.003
+          standard_name: Site barricading - brick wall - 1.8m height
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2062
+          dsr_item_ref: ''
+          aliases:
+          - brick barricade
+          - boundary wall temporary
+          typical_rate_range:
+            min: 1500
+            max: 3000
+          notes: Semi-permanent
+          data_source: estimated
+        - id: PRL.SS.BAR.004
+          standard_name: Site barricading - plywood/board - 2.4m height (urban sites)
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2062
+          dsr_item_ref: ''
+          aliases:
+          - plywood hoarding
+          - painted hoarding
+          typical_rate_range:
+            min: 800
+            max: 1500
+          notes: With printed graphics for urban projects
+          data_source: estimated
+      misc_setup:
+        items:
+        - id: PRL.SS.SGB.001
+          standard_name: Site signage board - project information - 2.4x1.5m
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: BOCW Act
+          dsr_item_ref: ''
+          aliases:
+          - project signboard
+          - site board
+          typical_rate_range:
+            min: 5000
+            max: 15000
+          notes: As required by local body
+          data_source: estimated
+        - id: PRL.SS.SEC.001
+          standard_name: Site security - watchman/guard service
+          unit: month
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: BOCW Act
+          dsr_item_ref: ''
+          aliases:
+          - site security
+          - watchman
+          - guard service
+          typical_rate_range:
+            min: 15000
+            max: 30000
+          notes: Per guard per month
+          data_source: estimated
+        - id: PRL.SS.SEC.002
+          standard_name: Site security - CCTV surveillance system (4-8 camera)
+          unit: set
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: BOCW Act
+          dsr_item_ref: ''
+          aliases:
+          - site CCTV
+          - surveillance system
+          typical_rate_range:
+            min: 30000
+            max: 80000
+          notes: One-time setup
+          data_source: estimated
+        - id: PRL.SS.ARD.001
+          standard_name: Temporary access road - WMM 150mm over compacted earth
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: BOCW Act
+          dsr_item_ref: ''
+          aliases:
+          - haul road
+          - construction road
+          - temporary road
+          typical_rate_range:
+            min: 150
+            max: 300
+          notes: ''
+          data_source: estimated
+        - id: PRL.SS.FNC.001
+          standard_name: Temporary fencing - MS pipe and chain link - 1.8m height
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: BOCW Act
+          dsr_item_ref: ''
+          aliases:
+          - temp fencing
+          - construction fencing
+          typical_rate_range:
+            min: 300
+            max: 600
+          notes: ''
+          data_source: estimated
+  temporary:
+    categories:
+      water_supply:
+        items:
+        - id: PRL.TM.WAT.001
+          standard_name: Temporary water supply - tanker delivery (10,000 litre)
+          unit: trip
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - water tanker
+          - construction water tanker
+          typical_rate_range:
+            min: 800
+            max: 2000
+          notes: Per tanker trip
+          data_source: estimated
+        - id: PRL.TM.WAT.002
+          standard_name: Temporary water supply - borewell drilling and installation
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - site borewell
+          - tube well
+          typical_rate_range:
+            min: 80000
+            max: 200000
+          notes: One-time, including pump
+          data_source: estimated
+        - id: PRL.TM.WAT.003
+          standard_name: Temporary water supply - municipal connection
+          unit: LS
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - water connection temporary
+          - municipal water
+          typical_rate_range:
+            min: 10000
+            max: 30000
+          notes: Connection charges + monthly bills
+          data_source: estimated
+        - id: PRL.TM.WAT.004
+          standard_name: Temporary water storage tank - MS/HDPE - 5000 litre
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - water storage tank
+          - site water tank
+          typical_rate_range:
+            min: 8000
+            max: 18000
+          notes: ''
+          data_source: estimated
+      power_supply:
+        items:
+        - id: PRL.TM.PWR.001
+          standard_name: Temporary power supply - DISCOM connection (3-phase)
+          unit: LS
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 732
+          dsr_item_ref: ''
+          aliases:
+          - temp power connection
+          - construction power
+          typical_rate_range:
+            min: 25000
+            max: 80000
+          notes: Connection charges, deposit, monthly bills
+          data_source: estimated
+        - id: PRL.TM.PWR.002
+          standard_name: Temporary power - internal distribution (DB + wiring)
+          unit: LS
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 732
+          dsr_item_ref: ''
+          aliases:
+          - site electrical distribution
+          - temp DB
+          typical_rate_range:
+            min: 20000
+            max: 60000
+          notes: ''
+          data_source: estimated
+        - id: PRL.TM.DG.001
+          standard_name: Temporary DG set - 20 KVA (diesel generator)
+          unit: month
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 732
+          dsr_item_ref: ''
+          aliases:
+          - DG 20KVA
+          - genset 20KVA
+          typical_rate_range:
+            min: 15000
+            max: 30000
+          notes: Monthly rental, fuel separate
+          data_source: estimated
+        - id: PRL.TM.DG.002
+          standard_name: Temporary DG set - 40 KVA (diesel generator)
+          unit: month
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 732
+          dsr_item_ref: ''
+          aliases:
+          - DG 40KVA
+          - genset 40KVA
+          typical_rate_range:
+            min: 25000
+            max: 50000
+          notes: ''
+          data_source: estimated
+        - id: PRL.TM.DG.003
+          standard_name: Temporary DG set - 62.5 KVA (diesel generator)
+          unit: month
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 732
+          dsr_item_ref: ''
+          aliases:
+          - DG 62.5KVA
+          - genset 62.5KVA
+          typical_rate_range:
+            min: 35000
+            max: 70000
+          notes: ''
+          data_source: estimated
+        - id: PRL.TM.DG.004
+          standard_name: Temporary DG set - 125 KVA (diesel generator)
+          unit: month
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 732
+          dsr_item_ref: ''
+          aliases:
+          - DG 125KVA
+          - genset 125KVA
+          typical_rate_range:
+            min: 55000
+            max: 100000
+          notes: ''
+          data_source: estimated
+        - id: PRL.TM.DG.005
+          standard_name: DG set fuel consumption (diesel)
+          unit: litre
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 732
+          dsr_item_ref: ''
+          aliases:
+          - diesel fuel
+          - DG fuel
+          typical_rate_range:
+            min: 85
+            max: 100
+          notes: Per litre diesel cost
+          data_source: estimated
+      sanitation:
+        items:
+        - id: PRL.TM.SAN.001
+          standard_name: Temporary sanitation - portable toilet (FRP, chemical type)
+          unit: month
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: BOCW Act
+          dsr_item_ref: ''
+          aliases:
+          - portable toilet
+          - bio toilet
+          - chemical toilet
+          typical_rate_range:
+            min: 3000
+            max: 6000
+          notes: Monthly rental including cleaning
+          data_source: IS codes only
+        - id: PRL.TM.SAN.002
+          standard_name: Temporary sanitation - constructed toilet block (10 seats)
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: BOCW Act
+          dsr_item_ref: ''
+          aliases:
+          - toilet block
+          - construction toilet
+          typical_rate_range:
+            min: 80000
+            max: 180000
+          notes: One-time construction cost
+          data_source: IS codes only
+        - id: PRL.TM.SAN.003
+          standard_name: Temporary sanitation - urinal block (10 nos)
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: BOCW Act
+          dsr_item_ref: ''
+          aliases:
+          - urinal block
+          - temporary urinal
+          typical_rate_range:
+            min: 40000
+            max: 80000
+          notes: ''
+          data_source: IS codes only
+      medical:
+        items:
+        - id: PRL.TM.FAR.001
+          standard_name: First aid room - setup and monthly maintenance
+          unit: month
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: BOCW Act
+          dsr_item_ref: ''
+          aliases:
+          - first aid room
+          - medical room
+          typical_rate_range:
+            min: 5000
+            max: 12000
+          notes: Including basic medical supplies
+          data_source: IS codes only
+        - id: PRL.TM.FEX.001
+          standard_name: Fire extinguisher - ABC type - 4 kg (site use)
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: BOCW Act
+          dsr_item_ref: ''
+          aliases:
+          - fire extinguisher
+          - ABC extinguisher
+          typical_rate_range:
+            min: 1500
+            max: 3000
+          notes: ''
+          data_source: estimated
+        - id: PRL.TM.FEX.002
+          standard_name: Fire extinguisher - CO2 type - 4.5 kg (site use)
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: BOCW Act
+          dsr_item_ref: ''
+          aliases:
+          - CO2 extinguisher
+          typical_rate_range:
+            min: 3000
+            max: 6000
+          notes: ''
+          data_source: estimated
+  safety:
+    categories:
+      ppe:
+        items:
+        - id: PRL.SF.HAT.001
+          standard_name: Safety helmet/hard hat - ISI marked
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2925
+          dsr_item_ref: ''
+          aliases:
+          - hard hat
+          - safety helmet
+          - construction helmet
+          typical_rate_range:
+            min: 150
+            max: 400
+          notes: ''
+          data_source: IS codes only
+        - id: PRL.SF.SHO.001
+          standard_name: Safety shoes - steel toe cap - ISI marked
+          unit: pair
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15298
+          dsr_item_ref: ''
+          aliases:
+          - safety shoes
+          - steel toe boots
+          typical_rate_range:
+            min: 400
+            max: 1200
+          notes: ''
+          data_source: IS codes only
+        - id: PRL.SF.VST.001
+          standard_name: Safety vest - high visibility reflective
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: BOCW Act
+          dsr_item_ref: ''
+          aliases:
+          - reflective vest
+          - hi-vis vest
+          - safety jacket
+          typical_rate_range:
+            min: 100
+            max: 300
+          notes: ''
+          data_source: estimated
+        - id: PRL.SF.HRN.001
+          standard_name: Safety harness - full body with double lanyard
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 3521
+          dsr_item_ref: ''
+          aliases:
+          - fall harness
+          - safety harness
+          - body harness
+          typical_rate_range:
+            min: 2000
+            max: 5000
+          notes: For work at height above 2.0m
+          data_source: IS codes only
+        - id: PRL.SF.GLV.001
+          standard_name: Safety gloves - leather/rubber (per pair)
+          unit: pair
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2925
+          dsr_item_ref: ''
+          aliases:
+          - work gloves
+          - safety gloves
+          typical_rate_range:
+            min: 50
+            max: 200
+          notes: ''
+          data_source: estimated
+        - id: PRL.SF.GOG.001
+          standard_name: Safety goggles/glasses - impact resistant
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2925
+          dsr_item_ref: ''
+          aliases:
+          - safety glasses
+          - safety goggles
+          typical_rate_range:
+            min: 80
+            max: 250
+          notes: ''
+          data_source: estimated
+        - id: PRL.SF.EAR.001
+          standard_name: Ear protection - ear plugs/ear muffs
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2925
+          dsr_item_ref: ''
+          aliases:
+          - ear muffs
+          - ear plugs
+          - hearing protection
+          typical_rate_range:
+            min: 50
+            max: 300
+          notes: ''
+          data_source: estimated
+        - id: PRL.SF.MSK.001
+          standard_name: Dust mask/respirator - N95 type
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2925
+          dsr_item_ref: ''
+          aliases:
+          - dust mask
+          - N95 mask
+          - respirator
+          typical_rate_range:
+            min: 30
+            max: 100
+          notes: ''
+          data_source: estimated
+      fall_protection:
+        items:
+        - id: PRL.SF.NET.001
+          standard_name: Safety net - horizontal (floor/slab opening protection)
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: BOCW Act
+          dsr_item_ref: ''
+          aliases:
+          - horizontal safety net
+          - floor net
+          typical_rate_range:
+            min: 30
+            max: 80
+          notes: Per sqm per month
+          data_source: estimated
+        - id: PRL.SF.NET.002
+          standard_name: Safety net - vertical (perimeter/facade protection)
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: BOCW Act
+          dsr_item_ref: ''
+          aliases:
+          - vertical safety net
+          - debris net
+          - facade net
+          typical_rate_range:
+            min: 25
+            max: 60
+          notes: ''
+          data_source: estimated
+        - id: PRL.SF.BAR.001
+          standard_name: Barricading tape - red/yellow caution tape
+          unit: roll
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2062
+          dsr_item_ref: ''
+          aliases:
+          - caution tape
+          - barricade tape
+          - warning tape
+          typical_rate_range:
+            min: 100
+            max: 250
+          notes: Per 100m roll
+          data_source: estimated
+        - id: PRL.SF.SGN.001
+          standard_name: Safety signage - site safety board set (20 signs)
+          unit: set
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 9457
+          dsr_item_ref: ''
+          aliases:
+          - safety signage set
+          - construction safety signs
+          typical_rate_range:
+            min: 3000
+            max: 8000
+          notes: Standard set of mandatory, prohibition, warning signs
+          data_source: IS codes only
+      scaffolding:
+        items:
+        - id: PRL.SF.SCP.001
+          standard_name: Scaffolding - steel pipe (H-frame) - per sqm of facade area
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2750
+          dsr_item_ref: ''
+          aliases:
+          - pipe scaffolding
+          - H-frame scaffolding
+          typical_rate_range:
+            min: 40
+            max: 80
+          notes: Monthly rental per sqm
+          data_source: IS codes only
+        - id: PRL.SF.SCP.002
+          standard_name: Scaffolding - cuplock system - per sqm of facade area
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2750
+          dsr_item_ref: ''
+          aliases:
+          - cuplock scaffolding
+          - system scaffolding
+          typical_rate_range:
+            min: 50
+            max: 100
+          notes: Monthly rental per sqm
+          data_source: IS codes only
+        - id: PRL.SF.SCP.003
+          standard_name: Scaffolding - frame type (walk-through) - per sqm
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: BOCW Act
+          dsr_item_ref: ''
+          aliases:
+          - frame scaffolding
+          - walk-through scaffold
+          typical_rate_range:
+            min: 35
+            max: 70
+          notes: ''
+          data_source: estimated
+        - id: PRL.SF.SCP.004
+          standard_name: Scaffolding - suspended/hanging platform (cradle)
+          unit: month
+          construction_types:
+          - all
+          building_types:
+          - high_rise
+          requires: []
+          is_code_ref: BOCW Act
+          dsr_item_ref: ''
+          aliases:
+          - suspended scaffold
+          - cradle
+          - BMU temporary
+          typical_rate_range:
+            min: 25000
+            max: 60000
+          notes: Monthly rental including operator
+          data_source: estimated
+        - id: PRL.SF.LDR.001
+          standard_name: Ladder - aluminum extension type - 6m working height
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: BOCW Act
+          dsr_item_ref: ''
+          aliases:
+          - aluminum ladder
+          - extension ladder
+          typical_rate_range:
+            min: 5000
+            max: 12000
+          notes: ''
+          data_source: estimated
+        - id: PRL.SF.LDR.002
+          standard_name: Ladder - FRP (fiberglass) type - for electrical work
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: BOCW Act
+          dsr_item_ref: ''
+          aliases:
+          - FRP ladder
+          - non-conductive ladder
+          typical_rate_range:
+            min: 8000
+            max: 18000
+          notes: Non-conductive for electrical areas
+          data_source: estimated
+        - id: PRL.SF.FAK.001
+          standard_name: First aid kit - standard (25 person capacity)
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: BOCW Act
+          dsr_item_ref: ''
+          aliases:
+          - first aid kit
+          - medical kit
+          typical_rate_range:
+            min: 500
+            max: 1500
+          notes: ''
+          data_source: IS codes only
+        - id: PRL.SF.TBT.001
+          standard_name: Toolbox talks - weekly safety briefing (documentation and conduct)
+          unit: month
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: BOCW Act
+          dsr_item_ref: ''
+          aliases:
+          - TBT
+          - toolbox talk
+          - safety briefing
+          typical_rate_range:
+            min: 2000
+            max: 5000
+          notes: Including preparation, documentation, attendance
+          data_source: estimated
+  testing:
+    categories:
+      concrete_testing:
+        items:
+        - id: PRL.TS.CUB.001
+          standard_name: Concrete cube test - 7 day compressive strength
+          unit: set
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 516
+          dsr_item_ref: ''
+          aliases:
+          - 7 day cube test
+          - cube test 7d
+          typical_rate_range:
+            min: 300
+            max: 600
+          notes: Set of 3 cubes (150x150x150mm)
+          data_source: IS codes only
+        - id: PRL.TS.CUB.002
+          standard_name: Concrete cube test - 28 day compressive strength
+          unit: set
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 516
+          dsr_item_ref: ''
+          aliases:
+          - 28 day cube test
+          - cube test 28d
+          typical_rate_range:
+            min: 300
+            max: 600
+          notes: Set of 3 cubes
+          data_source: IS codes only
+        - id: PRL.TS.SLM.001
+          standard_name: Concrete slump test
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1199
+          dsr_item_ref: ''
+          aliases:
+          - slump test
+          - workability test
+          typical_rate_range:
+            min: 100
+            max: 250
+          notes: Per test
+          data_source: IS codes only
+        - id: PRL.TS.UPV.001
+          standard_name: Ultrasonic pulse velocity (UPV) test on concrete
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 13311 Part 1
+          dsr_item_ref: ''
+          aliases:
+          - UPV test
+          - ultrasonic test
+          typical_rate_range:
+            min: 500
+            max: 1200
+          notes: Non-destructive test
+          data_source: IS codes only
+        - id: PRL.TS.RBH.001
+          standard_name: Rebound hammer test on concrete
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 13311 Part 2
+          dsr_item_ref: ''
+          aliases:
+          - Schmidt hammer test
+          - rebound hammer
+          typical_rate_range:
+            min: 300
+            max: 800
+          notes: Non-destructive test
+          data_source: IS codes only
+        - id: PRL.TS.CRC.001
+          standard_name: Core cutting and compressive strength test
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 516
+          dsr_item_ref: ''
+          aliases:
+          - core test
+          - core cutting
+          - core sample
+          typical_rate_range:
+            min: 2000
+            max: 5000
+          notes: Including cutting, capping, testing
+          data_source: IS codes only
+      rebar_testing:
+        items:
+        - id: PRL.TS.RBT.001
+          standard_name: Rebar tensile strength test
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1608
+          dsr_item_ref: ''
+          aliases:
+          - rebar tensile test
+          - steel tensile test
+          typical_rate_range:
+            min: 300
+            max: 700
+          notes: Per sample
+          data_source: IS codes only
+        - id: PRL.TS.RBB.001
+          standard_name: Rebar bend test (re-bend test)
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1599
+          dsr_item_ref: ''
+          aliases:
+          - bend test
+          - rebar bend
+          typical_rate_range:
+            min: 200
+            max: 500
+          notes: ''
+          data_source: IS codes only
+        - id: PRL.TS.RBS.001
+          standard_name: Rebar scanning/cover meter test
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: BOCW Act
+          dsr_item_ref: ''
+          aliases:
+          - rebar scanner
+          - cover meter
+          - profometer
+          typical_rate_range:
+            min: 400
+            max: 1000
+          notes: Non-destructive, to check rebar position and cover
+          data_source: estimated
+      soil_testing:
+        items:
+        - id: PRL.TS.SPT.001
+          standard_name: Soil investigation - Standard Penetration Test (SPT)
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2131
+          dsr_item_ref: ''
+          aliases:
+          - SPT test
+          - soil boring
+          - soil investigation
+          typical_rate_range:
+            min: 1500
+            max: 3500
+          notes: Per running meter of borehole
+          data_source: IS codes only
+        - id: PRL.TS.CBR.001
+          standard_name: Soil CBR test (California Bearing Ratio)
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2720 Part 16
+          dsr_item_ref: ''
+          aliases:
+          - CBR test
+          - bearing ratio test
+          typical_rate_range:
+            min: 1000
+            max: 2500
+          notes: ''
+          data_source: IS codes only
+        - id: PRL.TS.PLT.001
+          standard_name: Plate load test
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1888
+          dsr_item_ref: ''
+          aliases:
+          - plate load test
+          - PLT
+          typical_rate_range:
+            min: 15000
+            max: 35000
+          notes: ''
+          data_source: IS codes only
+      mep_testing:
+        items:
+        - id: PRL.TS.WPT.001
+          standard_name: Water potability test (chemical + bacteriological)
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 10500
+          dsr_item_ref: ''
+          aliases:
+          - water quality test
+          - potable water test
+          typical_rate_range:
+            min: 2000
+            max: 5000
+          notes: ''
+          data_source: IS codes only
+        - id: PRL.TS.PPR.001
+          standard_name: Pressure test - plumbing/fire system (hydrostatic)
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: BOCW Act
+          dsr_item_ref: ''
+          aliases:
+          - pressure test
+          - hydrostatic test
+          - hydro test
+          typical_rate_range:
+            min: 500
+            max: 1500
+          notes: Per section/zone
+          data_source: estimated
+        - id: PRL.TS.INR.001
+          standard_name: Insulation resistance test (megger test) - electrical
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 732
+          dsr_item_ref: ''
+          aliases:
+          - megger test
+          - IR test
+          - insulation test
+          typical_rate_range:
+            min: 300
+            max: 800
+          notes: Per circuit
+          data_source: IS codes only
+        - id: PRL.TS.ERT.001
+          standard_name: Earth resistance test (earth pit resistance measurement)
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 3043
+          dsr_item_ref: ''
+          aliases:
+          - earth resistance
+          - earthing test
+          - grounding test
+          typical_rate_range:
+            min: 500
+            max: 1200
+          notes: ''
+          data_source: IS codes only
+      finishing_testing:
+        items:
+        - id: PRL.TS.PNT.001
+          standard_name: Paint adhesion test (cross-cut/pull-off)
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 101
+          dsr_item_ref: ''
+          aliases:
+          - paint adhesion test
+          - cross-cut test
+          typical_rate_range:
+            min: 300
+            max: 700
+          notes: ''
+          data_source: IS codes only
+        - id: PRL.TS.TLA.001
+          standard_name: Tile adhesion/pull-off test
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: BOCW Act
+          dsr_item_ref: ''
+          aliases:
+          - tile pull test
+          - adhesion test tile
+          typical_rate_range:
+            min: 500
+            max: 1200
+          notes: ''
+          data_source: estimated
+      structural_testing:
+        items:
+        - id: PRL.TS.LDP.001
+          standard_name: Load test - pile (initial/routine)
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2911
+          dsr_item_ref: ''
+          aliases:
+          - pile load test
+          - pile test
+          typical_rate_range:
+            min: 100000
+            max: 500000
+          notes: Rate depends on pile capacity
+          data_source: IS codes only
+        - id: PRL.TS.LDS.001
+          standard_name: Load test - slab/beam (proof load test)
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 456
+          dsr_item_ref: ''
+          aliases:
+          - slab load test
+          - proof load test
+          typical_rate_range:
+            min: 20000
+            max: 60000
+          notes: ''
+          data_source: IS codes only
+      misc_testing:
+        items:
+        - id: PRL.TS.CTV.001
+          standard_name: CCTV survey of drainage/sewer pipeline
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1200
+          dsr_item_ref: ''
+          aliases:
+          - CCTV drain survey
+          - pipe inspection camera
+          typical_rate_range:
+            min: 100
+            max: 300
+          notes: Per running meter
+          data_source: estimated
+        - id: PRL.TS.AIR.001
+          standard_name: Air balancing test - HVAC system
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - commercial
+          requires: []
+          is_code_ref: BOCW Act
+          dsr_item_ref: ''
+          aliases:
+          - TAB test
+          - air balancing
+          - testing and balancing
+          typical_rate_range:
+            min: 1000
+            max: 3000
+          notes: Per terminal device
+          data_source: estimated
+        - id: PRL.TS.SND.001
+          standard_name: Sound/noise level test
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: BOCW Act
+          dsr_item_ref: ''
+          aliases:
+          - noise test
+          - sound test
+          - acoustic test
+          typical_rate_range:
+            min: 2000
+            max: 5000
+          notes: Per location
+          data_source: estimated
+        - id: PRL.TS.DFT.001
+          standard_name: DFT (dry film thickness) test for paint/coating
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: BOCW Act
+          dsr_item_ref: ''
+          aliases:
+          - DFT test
+          - paint thickness test
+          typical_rate_range:
+            min: 200
+            max: 500
+          notes: ''
+          data_source: estimated
+  insurance:
+    categories:
+      policies:
+        items:
+        - id: PRL.IS.CAR.001
+          standard_name: Contractor All Risk (CAR) insurance policy
+          unit: LS
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: BOCW Act
+          dsr_item_ref: ''
+          aliases:
+          - CAR policy
+          - contractor all risk
+          - construction insurance
+          typical_rate_range:
+            min: 50000
+            max: 500000
+          notes: Percentage of contract value, typically 0.3-0.8%
+          data_source: estimated
+        - id: PRL.IS.CAR.002
+          standard_name: Third party liability insurance
+          unit: LS
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: BOCW Act
+          dsr_item_ref: ''
+          aliases:
+          - third party insurance
+          - TPL policy
+          typical_rate_range:
+            min: 20000
+            max: 200000
+          notes: For damage to third party property/persons
+          data_source: estimated
+        - id: PRL.IS.CAR.003
+          standard_name: Workmen compensation insurance
+          unit: LS
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: Workmen Compensation Act
+          dsr_item_ref: ''
+          aliases:
+          - workmen comp insurance
+          - WCI
+          - labour insurance
+          typical_rate_range:
+            min: 30000
+            max: 300000
+          notes: As per Workmen Compensation Act 1923
+          data_source: IS codes only
+        - id: PRL.IS.CAR.004
+          standard_name: Plant and machinery insurance
+          unit: LS
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: BOCW Act
+          dsr_item_ref: ''
+          aliases:
+          - P&M insurance
+          - equipment insurance
+          typical_rate_range:
+            min: 15000
+            max: 150000
+          notes: Coverage for hired/owned equipment on site
+          data_source: estimated
+        - id: PRL.IS.CAR.005
+          standard_name: Professional indemnity insurance
+          unit: LS
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: BOCW Act
+          dsr_item_ref: ''
+          aliases:
+          - PI insurance
+          - professional liability
+          typical_rate_range:
+            min: 25000
+            max: 250000
+          notes: For design-build contracts
+          data_source: estimated
+  permits:
+    categories:
+      statutory:
+        items:
+        - id: PRL.PM.BPM.001
+          standard_name: Building permit/plan approval from local authority
+          unit: LS
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: BOCW Act
+          dsr_item_ref: ''
+          aliases:
+          - building permission
+          - plan sanction
+          - building approval
+          typical_rate_range:
+            min: 50000
+            max: 500000
+          notes: Varies by FSI/plot area
+          data_source: estimated
+        - id: PRL.PM.ENV.001
+          standard_name: Environmental clearance (EC/CTE/CTO)
+          unit: LS
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: EIA Notification
+          dsr_item_ref: ''
+          aliases:
+          - environmental clearance
+          - EC
+          - CTE
+          - CTO
+          typical_rate_range:
+            min: 100000
+            max: 1000000
+          notes: Required for projects above threshold area
+          data_source: IS codes only
+        - id: PRL.PM.FNO.001
+          standard_name: Fire NOC/fire approval from fire department
+          unit: LS
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - fire NOC
+          - fire clearance
+          - fire approval
+          typical_rate_range:
+            min: 25000
+            max: 200000
+          notes: ''
+          data_source: IS codes only
+        - id: PRL.PM.TRC.001
+          standard_name: Tree cutting/transplanting permission
+          unit: LS
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: BOCW Act
+          dsr_item_ref: ''
+          aliases:
+          - tree cutting permission
+          - tree transplant NOC
+          typical_rate_range:
+            min: 5000
+            max: 50000
+          notes: ''
+          data_source: estimated
+        - id: PRL.PM.RDC.001
+          standard_name: Road cutting permission
+          unit: LS
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: BOCW Act
+          dsr_item_ref: ''
+          aliases:
+          - road cutting NOC
+          - road opening permit
+          typical_rate_range:
+            min: 10000
+            max: 100000
+          notes: ''
+          data_source: estimated
+      utility_connections:
+        items:
+        - id: PRL.PM.WTR.001
+          standard_name: Water supply connection - permanent (municipal)
+          unit: LS
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: BOCW Act
+          dsr_item_ref: ''
+          aliases:
+          - water connection permanent
+          - municipal water connection
+          typical_rate_range:
+            min: 20000
+            max: 100000
+          notes: Connection charges and deposit
+          data_source: estimated
+        - id: PRL.PM.SWR.001
+          standard_name: Sewer/drainage connection - permanent (municipal)
+          unit: LS
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: BOCW Act
+          dsr_item_ref: ''
+          aliases:
+          - sewer connection
+          - drainage connection
+          typical_rate_range:
+            min: 15000
+            max: 80000
+          notes: ''
+          data_source: estimated
+        - id: PRL.PM.ELC.001
+          standard_name: Electrical connection - permanent (DISCOM)
+          unit: LS
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: BOCW Act
+          dsr_item_ref: ''
+          aliases:
+          - electrical connection
+          - power connection permanent
+          typical_rate_range:
+            min: 50000
+            max: 500000
+          notes: Depends on sanctioned load
+          data_source: estimated
+        - id: PRL.PM.LFT.001
+          standard_name: Lift/elevator clearance from inspector of factories/lifts
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: Indian Lift Act
+          dsr_item_ref: ''
+          aliases:
+          - lift clearance
+          - elevator license
+          - lift inspection
+          typical_rate_range:
+            min: 5000
+            max: 25000
+          notes: Per lift
+          data_source: IS codes only
+        - id: PRL.PM.OCC.001
+          standard_name: Occupation certificate/completion certificate
+          unit: LS
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - OC
+          - completion certificate
+          - CC
+          - occupation certificate
+          typical_rate_range:
+            min: 25000
+            max: 200000
+          notes: ''
+          data_source: estimated
+  mobilization:
+    categories:
+      equipment:
+        items:
+        - id: PRL.MB.CRN.001
+          standard_name: Crane mobilization/demobilization (hydra/mobile crane)
+          unit: trip
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: BOCW Act
+          dsr_item_ref: ''
+          aliases:
+          - crane mobilization
+          - crane mob-demob
+          typical_rate_range:
+            min: 15000
+            max: 50000
+          notes: Per trip (mob or demob)
+          data_source: estimated
+        - id: PRL.MB.EXC.001
+          standard_name: Excavator mobilization/demobilization
+          unit: trip
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: BOCW Act
+          dsr_item_ref: ''
+          aliases:
+          - JCB mobilization
+          - excavator mob-demob
+          typical_rate_range:
+            min: 10000
+            max: 30000
+          notes: ''
+          data_source: estimated
+        - id: PRL.MB.TMX.001
+          standard_name: Transit mixer mobilization/demobilization
+          unit: trip
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: BOCW Act
+          dsr_item_ref: ''
+          aliases:
+          - transit mixer mob
+          - concrete truck mob
+          typical_rate_range:
+            min: 5000
+            max: 15000
+          notes: ''
+          data_source: estimated
+        - id: PRL.MB.TWR.001
+          standard_name: Tower crane erection and dismantling
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - high_rise
+          requires: []
+          is_code_ref: BOCW Act
+          dsr_item_ref: ''
+          aliases:
+          - tower crane erection
+          - TC mob-demob
+          typical_rate_range:
+            min: 200000
+            max: 600000
+          notes: One-time, erection or dismantling
+          data_source: estimated
+      site_preparation:
+        items:
+        - id: PRL.MB.DMB.001
+          standard_name: Equipment demobilization - general (end of project)
+          unit: LS
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: BOCW Act
+          dsr_item_ref: ''
+          aliases:
+          - demobilization
+          - site closure equipment
+          typical_rate_range:
+            min: 50000
+            max: 200000
+          notes: All equipment removal
+          data_source: estimated
+        - id: PRL.MB.CLR.001
+          standard_name: Site clearing - vegetation, debris removal
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: BOCW Act
+          dsr_item_ref: ''
+          aliases:
+          - site clearance
+          - vegetation removal
+          typical_rate_range:
+            min: 10
+            max: 40
+          notes: ''
+          data_source: estimated
+        - id: PRL.MB.LVL.001
+          standard_name: Site levelling - rough grading with excavator
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: BOCW Act
+          dsr_item_ref: ''
+          aliases:
+          - rough levelling
+          - site grading
+          typical_rate_range:
+            min: 15
+            max: 40
+          notes: ''
+          data_source: estimated
+      survey:
+        items:
+        - id: PRL.MB.SRV.001
+          standard_name: Survey - boundary demarcation
+          unit: LS
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1200
+          dsr_item_ref: ''
+          aliases:
+          - boundary survey
+          - plot demarcation
+          typical_rate_range:
+            min: 10000
+            max: 30000
+          notes: ''
+          data_source: estimated
+        - id: PRL.MB.SRV.002
+          standard_name: Survey - contour/topographic survey (total station)
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1200
+          dsr_item_ref: ''
+          aliases:
+          - contour survey
+          - topo survey
+          - topographic survey
+          typical_rate_range:
+            min: 5
+            max: 15
+          notes: Per sqm of site area
+          data_source: estimated
+        - id: PRL.MB.SRV.003
+          standard_name: Survey - setting out/layout marking
+          unit: LS
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1200
+          dsr_item_ref: ''
+          aliases:
+          - setting out
+          - layout marking
+          - building layout
+          typical_rate_range:
+            min: 15000
+            max: 40000
+          notes: ''
+          data_source: estimated
+        - id: PRL.MB.SRV.004
+          standard_name: Survey - as-built survey (post-construction)
+          unit: LS
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1200
+          dsr_item_ref: ''
+          aliases:
+          - as-built survey
+          - completion survey
+          typical_rate_range:
+            min: 20000
+            max: 60000
+          notes: ''
+          data_source: estimated
+        - id: PRL.MB.SRV.005
+          standard_name: Survey - drone/UAV aerial survey
+          unit: LS
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1200
+          dsr_item_ref: ''
+          aliases:
+          - drone survey
+          - aerial survey
+          typical_rate_range:
+            min: 25000
+            max: 80000
+          notes: Including orthomosaic and 3D model
+          data_source: estimated
+  cleaning:
+    categories:
+      progressive:
+        items:
+        - id: PRL.CL.PRG.001
+          standard_name: Progressive cleaning - per floor during construction
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: BOCW Act
+          dsr_item_ref: ''
+          aliases:
+          - floor cleaning construction
+          - progressive clean
+          typical_rate_range:
+            min: 5
+            max: 15
+          notes: Debris removal, sweeping
+          data_source: estimated
+        - id: PRL.CL.PRG.002
+          standard_name: Progressive cleaning - common areas and staircases
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: BOCW Act
+          dsr_item_ref: ''
+          aliases:
+          - staircase cleaning
+          - common area cleaning
+          typical_rate_range:
+            min: 8
+            max: 20
+          notes: ''
+          data_source: estimated
+      final:
+        items:
+        - id: PRL.CL.FNL.001
+          standard_name: Final cleaning - acid wash (tiles/stone floors)
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: BOCW Act
+          dsr_item_ref: ''
+          aliases:
+          - acid wash
+          - tile acid cleaning
+          typical_rate_range:
+            min: 10
+            max: 25
+          notes: Oxalic acid wash
+          data_source: estimated
+        - id: PRL.CL.FNL.002
+          standard_name: Final cleaning - pressure wash (external facades, pavements)
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: BOCW Act
+          dsr_item_ref: ''
+          aliases:
+          - pressure wash
+          - power wash
+          - jet wash
+          typical_rate_range:
+            min: 8
+            max: 20
+          notes: ''
+          data_source: estimated
+        - id: PRL.CL.FNL.003
+          standard_name: Final cleaning - window cleaning (interior + exterior)
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: BOCW Act
+          dsr_item_ref: ''
+          aliases:
+          - window cleaning
+          - glass cleaning
+          typical_rate_range:
+            min: 15
+            max: 40
+          notes: Both faces
+          data_source: estimated
+        - id: PRL.CL.FNL.004
+          standard_name: Final cleaning - comprehensive deep clean (all surfaces)
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: BOCW Act
+          dsr_item_ref: ''
+          aliases:
+          - deep cleaning
+          - handover cleaning
+          - final deep clean
+          typical_rate_range:
+            min: 20
+            max: 50
+          notes: Including all surfaces, fixtures, hardware
+          data_source: estimated
+        - id: PRL.CL.PHO.001
+          standard_name: Post-handover cleaning - defect liability period
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: NBC 2016
+          dsr_item_ref: ''
+          aliases:
+          - post-handover clean
+          - DLP cleaning
+          typical_rate_range:
+            min: 15
+            max: 35
+          notes: ''
+          data_source: estimated
+        - id: PRL.CL.DBR.001
+          standard_name: Debris disposal - truck load (to approved dump site)
+          unit: trip
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: BOCW Act
+          dsr_item_ref: ''
+          aliases:
+          - debris removal
+          - muck disposal
+          - waste disposal
+          typical_rate_range:
+            min: 2000
+            max: 5000
+          notes: Per truck trip (5-10 cum)
+          data_source: estimated
+  scaffolding_extended:
+    categories:
+      tubular_scaffolding:
+        items:
+        - id: PRL.SC.TUB.001
+          standard_name: Tubular scaffolding - 48.3mm OD pipe - per sqm facade - up to 15m height
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2750, IS 1161
+          dsr_item_ref: ''
+          aliases:
+          - tubular scaffold 15m
+          - pipe scaffold standard
+          typical_rate_range:
+            min: 45
+            max: 90
+          notes: Monthly rental including clamps and planks
+          data_source: IS codes only
+        - id: PRL.SC.TUB.002
+          standard_name: Tubular scaffolding - 48.3mm OD pipe - per sqm facade - 15m to 30m height
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2750, IS 1161
+          dsr_item_ref: ''
+          aliases:
+          - tubular scaffold 30m
+          - high rise pipe scaffold
+          typical_rate_range:
+            min: 55
+            max: 110
+          notes: Additional bracing and tie-backs required
+          data_source: IS codes only
+        - id: PRL.SC.TUB.003
+          standard_name: Tubular scaffolding - 48.3mm OD pipe - per sqm facade - above 30m height
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - high_rise
+          requires: []
+          is_code_ref: IS 2750
+          dsr_item_ref: ''
+          aliases:
+          - tubular scaffold high rise
+          - super high scaffold
+          typical_rate_range:
+            min: 70
+            max: 140
+          notes: Engineered design required above 30m
+          data_source: IS codes only
+        - id: PRL.SC.TUB.004
+          standard_name: Tubular scaffolding - internal (for slab/beam work) - per sqm floor area
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2750
+          dsr_item_ref: ''
+          aliases:
+          - internal scaffold
+          - slab scaffold
+          - centering scaffold
+          typical_rate_range:
+            min: 30
+            max: 65
+          notes: For internal plastering, painting, ceiling work
+          data_source: IS codes only
+      cuplock_scaffolding:
+        items:
+        - id: PRL.SC.CUP.001
+          standard_name: Cuplock scaffolding system - per sqm facade - up to 20m height
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2750
+          dsr_item_ref: ''
+          aliases:
+          - cuplock system 20m
+          - cuplock scaffold standard
+          typical_rate_range:
+            min: 50
+            max: 100
+          notes: Monthly rental including all components
+          data_source: IS codes only
+        - id: PRL.SC.CUP.002
+          standard_name: Cuplock scaffolding system - per sqm facade - 20m to 40m height
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - high_rise
+          requires: []
+          is_code_ref: IS 2750
+          dsr_item_ref: ''
+          aliases:
+          - cuplock high rise
+          - cuplock tall scaffold
+          typical_rate_range:
+            min: 65
+            max: 130
+          notes: Engineered with structural calculations
+          data_source: IS codes only
+        - id: PRL.SC.CUP.003
+          standard_name: Cuplock scaffolding - shoring tower for heavy loads
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2750
+          dsr_item_ref: ''
+          aliases:
+          - cuplock shoring tower
+          - heavy duty support tower
+          typical_rate_range:
+            min: 3000
+            max: 7000
+          notes: Per tower per month for slab propping
+          data_source: IS codes only
+      ringlock_scaffolding:
+        items:
+        - id: PRL.SC.RNG.001
+          standard_name: Ringlock scaffolding system - per sqm facade - up to 20m height
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2750
+          dsr_item_ref: ''
+          aliases:
+          - ringlock scaffold
+          - rosette scaffold
+          - multidirectional scaffold
+          typical_rate_range:
+            min: 55
+            max: 110
+          notes: Monthly rental, rosette-type connection
+          data_source: IS codes only
+        - id: PRL.SC.RNG.002
+          standard_name: Ringlock scaffolding system - per sqm facade - 20m to 45m height
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - high_rise
+          requires: []
+          is_code_ref: IS 2750
+          dsr_item_ref: ''
+          aliases:
+          - ringlock high rise
+          - ringlock tall
+          typical_rate_range:
+            min: 70
+            max: 145
+          notes: Includes engineering design check
+          data_source: IS codes only
+        - id: PRL.SC.RNG.003
+          standard_name: Ringlock scaffolding - staircase tower for access
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2750
+          dsr_item_ref: ''
+          aliases:
+          - scaffold staircase tower
+          - access tower ringlock
+          typical_rate_range:
+            min: 5000
+            max: 12000
+          notes: Per tower per month
+          data_source: IS codes only
+      kwikstage_scaffolding:
+        items:
+        - id: PRL.SC.KWK.001
+          standard_name: Kwikstage scaffolding system - per sqm facade
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2750
+          dsr_item_ref: ''
+          aliases:
+          - kwikstage scaffold
+          - quick stage scaffold
+          typical_rate_range:
+            min: 45
+            max: 95
+          notes: Monthly rental
+          data_source: IS codes only
+        - id: PRL.SC.KWK.002
+          standard_name: Scaffold planks - steel (225mm wide) - rental
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: BOCW Act
+          dsr_item_ref: ''
+          aliases:
+          - steel scaffold plank
+          - scaffold board steel
+          typical_rate_range:
+            min: 8
+            max: 20
+          notes: Monthly rental per sqm of planking
+          data_source: estimated
+        - id: PRL.SC.KWK.003
+          standard_name: Scaffold planks - aluminum (600mm wide) - rental
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: BOCW Act
+          dsr_item_ref: ''
+          aliases:
+          - aluminum scaffold plank
+          - aluminium platform board
+          typical_rate_range:
+            min: 12
+            max: 28
+          notes: Lightweight aluminum planks monthly rental
+          data_source: estimated
+  safety_extended:
+    categories:
+      safety_nets:
+        items:
+        - id: PRL.SE.NET.001
+          standard_name: Safety net - horizontal (below slab/working platform) - per sqm
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 11057
+          dsr_item_ref: ''
+          aliases:
+          - horizontal safety net
+          - catch net below slab
+          typical_rate_range:
+            min: 15
+            max: 35
+          notes: HDPE knotless net per IS 11057
+          data_source: IS codes only
+        - id: PRL.SE.NET.002
+          standard_name: Safety net - vertical (perimeter/facade) - per sqm
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 11057
+          dsr_item_ref: ''
+          aliases:
+          - vertical safety net
+          - facade safety net
+          - perimeter net
+          typical_rate_range:
+            min: 12
+            max: 30
+          notes: Green debris net on GI pipe frame
+          data_source: IS codes only
+        - id: PRL.SE.NET.003
+          standard_name: Safety net - debris net (green) for scaffold enclosure
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: BOCW Act
+          dsr_item_ref: ''
+          aliases:
+          - debris net
+          - green net scaffold
+          - scaffold enclosure net
+          typical_rate_range:
+            min: 8
+            max: 20
+          notes: Fine mesh to prevent debris fall
+          data_source: estimated
+      barricades:
+        items:
+        - id: PRL.SE.BRC.001
+          standard_name: Barricade - MS pipe railing with reflective tape - permanent
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: BOCW Act
+          dsr_item_ref: ''
+          aliases:
+          - MS barricade
+          - pipe railing barricade
+          typical_rate_range:
+            min: 350
+            max: 700
+          notes: 1.1m height MS pipe with 2 rails
+          data_source: IS codes only
+        - id: PRL.SE.BRC.002
+          standard_name: Barricade - plastic jersey barrier (water filled)
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2062
+          dsr_item_ref: ''
+          aliases:
+          - jersey barrier
+          - plastic barrier
+          - water filled barricade
+          typical_rate_range:
+            min: 2000
+            max: 5000
+          notes: Interlocking type, reusable
+          data_source: estimated
+        - id: PRL.SE.BRC.003
+          standard_name: Barricade - retractable belt stanchion (crowd control)
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2062
+          dsr_item_ref: ''
+          aliases:
+          - belt stanchion
+          - retractable barrier
+          - crowd control barrier
+          typical_rate_range:
+            min: 1500
+            max: 3500
+          notes: For visitor walkways and restricted areas
+          data_source: estimated
+        - id: PRL.SE.BRC.004
+          standard_name: Barricade - edge protection system (roof/slab perimeter)
+          unit: rmt
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2750
+          dsr_item_ref: ''
+          aliases:
+          - edge protection
+          - slab edge guardrail
+          - roof edge barrier
+          typical_rate_range:
+            min: 200
+            max: 450
+          notes: Temporary guardrail at slab edges during construction
+          data_source: IS codes only
+      first_aid_medical:
+        items:
+        - id: PRL.SE.MED.001
+          standard_name: First aid room setup - fully equipped per BOCW Act
+          unit: LS
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: BOCW Act
+          dsr_item_ref: ''
+          aliases:
+          - first aid room
+          - medical room setup
+          typical_rate_range:
+            min: 30000
+            max: 80000
+          notes: For sites with 500+ workers
+          data_source: IS codes only
+        - id: PRL.SE.MED.002
+          standard_name: Stretcher - folding type with casualty blanket
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: BOCW Act
+          dsr_item_ref: ''
+          aliases:
+          - stretcher
+          - folding stretcher
+          - casualty stretcher
+          typical_rate_range:
+            min: 3000
+            max: 7000
+          notes: One per floor recommended
+          data_source: estimated
+        - id: PRL.SE.MED.003
+          standard_name: Eye wash station - portable emergency type
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: BOCW Act
+          dsr_item_ref: ''
+          aliases:
+          - eye wash station
+          - emergency eye wash
+          typical_rate_range:
+            min: 2000
+            max: 5000
+          notes: Near chemical/dust prone areas
+          data_source: estimated
+        - id: PRL.SE.MED.004
+          standard_name: Ambulance tie-up (on-call) - per month
+          unit: month
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: BOCW Act
+          dsr_item_ref: ''
+          aliases:
+          - ambulance on-call
+          - emergency ambulance
+          typical_rate_range:
+            min: 15000
+            max: 35000
+          notes: For major project sites with 500+ workers
+          data_source: IS codes only
+      fire_safety:
+        items:
+        - id: PRL.SE.FIR.001
+          standard_name: Fire extinguisher - ABC type 4kg - provision and maintenance
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15683
+          dsr_item_ref: ''
+          aliases:
+          - fire extinguisher ABC 4kg
+          - ABC powder type
+          typical_rate_range:
+            min: 1200
+            max: 2500
+          notes: One per 200 sqm or per floor
+          data_source: IS codes only
+        - id: PRL.SE.FIR.002
+          standard_name: Fire extinguisher - CO2 type 4.5kg
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 15683
+          dsr_item_ref: ''
+          aliases:
+          - CO2 fire extinguisher
+          - carbon dioxide extinguisher
+          typical_rate_range:
+            min: 3000
+            max: 6000
+          notes: For electrical panel areas
+          data_source: IS codes only
+        - id: PRL.SE.FIR.003
+          standard_name: Fire watch/hot work permit system - per month
+          unit: month
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: BOCW Act
+          dsr_item_ref: ''
+          aliases:
+          - fire watch
+          - hot work permit
+          - fire watcher
+          typical_rate_range:
+            min: 8000
+            max: 18000
+          notes: Dedicated fire watch during welding/cutting
+          data_source: estimated
+        - id: PRL.SE.FIR.004
+          standard_name: Fire hose reel - temporary construction phase
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: BOCW Act
+          dsr_item_ref: ''
+          aliases:
+          - temporary fire hose
+          - construction fire hose reel
+          typical_rate_range:
+            min: 8000
+            max: 15000
+          notes: 30m hose on reel with nozzle
+          data_source: estimated
+  temporary_facilities:
+    categories:
+      site_offices_extended:
+        items:
+        - id: PRL.TF.OFF.001
+          standard_name: Site office - prefab/porta cabin - 10 sqm (small site)
+          unit: month
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: BOCW Act
+          dsr_item_ref: ''
+          aliases:
+          - small site office
+          - porta cabin 10sqm
+          typical_rate_range:
+            min: 8000
+            max: 18000
+          notes: Monthly rental for small sites
+          data_source: estimated
+        - id: PRL.TF.OFF.002
+          standard_name: Site office - prefab/porta cabin - 60 sqm (large project)
+          unit: month
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: BOCW Act
+          dsr_item_ref: ''
+          aliases:
+          - large site office 60sqm
+          - big porta cabin
+          typical_rate_range:
+            min: 40000
+            max: 80000
+          notes: For large projects with multiple rooms
+          data_source: estimated
+        - id: PRL.TF.OFF.003
+          standard_name: Site meeting room - prefab with AV setup
+          unit: month
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: BOCW Act
+          dsr_item_ref: ''
+          aliases:
+          - site meeting room
+          - conference cabin
+          typical_rate_range:
+            min: 20000
+            max: 45000
+          notes: Including projector/screen and furniture
+          data_source: estimated
+      stores_extended:
+        items:
+        - id: PRL.TF.STR.001
+          standard_name: Tool crib/store - lockable MS container - 10 sqm
+          unit: month
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: BOCW Act
+          dsr_item_ref: ''
+          aliases:
+          - tool crib
+          - tool store
+          - lockable tool room
+          typical_rate_range:
+            min: 5000
+            max: 12000
+          notes: Secure tool storage with shelving
+          data_source: estimated
+        - id: PRL.TF.STR.002
+          standard_name: Paint store - ventilated with fire rating
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: BOCW Act
+          dsr_item_ref: ''
+          aliases:
+          - paint store
+          - flammable material store
+          typical_rate_range:
+            min: 400
+            max: 800
+          notes: Ventilated, away from heat sources
+          data_source: estimated
+        - id: PRL.TF.STR.003
+          standard_name: Electrical/plumbing material store - organized with racks
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: BOCW Act
+          dsr_item_ref: ''
+          aliases:
+          - MEP store
+          - electrical store
+          - plumbing material store
+          typical_rate_range:
+            min: 250
+            max: 500
+          notes: Covered store with categorized racks
+          data_source: estimated
+      labour_facilities:
+        items:
+        - id: PRL.TF.LBR.001
+          standard_name: Labour hutment - temporary shelter per worker
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: BOCW Act
+          dsr_item_ref: ''
+          aliases:
+          - labour hutment
+          - worker shelter
+          - labour camp
+          typical_rate_range:
+            min: 2000
+            max: 5000
+          notes: Per worker per month including cot
+          data_source: IS codes only
+        - id: PRL.TF.LBR.002
+          standard_name: Labour camp - semi-permanent with toilet/bath block
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: BOCW Act
+          dsr_item_ref: ''
+          aliases:
+          - labour camp semi-perm
+          - workers colony
+          typical_rate_range:
+            min: 500
+            max: 1200
+          notes: One-time construction cost per sqm
+          data_source: IS codes only
+        - id: PRL.TF.LBR.003
+          standard_name: Site canteen/mess - temporary setup for workers
+          unit: month
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: BOCW Act
+          dsr_item_ref: ''
+          aliases:
+          - site canteen
+          - workers mess
+          - labour kitchen
+          typical_rate_range:
+            min: 15000
+            max: 40000
+          notes: For sites with 250+ workers
+          data_source: IS codes only
+        - id: PRL.TF.LBR.004
+          standard_name: Creche facility - for children of women workers
+          unit: month
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: BOCW Act
+          dsr_item_ref: ''
+          aliases:
+          - creche
+          - child care facility
+          - nursery
+          typical_rate_range:
+            min: 10000
+            max: 25000
+          notes: Mandatory for sites with 50+ women workers
+          data_source: IS codes only
+        - id: PRL.TF.LBR.005
+          standard_name: Drinking water arrangement - with cooler/RO purifier
+          unit: month
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: BOCW Act
+          dsr_item_ref: ''
+          aliases:
+          - drinking water supply
+          - water cooler site
+          typical_rate_range:
+            min: 5000
+            max: 12000
+          notes: Per station per month
+          data_source: IS codes only
+        - id: PRL.TF.LBR.006
+          standard_name: Rest shelter/shade for workers - temporary canopy
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: BOCW Act
+          dsr_item_ref: ''
+          aliases:
+          - rest shelter
+          - worker shade
+          - break area
+          typical_rate_range:
+            min: 150
+            max: 350
+          notes: Covered rest area near work zone
+          data_source: IS codes only
+  equipment_hire:
+    categories:
+      concrete_equipment:
+        items:
+        - id: PRL.EQ.CPM.001
+          standard_name: Concrete pump hire - truck mounted boom pump - per day
+          unit: day
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: BOCW Act
+          dsr_item_ref: ''
+          aliases:
+          - concrete boom pump
+          - truck mounted pump
+          - boom placer
+          typical_rate_range:
+            min: 18000
+            max: 40000
+          notes: 36m boom, including operator and fuel
+          data_source: estimated
+        - id: PRL.EQ.CPM.002
+          standard_name: Concrete pump hire - stationary line pump - per day
+          unit: day
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: BOCW Act
+          dsr_item_ref: ''
+          aliases:
+          - stationary pump
+          - line pump concrete
+          - static pump
+          typical_rate_range:
+            min: 8000
+            max: 18000
+          notes: For low-rise or confined area pumping
+          data_source: estimated
+        - id: PRL.EQ.CPM.003
+          standard_name: Concrete pump hire - placing boom (separate) - per month
+          unit: month
+          construction_types:
+          - all
+          building_types:
+          - high_rise
+          requires: []
+          is_code_ref: BOCW Act
+          dsr_item_ref: ''
+          aliases:
+          - placing boom
+          - tower boom pump
+          typical_rate_range:
+            min: 150000
+            max: 350000
+          notes: Fixed on tower crane or separate mast
+          data_source: estimated
+        - id: PRL.EQ.BAT.001
+          standard_name: Batching plant hire - mobile type 30 cum/hr - per month
+          unit: month
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: BOCW Act
+          dsr_item_ref: ''
+          aliases:
+          - mobile batching plant
+          - concrete batching 30cum
+          typical_rate_range:
+            min: 200000
+            max: 450000
+          notes: Including setup, operator, and maintenance
+          data_source: estimated
+        - id: PRL.EQ.BAT.002
+          standard_name: Batching plant hire - stationary type 60 cum/hr - per month
+          unit: month
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: BOCW Act
+          dsr_item_ref: ''
+          aliases:
+          - stationary batching plant
+          - RMC plant site
+          typical_rate_range:
+            min: 400000
+            max: 800000
+          notes: For large projects requiring on-site batching
+          data_source: estimated
+        - id: PRL.EQ.TMX.001
+          standard_name: Transit mixer hire - 6 cum capacity - per trip
+          unit: trip
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: BOCW Act
+          dsr_item_ref: ''
+          aliases:
+          - transit mixer 6cum
+          - concrete truck
+          - RMC truck
+          typical_rate_range:
+            min: 2500
+            max: 5000
+          notes: Per trip from batching plant to site
+          data_source: estimated
+        - id: PRL.EQ.TMX.002
+          standard_name: Transit mixer hire - 9 cum capacity - per trip
+          unit: trip
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: BOCW Act
+          dsr_item_ref: ''
+          aliases:
+          - transit mixer 9cum
+          - large concrete truck
+          typical_rate_range:
+            min: 3500
+            max: 7000
+          notes: Large capacity truck for high volume pours
+          data_source: estimated
+      crane_equipment:
+        items:
+        - id: PRL.EQ.CRN.001
+          standard_name: Hydra crane hire - 12 ton capacity - per day
+          unit: day
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: BOCW Act
+          dsr_item_ref: ''
+          aliases:
+          - hydra crane 12T
+          - pick-and-carry crane
+          typical_rate_range:
+            min: 8000
+            max: 16000
+          notes: Including operator and fuel
+          data_source: estimated
+        - id: PRL.EQ.CRN.002
+          standard_name: Mobile crane hire - 20 ton capacity - per day
+          unit: day
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: BOCW Act
+          dsr_item_ref: ''
+          aliases:
+          - mobile crane 20T
+          - telescopic crane 20T
+          typical_rate_range:
+            min: 15000
+            max: 30000
+          notes: Including operator and fuel
+          data_source: estimated
+        - id: PRL.EQ.CRN.003
+          standard_name: Mobile crane hire - 50 ton capacity - per day
+          unit: day
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: BOCW Act
+          dsr_item_ref: ''
+          aliases:
+          - mobile crane 50T
+          - heavy crane 50T
+          typical_rate_range:
+            min: 30000
+            max: 60000
+          notes: For heavy structural steel and precast lifting
+          data_source: estimated
+        - id: PRL.EQ.CRN.004
+          standard_name: Tower crane hire - luffing jib type - per month
+          unit: month
+          construction_types:
+          - all
+          building_types:
+          - high_rise
+          requires: []
+          is_code_ref: BOCW Act
+          dsr_item_ref: ''
+          aliases:
+          - tower crane luffing
+          - luffing jib crane
+          typical_rate_range:
+            min: 250000
+            max: 600000
+          notes: Monthly rental including operator, maintenance
+          data_source: estimated
+        - id: PRL.EQ.CRN.005
+          standard_name: Tower crane hire - flat top/hammerhead type - per month
+          unit: month
+          construction_types:
+          - all
+          building_types:
+          - high_rise
+          requires: []
+          is_code_ref: BOCW Act
+          dsr_item_ref: ''
+          aliases:
+          - flat top crane
+          - hammerhead tower crane
+          typical_rate_range:
+            min: 200000
+            max: 500000
+          notes: Monthly rental including operator
+          data_source: estimated
+        - id: PRL.EQ.CRN.006
+          standard_name: Crawler crane hire - 100 ton capacity - per day
+          unit: day
+          construction_types:
+          - all
+          building_types:
+          - industrial
+          - infrastructure
+          requires: []
+          is_code_ref: BOCW Act
+          dsr_item_ref: ''
+          aliases:
+          - crawler crane 100T
+          - lattice boom crane
+          typical_rate_range:
+            min: 60000
+            max: 120000
+          notes: For heavy industrial lifts
+          data_source: estimated
+      hoist_equipment:
+        items:
+        - id: PRL.EQ.HST.001
+          standard_name: Material hoist (builder's hoist) - per month - 1 ton capacity
+          unit: month
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: BOCW Act
+          dsr_item_ref: ''
+          aliases:
+          - builder's hoist
+          - material hoist 1T
+          - construction hoist
+          typical_rate_range:
+            min: 25000
+            max: 55000
+          notes: Single cage material hoist
+          data_source: estimated
+        - id: PRL.EQ.HST.002
+          standard_name: Passenger-cum-material hoist - per month - 2 ton capacity
+          unit: month
+          construction_types:
+          - all
+          building_types:
+          - high_rise
+          requires: []
+          is_code_ref: BOCW Act
+          dsr_item_ref: ''
+          aliases:
+          - passenger hoist
+          - man-material hoist
+          - PMH
+          typical_rate_range:
+            min: 80000
+            max: 180000
+          notes: Including operator, safety certifications
+          data_source: estimated
+        - id: PRL.EQ.HST.003
+          standard_name: Goods lift (temporary) - per month - 500 kg capacity
+          unit: month
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: BOCW Act
+          dsr_item_ref: ''
+          aliases:
+          - temporary goods lift
+          - construction lift
+          typical_rate_range:
+            min: 15000
+            max: 35000
+          notes: For low-rise buildings
+          data_source: estimated
+      power_equipment:
+        items:
+        - id: PRL.EQ.DGS.001
+          standard_name: DG set hire - 62.5 kVA (50 kW) - per month
+          unit: month
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 732
+          dsr_item_ref: ''
+          aliases:
+          - DG set 62.5kVA
+          - diesel generator small
+          typical_rate_range:
+            min: 25000
+            max: 50000
+          notes: Including fuel, operator, maintenance
+          data_source: estimated
+        - id: PRL.EQ.DGS.002
+          standard_name: DG set hire - 125 kVA (100 kW) - per month
+          unit: month
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 732
+          dsr_item_ref: ''
+          aliases:
+          - DG set 125kVA
+          - diesel generator medium
+          typical_rate_range:
+            min: 40000
+            max: 80000
+          notes: Including fuel, operator, maintenance
+          data_source: estimated
+        - id: PRL.EQ.DGS.003
+          standard_name: DG set hire - 250 kVA (200 kW) - per month
+          unit: month
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 732
+          dsr_item_ref: ''
+          aliases:
+          - DG set 250kVA
+          - diesel generator large
+          typical_rate_range:
+            min: 70000
+            max: 140000
+          notes: For large sites with heavy equipment loads
+          data_source: estimated
+        - id: PRL.EQ.DGS.004
+          standard_name: DG set hire - 500 kVA (400 kW) - per month
+          unit: month
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 732
+          dsr_item_ref: ''
+          aliases:
+          - DG set 500kVA
+          - diesel generator extra large
+          typical_rate_range:
+            min: 120000
+            max: 250000
+          notes: For mega projects or multiple buildings
+          data_source: estimated
+      misc_equipment:
+        items:
+        - id: PRL.EQ.MSC.001
+          standard_name: Bar bending machine hire - per month
+          unit: month
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: BOCW Act
+          dsr_item_ref: ''
+          aliases:
+          - bar bending machine
+          - rebar bender
+          typical_rate_range:
+            min: 8000
+            max: 18000
+          notes: Hydraulic type for up to 32mm dia bars
+          data_source: estimated
+        - id: PRL.EQ.MSC.002
+          standard_name: Bar cutting machine hire - per month
+          unit: month
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: BOCW Act
+          dsr_item_ref: ''
+          aliases:
+          - bar cutting machine
+          - rebar cutter
+          typical_rate_range:
+            min: 6000
+            max: 14000
+          notes: For up to 40mm dia bars
+          data_source: estimated
+        - id: PRL.EQ.MSC.003
+          standard_name: Welding machine hire (electric arc) - per month
+          unit: month
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: BOCW Act
+          dsr_item_ref: ''
+          aliases:
+          - welding machine
+          - arc welder
+          - welding set
+          typical_rate_range:
+            min: 3000
+            max: 8000
+          notes: 400A capacity
+          data_source: estimated
+        - id: PRL.EQ.MSC.004
+          standard_name: Concrete mixer hire - 10/7 CFT - per month
+          unit: month
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: BOCW Act
+          dsr_item_ref: ''
+          aliases:
+          - concrete mixer 10/7
+          - site mixer
+          - mechanical mixer
+          typical_rate_range:
+            min: 8000
+            max: 16000
+          notes: Reversible drum mixer
+          data_source: estimated
+        - id: PRL.EQ.MSC.005
+          standard_name: Concrete vibrator (needle) hire - per month
+          unit: month
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: BOCW Act
+          dsr_item_ref: ''
+          aliases:
+          - needle vibrator
+          - concrete vibrator
+          - immersion vibrator
+          typical_rate_range:
+            min: 2000
+            max: 5000
+          notes: 40mm/60mm needle
+          data_source: estimated
+        - id: PRL.EQ.MSC.006
+          standard_name: Plate compactor hire - per month
+          unit: month
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: BOCW Act
+          dsr_item_ref: ''
+          aliases:
+          - plate compactor
+          - vibrating plate
+          - tamping plate
+          typical_rate_range:
+            min: 5000
+            max: 12000
+          notes: For backfilling and sub-grade compaction
+          data_source: estimated
+        - id: PRL.EQ.MSC.007
+          standard_name: Dewatering pump hire - submersible 5HP - per month
+          unit: month
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: BOCW Act
+          dsr_item_ref: ''
+          aliases:
+          - dewatering pump 5HP
+          - submersible pump hire
+          typical_rate_range:
+            min: 4000
+            max: 10000
+          notes: For basement/excavation dewatering
+          data_source: estimated
+        - id: PRL.EQ.MSC.008
+          standard_name: Shotcrete machine hire (wet process) - per day
+          unit: day
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: BOCW Act
+          dsr_item_ref: ''
+          aliases:
+          - shotcrete machine
+          - gunite machine
+          - concrete sprayer
+          typical_rate_range:
+            min: 12000
+            max: 25000
+          notes: For retaining walls, tunnels, slopes
+          data_source: estimated
+        - id: PRL.EQ.MSC.009
+          standard_name: Grouting pump hire - per day
+          unit: day
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: BOCW Act
+          dsr_item_ref: ''
+          aliases:
+          - grouting pump
+          - grout pump
+          - injection pump
+          typical_rate_range:
+            min: 5000
+            max: 12000
+          notes: For cement/epoxy grouting
+          data_source: estimated
+  testing_qc_extended:
+    categories:
+      concrete_testing_extended:
+        items:
+        - id: PRL.TX.CRC.001
+          standard_name: Concrete core test - extraction and compressive strength
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 516
+          dsr_item_ref: ''
+          aliases:
+          - core test concrete
+          - core cutting test
+          typical_rate_range:
+            min: 2000
+            max: 5000
+          notes: Including core cutting, capping, and testing
+          data_source: IS codes only
+        - id: PRL.TX.CRC.002
+          standard_name: Concrete Schmidt hammer test (rebound hammer)
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 13311 Part 2
+          dsr_item_ref: ''
+          aliases:
+          - Schmidt hammer test
+          - rebound hammer
+          - NDT concrete
+          typical_rate_range:
+            min: 500
+            max: 1200
+          notes: Non-destructive strength estimation per location
+          data_source: IS codes only
+        - id: PRL.TX.CRC.003
+          standard_name: Concrete cover meter survey (covermeter/profometer)
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1200
+          dsr_item_ref: ''
+          aliases:
+          - cover meter test
+          - profometer survey
+          - rebar cover check
+          typical_rate_range:
+            min: 50
+            max: 120
+          notes: Rebar cover verification per element
+          data_source: estimated
+        - id: PRL.TX.CRC.004
+          standard_name: Concrete carbonation test
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: BOCW Act
+          dsr_item_ref: ''
+          aliases:
+          - carbonation test
+          - phenolphthalein test concrete
+          typical_rate_range:
+            min: 1000
+            max: 2500
+          notes: Depth of carbonation measurement
+          data_source: estimated
+        - id: PRL.TX.CRC.005
+          standard_name: Half-cell potential survey (corrosion assessment)
+          unit: sqm
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: ASTM C876
+          dsr_item_ref: ''
+          aliases:
+          - half-cell test
+          - corrosion potential survey
+          typical_rate_range:
+            min: 80
+            max: 200
+          notes: Rebar corrosion probability assessment
+          data_source: IS codes only
+      water_testing:
+        items:
+        - id: PRL.TX.WTR.001
+          standard_name: Water testing for construction use - chemical analysis
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 456 Cl. 5.4
+          dsr_item_ref: ''
+          aliases:
+          - water test construction
+          - mixing water test
+          typical_rate_range:
+            min: 1500
+            max: 3500
+          notes: pH, chlorides, sulphates, organic matter
+          data_source: IS codes only
+        - id: PRL.TX.WTR.002
+          standard_name: Water tank leakage test (ponding test)
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: BOCW Act
+          dsr_item_ref: ''
+          aliases:
+          - ponding test
+          - tank leakage test
+          - water retention test
+          typical_rate_range:
+            min: 2000
+            max: 5000
+          notes: 24-hour water retention check
+          data_source: estimated
+      material_testing:
+        items:
+        - id: PRL.TX.MAT.001
+          standard_name: Aggregate testing - complete (sieve, specific gravity, water absorption, crushing value)
+          unit: set
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2386
+          dsr_item_ref: ''
+          aliases:
+          - aggregate test set
+          - coarse aggregate testing
+          typical_rate_range:
+            min: 3000
+            max: 6000
+          notes: Complete suite for 20mm/10mm aggregate
+          data_source: IS codes only
+        - id: PRL.TX.MAT.002
+          standard_name: Sand testing - complete (sieve, silt content, bulking, organic impurity)
+          unit: set
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 2386, IS 383
+          dsr_item_ref: ''
+          aliases:
+          - sand test set
+          - fine aggregate testing
+          typical_rate_range:
+            min: 2000
+            max: 4500
+          notes: Complete suite for fine aggregate
+          data_source: IS codes only
+        - id: PRL.TX.MAT.003
+          standard_name: Brick testing - compressive strength and water absorption
+          unit: set
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 3495
+          dsr_item_ref: ''
+          aliases:
+          - brick test
+          - brick crushing test
+          typical_rate_range:
+            min: 800
+            max: 2000
+          notes: Set of 5 bricks
+          data_source: IS codes only
+        - id: PRL.TX.MAT.004
+          standard_name: Cement testing - complete (fineness, setting time, soundness, compressive strength)
+          unit: set
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 4031
+          dsr_item_ref: ''
+          aliases:
+          - cement test set
+          - OPC testing
+          typical_rate_range:
+            min: 3000
+            max: 6000
+          notes: Complete cement quality tests
+          data_source: IS codes only
+  survey_extended:
+    categories:
+      survey_instruments:
+        items:
+        - id: PRL.SV.INS.001
+          standard_name: Total station survey - per day including instrument and operator
+          unit: day
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1200
+          dsr_item_ref: ''
+          aliases:
+          - total station survey
+          - ETS survey
+          typical_rate_range:
+            min: 3000
+            max: 8000
+          notes: Including trained surveyor
+          data_source: estimated
+        - id: PRL.SV.INS.002
+          standard_name: Auto level survey - per day including instrument and operator
+          unit: day
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1200
+          dsr_item_ref: ''
+          aliases:
+          - auto level survey
+          - levelling survey
+          typical_rate_range:
+            min: 2000
+            max: 5000
+          notes: For level checking and benchmarks
+          data_source: estimated
+        - id: PRL.SV.INS.003
+          standard_name: DGPS survey - per day including equipment and operator
+          unit: day
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1200
+          dsr_item_ref: ''
+          aliases:
+          - DGPS survey
+          - GPS survey
+          typical_rate_range:
+            min: 8000
+            max: 18000
+          notes: High accuracy positioning
+          data_source: estimated
+        - id: PRL.SV.INS.004
+          standard_name: Drone survey/aerial mapping - per acre
+          unit: acre
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1200
+          dsr_item_ref: ''
+          aliases:
+          - drone survey
+          - aerial survey
+          - UAV mapping
+          typical_rate_range:
+            min: 5000
+            max: 15000
+          notes: Including ortho-mosaic and contour generation
+          data_source: estimated
+        - id: PRL.SV.INS.005
+          standard_name: 3D laser scanning (LIDAR) - per day
+          unit: day
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: BOCW Act
+          dsr_item_ref: ''
+          aliases:
+          - laser scanning
+          - LIDAR survey
+          - 3D scanning
+          typical_rate_range:
+            min: 25000
+            max: 60000
+          notes: For as-built documentation and clash detection
+          data_source: estimated
+      setting_out:
+        items:
+        - id: PRL.SV.SET.001
+          standard_name: Setting out - column/foundation grid marking
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1200
+          dsr_item_ref: ''
+          aliases:
+          - grid marking
+          - column setting out
+          - foundation layout
+          typical_rate_range:
+            min: 100
+            max: 300
+          notes: Per grid point
+          data_source: estimated
+        - id: PRL.SV.SET.002
+          standard_name: Setting out - floor level transfer (per floor)
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1200
+          dsr_item_ref: ''
+          aliases:
+          - level transfer
+          - floor level marking
+          typical_rate_range:
+            min: 1500
+            max: 4000
+          notes: Benchmark transfer to each floor
+          data_source: estimated
+        - id: PRL.SV.SET.003
+          standard_name: As-built survey and documentation - per floor
+          unit: nos
+          construction_types:
+          - all
+          building_types:
+          - all
+          requires: []
+          is_code_ref: IS 1200
+          dsr_item_ref: ''
+          aliases:
+          - as-built survey
+          - as-built documentation
+          typical_rate_range:
+            min: 5000
+            max: 15000
+          notes: Including comparison with design drawings
+          data_source: estimated

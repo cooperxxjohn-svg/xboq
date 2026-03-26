@@ -3,10 +3,15 @@ Scope Reconciliation — cross-check requirements vs schedules vs BOQ.
 
 Detects missing links, quantity mismatches, and ambiguities between
 extraction outputs. All functions are pure (no Streamlit, no I/O).
+
+Also provides link_schedules_to_boq() which:
+  - Links schedule marks (D-01, W-05) to BOQ item descriptions.
+  - Creates stub BOQ items for unmatched schedule marks.
 """
 
 import re
-from typing import List, Dict, Any
+from dataclasses import dataclass, field
+from typing import List, Dict, Any, Optional, Set
 
 
 # =============================================================================
@@ -358,3 +363,150 @@ def reconcile_scope(
     ))
 
     return findings
+
+
+# =============================================================================
+# SCHEDULE ↔ BOQ LINKER  (Sprint 21 — 100% extraction feature)
+# =============================================================================
+
+@dataclass
+class ReconciliationResult:
+    """Output of link_schedules_to_boq()."""
+    linked_pairs: List[Dict] = field(default_factory=list)
+    """Each entry: {schedule_mark, boq_item_no, boq_description, confidence}."""
+
+    unmatched_schedule_marks: List[str] = field(default_factory=list)
+    """Marks that appeared in schedules but were not found in any BOQ item."""
+
+    stub_items: List[Dict] = field(default_factory=list)
+    """Synthesised BOQ-style dicts for each unmatched schedule mark."""
+
+
+# Maps schedule_type value to trade string
+_SCHED_TYPE_TO_TRADE: Dict[str, str] = {
+    "door":    "architectural",
+    "window":  "architectural",
+    "finish":  "finishes",
+    "fixture": "mep",
+    "hardware":"architectural",
+    "room":    "architectural",
+}
+_DEFAULT_TRADE = "architectural"
+
+
+def _normalize_mark(mark: str) -> str:
+    """Uppercase and strip separators for consistent comparison."""
+    return re.sub(r"[\s\-/]", "", mark.upper())
+
+
+def _build_mark_pattern(marks: List[str]) -> Optional[re.Pattern]:
+    """Build a compiled regex that matches any mark as a whole word."""
+    if not marks:
+        return None
+    escaped = [re.escape(m) for m in sorted(marks, key=len, reverse=True)]
+    return re.compile(r'\b(' + '|'.join(escaped) + r')\b', re.IGNORECASE)
+
+
+def link_schedules_to_boq(
+    schedules: List[dict],
+    boq_items: List[dict],
+) -> ReconciliationResult:
+    """
+    Link schedule marks to BOQ item descriptions.
+
+    Mutates boq_items in-place by adding ``linked_schedule_mark``.
+    Mutates schedule items in-place by adding ``matched_boq_item_nos``.
+
+    Args:
+        schedules:  Schedule rows from ExtractionResult.schedules.
+        boq_items:  BOQ items from ExtractionResult.boq_items.
+
+    Returns:
+        ReconciliationResult with linked_pairs, unmatched_schedule_marks,
+        and stub_items for unmatched marks.
+    """
+    result = ReconciliationResult()
+
+    # Initialise BOQ annotations regardless of schedule availability
+    for boq in boq_items:
+        boq.setdefault("linked_schedule_mark", None)
+
+    if not schedules:
+        return result
+
+    # --- Build mark lookup: normalised_mark → schedule_item ---
+    mark_lookup: Dict[str, dict] = {}
+    norm_to_original: Dict[str, str] = {}
+    for sched in schedules:
+        raw_mark = sched.get("mark", "")
+        if not raw_mark:
+            continue
+        norm = _normalize_mark(raw_mark)
+        if norm:
+            mark_lookup[norm] = sched
+            norm_to_original[norm] = raw_mark
+            sched.setdefault("matched_boq_item_nos", [])
+
+    if not mark_lookup:
+        return result
+
+    mark_pattern = _build_mark_pattern(list(norm_to_original.values()))
+    matched_norms: Set[str] = set()
+
+    # --- Scan BOQ items for mark appearances ---
+    for boq in boq_items:
+        if mark_pattern is None:
+            break
+        desc = boq.get("description", "") or ""
+        m = mark_pattern.search(desc)
+        if m:
+            found_mark = m.group(1)
+            norm = _normalize_mark(found_mark)
+            sched_item = mark_lookup.get(norm)
+            if sched_item:
+                boq["linked_schedule_mark"] = found_mark
+                item_no = boq.get("item_no") or boq.get("sr_no") or ""
+                sched_item["matched_boq_item_nos"].append(item_no)
+                matched_norms.add(norm)
+                result.linked_pairs.append({
+                    "schedule_mark":   found_mark,
+                    "boq_item_no":     item_no,
+                    "boq_description": desc[:120],
+                    "confidence":      0.90,
+                })
+
+    # --- Build stub items for unmatched marks ---
+    for norm, sched_item in mark_lookup.items():
+        if norm in matched_norms:
+            continue
+        raw_mark = norm_to_original[norm]
+        result.unmatched_schedule_marks.append(raw_mark)
+
+        sched_type = (sched_item.get("schedule_type") or "item").lower()
+        trade = _SCHED_TYPE_TO_TRADE.get(sched_type, _DEFAULT_TRADE)
+        size = (
+            sched_item.get("size")
+            or sched_item.get("dimensions")
+            or "size TBC"
+        )
+        qty = sched_item.get("qty") or sched_item.get("quantity")
+        try:
+            qty = float(qty) if qty is not None else None
+        except (TypeError, ValueError):
+            qty = None
+
+        result.stub_items.append({
+            "item_no":              None,
+            "description":          f"{sched_type.title()} {raw_mark}, {size}",
+            "unit":                 "nos",
+            "qty":                  qty,
+            "rate":                 None,
+            "section":              f"FROM SCHEDULE — {sched_type.upper()}",
+            "source":               "schedule_stub",
+            "confidence":           0.40,
+            "source_page":          sched_item.get("source_page", 0),
+            "trade":                trade,
+            "linked_schedule_mark": raw_mark,
+        })
+
+    return result

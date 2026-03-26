@@ -14,7 +14,7 @@ NO PRICING - pure scope and quantity extraction.
 from datetime import datetime
 from enum import Enum
 from typing import Any, Dict, List, Optional, Set, Tuple
-from pydantic import BaseModel, Field, field_validator, model_validator
+from pydantic import BaseModel, ConfigDict, Field, field_serializer, field_validator, model_validator
 import uuid
 
 
@@ -108,6 +108,8 @@ class Evidence(BaseModel):
     Evidence linking a claim to its source in the drawing.
     Every extracted fact must have evidence.
     """
+    model_config = ConfigDict(frozen=True)  # Evidence is immutable
+
     page: int = Field(ge=0, description="0-indexed page number")
     source: EvidenceSource = Field(description="Extraction method")
     bbox: Optional[Tuple[float, float, float, float]] = Field(
@@ -116,9 +118,6 @@ class Evidence(BaseModel):
     )
     snippet: str = Field(default="", max_length=500, description="Text snippet or description")
     table_id: Optional[str] = Field(default=None, description="Table identifier if from schedule")
-
-    class Config:
-        frozen = True  # Evidence is immutable
 
 
 class DrawingMeta(BaseModel):
@@ -186,9 +185,9 @@ class ScopeItem(BaseModel):
             self.pages_found = {e.page for e in self.evidence}
         return self
 
-    class Config:
-        # Allow set serialization
-        json_encoders = {set: list}
+    @field_serializer('pages_found')
+    def serialize_pages_found(self, v: Set[int]) -> list:
+        return sorted(v)
 
 
 class BOQItem(BaseModel):
@@ -313,8 +312,13 @@ class CoverageRecord(BaseModel):
             self.sources_used = {e.source for e in self.contributed_by}
         return self
 
-    class Config:
-        json_encoders = {set: list}
+    @field_serializer('pages_used')
+    def serialize_pages_used(self, v: Set[int]) -> list:
+        return sorted(v)
+
+    @field_serializer('sources_used')
+    def serialize_sources_used(self, v: Set[EvidenceSource]) -> list:
+        return [s.value for s in sorted(v, key=lambda x: x.value)]
 
 
 class Conflict(BaseModel):
@@ -397,11 +401,9 @@ class EstimatePackage(BaseModel):
         """Export to JSON string."""
         return self.model_dump_json(indent=2)
 
-    class Config:
-        json_encoders = {
-            datetime: lambda v: v.isoformat(),
-            set: list,
-        }
+    @field_serializer('created_at')
+    def serialize_created_at(self, v: datetime) -> str:
+        return v.isoformat()
 
 
 # =============================================================================
