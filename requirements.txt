@@ -1,41 +1,79 @@
-# Floor Plan Room & Area Engine - Dependencies
-# Python 3.10+
+# xBOQ.ai — Production Dependencies
+# Python 3.11+
 
-# Core
-numpy>=1.24.0
+# ── Core ──────────────────────────────────────────────────────────────
+numpy>=1.24.0,<2.0.0
 opencv-python>=4.8.0
 scikit-image>=0.21.0
 shapely>=2.0.0
 
-# PDF Processing
-PyMuPDF>=1.23.0
-pdfplumber>=0.10.0                 # Used by table_router for text-PDF table extraction
-camelot-py[cv]>=0.11.0             # Optional: requires ghostscript system package for lattice mode
-tabula-py>=2.9.0
+# ── PDF Processing ────────────────────────────────────────────────────
+PyMuPDF>=1.23.0                    # Fast PDF text/image extraction
+pdfplumber>=0.10.0                 # Table extraction from text-layer PDFs
+camelot-py[cv]>=0.11.0             # Lattice table extraction (needs ghostscript)
+tabula-py>=2.9.0                   # Fallback table extraction via Java
 
-# OCR (optional but recommended)
-pytesseract>=0.3.10
-
-# Image Processing
+# ── OCR ───────────────────────────────────────────────────────────────
+pytesseract>=0.3.10                # Tesseract OCR (needs tesseract-ocr system pkg)
 Pillow>=10.0.0
+
+# ── Image Processing ──────────────────────────────────────────────────
 scipy>=1.11.0
 
-# Data
+# ── Data ──────────────────────────────────────────────────────────────
 pandas>=2.0.0
 pyyaml>=6.0
 
-# Visualization
+# ── Visualization ─────────────────────────────────────────────────────
 matplotlib>=3.7.0
 plotly>=5.18.0
 
-# Web UI
+# ── Web UI ────────────────────────────────────────────────────────────
 streamlit>=1.28.0
 
-# Excel Export
+# ── Export: Excel ─────────────────────────────────────────────────────
 openpyxl>=3.1.0
 
-# Word Export
+# ── Export: Word DOCX ─────────────────────────────────────────────────
 python-docx>=0.8.11
 
-# Utilities
+# ── Export: PDF (Bid Summary + Evidence Appendix) ─────────────────────
+reportlab>=4.0.0                   # Was missing — caused ImportError on PDF export
+
+# ── AI / LLM (optional — pipeline falls back to templates without these) ──
+openai>=1.12.0                     # GPT-4 enrichment
+anthropic>=0.18.0                  # Claude enrichment (used if no OpenAI key)
+
+# ── Semantic Intelligence Layer (optional — falls back gracefully if absent) ──
+chromadb>=0.4.0                    # Persistent vector store for bid embeddings
+sentence-transformers>=2.2.0       # all-MiniLM-L6-v2 offline embeddings
+
+# ── Error Tracking ────────────────────────────────────────────────────
+sentry-sdk>=1.40.0                 # Set SENTRY_DSN env var to activate
+
+# ── Validation (Pydantic models used in analysis pipeline) ───────────────────
+pydantic>=2.0.0                    # Data models for pipeline payload, API schemas
+
+# ── Streamlit extras ─────────────────────────────────────────────────────────
+streamlit-image-coordinates>=0.4.0 # Click-coordinate extraction from st.image()
+requests>=2.31.0                   # HTTP client (outbound webhooks, scraper)
+
+# ── Utilities ─────────────────────────────────────────────────────────
 tqdm>=4.65.0
+
+# ── Tier 4: CAD/DXF import (optional — falls back gracefully if absent) ──
+# ezdxf>=1.0.0                   # pip install ezdxf  (CAD/DXF file parsing)
+
+# ── Email ────────────────────────────────────────────────────────────────────
+sendgrid>=6.11.0                   # SendGrid email transport (set SENDGRID_API_KEY to activate)
+
+# ── Auth / Sessions (P0 pre-pilot) ──────────────────────────────────────
+PyJWT>=2.8.0                       # session tokens for API + Streamlit UI
+
+# ── Database (enterprise pilot readiness) ────────────────────────────────────
+SQLAlchemy>=2.0.0                  # ORM — SQLite (dev) + PostgreSQL (prod) via DATABASE_URL
+psycopg2-binary>=2.9.9             # PostgreSQL adapter (binary — no libpq build dep)
+
+# ── Job queue (distributed pipeline workers) ─────────────────────────────────
+celery[redis]>=5.3.0               # Distributed task queue — Redis-backed, survives restarts
+flower>=2.0.0                      # Celery monitoring dashboard (port 5555)

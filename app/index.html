@@ -2618,8 +2618,8 @@
             <div class="cta-content fade-in">
                 <h2>Want to See Your <span class="gradient-text">Tender's Risk Map?</span></h2>
                 <p class="subtitle">Schedule a demo and run xBOQ on one of your real drawing sets. We'll walk you through coverage score, RFIs, and GO / NO-GO recommendation.</p>
-                <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 20px;">
-                    <a href="https://xboq-demo.streamlit.app" target="_blank" class="btn-primary">
+                <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 16px;">
+                    <a href="https://xboq-demo.streamlit.app" target="_blank" class="btn-primary" id="demo-launch-btn">
                         Try Live Demo
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                     </a>
@@ -2627,6 +2627,9 @@
                         Schedule a Demo
                     </a>
                 </div>
+                <p style="font-size:0.8rem;color:rgba(255,255,255,0.45);margin:0 0 8px;">
+                    Demo runs on Streamlit Community Cloud — requires a free GitHub or Google login.
+                </p>
                 <p class="cta-note">Questions? <a href="mailto:contact@xboq.ai" style="color: var(--purple-primary); text-decoration: underline;">contact@xboq.ai</a></p>
             </div>
         </div>
@@ -2725,6 +2728,73 @@
 
         const dashboard = document.querySelector('.dashboard-window');
         if (dashboard) dashboardObserver.observe(dashboard);
+
+        // ── Demo wake-up overlay ────────────────────────────────────────────
+        // Streamlit Community Cloud sleeps inactive apps.
+        // When a user clicks "Try Demo", we show an overlay with a countdown
+        // so they don't land on the Streamlit sleeping screen cold.
+        const DEMO_URL = 'https://xboq-demo.streamlit.app';
+        const WAKE_SECONDS = 18;
+
+        // Inject overlay HTML once
+        const overlayHTML = `
+        <div id="demo-wake-overlay" style="
+            display:none; position:fixed; inset:0; z-index:9999;
+            background:rgba(10,10,20,0.92); backdrop-filter:blur(6px);
+            flex-direction:column; align-items:center; justify-content:center;
+            font-family:inherit; color:#fff; text-align:center; padding:24px;">
+          <div style="max-width:420px;">
+            <div id="demo-spinner" style="
+                width:52px; height:52px; border-radius:50%;
+                border:4px solid rgba(140,69,255,0.3);
+                border-top-color:#8c45ff;
+                animation:spin 0.9s linear infinite;
+                margin:0 auto 24px;">
+            </div>
+            <h2 style="font-size:1.4rem;margin:0 0 10px;font-weight:700;">Waking up the demo&hellip;</h2>
+            <p style="color:rgba(255,255,255,0.65);margin:0 0 20px;font-size:0.95rem;">
+                Streamlit spins down after inactivity.<br>Opening in <strong id="demo-countdown">${WAKE_SECONDS}</strong>s&hellip;
+            </p>
+            <div style="background:rgba(140,69,255,0.15);border-radius:8px;height:6px;overflow:hidden;">
+                <div id="demo-progress-bar" style="height:100%;background:#8c45ff;width:0%;transition:width 1s linear;"></div>
+            </div>
+            <button onclick="document.getElementById('demo-wake-overlay').style.display='none'" style="
+                margin-top:20px; background:none; border:1px solid rgba(255,255,255,0.2);
+                color:rgba(255,255,255,0.5); border-radius:6px; padding:6px 14px;
+                cursor:pointer; font-size:0.8rem;">Cancel</button>
+          </div>
+        </div>
+        <style>@keyframes spin{to{transform:rotate(360deg)}}</style>`;
+        document.body.insertAdjacentHTML('beforeend', overlayHTML);
+
+        function openDemoWithWakeup(e) {
+            e.preventDefault();
+            const overlay = document.getElementById('demo-wake-overlay');
+            overlay.style.display = 'flex';
+            let remaining = WAKE_SECONDS;
+            const bar = document.getElementById('demo-progress-bar');
+            const counter = document.getElementById('demo-countdown');
+            bar.style.width = '0%';
+            // Trigger CSS transition on next frame
+            requestAnimationFrame(() => {
+                bar.style.width = '100%';
+            });
+            const tick = setInterval(() => {
+                remaining--;
+                counter.textContent = remaining;
+                if (remaining <= 0) {
+                    clearInterval(tick);
+                    overlay.style.display = 'none';
+                    window.open(DEMO_URL, '_blank');
+                }
+            }, 1000);
+        }
+
+        // Only attach wake-up overlay to the main CTA button (not nav scroll links)
+        // The overlay is skipped if the app is private (login required) since the
+        // countdown only makes sense for a sleeping-but-public app.
+        // For now, just let links open directly — login is required on the Streamlit side.
+        // Re-enable when the app is made public on Streamlit Community Cloud.
     </script>
 </body>
 </html>
