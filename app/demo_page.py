@@ -6503,6 +6503,10 @@ def _render_analysis_results_preview(result, project_id: str, uploaded_files: Li
             "\U0001f500 Compare",
             # Tier 4: attentive.ai parity
             "\U0001f4d0 Sheet Takeoff",
+            # T5: NLQ, Addendum, Scope Gap
+            "\U0001f4ac Chat",
+            "\U0001f4cb Addendum",
+            "\U0001f50d Scope Gaps",
         ]
     else:
         _tab_labels = [
@@ -6541,6 +6545,10 @@ def _render_analysis_results_preview(result, project_id: str, uploaded_files: Li
             "\U0001f500 Compare",
             # Tier 4: attentive.ai parity
             "\U0001f4d0 Sheet Takeoff",
+            # T5: NLQ, Addendum, Scope Gap
+            "\U0001f4ac Chat",
+            "\U0001f4cb Addendum",
+            "\U0001f50d Scope Gaps",
         ]
 
     # Sprint 20B: Stability guard helper — prevents one tab crash from blanking all tabs
@@ -9629,6 +9637,30 @@ def _render_analysis_results_preview(result, project_id: str, uploaded_files: Li
             render_sheet_takeoff_tab(payload or {})
         except Exception as _st_err:
             _handle_tab_error("Sheet Takeoff", _st_err)
+
+    # T5 — Tab 32: Chat with Tender (Natural Language Query)
+    with preview_tabs[32]:
+        try:
+            from app.tender_chat_tab import render_tender_chat_tab
+            render_tender_chat_tab(payload or {}, _make_widget_key)
+        except Exception as _tc_err:
+            _handle_tab_error("Chat with Tender", _tc_err)
+
+    # T5 — Tab 33: Addendum / Corrigendum Tracker
+    with preview_tabs[33]:
+        try:
+            from app.addendum_tab import render_addendum_tab
+            render_addendum_tab(payload or {}, _make_widget_key)
+        except Exception as _add_err:
+            _handle_tab_error("Addendum Tracker", _add_err)
+
+    # T5 — Tab 34: Scope Gap Detector
+    with preview_tabs[34]:
+        try:
+            from app.scope_gap_tab import render_scope_gap_tab
+            render_scope_gap_tab(payload or {}, _make_widget_key)
+        except Exception as _sg_err:
+            _handle_tab_error("Scope Gap Detector", _sg_err)
 
     # =========================================================================
     # ACTION BUTTONS
