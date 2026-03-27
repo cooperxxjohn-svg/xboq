@@ -1,9 +1,6 @@
 [server]
 headless = true
-enableCORS = true
-port = 8502
 maxUploadSize = 500
-enableXsrfProtection = false
 maxMessageSize = 500
 
 [browser]
