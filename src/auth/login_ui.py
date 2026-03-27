@@ -338,9 +338,13 @@ def get_current_user() -> Optional[Dict]:
 
 def render_auth_gate() -> Optional[Dict]:
     """
-    If Supabase is not configured, return a guest user and skip login.
-    If configured, show login form and return user only after auth.
+    Auth gate — currently bypassed (login disabled for demo).
+    Re-enable by removing the early return below.
     """
+    # Login disabled for demo — always return guest
+    return {"id": "guest", "email": "guest@local", "org_id": "local"}
+
+    # pylint: disable=unreachable
     if not is_configured():
         return {"id": "guest", "email": "guest@local", "org_id": "local"}
 
