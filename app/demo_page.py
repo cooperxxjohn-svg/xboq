@@ -9993,43 +9993,33 @@ def _run_analysis_with_progress(uploaded_files: List[Any], dev_mode: bool = Fals
 
 def _render_login_page():
     """Sprint 16 / Dark-theme redesign: full-screen dark purple login."""
-    # ── Extra styles scoped to the login card ──────────────────────────────
+    # ── CSS: target Streamlit's native form container for the card look ──
     st.markdown("""
     <style>
-    /* Particle canvas injection handled via JS below */
-    .xboq-login-wrap {
-        display: flex; flex-direction: column;
-        align-items: center; justify-content: center;
-        min-height: 70vh; padding: 2rem 1rem;
+    /* Hide default padding so login fills the screen */
+    .main .block-container { padding-top: 0 !important; }
+
+    /* ── Vertical centre helper ── */
+    .xboq-login-spacer { height: 12vh; }
+
+    /* ── Header block (logo + text above the form) ── */
+    .xboq-lheader {
+        text-align: center;
+        padding: 2rem 1rem 1.25rem;
     }
-    .xboq-lcard {
-        width: 100%; max-width: 420px;
-        background: rgba(17,17,19,0.82);
-        border: 1px solid rgba(124,58,237,0.28);
-        border-radius: 20px; padding: 2.5rem 2rem;
-        backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-        box-shadow: 0 0 0 1px rgba(124,58,237,0.1),
-                    0 32px 64px rgba(0,0,0,0.45),
-                    0 0 100px rgba(124,58,237,0.07);
-        position: relative; overflow: hidden;
-    }
-    .xboq-lcard::before {
-        content: ''; position: absolute;
-        top: 0; left: 0; right: 0; height: 1px;
-        background: linear-gradient(90deg, transparent, rgba(124,58,237,0.55), transparent);
-    }
-    .xboq-llogo {
-        display: flex; align-items: center; gap: 0.6rem; margin-bottom: 1.5rem;
+    .xboq-llogo-row {
+        display: flex; align-items: center; justify-content: center;
+        gap: 0.6rem; margin-bottom: 1rem;
     }
     .xboq-llogo-icon {
         width: 36px; height: 36px;
         background: linear-gradient(135deg, #7c3aed, #a78bfa);
-        border-radius: 9px; display: flex; align-items: center;
+        border-radius: 9px; display: inline-flex; align-items: center;
         justify-content: center; font-size: 1.1rem; font-weight: 800;
-        color: white; box-shadow: 0 0 20px rgba(124,58,237,0.5); flex-shrink: 0;
+        color: white; box-shadow: 0 0 20px rgba(124,58,237,0.5);
     }
-    .xboq-llogo-text {
-        font-size: 1.4rem; font-weight: 800;
+    .xboq-llogo-name {
+        font-size: 1.5rem; font-weight: 800;
         background: linear-gradient(135deg, #e4e4e7 30%, #a78bfa 100%);
         -webkit-background-clip: text; -webkit-text-fill-color: transparent;
         letter-spacing: -0.02em;
@@ -10037,60 +10027,84 @@ def _render_login_page():
     .xboq-lbadge {
         display: inline-flex; align-items: center; gap: 0.4rem;
         background: rgba(124,58,237,0.12); border: 1px solid rgba(124,58,237,0.28);
-        border-radius: 20px; padding: 0.22rem 0.8rem;
+        border-radius: 20px; padding: 0.22rem 0.85rem;
         font-size: 0.72rem; font-weight: 600; color: #a78bfa;
-        letter-spacing: 0.03em; margin-bottom: 1rem;
+        letter-spacing: 0.03em; margin-bottom: 0.85rem;
     }
     .xboq-lbadge-dot {
         width: 6px; height: 6px; border-radius: 50%;
         background: #4ade80; box-shadow: 0 0 6px #4ade80;
+        display: inline-block;
     }
     .xboq-lheadline {
-        font-size: 1.45rem; font-weight: 700; color: #e4e4e7;
-        letter-spacing: -0.02em; margin-bottom: 0.35rem; line-height: 1.2;
+        font-size: 1.5rem; font-weight: 700; color: #e4e4e7;
+        letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 0.3rem;
     }
     .xboq-lsub {
-        font-size: 0.875rem; color: #71717a; margin-bottom: 1.75rem; line-height: 1.5;
+        font-size: 0.875rem; color: #71717a; line-height: 1.5;
     }
-    .xboq-lcard .stTextInput label {
-        font-size: 0.75rem !important; font-weight: 600 !important;
+
+    /* ── Card styling via the Streamlit form container ── */
+    [data-testid="stForm"] {
+        background: rgba(17,17,19,0.88) !important;
+        border: 1px solid rgba(124,58,237,0.28) !important;
+        border-radius: 20px !important;
+        padding: 1.75rem 1.5rem !important;
+        box-shadow: 0 0 0 1px rgba(124,58,237,0.08),
+                    0 24px 56px rgba(0,0,0,0.5),
+                    0 0 80px rgba(124,58,237,0.07) !important;
+        position: relative !important;
+    }
+    /* Gradient top line on card */
+    [data-testid="stForm"]::before {
+        content: '' !important;
+        position: absolute !important; top: 0; left: 0; right: 0; height: 1px !important;
+        background: linear-gradient(90deg, transparent, rgba(124,58,237,0.55), transparent) !important;
+        border-radius: 20px 20px 0 0 !important;
+    }
+
+    /* ── Form inputs ── */
+    [data-testid="stForm"] .stTextInput label {
+        font-size: 0.72rem !important; font-weight: 600 !important;
         color: #71717a !important; text-transform: uppercase !important;
         letter-spacing: 0.07em !important;
     }
-    .xboq-lcard .stTextInput > div > div > input {
+    [data-testid="stForm"] .stTextInput > div > div > input {
         background: rgba(255,255,255,0.04) !important;
         border: 1px solid rgba(255,255,255,0.1) !important;
         border-radius: 10px !important; color: #e4e4e7 !important;
-        font-size: 0.95rem !important;
+        font-size: 0.93rem !important;
         transition: border-color 0.15s, box-shadow 0.15s !important;
     }
-    .xboq-lcard .stTextInput > div > div > input:focus {
+    [data-testid="stForm"] .stTextInput > div > div > input:focus {
         border-color: rgba(124,58,237,0.6) !important;
         box-shadow: 0 0 0 3px rgba(124,58,237,0.12) !important;
     }
-    .xboq-lcard .stFormSubmitButton > button {
+    /* ── Submit button ── */
+    [data-testid="stForm"] .stFormSubmitButton > button {
         width: 100% !important;
         background: linear-gradient(135deg, #7c3aed, #6d28d9) !important;
         color: white !important; border: none !important;
         border-radius: 10px !important; font-size: 0.95rem !important;
-        font-weight: 600 !important; cursor: pointer !important;
+        font-weight: 600 !important; letter-spacing: 0.01em !important;
         transition: all 0.15s ease !important;
-        box-shadow: 0 4px 24px rgba(124,58,237,0.35) !important;
+        box-shadow: 0 4px 20px rgba(124,58,237,0.4) !important;
         margin-top: 0.25rem !important;
     }
-    .xboq-lcard .stFormSubmitButton > button:hover {
+    [data-testid="stForm"] .stFormSubmitButton > button:hover {
         background: linear-gradient(135deg, #6d28d9, #5b21b6) !important;
-        box-shadow: 0 6px 32px rgba(124,58,237,0.5) !important;
+        box-shadow: 0 6px 28px rgba(124,58,237,0.55) !important;
         transform: translateY(-1px) !important;
     }
+
+    /* ── Stats below card ── */
     .xboq-lstats {
-        display: flex; justify-content: space-between; gap: 0.5rem;
-        margin-top: 1.5rem; padding-top: 1.25rem;
-        border-top: 1px solid rgba(255,255,255,0.06);
+        display: flex; justify-content: center; gap: 2rem;
+        padding: 1.25rem 0 0.5rem;
     }
-    .xboq-lstat { text-align: center; flex: 1; }
+    .xboq-lstat { text-align: center; }
     .xboq-lstat-val {
-        display: block; font-size: 1rem; font-weight: 700;
+        display: block; font-size: 1.05rem; font-weight: 700;
         background: linear-gradient(135deg, #e4e4e7, #a78bfa);
         -webkit-background-clip: text; -webkit-text-fill-color: transparent;
     }
@@ -10126,24 +10140,27 @@ def _render_login_page():
     </script>
     """, unsafe_allow_html=True)
 
-    # ── Centered card ──
+    # ── Vertical spacer + layout ──
+    st.markdown('<div class="xboq-login-spacer"></div>', unsafe_allow_html=True)
+
     _, col, _ = st.columns([1, 1.6, 1])
     with col:
-        st.markdown('<div class="xboq-login-wrap">', unsafe_allow_html=True)
-        st.markdown('<div class="xboq-lcard">', unsafe_allow_html=True)
-
+        # Logo + headline (pure HTML — renders correctly above the form)
         st.markdown("""
-        <div class="xboq-llogo">
-            <div class="xboq-llogo-icon">X</div>
-            <span class="xboq-llogo-text">xBOQ</span>
+        <div class="xboq-lheader">
+            <div class="xboq-llogo-row">
+                <span class="xboq-llogo-icon">X</span>
+                <span class="xboq-llogo-name">xBOQ</span>
+            </div>
+            <div class="xboq-lbadge">
+                <span class="xboq-lbadge-dot"></span>&nbsp;Bid Engineer Platform
+            </div>
+            <div class="xboq-lheadline">Sign in to your workspace</div>
+            <div class="xboq-lsub">AI-powered tender analysis for construction contractors.</div>
         </div>
-        <div class="xboq-lbadge">
-            <span class="xboq-lbadge-dot"></span>Bid Engineer Platform
-        </div>
-        <div class="xboq-lheadline">Sign in to your workspace</div>
-        <div class="xboq-lsub">AI-powered tender analysis for construction contractors.</div>
         """, unsafe_allow_html=True)
 
+        # Form — Streamlit renders this with data-testid="stForm", styled above
         with st.form("xboq_login"):
             tenant_id = st.text_input("Tenant ID", placeholder="your-org")
             password  = st.text_input("Password", type="password", placeholder="••••••••")
@@ -10165,6 +10182,7 @@ def _render_login_page():
                     except Exception as e:
                         st.error(f"Authentication error: {e}")
 
+        # Stats below the card
         st.markdown("""
         <div class="xboq-lstats">
             <div class="xboq-lstat">
@@ -10181,8 +10199,6 @@ def _render_login_page():
             </div>
         </div>
         """, unsafe_allow_html=True)
-
-        st.markdown('</div></div>', unsafe_allow_html=True)
 
 
 def _render_job_progress(job):
