@@ -1,7 +1,17 @@
 [server]
+headless = true
+enableCORS = true
+port = 8502
 maxUploadSize = 500
 enableXsrfProtection = false
 maxMessageSize = 500
 
 [browser]
 gatherUsageStats = false
+
+[theme]
+primaryColor = "#7c3aed"
+backgroundColor = "#09090b"
+secondaryBackgroundColor = "#111113"
+textColor = "#e4e4e7"
+font = "sans serif"

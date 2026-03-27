@@ -745,6 +745,191 @@ st.markdown("""
     .stDataFrame { font-size: 0.82rem !important; }
     /* Expander spacing */
     .streamlit-expanderHeader { font-size: 0.88rem !important; }
+
+    /* ═══════════════════════════════════════════════════════════════
+       DARK PURPLE THEME — matching xBOQ.ai website
+    ═══════════════════════════════════════════════════════════════ */
+
+    /* ── Background glow blobs (ambient violet/indigo) ── */
+    .stApp::before {
+        content: '';
+        position: fixed;
+        top: -200px; left: -150px;
+        width: 700px; height: 700px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(124,58,237,0.16) 0%, transparent 65%);
+        pointer-events: none;
+        z-index: 0;
+        animation: xboq-glow-a 9s ease-in-out infinite alternate;
+    }
+    .stApp::after {
+        content: '';
+        position: fixed;
+        bottom: -200px; right: -200px;
+        width: 600px; height: 600px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(99,40,220,0.13) 0%, transparent 65%);
+        pointer-events: none;
+        z-index: 0;
+        animation: xboq-glow-b 12s ease-in-out infinite alternate-reverse;
+    }
+    @keyframes xboq-glow-a {
+        0%   { transform: translate(0, 0) scale(1); }
+        100% { transform: translate(35px, 28px) scale(1.07); }
+    }
+    @keyframes xboq-glow-b {
+        0%   { transform: translate(0, 0) scale(1); }
+        100% { transform: translate(-25px, -20px) scale(1.06); }
+    }
+
+    /* ── Dot grid overlay ── */
+    .main {
+        background-image:
+            radial-gradient(circle, rgba(124,58,237,0.11) 1px, transparent 1px),
+            radial-gradient(circle, rgba(167,139,250,0.06) 1px, transparent 1px) !important;
+        background-size: 52px 52px, 104px 104px !important;
+        background-position: 0 0, 26px 26px !important;
+    }
+
+    /* ── KPI glow cards ── */
+    .kpi-card {
+        background: rgba(17,17,19,0.8);
+        border: 1px solid rgba(124,58,237,0.2);
+        border-radius: 14px;
+        padding: 1.25rem;
+        text-align: center;
+        transition: border-color 0.2s, box-shadow 0.2s;
+        position: relative;
+        overflow: hidden;
+    }
+    .kpi-card::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; right: 0; height: 1px;
+        background: linear-gradient(90deg, transparent, rgba(124,58,237,0.5), transparent);
+    }
+    .kpi-card:hover {
+        border-color: rgba(124,58,237,0.45);
+        box-shadow: 0 0 30px rgba(124,58,237,0.12);
+    }
+    .kpi-value {
+        font-size: 2rem; font-weight: 800; line-height: 1;
+        background: linear-gradient(135deg, #e4e4e7 20%, #a78bfa 100%);
+        -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        margin-bottom: 0.2rem;
+    }
+    .kpi-value.accent {
+        background: linear-gradient(135deg, #c4b5fd, #7c3aed);
+        -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .kpi-value.warn  { -webkit-text-fill-color: #fbbf24 !important; background: none; }
+    .kpi-value.danger  { -webkit-text-fill-color: #f87171 !important; background: none; }
+    .kpi-value.success { -webkit-text-fill-color: #4ade80 !important; background: none; }
+    .kpi-label {
+        font-size: 0.68rem; font-weight: 600; color: #52525b;
+        text-transform: uppercase; letter-spacing: 0.08em;
+    }
+    .kpi-sublabel { font-size: 0.72rem; color: #71717a; margin-top: 0.1rem; }
+
+    /* ── xBOQ stat bar (hero-style, like website) ── */
+    .xboq-stat-bar {
+        display: flex; gap: 0; overflow: hidden;
+        background: rgba(17,17,19,0.7);
+        border: 1px solid rgba(124,58,237,0.18);
+        border-radius: 14px;
+        margin: 1rem 0;
+    }
+    .xboq-stat-item {
+        flex: 1; text-align: center;
+        padding: 1rem 0.5rem;
+        border-right: 1px solid rgba(255,255,255,0.05);
+    }
+    .xboq-stat-item:last-child { border-right: none; }
+    .xboq-stat-item:hover { background: rgba(124,58,237,0.05); transition: background 0.2s; }
+    .xboq-stat-val {
+        display: block;
+        font-size: 1.5rem; font-weight: 800; line-height: 1;
+        background: linear-gradient(135deg, #e4e4e7, #a78bfa);
+        -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .xboq-stat-val.orange { -webkit-text-fill-color: #fb923c !important; background: none; }
+    .xboq-stat-val.green  { -webkit-text-fill-color: #4ade80 !important; background: none; }
+    .xboq-stat-lbl {
+        display: block;
+        font-size: 0.63rem; font-weight: 600; color: #52525b;
+        text-transform: uppercase; letter-spacing: 0.07em;
+        margin-top: 0.2rem;
+    }
+    .xboq-stat-sub {
+        display: block; font-size: 0.7rem; color: #3f3f46; margin-top: 0.05rem;
+    }
+
+    /* ── Glow divider ── */
+    .xboq-divider {
+        height: 1px;
+        background: linear-gradient(90deg,
+            transparent 0%, rgba(124,58,237,0.4) 30%,
+            rgba(167,139,250,0.5) 50%,
+            rgba(124,58,237,0.4) 70%, transparent 100%);
+        margin: 1.5rem 0; border: none;
+    }
+
+    /* ── Gradient headings ── */
+    .xboq-heading {
+        font-size: 1.6rem; font-weight: 800;
+        background: linear-gradient(135deg, #e4e4e7 30%, #a78bfa 100%);
+        -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 0.25rem;
+    }
+    .xboq-subheading { font-size: 0.9rem; color: #71717a; line-height: 1.6; }
+
+    /* ── Purple badge ── */
+    .xboq-badge {
+        display: inline-flex; align-items: center; gap: 0.35rem;
+        background: rgba(124,58,237,0.12);
+        border: 1px solid rgba(124,58,237,0.3);
+        border-radius: 20px; padding: 0.2rem 0.75rem;
+        font-size: 0.72rem; font-weight: 600; color: #a78bfa;
+        letter-spacing: 0.03em;
+    }
+    .xboq-badge-dot {
+        width: 5px; height: 5px; border-radius: 50%;
+        background: #4ade80; box-shadow: 0 0 6px #4ade80; flex-shrink: 0;
+    }
+
+    /* ── Glass panel ── */
+    .xboq-glass {
+        background: rgba(17,17,19,0.7);
+        border: 1px solid rgba(124,58,237,0.15);
+        border-radius: 16px; padding: 1.5rem;
+        backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+        position: relative; overflow: hidden;
+    }
+    .xboq-glass::before {
+        content: '';
+        position: absolute; top: 0; left: 0; right: 0; height: 1px;
+        background: linear-gradient(90deg, transparent, rgba(124,58,237,0.4), transparent);
+    }
+
+    /* ── Pulsing live dot ── */
+    .live-dot {
+        display: inline-block; width: 8px; height: 8px; border-radius: 50%;
+        background: #4ade80; box-shadow: 0 0 0 0 rgba(74,222,128,0.4);
+        animation: pulse-live 2s ease-in-out infinite;
+        margin-right: 0.35rem; vertical-align: middle;
+    }
+    @keyframes pulse-live {
+        0%   { box-shadow: 0 0 0 0 rgba(74,222,128,0.5); }
+        70%  { box-shadow: 0 0 0 8px rgba(74,222,128,0); }
+        100% { box-shadow: 0 0 0 0 rgba(74,222,128,0); }
+    }
+
+    /* ── Custom scrollbar ── */
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: #09090b; }
+    ::-webkit-scrollbar-thumb { background: rgba(124,58,237,0.35); border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: rgba(124,58,237,0.6); }
+
 </style>
 """, unsafe_allow_html=True)
 
@@ -923,33 +1108,35 @@ def render_decision_banner(demo: DemoAnalysis):
         """, unsafe_allow_html=True)
 
     with col2:
-        # Quick stats row
+        # Quick stats row — xBOQ.ai hero-style stat bar
+        _blockers_cls = "orange" if demo.blockers_count > 0 else "green"
         st.markdown("""
-        <div class="quick-stats">
-            <div class="quick-stat">
-                <div class="quick-stat-value">{pages}</div>
-                <div class="quick-stat-label">Pages</div>
+        <div class="xboq-stat-bar">
+            <div class="xboq-stat-item">
+                <span class="xboq-stat-val">{pages}</span>
+                <span class="xboq-stat-lbl">Pages</span>
             </div>
-            <div class="quick-stat">
-                <div class="quick-stat-value">{blockers}</div>
-                <div class="quick-stat-label">Blockers</div>
+            <div class="xboq-stat-item">
+                <span class="xboq-stat-val {blockers_cls}">{blockers}</span>
+                <span class="xboq-stat-lbl">Blockers</span>
             </div>
-            <div class="quick-stat">
-                <div class="quick-stat-value">{rfis}</div>
-                <div class="quick-stat-label">RFIs</div>
+            <div class="xboq-stat-item">
+                <span class="xboq-stat-val">{rfis}</span>
+                <span class="xboq-stat-lbl">RFIs Drafted</span>
             </div>
-            <div class="quick-stat">
-                <div class="quick-stat-value">{disciplines}</div>
-                <div class="quick-stat-label">Disciplines</div>
+            <div class="xboq-stat-item">
+                <span class="xboq-stat-val">{disciplines}</span>
+                <span class="xboq-stat-lbl">Disciplines</span>
             </div>
-            <div class="quick-stat">
-                <div class="quick-stat-value">{time:.1f}s</div>
-                <div class="quick-stat-label">Time</div>
+            <div class="xboq-stat-item">
+                <span class="xboq-stat-val green">{time:.1f}s</span>
+                <span class="xboq-stat-lbl">Analysis time</span>
             </div>
         </div>
         """.format(
             pages=demo.pages_total,
             blockers=demo.blockers_count,
+            blockers_cls=_blockers_cls,
             rfis=demo.rfis_count,
             disciplines=len(demo.disciplines_detected),
             time=demo.total_time_s
@@ -10206,25 +10393,90 @@ def main():
     if not project_id:
         # ── Hero landing page ──
         st.markdown("""
-        <div class="hero-section">
-            <h1>xBOQ</h1>
-            <div class="hero-tagline">
-                Upload tender drawings. Get a scope risk report in seconds.<br>
-                Know what's missing before you bid.
+        <div class="hero-section" style="text-align:center; padding: 3.5rem 1rem 2rem;">
+            <div style="
+                display:inline-flex; align-items:center; gap:0.5rem;
+                background:rgba(124,58,237,0.12); border:1px solid rgba(124,58,237,0.3);
+                border-radius:20px; padding:0.3rem 1rem;
+                font-size:0.75rem; font-weight:600; color:#a78bfa;
+                letter-spacing:0.04em; margin-bottom:1.25rem;
+            ">
+                <span style="width:6px;height:6px;border-radius:50%;background:#4ade80;
+                    box-shadow:0 0 6px #4ade80;display:inline-block;"></span>
+                AI Bid Engineer — Live
             </div>
-            <div class="hero-steps">
-                <div class="hero-step">
-                    <div class="hero-step-num">1</div>
-                    <div class="hero-step-label">Upload drawing PDFs</div>
+            <h1 style="
+                font-size: clamp(2.8rem, 6vw, 4rem); font-weight: 800;
+                letter-spacing: -0.03em; line-height: 1.1;
+                margin-bottom: 0.3rem;
+            ">
+                <span style="color:#e4e4e7;">Turn tender PDFs</span><br>
+                <span style="
+                    background: linear-gradient(135deg, #c4b5fd 0%, #7c3aed 60%);
+                    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+                ">into a bid-ready risk packet.</span>
+            </h1>
+            <div style="
+                font-size: 1.05rem; color: #71717a; font-weight: 400;
+                max-width: 520px; margin: 0.75rem auto 2.5rem; line-height: 1.6;
+            ">
+                Upload your tender documents. xBOQ <strong style="color:#e4e4e7;">extracts BOQ line items,
+                flags scope gaps, drafts RFIs,</strong> and generates a bid readiness packet with evidence.
+            </div>
+            <div style="display:flex; justify-content:center; gap:2.5rem; flex-wrap:wrap; margin:1.5rem 0;">
+                <div style="text-align:center;">
+                    <div style="width:32px;height:32px;border-radius:50%;
+                        background:rgba(124,58,237,0.15);color:#a78bfa;
+                        font-weight:700;font-size:0.85rem;
+                        display:inline-flex;align-items:center;justify-content:center;
+                        margin-bottom:0.4rem;">1</div>
+                    <div style="font-size:0.82rem;color:#71717a;max-width:120px;">Upload drawing PDFs</div>
                 </div>
-                <div class="hero-step">
-                    <div class="hero-step-num">2</div>
-                    <div class="hero-step-label">xBOQ reads every page</div>
+                <div style="text-align:center;">
+                    <div style="width:32px;height:32px;border-radius:50%;
+                        background:rgba(124,58,237,0.15);color:#a78bfa;
+                        font-weight:700;font-size:0.85rem;
+                        display:inline-flex;align-items:center;justify-content:center;
+                        margin-bottom:0.4rem;">2</div>
+                    <div style="font-size:0.82rem;color:#71717a;max-width:120px;">xBOQ reads every page</div>
                 </div>
-                <div class="hero-step">
-                    <div class="hero-step-num">3</div>
-                    <div class="hero-step-label">Get bid risk report + RFIs</div>
+                <div style="text-align:center;">
+                    <div style="width:32px;height:32px;border-radius:50%;
+                        background:rgba(124,58,237,0.15);color:#a78bfa;
+                        font-weight:700;font-size:0.85rem;
+                        display:inline-flex;align-items:center;justify-content:center;
+                        margin-bottom:0.4rem;">3</div>
+                    <div style="font-size:0.82rem;color:#71717a;max-width:120px;">Get bid risk report + RFIs</div>
                 </div>
+            </div>
+        </div>
+        <div class="xboq-stat-bar" style="max-width:700px;margin:0 auto 2rem;">
+            <div class="xboq-stat-item">
+                <span class="xboq-stat-val accent" style="
+                    background:linear-gradient(135deg,#c4b5fd,#7c3aed);
+                    -webkit-background-clip:text;-webkit-text-fill-color:transparent;">200+</span>
+                <span class="xboq-stat-lbl">Pages parsed</span>
+                <span class="xboq-stat-sub">Plans, schedules, details</span>
+            </div>
+            <div class="xboq-stat-item">
+                <span class="xboq-stat-val orange">6</span>
+                <span class="xboq-stat-lbl">Bid blockers</span>
+                <span class="xboq-stat-sub">Missing schedule, scope, trades</span>
+            </div>
+            <div class="xboq-stat-item">
+                <span class="xboq-stat-val">15</span>
+                <span class="xboq-stat-lbl">RFIs drafted</span>
+                <span class="xboq-stat-sub">Ready-to-send, grouped by trade</span>
+            </div>
+            <div class="xboq-stat-item">
+                <span class="xboq-stat-val">48</span>
+                <span class="xboq-stat-lbl">Analysis modules</span>
+                <span class="xboq-stat-sub">Classification to bid strategy</span>
+            </div>
+            <div class="xboq-stat-item">
+                <span class="xboq-stat-val green">&lt;24h</span>
+                <span class="xboq-stat-lbl">First report</span>
+                <span class="xboq-stat-sub">Analysis packet generated</span>
             </div>
         </div>
         """, unsafe_allow_html=True)
