@@ -9992,20 +9992,162 @@ def _run_analysis_with_progress(uploaded_files: List[Any], dev_mode: bool = Fals
 # =============================================================================
 
 def _render_login_page():
-    """Sprint 16: Render tenant login form when auth is enabled."""
+    """Sprint 16 / Dark-theme redesign: full-screen dark purple login."""
+    # ── Extra styles scoped to the login card ──────────────────────────────
     st.markdown("""
-    <div style="text-align: center; padding: 2rem 0 1rem;">
-        <h1 style="font-size: 2.5rem; color: #1a365d;">xBOQ Bid Engineer</h1>
-        <p style="color: #718096;">Sign in to your tenant workspace</p>
-    </div>
+    <style>
+    /* Particle canvas injection handled via JS below */
+    .xboq-login-wrap {
+        display: flex; flex-direction: column;
+        align-items: center; justify-content: center;
+        min-height: 70vh; padding: 2rem 1rem;
+    }
+    .xboq-lcard {
+        width: 100%; max-width: 420px;
+        background: rgba(17,17,19,0.82);
+        border: 1px solid rgba(124,58,237,0.28);
+        border-radius: 20px; padding: 2.5rem 2rem;
+        backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+        box-shadow: 0 0 0 1px rgba(124,58,237,0.1),
+                    0 32px 64px rgba(0,0,0,0.45),
+                    0 0 100px rgba(124,58,237,0.07);
+        position: relative; overflow: hidden;
+    }
+    .xboq-lcard::before {
+        content: ''; position: absolute;
+        top: 0; left: 0; right: 0; height: 1px;
+        background: linear-gradient(90deg, transparent, rgba(124,58,237,0.55), transparent);
+    }
+    .xboq-llogo {
+        display: flex; align-items: center; gap: 0.6rem; margin-bottom: 1.5rem;
+    }
+    .xboq-llogo-icon {
+        width: 36px; height: 36px;
+        background: linear-gradient(135deg, #7c3aed, #a78bfa);
+        border-radius: 9px; display: flex; align-items: center;
+        justify-content: center; font-size: 1.1rem; font-weight: 800;
+        color: white; box-shadow: 0 0 20px rgba(124,58,237,0.5); flex-shrink: 0;
+    }
+    .xboq-llogo-text {
+        font-size: 1.4rem; font-weight: 800;
+        background: linear-gradient(135deg, #e4e4e7 30%, #a78bfa 100%);
+        -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        letter-spacing: -0.02em;
+    }
+    .xboq-lbadge {
+        display: inline-flex; align-items: center; gap: 0.4rem;
+        background: rgba(124,58,237,0.12); border: 1px solid rgba(124,58,237,0.28);
+        border-radius: 20px; padding: 0.22rem 0.8rem;
+        font-size: 0.72rem; font-weight: 600; color: #a78bfa;
+        letter-spacing: 0.03em; margin-bottom: 1rem;
+    }
+    .xboq-lbadge-dot {
+        width: 6px; height: 6px; border-radius: 50%;
+        background: #4ade80; box-shadow: 0 0 6px #4ade80;
+    }
+    .xboq-lheadline {
+        font-size: 1.45rem; font-weight: 700; color: #e4e4e7;
+        letter-spacing: -0.02em; margin-bottom: 0.35rem; line-height: 1.2;
+    }
+    .xboq-lsub {
+        font-size: 0.875rem; color: #71717a; margin-bottom: 1.75rem; line-height: 1.5;
+    }
+    .xboq-lcard .stTextInput label {
+        font-size: 0.75rem !important; font-weight: 600 !important;
+        color: #71717a !important; text-transform: uppercase !important;
+        letter-spacing: 0.07em !important;
+    }
+    .xboq-lcard .stTextInput > div > div > input {
+        background: rgba(255,255,255,0.04) !important;
+        border: 1px solid rgba(255,255,255,0.1) !important;
+        border-radius: 10px !important; color: #e4e4e7 !important;
+        font-size: 0.95rem !important;
+        transition: border-color 0.15s, box-shadow 0.15s !important;
+    }
+    .xboq-lcard .stTextInput > div > div > input:focus {
+        border-color: rgba(124,58,237,0.6) !important;
+        box-shadow: 0 0 0 3px rgba(124,58,237,0.12) !important;
+    }
+    .xboq-lcard .stFormSubmitButton > button {
+        width: 100% !important;
+        background: linear-gradient(135deg, #7c3aed, #6d28d9) !important;
+        color: white !important; border: none !important;
+        border-radius: 10px !important; font-size: 0.95rem !important;
+        font-weight: 600 !important; cursor: pointer !important;
+        transition: all 0.15s ease !important;
+        box-shadow: 0 4px 24px rgba(124,58,237,0.35) !important;
+        margin-top: 0.25rem !important;
+    }
+    .xboq-lcard .stFormSubmitButton > button:hover {
+        background: linear-gradient(135deg, #6d28d9, #5b21b6) !important;
+        box-shadow: 0 6px 32px rgba(124,58,237,0.5) !important;
+        transform: translateY(-1px) !important;
+    }
+    .xboq-lstats {
+        display: flex; justify-content: space-between; gap: 0.5rem;
+        margin-top: 1.5rem; padding-top: 1.25rem;
+        border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    .xboq-lstat { text-align: center; flex: 1; }
+    .xboq-lstat-val {
+        display: block; font-size: 1rem; font-weight: 700;
+        background: linear-gradient(135deg, #e4e4e7, #a78bfa);
+        -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .xboq-lstat-lbl {
+        display: block; font-size: 0.62rem; font-weight: 600;
+        color: #52525b; text-transform: uppercase; letter-spacing: 0.06em; margin-top: 0.1rem;
+    }
+    </style>
     """, unsafe_allow_html=True)
 
-    col_l, col_c, col_r = st.columns([1, 2, 1])
-    with col_c:
+    # ── Particle canvas ──
+    st.markdown("""
+    <canvas id="xlogin-canvas" style="position:fixed;inset:0;z-index:1;pointer-events:none;width:100%;height:100%;"></canvas>
+    <script>
+    (function(){
+      var c=document.getElementById('xlogin-canvas');
+      if(!c)return;
+      var ctx=c.getContext('2d'),W=window.innerWidth,H=window.innerHeight;
+      c.width=W;c.height=H;
+      var dots=[];
+      for(var i=0;i<100;i++) dots.push({x:Math.random()*W,y:Math.random()*H,r:Math.random()*1.4+0.3,
+        a:Math.random(),da:(Math.random()-0.5)*0.005,dx:(Math.random()-0.5)*0.12,dy:(Math.random()-0.5)*0.12});
+      function draw(){ctx.clearRect(0,0,W,H);
+        dots.forEach(function(d){d.x+=d.dx;d.y+=d.dy;d.a+=d.da;
+          if(d.x<0)d.x=W;if(d.x>W)d.x=0;if(d.y<0)d.y=H;if(d.y>H)d.y=0;
+          if(d.a<0.08||d.a>0.92)d.da=-d.da;
+          ctx.beginPath();ctx.arc(d.x,d.y,d.r,0,2*Math.PI);
+          ctx.fillStyle=(Math.random()>0.5?'rgba(167,139,250,':'rgba(196,181,253,')+d.a+')';ctx.fill();
+        });requestAnimationFrame(draw);}
+      draw();
+      window.addEventListener('resize',function(){W=window.innerWidth;H=window.innerHeight;c.width=W;c.height=H;});
+    })();
+    </script>
+    """, unsafe_allow_html=True)
+
+    # ── Centered card ──
+    _, col, _ = st.columns([1, 1.6, 1])
+    with col:
+        st.markdown('<div class="xboq-login-wrap">', unsafe_allow_html=True)
+        st.markdown('<div class="xboq-lcard">', unsafe_allow_html=True)
+
+        st.markdown("""
+        <div class="xboq-llogo">
+            <div class="xboq-llogo-icon">X</div>
+            <span class="xboq-llogo-text">xBOQ</span>
+        </div>
+        <div class="xboq-lbadge">
+            <span class="xboq-lbadge-dot"></span>Bid Engineer Platform
+        </div>
+        <div class="xboq-lheadline">Sign in to your workspace</div>
+        <div class="xboq-lsub">AI-powered tender analysis for construction contractors.</div>
+        """, unsafe_allow_html=True)
+
         with st.form("xboq_login"):
-            tenant_id = st.text_input("Tenant ID")
-            password = st.text_input("Password", type="password")
-            submitted = st.form_submit_button("Login", use_container_width=True)
+            tenant_id = st.text_input("Tenant ID", placeholder="your-org")
+            password  = st.text_input("Password", type="password", placeholder="••••••••")
+            submitted = st.form_submit_button("Sign In →", use_container_width=True)
             if submitted:
                 if not tenant_id.strip() or not password:
                     st.error("Enter both tenant ID and password.")
@@ -10022,6 +10164,25 @@ def _render_login_page():
                             st.error("Invalid tenant ID or password.")
                     except Exception as e:
                         st.error(f"Authentication error: {e}")
+
+        st.markdown("""
+        <div class="xboq-lstats">
+            <div class="xboq-lstat">
+                <span class="xboq-lstat-val">200+</span>
+                <span class="xboq-lstat-lbl">Pages parsed</span>
+            </div>
+            <div class="xboq-lstat">
+                <span class="xboq-lstat-val">48</span>
+                <span class="xboq-lstat-lbl">Modules</span>
+            </div>
+            <div class="xboq-lstat">
+                <span class="xboq-lstat-val">&lt;24h</span>
+                <span class="xboq-lstat-lbl">First report</span>
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
+
+        st.markdown('</div></div>', unsafe_allow_html=True)
 
 
 def _render_job_progress(job):
